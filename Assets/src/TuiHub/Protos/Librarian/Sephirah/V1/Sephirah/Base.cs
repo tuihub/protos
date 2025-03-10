@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace TuiHub.Protos.Librarian.Sephirah.V1 {
+namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
 
   /// <summary>Holder for reflection information generated from librarian/sephirah/v1/sephirah/base.proto</summary>
   public static partial class BaseReflection {
@@ -47,16 +47,17 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             "bmNlU3VtbWFyeRISCgRuYW1lGAEgASgJUgRuYW1lEiAKC2Rlc2NyaXB0aW9u",
             "GAIgASgJUgtkZXNjcmlwdGlvbhIfCgt3ZWJzaXRlX3VybBgDIAEoCVIKd2Vi",
             "c2l0ZVVybBIZCghsb2dvX3VybBgEIAEoCVIHbG9nb1VybBIlCg5iYWNrZ3Jv",
-            "dW5kX3VybBgFIAEoCVINYmFja2dyb3VuZFVybEJdWjVnaXRodWIuY29tL3R1",
-            "aWh1Yi9wcm90b3MvcGtnL2xpYnJhcmlhbi9zZXBoaXJhaC92MTt2MaoCI1R1",
-            "aUh1Yi5Qcm90b3MuTGlicmFyaWFuLlNlcGhpcmFoLlYxYgZwcm90bzM="));
+            "dW5kX3VybBgFIAEoCVINYmFja2dyb3VuZFVybEJmWjVnaXRodWIuY29tL3R1",
+            "aWh1Yi9wcm90b3MvcGtnL2xpYnJhcmlhbi9zZXBoaXJhaC92MTt2MaoCLFR1",
+            "aUh1Yi5Qcm90b3MuTGlicmFyaWFuLlNlcGhpcmFoLlYxLlNlcGhpcmFoYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.WellknownReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ServerInformation), global::TuiHub.Protos.Librarian.Sephirah.V1.ServerInformation.Parser, new[]{ "ServerBinarySummary", "ProtocolSummary", "CurrentTime", "FeatureSummary", "ServerInstanceSummary", "StatusReport" }, new[]{ "FeatureSummary", "StatusReport" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ServerBinarySummary), global::TuiHub.Protos.Librarian.Sephirah.V1.ServerBinarySummary.Parser, new[]{ "SourceCodeAddress", "BuildVersion", "BuildDate" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ServerProtocolSummary), global::TuiHub.Protos.Librarian.Sephirah.V1.ServerProtocolSummary.Parser, new[]{ "Version" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ServerInstanceSummary), global::TuiHub.Protos.Librarian.Sephirah.V1.ServerInstanceSummary.Parser, new[]{ "Name", "Description", "WebsiteUrl", "LogoUrl", "BackgroundUrl" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerInformation), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerInformation.Parser, new[]{ "ServerBinarySummary", "ProtocolSummary", "CurrentTime", "FeatureSummary", "ServerInstanceSummary", "StatusReport" }, new[]{ "FeatureSummary", "StatusReport" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerBinarySummary), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerBinarySummary.Parser, new[]{ "SourceCodeAddress", "BuildVersion", "BuildDate" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerProtocolSummary), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerProtocolSummary.Parser, new[]{ "Version" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerInstanceSummary), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerInstanceSummary.Parser, new[]{ "Name", "Description", "WebsiteUrl", "LogoUrl", "BackgroundUrl" }, null, null, null, null)
           }));
     }
     #endregion
@@ -77,7 +78,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.BaseReflection.Descriptor.MessageTypes[0]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.BaseReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -114,13 +115,13 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "server_binary_summary" field.</summary>
     public const int ServerBinarySummaryFieldNumber = 1;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.ServerBinarySummary serverBinarySummary_;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerBinarySummary serverBinarySummary_;
     /// <summary>
     /// For manual inspection only, the client may display but should not parse the response.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.ServerBinarySummary ServerBinarySummary {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerBinarySummary ServerBinarySummary {
       get { return serverBinarySummary_; }
       set {
         serverBinarySummary_ = value;
@@ -129,13 +130,13 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "protocol_summary" field.</summary>
     public const int ProtocolSummaryFieldNumber = 2;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.ServerProtocolSummary protocolSummary_;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerProtocolSummary protocolSummary_;
     /// <summary>
     /// For manual inspection only, the client may display but should not parse the response.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.ServerProtocolSummary ProtocolSummary {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerProtocolSummary ProtocolSummary {
       get { return protocolSummary_; }
       set {
         protocolSummary_ = value;
@@ -175,13 +176,13 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "server_instance_summary" field.</summary>
     public const int ServerInstanceSummaryFieldNumber = 5;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.ServerInstanceSummary serverInstanceSummary_;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerInstanceSummary serverInstanceSummary_;
     /// <summary>
     /// For showing to user, customizable by server owner.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.ServerInstanceSummary ServerInstanceSummary {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerInstanceSummary ServerInstanceSummary {
       get { return serverInstanceSummary_; }
       set {
         serverInstanceSummary_ = value;
@@ -370,13 +371,13 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       if (other.serverBinarySummary_ != null) {
         if (serverBinarySummary_ == null) {
-          ServerBinarySummary = new global::TuiHub.Protos.Librarian.Sephirah.V1.ServerBinarySummary();
+          ServerBinarySummary = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerBinarySummary();
         }
         ServerBinarySummary.MergeFrom(other.ServerBinarySummary);
       }
       if (other.protocolSummary_ != null) {
         if (protocolSummary_ == null) {
-          ProtocolSummary = new global::TuiHub.Protos.Librarian.Sephirah.V1.ServerProtocolSummary();
+          ProtocolSummary = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerProtocolSummary();
         }
         ProtocolSummary.MergeFrom(other.ProtocolSummary);
       }
@@ -394,7 +395,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       if (other.serverInstanceSummary_ != null) {
         if (serverInstanceSummary_ == null) {
-          ServerInstanceSummary = new global::TuiHub.Protos.Librarian.Sephirah.V1.ServerInstanceSummary();
+          ServerInstanceSummary = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerInstanceSummary();
         }
         ServerInstanceSummary.MergeFrom(other.ServerInstanceSummary);
       }
@@ -418,14 +419,14 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           case 10: {
             if (serverBinarySummary_ == null) {
-              ServerBinarySummary = new global::TuiHub.Protos.Librarian.Sephirah.V1.ServerBinarySummary();
+              ServerBinarySummary = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerBinarySummary();
             }
             input.ReadMessage(ServerBinarySummary);
             break;
           }
           case 18: {
             if (protocolSummary_ == null) {
-              ProtocolSummary = new global::TuiHub.Protos.Librarian.Sephirah.V1.ServerProtocolSummary();
+              ProtocolSummary = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerProtocolSummary();
             }
             input.ReadMessage(ProtocolSummary);
             break;
@@ -446,7 +447,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
           }
           case 42: {
             if (serverInstanceSummary_ == null) {
-              ServerInstanceSummary = new global::TuiHub.Protos.Librarian.Sephirah.V1.ServerInstanceSummary();
+              ServerInstanceSummary = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerInstanceSummary();
             }
             input.ReadMessage(ServerInstanceSummary);
             break;
@@ -472,14 +473,14 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           case 10: {
             if (serverBinarySummary_ == null) {
-              ServerBinarySummary = new global::TuiHub.Protos.Librarian.Sephirah.V1.ServerBinarySummary();
+              ServerBinarySummary = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerBinarySummary();
             }
             input.ReadMessage(ServerBinarySummary);
             break;
           }
           case 18: {
             if (protocolSummary_ == null) {
-              ProtocolSummary = new global::TuiHub.Protos.Librarian.Sephirah.V1.ServerProtocolSummary();
+              ProtocolSummary = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerProtocolSummary();
             }
             input.ReadMessage(ProtocolSummary);
             break;
@@ -500,7 +501,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
           }
           case 42: {
             if (serverInstanceSummary_ == null) {
-              ServerInstanceSummary = new global::TuiHub.Protos.Librarian.Sephirah.V1.ServerInstanceSummary();
+              ServerInstanceSummary = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerInstanceSummary();
             }
             input.ReadMessage(ServerInstanceSummary);
             break;
@@ -530,7 +531,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.BaseReflection.Descriptor.MessageTypes[1]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.BaseReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -806,7 +807,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.BaseReflection.Descriptor.MessageTypes[2]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.BaseReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1000,7 +1001,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.BaseReflection.Descriptor.MessageTypes[3]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.BaseReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

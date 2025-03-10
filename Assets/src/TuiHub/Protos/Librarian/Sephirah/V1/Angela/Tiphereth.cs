@@ -94,7 +94,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
             "qgIqVHVpSHViLlByb3Rvcy5MaWJyYXJpYW4uU2VwaGlyYWguVjEuQW5nZWxh",
             "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::TuiHub.Protos.Librarian.Sephirah.V1.TipherethReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.WellknownReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.TipherethReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.WellknownReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Angela.SentinelStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Angela.GetTokenRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Angela.GetTokenRequest.Parser, new[]{ "Username", "Password", "DeviceId" }, new[]{ "DeviceId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Angela.GetTokenResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Angela.GetTokenResponse.Parser, new[]{ "AccessToken", "RefreshToken" }, null, null, null, null),
@@ -1115,10 +1115,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
 
     /// <summary>Field number for the "user" field.</summary>
     public const int UserFieldNumber = 1;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.User user_;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.User user_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.User User {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.User User {
       get { return user_; }
       set {
         user_ = value;
@@ -1212,7 +1212,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
       }
       if (other.user_ != null) {
         if (user_ == null) {
-          User = new global::TuiHub.Protos.Librarian.Sephirah.V1.User();
+          User = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.User();
         }
         User.MergeFrom(other.User);
       }
@@ -1233,7 +1233,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::TuiHub.Protos.Librarian.Sephirah.V1.User();
+              User = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.User();
             }
             input.ReadMessage(User);
             break;
@@ -1255,7 +1255,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::TuiHub.Protos.Librarian.Sephirah.V1.User();
+              User = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.User();
             }
             input.ReadMessage(User);
             break;
@@ -1525,23 +1525,23 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
 
     /// <summary>Field number for the "type_filter" field.</summary>
     public const int TypeFilterFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.UserType> _repeated_typeFilter_codec
-        = pb::FieldCodec.ForEnum(18, x => (int) x, x => (global::TuiHub.Protos.Librarian.Sephirah.V1.UserType) x);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.UserType> typeFilter_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.UserType>();
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UserType> _repeated_typeFilter_codec
+        = pb::FieldCodec.ForEnum(18, x => (int) x, x => (global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UserType) x);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UserType> typeFilter_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UserType>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.UserType> TypeFilter {
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UserType> TypeFilter {
       get { return typeFilter_; }
     }
 
     /// <summary>Field number for the "status_filter" field.</summary>
     public const int StatusFilterFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.UserStatus> _repeated_statusFilter_codec
-        = pb::FieldCodec.ForEnum(26, x => (int) x, x => (global::TuiHub.Protos.Librarian.Sephirah.V1.UserStatus) x);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.UserStatus> statusFilter_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.UserStatus>();
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UserStatus> _repeated_statusFilter_codec
+        = pb::FieldCodec.ForEnum(26, x => (int) x, x => (global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UserStatus) x);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UserStatus> statusFilter_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UserStatus>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.UserStatus> StatusFilter {
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UserStatus> StatusFilter {
       get { return statusFilter_; }
     }
 
@@ -1778,12 +1778,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
 
     /// <summary>Field number for the "users" field.</summary>
     public const int UsersFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.User> _repeated_users_codec
-        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.User.Parser);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.User> users_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.User>();
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.User> _repeated_users_codec
+        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.User.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.User> users_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.User>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.User> Users {
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.User> Users {
       get { return users_; }
     }
 
@@ -1989,10 +1989,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
 
     /// <summary>Field number for the "user" field.</summary>
     public const int UserFieldNumber = 1;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.User user_;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.User user_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.User User {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.User User {
       get { return user_; }
       set {
         user_ = value;
@@ -2086,7 +2086,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
       }
       if (other.user_ != null) {
         if (user_ == null) {
-          User = new global::TuiHub.Protos.Librarian.Sephirah.V1.User();
+          User = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.User();
         }
         User.MergeFrom(other.User);
       }
@@ -2107,7 +2107,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::TuiHub.Protos.Librarian.Sephirah.V1.User();
+              User = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.User();
             }
             input.ReadMessage(User);
             break;
@@ -2129,7 +2129,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
             break;
           case 10: {
             if (user_ == null) {
-              User = new global::TuiHub.Protos.Librarian.Sephirah.V1.User();
+              User = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.User();
             }
             input.ReadMessage(User);
             break;
@@ -2550,12 +2550,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
 
     /// <summary>Field number for the "porters" field.</summary>
     public const int PortersFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.Porter> _repeated_porters_codec
-        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.Parser);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Porter> porters_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Porter>();
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.Porter> _repeated_porters_codec
+        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.Porter.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.Porter> porters_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.Porter>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Porter> Porters {
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.Porter> Porters {
       get { return porters_; }
     }
 
@@ -2774,10 +2774,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
 
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 2;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.UserStatus status_ = global::TuiHub.Protos.Librarian.Sephirah.V1.UserStatus.Unspecified;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UserStatus status_ = global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UserStatus.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.UserStatus Status {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UserStatus Status {
       get { return status_; }
       set {
         status_ = value;
@@ -2809,7 +2809,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
     public override int GetHashCode() {
       int hash = 1;
       if (porterId_ != null) hash ^= PorterId.GetHashCode();
-      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.UserStatus.Unspecified) hash ^= Status.GetHashCode();
+      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UserStatus.Unspecified) hash ^= Status.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -2832,7 +2832,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
         output.WriteRawTag(10);
         output.WriteMessage(PorterId);
       }
-      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.UserStatus.Unspecified) {
+      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UserStatus.Unspecified) {
         output.WriteRawTag(16);
         output.WriteEnum((int) Status);
       }
@@ -2850,7 +2850,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
         output.WriteRawTag(10);
         output.WriteMessage(PorterId);
       }
-      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.UserStatus.Unspecified) {
+      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UserStatus.Unspecified) {
         output.WriteRawTag(16);
         output.WriteEnum((int) Status);
       }
@@ -2867,7 +2867,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
       if (porterId_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(PorterId);
       }
-      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.UserStatus.Unspecified) {
+      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UserStatus.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
       }
       if (_unknownFields != null) {
@@ -2888,7 +2888,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
         }
         PorterId.MergeFrom(other.PorterId);
       }
-      if (other.Status != global::TuiHub.Protos.Librarian.Sephirah.V1.UserStatus.Unspecified) {
+      if (other.Status != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UserStatus.Unspecified) {
         Status = other.Status;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -2914,7 +2914,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
             break;
           }
           case 16: {
-            Status = (global::TuiHub.Protos.Librarian.Sephirah.V1.UserStatus) input.ReadEnum();
+            Status = (global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UserStatus) input.ReadEnum();
             break;
           }
         }
@@ -2940,7 +2940,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
             break;
           }
           case 16: {
-            Status = (global::TuiHub.Protos.Librarian.Sephirah.V1.UserStatus) input.ReadEnum();
+            Status = (global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UserStatus) input.ReadEnum();
             break;
           }
         }

@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace TuiHub.Protos.Librarian.Sephirah.V1 {
+namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
 
   /// <summary>Holder for reflection information generated from librarian/sephirah/v1/sephirah/sephirah_service.proto</summary>
   public static partial class SephirahServiceReflection {
@@ -310,16 +310,17 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             "b25zZRKgAQoZTGlzdEZlZWRJdGVtc0luQ29sbGVjdGlvbhJALmxpYnJhcmlh",
             "bi5zZXBoaXJhaC52MS5zZXBoaXJhaC5MaXN0RmVlZEl0ZW1zSW5Db2xsZWN0",
             "aW9uUmVxdWVzdBpBLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5zZXBoaXJhaC5M",
-            "aXN0RmVlZEl0ZW1zSW5Db2xsZWN0aW9uUmVzcG9uc2VCXVo1Z2l0aHViLmNv",
+            "aXN0RmVlZEl0ZW1zSW5Db2xsZWN0aW9uUmVzcG9uc2VCZlo1Z2l0aHViLmNv",
             "bS90dWlodWIvcHJvdG9zL3BrZy9saWJyYXJpYW4vc2VwaGlyYWgvdjE7djGq",
-            "AiNUdWlIdWIuUHJvdG9zLkxpYnJhcmlhbi5TZXBoaXJhaC5WMWIGcHJvdG8z"));
+            "AixUdWlIdWIuUHJvdG9zLkxpYnJhcmlhbi5TZXBoaXJhaC5WMS5TZXBoaXJh",
+            "aGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::TuiHub.Protos.Librarian.Sephirah.V1.BaseReflection.Descriptor, global::TuiHub.Protos.Librarian.Sephirah.V1.BinahReflection.Descriptor, global::TuiHub.Protos.Librarian.Sephirah.V1.ChesedReflection.Descriptor, global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor, global::TuiHub.Protos.Librarian.Sephirah.V1.NetzachReflection.Descriptor, global::TuiHub.Protos.Librarian.Sephirah.V1.TipherethReflection.Descriptor, global::TuiHub.Protos.Librarian.Sephirah.V1.YesodReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ServerEvent), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.GetServerInformationRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.GetServerInformationRequest.Parser, new[]{ "WithStatusReport" }, new[]{ "WithStatusReport" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.GetServerInformationResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.GetServerInformationResponse.Parser, new[]{ "ServerInformation" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListenServerEventRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.ListenServerEventRequest.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListenServerEventResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.ListenServerEventResponse.Parser, new[]{ "Event", "OccurTime", "Payload" }, null, null, null, null)
+          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.BaseReflection.Descriptor, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.BinahReflection.Descriptor, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ChesedReflection.Descriptor, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NetzachReflection.Descriptor, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.TipherethReflection.Descriptor, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.YesodReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerEvent), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GetServerInformationRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GetServerInformationRequest.Parser, new[]{ "WithStatusReport" }, new[]{ "WithStatusReport" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GetServerInformationResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GetServerInformationResponse.Parser, new[]{ "ServerInformation" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListenServerEventRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListenServerEventRequest.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListenServerEventResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListenServerEventResponse.Parser, new[]{ "Event", "OccurTime", "Payload" }, null, null, null, null)
           }));
     }
     #endregion
@@ -356,7 +357,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.SephirahServiceReflection.Descriptor.MessageTypes[0]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SephirahServiceReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -561,7 +562,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.SephirahServiceReflection.Descriptor.MessageTypes[1]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SephirahServiceReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -593,10 +594,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "server_information" field.</summary>
     public const int ServerInformationFieldNumber = 1;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.ServerInformation serverInformation_;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerInformation serverInformation_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.ServerInformation ServerInformation {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerInformation ServerInformation {
       get { return serverInformation_; }
       set {
         serverInformation_ = value;
@@ -690,7 +691,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       if (other.serverInformation_ != null) {
         if (serverInformation_ == null) {
-          ServerInformation = new global::TuiHub.Protos.Librarian.Sephirah.V1.ServerInformation();
+          ServerInformation = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerInformation();
         }
         ServerInformation.MergeFrom(other.ServerInformation);
       }
@@ -711,7 +712,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           case 10: {
             if (serverInformation_ == null) {
-              ServerInformation = new global::TuiHub.Protos.Librarian.Sephirah.V1.ServerInformation();
+              ServerInformation = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerInformation();
             }
             input.ReadMessage(ServerInformation);
             break;
@@ -733,7 +734,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           case 10: {
             if (serverInformation_ == null) {
-              ServerInformation = new global::TuiHub.Protos.Librarian.Sephirah.V1.ServerInformation();
+              ServerInformation = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerInformation();
             }
             input.ReadMessage(ServerInformation);
             break;
@@ -759,7 +760,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.SephirahServiceReflection.Descriptor.MessageTypes[2]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SephirahServiceReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -911,7 +912,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.SephirahServiceReflection.Descriptor.MessageTypes[3]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SephirahServiceReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -945,10 +946,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "event" field.</summary>
     public const int EventFieldNumber = 1;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.ServerEvent event_ = global::TuiHub.Protos.Librarian.Sephirah.V1.ServerEvent.Unspecified;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerEvent event_ = global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerEvent.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.ServerEvent Event {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerEvent Event {
       get { return event_; }
       set {
         event_ = value;
@@ -1007,7 +1008,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Event != global::TuiHub.Protos.Librarian.Sephirah.V1.ServerEvent.Unspecified) hash ^= Event.GetHashCode();
+      if (Event != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerEvent.Unspecified) hash ^= Event.GetHashCode();
       if (occurTime_ != null) hash ^= OccurTime.GetHashCode();
       if (Payload.Length != 0) hash ^= Payload.GetHashCode();
       if (_unknownFields != null) {
@@ -1028,7 +1029,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Event != global::TuiHub.Protos.Librarian.Sephirah.V1.ServerEvent.Unspecified) {
+      if (Event != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerEvent.Unspecified) {
         output.WriteRawTag(8);
         output.WriteEnum((int) Event);
       }
@@ -1050,7 +1051,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Event != global::TuiHub.Protos.Librarian.Sephirah.V1.ServerEvent.Unspecified) {
+      if (Event != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerEvent.Unspecified) {
         output.WriteRawTag(8);
         output.WriteEnum((int) Event);
       }
@@ -1072,7 +1073,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Event != global::TuiHub.Protos.Librarian.Sephirah.V1.ServerEvent.Unspecified) {
+      if (Event != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerEvent.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Event);
       }
       if (occurTime_ != null) {
@@ -1093,7 +1094,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (other == null) {
         return;
       }
-      if (other.Event != global::TuiHub.Protos.Librarian.Sephirah.V1.ServerEvent.Unspecified) {
+      if (other.Event != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerEvent.Unspecified) {
         Event = other.Event;
       }
       if (other.occurTime_ != null) {
@@ -1121,7 +1122,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            Event = (global::TuiHub.Protos.Librarian.Sephirah.V1.ServerEvent) input.ReadEnum();
+            Event = (global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerEvent) input.ReadEnum();
             break;
           }
           case 18: {
@@ -1151,7 +1152,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            Event = (global::TuiHub.Protos.Librarian.Sephirah.V1.ServerEvent) input.ReadEnum();
+            Event = (global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ServerEvent) input.ReadEnum();
             break;
           }
           case 18: {

@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace TuiHub.Protos.Librarian.Sephirah.V1 {
+namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
 
   /// <summary>Holder for reflection information generated from librarian/sephirah/v1/sephirah/netzach.proto</summary>
   public static partial class NetzachReflection {
@@ -114,34 +114,35 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             "KgomU1lTVEVNX05PVElGSUNBVElPTl9TVEFUVVNfVU5TUEVDSUZJRUQQABIl",
             "CiFTWVNURU1fTk9USUZJQ0FUSU9OX1NUQVRVU19VTlJFQUQQARIjCh9TWVNU",
             "RU1fTk9USUZJQ0FUSU9OX1NUQVRVU19SRUFEEAISKAokU1lTVEVNX05PVElG",
-            "SUNBVElPTl9TVEFUVVNfRElTTUlTU0VEEANCXVo1Z2l0aHViLmNvbS90dWlo",
-            "dWIvcHJvdG9zL3BrZy9saWJyYXJpYW4vc2VwaGlyYWgvdjE7djGqAiNUdWlI",
-            "dWIuUHJvdG9zLkxpYnJhcmlhbi5TZXBoaXJhaC5WMWIGcHJvdG8z"));
+            "SUNBVElPTl9TVEFUVVNfRElTTUlTU0VEEANCZlo1Z2l0aHViLmNvbS90dWlo",
+            "dWIvcHJvdG9zL3BrZy9saWJyYXJpYW4vc2VwaGlyYWgvdjE7djGqAixUdWlI",
+            "dWIuUHJvdG9zLkxpYnJhcmlhbi5TZXBoaXJhaC5WMS5TZXBoaXJhaGIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.WellknownReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowStatus), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationLevel), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyTargetRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyTargetRequest.Parser, new[]{ "Target" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyTargetResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyTargetResponse.Parser, new[]{ "Id" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyTargetRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyTargetRequest.Parser, new[]{ "Target" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyTargetResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyTargetResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyTargetsRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyTargetsRequest.Parser, new[]{ "Paging", "IdFilter", "StatusFilter" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyTargetsResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyTargetsResponse.Parser, new[]{ "Paging", "Targets" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyFlowRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyFlowRequest.Parser, new[]{ "Flow" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyFlowResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.CreateNotifyFlowResponse.Parser, new[]{ "Id" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyFlowRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyFlowRequest.Parser, new[]{ "Flow" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyFlowResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateNotifyFlowResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyFlowsRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyFlowsRequest.Parser, new[]{ "Paging", "IdFilter" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyFlowsResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.ListNotifyFlowsResponse.Parser, new[]{ "Paging", "Flows" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTarget), global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTarget.Parser, new[]{ "Id", "Name", "Description", "Destination", "Status" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlow), global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlow.Parser, new[]{ "Id", "Name", "Description", "Sources", "Targets", "Status" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowSource), global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowSource.Parser, new[]{ "Filter", "SourceId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowTarget), global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowTarget.Parser, new[]{ "Filter", "TargetId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFilter), global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFilter.Parser, new[]{ "ExcludeKeywords", "IncludeKeywords" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListSystemNotificationsRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.ListSystemNotificationsRequest.Parser, new[]{ "Paging", "LevelFilter", "StatusFilter" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListSystemNotificationsResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.ListSystemNotificationsResponse.Parser, new[]{ "Paging", "Notifications" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSystemNotificationRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSystemNotificationRequest.Parser, new[]{ "Id", "Status" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSystemNotificationResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateSystemNotificationResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotification), global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotification.Parser, new[]{ "Id", "Level", "Status", "Title", "Content", "CreateTime", "UpdateTime" }, null, null, null, null)
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyTargetStatus), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlowStatus), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationLevel), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.CreateNotifyTargetRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.CreateNotifyTargetRequest.Parser, new[]{ "Target" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.CreateNotifyTargetResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.CreateNotifyTargetResponse.Parser, new[]{ "Id" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UpdateNotifyTargetRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UpdateNotifyTargetRequest.Parser, new[]{ "Target" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UpdateNotifyTargetResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UpdateNotifyTargetResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListNotifyTargetsRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListNotifyTargetsRequest.Parser, new[]{ "Paging", "IdFilter", "StatusFilter" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListNotifyTargetsResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListNotifyTargetsResponse.Parser, new[]{ "Paging", "Targets" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.CreateNotifyFlowRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.CreateNotifyFlowRequest.Parser, new[]{ "Flow" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.CreateNotifyFlowResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.CreateNotifyFlowResponse.Parser, new[]{ "Id" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UpdateNotifyFlowRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UpdateNotifyFlowRequest.Parser, new[]{ "Flow" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UpdateNotifyFlowResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UpdateNotifyFlowResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListNotifyFlowsRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListNotifyFlowsRequest.Parser, new[]{ "Paging", "IdFilter" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListNotifyFlowsResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListNotifyFlowsResponse.Parser, new[]{ "Paging", "Flows" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyTarget), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyTarget.Parser, new[]{ "Id", "Name", "Description", "Destination", "Status" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlow), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlow.Parser, new[]{ "Id", "Name", "Description", "Sources", "Targets", "Status" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlowSource), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlowSource.Parser, new[]{ "Filter", "SourceId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlowTarget), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlowTarget.Parser, new[]{ "Filter", "TargetId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFilter), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFilter.Parser, new[]{ "ExcludeKeywords", "IncludeKeywords" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListSystemNotificationsRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListSystemNotificationsRequest.Parser, new[]{ "Paging", "LevelFilter", "StatusFilter" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListSystemNotificationsResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListSystemNotificationsResponse.Parser, new[]{ "Paging", "Notifications" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UpdateSystemNotificationRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UpdateSystemNotificationRequest.Parser, new[]{ "Id", "Status" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UpdateSystemNotificationResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UpdateSystemNotificationResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotification), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotification.Parser, new[]{ "Id", "Level", "Status", "Title", "Content", "CreateTime", "UpdateTime" }, null, null, null, null)
           }));
     }
     #endregion
@@ -192,7 +193,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.NetzachReflection.Descriptor.MessageTypes[0]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NetzachReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -224,10 +225,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "target" field.</summary>
     public const int TargetFieldNumber = 1;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTarget target_;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyTarget target_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTarget Target {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyTarget Target {
       get { return target_; }
       set {
         target_ = value;
@@ -321,7 +322,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       if (other.target_ != null) {
         if (target_ == null) {
-          Target = new global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTarget();
+          Target = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyTarget();
         }
         Target.MergeFrom(other.Target);
       }
@@ -342,7 +343,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           case 10: {
             if (target_ == null) {
-              Target = new global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTarget();
+              Target = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyTarget();
             }
             input.ReadMessage(Target);
             break;
@@ -364,7 +365,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           case 10: {
             if (target_ == null) {
-              Target = new global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTarget();
+              Target = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyTarget();
             }
             input.ReadMessage(Target);
             break;
@@ -390,7 +391,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.NetzachReflection.Descriptor.MessageTypes[1]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NetzachReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -588,7 +589,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.NetzachReflection.Descriptor.MessageTypes[2]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NetzachReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -620,10 +621,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "target" field.</summary>
     public const int TargetFieldNumber = 1;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTarget target_;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyTarget target_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTarget Target {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyTarget Target {
       get { return target_; }
       set {
         target_ = value;
@@ -717,7 +718,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       if (other.target_ != null) {
         if (target_ == null) {
-          Target = new global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTarget();
+          Target = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyTarget();
         }
         Target.MergeFrom(other.Target);
       }
@@ -738,7 +739,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           case 10: {
             if (target_ == null) {
-              Target = new global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTarget();
+              Target = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyTarget();
             }
             input.ReadMessage(Target);
             break;
@@ -760,7 +761,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           case 10: {
             if (target_ == null) {
-              Target = new global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTarget();
+              Target = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyTarget();
             }
             input.ReadMessage(Target);
             break;
@@ -786,7 +787,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.NetzachReflection.Descriptor.MessageTypes[3]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NetzachReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -938,7 +939,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.NetzachReflection.Descriptor.MessageTypes[4]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NetzachReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -995,12 +996,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "status_filter" field.</summary>
     public const int StatusFilterFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus> _repeated_statusFilter_codec
-        = pb::FieldCodec.ForEnum(34, x => (int) x, x => (global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus) x);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus> statusFilter_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus>();
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyTargetStatus> _repeated_statusFilter_codec
+        = pb::FieldCodec.ForEnum(34, x => (int) x, x => (global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyTargetStatus) x);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyTargetStatus> statusFilter_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyTargetStatus>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus> StatusFilter {
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyTargetStatus> StatusFilter {
       get { return statusFilter_; }
     }
 
@@ -1190,7 +1191,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.NetzachReflection.Descriptor.MessageTypes[5]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NetzachReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1235,12 +1236,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "targets" field.</summary>
     public const int TargetsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTarget> _repeated_targets_codec
-        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTarget.Parser);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTarget> targets_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTarget>();
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyTarget> _repeated_targets_codec
+        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyTarget.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyTarget> targets_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyTarget>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTarget> Targets {
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyTarget> Targets {
       get { return targets_; }
     }
 
@@ -1414,7 +1415,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.NetzachReflection.Descriptor.MessageTypes[6]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NetzachReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1446,10 +1447,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "flow" field.</summary>
     public const int FlowFieldNumber = 1;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlow flow_;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlow flow_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlow Flow {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlow Flow {
       get { return flow_; }
       set {
         flow_ = value;
@@ -1543,7 +1544,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       if (other.flow_ != null) {
         if (flow_ == null) {
-          Flow = new global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlow();
+          Flow = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlow();
         }
         Flow.MergeFrom(other.Flow);
       }
@@ -1564,7 +1565,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           case 10: {
             if (flow_ == null) {
-              Flow = new global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlow();
+              Flow = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlow();
             }
             input.ReadMessage(Flow);
             break;
@@ -1586,7 +1587,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           case 10: {
             if (flow_ == null) {
-              Flow = new global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlow();
+              Flow = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlow();
             }
             input.ReadMessage(Flow);
             break;
@@ -1612,7 +1613,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.NetzachReflection.Descriptor.MessageTypes[7]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NetzachReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1810,7 +1811,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.NetzachReflection.Descriptor.MessageTypes[8]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NetzachReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1842,10 +1843,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "flow" field.</summary>
     public const int FlowFieldNumber = 1;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlow flow_;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlow flow_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlow Flow {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlow Flow {
       get { return flow_; }
       set {
         flow_ = value;
@@ -1939,7 +1940,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       if (other.flow_ != null) {
         if (flow_ == null) {
-          Flow = new global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlow();
+          Flow = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlow();
         }
         Flow.MergeFrom(other.Flow);
       }
@@ -1960,7 +1961,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           case 10: {
             if (flow_ == null) {
-              Flow = new global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlow();
+              Flow = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlow();
             }
             input.ReadMessage(Flow);
             break;
@@ -1982,7 +1983,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           case 10: {
             if (flow_ == null) {
-              Flow = new global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlow();
+              Flow = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlow();
             }
             input.ReadMessage(Flow);
             break;
@@ -2008,7 +2009,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.NetzachReflection.Descriptor.MessageTypes[9]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NetzachReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2160,7 +2161,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.NetzachReflection.Descriptor.MessageTypes[10]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NetzachReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2384,7 +2385,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.NetzachReflection.Descriptor.MessageTypes[11]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NetzachReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2429,12 +2430,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "flows" field.</summary>
     public const int FlowsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlow> _repeated_flows_codec
-        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlow.Parser);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlow> flows_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlow>();
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlow> _repeated_flows_codec
+        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlow.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlow> flows_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlow>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlow> Flows {
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlow> Flows {
       get { return flows_; }
     }
 
@@ -2608,7 +2609,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.NetzachReflection.Descriptor.MessageTypes[12]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NetzachReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2695,10 +2696,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 5;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus status_ = global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus.Unspecified;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyTargetStatus status_ = global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyTargetStatus.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus Status {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyTargetStatus Status {
       get { return status_; }
       set {
         status_ = value;
@@ -2736,7 +2737,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (destination_ != null) hash ^= Destination.GetHashCode();
-      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus.Unspecified) hash ^= Status.GetHashCode();
+      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyTargetStatus.Unspecified) hash ^= Status.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -2771,7 +2772,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(34);
         output.WriteMessage(Destination);
       }
-      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus.Unspecified) {
+      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyTargetStatus.Unspecified) {
         output.WriteRawTag(40);
         output.WriteEnum((int) Status);
       }
@@ -2801,7 +2802,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(34);
         output.WriteMessage(Destination);
       }
-      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus.Unspecified) {
+      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyTargetStatus.Unspecified) {
         output.WriteRawTag(40);
         output.WriteEnum((int) Status);
       }
@@ -2827,7 +2828,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (destination_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Destination);
       }
-      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus.Unspecified) {
+      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyTargetStatus.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
       }
       if (_unknownFields != null) {
@@ -2860,7 +2861,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         }
         Destination.MergeFrom(other.Destination);
       }
-      if (other.Status != global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus.Unspecified) {
+      if (other.Status != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyTargetStatus.Unspecified) {
         Status = other.Status;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -2901,7 +2902,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 40: {
-            Status = (global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus) input.ReadEnum();
+            Status = (global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyTargetStatus) input.ReadEnum();
             break;
           }
         }
@@ -2942,7 +2943,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 40: {
-            Status = (global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyTargetStatus) input.ReadEnum();
+            Status = (global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyTargetStatus) input.ReadEnum();
             break;
           }
         }
@@ -2966,7 +2967,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.NetzachReflection.Descriptor.MessageTypes[13]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NetzachReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3039,32 +3040,32 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "sources" field.</summary>
     public const int SourcesFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowSource> _repeated_sources_codec
-        = pb::FieldCodec.ForMessage(34, global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowSource.Parser);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowSource> sources_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowSource>();
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlowSource> _repeated_sources_codec
+        = pb::FieldCodec.ForMessage(34, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlowSource.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlowSource> sources_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlowSource>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowSource> Sources {
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlowSource> Sources {
       get { return sources_; }
     }
 
     /// <summary>Field number for the "targets" field.</summary>
     public const int TargetsFieldNumber = 5;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowTarget> _repeated_targets_codec
-        = pb::FieldCodec.ForMessage(42, global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowTarget.Parser);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowTarget> targets_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowTarget>();
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlowTarget> _repeated_targets_codec
+        = pb::FieldCodec.ForMessage(42, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlowTarget.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlowTarget> targets_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlowTarget>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowTarget> Targets {
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlowTarget> Targets {
       get { return targets_; }
     }
 
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 6;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowStatus status_ = global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowStatus.Unspecified;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlowStatus status_ = global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlowStatus.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowStatus Status {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlowStatus Status {
       get { return status_; }
       set {
         status_ = value;
@@ -3104,7 +3105,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       hash ^= sources_.GetHashCode();
       hash ^= targets_.GetHashCode();
-      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowStatus.Unspecified) hash ^= Status.GetHashCode();
+      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlowStatus.Unspecified) hash ^= Status.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -3137,7 +3138,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       sources_.WriteTo(output, _repeated_sources_codec);
       targets_.WriteTo(output, _repeated_targets_codec);
-      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowStatus.Unspecified) {
+      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlowStatus.Unspecified) {
         output.WriteRawTag(48);
         output.WriteEnum((int) Status);
       }
@@ -3165,7 +3166,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       sources_.WriteTo(ref output, _repeated_sources_codec);
       targets_.WriteTo(ref output, _repeated_targets_codec);
-      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowStatus.Unspecified) {
+      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlowStatus.Unspecified) {
         output.WriteRawTag(48);
         output.WriteEnum((int) Status);
       }
@@ -3190,7 +3191,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       size += sources_.CalculateSize(_repeated_sources_codec);
       size += targets_.CalculateSize(_repeated_targets_codec);
-      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowStatus.Unspecified) {
+      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlowStatus.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
       }
       if (_unknownFields != null) {
@@ -3219,7 +3220,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       sources_.Add(other.sources_);
       targets_.Add(other.targets_);
-      if (other.Status != global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowStatus.Unspecified) {
+      if (other.Status != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlowStatus.Unspecified) {
         Status = other.Status;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -3261,7 +3262,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 48: {
-            Status = (global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowStatus) input.ReadEnum();
+            Status = (global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlowStatus) input.ReadEnum();
             break;
           }
         }
@@ -3303,7 +3304,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 48: {
-            Status = (global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFlowStatus) input.ReadEnum();
+            Status = (global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFlowStatus) input.ReadEnum();
             break;
           }
         }
@@ -3327,7 +3328,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.NetzachReflection.Descriptor.MessageTypes[14]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NetzachReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3360,10 +3361,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "filter" field.</summary>
     public const int FilterFieldNumber = 1;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFilter filter_;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFilter filter_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFilter Filter {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFilter Filter {
       get { return filter_; }
       set {
         filter_ = value;
@@ -3485,7 +3486,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       if (other.filter_ != null) {
         if (filter_ == null) {
-          Filter = new global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFilter();
+          Filter = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFilter();
         }
         Filter.MergeFrom(other.Filter);
       }
@@ -3512,7 +3513,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           case 10: {
             if (filter_ == null) {
-              Filter = new global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFilter();
+              Filter = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFilter();
             }
             input.ReadMessage(Filter);
             break;
@@ -3541,7 +3542,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           case 10: {
             if (filter_ == null) {
-              Filter = new global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFilter();
+              Filter = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFilter();
             }
             input.ReadMessage(Filter);
             break;
@@ -3574,7 +3575,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.NetzachReflection.Descriptor.MessageTypes[15]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NetzachReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3607,10 +3608,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "filter" field.</summary>
     public const int FilterFieldNumber = 1;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFilter filter_;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFilter filter_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFilter Filter {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFilter Filter {
       get { return filter_; }
       set {
         filter_ = value;
@@ -3732,7 +3733,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       if (other.filter_ != null) {
         if (filter_ == null) {
-          Filter = new global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFilter();
+          Filter = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFilter();
         }
         Filter.MergeFrom(other.Filter);
       }
@@ -3759,7 +3760,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           case 10: {
             if (filter_ == null) {
-              Filter = new global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFilter();
+              Filter = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFilter();
             }
             input.ReadMessage(Filter);
             break;
@@ -3788,7 +3789,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           case 10: {
             if (filter_ == null) {
-              Filter = new global::TuiHub.Protos.Librarian.Sephirah.V1.NotifyFilter();
+              Filter = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NotifyFilter();
             }
             input.ReadMessage(Filter);
             break;
@@ -3821,7 +3822,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.NetzachReflection.Descriptor.MessageTypes[16]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NetzachReflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4025,7 +4026,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.NetzachReflection.Descriptor.MessageTypes[17]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NetzachReflection.Descriptor.MessageTypes[17]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4071,23 +4072,23 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "level_filter" field.</summary>
     public const int LevelFilterFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationLevel> _repeated_levelFilter_codec
-        = pb::FieldCodec.ForEnum(26, x => (int) x, x => (global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationLevel) x);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationLevel> levelFilter_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationLevel>();
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationLevel> _repeated_levelFilter_codec
+        = pb::FieldCodec.ForEnum(26, x => (int) x, x => (global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationLevel) x);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationLevel> levelFilter_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationLevel>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationLevel> LevelFilter {
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationLevel> LevelFilter {
       get { return levelFilter_; }
     }
 
     /// <summary>Field number for the "status_filter" field.</summary>
     public const int StatusFilterFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationStatus> _repeated_statusFilter_codec
-        = pb::FieldCodec.ForEnum(34, x => (int) x, x => (global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationStatus) x);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationStatus> statusFilter_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationStatus>();
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationStatus> _repeated_statusFilter_codec
+        = pb::FieldCodec.ForEnum(34, x => (int) x, x => (global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationStatus) x);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationStatus> statusFilter_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationStatus>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationStatus> StatusFilter {
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationStatus> StatusFilter {
       get { return statusFilter_; }
     }
 
@@ -4279,7 +4280,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.NetzachReflection.Descriptor.MessageTypes[18]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NetzachReflection.Descriptor.MessageTypes[18]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4324,12 +4325,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "notifications" field.</summary>
     public const int NotificationsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotification> _repeated_notifications_codec
-        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotification.Parser);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotification> notifications_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotification>();
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotification> _repeated_notifications_codec
+        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotification.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotification> notifications_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotification>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotification> Notifications {
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotification> Notifications {
       get { return notifications_; }
     }
 
@@ -4503,7 +4504,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.NetzachReflection.Descriptor.MessageTypes[19]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NetzachReflection.Descriptor.MessageTypes[19]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4548,10 +4549,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 2;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationStatus status_ = global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationStatus.Unspecified;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationStatus status_ = global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationStatus.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationStatus Status {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationStatus Status {
       get { return status_; }
       set {
         status_ = value;
@@ -4583,7 +4584,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     public override int GetHashCode() {
       int hash = 1;
       if (id_ != null) hash ^= Id.GetHashCode();
-      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationStatus.Unspecified) hash ^= Status.GetHashCode();
+      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationStatus.Unspecified) hash ^= Status.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -4606,7 +4607,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(10);
         output.WriteMessage(Id);
       }
-      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationStatus.Unspecified) {
+      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationStatus.Unspecified) {
         output.WriteRawTag(16);
         output.WriteEnum((int) Status);
       }
@@ -4624,7 +4625,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(10);
         output.WriteMessage(Id);
       }
-      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationStatus.Unspecified) {
+      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationStatus.Unspecified) {
         output.WriteRawTag(16);
         output.WriteEnum((int) Status);
       }
@@ -4641,7 +4642,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (id_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Id);
       }
-      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationStatus.Unspecified) {
+      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationStatus.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
       }
       if (_unknownFields != null) {
@@ -4662,7 +4663,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         }
         Id.MergeFrom(other.Id);
       }
-      if (other.Status != global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationStatus.Unspecified) {
+      if (other.Status != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationStatus.Unspecified) {
         Status = other.Status;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -4688,7 +4689,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 16: {
-            Status = (global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationStatus) input.ReadEnum();
+            Status = (global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationStatus) input.ReadEnum();
             break;
           }
         }
@@ -4714,7 +4715,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 16: {
-            Status = (global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationStatus) input.ReadEnum();
+            Status = (global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationStatus) input.ReadEnum();
             break;
           }
         }
@@ -4738,7 +4739,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.NetzachReflection.Descriptor.MessageTypes[20]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NetzachReflection.Descriptor.MessageTypes[20]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4890,7 +4891,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.NetzachReflection.Descriptor.MessageTypes[21]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.NetzachReflection.Descriptor.MessageTypes[21]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4940,10 +4941,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "level" field.</summary>
     public const int LevelFieldNumber = 3;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationLevel level_ = global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationLevel.Unspecified;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationLevel level_ = global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationLevel.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationLevel Level {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationLevel Level {
       get { return level_; }
       set {
         level_ = value;
@@ -4952,10 +4953,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 4;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationStatus status_ = global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationStatus.Unspecified;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationStatus status_ = global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationStatus.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationStatus Status {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationStatus Status {
       get { return status_; }
       set {
         status_ = value;
@@ -5043,8 +5044,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     public override int GetHashCode() {
       int hash = 1;
       if (id_ != null) hash ^= Id.GetHashCode();
-      if (Level != global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationLevel.Unspecified) hash ^= Level.GetHashCode();
-      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationStatus.Unspecified) hash ^= Status.GetHashCode();
+      if (Level != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationLevel.Unspecified) hash ^= Level.GetHashCode();
+      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationStatus.Unspecified) hash ^= Status.GetHashCode();
       if (Title.Length != 0) hash ^= Title.GetHashCode();
       if (Content.Length != 0) hash ^= Content.GetHashCode();
       if (createTime_ != null) hash ^= CreateTime.GetHashCode();
@@ -5071,11 +5072,11 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(10);
         output.WriteMessage(Id);
       }
-      if (Level != global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationLevel.Unspecified) {
+      if (Level != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationLevel.Unspecified) {
         output.WriteRawTag(24);
         output.WriteEnum((int) Level);
       }
-      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationStatus.Unspecified) {
+      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationStatus.Unspecified) {
         output.WriteRawTag(32);
         output.WriteEnum((int) Status);
       }
@@ -5109,11 +5110,11 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(10);
         output.WriteMessage(Id);
       }
-      if (Level != global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationLevel.Unspecified) {
+      if (Level != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationLevel.Unspecified) {
         output.WriteRawTag(24);
         output.WriteEnum((int) Level);
       }
-      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationStatus.Unspecified) {
+      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationStatus.Unspecified) {
         output.WriteRawTag(32);
         output.WriteEnum((int) Status);
       }
@@ -5146,10 +5147,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (id_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Id);
       }
-      if (Level != global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationLevel.Unspecified) {
+      if (Level != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationLevel.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Level);
       }
-      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationStatus.Unspecified) {
+      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationStatus.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
       }
       if (Title.Length != 0) {
@@ -5182,10 +5183,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         }
         Id.MergeFrom(other.Id);
       }
-      if (other.Level != global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationLevel.Unspecified) {
+      if (other.Level != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationLevel.Unspecified) {
         Level = other.Level;
       }
-      if (other.Status != global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationStatus.Unspecified) {
+      if (other.Status != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationStatus.Unspecified) {
         Status = other.Status;
       }
       if (other.Title.Length != 0) {
@@ -5229,11 +5230,11 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 24: {
-            Level = (global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationLevel) input.ReadEnum();
+            Level = (global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationLevel) input.ReadEnum();
             break;
           }
           case 32: {
-            Status = (global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationStatus) input.ReadEnum();
+            Status = (global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationStatus) input.ReadEnum();
             break;
           }
           case 42: {
@@ -5281,11 +5282,11 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 24: {
-            Level = (global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationLevel) input.ReadEnum();
+            Level = (global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationLevel) input.ReadEnum();
             break;
           }
           case 32: {
-            Status = (global::TuiHub.Protos.Librarian.Sephirah.V1.SystemNotificationStatus) input.ReadEnum();
+            Status = (global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemNotificationStatus) input.ReadEnum();
             break;
           }
           case 42: {

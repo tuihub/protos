@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace TuiHub.Protos.Librarian.Sephirah.V1 {
+namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
 
   /// <summary>Holder for reflection information generated from librarian/sephirah/v1/sephirah/gebura.proto</summary>
   public static partial class GeburaReflection {
@@ -268,78 +268,79 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             "X0ZJTEVfQ0FQQUNJVFlfU1RSQVRFR1lfREVMRVRFX09MREVTVF9PUl9GQUlM",
             "EAISOgo2QVBQX1NBVkVfRklMRV9DQVBBQ0lUWV9TVFJBVEVHWV9ERUxFVEVf",
             "VU5USUxfU0FUSVNGSUVEEAMqNgoHQXBwVHlwZRIYChRBUFBfVFlQRV9VTlNQ",
-            "RUNJRklFRBAAEhEKDUFQUF9UWVBFX0dBTUUQAUJdWjVnaXRodWIuY29tL3R1",
-            "aWh1Yi9wcm90b3MvcGtnL2xpYnJhcmlhbi9zZXBoaXJhaC92MTt2MaoCI1R1",
-            "aUh1Yi5Qcm90b3MuTGlicmFyaWFuLlNlcGhpcmFoLlYxYgZwcm90bzM="));
+            "RUNJRklFRBAAEhEKDUFQUF9UWVBFX0dBTUUQAUJmWjVnaXRodWIuY29tL3R1",
+            "aWh1Yi9wcm90b3MvcGtnL2xpYnJhcmlhbi9zZXBoaXJhaC92MTt2MaoCLFR1",
+            "aUh1Yi5Qcm90b3MuTGlicmFyaWFuLlNlcGhpcmFoLlYxLlNlcGhpcmFoYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.WellknownReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.AppSaveFileCapacityStrategy), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.AppType), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SearchStoreAppsRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.SearchStoreAppsRequest.Parser, new[]{ "Paging", "NameLike" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SearchStoreAppsResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.SearchStoreAppsResponse.Parser, new[]{ "Paging", "AppInfos" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.GetStoreAppSummaryRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.GetStoreAppSummaryRequest.Parser, new[]{ "StoreAppId", "AppBinaryLimit", "AppSaveFileLimit", "AcquiredUserLimit" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.GetStoreAppSummaryResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.GetStoreAppSummaryResponse.Parser, new[]{ "StoreApp" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.AcquireStoreAppRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.AcquireStoreAppRequest.Parser, new[]{ "StoreAppId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.AcquireStoreAppResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.AcquireStoreAppResponse.Parser, new[]{ "AppId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListStoreAppBinariesRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.ListStoreAppBinariesRequest.Parser, new[]{ "Paging", "AppId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListStoreAppBinariesResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.ListStoreAppBinariesResponse.Parser, new[]{ "Paging", "Binaries" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListStoreAppBinaryFilesRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.ListStoreAppBinaryFilesRequest.Parser, new[]{ "Paging", "AppBinaryId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListStoreAppBinaryFilesResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.ListStoreAppBinaryFilesResponse.Parser, new[]{ "Paging", "BinaryFiles" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadStoreAppBinaryRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadStoreAppBinaryRequest.Parser, new[]{ "Id" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadStoreAppBinaryResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadStoreAppBinaryResponse.Parser, new[]{ "DownloadBaseUrl", "Token", "DownloadBaseUrlAlternatives" }, new[]{ "Token" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListStoreAppSaveFilesRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.ListStoreAppSaveFilesRequest.Parser, new[]{ "Paging", "AppId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListStoreAppSaveFilesResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.ListStoreAppSaveFilesResponse.Parser, new[]{ "Paging", "SaveFiles" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadStoreAppSaveFileRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadStoreAppSaveFileRequest.Parser, new[]{ "Id" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadStoreAppSaveFileResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadStoreAppSaveFileResponse.Parser, new[]{ "DownloadToken" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SearchAppInfosRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.SearchAppInfosRequest.Parser, new[]{ "Paging", "NameLike", "SourceFilter" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SearchAppInfosResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.SearchAppInfosResponse.Parser, new[]{ "Paging", "AppInfos" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppRequest.Parser, new[]{ "App" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppResponse.Parser, new[]{ "Id" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppRequest.Parser, new[]{ "App" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppsRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppsRequest.Parser, new[]{ "Paging", "OwnerIdFilter", "IdFilter", "DeviceIdFilter" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppsResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppsResponse.Parser, new[]{ "Paging", "Apps" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.BatchCreateAppRunTimeRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.BatchCreateAppRunTimeRequest.Parser, new[]{ "AppRunTimes" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.BatchCreateAppRunTimeResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.BatchCreateAppRunTimeResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SumAppRunTimeRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.SumAppRunTimeRequest.Parser, new[]{ "AppIdFilter", "DeviceIdFilter", "TimeRangesFilter" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SumAppRunTimeResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.SumAppRunTimeResponse.Parser, new[]{ "RunTimeGroups" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SumAppRunTimeResponse.Types.Group), global::TuiHub.Protos.Librarian.Sephirah.V1.SumAppRunTimeResponse.Types.Group.Parser, new[]{ "TimeRange", "RunTimeSum" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppRunTimesRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppRunTimesRequest.Parser, new[]{ "Paging", "AppIdFilter", "DeviceIdFilter", "TimeRangeCross" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppRunTimesResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppRunTimesResponse.Parser, new[]{ "Paging", "AppRunTimes" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteAppRunTimeRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteAppRunTimeRequest.Parser, new[]{ "Id" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteAppRunTimeResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteAppRunTimeResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.AppRunTime), global::TuiHub.Protos.Librarian.Sephirah.V1.AppRunTime.Parser, new[]{ "Id", "AppId", "DeviceId", "RunTime" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UploadAppSaveFileRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.UploadAppSaveFileRequest.Parser, new[]{ "FileMetadata", "AppId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UploadAppSaveFileResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.UploadAppSaveFileResponse.Parser, new[]{ "UploadToken" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadAppSaveFileRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadAppSaveFileRequest.Parser, new[]{ "Id" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadAppSaveFileResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.DownloadAppSaveFileResponse.Parser, new[]{ "DownloadToken" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppSaveFilesRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppSaveFilesRequest.Parser, new[]{ "AppId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppSaveFilesResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppSaveFilesResponse.Parser, new[]{ "Results" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppSaveFilesResponse.Types.Result), global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppSaveFilesResponse.Types.Result.Parser, new[]{ "Id", "File", "Pinned" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteAppSaveFileRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteAppSaveFileRequest.Parser, new[]{ "Id" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteAppSaveFileResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteAppSaveFileResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.PinAppSaveFileRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.PinAppSaveFileRequest.Parser, new[]{ "Id" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.PinAppSaveFileResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.PinAppSaveFileResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UnpinAppSaveFileRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.UnpinAppSaveFileRequest.Parser, new[]{ "Id" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UnpinAppSaveFileResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.UnpinAppSaveFileResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppSaveFileCapacityRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppSaveFileCapacityRequest.Parser, new[]{ "AppId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppSaveFileCapacityResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.GetAppSaveFileCapacityResponse.Parser, new[]{ "Count", "CountMax", "SizeBytes", "SizeBytesMax", "Strategy" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SetAppSaveFileCapacityRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.SetAppSaveFileCapacityRequest.Parser, new[]{ "AppId", "Count", "SizeBytes", "Strategy", "ApplyToAll" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.SetAppSaveFileCapacityResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.SetAppSaveFileCapacityResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppCategoriesRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppCategoriesRequest.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppCategoriesResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppCategoriesResponse.Parser, new[]{ "AppCategories" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppCategoryRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppCategoryRequest.Parser, new[]{ "AppCategory" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppCategoryResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.CreateAppCategoryResponse.Parser, new[]{ "Id" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppCategoryRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppCategoryRequest.Parser, new[]{ "AppCategory" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppCategoryResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateAppCategoryResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteAppCategoryRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteAppCategoryRequest.Parser, new[]{ "Id" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteAppCategoryResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteAppCategoryResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.AppInfo), global::TuiHub.Protos.Librarian.Sephirah.V1.AppInfo.Parser, new[]{ "Source", "SourceAppId", "SourceUrl", "Name", "Type", "Description", "IconImageUrl", "IconImageId", "BackgroundImageUrl", "BackgroundImageId", "CoverImageUrl", "CoverImageId", "Tags", "AltNames", "Developer", "Publisher" }, new[]{ "SourceUrl" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppSummary), global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppSummary.Parser, new[]{ "StoreApp", "AppBinaryCount", "Binaries", "AppSaveFileCount", "SaveFiles", "AcquiredCount", "AcquiredUserIds" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.StoreApp), global::TuiHub.Protos.Librarian.Sephirah.V1.StoreApp.Parser, new[]{ "Id", "BoundAppSource", "Public", "Name", "Type", "Description", "IconImageId", "BackgroundImageId", "CoverImageId", "Tags", "AltNames", "Developer", "Publisher" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppDigest), global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppDigest.Parser, new[]{ "Id", "Name", "Type", "ShortDescription", "CoverImageId", "Tags" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppBinary), global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppBinary.Parser, new[]{ "Id", "Public", "SizeBytes", "Name", "Description", "Version" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppBinaryFile), global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppBinaryFile.Parser, new[]{ "Id", "File", "DownloadPath" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppSaveFile), global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppSaveFile.Parser, new[]{ "Id", "Name", "Description", "Public", "File" }, new[]{ "File" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.App), global::TuiHub.Protos.Librarian.Sephirah.V1.App.Parser, new[]{ "Id", "VersionNumber", "VersionUpdateTime", "CreatorDeviceId", "BoundAppSource", "Public", "BoundStoreApp", "StopStoreManaging", "Name", "Type", "Description", "IconImageUrl", "IconImageId", "BackgroundImageUrl", "BackgroundImageId", "CoverImageUrl", "CoverImageId", "Tags", "AltNames", "Developer", "Publisher" }, new[]{ "BoundStoreApp", "StopStoreManaging" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.AppCategory), global::TuiHub.Protos.Librarian.Sephirah.V1.AppCategory.Parser, new[]{ "Id", "VersionNumber", "VersionUpdateTime", "Name", "AppIds" }, null, null, null, null)
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppSaveFileCapacityStrategy), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SearchStoreAppsRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SearchStoreAppsRequest.Parser, new[]{ "Paging", "NameLike" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SearchStoreAppsResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SearchStoreAppsResponse.Parser, new[]{ "Paging", "AppInfos" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GetStoreAppSummaryRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GetStoreAppSummaryRequest.Parser, new[]{ "StoreAppId", "AppBinaryLimit", "AppSaveFileLimit", "AcquiredUserLimit" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GetStoreAppSummaryResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GetStoreAppSummaryResponse.Parser, new[]{ "StoreApp" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AcquireStoreAppRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AcquireStoreAppRequest.Parser, new[]{ "StoreAppId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AcquireStoreAppResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AcquireStoreAppResponse.Parser, new[]{ "AppId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListStoreAppBinariesRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListStoreAppBinariesRequest.Parser, new[]{ "Paging", "AppId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListStoreAppBinariesResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListStoreAppBinariesResponse.Parser, new[]{ "Paging", "Binaries" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListStoreAppBinaryFilesRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListStoreAppBinaryFilesRequest.Parser, new[]{ "Paging", "AppBinaryId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListStoreAppBinaryFilesResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListStoreAppBinaryFilesResponse.Parser, new[]{ "Paging", "BinaryFiles" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.DownloadStoreAppBinaryRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.DownloadStoreAppBinaryRequest.Parser, new[]{ "Id" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.DownloadStoreAppBinaryResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.DownloadStoreAppBinaryResponse.Parser, new[]{ "DownloadBaseUrl", "Token", "DownloadBaseUrlAlternatives" }, new[]{ "Token" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListStoreAppSaveFilesRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListStoreAppSaveFilesRequest.Parser, new[]{ "Paging", "AppId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListStoreAppSaveFilesResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListStoreAppSaveFilesResponse.Parser, new[]{ "Paging", "SaveFiles" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.DownloadStoreAppSaveFileRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.DownloadStoreAppSaveFileRequest.Parser, new[]{ "Id" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.DownloadStoreAppSaveFileResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.DownloadStoreAppSaveFileResponse.Parser, new[]{ "DownloadToken" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SearchAppInfosRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SearchAppInfosRequest.Parser, new[]{ "Paging", "NameLike", "SourceFilter" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SearchAppInfosResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SearchAppInfosResponse.Parser, new[]{ "Paging", "AppInfos" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.CreateAppRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.CreateAppRequest.Parser, new[]{ "App" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.CreateAppResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.CreateAppResponse.Parser, new[]{ "Id" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UpdateAppRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UpdateAppRequest.Parser, new[]{ "App" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UpdateAppResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UpdateAppResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListAppsRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListAppsRequest.Parser, new[]{ "Paging", "OwnerIdFilter", "IdFilter", "DeviceIdFilter" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListAppsResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListAppsResponse.Parser, new[]{ "Paging", "Apps" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.BatchCreateAppRunTimeRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.BatchCreateAppRunTimeRequest.Parser, new[]{ "AppRunTimes" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.BatchCreateAppRunTimeResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.BatchCreateAppRunTimeResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SumAppRunTimeRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SumAppRunTimeRequest.Parser, new[]{ "AppIdFilter", "DeviceIdFilter", "TimeRangesFilter" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SumAppRunTimeResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SumAppRunTimeResponse.Parser, new[]{ "RunTimeGroups" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SumAppRunTimeResponse.Types.Group), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SumAppRunTimeResponse.Types.Group.Parser, new[]{ "TimeRange", "RunTimeSum" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListAppRunTimesRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListAppRunTimesRequest.Parser, new[]{ "Paging", "AppIdFilter", "DeviceIdFilter", "TimeRangeCross" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListAppRunTimesResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListAppRunTimesResponse.Parser, new[]{ "Paging", "AppRunTimes" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.DeleteAppRunTimeRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.DeleteAppRunTimeRequest.Parser, new[]{ "Id" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.DeleteAppRunTimeResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.DeleteAppRunTimeResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppRunTime), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppRunTime.Parser, new[]{ "Id", "AppId", "DeviceId", "RunTime" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UploadAppSaveFileRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UploadAppSaveFileRequest.Parser, new[]{ "FileMetadata", "AppId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UploadAppSaveFileResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UploadAppSaveFileResponse.Parser, new[]{ "UploadToken" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.DownloadAppSaveFileRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.DownloadAppSaveFileRequest.Parser, new[]{ "Id" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.DownloadAppSaveFileResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.DownloadAppSaveFileResponse.Parser, new[]{ "DownloadToken" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListAppSaveFilesRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListAppSaveFilesRequest.Parser, new[]{ "AppId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListAppSaveFilesResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListAppSaveFilesResponse.Parser, new[]{ "Results" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListAppSaveFilesResponse.Types.Result), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListAppSaveFilesResponse.Types.Result.Parser, new[]{ "Id", "File", "Pinned" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.DeleteAppSaveFileRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.DeleteAppSaveFileRequest.Parser, new[]{ "Id" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.DeleteAppSaveFileResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.DeleteAppSaveFileResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.PinAppSaveFileRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.PinAppSaveFileRequest.Parser, new[]{ "Id" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.PinAppSaveFileResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.PinAppSaveFileResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UnpinAppSaveFileRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UnpinAppSaveFileRequest.Parser, new[]{ "Id" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UnpinAppSaveFileResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UnpinAppSaveFileResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GetAppSaveFileCapacityRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GetAppSaveFileCapacityRequest.Parser, new[]{ "AppId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GetAppSaveFileCapacityResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GetAppSaveFileCapacityResponse.Parser, new[]{ "Count", "CountMax", "SizeBytes", "SizeBytesMax", "Strategy" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SetAppSaveFileCapacityRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SetAppSaveFileCapacityRequest.Parser, new[]{ "AppId", "Count", "SizeBytes", "Strategy", "ApplyToAll" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SetAppSaveFileCapacityResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SetAppSaveFileCapacityResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListAppCategoriesRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListAppCategoriesRequest.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListAppCategoriesResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListAppCategoriesResponse.Parser, new[]{ "AppCategories" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.CreateAppCategoryRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.CreateAppCategoryRequest.Parser, new[]{ "AppCategory" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.CreateAppCategoryResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.CreateAppCategoryResponse.Parser, new[]{ "Id" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UpdateAppCategoryRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UpdateAppCategoryRequest.Parser, new[]{ "AppCategory" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UpdateAppCategoryResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UpdateAppCategoryResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.DeleteAppCategoryRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.DeleteAppCategoryRequest.Parser, new[]{ "Id" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.DeleteAppCategoryResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.DeleteAppCategoryResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppInfo), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppInfo.Parser, new[]{ "Source", "SourceAppId", "SourceUrl", "Name", "Type", "Description", "IconImageUrl", "IconImageId", "BackgroundImageUrl", "BackgroundImageId", "CoverImageUrl", "CoverImageId", "Tags", "AltNames", "Developer", "Publisher" }, new[]{ "SourceUrl" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppSummary), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppSummary.Parser, new[]{ "StoreApp", "AppBinaryCount", "Binaries", "AppSaveFileCount", "SaveFiles", "AcquiredCount", "AcquiredUserIds" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreApp), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreApp.Parser, new[]{ "Id", "BoundAppSource", "Public", "Name", "Type", "Description", "IconImageId", "BackgroundImageId", "CoverImageId", "Tags", "AltNames", "Developer", "Publisher" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppDigest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppDigest.Parser, new[]{ "Id", "Name", "Type", "ShortDescription", "CoverImageId", "Tags" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppBinary), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppBinary.Parser, new[]{ "Id", "Public", "SizeBytes", "Name", "Description", "Version" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppBinaryFile), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppBinaryFile.Parser, new[]{ "Id", "File", "DownloadPath" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppSaveFile), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppSaveFile.Parser, new[]{ "Id", "Name", "Description", "Public", "File" }, new[]{ "File" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.App), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.App.Parser, new[]{ "Id", "VersionNumber", "VersionUpdateTime", "CreatorDeviceId", "BoundAppSource", "Public", "BoundStoreApp", "StopStoreManaging", "Name", "Type", "Description", "IconImageUrl", "IconImageId", "BackgroundImageUrl", "BackgroundImageId", "CoverImageUrl", "CoverImageId", "Tags", "AltNames", "Developer", "Publisher" }, new[]{ "BoundStoreApp", "StopStoreManaging" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppCategory), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppCategory.Parser, new[]{ "Id", "VersionNumber", "VersionUpdateTime", "Name", "AppIds" }, null, null, null, null)
           }));
     }
     #endregion
@@ -386,7 +387,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[0]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -621,7 +622,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[1]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -666,12 +667,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "app_infos" field.</summary>
     public const int AppInfosFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppDigest> _repeated_appInfos_codec
-        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppDigest.Parser);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppDigest> appInfos_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppDigest>();
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppDigest> _repeated_appInfos_codec
+        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppDigest.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppDigest> appInfos_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppDigest>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppDigest> AppInfos {
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppDigest> AppInfos {
       get { return appInfos_; }
     }
 
@@ -845,7 +846,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[2]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1163,7 +1164,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[3]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1195,10 +1196,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "store_app" field.</summary>
     public const int StoreAppFieldNumber = 1;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppSummary storeApp_;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppSummary storeApp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppSummary StoreApp {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppSummary StoreApp {
       get { return storeApp_; }
       set {
         storeApp_ = value;
@@ -1292,7 +1293,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       if (other.storeApp_ != null) {
         if (storeApp_ == null) {
-          StoreApp = new global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppSummary();
+          StoreApp = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppSummary();
         }
         StoreApp.MergeFrom(other.StoreApp);
       }
@@ -1313,7 +1314,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           case 10: {
             if (storeApp_ == null) {
-              StoreApp = new global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppSummary();
+              StoreApp = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppSummary();
             }
             input.ReadMessage(StoreApp);
             break;
@@ -1335,7 +1336,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           case 10: {
             if (storeApp_ == null) {
-              StoreApp = new global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppSummary();
+              StoreApp = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppSummary();
             }
             input.ReadMessage(StoreApp);
             break;
@@ -1361,7 +1362,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[4]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1559,7 +1560,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[5]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1760,7 +1761,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[6]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2004,7 +2005,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[7]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2049,12 +2050,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "binaries" field.</summary>
     public const int BinariesFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppBinary> _repeated_binaries_codec
-        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppBinary.Parser);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppBinary> binaries_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppBinary>();
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppBinary> _repeated_binaries_codec
+        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppBinary.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppBinary> binaries_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppBinary>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppBinary> Binaries {
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppBinary> Binaries {
       get { return binaries_; }
     }
 
@@ -2228,7 +2229,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[8]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2472,7 +2473,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[9]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2517,12 +2518,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "binary_files" field.</summary>
     public const int BinaryFilesFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppBinaryFile> _repeated_binaryFiles_codec
-        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppBinaryFile.Parser);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppBinaryFile> binaryFiles_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppBinaryFile>();
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppBinaryFile> _repeated_binaryFiles_codec
+        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppBinaryFile.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppBinaryFile> binaryFiles_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppBinaryFile>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppBinaryFile> BinaryFiles {
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppBinaryFile> BinaryFiles {
       get { return binaryFiles_; }
     }
 
@@ -2696,7 +2697,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[10]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2894,7 +2895,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[11]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3163,7 +3164,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[12]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3407,7 +3408,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[13]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3452,12 +3453,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "save_files" field.</summary>
     public const int SaveFilesFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppSaveFile> _repeated_saveFiles_codec
-        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppSaveFile.Parser);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppSaveFile> saveFiles_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppSaveFile>();
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppSaveFile> _repeated_saveFiles_codec
+        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppSaveFile.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppSaveFile> saveFiles_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppSaveFile>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppSaveFile> SaveFiles {
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppSaveFile> SaveFiles {
       get { return saveFiles_; }
     }
 
@@ -3631,7 +3632,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[14]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3829,7 +3830,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[15]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4018,7 +4019,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[16]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4279,7 +4280,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[17]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[17]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4324,12 +4325,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "app_infos" field.</summary>
     public const int AppInfosFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.AppInfo> _repeated_appInfos_codec
-        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.AppInfo.Parser);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.AppInfo> appInfos_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.AppInfo>();
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppInfo> _repeated_appInfos_codec
+        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppInfo.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppInfo> appInfos_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.AppInfo> AppInfos {
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppInfo> AppInfos {
       get { return appInfos_; }
     }
 
@@ -4503,7 +4504,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[18]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[18]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4535,10 +4536,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "app" field.</summary>
     public const int AppFieldNumber = 1;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.App app_;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.App app_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.App App {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.App App {
       get { return app_; }
       set {
         app_ = value;
@@ -4632,7 +4633,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       if (other.app_ != null) {
         if (app_ == null) {
-          App = new global::TuiHub.Protos.Librarian.Sephirah.V1.App();
+          App = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.App();
         }
         App.MergeFrom(other.App);
       }
@@ -4653,7 +4654,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           case 10: {
             if (app_ == null) {
-              App = new global::TuiHub.Protos.Librarian.Sephirah.V1.App();
+              App = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.App();
             }
             input.ReadMessage(App);
             break;
@@ -4675,7 +4676,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           case 10: {
             if (app_ == null) {
-              App = new global::TuiHub.Protos.Librarian.Sephirah.V1.App();
+              App = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.App();
             }
             input.ReadMessage(App);
             break;
@@ -4701,7 +4702,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[19]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[19]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4899,7 +4900,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[20]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[20]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4931,10 +4932,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "app" field.</summary>
     public const int AppFieldNumber = 1;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.App app_;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.App app_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.App App {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.App App {
       get { return app_; }
       set {
         app_ = value;
@@ -5028,7 +5029,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       if (other.app_ != null) {
         if (app_ == null) {
-          App = new global::TuiHub.Protos.Librarian.Sephirah.V1.App();
+          App = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.App();
         }
         App.MergeFrom(other.App);
       }
@@ -5049,7 +5050,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           case 10: {
             if (app_ == null) {
-              App = new global::TuiHub.Protos.Librarian.Sephirah.V1.App();
+              App = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.App();
             }
             input.ReadMessage(App);
             break;
@@ -5071,7 +5072,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           case 10: {
             if (app_ == null) {
-              App = new global::TuiHub.Protos.Librarian.Sephirah.V1.App();
+              App = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.App();
             }
             input.ReadMessage(App);
             break;
@@ -5097,7 +5098,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[21]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[21]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5249,7 +5250,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[22]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[22]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5529,7 +5530,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[23]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[23]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5574,12 +5575,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "apps" field.</summary>
     public const int AppsFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.App> _repeated_apps_codec
-        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.App.Parser);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.App> apps_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.App>();
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.App> _repeated_apps_codec
+        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.App.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.App> apps_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.App>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.App> Apps {
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.App> Apps {
       get { return apps_; }
     }
 
@@ -5753,7 +5754,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[24]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[24]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5785,12 +5786,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "app_run_times" field.</summary>
     public const int AppRunTimesFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.AppRunTime> _repeated_appRunTimes_codec
-        = pb::FieldCodec.ForMessage(10, global::TuiHub.Protos.Librarian.Sephirah.V1.AppRunTime.Parser);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.AppRunTime> appRunTimes_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.AppRunTime>();
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppRunTime> _repeated_appRunTimes_codec
+        = pb::FieldCodec.ForMessage(10, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppRunTime.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppRunTime> appRunTimes_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppRunTime>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.AppRunTime> AppRunTimes {
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppRunTime> AppRunTimes {
       get { return appRunTimes_; }
     }
 
@@ -5931,7 +5932,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[25]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[25]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6083,7 +6084,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[26]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[26]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6313,7 +6314,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[27]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[27]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6345,12 +6346,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "run_time_groups" field.</summary>
     public const int RunTimeGroupsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.SumAppRunTimeResponse.Types.Group> _repeated_runTimeGroups_codec
-        = pb::FieldCodec.ForMessage(10, global::TuiHub.Protos.Librarian.Sephirah.V1.SumAppRunTimeResponse.Types.Group.Parser);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.SumAppRunTimeResponse.Types.Group> runTimeGroups_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.SumAppRunTimeResponse.Types.Group>();
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SumAppRunTimeResponse.Types.Group> _repeated_runTimeGroups_codec
+        = pb::FieldCodec.ForMessage(10, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SumAppRunTimeResponse.Types.Group.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SumAppRunTimeResponse.Types.Group> runTimeGroups_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SumAppRunTimeResponse.Types.Group>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.SumAppRunTimeResponse.Types.Group> RunTimeGroups {
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SumAppRunTimeResponse.Types.Group> RunTimeGroups {
       get { return runTimeGroups_; }
     }
 
@@ -6494,7 +6495,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::TuiHub.Protos.Librarian.Sephirah.V1.SumAppRunTimeResponse.Descriptor.NestedTypes[0]; }
+          get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SumAppRunTimeResponse.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6743,7 +6744,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[28]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[28]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7039,7 +7040,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[29]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[29]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7084,12 +7085,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "app_run_times" field.</summary>
     public const int AppRunTimesFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.AppRunTime> _repeated_appRunTimes_codec
-        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.AppRunTime.Parser);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.AppRunTime> appRunTimes_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.AppRunTime>();
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppRunTime> _repeated_appRunTimes_codec
+        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppRunTime.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppRunTime> appRunTimes_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppRunTime>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.AppRunTime> AppRunTimes {
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppRunTime> AppRunTimes {
       get { return appRunTimes_; }
     }
 
@@ -7263,7 +7264,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[30]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[30]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7461,7 +7462,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[31]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[31]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7613,7 +7614,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[32]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[32]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7949,7 +7950,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[33]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[33]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8193,7 +8194,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[34]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[34]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8382,7 +8383,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[35]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[35]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8580,7 +8581,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[36]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[36]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8769,7 +8770,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[37]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[37]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8967,7 +8968,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[38]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[38]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8999,12 +9000,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "results" field.</summary>
     public const int ResultsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppSaveFilesResponse.Types.Result> _repeated_results_codec
-        = pb::FieldCodec.ForMessage(10, global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppSaveFilesResponse.Types.Result.Parser);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppSaveFilesResponse.Types.Result> results_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppSaveFilesResponse.Types.Result>();
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListAppSaveFilesResponse.Types.Result> _repeated_results_codec
+        = pb::FieldCodec.ForMessage(10, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListAppSaveFilesResponse.Types.Result.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListAppSaveFilesResponse.Types.Result> results_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListAppSaveFilesResponse.Types.Result>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppSaveFilesResponse.Types.Result> Results {
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListAppSaveFilesResponse.Types.Result> Results {
       get { return results_; }
     }
 
@@ -9148,7 +9149,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::TuiHub.Protos.Librarian.Sephirah.V1.ListAppSaveFilesResponse.Descriptor.NestedTypes[0]; }
+          get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListAppSaveFilesResponse.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9434,7 +9435,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[39]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[39]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9632,7 +9633,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[40]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[40]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9784,7 +9785,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[41]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[41]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9982,7 +9983,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[42]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[42]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10134,7 +10135,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[43]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[43]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10332,7 +10333,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[44]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[44]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10484,7 +10485,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[45]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[45]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10682,7 +10683,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[46]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[46]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10766,10 +10767,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "strategy" field.</summary>
     public const int StrategyFieldNumber = 5;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.AppSaveFileCapacityStrategy strategy_ = global::TuiHub.Protos.Librarian.Sephirah.V1.AppSaveFileCapacityStrategy.Unspecified;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppSaveFileCapacityStrategy strategy_ = global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppSaveFileCapacityStrategy.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.AppSaveFileCapacityStrategy Strategy {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppSaveFileCapacityStrategy Strategy {
       get { return strategy_; }
       set {
         strategy_ = value;
@@ -10807,7 +10808,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (CountMax != 0UL) hash ^= CountMax.GetHashCode();
       if (SizeBytes != 0UL) hash ^= SizeBytes.GetHashCode();
       if (SizeBytesMax != 0UL) hash ^= SizeBytesMax.GetHashCode();
-      if (Strategy != global::TuiHub.Protos.Librarian.Sephirah.V1.AppSaveFileCapacityStrategy.Unspecified) hash ^= Strategy.GetHashCode();
+      if (Strategy != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppSaveFileCapacityStrategy.Unspecified) hash ^= Strategy.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -10842,7 +10843,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(32);
         output.WriteUInt64(SizeBytesMax);
       }
-      if (Strategy != global::TuiHub.Protos.Librarian.Sephirah.V1.AppSaveFileCapacityStrategy.Unspecified) {
+      if (Strategy != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppSaveFileCapacityStrategy.Unspecified) {
         output.WriteRawTag(40);
         output.WriteEnum((int) Strategy);
       }
@@ -10872,7 +10873,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(32);
         output.WriteUInt64(SizeBytesMax);
       }
-      if (Strategy != global::TuiHub.Protos.Librarian.Sephirah.V1.AppSaveFileCapacityStrategy.Unspecified) {
+      if (Strategy != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppSaveFileCapacityStrategy.Unspecified) {
         output.WriteRawTag(40);
         output.WriteEnum((int) Strategy);
       }
@@ -10898,7 +10899,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (SizeBytesMax != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(SizeBytesMax);
       }
-      if (Strategy != global::TuiHub.Protos.Librarian.Sephirah.V1.AppSaveFileCapacityStrategy.Unspecified) {
+      if (Strategy != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppSaveFileCapacityStrategy.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Strategy);
       }
       if (_unknownFields != null) {
@@ -10925,7 +10926,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (other.SizeBytesMax != 0UL) {
         SizeBytesMax = other.SizeBytesMax;
       }
-      if (other.Strategy != global::TuiHub.Protos.Librarian.Sephirah.V1.AppSaveFileCapacityStrategy.Unspecified) {
+      if (other.Strategy != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppSaveFileCapacityStrategy.Unspecified) {
         Strategy = other.Strategy;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -10960,7 +10961,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 40: {
-            Strategy = (global::TuiHub.Protos.Librarian.Sephirah.V1.AppSaveFileCapacityStrategy) input.ReadEnum();
+            Strategy = (global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppSaveFileCapacityStrategy) input.ReadEnum();
             break;
           }
         }
@@ -10995,7 +10996,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 40: {
-            Strategy = (global::TuiHub.Protos.Librarian.Sephirah.V1.AppSaveFileCapacityStrategy) input.ReadEnum();
+            Strategy = (global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppSaveFileCapacityStrategy) input.ReadEnum();
             break;
           }
         }
@@ -11019,7 +11020,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[47]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[47]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11091,10 +11092,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "strategy" field.</summary>
     public const int StrategyFieldNumber = 4;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.AppSaveFileCapacityStrategy strategy_ = global::TuiHub.Protos.Librarian.Sephirah.V1.AppSaveFileCapacityStrategy.Unspecified;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppSaveFileCapacityStrategy strategy_ = global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppSaveFileCapacityStrategy.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.AppSaveFileCapacityStrategy Strategy {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppSaveFileCapacityStrategy Strategy {
       get { return strategy_; }
       set {
         strategy_ = value;
@@ -11146,7 +11147,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (appId_ != null) hash ^= AppId.GetHashCode();
       if (Count != 0L) hash ^= Count.GetHashCode();
       if (SizeBytes != 0L) hash ^= SizeBytes.GetHashCode();
-      if (Strategy != global::TuiHub.Protos.Librarian.Sephirah.V1.AppSaveFileCapacityStrategy.Unspecified) hash ^= Strategy.GetHashCode();
+      if (Strategy != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppSaveFileCapacityStrategy.Unspecified) hash ^= Strategy.GetHashCode();
       if (ApplyToAll != false) hash ^= ApplyToAll.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -11178,7 +11179,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(24);
         output.WriteInt64(SizeBytes);
       }
-      if (Strategy != global::TuiHub.Protos.Librarian.Sephirah.V1.AppSaveFileCapacityStrategy.Unspecified) {
+      if (Strategy != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppSaveFileCapacityStrategy.Unspecified) {
         output.WriteRawTag(32);
         output.WriteEnum((int) Strategy);
       }
@@ -11208,7 +11209,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(24);
         output.WriteInt64(SizeBytes);
       }
-      if (Strategy != global::TuiHub.Protos.Librarian.Sephirah.V1.AppSaveFileCapacityStrategy.Unspecified) {
+      if (Strategy != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppSaveFileCapacityStrategy.Unspecified) {
         output.WriteRawTag(32);
         output.WriteEnum((int) Strategy);
       }
@@ -11235,7 +11236,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (SizeBytes != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(SizeBytes);
       }
-      if (Strategy != global::TuiHub.Protos.Librarian.Sephirah.V1.AppSaveFileCapacityStrategy.Unspecified) {
+      if (Strategy != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppSaveFileCapacityStrategy.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Strategy);
       }
       if (ApplyToAll != false) {
@@ -11265,7 +11266,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (other.SizeBytes != 0L) {
         SizeBytes = other.SizeBytes;
       }
-      if (other.Strategy != global::TuiHub.Protos.Librarian.Sephirah.V1.AppSaveFileCapacityStrategy.Unspecified) {
+      if (other.Strategy != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppSaveFileCapacityStrategy.Unspecified) {
         Strategy = other.Strategy;
       }
       if (other.ApplyToAll != false) {
@@ -11302,7 +11303,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 32: {
-            Strategy = (global::TuiHub.Protos.Librarian.Sephirah.V1.AppSaveFileCapacityStrategy) input.ReadEnum();
+            Strategy = (global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppSaveFileCapacityStrategy) input.ReadEnum();
             break;
           }
           case 40: {
@@ -11340,7 +11341,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 32: {
-            Strategy = (global::TuiHub.Protos.Librarian.Sephirah.V1.AppSaveFileCapacityStrategy) input.ReadEnum();
+            Strategy = (global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppSaveFileCapacityStrategy) input.ReadEnum();
             break;
           }
           case 40: {
@@ -11368,7 +11369,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[48]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[48]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11520,7 +11521,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[49]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[49]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11672,7 +11673,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[50]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[50]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11704,12 +11705,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "app_categories" field.</summary>
     public const int AppCategoriesFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.AppCategory> _repeated_appCategories_codec
-        = pb::FieldCodec.ForMessage(10, global::TuiHub.Protos.Librarian.Sephirah.V1.AppCategory.Parser);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.AppCategory> appCategories_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.AppCategory>();
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppCategory> _repeated_appCategories_codec
+        = pb::FieldCodec.ForMessage(10, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppCategory.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppCategory> appCategories_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppCategory>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.AppCategory> AppCategories {
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppCategory> AppCategories {
       get { return appCategories_; }
     }
 
@@ -11850,7 +11851,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[51]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[51]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -11882,10 +11883,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "app_category" field.</summary>
     public const int AppCategoryFieldNumber = 1;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.AppCategory appCategory_;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppCategory appCategory_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.AppCategory AppCategory {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppCategory AppCategory {
       get { return appCategory_; }
       set {
         appCategory_ = value;
@@ -11979,7 +11980,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       if (other.appCategory_ != null) {
         if (appCategory_ == null) {
-          AppCategory = new global::TuiHub.Protos.Librarian.Sephirah.V1.AppCategory();
+          AppCategory = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppCategory();
         }
         AppCategory.MergeFrom(other.AppCategory);
       }
@@ -12000,7 +12001,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           case 10: {
             if (appCategory_ == null) {
-              AppCategory = new global::TuiHub.Protos.Librarian.Sephirah.V1.AppCategory();
+              AppCategory = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppCategory();
             }
             input.ReadMessage(AppCategory);
             break;
@@ -12022,7 +12023,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           case 10: {
             if (appCategory_ == null) {
-              AppCategory = new global::TuiHub.Protos.Librarian.Sephirah.V1.AppCategory();
+              AppCategory = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppCategory();
             }
             input.ReadMessage(AppCategory);
             break;
@@ -12048,7 +12049,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[52]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[52]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -12246,7 +12247,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[53]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[53]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -12278,10 +12279,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "app_category" field.</summary>
     public const int AppCategoryFieldNumber = 1;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.AppCategory appCategory_;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppCategory appCategory_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.AppCategory AppCategory {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppCategory AppCategory {
       get { return appCategory_; }
       set {
         appCategory_ = value;
@@ -12375,7 +12376,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       if (other.appCategory_ != null) {
         if (appCategory_ == null) {
-          AppCategory = new global::TuiHub.Protos.Librarian.Sephirah.V1.AppCategory();
+          AppCategory = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppCategory();
         }
         AppCategory.MergeFrom(other.AppCategory);
       }
@@ -12396,7 +12397,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           case 10: {
             if (appCategory_ == null) {
-              AppCategory = new global::TuiHub.Protos.Librarian.Sephirah.V1.AppCategory();
+              AppCategory = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppCategory();
             }
             input.ReadMessage(AppCategory);
             break;
@@ -12418,7 +12419,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           case 10: {
             if (appCategory_ == null) {
-              AppCategory = new global::TuiHub.Protos.Librarian.Sephirah.V1.AppCategory();
+              AppCategory = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppCategory();
             }
             input.ReadMessage(AppCategory);
             break;
@@ -12444,7 +12445,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[54]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[54]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -12596,7 +12597,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[55]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[55]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -12794,7 +12795,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[56]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[56]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -12946,7 +12947,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[57]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[57]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -13058,10 +13059,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "type" field.</summary>
     public const int TypeFieldNumber = 11;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.AppType type_ = global::TuiHub.Protos.Librarian.Sephirah.V1.AppType.Unspecified;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType type_ = global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.AppType Type {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType Type {
       get { return type_; }
       set {
         type_ = value;
@@ -13246,7 +13247,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (SourceAppId.Length != 0) hash ^= SourceAppId.GetHashCode();
       if (HasSourceUrl) hash ^= SourceUrl.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.AppType.Unspecified) hash ^= Type.GetHashCode();
+      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType.Unspecified) hash ^= Type.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (IconImageUrl.Length != 0) hash ^= IconImageUrl.GetHashCode();
       if (iconImageId_ != null) hash ^= IconImageId.GetHashCode();
@@ -13292,7 +13293,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(82);
         output.WriteString(Name);
       }
-      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.AppType.Unspecified) {
+      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType.Unspecified) {
         output.WriteRawTag(88);
         output.WriteEnum((int) Type);
       }
@@ -13360,7 +13361,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(82);
         output.WriteString(Name);
       }
-      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.AppType.Unspecified) {
+      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType.Unspecified) {
         output.WriteRawTag(88);
         output.WriteEnum((int) Type);
       }
@@ -13424,7 +13425,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
-      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.AppType.Unspecified) {
+      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
       }
       if (Description.Length != 0) {
@@ -13480,7 +13481,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
-      if (other.Type != global::TuiHub.Protos.Librarian.Sephirah.V1.AppType.Unspecified) {
+      if (other.Type != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType.Unspecified) {
         Type = other.Type;
       }
       if (other.Description.Length != 0) {
@@ -13553,7 +13554,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 88: {
-            Type = (global::TuiHub.Protos.Librarian.Sephirah.V1.AppType) input.ReadEnum();
+            Type = (global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType) input.ReadEnum();
             break;
           }
           case 98: {
@@ -13641,7 +13642,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 88: {
-            Type = (global::TuiHub.Protos.Librarian.Sephirah.V1.AppType) input.ReadEnum();
+            Type = (global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType) input.ReadEnum();
             break;
           }
           case 98: {
@@ -13718,7 +13719,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[58]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[58]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -13756,10 +13757,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "store_app" field.</summary>
     public const int StoreAppFieldNumber = 1;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.StoreApp storeApp_;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreApp storeApp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.StoreApp StoreApp {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreApp StoreApp {
       get { return storeApp_; }
       set {
         storeApp_ = value;
@@ -13780,12 +13781,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "binaries" field.</summary>
     public const int BinariesFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppBinary> _repeated_binaries_codec
-        = pb::FieldCodec.ForMessage(26, global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppBinary.Parser);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppBinary> binaries_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppBinary>();
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppBinary> _repeated_binaries_codec
+        = pb::FieldCodec.ForMessage(26, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppBinary.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppBinary> binaries_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppBinary>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppBinary> Binaries {
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppBinary> Binaries {
       get { return binaries_; }
     }
 
@@ -13803,12 +13804,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "save_files" field.</summary>
     public const int SaveFilesFieldNumber = 5;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppSaveFile> _repeated_saveFiles_codec
-        = pb::FieldCodec.ForMessage(42, global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppSaveFile.Parser);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppSaveFile> saveFiles_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppSaveFile>();
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppSaveFile> _repeated_saveFiles_codec
+        = pb::FieldCodec.ForMessage(42, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppSaveFile.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppSaveFile> saveFiles_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppSaveFile>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppSaveFile> SaveFiles {
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppSaveFile> SaveFiles {
       get { return saveFiles_; }
     }
 
@@ -13976,7 +13977,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
       if (other.storeApp_ != null) {
         if (storeApp_ == null) {
-          StoreApp = new global::TuiHub.Protos.Librarian.Sephirah.V1.StoreApp();
+          StoreApp = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreApp();
         }
         StoreApp.MergeFrom(other.StoreApp);
       }
@@ -14009,7 +14010,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           case 10: {
             if (storeApp_ == null) {
-              StoreApp = new global::TuiHub.Protos.Librarian.Sephirah.V1.StoreApp();
+              StoreApp = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreApp();
             }
             input.ReadMessage(StoreApp);
             break;
@@ -14055,7 +14056,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           case 10: {
             if (storeApp_ == null) {
-              StoreApp = new global::TuiHub.Protos.Librarian.Sephirah.V1.StoreApp();
+              StoreApp = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreApp();
             }
             input.ReadMessage(StoreApp);
             break;
@@ -14105,7 +14106,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[59]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[59]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -14202,10 +14203,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "type" field.</summary>
     public const int TypeFieldNumber = 21;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.AppType type_ = global::TuiHub.Protos.Librarian.Sephirah.V1.AppType.Unspecified;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType type_ = global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.AppType Type {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType Type {
       get { return type_; }
       set {
         type_ = value;
@@ -14351,7 +14352,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       hash ^= BoundAppSource.GetHashCode();
       if (Public != false) hash ^= Public.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.AppType.Unspecified) hash ^= Type.GetHashCode();
+      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType.Unspecified) hash ^= Type.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (iconImageId_ != null) hash ^= IconImageId.GetHashCode();
       if (backgroundImageId_ != null) hash ^= BackgroundImageId.GetHashCode();
@@ -14391,7 +14392,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(162, 1);
         output.WriteString(Name);
       }
-      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.AppType.Unspecified) {
+      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType.Unspecified) {
         output.WriteRawTag(168, 1);
         output.WriteEnum((int) Type);
       }
@@ -14444,7 +14445,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(162, 1);
         output.WriteString(Name);
       }
-      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.AppType.Unspecified) {
+      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType.Unspecified) {
         output.WriteRawTag(168, 1);
         output.WriteEnum((int) Type);
       }
@@ -14494,7 +14495,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (Name.Length != 0) {
         size += 2 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
-      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.AppType.Unspecified) {
+      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType.Unspecified) {
         size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
       }
       if (Description.Length != 0) {
@@ -14542,7 +14543,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
-      if (other.Type != global::TuiHub.Protos.Librarian.Sephirah.V1.AppType.Unspecified) {
+      if (other.Type != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType.Unspecified) {
         Type = other.Type;
       }
       if (other.Description.Length != 0) {
@@ -14609,7 +14610,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 168: {
-            Type = (global::TuiHub.Protos.Librarian.Sephirah.V1.AppType) input.ReadEnum();
+            Type = (global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType) input.ReadEnum();
             break;
           }
           case 178: {
@@ -14688,7 +14689,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 168: {
-            Type = (global::TuiHub.Protos.Librarian.Sephirah.V1.AppType) input.ReadEnum();
+            Type = (global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType) input.ReadEnum();
             break;
           }
           case 178: {
@@ -14753,7 +14754,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[60]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[60]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -14814,10 +14815,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "type" field.</summary>
     public const int TypeFieldNumber = 21;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.AppType type_ = global::TuiHub.Protos.Librarian.Sephirah.V1.AppType.Unspecified;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType type_ = global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.AppType Type {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType Type {
       get { return type_; }
       set {
         type_ = value;
@@ -14892,7 +14893,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       int hash = 1;
       if (id_ != null) hash ^= Id.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.AppType.Unspecified) hash ^= Type.GetHashCode();
+      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType.Unspecified) hash ^= Type.GetHashCode();
       if (ShortDescription.Length != 0) hash ^= ShortDescription.GetHashCode();
       if (coverImageId_ != null) hash ^= CoverImageId.GetHashCode();
       hash ^= tags_.GetHashCode();
@@ -14922,7 +14923,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(162, 1);
         output.WriteString(Name);
       }
-      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.AppType.Unspecified) {
+      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType.Unspecified) {
         output.WriteRawTag(168, 1);
         output.WriteEnum((int) Type);
       }
@@ -14953,7 +14954,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(162, 1);
         output.WriteString(Name);
       }
-      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.AppType.Unspecified) {
+      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType.Unspecified) {
         output.WriteRawTag(168, 1);
         output.WriteEnum((int) Type);
       }
@@ -14982,7 +14983,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (Name.Length != 0) {
         size += 2 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
-      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.AppType.Unspecified) {
+      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType.Unspecified) {
         size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
       }
       if (ShortDescription.Length != 0) {
@@ -15013,7 +15014,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
-      if (other.Type != global::TuiHub.Protos.Librarian.Sephirah.V1.AppType.Unspecified) {
+      if (other.Type != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType.Unspecified) {
         Type = other.Type;
       }
       if (other.ShortDescription.Length != 0) {
@@ -15053,7 +15054,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 168: {
-            Type = (global::TuiHub.Protos.Librarian.Sephirah.V1.AppType) input.ReadEnum();
+            Type = (global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType) input.ReadEnum();
             break;
           }
           case 178: {
@@ -15098,7 +15099,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 168: {
-            Type = (global::TuiHub.Protos.Librarian.Sephirah.V1.AppType) input.ReadEnum();
+            Type = (global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType) input.ReadEnum();
             break;
           }
           case 178: {
@@ -15137,7 +15138,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[61]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[61]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15520,7 +15521,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[62]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[62]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15801,7 +15802,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[63]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[63]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16157,7 +16158,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[64]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[64]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -16355,10 +16356,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "type" field.</summary>
     public const int TypeFieldNumber = 21;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.AppType type_ = global::TuiHub.Protos.Librarian.Sephirah.V1.AppType.Unspecified;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType type_ = global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.AppType Type {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType Type {
       get { return type_; }
       set {
         type_ = value;
@@ -16553,7 +16554,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (boundStoreApp_ != null) hash ^= BoundStoreApp.GetHashCode();
       if (HasStopStoreManaging) hash ^= StopStoreManaging.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.AppType.Unspecified) hash ^= Type.GetHashCode();
+      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType.Unspecified) hash ^= Type.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (IconImageUrl.Length != 0) hash ^= IconImageUrl.GetHashCode();
       if (iconImageId_ != null) hash ^= IconImageId.GetHashCode();
@@ -16616,7 +16617,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(162, 1);
         output.WriteString(Name);
       }
-      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.AppType.Unspecified) {
+      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType.Unspecified) {
         output.WriteRawTag(168, 1);
         output.WriteEnum((int) Type);
       }
@@ -16701,7 +16702,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(162, 1);
         output.WriteString(Name);
       }
-      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.AppType.Unspecified) {
+      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType.Unspecified) {
         output.WriteRawTag(168, 1);
         output.WriteEnum((int) Type);
       }
@@ -16778,7 +16779,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (Name.Length != 0) {
         size += 2 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
-      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.AppType.Unspecified) {
+      if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType.Unspecified) {
         size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
       }
       if (Description.Length != 0) {
@@ -16859,7 +16860,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
-      if (other.Type != global::TuiHub.Protos.Librarian.Sephirah.V1.AppType.Unspecified) {
+      if (other.Type != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType.Unspecified) {
         Type = other.Type;
       }
       if (other.Description.Length != 0) {
@@ -16964,7 +16965,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 168: {
-            Type = (global::TuiHub.Protos.Librarian.Sephirah.V1.AppType) input.ReadEnum();
+            Type = (global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType) input.ReadEnum();
             break;
           }
           case 178: {
@@ -17084,7 +17085,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 168: {
-            Type = (global::TuiHub.Protos.Librarian.Sephirah.V1.AppType) input.ReadEnum();
+            Type = (global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType) input.ReadEnum();
             break;
           }
           case 178: {
@@ -17161,7 +17162,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor.MessageTypes[65]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor.MessageTypes[65]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

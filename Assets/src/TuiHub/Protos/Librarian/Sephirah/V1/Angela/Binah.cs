@@ -54,7 +54,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
             "VHVpSHViLlByb3Rvcy5MaWJyYXJpYW4uU2VwaGlyYWguVjEuQW5nZWxhYgZw",
             "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::TuiHub.Protos.Librarian.Sephirah.V1.BinahReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.WellknownReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.BinahReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.WellknownReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Angela.ListStorageCapacityUsageRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Angela.ListStorageCapacityUsageRequest.Parser, new[]{ "Paging" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Angela.ListStorageCapacityUsageResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Angela.ListStorageCapacityUsageResponse.Parser, new[]{ "Paging", "Items" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Angela.ListStorageCapacityUsageResponse.Types.Item), global::TuiHub.Protos.Librarian.Sephirah.V1.Angela.ListStorageCapacityUsageResponse.Types.Item.Parser, new[]{ "UserId", "StorageCapacityUsage" }, null, null, null, null)}),
@@ -558,10 +558,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
 
         /// <summary>Field number for the "storage_capacity_usage" field.</summary>
         public const int StorageCapacityUsageFieldNumber = 2;
-        private global::TuiHub.Protos.Librarian.Sephirah.V1.StorageCapacityUsage storageCapacityUsage_;
+        private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StorageCapacityUsage storageCapacityUsage_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::TuiHub.Protos.Librarian.Sephirah.V1.StorageCapacityUsage StorageCapacityUsage {
+        public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StorageCapacityUsage StorageCapacityUsage {
           get { return storageCapacityUsage_; }
           set {
             storageCapacityUsage_ = value;
@@ -674,7 +674,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
           }
           if (other.storageCapacityUsage_ != null) {
             if (storageCapacityUsage_ == null) {
-              StorageCapacityUsage = new global::TuiHub.Protos.Librarian.Sephirah.V1.StorageCapacityUsage();
+              StorageCapacityUsage = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StorageCapacityUsage();
             }
             StorageCapacityUsage.MergeFrom(other.StorageCapacityUsage);
           }
@@ -702,7 +702,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
               }
               case 18: {
                 if (storageCapacityUsage_ == null) {
-                  StorageCapacityUsage = new global::TuiHub.Protos.Librarian.Sephirah.V1.StorageCapacityUsage();
+                  StorageCapacityUsage = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StorageCapacityUsage();
                 }
                 input.ReadMessage(StorageCapacityUsage);
                 break;
@@ -731,7 +731,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
               }
               case 18: {
                 if (storageCapacityUsage_ == null) {
-                  StorageCapacityUsage = new global::TuiHub.Protos.Librarian.Sephirah.V1.StorageCapacityUsage();
+                  StorageCapacityUsage = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StorageCapacityUsage();
                 }
                 input.ReadMessage(StorageCapacityUsage);
                 break;
@@ -983,10 +983,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
 
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 1;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.FileTransferStatus status_ = global::TuiHub.Protos.Librarian.Sephirah.V1.FileTransferStatus.Unspecified;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FileTransferStatus status_ = global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FileTransferStatus.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.FileTransferStatus Status {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FileTransferStatus Status {
       get { return status_; }
       set {
         status_ = value;
@@ -1016,7 +1016,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.FileTransferStatus.Unspecified) hash ^= Status.GetHashCode();
+      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FileTransferStatus.Unspecified) hash ^= Status.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1035,7 +1035,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.FileTransferStatus.Unspecified) {
+      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FileTransferStatus.Unspecified) {
         output.WriteRawTag(8);
         output.WriteEnum((int) Status);
       }
@@ -1049,7 +1049,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.FileTransferStatus.Unspecified) {
+      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FileTransferStatus.Unspecified) {
         output.WriteRawTag(8);
         output.WriteEnum((int) Status);
       }
@@ -1063,7 +1063,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.FileTransferStatus.Unspecified) {
+      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FileTransferStatus.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
       }
       if (_unknownFields != null) {
@@ -1078,7 +1078,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
       if (other == null) {
         return;
       }
-      if (other.Status != global::TuiHub.Protos.Librarian.Sephirah.V1.FileTransferStatus.Unspecified) {
+      if (other.Status != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FileTransferStatus.Unspecified) {
         Status = other.Status;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -1097,7 +1097,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            Status = (global::TuiHub.Protos.Librarian.Sephirah.V1.FileTransferStatus) input.ReadEnum();
+            Status = (global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FileTransferStatus) input.ReadEnum();
             break;
           }
         }
@@ -1116,7 +1116,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            Status = (global::TuiHub.Protos.Librarian.Sephirah.V1.FileTransferStatus) input.ReadEnum();
+            Status = (global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FileTransferStatus) input.ReadEnum();
             break;
           }
         }
@@ -1854,10 +1854,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
 
     /// <summary>Field number for the "status" field.</summary>
     public const int StatusFieldNumber = 1;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.FileTransferStatus status_ = global::TuiHub.Protos.Librarian.Sephirah.V1.FileTransferStatus.Unspecified;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FileTransferStatus status_ = global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FileTransferStatus.Unspecified;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.FileTransferStatus Status {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FileTransferStatus Status {
       get { return status_; }
       set {
         status_ = value;
@@ -1887,7 +1887,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.FileTransferStatus.Unspecified) hash ^= Status.GetHashCode();
+      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FileTransferStatus.Unspecified) hash ^= Status.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1906,7 +1906,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.FileTransferStatus.Unspecified) {
+      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FileTransferStatus.Unspecified) {
         output.WriteRawTag(8);
         output.WriteEnum((int) Status);
       }
@@ -1920,7 +1920,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.FileTransferStatus.Unspecified) {
+      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FileTransferStatus.Unspecified) {
         output.WriteRawTag(8);
         output.WriteEnum((int) Status);
       }
@@ -1934,7 +1934,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.FileTransferStatus.Unspecified) {
+      if (Status != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FileTransferStatus.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Status);
       }
       if (_unknownFields != null) {
@@ -1949,7 +1949,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
       if (other == null) {
         return;
       }
-      if (other.Status != global::TuiHub.Protos.Librarian.Sephirah.V1.FileTransferStatus.Unspecified) {
+      if (other.Status != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FileTransferStatus.Unspecified) {
         Status = other.Status;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -1968,7 +1968,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            Status = (global::TuiHub.Protos.Librarian.Sephirah.V1.FileTransferStatus) input.ReadEnum();
+            Status = (global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FileTransferStatus) input.ReadEnum();
             break;
           }
         }
@@ -1987,7 +1987,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            Status = (global::TuiHub.Protos.Librarian.Sephirah.V1.FileTransferStatus) input.ReadEnum();
+            Status = (global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FileTransferStatus) input.ReadEnum();
             break;
           }
         }

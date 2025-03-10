@@ -94,7 +94,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
             "aGlyYWgvdjE7djGqAipUdWlIdWIuUHJvdG9zLkxpYnJhcmlhbi5TZXBoaXJh",
             "aC5WMS5BbmdlbGFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::TuiHub.Protos.Librarian.Sephirah.V1.GeburaReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.WellknownReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GeburaReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.WellknownReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Angela.SearchAppInfosRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Angela.SearchAppInfosRequest.Parser, new[]{ "Paging", "NameLike", "SourceFilter" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Angela.SearchAppInfosResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Angela.SearchAppInfosResponse.Parser, new[]{ "Paging", "AppInfos" }, null, null, null, null),
@@ -446,12 +446,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
 
     /// <summary>Field number for the "app_infos" field.</summary>
     public const int AppInfosFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.AppInfo> _repeated_appInfos_codec
-        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.AppInfo.Parser);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.AppInfo> appInfos_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.AppInfo>();
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppInfo> _repeated_appInfos_codec
+        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppInfo.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppInfo> appInfos_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppInfo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.AppInfo> AppInfos {
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppInfo> AppInfos {
       get { return appInfos_; }
     }
 
@@ -657,10 +657,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
 
     /// <summary>Field number for the "store_app" field.</summary>
     public const int StoreAppFieldNumber = 1;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.StoreApp storeApp_;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreApp storeApp_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.StoreApp StoreApp {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreApp StoreApp {
       get { return storeApp_; }
       set {
         storeApp_ = value;
@@ -754,7 +754,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
       }
       if (other.storeApp_ != null) {
         if (storeApp_ == null) {
-          StoreApp = new global::TuiHub.Protos.Librarian.Sephirah.V1.StoreApp();
+          StoreApp = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreApp();
         }
         StoreApp.MergeFrom(other.StoreApp);
       }
@@ -775,7 +775,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
             break;
           case 10: {
             if (storeApp_ == null) {
-              StoreApp = new global::TuiHub.Protos.Librarian.Sephirah.V1.StoreApp();
+              StoreApp = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreApp();
             }
             input.ReadMessage(StoreApp);
             break;
@@ -797,7 +797,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
             break;
           case 10: {
             if (storeApp_ == null) {
-              StoreApp = new global::TuiHub.Protos.Librarian.Sephirah.V1.StoreApp();
+              StoreApp = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreApp();
             }
             input.ReadMessage(StoreApp);
             break;
@@ -1053,10 +1053,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
 
     /// <summary>Field number for the "app_info" field.</summary>
     public const int AppInfoFieldNumber = 1;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.StoreApp appInfo_;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreApp appInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.StoreApp AppInfo {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreApp AppInfo {
       get { return appInfo_; }
       set {
         appInfo_ = value;
@@ -1150,7 +1150,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
       }
       if (other.appInfo_ != null) {
         if (appInfo_ == null) {
-          AppInfo = new global::TuiHub.Protos.Librarian.Sephirah.V1.StoreApp();
+          AppInfo = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreApp();
         }
         AppInfo.MergeFrom(other.AppInfo);
       }
@@ -1171,7 +1171,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
             break;
           case 10: {
             if (appInfo_ == null) {
-              AppInfo = new global::TuiHub.Protos.Librarian.Sephirah.V1.StoreApp();
+              AppInfo = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreApp();
             }
             input.ReadMessage(AppInfo);
             break;
@@ -1193,7 +1193,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
             break;
           case 10: {
             if (appInfo_ == null) {
-              AppInfo = new global::TuiHub.Protos.Librarian.Sephirah.V1.StoreApp();
+              AppInfo = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreApp();
             }
             input.ReadMessage(AppInfo);
             break;
@@ -1429,12 +1429,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
 
     /// <summary>Field number for the "type_filter" field.</summary>
     public const int TypeFilterFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.AppType> _repeated_typeFilter_codec
-        = pb::FieldCodec.ForEnum(34, x => (int) x, x => (global::TuiHub.Protos.Librarian.Sephirah.V1.AppType) x);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.AppType> typeFilter_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.AppType>();
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType> _repeated_typeFilter_codec
+        = pb::FieldCodec.ForEnum(34, x => (int) x, x => (global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType) x);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType> typeFilter_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.AppType> TypeFilter {
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType> TypeFilter {
       get { return typeFilter_; }
     }
 
@@ -1694,12 +1694,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
 
     /// <summary>Field number for the "app_infos" field.</summary>
     public const int AppInfosFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreApp> _repeated_appInfos_codec
-        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.StoreApp.Parser);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreApp> appInfos_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreApp>();
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreApp> _repeated_appInfos_codec
+        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreApp.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreApp> appInfos_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreApp>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreApp> AppInfos {
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreApp> AppInfos {
       get { return appInfos_; }
     }
 
@@ -2168,12 +2168,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
 
     /// <summary>Field number for the "binaries" field.</summary>
     public const int BinariesFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppBinary> _repeated_binaries_codec
-        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppBinary.Parser);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppBinary> binaries_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppBinary>();
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppBinary> _repeated_binaries_codec
+        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppBinary.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppBinary> binaries_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppBinary>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppBinary> Binaries {
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppBinary> Binaries {
       get { return binaries_; }
     }
 
@@ -2379,10 +2379,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
 
     /// <summary>Field number for the "binary" field.</summary>
     public const int BinaryFieldNumber = 1;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppBinary binary_;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppBinary binary_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppBinary Binary {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppBinary Binary {
       get { return binary_; }
       set {
         binary_ = value;
@@ -2476,7 +2476,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
       }
       if (other.binary_ != null) {
         if (binary_ == null) {
-          Binary = new global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppBinary();
+          Binary = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppBinary();
         }
         Binary.MergeFrom(other.Binary);
       }
@@ -2497,7 +2497,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
             break;
           case 10: {
             if (binary_ == null) {
-              Binary = new global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppBinary();
+              Binary = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppBinary();
             }
             input.ReadMessage(Binary);
             break;
@@ -2519,7 +2519,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
             break;
           case 10: {
             if (binary_ == null) {
-              Binary = new global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppBinary();
+              Binary = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppBinary();
             }
             input.ReadMessage(Binary);
             break;
@@ -3012,12 +3012,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
 
     /// <summary>Field number for the "files" field.</summary>
     public const int FilesFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppBinaryFile> _repeated_files_codec
-        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppBinaryFile.Parser);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppBinaryFile> files_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppBinaryFile>();
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppBinaryFile> _repeated_files_codec
+        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppBinaryFile.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppBinaryFile> files_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppBinaryFile>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppBinaryFile> Files {
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppBinaryFile> Files {
       get { return files_; }
     }
 
@@ -3223,10 +3223,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
 
     /// <summary>Field number for the "save_file" field.</summary>
     public const int SaveFileFieldNumber = 1;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppSaveFile saveFile_;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppSaveFile saveFile_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppSaveFile SaveFile {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppSaveFile SaveFile {
       get { return saveFile_; }
       set {
         saveFile_ = value;
@@ -3320,7 +3320,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
       }
       if (other.saveFile_ != null) {
         if (saveFile_ == null) {
-          SaveFile = new global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppSaveFile();
+          SaveFile = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppSaveFile();
         }
         SaveFile.MergeFrom(other.SaveFile);
       }
@@ -3341,7 +3341,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
             break;
           case 10: {
             if (saveFile_ == null) {
-              SaveFile = new global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppSaveFile();
+              SaveFile = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppSaveFile();
             }
             input.ReadMessage(SaveFile);
             break;
@@ -3363,7 +3363,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
             break;
           case 10: {
             if (saveFile_ == null) {
-              SaveFile = new global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppSaveFile();
+              SaveFile = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppSaveFile();
             }
             input.ReadMessage(SaveFile);
             break;
@@ -3619,10 +3619,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
 
     /// <summary>Field number for the "save_file" field.</summary>
     public const int SaveFileFieldNumber = 1;
-    private global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppSaveFile saveFile_;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppSaveFile saveFile_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppSaveFile SaveFile {
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppSaveFile SaveFile {
       get { return saveFile_; }
       set {
         saveFile_ = value;
@@ -3716,7 +3716,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
       }
       if (other.saveFile_ != null) {
         if (saveFile_ == null) {
-          SaveFile = new global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppSaveFile();
+          SaveFile = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppSaveFile();
         }
         SaveFile.MergeFrom(other.SaveFile);
       }
@@ -3737,7 +3737,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
             break;
           case 10: {
             if (saveFile_ == null) {
-              SaveFile = new global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppSaveFile();
+              SaveFile = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppSaveFile();
             }
             input.ReadMessage(SaveFile);
             break;
@@ -3759,7 +3759,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
             break;
           case 10: {
             if (saveFile_ == null) {
-              SaveFile = new global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppSaveFile();
+              SaveFile = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppSaveFile();
             }
             input.ReadMessage(SaveFile);
             break;
@@ -4648,12 +4648,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Angela {
 
     /// <summary>Field number for the "save_files" field.</summary>
     public const int SaveFilesFieldNumber = 2;
-    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppSaveFile> _repeated_saveFiles_codec
-        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppSaveFile.Parser);
-    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppSaveFile> saveFiles_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppSaveFile>();
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppSaveFile> _repeated_saveFiles_codec
+        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppSaveFile.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppSaveFile> saveFiles_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppSaveFile>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.StoreAppSaveFile> SaveFiles {
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppSaveFile> SaveFiles {
       get { return saveFiles_; }
     }
 
