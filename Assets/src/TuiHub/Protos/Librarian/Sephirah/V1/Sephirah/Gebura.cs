@@ -231,47 +231,46 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
             "ZBISCgRuYW1lGAIgASgJUgRuYW1lEiAKC2Rlc2NyaXB0aW9uGAMgASgJUgtk",
             "ZXNjcmlwdGlvbhIWCgZwdWJsaWMYBCABKAhSBnB1YmxpYxIzCgRmaWxlGAUg",
             "ASgLMhoubGlicmFyaWFuLnYxLkZpbGVNZXRhZGF0YUgAUgRmaWxliAEBQgcK",
-            "BV9maWxlIvYICgNBcHASKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50",
+            "BV9maWxlItoICgNBcHASKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50",
             "ZXJuYWxJRFICaWQSJQoOdmVyc2lvbl9udW1iZXIYAiABKARSDXZlcnNpb25O",
-            "dW1iZXISSgoTdmVyc2lvbl91cGRhdGVfdGltZRgDIAEoCzIaLmdvb2dsZS5w",
-            "cm90b2J1Zi5UaW1lc3RhbXBSEXZlcnNpb25VcGRhdGVUaW1lEkQKEWNyZWF0",
-            "b3JfZGV2aWNlX2lkGAQgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURS",
-            "D2NyZWF0b3JEZXZpY2VJZBJhChBib3VuZF9hcHBfc291cmNlGAUgAygLMjcu",
-            "bGlicmFyaWFuLnNlcGhpcmFoLnYxLnNlcGhpcmFoLkFwcC5Cb3VuZEFwcFNv",
-            "dXJjZUVudHJ5Ug5ib3VuZEFwcFNvdXJjZRIWCgZwdWJsaWMYBiABKAhSBnB1",
-            "YmxpYxJFCg9ib3VuZF9zdG9yZV9hcHAYByABKAsyGC5saWJyYXJpYW4udjEu",
-            "SW50ZXJuYWxJREgAUg1ib3VuZFN0b3JlQXBwiAEBEjMKE3N0b3Bfc3RvcmVf",
-            "bWFuYWdpbmcYCCABKAhIAVIRc3RvcFN0b3JlTWFuYWdpbmeIAQESEgoEbmFt",
-            "ZRgUIAEoCVIEbmFtZRI7CgR0eXBlGBUgASgOMicubGlicmFyaWFuLnNlcGhp",
-            "cmFoLnYxLnNlcGhpcmFoLkFwcFR5cGVSBHR5cGUSIAoLZGVzY3JpcHRpb24Y",
-            "FiABKAlSC2Rlc2NyaXB0aW9uEiQKDmljb25faW1hZ2VfdXJsGBcgASgJUgxp",
-            "Y29uSW1hZ2VVcmwSPAoNaWNvbl9pbWFnZV9pZBgYIAEoCzIYLmxpYnJhcmlh",
-            "bi52MS5JbnRlcm5hbElEUgtpY29uSW1hZ2VJZBIwChRiYWNrZ3JvdW5kX2lt",
-            "YWdlX3VybBgZIAEoCVISYmFja2dyb3VuZEltYWdlVXJsEkgKE2JhY2tncm91",
-            "bmRfaW1hZ2VfaWQYGiABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIR",
-            "YmFja2dyb3VuZEltYWdlSWQSJgoPY292ZXJfaW1hZ2VfdXJsGBsgASgJUg1j",
-            "b3ZlckltYWdlVXJsEj4KDmNvdmVyX2ltYWdlX2lkGBwgASgLMhgubGlicmFy",
-            "aWFuLnYxLkludGVybmFsSURSDGNvdmVySW1hZ2VJZBISCgR0YWdzGB0gAygJ",
-            "UgR0YWdzEhsKCWFsdF9uYW1lcxgeIAMoCVIIYWx0TmFtZXMSHAoJZGV2ZWxv",
-            "cGVyGB8gASgJUglkZXZlbG9wZXISHAoJcHVibGlzaGVyGCAgASgJUglwdWJs",
-            "aXNoZXIaQQoTQm91bmRBcHBTb3VyY2VFbnRyeRIQCgNrZXkYASABKAlSA2tl",
-            "eRIUCgV2YWx1ZRgCIAEoCVIFdmFsdWU6AjgBQhIKEF9ib3VuZF9zdG9yZV9h",
-            "cHBCFgoUX3N0b3Bfc3RvcmVfbWFuYWdpbmci8QEKC0FwcENhdGVnb3J5EigK",
-            "AmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSAmlkEiUKDnZl",
-            "cnNpb25fbnVtYmVyGAIgASgEUg12ZXJzaW9uTnVtYmVyEkoKE3ZlcnNpb25f",
-            "dXBkYXRlX3RpbWUYAyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1w",
-            "UhF2ZXJzaW9uVXBkYXRlVGltZRISCgRuYW1lGAogASgJUgRuYW1lEjEKB2Fw",
-            "cF9pZHMYCyADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIGYXBwSWRz",
-            "Ku8BChtBcHBTYXZlRmlsZUNhcGFjaXR5U3RyYXRlZ3kSLworQVBQX1NBVkVf",
-            "RklMRV9DQVBBQ0lUWV9TVFJBVEVHWV9VTlNQRUNJRklFRBAAEigKJEFQUF9T",
-            "QVZFX0ZJTEVfQ0FQQUNJVFlfU1RSQVRFR1lfRkFJTBABEjkKNUFQUF9TQVZF",
-            "X0ZJTEVfQ0FQQUNJVFlfU1RSQVRFR1lfREVMRVRFX09MREVTVF9PUl9GQUlM",
-            "EAISOgo2QVBQX1NBVkVfRklMRV9DQVBBQ0lUWV9TVFJBVEVHWV9ERUxFVEVf",
-            "VU5USUxfU0FUSVNGSUVEEAMqNgoHQXBwVHlwZRIYChRBUFBfVFlQRV9VTlNQ",
-            "RUNJRklFRBAAEhEKDUFQUF9UWVBFX0dBTUUQAUJmWjVnaXRodWIuY29tL3R1",
-            "aWh1Yi9wcm90b3MvcGtnL2xpYnJhcmlhbi9zZXBoaXJhaC92MTt2MaoCLFR1",
-            "aUh1Yi5Qcm90b3MuTGlicmFyaWFuLlNlcGhpcmFoLlYxLlNlcGhpcmFoYgZw",
-            "cm90bzM="));
+            "dW1iZXISPQoMdmVyc2lvbl9kYXRlGAMgASgLMhouZ29vZ2xlLnByb3RvYnVm",
+            "LlRpbWVzdGFtcFILdmVyc2lvbkRhdGUSRAoRY3JlYXRvcl9kZXZpY2VfaWQY",
+            "BCABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIPY3JlYXRvckRldmlj",
+            "ZUlkElQKC2FwcF9zb3VyY2VzGAUgAygLMjMubGlicmFyaWFuLnNlcGhpcmFo",
+            "LnYxLnNlcGhpcmFoLkFwcC5BcHBTb3VyY2VzRW50cnlSCmFwcFNvdXJjZXMS",
+            "FgoGcHVibGljGAYgASgIUgZwdWJsaWMSSgoSYm91bmRfc3RvcmVfYXBwX2lk",
+            "GAcgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURIAFIPYm91bmRTdG9y",
+            "ZUFwcElkiAEBEi8KEXN0b3Bfc3RvcmVfbWFuYWdlGAggASgISAFSD3N0b3BT",
+            "dG9yZU1hbmFnZYgBARISCgRuYW1lGBQgASgJUgRuYW1lEjsKBHR5cGUYFSAB",
+            "KA4yJy5saWJyYXJpYW4uc2VwaGlyYWgudjEuc2VwaGlyYWguQXBwVHlwZVIE",
+            "dHlwZRIgCgtkZXNjcmlwdGlvbhgWIAEoCVILZGVzY3JpcHRpb24SJAoOaWNv",
+            "bl9pbWFnZV91cmwYFyABKAlSDGljb25JbWFnZVVybBI8Cg1pY29uX2ltYWdl",
+            "X2lkGBggASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSC2ljb25JbWFn",
+            "ZUlkEjAKFGJhY2tncm91bmRfaW1hZ2VfdXJsGBkgASgJUhJiYWNrZ3JvdW5k",
+            "SW1hZ2VVcmwSSAoTYmFja2dyb3VuZF9pbWFnZV9pZBgaIAEoCzIYLmxpYnJh",
+            "cmlhbi52MS5JbnRlcm5hbElEUhFiYWNrZ3JvdW5kSW1hZ2VJZBImCg9jb3Zl",
+            "cl9pbWFnZV91cmwYGyABKAlSDWNvdmVySW1hZ2VVcmwSPgoOY292ZXJfaW1h",
+            "Z2VfaWQYHCABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIMY292ZXJJ",
+            "bWFnZUlkEhIKBHRhZ3MYHSADKAlSBHRhZ3MSGwoJYWx0X25hbWVzGB4gAygJ",
+            "UghhbHROYW1lcxIcCglkZXZlbG9wZXIYHyABKAlSCWRldmVsb3BlchIcCglw",
+            "dWJsaXNoZXIYICABKAlSCXB1Ymxpc2hlcho9Cg9BcHBTb3VyY2VzRW50cnkS",
+            "EAoDa2V5GAEgASgJUgNrZXkSFAoFdmFsdWUYAiABKAlSBXZhbHVlOgI4AUIV",
+            "ChNfYm91bmRfc3RvcmVfYXBwX2lkQhQKEl9zdG9wX3N0b3JlX21hbmFnZSLk",
+            "AQoLQXBwQ2F0ZWdvcnkSKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50",
+            "ZXJuYWxJRFICaWQSJQoOdmVyc2lvbl9udW1iZXIYAiABKARSDXZlcnNpb25O",
+            "dW1iZXISPQoMdmVyc2lvbl9kYXRlGAMgASgLMhouZ29vZ2xlLnByb3RvYnVm",
+            "LlRpbWVzdGFtcFILdmVyc2lvbkRhdGUSEgoEbmFtZRgKIAEoCVIEbmFtZRIx",
+            "CgdhcHBfaWRzGAsgAygLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSBmFw",
+            "cElkcyrvAQobQXBwU2F2ZUZpbGVDYXBhY2l0eVN0cmF0ZWd5Ei8KK0FQUF9T",
+            "QVZFX0ZJTEVfQ0FQQUNJVFlfU1RSQVRFR1lfVU5TUEVDSUZJRUQQABIoCiRB",
+            "UFBfU0FWRV9GSUxFX0NBUEFDSVRZX1NUUkFURUdZX0ZBSUwQARI5CjVBUFBf",
+            "U0FWRV9GSUxFX0NBUEFDSVRZX1NUUkFURUdZX0RFTEVURV9PTERFU1RfT1Jf",
+            "RkFJTBACEjoKNkFQUF9TQVZFX0ZJTEVfQ0FQQUNJVFlfU1RSQVRFR1lfREVM",
+            "RVRFX1VOVElMX1NBVElTRklFRBADKjYKB0FwcFR5cGUSGAoUQVBQX1RZUEVf",
+            "VU5TUEVDSUZJRUQQABIRCg1BUFBfVFlQRV9HQU1FEAFCZlo1Z2l0aHViLmNv",
+            "bS90dWlodWIvcHJvdG9zL3BrZy9saWJyYXJpYW4vc2VwaGlyYWgvdjE7djGq",
+            "AixUdWlIdWIuUHJvdG9zLkxpYnJhcmlhbi5TZXBoaXJhaC5WMS5TZXBoaXJh",
+            "aGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.WellknownReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppSaveFileCapacityStrategy), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -339,8 +338,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppBinary), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppBinary.Parser, new[]{ "Id", "Public", "SizeBytes", "Name", "Description", "Version" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppBinaryFile), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppBinaryFile.Parser, new[]{ "Id", "File", "DownloadPath" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppSaveFile), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.StoreAppSaveFile.Parser, new[]{ "Id", "Name", "Description", "Public", "File" }, new[]{ "File" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.App), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.App.Parser, new[]{ "Id", "VersionNumber", "VersionUpdateTime", "CreatorDeviceId", "BoundAppSource", "Public", "BoundStoreApp", "StopStoreManaging", "Name", "Type", "Description", "IconImageUrl", "IconImageId", "BackgroundImageUrl", "BackgroundImageId", "CoverImageUrl", "CoverImageId", "Tags", "AltNames", "Developer", "Publisher" }, new[]{ "BoundStoreApp", "StopStoreManaging" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppCategory), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppCategory.Parser, new[]{ "Id", "VersionNumber", "VersionUpdateTime", "Name", "AppIds" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.App), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.App.Parser, new[]{ "Id", "VersionNumber", "VersionDate", "CreatorDeviceId", "AppSources", "Public", "BoundStoreAppId", "StopStoreManage", "Name", "Type", "Description", "IconImageUrl", "IconImageId", "BackgroundImageUrl", "BackgroundImageId", "CoverImageUrl", "CoverImageId", "Tags", "AltNames", "Developer", "Publisher" }, new[]{ "BoundStoreAppId", "StopStoreManage" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppCategory), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppCategory.Parser, new[]{ "Id", "VersionNumber", "VersionDate", "Name", "AppIds" }, null, null, null, null)
           }));
     }
     #endregion
@@ -16181,12 +16180,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
       _hasBits0 = other._hasBits0;
       id_ = other.id_ != null ? other.id_.Clone() : null;
       versionNumber_ = other.versionNumber_;
-      versionUpdateTime_ = other.versionUpdateTime_ != null ? other.versionUpdateTime_.Clone() : null;
+      versionDate_ = other.versionDate_ != null ? other.versionDate_.Clone() : null;
       creatorDeviceId_ = other.creatorDeviceId_ != null ? other.creatorDeviceId_.Clone() : null;
-      boundAppSource_ = other.boundAppSource_.Clone();
+      appSources_ = other.appSources_.Clone();
       public_ = other.public_;
-      boundStoreApp_ = other.boundStoreApp_ != null ? other.boundStoreApp_.Clone() : null;
-      stopStoreManaging_ = other.stopStoreManaging_;
+      boundStoreAppId_ = other.boundStoreAppId_ != null ? other.boundStoreAppId_.Clone() : null;
+      stopStoreManage_ = other.stopStoreManage_;
       name_ = other.name_;
       type_ = other.type_;
       description_ = other.description_;
@@ -16237,15 +16236,15 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
       }
     }
 
-    /// <summary>Field number for the "version_update_time" field.</summary>
-    public const int VersionUpdateTimeFieldNumber = 3;
-    private global::Google.Protobuf.WellKnownTypes.Timestamp versionUpdateTime_;
+    /// <summary>Field number for the "version_date" field.</summary>
+    public const int VersionDateFieldNumber = 3;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp versionDate_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Google.Protobuf.WellKnownTypes.Timestamp VersionUpdateTime {
-      get { return versionUpdateTime_; }
+    public global::Google.Protobuf.WellKnownTypes.Timestamp VersionDate {
+      get { return versionDate_; }
       set {
-        versionUpdateTime_ = value;
+        versionDate_ = value;
       }
     }
 
@@ -16264,18 +16263,18 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
       }
     }
 
-    /// <summary>Field number for the "bound_app_source" field.</summary>
-    public const int BoundAppSourceFieldNumber = 5;
-    private static readonly pbc::MapField<string, string>.Codec _map_boundAppSource_codec
+    /// <summary>Field number for the "app_sources" field.</summary>
+    public const int AppSourcesFieldNumber = 5;
+    private static readonly pbc::MapField<string, string>.Codec _map_appSources_codec
         = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10, ""), pb::FieldCodec.ForString(18, ""), 42);
-    private readonly pbc::MapField<string, string> boundAppSource_ = new pbc::MapField<string, string>();
+    private readonly pbc::MapField<string, string> appSources_ = new pbc::MapField<string, string>();
     /// <summary>
     /// map of WellKnownAppInfoSource to source_app_id
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::MapField<string, string> BoundAppSource {
-      get { return boundAppSource_; }
+    public pbc::MapField<string, string> AppSources {
+      get { return appSources_; }
     }
 
     /// <summary>Field number for the "public" field.</summary>
@@ -16293,9 +16292,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
       }
     }
 
-    /// <summary>Field number for the "bound_store_app" field.</summary>
-    public const int BoundStoreAppFieldNumber = 7;
-    private global::TuiHub.Protos.Librarian.V1.InternalID boundStoreApp_;
+    /// <summary>Field number for the "bound_store_app_id" field.</summary>
+    public const int BoundStoreAppIdFieldNumber = 7;
+    private global::TuiHub.Protos.Librarian.V1.InternalID boundStoreAppId_;
     /// <summary>
     /// set by server and can't be updated
     /// when created by user, leave it empty
@@ -16303,42 +16302,42 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.V1.InternalID BoundStoreApp {
-      get { return boundStoreApp_; }
+    public global::TuiHub.Protos.Librarian.V1.InternalID BoundStoreAppId {
+      get { return boundStoreAppId_; }
       set {
-        boundStoreApp_ = value;
+        boundStoreAppId_ = value;
       }
     }
 
-    /// <summary>Field number for the "stop_store_managing" field.</summary>
-    public const int StopStoreManagingFieldNumber = 8;
-    private readonly static bool StopStoreManagingDefaultValue = false;
+    /// <summary>Field number for the "stop_store_manage" field.</summary>
+    public const int StopStoreManageFieldNumber = 8;
+    private readonly static bool StopStoreManageDefaultValue = false;
 
-    private bool stopStoreManaging_;
+    private bool stopStoreManage_;
     /// <summary>
     /// only valid when bound_store_app is set, default is false
     /// if not stop, the app is managed by the store and can't be updated by user
-    /// if stop, user can get full control of the app, but the bound relationship can't be removed
+    /// if stopped, user can get full control of the app, but the bound relationship can't be removed
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool StopStoreManaging {
-      get { if ((_hasBits0 & 1) != 0) { return stopStoreManaging_; } else { return StopStoreManagingDefaultValue; } }
+    public bool StopStoreManage {
+      get { if ((_hasBits0 & 1) != 0) { return stopStoreManage_; } else { return StopStoreManageDefaultValue; } }
       set {
         _hasBits0 |= 1;
-        stopStoreManaging_ = value;
+        stopStoreManage_ = value;
       }
     }
-    /// <summary>Gets whether the "stop_store_managing" field is set</summary>
+    /// <summary>Gets whether the "stop_store_manage" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasStopStoreManaging {
+    public bool HasStopStoreManage {
       get { return (_hasBits0 & 1) != 0; }
     }
-    /// <summary>Clears the value of the "stop_store_managing" field</summary>
+    /// <summary>Clears the value of the "stop_store_manage" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearStopStoreManaging() {
+    public void ClearStopStoreManage() {
       _hasBits0 &= ~1;
     }
 
@@ -16519,12 +16518,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
       }
       if (!object.Equals(Id, other.Id)) return false;
       if (VersionNumber != other.VersionNumber) return false;
-      if (!object.Equals(VersionUpdateTime, other.VersionUpdateTime)) return false;
+      if (!object.Equals(VersionDate, other.VersionDate)) return false;
       if (!object.Equals(CreatorDeviceId, other.CreatorDeviceId)) return false;
-      if (!BoundAppSource.Equals(other.BoundAppSource)) return false;
+      if (!AppSources.Equals(other.AppSources)) return false;
       if (Public != other.Public) return false;
-      if (!object.Equals(BoundStoreApp, other.BoundStoreApp)) return false;
-      if (StopStoreManaging != other.StopStoreManaging) return false;
+      if (!object.Equals(BoundStoreAppId, other.BoundStoreAppId)) return false;
+      if (StopStoreManage != other.StopStoreManage) return false;
       if (Name != other.Name) return false;
       if (Type != other.Type) return false;
       if (Description != other.Description) return false;
@@ -16547,12 +16546,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
       int hash = 1;
       if (id_ != null) hash ^= Id.GetHashCode();
       if (VersionNumber != 0UL) hash ^= VersionNumber.GetHashCode();
-      if (versionUpdateTime_ != null) hash ^= VersionUpdateTime.GetHashCode();
+      if (versionDate_ != null) hash ^= VersionDate.GetHashCode();
       if (creatorDeviceId_ != null) hash ^= CreatorDeviceId.GetHashCode();
-      hash ^= BoundAppSource.GetHashCode();
+      hash ^= AppSources.GetHashCode();
       if (Public != false) hash ^= Public.GetHashCode();
-      if (boundStoreApp_ != null) hash ^= BoundStoreApp.GetHashCode();
-      if (HasStopStoreManaging) hash ^= StopStoreManaging.GetHashCode();
+      if (boundStoreAppId_ != null) hash ^= BoundStoreAppId.GetHashCode();
+      if (HasStopStoreManage) hash ^= StopStoreManage.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Type != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType.Unspecified) hash ^= Type.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
@@ -16592,26 +16591,26 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
         output.WriteRawTag(16);
         output.WriteUInt64(VersionNumber);
       }
-      if (versionUpdateTime_ != null) {
+      if (versionDate_ != null) {
         output.WriteRawTag(26);
-        output.WriteMessage(VersionUpdateTime);
+        output.WriteMessage(VersionDate);
       }
       if (creatorDeviceId_ != null) {
         output.WriteRawTag(34);
         output.WriteMessage(CreatorDeviceId);
       }
-      boundAppSource_.WriteTo(output, _map_boundAppSource_codec);
+      appSources_.WriteTo(output, _map_appSources_codec);
       if (Public != false) {
         output.WriteRawTag(48);
         output.WriteBool(Public);
       }
-      if (boundStoreApp_ != null) {
+      if (boundStoreAppId_ != null) {
         output.WriteRawTag(58);
-        output.WriteMessage(BoundStoreApp);
+        output.WriteMessage(BoundStoreAppId);
       }
-      if (HasStopStoreManaging) {
+      if (HasStopStoreManage) {
         output.WriteRawTag(64);
-        output.WriteBool(StopStoreManaging);
+        output.WriteBool(StopStoreManage);
       }
       if (Name.Length != 0) {
         output.WriteRawTag(162, 1);
@@ -16677,26 +16676,26 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
         output.WriteRawTag(16);
         output.WriteUInt64(VersionNumber);
       }
-      if (versionUpdateTime_ != null) {
+      if (versionDate_ != null) {
         output.WriteRawTag(26);
-        output.WriteMessage(VersionUpdateTime);
+        output.WriteMessage(VersionDate);
       }
       if (creatorDeviceId_ != null) {
         output.WriteRawTag(34);
         output.WriteMessage(CreatorDeviceId);
       }
-      boundAppSource_.WriteTo(ref output, _map_boundAppSource_codec);
+      appSources_.WriteTo(ref output, _map_appSources_codec);
       if (Public != false) {
         output.WriteRawTag(48);
         output.WriteBool(Public);
       }
-      if (boundStoreApp_ != null) {
+      if (boundStoreAppId_ != null) {
         output.WriteRawTag(58);
-        output.WriteMessage(BoundStoreApp);
+        output.WriteMessage(BoundStoreAppId);
       }
-      if (HasStopStoreManaging) {
+      if (HasStopStoreManage) {
         output.WriteRawTag(64);
-        output.WriteBool(StopStoreManaging);
+        output.WriteBool(StopStoreManage);
       }
       if (Name.Length != 0) {
         output.WriteRawTag(162, 1);
@@ -16760,20 +16759,20 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
       if (VersionNumber != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(VersionNumber);
       }
-      if (versionUpdateTime_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(VersionUpdateTime);
+      if (versionDate_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(VersionDate);
       }
       if (creatorDeviceId_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(CreatorDeviceId);
       }
-      size += boundAppSource_.CalculateSize(_map_boundAppSource_codec);
+      size += appSources_.CalculateSize(_map_appSources_codec);
       if (Public != false) {
         size += 1 + 1;
       }
-      if (boundStoreApp_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(BoundStoreApp);
+      if (boundStoreAppId_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(BoundStoreAppId);
       }
-      if (HasStopStoreManaging) {
+      if (HasStopStoreManage) {
         size += 1 + 1;
       }
       if (Name.Length != 0) {
@@ -16832,11 +16831,11 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
       if (other.VersionNumber != 0UL) {
         VersionNumber = other.VersionNumber;
       }
-      if (other.versionUpdateTime_ != null) {
-        if (versionUpdateTime_ == null) {
-          VersionUpdateTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+      if (other.versionDate_ != null) {
+        if (versionDate_ == null) {
+          VersionDate = new global::Google.Protobuf.WellKnownTypes.Timestamp();
         }
-        VersionUpdateTime.MergeFrom(other.VersionUpdateTime);
+        VersionDate.MergeFrom(other.VersionDate);
       }
       if (other.creatorDeviceId_ != null) {
         if (creatorDeviceId_ == null) {
@@ -16844,18 +16843,18 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
         }
         CreatorDeviceId.MergeFrom(other.CreatorDeviceId);
       }
-      boundAppSource_.MergeFrom(other.boundAppSource_);
+      appSources_.MergeFrom(other.appSources_);
       if (other.Public != false) {
         Public = other.Public;
       }
-      if (other.boundStoreApp_ != null) {
-        if (boundStoreApp_ == null) {
-          BoundStoreApp = new global::TuiHub.Protos.Librarian.V1.InternalID();
+      if (other.boundStoreAppId_ != null) {
+        if (boundStoreAppId_ == null) {
+          BoundStoreAppId = new global::TuiHub.Protos.Librarian.V1.InternalID();
         }
-        BoundStoreApp.MergeFrom(other.BoundStoreApp);
+        BoundStoreAppId.MergeFrom(other.BoundStoreAppId);
       }
-      if (other.HasStopStoreManaging) {
-        StopStoreManaging = other.StopStoreManaging;
+      if (other.HasStopStoreManage) {
+        StopStoreManage = other.StopStoreManage;
       }
       if (other.Name.Length != 0) {
         Name = other.Name;
@@ -16928,10 +16927,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
             break;
           }
           case 26: {
-            if (versionUpdateTime_ == null) {
-              VersionUpdateTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            if (versionDate_ == null) {
+              VersionDate = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
-            input.ReadMessage(VersionUpdateTime);
+            input.ReadMessage(VersionDate);
             break;
           }
           case 34: {
@@ -16942,7 +16941,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
             break;
           }
           case 42: {
-            boundAppSource_.AddEntriesFrom(input, _map_boundAppSource_codec);
+            appSources_.AddEntriesFrom(input, _map_appSources_codec);
             break;
           }
           case 48: {
@@ -16950,14 +16949,14 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
             break;
           }
           case 58: {
-            if (boundStoreApp_ == null) {
-              BoundStoreApp = new global::TuiHub.Protos.Librarian.V1.InternalID();
+            if (boundStoreAppId_ == null) {
+              BoundStoreAppId = new global::TuiHub.Protos.Librarian.V1.InternalID();
             }
-            input.ReadMessage(BoundStoreApp);
+            input.ReadMessage(BoundStoreAppId);
             break;
           }
           case 64: {
-            StopStoreManaging = input.ReadBool();
+            StopStoreManage = input.ReadBool();
             break;
           }
           case 162: {
@@ -17048,10 +17047,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
             break;
           }
           case 26: {
-            if (versionUpdateTime_ == null) {
-              VersionUpdateTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            if (versionDate_ == null) {
+              VersionDate = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
-            input.ReadMessage(VersionUpdateTime);
+            input.ReadMessage(VersionDate);
             break;
           }
           case 34: {
@@ -17062,7 +17061,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
             break;
           }
           case 42: {
-            boundAppSource_.AddEntriesFrom(ref input, _map_boundAppSource_codec);
+            appSources_.AddEntriesFrom(ref input, _map_appSources_codec);
             break;
           }
           case 48: {
@@ -17070,14 +17069,14 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
             break;
           }
           case 58: {
-            if (boundStoreApp_ == null) {
-              BoundStoreApp = new global::TuiHub.Protos.Librarian.V1.InternalID();
+            if (boundStoreAppId_ == null) {
+              BoundStoreAppId = new global::TuiHub.Protos.Librarian.V1.InternalID();
             }
-            input.ReadMessage(BoundStoreApp);
+            input.ReadMessage(BoundStoreAppId);
             break;
           }
           case 64: {
-            StopStoreManaging = input.ReadBool();
+            StopStoreManage = input.ReadBool();
             break;
           }
           case 162: {
@@ -17184,7 +17183,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
     public AppCategory(AppCategory other) : this() {
       id_ = other.id_ != null ? other.id_.Clone() : null;
       versionNumber_ = other.versionNumber_;
-      versionUpdateTime_ = other.versionUpdateTime_ != null ? other.versionUpdateTime_.Clone() : null;
+      versionDate_ = other.versionDate_ != null ? other.versionDate_.Clone() : null;
       name_ = other.name_;
       appIds_ = other.appIds_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -17224,15 +17223,15 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
       }
     }
 
-    /// <summary>Field number for the "version_update_time" field.</summary>
-    public const int VersionUpdateTimeFieldNumber = 3;
-    private global::Google.Protobuf.WellKnownTypes.Timestamp versionUpdateTime_;
+    /// <summary>Field number for the "version_date" field.</summary>
+    public const int VersionDateFieldNumber = 3;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp versionDate_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Google.Protobuf.WellKnownTypes.Timestamp VersionUpdateTime {
-      get { return versionUpdateTime_; }
+    public global::Google.Protobuf.WellKnownTypes.Timestamp VersionDate {
+      get { return versionDate_; }
       set {
-        versionUpdateTime_ = value;
+        versionDate_ = value;
       }
     }
 
@@ -17279,7 +17278,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
       }
       if (!object.Equals(Id, other.Id)) return false;
       if (VersionNumber != other.VersionNumber) return false;
-      if (!object.Equals(VersionUpdateTime, other.VersionUpdateTime)) return false;
+      if (!object.Equals(VersionDate, other.VersionDate)) return false;
       if (Name != other.Name) return false;
       if(!appIds_.Equals(other.appIds_)) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -17291,7 +17290,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
       int hash = 1;
       if (id_ != null) hash ^= Id.GetHashCode();
       if (VersionNumber != 0UL) hash ^= VersionNumber.GetHashCode();
-      if (versionUpdateTime_ != null) hash ^= VersionUpdateTime.GetHashCode();
+      if (versionDate_ != null) hash ^= VersionDate.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       hash ^= appIds_.GetHashCode();
       if (_unknownFields != null) {
@@ -17320,9 +17319,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
         output.WriteRawTag(16);
         output.WriteUInt64(VersionNumber);
       }
-      if (versionUpdateTime_ != null) {
+      if (versionDate_ != null) {
         output.WriteRawTag(26);
-        output.WriteMessage(VersionUpdateTime);
+        output.WriteMessage(VersionDate);
       }
       if (Name.Length != 0) {
         output.WriteRawTag(82);
@@ -17347,9 +17346,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
         output.WriteRawTag(16);
         output.WriteUInt64(VersionNumber);
       }
-      if (versionUpdateTime_ != null) {
+      if (versionDate_ != null) {
         output.WriteRawTag(26);
-        output.WriteMessage(VersionUpdateTime);
+        output.WriteMessage(VersionDate);
       }
       if (Name.Length != 0) {
         output.WriteRawTag(82);
@@ -17372,8 +17371,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
       if (VersionNumber != 0UL) {
         size += 1 + pb::CodedOutputStream.ComputeUInt64Size(VersionNumber);
       }
-      if (versionUpdateTime_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(VersionUpdateTime);
+      if (versionDate_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(VersionDate);
       }
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
@@ -17400,11 +17399,11 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
       if (other.VersionNumber != 0UL) {
         VersionNumber = other.VersionNumber;
       }
-      if (other.versionUpdateTime_ != null) {
-        if (versionUpdateTime_ == null) {
-          VersionUpdateTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+      if (other.versionDate_ != null) {
+        if (versionDate_ == null) {
+          VersionDate = new global::Google.Protobuf.WellKnownTypes.Timestamp();
         }
-        VersionUpdateTime.MergeFrom(other.VersionUpdateTime);
+        VersionDate.MergeFrom(other.VersionDate);
       }
       if (other.Name.Length != 0) {
         Name = other.Name;
@@ -17437,10 +17436,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
             break;
           }
           case 26: {
-            if (versionUpdateTime_ == null) {
-              VersionUpdateTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            if (versionDate_ == null) {
+              VersionDate = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
-            input.ReadMessage(VersionUpdateTime);
+            input.ReadMessage(VersionDate);
             break;
           }
           case 82: {
@@ -17478,10 +17477,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
             break;
           }
           case 26: {
-            if (versionUpdateTime_ == null) {
-              VersionUpdateTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            if (versionDate_ == null) {
+              VersionDate = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
-            input.ReadMessage(VersionUpdateTime);
+            input.ReadMessage(VersionDate);
             break;
           }
           case 82: {

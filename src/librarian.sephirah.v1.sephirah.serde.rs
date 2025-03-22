@@ -575,22 +575,22 @@ impl serde::Serialize for App {
         if self.version_number != 0 {
             len += 1;
         }
-        if self.version_update_time.is_some() {
+        if self.version_date.is_some() {
             len += 1;
         }
         if self.creator_device_id.is_some() {
             len += 1;
         }
-        if !self.bound_app_source.is_empty() {
+        if !self.app_sources.is_empty() {
             len += 1;
         }
         if self.public {
             len += 1;
         }
-        if self.bound_store_app.is_some() {
+        if self.bound_store_app_id.is_some() {
             len += 1;
         }
-        if self.stop_store_managing.is_some() {
+        if self.stop_store_manage.is_some() {
             len += 1;
         }
         if !self.name.is_empty() {
@@ -641,23 +641,23 @@ impl serde::Serialize for App {
             #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("versionNumber", ToString::to_string(&self.version_number).as_str())?;
         }
-        if let Some(v) = self.version_update_time.as_ref() {
-            struct_ser.serialize_field("versionUpdateTime", v)?;
+        if let Some(v) = self.version_date.as_ref() {
+            struct_ser.serialize_field("versionDate", v)?;
         }
         if let Some(v) = self.creator_device_id.as_ref() {
             struct_ser.serialize_field("creatorDeviceId", v)?;
         }
-        if !self.bound_app_source.is_empty() {
-            struct_ser.serialize_field("boundAppSource", &self.bound_app_source)?;
+        if !self.app_sources.is_empty() {
+            struct_ser.serialize_field("appSources", &self.app_sources)?;
         }
         if self.public {
             struct_ser.serialize_field("public", &self.public)?;
         }
-        if let Some(v) = self.bound_store_app.as_ref() {
-            struct_ser.serialize_field("boundStoreApp", v)?;
+        if let Some(v) = self.bound_store_app_id.as_ref() {
+            struct_ser.serialize_field("boundStoreAppId", v)?;
         }
-        if let Some(v) = self.stop_store_managing.as_ref() {
-            struct_ser.serialize_field("stopStoreManaging", v)?;
+        if let Some(v) = self.stop_store_manage.as_ref() {
+            struct_ser.serialize_field("stopStoreManage", v)?;
         }
         if !self.name.is_empty() {
             struct_ser.serialize_field("name", &self.name)?;
@@ -713,17 +713,17 @@ impl<'de> serde::Deserialize<'de> for App {
             "id",
             "version_number",
             "versionNumber",
-            "version_update_time",
-            "versionUpdateTime",
+            "version_date",
+            "versionDate",
             "creator_device_id",
             "creatorDeviceId",
-            "bound_app_source",
-            "boundAppSource",
+            "app_sources",
+            "appSources",
             "public",
-            "bound_store_app",
-            "boundStoreApp",
-            "stop_store_managing",
-            "stopStoreManaging",
+            "bound_store_app_id",
+            "boundStoreAppId",
+            "stop_store_manage",
+            "stopStoreManage",
             "name",
             "type",
             "description",
@@ -750,12 +750,12 @@ impl<'de> serde::Deserialize<'de> for App {
         enum GeneratedField {
             Id,
             VersionNumber,
-            VersionUpdateTime,
+            VersionDate,
             CreatorDeviceId,
-            BoundAppSource,
+            AppSources,
             Public,
-            BoundStoreApp,
-            StopStoreManaging,
+            BoundStoreAppId,
+            StopStoreManage,
             Name,
             Type,
             Description,
@@ -792,12 +792,12 @@ impl<'de> serde::Deserialize<'de> for App {
                         match value {
                             "id" => Ok(GeneratedField::Id),
                             "versionNumber" | "version_number" => Ok(GeneratedField::VersionNumber),
-                            "versionUpdateTime" | "version_update_time" => Ok(GeneratedField::VersionUpdateTime),
+                            "versionDate" | "version_date" => Ok(GeneratedField::VersionDate),
                             "creatorDeviceId" | "creator_device_id" => Ok(GeneratedField::CreatorDeviceId),
-                            "boundAppSource" | "bound_app_source" => Ok(GeneratedField::BoundAppSource),
+                            "appSources" | "app_sources" => Ok(GeneratedField::AppSources),
                             "public" => Ok(GeneratedField::Public),
-                            "boundStoreApp" | "bound_store_app" => Ok(GeneratedField::BoundStoreApp),
-                            "stopStoreManaging" | "stop_store_managing" => Ok(GeneratedField::StopStoreManaging),
+                            "boundStoreAppId" | "bound_store_app_id" => Ok(GeneratedField::BoundStoreAppId),
+                            "stopStoreManage" | "stop_store_manage" => Ok(GeneratedField::StopStoreManage),
                             "name" => Ok(GeneratedField::Name),
                             "type" => Ok(GeneratedField::Type),
                             "description" => Ok(GeneratedField::Description),
@@ -832,12 +832,12 @@ impl<'de> serde::Deserialize<'de> for App {
             {
                 let mut id__ = None;
                 let mut version_number__ = None;
-                let mut version_update_time__ = None;
+                let mut version_date__ = None;
                 let mut creator_device_id__ = None;
-                let mut bound_app_source__ = None;
+                let mut app_sources__ = None;
                 let mut public__ = None;
-                let mut bound_store_app__ = None;
-                let mut stop_store_managing__ = None;
+                let mut bound_store_app_id__ = None;
+                let mut stop_store_manage__ = None;
                 let mut name__ = None;
                 let mut r#type__ = None;
                 let mut description__ = None;
@@ -867,11 +867,11 @@ impl<'de> serde::Deserialize<'de> for App {
                                 Some(map_.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
                             ;
                         }
-                        GeneratedField::VersionUpdateTime => {
-                            if version_update_time__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("versionUpdateTime"));
+                        GeneratedField::VersionDate => {
+                            if version_date__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("versionDate"));
                             }
-                            version_update_time__ = map_.next_value()?;
+                            version_date__ = map_.next_value()?;
                         }
                         GeneratedField::CreatorDeviceId => {
                             if creator_device_id__.is_some() {
@@ -879,11 +879,11 @@ impl<'de> serde::Deserialize<'de> for App {
                             }
                             creator_device_id__ = map_.next_value()?;
                         }
-                        GeneratedField::BoundAppSource => {
-                            if bound_app_source__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("boundAppSource"));
+                        GeneratedField::AppSources => {
+                            if app_sources__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("appSources"));
                             }
-                            bound_app_source__ = Some(
+                            app_sources__ = Some(
                                 map_.next_value::<std::collections::HashMap<_, _>>()?
                             );
                         }
@@ -893,17 +893,17 @@ impl<'de> serde::Deserialize<'de> for App {
                             }
                             public__ = Some(map_.next_value()?);
                         }
-                        GeneratedField::BoundStoreApp => {
-                            if bound_store_app__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("boundStoreApp"));
+                        GeneratedField::BoundStoreAppId => {
+                            if bound_store_app_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("boundStoreAppId"));
                             }
-                            bound_store_app__ = map_.next_value()?;
+                            bound_store_app_id__ = map_.next_value()?;
                         }
-                        GeneratedField::StopStoreManaging => {
-                            if stop_store_managing__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("stopStoreManaging"));
+                        GeneratedField::StopStoreManage => {
+                            if stop_store_manage__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("stopStoreManage"));
                             }
-                            stop_store_managing__ = map_.next_value()?;
+                            stop_store_manage__ = map_.next_value()?;
                         }
                         GeneratedField::Name => {
                             if name__.is_some() {
@@ -988,12 +988,12 @@ impl<'de> serde::Deserialize<'de> for App {
                 Ok(App {
                     id: id__,
                     version_number: version_number__.unwrap_or_default(),
-                    version_update_time: version_update_time__,
+                    version_date: version_date__,
                     creator_device_id: creator_device_id__,
-                    bound_app_source: bound_app_source__.unwrap_or_default(),
+                    app_sources: app_sources__.unwrap_or_default(),
                     public: public__.unwrap_or_default(),
-                    bound_store_app: bound_store_app__,
-                    stop_store_managing: stop_store_managing__,
+                    bound_store_app_id: bound_store_app_id__,
+                    stop_store_manage: stop_store_manage__,
                     name: name__.unwrap_or_default(),
                     r#type: r#type__.unwrap_or_default(),
                     description: description__.unwrap_or_default(),
@@ -1027,7 +1027,7 @@ impl serde::Serialize for AppCategory {
         if self.version_number != 0 {
             len += 1;
         }
-        if self.version_update_time.is_some() {
+        if self.version_date.is_some() {
             len += 1;
         }
         if !self.name.is_empty() {
@@ -1045,8 +1045,8 @@ impl serde::Serialize for AppCategory {
             #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("versionNumber", ToString::to_string(&self.version_number).as_str())?;
         }
-        if let Some(v) = self.version_update_time.as_ref() {
-            struct_ser.serialize_field("versionUpdateTime", v)?;
+        if let Some(v) = self.version_date.as_ref() {
+            struct_ser.serialize_field("versionDate", v)?;
         }
         if !self.name.is_empty() {
             struct_ser.serialize_field("name", &self.name)?;
@@ -1067,8 +1067,8 @@ impl<'de> serde::Deserialize<'de> for AppCategory {
             "id",
             "version_number",
             "versionNumber",
-            "version_update_time",
-            "versionUpdateTime",
+            "version_date",
+            "versionDate",
             "name",
             "app_ids",
             "appIds",
@@ -1078,7 +1078,7 @@ impl<'de> serde::Deserialize<'de> for AppCategory {
         enum GeneratedField {
             Id,
             VersionNumber,
-            VersionUpdateTime,
+            VersionDate,
             Name,
             AppIds,
         }
@@ -1104,7 +1104,7 @@ impl<'de> serde::Deserialize<'de> for AppCategory {
                         match value {
                             "id" => Ok(GeneratedField::Id),
                             "versionNumber" | "version_number" => Ok(GeneratedField::VersionNumber),
-                            "versionUpdateTime" | "version_update_time" => Ok(GeneratedField::VersionUpdateTime),
+                            "versionDate" | "version_date" => Ok(GeneratedField::VersionDate),
                             "name" => Ok(GeneratedField::Name),
                             "appIds" | "app_ids" => Ok(GeneratedField::AppIds),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
@@ -1128,7 +1128,7 @@ impl<'de> serde::Deserialize<'de> for AppCategory {
             {
                 let mut id__ = None;
                 let mut version_number__ = None;
-                let mut version_update_time__ = None;
+                let mut version_date__ = None;
                 let mut name__ = None;
                 let mut app_ids__ = None;
                 while let Some(k) = map_.next_key()? {
@@ -1147,11 +1147,11 @@ impl<'de> serde::Deserialize<'de> for AppCategory {
                                 Some(map_.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
                             ;
                         }
-                        GeneratedField::VersionUpdateTime => {
-                            if version_update_time__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("versionUpdateTime"));
+                        GeneratedField::VersionDate => {
+                            if version_date__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("versionDate"));
                             }
-                            version_update_time__ = map_.next_value()?;
+                            version_date__ = map_.next_value()?;
                         }
                         GeneratedField::Name => {
                             if name__.is_some() {
@@ -1170,7 +1170,7 @@ impl<'de> serde::Deserialize<'de> for AppCategory {
                 Ok(AppCategory {
                     id: id__,
                     version_number: version_number__.unwrap_or_default(),
-                    version_update_time: version_update_time__,
+                    version_date: version_date__,
                     name: name__.unwrap_or_default(),
                     app_ids: app_ids__.unwrap_or_default(),
                 })
@@ -12643,15 +12643,15 @@ impl serde::Serialize for ListPorterDigestsResponse {
         if self.paging.is_some() {
             len += 1;
         }
-        if !self.porter_groups.is_empty() {
+        if !self.porter_digests.is_empty() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.sephirah.ListPorterDigestsResponse", len)?;
         if let Some(v) = self.paging.as_ref() {
             struct_ser.serialize_field("paging", v)?;
         }
-        if !self.porter_groups.is_empty() {
-            struct_ser.serialize_field("porterGroups", &self.porter_groups)?;
+        if !self.porter_digests.is_empty() {
+            struct_ser.serialize_field("porterDigests", &self.porter_digests)?;
         }
         struct_ser.end()
     }
@@ -12664,14 +12664,14 @@ impl<'de> serde::Deserialize<'de> for ListPorterDigestsResponse {
     {
         const FIELDS: &[&str] = &[
             "paging",
-            "porter_groups",
-            "porterGroups",
+            "porter_digests",
+            "porterDigests",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             Paging,
-            PorterGroups,
+            PorterDigests,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -12694,7 +12694,7 @@ impl<'de> serde::Deserialize<'de> for ListPorterDigestsResponse {
                     {
                         match value {
                             "paging" => Ok(GeneratedField::Paging),
-                            "porterGroups" | "porter_groups" => Ok(GeneratedField::PorterGroups),
+                            "porterDigests" | "porter_digests" => Ok(GeneratedField::PorterDigests),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -12715,7 +12715,7 @@ impl<'de> serde::Deserialize<'de> for ListPorterDigestsResponse {
                     V: serde::de::MapAccess<'de>,
             {
                 let mut paging__ = None;
-                let mut porter_groups__ = None;
+                let mut porter_digests__ = None;
                 while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Paging => {
@@ -12724,17 +12724,17 @@ impl<'de> serde::Deserialize<'de> for ListPorterDigestsResponse {
                             }
                             paging__ = map_.next_value()?;
                         }
-                        GeneratedField::PorterGroups => {
-                            if porter_groups__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("porterGroups"));
+                        GeneratedField::PorterDigests => {
+                            if porter_digests__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("porterDigests"));
                             }
-                            porter_groups__ = Some(map_.next_value()?);
+                            porter_digests__ = Some(map_.next_value()?);
                         }
                     }
                 }
                 Ok(ListPorterDigestsResponse {
                     paging: paging__,
-                    porter_groups: porter_groups__.unwrap_or_default(),
+                    porter_digests: porter_digests__.unwrap_or_default(),
                 })
             }
         }
@@ -25285,8 +25285,6 @@ impl serde::Serialize for UserType {
             Self::Unspecified => "USER_TYPE_UNSPECIFIED",
             Self::Admin => "USER_TYPE_ADMIN",
             Self::Normal => "USER_TYPE_NORMAL",
-            Self::Sentinel => "USER_TYPE_SENTINEL",
-            Self::Porter => "USER_TYPE_PORTER",
         };
         serializer.serialize_str(variant)
     }
@@ -25301,8 +25299,6 @@ impl<'de> serde::Deserialize<'de> for UserType {
             "USER_TYPE_UNSPECIFIED",
             "USER_TYPE_ADMIN",
             "USER_TYPE_NORMAL",
-            "USER_TYPE_SENTINEL",
-            "USER_TYPE_PORTER",
         ];
 
         struct GeneratedVisitor;
@@ -25346,8 +25342,6 @@ impl<'de> serde::Deserialize<'de> for UserType {
                     "USER_TYPE_UNSPECIFIED" => Ok(UserType::Unspecified),
                     "USER_TYPE_ADMIN" => Ok(UserType::Admin),
                     "USER_TYPE_NORMAL" => Ok(UserType::Normal),
-                    "USER_TYPE_SENTINEL" => Ok(UserType::Sentinel),
-                    "USER_TYPE_PORTER" => Ok(UserType::Porter),
                     _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
                 }
             }

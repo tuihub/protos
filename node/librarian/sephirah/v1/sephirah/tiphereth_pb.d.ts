@@ -637,10 +637,10 @@ export class ListPorterDigestsResponse extends jspb.Message {
   getPaging(): librarian_v1_wellknown_pb.PagingResponse | undefined;
   setPaging(value?: librarian_v1_wellknown_pb.PagingResponse): void;
 
-  clearPorterGroupsList(): void;
-  getPorterGroupsList(): Array<PorterDigest>;
-  setPorterGroupsList(value: Array<PorterDigest>): void;
-  addPorterGroups(value?: PorterDigest, index?: number): PorterDigest;
+  clearPorterDigestsList(): void;
+  getPorterDigestsList(): Array<PorterDigest>;
+  setPorterDigestsList(value: Array<PorterDigest>): void;
+  addPorterDigests(value?: PorterDigest, index?: number): PorterDigest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListPorterDigestsResponse.AsObject;
@@ -655,7 +655,7 @@ export class ListPorterDigestsResponse extends jspb.Message {
 export namespace ListPorterDigestsResponse {
   export type AsObject = {
     paging?: librarian_v1_wellknown_pb.PagingResponse.AsObject,
-    porterGroupsList: Array<PorterDigest.AsObject>,
+    porterDigestsList: Array<PorterDigest.AsObject>,
   }
 }
 
@@ -1181,8 +1181,6 @@ export interface UserTypeMap {
   USER_TYPE_UNSPECIFIED: 0;
   USER_TYPE_ADMIN: 1;
   USER_TYPE_NORMAL: 2;
-  USER_TYPE_SENTINEL: 3;
-  USER_TYPE_PORTER: 4;
 }
 
 export const UserType: UserTypeMap;

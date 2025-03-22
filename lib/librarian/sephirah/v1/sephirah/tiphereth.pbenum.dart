@@ -42,15 +42,11 @@ class UserType extends $pb.ProtobufEnum {
   static const UserType USER_TYPE_UNSPECIFIED = UserType._(0, _omitEnumNames ? '' : 'USER_TYPE_UNSPECIFIED');
   static const UserType USER_TYPE_ADMIN = UserType._(1, _omitEnumNames ? '' : 'USER_TYPE_ADMIN');
   static const UserType USER_TYPE_NORMAL = UserType._(2, _omitEnumNames ? '' : 'USER_TYPE_NORMAL');
-  static const UserType USER_TYPE_SENTINEL = UserType._(3, _omitEnumNames ? '' : 'USER_TYPE_SENTINEL');
-  static const UserType USER_TYPE_PORTER = UserType._(4, _omitEnumNames ? '' : 'USER_TYPE_PORTER');
 
   static const $core.List<UserType> values = <UserType> [
     USER_TYPE_UNSPECIFIED,
     USER_TYPE_ADMIN,
     USER_TYPE_NORMAL,
-    USER_TYPE_SENTINEL,
-    USER_TYPE_PORTER,
   ];
 
   static final $core.Map<$core.int, UserType> _byValue = $pb.ProtobufEnum.initByValue(values);

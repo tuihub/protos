@@ -1049,12 +1049,12 @@ const App$json = {
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
     {'1': 'version_number', '3': 2, '4': 1, '5': 4, '10': 'versionNumber'},
-    {'1': 'version_update_time', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'versionUpdateTime'},
+    {'1': 'version_date', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'versionDate'},
     {'1': 'creator_device_id', '3': 4, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'creatorDeviceId'},
-    {'1': 'bound_app_source', '3': 5, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.sephirah.App.BoundAppSourceEntry', '10': 'boundAppSource'},
+    {'1': 'app_sources', '3': 5, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.sephirah.App.AppSourcesEntry', '10': 'appSources'},
     {'1': 'public', '3': 6, '4': 1, '5': 8, '10': 'public'},
-    {'1': 'bound_store_app', '3': 7, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '9': 0, '10': 'boundStoreApp', '17': true},
-    {'1': 'stop_store_managing', '3': 8, '4': 1, '5': 8, '9': 1, '10': 'stopStoreManaging', '17': true},
+    {'1': 'bound_store_app_id', '3': 7, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '9': 0, '10': 'boundStoreAppId', '17': true},
+    {'1': 'stop_store_manage', '3': 8, '4': 1, '5': 8, '9': 1, '10': 'stopStoreManage', '17': true},
     {'1': 'name', '3': 20, '4': 1, '5': 9, '10': 'name'},
     {'1': 'type', '3': 21, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.sephirah.AppType', '10': 'type'},
     {'1': 'description', '3': 22, '4': 1, '5': 9, '10': 'description'},
@@ -1069,16 +1069,16 @@ const App$json = {
     {'1': 'developer', '3': 31, '4': 1, '5': 9, '10': 'developer'},
     {'1': 'publisher', '3': 32, '4': 1, '5': 9, '10': 'publisher'},
   ],
-  '3': [App_BoundAppSourceEntry$json],
+  '3': [App_AppSourcesEntry$json],
   '8': [
-    {'1': '_bound_store_app'},
-    {'1': '_stop_store_managing'},
+    {'1': '_bound_store_app_id'},
+    {'1': '_stop_store_manage'},
   ],
 };
 
 @$core.Deprecated('Use appDescriptor instead')
-const App_BoundAppSourceEntry$json = {
-  '1': 'BoundAppSourceEntry',
+const App_AppSourcesEntry$json = {
+  '1': 'AppSourcesEntry',
   '2': [
     {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
     {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
@@ -1089,26 +1089,26 @@ const App_BoundAppSourceEntry$json = {
 /// Descriptor for `App`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List appDescriptor = $convert.base64Decode(
     'CgNBcHASKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSJQoOdmVyc2'
-    'lvbl9udW1iZXIYAiABKARSDXZlcnNpb25OdW1iZXISSgoTdmVyc2lvbl91cGRhdGVfdGltZRgD'
-    'IAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSEXZlcnNpb25VcGRhdGVUaW1lEkQKEW'
-    'NyZWF0b3JfZGV2aWNlX2lkGAQgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSD2NyZWF0'
-    'b3JEZXZpY2VJZBJhChBib3VuZF9hcHBfc291cmNlGAUgAygLMjcubGlicmFyaWFuLnNlcGhpcm'
-    'FoLnYxLnNlcGhpcmFoLkFwcC5Cb3VuZEFwcFNvdXJjZUVudHJ5Ug5ib3VuZEFwcFNvdXJjZRIW'
-    'CgZwdWJsaWMYBiABKAhSBnB1YmxpYxJFCg9ib3VuZF9zdG9yZV9hcHAYByABKAsyGC5saWJyYX'
-    'JpYW4udjEuSW50ZXJuYWxJREgAUg1ib3VuZFN0b3JlQXBwiAEBEjMKE3N0b3Bfc3RvcmVfbWFu'
-    'YWdpbmcYCCABKAhIAVIRc3RvcFN0b3JlTWFuYWdpbmeIAQESEgoEbmFtZRgUIAEoCVIEbmFtZR'
-    'I7CgR0eXBlGBUgASgOMicubGlicmFyaWFuLnNlcGhpcmFoLnYxLnNlcGhpcmFoLkFwcFR5cGVS'
-    'BHR5cGUSIAoLZGVzY3JpcHRpb24YFiABKAlSC2Rlc2NyaXB0aW9uEiQKDmljb25faW1hZ2VfdX'
-    'JsGBcgASgJUgxpY29uSW1hZ2VVcmwSPAoNaWNvbl9pbWFnZV9pZBgYIAEoCzIYLmxpYnJhcmlh'
-    'bi52MS5JbnRlcm5hbElEUgtpY29uSW1hZ2VJZBIwChRiYWNrZ3JvdW5kX2ltYWdlX3VybBgZIA'
-    'EoCVISYmFja2dyb3VuZEltYWdlVXJsEkgKE2JhY2tncm91bmRfaW1hZ2VfaWQYGiABKAsyGC5s'
-    'aWJyYXJpYW4udjEuSW50ZXJuYWxJRFIRYmFja2dyb3VuZEltYWdlSWQSJgoPY292ZXJfaW1hZ2'
-    'VfdXJsGBsgASgJUg1jb3ZlckltYWdlVXJsEj4KDmNvdmVyX2ltYWdlX2lkGBwgASgLMhgubGli'
-    'cmFyaWFuLnYxLkludGVybmFsSURSDGNvdmVySW1hZ2VJZBISCgR0YWdzGB0gAygJUgR0YWdzEh'
-    'sKCWFsdF9uYW1lcxgeIAMoCVIIYWx0TmFtZXMSHAoJZGV2ZWxvcGVyGB8gASgJUglkZXZlbG9w'
-    'ZXISHAoJcHVibGlzaGVyGCAgASgJUglwdWJsaXNoZXIaQQoTQm91bmRBcHBTb3VyY2VFbnRyeR'
-    'IQCgNrZXkYASABKAlSA2tleRIUCgV2YWx1ZRgCIAEoCVIFdmFsdWU6AjgBQhIKEF9ib3VuZF9z'
-    'dG9yZV9hcHBCFgoUX3N0b3Bfc3RvcmVfbWFuYWdpbmc=');
+    'lvbl9udW1iZXIYAiABKARSDXZlcnNpb25OdW1iZXISPQoMdmVyc2lvbl9kYXRlGAMgASgLMhou'
+    'Z29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFILdmVyc2lvbkRhdGUSRAoRY3JlYXRvcl9kZXZpY2'
+    'VfaWQYBCABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIPY3JlYXRvckRldmljZUlkElQK'
+    'C2FwcF9zb3VyY2VzGAUgAygLMjMubGlicmFyaWFuLnNlcGhpcmFoLnYxLnNlcGhpcmFoLkFwcC'
+    '5BcHBTb3VyY2VzRW50cnlSCmFwcFNvdXJjZXMSFgoGcHVibGljGAYgASgIUgZwdWJsaWMSSgoS'
+    'Ym91bmRfc3RvcmVfYXBwX2lkGAcgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURIAFIPYm'
+    '91bmRTdG9yZUFwcElkiAEBEi8KEXN0b3Bfc3RvcmVfbWFuYWdlGAggASgISAFSD3N0b3BTdG9y'
+    'ZU1hbmFnZYgBARISCgRuYW1lGBQgASgJUgRuYW1lEjsKBHR5cGUYFSABKA4yJy5saWJyYXJpYW'
+    '4uc2VwaGlyYWgudjEuc2VwaGlyYWguQXBwVHlwZVIEdHlwZRIgCgtkZXNjcmlwdGlvbhgWIAEo'
+    'CVILZGVzY3JpcHRpb24SJAoOaWNvbl9pbWFnZV91cmwYFyABKAlSDGljb25JbWFnZVVybBI8Cg'
+    '1pY29uX2ltYWdlX2lkGBggASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSC2ljb25JbWFn'
+    'ZUlkEjAKFGJhY2tncm91bmRfaW1hZ2VfdXJsGBkgASgJUhJiYWNrZ3JvdW5kSW1hZ2VVcmwSSA'
+    'oTYmFja2dyb3VuZF9pbWFnZV9pZBgaIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUhFi'
+    'YWNrZ3JvdW5kSW1hZ2VJZBImCg9jb3Zlcl9pbWFnZV91cmwYGyABKAlSDWNvdmVySW1hZ2VVcm'
+    'wSPgoOY292ZXJfaW1hZ2VfaWQYHCABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIMY292'
+    'ZXJJbWFnZUlkEhIKBHRhZ3MYHSADKAlSBHRhZ3MSGwoJYWx0X25hbWVzGB4gAygJUghhbHROYW'
+    '1lcxIcCglkZXZlbG9wZXIYHyABKAlSCWRldmVsb3BlchIcCglwdWJsaXNoZXIYICABKAlSCXB1'
+    'Ymxpc2hlcho9Cg9BcHBTb3VyY2VzRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSFAoFdmFsdWUYAi'
+    'ABKAlSBXZhbHVlOgI4AUIVChNfYm91bmRfc3RvcmVfYXBwX2lkQhQKEl9zdG9wX3N0b3JlX21h'
+    'bmFnZQ==');
 
 @$core.Deprecated('Use appCategoryDescriptor instead')
 const AppCategory$json = {
@@ -1116,7 +1116,7 @@ const AppCategory$json = {
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
     {'1': 'version_number', '3': 2, '4': 1, '5': 4, '10': 'versionNumber'},
-    {'1': 'version_update_time', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'versionUpdateTime'},
+    {'1': 'version_date', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'versionDate'},
     {'1': 'name', '3': 10, '4': 1, '5': 9, '10': 'name'},
     {'1': 'app_ids', '3': 11, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'appIds'},
   ],
@@ -1125,8 +1125,8 @@ const AppCategory$json = {
 /// Descriptor for `AppCategory`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List appCategoryDescriptor = $convert.base64Decode(
     'CgtBcHBDYXRlZ29yeRIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZB'
-    'IlCg52ZXJzaW9uX251bWJlchgCIAEoBFINdmVyc2lvbk51bWJlchJKChN2ZXJzaW9uX3VwZGF0'
-    'ZV90aW1lGAMgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIRdmVyc2lvblVwZGF0ZV'
-    'RpbWUSEgoEbmFtZRgKIAEoCVIEbmFtZRIxCgdhcHBfaWRzGAsgAygLMhgubGlicmFyaWFuLnYx'
-    'LkludGVybmFsSURSBmFwcElkcw==');
+    'IlCg52ZXJzaW9uX251bWJlchgCIAEoBFINdmVyc2lvbk51bWJlchI9Cgx2ZXJzaW9uX2RhdGUY'
+    'AyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgt2ZXJzaW9uRGF0ZRISCgRuYW1lGA'
+    'ogASgJUgRuYW1lEjEKB2FwcF9pZHMYCyADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIG'
+    'YXBwSWRz');
 

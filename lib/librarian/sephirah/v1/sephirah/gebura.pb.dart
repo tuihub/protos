@@ -4369,12 +4369,12 @@ class App extends $pb.GeneratedMessage {
   factory App({
     $8.InternalID? id,
     $fixnum.Int64? versionNumber,
-    $7.Timestamp? versionUpdateTime,
+    $7.Timestamp? versionDate,
     $8.InternalID? creatorDeviceId,
-    $core.Map<$core.String, $core.String>? boundAppSource,
+    $core.Map<$core.String, $core.String>? appSources,
     $core.bool? public,
-    $8.InternalID? boundStoreApp,
-    $core.bool? stopStoreManaging,
+    $8.InternalID? boundStoreAppId,
+    $core.bool? stopStoreManage,
     $core.String? name,
     AppType? type,
     $core.String? description,
@@ -4396,23 +4396,23 @@ class App extends $pb.GeneratedMessage {
     if (versionNumber != null) {
       $result.versionNumber = versionNumber;
     }
-    if (versionUpdateTime != null) {
-      $result.versionUpdateTime = versionUpdateTime;
+    if (versionDate != null) {
+      $result.versionDate = versionDate;
     }
     if (creatorDeviceId != null) {
       $result.creatorDeviceId = creatorDeviceId;
     }
-    if (boundAppSource != null) {
-      $result.boundAppSource.addAll(boundAppSource);
+    if (appSources != null) {
+      $result.appSources.addAll(appSources);
     }
     if (public != null) {
       $result.public = public;
     }
-    if (boundStoreApp != null) {
-      $result.boundStoreApp = boundStoreApp;
+    if (boundStoreAppId != null) {
+      $result.boundStoreAppId = boundStoreAppId;
     }
-    if (stopStoreManaging != null) {
-      $result.stopStoreManaging = stopStoreManaging;
+    if (stopStoreManage != null) {
+      $result.stopStoreManage = stopStoreManage;
     }
     if (name != null) {
       $result.name = name;
@@ -4462,12 +4462,12 @@ class App extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'App', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
     ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $8.InternalID.create)
     ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'versionNumber', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOM<$7.Timestamp>(3, _omitFieldNames ? '' : 'versionUpdateTime', subBuilder: $7.Timestamp.create)
+    ..aOM<$7.Timestamp>(3, _omitFieldNames ? '' : 'versionDate', subBuilder: $7.Timestamp.create)
     ..aOM<$8.InternalID>(4, _omitFieldNames ? '' : 'creatorDeviceId', subBuilder: $8.InternalID.create)
-    ..m<$core.String, $core.String>(5, _omitFieldNames ? '' : 'boundAppSource', entryClassName: 'App.BoundAppSourceEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('librarian.sephirah.v1.sephirah'))
+    ..m<$core.String, $core.String>(5, _omitFieldNames ? '' : 'appSources', entryClassName: 'App.AppSourcesEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('librarian.sephirah.v1.sephirah'))
     ..aOB(6, _omitFieldNames ? '' : 'public')
-    ..aOM<$8.InternalID>(7, _omitFieldNames ? '' : 'boundStoreApp', subBuilder: $8.InternalID.create)
-    ..aOB(8, _omitFieldNames ? '' : 'stopStoreManaging')
+    ..aOM<$8.InternalID>(7, _omitFieldNames ? '' : 'boundStoreAppId', subBuilder: $8.InternalID.create)
+    ..aOB(8, _omitFieldNames ? '' : 'stopStoreManage')
     ..aOS(20, _omitFieldNames ? '' : 'name')
     ..e<AppType>(21, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: AppType.APP_TYPE_UNSPECIFIED, valueOf: AppType.valueOf, enumValues: AppType.values)
     ..aOS(22, _omitFieldNames ? '' : 'description')
@@ -4528,15 +4528,15 @@ class App extends $pb.GeneratedMessage {
   void clearVersionNumber() => clearField(2);
 
   @$pb.TagNumber(3)
-  $7.Timestamp get versionUpdateTime => $_getN(2);
+  $7.Timestamp get versionDate => $_getN(2);
   @$pb.TagNumber(3)
-  set versionUpdateTime($7.Timestamp v) { setField(3, v); }
+  set versionDate($7.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
-  $core.bool hasVersionUpdateTime() => $_has(2);
+  $core.bool hasVersionDate() => $_has(2);
   @$pb.TagNumber(3)
-  void clearVersionUpdateTime() => clearField(3);
+  void clearVersionDate() => clearField(3);
   @$pb.TagNumber(3)
-  $7.Timestamp ensureVersionUpdateTime() => $_ensure(2);
+  $7.Timestamp ensureVersionDate() => $_ensure(2);
 
   /// set by server and can't be updated
   @$pb.TagNumber(4)
@@ -4552,7 +4552,7 @@ class App extends $pb.GeneratedMessage {
 
   /// map of WellKnownAppInfoSource to source_app_id
   @$pb.TagNumber(5)
-  $core.Map<$core.String, $core.String> get boundAppSource => $_getMap(4);
+  $core.Map<$core.String, $core.String> get appSources => $_getMap(4);
 
   /// false by default, public app makes it visible to others
   @$pb.TagNumber(6)
@@ -4568,27 +4568,27 @@ class App extends $pb.GeneratedMessage {
   /// when created by user, leave it empty
   /// when created by store, set it to the store app id
   @$pb.TagNumber(7)
-  $8.InternalID get boundStoreApp => $_getN(6);
+  $8.InternalID get boundStoreAppId => $_getN(6);
   @$pb.TagNumber(7)
-  set boundStoreApp($8.InternalID v) { setField(7, v); }
+  set boundStoreAppId($8.InternalID v) { setField(7, v); }
   @$pb.TagNumber(7)
-  $core.bool hasBoundStoreApp() => $_has(6);
+  $core.bool hasBoundStoreAppId() => $_has(6);
   @$pb.TagNumber(7)
-  void clearBoundStoreApp() => clearField(7);
+  void clearBoundStoreAppId() => clearField(7);
   @$pb.TagNumber(7)
-  $8.InternalID ensureBoundStoreApp() => $_ensure(6);
+  $8.InternalID ensureBoundStoreAppId() => $_ensure(6);
 
   /// only valid when bound_store_app is set, default is false
   /// if not stop, the app is managed by the store and can't be updated by user
-  /// if stop, user can get full control of the app, but the bound relationship can't be removed
+  /// if stopped, user can get full control of the app, but the bound relationship can't be removed
   @$pb.TagNumber(8)
-  $core.bool get stopStoreManaging => $_getBF(7);
+  $core.bool get stopStoreManage => $_getBF(7);
   @$pb.TagNumber(8)
-  set stopStoreManaging($core.bool v) { $_setBool(7, v); }
+  set stopStoreManage($core.bool v) { $_setBool(7, v); }
   @$pb.TagNumber(8)
-  $core.bool hasStopStoreManaging() => $_has(7);
+  $core.bool hasStopStoreManage() => $_has(7);
   @$pb.TagNumber(8)
-  void clearStopStoreManaging() => clearField(8);
+  void clearStopStoreManage() => clearField(8);
 
   @$pb.TagNumber(20)
   $core.String get name => $_getSZ(8);
@@ -4708,7 +4708,7 @@ class AppCategory extends $pb.GeneratedMessage {
   factory AppCategory({
     $8.InternalID? id,
     $fixnum.Int64? versionNumber,
-    $7.Timestamp? versionUpdateTime,
+    $7.Timestamp? versionDate,
     $core.String? name,
     $core.Iterable<$8.InternalID>? appIds,
   }) {
@@ -4719,8 +4719,8 @@ class AppCategory extends $pb.GeneratedMessage {
     if (versionNumber != null) {
       $result.versionNumber = versionNumber;
     }
-    if (versionUpdateTime != null) {
-      $result.versionUpdateTime = versionUpdateTime;
+    if (versionDate != null) {
+      $result.versionDate = versionDate;
     }
     if (name != null) {
       $result.name = name;
@@ -4737,7 +4737,7 @@ class AppCategory extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AppCategory', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
     ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $8.InternalID.create)
     ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'versionNumber', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOM<$7.Timestamp>(3, _omitFieldNames ? '' : 'versionUpdateTime', subBuilder: $7.Timestamp.create)
+    ..aOM<$7.Timestamp>(3, _omitFieldNames ? '' : 'versionDate', subBuilder: $7.Timestamp.create)
     ..aOS(10, _omitFieldNames ? '' : 'name')
     ..pc<$8.InternalID>(11, _omitFieldNames ? '' : 'appIds', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
     ..hasRequiredFields = false
@@ -4787,15 +4787,15 @@ class AppCategory extends $pb.GeneratedMessage {
   void clearVersionNumber() => clearField(2);
 
   @$pb.TagNumber(3)
-  $7.Timestamp get versionUpdateTime => $_getN(2);
+  $7.Timestamp get versionDate => $_getN(2);
   @$pb.TagNumber(3)
-  set versionUpdateTime($7.Timestamp v) { setField(3, v); }
+  set versionDate($7.Timestamp v) { setField(3, v); }
   @$pb.TagNumber(3)
-  $core.bool hasVersionUpdateTime() => $_has(2);
+  $core.bool hasVersionDate() => $_has(2);
   @$pb.TagNumber(3)
-  void clearVersionUpdateTime() => clearField(3);
+  void clearVersionDate() => clearField(3);
   @$pb.TagNumber(3)
-  $7.Timestamp ensureVersionUpdateTime() => $_ensure(2);
+  $7.Timestamp ensureVersionDate() => $_ensure(2);
 
   @$pb.TagNumber(10)
   $core.String get name => $_getSZ(3);

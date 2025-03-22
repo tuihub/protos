@@ -41,16 +41,13 @@ const UserType$json = {
     {'1': 'USER_TYPE_UNSPECIFIED', '2': 0},
     {'1': 'USER_TYPE_ADMIN', '2': 1},
     {'1': 'USER_TYPE_NORMAL', '2': 2},
-    {'1': 'USER_TYPE_SENTINEL', '2': 3},
-    {'1': 'USER_TYPE_PORTER', '2': 4},
   ],
 };
 
 /// Descriptor for `UserType`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List userTypeDescriptor = $convert.base64Decode(
     'CghVc2VyVHlwZRIZChVVU0VSX1RZUEVfVU5TUEVDSUZJRUQQABITCg9VU0VSX1RZUEVfQURNSU'
-    '4QARIUChBVU0VSX1RZUEVfTk9STUFMEAISFgoSVVNFUl9UWVBFX1NFTlRJTkVMEAMSFAoQVVNF'
-    'Ul9UWVBFX1BPUlRFUhAE');
+    '4QARIUChBVU0VSX1RZUEVfTk9STUFMEAI=');
 
 @$core.Deprecated('Use userStatusDescriptor instead')
 const UserStatus$json = {
@@ -499,15 +496,16 @@ const ListPorterDigestsResponse$json = {
   '1': 'ListPorterDigestsResponse',
   '2': [
     {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingResponse', '10': 'paging'},
-    {'1': 'porter_groups', '3': 2, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.sephirah.PorterDigest', '10': 'porterGroups'},
+    {'1': 'porter_digests', '3': 2, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.sephirah.PorterDigest', '10': 'porterDigests'},
   ],
 };
 
 /// Descriptor for `ListPorterDigestsResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List listPorterDigestsResponseDescriptor = $convert.base64Decode(
     'ChlMaXN0UG9ydGVyRGlnZXN0c1Jlc3BvbnNlEjQKBnBhZ2luZxgBIAEoCzIcLmxpYnJhcmlhbi'
-    '52MS5QYWdpbmdSZXNwb25zZVIGcGFnaW5nElEKDXBvcnRlcl9ncm91cHMYAiADKAsyLC5saWJy'
-    'YXJpYW4uc2VwaGlyYWgudjEuc2VwaGlyYWguUG9ydGVyRGlnZXN0Ugxwb3J0ZXJHcm91cHM=');
+    '52MS5QYWdpbmdSZXNwb25zZVIGcGFnaW5nElMKDnBvcnRlcl9kaWdlc3RzGAIgAygLMiwubGli'
+    'cmFyaWFuLnNlcGhpcmFoLnYxLnNlcGhpcmFoLlBvcnRlckRpZ2VzdFINcG9ydGVyRGlnZXN0cw'
+    '==');
 
 @$core.Deprecated('Use createPorterContextRequestDescriptor instead')
 const CreatePorterContextRequest$json = {

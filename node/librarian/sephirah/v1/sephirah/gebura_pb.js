@@ -14719,12 +14719,12 @@ proto.librarian.sephirah.v1.sephirah.App.toObject = function(includeInstance, ms
   var f, obj = {
 id: (f = msg.getId()) && librarian_v1_wellknown_pb.InternalID.toObject(includeInstance, f),
 versionNumber: jspb.Message.getFieldWithDefault(msg, 2, 0),
-versionUpdateTime: (f = msg.getVersionUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+versionDate: (f = msg.getVersionDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 creatorDeviceId: (f = msg.getCreatorDeviceId()) && librarian_v1_wellknown_pb.InternalID.toObject(includeInstance, f),
-boundAppSourceMap: (f = msg.getBoundAppSourceMap()) ? f.toObject(includeInstance, undefined) : [],
+appSourcesMap: (f = msg.getAppSourcesMap()) ? f.toObject(includeInstance, undefined) : [],
 pb_public: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-boundStoreApp: (f = msg.getBoundStoreApp()) && librarian_v1_wellknown_pb.InternalID.toObject(includeInstance, f),
-stopStoreManaging: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f,
+boundStoreAppId: (f = msg.getBoundStoreAppId()) && librarian_v1_wellknown_pb.InternalID.toObject(includeInstance, f),
+stopStoreManage: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f,
 name: jspb.Message.getFieldWithDefault(msg, 20, ""),
 type: jspb.Message.getFieldWithDefault(msg, 21, 0),
 description: jspb.Message.getFieldWithDefault(msg, 22, ""),
@@ -14786,7 +14786,7 @@ proto.librarian.sephirah.v1.sephirah.App.deserializeBinaryFromReader = function(
     case 3:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setVersionUpdateTime(value);
+      msg.setVersionDate(value);
       break;
     case 4:
       var value = new librarian_v1_wellknown_pb.InternalID;
@@ -14794,7 +14794,7 @@ proto.librarian.sephirah.v1.sephirah.App.deserializeBinaryFromReader = function(
       msg.setCreatorDeviceId(value);
       break;
     case 5:
-      var value = msg.getBoundAppSourceMap();
+      var value = msg.getAppSourcesMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
@@ -14806,11 +14806,11 @@ proto.librarian.sephirah.v1.sephirah.App.deserializeBinaryFromReader = function(
     case 7:
       var value = new librarian_v1_wellknown_pb.InternalID;
       reader.readMessage(value,librarian_v1_wellknown_pb.InternalID.deserializeBinaryFromReader);
-      msg.setBoundStoreApp(value);
+      msg.setBoundStoreAppId(value);
       break;
     case 8:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setStopStoreManaging(value);
+      msg.setStopStoreManage(value);
       break;
     case 20:
       var value = /** @type {string} */ (reader.readString());
@@ -14911,7 +14911,7 @@ proto.librarian.sephirah.v1.sephirah.App.serializeBinaryToWriter = function(mess
       f
     );
   }
-  f = message.getVersionUpdateTime();
+  f = message.getVersionDate();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -14927,7 +14927,7 @@ proto.librarian.sephirah.v1.sephirah.App.serializeBinaryToWriter = function(mess
       librarian_v1_wellknown_pb.InternalID.serializeBinaryToWriter
     );
   }
-  f = message.getBoundAppSourceMap(true);
+  f = message.getAppSourcesMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(5, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
@@ -14938,7 +14938,7 @@ proto.librarian.sephirah.v1.sephirah.App.serializeBinaryToWriter = function(mess
       f
     );
   }
-  f = message.getBoundStoreApp();
+  f = message.getBoundStoreAppId();
   if (f != null) {
     writer.writeMessage(
       7,
@@ -15106,10 +15106,10 @@ proto.librarian.sephirah.v1.sephirah.App.prototype.setVersionNumber = function(v
 
 
 /**
- * optional google.protobuf.Timestamp version_update_time = 3;
+ * optional google.protobuf.Timestamp version_date = 3;
  * @return {?proto.google.protobuf.Timestamp}
  */
-proto.librarian.sephirah.v1.sephirah.App.prototype.getVersionUpdateTime = function() {
+proto.librarian.sephirah.v1.sephirah.App.prototype.getVersionDate = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
     jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 3));
 };
@@ -15119,7 +15119,7 @@ proto.librarian.sephirah.v1.sephirah.App.prototype.getVersionUpdateTime = functi
  * @param {?proto.google.protobuf.Timestamp|undefined} value
  * @return {!proto.librarian.sephirah.v1.sephirah.App} returns this
 */
-proto.librarian.sephirah.v1.sephirah.App.prototype.setVersionUpdateTime = function(value) {
+proto.librarian.sephirah.v1.sephirah.App.prototype.setVersionDate = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
 };
 
@@ -15128,8 +15128,8 @@ proto.librarian.sephirah.v1.sephirah.App.prototype.setVersionUpdateTime = functi
  * Clears the message field making it undefined.
  * @return {!proto.librarian.sephirah.v1.sephirah.App} returns this
  */
-proto.librarian.sephirah.v1.sephirah.App.prototype.clearVersionUpdateTime = function() {
-  return this.setVersionUpdateTime(undefined);
+proto.librarian.sephirah.v1.sephirah.App.prototype.clearVersionDate = function() {
+  return this.setVersionDate(undefined);
 };
 
 
@@ -15137,7 +15137,7 @@ proto.librarian.sephirah.v1.sephirah.App.prototype.clearVersionUpdateTime = func
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.librarian.sephirah.v1.sephirah.App.prototype.hasVersionUpdateTime = function() {
+proto.librarian.sephirah.v1.sephirah.App.prototype.hasVersionDate = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -15180,12 +15180,12 @@ proto.librarian.sephirah.v1.sephirah.App.prototype.hasCreatorDeviceId = function
 
 
 /**
- * map<string, string> bound_app_source = 5;
+ * map<string, string> app_sources = 5;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
-proto.librarian.sephirah.v1.sephirah.App.prototype.getBoundAppSourceMap = function(opt_noLazyCreate) {
+proto.librarian.sephirah.v1.sephirah.App.prototype.getAppSourcesMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
       jspb.Message.getMapField(this, 5, opt_noLazyCreate,
       null));
@@ -15196,8 +15196,8 @@ proto.librarian.sephirah.v1.sephirah.App.prototype.getBoundAppSourceMap = functi
  * Clears values from the map. The map will be non-null.
  * @return {!proto.librarian.sephirah.v1.sephirah.App} returns this
  */
-proto.librarian.sephirah.v1.sephirah.App.prototype.clearBoundAppSourceMap = function() {
-  this.getBoundAppSourceMap().clear();
+proto.librarian.sephirah.v1.sephirah.App.prototype.clearAppSourcesMap = function() {
+  this.getAppSourcesMap().clear();
   return this;
 };
 
@@ -15221,10 +15221,10 @@ proto.librarian.sephirah.v1.sephirah.App.prototype.setPublic = function(value) {
 
 
 /**
- * optional librarian.v1.InternalID bound_store_app = 7;
+ * optional librarian.v1.InternalID bound_store_app_id = 7;
  * @return {?proto.librarian.v1.InternalID}
  */
-proto.librarian.sephirah.v1.sephirah.App.prototype.getBoundStoreApp = function() {
+proto.librarian.sephirah.v1.sephirah.App.prototype.getBoundStoreAppId = function() {
   return /** @type{?proto.librarian.v1.InternalID} */ (
     jspb.Message.getWrapperField(this, librarian_v1_wellknown_pb.InternalID, 7));
 };
@@ -15234,7 +15234,7 @@ proto.librarian.sephirah.v1.sephirah.App.prototype.getBoundStoreApp = function()
  * @param {?proto.librarian.v1.InternalID|undefined} value
  * @return {!proto.librarian.sephirah.v1.sephirah.App} returns this
 */
-proto.librarian.sephirah.v1.sephirah.App.prototype.setBoundStoreApp = function(value) {
+proto.librarian.sephirah.v1.sephirah.App.prototype.setBoundStoreAppId = function(value) {
   return jspb.Message.setWrapperField(this, 7, value);
 };
 
@@ -15243,8 +15243,8 @@ proto.librarian.sephirah.v1.sephirah.App.prototype.setBoundStoreApp = function(v
  * Clears the message field making it undefined.
  * @return {!proto.librarian.sephirah.v1.sephirah.App} returns this
  */
-proto.librarian.sephirah.v1.sephirah.App.prototype.clearBoundStoreApp = function() {
-  return this.setBoundStoreApp(undefined);
+proto.librarian.sephirah.v1.sephirah.App.prototype.clearBoundStoreAppId = function() {
+  return this.setBoundStoreAppId(undefined);
 };
 
 
@@ -15252,16 +15252,16 @@ proto.librarian.sephirah.v1.sephirah.App.prototype.clearBoundStoreApp = function
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.librarian.sephirah.v1.sephirah.App.prototype.hasBoundStoreApp = function() {
+proto.librarian.sephirah.v1.sephirah.App.prototype.hasBoundStoreAppId = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional bool stop_store_managing = 8;
+ * optional bool stop_store_manage = 8;
  * @return {boolean}
  */
-proto.librarian.sephirah.v1.sephirah.App.prototype.getStopStoreManaging = function() {
+proto.librarian.sephirah.v1.sephirah.App.prototype.getStopStoreManage = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
 };
 
@@ -15270,7 +15270,7 @@ proto.librarian.sephirah.v1.sephirah.App.prototype.getStopStoreManaging = functi
  * @param {boolean} value
  * @return {!proto.librarian.sephirah.v1.sephirah.App} returns this
  */
-proto.librarian.sephirah.v1.sephirah.App.prototype.setStopStoreManaging = function(value) {
+proto.librarian.sephirah.v1.sephirah.App.prototype.setStopStoreManage = function(value) {
   return jspb.Message.setField(this, 8, value);
 };
 
@@ -15279,7 +15279,7 @@ proto.librarian.sephirah.v1.sephirah.App.prototype.setStopStoreManaging = functi
  * Clears the field making it undefined.
  * @return {!proto.librarian.sephirah.v1.sephirah.App} returns this
  */
-proto.librarian.sephirah.v1.sephirah.App.prototype.clearStopStoreManaging = function() {
+proto.librarian.sephirah.v1.sephirah.App.prototype.clearStopStoreManage = function() {
   return jspb.Message.setField(this, 8, undefined);
 };
 
@@ -15288,7 +15288,7 @@ proto.librarian.sephirah.v1.sephirah.App.prototype.clearStopStoreManaging = func
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.librarian.sephirah.v1.sephirah.App.prototype.hasStopStoreManaging = function() {
+proto.librarian.sephirah.v1.sephirah.App.prototype.hasStopStoreManage = function() {
   return jspb.Message.getField(this, 8) != null;
 };
 
@@ -15663,7 +15663,7 @@ proto.librarian.sephirah.v1.sephirah.AppCategory.toObject = function(includeInst
   var f, obj = {
 id: (f = msg.getId()) && librarian_v1_wellknown_pb.InternalID.toObject(includeInstance, f),
 versionNumber: jspb.Message.getFieldWithDefault(msg, 2, 0),
-versionUpdateTime: (f = msg.getVersionUpdateTime()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+versionDate: (f = msg.getVersionDate()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 name: jspb.Message.getFieldWithDefault(msg, 10, ""),
 appIdsList: jspb.Message.toObjectList(msg.getAppIdsList(),
     librarian_v1_wellknown_pb.InternalID.toObject, includeInstance)
@@ -15715,7 +15715,7 @@ proto.librarian.sephirah.v1.sephirah.AppCategory.deserializeBinaryFromReader = f
     case 3:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
-      msg.setVersionUpdateTime(value);
+      msg.setVersionDate(value);
       break;
     case 10:
       var value = /** @type {string} */ (reader.readString());
@@ -15770,7 +15770,7 @@ proto.librarian.sephirah.v1.sephirah.AppCategory.serializeBinaryToWriter = funct
       f
     );
   }
-  f = message.getVersionUpdateTime();
+  f = message.getVersionDate();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -15852,10 +15852,10 @@ proto.librarian.sephirah.v1.sephirah.AppCategory.prototype.setVersionNumber = fu
 
 
 /**
- * optional google.protobuf.Timestamp version_update_time = 3;
+ * optional google.protobuf.Timestamp version_date = 3;
  * @return {?proto.google.protobuf.Timestamp}
  */
-proto.librarian.sephirah.v1.sephirah.AppCategory.prototype.getVersionUpdateTime = function() {
+proto.librarian.sephirah.v1.sephirah.AppCategory.prototype.getVersionDate = function() {
   return /** @type{?proto.google.protobuf.Timestamp} */ (
     jspb.Message.getWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 3));
 };
@@ -15865,7 +15865,7 @@ proto.librarian.sephirah.v1.sephirah.AppCategory.prototype.getVersionUpdateTime 
  * @param {?proto.google.protobuf.Timestamp|undefined} value
  * @return {!proto.librarian.sephirah.v1.sephirah.AppCategory} returns this
 */
-proto.librarian.sephirah.v1.sephirah.AppCategory.prototype.setVersionUpdateTime = function(value) {
+proto.librarian.sephirah.v1.sephirah.AppCategory.prototype.setVersionDate = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
 };
 
@@ -15874,8 +15874,8 @@ proto.librarian.sephirah.v1.sephirah.AppCategory.prototype.setVersionUpdateTime 
  * Clears the message field making it undefined.
  * @return {!proto.librarian.sephirah.v1.sephirah.AppCategory} returns this
  */
-proto.librarian.sephirah.v1.sephirah.AppCategory.prototype.clearVersionUpdateTime = function() {
-  return this.setVersionUpdateTime(undefined);
+proto.librarian.sephirah.v1.sephirah.AppCategory.prototype.clearVersionDate = function() {
+  return this.setVersionDate(undefined);
 };
 
 
@@ -15883,7 +15883,7 @@ proto.librarian.sephirah.v1.sephirah.AppCategory.prototype.clearVersionUpdateTim
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.librarian.sephirah.v1.sephirah.AppCategory.prototype.hasVersionUpdateTime = function() {
+proto.librarian.sephirah.v1.sephirah.AppCategory.prototype.hasVersionDate = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 

@@ -1510,14 +1510,14 @@ class ListPorterDigestsRequest extends $pb.GeneratedMessage {
 class ListPorterDigestsResponse extends $pb.GeneratedMessage {
   factory ListPorterDigestsResponse({
     $8.PagingResponse? paging,
-    $core.Iterable<PorterDigest>? porterGroups,
+    $core.Iterable<PorterDigest>? porterDigests,
   }) {
     final $result = create();
     if (paging != null) {
       $result.paging = paging;
     }
-    if (porterGroups != null) {
-      $result.porterGroups.addAll(porterGroups);
+    if (porterDigests != null) {
+      $result.porterDigests.addAll(porterDigests);
     }
     return $result;
   }
@@ -1527,7 +1527,7 @@ class ListPorterDigestsResponse extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListPorterDigestsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
     ..aOM<$8.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $8.PagingResponse.create)
-    ..pc<PorterDigest>(2, _omitFieldNames ? '' : 'porterGroups', $pb.PbFieldType.PM, subBuilder: PorterDigest.create)
+    ..pc<PorterDigest>(2, _omitFieldNames ? '' : 'porterDigests', $pb.PbFieldType.PM, subBuilder: PorterDigest.create)
     ..hasRequiredFields = false
   ;
 
@@ -1564,7 +1564,7 @@ class ListPorterDigestsResponse extends $pb.GeneratedMessage {
   $8.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<PorterDigest> get porterGroups => $_getList(1);
+  $core.List<PorterDigest> get porterDigests => $_getList(1);
 }
 
 class CreatePorterContextRequest extends $pb.GeneratedMessage {

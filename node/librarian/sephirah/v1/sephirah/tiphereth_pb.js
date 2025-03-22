@@ -5300,7 +5300,7 @@ proto.librarian.sephirah.v1.sephirah.ListPorterDigestsResponse.prototype.toObjec
 proto.librarian.sephirah.v1.sephirah.ListPorterDigestsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
 paging: (f = msg.getPaging()) && librarian_v1_wellknown_pb.PagingResponse.toObject(includeInstance, f),
-porterGroupsList: jspb.Message.toObjectList(msg.getPorterGroupsList(),
+porterDigestsList: jspb.Message.toObjectList(msg.getPorterDigestsList(),
     proto.librarian.sephirah.v1.sephirah.PorterDigest.toObject, includeInstance)
   };
 
@@ -5346,7 +5346,7 @@ proto.librarian.sephirah.v1.sephirah.ListPorterDigestsResponse.deserializeBinary
     case 2:
       var value = new proto.librarian.sephirah.v1.sephirah.PorterDigest;
       reader.readMessage(value,proto.librarian.sephirah.v1.sephirah.PorterDigest.deserializeBinaryFromReader);
-      msg.addPorterGroups(value);
+      msg.addPorterDigests(value);
       break;
     default:
       reader.skipField();
@@ -5385,7 +5385,7 @@ proto.librarian.sephirah.v1.sephirah.ListPorterDigestsResponse.serializeBinaryTo
       librarian_v1_wellknown_pb.PagingResponse.serializeBinaryToWriter
     );
   }
-  f = message.getPorterGroupsList();
+  f = message.getPorterDigestsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       2,
@@ -5434,10 +5434,10 @@ proto.librarian.sephirah.v1.sephirah.ListPorterDigestsResponse.prototype.hasPagi
 
 
 /**
- * repeated PorterDigest porter_groups = 2;
+ * repeated PorterDigest porter_digests = 2;
  * @return {!Array<!proto.librarian.sephirah.v1.sephirah.PorterDigest>}
  */
-proto.librarian.sephirah.v1.sephirah.ListPorterDigestsResponse.prototype.getPorterGroupsList = function() {
+proto.librarian.sephirah.v1.sephirah.ListPorterDigestsResponse.prototype.getPorterDigestsList = function() {
   return /** @type{!Array<!proto.librarian.sephirah.v1.sephirah.PorterDigest>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.librarian.sephirah.v1.sephirah.PorterDigest, 2));
 };
@@ -5447,7 +5447,7 @@ proto.librarian.sephirah.v1.sephirah.ListPorterDigestsResponse.prototype.getPort
  * @param {!Array<!proto.librarian.sephirah.v1.sephirah.PorterDigest>} value
  * @return {!proto.librarian.sephirah.v1.sephirah.ListPorterDigestsResponse} returns this
 */
-proto.librarian.sephirah.v1.sephirah.ListPorterDigestsResponse.prototype.setPorterGroupsList = function(value) {
+proto.librarian.sephirah.v1.sephirah.ListPorterDigestsResponse.prototype.setPorterDigestsList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
@@ -5457,7 +5457,7 @@ proto.librarian.sephirah.v1.sephirah.ListPorterDigestsResponse.prototype.setPort
  * @param {number=} opt_index
  * @return {!proto.librarian.sephirah.v1.sephirah.PorterDigest}
  */
-proto.librarian.sephirah.v1.sephirah.ListPorterDigestsResponse.prototype.addPorterGroups = function(opt_value, opt_index) {
+proto.librarian.sephirah.v1.sephirah.ListPorterDigestsResponse.prototype.addPorterDigests = function(opt_value, opt_index) {
   return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.librarian.sephirah.v1.sephirah.PorterDigest, opt_index);
 };
 
@@ -5466,8 +5466,8 @@ proto.librarian.sephirah.v1.sephirah.ListPorterDigestsResponse.prototype.addPort
  * Clears the list making it empty but non-null.
  * @return {!proto.librarian.sephirah.v1.sephirah.ListPorterDigestsResponse} returns this
  */
-proto.librarian.sephirah.v1.sephirah.ListPorterDigestsResponse.prototype.clearPorterGroupsList = function() {
-  return this.setPorterGroupsList([]);
+proto.librarian.sephirah.v1.sephirah.ListPorterDigestsResponse.prototype.clearPorterDigestsList = function() {
+  return this.setPorterDigestsList([]);
 };
 
 
@@ -9145,9 +9145,7 @@ proto.librarian.sephirah.v1.sephirah.SystemType = {
 proto.librarian.sephirah.v1.sephirah.UserType = {
   USER_TYPE_UNSPECIFIED: 0,
   USER_TYPE_ADMIN: 1,
-  USER_TYPE_NORMAL: 2,
-  USER_TYPE_SENTINEL: 3,
-  USER_TYPE_PORTER: 4
+  USER_TYPE_NORMAL: 2
 };
 
 /**

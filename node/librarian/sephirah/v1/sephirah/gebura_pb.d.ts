@@ -1844,30 +1844,30 @@ export class App extends jspb.Message {
   getVersionNumber(): number;
   setVersionNumber(value: number): void;
 
-  hasVersionUpdateTime(): boolean;
-  clearVersionUpdateTime(): void;
-  getVersionUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setVersionUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  hasVersionDate(): boolean;
+  clearVersionDate(): void;
+  getVersionDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setVersionDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
   hasCreatorDeviceId(): boolean;
   clearCreatorDeviceId(): void;
   getCreatorDeviceId(): librarian_v1_wellknown_pb.InternalID | undefined;
   setCreatorDeviceId(value?: librarian_v1_wellknown_pb.InternalID): void;
 
-  getBoundAppSourceMap(): jspb.Map<string, string>;
-  clearBoundAppSourceMap(): void;
+  getAppSourcesMap(): jspb.Map<string, string>;
+  clearAppSourcesMap(): void;
   getPublic(): boolean;
   setPublic(value: boolean): void;
 
-  hasBoundStoreApp(): boolean;
-  clearBoundStoreApp(): void;
-  getBoundStoreApp(): librarian_v1_wellknown_pb.InternalID | undefined;
-  setBoundStoreApp(value?: librarian_v1_wellknown_pb.InternalID): void;
+  hasBoundStoreAppId(): boolean;
+  clearBoundStoreAppId(): void;
+  getBoundStoreAppId(): librarian_v1_wellknown_pb.InternalID | undefined;
+  setBoundStoreAppId(value?: librarian_v1_wellknown_pb.InternalID): void;
 
-  hasStopStoreManaging(): boolean;
-  clearStopStoreManaging(): void;
-  getStopStoreManaging(): boolean;
-  setStopStoreManaging(value: boolean): void;
+  hasStopStoreManage(): boolean;
+  clearStopStoreManage(): void;
+  getStopStoreManage(): boolean;
+  setStopStoreManage(value: boolean): void;
 
   getName(): string;
   setName(value: string): void;
@@ -1932,12 +1932,12 @@ export namespace App {
   export type AsObject = {
     id?: librarian_v1_wellknown_pb.InternalID.AsObject,
     versionNumber: number,
-    versionUpdateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    versionDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     creatorDeviceId?: librarian_v1_wellknown_pb.InternalID.AsObject,
-    boundAppSourceMap: Array<[string, string]>,
+    appSourcesMap: Array<[string, string]>,
     pb_public: boolean,
-    boundStoreApp?: librarian_v1_wellknown_pb.InternalID.AsObject,
-    stopStoreManaging: boolean,
+    boundStoreAppId?: librarian_v1_wellknown_pb.InternalID.AsObject,
+    stopStoreManage: boolean,
     name: string,
     type: AppTypeMap[keyof AppTypeMap],
     description: string,
@@ -1963,10 +1963,10 @@ export class AppCategory extends jspb.Message {
   getVersionNumber(): number;
   setVersionNumber(value: number): void;
 
-  hasVersionUpdateTime(): boolean;
-  clearVersionUpdateTime(): void;
-  getVersionUpdateTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setVersionUpdateTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+  hasVersionDate(): boolean;
+  clearVersionDate(): void;
+  getVersionDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setVersionDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
   getName(): string;
   setName(value: string): void;
@@ -1990,7 +1990,7 @@ export namespace AppCategory {
   export type AsObject = {
     id?: librarian_v1_wellknown_pb.InternalID.AsObject,
     versionNumber: number,
-    versionUpdateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    versionDate?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     name: string,
     appIdsList: Array<librarian_v1_wellknown_pb.InternalID.AsObject>,
   }
