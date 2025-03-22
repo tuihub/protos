@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.1](https://github.com/tuihub/protos/compare/v0.5.0...v0.5.1) (2025-03-22)
+
+
+### Bug Fixes
+
+* update App ([f64a6e6](https://github.com/tuihub/protos/commit/f64a6e613f1dd7749b7c1097bf474d58c5ae6ea5))
+
 ## [0.5.0](https://github.com/tuihub/protos/compare/v0.4.28...v0.5.0) (2025-03-10)
 
 
