@@ -377,21 +377,21 @@ message App {
   // version number is used to check if the app is updated
   // set by server and always increase when updated
   uint64 version_number = 2;
-  google.protobuf.Timestamp version_update_time = 3;
+  google.protobuf.Timestamp version_date = 3;
   // set by server and can't be updated
   librarian.v1.InternalID creator_device_id = 4;
   // map of WellKnownAppInfoSource to source_app_id
-  map<string, string> bound_app_source = 5;
+  map<string, string> app_sources = 5;
   // false by default, public app makes it visible to others
   bool public = 6;
   // set by server and can't be updated
   // when created by user, leave it empty
   // when created by store, set it to the store app id
-  optional librarian.v1.InternalID bound_store_app = 7;
+  optional librarian.v1.InternalID bound_store_app_id = 7;
   // only valid when bound_store_app is set, default is false
   // if not stop, the app is managed by the store and can't be updated by user
-  // if stop, user can get full control of the app, but the bound relationship can't be removed
-  optional bool stop_store_managing = 8;
+  // if stopped, user can get full control of the app, but the bound relationship can't be removed
+  optional bool stop_store_manage = 8;
 
   string name = 20;
   AppType type = 21;
@@ -421,7 +421,7 @@ message AppCategory {
   // version number is used to check if the app is updated
   // set by server and always increase when updated
   uint64 version_number = 2;
-  google.protobuf.Timestamp version_update_time = 3;
+  google.protobuf.Timestamp version_date = 3;
 
   string name = 10;
   // Full update
