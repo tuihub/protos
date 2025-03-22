@@ -34,28 +34,6 @@ function deserialize_librarian_sephirah_v1_sephirah_AcquireStoreAppResponse(buff
   return librarian_sephirah_v1_sephirah_gebura_pb.AcquireStoreAppResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_sephirah_AddFeedItemToCollectionRequest(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_sephirah_yesod_pb.AddFeedItemToCollectionRequest)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.sephirah.AddFeedItemToCollectionRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_librarian_sephirah_v1_sephirah_AddFeedItemToCollectionRequest(buffer_arg) {
-  return librarian_sephirah_v1_sephirah_yesod_pb.AddFeedItemToCollectionRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_librarian_sephirah_v1_sephirah_AddFeedItemToCollectionResponse(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_sephirah_yesod_pb.AddFeedItemToCollectionResponse)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.sephirah.AddFeedItemToCollectionResponse');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_librarian_sephirah_v1_sephirah_AddFeedItemToCollectionResponse(buffer_arg) {
-  return librarian_sephirah_v1_sephirah_yesod_pb.AddFeedItemToCollectionResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
 function serialize_librarian_sephirah_v1_sephirah_BatchCreateAppRunTimeRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_sephirah_gebura_pb.BatchCreateAppRunTimeRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.sephirah.BatchCreateAppRunTimeRequest');
@@ -166,28 +144,6 @@ function deserialize_librarian_sephirah_v1_sephirah_CreateFeedConfigResponse(buf
   return librarian_sephirah_v1_sephirah_yesod_pb.CreateFeedConfigResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_sephirah_CreateFeedItemCollectionRequest(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_sephirah_yesod_pb.CreateFeedItemCollectionRequest)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.sephirah.CreateFeedItemCollectionRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_librarian_sephirah_v1_sephirah_CreateFeedItemCollectionRequest(buffer_arg) {
-  return librarian_sephirah_v1_sephirah_yesod_pb.CreateFeedItemCollectionRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_librarian_sephirah_v1_sephirah_CreateFeedItemCollectionResponse(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_sephirah_yesod_pb.CreateFeedItemCollectionResponse)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.sephirah.CreateFeedItemCollectionResponse');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_librarian_sephirah_v1_sephirah_CreateFeedItemCollectionResponse(buffer_arg) {
-  return librarian_sephirah_v1_sephirah_yesod_pb.CreateFeedItemCollectionResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
 function serialize_librarian_sephirah_v1_sephirah_CreateNotifyFlowRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_sephirah_netzach_pb.CreateNotifyFlowRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.sephirah.CreateNotifyFlowRequest');
@@ -208,6 +164,28 @@ function serialize_librarian_sephirah_v1_sephirah_CreateNotifyFlowResponse(arg) 
 
 function deserialize_librarian_sephirah_v1_sephirah_CreateNotifyFlowResponse(buffer_arg) {
   return librarian_sephirah_v1_sephirah_netzach_pb.CreateNotifyFlowResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_sephirah_CreateNotifySourceRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_sephirah_netzach_pb.CreateNotifySourceRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.sephirah.CreateNotifySourceRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_sephirah_CreateNotifySourceRequest(buffer_arg) {
+  return librarian_sephirah_v1_sephirah_netzach_pb.CreateNotifySourceRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_sephirah_CreateNotifySourceResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_sephirah_netzach_pb.CreateNotifySourceResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.sephirah.CreateNotifySourceResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_sephirah_CreateNotifySourceResponse(buffer_arg) {
+  return librarian_sephirah_v1_sephirah_netzach_pb.CreateNotifySourceResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_sephirah_v1_sephirah_CreateNotifyTargetRequest(arg) {
@@ -826,50 +804,6 @@ function deserialize_librarian_sephirah_v1_sephirah_ListFeedConfigsResponse(buff
   return librarian_sephirah_v1_sephirah_yesod_pb.ListFeedConfigsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_sephirah_ListFeedItemCollectionsRequest(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_sephirah_yesod_pb.ListFeedItemCollectionsRequest)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.sephirah.ListFeedItemCollectionsRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_librarian_sephirah_v1_sephirah_ListFeedItemCollectionsRequest(buffer_arg) {
-  return librarian_sephirah_v1_sephirah_yesod_pb.ListFeedItemCollectionsRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_librarian_sephirah_v1_sephirah_ListFeedItemCollectionsResponse(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_sephirah_yesod_pb.ListFeedItemCollectionsResponse)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.sephirah.ListFeedItemCollectionsResponse');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_librarian_sephirah_v1_sephirah_ListFeedItemCollectionsResponse(buffer_arg) {
-  return librarian_sephirah_v1_sephirah_yesod_pb.ListFeedItemCollectionsResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_librarian_sephirah_v1_sephirah_ListFeedItemsInCollectionRequest(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_sephirah_yesod_pb.ListFeedItemsInCollectionRequest)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.sephirah.ListFeedItemsInCollectionRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_librarian_sephirah_v1_sephirah_ListFeedItemsInCollectionRequest(buffer_arg) {
-  return librarian_sephirah_v1_sephirah_yesod_pb.ListFeedItemsInCollectionRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_librarian_sephirah_v1_sephirah_ListFeedItemsInCollectionResponse(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_sephirah_yesod_pb.ListFeedItemsInCollectionResponse)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.sephirah.ListFeedItemsInCollectionResponse');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_librarian_sephirah_v1_sephirah_ListFeedItemsInCollectionResponse(buffer_arg) {
-  return librarian_sephirah_v1_sephirah_yesod_pb.ListFeedItemsInCollectionResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
 function serialize_librarian_sephirah_v1_sephirah_ListFeedItemsRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_sephirah_yesod_pb.ListFeedItemsRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.sephirah.ListFeedItemsRequest');
@@ -978,6 +912,28 @@ function serialize_librarian_sephirah_v1_sephirah_ListNotifyFlowsResponse(arg) {
 
 function deserialize_librarian_sephirah_v1_sephirah_ListNotifyFlowsResponse(buffer_arg) {
   return librarian_sephirah_v1_sephirah_netzach_pb.ListNotifyFlowsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_sephirah_ListNotifySourcesRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_sephirah_netzach_pb.ListNotifySourcesRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.sephirah.ListNotifySourcesRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_sephirah_ListNotifySourcesRequest(buffer_arg) {
+  return librarian_sephirah_v1_sephirah_netzach_pb.ListNotifySourcesRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_sephirah_ListNotifySourcesResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_sephirah_netzach_pb.ListNotifySourcesResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.sephirah.ListNotifySourcesResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_sephirah_ListNotifySourcesResponse(buffer_arg) {
+  return librarian_sephirah_v1_sephirah_netzach_pb.ListNotifySourcesResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_sephirah_v1_sephirah_ListNotifyTargetsRequest(arg) {
@@ -1354,28 +1310,6 @@ function deserialize_librarian_sephirah_v1_sephirah_RegisterUserResponse(buffer_
   return librarian_sephirah_v1_sephirah_tiphereth_pb.RegisterUserResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_sephirah_RemoveFeedItemFromCollectionRequest(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_sephirah_yesod_pb.RemoveFeedItemFromCollectionRequest)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.sephirah.RemoveFeedItemFromCollectionRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_librarian_sephirah_v1_sephirah_RemoveFeedItemFromCollectionRequest(buffer_arg) {
-  return librarian_sephirah_v1_sephirah_yesod_pb.RemoveFeedItemFromCollectionRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_librarian_sephirah_v1_sephirah_RemoveFeedItemFromCollectionResponse(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_sephirah_yesod_pb.RemoveFeedItemFromCollectionResponse)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.sephirah.RemoveFeedItemFromCollectionResponse');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_librarian_sephirah_v1_sephirah_RemoveFeedItemFromCollectionResponse(buffer_arg) {
-  return librarian_sephirah_v1_sephirah_yesod_pb.RemoveFeedItemFromCollectionResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
 function serialize_librarian_sephirah_v1_sephirah_SearchAppInfosRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_sephirah_gebura_pb.SearchAppInfosRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.sephirah.SearchAppInfosRequest');
@@ -1662,26 +1596,26 @@ function deserialize_librarian_sephirah_v1_sephirah_UpdateFeedConfigResponse(buf
   return librarian_sephirah_v1_sephirah_yesod_pb.UpdateFeedConfigResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_sephirah_UpdateFeedItemCollectionRequest(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_sephirah_yesod_pb.UpdateFeedItemCollectionRequest)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.sephirah.UpdateFeedItemCollectionRequest');
+function serialize_librarian_sephirah_v1_sephirah_UpdateFeedItemTagsRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_sephirah_yesod_pb.UpdateFeedItemTagsRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.sephirah.UpdateFeedItemTagsRequest');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_librarian_sephirah_v1_sephirah_UpdateFeedItemCollectionRequest(buffer_arg) {
-  return librarian_sephirah_v1_sephirah_yesod_pb.UpdateFeedItemCollectionRequest.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_librarian_sephirah_v1_sephirah_UpdateFeedItemTagsRequest(buffer_arg) {
+  return librarian_sephirah_v1_sephirah_yesod_pb.UpdateFeedItemTagsRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_sephirah_UpdateFeedItemCollectionResponse(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_sephirah_yesod_pb.UpdateFeedItemCollectionResponse)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.sephirah.UpdateFeedItemCollectionResponse');
+function serialize_librarian_sephirah_v1_sephirah_UpdateFeedItemTagsResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_sephirah_yesod_pb.UpdateFeedItemTagsResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.sephirah.UpdateFeedItemTagsResponse');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_librarian_sephirah_v1_sephirah_UpdateFeedItemCollectionResponse(buffer_arg) {
-  return librarian_sephirah_v1_sephirah_yesod_pb.UpdateFeedItemCollectionResponse.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_librarian_sephirah_v1_sephirah_UpdateFeedItemTagsResponse(buffer_arg) {
+  return librarian_sephirah_v1_sephirah_yesod_pb.UpdateFeedItemTagsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_sephirah_v1_sephirah_UpdateImageRequest(arg) {
@@ -1726,6 +1660,28 @@ function serialize_librarian_sephirah_v1_sephirah_UpdateNotifyFlowResponse(arg) 
 
 function deserialize_librarian_sephirah_v1_sephirah_UpdateNotifyFlowResponse(buffer_arg) {
   return librarian_sephirah_v1_sephirah_netzach_pb.UpdateNotifyFlowResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_sephirah_UpdateNotifySourceRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_sephirah_netzach_pb.UpdateNotifySourceRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.sephirah.UpdateNotifySourceRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_sephirah_UpdateNotifySourceRequest(buffer_arg) {
+  return librarian_sephirah_v1_sephirah_netzach_pb.UpdateNotifySourceRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_sephirah_UpdateNotifySourceResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_sephirah_netzach_pb.UpdateNotifySourceResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.sephirah.UpdateNotifySourceResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_sephirah_UpdateNotifySourceResponse(buffer_arg) {
+  return librarian_sephirah_v1_sephirah_netzach_pb.UpdateNotifySourceResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_sephirah_v1_sephirah_UpdateNotifyTargetRequest(arg) {
@@ -2617,6 +2573,42 @@ deleteAppCategory: {
     responseDeserialize: deserialize_librarian_sephirah_v1_sephirah_DeleteAppCategoryResponse,
   },
   // `Netzach` `Normal`
+createNotifySource: {
+    path: '/librarian.sephirah.v1.sephirah.LibrarianSephirahService/CreateNotifySource',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_sephirah_netzach_pb.CreateNotifySourceRequest,
+    responseType: librarian_sephirah_v1_sephirah_netzach_pb.CreateNotifySourceResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_sephirah_CreateNotifySourceRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_sephirah_CreateNotifySourceRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_sephirah_CreateNotifySourceResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_sephirah_CreateNotifySourceResponse,
+  },
+  // `Netzach` `Normal`
+updateNotifySource: {
+    path: '/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UpdateNotifySource',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_sephirah_netzach_pb.UpdateNotifySourceRequest,
+    responseType: librarian_sephirah_v1_sephirah_netzach_pb.UpdateNotifySourceResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_sephirah_UpdateNotifySourceRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_sephirah_UpdateNotifySourceRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_sephirah_UpdateNotifySourceResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_sephirah_UpdateNotifySourceResponse,
+  },
+  // `Netzach` `Normal`
+listNotifySources: {
+    path: '/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListNotifySources',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_sephirah_netzach_pb.ListNotifySourcesRequest,
+    responseType: librarian_sephirah_v1_sephirah_netzach_pb.ListNotifySourcesResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_sephirah_ListNotifySourcesRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_sephirah_ListNotifySourcesRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_sephirah_ListNotifySourcesResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_sephirah_ListNotifySourcesResponse,
+  },
+  // `Netzach` `Normal`
 createNotifyTarget: {
     path: '/librarian.sephirah.v1.sephirah.LibrarianSephirahService/CreateNotifyTarget',
     requestStream: false,
@@ -2857,76 +2849,16 @@ readFeedItem: {
     responseDeserialize: deserialize_librarian_sephirah_v1_sephirah_ReadFeedItemResponse,
   },
   // `Yesod` `Normal`
-createFeedItemCollection: {
-    path: '/librarian.sephirah.v1.sephirah.LibrarianSephirahService/CreateFeedItemCollection',
+updateFeedItemTags: {
+    path: '/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UpdateFeedItemTags',
     requestStream: false,
     responseStream: false,
-    requestType: librarian_sephirah_v1_sephirah_yesod_pb.CreateFeedItemCollectionRequest,
-    responseType: librarian_sephirah_v1_sephirah_yesod_pb.CreateFeedItemCollectionResponse,
-    requestSerialize: serialize_librarian_sephirah_v1_sephirah_CreateFeedItemCollectionRequest,
-    requestDeserialize: deserialize_librarian_sephirah_v1_sephirah_CreateFeedItemCollectionRequest,
-    responseSerialize: serialize_librarian_sephirah_v1_sephirah_CreateFeedItemCollectionResponse,
-    responseDeserialize: deserialize_librarian_sephirah_v1_sephirah_CreateFeedItemCollectionResponse,
-  },
-  // `Yesod` `Normal`
-updateFeedItemCollection: {
-    path: '/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UpdateFeedItemCollection',
-    requestStream: false,
-    responseStream: false,
-    requestType: librarian_sephirah_v1_sephirah_yesod_pb.UpdateFeedItemCollectionRequest,
-    responseType: librarian_sephirah_v1_sephirah_yesod_pb.UpdateFeedItemCollectionResponse,
-    requestSerialize: serialize_librarian_sephirah_v1_sephirah_UpdateFeedItemCollectionRequest,
-    requestDeserialize: deserialize_librarian_sephirah_v1_sephirah_UpdateFeedItemCollectionRequest,
-    responseSerialize: serialize_librarian_sephirah_v1_sephirah_UpdateFeedItemCollectionResponse,
-    responseDeserialize: deserialize_librarian_sephirah_v1_sephirah_UpdateFeedItemCollectionResponse,
-  },
-  // `Yesod` `Normal`
-listFeedItemCollections: {
-    path: '/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListFeedItemCollections',
-    requestStream: false,
-    responseStream: false,
-    requestType: librarian_sephirah_v1_sephirah_yesod_pb.ListFeedItemCollectionsRequest,
-    responseType: librarian_sephirah_v1_sephirah_yesod_pb.ListFeedItemCollectionsResponse,
-    requestSerialize: serialize_librarian_sephirah_v1_sephirah_ListFeedItemCollectionsRequest,
-    requestDeserialize: deserialize_librarian_sephirah_v1_sephirah_ListFeedItemCollectionsRequest,
-    responseSerialize: serialize_librarian_sephirah_v1_sephirah_ListFeedItemCollectionsResponse,
-    responseDeserialize: deserialize_librarian_sephirah_v1_sephirah_ListFeedItemCollectionsResponse,
-  },
-  // `Yesod` `Normal`
-addFeedItemToCollection: {
-    path: '/librarian.sephirah.v1.sephirah.LibrarianSephirahService/AddFeedItemToCollection',
-    requestStream: false,
-    responseStream: false,
-    requestType: librarian_sephirah_v1_sephirah_yesod_pb.AddFeedItemToCollectionRequest,
-    responseType: librarian_sephirah_v1_sephirah_yesod_pb.AddFeedItemToCollectionResponse,
-    requestSerialize: serialize_librarian_sephirah_v1_sephirah_AddFeedItemToCollectionRequest,
-    requestDeserialize: deserialize_librarian_sephirah_v1_sephirah_AddFeedItemToCollectionRequest,
-    responseSerialize: serialize_librarian_sephirah_v1_sephirah_AddFeedItemToCollectionResponse,
-    responseDeserialize: deserialize_librarian_sephirah_v1_sephirah_AddFeedItemToCollectionResponse,
-  },
-  // `Yesod` `Normal`
-removeFeedItemFromCollection: {
-    path: '/librarian.sephirah.v1.sephirah.LibrarianSephirahService/RemoveFeedItemFromCollection',
-    requestStream: false,
-    responseStream: false,
-    requestType: librarian_sephirah_v1_sephirah_yesod_pb.RemoveFeedItemFromCollectionRequest,
-    responseType: librarian_sephirah_v1_sephirah_yesod_pb.RemoveFeedItemFromCollectionResponse,
-    requestSerialize: serialize_librarian_sephirah_v1_sephirah_RemoveFeedItemFromCollectionRequest,
-    requestDeserialize: deserialize_librarian_sephirah_v1_sephirah_RemoveFeedItemFromCollectionRequest,
-    responseSerialize: serialize_librarian_sephirah_v1_sephirah_RemoveFeedItemFromCollectionResponse,
-    responseDeserialize: deserialize_librarian_sephirah_v1_sephirah_RemoveFeedItemFromCollectionResponse,
-  },
-  // `Yesod` `Normal`
-listFeedItemsInCollection: {
-    path: '/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListFeedItemsInCollection',
-    requestStream: false,
-    responseStream: false,
-    requestType: librarian_sephirah_v1_sephirah_yesod_pb.ListFeedItemsInCollectionRequest,
-    responseType: librarian_sephirah_v1_sephirah_yesod_pb.ListFeedItemsInCollectionResponse,
-    requestSerialize: serialize_librarian_sephirah_v1_sephirah_ListFeedItemsInCollectionRequest,
-    requestDeserialize: deserialize_librarian_sephirah_v1_sephirah_ListFeedItemsInCollectionRequest,
-    responseSerialize: serialize_librarian_sephirah_v1_sephirah_ListFeedItemsInCollectionResponse,
-    responseDeserialize: deserialize_librarian_sephirah_v1_sephirah_ListFeedItemsInCollectionResponse,
+    requestType: librarian_sephirah_v1_sephirah_yesod_pb.UpdateFeedItemTagsRequest,
+    responseType: librarian_sephirah_v1_sephirah_yesod_pb.UpdateFeedItemTagsResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_sephirah_UpdateFeedItemTagsRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_sephirah_UpdateFeedItemTagsRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_sephirah_UpdateFeedItemTagsResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_sephirah_UpdateFeedItemTagsResponse,
   },
 };
 

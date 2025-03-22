@@ -19,91 +19,89 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	LibrarianSephirahService_GetServerInformation_FullMethodName         = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/GetServerInformation"
-	LibrarianSephirahService_ListenServerEvent_FullMethodName            = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListenServerEvent"
-	LibrarianSephirahService_GetToken_FullMethodName                     = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/GetToken"
-	LibrarianSephirahService_RefreshToken_FullMethodName                 = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/RefreshToken"
-	LibrarianSephirahService_GetUser_FullMethodName                      = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/GetUser"
-	LibrarianSephirahService_RegisterUser_FullMethodName                 = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/RegisterUser"
-	LibrarianSephirahService_UpdateUser_FullMethodName                   = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UpdateUser"
-	LibrarianSephirahService_RegisterDevice_FullMethodName               = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/RegisterDevice"
-	LibrarianSephirahService_ListUserSessions_FullMethodName             = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListUserSessions"
-	LibrarianSephirahService_DeleteUserSession_FullMethodName            = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/DeleteUserSession"
-	LibrarianSephirahService_LinkAccount_FullMethodName                  = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/LinkAccount"
-	LibrarianSephirahService_UnLinkAccount_FullMethodName                = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UnLinkAccount"
-	LibrarianSephirahService_ListLinkAccounts_FullMethodName             = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListLinkAccounts"
-	LibrarianSephirahService_ListPorterDigests_FullMethodName            = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListPorterDigests"
-	LibrarianSephirahService_CreatePorterContext_FullMethodName          = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/CreatePorterContext"
-	LibrarianSephirahService_ListPorterContexts_FullMethodName           = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListPorterContexts"
-	LibrarianSephirahService_UpdatePorterContext_FullMethodName          = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UpdatePorterContext"
-	LibrarianSephirahService_GetStorageCapacityUsage_FullMethodName      = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/GetStorageCapacityUsage"
-	LibrarianSephirahService_UploadFile_FullMethodName                   = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UploadFile"
-	LibrarianSephirahService_DownloadFile_FullMethodName                 = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/DownloadFile"
-	LibrarianSephirahService_SimpleUploadFile_FullMethodName             = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/SimpleUploadFile"
-	LibrarianSephirahService_SimpleDownloadFile_FullMethodName           = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/SimpleDownloadFile"
-	LibrarianSephirahService_PresignedUploadFile_FullMethodName          = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/PresignedUploadFile"
-	LibrarianSephirahService_PresignedUploadFileStatus_FullMethodName    = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/PresignedUploadFileStatus"
-	LibrarianSephirahService_PresignedDownloadFile_FullMethodName        = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/PresignedDownloadFile"
-	LibrarianSephirahService_UploadImage_FullMethodName                  = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UploadImage"
-	LibrarianSephirahService_UpdateImage_FullMethodName                  = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UpdateImage"
-	LibrarianSephirahService_ListImages_FullMethodName                   = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListImages"
-	LibrarianSephirahService_SearchImages_FullMethodName                 = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/SearchImages"
-	LibrarianSephirahService_GetImage_FullMethodName                     = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/GetImage"
-	LibrarianSephirahService_DownloadImage_FullMethodName                = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/DownloadImage"
-	LibrarianSephirahService_SearchStoreApps_FullMethodName              = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/SearchStoreApps"
-	LibrarianSephirahService_GetStoreAppSummary_FullMethodName           = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/GetStoreAppSummary"
-	LibrarianSephirahService_AcquireStoreApp_FullMethodName              = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/AcquireStoreApp"
-	LibrarianSephirahService_ListStoreAppBinaries_FullMethodName         = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListStoreAppBinaries"
-	LibrarianSephirahService_ListStoreAppBinaryFiles_FullMethodName      = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListStoreAppBinaryFiles"
-	LibrarianSephirahService_DownloadStoreAppBinary_FullMethodName       = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/DownloadStoreAppBinary"
-	LibrarianSephirahService_ListStoreAppSaveFiles_FullMethodName        = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListStoreAppSaveFiles"
-	LibrarianSephirahService_DownloadStoreAppSaveFile_FullMethodName     = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/DownloadStoreAppSaveFile"
-	LibrarianSephirahService_SearchAppInfos_FullMethodName               = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/SearchAppInfos"
-	LibrarianSephirahService_CreateApp_FullMethodName                    = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/CreateApp"
-	LibrarianSephirahService_UpdateApp_FullMethodName                    = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UpdateApp"
-	LibrarianSephirahService_ListApps_FullMethodName                     = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListApps"
-	LibrarianSephirahService_BatchCreateAppRunTime_FullMethodName        = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/BatchCreateAppRunTime"
-	LibrarianSephirahService_SumAppRunTime_FullMethodName                = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/SumAppRunTime"
-	LibrarianSephirahService_ListAppRunTimes_FullMethodName              = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListAppRunTimes"
-	LibrarianSephirahService_DeleteAppRunTime_FullMethodName             = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/DeleteAppRunTime"
-	LibrarianSephirahService_UploadAppSaveFile_FullMethodName            = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UploadAppSaveFile"
-	LibrarianSephirahService_DownloadAppSaveFile_FullMethodName          = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/DownloadAppSaveFile"
-	LibrarianSephirahService_ListAppSaveFiles_FullMethodName             = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListAppSaveFiles"
-	LibrarianSephirahService_DeleteAppSaveFile_FullMethodName            = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/DeleteAppSaveFile"
-	LibrarianSephirahService_PinAppSaveFile_FullMethodName               = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/PinAppSaveFile"
-	LibrarianSephirahService_UnpinAppSaveFile_FullMethodName             = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UnpinAppSaveFile"
-	LibrarianSephirahService_GetAppSaveFileCapacity_FullMethodName       = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/GetAppSaveFileCapacity"
-	LibrarianSephirahService_SetAppSaveFileCapacity_FullMethodName       = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/SetAppSaveFileCapacity"
-	LibrarianSephirahService_ListAppCategories_FullMethodName            = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListAppCategories"
-	LibrarianSephirahService_CreateAppCategory_FullMethodName            = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/CreateAppCategory"
-	LibrarianSephirahService_UpdateAppCategory_FullMethodName            = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UpdateAppCategory"
-	LibrarianSephirahService_DeleteAppCategory_FullMethodName            = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/DeleteAppCategory"
-	LibrarianSephirahService_CreateNotifyTarget_FullMethodName           = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/CreateNotifyTarget"
-	LibrarianSephirahService_UpdateNotifyTarget_FullMethodName           = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UpdateNotifyTarget"
-	LibrarianSephirahService_ListNotifyTargets_FullMethodName            = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListNotifyTargets"
-	LibrarianSephirahService_CreateNotifyFlow_FullMethodName             = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/CreateNotifyFlow"
-	LibrarianSephirahService_UpdateNotifyFlow_FullMethodName             = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UpdateNotifyFlow"
-	LibrarianSephirahService_ListNotifyFlows_FullMethodName              = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListNotifyFlows"
-	LibrarianSephirahService_ListSystemNotifications_FullMethodName      = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListSystemNotifications"
-	LibrarianSephirahService_UpdateSystemNotification_FullMethodName     = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UpdateSystemNotification"
-	LibrarianSephirahService_CreateFeedConfig_FullMethodName             = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/CreateFeedConfig"
-	LibrarianSephirahService_UpdateFeedConfig_FullMethodName             = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UpdateFeedConfig"
-	LibrarianSephirahService_ListFeedConfigs_FullMethodName              = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListFeedConfigs"
-	LibrarianSephirahService_CreateFeedActionSet_FullMethodName          = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/CreateFeedActionSet"
-	LibrarianSephirahService_UpdateFeedActionSet_FullMethodName          = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UpdateFeedActionSet"
-	LibrarianSephirahService_ListFeedActionSets_FullMethodName           = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListFeedActionSets"
-	LibrarianSephirahService_ListFeedCategories_FullMethodName           = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListFeedCategories"
-	LibrarianSephirahService_ListFeedPlatforms_FullMethodName            = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListFeedPlatforms"
-	LibrarianSephirahService_ListFeedItems_FullMethodName                = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListFeedItems"
-	LibrarianSephirahService_GetFeedItem_FullMethodName                  = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/GetFeedItem"
-	LibrarianSephirahService_GetBatchFeedItems_FullMethodName            = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/GetBatchFeedItems"
-	LibrarianSephirahService_ReadFeedItem_FullMethodName                 = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ReadFeedItem"
-	LibrarianSephirahService_CreateFeedItemCollection_FullMethodName     = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/CreateFeedItemCollection"
-	LibrarianSephirahService_UpdateFeedItemCollection_FullMethodName     = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UpdateFeedItemCollection"
-	LibrarianSephirahService_ListFeedItemCollections_FullMethodName      = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListFeedItemCollections"
-	LibrarianSephirahService_AddFeedItemToCollection_FullMethodName      = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/AddFeedItemToCollection"
-	LibrarianSephirahService_RemoveFeedItemFromCollection_FullMethodName = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/RemoveFeedItemFromCollection"
-	LibrarianSephirahService_ListFeedItemsInCollection_FullMethodName    = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListFeedItemsInCollection"
+	LibrarianSephirahService_GetServerInformation_FullMethodName      = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/GetServerInformation"
+	LibrarianSephirahService_ListenServerEvent_FullMethodName         = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListenServerEvent"
+	LibrarianSephirahService_GetToken_FullMethodName                  = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/GetToken"
+	LibrarianSephirahService_RefreshToken_FullMethodName              = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/RefreshToken"
+	LibrarianSephirahService_GetUser_FullMethodName                   = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/GetUser"
+	LibrarianSephirahService_RegisterUser_FullMethodName              = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/RegisterUser"
+	LibrarianSephirahService_UpdateUser_FullMethodName                = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UpdateUser"
+	LibrarianSephirahService_RegisterDevice_FullMethodName            = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/RegisterDevice"
+	LibrarianSephirahService_ListUserSessions_FullMethodName          = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListUserSessions"
+	LibrarianSephirahService_DeleteUserSession_FullMethodName         = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/DeleteUserSession"
+	LibrarianSephirahService_LinkAccount_FullMethodName               = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/LinkAccount"
+	LibrarianSephirahService_UnLinkAccount_FullMethodName             = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UnLinkAccount"
+	LibrarianSephirahService_ListLinkAccounts_FullMethodName          = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListLinkAccounts"
+	LibrarianSephirahService_ListPorterDigests_FullMethodName         = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListPorterDigests"
+	LibrarianSephirahService_CreatePorterContext_FullMethodName       = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/CreatePorterContext"
+	LibrarianSephirahService_ListPorterContexts_FullMethodName        = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListPorterContexts"
+	LibrarianSephirahService_UpdatePorterContext_FullMethodName       = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UpdatePorterContext"
+	LibrarianSephirahService_GetStorageCapacityUsage_FullMethodName   = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/GetStorageCapacityUsage"
+	LibrarianSephirahService_UploadFile_FullMethodName                = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UploadFile"
+	LibrarianSephirahService_DownloadFile_FullMethodName              = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/DownloadFile"
+	LibrarianSephirahService_SimpleUploadFile_FullMethodName          = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/SimpleUploadFile"
+	LibrarianSephirahService_SimpleDownloadFile_FullMethodName        = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/SimpleDownloadFile"
+	LibrarianSephirahService_PresignedUploadFile_FullMethodName       = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/PresignedUploadFile"
+	LibrarianSephirahService_PresignedUploadFileStatus_FullMethodName = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/PresignedUploadFileStatus"
+	LibrarianSephirahService_PresignedDownloadFile_FullMethodName     = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/PresignedDownloadFile"
+	LibrarianSephirahService_UploadImage_FullMethodName               = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UploadImage"
+	LibrarianSephirahService_UpdateImage_FullMethodName               = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UpdateImage"
+	LibrarianSephirahService_ListImages_FullMethodName                = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListImages"
+	LibrarianSephirahService_SearchImages_FullMethodName              = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/SearchImages"
+	LibrarianSephirahService_GetImage_FullMethodName                  = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/GetImage"
+	LibrarianSephirahService_DownloadImage_FullMethodName             = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/DownloadImage"
+	LibrarianSephirahService_SearchStoreApps_FullMethodName           = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/SearchStoreApps"
+	LibrarianSephirahService_GetStoreAppSummary_FullMethodName        = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/GetStoreAppSummary"
+	LibrarianSephirahService_AcquireStoreApp_FullMethodName           = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/AcquireStoreApp"
+	LibrarianSephirahService_ListStoreAppBinaries_FullMethodName      = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListStoreAppBinaries"
+	LibrarianSephirahService_ListStoreAppBinaryFiles_FullMethodName   = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListStoreAppBinaryFiles"
+	LibrarianSephirahService_DownloadStoreAppBinary_FullMethodName    = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/DownloadStoreAppBinary"
+	LibrarianSephirahService_ListStoreAppSaveFiles_FullMethodName     = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListStoreAppSaveFiles"
+	LibrarianSephirahService_DownloadStoreAppSaveFile_FullMethodName  = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/DownloadStoreAppSaveFile"
+	LibrarianSephirahService_SearchAppInfos_FullMethodName            = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/SearchAppInfos"
+	LibrarianSephirahService_CreateApp_FullMethodName                 = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/CreateApp"
+	LibrarianSephirahService_UpdateApp_FullMethodName                 = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UpdateApp"
+	LibrarianSephirahService_ListApps_FullMethodName                  = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListApps"
+	LibrarianSephirahService_BatchCreateAppRunTime_FullMethodName     = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/BatchCreateAppRunTime"
+	LibrarianSephirahService_SumAppRunTime_FullMethodName             = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/SumAppRunTime"
+	LibrarianSephirahService_ListAppRunTimes_FullMethodName           = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListAppRunTimes"
+	LibrarianSephirahService_DeleteAppRunTime_FullMethodName          = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/DeleteAppRunTime"
+	LibrarianSephirahService_UploadAppSaveFile_FullMethodName         = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UploadAppSaveFile"
+	LibrarianSephirahService_DownloadAppSaveFile_FullMethodName       = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/DownloadAppSaveFile"
+	LibrarianSephirahService_ListAppSaveFiles_FullMethodName          = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListAppSaveFiles"
+	LibrarianSephirahService_DeleteAppSaveFile_FullMethodName         = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/DeleteAppSaveFile"
+	LibrarianSephirahService_PinAppSaveFile_FullMethodName            = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/PinAppSaveFile"
+	LibrarianSephirahService_UnpinAppSaveFile_FullMethodName          = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UnpinAppSaveFile"
+	LibrarianSephirahService_GetAppSaveFileCapacity_FullMethodName    = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/GetAppSaveFileCapacity"
+	LibrarianSephirahService_SetAppSaveFileCapacity_FullMethodName    = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/SetAppSaveFileCapacity"
+	LibrarianSephirahService_ListAppCategories_FullMethodName         = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListAppCategories"
+	LibrarianSephirahService_CreateAppCategory_FullMethodName         = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/CreateAppCategory"
+	LibrarianSephirahService_UpdateAppCategory_FullMethodName         = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UpdateAppCategory"
+	LibrarianSephirahService_DeleteAppCategory_FullMethodName         = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/DeleteAppCategory"
+	LibrarianSephirahService_CreateNotifySource_FullMethodName        = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/CreateNotifySource"
+	LibrarianSephirahService_UpdateNotifySource_FullMethodName        = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UpdateNotifySource"
+	LibrarianSephirahService_ListNotifySources_FullMethodName         = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListNotifySources"
+	LibrarianSephirahService_CreateNotifyTarget_FullMethodName        = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/CreateNotifyTarget"
+	LibrarianSephirahService_UpdateNotifyTarget_FullMethodName        = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UpdateNotifyTarget"
+	LibrarianSephirahService_ListNotifyTargets_FullMethodName         = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListNotifyTargets"
+	LibrarianSephirahService_CreateNotifyFlow_FullMethodName          = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/CreateNotifyFlow"
+	LibrarianSephirahService_UpdateNotifyFlow_FullMethodName          = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UpdateNotifyFlow"
+	LibrarianSephirahService_ListNotifyFlows_FullMethodName           = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListNotifyFlows"
+	LibrarianSephirahService_ListSystemNotifications_FullMethodName   = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListSystemNotifications"
+	LibrarianSephirahService_UpdateSystemNotification_FullMethodName  = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UpdateSystemNotification"
+	LibrarianSephirahService_CreateFeedConfig_FullMethodName          = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/CreateFeedConfig"
+	LibrarianSephirahService_UpdateFeedConfig_FullMethodName          = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UpdateFeedConfig"
+	LibrarianSephirahService_ListFeedConfigs_FullMethodName           = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListFeedConfigs"
+	LibrarianSephirahService_CreateFeedActionSet_FullMethodName       = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/CreateFeedActionSet"
+	LibrarianSephirahService_UpdateFeedActionSet_FullMethodName       = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UpdateFeedActionSet"
+	LibrarianSephirahService_ListFeedActionSets_FullMethodName        = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListFeedActionSets"
+	LibrarianSephirahService_ListFeedCategories_FullMethodName        = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListFeedCategories"
+	LibrarianSephirahService_ListFeedPlatforms_FullMethodName         = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListFeedPlatforms"
+	LibrarianSephirahService_ListFeedItems_FullMethodName             = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListFeedItems"
+	LibrarianSephirahService_GetFeedItem_FullMethodName               = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/GetFeedItem"
+	LibrarianSephirahService_GetBatchFeedItems_FullMethodName         = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/GetBatchFeedItems"
+	LibrarianSephirahService_ReadFeedItem_FullMethodName              = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ReadFeedItem"
+	LibrarianSephirahService_UpdateFeedItemTags_FullMethodName        = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UpdateFeedItemTags"
 )
 
 // LibrarianSephirahServiceClient is the client API for LibrarianSephirahService service.
@@ -253,6 +251,12 @@ type LibrarianSephirahServiceClient interface {
 	// `Gebura` `Normal`
 	DeleteAppCategory(ctx context.Context, in *DeleteAppCategoryRequest, opts ...grpc.CallOption) (*DeleteAppCategoryResponse, error)
 	// `Netzach` `Normal`
+	CreateNotifySource(ctx context.Context, in *CreateNotifySourceRequest, opts ...grpc.CallOption) (*CreateNotifySourceResponse, error)
+	// `Netzach` `Normal`
+	UpdateNotifySource(ctx context.Context, in *UpdateNotifySourceRequest, opts ...grpc.CallOption) (*UpdateNotifySourceResponse, error)
+	// `Netzach` `Normal`
+	ListNotifySources(ctx context.Context, in *ListNotifySourcesRequest, opts ...grpc.CallOption) (*ListNotifySourcesResponse, error)
+	// `Netzach` `Normal`
 	CreateNotifyTarget(ctx context.Context, in *CreateNotifyTargetRequest, opts ...grpc.CallOption) (*CreateNotifyTargetResponse, error)
 	// `Netzach` `Normal`
 	UpdateNotifyTarget(ctx context.Context, in *UpdateNotifyTargetRequest, opts ...grpc.CallOption) (*UpdateNotifyTargetResponse, error)
@@ -293,17 +297,7 @@ type LibrarianSephirahServiceClient interface {
 	// `Yesod` `Normal`
 	ReadFeedItem(ctx context.Context, in *ReadFeedItemRequest, opts ...grpc.CallOption) (*ReadFeedItemResponse, error)
 	// `Yesod` `Normal`
-	CreateFeedItemCollection(ctx context.Context, in *CreateFeedItemCollectionRequest, opts ...grpc.CallOption) (*CreateFeedItemCollectionResponse, error)
-	// `Yesod` `Normal`
-	UpdateFeedItemCollection(ctx context.Context, in *UpdateFeedItemCollectionRequest, opts ...grpc.CallOption) (*UpdateFeedItemCollectionResponse, error)
-	// `Yesod` `Normal`
-	ListFeedItemCollections(ctx context.Context, in *ListFeedItemCollectionsRequest, opts ...grpc.CallOption) (*ListFeedItemCollectionsResponse, error)
-	// `Yesod` `Normal`
-	AddFeedItemToCollection(ctx context.Context, in *AddFeedItemToCollectionRequest, opts ...grpc.CallOption) (*AddFeedItemToCollectionResponse, error)
-	// `Yesod` `Normal`
-	RemoveFeedItemFromCollection(ctx context.Context, in *RemoveFeedItemFromCollectionRequest, opts ...grpc.CallOption) (*RemoveFeedItemFromCollectionResponse, error)
-	// `Yesod` `Normal`
-	ListFeedItemsInCollection(ctx context.Context, in *ListFeedItemsInCollectionRequest, opts ...grpc.CallOption) (*ListFeedItemsInCollectionResponse, error)
+	UpdateFeedItemTags(ctx context.Context, in *UpdateFeedItemTagsRequest, opts ...grpc.CallOption) (*UpdateFeedItemTagsResponse, error)
 }
 
 type librarianSephirahServiceClient struct {
@@ -931,6 +925,36 @@ func (c *librarianSephirahServiceClient) DeleteAppCategory(ctx context.Context, 
 	return out, nil
 }
 
+func (c *librarianSephirahServiceClient) CreateNotifySource(ctx context.Context, in *CreateNotifySourceRequest, opts ...grpc.CallOption) (*CreateNotifySourceResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(CreateNotifySourceResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_CreateNotifySource_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) UpdateNotifySource(ctx context.Context, in *UpdateNotifySourceRequest, opts ...grpc.CallOption) (*UpdateNotifySourceResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(UpdateNotifySourceResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_UpdateNotifySource_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSephirahServiceClient) ListNotifySources(ctx context.Context, in *ListNotifySourcesRequest, opts ...grpc.CallOption) (*ListNotifySourcesResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ListNotifySourcesResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_ListNotifySources_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *librarianSephirahServiceClient) CreateNotifyTarget(ctx context.Context, in *CreateNotifyTargetRequest, opts ...grpc.CallOption) (*CreateNotifyTargetResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(CreateNotifyTargetResponse)
@@ -1131,60 +1155,10 @@ func (c *librarianSephirahServiceClient) ReadFeedItem(ctx context.Context, in *R
 	return out, nil
 }
 
-func (c *librarianSephirahServiceClient) CreateFeedItemCollection(ctx context.Context, in *CreateFeedItemCollectionRequest, opts ...grpc.CallOption) (*CreateFeedItemCollectionResponse, error) {
+func (c *librarianSephirahServiceClient) UpdateFeedItemTags(ctx context.Context, in *UpdateFeedItemTagsRequest, opts ...grpc.CallOption) (*UpdateFeedItemTagsResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(CreateFeedItemCollectionResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_CreateFeedItemCollection_FullMethodName, in, out, cOpts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *librarianSephirahServiceClient) UpdateFeedItemCollection(ctx context.Context, in *UpdateFeedItemCollectionRequest, opts ...grpc.CallOption) (*UpdateFeedItemCollectionResponse, error) {
-	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(UpdateFeedItemCollectionResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_UpdateFeedItemCollection_FullMethodName, in, out, cOpts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *librarianSephirahServiceClient) ListFeedItemCollections(ctx context.Context, in *ListFeedItemCollectionsRequest, opts ...grpc.CallOption) (*ListFeedItemCollectionsResponse, error) {
-	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ListFeedItemCollectionsResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_ListFeedItemCollections_FullMethodName, in, out, cOpts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *librarianSephirahServiceClient) AddFeedItemToCollection(ctx context.Context, in *AddFeedItemToCollectionRequest, opts ...grpc.CallOption) (*AddFeedItemToCollectionResponse, error) {
-	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(AddFeedItemToCollectionResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_AddFeedItemToCollection_FullMethodName, in, out, cOpts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *librarianSephirahServiceClient) RemoveFeedItemFromCollection(ctx context.Context, in *RemoveFeedItemFromCollectionRequest, opts ...grpc.CallOption) (*RemoveFeedItemFromCollectionResponse, error) {
-	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(RemoveFeedItemFromCollectionResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_RemoveFeedItemFromCollection_FullMethodName, in, out, cOpts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *librarianSephirahServiceClient) ListFeedItemsInCollection(ctx context.Context, in *ListFeedItemsInCollectionRequest, opts ...grpc.CallOption) (*ListFeedItemsInCollectionResponse, error) {
-	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ListFeedItemsInCollectionResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_ListFeedItemsInCollection_FullMethodName, in, out, cOpts...)
+	out := new(UpdateFeedItemTagsResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_UpdateFeedItemTags_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1338,6 +1312,12 @@ type LibrarianSephirahServiceServer interface {
 	// `Gebura` `Normal`
 	DeleteAppCategory(context.Context, *DeleteAppCategoryRequest) (*DeleteAppCategoryResponse, error)
 	// `Netzach` `Normal`
+	CreateNotifySource(context.Context, *CreateNotifySourceRequest) (*CreateNotifySourceResponse, error)
+	// `Netzach` `Normal`
+	UpdateNotifySource(context.Context, *UpdateNotifySourceRequest) (*UpdateNotifySourceResponse, error)
+	// `Netzach` `Normal`
+	ListNotifySources(context.Context, *ListNotifySourcesRequest) (*ListNotifySourcesResponse, error)
+	// `Netzach` `Normal`
 	CreateNotifyTarget(context.Context, *CreateNotifyTargetRequest) (*CreateNotifyTargetResponse, error)
 	// `Netzach` `Normal`
 	UpdateNotifyTarget(context.Context, *UpdateNotifyTargetRequest) (*UpdateNotifyTargetResponse, error)
@@ -1378,17 +1358,7 @@ type LibrarianSephirahServiceServer interface {
 	// `Yesod` `Normal`
 	ReadFeedItem(context.Context, *ReadFeedItemRequest) (*ReadFeedItemResponse, error)
 	// `Yesod` `Normal`
-	CreateFeedItemCollection(context.Context, *CreateFeedItemCollectionRequest) (*CreateFeedItemCollectionResponse, error)
-	// `Yesod` `Normal`
-	UpdateFeedItemCollection(context.Context, *UpdateFeedItemCollectionRequest) (*UpdateFeedItemCollectionResponse, error)
-	// `Yesod` `Normal`
-	ListFeedItemCollections(context.Context, *ListFeedItemCollectionsRequest) (*ListFeedItemCollectionsResponse, error)
-	// `Yesod` `Normal`
-	AddFeedItemToCollection(context.Context, *AddFeedItemToCollectionRequest) (*AddFeedItemToCollectionResponse, error)
-	// `Yesod` `Normal`
-	RemoveFeedItemFromCollection(context.Context, *RemoveFeedItemFromCollectionRequest) (*RemoveFeedItemFromCollectionResponse, error)
-	// `Yesod` `Normal`
-	ListFeedItemsInCollection(context.Context, *ListFeedItemsInCollectionRequest) (*ListFeedItemsInCollectionResponse, error)
+	UpdateFeedItemTags(context.Context, *UpdateFeedItemTagsRequest) (*UpdateFeedItemTagsResponse, error)
 	mustEmbedUnimplementedLibrarianSephirahServiceServer()
 }
 
@@ -1576,6 +1546,15 @@ func (UnimplementedLibrarianSephirahServiceServer) UpdateAppCategory(context.Con
 func (UnimplementedLibrarianSephirahServiceServer) DeleteAppCategory(context.Context, *DeleteAppCategoryRequest) (*DeleteAppCategoryResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteAppCategory not implemented")
 }
+func (UnimplementedLibrarianSephirahServiceServer) CreateNotifySource(context.Context, *CreateNotifySourceRequest) (*CreateNotifySourceResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateNotifySource not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) UpdateNotifySource(context.Context, *UpdateNotifySourceRequest) (*UpdateNotifySourceResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateNotifySource not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) ListNotifySources(context.Context, *ListNotifySourcesRequest) (*ListNotifySourcesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ListNotifySources not implemented")
+}
 func (UnimplementedLibrarianSephirahServiceServer) CreateNotifyTarget(context.Context, *CreateNotifyTargetRequest) (*CreateNotifyTargetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateNotifyTarget not implemented")
 }
@@ -1636,23 +1615,8 @@ func (UnimplementedLibrarianSephirahServiceServer) GetBatchFeedItems(context.Con
 func (UnimplementedLibrarianSephirahServiceServer) ReadFeedItem(context.Context, *ReadFeedItemRequest) (*ReadFeedItemResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ReadFeedItem not implemented")
 }
-func (UnimplementedLibrarianSephirahServiceServer) CreateFeedItemCollection(context.Context, *CreateFeedItemCollectionRequest) (*CreateFeedItemCollectionResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateFeedItemCollection not implemented")
-}
-func (UnimplementedLibrarianSephirahServiceServer) UpdateFeedItemCollection(context.Context, *UpdateFeedItemCollectionRequest) (*UpdateFeedItemCollectionResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateFeedItemCollection not implemented")
-}
-func (UnimplementedLibrarianSephirahServiceServer) ListFeedItemCollections(context.Context, *ListFeedItemCollectionsRequest) (*ListFeedItemCollectionsResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListFeedItemCollections not implemented")
-}
-func (UnimplementedLibrarianSephirahServiceServer) AddFeedItemToCollection(context.Context, *AddFeedItemToCollectionRequest) (*AddFeedItemToCollectionResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method AddFeedItemToCollection not implemented")
-}
-func (UnimplementedLibrarianSephirahServiceServer) RemoveFeedItemFromCollection(context.Context, *RemoveFeedItemFromCollectionRequest) (*RemoveFeedItemFromCollectionResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RemoveFeedItemFromCollection not implemented")
-}
-func (UnimplementedLibrarianSephirahServiceServer) ListFeedItemsInCollection(context.Context, *ListFeedItemsInCollectionRequest) (*ListFeedItemsInCollectionResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListFeedItemsInCollection not implemented")
+func (UnimplementedLibrarianSephirahServiceServer) UpdateFeedItemTags(context.Context, *UpdateFeedItemTagsRequest) (*UpdateFeedItemTagsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateFeedItemTags not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) mustEmbedUnimplementedLibrarianSephirahServiceServer() {
 }
@@ -2691,6 +2655,60 @@ func _LibrarianSephirahService_DeleteAppCategory_Handler(srv interface{}, ctx co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LibrarianSephirahService_CreateNotifySource_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateNotifySourceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).CreateNotifySource(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_CreateNotifySource_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).CreateNotifySource(ctx, req.(*CreateNotifySourceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_UpdateNotifySource_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateNotifySourceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).UpdateNotifySource(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_UpdateNotifySource_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).UpdateNotifySource(ctx, req.(*UpdateNotifySourceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_ListNotifySources_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ListNotifySourcesRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).ListNotifySources(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_ListNotifySources_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).ListNotifySources(ctx, req.(*ListNotifySourcesRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _LibrarianSephirahService_CreateNotifyTarget_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateNotifyTargetRequest)
 	if err := dec(in); err != nil {
@@ -3051,110 +3069,20 @@ func _LibrarianSephirahService_ReadFeedItem_Handler(srv interface{}, ctx context
 	return interceptor(ctx, in, info, handler)
 }
 
-func _LibrarianSephirahService_CreateFeedItemCollection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(CreateFeedItemCollectionRequest)
+func _LibrarianSephirahService_UpdateFeedItemTags_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UpdateFeedItemTagsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).CreateFeedItemCollection(ctx, in)
+		return srv.(LibrarianSephirahServiceServer).UpdateFeedItemTags(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: LibrarianSephirahService_CreateFeedItemCollection_FullMethodName,
+		FullMethod: LibrarianSephirahService_UpdateFeedItemTags_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).CreateFeedItemCollection(ctx, req.(*CreateFeedItemCollectionRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _LibrarianSephirahService_UpdateFeedItemCollection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UpdateFeedItemCollectionRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).UpdateFeedItemCollection(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: LibrarianSephirahService_UpdateFeedItemCollection_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).UpdateFeedItemCollection(ctx, req.(*UpdateFeedItemCollectionRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _LibrarianSephirahService_ListFeedItemCollections_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListFeedItemCollectionsRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).ListFeedItemCollections(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: LibrarianSephirahService_ListFeedItemCollections_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).ListFeedItemCollections(ctx, req.(*ListFeedItemCollectionsRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _LibrarianSephirahService_AddFeedItemToCollection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(AddFeedItemToCollectionRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).AddFeedItemToCollection(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: LibrarianSephirahService_AddFeedItemToCollection_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).AddFeedItemToCollection(ctx, req.(*AddFeedItemToCollectionRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _LibrarianSephirahService_RemoveFeedItemFromCollection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(RemoveFeedItemFromCollectionRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).RemoveFeedItemFromCollection(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: LibrarianSephirahService_RemoveFeedItemFromCollection_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).RemoveFeedItemFromCollection(ctx, req.(*RemoveFeedItemFromCollectionRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _LibrarianSephirahService_ListFeedItemsInCollection_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListFeedItemsInCollectionRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).ListFeedItemsInCollection(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: LibrarianSephirahService_ListFeedItemsInCollection_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).ListFeedItemsInCollection(ctx, req.(*ListFeedItemsInCollectionRequest))
+		return srv.(LibrarianSephirahServiceServer).UpdateFeedItemTags(ctx, req.(*UpdateFeedItemTagsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -3383,6 +3311,18 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _LibrarianSephirahService_DeleteAppCategory_Handler,
 		},
 		{
+			MethodName: "CreateNotifySource",
+			Handler:    _LibrarianSephirahService_CreateNotifySource_Handler,
+		},
+		{
+			MethodName: "UpdateNotifySource",
+			Handler:    _LibrarianSephirahService_UpdateNotifySource_Handler,
+		},
+		{
+			MethodName: "ListNotifySources",
+			Handler:    _LibrarianSephirahService_ListNotifySources_Handler,
+		},
+		{
 			MethodName: "CreateNotifyTarget",
 			Handler:    _LibrarianSephirahService_CreateNotifyTarget_Handler,
 		},
@@ -3463,28 +3403,8 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _LibrarianSephirahService_ReadFeedItem_Handler,
 		},
 		{
-			MethodName: "CreateFeedItemCollection",
-			Handler:    _LibrarianSephirahService_CreateFeedItemCollection_Handler,
-		},
-		{
-			MethodName: "UpdateFeedItemCollection",
-			Handler:    _LibrarianSephirahService_UpdateFeedItemCollection_Handler,
-		},
-		{
-			MethodName: "ListFeedItemCollections",
-			Handler:    _LibrarianSephirahService_ListFeedItemCollections_Handler,
-		},
-		{
-			MethodName: "AddFeedItemToCollection",
-			Handler:    _LibrarianSephirahService_AddFeedItemToCollection_Handler,
-		},
-		{
-			MethodName: "RemoveFeedItemFromCollection",
-			Handler:    _LibrarianSephirahService_RemoveFeedItemFromCollection_Handler,
-		},
-		{
-			MethodName: "ListFeedItemsInCollection",
-			Handler:    _LibrarianSephirahService_ListFeedItemsInCollection_Handler,
+			MethodName: "UpdateFeedItemTags",
+			Handler:    _LibrarianSephirahService_UpdateFeedItemTags_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

@@ -1019,6 +1019,9 @@ impl serde::Serialize for FeedItem {
         if self.read_count != 0 {
             len += 1;
         }
+        if !self.tags.is_empty() {
+            len += 1;
+        }
         let mut struct_ser = serializer.serialize_struct("librarian.v1.FeedItem", len)?;
         if let Some(v) = self.id.as_ref() {
             struct_ser.serialize_field("id", v)?;
@@ -1067,6 +1070,9 @@ impl serde::Serialize for FeedItem {
             #[allow(clippy::needless_borrows_for_generic_args)]
             struct_ser.serialize_field("readCount", ToString::to_string(&self.read_count).as_str())?;
         }
+        if !self.tags.is_empty() {
+            struct_ser.serialize_field("tags", &self.tags)?;
+        }
         struct_ser.end()
     }
 }
@@ -1096,6 +1102,7 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
             "publishPlatform",
             "read_count",
             "readCount",
+            "tags",
         ];
 
         #[allow(clippy::enum_variant_names)]
@@ -1115,6 +1122,7 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
             Enclosures,
             PublishPlatform,
             ReadCount,
+            Tags,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -1151,6 +1159,7 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
                             "enclosures" => Ok(GeneratedField::Enclosures),
                             "publishPlatform" | "publish_platform" => Ok(GeneratedField::PublishPlatform),
                             "readCount" | "read_count" => Ok(GeneratedField::ReadCount),
+                            "tags" => Ok(GeneratedField::Tags),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -1185,6 +1194,7 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
                 let mut enclosures__ = None;
                 let mut publish_platform__ = None;
                 let mut read_count__ = None;
+                let mut tags__ = None;
                 while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Id => {
@@ -1279,6 +1289,12 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
                                 Some(map_.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
                             ;
                         }
+                        GeneratedField::Tags => {
+                            if tags__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("tags"));
+                            }
+                            tags__ = Some(map_.next_value()?);
+                        }
                     }
                 }
                 Ok(FeedItem {
@@ -1297,6 +1313,7 @@ impl<'de> serde::Deserialize<'de> for FeedItem {
                     enclosures: enclosures__.unwrap_or_default(),
                     publish_platform: publish_platform__.unwrap_or_default(),
                     read_count: read_count__.unwrap_or_default(),
+                    tags: tags__.unwrap_or_default(),
                 })
             }
         }
@@ -2683,6 +2700,7 @@ impl serde::Serialize for WellKnownNotifyDestination {
         let variant = match self {
             Self::Unspecified => "WELL_KNOWN_NOTIFY_DESTINATION_UNSPECIFIED",
             Self::Telegram => "WELL_KNOWN_NOTIFY_DESTINATION_TELEGRAM",
+            Self::Rss => "WELL_KNOWN_NOTIFY_DESTINATION_RSS",
         };
         serializer.serialize_str(variant)
     }
@@ -2696,6 +2714,7 @@ impl<'de> serde::Deserialize<'de> for WellKnownNotifyDestination {
         const FIELDS: &[&str] = &[
             "WELL_KNOWN_NOTIFY_DESTINATION_UNSPECIFIED",
             "WELL_KNOWN_NOTIFY_DESTINATION_TELEGRAM",
+            "WELL_KNOWN_NOTIFY_DESTINATION_RSS",
         ];
 
         struct GeneratedVisitor;
@@ -2738,6 +2757,81 @@ impl<'de> serde::Deserialize<'de> for WellKnownNotifyDestination {
                 match value {
                     "WELL_KNOWN_NOTIFY_DESTINATION_UNSPECIFIED" => Ok(WellKnownNotifyDestination::Unspecified),
                     "WELL_KNOWN_NOTIFY_DESTINATION_TELEGRAM" => Ok(WellKnownNotifyDestination::Telegram),
+                    "WELL_KNOWN_NOTIFY_DESTINATION_RSS" => Ok(WellKnownNotifyDestination::Rss),
+                    _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
+                }
+            }
+        }
+        deserializer.deserialize_any(GeneratedVisitor)
+    }
+}
+impl serde::Serialize for WellKnownNotifySource {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        let variant = match self {
+            Self::Unspecified => "WELL_KNOWN_NOTIFY_SOURCE_UNSPECIFIED",
+            Self::Feed => "WELL_KNOWN_NOTIFY_SOURCE_FEED",
+            Self::FeedTag => "WELL_KNOWN_NOTIFY_SOURCE_FEED_TAG",
+        };
+        serializer.serialize_str(variant)
+    }
+}
+impl<'de> serde::Deserialize<'de> for WellKnownNotifySource {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "WELL_KNOWN_NOTIFY_SOURCE_UNSPECIFIED",
+            "WELL_KNOWN_NOTIFY_SOURCE_FEED",
+            "WELL_KNOWN_NOTIFY_SOURCE_FEED_TAG",
+        ];
+
+        struct GeneratedVisitor;
+
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = WellKnownNotifySource;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                write!(formatter, "expected one of: {:?}", &FIELDS)
+            }
+
+            fn visit_i64<E>(self, v: i64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                i32::try_from(v)
+                    .ok()
+                    .and_then(|x| x.try_into().ok())
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Signed(v), &self)
+                    })
+            }
+
+            fn visit_u64<E>(self, v: u64) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                i32::try_from(v)
+                    .ok()
+                    .and_then(|x| x.try_into().ok())
+                    .ok_or_else(|| {
+                        serde::de::Error::invalid_value(serde::de::Unexpected::Unsigned(v), &self)
+                    })
+            }
+
+            fn visit_str<E>(self, value: &str) -> std::result::Result<Self::Value, E>
+            where
+                E: serde::de::Error,
+            {
+                match value {
+                    "WELL_KNOWN_NOTIFY_SOURCE_UNSPECIFIED" => Ok(WellKnownNotifySource::Unspecified),
+                    "WELL_KNOWN_NOTIFY_SOURCE_FEED" => Ok(WellKnownNotifySource::Feed),
+                    "WELL_KNOWN_NOTIFY_SOURCE_FEED_TAG" => Ok(WellKnownNotifySource::FeedTag),
                     _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
                 }
             }

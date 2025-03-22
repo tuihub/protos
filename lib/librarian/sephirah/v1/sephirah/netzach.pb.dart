@@ -19,6 +19,322 @@ import 'netzach.pbenum.dart';
 
 export 'netzach.pbenum.dart';
 
+class CreateNotifySourceRequest extends $pb.GeneratedMessage {
+  factory CreateNotifySourceRequest({
+    NotifySource? source,
+  }) {
+    final $result = create();
+    if (source != null) {
+      $result.source = source;
+    }
+    return $result;
+  }
+  CreateNotifySourceRequest._() : super();
+  factory CreateNotifySourceRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateNotifySourceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateNotifySourceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
+    ..aOM<NotifySource>(1, _omitFieldNames ? '' : 'source', subBuilder: NotifySource.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreateNotifySourceRequest clone() => CreateNotifySourceRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreateNotifySourceRequest copyWith(void Function(CreateNotifySourceRequest) updates) => super.copyWith((message) => updates(message as CreateNotifySourceRequest)) as CreateNotifySourceRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateNotifySourceRequest create() => CreateNotifySourceRequest._();
+  CreateNotifySourceRequest createEmptyInstance() => create();
+  static $pb.PbList<CreateNotifySourceRequest> createRepeated() => $pb.PbList<CreateNotifySourceRequest>();
+  @$core.pragma('dart2js:noInline')
+  static CreateNotifySourceRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateNotifySourceRequest>(create);
+  static CreateNotifySourceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  NotifySource get source => $_getN(0);
+  @$pb.TagNumber(1)
+  set source(NotifySource v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSource() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSource() => clearField(1);
+  @$pb.TagNumber(1)
+  NotifySource ensureSource() => $_ensure(0);
+}
+
+class CreateNotifySourceResponse extends $pb.GeneratedMessage {
+  factory CreateNotifySourceResponse({
+    $8.InternalID? id,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    return $result;
+  }
+  CreateNotifySourceResponse._() : super();
+  factory CreateNotifySourceResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory CreateNotifySourceResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateNotifySourceResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
+    ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $8.InternalID.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  CreateNotifySourceResponse clone() => CreateNotifySourceResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  CreateNotifySourceResponse copyWith(void Function(CreateNotifySourceResponse) updates) => super.copyWith((message) => updates(message as CreateNotifySourceResponse)) as CreateNotifySourceResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static CreateNotifySourceResponse create() => CreateNotifySourceResponse._();
+  CreateNotifySourceResponse createEmptyInstance() => create();
+  static $pb.PbList<CreateNotifySourceResponse> createRepeated() => $pb.PbList<CreateNotifySourceResponse>();
+  @$core.pragma('dart2js:noInline')
+  static CreateNotifySourceResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CreateNotifySourceResponse>(create);
+  static CreateNotifySourceResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $8.InternalID get id => $_getN(0);
+  @$pb.TagNumber(1)
+  set id($8.InternalID v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+  @$pb.TagNumber(1)
+  $8.InternalID ensureId() => $_ensure(0);
+}
+
+class UpdateNotifySourceRequest extends $pb.GeneratedMessage {
+  factory UpdateNotifySourceRequest({
+    NotifySource? source,
+  }) {
+    final $result = create();
+    if (source != null) {
+      $result.source = source;
+    }
+    return $result;
+  }
+  UpdateNotifySourceRequest._() : super();
+  factory UpdateNotifySourceRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateNotifySourceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateNotifySourceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
+    ..aOM<NotifySource>(1, _omitFieldNames ? '' : 'source', subBuilder: NotifySource.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateNotifySourceRequest clone() => UpdateNotifySourceRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateNotifySourceRequest copyWith(void Function(UpdateNotifySourceRequest) updates) => super.copyWith((message) => updates(message as UpdateNotifySourceRequest)) as UpdateNotifySourceRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateNotifySourceRequest create() => UpdateNotifySourceRequest._();
+  UpdateNotifySourceRequest createEmptyInstance() => create();
+  static $pb.PbList<UpdateNotifySourceRequest> createRepeated() => $pb.PbList<UpdateNotifySourceRequest>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateNotifySourceRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateNotifySourceRequest>(create);
+  static UpdateNotifySourceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  NotifySource get source => $_getN(0);
+  @$pb.TagNumber(1)
+  set source(NotifySource v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSource() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSource() => clearField(1);
+  @$pb.TagNumber(1)
+  NotifySource ensureSource() => $_ensure(0);
+}
+
+class UpdateNotifySourceResponse extends $pb.GeneratedMessage {
+  factory UpdateNotifySourceResponse() => create();
+  UpdateNotifySourceResponse._() : super();
+  factory UpdateNotifySourceResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory UpdateNotifySourceResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateNotifySourceResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  UpdateNotifySourceResponse clone() => UpdateNotifySourceResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  UpdateNotifySourceResponse copyWith(void Function(UpdateNotifySourceResponse) updates) => super.copyWith((message) => updates(message as UpdateNotifySourceResponse)) as UpdateNotifySourceResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static UpdateNotifySourceResponse create() => UpdateNotifySourceResponse._();
+  UpdateNotifySourceResponse createEmptyInstance() => create();
+  static $pb.PbList<UpdateNotifySourceResponse> createRepeated() => $pb.PbList<UpdateNotifySourceResponse>();
+  @$core.pragma('dart2js:noInline')
+  static UpdateNotifySourceResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateNotifySourceResponse>(create);
+  static UpdateNotifySourceResponse? _defaultInstance;
+}
+
+class ListNotifySourcesRequest extends $pb.GeneratedMessage {
+  factory ListNotifySourcesRequest({
+    $8.PagingRequest? paging,
+    $core.Iterable<$8.InternalID>? idFilter,
+    $core.Iterable<NotifySourceStatus>? statusFilter,
+  }) {
+    final $result = create();
+    if (paging != null) {
+      $result.paging = paging;
+    }
+    if (idFilter != null) {
+      $result.idFilter.addAll(idFilter);
+    }
+    if (statusFilter != null) {
+      $result.statusFilter.addAll(statusFilter);
+    }
+    return $result;
+  }
+  ListNotifySourcesRequest._() : super();
+  factory ListNotifySourcesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListNotifySourcesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListNotifySourcesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
+    ..aOM<$8.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $8.PagingRequest.create)
+    ..pc<$8.InternalID>(2, _omitFieldNames ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
+    ..pc<NotifySourceStatus>(4, _omitFieldNames ? '' : 'statusFilter', $pb.PbFieldType.KE, valueOf: NotifySourceStatus.valueOf, enumValues: NotifySourceStatus.values, defaultEnumValue: NotifySourceStatus.NOTIFY_SOURCE_STATUS_UNSPECIFIED)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListNotifySourcesRequest clone() => ListNotifySourcesRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListNotifySourcesRequest copyWith(void Function(ListNotifySourcesRequest) updates) => super.copyWith((message) => updates(message as ListNotifySourcesRequest)) as ListNotifySourcesRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListNotifySourcesRequest create() => ListNotifySourcesRequest._();
+  ListNotifySourcesRequest createEmptyInstance() => create();
+  static $pb.PbList<ListNotifySourcesRequest> createRepeated() => $pb.PbList<ListNotifySourcesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static ListNotifySourcesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListNotifySourcesRequest>(create);
+  static ListNotifySourcesRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $8.PagingRequest get paging => $_getN(0);
+  @$pb.TagNumber(1)
+  set paging($8.PagingRequest v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPaging() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPaging() => clearField(1);
+  @$pb.TagNumber(1)
+  $8.PagingRequest ensurePaging() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<$8.InternalID> get idFilter => $_getList(1);
+
+  @$pb.TagNumber(4)
+  $core.List<NotifySourceStatus> get statusFilter => $_getList(2);
+}
+
+class ListNotifySourcesResponse extends $pb.GeneratedMessage {
+  factory ListNotifySourcesResponse({
+    $8.PagingResponse? paging,
+    $core.Iterable<NotifySource>? sources,
+  }) {
+    final $result = create();
+    if (paging != null) {
+      $result.paging = paging;
+    }
+    if (sources != null) {
+      $result.sources.addAll(sources);
+    }
+    return $result;
+  }
+  ListNotifySourcesResponse._() : super();
+  factory ListNotifySourcesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory ListNotifySourcesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListNotifySourcesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
+    ..aOM<$8.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $8.PagingResponse.create)
+    ..pc<NotifySource>(2, _omitFieldNames ? '' : 'sources', $pb.PbFieldType.PM, subBuilder: NotifySource.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  ListNotifySourcesResponse clone() => ListNotifySourcesResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  ListNotifySourcesResponse copyWith(void Function(ListNotifySourcesResponse) updates) => super.copyWith((message) => updates(message as ListNotifySourcesResponse)) as ListNotifySourcesResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static ListNotifySourcesResponse create() => ListNotifySourcesResponse._();
+  ListNotifySourcesResponse createEmptyInstance() => create();
+  static $pb.PbList<ListNotifySourcesResponse> createRepeated() => $pb.PbList<ListNotifySourcesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static ListNotifySourcesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListNotifySourcesResponse>(create);
+  static ListNotifySourcesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $8.PagingResponse get paging => $_getN(0);
+  @$pb.TagNumber(1)
+  set paging($8.PagingResponse v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPaging() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPaging() => clearField(1);
+  @$pb.TagNumber(1)
+  $8.PagingResponse ensurePaging() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.List<NotifySource> get sources => $_getList(1);
+}
+
 class CreateNotifyTargetRequest extends $pb.GeneratedMessage {
   factory CreateNotifyTargetRequest({
     NotifyTarget? target,
@@ -643,6 +959,117 @@ class ListNotifyFlowsResponse extends $pb.GeneratedMessage {
   $core.List<NotifyFlow> get flows => $_getList(1);
 }
 
+class NotifySource extends $pb.GeneratedMessage {
+  factory NotifySource({
+    $8.InternalID? id,
+    $core.String? name,
+    $core.String? description,
+    $8.FeatureRequest? source,
+    NotifySourceStatus? status,
+  }) {
+    final $result = create();
+    if (id != null) {
+      $result.id = id;
+    }
+    if (name != null) {
+      $result.name = name;
+    }
+    if (description != null) {
+      $result.description = description;
+    }
+    if (source != null) {
+      $result.source = source;
+    }
+    if (status != null) {
+      $result.status = status;
+    }
+    return $result;
+  }
+  NotifySource._() : super();
+  factory NotifySource.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory NotifySource.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NotifySource', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
+    ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $8.InternalID.create)
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'description')
+    ..aOM<$8.FeatureRequest>(4, _omitFieldNames ? '' : 'source', subBuilder: $8.FeatureRequest.create)
+    ..e<NotifySourceStatus>(5, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: NotifySourceStatus.NOTIFY_SOURCE_STATUS_UNSPECIFIED, valueOf: NotifySourceStatus.valueOf, enumValues: NotifySourceStatus.values)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  NotifySource clone() => NotifySource()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  NotifySource copyWith(void Function(NotifySource) updates) => super.copyWith((message) => updates(message as NotifySource)) as NotifySource;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static NotifySource create() => NotifySource._();
+  NotifySource createEmptyInstance() => create();
+  static $pb.PbList<NotifySource> createRepeated() => $pb.PbList<NotifySource>();
+  @$core.pragma('dart2js:noInline')
+  static NotifySource getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<NotifySource>(create);
+  static NotifySource? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $8.InternalID get id => $_getN(0);
+  @$pb.TagNumber(1)
+  set id($8.InternalID v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+  @$pb.TagNumber(1)
+  $8.InternalID ensureId() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get name => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set name($core.String v) { $_setString(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasName() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get description => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set description($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasDescription() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDescription() => clearField(3);
+
+  /// WellKnownNotifySource
+  @$pb.TagNumber(4)
+  $8.FeatureRequest get source => $_getN(3);
+  @$pb.TagNumber(4)
+  set source($8.FeatureRequest v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasSource() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearSource() => clearField(4);
+  @$pb.TagNumber(4)
+  $8.FeatureRequest ensureSource() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  NotifySourceStatus get status => $_getN(4);
+  @$pb.TagNumber(5)
+  set status(NotifySourceStatus v) { setField(5, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasStatus() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearStatus() => clearField(5);
+}
+
 class NotifyTarget extends $pb.GeneratedMessage {
   factory NotifyTarget({
     $8.InternalID? id,
@@ -759,9 +1186,10 @@ class NotifyFlow extends $pb.GeneratedMessage {
     $8.InternalID? id,
     $core.String? name,
     $core.String? description,
-    $core.Iterable<NotifyFlowSource>? sources,
-    $core.Iterable<NotifyFlowTarget>? targets,
+    $core.Iterable<$8.InternalID>? sourceIds,
+    $core.Iterable<$8.InternalID>? targetIds,
     NotifyFlowStatus? status,
+    $core.Iterable<$8.InternalID>? actionSets,
   }) {
     final $result = create();
     if (id != null) {
@@ -773,14 +1201,17 @@ class NotifyFlow extends $pb.GeneratedMessage {
     if (description != null) {
       $result.description = description;
     }
-    if (sources != null) {
-      $result.sources.addAll(sources);
+    if (sourceIds != null) {
+      $result.sourceIds.addAll(sourceIds);
     }
-    if (targets != null) {
-      $result.targets.addAll(targets);
+    if (targetIds != null) {
+      $result.targetIds.addAll(targetIds);
     }
     if (status != null) {
       $result.status = status;
+    }
+    if (actionSets != null) {
+      $result.actionSets.addAll(actionSets);
     }
     return $result;
   }
@@ -792,9 +1223,10 @@ class NotifyFlow extends $pb.GeneratedMessage {
     ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $8.InternalID.create)
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'description')
-    ..pc<NotifyFlowSource>(4, _omitFieldNames ? '' : 'sources', $pb.PbFieldType.PM, subBuilder: NotifyFlowSource.create)
-    ..pc<NotifyFlowTarget>(5, _omitFieldNames ? '' : 'targets', $pb.PbFieldType.PM, subBuilder: NotifyFlowTarget.create)
+    ..pc<$8.InternalID>(4, _omitFieldNames ? '' : 'sourceIds', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
+    ..pc<$8.InternalID>(5, _omitFieldNames ? '' : 'targetIds', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
     ..e<NotifyFlowStatus>(6, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: NotifyFlowStatus.NOTIFY_FLOW_STATUS_UNSPECIFIED, valueOf: NotifyFlowStatus.valueOf, enumValues: NotifyFlowStatus.values)
+    ..pc<$8.InternalID>(7, _omitFieldNames ? '' : 'actionSets', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -849,10 +1281,10 @@ class NotifyFlow extends $pb.GeneratedMessage {
   void clearDescription() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.List<NotifyFlowSource> get sources => $_getList(3);
+  $core.List<$8.InternalID> get sourceIds => $_getList(3);
 
   @$pb.TagNumber(5)
-  $core.List<NotifyFlowTarget> get targets => $_getList(4);
+  $core.List<$8.InternalID> get targetIds => $_getList(4);
 
   @$pb.TagNumber(6)
   NotifyFlowStatus get status => $_getN(5);
@@ -862,144 +1294,10 @@ class NotifyFlow extends $pb.GeneratedMessage {
   $core.bool hasStatus() => $_has(5);
   @$pb.TagNumber(6)
   void clearStatus() => clearField(6);
-}
 
-class NotifyFlowSource extends $pb.GeneratedMessage {
-  factory NotifyFlowSource({
-    NotifyFilter? filter,
-    $8.InternalID? sourceId,
-  }) {
-    final $result = create();
-    if (filter != null) {
-      $result.filter = filter;
-    }
-    if (sourceId != null) {
-      $result.sourceId = sourceId;
-    }
-    return $result;
-  }
-  NotifyFlowSource._() : super();
-  factory NotifyFlowSource.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory NotifyFlowSource.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NotifyFlowSource', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
-    ..aOM<NotifyFilter>(1, _omitFieldNames ? '' : 'filter', subBuilder: NotifyFilter.create)
-    ..aOM<$8.InternalID>(2, _omitFieldNames ? '' : 'sourceId', subBuilder: $8.InternalID.create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  NotifyFlowSource clone() => NotifyFlowSource()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  NotifyFlowSource copyWith(void Function(NotifyFlowSource) updates) => super.copyWith((message) => updates(message as NotifyFlowSource)) as NotifyFlowSource;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static NotifyFlowSource create() => NotifyFlowSource._();
-  NotifyFlowSource createEmptyInstance() => create();
-  static $pb.PbList<NotifyFlowSource> createRepeated() => $pb.PbList<NotifyFlowSource>();
-  @$core.pragma('dart2js:noInline')
-  static NotifyFlowSource getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<NotifyFlowSource>(create);
-  static NotifyFlowSource? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  NotifyFilter get filter => $_getN(0);
-  @$pb.TagNumber(1)
-  set filter(NotifyFilter v) { setField(1, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasFilter() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearFilter() => clearField(1);
-  @$pb.TagNumber(1)
-  NotifyFilter ensureFilter() => $_ensure(0);
-
-  /// must be `FeedConfig.id` or `FeedItemCollection.id`
-  @$pb.TagNumber(2)
-  $8.InternalID get sourceId => $_getN(1);
-  @$pb.TagNumber(2)
-  set sourceId($8.InternalID v) { setField(2, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasSourceId() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearSourceId() => clearField(2);
-  @$pb.TagNumber(2)
-  $8.InternalID ensureSourceId() => $_ensure(1);
-}
-
-class NotifyFlowTarget extends $pb.GeneratedMessage {
-  factory NotifyFlowTarget({
-    NotifyFilter? filter,
-    $8.InternalID? targetId,
-  }) {
-    final $result = create();
-    if (filter != null) {
-      $result.filter = filter;
-    }
-    if (targetId != null) {
-      $result.targetId = targetId;
-    }
-    return $result;
-  }
-  NotifyFlowTarget._() : super();
-  factory NotifyFlowTarget.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory NotifyFlowTarget.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'NotifyFlowTarget', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
-    ..aOM<NotifyFilter>(1, _omitFieldNames ? '' : 'filter', subBuilder: NotifyFilter.create)
-    ..aOM<$8.InternalID>(2, _omitFieldNames ? '' : 'targetId', subBuilder: $8.InternalID.create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  NotifyFlowTarget clone() => NotifyFlowTarget()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  NotifyFlowTarget copyWith(void Function(NotifyFlowTarget) updates) => super.copyWith((message) => updates(message as NotifyFlowTarget)) as NotifyFlowTarget;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static NotifyFlowTarget create() => NotifyFlowTarget._();
-  NotifyFlowTarget createEmptyInstance() => create();
-  static $pb.PbList<NotifyFlowTarget> createRepeated() => $pb.PbList<NotifyFlowTarget>();
-  @$core.pragma('dart2js:noInline')
-  static NotifyFlowTarget getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<NotifyFlowTarget>(create);
-  static NotifyFlowTarget? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  NotifyFilter get filter => $_getN(0);
-  @$pb.TagNumber(1)
-  set filter(NotifyFilter v) { setField(1, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasFilter() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearFilter() => clearField(1);
-  @$pb.TagNumber(1)
-  NotifyFilter ensureFilter() => $_ensure(0);
-
-  /// must be NotifyTargetID
-  @$pb.TagNumber(2)
-  $8.InternalID get targetId => $_getN(1);
-  @$pb.TagNumber(2)
-  set targetId($8.InternalID v) { setField(2, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasTargetId() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearTargetId() => clearField(2);
-  @$pb.TagNumber(2)
-  $8.InternalID ensureTargetId() => $_ensure(1);
+  /// `FeedActionSet.id`
+  @$pb.TagNumber(7)
+  $core.List<$8.InternalID> get actionSets => $_getList(6);
 }
 
 class NotifyFilter extends $pb.GeneratedMessage {

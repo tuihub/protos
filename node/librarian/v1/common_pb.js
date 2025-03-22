@@ -598,7 +598,7 @@ proto.librarian.v1.Feed.prototype.clearAuthorsList = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.librarian.v1.FeedItem.repeatedFields_ = [3,13];
+proto.librarian.v1.FeedItem.repeatedFields_ = [3,13,16];
 
 
 
@@ -647,7 +647,8 @@ updatedParsed: (f = msg.getUpdatedParsed()) && google_protobuf_timestamp_pb.Time
 enclosuresList: jspb.Message.toObjectList(msg.getEnclosuresList(),
     proto.librarian.v1.FeedEnclosure.toObject, includeInstance),
 publishPlatform: jspb.Message.getFieldWithDefault(msg, 14, ""),
-readCount: jspb.Message.getFieldWithDefault(msg, 15, 0)
+readCount: jspb.Message.getFieldWithDefault(msg, 15, 0),
+tagsList: (f = jspb.Message.getRepeatedField(msg, 16)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -749,6 +750,10 @@ proto.librarian.v1.FeedItem.deserializeBinaryFromReader = function(msg, reader) 
     case 15:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setReadCount(value);
+      break;
+    case 16:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addTags(value);
       break;
     default:
       reader.skipField();
@@ -887,6 +892,13 @@ proto.librarian.v1.FeedItem.serializeBinaryToWriter = function(message, writer) 
   if (f !== 0) {
     writer.writeInt64(
       15,
+      f
+    );
+  }
+  f = message.getTagsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      16,
       f
     );
   }
@@ -1276,6 +1288,43 @@ proto.librarian.v1.FeedItem.prototype.getReadCount = function() {
  */
 proto.librarian.v1.FeedItem.prototype.setReadCount = function(value) {
   return jspb.Message.setProto3IntField(this, 15, value);
+};
+
+
+/**
+ * repeated string tags = 16;
+ * @return {!Array<string>}
+ */
+proto.librarian.v1.FeedItem.prototype.getTagsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 16));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.librarian.v1.FeedItem} returns this
+ */
+proto.librarian.v1.FeedItem.prototype.setTagsList = function(value) {
+  return jspb.Message.setField(this, 16, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.librarian.v1.FeedItem} returns this
+ */
+proto.librarian.v1.FeedItem.prototype.addTags = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 16, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.librarian.v1.FeedItem} returns this
+ */
+proto.librarian.v1.FeedItem.prototype.clearTagsList = function() {
+  return this.setTagsList([]);
 };
 
 

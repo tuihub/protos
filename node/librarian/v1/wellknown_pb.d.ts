@@ -334,9 +334,18 @@ export interface WellKnownFeedSourceMap {
 
 export const WellKnownFeedSource: WellKnownFeedSourceMap;
 
+export interface WellKnownNotifySourceMap {
+  WELL_KNOWN_NOTIFY_SOURCE_UNSPECIFIED: 0;
+  WELL_KNOWN_NOTIFY_SOURCE_FEED: 1;
+  WELL_KNOWN_NOTIFY_SOURCE_FEED_TAG: 2;
+}
+
+export const WellKnownNotifySource: WellKnownNotifySourceMap;
+
 export interface WellKnownNotifyDestinationMap {
   WELL_KNOWN_NOTIFY_DESTINATION_UNSPECIFIED: 0;
   WELL_KNOWN_NOTIFY_DESTINATION_TELEGRAM: 1;
+  WELL_KNOWN_NOTIFY_DESTINATION_RSS: 2;
 }
 
 export const WellKnownNotifyDestination: WellKnownNotifyDestinationMap;

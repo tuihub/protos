@@ -374,170 +374,28 @@ const ReadFeedItemResponse$json = {
 final $typed_data.Uint8List readFeedItemResponseDescriptor = $convert.base64Decode(
     'ChRSZWFkRmVlZEl0ZW1SZXNwb25zZQ==');
 
-@$core.Deprecated('Use createFeedItemCollectionRequestDescriptor instead')
-const CreateFeedItemCollectionRequest$json = {
-  '1': 'CreateFeedItemCollectionRequest',
+@$core.Deprecated('Use updateFeedItemTagsRequestDescriptor instead')
+const UpdateFeedItemTagsRequest$json = {
+  '1': 'UpdateFeedItemTagsRequest',
   '2': [
-    {'1': 'collection', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.sephirah.FeedItemCollection', '10': 'collection'},
+    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+    {'1': 'tags', '3': 2, '4': 3, '5': 9, '10': 'tags'},
   ],
 };
 
-/// Descriptor for `CreateFeedItemCollectionRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List createFeedItemCollectionRequestDescriptor = $convert.base64Decode(
-    'Ch9DcmVhdGVGZWVkSXRlbUNvbGxlY3Rpb25SZXF1ZXN0ElIKCmNvbGxlY3Rpb24YASABKAsyMi'
-    '5saWJyYXJpYW4uc2VwaGlyYWgudjEuc2VwaGlyYWguRmVlZEl0ZW1Db2xsZWN0aW9uUgpjb2xs'
-    'ZWN0aW9u');
+/// Descriptor for `UpdateFeedItemTagsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateFeedItemTagsRequestDescriptor = $convert.base64Decode(
+    'ChlVcGRhdGVGZWVkSXRlbVRhZ3NSZXF1ZXN0EigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLk'
+    'ludGVybmFsSURSAmlkEhIKBHRhZ3MYAiADKAlSBHRhZ3M=');
 
-@$core.Deprecated('Use createFeedItemCollectionResponseDescriptor instead')
-const CreateFeedItemCollectionResponse$json = {
-  '1': 'CreateFeedItemCollectionResponse',
+@$core.Deprecated('Use updateFeedItemTagsResponseDescriptor instead')
+const UpdateFeedItemTagsResponse$json = {
+  '1': 'UpdateFeedItemTagsResponse',
 };
 
-/// Descriptor for `CreateFeedItemCollectionResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List createFeedItemCollectionResponseDescriptor = $convert.base64Decode(
-    'CiBDcmVhdGVGZWVkSXRlbUNvbGxlY3Rpb25SZXNwb25zZQ==');
-
-@$core.Deprecated('Use updateFeedItemCollectionRequestDescriptor instead')
-const UpdateFeedItemCollectionRequest$json = {
-  '1': 'UpdateFeedItemCollectionRequest',
-  '2': [
-    {'1': 'collection', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.sephirah.FeedItemCollection', '10': 'collection'},
-  ],
-};
-
-/// Descriptor for `UpdateFeedItemCollectionRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List updateFeedItemCollectionRequestDescriptor = $convert.base64Decode(
-    'Ch9VcGRhdGVGZWVkSXRlbUNvbGxlY3Rpb25SZXF1ZXN0ElIKCmNvbGxlY3Rpb24YASABKAsyMi'
-    '5saWJyYXJpYW4uc2VwaGlyYWgudjEuc2VwaGlyYWguRmVlZEl0ZW1Db2xsZWN0aW9uUgpjb2xs'
-    'ZWN0aW9u');
-
-@$core.Deprecated('Use updateFeedItemCollectionResponseDescriptor instead')
-const UpdateFeedItemCollectionResponse$json = {
-  '1': 'UpdateFeedItemCollectionResponse',
-};
-
-/// Descriptor for `UpdateFeedItemCollectionResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List updateFeedItemCollectionResponseDescriptor = $convert.base64Decode(
-    'CiBVcGRhdGVGZWVkSXRlbUNvbGxlY3Rpb25SZXNwb25zZQ==');
-
-@$core.Deprecated('Use listFeedItemCollectionsRequestDescriptor instead')
-const ListFeedItemCollectionsRequest$json = {
-  '1': 'ListFeedItemCollectionsRequest',
-  '2': [
-    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
-    {'1': 'id_filter', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'idFilter'},
-    {'1': 'category_filter', '3': 3, '4': 3, '5': 9, '10': 'categoryFilter'},
-  ],
-};
-
-/// Descriptor for `ListFeedItemCollectionsRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listFeedItemCollectionsRequestDescriptor = $convert.base64Decode(
-    'Ch5MaXN0RmVlZEl0ZW1Db2xsZWN0aW9uc1JlcXVlc3QSMwoGcGFnaW5nGAEgASgLMhsubGlicm'
-    'FyaWFuLnYxLlBhZ2luZ1JlcXVlc3RSBnBhZ2luZxI1CglpZF9maWx0ZXIYAiADKAsyGC5saWJy'
-    'YXJpYW4udjEuSW50ZXJuYWxJRFIIaWRGaWx0ZXISJwoPY2F0ZWdvcnlfZmlsdGVyGAMgAygJUg'
-    '5jYXRlZ29yeUZpbHRlcg==');
-
-@$core.Deprecated('Use listFeedItemCollectionsResponseDescriptor instead')
-const ListFeedItemCollectionsResponse$json = {
-  '1': 'ListFeedItemCollectionsResponse',
-  '2': [
-    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingResponse', '10': 'paging'},
-    {'1': 'collections', '3': 2, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.sephirah.FeedItemCollection', '10': 'collections'},
-  ],
-};
-
-/// Descriptor for `ListFeedItemCollectionsResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listFeedItemCollectionsResponseDescriptor = $convert.base64Decode(
-    'Ch9MaXN0RmVlZEl0ZW1Db2xsZWN0aW9uc1Jlc3BvbnNlEjQKBnBhZ2luZxgBIAEoCzIcLmxpYn'
-    'Jhcmlhbi52MS5QYWdpbmdSZXNwb25zZVIGcGFnaW5nElQKC2NvbGxlY3Rpb25zGAIgAygLMjIu'
-    'bGlicmFyaWFuLnNlcGhpcmFoLnYxLnNlcGhpcmFoLkZlZWRJdGVtQ29sbGVjdGlvblILY29sbG'
-    'VjdGlvbnM=');
-
-@$core.Deprecated('Use addFeedItemToCollectionRequestDescriptor instead')
-const AddFeedItemToCollectionRequest$json = {
-  '1': 'AddFeedItemToCollectionRequest',
-  '2': [
-    {'1': 'feed_item_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'feedItemId'},
-    {'1': 'collection_id', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'collectionId'},
-  ],
-};
-
-/// Descriptor for `AddFeedItemToCollectionRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List addFeedItemToCollectionRequestDescriptor = $convert.base64Decode(
-    'Ch5BZGRGZWVkSXRlbVRvQ29sbGVjdGlvblJlcXVlc3QSOgoMZmVlZF9pdGVtX2lkGAEgASgLMh'
-    'gubGlicmFyaWFuLnYxLkludGVybmFsSURSCmZlZWRJdGVtSWQSPQoNY29sbGVjdGlvbl9pZBgC'
-    'IAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgxjb2xsZWN0aW9uSWQ=');
-
-@$core.Deprecated('Use addFeedItemToCollectionResponseDescriptor instead')
-const AddFeedItemToCollectionResponse$json = {
-  '1': 'AddFeedItemToCollectionResponse',
-};
-
-/// Descriptor for `AddFeedItemToCollectionResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List addFeedItemToCollectionResponseDescriptor = $convert.base64Decode(
-    'Ch9BZGRGZWVkSXRlbVRvQ29sbGVjdGlvblJlc3BvbnNl');
-
-@$core.Deprecated('Use removeFeedItemFromCollectionRequestDescriptor instead')
-const RemoveFeedItemFromCollectionRequest$json = {
-  '1': 'RemoveFeedItemFromCollectionRequest',
-  '2': [
-    {'1': 'feed_item_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'feedItemId'},
-    {'1': 'collection_id', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'collectionId'},
-  ],
-};
-
-/// Descriptor for `RemoveFeedItemFromCollectionRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List removeFeedItemFromCollectionRequestDescriptor = $convert.base64Decode(
-    'CiNSZW1vdmVGZWVkSXRlbUZyb21Db2xsZWN0aW9uUmVxdWVzdBI6CgxmZWVkX2l0ZW1faWQYAS'
-    'ABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIKZmVlZEl0ZW1JZBI9Cg1jb2xsZWN0aW9u'
-    'X2lkGAIgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSDGNvbGxlY3Rpb25JZA==');
-
-@$core.Deprecated('Use removeFeedItemFromCollectionResponseDescriptor instead')
-const RemoveFeedItemFromCollectionResponse$json = {
-  '1': 'RemoveFeedItemFromCollectionResponse',
-};
-
-/// Descriptor for `RemoveFeedItemFromCollectionResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List removeFeedItemFromCollectionResponseDescriptor = $convert.base64Decode(
-    'CiRSZW1vdmVGZWVkSXRlbUZyb21Db2xsZWN0aW9uUmVzcG9uc2U=');
-
-@$core.Deprecated('Use listFeedItemsInCollectionRequestDescriptor instead')
-const ListFeedItemsInCollectionRequest$json = {
-  '1': 'ListFeedItemsInCollectionRequest',
-  '2': [
-    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
-    {'1': 'collection_id_filter', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'collectionIdFilter'},
-    {'1': 'author_filter', '3': 3, '4': 3, '5': 9, '10': 'authorFilter'},
-    {'1': 'publish_platform_filter', '3': 4, '4': 3, '5': 9, '10': 'publishPlatformFilter'},
-    {'1': 'category_filter', '3': 5, '4': 3, '5': 9, '10': 'categoryFilter'},
-    {'1': 'publish_time_range', '3': 6, '4': 1, '5': 11, '6': '.librarian.v1.TimeRange', '10': 'publishTimeRange'},
-  ],
-};
-
-/// Descriptor for `ListFeedItemsInCollectionRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listFeedItemsInCollectionRequestDescriptor = $convert.base64Decode(
-    'CiBMaXN0RmVlZEl0ZW1zSW5Db2xsZWN0aW9uUmVxdWVzdBIzCgZwYWdpbmcYASABKAsyGy5saW'
-    'JyYXJpYW4udjEuUGFnaW5nUmVxdWVzdFIGcGFnaW5nEkoKFGNvbGxlY3Rpb25faWRfZmlsdGVy'
-    'GAIgAygLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSEmNvbGxlY3Rpb25JZEZpbHRlchIjCg'
-    '1hdXRob3JfZmlsdGVyGAMgAygJUgxhdXRob3JGaWx0ZXISNgoXcHVibGlzaF9wbGF0Zm9ybV9m'
-    'aWx0ZXIYBCADKAlSFXB1Ymxpc2hQbGF0Zm9ybUZpbHRlchInCg9jYXRlZ29yeV9maWx0ZXIYBS'
-    'ADKAlSDmNhdGVnb3J5RmlsdGVyEkUKEnB1Ymxpc2hfdGltZV9yYW5nZRgGIAEoCzIXLmxpYnJh'
-    'cmlhbi52MS5UaW1lUmFuZ2VSEHB1Ymxpc2hUaW1lUmFuZ2U=');
-
-@$core.Deprecated('Use listFeedItemsInCollectionResponseDescriptor instead')
-const ListFeedItemsInCollectionResponse$json = {
-  '1': 'ListFeedItemsInCollectionResponse',
-  '2': [
-    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingResponse', '10': 'paging'},
-    {'1': 'items', '3': 2, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.sephirah.FeedItemDigest', '10': 'items'},
-  ],
-};
-
-/// Descriptor for `ListFeedItemsInCollectionResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listFeedItemsInCollectionResponseDescriptor = $convert.base64Decode(
-    'CiFMaXN0RmVlZEl0ZW1zSW5Db2xsZWN0aW9uUmVzcG9uc2USNAoGcGFnaW5nGAEgASgLMhwubG'
-    'licmFyaWFuLnYxLlBhZ2luZ1Jlc3BvbnNlUgZwYWdpbmcSRAoFaXRlbXMYAiADKAsyLi5saWJy'
-    'YXJpYW4uc2VwaGlyYWgudjEuc2VwaGlyYWguRmVlZEl0ZW1EaWdlc3RSBWl0ZW1z');
+/// Descriptor for `UpdateFeedItemTagsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateFeedItemTagsResponseDescriptor = $convert.base64Decode(
+    'ChpVcGRhdGVGZWVkSXRlbVRhZ3NSZXNwb25zZQ==');
 
 @$core.Deprecated('Use feedConfigDescriptor instead')
 const FeedConfig$json = {
@@ -628,21 +486,4 @@ final $typed_data.Uint8List feedItemDigestDescriptor = $convert.base64Decode(
     'BsYXRmb3JtEigKEGZlZWRfY29uZmlnX25hbWUYCiABKAlSDmZlZWRDb25maWdOYW1lEiYKD2Zl'
     'ZWRfYXZhdGFyX3VybBgLIAEoCVINZmVlZEF2YXRhclVybBIdCgpyZWFkX2NvdW50GAwgASgDUg'
     'lyZWFkQ291bnQ=');
-
-@$core.Deprecated('Use feedItemCollectionDescriptor instead')
-const FeedItemCollection$json = {
-  '1': 'FeedItemCollection',
-  '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
-    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
-    {'1': 'category', '3': 4, '4': 1, '5': 9, '10': 'category'},
-  ],
-};
-
-/// Descriptor for `FeedItemCollection`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List feedItemCollectionDescriptor = $convert.base64Decode(
-    'ChJGZWVkSXRlbUNvbGxlY3Rpb24SKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYW'
-    'xJRFICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIgCgtkZXNjcmlwdGlvbhgDIAEoCVILZGVzY3Jp'
-    'cHRpb24SGgoIY2F0ZWdvcnkYBCABKAlSCGNhdGVnb3J5');
 

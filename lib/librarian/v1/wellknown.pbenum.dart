@@ -81,13 +81,32 @@ class WellKnownFeedSource extends $pb.ProtobufEnum {
   const WellKnownFeedSource._($core.int v, $core.String n) : super(v, n);
 }
 
+class WellKnownNotifySource extends $pb.ProtobufEnum {
+  static const WellKnownNotifySource WELL_KNOWN_NOTIFY_SOURCE_UNSPECIFIED = WellKnownNotifySource._(0, _omitEnumNames ? '' : 'WELL_KNOWN_NOTIFY_SOURCE_UNSPECIFIED');
+  static const WellKnownNotifySource WELL_KNOWN_NOTIFY_SOURCE_FEED = WellKnownNotifySource._(1, _omitEnumNames ? '' : 'WELL_KNOWN_NOTIFY_SOURCE_FEED');
+  static const WellKnownNotifySource WELL_KNOWN_NOTIFY_SOURCE_FEED_TAG = WellKnownNotifySource._(2, _omitEnumNames ? '' : 'WELL_KNOWN_NOTIFY_SOURCE_FEED_TAG');
+
+  static const $core.List<WellKnownNotifySource> values = <WellKnownNotifySource> [
+    WELL_KNOWN_NOTIFY_SOURCE_UNSPECIFIED,
+    WELL_KNOWN_NOTIFY_SOURCE_FEED,
+    WELL_KNOWN_NOTIFY_SOURCE_FEED_TAG,
+  ];
+
+  static final $core.Map<$core.int, WellKnownNotifySource> _byValue = $pb.ProtobufEnum.initByValue(values);
+  static WellKnownNotifySource? valueOf($core.int value) => _byValue[value];
+
+  const WellKnownNotifySource._($core.int v, $core.String n) : super(v, n);
+}
+
 class WellKnownNotifyDestination extends $pb.ProtobufEnum {
   static const WellKnownNotifyDestination WELL_KNOWN_NOTIFY_DESTINATION_UNSPECIFIED = WellKnownNotifyDestination._(0, _omitEnumNames ? '' : 'WELL_KNOWN_NOTIFY_DESTINATION_UNSPECIFIED');
   static const WellKnownNotifyDestination WELL_KNOWN_NOTIFY_DESTINATION_TELEGRAM = WellKnownNotifyDestination._(1, _omitEnumNames ? '' : 'WELL_KNOWN_NOTIFY_DESTINATION_TELEGRAM');
+  static const WellKnownNotifyDestination WELL_KNOWN_NOTIFY_DESTINATION_RSS = WellKnownNotifyDestination._(2, _omitEnumNames ? '' : 'WELL_KNOWN_NOTIFY_DESTINATION_RSS');
 
   static const $core.List<WellKnownNotifyDestination> values = <WellKnownNotifyDestination> [
     WELL_KNOWN_NOTIFY_DESTINATION_UNSPECIFIED,
     WELL_KNOWN_NOTIFY_DESTINATION_TELEGRAM,
+    WELL_KNOWN_NOTIFY_DESTINATION_RSS,
   ];
 
   static final $core.Map<$core.int, WellKnownNotifyDestination> _byValue = $pb.ProtobufEnum.initByValue(values);

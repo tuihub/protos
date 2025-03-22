@@ -75,22 +75,26 @@ namespace TuiHub.Protos.Librarian.V1 {
             "B8I+BHZuZGISMgoiV0VMTF9LTk9XTl9BUFBfSU5GT19TT1VSQ0VfQkFOR1VN",
             "SRAEGgrCPgdiYW5ndW1pKmoKE1dlbGxLbm93bkZlZWRTb3VyY2USKwoiV0VM",
             "TF9LTk9XTl9GRUVEX1NPVVJDRV9VTlNQRUNJRklFRBAAGgPCPgASJgoaV0VM",
-            "TF9LTk9XTl9GRUVEX1NPVVJDRV9SU1MQARoGwj4DcnNzKokBChpXZWxsS25v",
-            "d25Ob3RpZnlEZXN0aW5hdGlvbhIyCilXRUxMX0tOT1dOX05PVElGWV9ERVNU",
-            "SU5BVElPTl9VTlNQRUNJRklFRBAAGgPCPgASNwomV0VMTF9LTk9XTl9OT1RJ",
-            "RllfREVTVElOQVRJT05fVEVMRUdSQU0QARoLwj4IdGVsZWdyYW0q3wEKF1dl",
-            "bGxLbm93bkZlZWRJdGVtQWN0aW9uEjAKJ1dFTExfS05PV05fRkVFRF9JVEVN",
-            "X0FDVElPTl9VTlNQRUNJRklFRBAAGgPCPgASQQoqV0VMTF9LTk9XTl9GRUVE",
-            "X0lURU1fQUNUSU9OX0tFWVdPUkRfRklMVEVSEAEaEcI+DmtleXdvcmRfZmls",
-            "dGVyEk8KMVdFTExfS05PV05fRkVFRF9JVEVNX0FDVElPTl9ERVNDUklQVElP",
-            "Tl9HRU5FUkFUT1IQAhoYwj4VZGVzY3JpcHRpb25fZ2VuZXJhdG9yOj8KCXRv",
-            "X3N0cmluZxIhLmdvb2dsZS5wcm90b2J1Zi5FbnVtVmFsdWVPcHRpb25zGOgH",
-            "IAEoCVIIdG9TdHJpbmdCS1osZ2l0aHViLmNvbS90dWlodWIvcHJvdG9zL3Br",
-            "Zy9saWJyYXJpYW4vdjE7djGqAhpUdWlIdWIuUHJvdG9zLkxpYnJhcmlhbi5W",
-            "MWIGcHJvdG8z"));
+            "TF9LTk9XTl9GRUVEX1NPVVJDRV9SU1MQARoGwj4DcnNzKqYBChVXZWxsS25v",
+            "d25Ob3RpZnlTb3VyY2USLQokV0VMTF9LTk9XTl9OT1RJRllfU09VUkNFX1VO",
+            "U1BFQ0lGSUVEEAAaA8I+ABIqCh1XRUxMX0tOT1dOX05PVElGWV9TT1VSQ0Vf",
+            "RkVFRBABGgfCPgRmZWVkEjIKIVdFTExfS05PV05fTk9USUZZX1NPVVJDRV9G",
+            "RUVEX1RBRxACGgvCPghmZWVkX3RhZyq4AQoaV2VsbEtub3duTm90aWZ5RGVz",
+            "dGluYXRpb24SMgopV0VMTF9LTk9XTl9OT1RJRllfREVTVElOQVRJT05fVU5T",
+            "UEVDSUZJRUQQABoDwj4AEjcKJldFTExfS05PV05fTk9USUZZX0RFU1RJTkFU",
+            "SU9OX1RFTEVHUkFNEAEaC8I+CHRlbGVncmFtEi0KIVdFTExfS05PV05fTk9U",
+            "SUZZX0RFU1RJTkFUSU9OX1JTUxACGgbCPgNyc3Mq3wEKF1dlbGxLbm93bkZl",
+            "ZWRJdGVtQWN0aW9uEjAKJ1dFTExfS05PV05fRkVFRF9JVEVNX0FDVElPTl9V",
+            "TlNQRUNJRklFRBAAGgPCPgASQQoqV0VMTF9LTk9XTl9GRUVEX0lURU1fQUNU",
+            "SU9OX0tFWVdPUkRfRklMVEVSEAEaEcI+DmtleXdvcmRfZmlsdGVyEk8KMVdF",
+            "TExfS05PV05fRkVFRF9JVEVNX0FDVElPTl9ERVNDUklQVElPTl9HRU5FUkFU",
+            "T1IQAhoYwj4VZGVzY3JpcHRpb25fZ2VuZXJhdG9yOj8KCXRvX3N0cmluZxIh",
+            "Lmdvb2dsZS5wcm90b2J1Zi5FbnVtVmFsdWVPcHRpb25zGOgHIAEoCVIIdG9T",
+            "dHJpbmdCS1osZ2l0aHViLmNvbS90dWlodWIvcHJvdG9zL3BrZy9saWJyYXJp",
+            "YW4vdjE7djGqAhpUdWlIdWIuUHJvdG9zLkxpYnJhcmlhbi5WMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ValidateReflection.Descriptor, global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.V1.FileType), typeof(global::TuiHub.Protos.Librarian.V1.WellKnownAccountPlatform), typeof(global::TuiHub.Protos.Librarian.V1.WellKnownAppInfoSource), typeof(global::TuiHub.Protos.Librarian.V1.WellKnownFeedSource), typeof(global::TuiHub.Protos.Librarian.V1.WellKnownNotifyDestination), typeof(global::TuiHub.Protos.Librarian.V1.WellKnownFeedItemAction), }, new pb::Extension[] { WellknownExtensions.ToString_ }, new pbr::GeneratedClrTypeInfo[] {
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.V1.FileType), typeof(global::TuiHub.Protos.Librarian.V1.WellKnownAccountPlatform), typeof(global::TuiHub.Protos.Librarian.V1.WellKnownAppInfoSource), typeof(global::TuiHub.Protos.Librarian.V1.WellKnownFeedSource), typeof(global::TuiHub.Protos.Librarian.V1.WellKnownNotifySource), typeof(global::TuiHub.Protos.Librarian.V1.WellKnownNotifyDestination), typeof(global::TuiHub.Protos.Librarian.V1.WellKnownFeedItemAction), }, new pb::Extension[] { WellknownExtensions.ToString_ }, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.PagingRequest), global::TuiHub.Protos.Librarian.V1.PagingRequest.Parser, new[]{ "PageNum", "PageSize" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.PagingResponse), global::TuiHub.Protos.Librarian.V1.PagingResponse.Parser, new[]{ "TotalSize" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.TimeRange), global::TuiHub.Protos.Librarian.V1.TimeRange.Parser, new[]{ "StartTime", "Duration" }, null, null, null, null),
@@ -136,9 +140,16 @@ namespace TuiHub.Protos.Librarian.V1 {
     [pbr::OriginalName("WELL_KNOWN_FEED_SOURCE_RSS")] Rss = 1,
   }
 
+  public enum WellKnownNotifySource {
+    [pbr::OriginalName("WELL_KNOWN_NOTIFY_SOURCE_UNSPECIFIED")] Unspecified = 0,
+    [pbr::OriginalName("WELL_KNOWN_NOTIFY_SOURCE_FEED")] Feed = 1,
+    [pbr::OriginalName("WELL_KNOWN_NOTIFY_SOURCE_FEED_TAG")] FeedTag = 2,
+  }
+
   public enum WellKnownNotifyDestination {
     [pbr::OriginalName("WELL_KNOWN_NOTIFY_DESTINATION_UNSPECIFIED")] Unspecified = 0,
     [pbr::OriginalName("WELL_KNOWN_NOTIFY_DESTINATION_TELEGRAM")] Telegram = 1,
+    [pbr::OriginalName("WELL_KNOWN_NOTIFY_DESTINATION_RSS")] Rss = 2,
   }
 
   public enum WellKnownFeedItemAction {

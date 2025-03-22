@@ -56,6 +56,7 @@ const FeedItem$json = {
     {'1': 'enclosures', '3': 13, '4': 3, '5': 11, '6': '.librarian.v1.FeedEnclosure', '10': 'enclosures'},
     {'1': 'publish_platform', '3': 14, '4': 1, '5': 9, '10': 'publishPlatform'},
     {'1': 'read_count', '3': 15, '4': 1, '5': 3, '10': 'readCount'},
+    {'1': 'tags', '3': 16, '4': 3, '5': 9, '10': 'tags'},
   ],
   '8': [
     {'1': '_published_parsed'},
@@ -76,7 +77,8 @@ final $typed_data.Uint8List feedItemDescriptor = $convert.base64Decode(
     'YnVmLlRpbWVzdGFtcEgBUg11cGRhdGVkUGFyc2VkiAEBEjsKCmVuY2xvc3VyZXMYDSADKAsyGy'
     '5saWJyYXJpYW4udjEuRmVlZEVuY2xvc3VyZVIKZW5jbG9zdXJlcxIpChBwdWJsaXNoX3BsYXRm'
     'b3JtGA4gASgJUg9wdWJsaXNoUGxhdGZvcm0SHQoKcmVhZF9jb3VudBgPIAEoA1IJcmVhZENvdW'
-    '50QhMKEV9wdWJsaXNoZWRfcGFyc2VkQhEKD191cGRhdGVkX3BhcnNlZA==');
+    '50EhIKBHRhZ3MYECADKAlSBHRhZ3NCEwoRX3B1Ymxpc2hlZF9wYXJzZWRCEQoPX3VwZGF0ZWRf'
+    'cGFyc2Vk');
 
 @$core.Deprecated('Use feedPersonDescriptor instead')
 const FeedPerson$json = {

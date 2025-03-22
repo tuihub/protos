@@ -77,12 +77,30 @@ final $typed_data.Uint8List wellKnownFeedSourceDescriptor = $convert.base64Decod
     'ChNXZWxsS25vd25GZWVkU291cmNlEisKIldFTExfS05PV05fRkVFRF9TT1VSQ0VfVU5TUEVDSU'
     'ZJRUQQABoDwj4AEiYKGldFTExfS05PV05fRkVFRF9TT1VSQ0VfUlNTEAEaBsI+A3Jzcw==');
 
+@$core.Deprecated('Use wellKnownNotifySourceDescriptor instead')
+const WellKnownNotifySource$json = {
+  '1': 'WellKnownNotifySource',
+  '2': [
+    {'1': 'WELL_KNOWN_NOTIFY_SOURCE_UNSPECIFIED', '2': 0, '3': {}},
+    {'1': 'WELL_KNOWN_NOTIFY_SOURCE_FEED', '2': 1, '3': {}},
+    {'1': 'WELL_KNOWN_NOTIFY_SOURCE_FEED_TAG', '2': 2, '3': {}},
+  ],
+};
+
+/// Descriptor for `WellKnownNotifySource`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List wellKnownNotifySourceDescriptor = $convert.base64Decode(
+    'ChVXZWxsS25vd25Ob3RpZnlTb3VyY2USLQokV0VMTF9LTk9XTl9OT1RJRllfU09VUkNFX1VOU1'
+    'BFQ0lGSUVEEAAaA8I+ABIqCh1XRUxMX0tOT1dOX05PVElGWV9TT1VSQ0VfRkVFRBABGgfCPgRm'
+    'ZWVkEjIKIVdFTExfS05PV05fTk9USUZZX1NPVVJDRV9GRUVEX1RBRxACGgvCPghmZWVkX3RhZw'
+    '==');
+
 @$core.Deprecated('Use wellKnownNotifyDestinationDescriptor instead')
 const WellKnownNotifyDestination$json = {
   '1': 'WellKnownNotifyDestination',
   '2': [
     {'1': 'WELL_KNOWN_NOTIFY_DESTINATION_UNSPECIFIED', '2': 0, '3': {}},
     {'1': 'WELL_KNOWN_NOTIFY_DESTINATION_TELEGRAM', '2': 1, '3': {}},
+    {'1': 'WELL_KNOWN_NOTIFY_DESTINATION_RSS', '2': 2, '3': {}},
   ],
 };
 
@@ -90,7 +108,8 @@ const WellKnownNotifyDestination$json = {
 final $typed_data.Uint8List wellKnownNotifyDestinationDescriptor = $convert.base64Decode(
     'ChpXZWxsS25vd25Ob3RpZnlEZXN0aW5hdGlvbhIyCilXRUxMX0tOT1dOX05PVElGWV9ERVNUSU'
     '5BVElPTl9VTlNQRUNJRklFRBAAGgPCPgASNwomV0VMTF9LTk9XTl9OT1RJRllfREVTVElOQVRJ'
-    'T05fVEVMRUdSQU0QARoLwj4IdGVsZWdyYW0=');
+    'T05fVEVMRUdSQU0QARoLwj4IdGVsZWdyYW0SLQohV0VMTF9LTk9XTl9OT1RJRllfREVTVElOQV'
+    'RJT05fUlNTEAIaBsI+A3Jzcw==');
 
 @$core.Deprecated('Use wellKnownFeedItemActionDescriptor instead')
 const WellKnownFeedItemAction$json = {

@@ -13,6 +13,22 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
+@$core.Deprecated('Use notifySourceStatusDescriptor instead')
+const NotifySourceStatus$json = {
+  '1': 'NotifySourceStatus',
+  '2': [
+    {'1': 'NOTIFY_SOURCE_STATUS_UNSPECIFIED', '2': 0},
+    {'1': 'NOTIFY_SOURCE_STATUS_ACTIVE', '2': 1},
+    {'1': 'NOTIFY_SOURCE_STATUS_SUSPEND', '2': 2},
+  ],
+};
+
+/// Descriptor for `NotifySourceStatus`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List notifySourceStatusDescriptor = $convert.base64Decode(
+    'ChJOb3RpZnlTb3VyY2VTdGF0dXMSJAogTk9USUZZX1NPVVJDRV9TVEFUVVNfVU5TUEVDSUZJRU'
+    'QQABIfChtOT1RJRllfU09VUkNFX1NUQVRVU19BQ1RJVkUQARIgChxOT1RJRllfU09VUkNFX1NU'
+    'QVRVU19TVVNQRU5EEAI=');
+
 @$core.Deprecated('Use notifyTargetStatusDescriptor instead')
 const NotifyTargetStatus$json = {
   '1': 'NotifyTargetStatus',
@@ -81,6 +97,87 @@ final $typed_data.Uint8List systemNotificationStatusDescriptor = $convert.base64
     'NfVU5TUEVDSUZJRUQQABIlCiFTWVNURU1fTk9USUZJQ0FUSU9OX1NUQVRVU19VTlJFQUQQARIj'
     'Ch9TWVNURU1fTk9USUZJQ0FUSU9OX1NUQVRVU19SRUFEEAISKAokU1lTVEVNX05PVElGSUNBVE'
     'lPTl9TVEFUVVNfRElTTUlTU0VEEAM=');
+
+@$core.Deprecated('Use createNotifySourceRequestDescriptor instead')
+const CreateNotifySourceRequest$json = {
+  '1': 'CreateNotifySourceRequest',
+  '2': [
+    {'1': 'source', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.sephirah.NotifySource', '10': 'source'},
+  ],
+};
+
+/// Descriptor for `CreateNotifySourceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createNotifySourceRequestDescriptor = $convert.base64Decode(
+    'ChlDcmVhdGVOb3RpZnlTb3VyY2VSZXF1ZXN0EkQKBnNvdXJjZRgBIAEoCzIsLmxpYnJhcmlhbi'
+    '5zZXBoaXJhaC52MS5zZXBoaXJhaC5Ob3RpZnlTb3VyY2VSBnNvdXJjZQ==');
+
+@$core.Deprecated('Use createNotifySourceResponseDescriptor instead')
+const CreateNotifySourceResponse$json = {
+  '1': 'CreateNotifySourceResponse',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+  ],
+};
+
+/// Descriptor for `CreateNotifySourceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List createNotifySourceResponseDescriptor = $convert.base64Decode(
+    'ChpDcmVhdGVOb3RpZnlTb3VyY2VSZXNwb25zZRIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS'
+    '5JbnRlcm5hbElEUgJpZA==');
+
+@$core.Deprecated('Use updateNotifySourceRequestDescriptor instead')
+const UpdateNotifySourceRequest$json = {
+  '1': 'UpdateNotifySourceRequest',
+  '2': [
+    {'1': 'source', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.sephirah.NotifySource', '10': 'source'},
+  ],
+};
+
+/// Descriptor for `UpdateNotifySourceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateNotifySourceRequestDescriptor = $convert.base64Decode(
+    'ChlVcGRhdGVOb3RpZnlTb3VyY2VSZXF1ZXN0EkQKBnNvdXJjZRgBIAEoCzIsLmxpYnJhcmlhbi'
+    '5zZXBoaXJhaC52MS5zZXBoaXJhaC5Ob3RpZnlTb3VyY2VSBnNvdXJjZQ==');
+
+@$core.Deprecated('Use updateNotifySourceResponseDescriptor instead')
+const UpdateNotifySourceResponse$json = {
+  '1': 'UpdateNotifySourceResponse',
+};
+
+/// Descriptor for `UpdateNotifySourceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List updateNotifySourceResponseDescriptor = $convert.base64Decode(
+    'ChpVcGRhdGVOb3RpZnlTb3VyY2VSZXNwb25zZQ==');
+
+@$core.Deprecated('Use listNotifySourcesRequestDescriptor instead')
+const ListNotifySourcesRequest$json = {
+  '1': 'ListNotifySourcesRequest',
+  '2': [
+    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
+    {'1': 'id_filter', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'idFilter'},
+    {'1': 'status_filter', '3': 4, '4': 3, '5': 14, '6': '.librarian.sephirah.v1.sephirah.NotifySourceStatus', '10': 'statusFilter'},
+  ],
+};
+
+/// Descriptor for `ListNotifySourcesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listNotifySourcesRequestDescriptor = $convert.base64Decode(
+    'ChhMaXN0Tm90aWZ5U291cmNlc1JlcXVlc3QSMwoGcGFnaW5nGAEgASgLMhsubGlicmFyaWFuLn'
+    'YxLlBhZ2luZ1JlcXVlc3RSBnBhZ2luZxI1CglpZF9maWx0ZXIYAiADKAsyGC5saWJyYXJpYW4u'
+    'djEuSW50ZXJuYWxJRFIIaWRGaWx0ZXISVwoNc3RhdHVzX2ZpbHRlchgEIAMoDjIyLmxpYnJhcm'
+    'lhbi5zZXBoaXJhaC52MS5zZXBoaXJhaC5Ob3RpZnlTb3VyY2VTdGF0dXNSDHN0YXR1c0ZpbHRl'
+    'cg==');
+
+@$core.Deprecated('Use listNotifySourcesResponseDescriptor instead')
+const ListNotifySourcesResponse$json = {
+  '1': 'ListNotifySourcesResponse',
+  '2': [
+    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingResponse', '10': 'paging'},
+    {'1': 'sources', '3': 2, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.sephirah.NotifySource', '10': 'sources'},
+  ],
+};
+
+/// Descriptor for `ListNotifySourcesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List listNotifySourcesResponseDescriptor = $convert.base64Decode(
+    'ChlMaXN0Tm90aWZ5U291cmNlc1Jlc3BvbnNlEjQKBnBhZ2luZxgBIAEoCzIcLmxpYnJhcmlhbi'
+    '52MS5QYWdpbmdSZXNwb25zZVIGcGFnaW5nEkYKB3NvdXJjZXMYAiADKAsyLC5saWJyYXJpYW4u'
+    'c2VwaGlyYWgudjEuc2VwaGlyYWguTm90aWZ5U291cmNlUgdzb3VyY2Vz');
 
 @$core.Deprecated('Use createNotifyTargetRequestDescriptor instead')
 const CreateNotifyTargetRequest$json = {
@@ -241,6 +338,26 @@ final $typed_data.Uint8List listNotifyFlowsResponseDescriptor = $convert.base64D
     'EuUGFnaW5nUmVzcG9uc2VSBnBhZ2luZxJACgVmbG93cxgCIAMoCzIqLmxpYnJhcmlhbi5zZXBo'
     'aXJhaC52MS5zZXBoaXJhaC5Ob3RpZnlGbG93UgVmbG93cw==');
 
+@$core.Deprecated('Use notifySourceDescriptor instead')
+const NotifySource$json = {
+  '1': 'NotifySource',
+  '2': [
+    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+    {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
+    {'1': 'source', '3': 4, '4': 1, '5': 11, '6': '.librarian.v1.FeatureRequest', '10': 'source'},
+    {'1': 'status', '3': 5, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.sephirah.NotifySourceStatus', '10': 'status'},
+  ],
+};
+
+/// Descriptor for `NotifySource`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List notifySourceDescriptor = $convert.base64Decode(
+    'CgxOb3RpZnlTb3VyY2USKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaW'
+    'QSEgoEbmFtZRgCIAEoCVIEbmFtZRIgCgtkZXNjcmlwdGlvbhgDIAEoCVILZGVzY3JpcHRpb24S'
+    'NAoGc291cmNlGAQgASgLMhwubGlicmFyaWFuLnYxLkZlYXR1cmVSZXF1ZXN0UgZzb3VyY2USSg'
+    'oGc3RhdHVzGAUgASgOMjIubGlicmFyaWFuLnNlcGhpcmFoLnYxLnNlcGhpcmFoLk5vdGlmeVNv'
+    'dXJjZVN0YXR1c1IGc3RhdHVz');
+
 @$core.Deprecated('Use notifyTargetDescriptor instead')
 const NotifyTarget$json = {
   '1': 'NotifyTarget',
@@ -268,51 +385,22 @@ const NotifyFlow$json = {
     {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
-    {'1': 'sources', '3': 4, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.sephirah.NotifyFlowSource', '10': 'sources'},
-    {'1': 'targets', '3': 5, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.sephirah.NotifyFlowTarget', '10': 'targets'},
+    {'1': 'source_ids', '3': 4, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'sourceIds'},
+    {'1': 'target_ids', '3': 5, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'targetIds'},
     {'1': 'status', '3': 6, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.sephirah.NotifyFlowStatus', '10': 'status'},
+    {'1': 'action_sets', '3': 7, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'actionSets'},
   ],
 };
 
 /// Descriptor for `NotifyFlow`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List notifyFlowDescriptor = $convert.base64Decode(
     'CgpOb3RpZnlGbG93EigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSAmlkEh'
-    'IKBG5hbWUYAiABKAlSBG5hbWUSIAoLZGVzY3JpcHRpb24YAyABKAlSC2Rlc2NyaXB0aW9uEkoK'
-    'B3NvdXJjZXMYBCADKAsyMC5saWJyYXJpYW4uc2VwaGlyYWgudjEuc2VwaGlyYWguTm90aWZ5Rm'
-    'xvd1NvdXJjZVIHc291cmNlcxJKCgd0YXJnZXRzGAUgAygLMjAubGlicmFyaWFuLnNlcGhpcmFo'
-    'LnYxLnNlcGhpcmFoLk5vdGlmeUZsb3dUYXJnZXRSB3RhcmdldHMSSAoGc3RhdHVzGAYgASgOMj'
-    'AubGlicmFyaWFuLnNlcGhpcmFoLnYxLnNlcGhpcmFoLk5vdGlmeUZsb3dTdGF0dXNSBnN0YXR1'
-    'cw==');
-
-@$core.Deprecated('Use notifyFlowSourceDescriptor instead')
-const NotifyFlowSource$json = {
-  '1': 'NotifyFlowSource',
-  '2': [
-    {'1': 'filter', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.sephirah.NotifyFilter', '10': 'filter'},
-    {'1': 'source_id', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'sourceId'},
-  ],
-};
-
-/// Descriptor for `NotifyFlowSource`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List notifyFlowSourceDescriptor = $convert.base64Decode(
-    'ChBOb3RpZnlGbG93U291cmNlEkQKBmZpbHRlchgBIAEoCzIsLmxpYnJhcmlhbi5zZXBoaXJhaC'
-    '52MS5zZXBoaXJhaC5Ob3RpZnlGaWx0ZXJSBmZpbHRlchI1Cglzb3VyY2VfaWQYAiABKAsyGC5s'
-    'aWJyYXJpYW4udjEuSW50ZXJuYWxJRFIIc291cmNlSWQ=');
-
-@$core.Deprecated('Use notifyFlowTargetDescriptor instead')
-const NotifyFlowTarget$json = {
-  '1': 'NotifyFlowTarget',
-  '2': [
-    {'1': 'filter', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.sephirah.NotifyFilter', '10': 'filter'},
-    {'1': 'target_id', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'targetId'},
-  ],
-};
-
-/// Descriptor for `NotifyFlowTarget`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List notifyFlowTargetDescriptor = $convert.base64Decode(
-    'ChBOb3RpZnlGbG93VGFyZ2V0EkQKBmZpbHRlchgBIAEoCzIsLmxpYnJhcmlhbi5zZXBoaXJhaC'
-    '52MS5zZXBoaXJhaC5Ob3RpZnlGaWx0ZXJSBmZpbHRlchI1Cgl0YXJnZXRfaWQYAiABKAsyGC5s'
-    'aWJyYXJpYW4udjEuSW50ZXJuYWxJRFIIdGFyZ2V0SWQ=');
+    'IKBG5hbWUYAiABKAlSBG5hbWUSIAoLZGVzY3JpcHRpb24YAyABKAlSC2Rlc2NyaXB0aW9uEjcK'
+    'CnNvdXJjZV9pZHMYBCADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIJc291cmNlSWRzEj'
+    'cKCnRhcmdldF9pZHMYBSADKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIJdGFyZ2V0SWRz'
+    'EkgKBnN0YXR1cxgGIAEoDjIwLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5zZXBoaXJhaC5Ob3RpZn'
+    'lGbG93U3RhdHVzUgZzdGF0dXMSOQoLYWN0aW9uX3NldHMYByADKAsyGC5saWJyYXJpYW4udjEu'
+    'SW50ZXJuYWxJRFIKYWN0aW9uU2V0cw==');
 
 @$core.Deprecated('Use notifyFilterDescriptor instead')
 const NotifyFilter$json = {
