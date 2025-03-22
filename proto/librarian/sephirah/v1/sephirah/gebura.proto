@@ -119,7 +119,6 @@ message ListAppsRequest {
   // Used to get other's **public** apps.
   repeated librarian.v1.InternalID owner_id_filter = 2;
   repeated librarian.v1.InternalID id_filter = 3;
-  repeated librarian.v1.InternalID device_id_filter = 5;
 }
 
 message ListAppsResponse {

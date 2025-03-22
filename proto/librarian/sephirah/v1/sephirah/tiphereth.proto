@@ -58,17 +58,12 @@ message RegisterUserResponse {
 }
 
 message RegisterDeviceRequest {
-  DeviceInfo device_info = 1;
+  Device device_info = 1;
   // Client locally generated id, same local id will be treated as same device
   optional string client_local_id = 2;
 }
 message RegisterDeviceResponse {
   librarian.v1.InternalID device_id = 1;
-}
-
-message ListRegisteredDevicesRequest {}
-message ListRegisteredDevicesResponse {
-  repeated DeviceInfo devices = 1;
 }
 
 message ListUserSessionsRequest {}
@@ -179,12 +174,12 @@ message User {
 message UserSession {
   librarian.v1.InternalID id = 1;
   librarian.v1.InternalID user_id = 2;
-  DeviceInfo device_info = 3;
+  Device device_info = 3;
   google.protobuf.Timestamp create_time = 4;
   google.protobuf.Timestamp expire_time = 5;
 }
 
-message DeviceInfo {
+message Device {
   librarian.v1.InternalID device_id = 1;
   string device_name = 2;
   SystemType system_type = 3;
