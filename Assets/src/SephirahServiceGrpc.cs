@@ -87,10 +87,6 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.RegisterDeviceResponse> __Marshaller_librarian_sephirah_v1_sephirah_RegisterDeviceResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.RegisterDeviceResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListRegisteredDevicesRequest> __Marshaller_librarian_sephirah_v1_sephirah_ListRegisteredDevicesRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListRegisteredDevicesRequest.Parser));
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListRegisteredDevicesResponse> __Marshaller_librarian_sephirah_v1_sephirah_ListRegisteredDevicesResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListRegisteredDevicesResponse.Parser));
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListUserSessionsRequest> __Marshaller_librarian_sephirah_v1_sephirah_ListUserSessionsRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListUserSessionsRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListUserSessionsResponse> __Marshaller_librarian_sephirah_v1_sephirah_ListUserSessionsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListUserSessionsResponse.Parser));
@@ -462,14 +458,6 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
         "RegisterDevice",
         __Marshaller_librarian_sephirah_v1_sephirah_RegisterDeviceRequest,
         __Marshaller_librarian_sephirah_v1_sephirah_RegisterDeviceResponse);
-
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListRegisteredDevicesRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListRegisteredDevicesResponse> __Method_ListRegisteredDevices = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListRegisteredDevicesRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListRegisteredDevicesResponse>(
-        grpc::MethodType.Unary,
-        __ServiceName,
-        "ListRegisteredDevices",
-        __Marshaller_librarian_sephirah_v1_sephirah_ListRegisteredDevicesRequest,
-        __Marshaller_librarian_sephirah_v1_sephirah_ListRegisteredDevicesResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListUserSessionsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListUserSessionsResponse> __Method_ListUserSessions = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListUserSessionsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListUserSessionsResponse>(
@@ -1198,18 +1186,6 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.RegisterDeviceResponse> RegisterDevice(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.RegisterDeviceRequest request, grpc::ServerCallContext context)
-      {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
-      }
-
-      /// <summary>
-      /// `Tiphereth` `Normal`
-      /// </summary>
-      /// <param name="request">The request received from the client.</param>
-      /// <param name="context">The context of the server-side call handler being invoked.</param>
-      /// <returns>The response to send back to the client (wrapped by a task).</returns>
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListRegisteredDevicesResponse> ListRegisteredDevices(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListRegisteredDevicesRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -2559,54 +2535,6 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
       public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.RegisterDeviceResponse> RegisterDeviceAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.RegisterDeviceRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_RegisterDevice, null, options, request);
-      }
-      /// <summary>
-      /// `Tiphereth` `Normal`
-      /// </summary>
-      /// <param name="request">The request to send to the server.</param>
-      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
-      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
-      /// <param name="cancellationToken">An optional token for canceling the call.</param>
-      /// <returns>The response received from the server.</returns>
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListRegisteredDevicesResponse ListRegisteredDevices(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListRegisteredDevicesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-      {
-        return ListRegisteredDevices(request, new grpc::CallOptions(headers, deadline, cancellationToken));
-      }
-      /// <summary>
-      /// `Tiphereth` `Normal`
-      /// </summary>
-      /// <param name="request">The request to send to the server.</param>
-      /// <param name="options">The options for the call.</param>
-      /// <returns>The response received from the server.</returns>
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListRegisteredDevicesResponse ListRegisteredDevices(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListRegisteredDevicesRequest request, grpc::CallOptions options)
-      {
-        return CallInvoker.BlockingUnaryCall(__Method_ListRegisteredDevices, null, options, request);
-      }
-      /// <summary>
-      /// `Tiphereth` `Normal`
-      /// </summary>
-      /// <param name="request">The request to send to the server.</param>
-      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
-      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
-      /// <param name="cancellationToken">An optional token for canceling the call.</param>
-      /// <returns>The call object.</returns>
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListRegisteredDevicesResponse> ListRegisteredDevicesAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListRegisteredDevicesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-      {
-        return ListRegisteredDevicesAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
-      }
-      /// <summary>
-      /// `Tiphereth` `Normal`
-      /// </summary>
-      /// <param name="request">The request to send to the server.</param>
-      /// <param name="options">The options for the call.</param>
-      /// <returns>The call object.</returns>
-      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListRegisteredDevicesResponse> ListRegisteredDevicesAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListRegisteredDevicesRequest request, grpc::CallOptions options)
-      {
-        return CallInvoker.AsyncUnaryCall(__Method_ListRegisteredDevices, null, options, request);
       }
       /// <summary>
       /// `Tiphereth` `Normal`
@@ -6252,7 +6180,6 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
           .AddMethod(__Method_RegisterUser, serviceImpl.RegisterUser)
           .AddMethod(__Method_UpdateUser, serviceImpl.UpdateUser)
           .AddMethod(__Method_RegisterDevice, serviceImpl.RegisterDevice)
-          .AddMethod(__Method_ListRegisteredDevices, serviceImpl.ListRegisteredDevices)
           .AddMethod(__Method_ListUserSessions, serviceImpl.ListUserSessions)
           .AddMethod(__Method_DeleteUserSession, serviceImpl.DeleteUserSession)
           .AddMethod(__Method_LinkAccount, serviceImpl.LinkAccount)
@@ -6347,7 +6274,6 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
       serviceBinder.AddMethod(__Method_RegisterUser, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.RegisterUserRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.RegisterUserResponse>(serviceImpl.RegisterUser));
       serviceBinder.AddMethod(__Method_UpdateUser, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UpdateUserRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UpdateUserResponse>(serviceImpl.UpdateUser));
       serviceBinder.AddMethod(__Method_RegisterDevice, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.RegisterDeviceRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.RegisterDeviceResponse>(serviceImpl.RegisterDevice));
-      serviceBinder.AddMethod(__Method_ListRegisteredDevices, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListRegisteredDevicesRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListRegisteredDevicesResponse>(serviceImpl.ListRegisteredDevices));
       serviceBinder.AddMethod(__Method_ListUserSessions, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListUserSessionsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListUserSessionsResponse>(serviceImpl.ListUserSessions));
       serviceBinder.AddMethod(__Method_DeleteUserSession, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.DeleteUserSessionRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.DeleteUserSessionResponse>(serviceImpl.DeleteUserSession));
       serviceBinder.AddMethod(__Method_LinkAccount, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.LinkAccountRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.LinkAccountResponse>(serviceImpl.LinkAccount));

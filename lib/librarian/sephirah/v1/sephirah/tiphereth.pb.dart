@@ -578,7 +578,7 @@ class RegisterUserResponse extends $pb.GeneratedMessage {
 
 class RegisterDeviceRequest extends $pb.GeneratedMessage {
   factory RegisterDeviceRequest({
-    DeviceInfo? deviceInfo,
+    Device? deviceInfo,
     $core.String? clientLocalId,
   }) {
     final $result = create();
@@ -595,7 +595,7 @@ class RegisterDeviceRequest extends $pb.GeneratedMessage {
   factory RegisterDeviceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RegisterDeviceRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
-    ..aOM<DeviceInfo>(1, _omitFieldNames ? '' : 'deviceInfo', subBuilder: DeviceInfo.create)
+    ..aOM<Device>(1, _omitFieldNames ? '' : 'deviceInfo', subBuilder: Device.create)
     ..aOS(2, _omitFieldNames ? '' : 'clientLocalId')
     ..hasRequiredFields = false
   ;
@@ -622,15 +622,15 @@ class RegisterDeviceRequest extends $pb.GeneratedMessage {
   static RegisterDeviceRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  DeviceInfo get deviceInfo => $_getN(0);
+  Device get deviceInfo => $_getN(0);
   @$pb.TagNumber(1)
-  set deviceInfo(DeviceInfo v) { setField(1, v); }
+  set deviceInfo(Device v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasDeviceInfo() => $_has(0);
   @$pb.TagNumber(1)
   void clearDeviceInfo() => clearField(1);
   @$pb.TagNumber(1)
-  DeviceInfo ensureDeviceInfo() => $_ensure(0);
+  Device ensureDeviceInfo() => $_ensure(0);
 
   /// Client locally generated id, same local id will be treated as same device
   @$pb.TagNumber(2)
@@ -693,82 +693,6 @@ class RegisterDeviceResponse extends $pb.GeneratedMessage {
   void clearDeviceId() => clearField(1);
   @$pb.TagNumber(1)
   $8.InternalID ensureDeviceId() => $_ensure(0);
-}
-
-class ListRegisteredDevicesRequest extends $pb.GeneratedMessage {
-  factory ListRegisteredDevicesRequest() => create();
-  ListRegisteredDevicesRequest._() : super();
-  factory ListRegisteredDevicesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListRegisteredDevicesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListRegisteredDevicesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  ListRegisteredDevicesRequest clone() => ListRegisteredDevicesRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  ListRegisteredDevicesRequest copyWith(void Function(ListRegisteredDevicesRequest) updates) => super.copyWith((message) => updates(message as ListRegisteredDevicesRequest)) as ListRegisteredDevicesRequest;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static ListRegisteredDevicesRequest create() => ListRegisteredDevicesRequest._();
-  ListRegisteredDevicesRequest createEmptyInstance() => create();
-  static $pb.PbList<ListRegisteredDevicesRequest> createRepeated() => $pb.PbList<ListRegisteredDevicesRequest>();
-  @$core.pragma('dart2js:noInline')
-  static ListRegisteredDevicesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListRegisteredDevicesRequest>(create);
-  static ListRegisteredDevicesRequest? _defaultInstance;
-}
-
-class ListRegisteredDevicesResponse extends $pb.GeneratedMessage {
-  factory ListRegisteredDevicesResponse({
-    $core.Iterable<DeviceInfo>? devices,
-  }) {
-    final $result = create();
-    if (devices != null) {
-      $result.devices.addAll(devices);
-    }
-    return $result;
-  }
-  ListRegisteredDevicesResponse._() : super();
-  factory ListRegisteredDevicesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListRegisteredDevicesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListRegisteredDevicesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
-    ..pc<DeviceInfo>(1, _omitFieldNames ? '' : 'devices', $pb.PbFieldType.PM, subBuilder: DeviceInfo.create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  ListRegisteredDevicesResponse clone() => ListRegisteredDevicesResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  ListRegisteredDevicesResponse copyWith(void Function(ListRegisteredDevicesResponse) updates) => super.copyWith((message) => updates(message as ListRegisteredDevicesResponse)) as ListRegisteredDevicesResponse;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static ListRegisteredDevicesResponse create() => ListRegisteredDevicesResponse._();
-  ListRegisteredDevicesResponse createEmptyInstance() => create();
-  static $pb.PbList<ListRegisteredDevicesResponse> createRepeated() => $pb.PbList<ListRegisteredDevicesResponse>();
-  @$core.pragma('dart2js:noInline')
-  static ListRegisteredDevicesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListRegisteredDevicesResponse>(create);
-  static ListRegisteredDevicesResponse? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $core.List<DeviceInfo> get devices => $_getList(0);
 }
 
 class ListUserSessionsRequest extends $pb.GeneratedMessage {
@@ -2202,7 +2126,7 @@ class UserSession extends $pb.GeneratedMessage {
   factory UserSession({
     $8.InternalID? id,
     $8.InternalID? userId,
-    DeviceInfo? deviceInfo,
+    Device? deviceInfo,
     $7.Timestamp? createTime,
     $7.Timestamp? expireTime,
   }) {
@@ -2231,7 +2155,7 @@ class UserSession extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UserSession', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
     ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $8.InternalID.create)
     ..aOM<$8.InternalID>(2, _omitFieldNames ? '' : 'userId', subBuilder: $8.InternalID.create)
-    ..aOM<DeviceInfo>(3, _omitFieldNames ? '' : 'deviceInfo', subBuilder: DeviceInfo.create)
+    ..aOM<Device>(3, _omitFieldNames ? '' : 'deviceInfo', subBuilder: Device.create)
     ..aOM<$7.Timestamp>(4, _omitFieldNames ? '' : 'createTime', subBuilder: $7.Timestamp.create)
     ..aOM<$7.Timestamp>(5, _omitFieldNames ? '' : 'expireTime', subBuilder: $7.Timestamp.create)
     ..hasRequiredFields = false
@@ -2281,15 +2205,15 @@ class UserSession extends $pb.GeneratedMessage {
   $8.InternalID ensureUserId() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  DeviceInfo get deviceInfo => $_getN(2);
+  Device get deviceInfo => $_getN(2);
   @$pb.TagNumber(3)
-  set deviceInfo(DeviceInfo v) { setField(3, v); }
+  set deviceInfo(Device v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasDeviceInfo() => $_has(2);
   @$pb.TagNumber(3)
   void clearDeviceInfo() => clearField(3);
   @$pb.TagNumber(3)
-  DeviceInfo ensureDeviceInfo() => $_ensure(2);
+  Device ensureDeviceInfo() => $_ensure(2);
 
   @$pb.TagNumber(4)
   $7.Timestamp get createTime => $_getN(3);
@@ -2314,8 +2238,8 @@ class UserSession extends $pb.GeneratedMessage {
   $7.Timestamp ensureExpireTime() => $_ensure(4);
 }
 
-class DeviceInfo extends $pb.GeneratedMessage {
-  factory DeviceInfo({
+class Device extends $pb.GeneratedMessage {
+  factory Device({
     $8.InternalID? deviceId,
     $core.String? deviceName,
     SystemType? systemType,
@@ -2348,11 +2272,11 @@ class DeviceInfo extends $pb.GeneratedMessage {
     }
     return $result;
   }
-  DeviceInfo._() : super();
-  factory DeviceInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory DeviceInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  Device._() : super();
+  factory Device.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Device.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeviceInfo', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Device', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
     ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'deviceId', subBuilder: $8.InternalID.create)
     ..aOS(2, _omitFieldNames ? '' : 'deviceName')
     ..e<SystemType>(3, _omitFieldNames ? '' : 'systemType', $pb.PbFieldType.OE, defaultOrMaker: SystemType.SYSTEM_TYPE_UNSPECIFIED, valueOf: SystemType.valueOf, enumValues: SystemType.values)
@@ -2367,22 +2291,22 @@ class DeviceInfo extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
   'Will be removed in next major version')
-  DeviceInfo clone() => DeviceInfo()..mergeFromMessage(this);
+  Device clone() => Device()..mergeFromMessage(this);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  DeviceInfo copyWith(void Function(DeviceInfo) updates) => super.copyWith((message) => updates(message as DeviceInfo)) as DeviceInfo;
+  Device copyWith(void Function(Device) updates) => super.copyWith((message) => updates(message as Device)) as Device;
 
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static DeviceInfo create() => DeviceInfo._();
-  DeviceInfo createEmptyInstance() => create();
-  static $pb.PbList<DeviceInfo> createRepeated() => $pb.PbList<DeviceInfo>();
+  static Device create() => Device._();
+  Device createEmptyInstance() => create();
+  static $pb.PbList<Device> createRepeated() => $pb.PbList<Device>();
   @$core.pragma('dart2js:noInline')
-  static DeviceInfo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DeviceInfo>(create);
-  static DeviceInfo? _defaultInstance;
+  static Device getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Device>(create);
+  static Device? _defaultInstance;
 
   @$pb.TagNumber(1)
   $8.InternalID get deviceId => $_getN(0);

@@ -5524,7 +5524,7 @@ proto.librarian.sephirah.v1.sephirah.UpdateAppResponse.serializeBinaryToWriter =
  * @private {!Array<number>}
  * @const
  */
-proto.librarian.sephirah.v1.sephirah.ListAppsRequest.repeatedFields_ = [2,3,5];
+proto.librarian.sephirah.v1.sephirah.ListAppsRequest.repeatedFields_ = [2,3];
 
 
 
@@ -5561,8 +5561,6 @@ paging: (f = msg.getPaging()) && librarian_v1_wellknown_pb.PagingRequest.toObjec
 ownerIdFilterList: jspb.Message.toObjectList(msg.getOwnerIdFilterList(),
     librarian_v1_wellknown_pb.InternalID.toObject, includeInstance),
 idFilterList: jspb.Message.toObjectList(msg.getIdFilterList(),
-    librarian_v1_wellknown_pb.InternalID.toObject, includeInstance),
-deviceIdFilterList: jspb.Message.toObjectList(msg.getDeviceIdFilterList(),
     librarian_v1_wellknown_pb.InternalID.toObject, includeInstance)
   };
 
@@ -5615,11 +5613,6 @@ proto.librarian.sephirah.v1.sephirah.ListAppsRequest.deserializeBinaryFromReader
       reader.readMessage(value,librarian_v1_wellknown_pb.InternalID.deserializeBinaryFromReader);
       msg.addIdFilter(value);
       break;
-    case 5:
-      var value = new librarian_v1_wellknown_pb.InternalID;
-      reader.readMessage(value,librarian_v1_wellknown_pb.InternalID.deserializeBinaryFromReader);
-      msg.addDeviceIdFilter(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -5669,14 +5662,6 @@ proto.librarian.sephirah.v1.sephirah.ListAppsRequest.serializeBinaryToWriter = f
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       3,
-      f,
-      librarian_v1_wellknown_pb.InternalID.serializeBinaryToWriter
-    );
-  }
-  f = message.getDeviceIdFilterList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      5,
       f,
       librarian_v1_wellknown_pb.InternalID.serializeBinaryToWriter
     );
@@ -5794,44 +5779,6 @@ proto.librarian.sephirah.v1.sephirah.ListAppsRequest.prototype.addIdFilter = fun
  */
 proto.librarian.sephirah.v1.sephirah.ListAppsRequest.prototype.clearIdFilterList = function() {
   return this.setIdFilterList([]);
-};
-
-
-/**
- * repeated librarian.v1.InternalID device_id_filter = 5;
- * @return {!Array<!proto.librarian.v1.InternalID>}
- */
-proto.librarian.sephirah.v1.sephirah.ListAppsRequest.prototype.getDeviceIdFilterList = function() {
-  return /** @type{!Array<!proto.librarian.v1.InternalID>} */ (
-    jspb.Message.getRepeatedWrapperField(this, librarian_v1_wellknown_pb.InternalID, 5));
-};
-
-
-/**
- * @param {!Array<!proto.librarian.v1.InternalID>} value
- * @return {!proto.librarian.sephirah.v1.sephirah.ListAppsRequest} returns this
-*/
-proto.librarian.sephirah.v1.sephirah.ListAppsRequest.prototype.setDeviceIdFilterList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 5, value);
-};
-
-
-/**
- * @param {!proto.librarian.v1.InternalID=} opt_value
- * @param {number=} opt_index
- * @return {!proto.librarian.v1.InternalID}
- */
-proto.librarian.sephirah.v1.sephirah.ListAppsRequest.prototype.addDeviceIdFilter = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.librarian.v1.InternalID, opt_index);
-};
-
-
-/**
- * Clears the list making it empty but non-null.
- * @return {!proto.librarian.sephirah.v1.sephirah.ListAppsRequest} returns this
- */
-proto.librarian.sephirah.v1.sephirah.ListAppsRequest.prototype.clearDeviceIdFilterList = function() {
-  return this.setDeviceIdFilterList([]);
 };
 
 

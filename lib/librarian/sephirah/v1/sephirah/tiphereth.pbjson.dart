@@ -248,7 +248,7 @@ final $typed_data.Uint8List registerUserResponseDescriptor = $convert.base64Deco
 const RegisterDeviceRequest$json = {
   '1': 'RegisterDeviceRequest',
   '2': [
-    {'1': 'device_info', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.sephirah.DeviceInfo', '10': 'deviceInfo'},
+    {'1': 'device_info', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.sephirah.Device', '10': 'deviceInfo'},
     {'1': 'client_local_id', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'clientLocalId', '17': true},
   ],
   '8': [
@@ -258,9 +258,9 @@ const RegisterDeviceRequest$json = {
 
 /// Descriptor for `RegisterDeviceRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List registerDeviceRequestDescriptor = $convert.base64Decode(
-    'ChVSZWdpc3RlckRldmljZVJlcXVlc3QSSwoLZGV2aWNlX2luZm8YASABKAsyKi5saWJyYXJpYW'
-    '4uc2VwaGlyYWgudjEuc2VwaGlyYWguRGV2aWNlSW5mb1IKZGV2aWNlSW5mbxIrCg9jbGllbnRf'
-    'bG9jYWxfaWQYAiABKAlIAFINY2xpZW50TG9jYWxJZIgBAUISChBfY2xpZW50X2xvY2FsX2lk');
+    'ChVSZWdpc3RlckRldmljZVJlcXVlc3QSRwoLZGV2aWNlX2luZm8YASABKAsyJi5saWJyYXJpYW'
+    '4uc2VwaGlyYWgudjEuc2VwaGlyYWguRGV2aWNlUgpkZXZpY2VJbmZvEisKD2NsaWVudF9sb2Nh'
+    'bF9pZBgCIAEoCUgAUg1jbGllbnRMb2NhbElkiAEBQhIKEF9jbGllbnRfbG9jYWxfaWQ=');
 
 @$core.Deprecated('Use registerDeviceResponseDescriptor instead')
 const RegisterDeviceResponse$json = {
@@ -274,28 +274,6 @@ const RegisterDeviceResponse$json = {
 final $typed_data.Uint8List registerDeviceResponseDescriptor = $convert.base64Decode(
     'ChZSZWdpc3RlckRldmljZVJlc3BvbnNlEjUKCWRldmljZV9pZBgBIAEoCzIYLmxpYnJhcmlhbi'
     '52MS5JbnRlcm5hbElEUghkZXZpY2VJZA==');
-
-@$core.Deprecated('Use listRegisteredDevicesRequestDescriptor instead')
-const ListRegisteredDevicesRequest$json = {
-  '1': 'ListRegisteredDevicesRequest',
-};
-
-/// Descriptor for `ListRegisteredDevicesRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listRegisteredDevicesRequestDescriptor = $convert.base64Decode(
-    'ChxMaXN0UmVnaXN0ZXJlZERldmljZXNSZXF1ZXN0');
-
-@$core.Deprecated('Use listRegisteredDevicesResponseDescriptor instead')
-const ListRegisteredDevicesResponse$json = {
-  '1': 'ListRegisteredDevicesResponse',
-  '2': [
-    {'1': 'devices', '3': 1, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.sephirah.DeviceInfo', '10': 'devices'},
-  ],
-};
-
-/// Descriptor for `ListRegisteredDevicesResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listRegisteredDevicesResponseDescriptor = $convert.base64Decode(
-    'Ch1MaXN0UmVnaXN0ZXJlZERldmljZXNSZXNwb25zZRJECgdkZXZpY2VzGAEgAygLMioubGlicm'
-    'FyaWFuLnNlcGhpcmFoLnYxLnNlcGhpcmFoLkRldmljZUluZm9SB2RldmljZXM=');
 
 @$core.Deprecated('Use listUserSessionsRequestDescriptor instead')
 const ListUserSessionsRequest$json = {
@@ -654,7 +632,7 @@ const UserSession$json = {
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
     {'1': 'user_id', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'userId'},
-    {'1': 'device_info', '3': 3, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.sephirah.DeviceInfo', '10': 'deviceInfo'},
+    {'1': 'device_info', '3': 3, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.sephirah.Device', '10': 'deviceInfo'},
     {'1': 'create_time', '3': 4, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createTime'},
     {'1': 'expire_time', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'expireTime'},
   ],
@@ -663,15 +641,15 @@ const UserSession$json = {
 /// Descriptor for `UserSession`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List userSessionDescriptor = $convert.base64Decode(
     'CgtVc2VyU2Vzc2lvbhIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZB'
-    'IxCgd1c2VyX2lkGAIgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSBnVzZXJJZBJLCgtk'
-    'ZXZpY2VfaW5mbxgDIAEoCzIqLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5zZXBoaXJhaC5EZXZpY2'
-    'VJbmZvUgpkZXZpY2VJbmZvEjsKC2NyZWF0ZV90aW1lGAQgASgLMhouZ29vZ2xlLnByb3RvYnVm'
-    'LlRpbWVzdGFtcFIKY3JlYXRlVGltZRI7CgtleHBpcmVfdGltZRgFIAEoCzIaLmdvb2dsZS5wcm'
-    '90b2J1Zi5UaW1lc3RhbXBSCmV4cGlyZVRpbWU=');
+    'IxCgd1c2VyX2lkGAIgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSBnVzZXJJZBJHCgtk'
+    'ZXZpY2VfaW5mbxgDIAEoCzImLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5zZXBoaXJhaC5EZXZpY2'
+    'VSCmRldmljZUluZm8SOwoLY3JlYXRlX3RpbWUYBCABKAsyGi5nb29nbGUucHJvdG9idWYuVGlt'
+    'ZXN0YW1wUgpjcmVhdGVUaW1lEjsKC2V4cGlyZV90aW1lGAUgASgLMhouZ29vZ2xlLnByb3RvYn'
+    'VmLlRpbWVzdGFtcFIKZXhwaXJlVGltZQ==');
 
-@$core.Deprecated('Use deviceInfoDescriptor instead')
-const DeviceInfo$json = {
-  '1': 'DeviceInfo',
+@$core.Deprecated('Use deviceDescriptor instead')
+const Device$json = {
+  '1': 'Device',
   '2': [
     {'1': 'device_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'deviceId'},
     {'1': 'device_name', '3': 2, '4': 1, '5': 9, '10': 'deviceName'},
@@ -683,15 +661,15 @@ const DeviceInfo$json = {
   ],
 };
 
-/// Descriptor for `DeviceInfo`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List deviceInfoDescriptor = $convert.base64Decode(
-    'CgpEZXZpY2VJbmZvEjUKCWRldmljZV9pZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbE'
-    'lEUghkZXZpY2VJZBIfCgtkZXZpY2VfbmFtZRgCIAEoCVIKZGV2aWNlTmFtZRJLCgtzeXN0ZW1f'
-    'dHlwZRgDIAEoDjIqLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5zZXBoaXJhaC5TeXN0ZW1UeXBlUg'
-    'pzeXN0ZW1UeXBlEiUKDnN5c3RlbV92ZXJzaW9uGAQgASgJUg1zeXN0ZW1WZXJzaW9uEh8KC2Ns'
-    'aWVudF9uYW1lGAUgASgJUgpjbGllbnROYW1lEjsKGmNsaWVudF9zb3VyY2VfY29kZV9hZGRyZX'
-    'NzGAYgASgJUhdjbGllbnRTb3VyY2VDb2RlQWRkcmVzcxIlCg5jbGllbnRfdmVyc2lvbhgHIAEo'
-    'CVINY2xpZW50VmVyc2lvbg==');
+/// Descriptor for `Device`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deviceDescriptor = $convert.base64Decode(
+    'CgZEZXZpY2USNQoJZGV2aWNlX2lkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSCG'
+    'RldmljZUlkEh8KC2RldmljZV9uYW1lGAIgASgJUgpkZXZpY2VOYW1lEksKC3N5c3RlbV90eXBl'
+    'GAMgASgOMioubGlicmFyaWFuLnNlcGhpcmFoLnYxLnNlcGhpcmFoLlN5c3RlbVR5cGVSCnN5c3'
+    'RlbVR5cGUSJQoOc3lzdGVtX3ZlcnNpb24YBCABKAlSDXN5c3RlbVZlcnNpb24SHwoLY2xpZW50'
+    'X25hbWUYBSABKAlSCmNsaWVudE5hbWUSOwoaY2xpZW50X3NvdXJjZV9jb2RlX2FkZHJlc3MYBi'
+    'ABKAlSF2NsaWVudFNvdXJjZUNvZGVBZGRyZXNzEiUKDmNsaWVudF92ZXJzaW9uGAcgASgJUg1j'
+    'bGllbnRWZXJzaW9u');
 
 @$core.Deprecated('Use porterDescriptor instead')
 const Porter$json = {

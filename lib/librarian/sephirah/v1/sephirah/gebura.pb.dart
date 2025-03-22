@@ -1339,7 +1339,6 @@ class ListAppsRequest extends $pb.GeneratedMessage {
     $8.PagingRequest? paging,
     $core.Iterable<$8.InternalID>? ownerIdFilter,
     $core.Iterable<$8.InternalID>? idFilter,
-    $core.Iterable<$8.InternalID>? deviceIdFilter,
   }) {
     final $result = create();
     if (paging != null) {
@@ -1351,9 +1350,6 @@ class ListAppsRequest extends $pb.GeneratedMessage {
     if (idFilter != null) {
       $result.idFilter.addAll(idFilter);
     }
-    if (deviceIdFilter != null) {
-      $result.deviceIdFilter.addAll(deviceIdFilter);
-    }
     return $result;
   }
   ListAppsRequest._() : super();
@@ -1364,7 +1360,6 @@ class ListAppsRequest extends $pb.GeneratedMessage {
     ..aOM<$8.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $8.PagingRequest.create)
     ..pc<$8.InternalID>(2, _omitFieldNames ? '' : 'ownerIdFilter', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
     ..pc<$8.InternalID>(3, _omitFieldNames ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
-    ..pc<$8.InternalID>(5, _omitFieldNames ? '' : 'deviceIdFilter', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -1407,9 +1402,6 @@ class ListAppsRequest extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(3)
   $core.List<$8.InternalID> get idFilter => $_getList(2);
-
-  @$pb.TagNumber(5)
-  $core.List<$8.InternalID> get deviceIdFilter => $_getList(3);
 }
 
 class ListAppsResponse extends $pb.GeneratedMessage {

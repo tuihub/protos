@@ -342,38 +342,6 @@ pub mod librarian_sephirah_service_client {
         }
         /** `Tiphereth` `Normal`
 */
-        pub async fn list_registered_devices(
-            &mut self,
-            request: impl tonic::IntoRequest<super::ListRegisteredDevicesRequest>,
-        ) -> std::result::Result<
-            tonic::Response<super::ListRegisteredDevicesResponse>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
-            let codec = tonic::codec::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListRegisteredDevices",
-            );
-            let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new(
-                        "librarian.sephirah.v1.sephirah.LibrarianSephirahService",
-                        "ListRegisteredDevices",
-                    ),
-                );
-            self.inner.unary(req, path, codec).await
-        }
-        /** `Tiphereth` `Normal`
-*/
         pub async fn list_user_sessions(
             &mut self,
             request: impl tonic::IntoRequest<super::ListUserSessionsRequest>,
@@ -2932,15 +2900,6 @@ pub mod librarian_sephirah_service_server {
         >;
         /** `Tiphereth` `Normal`
 */
-        async fn list_registered_devices(
-            &self,
-            request: tonic::Request<super::ListRegisteredDevicesRequest>,
-        ) -> std::result::Result<
-            tonic::Response<super::ListRegisteredDevicesResponse>,
-            tonic::Status,
-        >;
-        /** `Tiphereth` `Normal`
-*/
         async fn list_user_sessions(
             &self,
             request: tonic::Request<super::ListUserSessionsRequest>,
@@ -4117,57 +4076,6 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = RegisterDeviceSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
-                        let mut grpc = tonic::server::Grpc::new(codec)
-                            .apply_compression_config(
-                                accept_compression_encodings,
-                                send_compression_encodings,
-                            )
-                            .apply_max_message_size_config(
-                                max_decoding_message_size,
-                                max_encoding_message_size,
-                            );
-                        let res = grpc.unary(method, req).await;
-                        Ok(res)
-                    };
-                    Box::pin(fut)
-                }
-                "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListRegisteredDevices" => {
-                    #[allow(non_camel_case_types)]
-                    struct ListRegisteredDevicesSvc<T: LibrarianSephirahService>(
-                        pub Arc<T>,
-                    );
-                    impl<
-                        T: LibrarianSephirahService,
-                    > tonic::server::UnaryService<super::ListRegisteredDevicesRequest>
-                    for ListRegisteredDevicesSvc<T> {
-                        type Response = super::ListRegisteredDevicesResponse;
-                        type Future = BoxFuture<
-                            tonic::Response<Self::Response>,
-                            tonic::Status,
-                        >;
-                        fn call(
-                            &mut self,
-                            request: tonic::Request<super::ListRegisteredDevicesRequest>,
-                        ) -> Self::Future {
-                            let inner = Arc::clone(&self.0);
-                            let fut = async move {
-                                <T as LibrarianSephirahService>::list_registered_devices(
-                                        &inner,
-                                        request,
-                                    )
-                                    .await
-                            };
-                            Box::pin(fut)
-                        }
-                    }
-                    let accept_compression_encodings = self.accept_compression_encodings;
-                    let send_compression_encodings = self.send_compression_encodings;
-                    let max_decoding_message_size = self.max_decoding_message_size;
-                    let max_encoding_message_size = self.max_encoding_message_size;
-                    let inner = self.inner.clone();
-                    let fut = async move {
-                        let method = ListRegisteredDevicesSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

@@ -59,10 +59,6 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
       '/librarian.sephirah.v1.sephirah.LibrarianSephirahService/RegisterDevice',
       ($1.RegisterDeviceRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.RegisterDeviceResponse.fromBuffer(value));
-  static final _$listRegisteredDevices = $grpc.ClientMethod<$1.ListRegisteredDevicesRequest, $1.ListRegisteredDevicesResponse>(
-      '/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListRegisteredDevices',
-      ($1.ListRegisteredDevicesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $1.ListRegisteredDevicesResponse.fromBuffer(value));
   static final _$listUserSessions = $grpc.ClientMethod<$1.ListUserSessionsRequest, $1.ListUserSessionsResponse>(
       '/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListUserSessions',
       ($1.ListUserSessionsRequest value) => value.writeToBuffer(),
@@ -408,10 +404,6 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$1.RegisterDeviceResponse> registerDevice($1.RegisterDeviceRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$registerDevice, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$1.ListRegisteredDevicesResponse> listRegisteredDevices($1.ListRegisteredDevicesRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$listRegisteredDevices, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.ListUserSessionsResponse> listUserSessions($1.ListUserSessionsRequest request, {$grpc.CallOptions? options}) {
@@ -784,13 +776,6 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $1.RegisterDeviceRequest.fromBuffer(value),
         ($1.RegisterDeviceResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.ListRegisteredDevicesRequest, $1.ListRegisteredDevicesResponse>(
-        'ListRegisteredDevices',
-        listRegisteredDevices_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $1.ListRegisteredDevicesRequest.fromBuffer(value),
-        ($1.ListRegisteredDevicesResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$1.ListUserSessionsRequest, $1.ListUserSessionsResponse>(
         'ListUserSessions',
         listUserSessions_Pre,
@@ -1364,10 +1349,6 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
     return registerDevice(call, await request);
   }
 
-  $async.Future<$1.ListRegisteredDevicesResponse> listRegisteredDevices_Pre($grpc.ServiceCall call, $async.Future<$1.ListRegisteredDevicesRequest> request) async {
-    return listRegisteredDevices(call, await request);
-  }
-
   $async.Future<$1.ListUserSessionsResponse> listUserSessions_Pre($grpc.ServiceCall call, $async.Future<$1.ListUserSessionsRequest> request) async {
     return listUserSessions(call, await request);
   }
@@ -1672,7 +1653,6 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
   $async.Future<$1.RegisterUserResponse> registerUser($grpc.ServiceCall call, $1.RegisterUserRequest request);
   $async.Future<$1.UpdateUserResponse> updateUser($grpc.ServiceCall call, $1.UpdateUserRequest request);
   $async.Future<$1.RegisterDeviceResponse> registerDevice($grpc.ServiceCall call, $1.RegisterDeviceRequest request);
-  $async.Future<$1.ListRegisteredDevicesResponse> listRegisteredDevices($grpc.ServiceCall call, $1.ListRegisteredDevicesRequest request);
   $async.Future<$1.ListUserSessionsResponse> listUserSessions($grpc.ServiceCall call, $1.ListUserSessionsRequest request);
   $async.Future<$1.DeleteUserSessionResponse> deleteUserSession($grpc.ServiceCall call, $1.DeleteUserSessionRequest request);
   $async.Future<$1.LinkAccountResponse> linkAccount($grpc.ServiceCall call, $1.LinkAccountRequest request);

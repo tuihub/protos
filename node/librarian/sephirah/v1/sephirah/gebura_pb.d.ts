@@ -582,11 +582,6 @@ export class ListAppsRequest extends jspb.Message {
   setIdFilterList(value: Array<librarian_v1_wellknown_pb.InternalID>): void;
   addIdFilter(value?: librarian_v1_wellknown_pb.InternalID, index?: number): librarian_v1_wellknown_pb.InternalID;
 
-  clearDeviceIdFilterList(): void;
-  getDeviceIdFilterList(): Array<librarian_v1_wellknown_pb.InternalID>;
-  setDeviceIdFilterList(value: Array<librarian_v1_wellknown_pb.InternalID>): void;
-  addDeviceIdFilter(value?: librarian_v1_wellknown_pb.InternalID, index?: number): librarian_v1_wellknown_pb.InternalID;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListAppsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListAppsRequest): ListAppsRequest.AsObject;
@@ -602,7 +597,6 @@ export namespace ListAppsRequest {
     paging?: librarian_v1_wellknown_pb.PagingRequest.AsObject,
     ownerIdFilterList: Array<librarian_v1_wellknown_pb.InternalID.AsObject>,
     idFilterList: Array<librarian_v1_wellknown_pb.InternalID.AsObject>,
-    deviceIdFilterList: Array<librarian_v1_wellknown_pb.InternalID.AsObject>,
   }
 }
 

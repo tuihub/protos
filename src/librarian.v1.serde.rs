@@ -1609,6 +1609,7 @@ impl serde::Serialize for FileType {
             Self::Unspecified => "FILE_TYPE_UNSPECIFIED",
             Self::GeburaSave => "FILE_TYPE_GEBURA_SAVE",
             Self::ChesedImage => "FILE_TYPE_CHESED_IMAGE",
+            Self::GeburaAppInfoImage => "FILE_TYPE_GEBURA_APP_INFO_IMAGE",
         };
         serializer.serialize_str(variant)
     }
@@ -1623,6 +1624,7 @@ impl<'de> serde::Deserialize<'de> for FileType {
             "FILE_TYPE_UNSPECIFIED",
             "FILE_TYPE_GEBURA_SAVE",
             "FILE_TYPE_CHESED_IMAGE",
+            "FILE_TYPE_GEBURA_APP_INFO_IMAGE",
         ];
 
         struct GeneratedVisitor;
@@ -1666,6 +1668,7 @@ impl<'de> serde::Deserialize<'de> for FileType {
                     "FILE_TYPE_UNSPECIFIED" => Ok(FileType::Unspecified),
                     "FILE_TYPE_GEBURA_SAVE" => Ok(FileType::GeburaSave),
                     "FILE_TYPE_CHESED_IMAGE" => Ok(FileType::ChesedImage),
+                    "FILE_TYPE_GEBURA_APP_INFO_IMAGE" => Ok(FileType::GeburaAppInfoImage),
                     _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
                 }
             }

@@ -27,7 +27,6 @@ const (
 	LibrarianSephirahService_RegisterUser_FullMethodName                 = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/RegisterUser"
 	LibrarianSephirahService_UpdateUser_FullMethodName                   = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UpdateUser"
 	LibrarianSephirahService_RegisterDevice_FullMethodName               = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/RegisterDevice"
-	LibrarianSephirahService_ListRegisteredDevices_FullMethodName        = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListRegisteredDevices"
 	LibrarianSephirahService_ListUserSessions_FullMethodName             = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListUserSessions"
 	LibrarianSephirahService_DeleteUserSession_FullMethodName            = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/DeleteUserSession"
 	LibrarianSephirahService_LinkAccount_FullMethodName                  = "/librarian.sephirah.v1.sephirah.LibrarianSephirahService/LinkAccount"
@@ -142,8 +141,6 @@ type LibrarianSephirahServiceClient interface {
 	// and store the device_id locally.
 	// The server could add extra limits to non-registered device
 	RegisterDevice(ctx context.Context, in *RegisterDeviceRequest, opts ...grpc.CallOption) (*RegisterDeviceResponse, error)
-	// `Tiphereth` `Normal`
-	ListRegisteredDevices(ctx context.Context, in *ListRegisteredDevicesRequest, opts ...grpc.CallOption) (*ListRegisteredDevicesResponse, error)
 	// `Tiphereth` `Normal`
 	ListUserSessions(ctx context.Context, in *ListUserSessionsRequest, opts ...grpc.CallOption) (*ListUserSessionsResponse, error)
 	// `Tiphereth` `Normal` delete session will revoke refresh_token immediately.
@@ -400,16 +397,6 @@ func (c *librarianSephirahServiceClient) RegisterDevice(ctx context.Context, in 
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(RegisterDeviceResponse)
 	err := c.cc.Invoke(ctx, LibrarianSephirahService_RegisterDevice_FullMethodName, in, out, cOpts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *librarianSephirahServiceClient) ListRegisteredDevices(ctx context.Context, in *ListRegisteredDevicesRequest, opts ...grpc.CallOption) (*ListRegisteredDevicesResponse, error) {
-	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ListRegisteredDevicesResponse)
-	err := c.cc.Invoke(ctx, LibrarianSephirahService_ListRegisteredDevices_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1240,8 +1227,6 @@ type LibrarianSephirahServiceServer interface {
 	// The server could add extra limits to non-registered device
 	RegisterDevice(context.Context, *RegisterDeviceRequest) (*RegisterDeviceResponse, error)
 	// `Tiphereth` `Normal`
-	ListRegisteredDevices(context.Context, *ListRegisteredDevicesRequest) (*ListRegisteredDevicesResponse, error)
-	// `Tiphereth` `Normal`
 	ListUserSessions(context.Context, *ListUserSessionsRequest) (*ListUserSessionsResponse, error)
 	// `Tiphereth` `Normal` delete session will revoke refresh_token immediately.
 	// NOTE: This can also be used to log out at server side.
@@ -1437,9 +1422,6 @@ func (UnimplementedLibrarianSephirahServiceServer) UpdateUser(context.Context, *
 }
 func (UnimplementedLibrarianSephirahServiceServer) RegisterDevice(context.Context, *RegisterDeviceRequest) (*RegisterDeviceResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RegisterDevice not implemented")
-}
-func (UnimplementedLibrarianSephirahServiceServer) ListRegisteredDevices(context.Context, *ListRegisteredDevicesRequest) (*ListRegisteredDevicesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ListRegisteredDevices not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) ListUserSessions(context.Context, *ListUserSessionsRequest) (*ListUserSessionsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListUserSessions not implemented")
@@ -1827,24 +1809,6 @@ func _LibrarianSephirahService_RegisterDevice_Handler(srv interface{}, ctx conte
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LibrarianSephirahServiceServer).RegisterDevice(ctx, req.(*RegisterDeviceRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _LibrarianSephirahService_ListRegisteredDevices_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListRegisteredDevicesRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(LibrarianSephirahServiceServer).ListRegisteredDevices(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: LibrarianSephirahService_ListRegisteredDevices_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LibrarianSephirahServiceServer).ListRegisteredDevices(ctx, req.(*ListRegisteredDevicesRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -3229,10 +3193,6 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "RegisterDevice",
 			Handler:    _LibrarianSephirahService_RegisterDevice_Handler,
-		},
-		{
-			MethodName: "ListRegisteredDevices",
-			Handler:    _LibrarianSephirahService_ListRegisteredDevices_Handler,
 		},
 		{
 			MethodName: "ListUserSessions",

@@ -17,11 +17,13 @@ class FileType extends $pb.ProtobufEnum {
   static const FileType FILE_TYPE_UNSPECIFIED = FileType._(0, _omitEnumNames ? '' : 'FILE_TYPE_UNSPECIFIED');
   static const FileType FILE_TYPE_GEBURA_SAVE = FileType._(1, _omitEnumNames ? '' : 'FILE_TYPE_GEBURA_SAVE');
   static const FileType FILE_TYPE_CHESED_IMAGE = FileType._(2, _omitEnumNames ? '' : 'FILE_TYPE_CHESED_IMAGE');
+  static const FileType FILE_TYPE_GEBURA_APP_INFO_IMAGE = FileType._(3, _omitEnumNames ? '' : 'FILE_TYPE_GEBURA_APP_INFO_IMAGE');
 
   static const $core.List<FileType> values = <FileType> [
     FILE_TYPE_UNSPECIFIED,
     FILE_TYPE_GEBURA_SAVE,
     FILE_TYPE_CHESED_IMAGE,
+    FILE_TYPE_GEBURA_APP_INFO_IMAGE,
   ];
 
   static final $core.Map<$core.int, FileType> _byValue = $pb.ProtobufEnum.initByValue(values);

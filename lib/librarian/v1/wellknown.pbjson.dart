@@ -20,13 +20,15 @@ const FileType$json = {
     {'1': 'FILE_TYPE_UNSPECIFIED', '2': 0},
     {'1': 'FILE_TYPE_GEBURA_SAVE', '2': 1},
     {'1': 'FILE_TYPE_CHESED_IMAGE', '2': 2},
+    {'1': 'FILE_TYPE_GEBURA_APP_INFO_IMAGE', '2': 3},
   ],
 };
 
 /// Descriptor for `FileType`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List fileTypeDescriptor = $convert.base64Decode(
     'CghGaWxlVHlwZRIZChVGSUxFX1RZUEVfVU5TUEVDSUZJRUQQABIZChVGSUxFX1RZUEVfR0VCVV'
-    'JBX1NBVkUQARIaChZGSUxFX1RZUEVfQ0hFU0VEX0lNQUdFEAI=');
+    'JBX1NBVkUQARIaChZGSUxFX1RZUEVfQ0hFU0VEX0lNQUdFEAISIwofRklMRV9UWVBFX0dFQlVS'
+    'QV9BUFBfSU5GT19JTUFHRRAD');
 
 @$core.Deprecated('Use wellKnownAccountPlatformDescriptor instead')
 const WellKnownAccountPlatform$json = {

@@ -2371,7 +2371,8 @@ proto.librarian.v1.FeatureSummary.prototype.clearFeedGettersList = function() {
 proto.librarian.v1.FileType = {
   FILE_TYPE_UNSPECIFIED: 0,
   FILE_TYPE_GEBURA_SAVE: 1,
-  FILE_TYPE_CHESED_IMAGE: 2
+  FILE_TYPE_CHESED_IMAGE: 2,
+  FILE_TYPE_GEBURA_APP_INFO_IMAGE: 3
 };
 
 /**

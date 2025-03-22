@@ -1046,28 +1046,6 @@ function deserialize_librarian_sephirah_v1_sephirah_ListPorterDigestsResponse(bu
   return librarian_sephirah_v1_sephirah_tiphereth_pb.ListPorterDigestsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_sephirah_ListRegisteredDevicesRequest(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_sephirah_tiphereth_pb.ListRegisteredDevicesRequest)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.sephirah.ListRegisteredDevicesRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_librarian_sephirah_v1_sephirah_ListRegisteredDevicesRequest(buffer_arg) {
-  return librarian_sephirah_v1_sephirah_tiphereth_pb.ListRegisteredDevicesRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_librarian_sephirah_v1_sephirah_ListRegisteredDevicesResponse(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_sephirah_tiphereth_pb.ListRegisteredDevicesResponse)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.sephirah.ListRegisteredDevicesResponse');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_librarian_sephirah_v1_sephirah_ListRegisteredDevicesResponse(buffer_arg) {
-  return librarian_sephirah_v1_sephirah_tiphereth_pb.ListRegisteredDevicesResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
 function serialize_librarian_sephirah_v1_sephirah_ListStoreAppBinariesRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_sephirah_gebura_pb.ListStoreAppBinariesRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.sephirah.ListStoreAppBinariesRequest');
@@ -2016,18 +1994,6 @@ registerDevice: {
     requestDeserialize: deserialize_librarian_sephirah_v1_sephirah_RegisterDeviceRequest,
     responseSerialize: serialize_librarian_sephirah_v1_sephirah_RegisterDeviceResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_sephirah_RegisterDeviceResponse,
-  },
-  // `Tiphereth` `Normal`
-listRegisteredDevices: {
-    path: '/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListRegisteredDevices',
-    requestStream: false,
-    responseStream: false,
-    requestType: librarian_sephirah_v1_sephirah_tiphereth_pb.ListRegisteredDevicesRequest,
-    responseType: librarian_sephirah_v1_sephirah_tiphereth_pb.ListRegisteredDevicesResponse,
-    requestSerialize: serialize_librarian_sephirah_v1_sephirah_ListRegisteredDevicesRequest,
-    requestDeserialize: deserialize_librarian_sephirah_v1_sephirah_ListRegisteredDevicesRequest,
-    responseSerialize: serialize_librarian_sephirah_v1_sephirah_ListRegisteredDevicesResponse,
-    responseDeserialize: deserialize_librarian_sephirah_v1_sephirah_ListRegisteredDevicesResponse,
   },
   // `Tiphereth` `Normal`
 listUserSessions: {

@@ -369,7 +369,6 @@ const ListAppsRequest$json = {
     {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
     {'1': 'owner_id_filter', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'ownerIdFilter'},
     {'1': 'id_filter', '3': 3, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'idFilter'},
-    {'1': 'device_id_filter', '3': 5, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'deviceIdFilter'},
   ],
 };
 
@@ -378,8 +377,7 @@ final $typed_data.Uint8List listAppsRequestDescriptor = $convert.base64Decode(
     'Cg9MaXN0QXBwc1JlcXVlc3QSMwoGcGFnaW5nGAEgASgLMhsubGlicmFyaWFuLnYxLlBhZ2luZ1'
     'JlcXVlc3RSBnBhZ2luZxJACg9vd25lcl9pZF9maWx0ZXIYAiADKAsyGC5saWJyYXJpYW4udjEu'
     'SW50ZXJuYWxJRFINb3duZXJJZEZpbHRlchI1CglpZF9maWx0ZXIYAyADKAsyGC5saWJyYXJpYW'
-    '4udjEuSW50ZXJuYWxJRFIIaWRGaWx0ZXISQgoQZGV2aWNlX2lkX2ZpbHRlchgFIAMoCzIYLmxp'
-    'YnJhcmlhbi52MS5JbnRlcm5hbElEUg5kZXZpY2VJZEZpbHRlcg==');
+    '4udjEuSW50ZXJuYWxJRFIIaWRGaWx0ZXI=');
 
 @$core.Deprecated('Use listAppsResponseDescriptor instead')
 const ListAppsResponse$json = {
