@@ -101,6 +101,8 @@ message FeatureSummary {
   repeated librarian.v1.FeatureFlag app_info_sources = 2;
   // WellKnownFeedSource
   repeated librarian.v1.FeatureFlag feed_sources = 3;
+  // WellKnownNotifySource
+  repeated librarian.v1.FeatureFlag notify_source = 8;
   // WellKnownNotifyDestination
   repeated librarian.v1.FeatureFlag notify_destinations = 4;
   // WellKnownFeedItemAction
