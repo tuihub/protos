@@ -340,6 +340,9 @@ impl serde::Serialize for FeatureSummary {
         if !self.feed_sources.is_empty() {
             len += 1;
         }
+        if !self.notify_source.is_empty() {
+            len += 1;
+        }
         if !self.notify_destinations.is_empty() {
             len += 1;
         }
@@ -361,6 +364,9 @@ impl serde::Serialize for FeatureSummary {
         }
         if !self.feed_sources.is_empty() {
             struct_ser.serialize_field("feedSources", &self.feed_sources)?;
+        }
+        if !self.notify_source.is_empty() {
+            struct_ser.serialize_field("notifySource", &self.notify_source)?;
         }
         if !self.notify_destinations.is_empty() {
             struct_ser.serialize_field("notifyDestinations", &self.notify_destinations)?;
@@ -390,6 +396,8 @@ impl<'de> serde::Deserialize<'de> for FeatureSummary {
             "appInfoSources",
             "feed_sources",
             "feedSources",
+            "notify_source",
+            "notifySource",
             "notify_destinations",
             "notifyDestinations",
             "feed_item_actions",
@@ -405,6 +413,7 @@ impl<'de> serde::Deserialize<'de> for FeatureSummary {
             AccountPlatforms,
             AppInfoSources,
             FeedSources,
+            NotifySource,
             NotifyDestinations,
             FeedItemActions,
             FeedSetters,
@@ -433,6 +442,7 @@ impl<'de> serde::Deserialize<'de> for FeatureSummary {
                             "accountPlatforms" | "account_platforms" => Ok(GeneratedField::AccountPlatforms),
                             "appInfoSources" | "app_info_sources" => Ok(GeneratedField::AppInfoSources),
                             "feedSources" | "feed_sources" => Ok(GeneratedField::FeedSources),
+                            "notifySource" | "notify_source" => Ok(GeneratedField::NotifySource),
                             "notifyDestinations" | "notify_destinations" => Ok(GeneratedField::NotifyDestinations),
                             "feedItemActions" | "feed_item_actions" => Ok(GeneratedField::FeedItemActions),
                             "feedSetters" | "feed_setters" => Ok(GeneratedField::FeedSetters),
@@ -459,6 +469,7 @@ impl<'de> serde::Deserialize<'de> for FeatureSummary {
                 let mut account_platforms__ = None;
                 let mut app_info_sources__ = None;
                 let mut feed_sources__ = None;
+                let mut notify_source__ = None;
                 let mut notify_destinations__ = None;
                 let mut feed_item_actions__ = None;
                 let mut feed_setters__ = None;
@@ -482,6 +493,12 @@ impl<'de> serde::Deserialize<'de> for FeatureSummary {
                                 return Err(serde::de::Error::duplicate_field("feedSources"));
                             }
                             feed_sources__ = Some(map_.next_value()?);
+                        }
+                        GeneratedField::NotifySource => {
+                            if notify_source__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("notifySource"));
+                            }
+                            notify_source__ = Some(map_.next_value()?);
                         }
                         GeneratedField::NotifyDestinations => {
                             if notify_destinations__.is_some() {
@@ -513,6 +530,7 @@ impl<'de> serde::Deserialize<'de> for FeatureSummary {
                     account_platforms: account_platforms__.unwrap_or_default(),
                     app_info_sources: app_info_sources__.unwrap_or_default(),
                     feed_sources: feed_sources__.unwrap_or_default(),
+                    notify_source: notify_source__.unwrap_or_default(),
                     notify_destinations: notify_destinations__.unwrap_or_default(),
                     feed_item_actions: feed_item_actions__.unwrap_or_default(),
                     feed_setters: feed_setters__.unwrap_or_default(),

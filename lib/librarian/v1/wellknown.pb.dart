@@ -682,6 +682,7 @@ class FeatureSummary extends $pb.GeneratedMessage {
     $core.Iterable<FeatureFlag>? feedItemActions,
     $core.Iterable<FeatureFlag>? feedSetters,
     $core.Iterable<FeatureFlag>? feedGetters,
+    $core.Iterable<FeatureFlag>? notifySource,
   }) {
     final $result = create();
     if (accountPlatforms != null) {
@@ -705,6 +706,9 @@ class FeatureSummary extends $pb.GeneratedMessage {
     if (feedGetters != null) {
       $result.feedGetters.addAll(feedGetters);
     }
+    if (notifySource != null) {
+      $result.notifySource.addAll(notifySource);
+    }
     return $result;
   }
   FeatureSummary._() : super();
@@ -719,6 +723,7 @@ class FeatureSummary extends $pb.GeneratedMessage {
     ..pc<FeatureFlag>(5, _omitFieldNames ? '' : 'feedItemActions', $pb.PbFieldType.PM, subBuilder: FeatureFlag.create)
     ..pc<FeatureFlag>(6, _omitFieldNames ? '' : 'feedSetters', $pb.PbFieldType.PM, subBuilder: FeatureFlag.create)
     ..pc<FeatureFlag>(7, _omitFieldNames ? '' : 'feedGetters', $pb.PbFieldType.PM, subBuilder: FeatureFlag.create)
+    ..pc<FeatureFlag>(8, _omitFieldNames ? '' : 'notifySource', $pb.PbFieldType.PM, subBuilder: FeatureFlag.create)
     ..hasRequiredFields = false
   ;
 
@@ -768,6 +773,10 @@ class FeatureSummary extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(7)
   $core.List<FeatureFlag> get feedGetters => $_getList(6);
+
+  /// WellKnownNotifySource
+  @$pb.TagNumber(8)
+  $core.List<FeatureFlag> get notifySource => $_getList(7);
 }
 
 class Wellknown {

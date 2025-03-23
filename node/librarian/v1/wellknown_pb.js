@@ -1894,7 +1894,7 @@ proto.librarian.v1.FeatureRequest.prototype.hasContextId = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.librarian.v1.FeatureSummary.repeatedFields_ = [1,2,3,4,5,6,7];
+proto.librarian.v1.FeatureSummary.repeatedFields_ = [1,2,3,8,4,5,6,7];
 
 
 
@@ -1932,6 +1932,8 @@ accountPlatformsList: jspb.Message.toObjectList(msg.getAccountPlatformsList(),
 appInfoSourcesList: jspb.Message.toObjectList(msg.getAppInfoSourcesList(),
     proto.librarian.v1.FeatureFlag.toObject, includeInstance),
 feedSourcesList: jspb.Message.toObjectList(msg.getFeedSourcesList(),
+    proto.librarian.v1.FeatureFlag.toObject, includeInstance),
+notifySourceList: jspb.Message.toObjectList(msg.getNotifySourceList(),
     proto.librarian.v1.FeatureFlag.toObject, includeInstance),
 notifyDestinationsList: jspb.Message.toObjectList(msg.getNotifyDestinationsList(),
     proto.librarian.v1.FeatureFlag.toObject, includeInstance),
@@ -1991,6 +1993,11 @@ proto.librarian.v1.FeatureSummary.deserializeBinaryFromReader = function(msg, re
       var value = new proto.librarian.v1.FeatureFlag;
       reader.readMessage(value,proto.librarian.v1.FeatureFlag.deserializeBinaryFromReader);
       msg.addFeedSources(value);
+      break;
+    case 8:
+      var value = new proto.librarian.v1.FeatureFlag;
+      reader.readMessage(value,proto.librarian.v1.FeatureFlag.deserializeBinaryFromReader);
+      msg.addNotifySource(value);
       break;
     case 4:
       var value = new proto.librarian.v1.FeatureFlag;
@@ -2061,6 +2068,14 @@ proto.librarian.v1.FeatureSummary.serializeBinaryToWriter = function(message, wr
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       3,
+      f,
+      proto.librarian.v1.FeatureFlag.serializeBinaryToWriter
+    );
+  }
+  f = message.getNotifySourceList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      8,
       f,
       proto.librarian.v1.FeatureFlag.serializeBinaryToWriter
     );
@@ -2211,6 +2226,44 @@ proto.librarian.v1.FeatureSummary.prototype.addFeedSources = function(opt_value,
  */
 proto.librarian.v1.FeatureSummary.prototype.clearFeedSourcesList = function() {
   return this.setFeedSourcesList([]);
+};
+
+
+/**
+ * repeated FeatureFlag notify_source = 8;
+ * @return {!Array<!proto.librarian.v1.FeatureFlag>}
+ */
+proto.librarian.v1.FeatureSummary.prototype.getNotifySourceList = function() {
+  return /** @type{!Array<!proto.librarian.v1.FeatureFlag>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.librarian.v1.FeatureFlag, 8));
+};
+
+
+/**
+ * @param {!Array<!proto.librarian.v1.FeatureFlag>} value
+ * @return {!proto.librarian.v1.FeatureSummary} returns this
+*/
+proto.librarian.v1.FeatureSummary.prototype.setNotifySourceList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 8, value);
+};
+
+
+/**
+ * @param {!proto.librarian.v1.FeatureFlag=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.librarian.v1.FeatureFlag}
+ */
+proto.librarian.v1.FeatureSummary.prototype.addNotifySource = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.librarian.v1.FeatureFlag, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.librarian.v1.FeatureSummary} returns this
+ */
+proto.librarian.v1.FeatureSummary.prototype.clearNotifySourceList = function() {
+  return this.setNotifySourceList([]);
 };
 
 

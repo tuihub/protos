@@ -258,6 +258,11 @@ export class FeatureSummary extends jspb.Message {
   setFeedSourcesList(value: Array<FeatureFlag>): void;
   addFeedSources(value?: FeatureFlag, index?: number): FeatureFlag;
 
+  clearNotifySourceList(): void;
+  getNotifySourceList(): Array<FeatureFlag>;
+  setNotifySourceList(value: Array<FeatureFlag>): void;
+  addNotifySource(value?: FeatureFlag, index?: number): FeatureFlag;
+
   clearNotifyDestinationsList(): void;
   getNotifyDestinationsList(): Array<FeatureFlag>;
   setNotifyDestinationsList(value: Array<FeatureFlag>): void;
@@ -293,6 +298,7 @@ export namespace FeatureSummary {
     accountPlatformsList: Array<FeatureFlag.AsObject>,
     appInfoSourcesList: Array<FeatureFlag.AsObject>,
     feedSourcesList: Array<FeatureFlag.AsObject>,
+    notifySourceList: Array<FeatureFlag.AsObject>,
     notifyDestinationsList: Array<FeatureFlag.AsObject>,
     feedItemActionsList: Array<FeatureFlag.AsObject>,
     feedSettersList: Array<FeatureFlag.AsObject>,
