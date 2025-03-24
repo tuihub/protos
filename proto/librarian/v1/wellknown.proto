@@ -101,8 +101,6 @@ message FeatureSummary {
   repeated librarian.v1.FeatureFlag app_info_sources = 2;
   // WellKnownFeedSource
   repeated librarian.v1.FeatureFlag feed_sources = 3;
-  // WellKnownNotifySource
-  repeated librarian.v1.FeatureFlag notify_source = 8;
   // WellKnownNotifyDestination
   repeated librarian.v1.FeatureFlag notify_destinations = 4;
   // WellKnownFeedItemAction
@@ -128,16 +126,9 @@ enum WellKnownFeedSource {
   WELL_KNOWN_FEED_SOURCE_RSS = 1 [(to_string) = "rss"];
 }
 
-enum WellKnownNotifySource {
-  WELL_KNOWN_NOTIFY_SOURCE_UNSPECIFIED = 0 [(to_string) = ""];
-  WELL_KNOWN_NOTIFY_SOURCE_FEED = 1 [(to_string) = "feed"];
-  WELL_KNOWN_NOTIFY_SOURCE_FEED_TAG = 2 [(to_string) = "feed_tag"];
-}
-
 enum WellKnownNotifyDestination {
   WELL_KNOWN_NOTIFY_DESTINATION_UNSPECIFIED = 0 [(to_string) = ""];
   WELL_KNOWN_NOTIFY_DESTINATION_TELEGRAM = 1 [(to_string) = "telegram"];
-  WELL_KNOWN_NOTIFY_DESTINATION_RSS = 2 [(to_string) = "rss"];
 }
 
 enum WellKnownFeedItemAction {

@@ -57,8 +57,6 @@ message FeedItem {
   string publish_platform = 14;
   // recorded read times
   int64 read_count = 15;
-  // tags
-  repeated string tags = 16;
 }
 
 // Person is an individual specified in a feed

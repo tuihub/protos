@@ -8,28 +8,6 @@ import "librarian/v1/wellknown.proto";
 option csharp_namespace = "TuiHub.Protos.Librarian.Sephirah.V1.Sephirah";
 option go_package = "github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1";
 
-message CreateNotifySourceRequest {
-  NotifySource source = 1;
-}
-message CreateNotifySourceResponse {
-  librarian.v1.InternalID id = 1;
-}
-
-message UpdateNotifySourceRequest {
-  NotifySource source = 1;
-}
-message UpdateNotifySourceResponse {}
-
-message ListNotifySourcesRequest {
-  librarian.v1.PagingRequest paging = 1;
-  repeated librarian.v1.InternalID id_filter = 2;
-  repeated NotifySourceStatus status_filter = 4;
-}
-message ListNotifySourcesResponse {
-  librarian.v1.PagingResponse paging = 1;
-  repeated NotifySource sources = 2;
-}
-
 message CreateNotifyTargetRequest {
   NotifyTarget target = 1;
 }
@@ -74,15 +52,6 @@ message ListNotifyFlowsResponse {
   repeated NotifyFlow flows = 2;
 }
 
-message NotifySource {
-  librarian.v1.InternalID id = 1;
-  string name = 2;
-  string description = 3;
-  // WellKnownNotifySource
-  librarian.v1.FeatureRequest source = 4;
-  NotifySourceStatus status = 5;
-}
-
 message NotifyTarget {
   librarian.v1.InternalID id = 1;
   string name = 2;
@@ -96,22 +65,26 @@ message NotifyFlow {
   librarian.v1.InternalID id = 1;
   string name = 2;
   string description = 3;
-  repeated librarian.v1.InternalID source_ids = 4;
-  repeated librarian.v1.InternalID target_ids = 5;
+  repeated NotifyFlowSource sources = 4;
+  repeated NotifyFlowTarget targets = 5;
   NotifyFlowStatus status = 6;
-  // `FeedActionSet.id`
-  repeated librarian.v1.InternalID action_sets = 7;
+}
+
+message NotifyFlowSource {
+  NotifyFilter filter = 1;
+  // must be `FeedConfig.id` or `FeedItemCollection.id`
+  librarian.v1.InternalID source_id = 2;
+}
+
+message NotifyFlowTarget {
+  NotifyFilter filter = 1;
+  // must be NotifyTargetID
+  librarian.v1.InternalID target_id = 2;
 }
 
 message NotifyFilter {
   repeated string exclude_keywords = 1;
   repeated string include_keywords = 2;
-}
-
-enum NotifySourceStatus {
-  NOTIFY_SOURCE_STATUS_UNSPECIFIED = 0;
-  NOTIFY_SOURCE_STATUS_ACTIVE = 1;
-  NOTIFY_SOURCE_STATUS_SUSPEND = 2;
 }
 
 enum NotifyTargetStatus {
