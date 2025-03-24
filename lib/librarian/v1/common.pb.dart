@@ -181,7 +181,6 @@ class FeedItem extends $pb.GeneratedMessage {
     $core.Iterable<FeedEnclosure>? enclosures,
     $core.String? publishPlatform,
     $fixnum.Int64? readCount,
-    $core.Iterable<$core.String>? tags,
   }) {
     final $result = create();
     if (id != null) {
@@ -229,9 +228,6 @@ class FeedItem extends $pb.GeneratedMessage {
     if (readCount != null) {
       $result.readCount = readCount;
     }
-    if (tags != null) {
-      $result.tags.addAll(tags);
-    }
     return $result;
   }
   FeedItem._() : super();
@@ -254,7 +250,6 @@ class FeedItem extends $pb.GeneratedMessage {
     ..pc<FeedEnclosure>(13, _omitFieldNames ? '' : 'enclosures', $pb.PbFieldType.PM, subBuilder: FeedEnclosure.create)
     ..aOS(14, _omitFieldNames ? '' : 'publishPlatform')
     ..aInt64(15, _omitFieldNames ? '' : 'readCount')
-    ..pPS(16, _omitFieldNames ? '' : 'tags')
     ..hasRequiredFields = false
   ;
 
@@ -423,10 +418,6 @@ class FeedItem extends $pb.GeneratedMessage {
   $core.bool hasReadCount() => $_has(14);
   @$pb.TagNumber(15)
   void clearReadCount() => clearField(15);
-
-  /// tags
-  @$pb.TagNumber(16)
-  $core.List<$core.String> get tags => $_getList(15);
 }
 
 /// Person is an individual specified in a feed

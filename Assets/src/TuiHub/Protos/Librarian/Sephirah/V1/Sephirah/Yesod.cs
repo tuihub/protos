@@ -83,50 +83,86 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
             "ChlHZXRCYXRjaEZlZWRJdGVtc1Jlc3BvbnNlEiwKBWl0ZW1zGAEgAygLMhYu",
             "bGlicmFyaWFuLnYxLkZlZWRJdGVtUgVpdGVtcyI/ChNSZWFkRmVlZEl0ZW1S",
             "ZXF1ZXN0EigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURS",
-            "AmlkIhYKFFJlYWRGZWVkSXRlbVJlc3BvbnNlIlkKGVVwZGF0ZUZlZWRJdGVt",
-            "VGFnc1JlcXVlc3QSKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJu",
-            "YWxJRFICaWQSEgoEdGFncxgCIAMoCVIEdGFncyIcChpVcGRhdGVGZWVkSXRl",
-            "bVRhZ3NSZXNwb25zZSLPBQoKRmVlZENvbmZpZxIoCgJpZBgBIAEoCzIYLmxp",
-            "YnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZBISCgRuYW1lGAIgASgJUgRuYW1l",
-            "EiAKC2Rlc2NyaXB0aW9uGAMgASgJUgtkZXNjcmlwdGlvbhI0CgZzb3VyY2UY",
-            "BCABKAsyHC5saWJyYXJpYW4udjEuRmVhdHVyZVJlcXVlc3RSBnNvdXJjZRI5",
-            "CgthY3Rpb25fc2V0cxgFIAMoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElE",
-            "UgphY3Rpb25TZXRzEkgKBnN0YXR1cxgGIAEoDjIwLmxpYnJhcmlhbi5zZXBo",
-            "aXJhaC52MS5zZXBoaXJhaC5GZWVkQ29uZmlnU3RhdHVzUgZzdGF0dXMSPgoN",
-            "cHVsbF9pbnRlcnZhbBgHIAEoCzIZLmdvb2dsZS5wcm90b2J1Zi5EdXJhdGlv",
-            "blIMcHVsbEludGVydmFsEhoKCGNhdGVnb3J5GAggASgJUghjYXRlZ29yeRId",
-            "CgpoaWRlX2l0ZW1zGAkgASgIUgloaWRlSXRlbXMSSQoQbGF0ZXN0X3B1bGxf",
-            "dGltZRgKIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBIAFIObGF0",
-            "ZXN0UHVsbFRpbWWIAQESZwoSbGF0ZXN0X3B1bGxfc3RhdHVzGAsgASgOMjQu",
-            "bGlicmFyaWFuLnNlcGhpcmFoLnYxLnNlcGhpcmFoLkZlZWRDb25maWdQdWxs",
-            "U3RhdHVzSAFSEGxhdGVzdFB1bGxTdGF0dXOIAQESMwoTbGF0ZXN0X3B1bGxf",
-            "bWVzc2FnZRgMIAEoCUgCUhFsYXRlc3RQdWxsTWVzc2FnZYgBAUITChFfbGF0",
-            "ZXN0X3B1bGxfdGltZUIVChNfbGF0ZXN0X3B1bGxfc3RhdHVzQhYKFF9sYXRl",
-            "c3RfcHVsbF9tZXNzYWdlIqcBCg1GZWVkQWN0aW9uU2V0EigKAmlkGAEgASgL",
-            "MhgubGlicmFyaWFuLnYxLkludGVybmFsSURSAmlkEhIKBG5hbWUYAiABKAlS",
-            "BG5hbWUSIAoLZGVzY3JpcHRpb24YAyABKAlSC2Rlc2NyaXB0aW9uEjYKB2Fj",
-            "dGlvbnMYBCADKAsyHC5saWJyYXJpYW4udjEuRmVhdHVyZVJlcXVlc3RSB2Fj",
-            "dGlvbnMi/QMKDkZlZWRJdGVtRGlnZXN0EjEKB2ZlZWRfaWQYASABKAsyGC5s",
-            "aWJyYXJpYW4udjEuSW50ZXJuYWxJRFIGZmVlZElkEjEKB2l0ZW1faWQYAiAB",
-            "KAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIGaXRlbUlkEh0KCmF2YXRh",
-            "cl91cmwYAyABKAlSCWF2YXRhclVybBIYCgdhdXRob3JzGAQgASgJUgdhdXRo",
-            "b3JzEk4KFXB1Ymxpc2hlZF9wYXJzZWRfdGltZRgFIAEoCzIaLmdvb2dsZS5w",
-            "cm90b2J1Zi5UaW1lc3RhbXBSE3B1Ymxpc2hlZFBhcnNlZFRpbWUSFAoFdGl0",
-            "bGUYBiABKAlSBXRpdGxlEisKEXNob3J0X2Rlc2NyaXB0aW9uGAcgASgJUhBz",
-            "aG9ydERlc2NyaXB0aW9uEh0KCmltYWdlX3VybHMYCCADKAlSCWltYWdlVXJs",
-            "cxIpChBwdWJsaXNoX3BsYXRmb3JtGAkgASgJUg9wdWJsaXNoUGxhdGZvcm0S",
-            "KAoQZmVlZF9jb25maWdfbmFtZRgKIAEoCVIOZmVlZENvbmZpZ05hbWUSJgoP",
-            "ZmVlZF9hdmF0YXJfdXJsGAsgASgJUg1mZWVkQXZhdGFyVXJsEh0KCnJlYWRf",
-            "Y291bnQYDCABKANSCXJlYWRDb3VudCp1ChBGZWVkQ29uZmlnU3RhdHVzEiIK",
-            "HkZFRURfQ09ORklHX1NUQVRVU19VTlNQRUNJRklFRBAAEh0KGUZFRURfQ09O",
-            "RklHX1NUQVRVU19BQ1RJVkUQARIeChpGRUVEX0NPTkZJR19TVEFUVVNfU1VT",
-            "UEVORBACKrABChRGZWVkQ29uZmlnUHVsbFN0YXR1cxInCiNGRUVEX0NPTkZJ",
-            "R19QVUxMX1NUQVRVU19VTlNQRUNJRklFRBAAEiYKIkZFRURfQ09ORklHX1BV",
-            "TExfU1RBVFVTX1BST0NFU1NJTkcQARIjCh9GRUVEX0NPTkZJR19QVUxMX1NU",
-            "QVRVU19TVUNDRVNTEAISIgoeRkVFRF9DT05GSUdfUFVMTF9TVEFUVVNfRkFJ",
-            "TEVEEANCZlo1Z2l0aHViLmNvbS90dWlodWIvcHJvdG9zL3BrZy9saWJyYXJp",
-            "YW4vc2VwaGlyYWgvdjE7djGqAixUdWlIdWIuUHJvdG9zLkxpYnJhcmlhbi5T",
-            "ZXBoaXJhaC5WMS5TZXBoaXJhaGIGcHJvdG8z"));
+            "AmlkIhYKFFJlYWRGZWVkSXRlbVJlc3BvbnNlInUKH0NyZWF0ZUZlZWRJdGVt",
+            "Q29sbGVjdGlvblJlcXVlc3QSUgoKY29sbGVjdGlvbhgBIAEoCzIyLmxpYnJh",
+            "cmlhbi5zZXBoaXJhaC52MS5zZXBoaXJhaC5GZWVkSXRlbUNvbGxlY3Rpb25S",
+            "CmNvbGxlY3Rpb24iIgogQ3JlYXRlRmVlZEl0ZW1Db2xsZWN0aW9uUmVzcG9u",
+            "c2UidQofVXBkYXRlRmVlZEl0ZW1Db2xsZWN0aW9uUmVxdWVzdBJSCgpjb2xs",
+            "ZWN0aW9uGAEgASgLMjIubGlicmFyaWFuLnNlcGhpcmFoLnYxLnNlcGhpcmFo",
+            "LkZlZWRJdGVtQ29sbGVjdGlvblIKY29sbGVjdGlvbiIiCiBVcGRhdGVGZWVk",
+            "SXRlbUNvbGxlY3Rpb25SZXNwb25zZSK1AQoeTGlzdEZlZWRJdGVtQ29sbGVj",
+            "dGlvbnNSZXF1ZXN0EjMKBnBhZ2luZxgBIAEoCzIbLmxpYnJhcmlhbi52MS5Q",
+            "YWdpbmdSZXF1ZXN0UgZwYWdpbmcSNQoJaWRfZmlsdGVyGAIgAygLMhgubGli",
+            "cmFyaWFuLnYxLkludGVybmFsSURSCGlkRmlsdGVyEicKD2NhdGVnb3J5X2Zp",
+            "bHRlchgDIAMoCVIOY2F0ZWdvcnlGaWx0ZXIirQEKH0xpc3RGZWVkSXRlbUNv",
+            "bGxlY3Rpb25zUmVzcG9uc2USNAoGcGFnaW5nGAEgASgLMhwubGlicmFyaWFu",
+            "LnYxLlBhZ2luZ1Jlc3BvbnNlUgZwYWdpbmcSVAoLY29sbGVjdGlvbnMYAiAD",
+            "KAsyMi5saWJyYXJpYW4uc2VwaGlyYWgudjEuc2VwaGlyYWguRmVlZEl0ZW1D",
+            "b2xsZWN0aW9uUgtjb2xsZWN0aW9ucyKbAQoeQWRkRmVlZEl0ZW1Ub0NvbGxl",
+            "Y3Rpb25SZXF1ZXN0EjoKDGZlZWRfaXRlbV9pZBgBIAEoCzIYLmxpYnJhcmlh",
+            "bi52MS5JbnRlcm5hbElEUgpmZWVkSXRlbUlkEj0KDWNvbGxlY3Rpb25faWQY",
+            "AiABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIMY29sbGVjdGlvbklk",
+            "IiEKH0FkZEZlZWRJdGVtVG9Db2xsZWN0aW9uUmVzcG9uc2UioAEKI1JlbW92",
+            "ZUZlZWRJdGVtRnJvbUNvbGxlY3Rpb25SZXF1ZXN0EjoKDGZlZWRfaXRlbV9p",
+            "ZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgpmZWVkSXRlbUlk",
+            "Ej0KDWNvbGxlY3Rpb25faWQYAiABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJu",
+            "YWxJRFIMY29sbGVjdGlvbklkIiYKJFJlbW92ZUZlZWRJdGVtRnJvbUNvbGxl",
+            "Y3Rpb25SZXNwb25zZSLwAgogTGlzdEZlZWRJdGVtc0luQ29sbGVjdGlvblJl",
+            "cXVlc3QSMwoGcGFnaW5nGAEgASgLMhsubGlicmFyaWFuLnYxLlBhZ2luZ1Jl",
+            "cXVlc3RSBnBhZ2luZxJKChRjb2xsZWN0aW9uX2lkX2ZpbHRlchgCIAMoCzIY",
+            "LmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUhJjb2xsZWN0aW9uSWRGaWx0ZXIS",
+            "IwoNYXV0aG9yX2ZpbHRlchgDIAMoCVIMYXV0aG9yRmlsdGVyEjYKF3B1Ymxp",
+            "c2hfcGxhdGZvcm1fZmlsdGVyGAQgAygJUhVwdWJsaXNoUGxhdGZvcm1GaWx0",
+            "ZXISJwoPY2F0ZWdvcnlfZmlsdGVyGAUgAygJUg5jYXRlZ29yeUZpbHRlchJF",
+            "ChJwdWJsaXNoX3RpbWVfcmFuZ2UYBiABKAsyFy5saWJyYXJpYW4udjEuVGlt",
+            "ZVJhbmdlUhBwdWJsaXNoVGltZVJhbmdlIp8BCiFMaXN0RmVlZEl0ZW1zSW5D",
+            "b2xsZWN0aW9uUmVzcG9uc2USNAoGcGFnaW5nGAEgASgLMhwubGlicmFyaWFu",
+            "LnYxLlBhZ2luZ1Jlc3BvbnNlUgZwYWdpbmcSRAoFaXRlbXMYAiADKAsyLi5s",
+            "aWJyYXJpYW4uc2VwaGlyYWgudjEuc2VwaGlyYWguRmVlZEl0ZW1EaWdlc3RS",
+            "BWl0ZW1zIs8FCgpGZWVkQ29uZmlnEigKAmlkGAEgASgLMhgubGlicmFyaWFu",
+            "LnYxLkludGVybmFsSURSAmlkEhIKBG5hbWUYAiABKAlSBG5hbWUSIAoLZGVz",
+            "Y3JpcHRpb24YAyABKAlSC2Rlc2NyaXB0aW9uEjQKBnNvdXJjZRgEIAEoCzIc",
+            "LmxpYnJhcmlhbi52MS5GZWF0dXJlUmVxdWVzdFIGc291cmNlEjkKC2FjdGlv",
+            "bl9zZXRzGAUgAygLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSCmFjdGlv",
+            "blNldHMSSAoGc3RhdHVzGAYgASgOMjAubGlicmFyaWFuLnNlcGhpcmFoLnYx",
+            "LnNlcGhpcmFoLkZlZWRDb25maWdTdGF0dXNSBnN0YXR1cxI+Cg1wdWxsX2lu",
+            "dGVydmFsGAcgASgLMhkuZ29vZ2xlLnByb3RvYnVmLkR1cmF0aW9uUgxwdWxs",
+            "SW50ZXJ2YWwSGgoIY2F0ZWdvcnkYCCABKAlSCGNhdGVnb3J5Eh0KCmhpZGVf",
+            "aXRlbXMYCSABKAhSCWhpZGVJdGVtcxJJChBsYXRlc3RfcHVsbF90aW1lGAog",
+            "ASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEgAUg5sYXRlc3RQdWxs",
+            "VGltZYgBARJnChJsYXRlc3RfcHVsbF9zdGF0dXMYCyABKA4yNC5saWJyYXJp",
+            "YW4uc2VwaGlyYWgudjEuc2VwaGlyYWguRmVlZENvbmZpZ1B1bGxTdGF0dXNI",
+            "AVIQbGF0ZXN0UHVsbFN0YXR1c4gBARIzChNsYXRlc3RfcHVsbF9tZXNzYWdl",
+            "GAwgASgJSAJSEWxhdGVzdFB1bGxNZXNzYWdliAEBQhMKEV9sYXRlc3RfcHVs",
+            "bF90aW1lQhUKE19sYXRlc3RfcHVsbF9zdGF0dXNCFgoUX2xhdGVzdF9wdWxs",
+            "X21lc3NhZ2UipwEKDUZlZWRBY3Rpb25TZXQSKAoCaWQYASABKAsyGC5saWJy",
+            "YXJpYW4udjEuSW50ZXJuYWxJRFICaWQSEgoEbmFtZRgCIAEoCVIEbmFtZRIg",
+            "CgtkZXNjcmlwdGlvbhgDIAEoCVILZGVzY3JpcHRpb24SNgoHYWN0aW9ucxgE",
+            "IAMoCzIcLmxpYnJhcmlhbi52MS5GZWF0dXJlUmVxdWVzdFIHYWN0aW9ucyL9",
+            "AwoORmVlZEl0ZW1EaWdlc3QSMQoHZmVlZF9pZBgBIAEoCzIYLmxpYnJhcmlh",
+            "bi52MS5JbnRlcm5hbElEUgZmZWVkSWQSMQoHaXRlbV9pZBgCIAEoCzIYLmxp",
+            "YnJhcmlhbi52MS5JbnRlcm5hbElEUgZpdGVtSWQSHQoKYXZhdGFyX3VybBgD",
+            "IAEoCVIJYXZhdGFyVXJsEhgKB2F1dGhvcnMYBCABKAlSB2F1dGhvcnMSTgoV",
+            "cHVibGlzaGVkX3BhcnNlZF90aW1lGAUgASgLMhouZ29vZ2xlLnByb3RvYnVm",
+            "LlRpbWVzdGFtcFITcHVibGlzaGVkUGFyc2VkVGltZRIUCgV0aXRsZRgGIAEo",
+            "CVIFdGl0bGUSKwoRc2hvcnRfZGVzY3JpcHRpb24YByABKAlSEHNob3J0RGVz",
+            "Y3JpcHRpb24SHQoKaW1hZ2VfdXJscxgIIAMoCVIJaW1hZ2VVcmxzEikKEHB1",
+            "Ymxpc2hfcGxhdGZvcm0YCSABKAlSD3B1Ymxpc2hQbGF0Zm9ybRIoChBmZWVk",
+            "X2NvbmZpZ19uYW1lGAogASgJUg5mZWVkQ29uZmlnTmFtZRImCg9mZWVkX2F2",
+            "YXRhcl91cmwYCyABKAlSDWZlZWRBdmF0YXJVcmwSHQoKcmVhZF9jb3VudBgM",
+            "IAEoA1IJcmVhZENvdW50IpABChJGZWVkSXRlbUNvbGxlY3Rpb24SKAoCaWQY",
+            "ASABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFICaWQSEgoEbmFtZRgC",
+            "IAEoCVIEbmFtZRIgCgtkZXNjcmlwdGlvbhgDIAEoCVILZGVzY3JpcHRpb24S",
+            "GgoIY2F0ZWdvcnkYBCABKAlSCGNhdGVnb3J5KnUKEEZlZWRDb25maWdTdGF0",
+            "dXMSIgoeRkVFRF9DT05GSUdfU1RBVFVTX1VOU1BFQ0lGSUVEEAASHQoZRkVF",
+            "RF9DT05GSUdfU1RBVFVTX0FDVElWRRABEh4KGkZFRURfQ09ORklHX1NUQVRV",
+            "U19TVVNQRU5EEAIqsAEKFEZlZWRDb25maWdQdWxsU3RhdHVzEicKI0ZFRURf",
+            "Q09ORklHX1BVTExfU1RBVFVTX1VOU1BFQ0lGSUVEEAASJgoiRkVFRF9DT05G",
+            "SUdfUFVMTF9TVEFUVVNfUFJPQ0VTU0lORxABEiMKH0ZFRURfQ09ORklHX1BV",
+            "TExfU1RBVFVTX1NVQ0NFU1MQAhIiCh5GRUVEX0NPTkZJR19QVUxMX1NUQVRV",
+            "U19GQUlMRUQQA0JmWjVnaXRodWIuY29tL3R1aWh1Yi9wcm90b3MvcGtnL2xp",
+            "YnJhcmlhbi9zZXBoaXJhaC92MTt2MaoCLFR1aUh1Yi5Qcm90b3MuTGlicmFy",
+            "aWFuLlNlcGhpcmFoLlYxLlNlcGhpcmFoYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.WellknownReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FeedConfigStatus), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FeedConfigPullStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -154,11 +190,22 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GetBatchFeedItemsResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.GetBatchFeedItemsResponse.Parser, new[]{ "Items" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ReadFeedItemRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ReadFeedItemRequest.Parser, new[]{ "Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ReadFeedItemResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ReadFeedItemResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UpdateFeedItemTagsRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UpdateFeedItemTagsRequest.Parser, new[]{ "Id", "Tags" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UpdateFeedItemTagsResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UpdateFeedItemTagsResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.CreateFeedItemCollectionRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.CreateFeedItemCollectionRequest.Parser, new[]{ "Collection" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.CreateFeedItemCollectionResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.CreateFeedItemCollectionResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UpdateFeedItemCollectionRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UpdateFeedItemCollectionRequest.Parser, new[]{ "Collection" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UpdateFeedItemCollectionResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UpdateFeedItemCollectionResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListFeedItemCollectionsRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListFeedItemCollectionsRequest.Parser, new[]{ "Paging", "IdFilter", "CategoryFilter" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListFeedItemCollectionsResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListFeedItemCollectionsResponse.Parser, new[]{ "Paging", "Collections" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AddFeedItemToCollectionRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AddFeedItemToCollectionRequest.Parser, new[]{ "FeedItemId", "CollectionId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AddFeedItemToCollectionResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AddFeedItemToCollectionResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.RemoveFeedItemFromCollectionRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.RemoveFeedItemFromCollectionRequest.Parser, new[]{ "FeedItemId", "CollectionId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.RemoveFeedItemFromCollectionResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.RemoveFeedItemFromCollectionResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListFeedItemsInCollectionRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListFeedItemsInCollectionRequest.Parser, new[]{ "Paging", "CollectionIdFilter", "AuthorFilter", "PublishPlatformFilter", "CategoryFilter", "PublishTimeRange" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListFeedItemsInCollectionResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.ListFeedItemsInCollectionResponse.Parser, new[]{ "Paging", "Items" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FeedConfig), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FeedConfig.Parser, new[]{ "Id", "Name", "Description", "Source", "ActionSets", "Status", "PullInterval", "Category", "HideItems", "LatestPullTime", "LatestPullStatus", "LatestPullMessage" }, new[]{ "LatestPullTime", "LatestPullStatus", "LatestPullMessage" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FeedActionSet), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FeedActionSet.Parser, new[]{ "Id", "Name", "Description", "Actions" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FeedItemDigest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FeedItemDigest.Parser, new[]{ "FeedId", "ItemId", "AvatarUrl", "Authors", "PublishedParsedTime", "Title", "ShortDescription", "ImageUrls", "PublishPlatform", "FeedConfigName", "FeedAvatarUrl", "ReadCount" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FeedItemDigest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FeedItemDigest.Parser, new[]{ "FeedId", "ItemId", "AvatarUrl", "Authors", "PublishedParsedTime", "Title", "ShortDescription", "ImageUrls", "PublishPlatform", "FeedConfigName", "FeedAvatarUrl", "ReadCount" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FeedItemCollection), global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FeedItemCollection.Parser, new[]{ "Id", "Name", "Description", "Category" }, null, null, null, null)
           }));
     }
     #endregion
@@ -5183,16 +5230,16 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
 
   }
 
-  public sealed partial class UpdateFeedItemTagsRequest : pb::IMessage<UpdateFeedItemTagsRequest>
+  public sealed partial class CreateFeedItemCollectionRequest : pb::IMessage<CreateFeedItemCollectionRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<UpdateFeedItemTagsRequest> _parser = new pb::MessageParser<UpdateFeedItemTagsRequest>(() => new UpdateFeedItemTagsRequest());
+    private static readonly pb::MessageParser<CreateFeedItemCollectionRequest> _parser = new pb::MessageParser<CreateFeedItemCollectionRequest>(() => new CreateFeedItemCollectionRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<UpdateFeedItemTagsRequest> Parser { get { return _parser; } }
+    public static pb::MessageParser<CreateFeedItemCollectionRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -5208,7 +5255,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public UpdateFeedItemTagsRequest() {
+    public CreateFeedItemCollectionRequest() {
       OnConstruction();
     }
 
@@ -5216,58 +5263,45 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public UpdateFeedItemTagsRequest(UpdateFeedItemTagsRequest other) : this() {
-      id_ = other.id_ != null ? other.id_.Clone() : null;
-      tags_ = other.tags_.Clone();
+    public CreateFeedItemCollectionRequest(CreateFeedItemCollectionRequest other) : this() {
+      collection_ = other.collection_ != null ? other.collection_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public UpdateFeedItemTagsRequest Clone() {
-      return new UpdateFeedItemTagsRequest(this);
+    public CreateFeedItemCollectionRequest Clone() {
+      return new CreateFeedItemCollectionRequest(this);
     }
 
-    /// <summary>Field number for the "id" field.</summary>
-    public const int IdFieldNumber = 1;
-    private global::TuiHub.Protos.Librarian.V1.InternalID id_;
+    /// <summary>Field number for the "collection" field.</summary>
+    public const int CollectionFieldNumber = 1;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FeedItemCollection collection_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::TuiHub.Protos.Librarian.V1.InternalID Id {
-      get { return id_; }
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FeedItemCollection Collection {
+      get { return collection_; }
       set {
-        id_ = value;
+        collection_ = value;
       }
-    }
-
-    /// <summary>Field number for the "tags" field.</summary>
-    public const int TagsFieldNumber = 2;
-    private static readonly pb::FieldCodec<string> _repeated_tags_codec
-        = pb::FieldCodec.ForString(18);
-    private readonly pbc::RepeatedField<string> tags_ = new pbc::RepeatedField<string>();
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<string> Tags {
-      get { return tags_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as UpdateFeedItemTagsRequest);
+      return Equals(other as CreateFeedItemCollectionRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(UpdateFeedItemTagsRequest other) {
+    public bool Equals(CreateFeedItemCollectionRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (!object.Equals(Id, other.Id)) return false;
-      if(!tags_.Equals(other.tags_)) return false;
+      if (!object.Equals(Collection, other.Collection)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -5275,8 +5309,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (id_ != null) hash ^= Id.GetHashCode();
-      hash ^= tags_.GetHashCode();
+      if (collection_ != null) hash ^= Collection.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -5295,11 +5328,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (id_ != null) {
+      if (collection_ != null) {
         output.WriteRawTag(10);
-        output.WriteMessage(Id);
+        output.WriteMessage(Collection);
       }
-      tags_.WriteTo(output, _repeated_tags_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -5310,11 +5342,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (id_ != null) {
+      if (collection_ != null) {
         output.WriteRawTag(10);
-        output.WriteMessage(Id);
+        output.WriteMessage(Collection);
       }
-      tags_.WriteTo(ref output, _repeated_tags_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -5325,10 +5356,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (id_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Id);
+      if (collection_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Collection);
       }
-      size += tags_.CalculateSize(_repeated_tags_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -5337,17 +5367,16 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(UpdateFeedItemTagsRequest other) {
+    public void MergeFrom(CreateFeedItemCollectionRequest other) {
       if (other == null) {
         return;
       }
-      if (other.id_ != null) {
-        if (id_ == null) {
-          Id = new global::TuiHub.Protos.Librarian.V1.InternalID();
+      if (other.collection_ != null) {
+        if (collection_ == null) {
+          Collection = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FeedItemCollection();
         }
-        Id.MergeFrom(other.Id);
+        Collection.MergeFrom(other.Collection);
       }
-      tags_.Add(other.tags_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -5364,14 +5393,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            if (id_ == null) {
-              Id = new global::TuiHub.Protos.Librarian.V1.InternalID();
+            if (collection_ == null) {
+              Collection = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FeedItemCollection();
             }
-            input.ReadMessage(Id);
-            break;
-          }
-          case 18: {
-            tags_.AddEntriesFrom(input, _repeated_tags_codec);
+            input.ReadMessage(Collection);
             break;
           }
         }
@@ -5390,14 +5415,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            if (id_ == null) {
-              Id = new global::TuiHub.Protos.Librarian.V1.InternalID();
+            if (collection_ == null) {
+              Collection = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FeedItemCollection();
             }
-            input.ReadMessage(Id);
-            break;
-          }
-          case 18: {
-            tags_.AddEntriesFrom(ref input, _repeated_tags_codec);
+            input.ReadMessage(Collection);
             break;
           }
         }
@@ -5407,16 +5428,16 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
 
   }
 
-  public sealed partial class UpdateFeedItemTagsResponse : pb::IMessage<UpdateFeedItemTagsResponse>
+  public sealed partial class CreateFeedItemCollectionResponse : pb::IMessage<CreateFeedItemCollectionResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<UpdateFeedItemTagsResponse> _parser = new pb::MessageParser<UpdateFeedItemTagsResponse>(() => new UpdateFeedItemTagsResponse());
+    private static readonly pb::MessageParser<CreateFeedItemCollectionResponse> _parser = new pb::MessageParser<CreateFeedItemCollectionResponse>(() => new CreateFeedItemCollectionResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<UpdateFeedItemTagsResponse> Parser { get { return _parser; } }
+    public static pb::MessageParser<CreateFeedItemCollectionResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -5432,7 +5453,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public UpdateFeedItemTagsResponse() {
+    public CreateFeedItemCollectionResponse() {
       OnConstruction();
     }
 
@@ -5440,25 +5461,25 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public UpdateFeedItemTagsResponse(UpdateFeedItemTagsResponse other) : this() {
+    public CreateFeedItemCollectionResponse(CreateFeedItemCollectionResponse other) : this() {
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public UpdateFeedItemTagsResponse Clone() {
-      return new UpdateFeedItemTagsResponse(this);
+    public CreateFeedItemCollectionResponse Clone() {
+      return new CreateFeedItemCollectionResponse(this);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as UpdateFeedItemTagsResponse);
+      return Equals(other as CreateFeedItemCollectionResponse);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(UpdateFeedItemTagsResponse other) {
+    public bool Equals(CreateFeedItemCollectionResponse other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -5518,7 +5539,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(UpdateFeedItemTagsResponse other) {
+    public void MergeFrom(CreateFeedItemCollectionResponse other) {
       if (other == null) {
         return;
       }
@@ -5552,6 +5573,2203 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class UpdateFeedItemCollectionRequest : pb::IMessage<UpdateFeedItemCollectionRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<UpdateFeedItemCollectionRequest> _parser = new pb::MessageParser<UpdateFeedItemCollectionRequest>(() => new UpdateFeedItemCollectionRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<UpdateFeedItemCollectionRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.YesodReflection.Descriptor.MessageTypes[26]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public UpdateFeedItemCollectionRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public UpdateFeedItemCollectionRequest(UpdateFeedItemCollectionRequest other) : this() {
+      collection_ = other.collection_ != null ? other.collection_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public UpdateFeedItemCollectionRequest Clone() {
+      return new UpdateFeedItemCollectionRequest(this);
+    }
+
+    /// <summary>Field number for the "collection" field.</summary>
+    public const int CollectionFieldNumber = 1;
+    private global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FeedItemCollection collection_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FeedItemCollection Collection {
+      get { return collection_; }
+      set {
+        collection_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as UpdateFeedItemCollectionRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(UpdateFeedItemCollectionRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Collection, other.Collection)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (collection_ != null) hash ^= Collection.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (collection_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Collection);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (collection_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Collection);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (collection_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Collection);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(UpdateFeedItemCollectionRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.collection_ != null) {
+        if (collection_ == null) {
+          Collection = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FeedItemCollection();
+        }
+        Collection.MergeFrom(other.Collection);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (collection_ == null) {
+              Collection = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FeedItemCollection();
+            }
+            input.ReadMessage(Collection);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            if (collection_ == null) {
+              Collection = new global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FeedItemCollection();
+            }
+            input.ReadMessage(Collection);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class UpdateFeedItemCollectionResponse : pb::IMessage<UpdateFeedItemCollectionResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<UpdateFeedItemCollectionResponse> _parser = new pb::MessageParser<UpdateFeedItemCollectionResponse>(() => new UpdateFeedItemCollectionResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<UpdateFeedItemCollectionResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.YesodReflection.Descriptor.MessageTypes[27]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public UpdateFeedItemCollectionResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public UpdateFeedItemCollectionResponse(UpdateFeedItemCollectionResponse other) : this() {
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public UpdateFeedItemCollectionResponse Clone() {
+      return new UpdateFeedItemCollectionResponse(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as UpdateFeedItemCollectionResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(UpdateFeedItemCollectionResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(UpdateFeedItemCollectionResponse other) {
+      if (other == null) {
+        return;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class ListFeedItemCollectionsRequest : pb::IMessage<ListFeedItemCollectionsRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ListFeedItemCollectionsRequest> _parser = new pb::MessageParser<ListFeedItemCollectionsRequest>(() => new ListFeedItemCollectionsRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ListFeedItemCollectionsRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.YesodReflection.Descriptor.MessageTypes[28]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ListFeedItemCollectionsRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ListFeedItemCollectionsRequest(ListFeedItemCollectionsRequest other) : this() {
+      paging_ = other.paging_ != null ? other.paging_.Clone() : null;
+      idFilter_ = other.idFilter_.Clone();
+      categoryFilter_ = other.categoryFilter_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ListFeedItemCollectionsRequest Clone() {
+      return new ListFeedItemCollectionsRequest(this);
+    }
+
+    /// <summary>Field number for the "paging" field.</summary>
+    public const int PagingFieldNumber = 1;
+    private global::TuiHub.Protos.Librarian.V1.PagingRequest paging_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::TuiHub.Protos.Librarian.V1.PagingRequest Paging {
+      get { return paging_; }
+      set {
+        paging_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "id_filter" field.</summary>
+    public const int IdFilterFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.V1.InternalID> _repeated_idFilter_codec
+        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.V1.InternalID.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.InternalID> idFilter_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.InternalID>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.InternalID> IdFilter {
+      get { return idFilter_; }
+    }
+
+    /// <summary>Field number for the "category_filter" field.</summary>
+    public const int CategoryFilterFieldNumber = 3;
+    private static readonly pb::FieldCodec<string> _repeated_categoryFilter_codec
+        = pb::FieldCodec.ForString(26);
+    private readonly pbc::RepeatedField<string> categoryFilter_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<string> CategoryFilter {
+      get { return categoryFilter_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ListFeedItemCollectionsRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ListFeedItemCollectionsRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Paging, other.Paging)) return false;
+      if(!idFilter_.Equals(other.idFilter_)) return false;
+      if(!categoryFilter_.Equals(other.categoryFilter_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (paging_ != null) hash ^= Paging.GetHashCode();
+      hash ^= idFilter_.GetHashCode();
+      hash ^= categoryFilter_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (paging_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Paging);
+      }
+      idFilter_.WriteTo(output, _repeated_idFilter_codec);
+      categoryFilter_.WriteTo(output, _repeated_categoryFilter_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (paging_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Paging);
+      }
+      idFilter_.WriteTo(ref output, _repeated_idFilter_codec);
+      categoryFilter_.WriteTo(ref output, _repeated_categoryFilter_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (paging_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Paging);
+      }
+      size += idFilter_.CalculateSize(_repeated_idFilter_codec);
+      size += categoryFilter_.CalculateSize(_repeated_categoryFilter_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ListFeedItemCollectionsRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.paging_ != null) {
+        if (paging_ == null) {
+          Paging = new global::TuiHub.Protos.Librarian.V1.PagingRequest();
+        }
+        Paging.MergeFrom(other.Paging);
+      }
+      idFilter_.Add(other.idFilter_);
+      categoryFilter_.Add(other.categoryFilter_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (paging_ == null) {
+              Paging = new global::TuiHub.Protos.Librarian.V1.PagingRequest();
+            }
+            input.ReadMessage(Paging);
+            break;
+          }
+          case 18: {
+            idFilter_.AddEntriesFrom(input, _repeated_idFilter_codec);
+            break;
+          }
+          case 26: {
+            categoryFilter_.AddEntriesFrom(input, _repeated_categoryFilter_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            if (paging_ == null) {
+              Paging = new global::TuiHub.Protos.Librarian.V1.PagingRequest();
+            }
+            input.ReadMessage(Paging);
+            break;
+          }
+          case 18: {
+            idFilter_.AddEntriesFrom(ref input, _repeated_idFilter_codec);
+            break;
+          }
+          case 26: {
+            categoryFilter_.AddEntriesFrom(ref input, _repeated_categoryFilter_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class ListFeedItemCollectionsResponse : pb::IMessage<ListFeedItemCollectionsResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ListFeedItemCollectionsResponse> _parser = new pb::MessageParser<ListFeedItemCollectionsResponse>(() => new ListFeedItemCollectionsResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ListFeedItemCollectionsResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.YesodReflection.Descriptor.MessageTypes[29]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ListFeedItemCollectionsResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ListFeedItemCollectionsResponse(ListFeedItemCollectionsResponse other) : this() {
+      paging_ = other.paging_ != null ? other.paging_.Clone() : null;
+      collections_ = other.collections_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ListFeedItemCollectionsResponse Clone() {
+      return new ListFeedItemCollectionsResponse(this);
+    }
+
+    /// <summary>Field number for the "paging" field.</summary>
+    public const int PagingFieldNumber = 1;
+    private global::TuiHub.Protos.Librarian.V1.PagingResponse paging_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::TuiHub.Protos.Librarian.V1.PagingResponse Paging {
+      get { return paging_; }
+      set {
+        paging_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "collections" field.</summary>
+    public const int CollectionsFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FeedItemCollection> _repeated_collections_codec
+        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FeedItemCollection.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FeedItemCollection> collections_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FeedItemCollection>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FeedItemCollection> Collections {
+      get { return collections_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ListFeedItemCollectionsResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ListFeedItemCollectionsResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Paging, other.Paging)) return false;
+      if(!collections_.Equals(other.collections_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (paging_ != null) hash ^= Paging.GetHashCode();
+      hash ^= collections_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (paging_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Paging);
+      }
+      collections_.WriteTo(output, _repeated_collections_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (paging_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Paging);
+      }
+      collections_.WriteTo(ref output, _repeated_collections_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (paging_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Paging);
+      }
+      size += collections_.CalculateSize(_repeated_collections_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ListFeedItemCollectionsResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.paging_ != null) {
+        if (paging_ == null) {
+          Paging = new global::TuiHub.Protos.Librarian.V1.PagingResponse();
+        }
+        Paging.MergeFrom(other.Paging);
+      }
+      collections_.Add(other.collections_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (paging_ == null) {
+              Paging = new global::TuiHub.Protos.Librarian.V1.PagingResponse();
+            }
+            input.ReadMessage(Paging);
+            break;
+          }
+          case 18: {
+            collections_.AddEntriesFrom(input, _repeated_collections_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            if (paging_ == null) {
+              Paging = new global::TuiHub.Protos.Librarian.V1.PagingResponse();
+            }
+            input.ReadMessage(Paging);
+            break;
+          }
+          case 18: {
+            collections_.AddEntriesFrom(ref input, _repeated_collections_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class AddFeedItemToCollectionRequest : pb::IMessage<AddFeedItemToCollectionRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<AddFeedItemToCollectionRequest> _parser = new pb::MessageParser<AddFeedItemToCollectionRequest>(() => new AddFeedItemToCollectionRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<AddFeedItemToCollectionRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.YesodReflection.Descriptor.MessageTypes[30]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AddFeedItemToCollectionRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AddFeedItemToCollectionRequest(AddFeedItemToCollectionRequest other) : this() {
+      feedItemId_ = other.feedItemId_ != null ? other.feedItemId_.Clone() : null;
+      collectionId_ = other.collectionId_ != null ? other.collectionId_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AddFeedItemToCollectionRequest Clone() {
+      return new AddFeedItemToCollectionRequest(this);
+    }
+
+    /// <summary>Field number for the "feed_item_id" field.</summary>
+    public const int FeedItemIdFieldNumber = 1;
+    private global::TuiHub.Protos.Librarian.V1.InternalID feedItemId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::TuiHub.Protos.Librarian.V1.InternalID FeedItemId {
+      get { return feedItemId_; }
+      set {
+        feedItemId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "collection_id" field.</summary>
+    public const int CollectionIdFieldNumber = 2;
+    private global::TuiHub.Protos.Librarian.V1.InternalID collectionId_;
+    /// <summary>
+    /// id 0 is regarded as the default collection id
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::TuiHub.Protos.Librarian.V1.InternalID CollectionId {
+      get { return collectionId_; }
+      set {
+        collectionId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as AddFeedItemToCollectionRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(AddFeedItemToCollectionRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(FeedItemId, other.FeedItemId)) return false;
+      if (!object.Equals(CollectionId, other.CollectionId)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (feedItemId_ != null) hash ^= FeedItemId.GetHashCode();
+      if (collectionId_ != null) hash ^= CollectionId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (feedItemId_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(FeedItemId);
+      }
+      if (collectionId_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(CollectionId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (feedItemId_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(FeedItemId);
+      }
+      if (collectionId_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(CollectionId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (feedItemId_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(FeedItemId);
+      }
+      if (collectionId_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CollectionId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(AddFeedItemToCollectionRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.feedItemId_ != null) {
+        if (feedItemId_ == null) {
+          FeedItemId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+        }
+        FeedItemId.MergeFrom(other.FeedItemId);
+      }
+      if (other.collectionId_ != null) {
+        if (collectionId_ == null) {
+          CollectionId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+        }
+        CollectionId.MergeFrom(other.CollectionId);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (feedItemId_ == null) {
+              FeedItemId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+            }
+            input.ReadMessage(FeedItemId);
+            break;
+          }
+          case 18: {
+            if (collectionId_ == null) {
+              CollectionId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+            }
+            input.ReadMessage(CollectionId);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            if (feedItemId_ == null) {
+              FeedItemId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+            }
+            input.ReadMessage(FeedItemId);
+            break;
+          }
+          case 18: {
+            if (collectionId_ == null) {
+              CollectionId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+            }
+            input.ReadMessage(CollectionId);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class AddFeedItemToCollectionResponse : pb::IMessage<AddFeedItemToCollectionResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<AddFeedItemToCollectionResponse> _parser = new pb::MessageParser<AddFeedItemToCollectionResponse>(() => new AddFeedItemToCollectionResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<AddFeedItemToCollectionResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.YesodReflection.Descriptor.MessageTypes[31]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AddFeedItemToCollectionResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AddFeedItemToCollectionResponse(AddFeedItemToCollectionResponse other) : this() {
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public AddFeedItemToCollectionResponse Clone() {
+      return new AddFeedItemToCollectionResponse(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as AddFeedItemToCollectionResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(AddFeedItemToCollectionResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(AddFeedItemToCollectionResponse other) {
+      if (other == null) {
+        return;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class RemoveFeedItemFromCollectionRequest : pb::IMessage<RemoveFeedItemFromCollectionRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<RemoveFeedItemFromCollectionRequest> _parser = new pb::MessageParser<RemoveFeedItemFromCollectionRequest>(() => new RemoveFeedItemFromCollectionRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<RemoveFeedItemFromCollectionRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.YesodReflection.Descriptor.MessageTypes[32]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RemoveFeedItemFromCollectionRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RemoveFeedItemFromCollectionRequest(RemoveFeedItemFromCollectionRequest other) : this() {
+      feedItemId_ = other.feedItemId_ != null ? other.feedItemId_.Clone() : null;
+      collectionId_ = other.collectionId_ != null ? other.collectionId_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RemoveFeedItemFromCollectionRequest Clone() {
+      return new RemoveFeedItemFromCollectionRequest(this);
+    }
+
+    /// <summary>Field number for the "feed_item_id" field.</summary>
+    public const int FeedItemIdFieldNumber = 1;
+    private global::TuiHub.Protos.Librarian.V1.InternalID feedItemId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::TuiHub.Protos.Librarian.V1.InternalID FeedItemId {
+      get { return feedItemId_; }
+      set {
+        feedItemId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "collection_id" field.</summary>
+    public const int CollectionIdFieldNumber = 2;
+    private global::TuiHub.Protos.Librarian.V1.InternalID collectionId_;
+    /// <summary>
+    /// id 0 is regarded as the default collection id
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::TuiHub.Protos.Librarian.V1.InternalID CollectionId {
+      get { return collectionId_; }
+      set {
+        collectionId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as RemoveFeedItemFromCollectionRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(RemoveFeedItemFromCollectionRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(FeedItemId, other.FeedItemId)) return false;
+      if (!object.Equals(CollectionId, other.CollectionId)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (feedItemId_ != null) hash ^= FeedItemId.GetHashCode();
+      if (collectionId_ != null) hash ^= CollectionId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (feedItemId_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(FeedItemId);
+      }
+      if (collectionId_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(CollectionId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (feedItemId_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(FeedItemId);
+      }
+      if (collectionId_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(CollectionId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (feedItemId_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(FeedItemId);
+      }
+      if (collectionId_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CollectionId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(RemoveFeedItemFromCollectionRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.feedItemId_ != null) {
+        if (feedItemId_ == null) {
+          FeedItemId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+        }
+        FeedItemId.MergeFrom(other.FeedItemId);
+      }
+      if (other.collectionId_ != null) {
+        if (collectionId_ == null) {
+          CollectionId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+        }
+        CollectionId.MergeFrom(other.CollectionId);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (feedItemId_ == null) {
+              FeedItemId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+            }
+            input.ReadMessage(FeedItemId);
+            break;
+          }
+          case 18: {
+            if (collectionId_ == null) {
+              CollectionId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+            }
+            input.ReadMessage(CollectionId);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            if (feedItemId_ == null) {
+              FeedItemId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+            }
+            input.ReadMessage(FeedItemId);
+            break;
+          }
+          case 18: {
+            if (collectionId_ == null) {
+              CollectionId = new global::TuiHub.Protos.Librarian.V1.InternalID();
+            }
+            input.ReadMessage(CollectionId);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class RemoveFeedItemFromCollectionResponse : pb::IMessage<RemoveFeedItemFromCollectionResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<RemoveFeedItemFromCollectionResponse> _parser = new pb::MessageParser<RemoveFeedItemFromCollectionResponse>(() => new RemoveFeedItemFromCollectionResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<RemoveFeedItemFromCollectionResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.YesodReflection.Descriptor.MessageTypes[33]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RemoveFeedItemFromCollectionResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RemoveFeedItemFromCollectionResponse(RemoveFeedItemFromCollectionResponse other) : this() {
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public RemoveFeedItemFromCollectionResponse Clone() {
+      return new RemoveFeedItemFromCollectionResponse(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as RemoveFeedItemFromCollectionResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(RemoveFeedItemFromCollectionResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(RemoveFeedItemFromCollectionResponse other) {
+      if (other == null) {
+        return;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class ListFeedItemsInCollectionRequest : pb::IMessage<ListFeedItemsInCollectionRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ListFeedItemsInCollectionRequest> _parser = new pb::MessageParser<ListFeedItemsInCollectionRequest>(() => new ListFeedItemsInCollectionRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ListFeedItemsInCollectionRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.YesodReflection.Descriptor.MessageTypes[34]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ListFeedItemsInCollectionRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ListFeedItemsInCollectionRequest(ListFeedItemsInCollectionRequest other) : this() {
+      paging_ = other.paging_ != null ? other.paging_.Clone() : null;
+      collectionIdFilter_ = other.collectionIdFilter_.Clone();
+      authorFilter_ = other.authorFilter_.Clone();
+      publishPlatformFilter_ = other.publishPlatformFilter_.Clone();
+      categoryFilter_ = other.categoryFilter_.Clone();
+      publishTimeRange_ = other.publishTimeRange_ != null ? other.publishTimeRange_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ListFeedItemsInCollectionRequest Clone() {
+      return new ListFeedItemsInCollectionRequest(this);
+    }
+
+    /// <summary>Field number for the "paging" field.</summary>
+    public const int PagingFieldNumber = 1;
+    private global::TuiHub.Protos.Librarian.V1.PagingRequest paging_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::TuiHub.Protos.Librarian.V1.PagingRequest Paging {
+      get { return paging_; }
+      set {
+        paging_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "collection_id_filter" field.</summary>
+    public const int CollectionIdFilterFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.V1.InternalID> _repeated_collectionIdFilter_codec
+        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.V1.InternalID.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.InternalID> collectionIdFilter_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.InternalID>();
+    /// <summary>
+    /// id 0 is regarded as the default collection id
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.V1.InternalID> CollectionIdFilter {
+      get { return collectionIdFilter_; }
+    }
+
+    /// <summary>Field number for the "author_filter" field.</summary>
+    public const int AuthorFilterFieldNumber = 3;
+    private static readonly pb::FieldCodec<string> _repeated_authorFilter_codec
+        = pb::FieldCodec.ForString(26);
+    private readonly pbc::RepeatedField<string> authorFilter_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<string> AuthorFilter {
+      get { return authorFilter_; }
+    }
+
+    /// <summary>Field number for the "publish_platform_filter" field.</summary>
+    public const int PublishPlatformFilterFieldNumber = 4;
+    private static readonly pb::FieldCodec<string> _repeated_publishPlatformFilter_codec
+        = pb::FieldCodec.ForString(34);
+    private readonly pbc::RepeatedField<string> publishPlatformFilter_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<string> PublishPlatformFilter {
+      get { return publishPlatformFilter_; }
+    }
+
+    /// <summary>Field number for the "category_filter" field.</summary>
+    public const int CategoryFilterFieldNumber = 5;
+    private static readonly pb::FieldCodec<string> _repeated_categoryFilter_codec
+        = pb::FieldCodec.ForString(42);
+    private readonly pbc::RepeatedField<string> categoryFilter_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<string> CategoryFilter {
+      get { return categoryFilter_; }
+    }
+
+    /// <summary>Field number for the "publish_time_range" field.</summary>
+    public const int PublishTimeRangeFieldNumber = 6;
+    private global::TuiHub.Protos.Librarian.V1.TimeRange publishTimeRange_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::TuiHub.Protos.Librarian.V1.TimeRange PublishTimeRange {
+      get { return publishTimeRange_; }
+      set {
+        publishTimeRange_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ListFeedItemsInCollectionRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ListFeedItemsInCollectionRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Paging, other.Paging)) return false;
+      if(!collectionIdFilter_.Equals(other.collectionIdFilter_)) return false;
+      if(!authorFilter_.Equals(other.authorFilter_)) return false;
+      if(!publishPlatformFilter_.Equals(other.publishPlatformFilter_)) return false;
+      if(!categoryFilter_.Equals(other.categoryFilter_)) return false;
+      if (!object.Equals(PublishTimeRange, other.PublishTimeRange)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (paging_ != null) hash ^= Paging.GetHashCode();
+      hash ^= collectionIdFilter_.GetHashCode();
+      hash ^= authorFilter_.GetHashCode();
+      hash ^= publishPlatformFilter_.GetHashCode();
+      hash ^= categoryFilter_.GetHashCode();
+      if (publishTimeRange_ != null) hash ^= PublishTimeRange.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (paging_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Paging);
+      }
+      collectionIdFilter_.WriteTo(output, _repeated_collectionIdFilter_codec);
+      authorFilter_.WriteTo(output, _repeated_authorFilter_codec);
+      publishPlatformFilter_.WriteTo(output, _repeated_publishPlatformFilter_codec);
+      categoryFilter_.WriteTo(output, _repeated_categoryFilter_codec);
+      if (publishTimeRange_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(PublishTimeRange);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (paging_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Paging);
+      }
+      collectionIdFilter_.WriteTo(ref output, _repeated_collectionIdFilter_codec);
+      authorFilter_.WriteTo(ref output, _repeated_authorFilter_codec);
+      publishPlatformFilter_.WriteTo(ref output, _repeated_publishPlatformFilter_codec);
+      categoryFilter_.WriteTo(ref output, _repeated_categoryFilter_codec);
+      if (publishTimeRange_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(PublishTimeRange);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (paging_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Paging);
+      }
+      size += collectionIdFilter_.CalculateSize(_repeated_collectionIdFilter_codec);
+      size += authorFilter_.CalculateSize(_repeated_authorFilter_codec);
+      size += publishPlatformFilter_.CalculateSize(_repeated_publishPlatformFilter_codec);
+      size += categoryFilter_.CalculateSize(_repeated_categoryFilter_codec);
+      if (publishTimeRange_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(PublishTimeRange);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ListFeedItemsInCollectionRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.paging_ != null) {
+        if (paging_ == null) {
+          Paging = new global::TuiHub.Protos.Librarian.V1.PagingRequest();
+        }
+        Paging.MergeFrom(other.Paging);
+      }
+      collectionIdFilter_.Add(other.collectionIdFilter_);
+      authorFilter_.Add(other.authorFilter_);
+      publishPlatformFilter_.Add(other.publishPlatformFilter_);
+      categoryFilter_.Add(other.categoryFilter_);
+      if (other.publishTimeRange_ != null) {
+        if (publishTimeRange_ == null) {
+          PublishTimeRange = new global::TuiHub.Protos.Librarian.V1.TimeRange();
+        }
+        PublishTimeRange.MergeFrom(other.PublishTimeRange);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (paging_ == null) {
+              Paging = new global::TuiHub.Protos.Librarian.V1.PagingRequest();
+            }
+            input.ReadMessage(Paging);
+            break;
+          }
+          case 18: {
+            collectionIdFilter_.AddEntriesFrom(input, _repeated_collectionIdFilter_codec);
+            break;
+          }
+          case 26: {
+            authorFilter_.AddEntriesFrom(input, _repeated_authorFilter_codec);
+            break;
+          }
+          case 34: {
+            publishPlatformFilter_.AddEntriesFrom(input, _repeated_publishPlatformFilter_codec);
+            break;
+          }
+          case 42: {
+            categoryFilter_.AddEntriesFrom(input, _repeated_categoryFilter_codec);
+            break;
+          }
+          case 50: {
+            if (publishTimeRange_ == null) {
+              PublishTimeRange = new global::TuiHub.Protos.Librarian.V1.TimeRange();
+            }
+            input.ReadMessage(PublishTimeRange);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            if (paging_ == null) {
+              Paging = new global::TuiHub.Protos.Librarian.V1.PagingRequest();
+            }
+            input.ReadMessage(Paging);
+            break;
+          }
+          case 18: {
+            collectionIdFilter_.AddEntriesFrom(ref input, _repeated_collectionIdFilter_codec);
+            break;
+          }
+          case 26: {
+            authorFilter_.AddEntriesFrom(ref input, _repeated_authorFilter_codec);
+            break;
+          }
+          case 34: {
+            publishPlatformFilter_.AddEntriesFrom(ref input, _repeated_publishPlatformFilter_codec);
+            break;
+          }
+          case 42: {
+            categoryFilter_.AddEntriesFrom(ref input, _repeated_categoryFilter_codec);
+            break;
+          }
+          case 50: {
+            if (publishTimeRange_ == null) {
+              PublishTimeRange = new global::TuiHub.Protos.Librarian.V1.TimeRange();
+            }
+            input.ReadMessage(PublishTimeRange);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class ListFeedItemsInCollectionResponse : pb::IMessage<ListFeedItemsInCollectionResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ListFeedItemsInCollectionResponse> _parser = new pb::MessageParser<ListFeedItemsInCollectionResponse>(() => new ListFeedItemsInCollectionResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<ListFeedItemsInCollectionResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.YesodReflection.Descriptor.MessageTypes[35]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ListFeedItemsInCollectionResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ListFeedItemsInCollectionResponse(ListFeedItemsInCollectionResponse other) : this() {
+      paging_ = other.paging_ != null ? other.paging_.Clone() : null;
+      items_ = other.items_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ListFeedItemsInCollectionResponse Clone() {
+      return new ListFeedItemsInCollectionResponse(this);
+    }
+
+    /// <summary>Field number for the "paging" field.</summary>
+    public const int PagingFieldNumber = 1;
+    private global::TuiHub.Protos.Librarian.V1.PagingResponse paging_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::TuiHub.Protos.Librarian.V1.PagingResponse Paging {
+      get { return paging_; }
+      set {
+        paging_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "items" field.</summary>
+    public const int ItemsFieldNumber = 2;
+    private static readonly pb::FieldCodec<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FeedItemDigest> _repeated_items_codec
+        = pb::FieldCodec.ForMessage(18, global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FeedItemDigest.Parser);
+    private readonly pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FeedItemDigest> items_ = new pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FeedItemDigest>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.FeedItemDigest> Items {
+      get { return items_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as ListFeedItemsInCollectionResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(ListFeedItemsInCollectionResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Paging, other.Paging)) return false;
+      if(!items_.Equals(other.items_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (paging_ != null) hash ^= Paging.GetHashCode();
+      hash ^= items_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (paging_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Paging);
+      }
+      items_.WriteTo(output, _repeated_items_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (paging_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Paging);
+      }
+      items_.WriteTo(ref output, _repeated_items_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (paging_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Paging);
+      }
+      size += items_.CalculateSize(_repeated_items_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(ListFeedItemsInCollectionResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.paging_ != null) {
+        if (paging_ == null) {
+          Paging = new global::TuiHub.Protos.Librarian.V1.PagingResponse();
+        }
+        Paging.MergeFrom(other.Paging);
+      }
+      items_.Add(other.items_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (paging_ == null) {
+              Paging = new global::TuiHub.Protos.Librarian.V1.PagingResponse();
+            }
+            input.ReadMessage(Paging);
+            break;
+          }
+          case 18: {
+            items_.AddEntriesFrom(input, _repeated_items_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            if (paging_ == null) {
+              Paging = new global::TuiHub.Protos.Librarian.V1.PagingResponse();
+            }
+            input.ReadMessage(Paging);
+            break;
+          }
+          case 18: {
+            items_.AddEntriesFrom(ref input, _repeated_items_codec);
+            break;
+          }
         }
       }
     }
@@ -5574,7 +7792,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.YesodReflection.Descriptor.MessageTypes[26]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.YesodReflection.Descriptor.MessageTypes[36]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6243,7 +8461,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.YesodReflection.Descriptor.MessageTypes[27]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.YesodReflection.Descriptor.MessageTypes[37]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6547,7 +8765,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.YesodReflection.Descriptor.MessageTypes[28]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.YesodReflection.Descriptor.MessageTypes[38]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7167,6 +9385,320 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
           }
           case 96: {
             ReadCount = input.ReadInt64();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// Server must maintain a default collection, without requirement of create
+  /// the default collection can have its id, but client can use id 0 to specify the default collection.
+  /// check ListCollectionItems api for the use case.
+  /// </summary>
+  public sealed partial class FeedItemCollection : pb::IMessage<FeedItemCollection>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<FeedItemCollection> _parser = new pb::MessageParser<FeedItemCollection>(() => new FeedItemCollection());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<FeedItemCollection> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.YesodReflection.Descriptor.MessageTypes[39]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FeedItemCollection() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FeedItemCollection(FeedItemCollection other) : this() {
+      id_ = other.id_ != null ? other.id_.Clone() : null;
+      name_ = other.name_;
+      description_ = other.description_;
+      category_ = other.category_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FeedItemCollection Clone() {
+      return new FeedItemCollection(this);
+    }
+
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private global::TuiHub.Protos.Librarian.V1.InternalID id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::TuiHub.Protos.Librarian.V1.InternalID Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 2;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "description" field.</summary>
+    public const int DescriptionFieldNumber = 3;
+    private string description_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Description {
+      get { return description_; }
+      set {
+        description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "category" field.</summary>
+    public const int CategoryFieldNumber = 4;
+    private string category_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Category {
+      get { return category_; }
+      set {
+        category_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as FeedItemCollection);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(FeedItemCollection other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Id, other.Id)) return false;
+      if (Name != other.Name) return false;
+      if (Description != other.Description) return false;
+      if (Category != other.Category) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (id_ != null) hash ^= Id.GetHashCode();
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (Description.Length != 0) hash ^= Description.GetHashCode();
+      if (Category.Length != 0) hash ^= Category.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (id_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Id);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Name);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Description);
+      }
+      if (Category.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Category);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (id_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Id);
+      }
+      if (Name.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Name);
+      }
+      if (Description.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Description);
+      }
+      if (Category.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Category);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (id_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Id);
+      }
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (Description.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
+      }
+      if (Category.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Category);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(FeedItemCollection other) {
+      if (other == null) {
+        return;
+      }
+      if (other.id_ != null) {
+        if (id_ == null) {
+          Id = new global::TuiHub.Protos.Librarian.V1.InternalID();
+        }
+        Id.MergeFrom(other.Id);
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.Description.Length != 0) {
+        Description = other.Description;
+      }
+      if (other.Category.Length != 0) {
+        Category = other.Category;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (id_ == null) {
+              Id = new global::TuiHub.Protos.Librarian.V1.InternalID();
+            }
+            input.ReadMessage(Id);
+            break;
+          }
+          case 18: {
+            Name = input.ReadString();
+            break;
+          }
+          case 26: {
+            Description = input.ReadString();
+            break;
+          }
+          case 34: {
+            Category = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            if (id_ == null) {
+              Id = new global::TuiHub.Protos.Librarian.V1.InternalID();
+            }
+            input.ReadMessage(Id);
+            break;
+          }
+          case 18: {
+            Name = input.ReadString();
+            break;
+          }
+          case 26: {
+            Description = input.ReadString();
+            break;
+          }
+          case 34: {
+            Category = input.ReadString();
             break;
           }
         }

@@ -5,150 +5,6 @@ import * as jspb from "google-protobuf";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 import * as librarian_v1_wellknown_pb from "../../../../librarian/v1/wellknown_pb";
 
-export class CreateNotifySourceRequest extends jspb.Message {
-  hasSource(): boolean;
-  clearSource(): void;
-  getSource(): NotifySource | undefined;
-  setSource(value?: NotifySource): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreateNotifySourceRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: CreateNotifySourceRequest): CreateNotifySourceRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: CreateNotifySourceRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreateNotifySourceRequest;
-  static deserializeBinaryFromReader(message: CreateNotifySourceRequest, reader: jspb.BinaryReader): CreateNotifySourceRequest;
-}
-
-export namespace CreateNotifySourceRequest {
-  export type AsObject = {
-    source?: NotifySource.AsObject,
-  }
-}
-
-export class CreateNotifySourceResponse extends jspb.Message {
-  hasId(): boolean;
-  clearId(): void;
-  getId(): librarian_v1_wellknown_pb.InternalID | undefined;
-  setId(value?: librarian_v1_wellknown_pb.InternalID): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreateNotifySourceResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: CreateNotifySourceResponse): CreateNotifySourceResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: CreateNotifySourceResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreateNotifySourceResponse;
-  static deserializeBinaryFromReader(message: CreateNotifySourceResponse, reader: jspb.BinaryReader): CreateNotifySourceResponse;
-}
-
-export namespace CreateNotifySourceResponse {
-  export type AsObject = {
-    id?: librarian_v1_wellknown_pb.InternalID.AsObject,
-  }
-}
-
-export class UpdateNotifySourceRequest extends jspb.Message {
-  hasSource(): boolean;
-  clearSource(): void;
-  getSource(): NotifySource | undefined;
-  setSource(value?: NotifySource): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UpdateNotifySourceRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: UpdateNotifySourceRequest): UpdateNotifySourceRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: UpdateNotifySourceRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UpdateNotifySourceRequest;
-  static deserializeBinaryFromReader(message: UpdateNotifySourceRequest, reader: jspb.BinaryReader): UpdateNotifySourceRequest;
-}
-
-export namespace UpdateNotifySourceRequest {
-  export type AsObject = {
-    source?: NotifySource.AsObject,
-  }
-}
-
-export class UpdateNotifySourceResponse extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): UpdateNotifySourceResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: UpdateNotifySourceResponse): UpdateNotifySourceResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: UpdateNotifySourceResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): UpdateNotifySourceResponse;
-  static deserializeBinaryFromReader(message: UpdateNotifySourceResponse, reader: jspb.BinaryReader): UpdateNotifySourceResponse;
-}
-
-export namespace UpdateNotifySourceResponse {
-  export type AsObject = {
-  }
-}
-
-export class ListNotifySourcesRequest extends jspb.Message {
-  hasPaging(): boolean;
-  clearPaging(): void;
-  getPaging(): librarian_v1_wellknown_pb.PagingRequest | undefined;
-  setPaging(value?: librarian_v1_wellknown_pb.PagingRequest): void;
-
-  clearIdFilterList(): void;
-  getIdFilterList(): Array<librarian_v1_wellknown_pb.InternalID>;
-  setIdFilterList(value: Array<librarian_v1_wellknown_pb.InternalID>): void;
-  addIdFilter(value?: librarian_v1_wellknown_pb.InternalID, index?: number): librarian_v1_wellknown_pb.InternalID;
-
-  clearStatusFilterList(): void;
-  getStatusFilterList(): Array<NotifySourceStatusMap[keyof NotifySourceStatusMap]>;
-  setStatusFilterList(value: Array<NotifySourceStatusMap[keyof NotifySourceStatusMap]>): void;
-  addStatusFilter(value: NotifySourceStatusMap[keyof NotifySourceStatusMap], index?: number): NotifySourceStatusMap[keyof NotifySourceStatusMap];
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListNotifySourcesRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ListNotifySourcesRequest): ListNotifySourcesRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListNotifySourcesRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListNotifySourcesRequest;
-  static deserializeBinaryFromReader(message: ListNotifySourcesRequest, reader: jspb.BinaryReader): ListNotifySourcesRequest;
-}
-
-export namespace ListNotifySourcesRequest {
-  export type AsObject = {
-    paging?: librarian_v1_wellknown_pb.PagingRequest.AsObject,
-    idFilterList: Array<librarian_v1_wellknown_pb.InternalID.AsObject>,
-    statusFilterList: Array<NotifySourceStatusMap[keyof NotifySourceStatusMap]>,
-  }
-}
-
-export class ListNotifySourcesResponse extends jspb.Message {
-  hasPaging(): boolean;
-  clearPaging(): void;
-  getPaging(): librarian_v1_wellknown_pb.PagingResponse | undefined;
-  setPaging(value?: librarian_v1_wellknown_pb.PagingResponse): void;
-
-  clearSourcesList(): void;
-  getSourcesList(): Array<NotifySource>;
-  setSourcesList(value: Array<NotifySource>): void;
-  addSources(value?: NotifySource, index?: number): NotifySource;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ListNotifySourcesResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ListNotifySourcesResponse): ListNotifySourcesResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ListNotifySourcesResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ListNotifySourcesResponse;
-  static deserializeBinaryFromReader(message: ListNotifySourcesResponse, reader: jspb.BinaryReader): ListNotifySourcesResponse;
-}
-
-export namespace ListNotifySourcesResponse {
-  export type AsObject = {
-    paging?: librarian_v1_wellknown_pb.PagingResponse.AsObject,
-    sourcesList: Array<NotifySource.AsObject>,
-  }
-}
-
 export class CreateNotifyTargetRequest extends jspb.Message {
   hasTarget(): boolean;
   clearTarget(): void;
@@ -431,46 +287,6 @@ export namespace ListNotifyFlowsResponse {
   }
 }
 
-export class NotifySource extends jspb.Message {
-  hasId(): boolean;
-  clearId(): void;
-  getId(): librarian_v1_wellknown_pb.InternalID | undefined;
-  setId(value?: librarian_v1_wellknown_pb.InternalID): void;
-
-  getName(): string;
-  setName(value: string): void;
-
-  getDescription(): string;
-  setDescription(value: string): void;
-
-  hasSource(): boolean;
-  clearSource(): void;
-  getSource(): librarian_v1_wellknown_pb.FeatureRequest | undefined;
-  setSource(value?: librarian_v1_wellknown_pb.FeatureRequest): void;
-
-  getStatus(): NotifySourceStatusMap[keyof NotifySourceStatusMap];
-  setStatus(value: NotifySourceStatusMap[keyof NotifySourceStatusMap]): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): NotifySource.AsObject;
-  static toObject(includeInstance: boolean, msg: NotifySource): NotifySource.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: NotifySource, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): NotifySource;
-  static deserializeBinaryFromReader(message: NotifySource, reader: jspb.BinaryReader): NotifySource;
-}
-
-export namespace NotifySource {
-  export type AsObject = {
-    id?: librarian_v1_wellknown_pb.InternalID.AsObject,
-    name: string,
-    description: string,
-    source?: librarian_v1_wellknown_pb.FeatureRequest.AsObject,
-    status: NotifySourceStatusMap[keyof NotifySourceStatusMap],
-  }
-}
-
 export class NotifyTarget extends jspb.Message {
   hasId(): boolean;
   clearId(): void;
@@ -523,23 +339,18 @@ export class NotifyFlow extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): void;
 
-  clearSourceIdsList(): void;
-  getSourceIdsList(): Array<librarian_v1_wellknown_pb.InternalID>;
-  setSourceIdsList(value: Array<librarian_v1_wellknown_pb.InternalID>): void;
-  addSourceIds(value?: librarian_v1_wellknown_pb.InternalID, index?: number): librarian_v1_wellknown_pb.InternalID;
+  clearSourcesList(): void;
+  getSourcesList(): Array<NotifyFlowSource>;
+  setSourcesList(value: Array<NotifyFlowSource>): void;
+  addSources(value?: NotifyFlowSource, index?: number): NotifyFlowSource;
 
-  clearTargetIdsList(): void;
-  getTargetIdsList(): Array<librarian_v1_wellknown_pb.InternalID>;
-  setTargetIdsList(value: Array<librarian_v1_wellknown_pb.InternalID>): void;
-  addTargetIds(value?: librarian_v1_wellknown_pb.InternalID, index?: number): librarian_v1_wellknown_pb.InternalID;
+  clearTargetsList(): void;
+  getTargetsList(): Array<NotifyFlowTarget>;
+  setTargetsList(value: Array<NotifyFlowTarget>): void;
+  addTargets(value?: NotifyFlowTarget, index?: number): NotifyFlowTarget;
 
   getStatus(): NotifyFlowStatusMap[keyof NotifyFlowStatusMap];
   setStatus(value: NotifyFlowStatusMap[keyof NotifyFlowStatusMap]): void;
-
-  clearActionSetsList(): void;
-  getActionSetsList(): Array<librarian_v1_wellknown_pb.InternalID>;
-  setActionSetsList(value: Array<librarian_v1_wellknown_pb.InternalID>): void;
-  addActionSets(value?: librarian_v1_wellknown_pb.InternalID, index?: number): librarian_v1_wellknown_pb.InternalID;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): NotifyFlow.AsObject;
@@ -556,10 +367,65 @@ export namespace NotifyFlow {
     id?: librarian_v1_wellknown_pb.InternalID.AsObject,
     name: string,
     description: string,
-    sourceIdsList: Array<librarian_v1_wellknown_pb.InternalID.AsObject>,
-    targetIdsList: Array<librarian_v1_wellknown_pb.InternalID.AsObject>,
+    sourcesList: Array<NotifyFlowSource.AsObject>,
+    targetsList: Array<NotifyFlowTarget.AsObject>,
     status: NotifyFlowStatusMap[keyof NotifyFlowStatusMap],
-    actionSetsList: Array<librarian_v1_wellknown_pb.InternalID.AsObject>,
+  }
+}
+
+export class NotifyFlowSource extends jspb.Message {
+  hasFilter(): boolean;
+  clearFilter(): void;
+  getFilter(): NotifyFilter | undefined;
+  setFilter(value?: NotifyFilter): void;
+
+  hasSourceId(): boolean;
+  clearSourceId(): void;
+  getSourceId(): librarian_v1_wellknown_pb.InternalID | undefined;
+  setSourceId(value?: librarian_v1_wellknown_pb.InternalID): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): NotifyFlowSource.AsObject;
+  static toObject(includeInstance: boolean, msg: NotifyFlowSource): NotifyFlowSource.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: NotifyFlowSource, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): NotifyFlowSource;
+  static deserializeBinaryFromReader(message: NotifyFlowSource, reader: jspb.BinaryReader): NotifyFlowSource;
+}
+
+export namespace NotifyFlowSource {
+  export type AsObject = {
+    filter?: NotifyFilter.AsObject,
+    sourceId?: librarian_v1_wellknown_pb.InternalID.AsObject,
+  }
+}
+
+export class NotifyFlowTarget extends jspb.Message {
+  hasFilter(): boolean;
+  clearFilter(): void;
+  getFilter(): NotifyFilter | undefined;
+  setFilter(value?: NotifyFilter): void;
+
+  hasTargetId(): boolean;
+  clearTargetId(): void;
+  getTargetId(): librarian_v1_wellknown_pb.InternalID | undefined;
+  setTargetId(value?: librarian_v1_wellknown_pb.InternalID): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): NotifyFlowTarget.AsObject;
+  static toObject(includeInstance: boolean, msg: NotifyFlowTarget): NotifyFlowTarget.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: NotifyFlowTarget, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): NotifyFlowTarget;
+  static deserializeBinaryFromReader(message: NotifyFlowTarget, reader: jspb.BinaryReader): NotifyFlowTarget;
+}
+
+export namespace NotifyFlowTarget {
+  export type AsObject = {
+    filter?: NotifyFilter.AsObject,
+    targetId?: librarian_v1_wellknown_pb.InternalID.AsObject,
   }
 }
 
@@ -744,14 +610,6 @@ export namespace SystemNotification {
     updateTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }
 }
-
-export interface NotifySourceStatusMap {
-  NOTIFY_SOURCE_STATUS_UNSPECIFIED: 0;
-  NOTIFY_SOURCE_STATUS_ACTIVE: 1;
-  NOTIFY_SOURCE_STATUS_SUSPEND: 2;
-}
-
-export const NotifySourceStatus: NotifySourceStatusMap;
 
 export interface NotifyTargetStatusMap {
   NOTIFY_TARGET_STATUS_UNSPECIFIED: 0;

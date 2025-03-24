@@ -420,45 +420,31 @@ final $typed_data.Uint8List batchCreateAppRunTimeResponseDescriptor = $convert.b
 const SumAppRunTimeRequest$json = {
   '1': 'SumAppRunTimeRequest',
   '2': [
-    {'1': 'app_id_filter', '3': 1, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'appIdFilter'},
-    {'1': 'device_id_filter', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'deviceIdFilter'},
-    {'1': 'time_ranges_filter', '3': 3, '4': 3, '5': 11, '6': '.librarian.v1.TimeRange', '10': 'timeRangesFilter'},
+    {'1': 'time_range_cross', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.TimeRange', '10': 'timeRangeCross'},
+    {'1': 'app_id_filter', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'appIdFilter'},
+    {'1': 'device_id_filter', '3': 3, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'deviceIdFilter'},
   ],
 };
 
 /// Descriptor for `SumAppRunTimeRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List sumAppRunTimeRequestDescriptor = $convert.base64Decode(
-    'ChRTdW1BcHBSdW5UaW1lUmVxdWVzdBI8Cg1hcHBfaWRfZmlsdGVyGAEgAygLMhgubGlicmFyaW'
-    'FuLnYxLkludGVybmFsSURSC2FwcElkRmlsdGVyEkIKEGRldmljZV9pZF9maWx0ZXIYAiADKAsy'
-    'GC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIOZGV2aWNlSWRGaWx0ZXISRQoSdGltZV9yYW5nZX'
-    'NfZmlsdGVyGAMgAygLMhcubGlicmFyaWFuLnYxLlRpbWVSYW5nZVIQdGltZVJhbmdlc0ZpbHRl'
-    'cg==');
+    'ChRTdW1BcHBSdW5UaW1lUmVxdWVzdBJBChB0aW1lX3JhbmdlX2Nyb3NzGAEgASgLMhcubGlicm'
+    'FyaWFuLnYxLlRpbWVSYW5nZVIOdGltZVJhbmdlQ3Jvc3MSPAoNYXBwX2lkX2ZpbHRlchgCIAMo'
+    'CzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgthcHBJZEZpbHRlchJCChBkZXZpY2VfaWRfZm'
+    'lsdGVyGAMgAygLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSDmRldmljZUlkRmlsdGVy');
 
 @$core.Deprecated('Use sumAppRunTimeResponseDescriptor instead')
 const SumAppRunTimeResponse$json = {
   '1': 'SumAppRunTimeResponse',
   '2': [
-    {'1': 'run_time_groups', '3': 1, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.sephirah.SumAppRunTimeResponse.Group', '10': 'runTimeGroups'},
-  ],
-  '3': [SumAppRunTimeResponse_Group$json],
-};
-
-@$core.Deprecated('Use sumAppRunTimeResponseDescriptor instead')
-const SumAppRunTimeResponse_Group$json = {
-  '1': 'Group',
-  '2': [
-    {'1': 'time_range', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.TimeRange', '10': 'timeRange'},
-    {'1': 'run_time_sum', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Duration', '10': 'runTimeSum'},
+    {'1': 'run_time_sum', '3': 1, '4': 1, '5': 11, '6': '.google.protobuf.Duration', '10': 'runTimeSum'},
   ],
 };
 
 /// Descriptor for `SumAppRunTimeResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List sumAppRunTimeResponseDescriptor = $convert.base64Decode(
-    'ChVTdW1BcHBSdW5UaW1lUmVzcG9uc2USYwoPcnVuX3RpbWVfZ3JvdXBzGAEgAygLMjsubGlicm'
-    'FyaWFuLnNlcGhpcmFoLnYxLnNlcGhpcmFoLlN1bUFwcFJ1blRpbWVSZXNwb25zZS5Hcm91cFIN'
-    'cnVuVGltZUdyb3Vwcxp8CgVHcm91cBI2Cgp0aW1lX3JhbmdlGAEgASgLMhcubGlicmFyaWFuLn'
-    'YxLlRpbWVSYW5nZVIJdGltZVJhbmdlEjsKDHJ1bl90aW1lX3N1bRgCIAEoCzIZLmdvb2dsZS5w'
-    'cm90b2J1Zi5EdXJhdGlvblIKcnVuVGltZVN1bQ==');
+    'ChVTdW1BcHBSdW5UaW1lUmVzcG9uc2USOwoMcnVuX3RpbWVfc3VtGAEgASgLMhkuZ29vZ2xlLn'
+    'Byb3RvYnVmLkR1cmF0aW9uUgpydW5UaW1lU3Vt');
 
 @$core.Deprecated('Use listAppRunTimesRequestDescriptor instead')
 const ListAppRunTimesRequest$json = {

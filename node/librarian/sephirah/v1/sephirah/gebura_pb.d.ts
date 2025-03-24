@@ -667,6 +667,11 @@ export namespace BatchCreateAppRunTimeResponse {
 }
 
 export class SumAppRunTimeRequest extends jspb.Message {
+  hasTimeRangeCross(): boolean;
+  clearTimeRangeCross(): void;
+  getTimeRangeCross(): librarian_v1_wellknown_pb.TimeRange | undefined;
+  setTimeRangeCross(value?: librarian_v1_wellknown_pb.TimeRange): void;
+
   clearAppIdFilterList(): void;
   getAppIdFilterList(): Array<librarian_v1_wellknown_pb.InternalID>;
   setAppIdFilterList(value: Array<librarian_v1_wellknown_pb.InternalID>): void;
@@ -676,11 +681,6 @@ export class SumAppRunTimeRequest extends jspb.Message {
   getDeviceIdFilterList(): Array<librarian_v1_wellknown_pb.InternalID>;
   setDeviceIdFilterList(value: Array<librarian_v1_wellknown_pb.InternalID>): void;
   addDeviceIdFilter(value?: librarian_v1_wellknown_pb.InternalID, index?: number): librarian_v1_wellknown_pb.InternalID;
-
-  clearTimeRangesFilterList(): void;
-  getTimeRangesFilterList(): Array<librarian_v1_wellknown_pb.TimeRange>;
-  setTimeRangesFilterList(value: Array<librarian_v1_wellknown_pb.TimeRange>): void;
-  addTimeRangesFilter(value?: librarian_v1_wellknown_pb.TimeRange, index?: number): librarian_v1_wellknown_pb.TimeRange;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SumAppRunTimeRequest.AsObject;
@@ -694,17 +694,17 @@ export class SumAppRunTimeRequest extends jspb.Message {
 
 export namespace SumAppRunTimeRequest {
   export type AsObject = {
+    timeRangeCross?: librarian_v1_wellknown_pb.TimeRange.AsObject,
     appIdFilterList: Array<librarian_v1_wellknown_pb.InternalID.AsObject>,
     deviceIdFilterList: Array<librarian_v1_wellknown_pb.InternalID.AsObject>,
-    timeRangesFilterList: Array<librarian_v1_wellknown_pb.TimeRange.AsObject>,
   }
 }
 
 export class SumAppRunTimeResponse extends jspb.Message {
-  clearRunTimeGroupsList(): void;
-  getRunTimeGroupsList(): Array<SumAppRunTimeResponse.Group>;
-  setRunTimeGroupsList(value: Array<SumAppRunTimeResponse.Group>): void;
-  addRunTimeGroups(value?: SumAppRunTimeResponse.Group, index?: number): SumAppRunTimeResponse.Group;
+  hasRunTimeSum(): boolean;
+  clearRunTimeSum(): void;
+  getRunTimeSum(): google_protobuf_duration_pb.Duration | undefined;
+  setRunTimeSum(value?: google_protobuf_duration_pb.Duration): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SumAppRunTimeResponse.AsObject;
@@ -718,35 +718,7 @@ export class SumAppRunTimeResponse extends jspb.Message {
 
 export namespace SumAppRunTimeResponse {
   export type AsObject = {
-    runTimeGroupsList: Array<SumAppRunTimeResponse.Group.AsObject>,
-  }
-
-  export class Group extends jspb.Message {
-    hasTimeRange(): boolean;
-    clearTimeRange(): void;
-    getTimeRange(): librarian_v1_wellknown_pb.TimeRange | undefined;
-    setTimeRange(value?: librarian_v1_wellknown_pb.TimeRange): void;
-
-    hasRunTimeSum(): boolean;
-    clearRunTimeSum(): void;
-    getRunTimeSum(): google_protobuf_duration_pb.Duration | undefined;
-    setRunTimeSum(value?: google_protobuf_duration_pb.Duration): void;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): Group.AsObject;
-    static toObject(includeInstance: boolean, msg: Group): Group.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: Group, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): Group;
-    static deserializeBinaryFromReader(message: Group, reader: jspb.BinaryReader): Group;
-  }
-
-  export namespace Group {
-    export type AsObject = {
-      timeRange?: librarian_v1_wellknown_pb.TimeRange.AsObject,
-      runTimeSum?: google_protobuf_duration_pb.Duration.AsObject,
-    }
+    runTimeSum?: google_protobuf_duration_pb.Duration.AsObject,
   }
 }
 

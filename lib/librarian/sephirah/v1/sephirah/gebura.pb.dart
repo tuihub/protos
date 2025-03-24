@@ -1542,19 +1542,19 @@ class BatchCreateAppRunTimeResponse extends $pb.GeneratedMessage {
 
 class SumAppRunTimeRequest extends $pb.GeneratedMessage {
   factory SumAppRunTimeRequest({
+    $8.TimeRange? timeRangeCross,
     $core.Iterable<$8.InternalID>? appIdFilter,
     $core.Iterable<$8.InternalID>? deviceIdFilter,
-    $core.Iterable<$8.TimeRange>? timeRangesFilter,
   }) {
     final $result = create();
+    if (timeRangeCross != null) {
+      $result.timeRangeCross = timeRangeCross;
+    }
     if (appIdFilter != null) {
       $result.appIdFilter.addAll(appIdFilter);
     }
     if (deviceIdFilter != null) {
       $result.deviceIdFilter.addAll(deviceIdFilter);
-    }
-    if (timeRangesFilter != null) {
-      $result.timeRangesFilter.addAll(timeRangesFilter);
     }
     return $result;
   }
@@ -1563,9 +1563,9 @@ class SumAppRunTimeRequest extends $pb.GeneratedMessage {
   factory SumAppRunTimeRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SumAppRunTimeRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
-    ..pc<$8.InternalID>(1, _omitFieldNames ? '' : 'appIdFilter', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
-    ..pc<$8.InternalID>(2, _omitFieldNames ? '' : 'deviceIdFilter', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
-    ..pc<$8.TimeRange>(3, _omitFieldNames ? '' : 'timeRangesFilter', $pb.PbFieldType.PM, subBuilder: $8.TimeRange.create)
+    ..aOM<$8.TimeRange>(1, _omitFieldNames ? '' : 'timeRangeCross', subBuilder: $8.TimeRange.create)
+    ..pc<$8.InternalID>(2, _omitFieldNames ? '' : 'appIdFilter', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
+    ..pc<$8.InternalID>(3, _omitFieldNames ? '' : 'deviceIdFilter', $pb.PbFieldType.PM, subBuilder: $8.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -1591,90 +1591,30 @@ class SumAppRunTimeRequest extends $pb.GeneratedMessage {
   static SumAppRunTimeRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$8.InternalID> get appIdFilter => $_getList(0);
+  $8.TimeRange get timeRangeCross => $_getN(0);
+  @$pb.TagNumber(1)
+  set timeRangeCross($8.TimeRange v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasTimeRangeCross() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearTimeRangeCross() => clearField(1);
+  @$pb.TagNumber(1)
+  $8.TimeRange ensureTimeRangeCross() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<$8.InternalID> get deviceIdFilter => $_getList(1);
+  $core.List<$8.InternalID> get appIdFilter => $_getList(1);
 
   @$pb.TagNumber(3)
-  $core.List<$8.TimeRange> get timeRangesFilter => $_getList(2);
-}
-
-class SumAppRunTimeResponse_Group extends $pb.GeneratedMessage {
-  factory SumAppRunTimeResponse_Group({
-    $8.TimeRange? timeRange,
-    $9.Duration? runTimeSum,
-  }) {
-    final $result = create();
-    if (timeRange != null) {
-      $result.timeRange = timeRange;
-    }
-    if (runTimeSum != null) {
-      $result.runTimeSum = runTimeSum;
-    }
-    return $result;
-  }
-  SumAppRunTimeResponse_Group._() : super();
-  factory SumAppRunTimeResponse_Group.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory SumAppRunTimeResponse_Group.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
-
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SumAppRunTimeResponse.Group', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
-    ..aOM<$8.TimeRange>(1, _omitFieldNames ? '' : 'timeRange', subBuilder: $8.TimeRange.create)
-    ..aOM<$9.Duration>(2, _omitFieldNames ? '' : 'runTimeSum', subBuilder: $9.Duration.create)
-    ..hasRequiredFields = false
-  ;
-
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
-  SumAppRunTimeResponse_Group clone() => SumAppRunTimeResponse_Group()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
-  SumAppRunTimeResponse_Group copyWith(void Function(SumAppRunTimeResponse_Group) updates) => super.copyWith((message) => updates(message as SumAppRunTimeResponse_Group)) as SumAppRunTimeResponse_Group;
-
-  $pb.BuilderInfo get info_ => _i;
-
-  @$core.pragma('dart2js:noInline')
-  static SumAppRunTimeResponse_Group create() => SumAppRunTimeResponse_Group._();
-  SumAppRunTimeResponse_Group createEmptyInstance() => create();
-  static $pb.PbList<SumAppRunTimeResponse_Group> createRepeated() => $pb.PbList<SumAppRunTimeResponse_Group>();
-  @$core.pragma('dart2js:noInline')
-  static SumAppRunTimeResponse_Group getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SumAppRunTimeResponse_Group>(create);
-  static SumAppRunTimeResponse_Group? _defaultInstance;
-
-  @$pb.TagNumber(1)
-  $8.TimeRange get timeRange => $_getN(0);
-  @$pb.TagNumber(1)
-  set timeRange($8.TimeRange v) { setField(1, v); }
-  @$pb.TagNumber(1)
-  $core.bool hasTimeRange() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearTimeRange() => clearField(1);
-  @$pb.TagNumber(1)
-  $8.TimeRange ensureTimeRange() => $_ensure(0);
-
-  @$pb.TagNumber(2)
-  $9.Duration get runTimeSum => $_getN(1);
-  @$pb.TagNumber(2)
-  set runTimeSum($9.Duration v) { setField(2, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasRunTimeSum() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearRunTimeSum() => clearField(2);
-  @$pb.TagNumber(2)
-  $9.Duration ensureRunTimeSum() => $_ensure(1);
+  $core.List<$8.InternalID> get deviceIdFilter => $_getList(2);
 }
 
 class SumAppRunTimeResponse extends $pb.GeneratedMessage {
   factory SumAppRunTimeResponse({
-    $core.Iterable<SumAppRunTimeResponse_Group>? runTimeGroups,
+    $9.Duration? runTimeSum,
   }) {
     final $result = create();
-    if (runTimeGroups != null) {
-      $result.runTimeGroups.addAll(runTimeGroups);
+    if (runTimeSum != null) {
+      $result.runTimeSum = runTimeSum;
     }
     return $result;
   }
@@ -1683,7 +1623,7 @@ class SumAppRunTimeResponse extends $pb.GeneratedMessage {
   factory SumAppRunTimeResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SumAppRunTimeResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
-    ..pc<SumAppRunTimeResponse_Group>(1, _omitFieldNames ? '' : 'runTimeGroups', $pb.PbFieldType.PM, subBuilder: SumAppRunTimeResponse_Group.create)
+    ..aOM<$9.Duration>(1, _omitFieldNames ? '' : 'runTimeSum', subBuilder: $9.Duration.create)
     ..hasRequiredFields = false
   ;
 
@@ -1709,7 +1649,15 @@ class SumAppRunTimeResponse extends $pb.GeneratedMessage {
   static SumAppRunTimeResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<SumAppRunTimeResponse_Group> get runTimeGroups => $_getList(0);
+  $9.Duration get runTimeSum => $_getN(0);
+  @$pb.TagNumber(1)
+  set runTimeSum($9.Duration v) { setField(1, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasRunTimeSum() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRunTimeSum() => clearField(1);
+  @$pb.TagNumber(1)
+  $9.Duration ensureRunTimeSum() => $_ensure(0);
 }
 
 class ListAppRunTimesRequest extends $pb.GeneratedMessage {

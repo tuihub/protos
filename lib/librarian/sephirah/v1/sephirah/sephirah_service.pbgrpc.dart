@@ -263,18 +263,6 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
       '/librarian.sephirah.v1.sephirah.LibrarianSephirahService/DeleteAppCategory',
       ($4.DeleteAppCategoryRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $4.DeleteAppCategoryResponse.fromBuffer(value));
-  static final _$createNotifySource = $grpc.ClientMethod<$5.CreateNotifySourceRequest, $5.CreateNotifySourceResponse>(
-      '/librarian.sephirah.v1.sephirah.LibrarianSephirahService/CreateNotifySource',
-      ($5.CreateNotifySourceRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $5.CreateNotifySourceResponse.fromBuffer(value));
-  static final _$updateNotifySource = $grpc.ClientMethod<$5.UpdateNotifySourceRequest, $5.UpdateNotifySourceResponse>(
-      '/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UpdateNotifySource',
-      ($5.UpdateNotifySourceRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $5.UpdateNotifySourceResponse.fromBuffer(value));
-  static final _$listNotifySources = $grpc.ClientMethod<$5.ListNotifySourcesRequest, $5.ListNotifySourcesResponse>(
-      '/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListNotifySources',
-      ($5.ListNotifySourcesRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $5.ListNotifySourcesResponse.fromBuffer(value));
   static final _$createNotifyTarget = $grpc.ClientMethod<$5.CreateNotifyTargetRequest, $5.CreateNotifyTargetResponse>(
       '/librarian.sephirah.v1.sephirah.LibrarianSephirahService/CreateNotifyTarget',
       ($5.CreateNotifyTargetRequest value) => value.writeToBuffer(),
@@ -355,10 +343,30 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
       '/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ReadFeedItem',
       ($6.ReadFeedItemRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $6.ReadFeedItemResponse.fromBuffer(value));
-  static final _$updateFeedItemTags = $grpc.ClientMethod<$6.UpdateFeedItemTagsRequest, $6.UpdateFeedItemTagsResponse>(
-      '/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UpdateFeedItemTags',
-      ($6.UpdateFeedItemTagsRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $6.UpdateFeedItemTagsResponse.fromBuffer(value));
+  static final _$createFeedItemCollection = $grpc.ClientMethod<$6.CreateFeedItemCollectionRequest, $6.CreateFeedItemCollectionResponse>(
+      '/librarian.sephirah.v1.sephirah.LibrarianSephirahService/CreateFeedItemCollection',
+      ($6.CreateFeedItemCollectionRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $6.CreateFeedItemCollectionResponse.fromBuffer(value));
+  static final _$updateFeedItemCollection = $grpc.ClientMethod<$6.UpdateFeedItemCollectionRequest, $6.UpdateFeedItemCollectionResponse>(
+      '/librarian.sephirah.v1.sephirah.LibrarianSephirahService/UpdateFeedItemCollection',
+      ($6.UpdateFeedItemCollectionRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $6.UpdateFeedItemCollectionResponse.fromBuffer(value));
+  static final _$listFeedItemCollections = $grpc.ClientMethod<$6.ListFeedItemCollectionsRequest, $6.ListFeedItemCollectionsResponse>(
+      '/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListFeedItemCollections',
+      ($6.ListFeedItemCollectionsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $6.ListFeedItemCollectionsResponse.fromBuffer(value));
+  static final _$addFeedItemToCollection = $grpc.ClientMethod<$6.AddFeedItemToCollectionRequest, $6.AddFeedItemToCollectionResponse>(
+      '/librarian.sephirah.v1.sephirah.LibrarianSephirahService/AddFeedItemToCollection',
+      ($6.AddFeedItemToCollectionRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $6.AddFeedItemToCollectionResponse.fromBuffer(value));
+  static final _$removeFeedItemFromCollection = $grpc.ClientMethod<$6.RemoveFeedItemFromCollectionRequest, $6.RemoveFeedItemFromCollectionResponse>(
+      '/librarian.sephirah.v1.sephirah.LibrarianSephirahService/RemoveFeedItemFromCollection',
+      ($6.RemoveFeedItemFromCollectionRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $6.RemoveFeedItemFromCollectionResponse.fromBuffer(value));
+  static final _$listFeedItemsInCollection = $grpc.ClientMethod<$6.ListFeedItemsInCollectionRequest, $6.ListFeedItemsInCollectionResponse>(
+      '/librarian.sephirah.v1.sephirah.LibrarianSephirahService/ListFeedItemsInCollection',
+      ($6.ListFeedItemsInCollectionRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $6.ListFeedItemsInCollectionResponse.fromBuffer(value));
 
   LibrarianSephirahServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -602,18 +610,6 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$deleteAppCategory, request, options: options);
   }
 
-  $grpc.ResponseFuture<$5.CreateNotifySourceResponse> createNotifySource($5.CreateNotifySourceRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$createNotifySource, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$5.UpdateNotifySourceResponse> updateNotifySource($5.UpdateNotifySourceRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$updateNotifySource, request, options: options);
-  }
-
-  $grpc.ResponseFuture<$5.ListNotifySourcesResponse> listNotifySources($5.ListNotifySourcesRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$listNotifySources, request, options: options);
-  }
-
   $grpc.ResponseFuture<$5.CreateNotifyTargetResponse> createNotifyTarget($5.CreateNotifyTargetRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createNotifyTarget, request, options: options);
   }
@@ -694,8 +690,28 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$readFeedItem, request, options: options);
   }
 
-  $grpc.ResponseFuture<$6.UpdateFeedItemTagsResponse> updateFeedItemTags($6.UpdateFeedItemTagsRequest request, {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$updateFeedItemTags, request, options: options);
+  $grpc.ResponseFuture<$6.CreateFeedItemCollectionResponse> createFeedItemCollection($6.CreateFeedItemCollectionRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$createFeedItemCollection, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$6.UpdateFeedItemCollectionResponse> updateFeedItemCollection($6.UpdateFeedItemCollectionRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateFeedItemCollection, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$6.ListFeedItemCollectionsResponse> listFeedItemCollections($6.ListFeedItemCollectionsRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$listFeedItemCollections, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$6.AddFeedItemToCollectionResponse> addFeedItemToCollection($6.AddFeedItemToCollectionRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$addFeedItemToCollection, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$6.RemoveFeedItemFromCollectionResponse> removeFeedItemFromCollection($6.RemoveFeedItemFromCollectionRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$removeFeedItemFromCollection, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$6.ListFeedItemsInCollectionResponse> listFeedItemsInCollection($6.ListFeedItemsInCollectionRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$listFeedItemsInCollection, request, options: options);
   }
 }
 
@@ -1117,27 +1133,6 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $4.DeleteAppCategoryRequest.fromBuffer(value),
         ($4.DeleteAppCategoryResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$5.CreateNotifySourceRequest, $5.CreateNotifySourceResponse>(
-        'CreateNotifySource',
-        createNotifySource_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $5.CreateNotifySourceRequest.fromBuffer(value),
-        ($5.CreateNotifySourceResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$5.UpdateNotifySourceRequest, $5.UpdateNotifySourceResponse>(
-        'UpdateNotifySource',
-        updateNotifySource_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $5.UpdateNotifySourceRequest.fromBuffer(value),
-        ($5.UpdateNotifySourceResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$5.ListNotifySourcesRequest, $5.ListNotifySourcesResponse>(
-        'ListNotifySources',
-        listNotifySources_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $5.ListNotifySourcesRequest.fromBuffer(value),
-        ($5.ListNotifySourcesResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$5.CreateNotifyTargetRequest, $5.CreateNotifyTargetResponse>(
         'CreateNotifyTarget',
         createNotifyTarget_Pre,
@@ -1278,13 +1273,48 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $6.ReadFeedItemRequest.fromBuffer(value),
         ($6.ReadFeedItemResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$6.UpdateFeedItemTagsRequest, $6.UpdateFeedItemTagsResponse>(
-        'UpdateFeedItemTags',
-        updateFeedItemTags_Pre,
+    $addMethod($grpc.ServiceMethod<$6.CreateFeedItemCollectionRequest, $6.CreateFeedItemCollectionResponse>(
+        'CreateFeedItemCollection',
+        createFeedItemCollection_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $6.UpdateFeedItemTagsRequest.fromBuffer(value),
-        ($6.UpdateFeedItemTagsResponse value) => value.writeToBuffer()));
+        ($core.List<$core.int> value) => $6.CreateFeedItemCollectionRequest.fromBuffer(value),
+        ($6.CreateFeedItemCollectionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$6.UpdateFeedItemCollectionRequest, $6.UpdateFeedItemCollectionResponse>(
+        'UpdateFeedItemCollection',
+        updateFeedItemCollection_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $6.UpdateFeedItemCollectionRequest.fromBuffer(value),
+        ($6.UpdateFeedItemCollectionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$6.ListFeedItemCollectionsRequest, $6.ListFeedItemCollectionsResponse>(
+        'ListFeedItemCollections',
+        listFeedItemCollections_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $6.ListFeedItemCollectionsRequest.fromBuffer(value),
+        ($6.ListFeedItemCollectionsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$6.AddFeedItemToCollectionRequest, $6.AddFeedItemToCollectionResponse>(
+        'AddFeedItemToCollection',
+        addFeedItemToCollection_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $6.AddFeedItemToCollectionRequest.fromBuffer(value),
+        ($6.AddFeedItemToCollectionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$6.RemoveFeedItemFromCollectionRequest, $6.RemoveFeedItemFromCollectionResponse>(
+        'RemoveFeedItemFromCollection',
+        removeFeedItemFromCollection_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $6.RemoveFeedItemFromCollectionRequest.fromBuffer(value),
+        ($6.RemoveFeedItemFromCollectionResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$6.ListFeedItemsInCollectionRequest, $6.ListFeedItemsInCollectionResponse>(
+        'ListFeedItemsInCollection',
+        listFeedItemsInCollection_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $6.ListFeedItemsInCollectionRequest.fromBuffer(value),
+        ($6.ListFeedItemsInCollectionResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.GetServerInformationResponse> getServerInformation_Pre($grpc.ServiceCall call, $async.Future<$0.GetServerInformationRequest> request) async {
@@ -1511,18 +1541,6 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
     return deleteAppCategory(call, await request);
   }
 
-  $async.Future<$5.CreateNotifySourceResponse> createNotifySource_Pre($grpc.ServiceCall call, $async.Future<$5.CreateNotifySourceRequest> request) async {
-    return createNotifySource(call, await request);
-  }
-
-  $async.Future<$5.UpdateNotifySourceResponse> updateNotifySource_Pre($grpc.ServiceCall call, $async.Future<$5.UpdateNotifySourceRequest> request) async {
-    return updateNotifySource(call, await request);
-  }
-
-  $async.Future<$5.ListNotifySourcesResponse> listNotifySources_Pre($grpc.ServiceCall call, $async.Future<$5.ListNotifySourcesRequest> request) async {
-    return listNotifySources(call, await request);
-  }
-
   $async.Future<$5.CreateNotifyTargetResponse> createNotifyTarget_Pre($grpc.ServiceCall call, $async.Future<$5.CreateNotifyTargetRequest> request) async {
     return createNotifyTarget(call, await request);
   }
@@ -1603,8 +1621,28 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
     return readFeedItem(call, await request);
   }
 
-  $async.Future<$6.UpdateFeedItemTagsResponse> updateFeedItemTags_Pre($grpc.ServiceCall call, $async.Future<$6.UpdateFeedItemTagsRequest> request) async {
-    return updateFeedItemTags(call, await request);
+  $async.Future<$6.CreateFeedItemCollectionResponse> createFeedItemCollection_Pre($grpc.ServiceCall call, $async.Future<$6.CreateFeedItemCollectionRequest> request) async {
+    return createFeedItemCollection(call, await request);
+  }
+
+  $async.Future<$6.UpdateFeedItemCollectionResponse> updateFeedItemCollection_Pre($grpc.ServiceCall call, $async.Future<$6.UpdateFeedItemCollectionRequest> request) async {
+    return updateFeedItemCollection(call, await request);
+  }
+
+  $async.Future<$6.ListFeedItemCollectionsResponse> listFeedItemCollections_Pre($grpc.ServiceCall call, $async.Future<$6.ListFeedItemCollectionsRequest> request) async {
+    return listFeedItemCollections(call, await request);
+  }
+
+  $async.Future<$6.AddFeedItemToCollectionResponse> addFeedItemToCollection_Pre($grpc.ServiceCall call, $async.Future<$6.AddFeedItemToCollectionRequest> request) async {
+    return addFeedItemToCollection(call, await request);
+  }
+
+  $async.Future<$6.RemoveFeedItemFromCollectionResponse> removeFeedItemFromCollection_Pre($grpc.ServiceCall call, $async.Future<$6.RemoveFeedItemFromCollectionRequest> request) async {
+    return removeFeedItemFromCollection(call, await request);
+  }
+
+  $async.Future<$6.ListFeedItemsInCollectionResponse> listFeedItemsInCollection_Pre($grpc.ServiceCall call, $async.Future<$6.ListFeedItemsInCollectionRequest> request) async {
+    return listFeedItemsInCollection(call, await request);
   }
 
   $async.Future<$0.GetServerInformationResponse> getServerInformation($grpc.ServiceCall call, $0.GetServerInformationRequest request);
@@ -1666,9 +1704,6 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
   $async.Future<$4.CreateAppCategoryResponse> createAppCategory($grpc.ServiceCall call, $4.CreateAppCategoryRequest request);
   $async.Future<$4.UpdateAppCategoryResponse> updateAppCategory($grpc.ServiceCall call, $4.UpdateAppCategoryRequest request);
   $async.Future<$4.DeleteAppCategoryResponse> deleteAppCategory($grpc.ServiceCall call, $4.DeleteAppCategoryRequest request);
-  $async.Future<$5.CreateNotifySourceResponse> createNotifySource($grpc.ServiceCall call, $5.CreateNotifySourceRequest request);
-  $async.Future<$5.UpdateNotifySourceResponse> updateNotifySource($grpc.ServiceCall call, $5.UpdateNotifySourceRequest request);
-  $async.Future<$5.ListNotifySourcesResponse> listNotifySources($grpc.ServiceCall call, $5.ListNotifySourcesRequest request);
   $async.Future<$5.CreateNotifyTargetResponse> createNotifyTarget($grpc.ServiceCall call, $5.CreateNotifyTargetRequest request);
   $async.Future<$5.UpdateNotifyTargetResponse> updateNotifyTarget($grpc.ServiceCall call, $5.UpdateNotifyTargetRequest request);
   $async.Future<$5.ListNotifyTargetsResponse> listNotifyTargets($grpc.ServiceCall call, $5.ListNotifyTargetsRequest request);
@@ -1689,5 +1724,10 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
   $async.Future<$6.GetFeedItemResponse> getFeedItem($grpc.ServiceCall call, $6.GetFeedItemRequest request);
   $async.Future<$6.GetBatchFeedItemsResponse> getBatchFeedItems($grpc.ServiceCall call, $6.GetBatchFeedItemsRequest request);
   $async.Future<$6.ReadFeedItemResponse> readFeedItem($grpc.ServiceCall call, $6.ReadFeedItemRequest request);
-  $async.Future<$6.UpdateFeedItemTagsResponse> updateFeedItemTags($grpc.ServiceCall call, $6.UpdateFeedItemTagsRequest request);
+  $async.Future<$6.CreateFeedItemCollectionResponse> createFeedItemCollection($grpc.ServiceCall call, $6.CreateFeedItemCollectionRequest request);
+  $async.Future<$6.UpdateFeedItemCollectionResponse> updateFeedItemCollection($grpc.ServiceCall call, $6.UpdateFeedItemCollectionRequest request);
+  $async.Future<$6.ListFeedItemCollectionsResponse> listFeedItemCollections($grpc.ServiceCall call, $6.ListFeedItemCollectionsRequest request);
+  $async.Future<$6.AddFeedItemToCollectionResponse> addFeedItemToCollection($grpc.ServiceCall call, $6.AddFeedItemToCollectionRequest request);
+  $async.Future<$6.RemoveFeedItemFromCollectionResponse> removeFeedItemFromCollection($grpc.ServiceCall call, $6.RemoveFeedItemFromCollectionRequest request);
+  $async.Future<$6.ListFeedItemsInCollectionResponse> listFeedItemsInCollection($grpc.ServiceCall call, $6.ListFeedItemsInCollectionRequest request);
 }

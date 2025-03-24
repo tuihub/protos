@@ -13,23 +13,6 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-class NotifySourceStatus extends $pb.ProtobufEnum {
-  static const NotifySourceStatus NOTIFY_SOURCE_STATUS_UNSPECIFIED = NotifySourceStatus._(0, _omitEnumNames ? '' : 'NOTIFY_SOURCE_STATUS_UNSPECIFIED');
-  static const NotifySourceStatus NOTIFY_SOURCE_STATUS_ACTIVE = NotifySourceStatus._(1, _omitEnumNames ? '' : 'NOTIFY_SOURCE_STATUS_ACTIVE');
-  static const NotifySourceStatus NOTIFY_SOURCE_STATUS_SUSPEND = NotifySourceStatus._(2, _omitEnumNames ? '' : 'NOTIFY_SOURCE_STATUS_SUSPEND');
-
-  static const $core.List<NotifySourceStatus> values = <NotifySourceStatus> [
-    NOTIFY_SOURCE_STATUS_UNSPECIFIED,
-    NOTIFY_SOURCE_STATUS_ACTIVE,
-    NOTIFY_SOURCE_STATUS_SUSPEND,
-  ];
-
-  static final $core.Map<$core.int, NotifySourceStatus> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static NotifySourceStatus? valueOf($core.int value) => _byValue[value];
-
-  const NotifySourceStatus._($core.int v, $core.String n) : super(v, n);
-}
-
 class NotifyTargetStatus extends $pb.ProtobufEnum {
   static const NotifyTargetStatus NOTIFY_TARGET_STATUS_UNSPECIFIED = NotifyTargetStatus._(0, _omitEnumNames ? '' : 'NOTIFY_TARGET_STATUS_UNSPECIFIED');
   static const NotifyTargetStatus NOTIFY_TARGET_STATUS_ACTIVE = NotifyTargetStatus._(1, _omitEnumNames ? '' : 'NOTIFY_TARGET_STATUS_ACTIVE');

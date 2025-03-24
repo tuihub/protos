@@ -258,11 +258,6 @@ export class FeatureSummary extends jspb.Message {
   setFeedSourcesList(value: Array<FeatureFlag>): void;
   addFeedSources(value?: FeatureFlag, index?: number): FeatureFlag;
 
-  clearNotifySourceList(): void;
-  getNotifySourceList(): Array<FeatureFlag>;
-  setNotifySourceList(value: Array<FeatureFlag>): void;
-  addNotifySource(value?: FeatureFlag, index?: number): FeatureFlag;
-
   clearNotifyDestinationsList(): void;
   getNotifyDestinationsList(): Array<FeatureFlag>;
   setNotifyDestinationsList(value: Array<FeatureFlag>): void;
@@ -298,7 +293,6 @@ export namespace FeatureSummary {
     accountPlatformsList: Array<FeatureFlag.AsObject>,
     appInfoSourcesList: Array<FeatureFlag.AsObject>,
     feedSourcesList: Array<FeatureFlag.AsObject>,
-    notifySourceList: Array<FeatureFlag.AsObject>,
     notifyDestinationsList: Array<FeatureFlag.AsObject>,
     feedItemActionsList: Array<FeatureFlag.AsObject>,
     feedSettersList: Array<FeatureFlag.AsObject>,
@@ -340,18 +334,9 @@ export interface WellKnownFeedSourceMap {
 
 export const WellKnownFeedSource: WellKnownFeedSourceMap;
 
-export interface WellKnownNotifySourceMap {
-  WELL_KNOWN_NOTIFY_SOURCE_UNSPECIFIED: 0;
-  WELL_KNOWN_NOTIFY_SOURCE_FEED: 1;
-  WELL_KNOWN_NOTIFY_SOURCE_FEED_TAG: 2;
-}
-
-export const WellKnownNotifySource: WellKnownNotifySourceMap;
-
 export interface WellKnownNotifyDestinationMap {
   WELL_KNOWN_NOTIFY_DESTINATION_UNSPECIFIED: 0;
   WELL_KNOWN_NOTIFY_DESTINATION_TELEGRAM: 1;
-  WELL_KNOWN_NOTIFY_DESTINATION_RSS: 2;
 }
 
 export const WellKnownNotifyDestination: WellKnownNotifyDestinationMap;

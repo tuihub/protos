@@ -77,30 +77,12 @@ final $typed_data.Uint8List wellKnownFeedSourceDescriptor = $convert.base64Decod
     'ChNXZWxsS25vd25GZWVkU291cmNlEisKIldFTExfS05PV05fRkVFRF9TT1VSQ0VfVU5TUEVDSU'
     'ZJRUQQABoDwj4AEiYKGldFTExfS05PV05fRkVFRF9TT1VSQ0VfUlNTEAEaBsI+A3Jzcw==');
 
-@$core.Deprecated('Use wellKnownNotifySourceDescriptor instead')
-const WellKnownNotifySource$json = {
-  '1': 'WellKnownNotifySource',
-  '2': [
-    {'1': 'WELL_KNOWN_NOTIFY_SOURCE_UNSPECIFIED', '2': 0, '3': {}},
-    {'1': 'WELL_KNOWN_NOTIFY_SOURCE_FEED', '2': 1, '3': {}},
-    {'1': 'WELL_KNOWN_NOTIFY_SOURCE_FEED_TAG', '2': 2, '3': {}},
-  ],
-};
-
-/// Descriptor for `WellKnownNotifySource`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List wellKnownNotifySourceDescriptor = $convert.base64Decode(
-    'ChVXZWxsS25vd25Ob3RpZnlTb3VyY2USLQokV0VMTF9LTk9XTl9OT1RJRllfU09VUkNFX1VOU1'
-    'BFQ0lGSUVEEAAaA8I+ABIqCh1XRUxMX0tOT1dOX05PVElGWV9TT1VSQ0VfRkVFRBABGgfCPgRm'
-    'ZWVkEjIKIVdFTExfS05PV05fTk9USUZZX1NPVVJDRV9GRUVEX1RBRxACGgvCPghmZWVkX3RhZw'
-    '==');
-
 @$core.Deprecated('Use wellKnownNotifyDestinationDescriptor instead')
 const WellKnownNotifyDestination$json = {
   '1': 'WellKnownNotifyDestination',
   '2': [
     {'1': 'WELL_KNOWN_NOTIFY_DESTINATION_UNSPECIFIED', '2': 0, '3': {}},
     {'1': 'WELL_KNOWN_NOTIFY_DESTINATION_TELEGRAM', '2': 1, '3': {}},
-    {'1': 'WELL_KNOWN_NOTIFY_DESTINATION_RSS', '2': 2, '3': {}},
   ],
 };
 
@@ -108,8 +90,7 @@ const WellKnownNotifyDestination$json = {
 final $typed_data.Uint8List wellKnownNotifyDestinationDescriptor = $convert.base64Decode(
     'ChpXZWxsS25vd25Ob3RpZnlEZXN0aW5hdGlvbhIyCilXRUxMX0tOT1dOX05PVElGWV9ERVNUSU'
     '5BVElPTl9VTlNQRUNJRklFRBAAGgPCPgASNwomV0VMTF9LTk9XTl9OT1RJRllfREVTVElOQVRJ'
-    'T05fVEVMRUdSQU0QARoLwj4IdGVsZWdyYW0SLQohV0VMTF9LTk9XTl9OT1RJRllfREVTVElOQV'
-    'RJT05fUlNTEAIaBsI+A3Jzcw==');
+    'T05fVEVMRUdSQU0QARoLwj4IdGVsZWdyYW0=');
 
 @$core.Deprecated('Use wellKnownFeedItemActionDescriptor instead')
 const WellKnownFeedItemAction$json = {
@@ -278,7 +259,6 @@ const FeatureSummary$json = {
     {'1': 'account_platforms', '3': 1, '4': 3, '5': 11, '6': '.librarian.v1.FeatureFlag', '10': 'accountPlatforms'},
     {'1': 'app_info_sources', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.FeatureFlag', '10': 'appInfoSources'},
     {'1': 'feed_sources', '3': 3, '4': 3, '5': 11, '6': '.librarian.v1.FeatureFlag', '10': 'feedSources'},
-    {'1': 'notify_source', '3': 8, '4': 3, '5': 11, '6': '.librarian.v1.FeatureFlag', '10': 'notifySource'},
     {'1': 'notify_destinations', '3': 4, '4': 3, '5': 11, '6': '.librarian.v1.FeatureFlag', '10': 'notifyDestinations'},
     {'1': 'feed_item_actions', '3': 5, '4': 3, '5': 11, '6': '.librarian.v1.FeatureFlag', '10': 'feedItemActions'},
     {'1': 'feed_setters', '3': 6, '4': 3, '5': 11, '6': '.librarian.v1.FeatureFlag', '10': 'feedSetters'},
@@ -291,11 +271,10 @@ final $typed_data.Uint8List featureSummaryDescriptor = $convert.base64Decode(
     'Cg5GZWF0dXJlU3VtbWFyeRJGChFhY2NvdW50X3BsYXRmb3JtcxgBIAMoCzIZLmxpYnJhcmlhbi'
     '52MS5GZWF0dXJlRmxhZ1IQYWNjb3VudFBsYXRmb3JtcxJDChBhcHBfaW5mb19zb3VyY2VzGAIg'
     'AygLMhkubGlicmFyaWFuLnYxLkZlYXR1cmVGbGFnUg5hcHBJbmZvU291cmNlcxI8CgxmZWVkX3'
-    'NvdXJjZXMYAyADKAsyGS5saWJyYXJpYW4udjEuRmVhdHVyZUZsYWdSC2ZlZWRTb3VyY2VzEj4K'
-    'DW5vdGlmeV9zb3VyY2UYCCADKAsyGS5saWJyYXJpYW4udjEuRmVhdHVyZUZsYWdSDG5vdGlmeV'
-    'NvdXJjZRJKChNub3RpZnlfZGVzdGluYXRpb25zGAQgAygLMhkubGlicmFyaWFuLnYxLkZlYXR1'
-    'cmVGbGFnUhJub3RpZnlEZXN0aW5hdGlvbnMSRQoRZmVlZF9pdGVtX2FjdGlvbnMYBSADKAsyGS'
-    '5saWJyYXJpYW4udjEuRmVhdHVyZUZsYWdSD2ZlZWRJdGVtQWN0aW9ucxI8CgxmZWVkX3NldHRl'
-    'cnMYBiADKAsyGS5saWJyYXJpYW4udjEuRmVhdHVyZUZsYWdSC2ZlZWRTZXR0ZXJzEjwKDGZlZW'
-    'RfZ2V0dGVycxgHIAMoCzIZLmxpYnJhcmlhbi52MS5GZWF0dXJlRmxhZ1ILZmVlZEdldHRlcnM=');
+    'NvdXJjZXMYAyADKAsyGS5saWJyYXJpYW4udjEuRmVhdHVyZUZsYWdSC2ZlZWRTb3VyY2VzEkoK'
+    'E25vdGlmeV9kZXN0aW5hdGlvbnMYBCADKAsyGS5saWJyYXJpYW4udjEuRmVhdHVyZUZsYWdSEm'
+    '5vdGlmeURlc3RpbmF0aW9ucxJFChFmZWVkX2l0ZW1fYWN0aW9ucxgFIAMoCzIZLmxpYnJhcmlh'
+    'bi52MS5GZWF0dXJlRmxhZ1IPZmVlZEl0ZW1BY3Rpb25zEjwKDGZlZWRfc2V0dGVycxgGIAMoCz'
+    'IZLmxpYnJhcmlhbi52MS5GZWF0dXJlRmxhZ1ILZmVlZFNldHRlcnMSPAoMZmVlZF9nZXR0ZXJz'
+    'GAcgAygLMhkubGlicmFyaWFuLnYxLkZlYXR1cmVGbGFnUgtmZWVkR2V0dGVycw==');
 

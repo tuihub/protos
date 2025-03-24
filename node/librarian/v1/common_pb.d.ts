@@ -119,11 +119,6 @@ export class FeedItem extends jspb.Message {
   getReadCount(): number;
   setReadCount(value: number): void;
 
-  clearTagsList(): void;
-  getTagsList(): Array<string>;
-  setTagsList(value: Array<string>): void;
-  addTags(value: string, index?: number): string;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FeedItem.AsObject;
   static toObject(includeInstance: boolean, msg: FeedItem): FeedItem.AsObject;
@@ -151,7 +146,6 @@ export namespace FeedItem {
     enclosuresList: Array<FeedEnclosure.AsObject>,
     publishPlatform: string,
     readCount: number,
-    tagsList: Array<string>,
   }
 }
 

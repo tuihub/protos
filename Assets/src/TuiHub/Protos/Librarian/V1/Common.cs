@@ -33,7 +33,7 @@ namespace TuiHub.Protos.Librarian.V1 {
             "UgVpdGVtcxIaCghsYW5ndWFnZRgGIAEoCVIIbGFuZ3VhZ2USLQoFaW1hZ2UY",
             "ByABKAsyFy5saWJyYXJpYW4udjEuRmVlZEltYWdlUgVpbWFnZRIyCgdhdXRo",
             "b3JzGAggAygLMhgubGlicmFyaWFuLnYxLkZlZWRQZXJzb25SB2F1dGhvcnMi",
-            "oAUKCEZlZWRJdGVtEigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVy",
+            "jAUKCEZlZWRJdGVtEigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVy",
             "bmFsSURSAmlkEhQKBXRpdGxlGAIgASgJUgV0aXRsZRIyCgdhdXRob3JzGAMg",
             "AygLMhgubGlicmFyaWFuLnYxLkZlZWRQZXJzb25SB2F1dGhvcnMSIAoLZGVz",
             "Y3JpcHRpb24YBCABKAlSC2Rlc2NyaXB0aW9uEhgKB2NvbnRlbnQYBSABKAlS",
@@ -46,24 +46,24 @@ namespace TuiHub.Protos.Librarian.V1 {
             "VGltZXN0YW1wSAFSDXVwZGF0ZWRQYXJzZWSIAQESOwoKZW5jbG9zdXJlcxgN",
             "IAMoCzIbLmxpYnJhcmlhbi52MS5GZWVkRW5jbG9zdXJlUgplbmNsb3N1cmVz",
             "EikKEHB1Ymxpc2hfcGxhdGZvcm0YDiABKAlSD3B1Ymxpc2hQbGF0Zm9ybRId",
-            "CgpyZWFkX2NvdW50GA8gASgDUglyZWFkQ291bnQSEgoEdGFncxgQIAMoCVIE",
-            "dGFnc0ITChFfcHVibGlzaGVkX3BhcnNlZEIRCg9fdXBkYXRlZF9wYXJzZWQi",
-            "NgoKRmVlZFBlcnNvbhISCgRuYW1lGAEgASgJUgRuYW1lEhQKBWVtYWlsGAIg",
-            "ASgJUgVlbWFpbCIzCglGZWVkSW1hZ2USEAoDdXJsGAEgASgJUgN1cmwSFAoF",
-            "dGl0bGUYAiABKAlSBXRpdGxlIk0KDUZlZWRFbmNsb3N1cmUSEAoDdXJsGAEg",
-            "ASgJUgN1cmwSFgoGbGVuZ3RoGAIgASgJUgZsZW5ndGgSEgoEdHlwZRgDIAEo",
-            "CVIEdHlwZSLZAQoTUG9ydGVyQmluYXJ5U3VtbWFyeRIuChNzb3VyY2VfY29k",
-            "ZV9hZGRyZXNzGAEgASgJUhFzb3VyY2VDb2RlQWRkcmVzcxIjCg1idWlsZF92",
-            "ZXJzaW9uGAIgASgJUgxidWlsZFZlcnNpb24SHQoKYnVpbGRfZGF0ZRgDIAEo",
-            "CVIJYnVpbGREYXRlEhIKBG5hbWUYBCABKAlSBG5hbWUSGAoHdmVyc2lvbhgF",
-            "IAEoCVIHdmVyc2lvbhIgCgtkZXNjcmlwdGlvbhgGIAEoCVILZGVzY3JpcHRp",
-            "b25CS1osZ2l0aHViLmNvbS90dWlodWIvcHJvdG9zL3BrZy9saWJyYXJpYW4v",
-            "djE7djGqAhpUdWlIdWIuUHJvdG9zLkxpYnJhcmlhbi5WMWIGcHJvdG8z"));
+            "CgpyZWFkX2NvdW50GA8gASgDUglyZWFkQ291bnRCEwoRX3B1Ymxpc2hlZF9w",
+            "YXJzZWRCEQoPX3VwZGF0ZWRfcGFyc2VkIjYKCkZlZWRQZXJzb24SEgoEbmFt",
+            "ZRgBIAEoCVIEbmFtZRIUCgVlbWFpbBgCIAEoCVIFZW1haWwiMwoJRmVlZElt",
+            "YWdlEhAKA3VybBgBIAEoCVIDdXJsEhQKBXRpdGxlGAIgASgJUgV0aXRsZSJN",
+            "Cg1GZWVkRW5jbG9zdXJlEhAKA3VybBgBIAEoCVIDdXJsEhYKBmxlbmd0aBgC",
+            "IAEoCVIGbGVuZ3RoEhIKBHR5cGUYAyABKAlSBHR5cGUi2QEKE1BvcnRlckJp",
+            "bmFyeVN1bW1hcnkSLgoTc291cmNlX2NvZGVfYWRkcmVzcxgBIAEoCVIRc291",
+            "cmNlQ29kZUFkZHJlc3MSIwoNYnVpbGRfdmVyc2lvbhgCIAEoCVIMYnVpbGRW",
+            "ZXJzaW9uEh0KCmJ1aWxkX2RhdGUYAyABKAlSCWJ1aWxkRGF0ZRISCgRuYW1l",
+            "GAQgASgJUgRuYW1lEhgKB3ZlcnNpb24YBSABKAlSB3ZlcnNpb24SIAoLZGVz",
+            "Y3JpcHRpb24YBiABKAlSC2Rlc2NyaXB0aW9uQktaLGdpdGh1Yi5jb20vdHVp",
+            "aHViL3Byb3Rvcy9wa2cvbGlicmFyaWFuL3YxO3YxqgIaVHVpSHViLlByb3Rv",
+            "cy5MaWJyYXJpYW4uVjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.WellknownReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.Feed), global::TuiHub.Protos.Librarian.V1.Feed.Parser, new[]{ "Id", "Title", "Link", "Description", "Items", "Language", "Image", "Authors" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.FeedItem), global::TuiHub.Protos.Librarian.V1.FeedItem.Parser, new[]{ "Id", "Title", "Authors", "Description", "Content", "Guid", "Link", "Image", "Published", "PublishedParsed", "Updated", "UpdatedParsed", "Enclosures", "PublishPlatform", "ReadCount", "Tags" }, new[]{ "PublishedParsed", "UpdatedParsed" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.FeedItem), global::TuiHub.Protos.Librarian.V1.FeedItem.Parser, new[]{ "Id", "Title", "Authors", "Description", "Content", "Guid", "Link", "Image", "Published", "PublishedParsed", "Updated", "UpdatedParsed", "Enclosures", "PublishPlatform", "ReadCount" }, new[]{ "PublishedParsed", "UpdatedParsed" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.FeedPerson), global::TuiHub.Protos.Librarian.V1.FeedPerson.Parser, new[]{ "Name", "Email" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.FeedImage), global::TuiHub.Protos.Librarian.V1.FeedImage.Parser, new[]{ "Url", "Title" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.V1.FeedEnclosure), global::TuiHub.Protos.Librarian.V1.FeedEnclosure.Parser, new[]{ "Url", "Length", "Type" }, null, null, null, null),
@@ -588,7 +588,6 @@ namespace TuiHub.Protos.Librarian.V1 {
       enclosures_ = other.enclosures_.Clone();
       publishPlatform_ = other.publishPlatform_;
       readCount_ = other.readCount_;
-      tags_ = other.tags_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -816,20 +815,6 @@ namespace TuiHub.Protos.Librarian.V1 {
       }
     }
 
-    /// <summary>Field number for the "tags" field.</summary>
-    public const int TagsFieldNumber = 16;
-    private static readonly pb::FieldCodec<string> _repeated_tags_codec
-        = pb::FieldCodec.ForString(130);
-    private readonly pbc::RepeatedField<string> tags_ = new pbc::RepeatedField<string>();
-    /// <summary>
-    /// tags
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<string> Tags {
-      get { return tags_; }
-    }
-
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -860,7 +845,6 @@ namespace TuiHub.Protos.Librarian.V1 {
       if(!enclosures_.Equals(other.enclosures_)) return false;
       if (PublishPlatform != other.PublishPlatform) return false;
       if (ReadCount != other.ReadCount) return false;
-      if(!tags_.Equals(other.tags_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -883,7 +867,6 @@ namespace TuiHub.Protos.Librarian.V1 {
       hash ^= enclosures_.GetHashCode();
       if (PublishPlatform.Length != 0) hash ^= PublishPlatform.GetHashCode();
       if (ReadCount != 0L) hash ^= ReadCount.GetHashCode();
-      hash ^= tags_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -956,7 +939,6 @@ namespace TuiHub.Protos.Librarian.V1 {
         output.WriteRawTag(120);
         output.WriteInt64(ReadCount);
       }
-      tags_.WriteTo(output, _repeated_tags_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1021,7 +1003,6 @@ namespace TuiHub.Protos.Librarian.V1 {
         output.WriteRawTag(120);
         output.WriteInt64(ReadCount);
       }
-      tags_.WriteTo(ref output, _repeated_tags_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1073,7 +1054,6 @@ namespace TuiHub.Protos.Librarian.V1 {
       if (ReadCount != 0L) {
         size += 1 + pb::CodedOutputStream.ComputeInt64Size(ReadCount);
       }
-      size += tags_.CalculateSize(_repeated_tags_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -1139,7 +1119,6 @@ namespace TuiHub.Protos.Librarian.V1 {
       if (other.ReadCount != 0L) {
         ReadCount = other.ReadCount;
       }
-      tags_.Add(other.tags_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -1227,10 +1206,6 @@ namespace TuiHub.Protos.Librarian.V1 {
             ReadCount = input.ReadInt64();
             break;
           }
-          case 130: {
-            tags_.AddEntriesFrom(input, _repeated_tags_codec);
-            break;
-          }
         }
       }
     #endif
@@ -1316,10 +1291,6 @@ namespace TuiHub.Protos.Librarian.V1 {
           }
           case 120: {
             ReadCount = input.ReadInt64();
-            break;
-          }
-          case 130: {
-            tags_.AddEntriesFrom(ref input, _repeated_tags_codec);
             break;
           }
         }
