@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.5.2](https://github.com/tuihub/protos/compare/v0.5.1...v0.5.2) (2025-03-24)
+
+
+### Features
+
+* add notify_source flag ([5e0a242](https://github.com/tuihub/protos/commit/5e0a2420969afa3bad9f846ce7b01b8cf82f7400))
+* replace feed_item_collection with tag ([8f9e5bb](https://github.com/tuihub/protos/commit/8f9e5bb4aa629555fd159e3e4325d07edb749805))
+* revert replace feed_item_collection with tag ([f911a13](https://github.com/tuihub/protos/commit/f911a13254b631d537b85b23eb3a4875db7a2386))
+* update SumAppRunTime ([444b3e8](https://github.com/tuihub/protos/commit/444b3e8f19e5d5ce9ed45603b418447d023e1e50))
+
+
+### Bug Fixes
+
+* delete unused ([66da614](https://github.com/tuihub/protos/commit/66da614039534a0efcaa68bbf82ebe29aaa1ac0f))
+
 ## [0.5.1](https://github.com/tuihub/protos/compare/v0.5.0...v0.5.1) (2025-03-22)
 
 
