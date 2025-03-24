@@ -133,17 +133,13 @@ message BatchCreateAppRunTimeRequest {
 message BatchCreateAppRunTimeResponse {}
 
 message SumAppRunTimeRequest {
-  repeated librarian.v1.InternalID app_id_filter = 1;
-  repeated librarian.v1.InternalID device_id_filter = 2;
-  repeated librarian.v1.TimeRange time_ranges_filter = 3;
+  librarian.v1.TimeRange time_range_cross = 1;
+  repeated librarian.v1.InternalID app_id_filter = 2;
+  repeated librarian.v1.InternalID device_id_filter = 3;
 }
 
 message SumAppRunTimeResponse {
-  message Group {
-    librarian.v1.TimeRange time_range = 1;
-    google.protobuf.Duration run_time_sum = 2;
-  }
-  repeated Group run_time_groups = 1;
+  google.protobuf.Duration run_time_sum = 1;
 }
 
 message ListAppRunTimesRequest {
