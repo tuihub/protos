@@ -25,8 +25,8 @@ message RefreshTokenResponse {
 }
 
 message ReportSentinelInformationRequest {
-  string hostname = 1;
-  repeated string hostname_alternatives = 2;
+  string url = 1;
+  repeated string url_alternatives = 2;
   // valid when need_token is true
   string get_token_url_path = 3;
   string download_file_base_path = 4;

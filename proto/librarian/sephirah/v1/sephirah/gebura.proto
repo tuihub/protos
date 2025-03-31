@@ -294,7 +294,7 @@ message AppInfo {
   string cover_image_url = 17;
   librarian.v1.InternalID cover_image_id = 18;
   repeated string tags = 19;
-  repeated string alt_names = 20;
+  repeated string name_alternatives = 20;
   string developer = 21;
   string publisher = 22;
 }
@@ -326,7 +326,7 @@ message StoreApp {
   // must be vertical, usually 3:4
   librarian.v1.InternalID cover_image_id = 25;
   repeated string tags = 26;
-  repeated string alt_names = 27;
+  repeated string name_alternatives = 27;
   string developer = 28;
   string publisher = 29;
 }
@@ -400,7 +400,7 @@ message App {
   string cover_image_url = 27;
   librarian.v1.InternalID cover_image_id = 28;
   repeated string tags = 29;
-  repeated string alt_names = 30;
+  repeated string name_alternatives = 30;
   string developer = 31;
   string publisher = 32;
 }

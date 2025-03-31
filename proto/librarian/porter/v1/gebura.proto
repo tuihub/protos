@@ -52,7 +52,7 @@ message AppInfo {
   // must be vertical, usually 3:4
   string cover_image_url = 11;
   repeated string tags = 12;
-  repeated string alt_names = 13;
+  repeated string name_alternatives = 13;
 }
 
 message AppInfoDetails {
