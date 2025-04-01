@@ -351,10 +351,10 @@ impl serde::Serialize for ReportSentinelInformationRequest {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if !self.hostname.is_empty() {
+        if !self.url.is_empty() {
             len += 1;
         }
-        if !self.hostname_alternatives.is_empty() {
+        if !self.url_alternatives.is_empty() {
             len += 1;
         }
         if !self.get_token_url_path.is_empty() {
@@ -367,11 +367,11 @@ impl serde::Serialize for ReportSentinelInformationRequest {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest", len)?;
-        if !self.hostname.is_empty() {
-            struct_ser.serialize_field("hostname", &self.hostname)?;
+        if !self.url.is_empty() {
+            struct_ser.serialize_field("url", &self.url)?;
         }
-        if !self.hostname_alternatives.is_empty() {
-            struct_ser.serialize_field("hostnameAlternatives", &self.hostname_alternatives)?;
+        if !self.url_alternatives.is_empty() {
+            struct_ser.serialize_field("urlAlternatives", &self.url_alternatives)?;
         }
         if !self.get_token_url_path.is_empty() {
             struct_ser.serialize_field("getTokenUrlPath", &self.get_token_url_path)?;
@@ -392,9 +392,9 @@ impl<'de> serde::Deserialize<'de> for ReportSentinelInformationRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "hostname",
-            "hostname_alternatives",
-            "hostnameAlternatives",
+            "url",
+            "url_alternatives",
+            "urlAlternatives",
             "get_token_url_path",
             "getTokenUrlPath",
             "download_file_base_path",
@@ -404,8 +404,8 @@ impl<'de> serde::Deserialize<'de> for ReportSentinelInformationRequest {
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            Hostname,
-            HostnameAlternatives,
+            Url,
+            UrlAlternatives,
             GetTokenUrlPath,
             DownloadFileBasePath,
             Libraries,
@@ -430,8 +430,8 @@ impl<'de> serde::Deserialize<'de> for ReportSentinelInformationRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "hostname" => Ok(GeneratedField::Hostname),
-                            "hostnameAlternatives" | "hostname_alternatives" => Ok(GeneratedField::HostnameAlternatives),
+                            "url" => Ok(GeneratedField::Url),
+                            "urlAlternatives" | "url_alternatives" => Ok(GeneratedField::UrlAlternatives),
                             "getTokenUrlPath" | "get_token_url_path" => Ok(GeneratedField::GetTokenUrlPath),
                             "downloadFileBasePath" | "download_file_base_path" => Ok(GeneratedField::DownloadFileBasePath),
                             "libraries" => Ok(GeneratedField::Libraries),
@@ -454,24 +454,24 @@ impl<'de> serde::Deserialize<'de> for ReportSentinelInformationRequest {
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut hostname__ = None;
-                let mut hostname_alternatives__ = None;
+                let mut url__ = None;
+                let mut url_alternatives__ = None;
                 let mut get_token_url_path__ = None;
                 let mut download_file_base_path__ = None;
                 let mut libraries__ = None;
                 while let Some(k) = map_.next_key()? {
                     match k {
-                        GeneratedField::Hostname => {
-                            if hostname__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("hostname"));
+                        GeneratedField::Url => {
+                            if url__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("url"));
                             }
-                            hostname__ = Some(map_.next_value()?);
+                            url__ = Some(map_.next_value()?);
                         }
-                        GeneratedField::HostnameAlternatives => {
-                            if hostname_alternatives__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("hostnameAlternatives"));
+                        GeneratedField::UrlAlternatives => {
+                            if url_alternatives__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("urlAlternatives"));
                             }
-                            hostname_alternatives__ = Some(map_.next_value()?);
+                            url_alternatives__ = Some(map_.next_value()?);
                         }
                         GeneratedField::GetTokenUrlPath => {
                             if get_token_url_path__.is_some() {
@@ -494,8 +494,8 @@ impl<'de> serde::Deserialize<'de> for ReportSentinelInformationRequest {
                     }
                 }
                 Ok(ReportSentinelInformationRequest {
-                    hostname: hostname__.unwrap_or_default(),
-                    hostname_alternatives: hostname_alternatives__.unwrap_or_default(),
+                    url: url__.unwrap_or_default(),
+                    url_alternatives: url_alternatives__.unwrap_or_default(),
                     get_token_url_path: get_token_url_path__.unwrap_or_default(),
                     download_file_base_path: download_file_base_path__.unwrap_or_default(),
                     libraries: libraries__.unwrap_or_default(),

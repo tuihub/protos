@@ -11533,7 +11533,7 @@ backgroundImageId: (f = msg.getBackgroundImageId()) && librarian_v1_wellknown_pb
 coverImageUrl: jspb.Message.getFieldWithDefault(msg, 17, ""),
 coverImageId: (f = msg.getCoverImageId()) && librarian_v1_wellknown_pb.InternalID.toObject(includeInstance, f),
 tagsList: (f = jspb.Message.getRepeatedField(msg, 19)) == null ? undefined : f,
-altNamesList: (f = jspb.Message.getRepeatedField(msg, 20)) == null ? undefined : f,
+nameAlternativesList: (f = jspb.Message.getRepeatedField(msg, 20)) == null ? undefined : f,
 developer: jspb.Message.getFieldWithDefault(msg, 21, ""),
 publisher: jspb.Message.getFieldWithDefault(msg, 22, "")
   };
@@ -11629,7 +11629,7 @@ proto.librarian.sephirah.v1.sephirah.AppInfo.deserializeBinaryFromReader = funct
       break;
     case 20:
       var value = /** @type {string} */ (reader.readString());
-      msg.addAltNames(value);
+      msg.addNameAlternatives(value);
       break;
     case 21:
       var value = /** @type {string} */ (reader.readString());
@@ -11762,7 +11762,7 @@ proto.librarian.sephirah.v1.sephirah.AppInfo.serializeBinaryToWriter = function(
       f
     );
   }
-  f = message.getAltNamesList();
+  f = message.getNameAlternativesList();
   if (f.length > 0) {
     writer.writeRepeatedString(
       20,
@@ -12115,10 +12115,10 @@ proto.librarian.sephirah.v1.sephirah.AppInfo.prototype.clearTagsList = function(
 
 
 /**
- * repeated string alt_names = 20;
+ * repeated string name_alternatives = 20;
  * @return {!Array<string>}
  */
-proto.librarian.sephirah.v1.sephirah.AppInfo.prototype.getAltNamesList = function() {
+proto.librarian.sephirah.v1.sephirah.AppInfo.prototype.getNameAlternativesList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 20));
 };
 
@@ -12127,7 +12127,7 @@ proto.librarian.sephirah.v1.sephirah.AppInfo.prototype.getAltNamesList = functio
  * @param {!Array<string>} value
  * @return {!proto.librarian.sephirah.v1.sephirah.AppInfo} returns this
  */
-proto.librarian.sephirah.v1.sephirah.AppInfo.prototype.setAltNamesList = function(value) {
+proto.librarian.sephirah.v1.sephirah.AppInfo.prototype.setNameAlternativesList = function(value) {
   return jspb.Message.setField(this, 20, value || []);
 };
 
@@ -12137,7 +12137,7 @@ proto.librarian.sephirah.v1.sephirah.AppInfo.prototype.setAltNamesList = functio
  * @param {number=} opt_index
  * @return {!proto.librarian.sephirah.v1.sephirah.AppInfo} returns this
  */
-proto.librarian.sephirah.v1.sephirah.AppInfo.prototype.addAltNames = function(value, opt_index) {
+proto.librarian.sephirah.v1.sephirah.AppInfo.prototype.addNameAlternatives = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 20, value, opt_index);
 };
 
@@ -12146,8 +12146,8 @@ proto.librarian.sephirah.v1.sephirah.AppInfo.prototype.addAltNames = function(va
  * Clears the list making it empty but non-null.
  * @return {!proto.librarian.sephirah.v1.sephirah.AppInfo} returns this
  */
-proto.librarian.sephirah.v1.sephirah.AppInfo.prototype.clearAltNamesList = function() {
-  return this.setAltNamesList([]);
+proto.librarian.sephirah.v1.sephirah.AppInfo.prototype.clearNameAlternativesList = function() {
+  return this.setNameAlternativesList([]);
 };
 
 
@@ -12643,7 +12643,7 @@ iconImageId: (f = msg.getIconImageId()) && librarian_v1_wellknown_pb.InternalID.
 backgroundImageId: (f = msg.getBackgroundImageId()) && librarian_v1_wellknown_pb.InternalID.toObject(includeInstance, f),
 coverImageId: (f = msg.getCoverImageId()) && librarian_v1_wellknown_pb.InternalID.toObject(includeInstance, f),
 tagsList: (f = jspb.Message.getRepeatedField(msg, 26)) == null ? undefined : f,
-altNamesList: (f = jspb.Message.getRepeatedField(msg, 27)) == null ? undefined : f,
+nameAlternativesList: (f = jspb.Message.getRepeatedField(msg, 27)) == null ? undefined : f,
 developer: jspb.Message.getFieldWithDefault(msg, 28, ""),
 publisher: jspb.Message.getFieldWithDefault(msg, 29, "")
   };
@@ -12730,7 +12730,7 @@ proto.librarian.sephirah.v1.sephirah.StoreApp.deserializeBinaryFromReader = func
       break;
     case 27:
       var value = /** @type {string} */ (reader.readString());
-      msg.addAltNames(value);
+      msg.addNameAlternatives(value);
       break;
     case 28:
       var value = /** @type {string} */ (reader.readString());
@@ -12840,7 +12840,7 @@ proto.librarian.sephirah.v1.sephirah.StoreApp.serializeBinaryToWriter = function
       f
     );
   }
-  f = message.getAltNamesList();
+  f = message.getNameAlternativesList();
   if (f.length > 0) {
     writer.writeRepeatedString(
       27,
@@ -13145,10 +13145,10 @@ proto.librarian.sephirah.v1.sephirah.StoreApp.prototype.clearTagsList = function
 
 
 /**
- * repeated string alt_names = 27;
+ * repeated string name_alternatives = 27;
  * @return {!Array<string>}
  */
-proto.librarian.sephirah.v1.sephirah.StoreApp.prototype.getAltNamesList = function() {
+proto.librarian.sephirah.v1.sephirah.StoreApp.prototype.getNameAlternativesList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 27));
 };
 
@@ -13157,7 +13157,7 @@ proto.librarian.sephirah.v1.sephirah.StoreApp.prototype.getAltNamesList = functi
  * @param {!Array<string>} value
  * @return {!proto.librarian.sephirah.v1.sephirah.StoreApp} returns this
  */
-proto.librarian.sephirah.v1.sephirah.StoreApp.prototype.setAltNamesList = function(value) {
+proto.librarian.sephirah.v1.sephirah.StoreApp.prototype.setNameAlternativesList = function(value) {
   return jspb.Message.setField(this, 27, value || []);
 };
 
@@ -13167,7 +13167,7 @@ proto.librarian.sephirah.v1.sephirah.StoreApp.prototype.setAltNamesList = functi
  * @param {number=} opt_index
  * @return {!proto.librarian.sephirah.v1.sephirah.StoreApp} returns this
  */
-proto.librarian.sephirah.v1.sephirah.StoreApp.prototype.addAltNames = function(value, opt_index) {
+proto.librarian.sephirah.v1.sephirah.StoreApp.prototype.addNameAlternatives = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 27, value, opt_index);
 };
 
@@ -13176,8 +13176,8 @@ proto.librarian.sephirah.v1.sephirah.StoreApp.prototype.addAltNames = function(v
  * Clears the list making it empty but non-null.
  * @return {!proto.librarian.sephirah.v1.sephirah.StoreApp} returns this
  */
-proto.librarian.sephirah.v1.sephirah.StoreApp.prototype.clearAltNamesList = function() {
-  return this.setAltNamesList([]);
+proto.librarian.sephirah.v1.sephirah.StoreApp.prototype.clearNameAlternativesList = function() {
+  return this.setNameAlternativesList([]);
 };
 
 
@@ -14447,7 +14447,7 @@ backgroundImageId: (f = msg.getBackgroundImageId()) && librarian_v1_wellknown_pb
 coverImageUrl: jspb.Message.getFieldWithDefault(msg, 27, ""),
 coverImageId: (f = msg.getCoverImageId()) && librarian_v1_wellknown_pb.InternalID.toObject(includeInstance, f),
 tagsList: (f = jspb.Message.getRepeatedField(msg, 29)) == null ? undefined : f,
-altNamesList: (f = jspb.Message.getRepeatedField(msg, 30)) == null ? undefined : f,
+nameAlternativesList: (f = jspb.Message.getRepeatedField(msg, 30)) == null ? undefined : f,
 developer: jspb.Message.getFieldWithDefault(msg, 31, ""),
 publisher: jspb.Message.getFieldWithDefault(msg, 32, "")
   };
@@ -14569,7 +14569,7 @@ proto.librarian.sephirah.v1.sephirah.App.deserializeBinaryFromReader = function(
       break;
     case 30:
       var value = /** @type {string} */ (reader.readString());
-      msg.addAltNames(value);
+      msg.addNameAlternatives(value);
       break;
     case 31:
       var value = /** @type {string} */ (reader.readString());
@@ -14738,7 +14738,7 @@ proto.librarian.sephirah.v1.sephirah.App.serializeBinaryToWriter = function(mess
       f
     );
   }
-  f = message.getAltNamesList();
+  f = message.getNameAlternativesList();
   if (f.length > 0) {
     writer.writeRepeatedString(
       30,
@@ -15262,10 +15262,10 @@ proto.librarian.sephirah.v1.sephirah.App.prototype.clearTagsList = function() {
 
 
 /**
- * repeated string alt_names = 30;
+ * repeated string name_alternatives = 30;
  * @return {!Array<string>}
  */
-proto.librarian.sephirah.v1.sephirah.App.prototype.getAltNamesList = function() {
+proto.librarian.sephirah.v1.sephirah.App.prototype.getNameAlternativesList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 30));
 };
 
@@ -15274,7 +15274,7 @@ proto.librarian.sephirah.v1.sephirah.App.prototype.getAltNamesList = function() 
  * @param {!Array<string>} value
  * @return {!proto.librarian.sephirah.v1.sephirah.App} returns this
  */
-proto.librarian.sephirah.v1.sephirah.App.prototype.setAltNamesList = function(value) {
+proto.librarian.sephirah.v1.sephirah.App.prototype.setNameAlternativesList = function(value) {
   return jspb.Message.setField(this, 30, value || []);
 };
 
@@ -15284,7 +15284,7 @@ proto.librarian.sephirah.v1.sephirah.App.prototype.setAltNamesList = function(va
  * @param {number=} opt_index
  * @return {!proto.librarian.sephirah.v1.sephirah.App} returns this
  */
-proto.librarian.sephirah.v1.sephirah.App.prototype.addAltNames = function(value, opt_index) {
+proto.librarian.sephirah.v1.sephirah.App.prototype.addNameAlternatives = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 30, value, opt_index);
 };
 
@@ -15293,8 +15293,8 @@ proto.librarian.sephirah.v1.sephirah.App.prototype.addAltNames = function(value,
  * Clears the list making it empty but non-null.
  * @return {!proto.librarian.sephirah.v1.sephirah.App} returns this
  */
-proto.librarian.sephirah.v1.sephirah.App.prototype.clearAltNamesList = function() {
-  return this.setAltNamesList([]);
+proto.librarian.sephirah.v1.sephirah.App.prototype.clearNameAlternativesList = function() {
+  return this.setNameAlternativesList([]);
 };
 
 

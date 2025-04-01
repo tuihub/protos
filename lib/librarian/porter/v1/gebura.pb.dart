@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: librarian/porter/v1/gebura.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -14,6 +14,8 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'gebura.pbenum.dart';
+
+export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 export 'gebura.pbenum.dart';
 
@@ -64,7 +66,7 @@ class SearchAppInfoRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasNameLike() => $_has(0);
   @$pb.TagNumber(1)
-  void clearNameLike() => clearField(1);
+  void clearNameLike() => $_clearField(1);
 }
 
 class SearchAppInfoResponse extends $pb.GeneratedMessage {
@@ -108,7 +110,7 @@ class SearchAppInfoResponse extends $pb.GeneratedMessage {
   static SearchAppInfoResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<AppInfo> get appInfos => $_getList(0);
+  $pb.PbList<AppInfo> get appInfos => $_getList(0);
 }
 
 class GetAppInfoRequest extends $pb.GeneratedMessage {
@@ -164,7 +166,7 @@ class GetAppInfoRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasSource() => $_has(0);
   @$pb.TagNumber(1)
-  void clearSource() => clearField(1);
+  void clearSource() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get sourceAppId => $_getSZ(1);
@@ -173,7 +175,7 @@ class GetAppInfoRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasSourceAppId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearSourceAppId() => clearField(2);
+  void clearSourceAppId() => $_clearField(2);
 }
 
 class GetAppInfoResponse extends $pb.GeneratedMessage {
@@ -219,11 +221,11 @@ class GetAppInfoResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   AppInfo get appInfo => $_getN(0);
   @$pb.TagNumber(1)
-  set appInfo(AppInfo v) { setField(1, v); }
+  set appInfo(AppInfo v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasAppInfo() => $_has(0);
   @$pb.TagNumber(1)
-  void clearAppInfo() => clearField(1);
+  void clearAppInfo() => $_clearField(1);
   @$pb.TagNumber(1)
   AppInfo ensureAppInfo() => $_ensure(0);
 }
@@ -286,7 +288,7 @@ class ParseRawAppInfoRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasSource() => $_has(0);
   @$pb.TagNumber(1)
-  void clearSource() => clearField(1);
+  void clearSource() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get sourceAppId => $_getSZ(1);
@@ -295,7 +297,7 @@ class ParseRawAppInfoRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasSourceAppId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearSourceAppId() => clearField(2);
+  void clearSourceAppId() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get rawDataJson => $_getSZ(2);
@@ -304,7 +306,7 @@ class ParseRawAppInfoRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasRawDataJson() => $_has(2);
   @$pb.TagNumber(3)
-  void clearRawDataJson() => clearField(3);
+  void clearRawDataJson() => $_clearField(3);
 }
 
 class ParseRawAppInfoResponse extends $pb.GeneratedMessage {
@@ -350,11 +352,11 @@ class ParseRawAppInfoResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   AppInfo get appInfo => $_getN(0);
   @$pb.TagNumber(1)
-  set appInfo(AppInfo v) { setField(1, v); }
+  set appInfo(AppInfo v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasAppInfo() => $_has(0);
   @$pb.TagNumber(1)
-  void clearAppInfo() => clearField(1);
+  void clearAppInfo() => $_clearField(1);
   @$pb.TagNumber(1)
   AppInfo ensureAppInfo() => $_ensure(0);
 }
@@ -373,7 +375,7 @@ class AppInfo extends $pb.GeneratedMessage {
     $core.String? backgroundImageUrl,
     $core.String? coverImageUrl,
     $core.Iterable<$core.String>? tags,
-    $core.Iterable<$core.String>? altNames,
+    $core.Iterable<$core.String>? nameAlternatives,
   }) {
     final $result = create();
     if (source != null) {
@@ -412,8 +414,8 @@ class AppInfo extends $pb.GeneratedMessage {
     if (tags != null) {
       $result.tags.addAll(tags);
     }
-    if (altNames != null) {
-      $result.altNames.addAll(altNames);
+    if (nameAlternatives != null) {
+      $result.nameAlternatives.addAll(nameAlternatives);
     }
     return $result;
   }
@@ -434,7 +436,7 @@ class AppInfo extends $pb.GeneratedMessage {
     ..aOS(10, _omitFieldNames ? '' : 'backgroundImageUrl')
     ..aOS(11, _omitFieldNames ? '' : 'coverImageUrl')
     ..pPS(12, _omitFieldNames ? '' : 'tags')
-    ..pPS(13, _omitFieldNames ? '' : 'altNames')
+    ..pPS(13, _omitFieldNames ? '' : 'nameAlternatives')
     ..hasRequiredFields = false
   ;
 
@@ -467,7 +469,7 @@ class AppInfo extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasSource() => $_has(0);
   @$pb.TagNumber(1)
-  void clearSource() => clearField(1);
+  void clearSource() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get sourceAppId => $_getSZ(1);
@@ -476,7 +478,7 @@ class AppInfo extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasSourceAppId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearSourceAppId() => clearField(2);
+  void clearSourceAppId() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get sourceUrl => $_getSZ(2);
@@ -485,7 +487,7 @@ class AppInfo extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasSourceUrl() => $_has(2);
   @$pb.TagNumber(3)
-  void clearSourceUrl() => clearField(3);
+  void clearSourceUrl() => $_clearField(3);
 
   /// original data in json format
   @$pb.TagNumber(4)
@@ -495,16 +497,16 @@ class AppInfo extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasRawDataJson() => $_has(3);
   @$pb.TagNumber(4)
-  void clearRawDataJson() => clearField(4);
+  void clearRawDataJson() => $_clearField(4);
 
   @$pb.TagNumber(5)
   AppInfoDetails get details => $_getN(4);
   @$pb.TagNumber(5)
-  set details(AppInfoDetails v) { setField(5, v); }
+  set details(AppInfoDetails v) { $_setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasDetails() => $_has(4);
   @$pb.TagNumber(5)
-  void clearDetails() => clearField(5);
+  void clearDetails() => $_clearField(5);
   @$pb.TagNumber(5)
   AppInfoDetails ensureDetails() => $_ensure(4);
 
@@ -515,16 +517,16 @@ class AppInfo extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.bool hasName() => $_has(5);
   @$pb.TagNumber(6)
-  void clearName() => clearField(6);
+  void clearName() => $_clearField(6);
 
   @$pb.TagNumber(7)
   AppType get type => $_getN(6);
   @$pb.TagNumber(7)
-  set type(AppType v) { setField(7, v); }
+  set type(AppType v) { $_setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasType() => $_has(6);
   @$pb.TagNumber(7)
-  void clearType() => clearField(7);
+  void clearType() => $_clearField(7);
 
   @$pb.TagNumber(8)
   $core.String get shortDescription => $_getSZ(7);
@@ -533,7 +535,7 @@ class AppInfo extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   $core.bool hasShortDescription() => $_has(7);
   @$pb.TagNumber(8)
-  void clearShortDescription() => clearField(8);
+  void clearShortDescription() => $_clearField(8);
 
   @$pb.TagNumber(9)
   $core.String get iconImageUrl => $_getSZ(8);
@@ -542,7 +544,7 @@ class AppInfo extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   $core.bool hasIconImageUrl() => $_has(8);
   @$pb.TagNumber(9)
-  void clearIconImageUrl() => clearField(9);
+  void clearIconImageUrl() => $_clearField(9);
 
   /// must be horizontal, usually 16:9
   @$pb.TagNumber(10)
@@ -552,7 +554,7 @@ class AppInfo extends $pb.GeneratedMessage {
   @$pb.TagNumber(10)
   $core.bool hasBackgroundImageUrl() => $_has(9);
   @$pb.TagNumber(10)
-  void clearBackgroundImageUrl() => clearField(10);
+  void clearBackgroundImageUrl() => $_clearField(10);
 
   /// must be vertical, usually 3:4
   @$pb.TagNumber(11)
@@ -562,13 +564,13 @@ class AppInfo extends $pb.GeneratedMessage {
   @$pb.TagNumber(11)
   $core.bool hasCoverImageUrl() => $_has(10);
   @$pb.TagNumber(11)
-  void clearCoverImageUrl() => clearField(11);
+  void clearCoverImageUrl() => $_clearField(11);
 
   @$pb.TagNumber(12)
-  $core.List<$core.String> get tags => $_getList(11);
+  $pb.PbList<$core.String> get tags => $_getList(11);
 
   @$pb.TagNumber(13)
-  $core.List<$core.String> get altNames => $_getList(12);
+  $pb.PbList<$core.String> get nameAlternatives => $_getList(12);
 }
 
 class AppInfoDetails extends $pb.GeneratedMessage {
@@ -643,7 +645,7 @@ class AppInfoDetails extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasDescription() => $_has(0);
   @$pb.TagNumber(1)
-  void clearDescription() => clearField(1);
+  void clearDescription() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get releaseDate => $_getSZ(1);
@@ -652,7 +654,7 @@ class AppInfoDetails extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasReleaseDate() => $_has(1);
   @$pb.TagNumber(2)
-  void clearReleaseDate() => clearField(2);
+  void clearReleaseDate() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get developer => $_getSZ(2);
@@ -661,7 +663,7 @@ class AppInfoDetails extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasDeveloper() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDeveloper() => clearField(3);
+  void clearDeveloper() => $_clearField(3);
 
   @$pb.TagNumber(4)
   $core.String get publisher => $_getSZ(3);
@@ -670,7 +672,7 @@ class AppInfoDetails extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasPublisher() => $_has(3);
   @$pb.TagNumber(4)
-  void clearPublisher() => clearField(4);
+  void clearPublisher() => $_clearField(4);
 
   @$pb.TagNumber(5)
   $core.String get version => $_getSZ(4);
@@ -679,10 +681,10 @@ class AppInfoDetails extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool hasVersion() => $_has(4);
   @$pb.TagNumber(5)
-  void clearVersion() => clearField(5);
+  void clearVersion() => $_clearField(5);
 
   @$pb.TagNumber(6)
-  $core.List<$core.String> get imageUrls => $_getList(5);
+  $pb.PbList<$core.String> get imageUrls => $_getList(5);
 }
 
 

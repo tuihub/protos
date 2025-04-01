@@ -45,13 +45,13 @@ export namespace RefreshTokenResponse {
 }
 
 export class ReportSentinelInformationRequest extends jspb.Message {
-  getHostname(): string;
-  setHostname(value: string): void;
+  getUrl(): string;
+  setUrl(value: string): void;
 
-  clearHostnameAlternativesList(): void;
-  getHostnameAlternativesList(): Array<string>;
-  setHostnameAlternativesList(value: Array<string>): void;
-  addHostnameAlternatives(value: string, index?: number): string;
+  clearUrlAlternativesList(): void;
+  getUrlAlternativesList(): Array<string>;
+  setUrlAlternativesList(value: Array<string>): void;
+  addUrlAlternatives(value: string, index?: number): string;
 
   getGetTokenUrlPath(): string;
   setGetTokenUrlPath(value: string): void;
@@ -76,8 +76,8 @@ export class ReportSentinelInformationRequest extends jspb.Message {
 
 export namespace ReportSentinelInformationRequest {
   export type AsObject = {
-    hostname: string,
-    hostnameAlternativesList: Array<string>,
+    url: string,
+    urlAlternativesList: Array<string>,
     getTokenUrlPath: string,
     downloadFileBasePath: string,
     librariesList: Array<SentinelLibrary.AsObject>,

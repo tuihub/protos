@@ -373,11 +373,11 @@ type AppInfo struct {
 	// must be horizontal, usually 16:9
 	BackgroundImageUrl string `protobuf:"bytes,10,opt,name=background_image_url,json=backgroundImageUrl,proto3" json:"background_image_url,omitempty"`
 	// must be vertical, usually 3:4
-	CoverImageUrl string   `protobuf:"bytes,11,opt,name=cover_image_url,json=coverImageUrl,proto3" json:"cover_image_url,omitempty"`
-	Tags          []string `protobuf:"bytes,12,rep,name=tags,proto3" json:"tags,omitempty"`
-	AltNames      []string `protobuf:"bytes,13,rep,name=alt_names,json=altNames,proto3" json:"alt_names,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	CoverImageUrl    string   `protobuf:"bytes,11,opt,name=cover_image_url,json=coverImageUrl,proto3" json:"cover_image_url,omitempty"`
+	Tags             []string `protobuf:"bytes,12,rep,name=tags,proto3" json:"tags,omitempty"`
+	NameAlternatives []string `protobuf:"bytes,13,rep,name=name_alternatives,json=nameAlternatives,proto3" json:"name_alternatives,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
 }
 
 func (x *AppInfo) Reset() {
@@ -494,9 +494,9 @@ func (x *AppInfo) GetTags() []string {
 	return nil
 }
 
-func (x *AppInfo) GetAltNames() []string {
+func (x *AppInfo) GetNameAlternatives() []string {
 	if x != nil {
-		return x.AltNames
+		return x.NameAlternatives
 	}
 	return nil
 }
@@ -604,7 +604,7 @@ const file_librarian_porter_v1_gebura_proto_rawDesc = "" +
 	"\rsource_app_id\x18\x02 \x01(\tR\vsourceAppId\x12\"\n" +
 	"\rraw_data_json\x18\x03 \x01(\tR\vrawDataJson\"R\n" +
 	"\x17ParseRawAppInfoResponse\x127\n" +
-	"\bapp_info\x18\x01 \x01(\v2\x1c.librarian.porter.v1.AppInfoR\aappInfo\"\x90\x04\n" +
+	"\bapp_info\x18\x01 \x01(\v2\x1c.librarian.porter.v1.AppInfoR\aappInfo\"\xa0\x04\n" +
 	"\aAppInfo\x12\x16\n" +
 	"\x06source\x18\x01 \x01(\tR\x06source\x12\"\n" +
 	"\rsource_app_id\x18\x02 \x01(\tR\vsourceAppId\x12\"\n" +
@@ -619,8 +619,8 @@ const file_librarian_porter_v1_gebura_proto_rawDesc = "" +
 	"\x14background_image_url\x18\n" +
 	" \x01(\tR\x12backgroundImageUrl\x12&\n" +
 	"\x0fcover_image_url\x18\v \x01(\tR\rcoverImageUrl\x12\x12\n" +
-	"\x04tags\x18\f \x03(\tR\x04tags\x12\x1b\n" +
-	"\talt_names\x18\r \x03(\tR\baltNamesB\r\n" +
+	"\x04tags\x18\f \x03(\tR\x04tags\x12+\n" +
+	"\x11name_alternatives\x18\r \x03(\tR\x10nameAlternativesB\r\n" +
 	"\v_source_urlB\n" +
 	"\n" +
 	"\b_details\"\xca\x01\n" +

@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: librarian/porter/v1/tiphereth.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -12,6 +12,8 @@
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
+
+export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 class GetAccountRequest extends $pb.GeneratedMessage {
   factory GetAccountRequest({
@@ -66,7 +68,7 @@ class GetAccountRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasPlatform() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPlatform() => clearField(1);
+  void clearPlatform() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get platformAccountId => $_getSZ(1);
@@ -75,7 +77,7 @@ class GetAccountRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasPlatformAccountId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearPlatformAccountId() => clearField(2);
+  void clearPlatformAccountId() => $_clearField(2);
 }
 
 class GetAccountResponse extends $pb.GeneratedMessage {
@@ -121,11 +123,11 @@ class GetAccountResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   Account get account => $_getN(0);
   @$pb.TagNumber(1)
-  set account(Account v) { setField(1, v); }
+  set account(Account v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasAccount() => $_has(0);
   @$pb.TagNumber(1)
-  void clearAccount() => clearField(1);
+  void clearAccount() => $_clearField(1);
   @$pb.TagNumber(1)
   Account ensureAccount() => $_ensure(0);
 }
@@ -198,7 +200,7 @@ class Account extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasPlatform() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPlatform() => clearField(1);
+  void clearPlatform() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get platformAccountId => $_getSZ(1);
@@ -207,7 +209,7 @@ class Account extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasPlatformAccountId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearPlatformAccountId() => clearField(2);
+  void clearPlatformAccountId() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get name => $_getSZ(2);
@@ -216,7 +218,7 @@ class Account extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasName() => $_has(2);
   @$pb.TagNumber(3)
-  void clearName() => clearField(3);
+  void clearName() => $_clearField(3);
 
   @$pb.TagNumber(4)
   $core.String get profileUrl => $_getSZ(3);
@@ -225,7 +227,7 @@ class Account extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasProfileUrl() => $_has(3);
   @$pb.TagNumber(4)
-  void clearProfileUrl() => clearField(4);
+  void clearProfileUrl() => $_clearField(4);
 
   @$pb.TagNumber(5)
   $core.String get avatarUrl => $_getSZ(4);
@@ -234,7 +236,7 @@ class Account extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool hasAvatarUrl() => $_has(4);
   @$pb.TagNumber(5)
-  void clearAvatarUrl() => clearField(5);
+  void clearAvatarUrl() => $_clearField(5);
 }
 
 

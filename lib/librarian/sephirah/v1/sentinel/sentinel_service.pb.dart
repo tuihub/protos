@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: librarian/sephirah/v1/sentinel/sentinel_service.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -15,6 +15,8 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../v1/wellknown.pb.dart' as $1;
+
+export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 class RefreshTokenRequest extends $pb.GeneratedMessage {
   factory RefreshTokenRequest() => create();
@@ -100,7 +102,7 @@ class RefreshTokenResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasAccessToken() => $_has(0);
   @$pb.TagNumber(1)
-  void clearAccessToken() => clearField(1);
+  void clearAccessToken() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get refreshToken => $_getSZ(1);
@@ -109,23 +111,23 @@ class RefreshTokenResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasRefreshToken() => $_has(1);
   @$pb.TagNumber(2)
-  void clearRefreshToken() => clearField(2);
+  void clearRefreshToken() => $_clearField(2);
 }
 
 class ReportSentinelInformationRequest extends $pb.GeneratedMessage {
   factory ReportSentinelInformationRequest({
-    $core.String? hostname,
-    $core.Iterable<$core.String>? hostnameAlternatives,
+    $core.String? url,
+    $core.Iterable<$core.String>? urlAlternatives,
     $core.String? getTokenUrlPath,
     $core.String? downloadFileBasePath,
     $core.Iterable<SentinelLibrary>? libraries,
   }) {
     final $result = create();
-    if (hostname != null) {
-      $result.hostname = hostname;
+    if (url != null) {
+      $result.url = url;
     }
-    if (hostnameAlternatives != null) {
-      $result.hostnameAlternatives.addAll(hostnameAlternatives);
+    if (urlAlternatives != null) {
+      $result.urlAlternatives.addAll(urlAlternatives);
     }
     if (getTokenUrlPath != null) {
       $result.getTokenUrlPath = getTokenUrlPath;
@@ -143,8 +145,8 @@ class ReportSentinelInformationRequest extends $pb.GeneratedMessage {
   factory ReportSentinelInformationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReportSentinelInformationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sentinel'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'hostname')
-    ..pPS(2, _omitFieldNames ? '' : 'hostnameAlternatives')
+    ..aOS(1, _omitFieldNames ? '' : 'url')
+    ..pPS(2, _omitFieldNames ? '' : 'urlAlternatives')
     ..aOS(3, _omitFieldNames ? '' : 'getTokenUrlPath')
     ..aOS(4, _omitFieldNames ? '' : 'downloadFileBasePath')
     ..pc<SentinelLibrary>(5, _omitFieldNames ? '' : 'libraries', $pb.PbFieldType.PM, subBuilder: SentinelLibrary.create)
@@ -173,16 +175,16 @@ class ReportSentinelInformationRequest extends $pb.GeneratedMessage {
   static ReportSentinelInformationRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get hostname => $_getSZ(0);
+  $core.String get url => $_getSZ(0);
   @$pb.TagNumber(1)
-  set hostname($core.String v) { $_setString(0, v); }
+  set url($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasHostname() => $_has(0);
+  $core.bool hasUrl() => $_has(0);
   @$pb.TagNumber(1)
-  void clearHostname() => clearField(1);
+  void clearUrl() => $_clearField(1);
 
   @$pb.TagNumber(2)
-  $core.List<$core.String> get hostnameAlternatives => $_getList(1);
+  $pb.PbList<$core.String> get urlAlternatives => $_getList(1);
 
   /// valid when need_token is true
   @$pb.TagNumber(3)
@@ -192,7 +194,7 @@ class ReportSentinelInformationRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasGetTokenUrlPath() => $_has(2);
   @$pb.TagNumber(3)
-  void clearGetTokenUrlPath() => clearField(3);
+  void clearGetTokenUrlPath() => $_clearField(3);
 
   @$pb.TagNumber(4)
   $core.String get downloadFileBasePath => $_getSZ(3);
@@ -201,10 +203,10 @@ class ReportSentinelInformationRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasDownloadFileBasePath() => $_has(3);
   @$pb.TagNumber(4)
-  void clearDownloadFileBasePath() => clearField(4);
+  void clearDownloadFileBasePath() => $_clearField(4);
 
   @$pb.TagNumber(5)
-  $core.List<SentinelLibrary> get libraries => $_getList(4);
+  $pb.PbList<SentinelLibrary> get libraries => $_getList(4);
 }
 
 class ReportSentinelInformationResponse extends $pb.GeneratedMessage {
@@ -280,7 +282,7 @@ class ReportAppBinariesRequest extends $pb.GeneratedMessage {
   static ReportAppBinariesRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<SentinelLibraryAppBinary> get appBinaries => $_getList(0);
+  $pb.PbList<SentinelLibraryAppBinary> get appBinaries => $_getList(0);
 }
 
 class ReportAppBinariesResponse extends $pb.GeneratedMessage {
@@ -367,7 +369,7 @@ class SentinelLibrary extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get downloadBasePath => $_getSZ(1);
@@ -376,7 +378,7 @@ class SentinelLibrary extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasDownloadBasePath() => $_has(1);
   @$pb.TagNumber(2)
-  void clearDownloadBasePath() => clearField(2);
+  void clearDownloadBasePath() => $_clearField(2);
 }
 
 class SentinelLibraryAppBinary extends $pb.GeneratedMessage {
@@ -466,7 +468,7 @@ class SentinelLibraryAppBinary extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasSentinelLibraryId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearSentinelLibraryId() => clearField(1);
+  void clearSentinelLibraryId() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get sentinelGeneratedId => $_getSZ(1);
@@ -475,7 +477,7 @@ class SentinelLibraryAppBinary extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasSentinelGeneratedId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearSentinelGeneratedId() => clearField(2);
+  void clearSentinelGeneratedId() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $fixnum.Int64 get sizeBytes => $_getI64(2);
@@ -484,7 +486,7 @@ class SentinelLibraryAppBinary extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasSizeBytes() => $_has(2);
   @$pb.TagNumber(3)
-  void clearSizeBytes() => clearField(3);
+  void clearSizeBytes() => $_clearField(3);
 
   @$pb.TagNumber(4)
   $core.bool get needToken => $_getBF(3);
@@ -493,10 +495,10 @@ class SentinelLibraryAppBinary extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasNeedToken() => $_has(3);
   @$pb.TagNumber(4)
-  void clearNeedToken() => clearField(4);
+  void clearNeedToken() => $_clearField(4);
 
   @$pb.TagNumber(5)
-  $core.List<SentinelLibraryAppBinaryFile> get files => $_getList(4);
+  $pb.PbList<SentinelLibraryAppBinaryFile> get files => $_getList(4);
 
   @$pb.TagNumber(10)
   $core.String get name => $_getSZ(5);
@@ -505,7 +507,7 @@ class SentinelLibraryAppBinary extends $pb.GeneratedMessage {
   @$pb.TagNumber(10)
   $core.bool hasName() => $_has(5);
   @$pb.TagNumber(10)
-  void clearName() => clearField(10);
+  void clearName() => $_clearField(10);
 
   @$pb.TagNumber(11)
   $core.String get version => $_getSZ(6);
@@ -514,7 +516,7 @@ class SentinelLibraryAppBinary extends $pb.GeneratedMessage {
   @$pb.TagNumber(11)
   $core.bool hasVersion() => $_has(6);
   @$pb.TagNumber(11)
-  void clearVersion() => clearField(11);
+  void clearVersion() => $_clearField(11);
 
   @$pb.TagNumber(12)
   $core.String get developer => $_getSZ(7);
@@ -523,7 +525,7 @@ class SentinelLibraryAppBinary extends $pb.GeneratedMessage {
   @$pb.TagNumber(12)
   $core.bool hasDeveloper() => $_has(7);
   @$pb.TagNumber(12)
-  void clearDeveloper() => clearField(12);
+  void clearDeveloper() => $_clearField(12);
 
   @$pb.TagNumber(13)
   $core.String get publisher => $_getSZ(8);
@@ -532,7 +534,7 @@ class SentinelLibraryAppBinary extends $pb.GeneratedMessage {
   @$pb.TagNumber(13)
   $core.bool hasPublisher() => $_has(8);
   @$pb.TagNumber(13)
-  void clearPublisher() => clearField(13);
+  void clearPublisher() => $_clearField(13);
 }
 
 class SentinelLibraryAppBinaryFile extends $pb.GeneratedMessage {
@@ -583,11 +585,11 @@ class SentinelLibraryAppBinaryFile extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $1.FileMetadata get fileMetadata => $_getN(0);
   @$pb.TagNumber(1)
-  set fileMetadata($1.FileMetadata v) { setField(1, v); }
+  set fileMetadata($1.FileMetadata v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasFileMetadata() => $_has(0);
   @$pb.TagNumber(1)
-  void clearFileMetadata() => clearField(1);
+  void clearFileMetadata() => $_clearField(1);
   @$pb.TagNumber(1)
   $1.FileMetadata ensureFileMetadata() => $_ensure(0);
 
@@ -599,7 +601,7 @@ class SentinelLibraryAppBinaryFile extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasServerFilePath() => $_has(1);
   @$pb.TagNumber(4)
-  void clearServerFilePath() => clearField(4);
+  void clearServerFilePath() => $_clearField(4);
 }
 
 

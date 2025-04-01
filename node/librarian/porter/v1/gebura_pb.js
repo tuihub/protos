@@ -1191,7 +1191,7 @@ iconImageUrl: jspb.Message.getFieldWithDefault(msg, 9, ""),
 backgroundImageUrl: jspb.Message.getFieldWithDefault(msg, 10, ""),
 coverImageUrl: jspb.Message.getFieldWithDefault(msg, 11, ""),
 tagsList: (f = jspb.Message.getRepeatedField(msg, 12)) == null ? undefined : f,
-altNamesList: (f = jspb.Message.getRepeatedField(msg, 13)) == null ? undefined : f
+nameAlternativesList: (f = jspb.Message.getRepeatedField(msg, 13)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1279,7 +1279,7 @@ proto.librarian.porter.v1.AppInfo.deserializeBinaryFromReader = function(msg, re
       break;
     case 13:
       var value = /** @type {string} */ (reader.readString());
-      msg.addAltNames(value);
+      msg.addNameAlternatives(value);
       break;
     default:
       reader.skipField();
@@ -1395,7 +1395,7 @@ proto.librarian.porter.v1.AppInfo.serializeBinaryToWriter = function(message, wr
       f
     );
   }
-  f = message.getAltNamesList();
+  f = message.getNameAlternativesList();
   if (f.length > 0) {
     writer.writeRepeatedString(
       13,
@@ -1678,10 +1678,10 @@ proto.librarian.porter.v1.AppInfo.prototype.clearTagsList = function() {
 
 
 /**
- * repeated string alt_names = 13;
+ * repeated string name_alternatives = 13;
  * @return {!Array<string>}
  */
-proto.librarian.porter.v1.AppInfo.prototype.getAltNamesList = function() {
+proto.librarian.porter.v1.AppInfo.prototype.getNameAlternativesList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 13));
 };
 
@@ -1690,7 +1690,7 @@ proto.librarian.porter.v1.AppInfo.prototype.getAltNamesList = function() {
  * @param {!Array<string>} value
  * @return {!proto.librarian.porter.v1.AppInfo} returns this
  */
-proto.librarian.porter.v1.AppInfo.prototype.setAltNamesList = function(value) {
+proto.librarian.porter.v1.AppInfo.prototype.setNameAlternativesList = function(value) {
   return jspb.Message.setField(this, 13, value || []);
 };
 
@@ -1700,7 +1700,7 @@ proto.librarian.porter.v1.AppInfo.prototype.setAltNamesList = function(value) {
  * @param {number=} opt_index
  * @return {!proto.librarian.porter.v1.AppInfo} returns this
  */
-proto.librarian.porter.v1.AppInfo.prototype.addAltNames = function(value, opt_index) {
+proto.librarian.porter.v1.AppInfo.prototype.addNameAlternatives = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 13, value, opt_index);
 };
 
@@ -1709,8 +1709,8 @@ proto.librarian.porter.v1.AppInfo.prototype.addAltNames = function(value, opt_in
  * Clears the list making it empty but non-null.
  * @return {!proto.librarian.porter.v1.AppInfo} returns this
  */
-proto.librarian.porter.v1.AppInfo.prototype.clearAltNamesList = function() {
-  return this.setAltNamesList([]);
+proto.librarian.porter.v1.AppInfo.prototype.clearNameAlternativesList = function() {
+  return this.setNameAlternativesList([]);
 };
 
 

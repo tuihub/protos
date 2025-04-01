@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: librarian/sephirah/v1/sephirah/tiphereth.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -17,6 +17,8 @@ import '../../../../google/protobuf/timestamp.pb.dart' as $7;
 import '../../../v1/common.pb.dart' as $10;
 import '../../../v1/wellknown.pb.dart' as $8;
 import 'tiphereth.pbenum.dart';
+
+export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 export 'tiphereth.pbenum.dart';
 
@@ -77,7 +79,7 @@ class GetTokenRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasUsername() => $_has(0);
   @$pb.TagNumber(1)
-  void clearUsername() => clearField(1);
+  void clearUsername() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get password => $_getSZ(1);
@@ -86,18 +88,18 @@ class GetTokenRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasPassword() => $_has(1);
   @$pb.TagNumber(2)
-  void clearPassword() => clearField(2);
+  void clearPassword() => $_clearField(2);
 
   /// Always ignore this if client don't impl device info feature.
   /// Otherwise, re-login after registered device with this and every time after
   @$pb.TagNumber(3)
   $8.InternalID get deviceId => $_getN(2);
   @$pb.TagNumber(3)
-  set deviceId($8.InternalID v) { setField(3, v); }
+  set deviceId($8.InternalID v) { $_setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasDeviceId() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDeviceId() => clearField(3);
+  void clearDeviceId() => $_clearField(3);
   @$pb.TagNumber(3)
   $8.InternalID ensureDeviceId() => $_ensure(2);
 }
@@ -154,7 +156,7 @@ class GetTokenResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasAccessToken() => $_has(0);
   @$pb.TagNumber(1)
-  void clearAccessToken() => clearField(1);
+  void clearAccessToken() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get refreshToken => $_getSZ(1);
@@ -163,7 +165,7 @@ class GetTokenResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasRefreshToken() => $_has(1);
   @$pb.TagNumber(2)
-  void clearRefreshToken() => clearField(2);
+  void clearRefreshToken() => $_clearField(2);
 }
 
 class RefreshTokenRequest extends $pb.GeneratedMessage {
@@ -212,11 +214,11 @@ class RefreshTokenRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $8.InternalID get deviceId => $_getN(0);
   @$pb.TagNumber(3)
-  set deviceId($8.InternalID v) { setField(3, v); }
+  set deviceId($8.InternalID v) { $_setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasDeviceId() => $_has(0);
   @$pb.TagNumber(3)
-  void clearDeviceId() => clearField(3);
+  void clearDeviceId() => $_clearField(3);
   @$pb.TagNumber(3)
   $8.InternalID ensureDeviceId() => $_ensure(0);
 }
@@ -273,7 +275,7 @@ class RefreshTokenResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasAccessToken() => $_has(0);
   @$pb.TagNumber(1)
-  void clearAccessToken() => clearField(1);
+  void clearAccessToken() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get refreshToken => $_getSZ(1);
@@ -282,7 +284,7 @@ class RefreshTokenResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasRefreshToken() => $_has(1);
   @$pb.TagNumber(2)
-  void clearRefreshToken() => clearField(2);
+  void clearRefreshToken() => $_clearField(2);
 }
 
 class RegisterUserRequest_Captcha extends $pb.GeneratedMessage {
@@ -337,7 +339,7 @@ class RegisterUserRequest_Captcha extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get value => $_getSZ(1);
@@ -346,7 +348,7 @@ class RegisterUserRequest_Captcha extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasValue() => $_has(1);
   @$pb.TagNumber(2)
-  void clearValue() => clearField(2);
+  void clearValue() => $_clearField(2);
 }
 
 class RegisterUserRequest extends $pb.GeneratedMessage {
@@ -406,7 +408,7 @@ class RegisterUserRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasUsername() => $_has(0);
   @$pb.TagNumber(1)
-  void clearUsername() => clearField(1);
+  void clearUsername() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get password => $_getSZ(1);
@@ -415,16 +417,16 @@ class RegisterUserRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasPassword() => $_has(1);
   @$pb.TagNumber(2)
-  void clearPassword() => clearField(2);
+  void clearPassword() => $_clearField(2);
 
   @$pb.TagNumber(3)
   RegisterUserRequest_Captcha get captcha => $_getN(2);
   @$pb.TagNumber(3)
-  set captcha(RegisterUserRequest_Captcha v) { setField(3, v); }
+  set captcha(RegisterUserRequest_Captcha v) { $_setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasCaptcha() => $_has(2);
   @$pb.TagNumber(3)
-  void clearCaptcha() => clearField(3);
+  void clearCaptcha() => $_clearField(3);
   @$pb.TagNumber(3)
   RegisterUserRequest_Captcha ensureCaptcha() => $_ensure(2);
 }
@@ -481,7 +483,7 @@ class RegisterUserResponse_ImageCaptcha extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.List<$core.int> get image => $_getN(1);
@@ -490,7 +492,7 @@ class RegisterUserResponse_ImageCaptcha extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasImage() => $_has(1);
   @$pb.TagNumber(2)
-  void clearImage() => clearField(2);
+  void clearImage() => $_clearField(2);
 }
 
 enum RegisterUserResponse_Stage {
@@ -551,17 +553,17 @@ class RegisterUserResponse extends $pb.GeneratedMessage {
   static RegisterUserResponse? _defaultInstance;
 
   RegisterUserResponse_Stage whichStage() => _RegisterUserResponse_StageByTag[$_whichOneof(0)]!;
-  void clearStage() => clearField($_whichOneof(0));
+  void clearStage() => $_clearField($_whichOneof(0));
 
   /// If captcha required
   @$pb.TagNumber(1)
   RegisterUserResponse_ImageCaptcha get captcha => $_getN(0);
   @$pb.TagNumber(1)
-  set captcha(RegisterUserResponse_ImageCaptcha v) { setField(1, v); }
+  set captcha(RegisterUserResponse_ImageCaptcha v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasCaptcha() => $_has(0);
   @$pb.TagNumber(1)
-  void clearCaptcha() => clearField(1);
+  void clearCaptcha() => $_clearField(1);
   @$pb.TagNumber(1)
   RegisterUserResponse_ImageCaptcha ensureCaptcha() => $_ensure(0);
 
@@ -573,7 +575,7 @@ class RegisterUserResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasRefreshToken() => $_has(1);
   @$pb.TagNumber(2)
-  void clearRefreshToken() => clearField(2);
+  void clearRefreshToken() => $_clearField(2);
 }
 
 class RegisterDeviceRequest extends $pb.GeneratedMessage {
@@ -624,11 +626,11 @@ class RegisterDeviceRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   Device get deviceInfo => $_getN(0);
   @$pb.TagNumber(1)
-  set deviceInfo(Device v) { setField(1, v); }
+  set deviceInfo(Device v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasDeviceInfo() => $_has(0);
   @$pb.TagNumber(1)
-  void clearDeviceInfo() => clearField(1);
+  void clearDeviceInfo() => $_clearField(1);
   @$pb.TagNumber(1)
   Device ensureDeviceInfo() => $_ensure(0);
 
@@ -640,7 +642,7 @@ class RegisterDeviceRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasClientLocalId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearClientLocalId() => clearField(2);
+  void clearClientLocalId() => $_clearField(2);
 }
 
 class RegisterDeviceResponse extends $pb.GeneratedMessage {
@@ -686,11 +688,11 @@ class RegisterDeviceResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.InternalID get deviceId => $_getN(0);
   @$pb.TagNumber(1)
-  set deviceId($8.InternalID v) { setField(1, v); }
+  set deviceId($8.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasDeviceId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearDeviceId() => clearField(1);
+  void clearDeviceId() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.InternalID ensureDeviceId() => $_ensure(0);
 }
@@ -768,7 +770,7 @@ class ListUserSessionsResponse extends $pb.GeneratedMessage {
   static ListUserSessionsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<UserSession> get sessions => $_getList(0);
+  $pb.PbList<UserSession> get sessions => $_getList(0);
 }
 
 class DeleteUserSessionRequest extends $pb.GeneratedMessage {
@@ -814,11 +816,11 @@ class DeleteUserSessionRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.InternalID get sessionId => $_getN(0);
   @$pb.TagNumber(1)
-  set sessionId($8.InternalID v) { setField(1, v); }
+  set sessionId($8.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasSessionId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearSessionId() => clearField(1);
+  void clearSessionId() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.InternalID ensureSessionId() => $_ensure(0);
 }
@@ -903,11 +905,11 @@ class UpdateUserRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   User get user => $_getN(0);
   @$pb.TagNumber(1)
-  set user(User v) { setField(1, v); }
+  set user(User v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasUser() => $_has(0);
   @$pb.TagNumber(1)
-  void clearUser() => clearField(1);
+  void clearUser() => $_clearField(1);
   @$pb.TagNumber(1)
   User ensureUser() => $_ensure(0);
 
@@ -919,7 +921,7 @@ class UpdateUserRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasPassword() => $_has(1);
   @$pb.TagNumber(2)
-  void clearPassword() => clearField(2);
+  void clearPassword() => $_clearField(2);
 }
 
 class UpdateUserResponse extends $pb.GeneratedMessage {
@@ -998,11 +1000,11 @@ class GetUserRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($8.InternalID v) { setField(1, v); }
+  set id($8.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.InternalID ensureId() => $_ensure(0);
 }
@@ -1050,11 +1052,11 @@ class GetUserResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   User get user => $_getN(0);
   @$pb.TagNumber(1)
-  set user(User v) { setField(1, v); }
+  set user(User v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasUser() => $_has(0);
   @$pb.TagNumber(1)
-  void clearUser() => clearField(1);
+  void clearUser() => $_clearField(1);
   @$pb.TagNumber(1)
   User ensureUser() => $_ensure(0);
 }
@@ -1112,7 +1114,7 @@ class LinkAccountRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasPlatform() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPlatform() => clearField(1);
+  void clearPlatform() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get platformAccountId => $_getSZ(1);
@@ -1121,7 +1123,7 @@ class LinkAccountRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasPlatformAccountId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearPlatformAccountId() => clearField(2);
+  void clearPlatformAccountId() => $_clearField(2);
 }
 
 class LinkAccountResponse extends $pb.GeneratedMessage {
@@ -1167,11 +1169,11 @@ class LinkAccountResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.InternalID get accountId => $_getN(0);
   @$pb.TagNumber(1)
-  set accountId($8.InternalID v) { setField(1, v); }
+  set accountId($8.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasAccountId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearAccountId() => clearField(1);
+  void clearAccountId() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.InternalID ensureAccountId() => $_ensure(0);
 }
@@ -1229,7 +1231,7 @@ class UnLinkAccountRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasPlatform() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPlatform() => clearField(1);
+  void clearPlatform() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get platformAccountId => $_getSZ(1);
@@ -1238,7 +1240,7 @@ class UnLinkAccountRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasPlatformAccountId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearPlatformAccountId() => clearField(2);
+  void clearPlatformAccountId() => $_clearField(2);
 }
 
 class UnLinkAccountResponse extends $pb.GeneratedMessage {
@@ -1317,11 +1319,11 @@ class ListLinkAccountsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.InternalID get userId => $_getN(0);
   @$pb.TagNumber(1)
-  set userId($8.InternalID v) { setField(1, v); }
+  set userId($8.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasUserId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearUserId() => clearField(1);
+  void clearUserId() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.InternalID ensureUserId() => $_ensure(0);
 }
@@ -1367,7 +1369,7 @@ class ListLinkAccountsResponse extends $pb.GeneratedMessage {
   static ListLinkAccountsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<Account> get accounts => $_getList(0);
+  $pb.PbList<Account> get accounts => $_getList(0);
 }
 
 class ListPorterDigestsRequest extends $pb.GeneratedMessage {
@@ -1418,17 +1420,17 @@ class ListPorterDigestsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.PagingRequest get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($8.PagingRequest v) { setField(1, v); }
+  set paging($8.PagingRequest v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.PagingRequest ensurePaging() => $_ensure(0);
 
   /// Normal user can only list active porters
   @$pb.TagNumber(2)
-  $core.List<UserStatus> get statusFilter => $_getList(1);
+  $pb.PbList<UserStatus> get statusFilter => $_getList(1);
 }
 
 class ListPorterDigestsResponse extends $pb.GeneratedMessage {
@@ -1479,16 +1481,16 @@ class ListPorterDigestsResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.PagingResponse get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($8.PagingResponse v) { setField(1, v); }
+  set paging($8.PagingResponse v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<PorterDigest> get porterDigests => $_getList(1);
+  $pb.PbList<PorterDigest> get porterDigests => $_getList(1);
 }
 
 class CreatePorterContextRequest extends $pb.GeneratedMessage {
@@ -1534,11 +1536,11 @@ class CreatePorterContextRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   PorterContext get context => $_getN(0);
   @$pb.TagNumber(1)
-  set context(PorterContext v) { setField(1, v); }
+  set context(PorterContext v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasContext() => $_has(0);
   @$pb.TagNumber(1)
-  void clearContext() => clearField(1);
+  void clearContext() => $_clearField(1);
   @$pb.TagNumber(1)
   PorterContext ensureContext() => $_ensure(0);
 }
@@ -1586,11 +1588,11 @@ class CreatePorterContextResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.InternalID get contextId => $_getN(0);
   @$pb.TagNumber(1)
-  set contextId($8.InternalID v) { setField(1, v); }
+  set contextId($8.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasContextId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearContextId() => clearField(1);
+  void clearContextId() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.InternalID ensureContextId() => $_ensure(0);
 }
@@ -1638,11 +1640,11 @@ class ListPorterContextsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.PagingRequest get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($8.PagingRequest v) { setField(1, v); }
+  set paging($8.PagingRequest v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.PagingRequest ensurePaging() => $_ensure(0);
 }
@@ -1695,16 +1697,16 @@ class ListPorterContextsResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.PagingResponse get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($8.PagingResponse v) { setField(1, v); }
+  set paging($8.PagingResponse v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<PorterContext> get contexts => $_getList(1);
+  $pb.PbList<PorterContext> get contexts => $_getList(1);
 }
 
 class UpdatePorterContextRequest extends $pb.GeneratedMessage {
@@ -1750,11 +1752,11 @@ class UpdatePorterContextRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   PorterContext get context => $_getN(0);
   @$pb.TagNumber(1)
-  set context(PorterContext v) { setField(1, v); }
+  set context(PorterContext v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasContext() => $_has(0);
   @$pb.TagNumber(1)
-  void clearContext() => clearField(1);
+  void clearContext() => $_clearField(1);
   @$pb.TagNumber(1)
   PorterContext ensureContext() => $_ensure(0);
 }
@@ -1834,11 +1836,11 @@ class DeletePorterContextRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.InternalID get contextId => $_getN(0);
   @$pb.TagNumber(1)
-  set contextId($8.InternalID v) { setField(1, v); }
+  set contextId($8.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasContextId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearContextId() => clearField(1);
+  void clearContextId() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.InternalID ensureContextId() => $_ensure(0);
 }
@@ -1948,11 +1950,11 @@ class Account extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($8.InternalID v) { setField(1, v); }
+  set id($8.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.InternalID ensureId() => $_ensure(0);
 
@@ -1964,7 +1966,7 @@ class Account extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasPlatform() => $_has(1);
   @$pb.TagNumber(2)
-  void clearPlatform() => clearField(2);
+  void clearPlatform() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get platformAccountId => $_getSZ(2);
@@ -1973,7 +1975,7 @@ class Account extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasPlatformAccountId() => $_has(2);
   @$pb.TagNumber(3)
-  void clearPlatformAccountId() => clearField(3);
+  void clearPlatformAccountId() => $_clearField(3);
 
   @$pb.TagNumber(4)
   $core.String get name => $_getSZ(3);
@@ -1982,7 +1984,7 @@ class Account extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasName() => $_has(3);
   @$pb.TagNumber(4)
-  void clearName() => clearField(4);
+  void clearName() => $_clearField(4);
 
   @$pb.TagNumber(5)
   $core.String get profileUrl => $_getSZ(4);
@@ -1991,7 +1993,7 @@ class Account extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool hasProfileUrl() => $_has(4);
   @$pb.TagNumber(5)
-  void clearProfileUrl() => clearField(5);
+  void clearProfileUrl() => $_clearField(5);
 
   @$pb.TagNumber(6)
   $core.String get avatarUrl => $_getSZ(5);
@@ -2000,16 +2002,16 @@ class Account extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.bool hasAvatarUrl() => $_has(5);
   @$pb.TagNumber(6)
-  void clearAvatarUrl() => clearField(6);
+  void clearAvatarUrl() => $_clearField(6);
 
   @$pb.TagNumber(7)
   $7.Timestamp get latestUpdateTime => $_getN(6);
   @$pb.TagNumber(7)
-  set latestUpdateTime($7.Timestamp v) { setField(7, v); }
+  set latestUpdateTime($7.Timestamp v) { $_setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasLatestUpdateTime() => $_has(6);
   @$pb.TagNumber(7)
-  void clearLatestUpdateTime() => clearField(7);
+  void clearLatestUpdateTime() => $_clearField(7);
   @$pb.TagNumber(7)
   $7.Timestamp ensureLatestUpdateTime() => $_ensure(6);
 }
@@ -2077,11 +2079,11 @@ class User extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($8.InternalID v) { setField(1, v); }
+  set id($8.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.InternalID ensureId() => $_ensure(0);
 
@@ -2092,7 +2094,7 @@ class User extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasUsername() => $_has(1);
   @$pb.TagNumber(2)
-  void clearUsername() => clearField(2);
+  void clearUsername() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get password => $_getSZ(2);
@@ -2101,25 +2103,25 @@ class User extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasPassword() => $_has(2);
   @$pb.TagNumber(3)
-  void clearPassword() => clearField(3);
+  void clearPassword() => $_clearField(3);
 
   @$pb.TagNumber(4)
   UserType get type => $_getN(3);
   @$pb.TagNumber(4)
-  set type(UserType v) { setField(4, v); }
+  set type(UserType v) { $_setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasType() => $_has(3);
   @$pb.TagNumber(4)
-  void clearType() => clearField(4);
+  void clearType() => $_clearField(4);
 
   @$pb.TagNumber(5)
   UserStatus get status => $_getN(4);
   @$pb.TagNumber(5)
-  set status(UserStatus v) { setField(5, v); }
+  set status(UserStatus v) { $_setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasStatus() => $_has(4);
   @$pb.TagNumber(5)
-  void clearStatus() => clearField(5);
+  void clearStatus() => $_clearField(5);
 }
 
 class UserSession extends $pb.GeneratedMessage {
@@ -2185,55 +2187,55 @@ class UserSession extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($8.InternalID v) { setField(1, v); }
+  set id($8.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.InternalID ensureId() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $8.InternalID get userId => $_getN(1);
   @$pb.TagNumber(2)
-  set userId($8.InternalID v) { setField(2, v); }
+  set userId($8.InternalID v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasUserId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearUserId() => clearField(2);
+  void clearUserId() => $_clearField(2);
   @$pb.TagNumber(2)
   $8.InternalID ensureUserId() => $_ensure(1);
 
   @$pb.TagNumber(3)
   Device get deviceInfo => $_getN(2);
   @$pb.TagNumber(3)
-  set deviceInfo(Device v) { setField(3, v); }
+  set deviceInfo(Device v) { $_setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasDeviceInfo() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDeviceInfo() => clearField(3);
+  void clearDeviceInfo() => $_clearField(3);
   @$pb.TagNumber(3)
   Device ensureDeviceInfo() => $_ensure(2);
 
   @$pb.TagNumber(4)
   $7.Timestamp get createTime => $_getN(3);
   @$pb.TagNumber(4)
-  set createTime($7.Timestamp v) { setField(4, v); }
+  set createTime($7.Timestamp v) { $_setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasCreateTime() => $_has(3);
   @$pb.TagNumber(4)
-  void clearCreateTime() => clearField(4);
+  void clearCreateTime() => $_clearField(4);
   @$pb.TagNumber(4)
   $7.Timestamp ensureCreateTime() => $_ensure(3);
 
   @$pb.TagNumber(5)
   $7.Timestamp get expireTime => $_getN(4);
   @$pb.TagNumber(5)
-  set expireTime($7.Timestamp v) { setField(5, v); }
+  set expireTime($7.Timestamp v) { $_setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasExpireTime() => $_has(4);
   @$pb.TagNumber(5)
-  void clearExpireTime() => clearField(5);
+  void clearExpireTime() => $_clearField(5);
   @$pb.TagNumber(5)
   $7.Timestamp ensureExpireTime() => $_ensure(4);
 }
@@ -2311,11 +2313,11 @@ class Device extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.InternalID get deviceId => $_getN(0);
   @$pb.TagNumber(1)
-  set deviceId($8.InternalID v) { setField(1, v); }
+  set deviceId($8.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasDeviceId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearDeviceId() => clearField(1);
+  void clearDeviceId() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.InternalID ensureDeviceId() => $_ensure(0);
 
@@ -2326,16 +2328,16 @@ class Device extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasDeviceName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearDeviceName() => clearField(2);
+  void clearDeviceName() => $_clearField(2);
 
   @$pb.TagNumber(3)
   SystemType get systemType => $_getN(2);
   @$pb.TagNumber(3)
-  set systemType(SystemType v) { setField(3, v); }
+  set systemType(SystemType v) { $_setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasSystemType() => $_has(2);
   @$pb.TagNumber(3)
-  void clearSystemType() => clearField(3);
+  void clearSystemType() => $_clearField(3);
 
   @$pb.TagNumber(4)
   $core.String get systemVersion => $_getSZ(3);
@@ -2344,7 +2346,7 @@ class Device extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasSystemVersion() => $_has(3);
   @$pb.TagNumber(4)
-  void clearSystemVersion() => clearField(4);
+  void clearSystemVersion() => $_clearField(4);
 
   @$pb.TagNumber(5)
   $core.String get clientName => $_getSZ(4);
@@ -2353,7 +2355,7 @@ class Device extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool hasClientName() => $_has(4);
   @$pb.TagNumber(5)
-  void clearClientName() => clearField(5);
+  void clearClientName() => $_clearField(5);
 
   @$pb.TagNumber(6)
   $core.String get clientSourceCodeAddress => $_getSZ(5);
@@ -2362,7 +2364,7 @@ class Device extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.bool hasClientSourceCodeAddress() => $_has(5);
   @$pb.TagNumber(6)
-  void clearClientSourceCodeAddress() => clearField(6);
+  void clearClientSourceCodeAddress() => $_clearField(6);
 
   @$pb.TagNumber(7)
   $core.String get clientVersion => $_getSZ(6);
@@ -2371,7 +2373,7 @@ class Device extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   $core.bool hasClientVersion() => $_has(6);
   @$pb.TagNumber(7)
-  void clearClientVersion() => clearField(7);
+  void clearClientVersion() => $_clearField(7);
 }
 
 class Porter extends $pb.GeneratedMessage {
@@ -2457,22 +2459,22 @@ class Porter extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($8.InternalID v) { setField(1, v); }
+  set id($8.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.InternalID ensureId() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $10.PorterBinarySummary get binarySummary => $_getN(1);
   @$pb.TagNumber(2)
-  set binarySummary($10.PorterBinarySummary v) { setField(2, v); }
+  set binarySummary($10.PorterBinarySummary v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasBinarySummary() => $_has(1);
   @$pb.TagNumber(2)
-  void clearBinarySummary() => clearField(2);
+  void clearBinarySummary() => $_clearField(2);
   @$pb.TagNumber(2)
   $10.PorterBinarySummary ensureBinarySummary() => $_ensure(1);
 
@@ -2483,7 +2485,7 @@ class Porter extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasGlobalName() => $_has(2);
   @$pb.TagNumber(3)
-  void clearGlobalName() => clearField(3);
+  void clearGlobalName() => $_clearField(3);
 
   @$pb.TagNumber(4)
   $core.String get region => $_getSZ(3);
@@ -2492,37 +2494,37 @@ class Porter extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasRegion() => $_has(3);
   @$pb.TagNumber(4)
-  void clearRegion() => clearField(4);
+  void clearRegion() => $_clearField(4);
 
   @$pb.TagNumber(5)
   $8.FeatureSummary get featureSummary => $_getN(4);
   @$pb.TagNumber(5)
-  set featureSummary($8.FeatureSummary v) { setField(5, v); }
+  set featureSummary($8.FeatureSummary v) { $_setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasFeatureSummary() => $_has(4);
   @$pb.TagNumber(5)
-  void clearFeatureSummary() => clearField(5);
+  void clearFeatureSummary() => $_clearField(5);
   @$pb.TagNumber(5)
   $8.FeatureSummary ensureFeatureSummary() => $_ensure(4);
 
   @$pb.TagNumber(6)
   UserStatus get status => $_getN(5);
   @$pb.TagNumber(6)
-  set status(UserStatus v) { setField(6, v); }
+  set status(UserStatus v) { $_setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasStatus() => $_has(5);
   @$pb.TagNumber(6)
-  void clearStatus() => clearField(6);
+  void clearStatus() => $_clearField(6);
 
   /// Only used in response
   @$pb.TagNumber(7)
   PorterConnectionStatus get connectionStatus => $_getN(6);
   @$pb.TagNumber(7)
-  set connectionStatus(PorterConnectionStatus v) { setField(7, v); }
+  set connectionStatus(PorterConnectionStatus v) { $_setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasConnectionStatus() => $_has(6);
   @$pb.TagNumber(7)
-  void clearConnectionStatus() => clearField(7);
+  void clearConnectionStatus() => $_clearField(7);
 
   /// Only used in response
   @$pb.TagNumber(8)
@@ -2532,7 +2534,7 @@ class Porter extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   $core.bool hasContextJsonSchema() => $_has(7);
   @$pb.TagNumber(8)
-  void clearContextJsonSchema() => clearField(8);
+  void clearContextJsonSchema() => $_clearField(8);
 
   /// Only used in response
   @$pb.TagNumber(9)
@@ -2542,7 +2544,7 @@ class Porter extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   $core.bool hasConnectionStatusMessage() => $_has(8);
   @$pb.TagNumber(9)
-  void clearConnectionStatusMessage() => clearField(9);
+  void clearConnectionStatusMessage() => $_clearField(9);
 }
 
 class PorterContext extends $pb.GeneratedMessage {
@@ -2628,11 +2630,11 @@ class PorterContext extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($8.InternalID v) { setField(1, v); }
+  set id($8.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.InternalID ensureId() => $_ensure(0);
 
@@ -2643,7 +2645,7 @@ class PorterContext extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasGlobalName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearGlobalName() => clearField(2);
+  void clearGlobalName() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get region => $_getSZ(2);
@@ -2652,7 +2654,7 @@ class PorterContext extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasRegion() => $_has(2);
   @$pb.TagNumber(3)
-  void clearRegion() => clearField(3);
+  void clearRegion() => $_clearField(3);
 
   @$pb.TagNumber(4)
   $core.String get contextJson => $_getSZ(3);
@@ -2661,7 +2663,7 @@ class PorterContext extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasContextJson() => $_has(3);
   @$pb.TagNumber(4)
-  void clearContextJson() => clearField(4);
+  void clearContextJson() => $_clearField(4);
 
   @$pb.TagNumber(5)
   $core.String get name => $_getSZ(4);
@@ -2670,7 +2672,7 @@ class PorterContext extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool hasName() => $_has(4);
   @$pb.TagNumber(5)
-  void clearName() => clearField(5);
+  void clearName() => $_clearField(5);
 
   @$pb.TagNumber(6)
   $core.String get description => $_getSZ(5);
@@ -2679,26 +2681,26 @@ class PorterContext extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.bool hasDescription() => $_has(5);
   @$pb.TagNumber(6)
-  void clearDescription() => clearField(6);
+  void clearDescription() => $_clearField(6);
 
   @$pb.TagNumber(7)
   PorterContextStatus get status => $_getN(6);
   @$pb.TagNumber(7)
-  set status(PorterContextStatus v) { setField(7, v); }
+  set status(PorterContextStatus v) { $_setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasStatus() => $_has(6);
   @$pb.TagNumber(7)
-  void clearStatus() => clearField(7);
+  void clearStatus() => $_clearField(7);
 
   /// Only used in response
   @$pb.TagNumber(8)
   PorterContextHandleStatus get handleStatus => $_getN(7);
   @$pb.TagNumber(8)
-  set handleStatus(PorterContextHandleStatus v) { setField(8, v); }
+  set handleStatus(PorterContextHandleStatus v) { $_setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasHandleStatus() => $_has(7);
   @$pb.TagNumber(8)
-  void clearHandleStatus() => clearField(8);
+  void clearHandleStatus() => $_clearField(8);
 
   /// Only used in response
   @$pb.TagNumber(9)
@@ -2708,7 +2710,7 @@ class PorterContext extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   $core.bool hasHandleStatusMessage() => $_has(8);
   @$pb.TagNumber(9)
-  void clearHandleStatusMessage() => clearField(9);
+  void clearHandleStatusMessage() => $_clearField(9);
 }
 
 class PorterDigest extends $pb.GeneratedMessage {
@@ -2774,11 +2776,11 @@ class PorterDigest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $10.PorterBinarySummary get binarySummary => $_getN(0);
   @$pb.TagNumber(1)
-  set binarySummary($10.PorterBinarySummary v) { setField(1, v); }
+  set binarySummary($10.PorterBinarySummary v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBinarySummary() => $_has(0);
   @$pb.TagNumber(1)
-  void clearBinarySummary() => clearField(1);
+  void clearBinarySummary() => $_clearField(1);
   @$pb.TagNumber(1)
   $10.PorterBinarySummary ensureBinarySummary() => $_ensure(0);
 
@@ -2789,10 +2791,10 @@ class PorterDigest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasGlobalName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearGlobalName() => clearField(2);
+  void clearGlobalName() => $_clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<$core.String> get regions => $_getList(2);
+  $pb.PbList<$core.String> get regions => $_getList(2);
 
   @$pb.TagNumber(4)
   $core.String get contextJsonSchema => $_getSZ(3);
@@ -2801,16 +2803,16 @@ class PorterDigest extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasContextJsonSchema() => $_has(3);
   @$pb.TagNumber(4)
-  void clearContextJsonSchema() => clearField(4);
+  void clearContextJsonSchema() => $_clearField(4);
 
   @$pb.TagNumber(5)
   $8.FeatureSummary get featureSummary => $_getN(4);
   @$pb.TagNumber(5)
-  set featureSummary($8.FeatureSummary v) { setField(5, v); }
+  set featureSummary($8.FeatureSummary v) { $_setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasFeatureSummary() => $_has(4);
   @$pb.TagNumber(5)
-  void clearFeatureSummary() => clearField(5);
+  void clearFeatureSummary() => $_clearField(5);
   @$pb.TagNumber(5)
   $8.FeatureSummary ensureFeatureSummary() => $_ensure(4);
 }

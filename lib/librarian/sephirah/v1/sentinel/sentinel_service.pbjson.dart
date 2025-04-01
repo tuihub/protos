@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: librarian/sephirah/v1/sentinel/sentinel_service.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -40,8 +40,8 @@ final $typed_data.Uint8List refreshTokenResponseDescriptor = $convert.base64Deco
 const ReportSentinelInformationRequest$json = {
   '1': 'ReportSentinelInformationRequest',
   '2': [
-    {'1': 'hostname', '3': 1, '4': 1, '5': 9, '10': 'hostname'},
-    {'1': 'hostname_alternatives', '3': 2, '4': 3, '5': 9, '10': 'hostnameAlternatives'},
+    {'1': 'url', '3': 1, '4': 1, '5': 9, '10': 'url'},
+    {'1': 'url_alternatives', '3': 2, '4': 3, '5': 9, '10': 'urlAlternatives'},
     {'1': 'get_token_url_path', '3': 3, '4': 1, '5': 9, '10': 'getTokenUrlPath'},
     {'1': 'download_file_base_path', '3': 4, '4': 1, '5': 9, '10': 'downloadFileBasePath'},
     {'1': 'libraries', '3': 5, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.sentinel.SentinelLibrary', '10': 'libraries'},
@@ -50,12 +50,11 @@ const ReportSentinelInformationRequest$json = {
 
 /// Descriptor for `ReportSentinelInformationRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List reportSentinelInformationRequestDescriptor = $convert.base64Decode(
-    'CiBSZXBvcnRTZW50aW5lbEluZm9ybWF0aW9uUmVxdWVzdBIaCghob3N0bmFtZRgBIAEoCVIIaG'
-    '9zdG5hbWUSMwoVaG9zdG5hbWVfYWx0ZXJuYXRpdmVzGAIgAygJUhRob3N0bmFtZUFsdGVybmF0'
-    'aXZlcxIrChJnZXRfdG9rZW5fdXJsX3BhdGgYAyABKAlSD2dldFRva2VuVXJsUGF0aBI1Chdkb3'
-    'dubG9hZF9maWxlX2Jhc2VfcGF0aBgEIAEoCVIUZG93bmxvYWRGaWxlQmFzZVBhdGgSTQoJbGli'
-    'cmFyaWVzGAUgAygLMi8ubGlicmFyaWFuLnNlcGhpcmFoLnYxLnNlbnRpbmVsLlNlbnRpbmVsTG'
-    'licmFyeVIJbGlicmFyaWVz');
+    'CiBSZXBvcnRTZW50aW5lbEluZm9ybWF0aW9uUmVxdWVzdBIQCgN1cmwYASABKAlSA3VybBIpCh'
+    'B1cmxfYWx0ZXJuYXRpdmVzGAIgAygJUg91cmxBbHRlcm5hdGl2ZXMSKwoSZ2V0X3Rva2VuX3Vy'
+    'bF9wYXRoGAMgASgJUg9nZXRUb2tlblVybFBhdGgSNQoXZG93bmxvYWRfZmlsZV9iYXNlX3BhdG'
+    'gYBCABKAlSFGRvd25sb2FkRmlsZUJhc2VQYXRoEk0KCWxpYnJhcmllcxgFIAMoCzIvLmxpYnJh'
+    'cmlhbi5zZXBoaXJhaC52MS5zZW50aW5lbC5TZW50aW5lbExpYnJhcnlSCWxpYnJhcmllcw==');
 
 @$core.Deprecated('Use reportSentinelInformationResponseDescriptor instead')
 const ReportSentinelInformationResponse$json = {

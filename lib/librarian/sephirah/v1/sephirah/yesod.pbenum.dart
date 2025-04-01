@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: librarian/sephirah/v1/sephirah/yesod.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -27,7 +27,7 @@ class FeedConfigStatus extends $pb.ProtobufEnum {
   static final $core.Map<$core.int, FeedConfigStatus> _byValue = $pb.ProtobufEnum.initByValue(values);
   static FeedConfigStatus? valueOf($core.int value) => _byValue[value];
 
-  const FeedConfigStatus._($core.int v, $core.String n) : super(v, n);
+  const FeedConfigStatus._(super.v, super.n);
 }
 
 class FeedConfigPullStatus extends $pb.ProtobufEnum {
@@ -46,7 +46,7 @@ class FeedConfigPullStatus extends $pb.ProtobufEnum {
   static final $core.Map<$core.int, FeedConfigPullStatus> _byValue = $pb.ProtobufEnum.initByValue(values);
   static FeedConfigPullStatus? valueOf($core.int value) => _byValue[value];
 
-  const FeedConfigPullStatus._($core.int v, $core.String n) : super(v, n);
+  const FeedConfigPullStatus._(super.v, super.n);
 }
 
 

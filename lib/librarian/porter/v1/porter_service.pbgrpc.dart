@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: librarian/porter/v1/porter_service.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -263,64 +263,64 @@ abstract class LibrarianPorterServiceBase extends $grpc.Service {
         ($0.PushFeedItemsResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$0.GetPorterInformationResponse> getPorterInformation_Pre($grpc.ServiceCall call, $async.Future<$0.GetPorterInformationRequest> request) async {
-    return getPorterInformation(call, await request);
+  $async.Future<$0.GetPorterInformationResponse> getPorterInformation_Pre($grpc.ServiceCall $call, $async.Future<$0.GetPorterInformationRequest> $request) async {
+    return getPorterInformation($call, await $request);
   }
 
-  $async.Future<$0.EnablePorterResponse> enablePorter_Pre($grpc.ServiceCall call, $async.Future<$0.EnablePorterRequest> request) async {
-    return enablePorter(call, await request);
+  $async.Future<$0.EnablePorterResponse> enablePorter_Pre($grpc.ServiceCall $call, $async.Future<$0.EnablePorterRequest> $request) async {
+    return enablePorter($call, await $request);
   }
 
-  $async.Future<$0.EnableContextResponse> enableContext_Pre($grpc.ServiceCall call, $async.Future<$0.EnableContextRequest> request) async {
-    return enableContext(call, await request);
+  $async.Future<$0.EnableContextResponse> enableContext_Pre($grpc.ServiceCall $call, $async.Future<$0.EnableContextRequest> $request) async {
+    return enableContext($call, await $request);
   }
 
-  $async.Future<$0.DisableContextResponse> disableContext_Pre($grpc.ServiceCall call, $async.Future<$0.DisableContextRequest> request) async {
-    return disableContext(call, await request);
+  $async.Future<$0.DisableContextResponse> disableContext_Pre($grpc.ServiceCall $call, $async.Future<$0.DisableContextRequest> $request) async {
+    return disableContext($call, await $request);
   }
 
-  $async.Future<$1.GetAccountResponse> getAccount_Pre($grpc.ServiceCall call, $async.Future<$1.GetAccountRequest> request) async {
-    return getAccount(call, await request);
+  $async.Future<$1.GetAccountResponse> getAccount_Pre($grpc.ServiceCall $call, $async.Future<$1.GetAccountRequest> $request) async {
+    return getAccount($call, await $request);
   }
 
-  $async.Future<$2.SearchAppInfoResponse> searchAppInfo_Pre($grpc.ServiceCall call, $async.Future<$2.SearchAppInfoRequest> request) async {
-    return searchAppInfo(call, await request);
+  $async.Future<$2.SearchAppInfoResponse> searchAppInfo_Pre($grpc.ServiceCall $call, $async.Future<$2.SearchAppInfoRequest> $request) async {
+    return searchAppInfo($call, await $request);
   }
 
-  $async.Future<$2.GetAppInfoResponse> getAppInfo_Pre($grpc.ServiceCall call, $async.Future<$2.GetAppInfoRequest> request) async {
-    return getAppInfo(call, await request);
+  $async.Future<$2.GetAppInfoResponse> getAppInfo_Pre($grpc.ServiceCall $call, $async.Future<$2.GetAppInfoRequest> $request) async {
+    return getAppInfo($call, await $request);
   }
 
-  $async.Future<$2.ParseRawAppInfoResponse> parseRawAppInfo_Pre($grpc.ServiceCall call, $async.Future<$2.ParseRawAppInfoRequest> request) async {
-    return parseRawAppInfo(call, await request);
+  $async.Future<$2.ParseRawAppInfoResponse> parseRawAppInfo_Pre($grpc.ServiceCall $call, $async.Future<$2.ParseRawAppInfoRequest> $request) async {
+    return parseRawAppInfo($call, await $request);
   }
 
-  $async.Future<$0.PullFeedResponse> pullFeed_Pre($grpc.ServiceCall call, $async.Future<$0.PullFeedRequest> request) async {
-    return pullFeed(call, await request);
+  $async.Future<$0.PullFeedResponse> pullFeed_Pre($grpc.ServiceCall $call, $async.Future<$0.PullFeedRequest> $request) async {
+    return pullFeed($call, await $request);
   }
 
-  $async.Future<$0.ExecFeedItemActionResponse> execFeedItemAction_Pre($grpc.ServiceCall call, $async.Future<$0.ExecFeedItemActionRequest> request) async {
-    return execFeedItemAction(call, await request);
+  $async.Future<$0.ExecFeedItemActionResponse> execFeedItemAction_Pre($grpc.ServiceCall $call, $async.Future<$0.ExecFeedItemActionRequest> $request) async {
+    return execFeedItemAction($call, await $request);
   }
 
-  $async.Future<$0.EnableFeedSetterResponse> enableFeedSetter_Pre($grpc.ServiceCall call, $async.Future<$0.EnableFeedSetterRequest> request) async {
-    return enableFeedSetter(call, await request);
+  $async.Future<$0.EnableFeedSetterResponse> enableFeedSetter_Pre($grpc.ServiceCall $call, $async.Future<$0.EnableFeedSetterRequest> $request) async {
+    return enableFeedSetter($call, await $request);
   }
 
-  $async.Future<$0.DisableFeedSetterResponse> disableFeedSetter_Pre($grpc.ServiceCall call, $async.Future<$0.DisableFeedSetterRequest> request) async {
-    return disableFeedSetter(call, await request);
+  $async.Future<$0.DisableFeedSetterResponse> disableFeedSetter_Pre($grpc.ServiceCall $call, $async.Future<$0.DisableFeedSetterRequest> $request) async {
+    return disableFeedSetter($call, await $request);
   }
 
-  $async.Future<$0.EnableFeedGetterResponse> enableFeedGetter_Pre($grpc.ServiceCall call, $async.Future<$0.EnableFeedGetterRequest> request) async {
-    return enableFeedGetter(call, await request);
+  $async.Future<$0.EnableFeedGetterResponse> enableFeedGetter_Pre($grpc.ServiceCall $call, $async.Future<$0.EnableFeedGetterRequest> $request) async {
+    return enableFeedGetter($call, await $request);
   }
 
-  $async.Future<$0.DisableFeedGetterResponse> disableFeedGetter_Pre($grpc.ServiceCall call, $async.Future<$0.DisableFeedGetterRequest> request) async {
-    return disableFeedGetter(call, await request);
+  $async.Future<$0.DisableFeedGetterResponse> disableFeedGetter_Pre($grpc.ServiceCall $call, $async.Future<$0.DisableFeedGetterRequest> $request) async {
+    return disableFeedGetter($call, await $request);
   }
 
-  $async.Future<$0.PushFeedItemsResponse> pushFeedItems_Pre($grpc.ServiceCall call, $async.Future<$0.PushFeedItemsRequest> request) async {
-    return pushFeedItems(call, await request);
+  $async.Future<$0.PushFeedItemsResponse> pushFeedItems_Pre($grpc.ServiceCall $call, $async.Future<$0.PushFeedItemsRequest> $request) async {
+    return pushFeedItems($call, await $request);
   }
 
   $async.Future<$0.GetPorterInformationResponse> getPorterInformation($grpc.ServiceCall call, $0.GetPorterInformationRequest request);

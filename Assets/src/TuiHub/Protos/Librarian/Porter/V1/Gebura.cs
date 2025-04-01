@@ -36,7 +36,7 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
             "DXNvdXJjZV9hcHBfaWQYAiABKAlSC3NvdXJjZUFwcElkEiIKDXJhd19kYXRh",
             "X2pzb24YAyABKAlSC3Jhd0RhdGFKc29uIlIKF1BhcnNlUmF3QXBwSW5mb1Jl",
             "c3BvbnNlEjcKCGFwcF9pbmZvGAEgASgLMhwubGlicmFyaWFuLnBvcnRlci52",
-            "MS5BcHBJbmZvUgdhcHBJbmZvIpAECgdBcHBJbmZvEhYKBnNvdXJjZRgBIAEo",
+            "MS5BcHBJbmZvUgdhcHBJbmZvIqAECgdBcHBJbmZvEhYKBnNvdXJjZRgBIAEo",
             "CVIGc291cmNlEiIKDXNvdXJjZV9hcHBfaWQYAiABKAlSC3NvdXJjZUFwcElk",
             "EiIKCnNvdXJjZV91cmwYAyABKAlIAFIJc291cmNlVXJsiAEBEiIKDXJhd19k",
             "YXRhX2pzb24YBCABKAlSC3Jhd0RhdGFKc29uEkIKB2RldGFpbHMYBSABKAsy",
@@ -46,17 +46,17 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
             "aXB0aW9uGAggASgJUhBzaG9ydERlc2NyaXB0aW9uEiQKDmljb25faW1hZ2Vf",
             "dXJsGAkgASgJUgxpY29uSW1hZ2VVcmwSMAoUYmFja2dyb3VuZF9pbWFnZV91",
             "cmwYCiABKAlSEmJhY2tncm91bmRJbWFnZVVybBImCg9jb3Zlcl9pbWFnZV91",
-            "cmwYCyABKAlSDWNvdmVySW1hZ2VVcmwSEgoEdGFncxgMIAMoCVIEdGFncxIb",
-            "CglhbHRfbmFtZXMYDSADKAlSCGFsdE5hbWVzQg0KC19zb3VyY2VfdXJsQgoK",
-            "CF9kZXRhaWxzIsoBCg5BcHBJbmZvRGV0YWlscxIgCgtkZXNjcmlwdGlvbhgB",
-            "IAEoCVILZGVzY3JpcHRpb24SIQoMcmVsZWFzZV9kYXRlGAIgASgJUgtyZWxl",
-            "YXNlRGF0ZRIcCglkZXZlbG9wZXIYAyABKAlSCWRldmVsb3BlchIcCglwdWJs",
-            "aXNoZXIYBCABKAlSCXB1Ymxpc2hlchIYCgd2ZXJzaW9uGAUgASgJUgd2ZXJz",
-            "aW9uEh0KCmltYWdlX3VybHMYBiADKAlSCWltYWdlVXJscyo2CgdBcHBUeXBl",
-            "EhgKFEFQUF9UWVBFX1VOU1BFQ0lGSUVEEAASEQoNQVBQX1RZUEVfR0FNRRAB",
-            "QllaM2dpdGh1Yi5jb20vdHVpaHViL3Byb3Rvcy9wa2cvbGlicmFyaWFuL3Bv",
-            "cnRlci92MTt2MaoCIVR1aUh1Yi5Qcm90b3MuTGlicmFyaWFuLlBvcnRlci5W",
-            "MWIGcHJvdG8z"));
+            "cmwYCyABKAlSDWNvdmVySW1hZ2VVcmwSEgoEdGFncxgMIAMoCVIEdGFncxIr",
+            "ChFuYW1lX2FsdGVybmF0aXZlcxgNIAMoCVIQbmFtZUFsdGVybmF0aXZlc0IN",
+            "Cgtfc291cmNlX3VybEIKCghfZGV0YWlscyLKAQoOQXBwSW5mb0RldGFpbHMS",
+            "IAoLZGVzY3JpcHRpb24YASABKAlSC2Rlc2NyaXB0aW9uEiEKDHJlbGVhc2Vf",
+            "ZGF0ZRgCIAEoCVILcmVsZWFzZURhdGUSHAoJZGV2ZWxvcGVyGAMgASgJUglk",
+            "ZXZlbG9wZXISHAoJcHVibGlzaGVyGAQgASgJUglwdWJsaXNoZXISGAoHdmVy",
+            "c2lvbhgFIAEoCVIHdmVyc2lvbhIdCgppbWFnZV91cmxzGAYgAygJUglpbWFn",
+            "ZVVybHMqNgoHQXBwVHlwZRIYChRBUFBfVFlQRV9VTlNQRUNJRklFRBAAEhEK",
+            "DUFQUF9UWVBFX0dBTUUQAUJZWjNnaXRodWIuY29tL3R1aWh1Yi9wcm90b3Mv",
+            "cGtnL2xpYnJhcmlhbi9wb3J0ZXIvdjE7djGqAiFUdWlIdWIuUHJvdG9zLkxp",
+            "YnJhcmlhbi5Qb3J0ZXIuVjFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Porter.V1.AppType), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -66,7 +66,7 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Porter.V1.GetAppInfoResponse), global::TuiHub.Protos.Librarian.Porter.V1.GetAppInfoResponse.Parser, new[]{ "AppInfo" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Porter.V1.ParseRawAppInfoRequest), global::TuiHub.Protos.Librarian.Porter.V1.ParseRawAppInfoRequest.Parser, new[]{ "Source", "SourceAppId", "RawDataJson" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Porter.V1.ParseRawAppInfoResponse), global::TuiHub.Protos.Librarian.Porter.V1.ParseRawAppInfoResponse.Parser, new[]{ "AppInfo" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Porter.V1.AppInfo), global::TuiHub.Protos.Librarian.Porter.V1.AppInfo.Parser, new[]{ "Source", "SourceAppId", "SourceUrl", "RawDataJson", "Details", "Name", "Type", "ShortDescription", "IconImageUrl", "BackgroundImageUrl", "CoverImageUrl", "Tags", "AltNames" }, new[]{ "SourceUrl", "Details" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Porter.V1.AppInfo), global::TuiHub.Protos.Librarian.Porter.V1.AppInfo.Parser, new[]{ "Source", "SourceAppId", "SourceUrl", "RawDataJson", "Details", "Name", "Type", "ShortDescription", "IconImageUrl", "BackgroundImageUrl", "CoverImageUrl", "Tags", "NameAlternatives" }, new[]{ "SourceUrl", "Details" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Porter.V1.AppInfoDetails), global::TuiHub.Protos.Librarian.Porter.V1.AppInfoDetails.Parser, new[]{ "Description", "ReleaseDate", "Developer", "Publisher", "Version", "ImageUrls" }, null, null, null, null)
           }));
     }
@@ -1386,7 +1386,7 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
       backgroundImageUrl_ = other.backgroundImageUrl_;
       coverImageUrl_ = other.coverImageUrl_;
       tags_ = other.tags_.Clone();
-      altNames_ = other.altNames_.Clone();
+      nameAlternatives_ = other.nameAlternatives_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1565,15 +1565,15 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
       get { return tags_; }
     }
 
-    /// <summary>Field number for the "alt_names" field.</summary>
-    public const int AltNamesFieldNumber = 13;
-    private static readonly pb::FieldCodec<string> _repeated_altNames_codec
+    /// <summary>Field number for the "name_alternatives" field.</summary>
+    public const int NameAlternativesFieldNumber = 13;
+    private static readonly pb::FieldCodec<string> _repeated_nameAlternatives_codec
         = pb::FieldCodec.ForString(106);
-    private readonly pbc::RepeatedField<string> altNames_ = new pbc::RepeatedField<string>();
+    private readonly pbc::RepeatedField<string> nameAlternatives_ = new pbc::RepeatedField<string>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<string> AltNames {
-      get { return altNames_; }
+    public pbc::RepeatedField<string> NameAlternatives {
+      get { return nameAlternatives_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1603,7 +1603,7 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
       if (BackgroundImageUrl != other.BackgroundImageUrl) return false;
       if (CoverImageUrl != other.CoverImageUrl) return false;
       if(!tags_.Equals(other.tags_)) return false;
-      if(!altNames_.Equals(other.altNames_)) return false;
+      if(!nameAlternatives_.Equals(other.nameAlternatives_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1623,7 +1623,7 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
       if (BackgroundImageUrl.Length != 0) hash ^= BackgroundImageUrl.GetHashCode();
       if (CoverImageUrl.Length != 0) hash ^= CoverImageUrl.GetHashCode();
       hash ^= tags_.GetHashCode();
-      hash ^= altNames_.GetHashCode();
+      hash ^= nameAlternatives_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1687,7 +1687,7 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
         output.WriteString(CoverImageUrl);
       }
       tags_.WriteTo(output, _repeated_tags_codec);
-      altNames_.WriteTo(output, _repeated_altNames_codec);
+      nameAlternatives_.WriteTo(output, _repeated_nameAlternatives_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1743,7 +1743,7 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
         output.WriteString(CoverImageUrl);
       }
       tags_.WriteTo(ref output, _repeated_tags_codec);
-      altNames_.WriteTo(ref output, _repeated_altNames_codec);
+      nameAlternatives_.WriteTo(ref output, _repeated_nameAlternatives_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1788,7 +1788,7 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(CoverImageUrl);
       }
       size += tags_.CalculateSize(_repeated_tags_codec);
-      size += altNames_.CalculateSize(_repeated_altNames_codec);
+      size += nameAlternatives_.CalculateSize(_repeated_nameAlternatives_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -1838,7 +1838,7 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
         CoverImageUrl = other.CoverImageUrl;
       }
       tags_.Add(other.tags_);
-      altNames_.Add(other.altNames_);
+      nameAlternatives_.Add(other.nameAlternatives_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -1906,7 +1906,7 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
             break;
           }
           case 106: {
-            altNames_.AddEntriesFrom(input, _repeated_altNames_codec);
+            nameAlternatives_.AddEntriesFrom(input, _repeated_nameAlternatives_codec);
             break;
           }
         }
@@ -1976,7 +1976,7 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
             break;
           }
           case 106: {
-            altNames_.AddEntriesFrom(ref input, _repeated_altNames_codec);
+            nameAlternatives_.AddEntriesFrom(ref input, _repeated_nameAlternatives_codec);
             break;
           }
         }

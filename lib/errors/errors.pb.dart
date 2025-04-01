@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: errors/errors.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -13,12 +13,14 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
+
 class Error extends $pb.GeneratedMessage {
   factory Error({
     $core.int? code,
     $core.String? reason,
     $core.String? message,
-    $core.Map<$core.String, $core.String>? metadata,
+    $pb.PbMap<$core.String, $core.String>? metadata,
   }) {
     final $result = create();
     if (code != null) {
@@ -75,7 +77,7 @@ class Error extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasCode() => $_has(0);
   @$pb.TagNumber(1)
-  void clearCode() => clearField(1);
+  void clearCode() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get reason => $_getSZ(1);
@@ -84,7 +86,7 @@ class Error extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasReason() => $_has(1);
   @$pb.TagNumber(2)
-  void clearReason() => clearField(2);
+  void clearReason() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get message => $_getSZ(2);
@@ -93,10 +95,10 @@ class Error extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasMessage() => $_has(2);
   @$pb.TagNumber(3)
-  void clearMessage() => clearField(3);
+  void clearMessage() => $_clearField(3);
 
   @$pb.TagNumber(4)
-  $core.Map<$core.String, $core.String> get metadata => $_getMap(3);
+  $pb.PbMap<$core.String, $core.String> get metadata => $_getMap(3);
 }
 
 class Errors {

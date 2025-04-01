@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: librarian/v1/wellknown.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -17,6 +17,8 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import '../../google/protobuf/duration.pb.dart' as $1;
 import '../../google/protobuf/timestamp.pb.dart' as $0;
 import 'wellknown.pbenum.dart';
+
+export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 export 'wellknown.pbenum.dart';
 
@@ -73,7 +75,7 @@ class PagingRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasPageNum() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPageNum() => clearField(1);
+  void clearPageNum() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get pageSize => $_getI64(1);
@@ -82,7 +84,7 @@ class PagingRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasPageSize() => $_has(1);
   @$pb.TagNumber(2)
-  void clearPageSize() => clearField(2);
+  void clearPageSize() => $_clearField(2);
 }
 
 class PagingResponse extends $pb.GeneratedMessage {
@@ -132,7 +134,7 @@ class PagingResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasTotalSize() => $_has(0);
   @$pb.TagNumber(1)
-  void clearTotalSize() => clearField(1);
+  void clearTotalSize() => $_clearField(1);
 }
 
 /// half-open e.g.
@@ -190,22 +192,22 @@ class TimeRange extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $0.Timestamp get startTime => $_getN(0);
   @$pb.TagNumber(1)
-  set startTime($0.Timestamp v) { setField(1, v); }
+  set startTime($0.Timestamp v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasStartTime() => $_has(0);
   @$pb.TagNumber(1)
-  void clearStartTime() => clearField(1);
+  void clearStartTime() => $_clearField(1);
   @$pb.TagNumber(1)
   $0.Timestamp ensureStartTime() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $1.Duration get duration => $_getN(1);
   @$pb.TagNumber(2)
-  set duration($1.Duration v) { setField(2, v); }
+  set duration($1.Duration v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasDuration() => $_has(1);
   @$pb.TagNumber(2)
-  void clearDuration() => clearField(2);
+  void clearDuration() => $_clearField(2);
   @$pb.TagNumber(2)
   $1.Duration ensureDuration() => $_ensure(1);
 }
@@ -258,7 +260,7 @@ class InternalID extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 }
 
 class I18NString extends $pb.GeneratedMessage {
@@ -314,7 +316,7 @@ class I18NString extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasKey() => $_has(0);
   @$pb.TagNumber(1)
-  void clearKey() => clearField(1);
+  void clearKey() => $_clearField(1);
 
   /// The default value of the string.
   @$pb.TagNumber(2)
@@ -324,7 +326,7 @@ class I18NString extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasValue() => $_has(1);
   @$pb.TagNumber(2)
-  void clearValue() => clearField(2);
+  void clearValue() => $_clearField(2);
 }
 
 class FileMetadata extends $pb.GeneratedMessage {
@@ -395,11 +397,11 @@ class FileMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id(InternalID v) { setField(1, v); }
+  set id(InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
   @$pb.TagNumber(1)
   InternalID ensureId() => $_ensure(0);
 
@@ -410,7 +412,7 @@ class FileMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearName() => clearField(2);
+  void clearName() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $fixnum.Int64 get sizeBytes => $_getI64(2);
@@ -419,16 +421,16 @@ class FileMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasSizeBytes() => $_has(2);
   @$pb.TagNumber(3)
-  void clearSizeBytes() => clearField(3);
+  void clearSizeBytes() => $_clearField(3);
 
   @$pb.TagNumber(4)
   FileType get type => $_getN(3);
   @$pb.TagNumber(4)
-  set type(FileType v) { setField(4, v); }
+  set type(FileType v) { $_setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasType() => $_has(3);
   @$pb.TagNumber(4)
-  void clearType() => clearField(4);
+  void clearType() => $_clearField(4);
 
   @$pb.TagNumber(5)
   $core.List<$core.int> get sha256 => $_getN(4);
@@ -437,16 +439,16 @@ class FileMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool hasSha256() => $_has(4);
   @$pb.TagNumber(5)
-  void clearSha256() => clearField(5);
+  void clearSha256() => $_clearField(5);
 
   @$pb.TagNumber(6)
   $0.Timestamp get createTime => $_getN(5);
   @$pb.TagNumber(6)
-  set createTime($0.Timestamp v) { setField(6, v); }
+  set createTime($0.Timestamp v) { $_setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasCreateTime() => $_has(5);
   @$pb.TagNumber(6)
-  void clearCreateTime() => clearField(6);
+  void clearCreateTime() => $_clearField(6);
   @$pb.TagNumber(6)
   $0.Timestamp ensureCreateTime() => $_ensure(5);
 }
@@ -460,7 +462,7 @@ class FeatureFlag extends $pb.GeneratedMessage {
     $core.String? description,
     $core.String? configJsonSchema,
     $core.bool? requireContext,
-    $core.Map<$core.String, $core.String>? extra,
+    $pb.PbMap<$core.String, $core.String>? extra,
   }) {
     final $result = create();
     if (id != null) {
@@ -527,7 +529,7 @@ class FeatureFlag extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 
   /// Human-readable name
   @$pb.TagNumber(2)
@@ -537,7 +539,7 @@ class FeatureFlag extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearName() => clearField(2);
+  void clearName() => $_clearField(2);
 
   /// Human-readable description
   @$pb.TagNumber(3)
@@ -547,7 +549,7 @@ class FeatureFlag extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasDescription() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDescription() => clearField(3);
+  void clearDescription() => $_clearField(3);
 
   /// Customized JSON schema for feature
   @$pb.TagNumber(4)
@@ -557,7 +559,7 @@ class FeatureFlag extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasConfigJsonSchema() => $_has(3);
   @$pb.TagNumber(4)
-  void clearConfigJsonSchema() => clearField(4);
+  void clearConfigJsonSchema() => $_clearField(4);
 
   /// Require context to use this feature
   @$pb.TagNumber(5)
@@ -567,11 +569,11 @@ class FeatureFlag extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool hasRequireContext() => $_has(4);
   @$pb.TagNumber(5)
-  void clearRequireContext() => clearField(5);
+  void clearRequireContext() => $_clearField(5);
 
   /// Extra information
   @$pb.TagNumber(6)
-  $core.Map<$core.String, $core.String> get extra => $_getMap(5);
+  $pb.PbMap<$core.String, $core.String> get extra => $_getMap(5);
 }
 
 /// FeatureRequest is used to deliver feature-related request parameters.
@@ -638,7 +640,7 @@ class FeatureRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 
   /// See `FeatureFlag.region`
   @$pb.TagNumber(2)
@@ -648,7 +650,7 @@ class FeatureRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasRegion() => $_has(1);
   @$pb.TagNumber(2)
-  void clearRegion() => clearField(2);
+  void clearRegion() => $_clearField(2);
 
   /// Configuration JSON, must be validated by schema
   @$pb.TagNumber(3)
@@ -658,17 +660,17 @@ class FeatureRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasConfigJson() => $_has(2);
   @$pb.TagNumber(3)
-  void clearConfigJson() => clearField(3);
+  void clearConfigJson() => $_clearField(3);
 
   /// Require if feature needs context
   @$pb.TagNumber(4)
   InternalID get contextId => $_getN(3);
   @$pb.TagNumber(4)
-  set contextId(InternalID v) { setField(4, v); }
+  set contextId(InternalID v) { $_setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasContextId() => $_has(3);
   @$pb.TagNumber(4)
-  void clearContextId() => clearField(4);
+  void clearContextId() => $_clearField(4);
   @$pb.TagNumber(4)
   InternalID ensureContextId() => $_ensure(3);
 }
@@ -745,29 +747,29 @@ class FeatureSummary extends $pb.GeneratedMessage {
 
   /// WellKnownAccountPlatform
   @$pb.TagNumber(1)
-  $core.List<FeatureFlag> get accountPlatforms => $_getList(0);
+  $pb.PbList<FeatureFlag> get accountPlatforms => $_getList(0);
 
   /// WellKnownAppInfoSource
   @$pb.TagNumber(2)
-  $core.List<FeatureFlag> get appInfoSources => $_getList(1);
+  $pb.PbList<FeatureFlag> get appInfoSources => $_getList(1);
 
   /// WellKnownFeedSource
   @$pb.TagNumber(3)
-  $core.List<FeatureFlag> get feedSources => $_getList(2);
+  $pb.PbList<FeatureFlag> get feedSources => $_getList(2);
 
   /// WellKnownNotifyDestination
   @$pb.TagNumber(4)
-  $core.List<FeatureFlag> get notifyDestinations => $_getList(3);
+  $pb.PbList<FeatureFlag> get notifyDestinations => $_getList(3);
 
   /// WellKnownFeedItemAction
   @$pb.TagNumber(5)
-  $core.List<FeatureFlag> get feedItemActions => $_getList(4);
+  $pb.PbList<FeatureFlag> get feedItemActions => $_getList(4);
 
   @$pb.TagNumber(6)
-  $core.List<FeatureFlag> get feedSetters => $_getList(5);
+  $pb.PbList<FeatureFlag> get feedSetters => $_getList(5);
 
   @$pb.TagNumber(7)
-  $core.List<FeatureFlag> get feedGetters => $_getList(6);
+  $pb.PbList<FeatureFlag> get feedGetters => $_getList(6);
 }
 
 class Wellknown {

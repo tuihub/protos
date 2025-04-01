@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: librarian/sephirah/v1/angela/binah.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -16,6 +16,8 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import '../../../v1/wellknown.pb.dart' as $4;
 import '../sephirah/binah.pb.dart' as $5;
 import '../sephirah/binah.pbenum.dart' as $5;
+
+export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 class ListStorageCapacityUsageRequest extends $pb.GeneratedMessage {
   factory ListStorageCapacityUsageRequest({
@@ -60,11 +62,11 @@ class ListStorageCapacityUsageRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $4.PagingRequest get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($4.PagingRequest v) { setField(1, v); }
+  set paging($4.PagingRequest v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
   $4.PagingRequest ensurePaging() => $_ensure(0);
 }
@@ -117,22 +119,22 @@ class ListStorageCapacityUsageResponse_Item extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $4.InternalID get userId => $_getN(0);
   @$pb.TagNumber(1)
-  set userId($4.InternalID v) { setField(1, v); }
+  set userId($4.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasUserId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearUserId() => clearField(1);
+  void clearUserId() => $_clearField(1);
   @$pb.TagNumber(1)
   $4.InternalID ensureUserId() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $5.StorageCapacityUsage get storageCapacityUsage => $_getN(1);
   @$pb.TagNumber(2)
-  set storageCapacityUsage($5.StorageCapacityUsage v) { setField(2, v); }
+  set storageCapacityUsage($5.StorageCapacityUsage v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasStorageCapacityUsage() => $_has(1);
   @$pb.TagNumber(2)
-  void clearStorageCapacityUsage() => clearField(2);
+  void clearStorageCapacityUsage() => $_clearField(2);
   @$pb.TagNumber(2)
   $5.StorageCapacityUsage ensureStorageCapacityUsage() => $_ensure(1);
 }
@@ -185,16 +187,16 @@ class ListStorageCapacityUsageResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $4.PagingResponse get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($4.PagingResponse v) { setField(1, v); }
+  set paging($4.PagingResponse v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
   $4.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<ListStorageCapacityUsageResponse_Item> get items => $_getList(1);
+  $pb.PbList<ListStorageCapacityUsageResponse_Item> get items => $_getList(1);
 }
 
 class SimpleUploadFileRequest extends $pb.GeneratedMessage {
@@ -244,7 +246,7 @@ class SimpleUploadFileRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasData() => $_has(0);
   @$pb.TagNumber(1)
-  void clearData() => clearField(1);
+  void clearData() => $_clearField(1);
 }
 
 class SimpleUploadFileResponse extends $pb.GeneratedMessage {
@@ -290,11 +292,11 @@ class SimpleUploadFileResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $5.FileTransferStatus get status => $_getN(0);
   @$pb.TagNumber(1)
-  set status($5.FileTransferStatus v) { setField(1, v); }
+  set status($5.FileTransferStatus v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasStatus() => $_has(0);
   @$pb.TagNumber(1)
-  void clearStatus() => clearField(1);
+  void clearStatus() => $_clearField(1);
 }
 
 class SimpleDownloadFileRequest extends $pb.GeneratedMessage {
@@ -376,7 +378,7 @@ class SimpleDownloadFileResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasData() => $_has(0);
   @$pb.TagNumber(1)
-  void clearData() => clearField(1);
+  void clearData() => $_clearField(1);
 }
 
 class PresignedUploadFileRequest extends $pb.GeneratedMessage {
@@ -458,7 +460,7 @@ class PresignedUploadFileResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasUploadUrl() => $_has(0);
   @$pb.TagNumber(1)
-  void clearUploadUrl() => clearField(1);
+  void clearUploadUrl() => $_clearField(1);
 }
 
 class PresignedUploadFileStatusRequest extends $pb.GeneratedMessage {
@@ -504,11 +506,11 @@ class PresignedUploadFileStatusRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $5.FileTransferStatus get status => $_getN(0);
   @$pb.TagNumber(1)
-  set status($5.FileTransferStatus v) { setField(1, v); }
+  set status($5.FileTransferStatus v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasStatus() => $_has(0);
   @$pb.TagNumber(1)
-  void clearStatus() => clearField(1);
+  void clearStatus() => $_clearField(1);
 }
 
 class PresignedUploadFileStatusResponse extends $pb.GeneratedMessage {
@@ -623,7 +625,7 @@ class PresignedDownloadFileResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasDownloadUrl() => $_has(0);
   @$pb.TagNumber(1)
-  void clearDownloadUrl() => clearField(1);
+  void clearDownloadUrl() => $_clearField(1);
 }
 
 

@@ -623,7 +623,7 @@ impl serde::Serialize for App {
         if !self.tags.is_empty() {
             len += 1;
         }
-        if !self.alt_names.is_empty() {
+        if !self.name_alternatives.is_empty() {
             len += 1;
         }
         if !self.developer.is_empty() {
@@ -691,8 +691,8 @@ impl serde::Serialize for App {
         if !self.tags.is_empty() {
             struct_ser.serialize_field("tags", &self.tags)?;
         }
-        if !self.alt_names.is_empty() {
-            struct_ser.serialize_field("altNames", &self.alt_names)?;
+        if !self.name_alternatives.is_empty() {
+            struct_ser.serialize_field("nameAlternatives", &self.name_alternatives)?;
         }
         if !self.developer.is_empty() {
             struct_ser.serialize_field("developer", &self.developer)?;
@@ -740,8 +740,8 @@ impl<'de> serde::Deserialize<'de> for App {
             "cover_image_id",
             "coverImageId",
             "tags",
-            "alt_names",
-            "altNames",
+            "name_alternatives",
+            "nameAlternatives",
             "developer",
             "publisher",
         ];
@@ -766,7 +766,7 @@ impl<'de> serde::Deserialize<'de> for App {
             CoverImageUrl,
             CoverImageId,
             Tags,
-            AltNames,
+            NameAlternatives,
             Developer,
             Publisher,
         }
@@ -808,7 +808,7 @@ impl<'de> serde::Deserialize<'de> for App {
                             "coverImageUrl" | "cover_image_url" => Ok(GeneratedField::CoverImageUrl),
                             "coverImageId" | "cover_image_id" => Ok(GeneratedField::CoverImageId),
                             "tags" => Ok(GeneratedField::Tags),
-                            "altNames" | "alt_names" => Ok(GeneratedField::AltNames),
+                            "nameAlternatives" | "name_alternatives" => Ok(GeneratedField::NameAlternatives),
                             "developer" => Ok(GeneratedField::Developer),
                             "publisher" => Ok(GeneratedField::Publisher),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
@@ -848,7 +848,7 @@ impl<'de> serde::Deserialize<'de> for App {
                 let mut cover_image_url__ = None;
                 let mut cover_image_id__ = None;
                 let mut tags__ = None;
-                let mut alt_names__ = None;
+                let mut name_alternatives__ = None;
                 let mut developer__ = None;
                 let mut publisher__ = None;
                 while let Some(k) = map_.next_key()? {
@@ -965,11 +965,11 @@ impl<'de> serde::Deserialize<'de> for App {
                             }
                             tags__ = Some(map_.next_value()?);
                         }
-                        GeneratedField::AltNames => {
-                            if alt_names__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("altNames"));
+                        GeneratedField::NameAlternatives => {
+                            if name_alternatives__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("nameAlternatives"));
                             }
-                            alt_names__ = Some(map_.next_value()?);
+                            name_alternatives__ = Some(map_.next_value()?);
                         }
                         GeneratedField::Developer => {
                             if developer__.is_some() {
@@ -1004,7 +1004,7 @@ impl<'de> serde::Deserialize<'de> for App {
                     cover_image_url: cover_image_url__.unwrap_or_default(),
                     cover_image_id: cover_image_id__,
                     tags: tags__.unwrap_or_default(),
-                    alt_names: alt_names__.unwrap_or_default(),
+                    name_alternatives: name_alternatives__.unwrap_or_default(),
                     developer: developer__.unwrap_or_default(),
                     publisher: publisher__.unwrap_or_default(),
                 })
@@ -1226,7 +1226,7 @@ impl serde::Serialize for AppInfo {
         if !self.tags.is_empty() {
             len += 1;
         }
-        if !self.alt_names.is_empty() {
+        if !self.name_alternatives.is_empty() {
             len += 1;
         }
         if !self.developer.is_empty() {
@@ -1277,8 +1277,8 @@ impl serde::Serialize for AppInfo {
         if !self.tags.is_empty() {
             struct_ser.serialize_field("tags", &self.tags)?;
         }
-        if !self.alt_names.is_empty() {
-            struct_ser.serialize_field("altNames", &self.alt_names)?;
+        if !self.name_alternatives.is_empty() {
+            struct_ser.serialize_field("nameAlternatives", &self.name_alternatives)?;
         }
         if !self.developer.is_empty() {
             struct_ser.serialize_field("developer", &self.developer)?;
@@ -1317,8 +1317,8 @@ impl<'de> serde::Deserialize<'de> for AppInfo {
             "cover_image_id",
             "coverImageId",
             "tags",
-            "alt_names",
-            "altNames",
+            "name_alternatives",
+            "nameAlternatives",
             "developer",
             "publisher",
         ];
@@ -1338,7 +1338,7 @@ impl<'de> serde::Deserialize<'de> for AppInfo {
             CoverImageUrl,
             CoverImageId,
             Tags,
-            AltNames,
+            NameAlternatives,
             Developer,
             Publisher,
         }
@@ -1375,7 +1375,7 @@ impl<'de> serde::Deserialize<'de> for AppInfo {
                             "coverImageUrl" | "cover_image_url" => Ok(GeneratedField::CoverImageUrl),
                             "coverImageId" | "cover_image_id" => Ok(GeneratedField::CoverImageId),
                             "tags" => Ok(GeneratedField::Tags),
-                            "altNames" | "alt_names" => Ok(GeneratedField::AltNames),
+                            "nameAlternatives" | "name_alternatives" => Ok(GeneratedField::NameAlternatives),
                             "developer" => Ok(GeneratedField::Developer),
                             "publisher" => Ok(GeneratedField::Publisher),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
@@ -1410,7 +1410,7 @@ impl<'de> serde::Deserialize<'de> for AppInfo {
                 let mut cover_image_url__ = None;
                 let mut cover_image_id__ = None;
                 let mut tags__ = None;
-                let mut alt_names__ = None;
+                let mut name_alternatives__ = None;
                 let mut developer__ = None;
                 let mut publisher__ = None;
                 while let Some(k) = map_.next_key()? {
@@ -1493,11 +1493,11 @@ impl<'de> serde::Deserialize<'de> for AppInfo {
                             }
                             tags__ = Some(map_.next_value()?);
                         }
-                        GeneratedField::AltNames => {
-                            if alt_names__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("altNames"));
+                        GeneratedField::NameAlternatives => {
+                            if name_alternatives__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("nameAlternatives"));
                             }
-                            alt_names__ = Some(map_.next_value()?);
+                            name_alternatives__ = Some(map_.next_value()?);
                         }
                         GeneratedField::Developer => {
                             if developer__.is_some() {
@@ -1527,7 +1527,7 @@ impl<'de> serde::Deserialize<'de> for AppInfo {
                     cover_image_url: cover_image_url__.unwrap_or_default(),
                     cover_image_id: cover_image_id__,
                     tags: tags__.unwrap_or_default(),
-                    alt_names: alt_names__.unwrap_or_default(),
+                    name_alternatives: name_alternatives__.unwrap_or_default(),
                     developer: developer__.unwrap_or_default(),
                     publisher: publisher__.unwrap_or_default(),
                 })
@@ -19734,7 +19734,7 @@ impl serde::Serialize for StoreApp {
         if !self.tags.is_empty() {
             len += 1;
         }
-        if !self.alt_names.is_empty() {
+        if !self.name_alternatives.is_empty() {
             len += 1;
         }
         if !self.developer.is_empty() {
@@ -19776,8 +19776,8 @@ impl serde::Serialize for StoreApp {
         if !self.tags.is_empty() {
             struct_ser.serialize_field("tags", &self.tags)?;
         }
-        if !self.alt_names.is_empty() {
-            struct_ser.serialize_field("altNames", &self.alt_names)?;
+        if !self.name_alternatives.is_empty() {
+            struct_ser.serialize_field("nameAlternatives", &self.name_alternatives)?;
         }
         if !self.developer.is_empty() {
             struct_ser.serialize_field("developer", &self.developer)?;
@@ -19809,8 +19809,8 @@ impl<'de> serde::Deserialize<'de> for StoreApp {
             "cover_image_id",
             "coverImageId",
             "tags",
-            "alt_names",
-            "altNames",
+            "name_alternatives",
+            "nameAlternatives",
             "developer",
             "publisher",
         ];
@@ -19827,7 +19827,7 @@ impl<'de> serde::Deserialize<'de> for StoreApp {
             BackgroundImageId,
             CoverImageId,
             Tags,
-            AltNames,
+            NameAlternatives,
             Developer,
             Publisher,
         }
@@ -19861,7 +19861,7 @@ impl<'de> serde::Deserialize<'de> for StoreApp {
                             "backgroundImageId" | "background_image_id" => Ok(GeneratedField::BackgroundImageId),
                             "coverImageId" | "cover_image_id" => Ok(GeneratedField::CoverImageId),
                             "tags" => Ok(GeneratedField::Tags),
-                            "altNames" | "alt_names" => Ok(GeneratedField::AltNames),
+                            "nameAlternatives" | "name_alternatives" => Ok(GeneratedField::NameAlternatives),
                             "developer" => Ok(GeneratedField::Developer),
                             "publisher" => Ok(GeneratedField::Publisher),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
@@ -19893,7 +19893,7 @@ impl<'de> serde::Deserialize<'de> for StoreApp {
                 let mut background_image_id__ = None;
                 let mut cover_image_id__ = None;
                 let mut tags__ = None;
-                let mut alt_names__ = None;
+                let mut name_alternatives__ = None;
                 let mut developer__ = None;
                 let mut publisher__ = None;
                 while let Some(k) = map_.next_key()? {
@@ -19960,11 +19960,11 @@ impl<'de> serde::Deserialize<'de> for StoreApp {
                             }
                             tags__ = Some(map_.next_value()?);
                         }
-                        GeneratedField::AltNames => {
-                            if alt_names__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("altNames"));
+                        GeneratedField::NameAlternatives => {
+                            if name_alternatives__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("nameAlternatives"));
                             }
-                            alt_names__ = Some(map_.next_value()?);
+                            name_alternatives__ = Some(map_.next_value()?);
                         }
                         GeneratedField::Developer => {
                             if developer__.is_some() {
@@ -19991,7 +19991,7 @@ impl<'de> serde::Deserialize<'de> for StoreApp {
                     background_image_id: background_image_id__,
                     cover_image_id: cover_image_id__,
                     tags: tags__.unwrap_or_default(),
-                    alt_names: alt_names__.unwrap_or_default(),
+                    name_alternatives: name_alternatives__.unwrap_or_default(),
                     developer: developer__.unwrap_or_default(),
                     publisher: publisher__.unwrap_or_default(),
                 })

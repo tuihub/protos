@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: librarian/sephirah/v1/sephirah/netzach.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -16,6 +16,8 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import '../../../../google/protobuf/timestamp.pb.dart' as $7;
 import '../../../v1/wellknown.pb.dart' as $8;
 import 'netzach.pbenum.dart';
+
+export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 export 'netzach.pbenum.dart';
 
@@ -62,11 +64,11 @@ class CreateNotifyTargetRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   NotifyTarget get target => $_getN(0);
   @$pb.TagNumber(1)
-  set target(NotifyTarget v) { setField(1, v); }
+  set target(NotifyTarget v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasTarget() => $_has(0);
   @$pb.TagNumber(1)
-  void clearTarget() => clearField(1);
+  void clearTarget() => $_clearField(1);
   @$pb.TagNumber(1)
   NotifyTarget ensureTarget() => $_ensure(0);
 }
@@ -114,11 +116,11 @@ class CreateNotifyTargetResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($8.InternalID v) { setField(1, v); }
+  set id($8.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.InternalID ensureId() => $_ensure(0);
 }
@@ -166,11 +168,11 @@ class UpdateNotifyTargetRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   NotifyTarget get target => $_getN(0);
   @$pb.TagNumber(1)
-  set target(NotifyTarget v) { setField(1, v); }
+  set target(NotifyTarget v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasTarget() => $_has(0);
   @$pb.TagNumber(1)
-  void clearTarget() => clearField(1);
+  void clearTarget() => $_clearField(1);
   @$pb.TagNumber(1)
   NotifyTarget ensureTarget() => $_ensure(0);
 }
@@ -260,19 +262,19 @@ class ListNotifyTargetsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.PagingRequest get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($8.PagingRequest v) { setField(1, v); }
+  set paging($8.PagingRequest v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.PagingRequest ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<$8.InternalID> get idFilter => $_getList(1);
+  $pb.PbList<$8.InternalID> get idFilter => $_getList(1);
 
   @$pb.TagNumber(4)
-  $core.List<NotifyTargetStatus> get statusFilter => $_getList(2);
+  $pb.PbList<NotifyTargetStatus> get statusFilter => $_getList(2);
 }
 
 class ListNotifyTargetsResponse extends $pb.GeneratedMessage {
@@ -323,16 +325,16 @@ class ListNotifyTargetsResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.PagingResponse get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($8.PagingResponse v) { setField(1, v); }
+  set paging($8.PagingResponse v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<NotifyTarget> get targets => $_getList(1);
+  $pb.PbList<NotifyTarget> get targets => $_getList(1);
 }
 
 class CreateNotifyFlowRequest extends $pb.GeneratedMessage {
@@ -378,11 +380,11 @@ class CreateNotifyFlowRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   NotifyFlow get flow => $_getN(0);
   @$pb.TagNumber(1)
-  set flow(NotifyFlow v) { setField(1, v); }
+  set flow(NotifyFlow v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasFlow() => $_has(0);
   @$pb.TagNumber(1)
-  void clearFlow() => clearField(1);
+  void clearFlow() => $_clearField(1);
   @$pb.TagNumber(1)
   NotifyFlow ensureFlow() => $_ensure(0);
 }
@@ -430,11 +432,11 @@ class CreateNotifyFlowResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($8.InternalID v) { setField(1, v); }
+  set id($8.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.InternalID ensureId() => $_ensure(0);
 }
@@ -482,11 +484,11 @@ class UpdateNotifyFlowRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   NotifyFlow get flow => $_getN(0);
   @$pb.TagNumber(1)
-  set flow(NotifyFlow v) { setField(1, v); }
+  set flow(NotifyFlow v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasFlow() => $_has(0);
   @$pb.TagNumber(1)
-  void clearFlow() => clearField(1);
+  void clearFlow() => $_clearField(1);
   @$pb.TagNumber(1)
   NotifyFlow ensureFlow() => $_ensure(0);
 }
@@ -571,16 +573,16 @@ class ListNotifyFlowsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.PagingRequest get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($8.PagingRequest v) { setField(1, v); }
+  set paging($8.PagingRequest v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.PagingRequest ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<$8.InternalID> get idFilter => $_getList(1);
+  $pb.PbList<$8.InternalID> get idFilter => $_getList(1);
 }
 
 class ListNotifyFlowsResponse extends $pb.GeneratedMessage {
@@ -631,16 +633,16 @@ class ListNotifyFlowsResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.PagingResponse get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($8.PagingResponse v) { setField(1, v); }
+  set paging($8.PagingResponse v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<NotifyFlow> get flows => $_getList(1);
+  $pb.PbList<NotifyFlow> get flows => $_getList(1);
 }
 
 class NotifyTarget extends $pb.GeneratedMessage {
@@ -706,11 +708,11 @@ class NotifyTarget extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($8.InternalID v) { setField(1, v); }
+  set id($8.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.InternalID ensureId() => $_ensure(0);
 
@@ -721,7 +723,7 @@ class NotifyTarget extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearName() => clearField(2);
+  void clearName() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get description => $_getSZ(2);
@@ -730,28 +732,28 @@ class NotifyTarget extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasDescription() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDescription() => clearField(3);
+  void clearDescription() => $_clearField(3);
 
   /// WellKnownNotifyDestination
   @$pb.TagNumber(4)
   $8.FeatureRequest get destination => $_getN(3);
   @$pb.TagNumber(4)
-  set destination($8.FeatureRequest v) { setField(4, v); }
+  set destination($8.FeatureRequest v) { $_setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasDestination() => $_has(3);
   @$pb.TagNumber(4)
-  void clearDestination() => clearField(4);
+  void clearDestination() => $_clearField(4);
   @$pb.TagNumber(4)
   $8.FeatureRequest ensureDestination() => $_ensure(3);
 
   @$pb.TagNumber(5)
   NotifyTargetStatus get status => $_getN(4);
   @$pb.TagNumber(5)
-  set status(NotifyTargetStatus v) { setField(5, v); }
+  set status(NotifyTargetStatus v) { $_setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasStatus() => $_has(4);
   @$pb.TagNumber(5)
-  void clearStatus() => clearField(5);
+  void clearStatus() => $_clearField(5);
 }
 
 class NotifyFlow extends $pb.GeneratedMessage {
@@ -822,11 +824,11 @@ class NotifyFlow extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($8.InternalID v) { setField(1, v); }
+  set id($8.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.InternalID ensureId() => $_ensure(0);
 
@@ -837,7 +839,7 @@ class NotifyFlow extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearName() => clearField(2);
+  void clearName() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get description => $_getSZ(2);
@@ -846,22 +848,22 @@ class NotifyFlow extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasDescription() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDescription() => clearField(3);
+  void clearDescription() => $_clearField(3);
 
   @$pb.TagNumber(4)
-  $core.List<NotifyFlowSource> get sources => $_getList(3);
+  $pb.PbList<NotifyFlowSource> get sources => $_getList(3);
 
   @$pb.TagNumber(5)
-  $core.List<NotifyFlowTarget> get targets => $_getList(4);
+  $pb.PbList<NotifyFlowTarget> get targets => $_getList(4);
 
   @$pb.TagNumber(6)
   NotifyFlowStatus get status => $_getN(5);
   @$pb.TagNumber(6)
-  set status(NotifyFlowStatus v) { setField(6, v); }
+  set status(NotifyFlowStatus v) { $_setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasStatus() => $_has(5);
   @$pb.TagNumber(6)
-  void clearStatus() => clearField(6);
+  void clearStatus() => $_clearField(6);
 }
 
 class NotifyFlowSource extends $pb.GeneratedMessage {
@@ -912,11 +914,11 @@ class NotifyFlowSource extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   NotifyFilter get filter => $_getN(0);
   @$pb.TagNumber(1)
-  set filter(NotifyFilter v) { setField(1, v); }
+  set filter(NotifyFilter v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasFilter() => $_has(0);
   @$pb.TagNumber(1)
-  void clearFilter() => clearField(1);
+  void clearFilter() => $_clearField(1);
   @$pb.TagNumber(1)
   NotifyFilter ensureFilter() => $_ensure(0);
 
@@ -924,11 +926,11 @@ class NotifyFlowSource extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $8.InternalID get sourceId => $_getN(1);
   @$pb.TagNumber(2)
-  set sourceId($8.InternalID v) { setField(2, v); }
+  set sourceId($8.InternalID v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasSourceId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearSourceId() => clearField(2);
+  void clearSourceId() => $_clearField(2);
   @$pb.TagNumber(2)
   $8.InternalID ensureSourceId() => $_ensure(1);
 }
@@ -981,11 +983,11 @@ class NotifyFlowTarget extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   NotifyFilter get filter => $_getN(0);
   @$pb.TagNumber(1)
-  set filter(NotifyFilter v) { setField(1, v); }
+  set filter(NotifyFilter v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasFilter() => $_has(0);
   @$pb.TagNumber(1)
-  void clearFilter() => clearField(1);
+  void clearFilter() => $_clearField(1);
   @$pb.TagNumber(1)
   NotifyFilter ensureFilter() => $_ensure(0);
 
@@ -993,11 +995,11 @@ class NotifyFlowTarget extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $8.InternalID get targetId => $_getN(1);
   @$pb.TagNumber(2)
-  set targetId($8.InternalID v) { setField(2, v); }
+  set targetId($8.InternalID v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasTargetId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearTargetId() => clearField(2);
+  void clearTargetId() => $_clearField(2);
   @$pb.TagNumber(2)
   $8.InternalID ensureTargetId() => $_ensure(1);
 }
@@ -1048,10 +1050,10 @@ class NotifyFilter extends $pb.GeneratedMessage {
   static NotifyFilter? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$core.String> get excludeKeywords => $_getList(0);
+  $pb.PbList<$core.String> get excludeKeywords => $_getList(0);
 
   @$pb.TagNumber(2)
-  $core.List<$core.String> get includeKeywords => $_getList(1);
+  $pb.PbList<$core.String> get includeKeywords => $_getList(1);
 }
 
 class ListSystemNotificationsRequest extends $pb.GeneratedMessage {
@@ -1107,19 +1109,19 @@ class ListSystemNotificationsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.PagingRequest get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($8.PagingRequest v) { setField(1, v); }
+  set paging($8.PagingRequest v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.PagingRequest ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(3)
-  $core.List<SystemNotificationLevel> get levelFilter => $_getList(1);
+  $pb.PbList<SystemNotificationLevel> get levelFilter => $_getList(1);
 
   @$pb.TagNumber(4)
-  $core.List<SystemNotificationStatus> get statusFilter => $_getList(2);
+  $pb.PbList<SystemNotificationStatus> get statusFilter => $_getList(2);
 }
 
 class ListSystemNotificationsResponse extends $pb.GeneratedMessage {
@@ -1170,16 +1172,16 @@ class ListSystemNotificationsResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.PagingResponse get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($8.PagingResponse v) { setField(1, v); }
+  set paging($8.PagingResponse v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<SystemNotification> get notifications => $_getList(1);
+  $pb.PbList<SystemNotification> get notifications => $_getList(1);
 }
 
 class UpdateSystemNotificationRequest extends $pb.GeneratedMessage {
@@ -1230,22 +1232,22 @@ class UpdateSystemNotificationRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($8.InternalID v) { setField(1, v); }
+  set id($8.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.InternalID ensureId() => $_ensure(0);
 
   @$pb.TagNumber(2)
   SystemNotificationStatus get status => $_getN(1);
   @$pb.TagNumber(2)
-  set status(SystemNotificationStatus v) { setField(2, v); }
+  set status(SystemNotificationStatus v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasStatus() => $_has(1);
   @$pb.TagNumber(2)
-  void clearStatus() => clearField(2);
+  void clearStatus() => $_clearField(2);
 }
 
 class UpdateSystemNotificationResponse extends $pb.GeneratedMessage {
@@ -1353,31 +1355,31 @@ class SystemNotification extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($8.InternalID v) { setField(1, v); }
+  set id($8.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.InternalID ensureId() => $_ensure(0);
 
   @$pb.TagNumber(3)
   SystemNotificationLevel get level => $_getN(1);
   @$pb.TagNumber(3)
-  set level(SystemNotificationLevel v) { setField(3, v); }
+  set level(SystemNotificationLevel v) { $_setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasLevel() => $_has(1);
   @$pb.TagNumber(3)
-  void clearLevel() => clearField(3);
+  void clearLevel() => $_clearField(3);
 
   @$pb.TagNumber(4)
   SystemNotificationStatus get status => $_getN(2);
   @$pb.TagNumber(4)
-  set status(SystemNotificationStatus v) { setField(4, v); }
+  set status(SystemNotificationStatus v) { $_setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasStatus() => $_has(2);
   @$pb.TagNumber(4)
-  void clearStatus() => clearField(4);
+  void clearStatus() => $_clearField(4);
 
   @$pb.TagNumber(5)
   $core.String get title => $_getSZ(3);
@@ -1386,7 +1388,7 @@ class SystemNotification extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool hasTitle() => $_has(3);
   @$pb.TagNumber(5)
-  void clearTitle() => clearField(5);
+  void clearTitle() => $_clearField(5);
 
   /// plain text
   @$pb.TagNumber(6)
@@ -1396,27 +1398,27 @@ class SystemNotification extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.bool hasContent() => $_has(4);
   @$pb.TagNumber(6)
-  void clearContent() => clearField(6);
+  void clearContent() => $_clearField(6);
 
   @$pb.TagNumber(7)
   $7.Timestamp get createTime => $_getN(5);
   @$pb.TagNumber(7)
-  set createTime($7.Timestamp v) { setField(7, v); }
+  set createTime($7.Timestamp v) { $_setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasCreateTime() => $_has(5);
   @$pb.TagNumber(7)
-  void clearCreateTime() => clearField(7);
+  void clearCreateTime() => $_clearField(7);
   @$pb.TagNumber(7)
   $7.Timestamp ensureCreateTime() => $_ensure(5);
 
   @$pb.TagNumber(8)
   $7.Timestamp get updateTime => $_getN(6);
   @$pb.TagNumber(8)
-  set updateTime($7.Timestamp v) { setField(8, v); }
+  set updateTime($7.Timestamp v) { $_setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasUpdateTime() => $_has(6);
   @$pb.TagNumber(8)
-  void clearUpdateTime() => clearField(8);
+  void clearUpdateTime() => $_clearField(8);
   @$pb.TagNumber(8)
   $7.Timestamp ensureUpdateTime() => $_ensure(6);
 }

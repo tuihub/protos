@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: librarian/sephirah/v1/sephirah/binah.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -31,7 +31,7 @@ class ChunkTransferStatus extends $pb.ProtobufEnum {
   static final $core.Map<$core.int, ChunkTransferStatus> _byValue = $pb.ProtobufEnum.initByValue(values);
   static ChunkTransferStatus? valueOf($core.int value) => _byValue[value];
 
-  const ChunkTransferStatus._($core.int v, $core.String n) : super(v, n);
+  const ChunkTransferStatus._(super.v, super.n);
 }
 
 class FileTransferStatus extends $pb.ProtobufEnum {
@@ -52,7 +52,7 @@ class FileTransferStatus extends $pb.ProtobufEnum {
   static final $core.Map<$core.int, FileTransferStatus> _byValue = $pb.ProtobufEnum.initByValue(values);
   static FileTransferStatus? valueOf($core.int value) => _byValue[value];
 
-  const FileTransferStatus._($core.int v, $core.String n) : super(v, n);
+  const FileTransferStatus._(super.v, super.n);
 }
 
 

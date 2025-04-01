@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: librarian/porter/v1/gebura.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -123,7 +123,7 @@ const AppInfo$json = {
     {'1': 'background_image_url', '3': 10, '4': 1, '5': 9, '10': 'backgroundImageUrl'},
     {'1': 'cover_image_url', '3': 11, '4': 1, '5': 9, '10': 'coverImageUrl'},
     {'1': 'tags', '3': 12, '4': 3, '5': 9, '10': 'tags'},
-    {'1': 'alt_names', '3': 13, '4': 3, '5': 9, '10': 'altNames'},
+    {'1': 'name_alternatives', '3': 13, '4': 3, '5': 9, '10': 'nameAlternatives'},
   ],
   '8': [
     {'1': '_source_url'},
@@ -141,8 +141,8 @@ final $typed_data.Uint8List appInfoDescriptor = $convert.base64Decode(
     'BlEisKEXNob3J0X2Rlc2NyaXB0aW9uGAggASgJUhBzaG9ydERlc2NyaXB0aW9uEiQKDmljb25f'
     'aW1hZ2VfdXJsGAkgASgJUgxpY29uSW1hZ2VVcmwSMAoUYmFja2dyb3VuZF9pbWFnZV91cmwYCi'
     'ABKAlSEmJhY2tncm91bmRJbWFnZVVybBImCg9jb3Zlcl9pbWFnZV91cmwYCyABKAlSDWNvdmVy'
-    'SW1hZ2VVcmwSEgoEdGFncxgMIAMoCVIEdGFncxIbCglhbHRfbmFtZXMYDSADKAlSCGFsdE5hbW'
-    'VzQg0KC19zb3VyY2VfdXJsQgoKCF9kZXRhaWxz');
+    'SW1hZ2VVcmwSEgoEdGFncxgMIAMoCVIEdGFncxIrChFuYW1lX2FsdGVybmF0aXZlcxgNIAMoCV'
+    'IQbmFtZUFsdGVybmF0aXZlc0INCgtfc291cmNlX3VybEIKCghfZGV0YWlscw==');
 
 @$core.Deprecated('Use appInfoDetailsDescriptor instead')
 const AppInfoDetails$json = {

@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: librarian/sephirah/v1/angela/gebura.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -16,6 +16,8 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import '../../../v1/wellknown.pb.dart' as $4;
 import '../sephirah/gebura.pb.dart' as $6;
 import '../sephirah/gebura.pbenum.dart' as $6;
+
+export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 class SearchAppInfosRequest extends $pb.GeneratedMessage {
   factory SearchAppInfosRequest({
@@ -70,11 +72,11 @@ class SearchAppInfosRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $4.PagingRequest get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($4.PagingRequest v) { setField(1, v); }
+  set paging($4.PagingRequest v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
   $4.PagingRequest ensurePaging() => $_ensure(0);
 
@@ -85,10 +87,10 @@ class SearchAppInfosRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasNameLike() => $_has(1);
   @$pb.TagNumber(2)
-  void clearNameLike() => clearField(2);
+  void clearNameLike() => $_clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<$core.String> get sourceFilter => $_getList(2);
+  $pb.PbList<$core.String> get sourceFilter => $_getList(2);
 }
 
 class SearchAppInfosResponse extends $pb.GeneratedMessage {
@@ -139,16 +141,16 @@ class SearchAppInfosResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $4.PagingResponse get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($4.PagingResponse v) { setField(1, v); }
+  set paging($4.PagingResponse v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
   $4.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<$6.AppInfo> get appInfos => $_getList(1);
+  $pb.PbList<$6.AppInfo> get appInfos => $_getList(1);
 }
 
 class CreateStoreAppRequest extends $pb.GeneratedMessage {
@@ -194,11 +196,11 @@ class CreateStoreAppRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $6.StoreApp get storeApp => $_getN(0);
   @$pb.TagNumber(1)
-  set storeApp($6.StoreApp v) { setField(1, v); }
+  set storeApp($6.StoreApp v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasStoreApp() => $_has(0);
   @$pb.TagNumber(1)
-  void clearStoreApp() => clearField(1);
+  void clearStoreApp() => $_clearField(1);
   @$pb.TagNumber(1)
   $6.StoreApp ensureStoreApp() => $_ensure(0);
 }
@@ -246,11 +248,11 @@ class CreateStoreAppResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $4.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($4.InternalID v) { setField(1, v); }
+  set id($4.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
   @$pb.TagNumber(1)
   $4.InternalID ensureId() => $_ensure(0);
 }
@@ -298,11 +300,11 @@ class UpdateStoreAppRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $6.StoreApp get appInfo => $_getN(0);
   @$pb.TagNumber(1)
-  set appInfo($6.StoreApp v) { setField(1, v); }
+  set appInfo($6.StoreApp v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasAppInfo() => $_has(0);
   @$pb.TagNumber(1)
-  void clearAppInfo() => clearField(1);
+  void clearAppInfo() => $_clearField(1);
   @$pb.TagNumber(1)
   $6.StoreApp ensureAppInfo() => $_ensure(0);
 }
@@ -397,22 +399,22 @@ class ListStoreAppsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $4.PagingRequest get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($4.PagingRequest v) { setField(1, v); }
+  set paging($4.PagingRequest v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
   $4.PagingRequest ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(3)
-  $core.List<$core.String> get sourceFilter => $_getList(1);
+  $pb.PbList<$core.String> get sourceFilter => $_getList(1);
 
   @$pb.TagNumber(4)
-  $core.List<$6.AppType> get typeFilter => $_getList(2);
+  $pb.PbList<$6.AppType> get typeFilter => $_getList(2);
 
   @$pb.TagNumber(5)
-  $core.List<$4.InternalID> get idFilter => $_getList(3);
+  $pb.PbList<$4.InternalID> get idFilter => $_getList(3);
 }
 
 class ListStoreAppsResponse extends $pb.GeneratedMessage {
@@ -463,16 +465,16 @@ class ListStoreAppsResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $4.PagingResponse get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($4.PagingResponse v) { setField(1, v); }
+  set paging($4.PagingResponse v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
   $4.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<$6.StoreApp> get appInfos => $_getList(1);
+  $pb.PbList<$6.StoreApp> get appInfos => $_getList(1);
 }
 
 class ListStoreAppBinariesRequest extends $pb.GeneratedMessage {
@@ -528,19 +530,19 @@ class ListStoreAppBinariesRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $4.PagingRequest get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($4.PagingRequest v) { setField(1, v); }
+  set paging($4.PagingRequest v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
   $4.PagingRequest ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<$4.InternalID> get appIdFilter => $_getList(1);
+  $pb.PbList<$4.InternalID> get appIdFilter => $_getList(1);
 
   @$pb.TagNumber(3)
-  $core.List<$4.InternalID> get idFilter => $_getList(2);
+  $pb.PbList<$4.InternalID> get idFilter => $_getList(2);
 }
 
 class ListStoreAppBinariesResponse extends $pb.GeneratedMessage {
@@ -591,16 +593,16 @@ class ListStoreAppBinariesResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $4.PagingResponse get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($4.PagingResponse v) { setField(1, v); }
+  set paging($4.PagingResponse v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
   $4.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<$6.StoreAppBinary> get binaries => $_getList(1);
+  $pb.PbList<$6.StoreAppBinary> get binaries => $_getList(1);
 }
 
 class UpdateStoreAppBinaryRequest extends $pb.GeneratedMessage {
@@ -646,11 +648,11 @@ class UpdateStoreAppBinaryRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $6.StoreAppBinary get binary => $_getN(0);
   @$pb.TagNumber(1)
-  set binary($6.StoreAppBinary v) { setField(1, v); }
+  set binary($6.StoreAppBinary v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBinary() => $_has(0);
   @$pb.TagNumber(1)
-  void clearBinary() => clearField(1);
+  void clearBinary() => $_clearField(1);
   @$pb.TagNumber(1)
   $6.StoreAppBinary ensureBinary() => $_ensure(0);
 }
@@ -740,27 +742,27 @@ class ListStoreAppBinaryFilesRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $4.PagingRequest get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($4.PagingRequest v) { setField(1, v); }
+  set paging($4.PagingRequest v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
   $4.PagingRequest ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(3)
   $4.InternalID get appBinaryId => $_getN(1);
   @$pb.TagNumber(3)
-  set appBinaryId($4.InternalID v) { setField(3, v); }
+  set appBinaryId($4.InternalID v) { $_setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasAppBinaryId() => $_has(1);
   @$pb.TagNumber(3)
-  void clearAppBinaryId() => clearField(3);
+  void clearAppBinaryId() => $_clearField(3);
   @$pb.TagNumber(3)
   $4.InternalID ensureAppBinaryId() => $_ensure(1);
 
   @$pb.TagNumber(4)
-  $core.List<$4.InternalID> get idFilter => $_getList(2);
+  $pb.PbList<$4.InternalID> get idFilter => $_getList(2);
 }
 
 class ListStoreAppBinaryFilesResponse extends $pb.GeneratedMessage {
@@ -811,16 +813,16 @@ class ListStoreAppBinaryFilesResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $4.PagingResponse get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($4.PagingResponse v) { setField(1, v); }
+  set paging($4.PagingResponse v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
   $4.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<$6.StoreAppBinaryFile> get files => $_getList(1);
+  $pb.PbList<$6.StoreAppBinaryFile> get files => $_getList(1);
 }
 
 class CreateStoreAppSaveFileRequest extends $pb.GeneratedMessage {
@@ -866,11 +868,11 @@ class CreateStoreAppSaveFileRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $6.StoreAppSaveFile get saveFile => $_getN(0);
   @$pb.TagNumber(1)
-  set saveFile($6.StoreAppSaveFile v) { setField(1, v); }
+  set saveFile($6.StoreAppSaveFile v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasSaveFile() => $_has(0);
   @$pb.TagNumber(1)
-  void clearSaveFile() => clearField(1);
+  void clearSaveFile() => $_clearField(1);
   @$pb.TagNumber(1)
   $6.StoreAppSaveFile ensureSaveFile() => $_ensure(0);
 }
@@ -918,11 +920,11 @@ class CreateStoreAppSaveFileResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $4.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($4.InternalID v) { setField(1, v); }
+  set id($4.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
   @$pb.TagNumber(1)
   $4.InternalID ensureId() => $_ensure(0);
 }
@@ -970,11 +972,11 @@ class UpdateStoreAppSaveFileRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $6.StoreAppSaveFile get saveFile => $_getN(0);
   @$pb.TagNumber(1)
-  set saveFile($6.StoreAppSaveFile v) { setField(1, v); }
+  set saveFile($6.StoreAppSaveFile v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasSaveFile() => $_has(0);
   @$pb.TagNumber(1)
-  void clearSaveFile() => clearField(1);
+  void clearSaveFile() => $_clearField(1);
   @$pb.TagNumber(1)
   $6.StoreAppSaveFile ensureSaveFile() => $_ensure(0);
 }
@@ -1059,22 +1061,22 @@ class UploadStoreAppSaveFileRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $4.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($4.InternalID v) { setField(1, v); }
+  set id($4.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
   @$pb.TagNumber(1)
   $4.InternalID ensureId() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $4.FileMetadata get fileMetadata => $_getN(1);
   @$pb.TagNumber(2)
-  set fileMetadata($4.FileMetadata v) { setField(2, v); }
+  set fileMetadata($4.FileMetadata v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasFileMetadata() => $_has(1);
   @$pb.TagNumber(2)
-  void clearFileMetadata() => clearField(2);
+  void clearFileMetadata() => $_clearField(2);
   @$pb.TagNumber(2)
   $4.FileMetadata ensureFileMetadata() => $_ensure(1);
 }
@@ -1164,27 +1166,27 @@ class ListStoreAppSaveFilesRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $4.PagingRequest get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($4.PagingRequest v) { setField(1, v); }
+  set paging($4.PagingRequest v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
   $4.PagingRequest ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $4.InternalID get appId => $_getN(1);
   @$pb.TagNumber(2)
-  set appId($4.InternalID v) { setField(2, v); }
+  set appId($4.InternalID v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasAppId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearAppId() => clearField(2);
+  void clearAppId() => $_clearField(2);
   @$pb.TagNumber(2)
   $4.InternalID ensureAppId() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $core.List<$4.InternalID> get idFilter => $_getList(2);
+  $pb.PbList<$4.InternalID> get idFilter => $_getList(2);
 }
 
 class ListStoreAppSaveFilesResponse extends $pb.GeneratedMessage {
@@ -1235,16 +1237,16 @@ class ListStoreAppSaveFilesResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $4.PagingResponse get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($4.PagingResponse v) { setField(1, v); }
+  set paging($4.PagingResponse v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
   $4.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<$6.StoreAppSaveFile> get saveFiles => $_getList(1);
+  $pb.PbList<$6.StoreAppSaveFile> get saveFiles => $_getList(1);
 }
 
 class DeleteStoreAppSaveFileRequest extends $pb.GeneratedMessage {
@@ -1290,11 +1292,11 @@ class DeleteStoreAppSaveFileRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $4.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($4.InternalID v) { setField(1, v); }
+  set id($4.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
   @$pb.TagNumber(1)
   $4.InternalID ensureId() => $_ensure(0);
 }

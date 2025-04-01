@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: librarian/porter/v1/gebura.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -25,7 +25,7 @@ class AppType extends $pb.ProtobufEnum {
   static final $core.Map<$core.int, AppType> _byValue = $pb.ProtobufEnum.initByValue(values);
   static AppType? valueOf($core.int value) => _byValue[value];
 
-  const AppType._($core.int v, $core.String n) : super(v, n);
+  const AppType._(super.v, super.n);
 }
 
 

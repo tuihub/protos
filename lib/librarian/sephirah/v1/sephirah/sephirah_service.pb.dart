@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: librarian/sephirah/v1/sephirah/sephirah_service.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -16,6 +16,8 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import '../../../../google/protobuf/timestamp.pb.dart' as $7;
 import 'base.pb.dart' as $11;
 import 'sephirah_service.pbenum.dart';
+
+export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 export 'sephirah_service.pbenum.dart';
 
@@ -66,7 +68,7 @@ class GetServerInformationRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasWithStatusReport() => $_has(0);
   @$pb.TagNumber(1)
-  void clearWithStatusReport() => clearField(1);
+  void clearWithStatusReport() => $_clearField(1);
 }
 
 class GetServerInformationResponse extends $pb.GeneratedMessage {
@@ -112,11 +114,11 @@ class GetServerInformationResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $11.ServerInformation get serverInformation => $_getN(0);
   @$pb.TagNumber(1)
-  set serverInformation($11.ServerInformation v) { setField(1, v); }
+  set serverInformation($11.ServerInformation v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasServerInformation() => $_has(0);
   @$pb.TagNumber(1)
-  void clearServerInformation() => clearField(1);
+  void clearServerInformation() => $_clearField(1);
   @$pb.TagNumber(1)
   $11.ServerInformation ensureServerInformation() => $_ensure(0);
 }
@@ -206,20 +208,20 @@ class ListenServerEventResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   ServerEvent get event => $_getN(0);
   @$pb.TagNumber(1)
-  set event(ServerEvent v) { setField(1, v); }
+  set event(ServerEvent v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasEvent() => $_has(0);
   @$pb.TagNumber(1)
-  void clearEvent() => clearField(1);
+  void clearEvent() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $7.Timestamp get occurTime => $_getN(1);
   @$pb.TagNumber(2)
-  set occurTime($7.Timestamp v) { setField(2, v); }
+  set occurTime($7.Timestamp v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasOccurTime() => $_has(1);
   @$pb.TagNumber(2)
-  void clearOccurTime() => clearField(2);
+  void clearOccurTime() => $_clearField(2);
   @$pb.TagNumber(2)
   $7.Timestamp ensureOccurTime() => $_ensure(1);
 
@@ -231,7 +233,7 @@ class ListenServerEventResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasPayload() => $_has(2);
   @$pb.TagNumber(3)
-  void clearPayload() => clearField(3);
+  void clearPayload() => $_clearField(3);
 }
 
 

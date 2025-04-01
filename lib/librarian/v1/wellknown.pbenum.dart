@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: librarian/v1/wellknown.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -29,7 +29,7 @@ class FileType extends $pb.ProtobufEnum {
   static final $core.Map<$core.int, FileType> _byValue = $pb.ProtobufEnum.initByValue(values);
   static FileType? valueOf($core.int value) => _byValue[value];
 
-  const FileType._($core.int v, $core.String n) : super(v, n);
+  const FileType._(super.v, super.n);
 }
 
 class WellKnownAccountPlatform extends $pb.ProtobufEnum {
@@ -44,7 +44,7 @@ class WellKnownAccountPlatform extends $pb.ProtobufEnum {
   static final $core.Map<$core.int, WellKnownAccountPlatform> _byValue = $pb.ProtobufEnum.initByValue(values);
   static WellKnownAccountPlatform? valueOf($core.int value) => _byValue[value];
 
-  const WellKnownAccountPlatform._($core.int v, $core.String n) : super(v, n);
+  const WellKnownAccountPlatform._(super.v, super.n);
 }
 
 class WellKnownAppInfoSource extends $pb.ProtobufEnum {
@@ -63,7 +63,7 @@ class WellKnownAppInfoSource extends $pb.ProtobufEnum {
   static final $core.Map<$core.int, WellKnownAppInfoSource> _byValue = $pb.ProtobufEnum.initByValue(values);
   static WellKnownAppInfoSource? valueOf($core.int value) => _byValue[value];
 
-  const WellKnownAppInfoSource._($core.int v, $core.String n) : super(v, n);
+  const WellKnownAppInfoSource._(super.v, super.n);
 }
 
 class WellKnownFeedSource extends $pb.ProtobufEnum {
@@ -78,7 +78,7 @@ class WellKnownFeedSource extends $pb.ProtobufEnum {
   static final $core.Map<$core.int, WellKnownFeedSource> _byValue = $pb.ProtobufEnum.initByValue(values);
   static WellKnownFeedSource? valueOf($core.int value) => _byValue[value];
 
-  const WellKnownFeedSource._($core.int v, $core.String n) : super(v, n);
+  const WellKnownFeedSource._(super.v, super.n);
 }
 
 class WellKnownNotifyDestination extends $pb.ProtobufEnum {
@@ -93,12 +93,14 @@ class WellKnownNotifyDestination extends $pb.ProtobufEnum {
   static final $core.Map<$core.int, WellKnownNotifyDestination> _byValue = $pb.ProtobufEnum.initByValue(values);
   static WellKnownNotifyDestination? valueOf($core.int value) => _byValue[value];
 
-  const WellKnownNotifyDestination._($core.int v, $core.String n) : super(v, n);
+  const WellKnownNotifyDestination._(super.v, super.n);
 }
 
 class WellKnownFeedItemAction extends $pb.ProtobufEnum {
   static const WellKnownFeedItemAction WELL_KNOWN_FEED_ITEM_ACTION_UNSPECIFIED = WellKnownFeedItemAction._(0, _omitEnumNames ? '' : 'WELL_KNOWN_FEED_ITEM_ACTION_UNSPECIFIED');
+  /// filter item by keywords
   static const WellKnownFeedItemAction WELL_KNOWN_FEED_ITEM_ACTION_KEYWORD_FILTER = WellKnownFeedItemAction._(1, _omitEnumNames ? '' : 'WELL_KNOWN_FEED_ITEM_ACTION_KEYWORD_FILTER');
+  /// generate description form content
   static const WellKnownFeedItemAction WELL_KNOWN_FEED_ITEM_ACTION_DESCRIPTION_GENERATOR = WellKnownFeedItemAction._(2, _omitEnumNames ? '' : 'WELL_KNOWN_FEED_ITEM_ACTION_DESCRIPTION_GENERATOR');
 
   static const $core.List<WellKnownFeedItemAction> values = <WellKnownFeedItemAction> [
@@ -110,7 +112,7 @@ class WellKnownFeedItemAction extends $pb.ProtobufEnum {
   static final $core.Map<$core.int, WellKnownFeedItemAction> _byValue = $pb.ProtobufEnum.initByValue(values);
   static WellKnownFeedItemAction? valueOf($core.int value) => _byValue[value];
 
-  const WellKnownFeedItemAction._($core.int v, $core.String n) : super(v, n);
+  const WellKnownFeedItemAction._(super.v, super.n);
 }
 
 

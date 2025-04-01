@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: librarian/sephirah/v1/sentinel/sentinel_service.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -81,16 +81,16 @@ abstract class LibrarianSentinelServiceBase extends $grpc.Service {
         ($0.ReportAppBinariesResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$0.RefreshTokenResponse> refreshToken_Pre($grpc.ServiceCall call, $async.Future<$0.RefreshTokenRequest> request) async {
-    return refreshToken(call, await request);
+  $async.Future<$0.RefreshTokenResponse> refreshToken_Pre($grpc.ServiceCall $call, $async.Future<$0.RefreshTokenRequest> $request) async {
+    return refreshToken($call, await $request);
   }
 
-  $async.Future<$0.ReportSentinelInformationResponse> reportSentinelInformation_Pre($grpc.ServiceCall call, $async.Future<$0.ReportSentinelInformationRequest> request) async {
-    return reportSentinelInformation(call, await request);
+  $async.Future<$0.ReportSentinelInformationResponse> reportSentinelInformation_Pre($grpc.ServiceCall $call, $async.Future<$0.ReportSentinelInformationRequest> $request) async {
+    return reportSentinelInformation($call, await $request);
   }
 
-  $async.Future<$0.ReportAppBinariesResponse> reportAppBinaries_Pre($grpc.ServiceCall call, $async.Future<$0.ReportAppBinariesRequest> request) async {
-    return reportAppBinaries(call, await request);
+  $async.Future<$0.ReportAppBinariesResponse> reportAppBinaries_Pre($grpc.ServiceCall $call, $async.Future<$0.ReportAppBinariesRequest> $request) async {
+    return reportAppBinaries($call, await $request);
   }
 
   $async.Future<$0.RefreshTokenResponse> refreshToken($grpc.ServiceCall call, $0.RefreshTokenRequest request);

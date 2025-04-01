@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: librarian/miner/v1/miner.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -66,8 +66,8 @@ abstract class LibrarianMinerServiceBase extends $grpc.Service {
         ($0.RecognizeImageURLResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$0.RecognizeImageURLResponse> recognizeImageURL_Pre($grpc.ServiceCall call, $async.Future<$0.RecognizeImageURLRequest> request) async {
-    return recognizeImageURL(call, await request);
+  $async.Future<$0.RecognizeImageURLResponse> recognizeImageURL_Pre($grpc.ServiceCall $call, $async.Future<$0.RecognizeImageURLRequest> $request) async {
+    return recognizeImageURL($call, await $request);
   }
 
   $async.Future<$0.RecognizeImageBinaryResponse> recognizeImageBinary($grpc.ServiceCall call, $async.Stream<$0.RecognizeImageBinaryRequest> request);

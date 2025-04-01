@@ -111,9 +111,9 @@ func (x *RefreshTokenResponse) GetRefreshToken() string {
 }
 
 type ReportSentinelInformationRequest struct {
-	state                protoimpl.MessageState `protogen:"open.v1"`
-	Hostname             string                 `protobuf:"bytes,1,opt,name=hostname,proto3" json:"hostname,omitempty"`
-	HostnameAlternatives []string               `protobuf:"bytes,2,rep,name=hostname_alternatives,json=hostnameAlternatives,proto3" json:"hostname_alternatives,omitempty"`
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	Url             string                 `protobuf:"bytes,1,opt,name=url,proto3" json:"url,omitempty"`
+	UrlAlternatives []string               `protobuf:"bytes,2,rep,name=url_alternatives,json=urlAlternatives,proto3" json:"url_alternatives,omitempty"`
 	// valid when need_token is true
 	GetTokenUrlPath      string             `protobuf:"bytes,3,opt,name=get_token_url_path,json=getTokenUrlPath,proto3" json:"get_token_url_path,omitempty"`
 	DownloadFileBasePath string             `protobuf:"bytes,4,opt,name=download_file_base_path,json=downloadFileBasePath,proto3" json:"download_file_base_path,omitempty"`
@@ -152,16 +152,16 @@ func (*ReportSentinelInformationRequest) Descriptor() ([]byte, []int) {
 	return file_librarian_sephirah_v1_sentinel_sentinel_service_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *ReportSentinelInformationRequest) GetHostname() string {
+func (x *ReportSentinelInformationRequest) GetUrl() string {
 	if x != nil {
-		return x.Hostname
+		return x.Url
 	}
 	return ""
 }
 
-func (x *ReportSentinelInformationRequest) GetHostnameAlternatives() []string {
+func (x *ReportSentinelInformationRequest) GetUrlAlternatives() []string {
 	if x != nil {
-		return x.HostnameAlternatives
+		return x.UrlAlternatives
 	}
 	return nil
 }
@@ -524,10 +524,10 @@ const file_librarian_sephirah_v1_sentinel_sentinel_service_proto_rawDesc = "" +
 	"\x13RefreshTokenRequest\"^\n" +
 	"\x14RefreshTokenResponse\x12!\n" +
 	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\x12#\n" +
-	"\rrefresh_token\x18\x02 \x01(\tR\frefreshToken\"\xa6\x02\n" +
-	" ReportSentinelInformationRequest\x12\x1a\n" +
-	"\bhostname\x18\x01 \x01(\tR\bhostname\x123\n" +
-	"\x15hostname_alternatives\x18\x02 \x03(\tR\x14hostnameAlternatives\x12+\n" +
+	"\rrefresh_token\x18\x02 \x01(\tR\frefreshToken\"\x92\x02\n" +
+	" ReportSentinelInformationRequest\x12\x10\n" +
+	"\x03url\x18\x01 \x01(\tR\x03url\x12)\n" +
+	"\x10url_alternatives\x18\x02 \x03(\tR\x0furlAlternatives\x12+\n" +
 	"\x12get_token_url_path\x18\x03 \x01(\tR\x0fgetTokenUrlPath\x125\n" +
 	"\x17download_file_base_path\x18\x04 \x01(\tR\x14downloadFileBasePath\x12M\n" +
 	"\tlibraries\x18\x05 \x03(\v2/.librarian.sephirah.v1.sentinel.SentinelLibraryR\tlibraries\"#\n" +

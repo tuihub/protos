@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: librarian/sephirah/v1/angela/angela_service.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -15,6 +15,8 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../v1/wellknown.pb.dart' as $4;
 import '../sephirah/base.pb.dart' as $9;
+
+export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 class GetServerInformationRequest extends $pb.GeneratedMessage {
   factory GetServerInformationRequest({
@@ -63,7 +65,7 @@ class GetServerInformationRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasWithStatusReport() => $_has(0);
   @$pb.TagNumber(1)
-  void clearWithStatusReport() => clearField(1);
+  void clearWithStatusReport() => $_clearField(1);
 }
 
 class GetServerInformationResponse extends $pb.GeneratedMessage {
@@ -109,11 +111,11 @@ class GetServerInformationResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $9.ServerInformation get serverInformation => $_getN(0);
   @$pb.TagNumber(1)
-  set serverInformation($9.ServerInformation v) { setField(1, v); }
+  set serverInformation($9.ServerInformation v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasServerInformation() => $_has(0);
   @$pb.TagNumber(1)
-  void clearServerInformation() => clearField(1);
+  void clearServerInformation() => $_clearField(1);
   @$pb.TagNumber(1)
   $9.ServerInformation ensureServerInformation() => $_ensure(0);
 }
@@ -191,7 +193,7 @@ class GetServerConfigResponse extends $pb.GeneratedMessage {
   static GetServerConfigResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<ServerConfigSection> get sections => $_getList(0);
+  $pb.PbList<ServerConfigSection> get sections => $_getList(0);
 }
 
 class UpdateServerConfigRequest extends $pb.GeneratedMessage {
@@ -235,7 +237,7 @@ class UpdateServerConfigRequest extends $pb.GeneratedMessage {
   static UpdateServerConfigRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<ServerConfigItem> get items => $_getList(0);
+  $pb.PbList<ServerConfigItem> get items => $_getList(0);
 }
 
 class UpdateServerConfigResponse extends $pb.GeneratedMessage {
@@ -332,32 +334,32 @@ class ServerConfigSection extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $4.I18NString get name => $_getN(1);
   @$pb.TagNumber(2)
-  set name($4.I18NString v) { setField(2, v); }
+  set name($4.I18NString v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearName() => clearField(2);
+  void clearName() => $_clearField(2);
   @$pb.TagNumber(2)
   $4.I18NString ensureName() => $_ensure(1);
 
   @$pb.TagNumber(3)
   $4.I18NString get description => $_getN(2);
   @$pb.TagNumber(3)
-  set description($4.I18NString v) { setField(3, v); }
+  set description($4.I18NString v) { $_setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasDescription() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDescription() => clearField(3);
+  void clearDescription() => $_clearField(3);
   @$pb.TagNumber(3)
   $4.I18NString ensureDescription() => $_ensure(2);
 
   @$pb.TagNumber(4)
-  $core.List<ServerConfigItem> get items => $_getList(3);
+  $pb.PbList<ServerConfigItem> get items => $_getList(3);
 }
 
 class ServerConfigItem extends $pb.GeneratedMessage {
@@ -428,27 +430,27 @@ class ServerConfigItem extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $4.I18NString get name => $_getN(1);
   @$pb.TagNumber(2)
-  set name($4.I18NString v) { setField(2, v); }
+  set name($4.I18NString v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearName() => clearField(2);
+  void clearName() => $_clearField(2);
   @$pb.TagNumber(2)
   $4.I18NString ensureName() => $_ensure(1);
 
   @$pb.TagNumber(3)
   $4.I18NString get description => $_getN(2);
   @$pb.TagNumber(3)
-  set description($4.I18NString v) { setField(3, v); }
+  set description($4.I18NString v) { $_setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasDescription() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDescription() => clearField(3);
+  void clearDescription() => $_clearField(3);
   @$pb.TagNumber(3)
   $4.I18NString ensureDescription() => $_ensure(2);
 
@@ -459,7 +461,7 @@ class ServerConfigItem extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasDefaultValue() => $_has(3);
   @$pb.TagNumber(4)
-  void clearDefaultValue() => clearField(4);
+  void clearDefaultValue() => $_clearField(4);
 
   @$pb.TagNumber(5)
   $core.String get currentValue => $_getSZ(4);
@@ -468,7 +470,7 @@ class ServerConfigItem extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool hasCurrentValue() => $_has(4);
   @$pb.TagNumber(5)
-  void clearCurrentValue() => clearField(5);
+  void clearCurrentValue() => $_clearField(5);
 }
 
 class ServerConfigItemUpdate extends $pb.GeneratedMessage {
@@ -523,7 +525,7 @@ class ServerConfigItemUpdate extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get value => $_getSZ(1);
@@ -532,7 +534,7 @@ class ServerConfigItemUpdate extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasValue() => $_has(1);
   @$pb.TagNumber(2)
-  void clearValue() => clearField(2);
+  void clearValue() => $_clearField(2);
 }
 
 

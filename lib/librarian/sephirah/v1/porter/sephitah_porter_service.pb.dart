@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: librarian/sephirah/v1/porter/sephitah_porter_service.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -15,6 +15,8 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../v1/common.pb.dart' as $2;
 import '../../../v1/wellknown.pb.dart' as $1;
+
+export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 class AcquireUserTokenRequest extends $pb.GeneratedMessage {
   factory AcquireUserTokenRequest({
@@ -59,11 +61,11 @@ class AcquireUserTokenRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $1.InternalID get userId => $_getN(0);
   @$pb.TagNumber(1)
-  set userId($1.InternalID v) { setField(1, v); }
+  set userId($1.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasUserId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearUserId() => clearField(1);
+  void clearUserId() => $_clearField(1);
   @$pb.TagNumber(1)
   $1.InternalID ensureUserId() => $_ensure(0);
 }
@@ -115,7 +117,7 @@ class AcquireUserTokenResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasAccessToken() => $_has(0);
   @$pb.TagNumber(1)
-  void clearAccessToken() => clearField(1);
+  void clearAccessToken() => $_clearField(1);
 }
 
 class GetNotifyTargetItemsRequest extends $pb.GeneratedMessage {
@@ -166,22 +168,22 @@ class GetNotifyTargetItemsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $1.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($1.InternalID v) { setField(1, v); }
+  set id($1.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
   @$pb.TagNumber(1)
   $1.InternalID ensureId() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $1.PagingRequest get paging => $_getN(1);
   @$pb.TagNumber(2)
-  set paging($1.PagingRequest v) { setField(2, v); }
+  set paging($1.PagingRequest v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasPaging() => $_has(1);
   @$pb.TagNumber(2)
-  void clearPaging() => clearField(2);
+  void clearPaging() => $_clearField(2);
   @$pb.TagNumber(2)
   $1.PagingRequest ensurePaging() => $_ensure(1);
 }
@@ -239,27 +241,27 @@ class GetNotifyTargetItemsResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $1.PagingResponse get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($1.PagingResponse v) { setField(1, v); }
+  set paging($1.PagingResponse v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
   $1.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $1.FeatureRequest get destination => $_getN(1);
   @$pb.TagNumber(2)
-  set destination($1.FeatureRequest v) { setField(2, v); }
+  set destination($1.FeatureRequest v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasDestination() => $_has(1);
   @$pb.TagNumber(2)
-  void clearDestination() => clearField(2);
+  void clearDestination() => $_clearField(2);
   @$pb.TagNumber(2)
   $1.FeatureRequest ensureDestination() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $core.List<$2.FeedItem> get items => $_getList(2);
+  $pb.PbList<$2.FeedItem> get items => $_getList(2);
 }
 
 class UpsertFeedRequest extends $pb.GeneratedMessage {
@@ -310,22 +312,22 @@ class UpsertFeedRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $1.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($1.InternalID v) { setField(1, v); }
+  set id($1.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
   @$pb.TagNumber(1)
   $1.InternalID ensureId() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $2.Feed get data => $_getN(1);
   @$pb.TagNumber(2)
-  set data($2.Feed v) { setField(2, v); }
+  set data($2.Feed v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasData() => $_has(1);
   @$pb.TagNumber(2)
-  void clearData() => clearField(2);
+  void clearData() => $_clearField(2);
   @$pb.TagNumber(2)
   $2.Feed ensureData() => $_ensure(1);
 }
@@ -405,11 +407,11 @@ class GetFeedRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $1.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($1.InternalID v) { setField(1, v); }
+  set id($1.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
   @$pb.TagNumber(1)
   $1.InternalID ensureId() => $_ensure(0);
 }
@@ -457,11 +459,11 @@ class GetFeedResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $2.Feed get data => $_getN(0);
   @$pb.TagNumber(1)
-  set data($2.Feed v) { setField(1, v); }
+  set data($2.Feed v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasData() => $_has(0);
   @$pb.TagNumber(1)
-  void clearData() => clearField(1);
+  void clearData() => $_clearField(1);
   @$pb.TagNumber(1)
   $2.Feed ensureData() => $_ensure(0);
 }

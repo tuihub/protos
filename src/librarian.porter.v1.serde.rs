@@ -205,7 +205,7 @@ impl serde::Serialize for AppInfo {
         if !self.tags.is_empty() {
             len += 1;
         }
-        if !self.alt_names.is_empty() {
+        if !self.name_alternatives.is_empty() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.porter.v1.AppInfo", len)?;
@@ -247,8 +247,8 @@ impl serde::Serialize for AppInfo {
         if !self.tags.is_empty() {
             struct_ser.serialize_field("tags", &self.tags)?;
         }
-        if !self.alt_names.is_empty() {
-            struct_ser.serialize_field("altNames", &self.alt_names)?;
+        if !self.name_alternatives.is_empty() {
+            struct_ser.serialize_field("nameAlternatives", &self.name_alternatives)?;
         }
         struct_ser.end()
     }
@@ -279,8 +279,8 @@ impl<'de> serde::Deserialize<'de> for AppInfo {
             "cover_image_url",
             "coverImageUrl",
             "tags",
-            "alt_names",
-            "altNames",
+            "name_alternatives",
+            "nameAlternatives",
         ];
 
         #[allow(clippy::enum_variant_names)]
@@ -297,7 +297,7 @@ impl<'de> serde::Deserialize<'de> for AppInfo {
             BackgroundImageUrl,
             CoverImageUrl,
             Tags,
-            AltNames,
+            NameAlternatives,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -331,7 +331,7 @@ impl<'de> serde::Deserialize<'de> for AppInfo {
                             "backgroundImageUrl" | "background_image_url" => Ok(GeneratedField::BackgroundImageUrl),
                             "coverImageUrl" | "cover_image_url" => Ok(GeneratedField::CoverImageUrl),
                             "tags" => Ok(GeneratedField::Tags),
-                            "altNames" | "alt_names" => Ok(GeneratedField::AltNames),
+                            "nameAlternatives" | "name_alternatives" => Ok(GeneratedField::NameAlternatives),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -363,7 +363,7 @@ impl<'de> serde::Deserialize<'de> for AppInfo {
                 let mut background_image_url__ = None;
                 let mut cover_image_url__ = None;
                 let mut tags__ = None;
-                let mut alt_names__ = None;
+                let mut name_alternatives__ = None;
                 while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Source => {
@@ -438,11 +438,11 @@ impl<'de> serde::Deserialize<'de> for AppInfo {
                             }
                             tags__ = Some(map_.next_value()?);
                         }
-                        GeneratedField::AltNames => {
-                            if alt_names__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("altNames"));
+                        GeneratedField::NameAlternatives => {
+                            if name_alternatives__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("nameAlternatives"));
                             }
-                            alt_names__ = Some(map_.next_value()?);
+                            name_alternatives__ = Some(map_.next_value()?);
                         }
                     }
                 }
@@ -459,7 +459,7 @@ impl<'de> serde::Deserialize<'de> for AppInfo {
                     background_image_url: background_image_url__.unwrap_or_default(),
                     cover_image_url: cover_image_url__.unwrap_or_default(),
                     tags: tags__.unwrap_or_default(),
-                    alt_names: alt_names__.unwrap_or_default(),
+                    name_alternatives: name_alternatives__.unwrap_or_default(),
                 })
             }
         }

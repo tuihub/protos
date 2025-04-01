@@ -184,10 +184,10 @@ export class AppInfo extends jspb.Message {
   setTagsList(value: Array<string>): void;
   addTags(value: string, index?: number): string;
 
-  clearAltNamesList(): void;
-  getAltNamesList(): Array<string>;
-  setAltNamesList(value: Array<string>): void;
-  addAltNames(value: string, index?: number): string;
+  clearNameAlternativesList(): void;
+  getNameAlternativesList(): Array<string>;
+  setNameAlternativesList(value: Array<string>): void;
+  addNameAlternatives(value: string, index?: number): string;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AppInfo.AsObject;
@@ -213,7 +213,7 @@ export namespace AppInfo {
     backgroundImageUrl: string,
     coverImageUrl: string,
     tagsList: Array<string>,
-    altNamesList: Array<string>,
+    nameAlternativesList: Array<string>,
   }
 }
 

@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: librarian/sephirah/v1/sephirah/gebura.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -851,7 +851,7 @@ const AppInfo$json = {
     {'1': 'cover_image_url', '3': 17, '4': 1, '5': 9, '10': 'coverImageUrl'},
     {'1': 'cover_image_id', '3': 18, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'coverImageId'},
     {'1': 'tags', '3': 19, '4': 3, '5': 9, '10': 'tags'},
-    {'1': 'alt_names', '3': 20, '4': 3, '5': 9, '10': 'altNames'},
+    {'1': 'name_alternatives', '3': 20, '4': 3, '5': 9, '10': 'nameAlternatives'},
     {'1': 'developer', '3': 21, '4': 1, '5': 9, '10': 'developer'},
     {'1': 'publisher', '3': 22, '4': 1, '5': 9, '10': 'publisher'},
   ],
@@ -872,9 +872,9 @@ final $typed_data.Uint8List appInfoDescriptor = $convert.base64Decode(
     'dlX2lkGBAgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSEWJhY2tncm91bmRJbWFnZUlk'
     'EiYKD2NvdmVyX2ltYWdlX3VybBgRIAEoCVINY292ZXJJbWFnZVVybBI+Cg5jb3Zlcl9pbWFnZV'
     '9pZBgSIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgxjb3ZlckltYWdlSWQSEgoEdGFn'
-    'cxgTIAMoCVIEdGFncxIbCglhbHRfbmFtZXMYFCADKAlSCGFsdE5hbWVzEhwKCWRldmVsb3Blch'
-    'gVIAEoCVIJZGV2ZWxvcGVyEhwKCXB1Ymxpc2hlchgWIAEoCVIJcHVibGlzaGVyQg0KC19zb3Vy'
-    'Y2VfdXJs');
+    'cxgTIAMoCVIEdGFncxIrChFuYW1lX2FsdGVybmF0aXZlcxgUIAMoCVIQbmFtZUFsdGVybmF0aX'
+    'ZlcxIcCglkZXZlbG9wZXIYFSABKAlSCWRldmVsb3BlchIcCglwdWJsaXNoZXIYFiABKAlSCXB1'
+    'Ymxpc2hlckINCgtfc291cmNlX3VybA==');
 
 @$core.Deprecated('Use storeAppSummaryDescriptor instead')
 const StoreAppSummary$json = {
@@ -915,7 +915,7 @@ const StoreApp$json = {
     {'1': 'background_image_id', '3': 24, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'backgroundImageId'},
     {'1': 'cover_image_id', '3': 25, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'coverImageId'},
     {'1': 'tags', '3': 26, '4': 3, '5': 9, '10': 'tags'},
-    {'1': 'alt_names', '3': 27, '4': 3, '5': 9, '10': 'altNames'},
+    {'1': 'name_alternatives', '3': 27, '4': 3, '5': 9, '10': 'nameAlternatives'},
     {'1': 'developer', '3': 28, '4': 1, '5': 9, '10': 'developer'},
     {'1': 'publisher', '3': 29, '4': 1, '5': 9, '10': 'publisher'},
   ],
@@ -943,10 +943,10 @@ final $typed_data.Uint8List storeAppDescriptor = $convert.base64Decode(
     'LkludGVybmFsSURSC2ljb25JbWFnZUlkEkgKE2JhY2tncm91bmRfaW1hZ2VfaWQYGCABKAsyGC'
     '5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIRYmFja2dyb3VuZEltYWdlSWQSPgoOY292ZXJfaW1h'
     'Z2VfaWQYGSABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIMY292ZXJJbWFnZUlkEhIKBH'
-    'RhZ3MYGiADKAlSBHRhZ3MSGwoJYWx0X25hbWVzGBsgAygJUghhbHROYW1lcxIcCglkZXZlbG9w'
-    'ZXIYHCABKAlSCWRldmVsb3BlchIcCglwdWJsaXNoZXIYHSABKAlSCXB1Ymxpc2hlchpBChNCb3'
-    'VuZEFwcFNvdXJjZUVudHJ5EhAKA2tleRgBIAEoCVIDa2V5EhQKBXZhbHVlGAIgASgJUgV2YWx1'
-    'ZToCOAE=');
+    'RhZ3MYGiADKAlSBHRhZ3MSKwoRbmFtZV9hbHRlcm5hdGl2ZXMYGyADKAlSEG5hbWVBbHRlcm5h'
+    'dGl2ZXMSHAoJZGV2ZWxvcGVyGBwgASgJUglkZXZlbG9wZXISHAoJcHVibGlzaGVyGB0gASgJUg'
+    'lwdWJsaXNoZXIaQQoTQm91bmRBcHBTb3VyY2VFbnRyeRIQCgNrZXkYASABKAlSA2tleRIUCgV2'
+    'YWx1ZRgCIAEoCVIFdmFsdWU6AjgB');
 
 @$core.Deprecated('Use storeAppDigestDescriptor instead')
 const StoreAppDigest$json = {
@@ -1049,7 +1049,7 @@ const App$json = {
     {'1': 'cover_image_url', '3': 27, '4': 1, '5': 9, '10': 'coverImageUrl'},
     {'1': 'cover_image_id', '3': 28, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'coverImageId'},
     {'1': 'tags', '3': 29, '4': 3, '5': 9, '10': 'tags'},
-    {'1': 'alt_names', '3': 30, '4': 3, '5': 9, '10': 'altNames'},
+    {'1': 'name_alternatives', '3': 30, '4': 3, '5': 9, '10': 'nameAlternatives'},
     {'1': 'developer', '3': 31, '4': 1, '5': 9, '10': 'developer'},
     {'1': 'publisher', '3': 32, '4': 1, '5': 9, '10': 'publisher'},
   ],
@@ -1088,11 +1088,11 @@ final $typed_data.Uint8List appDescriptor = $convert.base64Decode(
     'oTYmFja2dyb3VuZF9pbWFnZV9pZBgaIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUhFi'
     'YWNrZ3JvdW5kSW1hZ2VJZBImCg9jb3Zlcl9pbWFnZV91cmwYGyABKAlSDWNvdmVySW1hZ2VVcm'
     'wSPgoOY292ZXJfaW1hZ2VfaWQYHCABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJRFIMY292'
-    'ZXJJbWFnZUlkEhIKBHRhZ3MYHSADKAlSBHRhZ3MSGwoJYWx0X25hbWVzGB4gAygJUghhbHROYW'
-    '1lcxIcCglkZXZlbG9wZXIYHyABKAlSCWRldmVsb3BlchIcCglwdWJsaXNoZXIYICABKAlSCXB1'
-    'Ymxpc2hlcho9Cg9BcHBTb3VyY2VzRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSFAoFdmFsdWUYAi'
-    'ABKAlSBXZhbHVlOgI4AUIVChNfYm91bmRfc3RvcmVfYXBwX2lkQhQKEl9zdG9wX3N0b3JlX21h'
-    'bmFnZQ==');
+    'ZXJJbWFnZUlkEhIKBHRhZ3MYHSADKAlSBHRhZ3MSKwoRbmFtZV9hbHRlcm5hdGl2ZXMYHiADKA'
+    'lSEG5hbWVBbHRlcm5hdGl2ZXMSHAoJZGV2ZWxvcGVyGB8gASgJUglkZXZlbG9wZXISHAoJcHVi'
+    'bGlzaGVyGCAgASgJUglwdWJsaXNoZXIaPQoPQXBwU291cmNlc0VudHJ5EhAKA2tleRgBIAEoCV'
+    'IDa2V5EhQKBXZhbHVlGAIgASgJUgV2YWx1ZToCOAFCFQoTX2JvdW5kX3N0b3JlX2FwcF9pZEIU'
+    'ChJfc3RvcF9zdG9yZV9tYW5hZ2U=');
 
 @$core.Deprecated('Use appCategoryDescriptor instead')
 const AppCategory$json = {

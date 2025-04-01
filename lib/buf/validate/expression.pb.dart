@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: buf/validate/expression.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -12,6 +12,8 @@
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
+
+export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 ///  `Constraint` represents a validation rule written in the Common Expression
 ///  Language (CEL) syntax. Each Constraint includes a unique identifier, an
@@ -87,7 +89,7 @@ class Constraint extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 
   /// `message` is an optional field that provides a human-readable error message
   /// for this Constraint when the CEL expression evaluates to false. If a
@@ -100,7 +102,7 @@ class Constraint extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasMessage() => $_has(1);
   @$pb.TagNumber(2)
-  void clearMessage() => clearField(2);
+  void clearMessage() => $_clearField(2);
 
   /// `expression` is the actual CEL expression that will be evaluated for
   /// validation. This string must resolve to either a boolean or a string
@@ -113,7 +115,7 @@ class Constraint extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasExpression() => $_has(2);
   @$pb.TagNumber(3)
-  void clearExpression() => clearField(3);
+  void clearExpression() => $_clearField(3);
 }
 
 /// `Violations` is a collection of `Violation` messages. This message type is returned by
@@ -161,7 +163,7 @@ class Violations extends $pb.GeneratedMessage {
 
   /// `violations` is a repeated field that contains all the `Violation` messages corresponding to the violations detected.
   @$pb.TagNumber(1)
-  $core.List<Violation> get violations => $_getList(0);
+  $pb.PbList<Violation> get violations => $_getList(0);
 }
 
 ///  `Violation` represents a single instance where a validation rule, expressed
@@ -235,7 +237,7 @@ class Violation extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasFieldPath() => $_has(0);
   @$pb.TagNumber(1)
-  void clearFieldPath() => clearField(1);
+  void clearFieldPath() => $_clearField(1);
 
   /// `constraint_id` is the unique identifier of the `Constraint` that was not fulfilled.
   /// This is the same `id` that was specified in the `Constraint` message, allowing easy tracing of which rule was violated.
@@ -246,7 +248,7 @@ class Violation extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasConstraintId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearConstraintId() => clearField(2);
+  void clearConstraintId() => $_clearField(2);
 
   /// `message` is a human-readable error message that describes the nature of the violation.
   /// This can be the default error message from the violated `Constraint`, or it can be a custom message that gives more context about the violation.
@@ -257,7 +259,7 @@ class Violation extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasMessage() => $_has(2);
   @$pb.TagNumber(3)
-  void clearMessage() => clearField(3);
+  void clearMessage() => $_clearField(3);
 }
 
 

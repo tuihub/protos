@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: librarian/miner/v1/miner.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -12,6 +12,8 @@
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
+
+export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 class RecognizeImageBinaryRequest extends $pb.GeneratedMessage {
   factory RecognizeImageBinaryRequest({
@@ -60,7 +62,7 @@ class RecognizeImageBinaryRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasData() => $_has(0);
   @$pb.TagNumber(1)
-  void clearData() => clearField(1);
+  void clearData() => $_clearField(1);
 }
 
 class RecognizeImageBinaryResponse extends $pb.GeneratedMessage {
@@ -104,7 +106,7 @@ class RecognizeImageBinaryResponse extends $pb.GeneratedMessage {
   static RecognizeImageBinaryResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<RecognizeImageResult> get results => $_getList(0);
+  $pb.PbList<RecognizeImageResult> get results => $_getList(0);
 }
 
 class RecognizeImageURLRequest extends $pb.GeneratedMessage {
@@ -154,7 +156,7 @@ class RecognizeImageURLRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasUrl() => $_has(0);
   @$pb.TagNumber(1)
-  void clearUrl() => clearField(1);
+  void clearUrl() => $_clearField(1);
 }
 
 class RecognizeImageURLResponse extends $pb.GeneratedMessage {
@@ -198,7 +200,7 @@ class RecognizeImageURLResponse extends $pb.GeneratedMessage {
   static RecognizeImageURLResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<RecognizeImageResult> get results => $_getList(0);
+  $pb.PbList<RecognizeImageResult> get results => $_getList(0);
 }
 
 class RecognizeImageResult extends $pb.GeneratedMessage {
@@ -253,7 +255,7 @@ class RecognizeImageResult extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasConfidence() => $_has(0);
   @$pb.TagNumber(1)
-  void clearConfidence() => clearField(1);
+  void clearConfidence() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get text => $_getSZ(1);
@@ -262,7 +264,7 @@ class RecognizeImageResult extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasText() => $_has(1);
   @$pb.TagNumber(2)
-  void clearText() => clearField(2);
+  void clearText() => $_clearField(2);
 }
 
 

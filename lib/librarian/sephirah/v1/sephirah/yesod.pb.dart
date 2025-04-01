@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: librarian/sephirah/v1/sephirah/yesod.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -19,6 +19,8 @@ import '../../../../google/protobuf/timestamp.pb.dart' as $7;
 import '../../../v1/common.pb.dart' as $10;
 import '../../../v1/wellknown.pb.dart' as $8;
 import 'yesod.pbenum.dart';
+
+export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 export 'yesod.pbenum.dart';
 
@@ -65,11 +67,11 @@ class CreateFeedConfigRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   FeedConfig get config => $_getN(0);
   @$pb.TagNumber(1)
-  set config(FeedConfig v) { setField(1, v); }
+  set config(FeedConfig v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasConfig() => $_has(0);
   @$pb.TagNumber(1)
-  void clearConfig() => clearField(1);
+  void clearConfig() => $_clearField(1);
   @$pb.TagNumber(1)
   FeedConfig ensureConfig() => $_ensure(0);
 }
@@ -117,11 +119,11 @@ class CreateFeedConfigResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($8.InternalID v) { setField(1, v); }
+  set id($8.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.InternalID ensureId() => $_ensure(0);
 }
@@ -169,11 +171,11 @@ class UpdateFeedConfigRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   FeedConfig get config => $_getN(0);
   @$pb.TagNumber(1)
-  set config(FeedConfig v) { setField(1, v); }
+  set config(FeedConfig v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasConfig() => $_has(0);
   @$pb.TagNumber(1)
-  void clearConfig() => clearField(1);
+  void clearConfig() => $_clearField(1);
   @$pb.TagNumber(1)
   FeedConfig ensureConfig() => $_ensure(0);
 }
@@ -268,22 +270,22 @@ class ListFeedConfigsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.PagingRequest get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($8.PagingRequest v) { setField(1, v); }
+  set paging($8.PagingRequest v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.PagingRequest ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<$8.InternalID> get idFilter => $_getList(1);
+  $pb.PbList<$8.InternalID> get idFilter => $_getList(1);
 
   @$pb.TagNumber(5)
-  $core.List<FeedConfigStatus> get statusFilter => $_getList(2);
+  $pb.PbList<FeedConfigStatus> get statusFilter => $_getList(2);
 
   @$pb.TagNumber(6)
-  $core.List<$core.String> get categoryFilter => $_getList(3);
+  $pb.PbList<$core.String> get categoryFilter => $_getList(3);
 }
 
 class ListFeedConfigsResponse_FeedWithConfig extends $pb.GeneratedMessage {
@@ -334,22 +336,22 @@ class ListFeedConfigsResponse_FeedWithConfig extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $10.Feed get feed => $_getN(0);
   @$pb.TagNumber(1)
-  set feed($10.Feed v) { setField(1, v); }
+  set feed($10.Feed v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasFeed() => $_has(0);
   @$pb.TagNumber(1)
-  void clearFeed() => clearField(1);
+  void clearFeed() => $_clearField(1);
   @$pb.TagNumber(1)
   $10.Feed ensureFeed() => $_ensure(0);
 
   @$pb.TagNumber(2)
   FeedConfig get config => $_getN(1);
   @$pb.TagNumber(2)
-  set config(FeedConfig v) { setField(2, v); }
+  set config(FeedConfig v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasConfig() => $_has(1);
   @$pb.TagNumber(2)
-  void clearConfig() => clearField(2);
+  void clearConfig() => $_clearField(2);
   @$pb.TagNumber(2)
   FeedConfig ensureConfig() => $_ensure(1);
 }
@@ -402,16 +404,16 @@ class ListFeedConfigsResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.PagingResponse get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($8.PagingResponse v) { setField(1, v); }
+  set paging($8.PagingResponse v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<ListFeedConfigsResponse_FeedWithConfig> get feedsWithConfig => $_getList(1);
+  $pb.PbList<ListFeedConfigsResponse_FeedWithConfig> get feedsWithConfig => $_getList(1);
 }
 
 class CreateFeedActionSetRequest extends $pb.GeneratedMessage {
@@ -457,11 +459,11 @@ class CreateFeedActionSetRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   FeedActionSet get actionSet => $_getN(0);
   @$pb.TagNumber(1)
-  set actionSet(FeedActionSet v) { setField(1, v); }
+  set actionSet(FeedActionSet v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasActionSet() => $_has(0);
   @$pb.TagNumber(1)
-  void clearActionSet() => clearField(1);
+  void clearActionSet() => $_clearField(1);
   @$pb.TagNumber(1)
   FeedActionSet ensureActionSet() => $_ensure(0);
 }
@@ -509,11 +511,11 @@ class CreateFeedActionSetResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($8.InternalID v) { setField(1, v); }
+  set id($8.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.InternalID ensureId() => $_ensure(0);
 }
@@ -561,11 +563,11 @@ class UpdateFeedActionSetRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   FeedActionSet get actionSet => $_getN(0);
   @$pb.TagNumber(1)
-  set actionSet(FeedActionSet v) { setField(1, v); }
+  set actionSet(FeedActionSet v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasActionSet() => $_has(0);
   @$pb.TagNumber(1)
-  void clearActionSet() => clearField(1);
+  void clearActionSet() => $_clearField(1);
   @$pb.TagNumber(1)
   FeedActionSet ensureActionSet() => $_ensure(0);
 }
@@ -645,11 +647,11 @@ class ListFeedActionSetsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.PagingRequest get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($8.PagingRequest v) { setField(1, v); }
+  set paging($8.PagingRequest v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.PagingRequest ensurePaging() => $_ensure(0);
 }
@@ -702,16 +704,16 @@ class ListFeedActionSetsResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.PagingResponse get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($8.PagingResponse v) { setField(1, v); }
+  set paging($8.PagingResponse v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<FeedActionSet> get actionSets => $_getList(1);
+  $pb.PbList<FeedActionSet> get actionSets => $_getList(1);
 }
 
 class ListFeedCategoriesRequest extends $pb.GeneratedMessage {
@@ -787,7 +789,7 @@ class ListFeedCategoriesResponse extends $pb.GeneratedMessage {
   static ListFeedCategoriesResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$core.String> get categories => $_getList(0);
+  $pb.PbList<$core.String> get categories => $_getList(0);
 }
 
 class ListFeedPlatformsRequest extends $pb.GeneratedMessage {
@@ -863,7 +865,7 @@ class ListFeedPlatformsResponse extends $pb.GeneratedMessage {
   static ListFeedPlatformsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$core.String> get platforms => $_getList(0);
+  $pb.PbList<$core.String> get platforms => $_getList(0);
 }
 
 class ListFeedItemsRequest extends $pb.GeneratedMessage {
@@ -934,34 +936,34 @@ class ListFeedItemsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.PagingRequest get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($8.PagingRequest v) { setField(1, v); }
+  set paging($8.PagingRequest v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.PagingRequest ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<$8.InternalID> get feedIdFilter => $_getList(1);
+  $pb.PbList<$8.InternalID> get feedIdFilter => $_getList(1);
 
   @$pb.TagNumber(3)
-  $core.List<$core.String> get authorFilter => $_getList(2);
+  $pb.PbList<$core.String> get authorFilter => $_getList(2);
 
   @$pb.TagNumber(4)
-  $core.List<$core.String> get publishPlatformFilter => $_getList(3);
+  $pb.PbList<$core.String> get publishPlatformFilter => $_getList(3);
 
   @$pb.TagNumber(5)
-  $core.List<$core.String> get categoryFilter => $_getList(4);
+  $pb.PbList<$core.String> get categoryFilter => $_getList(4);
 
   @$pb.TagNumber(6)
   $8.TimeRange get publishTimeRange => $_getN(5);
   @$pb.TagNumber(6)
-  set publishTimeRange($8.TimeRange v) { setField(6, v); }
+  set publishTimeRange($8.TimeRange v) { $_setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasPublishTimeRange() => $_has(5);
   @$pb.TagNumber(6)
-  void clearPublishTimeRange() => clearField(6);
+  void clearPublishTimeRange() => $_clearField(6);
   @$pb.TagNumber(6)
   $8.TimeRange ensurePublishTimeRange() => $_ensure(5);
 }
@@ -1014,16 +1016,16 @@ class ListFeedItemsResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.PagingResponse get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($8.PagingResponse v) { setField(1, v); }
+  set paging($8.PagingResponse v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<FeedItemDigest> get items => $_getList(1);
+  $pb.PbList<FeedItemDigest> get items => $_getList(1);
 }
 
 class GetFeedItemRequest extends $pb.GeneratedMessage {
@@ -1069,11 +1071,11 @@ class GetFeedItemRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($8.InternalID v) { setField(1, v); }
+  set id($8.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.InternalID ensureId() => $_ensure(0);
 }
@@ -1121,11 +1123,11 @@ class GetFeedItemResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $10.FeedItem get item => $_getN(0);
   @$pb.TagNumber(1)
-  set item($10.FeedItem v) { setField(1, v); }
+  set item($10.FeedItem v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasItem() => $_has(0);
   @$pb.TagNumber(1)
-  void clearItem() => clearField(1);
+  void clearItem() => $_clearField(1);
   @$pb.TagNumber(1)
   $10.FeedItem ensureItem() => $_ensure(0);
 }
@@ -1171,7 +1173,7 @@ class GetBatchFeedItemsRequest extends $pb.GeneratedMessage {
   static GetBatchFeedItemsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$8.InternalID> get ids => $_getList(0);
+  $pb.PbList<$8.InternalID> get ids => $_getList(0);
 }
 
 class GetBatchFeedItemsResponse extends $pb.GeneratedMessage {
@@ -1215,7 +1217,7 @@ class GetBatchFeedItemsResponse extends $pb.GeneratedMessage {
   static GetBatchFeedItemsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$10.FeedItem> get items => $_getList(0);
+  $pb.PbList<$10.FeedItem> get items => $_getList(0);
 }
 
 class ReadFeedItemRequest extends $pb.GeneratedMessage {
@@ -1261,11 +1263,11 @@ class ReadFeedItemRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($8.InternalID v) { setField(1, v); }
+  set id($8.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.InternalID ensureId() => $_ensure(0);
 }
@@ -1345,11 +1347,11 @@ class CreateFeedItemCollectionRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   FeedItemCollection get collection => $_getN(0);
   @$pb.TagNumber(1)
-  set collection(FeedItemCollection v) { setField(1, v); }
+  set collection(FeedItemCollection v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasCollection() => $_has(0);
   @$pb.TagNumber(1)
-  void clearCollection() => clearField(1);
+  void clearCollection() => $_clearField(1);
   @$pb.TagNumber(1)
   FeedItemCollection ensureCollection() => $_ensure(0);
 }
@@ -1429,11 +1431,11 @@ class UpdateFeedItemCollectionRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   FeedItemCollection get collection => $_getN(0);
   @$pb.TagNumber(1)
-  set collection(FeedItemCollection v) { setField(1, v); }
+  set collection(FeedItemCollection v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasCollection() => $_has(0);
   @$pb.TagNumber(1)
-  void clearCollection() => clearField(1);
+  void clearCollection() => $_clearField(1);
   @$pb.TagNumber(1)
   FeedItemCollection ensureCollection() => $_ensure(0);
 }
@@ -1523,19 +1525,19 @@ class ListFeedItemCollectionsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.PagingRequest get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($8.PagingRequest v) { setField(1, v); }
+  set paging($8.PagingRequest v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.PagingRequest ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<$8.InternalID> get idFilter => $_getList(1);
+  $pb.PbList<$8.InternalID> get idFilter => $_getList(1);
 
   @$pb.TagNumber(3)
-  $core.List<$core.String> get categoryFilter => $_getList(2);
+  $pb.PbList<$core.String> get categoryFilter => $_getList(2);
 }
 
 class ListFeedItemCollectionsResponse extends $pb.GeneratedMessage {
@@ -1586,16 +1588,16 @@ class ListFeedItemCollectionsResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.PagingResponse get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($8.PagingResponse v) { setField(1, v); }
+  set paging($8.PagingResponse v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<FeedItemCollection> get collections => $_getList(1);
+  $pb.PbList<FeedItemCollection> get collections => $_getList(1);
 }
 
 class AddFeedItemToCollectionRequest extends $pb.GeneratedMessage {
@@ -1646,11 +1648,11 @@ class AddFeedItemToCollectionRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.InternalID get feedItemId => $_getN(0);
   @$pb.TagNumber(1)
-  set feedItemId($8.InternalID v) { setField(1, v); }
+  set feedItemId($8.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasFeedItemId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearFeedItemId() => clearField(1);
+  void clearFeedItemId() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.InternalID ensureFeedItemId() => $_ensure(0);
 
@@ -1658,11 +1660,11 @@ class AddFeedItemToCollectionRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $8.InternalID get collectionId => $_getN(1);
   @$pb.TagNumber(2)
-  set collectionId($8.InternalID v) { setField(2, v); }
+  set collectionId($8.InternalID v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCollectionId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearCollectionId() => clearField(2);
+  void clearCollectionId() => $_clearField(2);
   @$pb.TagNumber(2)
   $8.InternalID ensureCollectionId() => $_ensure(1);
 }
@@ -1747,11 +1749,11 @@ class RemoveFeedItemFromCollectionRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.InternalID get feedItemId => $_getN(0);
   @$pb.TagNumber(1)
-  set feedItemId($8.InternalID v) { setField(1, v); }
+  set feedItemId($8.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasFeedItemId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearFeedItemId() => clearField(1);
+  void clearFeedItemId() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.InternalID ensureFeedItemId() => $_ensure(0);
 
@@ -1759,11 +1761,11 @@ class RemoveFeedItemFromCollectionRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $8.InternalID get collectionId => $_getN(1);
   @$pb.TagNumber(2)
-  set collectionId($8.InternalID v) { setField(2, v); }
+  set collectionId($8.InternalID v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCollectionId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearCollectionId() => clearField(2);
+  void clearCollectionId() => $_clearField(2);
   @$pb.TagNumber(2)
   $8.InternalID ensureCollectionId() => $_ensure(1);
 }
@@ -1868,35 +1870,35 @@ class ListFeedItemsInCollectionRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.PagingRequest get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($8.PagingRequest v) { setField(1, v); }
+  set paging($8.PagingRequest v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.PagingRequest ensurePaging() => $_ensure(0);
 
   /// id 0 is regarded as the default collection id
   @$pb.TagNumber(2)
-  $core.List<$8.InternalID> get collectionIdFilter => $_getList(1);
+  $pb.PbList<$8.InternalID> get collectionIdFilter => $_getList(1);
 
   @$pb.TagNumber(3)
-  $core.List<$core.String> get authorFilter => $_getList(2);
+  $pb.PbList<$core.String> get authorFilter => $_getList(2);
 
   @$pb.TagNumber(4)
-  $core.List<$core.String> get publishPlatformFilter => $_getList(3);
+  $pb.PbList<$core.String> get publishPlatformFilter => $_getList(3);
 
   @$pb.TagNumber(5)
-  $core.List<$core.String> get categoryFilter => $_getList(4);
+  $pb.PbList<$core.String> get categoryFilter => $_getList(4);
 
   @$pb.TagNumber(6)
   $8.TimeRange get publishTimeRange => $_getN(5);
   @$pb.TagNumber(6)
-  set publishTimeRange($8.TimeRange v) { setField(6, v); }
+  set publishTimeRange($8.TimeRange v) { $_setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasPublishTimeRange() => $_has(5);
   @$pb.TagNumber(6)
-  void clearPublishTimeRange() => clearField(6);
+  void clearPublishTimeRange() => $_clearField(6);
   @$pb.TagNumber(6)
   $8.TimeRange ensurePublishTimeRange() => $_ensure(5);
 }
@@ -1949,16 +1951,16 @@ class ListFeedItemsInCollectionResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.PagingResponse get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($8.PagingResponse v) { setField(1, v); }
+  set paging($8.PagingResponse v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<FeedItemDigest> get items => $_getList(1);
+  $pb.PbList<FeedItemDigest> get items => $_getList(1);
 }
 
 class FeedConfig extends $pb.GeneratedMessage {
@@ -2059,11 +2061,11 @@ class FeedConfig extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($8.InternalID v) { setField(1, v); }
+  set id($8.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.InternalID ensureId() => $_ensure(0);
 
@@ -2074,7 +2076,7 @@ class FeedConfig extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearName() => clearField(2);
+  void clearName() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get description => $_getSZ(2);
@@ -2083,41 +2085,41 @@ class FeedConfig extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasDescription() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDescription() => clearField(3);
+  void clearDescription() => $_clearField(3);
 
   /// WellKnownFeedSource
   @$pb.TagNumber(4)
   $8.FeatureRequest get source => $_getN(3);
   @$pb.TagNumber(4)
-  set source($8.FeatureRequest v) { setField(4, v); }
+  set source($8.FeatureRequest v) { $_setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasSource() => $_has(3);
   @$pb.TagNumber(4)
-  void clearSource() => clearField(4);
+  void clearSource() => $_clearField(4);
   @$pb.TagNumber(4)
   $8.FeatureRequest ensureSource() => $_ensure(3);
 
   /// `FeedActionSet.id`
   @$pb.TagNumber(5)
-  $core.List<$8.InternalID> get actionSets => $_getList(4);
+  $pb.PbList<$8.InternalID> get actionSets => $_getList(4);
 
   @$pb.TagNumber(6)
   FeedConfigStatus get status => $_getN(5);
   @$pb.TagNumber(6)
-  set status(FeedConfigStatus v) { setField(6, v); }
+  set status(FeedConfigStatus v) { $_setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasStatus() => $_has(5);
   @$pb.TagNumber(6)
-  void clearStatus() => clearField(6);
+  void clearStatus() => $_clearField(6);
 
   @$pb.TagNumber(7)
   $9.Duration get pullInterval => $_getN(6);
   @$pb.TagNumber(7)
-  set pullInterval($9.Duration v) { setField(7, v); }
+  set pullInterval($9.Duration v) { $_setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasPullInterval() => $_has(6);
   @$pb.TagNumber(7)
-  void clearPullInterval() => clearField(7);
+  void clearPullInterval() => $_clearField(7);
   @$pb.TagNumber(7)
   $9.Duration ensurePullInterval() => $_ensure(6);
 
@@ -2128,7 +2130,7 @@ class FeedConfig extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   $core.bool hasCategory() => $_has(7);
   @$pb.TagNumber(8)
-  void clearCategory() => clearField(8);
+  void clearCategory() => $_clearField(8);
 
   /// If ture, exclude items from ListFeedItemsResponse
   @$pb.TagNumber(9)
@@ -2138,17 +2140,17 @@ class FeedConfig extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   $core.bool hasHideItems() => $_has(8);
   @$pb.TagNumber(9)
-  void clearHideItems() => clearField(9);
+  void clearHideItems() => $_clearField(9);
 
   /// response only
   @$pb.TagNumber(10)
   $7.Timestamp get latestPullTime => $_getN(9);
   @$pb.TagNumber(10)
-  set latestPullTime($7.Timestamp v) { setField(10, v); }
+  set latestPullTime($7.Timestamp v) { $_setField(10, v); }
   @$pb.TagNumber(10)
   $core.bool hasLatestPullTime() => $_has(9);
   @$pb.TagNumber(10)
-  void clearLatestPullTime() => clearField(10);
+  void clearLatestPullTime() => $_clearField(10);
   @$pb.TagNumber(10)
   $7.Timestamp ensureLatestPullTime() => $_ensure(9);
 
@@ -2156,11 +2158,11 @@ class FeedConfig extends $pb.GeneratedMessage {
   @$pb.TagNumber(11)
   FeedConfigPullStatus get latestPullStatus => $_getN(10);
   @$pb.TagNumber(11)
-  set latestPullStatus(FeedConfigPullStatus v) { setField(11, v); }
+  set latestPullStatus(FeedConfigPullStatus v) { $_setField(11, v); }
   @$pb.TagNumber(11)
   $core.bool hasLatestPullStatus() => $_has(10);
   @$pb.TagNumber(11)
-  void clearLatestPullStatus() => clearField(11);
+  void clearLatestPullStatus() => $_clearField(11);
 
   /// response only
   @$pb.TagNumber(12)
@@ -2170,7 +2172,7 @@ class FeedConfig extends $pb.GeneratedMessage {
   @$pb.TagNumber(12)
   $core.bool hasLatestPullMessage() => $_has(11);
   @$pb.TagNumber(12)
-  void clearLatestPullMessage() => clearField(12);
+  void clearLatestPullMessage() => $_clearField(12);
 }
 
 class FeedActionSet extends $pb.GeneratedMessage {
@@ -2231,11 +2233,11 @@ class FeedActionSet extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($8.InternalID v) { setField(1, v); }
+  set id($8.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.InternalID ensureId() => $_ensure(0);
 
@@ -2246,7 +2248,7 @@ class FeedActionSet extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearName() => clearField(2);
+  void clearName() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get description => $_getSZ(2);
@@ -2255,11 +2257,11 @@ class FeedActionSet extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasDescription() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDescription() => clearField(3);
+  void clearDescription() => $_clearField(3);
 
   /// WellKnownFeedItemAction
   @$pb.TagNumber(4)
-  $core.List<$8.FeatureRequest> get actions => $_getList(3);
+  $pb.PbList<$8.FeatureRequest> get actions => $_getList(3);
 }
 
 /// Digest information generated from origin item data
@@ -2361,22 +2363,22 @@ class FeedItemDigest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.InternalID get feedId => $_getN(0);
   @$pb.TagNumber(1)
-  set feedId($8.InternalID v) { setField(1, v); }
+  set feedId($8.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasFeedId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearFeedId() => clearField(1);
+  void clearFeedId() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.InternalID ensureFeedId() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $8.InternalID get itemId => $_getN(1);
   @$pb.TagNumber(2)
-  set itemId($8.InternalID v) { setField(2, v); }
+  set itemId($8.InternalID v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasItemId() => $_has(1);
   @$pb.TagNumber(2)
-  void clearItemId() => clearField(2);
+  void clearItemId() => $_clearField(2);
   @$pb.TagNumber(2)
   $8.InternalID ensureItemId() => $_ensure(1);
 
@@ -2388,7 +2390,7 @@ class FeedItemDigest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasAvatarUrl() => $_has(2);
   @$pb.TagNumber(3)
-  void clearAvatarUrl() => clearField(3);
+  void clearAvatarUrl() => $_clearField(3);
 
   /// `FeedItem.authors.name`, seperated by `, `
   @$pb.TagNumber(4)
@@ -2398,17 +2400,17 @@ class FeedItemDigest extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasAuthors() => $_has(3);
   @$pb.TagNumber(4)
-  void clearAuthors() => clearField(4);
+  void clearAuthors() => $_clearField(4);
 
   /// `FeedItem.published_parsed`
   @$pb.TagNumber(5)
   $7.Timestamp get publishedParsedTime => $_getN(4);
   @$pb.TagNumber(5)
-  set publishedParsedTime($7.Timestamp v) { setField(5, v); }
+  set publishedParsedTime($7.Timestamp v) { $_setField(5, v); }
   @$pb.TagNumber(5)
   $core.bool hasPublishedParsedTime() => $_has(4);
   @$pb.TagNumber(5)
-  void clearPublishedParsedTime() => clearField(5);
+  void clearPublishedParsedTime() => $_clearField(5);
   @$pb.TagNumber(5)
   $7.Timestamp ensurePublishedParsedTime() => $_ensure(4);
 
@@ -2420,7 +2422,7 @@ class FeedItemDigest extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.bool hasTitle() => $_has(5);
   @$pb.TagNumber(6)
-  void clearTitle() => clearField(6);
+  void clearTitle() => $_clearField(6);
 
   /// text generated from `FeedItem.content` or `FeedItem.description`
   @$pb.TagNumber(7)
@@ -2430,12 +2432,12 @@ class FeedItemDigest extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   $core.bool hasShortDescription() => $_has(6);
   @$pb.TagNumber(7)
-  void clearShortDescription() => clearField(7);
+  void clearShortDescription() => $_clearField(7);
 
   /// images generated from `FeedItem.content` or `FeedItem.description`
   /// maximum 9
   @$pb.TagNumber(8)
-  $core.List<$core.String> get imageUrls => $_getList(7);
+  $pb.PbList<$core.String> get imageUrls => $_getList(7);
 
   /// hostname of `FeedItem.link`, e.g. github.com
   @$pb.TagNumber(9)
@@ -2445,7 +2447,7 @@ class FeedItemDigest extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   $core.bool hasPublishPlatform() => $_has(8);
   @$pb.TagNumber(9)
-  void clearPublishPlatform() => clearField(9);
+  void clearPublishPlatform() => $_clearField(9);
 
   /// `FeedConfig.name`
   @$pb.TagNumber(10)
@@ -2455,7 +2457,7 @@ class FeedItemDigest extends $pb.GeneratedMessage {
   @$pb.TagNumber(10)
   $core.bool hasFeedConfigName() => $_has(9);
   @$pb.TagNumber(10)
-  void clearFeedConfigName() => clearField(10);
+  void clearFeedConfigName() => $_clearField(10);
 
   /// `Feed.image.url`
   @$pb.TagNumber(11)
@@ -2465,7 +2467,7 @@ class FeedItemDigest extends $pb.GeneratedMessage {
   @$pb.TagNumber(11)
   $core.bool hasFeedAvatarUrl() => $_has(10);
   @$pb.TagNumber(11)
-  void clearFeedAvatarUrl() => clearField(11);
+  void clearFeedAvatarUrl() => $_clearField(11);
 
   /// `FeedItem.read_count`
   @$pb.TagNumber(12)
@@ -2475,7 +2477,7 @@ class FeedItemDigest extends $pb.GeneratedMessage {
   @$pb.TagNumber(12)
   $core.bool hasReadCount() => $_has(11);
   @$pb.TagNumber(12)
-  void clearReadCount() => clearField(12);
+  void clearReadCount() => $_clearField(12);
 }
 
 /// Server must maintain a default collection, without requirement of create
@@ -2539,11 +2541,11 @@ class FeedItemCollection extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($8.InternalID v) { setField(1, v); }
+  set id($8.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.InternalID ensureId() => $_ensure(0);
 
@@ -2554,7 +2556,7 @@ class FeedItemCollection extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearName() => clearField(2);
+  void clearName() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get description => $_getSZ(2);
@@ -2563,7 +2565,7 @@ class FeedItemCollection extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasDescription() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDescription() => clearField(3);
+  void clearDescription() => $_clearField(3);
 
   @$pb.TagNumber(4)
   $core.String get category => $_getSZ(3);
@@ -2572,7 +2574,7 @@ class FeedItemCollection extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasCategory() => $_has(3);
   @$pb.TagNumber(4)
-  void clearCategory() => clearField(4);
+  void clearCategory() => $_clearField(4);
 }
 
 

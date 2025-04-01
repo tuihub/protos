@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: librarian/sephirah/v1/errors.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -37,7 +37,7 @@ class ErrorReason extends $pb.ProtobufEnum {
   static final $core.Map<$core.int, ErrorReason> _byValue = $pb.ProtobufEnum.initByValue(values);
   static ErrorReason? valueOf($core.int value) => _byValue[value];
 
-  const ErrorReason._($core.int v, $core.String n) : super(v, n);
+  const ErrorReason._(super.v, super.n);
 }
 
 

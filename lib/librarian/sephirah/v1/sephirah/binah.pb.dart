@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: librarian/sephirah/v1/sephirah/binah.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -16,6 +16,8 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../v1/wellknown.pbenum.dart' as $8;
 import 'binah.pbenum.dart';
+
+export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 export 'binah.pbenum.dart';
 
@@ -94,11 +96,11 @@ class GetStorageCapacityUsageResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   StorageCapacityUsage get storageCapacityUsage => $_getN(0);
   @$pb.TagNumber(1)
-  set storageCapacityUsage(StorageCapacityUsage v) { setField(1, v); }
+  set storageCapacityUsage(StorageCapacityUsage v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasStorageCapacityUsage() => $_has(0);
   @$pb.TagNumber(1)
-  void clearStorageCapacityUsage() => clearField(1);
+  void clearStorageCapacityUsage() => $_clearField(1);
   @$pb.TagNumber(1)
   StorageCapacityUsage ensureStorageCapacityUsage() => $_ensure(0);
 }
@@ -160,7 +162,7 @@ class StorageCapacityUsage extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasTotalLimitSizeBytes() => $_has(0);
   @$pb.TagNumber(1)
-  void clearTotalLimitSizeBytes() => clearField(1);
+  void clearTotalLimitSizeBytes() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get totalUsedSizeBytes => $_getI64(1);
@@ -169,11 +171,11 @@ class StorageCapacityUsage extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasTotalUsedSizeBytes() => $_has(1);
   @$pb.TagNumber(2)
-  void clearTotalUsedSizeBytes() => clearField(2);
+  void clearTotalUsedSizeBytes() => $_clearField(2);
 
   /// details are optional and depends on server implementation
   @$pb.TagNumber(3)
-  $core.List<StorageCapacityUsageDetail> get details => $_getList(2);
+  $pb.PbList<StorageCapacityUsageDetail> get details => $_getList(2);
 }
 
 class StorageCapacityUsageDetail extends $pb.GeneratedMessage {
@@ -229,11 +231,11 @@ class StorageCapacityUsageDetail extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.FileType get type => $_getN(0);
   @$pb.TagNumber(1)
-  set type($8.FileType v) { setField(1, v); }
+  set type($8.FileType v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasType() => $_has(0);
   @$pb.TagNumber(1)
-  void clearType() => clearField(1);
+  void clearType() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get limitSizeBytes => $_getI64(1);
@@ -242,7 +244,7 @@ class StorageCapacityUsageDetail extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasLimitSizeBytes() => $_has(1);
   @$pb.TagNumber(2)
-  void clearLimitSizeBytes() => clearField(2);
+  void clearLimitSizeBytes() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $fixnum.Int64 get usedSizeBytes => $_getI64(2);
@@ -251,7 +253,7 @@ class StorageCapacityUsageDetail extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasUsedSizeBytes() => $_has(2);
   @$pb.TagNumber(3)
-  void clearUsedSizeBytes() => clearField(3);
+  void clearUsedSizeBytes() => $_clearField(3);
 }
 
 enum UploadFileRequest_Content {
@@ -312,16 +314,16 @@ class UploadFileRequest extends $pb.GeneratedMessage {
   static UploadFileRequest? _defaultInstance;
 
   UploadFileRequest_Content whichContent() => _UploadFileRequest_ContentByTag[$_whichOneof(0)]!;
-  void clearContent() => clearField($_whichOneof(0));
+  void clearContent() => $_clearField($_whichOneof(0));
 
   @$pb.TagNumber(1)
   FileChunk get fileChunk => $_getN(0);
   @$pb.TagNumber(1)
-  set fileChunk(FileChunk v) { setField(1, v); }
+  set fileChunk(FileChunk v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasFileChunk() => $_has(0);
   @$pb.TagNumber(1)
-  void clearFileChunk() => clearField(1);
+  void clearFileChunk() => $_clearField(1);
   @$pb.TagNumber(1)
   FileChunk ensureFileChunk() => $_ensure(0);
 
@@ -332,7 +334,7 @@ class UploadFileRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasRequireFileStatus() => $_has(1);
   @$pb.TagNumber(2)
-  void clearRequireFileStatus() => clearField(2);
+  void clearRequireFileStatus() => $_clearField(2);
 }
 
 class UploadFileResponse_ChunkStatus extends $pb.GeneratedMessage {
@@ -387,16 +389,16 @@ class UploadFileResponse_ChunkStatus extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasChunkNumber() => $_has(0);
   @$pb.TagNumber(1)
-  void clearChunkNumber() => clearField(1);
+  void clearChunkNumber() => $_clearField(1);
 
   @$pb.TagNumber(2)
   ChunkTransferStatus get status => $_getN(1);
   @$pb.TagNumber(2)
-  set status(ChunkTransferStatus v) { setField(2, v); }
+  set status(ChunkTransferStatus v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasStatus() => $_has(1);
   @$pb.TagNumber(2)
-  void clearStatus() => clearField(2);
+  void clearStatus() => $_clearField(2);
 }
 
 class UploadFileResponse_FileStatus extends $pb.GeneratedMessage {
@@ -445,16 +447,16 @@ class UploadFileResponse_FileStatus extends $pb.GeneratedMessage {
   static UploadFileResponse_FileStatus? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$fixnum.Int64> get missingChunkList => $_getList(0);
+  $pb.PbList<$fixnum.Int64> get missingChunkList => $_getList(0);
 
   @$pb.TagNumber(2)
   FileTransferStatus get status => $_getN(1);
   @$pb.TagNumber(2)
-  set status(FileTransferStatus v) { setField(2, v); }
+  set status(FileTransferStatus v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasStatus() => $_has(1);
   @$pb.TagNumber(2)
-  void clearStatus() => clearField(2);
+  void clearStatus() => $_clearField(2);
 }
 
 enum UploadFileResponse_Content {
@@ -515,27 +517,27 @@ class UploadFileResponse extends $pb.GeneratedMessage {
   static UploadFileResponse? _defaultInstance;
 
   UploadFileResponse_Content whichContent() => _UploadFileResponse_ContentByTag[$_whichOneof(0)]!;
-  void clearContent() => clearField($_whichOneof(0));
+  void clearContent() => $_clearField($_whichOneof(0));
 
   @$pb.TagNumber(1)
   UploadFileResponse_ChunkStatus get chunkStatus => $_getN(0);
   @$pb.TagNumber(1)
-  set chunkStatus(UploadFileResponse_ChunkStatus v) { setField(1, v); }
+  set chunkStatus(UploadFileResponse_ChunkStatus v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasChunkStatus() => $_has(0);
   @$pb.TagNumber(1)
-  void clearChunkStatus() => clearField(1);
+  void clearChunkStatus() => $_clearField(1);
   @$pb.TagNumber(1)
   UploadFileResponse_ChunkStatus ensureChunkStatus() => $_ensure(0);
 
   @$pb.TagNumber(2)
   UploadFileResponse_FileStatus get fileStatus => $_getN(1);
   @$pb.TagNumber(2)
-  set fileStatus(UploadFileResponse_FileStatus v) { setField(2, v); }
+  set fileStatus(UploadFileResponse_FileStatus v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasFileStatus() => $_has(1);
   @$pb.TagNumber(2)
-  void clearFileStatus() => clearField(2);
+  void clearFileStatus() => $_clearField(2);
   @$pb.TagNumber(2)
   UploadFileResponse_FileStatus ensureFileStatus() => $_ensure(1);
 }
@@ -592,7 +594,7 @@ class DownloadFileRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasStartChunkNumber() => $_has(0);
   @$pb.TagNumber(1)
-  void clearStartChunkNumber() => clearField(1);
+  void clearStartChunkNumber() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get endChunkNumber => $_getI64(1);
@@ -601,7 +603,7 @@ class DownloadFileRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasEndChunkNumber() => $_has(1);
   @$pb.TagNumber(2)
-  void clearEndChunkNumber() => clearField(2);
+  void clearEndChunkNumber() => $_clearField(2);
 }
 
 class DownloadFileResponse extends $pb.GeneratedMessage {
@@ -647,11 +649,11 @@ class DownloadFileResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   FileChunk get fileChunk => $_getN(0);
   @$pb.TagNumber(1)
-  set fileChunk(FileChunk v) { setField(1, v); }
+  set fileChunk(FileChunk v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasFileChunk() => $_has(0);
   @$pb.TagNumber(1)
-  void clearFileChunk() => clearField(1);
+  void clearFileChunk() => $_clearField(1);
   @$pb.TagNumber(1)
   FileChunk ensureFileChunk() => $_ensure(0);
 }
@@ -703,7 +705,7 @@ class SimpleUploadFileRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasData() => $_has(0);
   @$pb.TagNumber(1)
-  void clearData() => clearField(1);
+  void clearData() => $_clearField(1);
 }
 
 class SimpleUploadFileResponse extends $pb.GeneratedMessage {
@@ -749,11 +751,11 @@ class SimpleUploadFileResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   FileTransferStatus get status => $_getN(0);
   @$pb.TagNumber(1)
-  set status(FileTransferStatus v) { setField(1, v); }
+  set status(FileTransferStatus v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasStatus() => $_has(0);
   @$pb.TagNumber(1)
-  void clearStatus() => clearField(1);
+  void clearStatus() => $_clearField(1);
 }
 
 class SimpleDownloadFileRequest extends $pb.GeneratedMessage {
@@ -835,7 +837,7 @@ class SimpleDownloadFileResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasData() => $_has(0);
   @$pb.TagNumber(1)
-  void clearData() => clearField(1);
+  void clearData() => $_clearField(1);
 }
 
 class PresignedUploadFileRequest extends $pb.GeneratedMessage {
@@ -917,7 +919,7 @@ class PresignedUploadFileResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasUploadUrl() => $_has(0);
   @$pb.TagNumber(1)
-  void clearUploadUrl() => clearField(1);
+  void clearUploadUrl() => $_clearField(1);
 }
 
 class PresignedUploadFileStatusRequest extends $pb.GeneratedMessage {
@@ -963,11 +965,11 @@ class PresignedUploadFileStatusRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   FileTransferStatus get status => $_getN(0);
   @$pb.TagNumber(1)
-  set status(FileTransferStatus v) { setField(1, v); }
+  set status(FileTransferStatus v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasStatus() => $_has(0);
   @$pb.TagNumber(1)
-  void clearStatus() => clearField(1);
+  void clearStatus() => $_clearField(1);
 }
 
 class PresignedUploadFileStatusResponse extends $pb.GeneratedMessage {
@@ -1082,7 +1084,7 @@ class PresignedDownloadFileResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasDownloadUrl() => $_has(0);
   @$pb.TagNumber(1)
-  void clearDownloadUrl() => clearField(1);
+  void clearDownloadUrl() => $_clearField(1);
 }
 
 class FileChunk extends $pb.GeneratedMessage {
@@ -1137,7 +1139,7 @@ class FileChunk extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasChunkNumber() => $_has(0);
   @$pb.TagNumber(1)
-  void clearChunkNumber() => clearField(1);
+  void clearChunkNumber() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.List<$core.int> get data => $_getN(1);
@@ -1146,7 +1148,7 @@ class FileChunk extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasData() => $_has(1);
   @$pb.TagNumber(2)
-  void clearData() => clearField(2);
+  void clearData() => $_clearField(2);
 }
 
 

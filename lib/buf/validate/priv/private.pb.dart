@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: buf/validate/priv/private.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -12,6 +12,8 @@
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
+
+export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 /// Do not use. Internal to protovalidate library
 class FieldConstraints extends $pb.GeneratedMessage {
@@ -55,7 +57,7 @@ class FieldConstraints extends $pb.GeneratedMessage {
   static FieldConstraints? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<Constraint> get cel => $_getList(0);
+  $pb.PbList<Constraint> get cel => $_getList(0);
 }
 
 /// Do not use. Internal to protovalidate library
@@ -116,7 +118,7 @@ class Constraint extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
 
   @$pb.TagNumber(2)
   $core.String get message => $_getSZ(1);
@@ -125,7 +127,7 @@ class Constraint extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasMessage() => $_has(1);
   @$pb.TagNumber(2)
-  void clearMessage() => clearField(2);
+  void clearMessage() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get expression => $_getSZ(2);
@@ -134,7 +136,7 @@ class Constraint extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasExpression() => $_has(2);
   @$pb.TagNumber(3)
-  void clearExpression() => clearField(3);
+  void clearExpression() => $_clearField(3);
 }
 
 class Private {

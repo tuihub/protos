@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: librarian/porter/v1/porter_service.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -16,6 +16,8 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../v1/common.pb.dart' as $6;
 import '../../v1/wellknown.pb.dart' as $7;
+
+export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 class GetPorterInformationRequest extends $pb.GeneratedMessage {
   factory GetPorterInformationRequest() => create();
@@ -112,11 +114,11 @@ class GetPorterInformationResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $6.PorterBinarySummary get binarySummary => $_getN(0);
   @$pb.TagNumber(1)
-  set binarySummary($6.PorterBinarySummary v) { setField(1, v); }
+  set binarySummary($6.PorterBinarySummary v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBinarySummary() => $_has(0);
   @$pb.TagNumber(1)
-  void clearBinarySummary() => clearField(1);
+  void clearBinarySummary() => $_clearField(1);
   @$pb.TagNumber(1)
   $6.PorterBinarySummary ensureBinarySummary() => $_ensure(0);
 
@@ -129,7 +131,7 @@ class GetPorterInformationResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasGlobalName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearGlobalName() => clearField(2);
+  void clearGlobalName() => $_clearField(2);
 
   /// Region is used to group porters,
   /// same porter in same region can be randomly selected.
@@ -141,17 +143,17 @@ class GetPorterInformationResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasRegion() => $_has(2);
   @$pb.TagNumber(3)
-  void clearRegion() => clearField(3);
+  void clearRegion() => $_clearField(3);
 
   /// Supported features.
   @$pb.TagNumber(4)
   $7.FeatureSummary get featureSummary => $_getN(3);
   @$pb.TagNumber(4)
-  set featureSummary($7.FeatureSummary v) { setField(4, v); }
+  set featureSummary($7.FeatureSummary v) { $_setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasFeatureSummary() => $_has(3);
   @$pb.TagNumber(4)
-  void clearFeatureSummary() => clearField(4);
+  void clearFeatureSummary() => $_clearField(4);
   @$pb.TagNumber(4)
   $7.FeatureSummary ensureFeatureSummary() => $_ensure(3);
 
@@ -166,7 +168,7 @@ class GetPorterInformationResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool hasContextJsonSchema() => $_has(4);
   @$pb.TagNumber(5)
-  void clearContextJsonSchema() => clearField(5);
+  void clearContextJsonSchema() => $_clearField(5);
 }
 
 class EnablePorterRequest extends $pb.GeneratedMessage {
@@ -224,7 +226,7 @@ class EnablePorterRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasSephirahId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearSephirahId() => clearField(1);
+  void clearSephirahId() => $_clearField(1);
 
   /// Used to perform reverse call.
   /// If not needed, porter should ignore it.
@@ -237,7 +239,7 @@ class EnablePorterRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasRefreshToken() => $_has(1);
   @$pb.TagNumber(2)
-  void clearRefreshToken() => clearField(2);
+  void clearRefreshToken() => $_clearField(2);
 }
 
 class EnablePorterResponse extends $pb.GeneratedMessage {
@@ -298,7 +300,7 @@ class EnablePorterResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasStatusMessage() => $_has(0);
   @$pb.TagNumber(1)
-  void clearStatusMessage() => clearField(1);
+  void clearStatusMessage() => $_clearField(1);
 
   /// If true, enabler should resend request with `refresh_token`.
   @$pb.TagNumber(2)
@@ -308,16 +310,16 @@ class EnablePorterResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasNeedRefreshToken() => $_has(1);
   @$pb.TagNumber(2)
-  void clearNeedRefreshToken() => clearField(2);
+  void clearNeedRefreshToken() => $_clearField(2);
 
   @$pb.TagNumber(3)
   PorterEnablesSummary get enablesSummary => $_getN(2);
   @$pb.TagNumber(3)
-  set enablesSummary(PorterEnablesSummary v) { setField(3, v); }
+  set enablesSummary(PorterEnablesSummary v) { $_setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasEnablesSummary() => $_has(2);
   @$pb.TagNumber(3)
-  void clearEnablesSummary() => clearField(3);
+  void clearEnablesSummary() => $_clearField(3);
   @$pb.TagNumber(3)
   PorterEnablesSummary ensureEnablesSummary() => $_ensure(2);
 }
@@ -374,15 +376,15 @@ class PorterEnablesSummary extends $pb.GeneratedMessage {
 
   /// `EnableContextRequest.context_id`
   @$pb.TagNumber(1)
-  $core.List<$7.InternalID> get contextIds => $_getList(0);
+  $pb.PbList<$7.InternalID> get contextIds => $_getList(0);
 
   /// `EnableFeedSetterRequest.setter_id`
   @$pb.TagNumber(2)
-  $core.List<$7.InternalID> get feedSetterIds => $_getList(1);
+  $pb.PbList<$7.InternalID> get feedSetterIds => $_getList(1);
 
   /// `EnableFeedGetterRequest.getter_id`
   @$pb.TagNumber(3)
-  $core.List<$7.InternalID> get feedGetterIds => $_getList(2);
+  $pb.PbList<$7.InternalID> get feedGetterIds => $_getList(2);
 }
 
 class EnableContextRequest extends $pb.GeneratedMessage {
@@ -435,11 +437,11 @@ class EnableContextRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $7.InternalID get contextId => $_getN(0);
   @$pb.TagNumber(1)
-  set contextId($7.InternalID v) { setField(1, v); }
+  set contextId($7.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasContextId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearContextId() => clearField(1);
+  void clearContextId() => $_clearField(1);
   @$pb.TagNumber(1)
   $7.InternalID ensureContextId() => $_ensure(0);
 
@@ -450,7 +452,7 @@ class EnableContextRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasContextJson() => $_has(1);
   @$pb.TagNumber(2)
-  void clearContextJson() => clearField(2);
+  void clearContextJson() => $_clearField(2);
 }
 
 class EnableContextResponse extends $pb.GeneratedMessage {
@@ -528,11 +530,11 @@ class DisableContextRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $7.InternalID get contextId => $_getN(0);
   @$pb.TagNumber(1)
-  set contextId($7.InternalID v) { setField(1, v); }
+  set contextId($7.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasContextId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearContextId() => clearField(1);
+  void clearContextId() => $_clearField(1);
   @$pb.TagNumber(1)
   $7.InternalID ensureContextId() => $_ensure(0);
 }
@@ -613,11 +615,11 @@ class PullFeedRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $7.FeatureRequest get source => $_getN(0);
   @$pb.TagNumber(1)
-  set source($7.FeatureRequest v) { setField(1, v); }
+  set source($7.FeatureRequest v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasSource() => $_has(0);
   @$pb.TagNumber(1)
-  void clearSource() => clearField(1);
+  void clearSource() => $_clearField(1);
   @$pb.TagNumber(1)
   $7.FeatureRequest ensureSource() => $_ensure(0);
 }
@@ -665,11 +667,11 @@ class PullFeedResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $6.Feed get data => $_getN(0);
   @$pb.TagNumber(1)
-  set data($6.Feed v) { setField(1, v); }
+  set data($6.Feed v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasData() => $_has(0);
   @$pb.TagNumber(1)
-  void clearData() => clearField(1);
+  void clearData() => $_clearField(1);
   @$pb.TagNumber(1)
   $6.Feed ensureData() => $_ensure(0);
 }
@@ -723,16 +725,16 @@ class PushFeedItemsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $7.FeatureRequest get destination => $_getN(0);
   @$pb.TagNumber(1)
-  set destination($7.FeatureRequest v) { setField(1, v); }
+  set destination($7.FeatureRequest v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasDestination() => $_has(0);
   @$pb.TagNumber(1)
-  void clearDestination() => clearField(1);
+  void clearDestination() => $_clearField(1);
   @$pb.TagNumber(1)
   $7.FeatureRequest ensureDestination() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<$6.FeedItem> get items => $_getList(1);
+  $pb.PbList<$6.FeedItem> get items => $_getList(1);
 }
 
 class PushFeedItemsResponse extends $pb.GeneratedMessage {
@@ -816,22 +818,22 @@ class ExecFeedItemActionRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $7.FeatureRequest get action => $_getN(0);
   @$pb.TagNumber(1)
-  set action($7.FeatureRequest v) { setField(1, v); }
+  set action($7.FeatureRequest v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasAction() => $_has(0);
   @$pb.TagNumber(1)
-  void clearAction() => clearField(1);
+  void clearAction() => $_clearField(1);
   @$pb.TagNumber(1)
   $7.FeatureRequest ensureAction() => $_ensure(0);
 
   @$pb.TagNumber(3)
   $6.FeedItem get item => $_getN(1);
   @$pb.TagNumber(3)
-  set item($6.FeedItem v) { setField(3, v); }
+  set item($6.FeedItem v) { $_setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasItem() => $_has(1);
   @$pb.TagNumber(3)
-  void clearItem() => clearField(3);
+  void clearItem() => $_clearField(3);
   @$pb.TagNumber(3)
   $6.FeedItem ensureItem() => $_ensure(1);
 }
@@ -881,11 +883,11 @@ class ExecFeedItemActionResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $6.FeedItem get item => $_getN(0);
   @$pb.TagNumber(1)
-  set item($6.FeedItem v) { setField(1, v); }
+  set item($6.FeedItem v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasItem() => $_has(0);
   @$pb.TagNumber(1)
-  void clearItem() => clearField(1);
+  void clearItem() => $_clearField(1);
   @$pb.TagNumber(1)
   $6.FeedItem ensureItem() => $_ensure(0);
 }
@@ -943,11 +945,11 @@ class EnableFeedSetterRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $7.InternalID get setterId => $_getN(0);
   @$pb.TagNumber(1)
-  set setterId($7.InternalID v) { setField(1, v); }
+  set setterId($7.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasSetterId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearSetterId() => clearField(1);
+  void clearSetterId() => $_clearField(1);
   @$pb.TagNumber(1)
   $7.InternalID ensureSetterId() => $_ensure(0);
 
@@ -955,22 +957,22 @@ class EnableFeedSetterRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $7.FeatureRequest get setter => $_getN(1);
   @$pb.TagNumber(2)
-  set setter($7.FeatureRequest v) { setField(2, v); }
+  set setter($7.FeatureRequest v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasSetter() => $_has(1);
   @$pb.TagNumber(2)
-  void clearSetter() => clearField(2);
+  void clearSetter() => $_clearField(2);
   @$pb.TagNumber(2)
   $7.FeatureRequest ensureSetter() => $_ensure(1);
 
   @$pb.TagNumber(3)
   $7.InternalID get feedId => $_getN(2);
   @$pb.TagNumber(3)
-  set feedId($7.InternalID v) { setField(3, v); }
+  set feedId($7.InternalID v) { $_setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasFeedId() => $_has(2);
   @$pb.TagNumber(3)
-  void clearFeedId() => clearField(3);
+  void clearFeedId() => $_clearField(3);
   @$pb.TagNumber(3)
   $7.InternalID ensureFeedId() => $_ensure(2);
 }
@@ -1050,11 +1052,11 @@ class DisableFeedSetterRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $7.InternalID get setterId => $_getN(0);
   @$pb.TagNumber(1)
-  set setterId($7.InternalID v) { setField(1, v); }
+  set setterId($7.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasSetterId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearSetterId() => clearField(1);
+  void clearSetterId() => $_clearField(1);
   @$pb.TagNumber(1)
   $7.InternalID ensureSetterId() => $_ensure(0);
 }
@@ -1144,11 +1146,11 @@ class EnableFeedGetterRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $7.InternalID get getterId => $_getN(0);
   @$pb.TagNumber(1)
-  set getterId($7.InternalID v) { setField(1, v); }
+  set getterId($7.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasGetterId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearGetterId() => clearField(1);
+  void clearGetterId() => $_clearField(1);
   @$pb.TagNumber(1)
   $7.InternalID ensureGetterId() => $_ensure(0);
 
@@ -1156,22 +1158,22 @@ class EnableFeedGetterRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $7.FeatureRequest get getter => $_getN(1);
   @$pb.TagNumber(2)
-  set getter($7.FeatureRequest v) { setField(2, v); }
+  set getter($7.FeatureRequest v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasGetter() => $_has(1);
   @$pb.TagNumber(2)
-  void clearGetter() => clearField(2);
+  void clearGetter() => $_clearField(2);
   @$pb.TagNumber(2)
   $7.FeatureRequest ensureGetter() => $_ensure(1);
 
   @$pb.TagNumber(3)
   $7.InternalID get feedId => $_getN(2);
   @$pb.TagNumber(3)
-  set feedId($7.InternalID v) { setField(3, v); }
+  set feedId($7.InternalID v) { $_setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasFeedId() => $_has(2);
   @$pb.TagNumber(3)
-  void clearFeedId() => clearField(3);
+  void clearFeedId() => $_clearField(3);
   @$pb.TagNumber(3)
   $7.InternalID ensureFeedId() => $_ensure(2);
 }
@@ -1251,11 +1253,11 @@ class DisableFeedGetterRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $7.InternalID get getterId => $_getN(0);
   @$pb.TagNumber(1)
-  set getterId($7.InternalID v) { setField(1, v); }
+  set getterId($7.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasGetterId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearGetterId() => clearField(1);
+  void clearGetterId() => $_clearField(1);
   @$pb.TagNumber(1)
   $7.InternalID ensureGetterId() => $_ensure(0);
 }

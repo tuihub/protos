@@ -1468,10 +1468,10 @@ export class AppInfo extends jspb.Message {
   setTagsList(value: Array<string>): void;
   addTags(value: string, index?: number): string;
 
-  clearAltNamesList(): void;
-  getAltNamesList(): Array<string>;
-  setAltNamesList(value: Array<string>): void;
-  addAltNames(value: string, index?: number): string;
+  clearNameAlternativesList(): void;
+  getNameAlternativesList(): Array<string>;
+  setNameAlternativesList(value: Array<string>): void;
+  addNameAlternatives(value: string, index?: number): string;
 
   getDeveloper(): string;
   setDeveloper(value: string): void;
@@ -1504,7 +1504,7 @@ export namespace AppInfo {
     coverImageUrl: string,
     coverImageId?: librarian_v1_wellknown_pb.InternalID.AsObject,
     tagsList: Array<string>,
-    altNamesList: Array<string>,
+    nameAlternativesList: Array<string>,
     developer: string,
     publisher: string,
   }
@@ -1602,10 +1602,10 @@ export class StoreApp extends jspb.Message {
   setTagsList(value: Array<string>): void;
   addTags(value: string, index?: number): string;
 
-  clearAltNamesList(): void;
-  getAltNamesList(): Array<string>;
-  setAltNamesList(value: Array<string>): void;
-  addAltNames(value: string, index?: number): string;
+  clearNameAlternativesList(): void;
+  getNameAlternativesList(): Array<string>;
+  setNameAlternativesList(value: Array<string>): void;
+  addNameAlternatives(value: string, index?: number): string;
 
   getDeveloper(): string;
   setDeveloper(value: string): void;
@@ -1635,7 +1635,7 @@ export namespace StoreApp {
     backgroundImageId?: librarian_v1_wellknown_pb.InternalID.AsObject,
     coverImageId?: librarian_v1_wellknown_pb.InternalID.AsObject,
     tagsList: Array<string>,
-    altNamesList: Array<string>,
+    nameAlternativesList: Array<string>,
     developer: string,
     publisher: string,
   }
@@ -1873,10 +1873,10 @@ export class App extends jspb.Message {
   setTagsList(value: Array<string>): void;
   addTags(value: string, index?: number): string;
 
-  clearAltNamesList(): void;
-  getAltNamesList(): Array<string>;
-  setAltNamesList(value: Array<string>): void;
-  addAltNames(value: string, index?: number): string;
+  clearNameAlternativesList(): void;
+  getNameAlternativesList(): Array<string>;
+  setNameAlternativesList(value: Array<string>): void;
+  addNameAlternatives(value: string, index?: number): string;
 
   getDeveloper(): string;
   setDeveloper(value: string): void;
@@ -1914,7 +1914,7 @@ export namespace App {
     coverImageUrl: string,
     coverImageId?: librarian_v1_wellknown_pb.InternalID.AsObject,
     tagsList: Array<string>,
-    altNamesList: Array<string>,
+    nameAlternativesList: Array<string>,
     developer: string,
     publisher: string,
   }

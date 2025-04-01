@@ -521,8 +521,8 @@ proto.librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest.prototype.
  */
 proto.librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-hostname: jspb.Message.getFieldWithDefault(msg, 1, ""),
-hostnameAlternativesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
+url: jspb.Message.getFieldWithDefault(msg, 1, ""),
+urlAlternativesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
 getTokenUrlPath: jspb.Message.getFieldWithDefault(msg, 3, ""),
 downloadFileBasePath: jspb.Message.getFieldWithDefault(msg, 4, ""),
 librariesList: jspb.Message.toObjectList(msg.getLibrariesList(),
@@ -565,11 +565,11 @@ proto.librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest.deserializ
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setHostname(value);
+      msg.setUrl(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.addHostnameAlternatives(value);
+      msg.addUrlAlternatives(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -613,14 +613,14 @@ proto.librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest.prototype.
  */
 proto.librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getHostname();
+  f = message.getUrl();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getHostnameAlternativesList();
+  f = message.getUrlAlternativesList();
   if (f.length > 0) {
     writer.writeRepeatedString(
       2,
@@ -653,10 +653,10 @@ proto.librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest.serializeB
 
 
 /**
- * optional string hostname = 1;
+ * optional string url = 1;
  * @return {string}
  */
-proto.librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest.prototype.getHostname = function() {
+proto.librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest.prototype.getUrl = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -665,16 +665,16 @@ proto.librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest.prototype.
  * @param {string} value
  * @return {!proto.librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest} returns this
  */
-proto.librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest.prototype.setHostname = function(value) {
+proto.librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest.prototype.setUrl = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * repeated string hostname_alternatives = 2;
+ * repeated string url_alternatives = 2;
  * @return {!Array<string>}
  */
-proto.librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest.prototype.getHostnameAlternativesList = function() {
+proto.librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest.prototype.getUrlAlternativesList = function() {
   return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
@@ -683,7 +683,7 @@ proto.librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest.prototype.
  * @param {!Array<string>} value
  * @return {!proto.librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest} returns this
  */
-proto.librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest.prototype.setHostnameAlternativesList = function(value) {
+proto.librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest.prototype.setUrlAlternativesList = function(value) {
   return jspb.Message.setField(this, 2, value || []);
 };
 
@@ -693,7 +693,7 @@ proto.librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest.prototype.
  * @param {number=} opt_index
  * @return {!proto.librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest} returns this
  */
-proto.librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest.prototype.addHostnameAlternatives = function(value, opt_index) {
+proto.librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest.prototype.addUrlAlternatives = function(value, opt_index) {
   return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
 };
 
@@ -702,8 +702,8 @@ proto.librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest.prototype.
  * Clears the list making it empty but non-null.
  * @return {!proto.librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest} returns this
  */
-proto.librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest.prototype.clearHostnameAlternativesList = function() {
-  return this.setHostnameAlternativesList([]);
+proto.librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest.prototype.clearUrlAlternativesList = function() {
+  return this.setUrlAlternativesList([]);
 };
 
 

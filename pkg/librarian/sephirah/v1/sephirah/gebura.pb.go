@@ -2874,14 +2874,14 @@ type AppInfo struct {
 	BackgroundImageUrl string         `protobuf:"bytes,15,opt,name=background_image_url,json=backgroundImageUrl,proto3" json:"background_image_url,omitempty"`
 	BackgroundImageId  *v1.InternalID `protobuf:"bytes,16,opt,name=background_image_id,json=backgroundImageId,proto3" json:"background_image_id,omitempty"`
 	// must be vertical, usually 3:4
-	CoverImageUrl string         `protobuf:"bytes,17,opt,name=cover_image_url,json=coverImageUrl,proto3" json:"cover_image_url,omitempty"`
-	CoverImageId  *v1.InternalID `protobuf:"bytes,18,opt,name=cover_image_id,json=coverImageId,proto3" json:"cover_image_id,omitempty"`
-	Tags          []string       `protobuf:"bytes,19,rep,name=tags,proto3" json:"tags,omitempty"`
-	AltNames      []string       `protobuf:"bytes,20,rep,name=alt_names,json=altNames,proto3" json:"alt_names,omitempty"`
-	Developer     string         `protobuf:"bytes,21,opt,name=developer,proto3" json:"developer,omitempty"`
-	Publisher     string         `protobuf:"bytes,22,opt,name=publisher,proto3" json:"publisher,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	CoverImageUrl    string         `protobuf:"bytes,17,opt,name=cover_image_url,json=coverImageUrl,proto3" json:"cover_image_url,omitempty"`
+	CoverImageId     *v1.InternalID `protobuf:"bytes,18,opt,name=cover_image_id,json=coverImageId,proto3" json:"cover_image_id,omitempty"`
+	Tags             []string       `protobuf:"bytes,19,rep,name=tags,proto3" json:"tags,omitempty"`
+	NameAlternatives []string       `protobuf:"bytes,20,rep,name=name_alternatives,json=nameAlternatives,proto3" json:"name_alternatives,omitempty"`
+	Developer        string         `protobuf:"bytes,21,opt,name=developer,proto3" json:"developer,omitempty"`
+	Publisher        string         `protobuf:"bytes,22,opt,name=publisher,proto3" json:"publisher,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
 }
 
 func (x *AppInfo) Reset() {
@@ -3005,9 +3005,9 @@ func (x *AppInfo) GetTags() []string {
 	return nil
 }
 
-func (x *AppInfo) GetAltNames() []string {
+func (x *AppInfo) GetNameAlternatives() []string {
 	if x != nil {
-		return x.AltNames
+		return x.NameAlternatives
 	}
 	return nil
 }
@@ -3132,13 +3132,13 @@ type StoreApp struct {
 	IconImageId       *v1.InternalID `protobuf:"bytes,23,opt,name=icon_image_id,json=iconImageId,proto3" json:"icon_image_id,omitempty"`
 	BackgroundImageId *v1.InternalID `protobuf:"bytes,24,opt,name=background_image_id,json=backgroundImageId,proto3" json:"background_image_id,omitempty"`
 	// must be vertical, usually 3:4
-	CoverImageId  *v1.InternalID `protobuf:"bytes,25,opt,name=cover_image_id,json=coverImageId,proto3" json:"cover_image_id,omitempty"`
-	Tags          []string       `protobuf:"bytes,26,rep,name=tags,proto3" json:"tags,omitempty"`
-	AltNames      []string       `protobuf:"bytes,27,rep,name=alt_names,json=altNames,proto3" json:"alt_names,omitempty"`
-	Developer     string         `protobuf:"bytes,28,opt,name=developer,proto3" json:"developer,omitempty"`
-	Publisher     string         `protobuf:"bytes,29,opt,name=publisher,proto3" json:"publisher,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	CoverImageId     *v1.InternalID `protobuf:"bytes,25,opt,name=cover_image_id,json=coverImageId,proto3" json:"cover_image_id,omitempty"`
+	Tags             []string       `protobuf:"bytes,26,rep,name=tags,proto3" json:"tags,omitempty"`
+	NameAlternatives []string       `protobuf:"bytes,27,rep,name=name_alternatives,json=nameAlternatives,proto3" json:"name_alternatives,omitempty"`
+	Developer        string         `protobuf:"bytes,28,opt,name=developer,proto3" json:"developer,omitempty"`
+	Publisher        string         `protobuf:"bytes,29,opt,name=publisher,proto3" json:"publisher,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
 }
 
 func (x *StoreApp) Reset() {
@@ -3241,9 +3241,9 @@ func (x *StoreApp) GetTags() []string {
 	return nil
 }
 
-func (x *StoreApp) GetAltNames() []string {
+func (x *StoreApp) GetNameAlternatives() []string {
 	if x != nil {
-		return x.AltNames
+		return x.NameAlternatives
 	}
 	return nil
 }
@@ -3597,14 +3597,14 @@ type App struct {
 	BackgroundImageUrl string         `protobuf:"bytes,25,opt,name=background_image_url,json=backgroundImageUrl,proto3" json:"background_image_url,omitempty"`
 	BackgroundImageId  *v1.InternalID `protobuf:"bytes,26,opt,name=background_image_id,json=backgroundImageId,proto3" json:"background_image_id,omitempty"`
 	// must be vertical, usually 3:4
-	CoverImageUrl string         `protobuf:"bytes,27,opt,name=cover_image_url,json=coverImageUrl,proto3" json:"cover_image_url,omitempty"`
-	CoverImageId  *v1.InternalID `protobuf:"bytes,28,opt,name=cover_image_id,json=coverImageId,proto3" json:"cover_image_id,omitempty"`
-	Tags          []string       `protobuf:"bytes,29,rep,name=tags,proto3" json:"tags,omitempty"`
-	AltNames      []string       `protobuf:"bytes,30,rep,name=alt_names,json=altNames,proto3" json:"alt_names,omitempty"`
-	Developer     string         `protobuf:"bytes,31,opt,name=developer,proto3" json:"developer,omitempty"`
-	Publisher     string         `protobuf:"bytes,32,opt,name=publisher,proto3" json:"publisher,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	CoverImageUrl    string         `protobuf:"bytes,27,opt,name=cover_image_url,json=coverImageUrl,proto3" json:"cover_image_url,omitempty"`
+	CoverImageId     *v1.InternalID `protobuf:"bytes,28,opt,name=cover_image_id,json=coverImageId,proto3" json:"cover_image_id,omitempty"`
+	Tags             []string       `protobuf:"bytes,29,rep,name=tags,proto3" json:"tags,omitempty"`
+	NameAlternatives []string       `protobuf:"bytes,30,rep,name=name_alternatives,json=nameAlternatives,proto3" json:"name_alternatives,omitempty"`
+	Developer        string         `protobuf:"bytes,31,opt,name=developer,proto3" json:"developer,omitempty"`
+	Publisher        string         `protobuf:"bytes,32,opt,name=publisher,proto3" json:"publisher,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
 }
 
 func (x *App) Reset() {
@@ -3763,9 +3763,9 @@ func (x *App) GetTags() []string {
 	return nil
 }
 
-func (x *App) GetAltNames() []string {
+func (x *App) GetNameAlternatives() []string {
 	if x != nil {
-		return x.AltNames
+		return x.NameAlternatives
 	}
 	return nil
 }
@@ -4081,7 +4081,7 @@ const file_librarian_sephirah_v1_sephirah_gebura_proto_rawDesc = "" +
 	"\x19UpdateAppCategoryResponse\"D\n" +
 	"\x18DeleteAppCategoryRequest\x12(\n" +
 	"\x02id\x18\x01 \x01(\v2\x18.librarian.v1.InternalIDR\x02id\"\x1b\n" +
-	"\x19DeleteAppCategoryResponse\"\xa0\x05\n" +
+	"\x19DeleteAppCategoryResponse\"\xb0\x05\n" +
 	"\aAppInfo\x12\x16\n" +
 	"\x06source\x18\x01 \x01(\tR\x06source\x12\"\n" +
 	"\rsource_app_id\x18\x02 \x01(\tR\vsourceAppId\x12\"\n" +
@@ -4097,8 +4097,8 @@ const file_librarian_sephirah_v1_sephirah_gebura_proto_rawDesc = "" +
 	"\x13background_image_id\x18\x10 \x01(\v2\x18.librarian.v1.InternalIDR\x11backgroundImageId\x12&\n" +
 	"\x0fcover_image_url\x18\x11 \x01(\tR\rcoverImageUrl\x12>\n" +
 	"\x0ecover_image_id\x18\x12 \x01(\v2\x18.librarian.v1.InternalIDR\fcoverImageId\x12\x12\n" +
-	"\x04tags\x18\x13 \x03(\tR\x04tags\x12\x1b\n" +
-	"\talt_names\x18\x14 \x03(\tR\baltNames\x12\x1c\n" +
+	"\x04tags\x18\x13 \x03(\tR\x04tags\x12+\n" +
+	"\x11name_alternatives\x18\x14 \x03(\tR\x10nameAlternatives\x12\x1c\n" +
 	"\tdeveloper\x18\x15 \x01(\tR\tdeveloper\x12\x1c\n" +
 	"\tpublisher\x18\x16 \x01(\tR\tpublisherB\r\n" +
 	"\v_source_url\"\xbb\x03\n" +
@@ -4110,7 +4110,7 @@ const file_librarian_sephirah_v1_sephirah_gebura_proto_rawDesc = "" +
 	"\n" +
 	"save_files\x18\x05 \x03(\v20.librarian.sephirah.v1.sephirah.StoreAppSaveFileR\tsaveFiles\x12%\n" +
 	"\x0eacquired_count\x18\x06 \x01(\x03R\racquiredCount\x12D\n" +
-	"\x11acquired_user_ids\x18\a \x03(\v2\x18.librarian.v1.InternalIDR\x0facquiredUserIds\"\x9f\x05\n" +
+	"\x11acquired_user_ids\x18\a \x03(\v2\x18.librarian.v1.InternalIDR\x0facquiredUserIds\"\xaf\x05\n" +
 	"\bStoreApp\x12(\n" +
 	"\x02id\x18\x01 \x01(\v2\x18.librarian.v1.InternalIDR\x02id\x12f\n" +
 	"\x10bound_app_source\x18\x05 \x03(\v2<.librarian.sephirah.v1.sephirah.StoreApp.BoundAppSourceEntryR\x0eboundAppSource\x12\x16\n" +
@@ -4121,8 +4121,8 @@ const file_librarian_sephirah_v1_sephirah_gebura_proto_rawDesc = "" +
 	"\ricon_image_id\x18\x17 \x01(\v2\x18.librarian.v1.InternalIDR\viconImageId\x12H\n" +
 	"\x13background_image_id\x18\x18 \x01(\v2\x18.librarian.v1.InternalIDR\x11backgroundImageId\x12>\n" +
 	"\x0ecover_image_id\x18\x19 \x01(\v2\x18.librarian.v1.InternalIDR\fcoverImageId\x12\x12\n" +
-	"\x04tags\x18\x1a \x03(\tR\x04tags\x12\x1b\n" +
-	"\talt_names\x18\x1b \x03(\tR\baltNames\x12\x1c\n" +
+	"\x04tags\x18\x1a \x03(\tR\x04tags\x12+\n" +
+	"\x11name_alternatives\x18\x1b \x03(\tR\x10nameAlternatives\x12\x1c\n" +
 	"\tdeveloper\x18\x1c \x01(\tR\tdeveloper\x12\x1c\n" +
 	"\tpublisher\x18\x1d \x01(\tR\tpublisher\x1aA\n" +
 	"\x13BoundAppSourceEntry\x12\x10\n" +
@@ -4154,7 +4154,7 @@ const file_librarian_sephirah_v1_sephirah_gebura_proto_rawDesc = "" +
 	"\vdescription\x18\x03 \x01(\tR\vdescription\x12\x16\n" +
 	"\x06public\x18\x04 \x01(\bR\x06public\x123\n" +
 	"\x04file\x18\x05 \x01(\v2\x1a.librarian.v1.FileMetadataH\x00R\x04file\x88\x01\x01B\a\n" +
-	"\x05_file\"\xda\b\n" +
+	"\x05_file\"\xea\b\n" +
 	"\x03App\x12(\n" +
 	"\x02id\x18\x01 \x01(\v2\x18.librarian.v1.InternalIDR\x02id\x12%\n" +
 	"\x0eversion_number\x18\x02 \x01(\x04R\rversionNumber\x12=\n" +
@@ -4174,8 +4174,8 @@ const file_librarian_sephirah_v1_sephirah_gebura_proto_rawDesc = "" +
 	"\x13background_image_id\x18\x1a \x01(\v2\x18.librarian.v1.InternalIDR\x11backgroundImageId\x12&\n" +
 	"\x0fcover_image_url\x18\x1b \x01(\tR\rcoverImageUrl\x12>\n" +
 	"\x0ecover_image_id\x18\x1c \x01(\v2\x18.librarian.v1.InternalIDR\fcoverImageId\x12\x12\n" +
-	"\x04tags\x18\x1d \x03(\tR\x04tags\x12\x1b\n" +
-	"\talt_names\x18\x1e \x03(\tR\baltNames\x12\x1c\n" +
+	"\x04tags\x18\x1d \x03(\tR\x04tags\x12+\n" +
+	"\x11name_alternatives\x18\x1e \x03(\tR\x10nameAlternatives\x12\x1c\n" +
 	"\tdeveloper\x18\x1f \x01(\tR\tdeveloper\x12\x1c\n" +
 	"\tpublisher\x18  \x01(\tR\tpublisher\x1a=\n" +
 	"\x0fAppSourcesEntry\x12\x10\n" +

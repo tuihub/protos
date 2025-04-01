@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: librarian/sephirah/v1/sephirah/netzach.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -27,7 +27,7 @@ class NotifyTargetStatus extends $pb.ProtobufEnum {
   static final $core.Map<$core.int, NotifyTargetStatus> _byValue = $pb.ProtobufEnum.initByValue(values);
   static NotifyTargetStatus? valueOf($core.int value) => _byValue[value];
 
-  const NotifyTargetStatus._($core.int v, $core.String n) : super(v, n);
+  const NotifyTargetStatus._(super.v, super.n);
 }
 
 class NotifyFlowStatus extends $pb.ProtobufEnum {
@@ -44,7 +44,7 @@ class NotifyFlowStatus extends $pb.ProtobufEnum {
   static final $core.Map<$core.int, NotifyFlowStatus> _byValue = $pb.ProtobufEnum.initByValue(values);
   static NotifyFlowStatus? valueOf($core.int value) => _byValue[value];
 
-  const NotifyFlowStatus._($core.int v, $core.String n) : super(v, n);
+  const NotifyFlowStatus._(super.v, super.n);
 }
 
 class SystemNotificationLevel extends $pb.ProtobufEnum {
@@ -65,7 +65,7 @@ class SystemNotificationLevel extends $pb.ProtobufEnum {
   static final $core.Map<$core.int, SystemNotificationLevel> _byValue = $pb.ProtobufEnum.initByValue(values);
   static SystemNotificationLevel? valueOf($core.int value) => _byValue[value];
 
-  const SystemNotificationLevel._($core.int v, $core.String n) : super(v, n);
+  const SystemNotificationLevel._(super.v, super.n);
 }
 
 class SystemNotificationStatus extends $pb.ProtobufEnum {
@@ -84,7 +84,7 @@ class SystemNotificationStatus extends $pb.ProtobufEnum {
   static final $core.Map<$core.int, SystemNotificationStatus> _byValue = $pb.ProtobufEnum.initByValue(values);
   static SystemNotificationStatus? valueOf($core.int value) => _byValue[value];
 
-  const SystemNotificationStatus._($core.int v, $core.String n) : super(v, n);
+  const SystemNotificationStatus._(super.v, super.n);
 }
 
 

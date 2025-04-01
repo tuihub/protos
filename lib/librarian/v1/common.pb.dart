@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: librarian/v1/common.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -16,6 +16,8 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../google/protobuf/timestamp.pb.dart' as $0;
 import 'wellknown.pb.dart' as $2;
+
+export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 class Feed extends $pb.GeneratedMessage {
   factory Feed({
@@ -95,11 +97,11 @@ class Feed extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $2.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($2.InternalID v) { setField(1, v); }
+  set id($2.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
   @$pb.TagNumber(1)
   $2.InternalID ensureId() => $_ensure(0);
 
@@ -111,7 +113,7 @@ class Feed extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasTitle() => $_has(1);
   @$pb.TagNumber(2)
-  void clearTitle() => clearField(2);
+  void clearTitle() => $_clearField(2);
 
   /// `standard field`
   @$pb.TagNumber(3)
@@ -121,7 +123,7 @@ class Feed extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasLink() => $_has(2);
   @$pb.TagNumber(3)
-  void clearLink() => clearField(3);
+  void clearLink() => $_clearField(3);
 
   /// `standard field`
   @$pb.TagNumber(4)
@@ -131,11 +133,11 @@ class Feed extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasDescription() => $_has(3);
   @$pb.TagNumber(4)
-  void clearDescription() => clearField(4);
+  void clearDescription() => $_clearField(4);
 
   /// `standard field`
   @$pb.TagNumber(5)
-  $core.List<FeedItem> get items => $_getList(4);
+  $pb.PbList<FeedItem> get items => $_getList(4);
 
   /// `standard field`
   @$pb.TagNumber(6)
@@ -145,23 +147,23 @@ class Feed extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.bool hasLanguage() => $_has(5);
   @$pb.TagNumber(6)
-  void clearLanguage() => clearField(6);
+  void clearLanguage() => $_clearField(6);
 
   /// `standard field`
   @$pb.TagNumber(7)
   FeedImage get image => $_getN(6);
   @$pb.TagNumber(7)
-  set image(FeedImage v) { setField(7, v); }
+  set image(FeedImage v) { $_setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasImage() => $_has(6);
   @$pb.TagNumber(7)
-  void clearImage() => clearField(7);
+  void clearImage() => $_clearField(7);
   @$pb.TagNumber(7)
   FeedImage ensureImage() => $_ensure(6);
 
   /// `standard field`
   @$pb.TagNumber(8)
-  $core.List<FeedPerson> get authors => $_getList(7);
+  $pb.PbList<FeedPerson> get authors => $_getList(7);
 }
 
 class FeedItem extends $pb.GeneratedMessage {
@@ -277,11 +279,11 @@ class FeedItem extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $2.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($2.InternalID v) { setField(1, v); }
+  set id($2.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
   @$pb.TagNumber(1)
   $2.InternalID ensureId() => $_ensure(0);
 
@@ -293,11 +295,11 @@ class FeedItem extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasTitle() => $_has(1);
   @$pb.TagNumber(2)
-  void clearTitle() => clearField(2);
+  void clearTitle() => $_clearField(2);
 
   /// `standard field`
   @$pb.TagNumber(3)
-  $core.List<FeedPerson> get authors => $_getList(2);
+  $pb.PbList<FeedPerson> get authors => $_getList(2);
 
   /// `standard field`
   @$pb.TagNumber(4)
@@ -307,7 +309,7 @@ class FeedItem extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasDescription() => $_has(3);
   @$pb.TagNumber(4)
-  void clearDescription() => clearField(4);
+  void clearDescription() => $_clearField(4);
 
   /// `standard field`
   @$pb.TagNumber(5)
@@ -317,7 +319,7 @@ class FeedItem extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool hasContent() => $_has(4);
   @$pb.TagNumber(5)
-  void clearContent() => clearField(5);
+  void clearContent() => $_clearField(5);
 
   /// `standard field`
   @$pb.TagNumber(6)
@@ -327,7 +329,7 @@ class FeedItem extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.bool hasGuid() => $_has(5);
   @$pb.TagNumber(6)
-  void clearGuid() => clearField(6);
+  void clearGuid() => $_clearField(6);
 
   /// `standard field`. e.g. https://github.com/TuiHub/Librarian/releases.atom
   @$pb.TagNumber(7)
@@ -337,17 +339,17 @@ class FeedItem extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   $core.bool hasLink() => $_has(6);
   @$pb.TagNumber(7)
-  void clearLink() => clearField(7);
+  void clearLink() => $_clearField(7);
 
   /// `standard field`
   @$pb.TagNumber(8)
   FeedImage get image => $_getN(7);
   @$pb.TagNumber(8)
-  set image(FeedImage v) { setField(8, v); }
+  set image(FeedImage v) { $_setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasImage() => $_has(7);
   @$pb.TagNumber(8)
-  void clearImage() => clearField(8);
+  void clearImage() => $_clearField(8);
   @$pb.TagNumber(8)
   FeedImage ensureImage() => $_ensure(7);
 
@@ -359,18 +361,18 @@ class FeedItem extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   $core.bool hasPublished() => $_has(8);
   @$pb.TagNumber(9)
-  void clearPublished() => clearField(9);
+  void clearPublished() => $_clearField(9);
 
   /// must valid when send to client.
   /// if server failed to generate, fallback to server time.
   @$pb.TagNumber(10)
   $0.Timestamp get publishedParsed => $_getN(9);
   @$pb.TagNumber(10)
-  set publishedParsed($0.Timestamp v) { setField(10, v); }
+  set publishedParsed($0.Timestamp v) { $_setField(10, v); }
   @$pb.TagNumber(10)
   $core.bool hasPublishedParsed() => $_has(9);
   @$pb.TagNumber(10)
-  void clearPublishedParsed() => clearField(10);
+  void clearPublishedParsed() => $_clearField(10);
   @$pb.TagNumber(10)
   $0.Timestamp ensurePublishedParsed() => $_ensure(9);
 
@@ -382,22 +384,22 @@ class FeedItem extends $pb.GeneratedMessage {
   @$pb.TagNumber(11)
   $core.bool hasUpdated() => $_has(10);
   @$pb.TagNumber(11)
-  void clearUpdated() => clearField(11);
+  void clearUpdated() => $_clearField(11);
 
   @$pb.TagNumber(12)
   $0.Timestamp get updatedParsed => $_getN(11);
   @$pb.TagNumber(12)
-  set updatedParsed($0.Timestamp v) { setField(12, v); }
+  set updatedParsed($0.Timestamp v) { $_setField(12, v); }
   @$pb.TagNumber(12)
   $core.bool hasUpdatedParsed() => $_has(11);
   @$pb.TagNumber(12)
-  void clearUpdatedParsed() => clearField(12);
+  void clearUpdatedParsed() => $_clearField(12);
   @$pb.TagNumber(12)
   $0.Timestamp ensureUpdatedParsed() => $_ensure(11);
 
   /// `standard field`
   @$pb.TagNumber(13)
-  $core.List<FeedEnclosure> get enclosures => $_getList(12);
+  $pb.PbList<FeedEnclosure> get enclosures => $_getList(12);
 
   /// hostname of `link`. e.g. github.com
   @$pb.TagNumber(14)
@@ -407,7 +409,7 @@ class FeedItem extends $pb.GeneratedMessage {
   @$pb.TagNumber(14)
   $core.bool hasPublishPlatform() => $_has(13);
   @$pb.TagNumber(14)
-  void clearPublishPlatform() => clearField(14);
+  void clearPublishPlatform() => $_clearField(14);
 
   /// recorded read times
   @$pb.TagNumber(15)
@@ -417,7 +419,7 @@ class FeedItem extends $pb.GeneratedMessage {
   @$pb.TagNumber(15)
   $core.bool hasReadCount() => $_has(14);
   @$pb.TagNumber(15)
-  void clearReadCount() => clearField(15);
+  void clearReadCount() => $_clearField(15);
 }
 
 /// Person is an individual specified in a feed
@@ -475,7 +477,7 @@ class FeedPerson extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasName() => $_has(0);
   @$pb.TagNumber(1)
-  void clearName() => clearField(1);
+  void clearName() => $_clearField(1);
 
   /// `standard field`
   @$pb.TagNumber(2)
@@ -485,7 +487,7 @@ class FeedPerson extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasEmail() => $_has(1);
   @$pb.TagNumber(2)
-  void clearEmail() => clearField(2);
+  void clearEmail() => $_clearField(2);
 }
 
 /// Image is an image that is the artwork for a given
@@ -543,7 +545,7 @@ class FeedImage extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasUrl() => $_has(0);
   @$pb.TagNumber(1)
-  void clearUrl() => clearField(1);
+  void clearUrl() => $_clearField(1);
 
   /// `standard field`
   @$pb.TagNumber(2)
@@ -553,7 +555,7 @@ class FeedImage extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasTitle() => $_has(1);
   @$pb.TagNumber(2)
-  void clearTitle() => clearField(2);
+  void clearTitle() => $_clearField(2);
 }
 
 /// Enclosure is a file associated with a given Item.
@@ -615,7 +617,7 @@ class FeedEnclosure extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasUrl() => $_has(0);
   @$pb.TagNumber(1)
-  void clearUrl() => clearField(1);
+  void clearUrl() => $_clearField(1);
 
   /// `standard field`
   @$pb.TagNumber(2)
@@ -625,7 +627,7 @@ class FeedEnclosure extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasLength() => $_has(1);
   @$pb.TagNumber(2)
-  void clearLength() => clearField(2);
+  void clearLength() => $_clearField(2);
 
   /// `standard field`
   @$pb.TagNumber(3)
@@ -635,7 +637,7 @@ class FeedEnclosure extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasType() => $_has(2);
   @$pb.TagNumber(3)
-  void clearType() => clearField(3);
+  void clearType() => $_clearField(3);
 }
 
 class PorterBinarySummary extends $pb.GeneratedMessage {
@@ -712,7 +714,7 @@ class PorterBinarySummary extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasSourceCodeAddress() => $_has(0);
   @$pb.TagNumber(1)
-  void clearSourceCodeAddress() => clearField(1);
+  void clearSourceCodeAddress() => $_clearField(1);
 
   /// Binary build version.
   /// The content *should* be a semantic version string similar to the one generated by `git describe`,
@@ -724,7 +726,7 @@ class PorterBinarySummary extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasBuildVersion() => $_has(1);
   @$pb.TagNumber(2)
-  void clearBuildVersion() => clearField(2);
+  void clearBuildVersion() => $_clearField(2);
 
   /// Binary build date.
   /// The content *should* be a date format that is human-readable.
@@ -735,7 +737,7 @@ class PorterBinarySummary extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasBuildDate() => $_has(2);
   @$pb.TagNumber(3)
-  void clearBuildDate() => clearField(3);
+  void clearBuildDate() => $_clearField(3);
 
   /// Human-readable name. plain text.
   @$pb.TagNumber(4)
@@ -745,7 +747,7 @@ class PorterBinarySummary extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool hasName() => $_has(3);
   @$pb.TagNumber(4)
-  void clearName() => clearField(4);
+  void clearName() => $_clearField(4);
 
   /// Human-readable version. plain text.
   @$pb.TagNumber(5)
@@ -755,7 +757,7 @@ class PorterBinarySummary extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool hasVersion() => $_has(4);
   @$pb.TagNumber(5)
-  void clearVersion() => clearField(5);
+  void clearVersion() => $_clearField(5);
 
   /// Human-readable description. plain text or markdown.
   @$pb.TagNumber(6)
@@ -765,7 +767,7 @@ class PorterBinarySummary extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.bool hasDescription() => $_has(5);
   @$pb.TagNumber(6)
-  void clearDescription() => clearField(6);
+  void clearDescription() => $_clearField(6);
 }
 
 

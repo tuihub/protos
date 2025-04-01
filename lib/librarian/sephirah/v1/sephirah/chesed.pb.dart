@@ -2,7 +2,7 @@
 //  Generated code. Do not modify.
 //  source: librarian/sephirah/v1/sephirah/chesed.proto
 //
-// @dart = 2.12
+// @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names, library_prefixes
@@ -14,6 +14,8 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../v1/wellknown.pb.dart' as $8;
+
+export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 class UploadImageRequest extends $pb.GeneratedMessage {
   factory UploadImageRequest({
@@ -68,11 +70,11 @@ class UploadImageRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.FileMetadata get fileMetadata => $_getN(0);
   @$pb.TagNumber(1)
-  set fileMetadata($8.FileMetadata v) { setField(1, v); }
+  set fileMetadata($8.FileMetadata v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasFileMetadata() => $_has(0);
   @$pb.TagNumber(1)
-  void clearFileMetadata() => clearField(1);
+  void clearFileMetadata() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.FileMetadata ensureFileMetadata() => $_ensure(0);
 
@@ -83,7 +85,7 @@ class UploadImageRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearName() => clearField(2);
+  void clearName() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get description => $_getSZ(2);
@@ -92,7 +94,7 @@ class UploadImageRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasDescription() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDescription() => clearField(3);
+  void clearDescription() => $_clearField(3);
 }
 
 class UploadImageResponse extends $pb.GeneratedMessage {
@@ -142,7 +144,7 @@ class UploadImageResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasUploadToken() => $_has(0);
   @$pb.TagNumber(1)
-  void clearUploadToken() => clearField(1);
+  void clearUploadToken() => $_clearField(1);
 }
 
 class UpdateImageRequest extends $pb.GeneratedMessage {
@@ -198,11 +200,11 @@ class UpdateImageRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($8.InternalID v) { setField(1, v); }
+  set id($8.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.InternalID ensureId() => $_ensure(0);
 
@@ -213,7 +215,7 @@ class UpdateImageRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearName() => clearField(2);
+  void clearName() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get description => $_getSZ(2);
@@ -222,7 +224,7 @@ class UpdateImageRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasDescription() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDescription() => clearField(3);
+  void clearDescription() => $_clearField(3);
 }
 
 class UpdateImageResponse extends $pb.GeneratedMessage {
@@ -305,22 +307,22 @@ class ListImagesRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.PagingRequest get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($8.PagingRequest v) { setField(1, v); }
+  set paging($8.PagingRequest v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.PagingRequest ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $8.TimeRange get timeRange => $_getN(1);
   @$pb.TagNumber(2)
-  set timeRange($8.TimeRange v) { setField(2, v); }
+  set timeRange($8.TimeRange v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasTimeRange() => $_has(1);
   @$pb.TagNumber(2)
-  void clearTimeRange() => clearField(2);
+  void clearTimeRange() => $_clearField(2);
   @$pb.TagNumber(2)
   $8.TimeRange ensureTimeRange() => $_ensure(1);
 }
@@ -373,16 +375,16 @@ class ListImagesResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.PagingResponse get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($8.PagingResponse v) { setField(1, v); }
+  set paging($8.PagingResponse v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<$8.InternalID> get ids => $_getList(1);
+  $pb.PbList<$8.InternalID> get ids => $_getList(1);
 }
 
 class SearchImagesRequest extends $pb.GeneratedMessage {
@@ -433,11 +435,11 @@ class SearchImagesRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.PagingRequest get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($8.PagingRequest v) { setField(1, v); }
+  set paging($8.PagingRequest v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.PagingRequest ensurePaging() => $_ensure(0);
 
@@ -448,7 +450,7 @@ class SearchImagesRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasKeywords() => $_has(1);
   @$pb.TagNumber(2)
-  void clearKeywords() => clearField(2);
+  void clearKeywords() => $_clearField(2);
 }
 
 class SearchImagesResponse extends $pb.GeneratedMessage {
@@ -499,16 +501,16 @@ class SearchImagesResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.PagingResponse get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($8.PagingResponse v) { setField(1, v); }
+  set paging($8.PagingResponse v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPaging() => clearField(1);
+  void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $core.List<$8.InternalID> get ids => $_getList(1);
+  $pb.PbList<$8.InternalID> get ids => $_getList(1);
 }
 
 class GetImageRequest extends $pb.GeneratedMessage {
@@ -554,11 +556,11 @@ class GetImageRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($8.InternalID v) { setField(1, v); }
+  set id($8.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.InternalID ensureId() => $_ensure(0);
 }
@@ -616,11 +618,11 @@ class GetImageResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.FileMetadata get fileMetadata => $_getN(0);
   @$pb.TagNumber(1)
-  set fileMetadata($8.FileMetadata v) { setField(1, v); }
+  set fileMetadata($8.FileMetadata v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasFileMetadata() => $_has(0);
   @$pb.TagNumber(1)
-  void clearFileMetadata() => clearField(1);
+  void clearFileMetadata() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.FileMetadata ensureFileMetadata() => $_ensure(0);
 
@@ -631,7 +633,7 @@ class GetImageResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearName() => clearField(2);
+  void clearName() => $_clearField(2);
 
   @$pb.TagNumber(3)
   $core.String get description => $_getSZ(2);
@@ -640,7 +642,7 @@ class GetImageResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool hasDescription() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDescription() => clearField(3);
+  void clearDescription() => $_clearField(3);
 }
 
 class DownloadImageRequest extends $pb.GeneratedMessage {
@@ -686,11 +688,11 @@ class DownloadImageRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($8.InternalID v) { setField(1, v); }
+  set id($8.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearId() => clearField(1);
+  void clearId() => $_clearField(1);
   @$pb.TagNumber(1)
   $8.InternalID ensureId() => $_ensure(0);
 }
@@ -742,7 +744,7 @@ class DownloadImageResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool hasDownloadToken() => $_has(0);
   @$pb.TagNumber(1)
-  void clearDownloadToken() => clearField(1);
+  void clearDownloadToken() => $_clearField(1);
 }
 
 
