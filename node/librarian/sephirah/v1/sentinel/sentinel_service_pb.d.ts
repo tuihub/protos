@@ -2,7 +2,6 @@
 // file: librarian/sephirah/v1/sentinel/sentinel_service.proto
 
 import * as jspb from "google-protobuf";
-import * as librarian_v1_wellknown_pb from "../../../../librarian/v1/wellknown_pb";
 
 export class RefreshTokenRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
@@ -217,13 +216,24 @@ export namespace SentinelLibraryAppBinary {
 }
 
 export class SentinelLibraryAppBinaryFile extends jspb.Message {
-  hasFileMetadata(): boolean;
-  clearFileMetadata(): void;
-  getFileMetadata(): librarian_v1_wellknown_pb.FileMetadata | undefined;
-  setFileMetadata(value?: librarian_v1_wellknown_pb.FileMetadata): void;
+  getName(): string;
+  setName(value: string): void;
+
+  getSizeBytes(): number;
+  setSizeBytes(value: number): void;
+
+  getSha256(): Uint8Array | string;
+  getSha256_asU8(): Uint8Array;
+  getSha256_asB64(): string;
+  setSha256(value: Uint8Array | string): void;
 
   getServerFilePath(): string;
   setServerFilePath(value: string): void;
+
+  hasChunksInfo(): boolean;
+  clearChunksInfo(): void;
+  getChunksInfo(): string;
+  setChunksInfo(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SentinelLibraryAppBinaryFile.AsObject;
@@ -237,8 +247,11 @@ export class SentinelLibraryAppBinaryFile extends jspb.Message {
 
 export namespace SentinelLibraryAppBinaryFile {
   export type AsObject = {
-    fileMetadata?: librarian_v1_wellknown_pb.FileMetadata.AsObject,
+    name: string,
+    sizeBytes: number,
+    sha256: Uint8Array | string,
     serverFilePath: string,
+    chunksInfo: string,
   }
 }
 

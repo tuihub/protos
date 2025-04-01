@@ -3,7 +3,6 @@
 'use strict';
 var grpc = require('@grpc/grpc-js');
 var librarian_sephirah_v1_sentinel_sentinel_service_pb = require('../../../../librarian/sephirah/v1/sentinel/sentinel_service_pb.js');
-var librarian_v1_wellknown_pb = require('../../../../librarian/v1/wellknown_pb.js');
 
 function serialize_librarian_sephirah_v1_sentinel_RefreshTokenRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_sentinel_sentinel_service_pb.RefreshTokenRequest)) {

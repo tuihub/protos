@@ -132,14 +132,21 @@ final $typed_data.Uint8List sentinelLibraryAppBinaryDescriptor = $convert.base64
 const SentinelLibraryAppBinaryFile$json = {
   '1': 'SentinelLibraryAppBinaryFile',
   '2': [
-    {'1': 'file_metadata', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.FileMetadata', '10': 'fileMetadata'},
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'size_bytes', '3': 2, '4': 1, '5': 3, '10': 'sizeBytes'},
+    {'1': 'sha256', '3': 3, '4': 1, '5': 12, '10': 'sha256'},
     {'1': 'server_file_path', '3': 4, '4': 1, '5': 9, '10': 'serverFilePath'},
+    {'1': 'chunks_info', '3': 10, '4': 1, '5': 9, '9': 0, '10': 'chunksInfo', '17': true},
+  ],
+  '8': [
+    {'1': '_chunks_info'},
   ],
 };
 
 /// Descriptor for `SentinelLibraryAppBinaryFile`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List sentinelLibraryAppBinaryFileDescriptor = $convert.base64Decode(
-    'ChxTZW50aW5lbExpYnJhcnlBcHBCaW5hcnlGaWxlEj8KDWZpbGVfbWV0YWRhdGEYASABKAsyGi'
-    '5saWJyYXJpYW4udjEuRmlsZU1ldGFkYXRhUgxmaWxlTWV0YWRhdGESKAoQc2VydmVyX2ZpbGVf'
-    'cGF0aBgEIAEoCVIOc2VydmVyRmlsZVBhdGg=');
+    'ChxTZW50aW5lbExpYnJhcnlBcHBCaW5hcnlGaWxlEhIKBG5hbWUYASABKAlSBG5hbWUSHQoKc2'
+    'l6ZV9ieXRlcxgCIAEoA1IJc2l6ZUJ5dGVzEhYKBnNoYTI1NhgDIAEoDFIGc2hhMjU2EigKEHNl'
+    'cnZlcl9maWxlX3BhdGgYBCABKAlSDnNlcnZlckZpbGVQYXRoEiQKC2NodW5rc19pbmZvGAogAS'
+    'gJSABSCmNodW5rc0luZm+IAQFCDgoMX2NodW5rc19pbmZv');
 

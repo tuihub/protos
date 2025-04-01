@@ -936,18 +936,40 @@ impl serde::Serialize for SentinelLibraryAppBinaryFile {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if self.file_metadata.is_some() {
+        if !self.name.is_empty() {
+            len += 1;
+        }
+        if self.size_bytes != 0 {
+            len += 1;
+        }
+        if !self.sha256.is_empty() {
             len += 1;
         }
         if !self.server_file_path.is_empty() {
+            len += 1;
+        }
+        if self.chunks_info.is_some() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.sentinel.SentinelLibraryAppBinaryFile", len)?;
-        if let Some(v) = self.file_metadata.as_ref() {
-            struct_ser.serialize_field("fileMetadata", v)?;
+        if !self.name.is_empty() {
+            struct_ser.serialize_field("name", &self.name)?;
+        }
+        if self.size_bytes != 0 {
+            #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
+            struct_ser.serialize_field("sizeBytes", ToString::to_string(&self.size_bytes).as_str())?;
+        }
+        if !self.sha256.is_empty() {
+            #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
+            struct_ser.serialize_field("sha256", pbjson::private::base64::encode(&self.sha256).as_str())?;
         }
         if !self.server_file_path.is_empty() {
             struct_ser.serialize_field("serverFilePath", &self.server_file_path)?;
+        }
+        if let Some(v) = self.chunks_info.as_ref() {
+            struct_ser.serialize_field("chunksInfo", v)?;
         }
         struct_ser.end()
     }
@@ -959,16 +981,23 @@ impl<'de> serde::Deserialize<'de> for SentinelLibraryAppBinaryFile {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "file_metadata",
-            "fileMetadata",
+            "name",
+            "size_bytes",
+            "sizeBytes",
+            "sha256",
             "server_file_path",
             "serverFilePath",
+            "chunks_info",
+            "chunksInfo",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            FileMetadata,
+            Name,
+            SizeBytes,
+            Sha256,
             ServerFilePath,
+            ChunksInfo,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -990,8 +1019,11 @@ impl<'de> serde::Deserialize<'de> for SentinelLibraryAppBinaryFile {
                         E: serde::de::Error,
                     {
                         match value {
-                            "fileMetadata" | "file_metadata" => Ok(GeneratedField::FileMetadata),
+                            "name" => Ok(GeneratedField::Name),
+                            "sizeBytes" | "size_bytes" => Ok(GeneratedField::SizeBytes),
+                            "sha256" => Ok(GeneratedField::Sha256),
                             "serverFilePath" | "server_file_path" => Ok(GeneratedField::ServerFilePath),
+                            "chunksInfo" | "chunks_info" => Ok(GeneratedField::ChunksInfo),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -1011,15 +1043,34 @@ impl<'de> serde::Deserialize<'de> for SentinelLibraryAppBinaryFile {
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut file_metadata__ = None;
+                let mut name__ = None;
+                let mut size_bytes__ = None;
+                let mut sha256__ = None;
                 let mut server_file_path__ = None;
+                let mut chunks_info__ = None;
                 while let Some(k) = map_.next_key()? {
                     match k {
-                        GeneratedField::FileMetadata => {
-                            if file_metadata__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("fileMetadata"));
+                        GeneratedField::Name => {
+                            if name__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("name"));
                             }
-                            file_metadata__ = map_.next_value()?;
+                            name__ = Some(map_.next_value()?);
+                        }
+                        GeneratedField::SizeBytes => {
+                            if size_bytes__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("sizeBytes"));
+                            }
+                            size_bytes__ = 
+                                Some(map_.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
+                        }
+                        GeneratedField::Sha256 => {
+                            if sha256__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("sha256"));
+                            }
+                            sha256__ = 
+                                Some(map_.next_value::<::pbjson::private::BytesDeserialize<_>>()?.0)
+                            ;
                         }
                         GeneratedField::ServerFilePath => {
                             if server_file_path__.is_some() {
@@ -1027,11 +1078,20 @@ impl<'de> serde::Deserialize<'de> for SentinelLibraryAppBinaryFile {
                             }
                             server_file_path__ = Some(map_.next_value()?);
                         }
+                        GeneratedField::ChunksInfo => {
+                            if chunks_info__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("chunksInfo"));
+                            }
+                            chunks_info__ = map_.next_value()?;
+                        }
                     }
                 }
                 Ok(SentinelLibraryAppBinaryFile {
-                    file_metadata: file_metadata__,
+                    name: name__.unwrap_or_default(),
+                    size_bytes: size_bytes__.unwrap_or_default(),
+                    sha256: sha256__.unwrap_or_default(),
                     server_file_path: server_file_path__.unwrap_or_default(),
+                    chunks_info: chunks_info__,
                 })
             }
         }

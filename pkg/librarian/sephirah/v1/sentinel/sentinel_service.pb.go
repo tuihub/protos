@@ -7,7 +7,6 @@
 package v1
 
 import (
-	v1 "github.com/tuihub/protos/pkg/librarian/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -464,10 +463,13 @@ func (x *SentinelLibraryAppBinary) GetPublisher() string {
 }
 
 type SentinelLibraryAppBinaryFile struct {
-	state        protoimpl.MessageState `protogen:"open.v1"`
-	FileMetadata *v1.FileMetadata       `protobuf:"bytes,1,opt,name=file_metadata,json=fileMetadata,proto3" json:"file_metadata,omitempty"`
+	state     protoimpl.MessageState `protogen:"open.v1"`
+	Name      string                 `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	SizeBytes int64                  `protobuf:"varint,2,opt,name=size_bytes,json=sizeBytes,proto3" json:"size_bytes,omitempty"`
+	Sha256    []byte                 `protobuf:"bytes,3,opt,name=sha256,proto3" json:"sha256,omitempty"`
 	// should be path-joined to download_url when need_token is false
-	ServerFilePath string `protobuf:"bytes,4,opt,name=server_file_path,json=serverFilePath,proto3" json:"server_file_path,omitempty"`
+	ServerFilePath string  `protobuf:"bytes,4,opt,name=server_file_path,json=serverFilePath,proto3" json:"server_file_path,omitempty"`
+	ChunksInfo     *string `protobuf:"bytes,10,opt,name=chunks_info,json=chunksInfo,proto3,oneof" json:"chunks_info,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -502,9 +504,23 @@ func (*SentinelLibraryAppBinaryFile) Descriptor() ([]byte, []int) {
 	return file_librarian_sephirah_v1_sentinel_sentinel_service_proto_rawDescGZIP(), []int{8}
 }
 
-func (x *SentinelLibraryAppBinaryFile) GetFileMetadata() *v1.FileMetadata {
+func (x *SentinelLibraryAppBinaryFile) GetName() string {
 	if x != nil {
-		return x.FileMetadata
+		return x.Name
+	}
+	return ""
+}
+
+func (x *SentinelLibraryAppBinaryFile) GetSizeBytes() int64 {
+	if x != nil {
+		return x.SizeBytes
+	}
+	return 0
+}
+
+func (x *SentinelLibraryAppBinaryFile) GetSha256() []byte {
+	if x != nil {
+		return x.Sha256
 	}
 	return nil
 }
@@ -516,11 +532,18 @@ func (x *SentinelLibraryAppBinaryFile) GetServerFilePath() string {
 	return ""
 }
 
+func (x *SentinelLibraryAppBinaryFile) GetChunksInfo() string {
+	if x != nil && x.ChunksInfo != nil {
+		return *x.ChunksInfo
+	}
+	return ""
+}
+
 var File_librarian_sephirah_v1_sentinel_sentinel_service_proto protoreflect.FileDescriptor
 
 const file_librarian_sephirah_v1_sentinel_sentinel_service_proto_rawDesc = "" +
 	"\n" +
-	"5librarian/sephirah/v1/sentinel/sentinel_service.proto\x12\x1elibrarian.sephirah.v1.sentinel\x1a\x1clibrarian/v1/wellknown.proto\"\x15\n" +
+	"5librarian/sephirah/v1/sentinel/sentinel_service.proto\x12\x1elibrarian.sephirah.v1.sentinel\"\x15\n" +
 	"\x13RefreshTokenRequest\"^\n" +
 	"\x14RefreshTokenResponse\x12!\n" +
 	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\x12#\n" +
@@ -550,10 +573,17 @@ const file_librarian_sephirah_v1_sentinel_sentinel_service_proto_rawDesc = "" +
 	" \x01(\tR\x04name\x12\x18\n" +
 	"\aversion\x18\v \x01(\tR\aversion\x12\x1c\n" +
 	"\tdeveloper\x18\f \x01(\tR\tdeveloper\x12\x1c\n" +
-	"\tpublisher\x18\r \x01(\tR\tpublisher\"\x89\x01\n" +
-	"\x1cSentinelLibraryAppBinaryFile\x12?\n" +
-	"\rfile_metadata\x18\x01 \x01(\v2\x1a.librarian.v1.FileMetadataR\ffileMetadata\x12(\n" +
-	"\x10server_file_path\x18\x04 \x01(\tR\x0eserverFilePath2\xc3\x03\n" +
+	"\tpublisher\x18\r \x01(\tR\tpublisher\"\xc9\x01\n" +
+	"\x1cSentinelLibraryAppBinaryFile\x12\x12\n" +
+	"\x04name\x18\x01 \x01(\tR\x04name\x12\x1d\n" +
+	"\n" +
+	"size_bytes\x18\x02 \x01(\x03R\tsizeBytes\x12\x16\n" +
+	"\x06sha256\x18\x03 \x01(\fR\x06sha256\x12(\n" +
+	"\x10server_file_path\x18\x04 \x01(\tR\x0eserverFilePath\x12$\n" +
+	"\vchunks_info\x18\n" +
+	" \x01(\tH\x00R\n" +
+	"chunksInfo\x88\x01\x01B\x0e\n" +
+	"\f_chunks_info2\xc3\x03\n" +
 	"\x18LibrarianSentinelService\x12y\n" +
 	"\fRefreshToken\x123.librarian.sephirah.v1.sentinel.RefreshTokenRequest\x1a4.librarian.sephirah.v1.sentinel.RefreshTokenResponse\x12\xa0\x01\n" +
 	"\x19ReportSentinelInformation\x12@.librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest\x1aA.librarian.sephirah.v1.sentinel.ReportSentinelInformationResponse\x12\x88\x01\n" +
@@ -582,24 +612,22 @@ var file_librarian_sephirah_v1_sentinel_sentinel_service_proto_goTypes = []any{
 	(*SentinelLibrary)(nil),                   // 6: librarian.sephirah.v1.sentinel.SentinelLibrary
 	(*SentinelLibraryAppBinary)(nil),          // 7: librarian.sephirah.v1.sentinel.SentinelLibraryAppBinary
 	(*SentinelLibraryAppBinaryFile)(nil),      // 8: librarian.sephirah.v1.sentinel.SentinelLibraryAppBinaryFile
-	(*v1.FileMetadata)(nil),                   // 9: librarian.v1.FileMetadata
 }
 var file_librarian_sephirah_v1_sentinel_sentinel_service_proto_depIdxs = []int32{
 	6, // 0: librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest.libraries:type_name -> librarian.sephirah.v1.sentinel.SentinelLibrary
 	7, // 1: librarian.sephirah.v1.sentinel.ReportAppBinariesRequest.app_binaries:type_name -> librarian.sephirah.v1.sentinel.SentinelLibraryAppBinary
 	8, // 2: librarian.sephirah.v1.sentinel.SentinelLibraryAppBinary.files:type_name -> librarian.sephirah.v1.sentinel.SentinelLibraryAppBinaryFile
-	9, // 3: librarian.sephirah.v1.sentinel.SentinelLibraryAppBinaryFile.file_metadata:type_name -> librarian.v1.FileMetadata
-	0, // 4: librarian.sephirah.v1.sentinel.LibrarianSentinelService.RefreshToken:input_type -> librarian.sephirah.v1.sentinel.RefreshTokenRequest
-	2, // 5: librarian.sephirah.v1.sentinel.LibrarianSentinelService.ReportSentinelInformation:input_type -> librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest
-	4, // 6: librarian.sephirah.v1.sentinel.LibrarianSentinelService.ReportAppBinaries:input_type -> librarian.sephirah.v1.sentinel.ReportAppBinariesRequest
-	1, // 7: librarian.sephirah.v1.sentinel.LibrarianSentinelService.RefreshToken:output_type -> librarian.sephirah.v1.sentinel.RefreshTokenResponse
-	3, // 8: librarian.sephirah.v1.sentinel.LibrarianSentinelService.ReportSentinelInformation:output_type -> librarian.sephirah.v1.sentinel.ReportSentinelInformationResponse
-	5, // 9: librarian.sephirah.v1.sentinel.LibrarianSentinelService.ReportAppBinaries:output_type -> librarian.sephirah.v1.sentinel.ReportAppBinariesResponse
-	7, // [7:10] is the sub-list for method output_type
-	4, // [4:7] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	0, // 3: librarian.sephirah.v1.sentinel.LibrarianSentinelService.RefreshToken:input_type -> librarian.sephirah.v1.sentinel.RefreshTokenRequest
+	2, // 4: librarian.sephirah.v1.sentinel.LibrarianSentinelService.ReportSentinelInformation:input_type -> librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest
+	4, // 5: librarian.sephirah.v1.sentinel.LibrarianSentinelService.ReportAppBinaries:input_type -> librarian.sephirah.v1.sentinel.ReportAppBinariesRequest
+	1, // 6: librarian.sephirah.v1.sentinel.LibrarianSentinelService.RefreshToken:output_type -> librarian.sephirah.v1.sentinel.RefreshTokenResponse
+	3, // 7: librarian.sephirah.v1.sentinel.LibrarianSentinelService.ReportSentinelInformation:output_type -> librarian.sephirah.v1.sentinel.ReportSentinelInformationResponse
+	5, // 8: librarian.sephirah.v1.sentinel.LibrarianSentinelService.ReportAppBinaries:output_type -> librarian.sephirah.v1.sentinel.ReportAppBinariesResponse
+	6, // [6:9] is the sub-list for method output_type
+	3, // [3:6] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_librarian_sephirah_v1_sentinel_sentinel_service_proto_init() }
@@ -607,6 +635,7 @@ func file_librarian_sephirah_v1_sentinel_sentinel_service_proto_init() {
 	if File_librarian_sephirah_v1_sentinel_sentinel_service_proto != nil {
 		return
 	}
+	file_librarian_sephirah_v1_sentinel_sentinel_service_proto_msgTypes[8].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

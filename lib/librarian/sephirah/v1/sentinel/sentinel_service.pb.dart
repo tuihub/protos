@@ -14,8 +14,6 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../v1/wellknown.pb.dart' as $1;
-
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 class RefreshTokenRequest extends $pb.GeneratedMessage {
@@ -539,15 +537,27 @@ class SentinelLibraryAppBinary extends $pb.GeneratedMessage {
 
 class SentinelLibraryAppBinaryFile extends $pb.GeneratedMessage {
   factory SentinelLibraryAppBinaryFile({
-    $1.FileMetadata? fileMetadata,
+    $core.String? name,
+    $fixnum.Int64? sizeBytes,
+    $core.List<$core.int>? sha256,
     $core.String? serverFilePath,
+    $core.String? chunksInfo,
   }) {
     final $result = create();
-    if (fileMetadata != null) {
-      $result.fileMetadata = fileMetadata;
+    if (name != null) {
+      $result.name = name;
+    }
+    if (sizeBytes != null) {
+      $result.sizeBytes = sizeBytes;
+    }
+    if (sha256 != null) {
+      $result.sha256 = sha256;
     }
     if (serverFilePath != null) {
       $result.serverFilePath = serverFilePath;
+    }
+    if (chunksInfo != null) {
+      $result.chunksInfo = chunksInfo;
     }
     return $result;
   }
@@ -556,8 +566,11 @@ class SentinelLibraryAppBinaryFile extends $pb.GeneratedMessage {
   factory SentinelLibraryAppBinaryFile.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SentinelLibraryAppBinaryFile', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sentinel'), createEmptyInstance: create)
-    ..aOM<$1.FileMetadata>(1, _omitFieldNames ? '' : 'fileMetadata', subBuilder: $1.FileMetadata.create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..aInt64(2, _omitFieldNames ? '' : 'sizeBytes')
+    ..a<$core.List<$core.int>>(3, _omitFieldNames ? '' : 'sha256', $pb.PbFieldType.OY)
     ..aOS(4, _omitFieldNames ? '' : 'serverFilePath')
+    ..aOS(10, _omitFieldNames ? '' : 'chunksInfo')
     ..hasRequiredFields = false
   ;
 
@@ -583,25 +596,50 @@ class SentinelLibraryAppBinaryFile extends $pb.GeneratedMessage {
   static SentinelLibraryAppBinaryFile? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $1.FileMetadata get fileMetadata => $_getN(0);
+  $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
-  set fileMetadata($1.FileMetadata v) { $_setField(1, v); }
+  set name($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasFileMetadata() => $_has(0);
+  $core.bool hasName() => $_has(0);
   @$pb.TagNumber(1)
-  void clearFileMetadata() => $_clearField(1);
-  @$pb.TagNumber(1)
-  $1.FileMetadata ensureFileMetadata() => $_ensure(0);
+  void clearName() => $_clearField(1);
+
+  @$pb.TagNumber(2)
+  $fixnum.Int64 get sizeBytes => $_getI64(1);
+  @$pb.TagNumber(2)
+  set sizeBytes($fixnum.Int64 v) { $_setInt64(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasSizeBytes() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearSizeBytes() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.List<$core.int> get sha256 => $_getN(2);
+  @$pb.TagNumber(3)
+  set sha256($core.List<$core.int> v) { $_setBytes(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasSha256() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSha256() => $_clearField(3);
 
   /// should be path-joined to download_url when need_token is false
   @$pb.TagNumber(4)
-  $core.String get serverFilePath => $_getSZ(1);
+  $core.String get serverFilePath => $_getSZ(3);
   @$pb.TagNumber(4)
-  set serverFilePath($core.String v) { $_setString(1, v); }
+  set serverFilePath($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasServerFilePath() => $_has(1);
+  $core.bool hasServerFilePath() => $_has(3);
   @$pb.TagNumber(4)
   void clearServerFilePath() => $_clearField(4);
+
+  @$pb.TagNumber(10)
+  $core.String get chunksInfo => $_getSZ(4);
+  @$pb.TagNumber(10)
+  set chunksInfo($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(10)
+  $core.bool hasChunksInfo() => $_has(4);
+  @$pb.TagNumber(10)
+  void clearChunksInfo() => $_clearField(10);
 }
 
 

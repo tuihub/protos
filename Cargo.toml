@@ -28,7 +28,7 @@ proto_full = ["buf-validate","buf-validate-priv","errors","librarian-miner-v1","
 "librarian-sephirah-v1" = []
 "librarian-sephirah-v1-angela" = ["librarian-sephirah-v1","librarian-sephirah-v1-sephirah","librarian-v1"]
 "librarian-sephirah-v1-porter" = ["librarian-sephirah-v1","librarian-v1"]
-"librarian-sephirah-v1-sentinel" = ["librarian-sephirah-v1","librarian-v1"]
+"librarian-sephirah-v1-sentinel" = ["librarian-sephirah-v1"]
 "librarian-sephirah-v1-sephirah" = ["librarian-sephirah-v1","librarian-v1"]
 "librarian-v1" = []
 ## @@protoc_insertion_point(features)

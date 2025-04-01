@@ -21,8 +21,6 @@ var global =
     (function () { return this; }).call(null) ||
     Function('return this')();
 
-var librarian_v1_wellknown_pb = require('../../../../librarian/v1/wellknown_pb.js');
-goog.object.extend(proto, librarian_v1_wellknown_pb);
 goog.exportSymbol('proto.librarian.sephirah.v1.sentinel.RefreshTokenRequest', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.sentinel.RefreshTokenResponse', null, global);
 goog.exportSymbol('proto.librarian.sephirah.v1.sentinel.ReportAppBinariesRequest', null, global);
@@ -1735,8 +1733,11 @@ proto.librarian.sephirah.v1.sentinel.SentinelLibraryAppBinaryFile.prototype.toOb
  */
 proto.librarian.sephirah.v1.sentinel.SentinelLibraryAppBinaryFile.toObject = function(includeInstance, msg) {
   var f, obj = {
-fileMetadata: (f = msg.getFileMetadata()) && librarian_v1_wellknown_pb.FileMetadata.toObject(includeInstance, f),
-serverFilePath: jspb.Message.getFieldWithDefault(msg, 4, "")
+name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+sizeBytes: jspb.Message.getFieldWithDefault(msg, 2, 0),
+sha256: msg.getSha256_asB64(),
+serverFilePath: jspb.Message.getFieldWithDefault(msg, 4, ""),
+chunksInfo: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1774,13 +1775,24 @@ proto.librarian.sephirah.v1.sentinel.SentinelLibraryAppBinaryFile.deserializeBin
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new librarian_v1_wellknown_pb.FileMetadata;
-      reader.readMessage(value,librarian_v1_wellknown_pb.FileMetadata.deserializeBinaryFromReader);
-      msg.setFileMetadata(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setName(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setSizeBytes(value);
+      break;
+    case 3:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.setSha256(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
       msg.setServerFilePath(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setChunksInfo(value);
       break;
     default:
       reader.skipField();
@@ -1811,12 +1823,25 @@ proto.librarian.sephirah.v1.sentinel.SentinelLibraryAppBinaryFile.prototype.seri
  */
 proto.librarian.sephirah.v1.sentinel.SentinelLibraryAppBinaryFile.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getFileMetadata();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getName();
+  if (f.length > 0) {
+    writer.writeString(
       1,
-      f,
-      librarian_v1_wellknown_pb.FileMetadata.serializeBinaryToWriter
+      f
+    );
+  }
+  f = message.getSizeBytes();
+  if (f !== 0) {
+    writer.writeInt64(
+      2,
+      f
+    );
+  }
+  f = message.getSha256_asU8();
+  if (f.length > 0) {
+    writer.writeBytes(
+      3,
+      f
     );
   }
   f = message.getServerFilePath();
@@ -1826,43 +1851,91 @@ proto.librarian.sephirah.v1.sentinel.SentinelLibraryAppBinaryFile.serializeBinar
       f
     );
   }
+  f = /** @type {string} */ (jspb.Message.getField(message, 10));
+  if (f != null) {
+    writer.writeString(
+      10,
+      f
+    );
+  }
 };
 
 
 /**
- * optional librarian.v1.FileMetadata file_metadata = 1;
- * @return {?proto.librarian.v1.FileMetadata}
+ * optional string name = 1;
+ * @return {string}
  */
-proto.librarian.sephirah.v1.sentinel.SentinelLibraryAppBinaryFile.prototype.getFileMetadata = function() {
-  return /** @type{?proto.librarian.v1.FileMetadata} */ (
-    jspb.Message.getWrapperField(this, librarian_v1_wellknown_pb.FileMetadata, 1));
+proto.librarian.sephirah.v1.sentinel.SentinelLibraryAppBinaryFile.prototype.getName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {?proto.librarian.v1.FileMetadata|undefined} value
- * @return {!proto.librarian.sephirah.v1.sentinel.SentinelLibraryAppBinaryFile} returns this
-*/
-proto.librarian.sephirah.v1.sentinel.SentinelLibraryAppBinaryFile.prototype.setFileMetadata = function(value) {
-  return jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
+ * @param {string} value
  * @return {!proto.librarian.sephirah.v1.sentinel.SentinelLibraryAppBinaryFile} returns this
  */
-proto.librarian.sephirah.v1.sentinel.SentinelLibraryAppBinaryFile.prototype.clearFileMetadata = function() {
-  return this.setFileMetadata(undefined);
+proto.librarian.sephirah.v1.sentinel.SentinelLibraryAppBinaryFile.prototype.setName = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * Returns whether this field is set.
- * @return {boolean}
+ * optional int64 size_bytes = 2;
+ * @return {number}
  */
-proto.librarian.sephirah.v1.sentinel.SentinelLibraryAppBinaryFile.prototype.hasFileMetadata = function() {
-  return jspb.Message.getField(this, 1) != null;
+proto.librarian.sephirah.v1.sentinel.SentinelLibraryAppBinaryFile.prototype.getSizeBytes = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.librarian.sephirah.v1.sentinel.SentinelLibraryAppBinaryFile} returns this
+ */
+proto.librarian.sephirah.v1.sentinel.SentinelLibraryAppBinaryFile.prototype.setSizeBytes = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
+};
+
+
+/**
+ * optional bytes sha256 = 3;
+ * @return {!(string|Uint8Array)}
+ */
+proto.librarian.sephirah.v1.sentinel.SentinelLibraryAppBinaryFile.prototype.getSha256 = function() {
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * optional bytes sha256 = 3;
+ * This is a type-conversion wrapper around `getSha256()`
+ * @return {string}
+ */
+proto.librarian.sephirah.v1.sentinel.SentinelLibraryAppBinaryFile.prototype.getSha256_asB64 = function() {
+  return /** @type {string} */ (jspb.Message.bytesAsB64(
+      this.getSha256()));
+};
+
+
+/**
+ * optional bytes sha256 = 3;
+ * Note that Uint8Array is not supported on all browsers.
+ * @see http://caniuse.com/Uint8Array
+ * This is a type-conversion wrapper around `getSha256()`
+ * @return {!Uint8Array}
+ */
+proto.librarian.sephirah.v1.sentinel.SentinelLibraryAppBinaryFile.prototype.getSha256_asU8 = function() {
+  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+      this.getSha256()));
+};
+
+
+/**
+ * @param {!(string|Uint8Array)} value
+ * @return {!proto.librarian.sephirah.v1.sentinel.SentinelLibraryAppBinaryFile} returns this
+ */
+proto.librarian.sephirah.v1.sentinel.SentinelLibraryAppBinaryFile.prototype.setSha256 = function(value) {
+  return jspb.Message.setProto3BytesField(this, 3, value);
 };
 
 
@@ -1881,6 +1954,42 @@ proto.librarian.sephirah.v1.sentinel.SentinelLibraryAppBinaryFile.prototype.getS
  */
 proto.librarian.sephirah.v1.sentinel.SentinelLibraryAppBinaryFile.prototype.setServerFilePath = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string chunks_info = 10;
+ * @return {string}
+ */
+proto.librarian.sephirah.v1.sentinel.SentinelLibraryAppBinaryFile.prototype.getChunksInfo = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.librarian.sephirah.v1.sentinel.SentinelLibraryAppBinaryFile} returns this
+ */
+proto.librarian.sephirah.v1.sentinel.SentinelLibraryAppBinaryFile.prototype.setChunksInfo = function(value) {
+  return jspb.Message.setField(this, 10, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.sentinel.SentinelLibraryAppBinaryFile} returns this
+ */
+proto.librarian.sephirah.v1.sentinel.SentinelLibraryAppBinaryFile.prototype.clearChunksInfo = function() {
+  return jspb.Message.setField(this, 10, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.sentinel.SentinelLibraryAppBinaryFile.prototype.hasChunksInfo = function() {
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
