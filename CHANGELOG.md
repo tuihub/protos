@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.5.3](https://github.com/tuihub/protos/compare/v0.5.2...v0.5.3) (2025-04-01)
+
+
+### Features
+
+* change naming ([db5afd2](https://github.com/tuihub/protos/commit/db5afd2d57112401c05b5d5232f83b53f37cf06f))
+* **sentinel:** change SentinelLibraryAppBinaryFile ([3fba9b4](https://github.com/tuihub/protos/commit/3fba9b4ebfa846ae5991f7c171b6fa908d0d556d))
+
+
+### Bug Fixes
+
+* **dart:** bump protobuf to 4.0.0 ([a6f2f6c](https://github.com/tuihub/protos/commit/a6f2f6ce3022d8e9de2ed4505c3dc472d1d3853e))
+* **deps:** update all non-major dependencies ([#177](https://github.com/tuihub/protos/issues/177)) ([354ae84](https://github.com/tuihub/protos/commit/354ae84773494f162eacecfb8350734a5cc4434e))
+* **sentinel:** remove unused import ([2f8e5ea](https://github.com/tuihub/protos/commit/2f8e5ea5da5d4b6c15b711300160c8150aed69e9))
+
 ## [0.5.2](https://github.com/tuihub/protos/compare/v0.5.1...v0.5.2) (2025-03-24)
 
 
