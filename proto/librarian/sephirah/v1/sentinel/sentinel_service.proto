@@ -58,7 +58,11 @@ message SentinelLibraryAppBinary {
 }
 
 message SentinelLibraryAppBinaryFile {
-  librarian.v1.FileMetadata file_metadata = 1;
+  string name = 1;
+  int64 size_bytes = 2;
+  bytes sha256 = 3;
   // should be path-joined to download_url when need_token is false
   string server_file_path = 4;
+
+  optional string chunks_info = 10;
 }
