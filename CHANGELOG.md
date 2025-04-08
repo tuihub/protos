@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.4](https://github.com/tuihub/protos/compare/v0.5.3...v0.5.4) (2025-04-08)
+
+
+### Features
+
+* **sentinel:** rename get_token_path ([b075369](https://github.com/tuihub/protos/commit/b07536960977fcd8900c2873cc3e906f69fed4d9))
+
 ## [0.5.3](https://github.com/tuihub/protos/compare/v0.5.2...v0.5.3) (2025-04-01)
 
 
