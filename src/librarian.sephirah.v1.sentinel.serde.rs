@@ -357,7 +357,7 @@ impl serde::Serialize for ReportSentinelInformationRequest {
         if !self.url_alternatives.is_empty() {
             len += 1;
         }
-        if !self.get_token_url_path.is_empty() {
+        if !self.get_token_path.is_empty() {
             len += 1;
         }
         if !self.download_file_base_path.is_empty() {
@@ -373,8 +373,8 @@ impl serde::Serialize for ReportSentinelInformationRequest {
         if !self.url_alternatives.is_empty() {
             struct_ser.serialize_field("urlAlternatives", &self.url_alternatives)?;
         }
-        if !self.get_token_url_path.is_empty() {
-            struct_ser.serialize_field("getTokenUrlPath", &self.get_token_url_path)?;
+        if !self.get_token_path.is_empty() {
+            struct_ser.serialize_field("getTokenPath", &self.get_token_path)?;
         }
         if !self.download_file_base_path.is_empty() {
             struct_ser.serialize_field("downloadFileBasePath", &self.download_file_base_path)?;
@@ -395,8 +395,8 @@ impl<'de> serde::Deserialize<'de> for ReportSentinelInformationRequest {
             "url",
             "url_alternatives",
             "urlAlternatives",
-            "get_token_url_path",
-            "getTokenUrlPath",
+            "get_token_path",
+            "getTokenPath",
             "download_file_base_path",
             "downloadFileBasePath",
             "libraries",
@@ -406,7 +406,7 @@ impl<'de> serde::Deserialize<'de> for ReportSentinelInformationRequest {
         enum GeneratedField {
             Url,
             UrlAlternatives,
-            GetTokenUrlPath,
+            GetTokenPath,
             DownloadFileBasePath,
             Libraries,
         }
@@ -432,7 +432,7 @@ impl<'de> serde::Deserialize<'de> for ReportSentinelInformationRequest {
                         match value {
                             "url" => Ok(GeneratedField::Url),
                             "urlAlternatives" | "url_alternatives" => Ok(GeneratedField::UrlAlternatives),
-                            "getTokenUrlPath" | "get_token_url_path" => Ok(GeneratedField::GetTokenUrlPath),
+                            "getTokenPath" | "get_token_path" => Ok(GeneratedField::GetTokenPath),
                             "downloadFileBasePath" | "download_file_base_path" => Ok(GeneratedField::DownloadFileBasePath),
                             "libraries" => Ok(GeneratedField::Libraries),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
@@ -456,7 +456,7 @@ impl<'de> serde::Deserialize<'de> for ReportSentinelInformationRequest {
             {
                 let mut url__ = None;
                 let mut url_alternatives__ = None;
-                let mut get_token_url_path__ = None;
+                let mut get_token_path__ = None;
                 let mut download_file_base_path__ = None;
                 let mut libraries__ = None;
                 while let Some(k) = map_.next_key()? {
@@ -473,11 +473,11 @@ impl<'de> serde::Deserialize<'de> for ReportSentinelInformationRequest {
                             }
                             url_alternatives__ = Some(map_.next_value()?);
                         }
-                        GeneratedField::GetTokenUrlPath => {
-                            if get_token_url_path__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("getTokenUrlPath"));
+                        GeneratedField::GetTokenPath => {
+                            if get_token_path__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("getTokenPath"));
                             }
-                            get_token_url_path__ = Some(map_.next_value()?);
+                            get_token_path__ = Some(map_.next_value()?);
                         }
                         GeneratedField::DownloadFileBasePath => {
                             if download_file_base_path__.is_some() {
@@ -496,7 +496,7 @@ impl<'de> serde::Deserialize<'de> for ReportSentinelInformationRequest {
                 Ok(ReportSentinelInformationRequest {
                     url: url__.unwrap_or_default(),
                     url_alternatives: url_alternatives__.unwrap_or_default(),
-                    get_token_url_path: get_token_url_path__.unwrap_or_default(),
+                    get_token_path: get_token_path__.unwrap_or_default(),
                     download_file_base_path: download_file_base_path__.unwrap_or_default(),
                     libraries: libraries__.unwrap_or_default(),
                 })

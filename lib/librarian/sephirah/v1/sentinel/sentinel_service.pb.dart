@@ -116,7 +116,7 @@ class ReportSentinelInformationRequest extends $pb.GeneratedMessage {
   factory ReportSentinelInformationRequest({
     $core.String? url,
     $core.Iterable<$core.String>? urlAlternatives,
-    $core.String? getTokenUrlPath,
+    $core.String? getTokenPath,
     $core.String? downloadFileBasePath,
     $core.Iterable<SentinelLibrary>? libraries,
   }) {
@@ -127,8 +127,8 @@ class ReportSentinelInformationRequest extends $pb.GeneratedMessage {
     if (urlAlternatives != null) {
       $result.urlAlternatives.addAll(urlAlternatives);
     }
-    if (getTokenUrlPath != null) {
-      $result.getTokenUrlPath = getTokenUrlPath;
+    if (getTokenPath != null) {
+      $result.getTokenPath = getTokenPath;
     }
     if (downloadFileBasePath != null) {
       $result.downloadFileBasePath = downloadFileBasePath;
@@ -145,7 +145,7 @@ class ReportSentinelInformationRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReportSentinelInformationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sentinel'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'url')
     ..pPS(2, _omitFieldNames ? '' : 'urlAlternatives')
-    ..aOS(3, _omitFieldNames ? '' : 'getTokenUrlPath')
+    ..aOS(3, _omitFieldNames ? '' : 'getTokenPath')
     ..aOS(4, _omitFieldNames ? '' : 'downloadFileBasePath')
     ..pc<SentinelLibrary>(5, _omitFieldNames ? '' : 'libraries', $pb.PbFieldType.PM, subBuilder: SentinelLibrary.create)
     ..hasRequiredFields = false
@@ -186,13 +186,13 @@ class ReportSentinelInformationRequest extends $pb.GeneratedMessage {
 
   /// valid when need_token is true
   @$pb.TagNumber(3)
-  $core.String get getTokenUrlPath => $_getSZ(2);
+  $core.String get getTokenPath => $_getSZ(2);
   @$pb.TagNumber(3)
-  set getTokenUrlPath($core.String v) { $_setString(2, v); }
+  set getTokenPath($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasGetTokenUrlPath() => $_has(2);
+  $core.bool hasGetTokenPath() => $_has(2);
   @$pb.TagNumber(3)
-  void clearGetTokenUrlPath() => $_clearField(3);
+  void clearGetTokenPath() => $_clearField(3);
 
   @$pb.TagNumber(4)
   $core.String get downloadFileBasePath => $_getSZ(3);
@@ -622,7 +622,7 @@ class SentinelLibraryAppBinaryFile extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearSha256() => $_clearField(3);
 
-  /// should be path-joined to download_url when need_token is false
+  /// should be path-joined to download_path when need_token is false
   @$pb.TagNumber(4)
   $core.String get serverFilePath => $_getSZ(3);
   @$pb.TagNumber(4)

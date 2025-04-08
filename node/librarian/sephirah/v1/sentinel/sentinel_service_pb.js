@@ -521,7 +521,7 @@ proto.librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest.toObject =
   var f, obj = {
 url: jspb.Message.getFieldWithDefault(msg, 1, ""),
 urlAlternativesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f,
-getTokenUrlPath: jspb.Message.getFieldWithDefault(msg, 3, ""),
+getTokenPath: jspb.Message.getFieldWithDefault(msg, 3, ""),
 downloadFileBasePath: jspb.Message.getFieldWithDefault(msg, 4, ""),
 librariesList: jspb.Message.toObjectList(msg.getLibrariesList(),
     proto.librarian.sephirah.v1.sentinel.SentinelLibrary.toObject, includeInstance)
@@ -571,7 +571,7 @@ proto.librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest.deserializ
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setGetTokenUrlPath(value);
+      msg.setGetTokenPath(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
@@ -625,7 +625,7 @@ proto.librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest.serializeB
       f
     );
   }
-  f = message.getGetTokenUrlPath();
+  f = message.getGetTokenPath();
   if (f.length > 0) {
     writer.writeString(
       3,
@@ -706,10 +706,10 @@ proto.librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest.prototype.
 
 
 /**
- * optional string get_token_url_path = 3;
+ * optional string get_token_path = 3;
  * @return {string}
  */
-proto.librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest.prototype.getGetTokenUrlPath = function() {
+proto.librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest.prototype.getGetTokenPath = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -718,7 +718,7 @@ proto.librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest.prototype.
  * @param {string} value
  * @return {!proto.librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest} returns this
  */
-proto.librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest.prototype.setGetTokenUrlPath = function(value) {
+proto.librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest.prototype.setGetTokenPath = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
 };
 

@@ -52,8 +52,8 @@ export class ReportSentinelInformationRequest extends jspb.Message {
   setUrlAlternativesList(value: Array<string>): void;
   addUrlAlternatives(value: string, index?: number): string;
 
-  getGetTokenUrlPath(): string;
-  setGetTokenUrlPath(value: string): void;
+  getGetTokenPath(): string;
+  setGetTokenPath(value: string): void;
 
   getDownloadFileBasePath(): string;
   setDownloadFileBasePath(value: string): void;
@@ -77,7 +77,7 @@ export namespace ReportSentinelInformationRequest {
   export type AsObject = {
     url: string,
     urlAlternativesList: Array<string>,
-    getTokenUrlPath: string,
+    getTokenPath: string,
     downloadFileBasePath: string,
     librariesList: Array<SentinelLibrary.AsObject>,
   }

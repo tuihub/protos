@@ -42,7 +42,7 @@ const ReportSentinelInformationRequest$json = {
   '2': [
     {'1': 'url', '3': 1, '4': 1, '5': 9, '10': 'url'},
     {'1': 'url_alternatives', '3': 2, '4': 3, '5': 9, '10': 'urlAlternatives'},
-    {'1': 'get_token_url_path', '3': 3, '4': 1, '5': 9, '10': 'getTokenUrlPath'},
+    {'1': 'get_token_path', '3': 3, '4': 1, '5': 9, '10': 'getTokenPath'},
     {'1': 'download_file_base_path', '3': 4, '4': 1, '5': 9, '10': 'downloadFileBasePath'},
     {'1': 'libraries', '3': 5, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.sentinel.SentinelLibrary', '10': 'libraries'},
   ],
@@ -51,10 +51,10 @@ const ReportSentinelInformationRequest$json = {
 /// Descriptor for `ReportSentinelInformationRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List reportSentinelInformationRequestDescriptor = $convert.base64Decode(
     'CiBSZXBvcnRTZW50aW5lbEluZm9ybWF0aW9uUmVxdWVzdBIQCgN1cmwYASABKAlSA3VybBIpCh'
-    'B1cmxfYWx0ZXJuYXRpdmVzGAIgAygJUg91cmxBbHRlcm5hdGl2ZXMSKwoSZ2V0X3Rva2VuX3Vy'
-    'bF9wYXRoGAMgASgJUg9nZXRUb2tlblVybFBhdGgSNQoXZG93bmxvYWRfZmlsZV9iYXNlX3BhdG'
-    'gYBCABKAlSFGRvd25sb2FkRmlsZUJhc2VQYXRoEk0KCWxpYnJhcmllcxgFIAMoCzIvLmxpYnJh'
-    'cmlhbi5zZXBoaXJhaC52MS5zZW50aW5lbC5TZW50aW5lbExpYnJhcnlSCWxpYnJhcmllcw==');
+    'B1cmxfYWx0ZXJuYXRpdmVzGAIgAygJUg91cmxBbHRlcm5hdGl2ZXMSJAoOZ2V0X3Rva2VuX3Bh'
+    'dGgYAyABKAlSDGdldFRva2VuUGF0aBI1Chdkb3dubG9hZF9maWxlX2Jhc2VfcGF0aBgEIAEoCV'
+    'IUZG93bmxvYWRGaWxlQmFzZVBhdGgSTQoJbGlicmFyaWVzGAUgAygLMi8ubGlicmFyaWFuLnNl'
+    'cGhpcmFoLnYxLnNlbnRpbmVsLlNlbnRpbmVsTGlicmFyeVIJbGlicmFyaWVz');
 
 @$core.Deprecated('Use reportSentinelInformationResponseDescriptor instead')
 const ReportSentinelInformationResponse$json = {
