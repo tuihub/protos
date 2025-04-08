@@ -26,7 +26,7 @@ message ReportSentinelInformationRequest {
   string url = 1;
   repeated string url_alternatives = 2;
   // valid when need_token is true
-  string get_token_url_path = 3;
+  string get_token_path = 3;
   string download_file_base_path = 4;
   repeated SentinelLibrary libraries = 5;
 }
@@ -59,7 +59,7 @@ message SentinelLibraryAppBinaryFile {
   string name = 1;
   int64 size_bytes = 2;
   bytes sha256 = 3;
-  // should be path-joined to download_url when need_token is false
+  // should be path-joined to download_path when need_token is false
   string server_file_path = 4;
 
   optional string chunks_info = 10;
