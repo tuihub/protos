@@ -1,5 +1,5 @@
 // package: librarian.sephirah.v1.porter
-// file: librarian/sephirah/v1/porter/sephitah_porter_service.proto
+// file: librarian/sephirah/v1/porter/sephirah_porter_service.proto
 
 import * as jspb from "google-protobuf";
 import * as librarian_v1_common_pb from "../../../../librarian/v1/common_pb";

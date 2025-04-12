@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             (unknown)
-// source: librarian/sephirah/v1/porter/sephitah_porter_service.proto
+// source: librarian/sephirah/v1/porter/sephirah_porter_service.proto
 
 package v1
 
@@ -242,5 +242,5 @@ var LibrarianSephirahPorterService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "librarian/sephirah/v1/porter/sephitah_porter_service.proto",
+	Metadata: "librarian/sephirah/v1/porter/sephirah_porter_service.proto",
 }

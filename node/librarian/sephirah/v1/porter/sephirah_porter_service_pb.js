@@ -1,4 +1,4 @@
-// source: librarian/sephirah/v1/porter/sephitah_porter_service.proto
+// source: librarian/sephirah/v1/porter/sephirah_porter_service.proto
 /**
  * @fileoverview
  * @enhanceable

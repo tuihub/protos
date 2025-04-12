@@ -1,6 +1,6 @@
 //
 //  Generated code. Do not modify.
-//  source: librarian/sephirah/v1/porter/sephitah_porter_service.proto
+//  source: librarian/sephirah/v1/porter/sephirah_porter_service.proto
 //
 // @dart = 3.3
 
@@ -15,9 +15,9 @@ import 'dart:core' as $core;
 import 'package:grpc/service_api.dart' as $grpc;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'sephitah_porter_service.pb.dart' as $0;
+import 'sephirah_porter_service.pb.dart' as $0;
 
-export 'sephitah_porter_service.pb.dart';
+export 'sephirah_porter_service.pb.dart';
 
 @$pb.GrpcServiceName('librarian.sephirah.v1.porter.LibrarianSephirahPorterService')
 class LibrarianSephirahPorterServiceClient extends $grpc.Client {
