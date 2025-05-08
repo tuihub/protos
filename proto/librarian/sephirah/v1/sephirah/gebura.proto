@@ -245,9 +245,9 @@ enum AppSaveFileCapacityStrategy {
   // delete the oldest file and save new file
   // check if delete the oldest file can't satisfy the limit, do not delete and fail to save new file
   APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST_OR_FAIL = 2;
-  // delete files until the limit is satisfied
+  // delete the oldest files one by one until the limit is satisfied
   // check if delete all files can't satisfy the limit, do not delete and fail to save new file
-  APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_UNTIL_SATISFIED = 3;
+  APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST_UNTIL_SATISFIED = 3;
 }
 
 message ListAppCategoriesRequest {}
