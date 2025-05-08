@@ -20,15 +20,15 @@ class AppSaveFileCapacityStrategy extends $pb.ProtobufEnum {
   /// delete the oldest file and save new file
   /// check if delete the oldest file can't satisfy the limit, do not delete and fail to save new file
   static const AppSaveFileCapacityStrategy APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST_OR_FAIL = AppSaveFileCapacityStrategy._(2, _omitEnumNames ? '' : 'APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST_OR_FAIL');
-  /// delete files until the limit is satisfied
+  /// delete the oldest files one by one until the limit is satisfied
   /// check if delete all files can't satisfy the limit, do not delete and fail to save new file
-  static const AppSaveFileCapacityStrategy APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_UNTIL_SATISFIED = AppSaveFileCapacityStrategy._(3, _omitEnumNames ? '' : 'APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_UNTIL_SATISFIED');
+  static const AppSaveFileCapacityStrategy APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST_UNTIL_SATISFIED = AppSaveFileCapacityStrategy._(3, _omitEnumNames ? '' : 'APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST_UNTIL_SATISFIED');
 
   static const $core.List<AppSaveFileCapacityStrategy> values = <AppSaveFileCapacityStrategy> [
     APP_SAVE_FILE_CAPACITY_STRATEGY_UNSPECIFIED,
     APP_SAVE_FILE_CAPACITY_STRATEGY_FAIL,
     APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST_OR_FAIL,
-    APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_UNTIL_SATISFIED,
+    APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST_UNTIL_SATISFIED,
   ];
 
   static final $core.Map<$core.int, AppSaveFileCapacityStrategy> _byValue = $pb.ProtobufEnum.initByValue(values);

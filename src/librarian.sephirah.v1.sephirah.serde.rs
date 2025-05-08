@@ -1691,7 +1691,7 @@ impl serde::Serialize for AppSaveFileCapacityStrategy {
             Self::Unspecified => "APP_SAVE_FILE_CAPACITY_STRATEGY_UNSPECIFIED",
             Self::Fail => "APP_SAVE_FILE_CAPACITY_STRATEGY_FAIL",
             Self::DeleteOldestOrFail => "APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST_OR_FAIL",
-            Self::DeleteUntilSatisfied => "APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_UNTIL_SATISFIED",
+            Self::DeleteOldestUntilSatisfied => "APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST_UNTIL_SATISFIED",
         };
         serializer.serialize_str(variant)
     }
@@ -1706,7 +1706,7 @@ impl<'de> serde::Deserialize<'de> for AppSaveFileCapacityStrategy {
             "APP_SAVE_FILE_CAPACITY_STRATEGY_UNSPECIFIED",
             "APP_SAVE_FILE_CAPACITY_STRATEGY_FAIL",
             "APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST_OR_FAIL",
-            "APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_UNTIL_SATISFIED",
+            "APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST_UNTIL_SATISFIED",
         ];
 
         struct GeneratedVisitor;
@@ -1750,7 +1750,7 @@ impl<'de> serde::Deserialize<'de> for AppSaveFileCapacityStrategy {
                     "APP_SAVE_FILE_CAPACITY_STRATEGY_UNSPECIFIED" => Ok(AppSaveFileCapacityStrategy::Unspecified),
                     "APP_SAVE_FILE_CAPACITY_STRATEGY_FAIL" => Ok(AppSaveFileCapacityStrategy::Fail),
                     "APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST_OR_FAIL" => Ok(AppSaveFileCapacityStrategy::DeleteOldestOrFail),
-                    "APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_UNTIL_SATISFIED" => Ok(AppSaveFileCapacityStrategy::DeleteUntilSatisfied),
+                    "APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST_UNTIL_SATISFIED" => Ok(AppSaveFileCapacityStrategy::DeleteOldestUntilSatisfied),
                     _ => Err(serde::de::Error::unknown_variant(value, FIELDS)),
                 }
             }

@@ -256,16 +256,17 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
             "EiUKDnZlcnNpb25fbnVtYmVyGAIgASgEUg12ZXJzaW9uTnVtYmVyEj0KDHZl",
             "cnNpb25fZGF0ZRgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBS",
             "C3ZlcnNpb25EYXRlEhIKBG5hbWUYCiABKAlSBG5hbWUSMQoHYXBwX2lkcxgL",
-            "IAMoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgZhcHBJZHMq7wEKG0Fw",
+            "IAMoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgZhcHBJZHMq9gEKG0Fw",
             "cFNhdmVGaWxlQ2FwYWNpdHlTdHJhdGVneRIvCitBUFBfU0FWRV9GSUxFX0NB",
             "UEFDSVRZX1NUUkFURUdZX1VOU1BFQ0lGSUVEEAASKAokQVBQX1NBVkVfRklM",
             "RV9DQVBBQ0lUWV9TVFJBVEVHWV9GQUlMEAESOQo1QVBQX1NBVkVfRklMRV9D",
-            "QVBBQ0lUWV9TVFJBVEVHWV9ERUxFVEVfT0xERVNUX09SX0ZBSUwQAhI6CjZB",
-            "UFBfU0FWRV9GSUxFX0NBUEFDSVRZX1NUUkFURUdZX0RFTEVURV9VTlRJTF9T",
-            "QVRJU0ZJRUQQAyo2CgdBcHBUeXBlEhgKFEFQUF9UWVBFX1VOU1BFQ0lGSUVE",
-            "EAASEQoNQVBQX1RZUEVfR0FNRRABQmZaNWdpdGh1Yi5jb20vdHVpaHViL3By",
-            "b3Rvcy9wa2cvbGlicmFyaWFuL3NlcGhpcmFoL3YxO3YxqgIsVHVpSHViLlBy",
-            "b3Rvcy5MaWJyYXJpYW4uU2VwaGlyYWguVjEuU2VwaGlyYWhiBnByb3RvMw=="));
+            "QVBBQ0lUWV9TVFJBVEVHWV9ERUxFVEVfT0xERVNUX09SX0ZBSUwQAhJBCj1B",
+            "UFBfU0FWRV9GSUxFX0NBUEFDSVRZX1NUUkFURUdZX0RFTEVURV9PTERFU1Rf",
+            "VU5USUxfU0FUSVNGSUVEEAMqNgoHQXBwVHlwZRIYChRBUFBfVFlQRV9VTlNQ",
+            "RUNJRklFRBAAEhEKDUFQUF9UWVBFX0dBTUUQAUJmWjVnaXRodWIuY29tL3R1",
+            "aWh1Yi9wcm90b3MvcGtnL2xpYnJhcmlhbi9zZXBoaXJhaC92MTt2MaoCLFR1",
+            "aUh1Yi5Qcm90b3MuTGlicmFyaWFuLlNlcGhpcmFoLlYxLlNlcGhpcmFoYgZw",
+            "cm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.WellknownReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppSaveFileCapacityStrategy), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppType), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -353,10 +354,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
     /// </summary>
     [pbr::OriginalName("APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST_OR_FAIL")] DeleteOldestOrFail = 2,
     /// <summary>
-    /// delete files until the limit is satisfied
+    /// delete the oldest files one by one until the limit is satisfied
     /// check if delete all files can't satisfy the limit, do not delete and fail to save new file
     /// </summary>
-    [pbr::OriginalName("APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_UNTIL_SATISFIED")] DeleteUntilSatisfied = 3,
+    [pbr::OriginalName("APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST_UNTIL_SATISFIED")] DeleteOldestUntilSatisfied = 3,
   }
 
   public enum AppType {

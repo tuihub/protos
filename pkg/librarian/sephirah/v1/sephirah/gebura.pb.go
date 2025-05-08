@@ -33,9 +33,9 @@ const (
 	// delete the oldest file and save new file
 	// check if delete the oldest file can't satisfy the limit, do not delete and fail to save new file
 	AppSaveFileCapacityStrategy_APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST_OR_FAIL AppSaveFileCapacityStrategy = 2
-	// delete files until the limit is satisfied
+	// delete the oldest files one by one until the limit is satisfied
 	// check if delete all files can't satisfy the limit, do not delete and fail to save new file
-	AppSaveFileCapacityStrategy_APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_UNTIL_SATISFIED AppSaveFileCapacityStrategy = 3
+	AppSaveFileCapacityStrategy_APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST_UNTIL_SATISFIED AppSaveFileCapacityStrategy = 3
 )
 
 // Enum value maps for AppSaveFileCapacityStrategy.
@@ -44,13 +44,13 @@ var (
 		0: "APP_SAVE_FILE_CAPACITY_STRATEGY_UNSPECIFIED",
 		1: "APP_SAVE_FILE_CAPACITY_STRATEGY_FAIL",
 		2: "APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST_OR_FAIL",
-		3: "APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_UNTIL_SATISFIED",
+		3: "APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST_UNTIL_SATISFIED",
 	}
 	AppSaveFileCapacityStrategy_value = map[string]int32{
-		"APP_SAVE_FILE_CAPACITY_STRATEGY_UNSPECIFIED":            0,
-		"APP_SAVE_FILE_CAPACITY_STRATEGY_FAIL":                   1,
-		"APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST_OR_FAIL":  2,
-		"APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_UNTIL_SATISFIED": 3,
+		"APP_SAVE_FILE_CAPACITY_STRATEGY_UNSPECIFIED":                   0,
+		"APP_SAVE_FILE_CAPACITY_STRATEGY_FAIL":                          1,
+		"APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST_OR_FAIL":         2,
+		"APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST_UNTIL_SATISFIED": 3,
 	}
 )
 
@@ -4189,12 +4189,12 @@ const file_librarian_sephirah_v1_sephirah_gebura_proto_rawDesc = "" +
 	"\fversion_date\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\vversionDate\x12\x12\n" +
 	"\x04name\x18\n" +
 	" \x01(\tR\x04name\x121\n" +
-	"\aapp_ids\x18\v \x03(\v2\x18.librarian.v1.InternalIDR\x06appIds*\xef\x01\n" +
+	"\aapp_ids\x18\v \x03(\v2\x18.librarian.v1.InternalIDR\x06appIds*\xf6\x01\n" +
 	"\x1bAppSaveFileCapacityStrategy\x12/\n" +
 	"+APP_SAVE_FILE_CAPACITY_STRATEGY_UNSPECIFIED\x10\x00\x12(\n" +
 	"$APP_SAVE_FILE_CAPACITY_STRATEGY_FAIL\x10\x01\x129\n" +
-	"5APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST_OR_FAIL\x10\x02\x12:\n" +
-	"6APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_UNTIL_SATISFIED\x10\x03*6\n" +
+	"5APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST_OR_FAIL\x10\x02\x12A\n" +
+	"=APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST_UNTIL_SATISFIED\x10\x03*6\n" +
 	"\aAppType\x12\x18\n" +
 	"\x14APP_TYPE_UNSPECIFIED\x10\x00\x12\x11\n" +
 	"\rAPP_TYPE_GAME\x10\x01BfZ5github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1\xaa\x02,TuiHub.Protos.Librarian.Sephirah.V1.Sephirahb\x06proto3"
