@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.5](https://github.com/tuihub/protos/compare/v0.5.4...v0.5.5) (2025-05-14)
+
+
+### Features
+
+* **sentinel:** add heartbeat ([22d6a54](https://github.com/tuihub/protos/commit/22d6a5488b478fdb1460c2a3a1e4e9c1b1a36050))
+
 ## [0.5.4](https://github.com/tuihub/protos/compare/v0.5.3...v0.5.4) (2025-04-08)
 
 
