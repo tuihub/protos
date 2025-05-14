@@ -16,7 +16,7 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../../google/protobuf/duration.pb.dart' as $9;
 import '../../../../google/protobuf/timestamp.pb.dart' as $7;
-import '../../../v1/common.pb.dart' as $10;
+import '../../../v1/common.pb.dart' as $11;
 import '../../../v1/wellknown.pb.dart' as $8;
 import 'yesod.pbenum.dart';
 
@@ -290,7 +290,7 @@ class ListFeedConfigsRequest extends $pb.GeneratedMessage {
 
 class ListFeedConfigsResponse_FeedWithConfig extends $pb.GeneratedMessage {
   factory ListFeedConfigsResponse_FeedWithConfig({
-    $10.Feed? feed,
+    $11.Feed? feed,
     FeedConfig? config,
   }) {
     final $result = create();
@@ -307,7 +307,7 @@ class ListFeedConfigsResponse_FeedWithConfig extends $pb.GeneratedMessage {
   factory ListFeedConfigsResponse_FeedWithConfig.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListFeedConfigsResponse.FeedWithConfig', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
-    ..aOM<$10.Feed>(1, _omitFieldNames ? '' : 'feed', subBuilder: $10.Feed.create)
+    ..aOM<$11.Feed>(1, _omitFieldNames ? '' : 'feed', subBuilder: $11.Feed.create)
     ..aOM<FeedConfig>(2, _omitFieldNames ? '' : 'config', subBuilder: FeedConfig.create)
     ..hasRequiredFields = false
   ;
@@ -334,15 +334,15 @@ class ListFeedConfigsResponse_FeedWithConfig extends $pb.GeneratedMessage {
   static ListFeedConfigsResponse_FeedWithConfig? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $10.Feed get feed => $_getN(0);
+  $11.Feed get feed => $_getN(0);
   @$pb.TagNumber(1)
-  set feed($10.Feed v) { $_setField(1, v); }
+  set feed($11.Feed v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasFeed() => $_has(0);
   @$pb.TagNumber(1)
   void clearFeed() => $_clearField(1);
   @$pb.TagNumber(1)
-  $10.Feed ensureFeed() => $_ensure(0);
+  $11.Feed ensureFeed() => $_ensure(0);
 
   @$pb.TagNumber(2)
   FeedConfig get config => $_getN(1);
@@ -1082,7 +1082,7 @@ class GetFeedItemRequest extends $pb.GeneratedMessage {
 
 class GetFeedItemResponse extends $pb.GeneratedMessage {
   factory GetFeedItemResponse({
-    $10.FeedItem? item,
+    $11.FeedItem? item,
   }) {
     final $result = create();
     if (item != null) {
@@ -1095,7 +1095,7 @@ class GetFeedItemResponse extends $pb.GeneratedMessage {
   factory GetFeedItemResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetFeedItemResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
-    ..aOM<$10.FeedItem>(1, _omitFieldNames ? '' : 'item', subBuilder: $10.FeedItem.create)
+    ..aOM<$11.FeedItem>(1, _omitFieldNames ? '' : 'item', subBuilder: $11.FeedItem.create)
     ..hasRequiredFields = false
   ;
 
@@ -1121,15 +1121,15 @@ class GetFeedItemResponse extends $pb.GeneratedMessage {
   static GetFeedItemResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $10.FeedItem get item => $_getN(0);
+  $11.FeedItem get item => $_getN(0);
   @$pb.TagNumber(1)
-  set item($10.FeedItem v) { $_setField(1, v); }
+  set item($11.FeedItem v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasItem() => $_has(0);
   @$pb.TagNumber(1)
   void clearItem() => $_clearField(1);
   @$pb.TagNumber(1)
-  $10.FeedItem ensureItem() => $_ensure(0);
+  $11.FeedItem ensureItem() => $_ensure(0);
 }
 
 class GetBatchFeedItemsRequest extends $pb.GeneratedMessage {
@@ -1178,7 +1178,7 @@ class GetBatchFeedItemsRequest extends $pb.GeneratedMessage {
 
 class GetBatchFeedItemsResponse extends $pb.GeneratedMessage {
   factory GetBatchFeedItemsResponse({
-    $core.Iterable<$10.FeedItem>? items,
+    $core.Iterable<$11.FeedItem>? items,
   }) {
     final $result = create();
     if (items != null) {
@@ -1191,7 +1191,7 @@ class GetBatchFeedItemsResponse extends $pb.GeneratedMessage {
   factory GetBatchFeedItemsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetBatchFeedItemsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
-    ..pc<$10.FeedItem>(1, _omitFieldNames ? '' : 'items', $pb.PbFieldType.PM, subBuilder: $10.FeedItem.create)
+    ..pc<$11.FeedItem>(1, _omitFieldNames ? '' : 'items', $pb.PbFieldType.PM, subBuilder: $11.FeedItem.create)
     ..hasRequiredFields = false
   ;
 
@@ -1217,7 +1217,7 @@ class GetBatchFeedItemsResponse extends $pb.GeneratedMessage {
   static GetBatchFeedItemsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $pb.PbList<$10.FeedItem> get items => $_getList(0);
+  $pb.PbList<$11.FeedItem> get items => $_getList(0);
 }
 
 class ReadFeedItemRequest extends $pb.GeneratedMessage {

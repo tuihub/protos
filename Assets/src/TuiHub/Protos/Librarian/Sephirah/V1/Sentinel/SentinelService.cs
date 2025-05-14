@@ -25,57 +25,75 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CjVsaWJyYXJpYW4vc2VwaGlyYWgvdjEvc2VudGluZWwvc2VudGluZWxfc2Vy",
-            "dmljZS5wcm90bxIebGlicmFyaWFuLnNlcGhpcmFoLnYxLnNlbnRpbmVsIhUK",
-            "E1JlZnJlc2hUb2tlblJlcXVlc3QiXgoUUmVmcmVzaFRva2VuUmVzcG9uc2US",
-            "IQoMYWNjZXNzX3Rva2VuGAEgASgJUgthY2Nlc3NUb2tlbhIjCg1yZWZyZXNo",
-            "X3Rva2VuGAIgASgJUgxyZWZyZXNoVG9rZW4iiwIKIFJlcG9ydFNlbnRpbmVs",
+            "dmljZS5wcm90bxIebGlicmFyaWFuLnNlcGhpcmFoLnYxLnNlbnRpbmVsGh5n",
+            "b29nbGUvcHJvdG9idWYvZHVyYXRpb24ucHJvdG8aH2dvb2dsZS9wcm90b2J1",
+            "Zi90aW1lc3RhbXAucHJvdG8iFQoTUmVmcmVzaFRva2VuUmVxdWVzdCJeChRS",
+            "ZWZyZXNoVG9rZW5SZXNwb25zZRIhCgxhY2Nlc3NfdG9rZW4YASABKAlSC2Fj",
+            "Y2Vzc1Rva2VuEiMKDXJlZnJlc2hfdG9rZW4YAiABKAlSDHJlZnJlc2hUb2tl",
+            "biKPAgoQSGVhcnRiZWF0UmVxdWVzdBIfCgtpbnN0YW5jZV9pZBgBIAEoA1IK",
+            "aW5zdGFuY2VJZBI7CgtjbGllbnRfdGltZRgCIAEoCzIaLmdvb2dsZS5wcm90",
+            "b2J1Zi5UaW1lc3RhbXBSCmNsaWVudFRpbWUSSAoSaGVhcnRiZWF0X2ludGVy",
+            "dmFsGAMgASgLMhkuZ29vZ2xlLnByb3RvYnVmLkR1cmF0aW9uUhFoZWFydGJl",
+            "YXRJbnRlcnZhbBJTChhjb21taXRfc25hcHNob3RfaW50ZXJ2YWwYBCABKAsy",
+            "GS5nb29nbGUucHJvdG9idWYuRHVyYXRpb25SFmNvbW1pdFNuYXBzaG90SW50",
+            "ZXJ2YWwiEwoRSGVhcnRiZWF0UmVzcG9uc2UiiwIKIFJlcG9ydFNlbnRpbmVs",
             "SW5mb3JtYXRpb25SZXF1ZXN0EhAKA3VybBgBIAEoCVIDdXJsEikKEHVybF9h",
             "bHRlcm5hdGl2ZXMYAiADKAlSD3VybEFsdGVybmF0aXZlcxIkCg5nZXRfdG9r",
             "ZW5fcGF0aBgDIAEoCVIMZ2V0VG9rZW5QYXRoEjUKF2Rvd25sb2FkX2ZpbGVf",
             "YmFzZV9wYXRoGAQgASgJUhRkb3dubG9hZEZpbGVCYXNlUGF0aBJNCglsaWJy",
             "YXJpZXMYBSADKAsyLy5saWJyYXJpYW4uc2VwaGlyYWgudjEuc2VudGluZWwu",
             "U2VudGluZWxMaWJyYXJ5UglsaWJyYXJpZXMiIwohUmVwb3J0U2VudGluZWxJ",
-            "bmZvcm1hdGlvblJlc3BvbnNlIncKGFJlcG9ydEFwcEJpbmFyaWVzUmVxdWVz",
-            "dBJbCgxhcHBfYmluYXJpZXMYASADKAsyOC5saWJyYXJpYW4uc2VwaGlyYWgu",
-            "djEuc2VudGluZWwuU2VudGluZWxMaWJyYXJ5QXBwQmluYXJ5UgthcHBCaW5h",
-            "cmllcyIbChlSZXBvcnRBcHBCaW5hcmllc1Jlc3BvbnNlIk8KD1NlbnRpbmVs",
-            "TGlicmFyeRIOCgJpZBgBIAEoA1ICaWQSLAoSZG93bmxvYWRfYmFzZV9wYXRo",
-            "GAIgASgJUhBkb3dubG9hZEJhc2VQYXRoIvoCChhTZW50aW5lbExpYnJhcnlB",
-            "cHBCaW5hcnkSLgoTc2VudGluZWxfbGlicmFyeV9pZBgBIAEoA1IRc2VudGlu",
-            "ZWxMaWJyYXJ5SWQSMgoVc2VudGluZWxfZ2VuZXJhdGVkX2lkGAIgASgJUhNz",
-            "ZW50aW5lbEdlbmVyYXRlZElkEh0KCnNpemVfYnl0ZXMYAyABKANSCXNpemVC",
-            "eXRlcxIdCgpuZWVkX3Rva2VuGAQgASgIUgluZWVkVG9rZW4SUgoFZmlsZXMY",
-            "BSADKAsyPC5saWJyYXJpYW4uc2VwaGlyYWgudjEuc2VudGluZWwuU2VudGlu",
-            "ZWxMaWJyYXJ5QXBwQmluYXJ5RmlsZVIFZmlsZXMSEgoEbmFtZRgKIAEoCVIE",
-            "bmFtZRIYCgd2ZXJzaW9uGAsgASgJUgd2ZXJzaW9uEhwKCWRldmVsb3BlchgM",
-            "IAEoCVIJZGV2ZWxvcGVyEhwKCXB1Ymxpc2hlchgNIAEoCVIJcHVibGlzaGVy",
-            "IskBChxTZW50aW5lbExpYnJhcnlBcHBCaW5hcnlGaWxlEhIKBG5hbWUYASAB",
-            "KAlSBG5hbWUSHQoKc2l6ZV9ieXRlcxgCIAEoA1IJc2l6ZUJ5dGVzEhYKBnNo",
-            "YTI1NhgDIAEoDFIGc2hhMjU2EigKEHNlcnZlcl9maWxlX3BhdGgYBCABKAlS",
-            "DnNlcnZlckZpbGVQYXRoEiQKC2NodW5rc19pbmZvGAogASgJSABSCmNodW5r",
-            "c0luZm+IAQFCDgoMX2NodW5rc19pbmZvMsMDChhMaWJyYXJpYW5TZW50aW5l",
-            "bFNlcnZpY2USeQoMUmVmcmVzaFRva2VuEjMubGlicmFyaWFuLnNlcGhpcmFo",
-            "LnYxLnNlbnRpbmVsLlJlZnJlc2hUb2tlblJlcXVlc3QaNC5saWJyYXJpYW4u",
-            "c2VwaGlyYWgudjEuc2VudGluZWwuUmVmcmVzaFRva2VuUmVzcG9uc2USoAEK",
-            "GVJlcG9ydFNlbnRpbmVsSW5mb3JtYXRpb24SQC5saWJyYXJpYW4uc2VwaGly",
-            "YWgudjEuc2VudGluZWwuUmVwb3J0U2VudGluZWxJbmZvcm1hdGlvblJlcXVl",
-            "c3QaQS5saWJyYXJpYW4uc2VwaGlyYWgudjEuc2VudGluZWwuUmVwb3J0U2Vu",
-            "dGluZWxJbmZvcm1hdGlvblJlc3BvbnNlEogBChFSZXBvcnRBcHBCaW5hcmll",
-            "cxI4LmxpYnJhcmlhbi5zZXBoaXJhaC52MS5zZW50aW5lbC5SZXBvcnRBcHBC",
-            "aW5hcmllc1JlcXVlc3QaOS5saWJyYXJpYW4uc2VwaGlyYWgudjEuc2VudGlu",
-            "ZWwuUmVwb3J0QXBwQmluYXJpZXNSZXNwb25zZUJvWj5naXRodWIuY29tL3R1",
-            "aWh1Yi9wcm90b3MvcGtnL2xpYnJhcmlhbi9zZXBoaXJhaC92MS9zZW50aW5l",
-            "bDt2MaoCLFR1aUh1Yi5Qcm90b3MuTGlicmFyaWFuLlNlcGhpcmFoLlYxLlNl",
-            "bnRpbmVsYgZwcm90bzM="));
+            "bmZvcm1hdGlvblJlc3BvbnNlIpECChhSZXBvcnRBcHBCaW5hcmllc1JlcXVl",
+            "c3QSWwoMYXBwX2JpbmFyaWVzGAEgAygLMjgubGlicmFyaWFuLnNlcGhpcmFo",
+            "LnYxLnNlbnRpbmVsLlNlbnRpbmVsTGlicmFyeUFwcEJpbmFyeVILYXBwQmlu",
+            "YXJpZXMSRAoNc25hcHNob3RfdGltZRgCIAEoCzIaLmdvb2dsZS5wcm90b2J1",
+            "Zi5UaW1lc3RhbXBIAFIMc25hcHNob3RUaW1liAEBEiwKD2NvbW1pdF9zbmFw",
+            "c2hvdBgDIAEoCEgBUg5jb21taXRTbmFwc2hvdIgBAUIQCg5fc25hcHNob3Rf",
+            "dGltZUISChBfY29tbWl0X3NuYXBzaG90InQKGVJlcG9ydEFwcEJpbmFyaWVz",
+            "UmVzcG9uc2USOwoXY29tbWl0X3NuYXBzaG90X3N1Y2Nlc3MYASABKAhIAFIV",
+            "Y29tbWl0U25hcHNob3RTdWNjZXNziAEBQhoKGF9jb21taXRfc25hcHNob3Rf",
+            "c3VjY2VzcyJPCg9TZW50aW5lbExpYnJhcnkSDgoCaWQYASABKANSAmlkEiwK",
+            "EmRvd25sb2FkX2Jhc2VfcGF0aBgCIAEoCVIQZG93bmxvYWRCYXNlUGF0aCL6",
+            "AgoYU2VudGluZWxMaWJyYXJ5QXBwQmluYXJ5Ei4KE3NlbnRpbmVsX2xpYnJh",
+            "cnlfaWQYASABKANSEXNlbnRpbmVsTGlicmFyeUlkEjIKFXNlbnRpbmVsX2dl",
+            "bmVyYXRlZF9pZBgCIAEoCVITc2VudGluZWxHZW5lcmF0ZWRJZBIdCgpzaXpl",
+            "X2J5dGVzGAMgASgDUglzaXplQnl0ZXMSHQoKbmVlZF90b2tlbhgEIAEoCFIJ",
+            "bmVlZFRva2VuElIKBWZpbGVzGAUgAygLMjwubGlicmFyaWFuLnNlcGhpcmFo",
+            "LnYxLnNlbnRpbmVsLlNlbnRpbmVsTGlicmFyeUFwcEJpbmFyeUZpbGVSBWZp",
+            "bGVzEhIKBG5hbWUYCiABKAlSBG5hbWUSGAoHdmVyc2lvbhgLIAEoCVIHdmVy",
+            "c2lvbhIcCglkZXZlbG9wZXIYDCABKAlSCWRldmVsb3BlchIcCglwdWJsaXNo",
+            "ZXIYDSABKAlSCXB1Ymxpc2hlciLJAQocU2VudGluZWxMaWJyYXJ5QXBwQmlu",
+            "YXJ5RmlsZRISCgRuYW1lGAEgASgJUgRuYW1lEh0KCnNpemVfYnl0ZXMYAiAB",
+            "KANSCXNpemVCeXRlcxIWCgZzaGEyNTYYAyABKAxSBnNoYTI1NhIoChBzZXJ2",
+            "ZXJfZmlsZV9wYXRoGAQgASgJUg5zZXJ2ZXJGaWxlUGF0aBIkCgtjaHVua3Nf",
+            "aW5mbxgKIAEoCUgAUgpjaHVua3NJbmZviAEBQg4KDF9jaHVua3NfaW5mbzK1",
+            "BAoYTGlicmFyaWFuU2VudGluZWxTZXJ2aWNlEnkKDFJlZnJlc2hUb2tlbhIz",
+            "LmxpYnJhcmlhbi5zZXBoaXJhaC52MS5zZW50aW5lbC5SZWZyZXNoVG9rZW5S",
+            "ZXF1ZXN0GjQubGlicmFyaWFuLnNlcGhpcmFoLnYxLnNlbnRpbmVsLlJlZnJl",
+            "c2hUb2tlblJlc3BvbnNlEnAKCUhlYXJ0YmVhdBIwLmxpYnJhcmlhbi5zZXBo",
+            "aXJhaC52MS5zZW50aW5lbC5IZWFydGJlYXRSZXF1ZXN0GjEubGlicmFyaWFu",
+            "LnNlcGhpcmFoLnYxLnNlbnRpbmVsLkhlYXJ0YmVhdFJlc3BvbnNlEqABChlS",
+            "ZXBvcnRTZW50aW5lbEluZm9ybWF0aW9uEkAubGlicmFyaWFuLnNlcGhpcmFo",
+            "LnYxLnNlbnRpbmVsLlJlcG9ydFNlbnRpbmVsSW5mb3JtYXRpb25SZXF1ZXN0",
+            "GkEubGlicmFyaWFuLnNlcGhpcmFoLnYxLnNlbnRpbmVsLlJlcG9ydFNlbnRp",
+            "bmVsSW5mb3JtYXRpb25SZXNwb25zZRKIAQoRUmVwb3J0QXBwQmluYXJpZXMS",
+            "OC5saWJyYXJpYW4uc2VwaGlyYWgudjEuc2VudGluZWwuUmVwb3J0QXBwQmlu",
+            "YXJpZXNSZXF1ZXN0GjkubGlicmFyaWFuLnNlcGhpcmFoLnYxLnNlbnRpbmVs",
+            "LlJlcG9ydEFwcEJpbmFyaWVzUmVzcG9uc2VCb1o+Z2l0aHViLmNvbS90dWlo",
+            "dWIvcHJvdG9zL3BrZy9saWJyYXJpYW4vc2VwaGlyYWgvdjEvc2VudGluZWw7",
+            "djGqAixUdWlIdWIuUHJvdG9zLkxpYnJhcmlhbi5TZXBoaXJhaC5WMS5TZW50",
+            "aW5lbGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.RefreshTokenRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.RefreshTokenRequest.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.RefreshTokenResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.RefreshTokenResponse.Parser, new[]{ "AccessToken", "RefreshToken" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatRequest.Parser, new[]{ "InstanceId", "ClientTime", "HeartbeatInterval", "CommitSnapshotInterval" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatResponse.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationRequest.Parser, new[]{ "Url", "UrlAlternatives", "GetTokenPath", "DownloadFileBasePath", "Libraries" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportAppBinariesRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportAppBinariesRequest.Parser, new[]{ "AppBinaries" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportAppBinariesResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportAppBinariesResponse.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportAppBinariesRequest), global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportAppBinariesRequest.Parser, new[]{ "AppBinaries", "SnapshotTime", "CommitSnapshot" }, new[]{ "SnapshotTime", "CommitSnapshot" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportAppBinariesResponse), global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportAppBinariesResponse.Parser, new[]{ "CommitSnapshotSuccess" }, new[]{ "CommitSnapshotSuccess" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.SentinelLibrary), global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.SentinelLibrary.Parser, new[]{ "Id", "DownloadBasePath" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.SentinelLibraryAppBinary), global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.SentinelLibraryAppBinary.Parser, new[]{ "SentinelLibraryId", "SentinelGeneratedId", "SizeBytes", "NeedToken", "Files", "Name", "Version", "Developer", "Publisher" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.SentinelLibraryAppBinaryFile), global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.SentinelLibraryAppBinaryFile.Parser, new[]{ "Name", "SizeBytes", "Sha256", "ServerFilePath", "ChunksInfo" }, new[]{ "ChunksInfo" }, null, null, null)
@@ -463,6 +481,488 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
 
   }
 
+  public sealed partial class HeartbeatRequest : pb::IMessage<HeartbeatRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<HeartbeatRequest> _parser = new pb::MessageParser<HeartbeatRequest>(() => new HeartbeatRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<HeartbeatRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.SentinelServiceReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HeartbeatRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HeartbeatRequest(HeartbeatRequest other) : this() {
+      instanceId_ = other.instanceId_;
+      clientTime_ = other.clientTime_ != null ? other.clientTime_.Clone() : null;
+      heartbeatInterval_ = other.heartbeatInterval_ != null ? other.heartbeatInterval_.Clone() : null;
+      commitSnapshotInterval_ = other.commitSnapshotInterval_ != null ? other.commitSnapshotInterval_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HeartbeatRequest Clone() {
+      return new HeartbeatRequest(this);
+    }
+
+    /// <summary>Field number for the "instance_id" field.</summary>
+    public const int InstanceIdFieldNumber = 1;
+    private long instanceId_;
+    /// <summary>
+    /// instance_id is used to identify the client instance, should be randomly generated by client on startup
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public long InstanceId {
+      get { return instanceId_; }
+      set {
+        instanceId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "client_time" field.</summary>
+    public const int ClientTimeFieldNumber = 2;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp clientTime_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp ClientTime {
+      get { return clientTime_; }
+      set {
+        clientTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "heartbeat_interval" field.</summary>
+    public const int HeartbeatIntervalFieldNumber = 3;
+    private global::Google.Protobuf.WellKnownTypes.Duration heartbeatInterval_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Duration HeartbeatInterval {
+      get { return heartbeatInterval_; }
+      set {
+        heartbeatInterval_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "commit_snapshot_interval" field.</summary>
+    public const int CommitSnapshotIntervalFieldNumber = 4;
+    private global::Google.Protobuf.WellKnownTypes.Duration commitSnapshotInterval_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Duration CommitSnapshotInterval {
+      get { return commitSnapshotInterval_; }
+      set {
+        commitSnapshotInterval_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as HeartbeatRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(HeartbeatRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (InstanceId != other.InstanceId) return false;
+      if (!object.Equals(ClientTime, other.ClientTime)) return false;
+      if (!object.Equals(HeartbeatInterval, other.HeartbeatInterval)) return false;
+      if (!object.Equals(CommitSnapshotInterval, other.CommitSnapshotInterval)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (InstanceId != 0L) hash ^= InstanceId.GetHashCode();
+      if (clientTime_ != null) hash ^= ClientTime.GetHashCode();
+      if (heartbeatInterval_ != null) hash ^= HeartbeatInterval.GetHashCode();
+      if (commitSnapshotInterval_ != null) hash ^= CommitSnapshotInterval.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (InstanceId != 0L) {
+        output.WriteRawTag(8);
+        output.WriteInt64(InstanceId);
+      }
+      if (clientTime_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(ClientTime);
+      }
+      if (heartbeatInterval_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(HeartbeatInterval);
+      }
+      if (commitSnapshotInterval_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(CommitSnapshotInterval);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (InstanceId != 0L) {
+        output.WriteRawTag(8);
+        output.WriteInt64(InstanceId);
+      }
+      if (clientTime_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(ClientTime);
+      }
+      if (heartbeatInterval_ != null) {
+        output.WriteRawTag(26);
+        output.WriteMessage(HeartbeatInterval);
+      }
+      if (commitSnapshotInterval_ != null) {
+        output.WriteRawTag(34);
+        output.WriteMessage(CommitSnapshotInterval);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (InstanceId != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(InstanceId);
+      }
+      if (clientTime_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(ClientTime);
+      }
+      if (heartbeatInterval_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(HeartbeatInterval);
+      }
+      if (commitSnapshotInterval_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CommitSnapshotInterval);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(HeartbeatRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.InstanceId != 0L) {
+        InstanceId = other.InstanceId;
+      }
+      if (other.clientTime_ != null) {
+        if (clientTime_ == null) {
+          ClientTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        ClientTime.MergeFrom(other.ClientTime);
+      }
+      if (other.heartbeatInterval_ != null) {
+        if (heartbeatInterval_ == null) {
+          HeartbeatInterval = new global::Google.Protobuf.WellKnownTypes.Duration();
+        }
+        HeartbeatInterval.MergeFrom(other.HeartbeatInterval);
+      }
+      if (other.commitSnapshotInterval_ != null) {
+        if (commitSnapshotInterval_ == null) {
+          CommitSnapshotInterval = new global::Google.Protobuf.WellKnownTypes.Duration();
+        }
+        CommitSnapshotInterval.MergeFrom(other.CommitSnapshotInterval);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            InstanceId = input.ReadInt64();
+            break;
+          }
+          case 18: {
+            if (clientTime_ == null) {
+              ClientTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(ClientTime);
+            break;
+          }
+          case 26: {
+            if (heartbeatInterval_ == null) {
+              HeartbeatInterval = new global::Google.Protobuf.WellKnownTypes.Duration();
+            }
+            input.ReadMessage(HeartbeatInterval);
+            break;
+          }
+          case 34: {
+            if (commitSnapshotInterval_ == null) {
+              CommitSnapshotInterval = new global::Google.Protobuf.WellKnownTypes.Duration();
+            }
+            input.ReadMessage(CommitSnapshotInterval);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            InstanceId = input.ReadInt64();
+            break;
+          }
+          case 18: {
+            if (clientTime_ == null) {
+              ClientTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(ClientTime);
+            break;
+          }
+          case 26: {
+            if (heartbeatInterval_ == null) {
+              HeartbeatInterval = new global::Google.Protobuf.WellKnownTypes.Duration();
+            }
+            input.ReadMessage(HeartbeatInterval);
+            break;
+          }
+          case 34: {
+            if (commitSnapshotInterval_ == null) {
+              CommitSnapshotInterval = new global::Google.Protobuf.WellKnownTypes.Duration();
+            }
+            input.ReadMessage(CommitSnapshotInterval);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class HeartbeatResponse : pb::IMessage<HeartbeatResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<HeartbeatResponse> _parser = new pb::MessageParser<HeartbeatResponse>(() => new HeartbeatResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<HeartbeatResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.SentinelServiceReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HeartbeatResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HeartbeatResponse(HeartbeatResponse other) : this() {
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public HeartbeatResponse Clone() {
+      return new HeartbeatResponse(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as HeartbeatResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(HeartbeatResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(HeartbeatResponse other) {
+      if (other == null) {
+        return;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+        }
+      }
+    }
+    #endif
+
+  }
+
   public sealed partial class ReportSentinelInformationRequest : pb::IMessage<ReportSentinelInformationRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -477,7 +977,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.SentinelServiceReflection.Descriptor.MessageTypes[2]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.SentinelServiceReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -795,7 +1295,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.SentinelServiceReflection.Descriptor.MessageTypes[3]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.SentinelServiceReflection.Descriptor.MessageTypes[5]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -940,6 +1440,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
   {
     private static readonly pb::MessageParser<ReportAppBinariesRequest> _parser = new pb::MessageParser<ReportAppBinariesRequest>(() => new ReportAppBinariesRequest());
     private pb::UnknownFieldSet _unknownFields;
+    private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ReportAppBinariesRequest> Parser { get { return _parser; } }
@@ -947,7 +1448,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.SentinelServiceReflection.Descriptor.MessageTypes[4]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.SentinelServiceReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -967,7 +1468,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ReportAppBinariesRequest(ReportAppBinariesRequest other) : this() {
+      _hasBits0 = other._hasBits0;
       appBinaries_ = other.appBinaries_.Clone();
+      snapshotTime_ = other.snapshotTime_ != null ? other.snapshotTime_.Clone() : null;
+      commitSnapshot_ = other.commitSnapshot_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -988,6 +1492,55 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
       get { return appBinaries_; }
     }
 
+    /// <summary>Field number for the "snapshot_time" field.</summary>
+    public const int SnapshotTimeFieldNumber = 2;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp snapshotTime_;
+    /// <summary>
+    /// Each library has multiple snapshots, and only one of them is the active snapshot
+    /// Use this field to create a new snapshot,
+    /// the new snapshot must be newer than exists,
+    /// the new snapshot will not be active until committed
+    /// Leave empty to update current active snapshot
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp SnapshotTime {
+      get { return snapshotTime_; }
+      set {
+        snapshotTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "commit_snapshot" field.</summary>
+    public const int CommitSnapshotFieldNumber = 3;
+    private readonly static bool CommitSnapshotDefaultValue = false;
+
+    private bool commitSnapshot_;
+    /// <summary>
+    /// If true, the new snapshot will be set as active
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool CommitSnapshot {
+      get { if ((_hasBits0 & 1) != 0) { return commitSnapshot_; } else { return CommitSnapshotDefaultValue; } }
+      set {
+        _hasBits0 |= 1;
+        commitSnapshot_ = value;
+      }
+    }
+    /// <summary>Gets whether the "commit_snapshot" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasCommitSnapshot {
+      get { return (_hasBits0 & 1) != 0; }
+    }
+    /// <summary>Clears the value of the "commit_snapshot" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearCommitSnapshot() {
+      _hasBits0 &= ~1;
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -1004,6 +1557,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
         return true;
       }
       if(!appBinaries_.Equals(other.appBinaries_)) return false;
+      if (!object.Equals(SnapshotTime, other.SnapshotTime)) return false;
+      if (CommitSnapshot != other.CommitSnapshot) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1012,6 +1567,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
     public override int GetHashCode() {
       int hash = 1;
       hash ^= appBinaries_.GetHashCode();
+      if (snapshotTime_ != null) hash ^= SnapshotTime.GetHashCode();
+      if (HasCommitSnapshot) hash ^= CommitSnapshot.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1031,6 +1588,14 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
       output.WriteRawMessage(this);
     #else
       appBinaries_.WriteTo(output, _repeated_appBinaries_codec);
+      if (snapshotTime_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(SnapshotTime);
+      }
+      if (HasCommitSnapshot) {
+        output.WriteRawTag(24);
+        output.WriteBool(CommitSnapshot);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1042,6 +1607,14 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       appBinaries_.WriteTo(ref output, _repeated_appBinaries_codec);
+      if (snapshotTime_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(SnapshotTime);
+      }
+      if (HasCommitSnapshot) {
+        output.WriteRawTag(24);
+        output.WriteBool(CommitSnapshot);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1053,6 +1626,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
     public int CalculateSize() {
       int size = 0;
       size += appBinaries_.CalculateSize(_repeated_appBinaries_codec);
+      if (snapshotTime_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SnapshotTime);
+      }
+      if (HasCommitSnapshot) {
+        size += 1 + 1;
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -1066,6 +1645,15 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
         return;
       }
       appBinaries_.Add(other.appBinaries_);
+      if (other.snapshotTime_ != null) {
+        if (snapshotTime_ == null) {
+          SnapshotTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        SnapshotTime.MergeFrom(other.SnapshotTime);
+      }
+      if (other.HasCommitSnapshot) {
+        CommitSnapshot = other.CommitSnapshot;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -1083,6 +1671,17 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
             break;
           case 10: {
             appBinaries_.AddEntriesFrom(input, _repeated_appBinaries_codec);
+            break;
+          }
+          case 18: {
+            if (snapshotTime_ == null) {
+              SnapshotTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(SnapshotTime);
+            break;
+          }
+          case 24: {
+            CommitSnapshot = input.ReadBool();
             break;
           }
         }
@@ -1104,6 +1703,17 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
             appBinaries_.AddEntriesFrom(ref input, _repeated_appBinaries_codec);
             break;
           }
+          case 18: {
+            if (snapshotTime_ == null) {
+              SnapshotTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(SnapshotTime);
+            break;
+          }
+          case 24: {
+            CommitSnapshot = input.ReadBool();
+            break;
+          }
         }
       }
     }
@@ -1118,6 +1728,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
   {
     private static readonly pb::MessageParser<ReportAppBinariesResponse> _parser = new pb::MessageParser<ReportAppBinariesResponse>(() => new ReportAppBinariesResponse());
     private pb::UnknownFieldSet _unknownFields;
+    private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<ReportAppBinariesResponse> Parser { get { return _parser; } }
@@ -1125,7 +1736,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.SentinelServiceReflection.Descriptor.MessageTypes[5]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.SentinelServiceReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1145,6 +1756,8 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ReportAppBinariesResponse(ReportAppBinariesResponse other) : this() {
+      _hasBits0 = other._hasBits0;
+      commitSnapshotSuccess_ = other.commitSnapshotSuccess_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1152,6 +1765,36 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ReportAppBinariesResponse Clone() {
       return new ReportAppBinariesResponse(this);
+    }
+
+    /// <summary>Field number for the "commit_snapshot_success" field.</summary>
+    public const int CommitSnapshotSuccessFieldNumber = 1;
+    private readonly static bool CommitSnapshotSuccessDefaultValue = false;
+
+    private bool commitSnapshotSuccess_;
+    /// <summary>
+    /// If true, the new snapshot is set as active
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool CommitSnapshotSuccess {
+      get { if ((_hasBits0 & 1) != 0) { return commitSnapshotSuccess_; } else { return CommitSnapshotSuccessDefaultValue; } }
+      set {
+        _hasBits0 |= 1;
+        commitSnapshotSuccess_ = value;
+      }
+    }
+    /// <summary>Gets whether the "commit_snapshot_success" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasCommitSnapshotSuccess {
+      get { return (_hasBits0 & 1) != 0; }
+    }
+    /// <summary>Clears the value of the "commit_snapshot_success" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearCommitSnapshotSuccess() {
+      _hasBits0 &= ~1;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1169,6 +1812,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (CommitSnapshotSuccess != other.CommitSnapshotSuccess) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1176,6 +1820,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (HasCommitSnapshotSuccess) hash ^= CommitSnapshotSuccess.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1194,6 +1839,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (HasCommitSnapshotSuccess) {
+        output.WriteRawTag(8);
+        output.WriteBool(CommitSnapshotSuccess);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1204,6 +1853,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (HasCommitSnapshotSuccess) {
+        output.WriteRawTag(8);
+        output.WriteBool(CommitSnapshotSuccess);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1214,6 +1867,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (HasCommitSnapshotSuccess) {
+        size += 1 + 1;
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -1225,6 +1881,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
     public void MergeFrom(ReportAppBinariesResponse other) {
       if (other == null) {
         return;
+      }
+      if (other.HasCommitSnapshotSuccess) {
+        CommitSnapshotSuccess = other.CommitSnapshotSuccess;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1241,6 +1900,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 8: {
+            CommitSnapshotSuccess = input.ReadBool();
+            break;
+          }
         }
       }
     #endif
@@ -1256,6 +1919,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
+          case 8: {
+            CommitSnapshotSuccess = input.ReadBool();
+            break;
+          }
         }
       }
     }
@@ -1277,7 +1944,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.SentinelServiceReflection.Descriptor.MessageTypes[6]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.SentinelServiceReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1503,7 +2170,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.SentinelServiceReflection.Descriptor.MessageTypes[7]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.SentinelServiceReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1977,7 +2644,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.SentinelServiceReflection.Descriptor.MessageTypes[8]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.SentinelServiceReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

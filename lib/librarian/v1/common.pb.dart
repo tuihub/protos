@@ -14,14 +14,14 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/timestamp.pb.dart' as $0;
-import 'wellknown.pb.dart' as $2;
+import '../../google/protobuf/timestamp.pb.dart' as $1;
+import 'wellknown.pb.dart' as $0;
 
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 class Feed extends $pb.GeneratedMessage {
   factory Feed({
-    $2.InternalID? id,
+    $0.InternalID? id,
     $core.String? title,
     $core.String? link,
     $core.String? description,
@@ -62,7 +62,7 @@ class Feed extends $pb.GeneratedMessage {
   factory Feed.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Feed', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
-    ..aOM<$2.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $2.InternalID.create)
+    ..aOM<$0.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $0.InternalID.create)
     ..aOS(2, _omitFieldNames ? '' : 'title')
     ..aOS(3, _omitFieldNames ? '' : 'link')
     ..aOS(4, _omitFieldNames ? '' : 'description')
@@ -95,15 +95,15 @@ class Feed extends $pb.GeneratedMessage {
   static Feed? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $2.InternalID get id => $_getN(0);
+  $0.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($2.InternalID v) { $_setField(1, v); }
+  set id($0.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
   void clearId() => $_clearField(1);
   @$pb.TagNumber(1)
-  $2.InternalID ensureId() => $_ensure(0);
+  $0.InternalID ensureId() => $_ensure(0);
 
   /// `standard field`
   @$pb.TagNumber(2)
@@ -168,7 +168,7 @@ class Feed extends $pb.GeneratedMessage {
 
 class FeedItem extends $pb.GeneratedMessage {
   factory FeedItem({
-    $2.InternalID? id,
+    $0.InternalID? id,
     $core.String? title,
     $core.Iterable<FeedPerson>? authors,
     $core.String? description,
@@ -177,9 +177,9 @@ class FeedItem extends $pb.GeneratedMessage {
     $core.String? link,
     FeedImage? image,
     $core.String? published,
-    $0.Timestamp? publishedParsed,
+    $1.Timestamp? publishedParsed,
     $core.String? updated,
-    $0.Timestamp? updatedParsed,
+    $1.Timestamp? updatedParsed,
     $core.Iterable<FeedEnclosure>? enclosures,
     $core.String? publishPlatform,
     $fixnum.Int64? readCount,
@@ -237,7 +237,7 @@ class FeedItem extends $pb.GeneratedMessage {
   factory FeedItem.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FeedItem', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
-    ..aOM<$2.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $2.InternalID.create)
+    ..aOM<$0.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $0.InternalID.create)
     ..aOS(2, _omitFieldNames ? '' : 'title')
     ..pc<FeedPerson>(3, _omitFieldNames ? '' : 'authors', $pb.PbFieldType.PM, subBuilder: FeedPerson.create)
     ..aOS(4, _omitFieldNames ? '' : 'description')
@@ -246,9 +246,9 @@ class FeedItem extends $pb.GeneratedMessage {
     ..aOS(7, _omitFieldNames ? '' : 'link')
     ..aOM<FeedImage>(8, _omitFieldNames ? '' : 'image', subBuilder: FeedImage.create)
     ..aOS(9, _omitFieldNames ? '' : 'published')
-    ..aOM<$0.Timestamp>(10, _omitFieldNames ? '' : 'publishedParsed', subBuilder: $0.Timestamp.create)
+    ..aOM<$1.Timestamp>(10, _omitFieldNames ? '' : 'publishedParsed', subBuilder: $1.Timestamp.create)
     ..aOS(11, _omitFieldNames ? '' : 'updated')
-    ..aOM<$0.Timestamp>(12, _omitFieldNames ? '' : 'updatedParsed', subBuilder: $0.Timestamp.create)
+    ..aOM<$1.Timestamp>(12, _omitFieldNames ? '' : 'updatedParsed', subBuilder: $1.Timestamp.create)
     ..pc<FeedEnclosure>(13, _omitFieldNames ? '' : 'enclosures', $pb.PbFieldType.PM, subBuilder: FeedEnclosure.create)
     ..aOS(14, _omitFieldNames ? '' : 'publishPlatform')
     ..aInt64(15, _omitFieldNames ? '' : 'readCount')
@@ -277,15 +277,15 @@ class FeedItem extends $pb.GeneratedMessage {
   static FeedItem? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $2.InternalID get id => $_getN(0);
+  $0.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($2.InternalID v) { $_setField(1, v); }
+  set id($0.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
   void clearId() => $_clearField(1);
   @$pb.TagNumber(1)
-  $2.InternalID ensureId() => $_ensure(0);
+  $0.InternalID ensureId() => $_ensure(0);
 
   /// `standard field`
   @$pb.TagNumber(2)
@@ -366,15 +366,15 @@ class FeedItem extends $pb.GeneratedMessage {
   /// must valid when send to client.
   /// if server failed to generate, fallback to server time.
   @$pb.TagNumber(10)
-  $0.Timestamp get publishedParsed => $_getN(9);
+  $1.Timestamp get publishedParsed => $_getN(9);
   @$pb.TagNumber(10)
-  set publishedParsed($0.Timestamp v) { $_setField(10, v); }
+  set publishedParsed($1.Timestamp v) { $_setField(10, v); }
   @$pb.TagNumber(10)
   $core.bool hasPublishedParsed() => $_has(9);
   @$pb.TagNumber(10)
   void clearPublishedParsed() => $_clearField(10);
   @$pb.TagNumber(10)
-  $0.Timestamp ensurePublishedParsed() => $_ensure(9);
+  $1.Timestamp ensurePublishedParsed() => $_ensure(9);
 
   /// `standard field`
   @$pb.TagNumber(11)
@@ -387,15 +387,15 @@ class FeedItem extends $pb.GeneratedMessage {
   void clearUpdated() => $_clearField(11);
 
   @$pb.TagNumber(12)
-  $0.Timestamp get updatedParsed => $_getN(11);
+  $1.Timestamp get updatedParsed => $_getN(11);
   @$pb.TagNumber(12)
-  set updatedParsed($0.Timestamp v) { $_setField(12, v); }
+  set updatedParsed($1.Timestamp v) { $_setField(12, v); }
   @$pb.TagNumber(12)
   $core.bool hasUpdatedParsed() => $_has(11);
   @$pb.TagNumber(12)
   void clearUpdatedParsed() => $_clearField(12);
   @$pb.TagNumber(12)
-  $0.Timestamp ensureUpdatedParsed() => $_ensure(11);
+  $1.Timestamp ensureUpdatedParsed() => $_ensure(11);
 
   /// `standard field`
   @$pb.TagNumber(13)

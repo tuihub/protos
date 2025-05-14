@@ -14,8 +14,8 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/duration.pb.dart' as $1;
-import '../../google/protobuf/timestamp.pb.dart' as $0;
+import '../../google/protobuf/duration.pb.dart' as $2;
+import '../../google/protobuf/timestamp.pb.dart' as $1;
 import 'wellknown.pbenum.dart';
 
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
@@ -146,8 +146,8 @@ class PagingResponse extends $pb.GeneratedMessage {
 /// or [2023.01.01 00:00 , 2023.01.02 00:00)
 class TimeRange extends $pb.GeneratedMessage {
   factory TimeRange({
-    $0.Timestamp? startTime,
-    $1.Duration? duration,
+    $1.Timestamp? startTime,
+    $2.Duration? duration,
   }) {
     final $result = create();
     if (startTime != null) {
@@ -163,8 +163,8 @@ class TimeRange extends $pb.GeneratedMessage {
   factory TimeRange.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TimeRange', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
-    ..aOM<$0.Timestamp>(1, _omitFieldNames ? '' : 'startTime', subBuilder: $0.Timestamp.create)
-    ..aOM<$1.Duration>(2, _omitFieldNames ? '' : 'duration', subBuilder: $1.Duration.create)
+    ..aOM<$1.Timestamp>(1, _omitFieldNames ? '' : 'startTime', subBuilder: $1.Timestamp.create)
+    ..aOM<$2.Duration>(2, _omitFieldNames ? '' : 'duration', subBuilder: $2.Duration.create)
     ..hasRequiredFields = false
   ;
 
@@ -190,26 +190,26 @@ class TimeRange extends $pb.GeneratedMessage {
   static TimeRange? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.Timestamp get startTime => $_getN(0);
+  $1.Timestamp get startTime => $_getN(0);
   @$pb.TagNumber(1)
-  set startTime($0.Timestamp v) { $_setField(1, v); }
+  set startTime($1.Timestamp v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasStartTime() => $_has(0);
   @$pb.TagNumber(1)
   void clearStartTime() => $_clearField(1);
   @$pb.TagNumber(1)
-  $0.Timestamp ensureStartTime() => $_ensure(0);
+  $1.Timestamp ensureStartTime() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $1.Duration get duration => $_getN(1);
+  $2.Duration get duration => $_getN(1);
   @$pb.TagNumber(2)
-  set duration($1.Duration v) { $_setField(2, v); }
+  set duration($2.Duration v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasDuration() => $_has(1);
   @$pb.TagNumber(2)
   void clearDuration() => $_clearField(2);
   @$pb.TagNumber(2)
-  $1.Duration ensureDuration() => $_ensure(1);
+  $2.Duration ensureDuration() => $_ensure(1);
 }
 
 /// A globally unique identifier
@@ -336,7 +336,7 @@ class FileMetadata extends $pb.GeneratedMessage {
     $fixnum.Int64? sizeBytes,
     FileType? type,
     $core.List<$core.int>? sha256,
-    $0.Timestamp? createTime,
+    $1.Timestamp? createTime,
   }) {
     final $result = create();
     if (id != null) {
@@ -369,7 +369,7 @@ class FileMetadata extends $pb.GeneratedMessage {
     ..aInt64(3, _omitFieldNames ? '' : 'sizeBytes')
     ..e<FileType>(4, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: FileType.FILE_TYPE_UNSPECIFIED, valueOf: FileType.valueOf, enumValues: FileType.values)
     ..a<$core.List<$core.int>>(5, _omitFieldNames ? '' : 'sha256', $pb.PbFieldType.OY)
-    ..aOM<$0.Timestamp>(6, _omitFieldNames ? '' : 'createTime', subBuilder: $0.Timestamp.create)
+    ..aOM<$1.Timestamp>(6, _omitFieldNames ? '' : 'createTime', subBuilder: $1.Timestamp.create)
     ..hasRequiredFields = false
   ;
 
@@ -442,15 +442,15 @@ class FileMetadata extends $pb.GeneratedMessage {
   void clearSha256() => $_clearField(5);
 
   @$pb.TagNumber(6)
-  $0.Timestamp get createTime => $_getN(5);
+  $1.Timestamp get createTime => $_getN(5);
   @$pb.TagNumber(6)
-  set createTime($0.Timestamp v) { $_setField(6, v); }
+  set createTime($1.Timestamp v) { $_setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasCreateTime() => $_has(5);
   @$pb.TagNumber(6)
   void clearCreateTime() => $_clearField(6);
   @$pb.TagNumber(6)
-  $0.Timestamp ensureCreateTime() => $_ensure(5);
+  $1.Timestamp ensureCreateTime() => $_ensure(5);
 }
 
 /// FeatureFlag is used to identify features.
@@ -462,7 +462,7 @@ class FeatureFlag extends $pb.GeneratedMessage {
     $core.String? description,
     $core.String? configJsonSchema,
     $core.bool? requireContext,
-    $pb.PbMap<$core.String, $core.String>? extra,
+    $core.Iterable<$core.MapEntry<$core.String, $core.String>>? extra,
   }) {
     final $result = create();
     if (id != null) {
@@ -481,7 +481,7 @@ class FeatureFlag extends $pb.GeneratedMessage {
       $result.requireContext = requireContext;
     }
     if (extra != null) {
-      $result.extra.addAll(extra);
+      $result.extra.addEntries(extra);
     }
     return $result;
   }

@@ -25,6 +25,10 @@ class LibrarianSentinelServiceClient extends $grpc.Client {
       '/librarian.sephirah.v1.sentinel.LibrarianSentinelService/RefreshToken',
       ($0.RefreshTokenRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.RefreshTokenResponse.fromBuffer(value));
+  static final _$heartbeat = $grpc.ClientMethod<$0.HeartbeatRequest, $0.HeartbeatResponse>(
+      '/librarian.sephirah.v1.sentinel.LibrarianSentinelService/Heartbeat',
+      ($0.HeartbeatRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.HeartbeatResponse.fromBuffer(value));
   static final _$reportSentinelInformation = $grpc.ClientMethod<$0.ReportSentinelInformationRequest, $0.ReportSentinelInformationResponse>(
       '/librarian.sephirah.v1.sentinel.LibrarianSentinelService/ReportSentinelInformation',
       ($0.ReportSentinelInformationRequest value) => value.writeToBuffer(),
@@ -34,14 +38,14 @@ class LibrarianSentinelServiceClient extends $grpc.Client {
       ($0.ReportAppBinariesRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.ReportAppBinariesResponse.fromBuffer(value));
 
-  LibrarianSentinelServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions? options,
-      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
-      : super(channel, options: options,
-        interceptors: interceptors);
+  LibrarianSentinelServiceClient(super.channel, {super.options, super.interceptors});
 
   $grpc.ResponseFuture<$0.RefreshTokenResponse> refreshToken($0.RefreshTokenRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$refreshToken, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.HeartbeatResponse> heartbeat($0.HeartbeatRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$heartbeat, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.ReportSentinelInformationResponse> reportSentinelInformation($0.ReportSentinelInformationRequest request, {$grpc.CallOptions? options}) {
@@ -65,6 +69,13 @@ abstract class LibrarianSentinelServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.RefreshTokenRequest.fromBuffer(value),
         ($0.RefreshTokenResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.HeartbeatRequest, $0.HeartbeatResponse>(
+        'Heartbeat',
+        heartbeat_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.HeartbeatRequest.fromBuffer(value),
+        ($0.HeartbeatResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.ReportSentinelInformationRequest, $0.ReportSentinelInformationResponse>(
         'ReportSentinelInformation',
         reportSentinelInformation_Pre,
@@ -85,6 +96,10 @@ abstract class LibrarianSentinelServiceBase extends $grpc.Service {
     return refreshToken($call, await $request);
   }
 
+  $async.Future<$0.HeartbeatResponse> heartbeat_Pre($grpc.ServiceCall $call, $async.Future<$0.HeartbeatRequest> $request) async {
+    return heartbeat($call, await $request);
+  }
+
   $async.Future<$0.ReportSentinelInformationResponse> reportSentinelInformation_Pre($grpc.ServiceCall $call, $async.Future<$0.ReportSentinelInformationRequest> $request) async {
     return reportSentinelInformation($call, await $request);
   }
@@ -94,6 +109,7 @@ abstract class LibrarianSentinelServiceBase extends $grpc.Service {
   }
 
   $async.Future<$0.RefreshTokenResponse> refreshToken($grpc.ServiceCall call, $0.RefreshTokenRequest request);
+  $async.Future<$0.HeartbeatResponse> heartbeat($grpc.ServiceCall call, $0.HeartbeatRequest request);
   $async.Future<$0.ReportSentinelInformationResponse> reportSentinelInformation($grpc.ServiceCall call, $0.ReportSentinelInformationRequest request);
   $async.Future<$0.ReportAppBinariesResponse> reportAppBinaries($grpc.ServiceCall call, $0.ReportAppBinariesRequest request);
 }

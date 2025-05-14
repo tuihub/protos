@@ -14,7 +14,7 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../../google/protobuf/timestamp.pb.dart' as $7;
-import 'base.pb.dart' as $11;
+import 'base.pb.dart' as $10;
 import 'sephirah_service.pbenum.dart';
 
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
@@ -73,7 +73,7 @@ class GetServerInformationRequest extends $pb.GeneratedMessage {
 
 class GetServerInformationResponse extends $pb.GeneratedMessage {
   factory GetServerInformationResponse({
-    $11.ServerInformation? serverInformation,
+    $10.ServerInformation? serverInformation,
   }) {
     final $result = create();
     if (serverInformation != null) {
@@ -86,7 +86,7 @@ class GetServerInformationResponse extends $pb.GeneratedMessage {
   factory GetServerInformationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetServerInformationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
-    ..aOM<$11.ServerInformation>(1, _omitFieldNames ? '' : 'serverInformation', subBuilder: $11.ServerInformation.create)
+    ..aOM<$10.ServerInformation>(1, _omitFieldNames ? '' : 'serverInformation', subBuilder: $10.ServerInformation.create)
     ..hasRequiredFields = false
   ;
 
@@ -112,15 +112,15 @@ class GetServerInformationResponse extends $pb.GeneratedMessage {
   static GetServerInformationResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $11.ServerInformation get serverInformation => $_getN(0);
+  $10.ServerInformation get serverInformation => $_getN(0);
   @$pb.TagNumber(1)
-  set serverInformation($11.ServerInformation v) { $_setField(1, v); }
+  set serverInformation($10.ServerInformation v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasServerInformation() => $_has(0);
   @$pb.TagNumber(1)
   void clearServerInformation() => $_clearField(1);
   @$pb.TagNumber(1)
-  $11.ServerInformation ensureServerInformation() => $_ensure(0);
+  $10.ServerInformation ensureServerInformation() => $_ensure(0);
 }
 
 class ListenServerEventRequest extends $pb.GeneratedMessage {

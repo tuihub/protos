@@ -3,6 +3,30 @@
 'use strict';
 var grpc = require('@grpc/grpc-js');
 var librarian_sephirah_v1_sentinel_sentinel_service_pb = require('../../../../librarian/sephirah/v1/sentinel/sentinel_service_pb.js');
+var google_protobuf_duration_pb = require('google-protobuf/google/protobuf/duration_pb.js');
+var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
+
+function serialize_librarian_sephirah_v1_sentinel_HeartbeatRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_sentinel_sentinel_service_pb.HeartbeatRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.sentinel.HeartbeatRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_sentinel_HeartbeatRequest(buffer_arg) {
+  return librarian_sephirah_v1_sentinel_sentinel_service_pb.HeartbeatRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_sentinel_HeartbeatResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_sentinel_sentinel_service_pb.HeartbeatResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.sentinel.HeartbeatResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_sentinel_HeartbeatResponse(buffer_arg) {
+  return librarian_sephirah_v1_sentinel_sentinel_service_pb.HeartbeatResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
 
 function serialize_librarian_sephirah_v1_sentinel_RefreshTokenRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_sentinel_sentinel_service_pb.RefreshTokenRequest)) {
@@ -84,7 +108,19 @@ refreshToken: {
     responseSerialize: serialize_librarian_sephirah_v1_sentinel_RefreshTokenResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_sentinel_RefreshTokenResponse,
   },
-  // `Gebura` `Sentinel`
+  // `Tiphereth`
+heartbeat: {
+    path: '/librarian.sephirah.v1.sentinel.LibrarianSentinelService/Heartbeat',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_sentinel_sentinel_service_pb.HeartbeatRequest,
+    responseType: librarian_sephirah_v1_sentinel_sentinel_service_pb.HeartbeatResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_sentinel_HeartbeatRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_sentinel_HeartbeatRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_sentinel_HeartbeatResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_sentinel_HeartbeatResponse,
+  },
+  // `Gebura`
 reportSentinelInformation: {
     path: '/librarian.sephirah.v1.sentinel.LibrarianSentinelService/ReportSentinelInformation',
     requestStream: false,
@@ -96,7 +132,7 @@ reportSentinelInformation: {
     responseSerialize: serialize_librarian_sephirah_v1_sentinel_ReportSentinelInformationResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_sentinel_ReportSentinelInformationResponse,
   },
-  // `Gebura` `Sentinel`
+  // `Gebura`
 // Full update, changes are handled by librarian
 reportAppBinaries: {
     path: '/librarian.sephirah.v1.sentinel.LibrarianSentinelService/ReportAppBinaries',

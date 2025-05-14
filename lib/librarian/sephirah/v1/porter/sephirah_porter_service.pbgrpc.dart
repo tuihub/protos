@@ -38,11 +38,7 @@ class LibrarianSephirahPorterServiceClient extends $grpc.Client {
       ($0.GetFeedRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.GetFeedResponse.fromBuffer(value));
 
-  LibrarianSephirahPorterServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions? options,
-      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
-      : super(channel, options: options,
-        interceptors: interceptors);
+  LibrarianSephirahPorterServiceClient(super.channel, {super.options, super.interceptors});
 
   $grpc.ResponseFuture<$0.AcquireUserTokenResponse> acquireUserToken($0.AcquireUserTokenRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$acquireUserToken, request, options: options);

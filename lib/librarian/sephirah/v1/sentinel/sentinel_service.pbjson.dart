@@ -36,6 +36,34 @@ final $typed_data.Uint8List refreshTokenResponseDescriptor = $convert.base64Deco
     'ChRSZWZyZXNoVG9rZW5SZXNwb25zZRIhCgxhY2Nlc3NfdG9rZW4YASABKAlSC2FjY2Vzc1Rva2'
     'VuEiMKDXJlZnJlc2hfdG9rZW4YAiABKAlSDHJlZnJlc2hUb2tlbg==');
 
+@$core.Deprecated('Use heartbeatRequestDescriptor instead')
+const HeartbeatRequest$json = {
+  '1': 'HeartbeatRequest',
+  '2': [
+    {'1': 'instance_id', '3': 1, '4': 1, '5': 3, '10': 'instanceId'},
+    {'1': 'client_time', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'clientTime'},
+    {'1': 'heartbeat_interval', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Duration', '10': 'heartbeatInterval'},
+    {'1': 'commit_snapshot_interval', '3': 4, '4': 1, '5': 11, '6': '.google.protobuf.Duration', '10': 'commitSnapshotInterval'},
+  ],
+};
+
+/// Descriptor for `HeartbeatRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List heartbeatRequestDescriptor = $convert.base64Decode(
+    'ChBIZWFydGJlYXRSZXF1ZXN0Eh8KC2luc3RhbmNlX2lkGAEgASgDUgppbnN0YW5jZUlkEjsKC2'
+    'NsaWVudF90aW1lGAIgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIKY2xpZW50VGlt'
+    'ZRJIChJoZWFydGJlYXRfaW50ZXJ2YWwYAyABKAsyGS5nb29nbGUucHJvdG9idWYuRHVyYXRpb2'
+    '5SEWhlYXJ0YmVhdEludGVydmFsElMKGGNvbW1pdF9zbmFwc2hvdF9pbnRlcnZhbBgEIAEoCzIZ'
+    'Lmdvb2dsZS5wcm90b2J1Zi5EdXJhdGlvblIWY29tbWl0U25hcHNob3RJbnRlcnZhbA==');
+
+@$core.Deprecated('Use heartbeatResponseDescriptor instead')
+const HeartbeatResponse$json = {
+  '1': 'HeartbeatResponse',
+};
+
+/// Descriptor for `HeartbeatResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List heartbeatResponseDescriptor = $convert.base64Decode(
+    'ChFIZWFydGJlYXRSZXNwb25zZQ==');
+
 @$core.Deprecated('Use reportSentinelInformationRequestDescriptor instead')
 const ReportSentinelInformationRequest$json = {
   '1': 'ReportSentinelInformationRequest',
@@ -70,6 +98,12 @@ const ReportAppBinariesRequest$json = {
   '1': 'ReportAppBinariesRequest',
   '2': [
     {'1': 'app_binaries', '3': 1, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.sentinel.SentinelLibraryAppBinary', '10': 'appBinaries'},
+    {'1': 'snapshot_time', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '9': 0, '10': 'snapshotTime', '17': true},
+    {'1': 'commit_snapshot', '3': 3, '4': 1, '5': 8, '9': 1, '10': 'commitSnapshot', '17': true},
+  ],
+  '8': [
+    {'1': '_snapshot_time'},
+    {'1': '_commit_snapshot'},
   ],
 };
 
@@ -77,16 +111,26 @@ const ReportAppBinariesRequest$json = {
 final $typed_data.Uint8List reportAppBinariesRequestDescriptor = $convert.base64Decode(
     'ChhSZXBvcnRBcHBCaW5hcmllc1JlcXVlc3QSWwoMYXBwX2JpbmFyaWVzGAEgAygLMjgubGlicm'
     'FyaWFuLnNlcGhpcmFoLnYxLnNlbnRpbmVsLlNlbnRpbmVsTGlicmFyeUFwcEJpbmFyeVILYXBw'
-    'QmluYXJpZXM=');
+    'QmluYXJpZXMSRAoNc25hcHNob3RfdGltZRgCIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3'
+    'RhbXBIAFIMc25hcHNob3RUaW1liAEBEiwKD2NvbW1pdF9zbmFwc2hvdBgDIAEoCEgBUg5jb21t'
+    'aXRTbmFwc2hvdIgBAUIQCg5fc25hcHNob3RfdGltZUISChBfY29tbWl0X3NuYXBzaG90');
 
 @$core.Deprecated('Use reportAppBinariesResponseDescriptor instead')
 const ReportAppBinariesResponse$json = {
   '1': 'ReportAppBinariesResponse',
+  '2': [
+    {'1': 'commit_snapshot_success', '3': 1, '4': 1, '5': 8, '9': 0, '10': 'commitSnapshotSuccess', '17': true},
+  ],
+  '8': [
+    {'1': '_commit_snapshot_success'},
+  ],
 };
 
 /// Descriptor for `ReportAppBinariesResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List reportAppBinariesResponseDescriptor = $convert.base64Decode(
-    'ChlSZXBvcnRBcHBCaW5hcmllc1Jlc3BvbnNl');
+    'ChlSZXBvcnRBcHBCaW5hcmllc1Jlc3BvbnNlEjsKF2NvbW1pdF9zbmFwc2hvdF9zdWNjZXNzGA'
+    'EgASgISABSFWNvbW1pdFNuYXBzaG90U3VjY2Vzc4gBAUIaChhfY29tbWl0X3NuYXBzaG90X3N1'
+    'Y2Nlc3M=');
 
 @$core.Deprecated('Use sentinelLibraryDescriptor instead')
 const SentinelLibrary$json = {

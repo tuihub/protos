@@ -20,7 +20,7 @@ class Error extends $pb.GeneratedMessage {
     $core.int? code,
     $core.String? reason,
     $core.String? message,
-    $pb.PbMap<$core.String, $core.String>? metadata,
+    $core.Iterable<$core.MapEntry<$core.String, $core.String>>? metadata,
   }) {
     final $result = create();
     if (code != null) {
@@ -33,7 +33,7 @@ class Error extends $pb.GeneratedMessage {
       $result.message = message;
     }
     if (metadata != null) {
-      $result.metadata.addAll(metadata);
+      $result.metadata.addEntries(metadata);
     }
     return $result;
   }

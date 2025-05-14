@@ -13,8 +13,8 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../v1/wellknown.pb.dart' as $4;
-import '../sephirah/base.pb.dart' as $9;
+import '../../../v1/wellknown.pb.dart' as $5;
+import '../sephirah/base.pb.dart' as $4;
 
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
@@ -70,7 +70,7 @@ class GetServerInformationRequest extends $pb.GeneratedMessage {
 
 class GetServerInformationResponse extends $pb.GeneratedMessage {
   factory GetServerInformationResponse({
-    $9.ServerInformation? serverInformation,
+    $4.ServerInformation? serverInformation,
   }) {
     final $result = create();
     if (serverInformation != null) {
@@ -83,7 +83,7 @@ class GetServerInformationResponse extends $pb.GeneratedMessage {
   factory GetServerInformationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetServerInformationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
-    ..aOM<$9.ServerInformation>(1, _omitFieldNames ? '' : 'serverInformation', subBuilder: $9.ServerInformation.create)
+    ..aOM<$4.ServerInformation>(1, _omitFieldNames ? '' : 'serverInformation', subBuilder: $4.ServerInformation.create)
     ..hasRequiredFields = false
   ;
 
@@ -109,15 +109,15 @@ class GetServerInformationResponse extends $pb.GeneratedMessage {
   static GetServerInformationResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $9.ServerInformation get serverInformation => $_getN(0);
+  $4.ServerInformation get serverInformation => $_getN(0);
   @$pb.TagNumber(1)
-  set serverInformation($9.ServerInformation v) { $_setField(1, v); }
+  set serverInformation($4.ServerInformation v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasServerInformation() => $_has(0);
   @$pb.TagNumber(1)
   void clearServerInformation() => $_clearField(1);
   @$pb.TagNumber(1)
-  $9.ServerInformation ensureServerInformation() => $_ensure(0);
+  $4.ServerInformation ensureServerInformation() => $_ensure(0);
 }
 
 class GetServerConfigRequest extends $pb.GeneratedMessage {
@@ -275,8 +275,8 @@ class UpdateServerConfigResponse extends $pb.GeneratedMessage {
 class ServerConfigSection extends $pb.GeneratedMessage {
   factory ServerConfigSection({
     $core.String? id,
-    $4.I18NString? name,
-    $4.I18NString? description,
+    $5.I18NString? name,
+    $5.I18NString? description,
     $core.Iterable<ServerConfigItem>? items,
   }) {
     final $result = create();
@@ -300,8 +300,8 @@ class ServerConfigSection extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ServerConfigSection', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..aOM<$4.I18NString>(2, _omitFieldNames ? '' : 'name', subBuilder: $4.I18NString.create)
-    ..aOM<$4.I18NString>(3, _omitFieldNames ? '' : 'description', subBuilder: $4.I18NString.create)
+    ..aOM<$5.I18NString>(2, _omitFieldNames ? '' : 'name', subBuilder: $5.I18NString.create)
+    ..aOM<$5.I18NString>(3, _omitFieldNames ? '' : 'description', subBuilder: $5.I18NString.create)
     ..pc<ServerConfigItem>(4, _omitFieldNames ? '' : 'items', $pb.PbFieldType.PM, subBuilder: ServerConfigItem.create)
     ..hasRequiredFields = false
   ;
@@ -337,26 +337,26 @@ class ServerConfigSection extends $pb.GeneratedMessage {
   void clearId() => $_clearField(1);
 
   @$pb.TagNumber(2)
-  $4.I18NString get name => $_getN(1);
+  $5.I18NString get name => $_getN(1);
   @$pb.TagNumber(2)
-  set name($4.I18NString v) { $_setField(2, v); }
+  set name($5.I18NString v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
   void clearName() => $_clearField(2);
   @$pb.TagNumber(2)
-  $4.I18NString ensureName() => $_ensure(1);
+  $5.I18NString ensureName() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $4.I18NString get description => $_getN(2);
+  $5.I18NString get description => $_getN(2);
   @$pb.TagNumber(3)
-  set description($4.I18NString v) { $_setField(3, v); }
+  set description($5.I18NString v) { $_setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasDescription() => $_has(2);
   @$pb.TagNumber(3)
   void clearDescription() => $_clearField(3);
   @$pb.TagNumber(3)
-  $4.I18NString ensureDescription() => $_ensure(2);
+  $5.I18NString ensureDescription() => $_ensure(2);
 
   @$pb.TagNumber(4)
   $pb.PbList<ServerConfigItem> get items => $_getList(3);
@@ -365,8 +365,8 @@ class ServerConfigSection extends $pb.GeneratedMessage {
 class ServerConfigItem extends $pb.GeneratedMessage {
   factory ServerConfigItem({
     $core.String? id,
-    $4.I18NString? name,
-    $4.I18NString? description,
+    $5.I18NString? name,
+    $5.I18NString? description,
     $core.String? defaultValue,
     $core.String? currentValue,
   }) {
@@ -394,8 +394,8 @@ class ServerConfigItem extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ServerConfigItem', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..aOM<$4.I18NString>(2, _omitFieldNames ? '' : 'name', subBuilder: $4.I18NString.create)
-    ..aOM<$4.I18NString>(3, _omitFieldNames ? '' : 'description', subBuilder: $4.I18NString.create)
+    ..aOM<$5.I18NString>(2, _omitFieldNames ? '' : 'name', subBuilder: $5.I18NString.create)
+    ..aOM<$5.I18NString>(3, _omitFieldNames ? '' : 'description', subBuilder: $5.I18NString.create)
     ..aOS(4, _omitFieldNames ? '' : 'defaultValue')
     ..aOS(5, _omitFieldNames ? '' : 'currentValue')
     ..hasRequiredFields = false
@@ -433,26 +433,26 @@ class ServerConfigItem extends $pb.GeneratedMessage {
   void clearId() => $_clearField(1);
 
   @$pb.TagNumber(2)
-  $4.I18NString get name => $_getN(1);
+  $5.I18NString get name => $_getN(1);
   @$pb.TagNumber(2)
-  set name($4.I18NString v) { $_setField(2, v); }
+  set name($5.I18NString v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
   void clearName() => $_clearField(2);
   @$pb.TagNumber(2)
-  $4.I18NString ensureName() => $_ensure(1);
+  $5.I18NString ensureName() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $4.I18NString get description => $_getN(2);
+  $5.I18NString get description => $_getN(2);
   @$pb.TagNumber(3)
-  set description($4.I18NString v) { $_setField(3, v); }
+  set description($5.I18NString v) { $_setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasDescription() => $_has(2);
   @$pb.TagNumber(3)
   void clearDescription() => $_clearField(3);
   @$pb.TagNumber(3)
-  $4.I18NString ensureDescription() => $_ensure(2);
+  $5.I18NString ensureDescription() => $_ensure(2);
 
   @$pb.TagNumber(4)
   $core.String get defaultValue => $_getSZ(3);

@@ -116,6 +116,36 @@ pub mod librarian_sentinel_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
+        pub async fn heartbeat(
+            &mut self,
+            request: impl tonic::IntoRequest<super::HeartbeatRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::HeartbeatResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.sentinel.LibrarianSentinelService/Heartbeat",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.sentinel.LibrarianSentinelService",
+                        "Heartbeat",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
+        }
         pub async fn report_sentinel_information(
             &mut self,
             request: impl tonic::IntoRequest<super::ReportSentinelInformationRequest>,
@@ -190,6 +220,13 @@ pub mod librarian_sentinel_service_server {
             request: tonic::Request<super::RefreshTokenRequest>,
         ) -> std::result::Result<
             tonic::Response<super::RefreshTokenResponse>,
+            tonic::Status,
+        >;
+        async fn heartbeat(
+            &self,
+            request: tonic::Request<super::HeartbeatRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::HeartbeatResponse>,
             tonic::Status,
         >;
         async fn report_sentinel_information(
@@ -318,6 +355,52 @@ pub mod librarian_sentinel_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = RefreshTokenSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.sentinel.LibrarianSentinelService/Heartbeat" => {
+                    #[allow(non_camel_case_types)]
+                    struct HeartbeatSvc<T: LibrarianSentinelService>(pub Arc<T>);
+                    impl<
+                        T: LibrarianSentinelService,
+                    > tonic::server::UnaryService<super::HeartbeatRequest>
+                    for HeartbeatSvc<T> {
+                        type Response = super::HeartbeatResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::HeartbeatRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as LibrarianSentinelService>::heartbeat(&inner, request)
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = HeartbeatSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

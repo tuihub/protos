@@ -14,7 +14,7 @@ import 'dart:core' as $core;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../../google/protobuf/timestamp.pb.dart' as $7;
-import '../../../v1/common.pb.dart' as $10;
+import '../../../v1/common.pb.dart' as $11;
 import '../../../v1/wellknown.pb.dart' as $8;
 import 'tiphereth.pbenum.dart';
 
@@ -2379,7 +2379,7 @@ class Device extends $pb.GeneratedMessage {
 class Porter extends $pb.GeneratedMessage {
   factory Porter({
     $8.InternalID? id,
-    $10.PorterBinarySummary? binarySummary,
+    $11.PorterBinarySummary? binarySummary,
     $core.String? globalName,
     $core.String? region,
     $8.FeatureSummary? featureSummary,
@@ -2424,7 +2424,7 @@ class Porter extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Porter', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
     ..aOM<$8.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $8.InternalID.create)
-    ..aOM<$10.PorterBinarySummary>(2, _omitFieldNames ? '' : 'binarySummary', subBuilder: $10.PorterBinarySummary.create)
+    ..aOM<$11.PorterBinarySummary>(2, _omitFieldNames ? '' : 'binarySummary', subBuilder: $11.PorterBinarySummary.create)
     ..aOS(3, _omitFieldNames ? '' : 'globalName')
     ..aOS(4, _omitFieldNames ? '' : 'region')
     ..aOM<$8.FeatureSummary>(5, _omitFieldNames ? '' : 'featureSummary', subBuilder: $8.FeatureSummary.create)
@@ -2468,15 +2468,15 @@ class Porter extends $pb.GeneratedMessage {
   $8.InternalID ensureId() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $10.PorterBinarySummary get binarySummary => $_getN(1);
+  $11.PorterBinarySummary get binarySummary => $_getN(1);
   @$pb.TagNumber(2)
-  set binarySummary($10.PorterBinarySummary v) { $_setField(2, v); }
+  set binarySummary($11.PorterBinarySummary v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasBinarySummary() => $_has(1);
   @$pb.TagNumber(2)
   void clearBinarySummary() => $_clearField(2);
   @$pb.TagNumber(2)
-  $10.PorterBinarySummary ensureBinarySummary() => $_ensure(1);
+  $11.PorterBinarySummary ensureBinarySummary() => $_ensure(1);
 
   @$pb.TagNumber(3)
   $core.String get globalName => $_getSZ(2);
@@ -2715,7 +2715,7 @@ class PorterContext extends $pb.GeneratedMessage {
 
 class PorterDigest extends $pb.GeneratedMessage {
   factory PorterDigest({
-    $10.PorterBinarySummary? binarySummary,
+    $11.PorterBinarySummary? binarySummary,
     $core.String? globalName,
     $core.Iterable<$core.String>? regions,
     $core.String? contextJsonSchema,
@@ -2744,7 +2744,7 @@ class PorterDigest extends $pb.GeneratedMessage {
   factory PorterDigest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PorterDigest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
-    ..aOM<$10.PorterBinarySummary>(1, _omitFieldNames ? '' : 'binarySummary', subBuilder: $10.PorterBinarySummary.create)
+    ..aOM<$11.PorterBinarySummary>(1, _omitFieldNames ? '' : 'binarySummary', subBuilder: $11.PorterBinarySummary.create)
     ..aOS(2, _omitFieldNames ? '' : 'globalName')
     ..pPS(3, _omitFieldNames ? '' : 'regions')
     ..aOS(4, _omitFieldNames ? '' : 'contextJsonSchema')
@@ -2774,15 +2774,15 @@ class PorterDigest extends $pb.GeneratedMessage {
   static PorterDigest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $10.PorterBinarySummary get binarySummary => $_getN(0);
+  $11.PorterBinarySummary get binarySummary => $_getN(0);
   @$pb.TagNumber(1)
-  set binarySummary($10.PorterBinarySummary v) { $_setField(1, v); }
+  set binarySummary($11.PorterBinarySummary v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBinarySummary() => $_has(0);
   @$pb.TagNumber(1)
   void clearBinarySummary() => $_clearField(1);
   @$pb.TagNumber(1)
-  $10.PorterBinarySummary ensureBinarySummary() => $_ensure(0);
+  $11.PorterBinarySummary ensureBinarySummary() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.String get globalName => $_getSZ(1);

@@ -20,6 +20,7 @@ const _ = grpc.SupportPackageIsVersion9
 
 const (
 	LibrarianSentinelService_RefreshToken_FullMethodName              = "/librarian.sephirah.v1.sentinel.LibrarianSentinelService/RefreshToken"
+	LibrarianSentinelService_Heartbeat_FullMethodName                 = "/librarian.sephirah.v1.sentinel.LibrarianSentinelService/Heartbeat"
 	LibrarianSentinelService_ReportSentinelInformation_FullMethodName = "/librarian.sephirah.v1.sentinel.LibrarianSentinelService/ReportSentinelInformation"
 	LibrarianSentinelService_ReportAppBinaries_FullMethodName         = "/librarian.sephirah.v1.sentinel.LibrarianSentinelService/ReportAppBinaries"
 )
@@ -30,9 +31,11 @@ const (
 type LibrarianSentinelServiceClient interface {
 	// `Tiphereth` Use valid refresh_token and get two new token, a refresh_token can only be used once
 	RefreshToken(ctx context.Context, in *RefreshTokenRequest, opts ...grpc.CallOption) (*RefreshTokenResponse, error)
-	// `Gebura` `Sentinel`
+	// `Tiphereth`
+	Heartbeat(ctx context.Context, in *HeartbeatRequest, opts ...grpc.CallOption) (*HeartbeatResponse, error)
+	// `Gebura`
 	ReportSentinelInformation(ctx context.Context, in *ReportSentinelInformationRequest, opts ...grpc.CallOption) (*ReportSentinelInformationResponse, error)
-	// `Gebura` `Sentinel`
+	// `Gebura`
 	// Full update, changes are handled by librarian
 	ReportAppBinaries(ctx context.Context, in *ReportAppBinariesRequest, opts ...grpc.CallOption) (*ReportAppBinariesResponse, error)
 }
@@ -49,6 +52,16 @@ func (c *librarianSentinelServiceClient) RefreshToken(ctx context.Context, in *R
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(RefreshTokenResponse)
 	err := c.cc.Invoke(ctx, LibrarianSentinelService_RefreshToken_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianSentinelServiceClient) Heartbeat(ctx context.Context, in *HeartbeatRequest, opts ...grpc.CallOption) (*HeartbeatResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(HeartbeatResponse)
+	err := c.cc.Invoke(ctx, LibrarianSentinelService_Heartbeat_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -81,9 +94,11 @@ func (c *librarianSentinelServiceClient) ReportAppBinaries(ctx context.Context, 
 type LibrarianSentinelServiceServer interface {
 	// `Tiphereth` Use valid refresh_token and get two new token, a refresh_token can only be used once
 	RefreshToken(context.Context, *RefreshTokenRequest) (*RefreshTokenResponse, error)
-	// `Gebura` `Sentinel`
+	// `Tiphereth`
+	Heartbeat(context.Context, *HeartbeatRequest) (*HeartbeatResponse, error)
+	// `Gebura`
 	ReportSentinelInformation(context.Context, *ReportSentinelInformationRequest) (*ReportSentinelInformationResponse, error)
-	// `Gebura` `Sentinel`
+	// `Gebura`
 	// Full update, changes are handled by librarian
 	ReportAppBinaries(context.Context, *ReportAppBinariesRequest) (*ReportAppBinariesResponse, error)
 	mustEmbedUnimplementedLibrarianSentinelServiceServer()
@@ -98,6 +113,9 @@ type UnimplementedLibrarianSentinelServiceServer struct{}
 
 func (UnimplementedLibrarianSentinelServiceServer) RefreshToken(context.Context, *RefreshTokenRequest) (*RefreshTokenResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RefreshToken not implemented")
+}
+func (UnimplementedLibrarianSentinelServiceServer) Heartbeat(context.Context, *HeartbeatRequest) (*HeartbeatResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Heartbeat not implemented")
 }
 func (UnimplementedLibrarianSentinelServiceServer) ReportSentinelInformation(context.Context, *ReportSentinelInformationRequest) (*ReportSentinelInformationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ReportSentinelInformation not implemented")
@@ -141,6 +159,24 @@ func _LibrarianSentinelService_RefreshToken_Handler(srv interface{}, ctx context
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LibrarianSentinelServiceServer).RefreshToken(ctx, req.(*RefreshTokenRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSentinelService_Heartbeat_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(HeartbeatRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSentinelServiceServer).Heartbeat(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSentinelService_Heartbeat_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSentinelServiceServer).Heartbeat(ctx, req.(*HeartbeatRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -191,6 +227,10 @@ var LibrarianSentinelService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "RefreshToken",
 			Handler:    _LibrarianSentinelService_RefreshToken_Handler,
+		},
+		{
+			MethodName: "Heartbeat",
+			Handler:    _LibrarianSentinelService_Heartbeat_Handler,
 		},
 		{
 			MethodName: "ReportSentinelInformation",

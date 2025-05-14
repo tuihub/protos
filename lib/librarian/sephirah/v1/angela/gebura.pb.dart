@@ -13,15 +13,15 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../v1/wellknown.pb.dart' as $4;
-import '../sephirah/gebura.pb.dart' as $6;
-import '../sephirah/gebura.pbenum.dart' as $6;
+import '../../../v1/wellknown.pb.dart' as $5;
+import '../sephirah/gebura.pb.dart' as $7;
+import '../sephirah/gebura.pbenum.dart' as $7;
 
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 class SearchAppInfosRequest extends $pb.GeneratedMessage {
   factory SearchAppInfosRequest({
-    $4.PagingRequest? paging,
+    $5.PagingRequest? paging,
     $core.String? nameLike,
     $core.Iterable<$core.String>? sourceFilter,
   }) {
@@ -42,7 +42,7 @@ class SearchAppInfosRequest extends $pb.GeneratedMessage {
   factory SearchAppInfosRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SearchAppInfosRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
-    ..aOM<$4.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $4.PagingRequest.create)
+    ..aOM<$5.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $5.PagingRequest.create)
     ..aOS(2, _omitFieldNames ? '' : 'nameLike')
     ..pPS(3, _omitFieldNames ? '' : 'sourceFilter')
     ..hasRequiredFields = false
@@ -70,15 +70,15 @@ class SearchAppInfosRequest extends $pb.GeneratedMessage {
   static SearchAppInfosRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $4.PagingRequest get paging => $_getN(0);
+  $5.PagingRequest get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($4.PagingRequest v) { $_setField(1, v); }
+  set paging($5.PagingRequest v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
   void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
-  $4.PagingRequest ensurePaging() => $_ensure(0);
+  $5.PagingRequest ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.String get nameLike => $_getSZ(1);
@@ -95,8 +95,8 @@ class SearchAppInfosRequest extends $pb.GeneratedMessage {
 
 class SearchAppInfosResponse extends $pb.GeneratedMessage {
   factory SearchAppInfosResponse({
-    $4.PagingResponse? paging,
-    $core.Iterable<$6.AppInfo>? appInfos,
+    $5.PagingResponse? paging,
+    $core.Iterable<$7.AppInfo>? appInfos,
   }) {
     final $result = create();
     if (paging != null) {
@@ -112,8 +112,8 @@ class SearchAppInfosResponse extends $pb.GeneratedMessage {
   factory SearchAppInfosResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SearchAppInfosResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
-    ..aOM<$4.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $4.PagingResponse.create)
-    ..pc<$6.AppInfo>(2, _omitFieldNames ? '' : 'appInfos', $pb.PbFieldType.PM, subBuilder: $6.AppInfo.create)
+    ..aOM<$5.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $5.PagingResponse.create)
+    ..pc<$7.AppInfo>(2, _omitFieldNames ? '' : 'appInfos', $pb.PbFieldType.PM, subBuilder: $7.AppInfo.create)
     ..hasRequiredFields = false
   ;
 
@@ -139,23 +139,23 @@ class SearchAppInfosResponse extends $pb.GeneratedMessage {
   static SearchAppInfosResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $4.PagingResponse get paging => $_getN(0);
+  $5.PagingResponse get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($4.PagingResponse v) { $_setField(1, v); }
+  set paging($5.PagingResponse v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
   void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
-  $4.PagingResponse ensurePaging() => $_ensure(0);
+  $5.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $pb.PbList<$6.AppInfo> get appInfos => $_getList(1);
+  $pb.PbList<$7.AppInfo> get appInfos => $_getList(1);
 }
 
 class CreateStoreAppRequest extends $pb.GeneratedMessage {
   factory CreateStoreAppRequest({
-    $6.StoreApp? storeApp,
+    $7.StoreApp? storeApp,
   }) {
     final $result = create();
     if (storeApp != null) {
@@ -168,7 +168,7 @@ class CreateStoreAppRequest extends $pb.GeneratedMessage {
   factory CreateStoreAppRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateStoreAppRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
-    ..aOM<$6.StoreApp>(1, _omitFieldNames ? '' : 'storeApp', subBuilder: $6.StoreApp.create)
+    ..aOM<$7.StoreApp>(1, _omitFieldNames ? '' : 'storeApp', subBuilder: $7.StoreApp.create)
     ..hasRequiredFields = false
   ;
 
@@ -194,20 +194,20 @@ class CreateStoreAppRequest extends $pb.GeneratedMessage {
   static CreateStoreAppRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $6.StoreApp get storeApp => $_getN(0);
+  $7.StoreApp get storeApp => $_getN(0);
   @$pb.TagNumber(1)
-  set storeApp($6.StoreApp v) { $_setField(1, v); }
+  set storeApp($7.StoreApp v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasStoreApp() => $_has(0);
   @$pb.TagNumber(1)
   void clearStoreApp() => $_clearField(1);
   @$pb.TagNumber(1)
-  $6.StoreApp ensureStoreApp() => $_ensure(0);
+  $7.StoreApp ensureStoreApp() => $_ensure(0);
 }
 
 class CreateStoreAppResponse extends $pb.GeneratedMessage {
   factory CreateStoreAppResponse({
-    $4.InternalID? id,
+    $5.InternalID? id,
   }) {
     final $result = create();
     if (id != null) {
@@ -220,7 +220,7 @@ class CreateStoreAppResponse extends $pb.GeneratedMessage {
   factory CreateStoreAppResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateStoreAppResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
-    ..aOM<$4.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $4.InternalID.create)
+    ..aOM<$5.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $5.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -246,20 +246,20 @@ class CreateStoreAppResponse extends $pb.GeneratedMessage {
   static CreateStoreAppResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $4.InternalID get id => $_getN(0);
+  $5.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($4.InternalID v) { $_setField(1, v); }
+  set id($5.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
   void clearId() => $_clearField(1);
   @$pb.TagNumber(1)
-  $4.InternalID ensureId() => $_ensure(0);
+  $5.InternalID ensureId() => $_ensure(0);
 }
 
 class UpdateStoreAppRequest extends $pb.GeneratedMessage {
   factory UpdateStoreAppRequest({
-    $6.StoreApp? appInfo,
+    $7.StoreApp? appInfo,
   }) {
     final $result = create();
     if (appInfo != null) {
@@ -272,7 +272,7 @@ class UpdateStoreAppRequest extends $pb.GeneratedMessage {
   factory UpdateStoreAppRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateStoreAppRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
-    ..aOM<$6.StoreApp>(1, _omitFieldNames ? '' : 'appInfo', subBuilder: $6.StoreApp.create)
+    ..aOM<$7.StoreApp>(1, _omitFieldNames ? '' : 'appInfo', subBuilder: $7.StoreApp.create)
     ..hasRequiredFields = false
   ;
 
@@ -298,15 +298,15 @@ class UpdateStoreAppRequest extends $pb.GeneratedMessage {
   static UpdateStoreAppRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $6.StoreApp get appInfo => $_getN(0);
+  $7.StoreApp get appInfo => $_getN(0);
   @$pb.TagNumber(1)
-  set appInfo($6.StoreApp v) { $_setField(1, v); }
+  set appInfo($7.StoreApp v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasAppInfo() => $_has(0);
   @$pb.TagNumber(1)
   void clearAppInfo() => $_clearField(1);
   @$pb.TagNumber(1)
-  $6.StoreApp ensureAppInfo() => $_ensure(0);
+  $7.StoreApp ensureAppInfo() => $_ensure(0);
 }
 
 class UpdateStoreAppResponse extends $pb.GeneratedMessage {
@@ -343,10 +343,10 @@ class UpdateStoreAppResponse extends $pb.GeneratedMessage {
 
 class ListStoreAppsRequest extends $pb.GeneratedMessage {
   factory ListStoreAppsRequest({
-    $4.PagingRequest? paging,
+    $5.PagingRequest? paging,
     $core.Iterable<$core.String>? sourceFilter,
-    $core.Iterable<$6.AppType>? typeFilter,
-    $core.Iterable<$4.InternalID>? idFilter,
+    $core.Iterable<$7.AppType>? typeFilter,
+    $core.Iterable<$5.InternalID>? idFilter,
   }) {
     final $result = create();
     if (paging != null) {
@@ -368,10 +368,10 @@ class ListStoreAppsRequest extends $pb.GeneratedMessage {
   factory ListStoreAppsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListStoreAppsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
-    ..aOM<$4.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $4.PagingRequest.create)
+    ..aOM<$5.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $5.PagingRequest.create)
     ..pPS(3, _omitFieldNames ? '' : 'sourceFilter')
-    ..pc<$6.AppType>(4, _omitFieldNames ? '' : 'typeFilter', $pb.PbFieldType.KE, valueOf: $6.AppType.valueOf, enumValues: $6.AppType.values, defaultEnumValue: $6.AppType.APP_TYPE_UNSPECIFIED)
-    ..pc<$4.InternalID>(5, _omitFieldNames ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $4.InternalID.create)
+    ..pc<$7.AppType>(4, _omitFieldNames ? '' : 'typeFilter', $pb.PbFieldType.KE, valueOf: $7.AppType.valueOf, enumValues: $7.AppType.values, defaultEnumValue: $7.AppType.APP_TYPE_UNSPECIFIED)
+    ..pc<$5.InternalID>(5, _omitFieldNames ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $5.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -397,30 +397,30 @@ class ListStoreAppsRequest extends $pb.GeneratedMessage {
   static ListStoreAppsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $4.PagingRequest get paging => $_getN(0);
+  $5.PagingRequest get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($4.PagingRequest v) { $_setField(1, v); }
+  set paging($5.PagingRequest v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
   void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
-  $4.PagingRequest ensurePaging() => $_ensure(0);
+  $5.PagingRequest ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(3)
   $pb.PbList<$core.String> get sourceFilter => $_getList(1);
 
   @$pb.TagNumber(4)
-  $pb.PbList<$6.AppType> get typeFilter => $_getList(2);
+  $pb.PbList<$7.AppType> get typeFilter => $_getList(2);
 
   @$pb.TagNumber(5)
-  $pb.PbList<$4.InternalID> get idFilter => $_getList(3);
+  $pb.PbList<$5.InternalID> get idFilter => $_getList(3);
 }
 
 class ListStoreAppsResponse extends $pb.GeneratedMessage {
   factory ListStoreAppsResponse({
-    $4.PagingResponse? paging,
-    $core.Iterable<$6.StoreApp>? appInfos,
+    $5.PagingResponse? paging,
+    $core.Iterable<$7.StoreApp>? appInfos,
   }) {
     final $result = create();
     if (paging != null) {
@@ -436,8 +436,8 @@ class ListStoreAppsResponse extends $pb.GeneratedMessage {
   factory ListStoreAppsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListStoreAppsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
-    ..aOM<$4.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $4.PagingResponse.create)
-    ..pc<$6.StoreApp>(2, _omitFieldNames ? '' : 'appInfos', $pb.PbFieldType.PM, subBuilder: $6.StoreApp.create)
+    ..aOM<$5.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $5.PagingResponse.create)
+    ..pc<$7.StoreApp>(2, _omitFieldNames ? '' : 'appInfos', $pb.PbFieldType.PM, subBuilder: $7.StoreApp.create)
     ..hasRequiredFields = false
   ;
 
@@ -463,25 +463,25 @@ class ListStoreAppsResponse extends $pb.GeneratedMessage {
   static ListStoreAppsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $4.PagingResponse get paging => $_getN(0);
+  $5.PagingResponse get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($4.PagingResponse v) { $_setField(1, v); }
+  set paging($5.PagingResponse v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
   void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
-  $4.PagingResponse ensurePaging() => $_ensure(0);
+  $5.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $pb.PbList<$6.StoreApp> get appInfos => $_getList(1);
+  $pb.PbList<$7.StoreApp> get appInfos => $_getList(1);
 }
 
 class ListStoreAppBinariesRequest extends $pb.GeneratedMessage {
   factory ListStoreAppBinariesRequest({
-    $4.PagingRequest? paging,
-    $core.Iterable<$4.InternalID>? appIdFilter,
-    $core.Iterable<$4.InternalID>? idFilter,
+    $5.PagingRequest? paging,
+    $core.Iterable<$5.InternalID>? appIdFilter,
+    $core.Iterable<$5.InternalID>? idFilter,
   }) {
     final $result = create();
     if (paging != null) {
@@ -500,9 +500,9 @@ class ListStoreAppBinariesRequest extends $pb.GeneratedMessage {
   factory ListStoreAppBinariesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListStoreAppBinariesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
-    ..aOM<$4.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $4.PagingRequest.create)
-    ..pc<$4.InternalID>(2, _omitFieldNames ? '' : 'appIdFilter', $pb.PbFieldType.PM, subBuilder: $4.InternalID.create)
-    ..pc<$4.InternalID>(3, _omitFieldNames ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $4.InternalID.create)
+    ..aOM<$5.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $5.PagingRequest.create)
+    ..pc<$5.InternalID>(2, _omitFieldNames ? '' : 'appIdFilter', $pb.PbFieldType.PM, subBuilder: $5.InternalID.create)
+    ..pc<$5.InternalID>(3, _omitFieldNames ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $5.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -528,27 +528,27 @@ class ListStoreAppBinariesRequest extends $pb.GeneratedMessage {
   static ListStoreAppBinariesRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $4.PagingRequest get paging => $_getN(0);
+  $5.PagingRequest get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($4.PagingRequest v) { $_setField(1, v); }
+  set paging($5.PagingRequest v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
   void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
-  $4.PagingRequest ensurePaging() => $_ensure(0);
+  $5.PagingRequest ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $pb.PbList<$4.InternalID> get appIdFilter => $_getList(1);
+  $pb.PbList<$5.InternalID> get appIdFilter => $_getList(1);
 
   @$pb.TagNumber(3)
-  $pb.PbList<$4.InternalID> get idFilter => $_getList(2);
+  $pb.PbList<$5.InternalID> get idFilter => $_getList(2);
 }
 
 class ListStoreAppBinariesResponse extends $pb.GeneratedMessage {
   factory ListStoreAppBinariesResponse({
-    $4.PagingResponse? paging,
-    $core.Iterable<$6.StoreAppBinary>? binaries,
+    $5.PagingResponse? paging,
+    $core.Iterable<$7.StoreAppBinary>? binaries,
   }) {
     final $result = create();
     if (paging != null) {
@@ -564,8 +564,8 @@ class ListStoreAppBinariesResponse extends $pb.GeneratedMessage {
   factory ListStoreAppBinariesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListStoreAppBinariesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
-    ..aOM<$4.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $4.PagingResponse.create)
-    ..pc<$6.StoreAppBinary>(2, _omitFieldNames ? '' : 'binaries', $pb.PbFieldType.PM, subBuilder: $6.StoreAppBinary.create)
+    ..aOM<$5.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $5.PagingResponse.create)
+    ..pc<$7.StoreAppBinary>(2, _omitFieldNames ? '' : 'binaries', $pb.PbFieldType.PM, subBuilder: $7.StoreAppBinary.create)
     ..hasRequiredFields = false
   ;
 
@@ -591,23 +591,23 @@ class ListStoreAppBinariesResponse extends $pb.GeneratedMessage {
   static ListStoreAppBinariesResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $4.PagingResponse get paging => $_getN(0);
+  $5.PagingResponse get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($4.PagingResponse v) { $_setField(1, v); }
+  set paging($5.PagingResponse v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
   void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
-  $4.PagingResponse ensurePaging() => $_ensure(0);
+  $5.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $pb.PbList<$6.StoreAppBinary> get binaries => $_getList(1);
+  $pb.PbList<$7.StoreAppBinary> get binaries => $_getList(1);
 }
 
 class UpdateStoreAppBinaryRequest extends $pb.GeneratedMessage {
   factory UpdateStoreAppBinaryRequest({
-    $6.StoreAppBinary? binary,
+    $7.StoreAppBinary? binary,
   }) {
     final $result = create();
     if (binary != null) {
@@ -620,7 +620,7 @@ class UpdateStoreAppBinaryRequest extends $pb.GeneratedMessage {
   factory UpdateStoreAppBinaryRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateStoreAppBinaryRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
-    ..aOM<$6.StoreAppBinary>(1, _omitFieldNames ? '' : 'binary', subBuilder: $6.StoreAppBinary.create)
+    ..aOM<$7.StoreAppBinary>(1, _omitFieldNames ? '' : 'binary', subBuilder: $7.StoreAppBinary.create)
     ..hasRequiredFields = false
   ;
 
@@ -646,15 +646,15 @@ class UpdateStoreAppBinaryRequest extends $pb.GeneratedMessage {
   static UpdateStoreAppBinaryRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $6.StoreAppBinary get binary => $_getN(0);
+  $7.StoreAppBinary get binary => $_getN(0);
   @$pb.TagNumber(1)
-  set binary($6.StoreAppBinary v) { $_setField(1, v); }
+  set binary($7.StoreAppBinary v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBinary() => $_has(0);
   @$pb.TagNumber(1)
   void clearBinary() => $_clearField(1);
   @$pb.TagNumber(1)
-  $6.StoreAppBinary ensureBinary() => $_ensure(0);
+  $7.StoreAppBinary ensureBinary() => $_ensure(0);
 }
 
 class UpdateStoreAppBinaryResponse extends $pb.GeneratedMessage {
@@ -691,9 +691,9 @@ class UpdateStoreAppBinaryResponse extends $pb.GeneratedMessage {
 
 class ListStoreAppBinaryFilesRequest extends $pb.GeneratedMessage {
   factory ListStoreAppBinaryFilesRequest({
-    $4.PagingRequest? paging,
-    $4.InternalID? appBinaryId,
-    $core.Iterable<$4.InternalID>? idFilter,
+    $5.PagingRequest? paging,
+    $5.InternalID? appBinaryId,
+    $core.Iterable<$5.InternalID>? idFilter,
   }) {
     final $result = create();
     if (paging != null) {
@@ -712,9 +712,9 @@ class ListStoreAppBinaryFilesRequest extends $pb.GeneratedMessage {
   factory ListStoreAppBinaryFilesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListStoreAppBinaryFilesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
-    ..aOM<$4.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $4.PagingRequest.create)
-    ..aOM<$4.InternalID>(3, _omitFieldNames ? '' : 'appBinaryId', subBuilder: $4.InternalID.create)
-    ..pc<$4.InternalID>(4, _omitFieldNames ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $4.InternalID.create)
+    ..aOM<$5.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $5.PagingRequest.create)
+    ..aOM<$5.InternalID>(3, _omitFieldNames ? '' : 'appBinaryId', subBuilder: $5.InternalID.create)
+    ..pc<$5.InternalID>(4, _omitFieldNames ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $5.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -740,35 +740,35 @@ class ListStoreAppBinaryFilesRequest extends $pb.GeneratedMessage {
   static ListStoreAppBinaryFilesRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $4.PagingRequest get paging => $_getN(0);
+  $5.PagingRequest get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($4.PagingRequest v) { $_setField(1, v); }
+  set paging($5.PagingRequest v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
   void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
-  $4.PagingRequest ensurePaging() => $_ensure(0);
+  $5.PagingRequest ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(3)
-  $4.InternalID get appBinaryId => $_getN(1);
+  $5.InternalID get appBinaryId => $_getN(1);
   @$pb.TagNumber(3)
-  set appBinaryId($4.InternalID v) { $_setField(3, v); }
+  set appBinaryId($5.InternalID v) { $_setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasAppBinaryId() => $_has(1);
   @$pb.TagNumber(3)
   void clearAppBinaryId() => $_clearField(3);
   @$pb.TagNumber(3)
-  $4.InternalID ensureAppBinaryId() => $_ensure(1);
+  $5.InternalID ensureAppBinaryId() => $_ensure(1);
 
   @$pb.TagNumber(4)
-  $pb.PbList<$4.InternalID> get idFilter => $_getList(2);
+  $pb.PbList<$5.InternalID> get idFilter => $_getList(2);
 }
 
 class ListStoreAppBinaryFilesResponse extends $pb.GeneratedMessage {
   factory ListStoreAppBinaryFilesResponse({
-    $4.PagingResponse? paging,
-    $core.Iterable<$6.StoreAppBinaryFile>? files,
+    $5.PagingResponse? paging,
+    $core.Iterable<$7.StoreAppBinaryFile>? files,
   }) {
     final $result = create();
     if (paging != null) {
@@ -784,8 +784,8 @@ class ListStoreAppBinaryFilesResponse extends $pb.GeneratedMessage {
   factory ListStoreAppBinaryFilesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListStoreAppBinaryFilesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
-    ..aOM<$4.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $4.PagingResponse.create)
-    ..pc<$6.StoreAppBinaryFile>(2, _omitFieldNames ? '' : 'files', $pb.PbFieldType.PM, subBuilder: $6.StoreAppBinaryFile.create)
+    ..aOM<$5.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $5.PagingResponse.create)
+    ..pc<$7.StoreAppBinaryFile>(2, _omitFieldNames ? '' : 'files', $pb.PbFieldType.PM, subBuilder: $7.StoreAppBinaryFile.create)
     ..hasRequiredFields = false
   ;
 
@@ -811,23 +811,23 @@ class ListStoreAppBinaryFilesResponse extends $pb.GeneratedMessage {
   static ListStoreAppBinaryFilesResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $4.PagingResponse get paging => $_getN(0);
+  $5.PagingResponse get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($4.PagingResponse v) { $_setField(1, v); }
+  set paging($5.PagingResponse v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
   void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
-  $4.PagingResponse ensurePaging() => $_ensure(0);
+  $5.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $pb.PbList<$6.StoreAppBinaryFile> get files => $_getList(1);
+  $pb.PbList<$7.StoreAppBinaryFile> get files => $_getList(1);
 }
 
 class CreateStoreAppSaveFileRequest extends $pb.GeneratedMessage {
   factory CreateStoreAppSaveFileRequest({
-    $6.StoreAppSaveFile? saveFile,
+    $7.StoreAppSaveFile? saveFile,
   }) {
     final $result = create();
     if (saveFile != null) {
@@ -840,7 +840,7 @@ class CreateStoreAppSaveFileRequest extends $pb.GeneratedMessage {
   factory CreateStoreAppSaveFileRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateStoreAppSaveFileRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
-    ..aOM<$6.StoreAppSaveFile>(1, _omitFieldNames ? '' : 'saveFile', subBuilder: $6.StoreAppSaveFile.create)
+    ..aOM<$7.StoreAppSaveFile>(1, _omitFieldNames ? '' : 'saveFile', subBuilder: $7.StoreAppSaveFile.create)
     ..hasRequiredFields = false
   ;
 
@@ -866,20 +866,20 @@ class CreateStoreAppSaveFileRequest extends $pb.GeneratedMessage {
   static CreateStoreAppSaveFileRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $6.StoreAppSaveFile get saveFile => $_getN(0);
+  $7.StoreAppSaveFile get saveFile => $_getN(0);
   @$pb.TagNumber(1)
-  set saveFile($6.StoreAppSaveFile v) { $_setField(1, v); }
+  set saveFile($7.StoreAppSaveFile v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasSaveFile() => $_has(0);
   @$pb.TagNumber(1)
   void clearSaveFile() => $_clearField(1);
   @$pb.TagNumber(1)
-  $6.StoreAppSaveFile ensureSaveFile() => $_ensure(0);
+  $7.StoreAppSaveFile ensureSaveFile() => $_ensure(0);
 }
 
 class CreateStoreAppSaveFileResponse extends $pb.GeneratedMessage {
   factory CreateStoreAppSaveFileResponse({
-    $4.InternalID? id,
+    $5.InternalID? id,
   }) {
     final $result = create();
     if (id != null) {
@@ -892,7 +892,7 @@ class CreateStoreAppSaveFileResponse extends $pb.GeneratedMessage {
   factory CreateStoreAppSaveFileResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateStoreAppSaveFileResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
-    ..aOM<$4.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $4.InternalID.create)
+    ..aOM<$5.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $5.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -918,20 +918,20 @@ class CreateStoreAppSaveFileResponse extends $pb.GeneratedMessage {
   static CreateStoreAppSaveFileResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $4.InternalID get id => $_getN(0);
+  $5.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($4.InternalID v) { $_setField(1, v); }
+  set id($5.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
   void clearId() => $_clearField(1);
   @$pb.TagNumber(1)
-  $4.InternalID ensureId() => $_ensure(0);
+  $5.InternalID ensureId() => $_ensure(0);
 }
 
 class UpdateStoreAppSaveFileRequest extends $pb.GeneratedMessage {
   factory UpdateStoreAppSaveFileRequest({
-    $6.StoreAppSaveFile? saveFile,
+    $7.StoreAppSaveFile? saveFile,
   }) {
     final $result = create();
     if (saveFile != null) {
@@ -944,7 +944,7 @@ class UpdateStoreAppSaveFileRequest extends $pb.GeneratedMessage {
   factory UpdateStoreAppSaveFileRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateStoreAppSaveFileRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
-    ..aOM<$6.StoreAppSaveFile>(1, _omitFieldNames ? '' : 'saveFile', subBuilder: $6.StoreAppSaveFile.create)
+    ..aOM<$7.StoreAppSaveFile>(1, _omitFieldNames ? '' : 'saveFile', subBuilder: $7.StoreAppSaveFile.create)
     ..hasRequiredFields = false
   ;
 
@@ -970,15 +970,15 @@ class UpdateStoreAppSaveFileRequest extends $pb.GeneratedMessage {
   static UpdateStoreAppSaveFileRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $6.StoreAppSaveFile get saveFile => $_getN(0);
+  $7.StoreAppSaveFile get saveFile => $_getN(0);
   @$pb.TagNumber(1)
-  set saveFile($6.StoreAppSaveFile v) { $_setField(1, v); }
+  set saveFile($7.StoreAppSaveFile v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasSaveFile() => $_has(0);
   @$pb.TagNumber(1)
   void clearSaveFile() => $_clearField(1);
   @$pb.TagNumber(1)
-  $6.StoreAppSaveFile ensureSaveFile() => $_ensure(0);
+  $7.StoreAppSaveFile ensureSaveFile() => $_ensure(0);
 }
 
 class UpdateStoreAppSaveFileResponse extends $pb.GeneratedMessage {
@@ -1015,8 +1015,8 @@ class UpdateStoreAppSaveFileResponse extends $pb.GeneratedMessage {
 
 class UploadStoreAppSaveFileRequest extends $pb.GeneratedMessage {
   factory UploadStoreAppSaveFileRequest({
-    $4.InternalID? id,
-    $4.FileMetadata? fileMetadata,
+    $5.InternalID? id,
+    $5.FileMetadata? fileMetadata,
   }) {
     final $result = create();
     if (id != null) {
@@ -1032,8 +1032,8 @@ class UploadStoreAppSaveFileRequest extends $pb.GeneratedMessage {
   factory UploadStoreAppSaveFileRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UploadStoreAppSaveFileRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
-    ..aOM<$4.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $4.InternalID.create)
-    ..aOM<$4.FileMetadata>(2, _omitFieldNames ? '' : 'fileMetadata', subBuilder: $4.FileMetadata.create)
+    ..aOM<$5.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $5.InternalID.create)
+    ..aOM<$5.FileMetadata>(2, _omitFieldNames ? '' : 'fileMetadata', subBuilder: $5.FileMetadata.create)
     ..hasRequiredFields = false
   ;
 
@@ -1059,26 +1059,26 @@ class UploadStoreAppSaveFileRequest extends $pb.GeneratedMessage {
   static UploadStoreAppSaveFileRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $4.InternalID get id => $_getN(0);
+  $5.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($4.InternalID v) { $_setField(1, v); }
+  set id($5.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
   void clearId() => $_clearField(1);
   @$pb.TagNumber(1)
-  $4.InternalID ensureId() => $_ensure(0);
+  $5.InternalID ensureId() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $4.FileMetadata get fileMetadata => $_getN(1);
+  $5.FileMetadata get fileMetadata => $_getN(1);
   @$pb.TagNumber(2)
-  set fileMetadata($4.FileMetadata v) { $_setField(2, v); }
+  set fileMetadata($5.FileMetadata v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasFileMetadata() => $_has(1);
   @$pb.TagNumber(2)
   void clearFileMetadata() => $_clearField(2);
   @$pb.TagNumber(2)
-  $4.FileMetadata ensureFileMetadata() => $_ensure(1);
+  $5.FileMetadata ensureFileMetadata() => $_ensure(1);
 }
 
 class UploadStoreAppSaveFileResponse extends $pb.GeneratedMessage {
@@ -1115,9 +1115,9 @@ class UploadStoreAppSaveFileResponse extends $pb.GeneratedMessage {
 
 class ListStoreAppSaveFilesRequest extends $pb.GeneratedMessage {
   factory ListStoreAppSaveFilesRequest({
-    $4.PagingRequest? paging,
-    $4.InternalID? appId,
-    $core.Iterable<$4.InternalID>? idFilter,
+    $5.PagingRequest? paging,
+    $5.InternalID? appId,
+    $core.Iterable<$5.InternalID>? idFilter,
   }) {
     final $result = create();
     if (paging != null) {
@@ -1136,9 +1136,9 @@ class ListStoreAppSaveFilesRequest extends $pb.GeneratedMessage {
   factory ListStoreAppSaveFilesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListStoreAppSaveFilesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
-    ..aOM<$4.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $4.PagingRequest.create)
-    ..aOM<$4.InternalID>(2, _omitFieldNames ? '' : 'appId', subBuilder: $4.InternalID.create)
-    ..pc<$4.InternalID>(3, _omitFieldNames ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $4.InternalID.create)
+    ..aOM<$5.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $5.PagingRequest.create)
+    ..aOM<$5.InternalID>(2, _omitFieldNames ? '' : 'appId', subBuilder: $5.InternalID.create)
+    ..pc<$5.InternalID>(3, _omitFieldNames ? '' : 'idFilter', $pb.PbFieldType.PM, subBuilder: $5.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -1164,35 +1164,35 @@ class ListStoreAppSaveFilesRequest extends $pb.GeneratedMessage {
   static ListStoreAppSaveFilesRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $4.PagingRequest get paging => $_getN(0);
+  $5.PagingRequest get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($4.PagingRequest v) { $_setField(1, v); }
+  set paging($5.PagingRequest v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
   void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
-  $4.PagingRequest ensurePaging() => $_ensure(0);
+  $5.PagingRequest ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $4.InternalID get appId => $_getN(1);
+  $5.InternalID get appId => $_getN(1);
   @$pb.TagNumber(2)
-  set appId($4.InternalID v) { $_setField(2, v); }
+  set appId($5.InternalID v) { $_setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasAppId() => $_has(1);
   @$pb.TagNumber(2)
   void clearAppId() => $_clearField(2);
   @$pb.TagNumber(2)
-  $4.InternalID ensureAppId() => $_ensure(1);
+  $5.InternalID ensureAppId() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $pb.PbList<$4.InternalID> get idFilter => $_getList(2);
+  $pb.PbList<$5.InternalID> get idFilter => $_getList(2);
 }
 
 class ListStoreAppSaveFilesResponse extends $pb.GeneratedMessage {
   factory ListStoreAppSaveFilesResponse({
-    $4.PagingResponse? paging,
-    $core.Iterable<$6.StoreAppSaveFile>? saveFiles,
+    $5.PagingResponse? paging,
+    $core.Iterable<$7.StoreAppSaveFile>? saveFiles,
   }) {
     final $result = create();
     if (paging != null) {
@@ -1208,8 +1208,8 @@ class ListStoreAppSaveFilesResponse extends $pb.GeneratedMessage {
   factory ListStoreAppSaveFilesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListStoreAppSaveFilesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
-    ..aOM<$4.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $4.PagingResponse.create)
-    ..pc<$6.StoreAppSaveFile>(2, _omitFieldNames ? '' : 'saveFiles', $pb.PbFieldType.PM, subBuilder: $6.StoreAppSaveFile.create)
+    ..aOM<$5.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $5.PagingResponse.create)
+    ..pc<$7.StoreAppSaveFile>(2, _omitFieldNames ? '' : 'saveFiles', $pb.PbFieldType.PM, subBuilder: $7.StoreAppSaveFile.create)
     ..hasRequiredFields = false
   ;
 
@@ -1235,23 +1235,23 @@ class ListStoreAppSaveFilesResponse extends $pb.GeneratedMessage {
   static ListStoreAppSaveFilesResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $4.PagingResponse get paging => $_getN(0);
+  $5.PagingResponse get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($4.PagingResponse v) { $_setField(1, v); }
+  set paging($5.PagingResponse v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
   void clearPaging() => $_clearField(1);
   @$pb.TagNumber(1)
-  $4.PagingResponse ensurePaging() => $_ensure(0);
+  $5.PagingResponse ensurePaging() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $pb.PbList<$6.StoreAppSaveFile> get saveFiles => $_getList(1);
+  $pb.PbList<$7.StoreAppSaveFile> get saveFiles => $_getList(1);
 }
 
 class DeleteStoreAppSaveFileRequest extends $pb.GeneratedMessage {
   factory DeleteStoreAppSaveFileRequest({
-    $4.InternalID? id,
+    $5.InternalID? id,
   }) {
     final $result = create();
     if (id != null) {
@@ -1264,7 +1264,7 @@ class DeleteStoreAppSaveFileRequest extends $pb.GeneratedMessage {
   factory DeleteStoreAppSaveFileRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteStoreAppSaveFileRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
-    ..aOM<$4.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $4.InternalID.create)
+    ..aOM<$5.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $5.InternalID.create)
     ..hasRequiredFields = false
   ;
 
@@ -1290,15 +1290,15 @@ class DeleteStoreAppSaveFileRequest extends $pb.GeneratedMessage {
   static DeleteStoreAppSaveFileRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $4.InternalID get id => $_getN(0);
+  $5.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($4.InternalID v) { $_setField(1, v); }
+  set id($5.InternalID v) { $_setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
   void clearId() => $_clearField(1);
   @$pb.TagNumber(1)
-  $4.InternalID ensureId() => $_ensure(0);
+  $5.InternalID ensureId() => $_ensure(0);
 }
 
 class DeleteStoreAppSaveFileResponse extends $pb.GeneratedMessage {

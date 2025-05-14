@@ -84,11 +84,7 @@ class LibrarianPorterServiceClient extends $grpc.Client {
       ($0.PushFeedItemsRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.PushFeedItemsResponse.fromBuffer(value));
 
-  LibrarianPorterServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions? options,
-      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
-      : super(channel, options: options,
-        interceptors: interceptors);
+  LibrarianPorterServiceClient(super.channel, {super.options, super.interceptors});
 
   $grpc.ResponseFuture<$0.GetPorterInformationResponse> getPorterInformation($0.GetPorterInformationRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getPorterInformation, request, options: options);

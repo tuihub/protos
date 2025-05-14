@@ -30,11 +30,7 @@ class LibrarianMinerServiceClient extends $grpc.Client {
       ($0.RecognizeImageURLRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.RecognizeImageURLResponse.fromBuffer(value));
 
-  LibrarianMinerServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions? options,
-      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
-      : super(channel, options: options,
-        interceptors: interceptors);
+  LibrarianMinerServiceClient(super.channel, {super.options, super.interceptors});
 
   $grpc.ResponseFuture<$0.RecognizeImageBinaryResponse> recognizeImageBinary($async.Stream<$0.RecognizeImageBinaryRequest> request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$recognizeImageBinary, request, options: options).single;

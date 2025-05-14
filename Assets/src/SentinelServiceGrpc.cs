@@ -50,6 +50,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.RefreshTokenResponse> __Marshaller_librarian_sephirah_v1_sentinel_RefreshTokenResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.RefreshTokenResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatRequest> __Marshaller_librarian_sephirah_v1_sentinel_HeartbeatRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatResponse> __Marshaller_librarian_sephirah_v1_sentinel_HeartbeatResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationRequest> __Marshaller_librarian_sephirah_v1_sentinel_ReportSentinelInformationRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationResponse> __Marshaller_librarian_sephirah_v1_sentinel_ReportSentinelInformationResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationResponse.Parser));
@@ -65,6 +69,14 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
         "RefreshToken",
         __Marshaller_librarian_sephirah_v1_sentinel_RefreshTokenRequest,
         __Marshaller_librarian_sephirah_v1_sentinel_RefreshTokenResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatResponse> __Method_Heartbeat = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "Heartbeat",
+        __Marshaller_librarian_sephirah_v1_sentinel_HeartbeatRequest,
+        __Marshaller_librarian_sephirah_v1_sentinel_HeartbeatResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationResponse> __Method_ReportSentinelInformation = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationResponse>(
@@ -105,7 +117,19 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
       }
 
       /// <summary>
-      /// `Gebura` `Sentinel`
+      /// `Tiphereth`
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatResponse> Heartbeat(global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Gebura`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -117,7 +141,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
       }
 
       /// <summary>
-      /// `Gebura` `Sentinel`
+      /// `Gebura`
       /// Full update, changes are handled by librarian
       /// </summary>
       /// <param name="request">The request received from the client.</param>
@@ -207,7 +231,55 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
         return CallInvoker.AsyncUnaryCall(__Method_RefreshToken, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Sentinel`
+      /// `Tiphereth`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatResponse Heartbeat(global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return Heartbeat(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Tiphereth`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatResponse Heartbeat(global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_Heartbeat, null, options, request);
+      }
+      /// <summary>
+      /// `Tiphereth`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatResponse> HeartbeatAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return HeartbeatAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Tiphereth`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatResponse> HeartbeatAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_Heartbeat, null, options, request);
+      }
+      /// <summary>
+      /// `Gebura`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -220,7 +292,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
         return ReportSentinelInformation(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Sentinel`
+      /// `Gebura`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -231,7 +303,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
         return CallInvoker.BlockingUnaryCall(__Method_ReportSentinelInformation, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Sentinel`
+      /// `Gebura`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -244,7 +316,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
         return ReportSentinelInformationAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Sentinel`
+      /// `Gebura`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -255,7 +327,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
         return CallInvoker.AsyncUnaryCall(__Method_ReportSentinelInformation, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Sentinel`
+      /// `Gebura`
       /// Full update, changes are handled by librarian
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
@@ -269,7 +341,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
         return ReportAppBinaries(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Sentinel`
+      /// `Gebura`
       /// Full update, changes are handled by librarian
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
@@ -281,7 +353,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
         return CallInvoker.BlockingUnaryCall(__Method_ReportAppBinaries, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Sentinel`
+      /// `Gebura`
       /// Full update, changes are handled by librarian
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
@@ -295,7 +367,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
         return ReportAppBinariesAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Sentinel`
+      /// `Gebura`
       /// Full update, changes are handled by librarian
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
@@ -321,6 +393,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_RefreshToken, serviceImpl.RefreshToken)
+          .AddMethod(__Method_Heartbeat, serviceImpl.Heartbeat)
           .AddMethod(__Method_ReportSentinelInformation, serviceImpl.ReportSentinelInformation)
           .AddMethod(__Method_ReportAppBinaries, serviceImpl.ReportAppBinaries).Build();
     }
@@ -333,6 +406,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
     public static void BindService(grpc::ServiceBinderBase serviceBinder, LibrarianSentinelServiceBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_RefreshToken, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.RefreshTokenRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.RefreshTokenResponse>(serviceImpl.RefreshToken));
+      serviceBinder.AddMethod(__Method_Heartbeat, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatResponse>(serviceImpl.Heartbeat));
       serviceBinder.AddMethod(__Method_ReportSentinelInformation, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationResponse>(serviceImpl.ReportSentinelInformation));
       serviceBinder.AddMethod(__Method_ReportAppBinaries, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportAppBinariesRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportAppBinariesResponse>(serviceImpl.ReportAppBinaries));
     }

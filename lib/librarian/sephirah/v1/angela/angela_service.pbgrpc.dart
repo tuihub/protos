@@ -161,11 +161,7 @@ class LibrarianAngelaServiceClient extends $grpc.Client {
       ($3.DeleteStoreAppSaveFileRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $3.DeleteStoreAppSaveFileResponse.fromBuffer(value));
 
-  LibrarianAngelaServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions? options,
-      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
-      : super(channel, options: options,
-        interceptors: interceptors);
+  LibrarianAngelaServiceClient(super.channel, {super.options, super.interceptors});
 
   $grpc.ResponseFuture<$0.GetServerInformationResponse> getServerInformation($0.GetServerInformationRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getServerInformation, request, options: options);

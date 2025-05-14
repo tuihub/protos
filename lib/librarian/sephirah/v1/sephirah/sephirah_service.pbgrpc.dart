@@ -368,11 +368,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
       ($6.ListFeedItemsInCollectionRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $6.ListFeedItemsInCollectionResponse.fromBuffer(value));
 
-  LibrarianSephirahServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions? options,
-      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
-      : super(channel, options: options,
-        interceptors: interceptors);
+  LibrarianSephirahServiceClient(super.channel, {super.options, super.interceptors});
 
   $grpc.ResponseFuture<$0.GetServerInformationResponse> getServerInformation($0.GetServerInformationRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getServerInformation, request, options: options);

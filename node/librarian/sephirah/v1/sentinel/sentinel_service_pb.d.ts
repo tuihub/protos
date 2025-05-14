@@ -2,6 +2,8 @@
 // file: librarian/sephirah/v1/sentinel/sentinel_service.proto
 
 import * as jspb from "google-protobuf";
+import * as google_protobuf_duration_pb from "google-protobuf/google/protobuf/duration_pb";
+import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
 export class RefreshTokenRequest extends jspb.Message {
   serializeBinary(): Uint8Array;
@@ -40,6 +42,60 @@ export namespace RefreshTokenResponse {
   export type AsObject = {
     accessToken: string,
     refreshToken: string,
+  }
+}
+
+export class HeartbeatRequest extends jspb.Message {
+  getInstanceId(): number;
+  setInstanceId(value: number): void;
+
+  hasClientTime(): boolean;
+  clearClientTime(): void;
+  getClientTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setClientTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasHeartbeatInterval(): boolean;
+  clearHeartbeatInterval(): void;
+  getHeartbeatInterval(): google_protobuf_duration_pb.Duration | undefined;
+  setHeartbeatInterval(value?: google_protobuf_duration_pb.Duration): void;
+
+  hasCommitSnapshotInterval(): boolean;
+  clearCommitSnapshotInterval(): void;
+  getCommitSnapshotInterval(): google_protobuf_duration_pb.Duration | undefined;
+  setCommitSnapshotInterval(value?: google_protobuf_duration_pb.Duration): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): HeartbeatRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: HeartbeatRequest): HeartbeatRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: HeartbeatRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): HeartbeatRequest;
+  static deserializeBinaryFromReader(message: HeartbeatRequest, reader: jspb.BinaryReader): HeartbeatRequest;
+}
+
+export namespace HeartbeatRequest {
+  export type AsObject = {
+    instanceId: number,
+    clientTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    heartbeatInterval?: google_protobuf_duration_pb.Duration.AsObject,
+    commitSnapshotInterval?: google_protobuf_duration_pb.Duration.AsObject,
+  }
+}
+
+export class HeartbeatResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): HeartbeatResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: HeartbeatResponse): HeartbeatResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: HeartbeatResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): HeartbeatResponse;
+  static deserializeBinaryFromReader(message: HeartbeatResponse, reader: jspb.BinaryReader): HeartbeatResponse;
+}
+
+export namespace HeartbeatResponse {
+  export type AsObject = {
   }
 }
 
@@ -105,6 +161,16 @@ export class ReportAppBinariesRequest extends jspb.Message {
   setAppBinariesList(value: Array<SentinelLibraryAppBinary>): void;
   addAppBinaries(value?: SentinelLibraryAppBinary, index?: number): SentinelLibraryAppBinary;
 
+  hasSnapshotTime(): boolean;
+  clearSnapshotTime(): void;
+  getSnapshotTime(): google_protobuf_timestamp_pb.Timestamp | undefined;
+  setSnapshotTime(value?: google_protobuf_timestamp_pb.Timestamp): void;
+
+  hasCommitSnapshot(): boolean;
+  clearCommitSnapshot(): void;
+  getCommitSnapshot(): boolean;
+  setCommitSnapshot(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReportAppBinariesRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ReportAppBinariesRequest): ReportAppBinariesRequest.AsObject;
@@ -118,10 +184,17 @@ export class ReportAppBinariesRequest extends jspb.Message {
 export namespace ReportAppBinariesRequest {
   export type AsObject = {
     appBinariesList: Array<SentinelLibraryAppBinary.AsObject>,
+    snapshotTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    commitSnapshot: boolean,
   }
 }
 
 export class ReportAppBinariesResponse extends jspb.Message {
+  hasCommitSnapshotSuccess(): boolean;
+  clearCommitSnapshotSuccess(): void;
+  getCommitSnapshotSuccess(): boolean;
+  setCommitSnapshotSuccess(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ReportAppBinariesResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ReportAppBinariesResponse): ReportAppBinariesResponse.AsObject;
@@ -134,6 +207,7 @@ export class ReportAppBinariesResponse extends jspb.Message {
 
 export namespace ReportAppBinariesResponse {
   export type AsObject = {
+    commitSnapshotSuccess: boolean,
   }
 }
 

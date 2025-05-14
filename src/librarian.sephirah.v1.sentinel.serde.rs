@@ -1,4 +1,225 @@
 // @generated
+impl serde::Serialize for HeartbeatRequest {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.instance_id != 0 {
+            len += 1;
+        }
+        if self.client_time.is_some() {
+            len += 1;
+        }
+        if self.heartbeat_interval.is_some() {
+            len += 1;
+        }
+        if self.commit_snapshot_interval.is_some() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.sentinel.HeartbeatRequest", len)?;
+        if self.instance_id != 0 {
+            #[allow(clippy::needless_borrow)]
+            #[allow(clippy::needless_borrows_for_generic_args)]
+            struct_ser.serialize_field("instanceId", ToString::to_string(&self.instance_id).as_str())?;
+        }
+        if let Some(v) = self.client_time.as_ref() {
+            struct_ser.serialize_field("clientTime", v)?;
+        }
+        if let Some(v) = self.heartbeat_interval.as_ref() {
+            struct_ser.serialize_field("heartbeatInterval", v)?;
+        }
+        if let Some(v) = self.commit_snapshot_interval.as_ref() {
+            struct_ser.serialize_field("commitSnapshotInterval", v)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for HeartbeatRequest {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "instance_id",
+            "instanceId",
+            "client_time",
+            "clientTime",
+            "heartbeat_interval",
+            "heartbeatInterval",
+            "commit_snapshot_interval",
+            "commitSnapshotInterval",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            InstanceId,
+            ClientTime,
+            HeartbeatInterval,
+            CommitSnapshotInterval,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "instanceId" | "instance_id" => Ok(GeneratedField::InstanceId),
+                            "clientTime" | "client_time" => Ok(GeneratedField::ClientTime),
+                            "heartbeatInterval" | "heartbeat_interval" => Ok(GeneratedField::HeartbeatInterval),
+                            "commitSnapshotInterval" | "commit_snapshot_interval" => Ok(GeneratedField::CommitSnapshotInterval),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = HeartbeatRequest;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.sentinel.HeartbeatRequest")
+            }
+
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<HeartbeatRequest, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut instance_id__ = None;
+                let mut client_time__ = None;
+                let mut heartbeat_interval__ = None;
+                let mut commit_snapshot_interval__ = None;
+                while let Some(k) = map_.next_key()? {
+                    match k {
+                        GeneratedField::InstanceId => {
+                            if instance_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("instanceId"));
+                            }
+                            instance_id__ = 
+                                Some(map_.next_value::<::pbjson::private::NumberDeserialize<_>>()?.0)
+                            ;
+                        }
+                        GeneratedField::ClientTime => {
+                            if client_time__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("clientTime"));
+                            }
+                            client_time__ = map_.next_value()?;
+                        }
+                        GeneratedField::HeartbeatInterval => {
+                            if heartbeat_interval__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("heartbeatInterval"));
+                            }
+                            heartbeat_interval__ = map_.next_value()?;
+                        }
+                        GeneratedField::CommitSnapshotInterval => {
+                            if commit_snapshot_interval__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("commitSnapshotInterval"));
+                            }
+                            commit_snapshot_interval__ = map_.next_value()?;
+                        }
+                    }
+                }
+                Ok(HeartbeatRequest {
+                    instance_id: instance_id__.unwrap_or_default(),
+                    client_time: client_time__,
+                    heartbeat_interval: heartbeat_interval__,
+                    commit_snapshot_interval: commit_snapshot_interval__,
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.sentinel.HeartbeatRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for HeartbeatResponse {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let len = 0;
+        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.sentinel.HeartbeatResponse", len)?;
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for HeartbeatResponse {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                            Err(serde::de::Error::unknown_field(value, FIELDS))
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = HeartbeatResponse;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.sentinel.HeartbeatResponse")
+            }
+
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<HeartbeatResponse, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                while map_.next_key::<GeneratedField>()?.is_some() {
+                    let _ = map_.next_value::<serde::de::IgnoredAny>()?;
+                }
+                Ok(HeartbeatResponse {
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.sentinel.HeartbeatResponse", FIELDS, GeneratedVisitor)
+    }
+}
 impl serde::Serialize for RefreshTokenRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
@@ -191,9 +412,21 @@ impl serde::Serialize for ReportAppBinariesRequest {
         if !self.app_binaries.is_empty() {
             len += 1;
         }
+        if self.snapshot_time.is_some() {
+            len += 1;
+        }
+        if self.commit_snapshot.is_some() {
+            len += 1;
+        }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.sentinel.ReportAppBinariesRequest", len)?;
         if !self.app_binaries.is_empty() {
             struct_ser.serialize_field("appBinaries", &self.app_binaries)?;
+        }
+        if let Some(v) = self.snapshot_time.as_ref() {
+            struct_ser.serialize_field("snapshotTime", v)?;
+        }
+        if let Some(v) = self.commit_snapshot.as_ref() {
+            struct_ser.serialize_field("commitSnapshot", v)?;
         }
         struct_ser.end()
     }
@@ -207,11 +440,17 @@ impl<'de> serde::Deserialize<'de> for ReportAppBinariesRequest {
         const FIELDS: &[&str] = &[
             "app_binaries",
             "appBinaries",
+            "snapshot_time",
+            "snapshotTime",
+            "commit_snapshot",
+            "commitSnapshot",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
             AppBinaries,
+            SnapshotTime,
+            CommitSnapshot,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -234,6 +473,8 @@ impl<'de> serde::Deserialize<'de> for ReportAppBinariesRequest {
                     {
                         match value {
                             "appBinaries" | "app_binaries" => Ok(GeneratedField::AppBinaries),
+                            "snapshotTime" | "snapshot_time" => Ok(GeneratedField::SnapshotTime),
+                            "commitSnapshot" | "commit_snapshot" => Ok(GeneratedField::CommitSnapshot),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -254,6 +495,8 @@ impl<'de> serde::Deserialize<'de> for ReportAppBinariesRequest {
                     V: serde::de::MapAccess<'de>,
             {
                 let mut app_binaries__ = None;
+                let mut snapshot_time__ = None;
+                let mut commit_snapshot__ = None;
                 while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::AppBinaries => {
@@ -262,10 +505,24 @@ impl<'de> serde::Deserialize<'de> for ReportAppBinariesRequest {
                             }
                             app_binaries__ = Some(map_.next_value()?);
                         }
+                        GeneratedField::SnapshotTime => {
+                            if snapshot_time__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("snapshotTime"));
+                            }
+                            snapshot_time__ = map_.next_value()?;
+                        }
+                        GeneratedField::CommitSnapshot => {
+                            if commit_snapshot__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("commitSnapshot"));
+                            }
+                            commit_snapshot__ = map_.next_value()?;
+                        }
                     }
                 }
                 Ok(ReportAppBinariesRequest {
                     app_binaries: app_binaries__.unwrap_or_default(),
+                    snapshot_time: snapshot_time__,
+                    commit_snapshot: commit_snapshot__,
                 })
             }
         }
@@ -279,8 +536,14 @@ impl serde::Serialize for ReportAppBinariesResponse {
         S: serde::Serializer,
     {
         use serde::ser::SerializeStruct;
-        let len = 0;
-        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.sentinel.ReportAppBinariesResponse", len)?;
+        let mut len = 0;
+        if self.commit_snapshot_success.is_some() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.sentinel.ReportAppBinariesResponse", len)?;
+        if let Some(v) = self.commit_snapshot_success.as_ref() {
+            struct_ser.serialize_field("commitSnapshotSuccess", v)?;
+        }
         struct_ser.end()
     }
 }
@@ -291,10 +554,13 @@ impl<'de> serde::Deserialize<'de> for ReportAppBinariesResponse {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "commit_snapshot_success",
+            "commitSnapshotSuccess",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
+            CommitSnapshotSuccess,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -315,7 +581,10 @@ impl<'de> serde::Deserialize<'de> for ReportAppBinariesResponse {
                     where
                         E: serde::de::Error,
                     {
-                            Err(serde::de::Error::unknown_field(value, FIELDS))
+                        match value {
+                            "commitSnapshotSuccess" | "commit_snapshot_success" => Ok(GeneratedField::CommitSnapshotSuccess),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
                     }
                 }
                 deserializer.deserialize_identifier(GeneratedVisitor)
@@ -333,10 +602,19 @@ impl<'de> serde::Deserialize<'de> for ReportAppBinariesResponse {
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                while map_.next_key::<GeneratedField>()?.is_some() {
-                    let _ = map_.next_value::<serde::de::IgnoredAny>()?;
+                let mut commit_snapshot_success__ = None;
+                while let Some(k) = map_.next_key()? {
+                    match k {
+                        GeneratedField::CommitSnapshotSuccess => {
+                            if commit_snapshot_success__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("commitSnapshotSuccess"));
+                            }
+                            commit_snapshot_success__ = map_.next_value()?;
+                        }
+                    }
                 }
                 Ok(ReportAppBinariesResponse {
+                    commit_snapshot_success: commit_snapshot_success__,
                 })
             }
         }

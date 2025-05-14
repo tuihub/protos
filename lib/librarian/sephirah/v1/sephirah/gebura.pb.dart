@@ -3665,7 +3665,7 @@ class StoreAppSummary extends $pb.GeneratedMessage {
 class StoreApp extends $pb.GeneratedMessage {
   factory StoreApp({
     $8.InternalID? id,
-    $pb.PbMap<$core.String, $core.String>? boundAppSource,
+    $core.Iterable<$core.MapEntry<$core.String, $core.String>>? boundAppSource,
     $core.bool? public,
     $core.String? name,
     AppType? type,
@@ -3683,7 +3683,7 @@ class StoreApp extends $pb.GeneratedMessage {
       $result.id = id;
     }
     if (boundAppSource != null) {
-      $result.boundAppSource.addAll(boundAppSource);
+      $result.boundAppSource.addEntries(boundAppSource);
     }
     if (public != null) {
       $result.public = public;
@@ -4313,7 +4313,7 @@ class App extends $pb.GeneratedMessage {
     $fixnum.Int64? versionNumber,
     $7.Timestamp? versionDate,
     $8.InternalID? creatorDeviceId,
-    $pb.PbMap<$core.String, $core.String>? appSources,
+    $core.Iterable<$core.MapEntry<$core.String, $core.String>>? appSources,
     $core.bool? public,
     $8.InternalID? boundStoreAppId,
     $core.bool? stopStoreManage,
@@ -4345,7 +4345,7 @@ class App extends $pb.GeneratedMessage {
       $result.creatorDeviceId = creatorDeviceId;
     }
     if (appSources != null) {
-      $result.appSources.addAll(appSources);
+      $result.appSources.addEntries(appSources);
     }
     if (public != null) {
       $result.public = public;
