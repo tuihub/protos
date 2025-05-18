@@ -220,10 +220,10 @@ message GetAppSaveFileCapacityRequest {
 }
 
 message GetAppSaveFileCapacityResponse {
-  uint64 count = 1;
-  uint64 count_max = 2;
-  uint64 size_bytes = 3;
-  uint64 size_bytes_max = 4;
+  int64 count = 1;
+  int64 count_max = 2;
+  int64 size_bytes = 3;
+  int64 size_bytes_max = 4;
   AppSaveFileCapacityStrategy strategy = 5;
 }
 
