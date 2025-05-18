@@ -697,19 +697,19 @@ final $typed_data.Uint8List getAppSaveFileCapacityRequestDescriptor = $convert.b
 const GetAppSaveFileCapacityResponse$json = {
   '1': 'GetAppSaveFileCapacityResponse',
   '2': [
-    {'1': 'count', '3': 1, '4': 1, '5': 4, '10': 'count'},
-    {'1': 'count_max', '3': 2, '4': 1, '5': 4, '10': 'countMax'},
-    {'1': 'size_bytes', '3': 3, '4': 1, '5': 4, '10': 'sizeBytes'},
-    {'1': 'size_bytes_max', '3': 4, '4': 1, '5': 4, '10': 'sizeBytesMax'},
+    {'1': 'count', '3': 1, '4': 1, '5': 3, '10': 'count'},
+    {'1': 'count_max', '3': 2, '4': 1, '5': 3, '10': 'countMax'},
+    {'1': 'size_bytes', '3': 3, '4': 1, '5': 3, '10': 'sizeBytes'},
+    {'1': 'size_bytes_max', '3': 4, '4': 1, '5': 3, '10': 'sizeBytesMax'},
     {'1': 'strategy', '3': 5, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.sephirah.AppSaveFileCapacityStrategy', '10': 'strategy'},
   ],
 };
 
 /// Descriptor for `GetAppSaveFileCapacityResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getAppSaveFileCapacityResponseDescriptor = $convert.base64Decode(
-    'Ch5HZXRBcHBTYXZlRmlsZUNhcGFjaXR5UmVzcG9uc2USFAoFY291bnQYASABKARSBWNvdW50Eh'
-    'sKCWNvdW50X21heBgCIAEoBFIIY291bnRNYXgSHQoKc2l6ZV9ieXRlcxgDIAEoBFIJc2l6ZUJ5'
-    'dGVzEiQKDnNpemVfYnl0ZXNfbWF4GAQgASgEUgxzaXplQnl0ZXNNYXgSVwoIc3RyYXRlZ3kYBS'
+    'Ch5HZXRBcHBTYXZlRmlsZUNhcGFjaXR5UmVzcG9uc2USFAoFY291bnQYASABKANSBWNvdW50Eh'
+    'sKCWNvdW50X21heBgCIAEoA1IIY291bnRNYXgSHQoKc2l6ZV9ieXRlcxgDIAEoA1IJc2l6ZUJ5'
+    'dGVzEiQKDnNpemVfYnl0ZXNfbWF4GAQgASgDUgxzaXplQnl0ZXNNYXgSVwoIc3RyYXRlZ3kYBS'
     'ABKA4yOy5saWJyYXJpYW4uc2VwaGlyYWgudjEuc2VwaGlyYWguQXBwU2F2ZUZpbGVDYXBhY2l0'
     'eVN0cmF0ZWd5UghzdHJhdGVneQ==');
 

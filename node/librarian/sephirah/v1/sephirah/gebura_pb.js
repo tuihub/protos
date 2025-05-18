@@ -9866,19 +9866,19 @@ proto.librarian.sephirah.v1.sephirah.GetAppSaveFileCapacityResponse.deserializeB
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setCount(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setCountMax(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setSizeBytes(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readUint64());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setSizeBytesMax(value);
       break;
     case 5:
@@ -9916,28 +9916,28 @@ proto.librarian.sephirah.v1.sephirah.GetAppSaveFileCapacityResponse.serializeBin
   var f = undefined;
   f = message.getCount();
   if (f !== 0) {
-    writer.writeUint64(
+    writer.writeInt64(
       1,
       f
     );
   }
   f = message.getCountMax();
   if (f !== 0) {
-    writer.writeUint64(
+    writer.writeInt64(
       2,
       f
     );
   }
   f = message.getSizeBytes();
   if (f !== 0) {
-    writer.writeUint64(
+    writer.writeInt64(
       3,
       f
     );
   }
   f = message.getSizeBytesMax();
   if (f !== 0) {
-    writer.writeUint64(
+    writer.writeInt64(
       4,
       f
     );
@@ -9953,7 +9953,7 @@ proto.librarian.sephirah.v1.sephirah.GetAppSaveFileCapacityResponse.serializeBin
 
 
 /**
- * optional uint64 count = 1;
+ * optional int64 count = 1;
  * @return {number}
  */
 proto.librarian.sephirah.v1.sephirah.GetAppSaveFileCapacityResponse.prototype.getCount = function() {
@@ -9971,7 +9971,7 @@ proto.librarian.sephirah.v1.sephirah.GetAppSaveFileCapacityResponse.prototype.se
 
 
 /**
- * optional uint64 count_max = 2;
+ * optional int64 count_max = 2;
  * @return {number}
  */
 proto.librarian.sephirah.v1.sephirah.GetAppSaveFileCapacityResponse.prototype.getCountMax = function() {
@@ -9989,7 +9989,7 @@ proto.librarian.sephirah.v1.sephirah.GetAppSaveFileCapacityResponse.prototype.se
 
 
 /**
- * optional uint64 size_bytes = 3;
+ * optional int64 size_bytes = 3;
  * @return {number}
  */
 proto.librarian.sephirah.v1.sephirah.GetAppSaveFileCapacityResponse.prototype.getSizeBytes = function() {
@@ -10007,7 +10007,7 @@ proto.librarian.sephirah.v1.sephirah.GetAppSaveFileCapacityResponse.prototype.se
 
 
 /**
- * optional uint64 size_bytes_max = 4;
+ * optional int64 size_bytes_max = 4;
  * @return {number}
  */
 proto.librarian.sephirah.v1.sephirah.GetAppSaveFileCapacityResponse.prototype.getSizeBytesMax = function() {

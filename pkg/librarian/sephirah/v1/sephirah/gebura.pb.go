@@ -2344,10 +2344,10 @@ func (x *GetAppSaveFileCapacityRequest) GetAppId() *v1.InternalID {
 
 type GetAppSaveFileCapacityResponse struct {
 	state         protoimpl.MessageState      `protogen:"open.v1"`
-	Count         uint64                      `protobuf:"varint,1,opt,name=count,proto3" json:"count,omitempty"`
-	CountMax      uint64                      `protobuf:"varint,2,opt,name=count_max,json=countMax,proto3" json:"count_max,omitempty"`
-	SizeBytes     uint64                      `protobuf:"varint,3,opt,name=size_bytes,json=sizeBytes,proto3" json:"size_bytes,omitempty"`
-	SizeBytesMax  uint64                      `protobuf:"varint,4,opt,name=size_bytes_max,json=sizeBytesMax,proto3" json:"size_bytes_max,omitempty"`
+	Count         int64                       `protobuf:"varint,1,opt,name=count,proto3" json:"count,omitempty"`
+	CountMax      int64                       `protobuf:"varint,2,opt,name=count_max,json=countMax,proto3" json:"count_max,omitempty"`
+	SizeBytes     int64                       `protobuf:"varint,3,opt,name=size_bytes,json=sizeBytes,proto3" json:"size_bytes,omitempty"`
+	SizeBytesMax  int64                       `protobuf:"varint,4,opt,name=size_bytes_max,json=sizeBytesMax,proto3" json:"size_bytes_max,omitempty"`
 	Strategy      AppSaveFileCapacityStrategy `protobuf:"varint,5,opt,name=strategy,proto3,enum=librarian.sephirah.v1.sephirah.AppSaveFileCapacityStrategy" json:"strategy,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -2383,28 +2383,28 @@ func (*GetAppSaveFileCapacityResponse) Descriptor() ([]byte, []int) {
 	return file_librarian_sephirah_v1_sephirah_gebura_proto_rawDescGZIP(), []int{46}
 }
 
-func (x *GetAppSaveFileCapacityResponse) GetCount() uint64 {
+func (x *GetAppSaveFileCapacityResponse) GetCount() int64 {
 	if x != nil {
 		return x.Count
 	}
 	return 0
 }
 
-func (x *GetAppSaveFileCapacityResponse) GetCountMax() uint64 {
+func (x *GetAppSaveFileCapacityResponse) GetCountMax() int64 {
 	if x != nil {
 		return x.CountMax
 	}
 	return 0
 }
 
-func (x *GetAppSaveFileCapacityResponse) GetSizeBytes() uint64 {
+func (x *GetAppSaveFileCapacityResponse) GetSizeBytes() int64 {
 	if x != nil {
 		return x.SizeBytes
 	}
 	return 0
 }
 
-func (x *GetAppSaveFileCapacityResponse) GetSizeBytesMax() uint64 {
+func (x *GetAppSaveFileCapacityResponse) GetSizeBytesMax() int64 {
 	if x != nil {
 		return x.SizeBytesMax
 	}
@@ -4054,11 +4054,11 @@ const file_librarian_sephirah_v1_sephirah_gebura_proto_rawDesc = "" +
 	"\x1dGetAppSaveFileCapacityRequest\x12/\n" +
 	"\x06app_id\x18\x01 \x01(\v2\x18.librarian.v1.InternalIDR\x05appId\"\xf1\x01\n" +
 	"\x1eGetAppSaveFileCapacityResponse\x12\x14\n" +
-	"\x05count\x18\x01 \x01(\x04R\x05count\x12\x1b\n" +
-	"\tcount_max\x18\x02 \x01(\x04R\bcountMax\x12\x1d\n" +
+	"\x05count\x18\x01 \x01(\x03R\x05count\x12\x1b\n" +
+	"\tcount_max\x18\x02 \x01(\x03R\bcountMax\x12\x1d\n" +
 	"\n" +
-	"size_bytes\x18\x03 \x01(\x04R\tsizeBytes\x12$\n" +
-	"\x0esize_bytes_max\x18\x04 \x01(\x04R\fsizeBytesMax\x12W\n" +
+	"size_bytes\x18\x03 \x01(\x03R\tsizeBytes\x12$\n" +
+	"\x0esize_bytes_max\x18\x04 \x01(\x03R\fsizeBytesMax\x12W\n" +
 	"\bstrategy\x18\x05 \x01(\x0e2;.librarian.sephirah.v1.sephirah.AppSaveFileCapacityStrategyR\bstrategy\"\x80\x02\n" +
 	"\x1dSetAppSaveFileCapacityRequest\x12/\n" +
 	"\x06app_id\x18\x01 \x01(\v2\x18.librarian.v1.InternalIDR\x05appId\x12\x14\n" +

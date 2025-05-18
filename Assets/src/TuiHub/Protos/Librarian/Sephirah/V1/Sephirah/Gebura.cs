@@ -144,9 +144,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
             "GgoYVW5waW5BcHBTYXZlRmlsZVJlc3BvbnNlIlAKHUdldEFwcFNhdmVGaWxl",
             "Q2FwYWNpdHlSZXF1ZXN0Ei8KBmFwcF9pZBgBIAEoCzIYLmxpYnJhcmlhbi52",
             "MS5JbnRlcm5hbElEUgVhcHBJZCLxAQoeR2V0QXBwU2F2ZUZpbGVDYXBhY2l0",
-            "eVJlc3BvbnNlEhQKBWNvdW50GAEgASgEUgVjb3VudBIbCgljb3VudF9tYXgY",
-            "AiABKARSCGNvdW50TWF4Eh0KCnNpemVfYnl0ZXMYAyABKARSCXNpemVCeXRl",
-            "cxIkCg5zaXplX2J5dGVzX21heBgEIAEoBFIMc2l6ZUJ5dGVzTWF4ElcKCHN0",
+            "eVJlc3BvbnNlEhQKBWNvdW50GAEgASgDUgVjb3VudBIbCgljb3VudF9tYXgY",
+            "AiABKANSCGNvdW50TWF4Eh0KCnNpemVfYnl0ZXMYAyABKANSCXNpemVCeXRl",
+            "cxIkCg5zaXplX2J5dGVzX21heBgEIAEoA1IMc2l6ZUJ5dGVzTWF4ElcKCHN0",
             "cmF0ZWd5GAUgASgOMjsubGlicmFyaWFuLnNlcGhpcmFoLnYxLnNlcGhpcmFo",
             "LkFwcFNhdmVGaWxlQ2FwYWNpdHlTdHJhdGVneVIIc3RyYXRlZ3kigAIKHVNl",
             "dEFwcFNhdmVGaWxlQ2FwYWNpdHlSZXF1ZXN0Ei8KBmFwcF9pZBgBIAEoCzIY",
@@ -10476,10 +10476,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
 
     /// <summary>Field number for the "count" field.</summary>
     public const int CountFieldNumber = 1;
-    private ulong count_;
+    private long count_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong Count {
+    public long Count {
       get { return count_; }
       set {
         count_ = value;
@@ -10488,10 +10488,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
 
     /// <summary>Field number for the "count_max" field.</summary>
     public const int CountMaxFieldNumber = 2;
-    private ulong countMax_;
+    private long countMax_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong CountMax {
+    public long CountMax {
       get { return countMax_; }
       set {
         countMax_ = value;
@@ -10500,10 +10500,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
 
     /// <summary>Field number for the "size_bytes" field.</summary>
     public const int SizeBytesFieldNumber = 3;
-    private ulong sizeBytes_;
+    private long sizeBytes_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong SizeBytes {
+    public long SizeBytes {
       get { return sizeBytes_; }
       set {
         sizeBytes_ = value;
@@ -10512,10 +10512,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
 
     /// <summary>Field number for the "size_bytes_max" field.</summary>
     public const int SizeBytesMaxFieldNumber = 4;
-    private ulong sizeBytesMax_;
+    private long sizeBytesMax_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public ulong SizeBytesMax {
+    public long SizeBytesMax {
       get { return sizeBytesMax_; }
       set {
         sizeBytesMax_ = value;
@@ -10561,10 +10561,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (Count != 0UL) hash ^= Count.GetHashCode();
-      if (CountMax != 0UL) hash ^= CountMax.GetHashCode();
-      if (SizeBytes != 0UL) hash ^= SizeBytes.GetHashCode();
-      if (SizeBytesMax != 0UL) hash ^= SizeBytesMax.GetHashCode();
+      if (Count != 0L) hash ^= Count.GetHashCode();
+      if (CountMax != 0L) hash ^= CountMax.GetHashCode();
+      if (SizeBytes != 0L) hash ^= SizeBytes.GetHashCode();
+      if (SizeBytesMax != 0L) hash ^= SizeBytesMax.GetHashCode();
       if (Strategy != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppSaveFileCapacityStrategy.Unspecified) hash ^= Strategy.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -10584,21 +10584,21 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Count != 0UL) {
+      if (Count != 0L) {
         output.WriteRawTag(8);
-        output.WriteUInt64(Count);
+        output.WriteInt64(Count);
       }
-      if (CountMax != 0UL) {
+      if (CountMax != 0L) {
         output.WriteRawTag(16);
-        output.WriteUInt64(CountMax);
+        output.WriteInt64(CountMax);
       }
-      if (SizeBytes != 0UL) {
+      if (SizeBytes != 0L) {
         output.WriteRawTag(24);
-        output.WriteUInt64(SizeBytes);
+        output.WriteInt64(SizeBytes);
       }
-      if (SizeBytesMax != 0UL) {
+      if (SizeBytesMax != 0L) {
         output.WriteRawTag(32);
-        output.WriteUInt64(SizeBytesMax);
+        output.WriteInt64(SizeBytesMax);
       }
       if (Strategy != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppSaveFileCapacityStrategy.Unspecified) {
         output.WriteRawTag(40);
@@ -10614,21 +10614,21 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Count != 0UL) {
+      if (Count != 0L) {
         output.WriteRawTag(8);
-        output.WriteUInt64(Count);
+        output.WriteInt64(Count);
       }
-      if (CountMax != 0UL) {
+      if (CountMax != 0L) {
         output.WriteRawTag(16);
-        output.WriteUInt64(CountMax);
+        output.WriteInt64(CountMax);
       }
-      if (SizeBytes != 0UL) {
+      if (SizeBytes != 0L) {
         output.WriteRawTag(24);
-        output.WriteUInt64(SizeBytes);
+        output.WriteInt64(SizeBytes);
       }
-      if (SizeBytesMax != 0UL) {
+      if (SizeBytesMax != 0L) {
         output.WriteRawTag(32);
-        output.WriteUInt64(SizeBytesMax);
+        output.WriteInt64(SizeBytesMax);
       }
       if (Strategy != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppSaveFileCapacityStrategy.Unspecified) {
         output.WriteRawTag(40);
@@ -10644,17 +10644,17 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (Count != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Count);
+      if (Count != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(Count);
       }
-      if (CountMax != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(CountMax);
+      if (CountMax != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(CountMax);
       }
-      if (SizeBytes != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(SizeBytes);
+      if (SizeBytes != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(SizeBytes);
       }
-      if (SizeBytesMax != 0UL) {
-        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(SizeBytesMax);
+      if (SizeBytesMax != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(SizeBytesMax);
       }
       if (Strategy != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppSaveFileCapacityStrategy.Unspecified) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Strategy);
@@ -10671,16 +10671,16 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
       if (other == null) {
         return;
       }
-      if (other.Count != 0UL) {
+      if (other.Count != 0L) {
         Count = other.Count;
       }
-      if (other.CountMax != 0UL) {
+      if (other.CountMax != 0L) {
         CountMax = other.CountMax;
       }
-      if (other.SizeBytes != 0UL) {
+      if (other.SizeBytes != 0L) {
         SizeBytes = other.SizeBytes;
       }
-      if (other.SizeBytesMax != 0UL) {
+      if (other.SizeBytesMax != 0L) {
         SizeBytesMax = other.SizeBytesMax;
       }
       if (other.Strategy != global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.AppSaveFileCapacityStrategy.Unspecified) {
@@ -10702,19 +10702,19 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 8: {
-            Count = input.ReadUInt64();
+            Count = input.ReadInt64();
             break;
           }
           case 16: {
-            CountMax = input.ReadUInt64();
+            CountMax = input.ReadInt64();
             break;
           }
           case 24: {
-            SizeBytes = input.ReadUInt64();
+            SizeBytes = input.ReadInt64();
             break;
           }
           case 32: {
-            SizeBytesMax = input.ReadUInt64();
+            SizeBytesMax = input.ReadInt64();
             break;
           }
           case 40: {
@@ -10737,19 +10737,19 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 8: {
-            Count = input.ReadUInt64();
+            Count = input.ReadInt64();
             break;
           }
           case 16: {
-            CountMax = input.ReadUInt64();
+            CountMax = input.ReadInt64();
             break;
           }
           case 24: {
-            SizeBytes = input.ReadUInt64();
+            SizeBytes = input.ReadInt64();
             break;
           }
           case 32: {
-            SizeBytesMax = input.ReadUInt64();
+            SizeBytesMax = input.ReadInt64();
             break;
           }
           case 40: {

@@ -2723,10 +2723,10 @@ class GetAppSaveFileCapacityResponse extends $pb.GeneratedMessage {
   factory GetAppSaveFileCapacityResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAppSaveFileCapacityResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
-    ..a<$fixnum.Int64>(1, _omitFieldNames ? '' : 'count', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..a<$fixnum.Int64>(2, _omitFieldNames ? '' : 'countMax', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..a<$fixnum.Int64>(3, _omitFieldNames ? '' : 'sizeBytes', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..a<$fixnum.Int64>(4, _omitFieldNames ? '' : 'sizeBytesMax', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aInt64(1, _omitFieldNames ? '' : 'count')
+    ..aInt64(2, _omitFieldNames ? '' : 'countMax')
+    ..aInt64(3, _omitFieldNames ? '' : 'sizeBytes')
+    ..aInt64(4, _omitFieldNames ? '' : 'sizeBytesMax')
     ..e<AppSaveFileCapacityStrategy>(5, _omitFieldNames ? '' : 'strategy', $pb.PbFieldType.OE, defaultOrMaker: AppSaveFileCapacityStrategy.APP_SAVE_FILE_CAPACITY_STRATEGY_UNSPECIFIED, valueOf: AppSaveFileCapacityStrategy.valueOf, enumValues: AppSaveFileCapacityStrategy.values)
     ..hasRequiredFields = false
   ;
