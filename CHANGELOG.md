@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.6](https://github.com/tuihub/protos/compare/v0.5.5...v0.5.6) (2025-05-18)
+
+
+### Bug Fixes
+
+* **gebura:** change fields in GetAppSaveFileCapacityResponse to int64 ([167b9a3](https://github.com/tuihub/protos/commit/167b9a31b068be37b3c268a8f02e8703b0de14b8))
+
 ## [0.5.5](https://github.com/tuihub/protos/compare/v0.5.4...v0.5.5) (2025-05-14)
 
 
