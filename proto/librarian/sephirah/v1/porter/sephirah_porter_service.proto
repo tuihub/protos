@@ -9,6 +9,9 @@ option csharp_namespace = "TuiHub.Protos.Librarian.Sephirah.V1.Porter";
 option go_package = "github.com/tuihub/protos/pkg/librarian/sephirah/v1/porter;v1";
 
 service LibrarianSephirahPorterService {
+  // `Tiphereth` Use valid refresh_token and get two new token, a refresh_token can only be used once
+  rpc RefreshToken(RefreshTokenRequest) returns (RefreshTokenResponse);
+
   // `Tiphereth` `Porter` Obtain access_token of a specific user after user authorization.
   // This token can be used to perform actions on behalf of the user.
   rpc AcquireUserToken(AcquireUserTokenRequest) returns (AcquireUserTokenResponse);
@@ -20,6 +23,12 @@ service LibrarianSephirahPorterService {
   rpc UpsertFeed(UpsertFeedRequest) returns (UpsertFeedResponse);
   // `Yesod` `Porter`
   rpc GetFeed(GetFeedRequest) returns (GetFeedResponse);
+}
+
+message RefreshTokenRequest {}
+message RefreshTokenResponse {
+  string access_token = 1;
+  string refresh_token = 2;
 }
 
 message AcquireUserTokenRequest {
