@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.5.6](https://github.com/tuihub/protos/compare/v0.5.5...v0.5.6) (2025-06-08)
+
+
+### Features
+
+* **porter:** add RefreshToken ([e134a42](https://github.com/tuihub/protos/commit/e134a423c93b5b729b7c2c38578092c689d444bb))
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#182](https://github.com/tuihub/protos/issues/182)) ([21afad0](https://github.com/tuihub/protos/commit/21afad0dc1c18730492648930ea59a2dc8ff4b41))
+* **gebura:** change fields in GetAppSaveFileCapacityResponse to int64 ([167b9a3](https://github.com/tuihub/protos/commit/167b9a31b068be37b3c268a8f02e8703b0de14b8))
+
 ## [0.5.5](https://github.com/tuihub/protos/compare/v0.5.4...v0.5.5) (2025-05-14)
 
 
