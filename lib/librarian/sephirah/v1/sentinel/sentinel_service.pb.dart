@@ -5,9 +5,10 @@
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
-// ignore_for_file: constant_identifier_names, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_final_fields
-// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: curly_braces_in_flow_control_structures
+// ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
+// ignore_for_file: non_constant_identifier_names
 
 import 'dart:core' as $core;
 
@@ -21,29 +22,27 @@ export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 class RefreshTokenRequest extends $pb.GeneratedMessage {
   factory RefreshTokenRequest() => create();
-  RefreshTokenRequest._() : super();
-  factory RefreshTokenRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory RefreshTokenRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  RefreshTokenRequest._();
+
+  factory RefreshTokenRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RefreshTokenRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RefreshTokenRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sentinel'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   RefreshTokenRequest clone() => RefreshTokenRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   RefreshTokenRequest copyWith(void Function(RefreshTokenRequest) updates) => super.copyWith((message) => updates(message as RefreshTokenRequest)) as RefreshTokenRequest;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static RefreshTokenRequest create() => RefreshTokenRequest._();
+  @$core.override
   RefreshTokenRequest createEmptyInstance() => create();
   static $pb.PbList<RefreshTokenRequest> createRepeated() => $pb.PbList<RefreshTokenRequest>();
   @$core.pragma('dart2js:noInline')
@@ -56,18 +55,16 @@ class RefreshTokenResponse extends $pb.GeneratedMessage {
     $core.String? accessToken,
     $core.String? refreshToken,
   }) {
-    final $result = create();
-    if (accessToken != null) {
-      $result.accessToken = accessToken;
-    }
-    if (refreshToken != null) {
-      $result.refreshToken = refreshToken;
-    }
-    return $result;
+    final result = create();
+    if (accessToken != null) result.accessToken = accessToken;
+    if (refreshToken != null) result.refreshToken = refreshToken;
+    return result;
   }
-  RefreshTokenResponse._() : super();
-  factory RefreshTokenResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory RefreshTokenResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  RefreshTokenResponse._();
+
+  factory RefreshTokenResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RefreshTokenResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RefreshTokenResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sentinel'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'accessToken')
@@ -75,21 +72,17 @@ class RefreshTokenResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   RefreshTokenResponse clone() => RefreshTokenResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   RefreshTokenResponse copyWith(void Function(RefreshTokenResponse) updates) => super.copyWith((message) => updates(message as RefreshTokenResponse)) as RefreshTokenResponse;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static RefreshTokenResponse create() => RefreshTokenResponse._();
+  @$core.override
   RefreshTokenResponse createEmptyInstance() => create();
   static $pb.PbList<RefreshTokenResponse> createRepeated() => $pb.PbList<RefreshTokenResponse>();
   @$core.pragma('dart2js:noInline')
@@ -99,7 +92,7 @@ class RefreshTokenResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get accessToken => $_getSZ(0);
   @$pb.TagNumber(1)
-  set accessToken($core.String v) { $_setString(0, v); }
+  set accessToken($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasAccessToken() => $_has(0);
   @$pb.TagNumber(1)
@@ -108,7 +101,7 @@ class RefreshTokenResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get refreshToken => $_getSZ(1);
   @$pb.TagNumber(2)
-  set refreshToken($core.String v) { $_setString(1, v); }
+  set refreshToken($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasRefreshToken() => $_has(1);
   @$pb.TagNumber(2)
@@ -122,24 +115,18 @@ class HeartbeatRequest extends $pb.GeneratedMessage {
     $2.Duration? heartbeatInterval,
     $2.Duration? commitSnapshotInterval,
   }) {
-    final $result = create();
-    if (instanceId != null) {
-      $result.instanceId = instanceId;
-    }
-    if (clientTime != null) {
-      $result.clientTime = clientTime;
-    }
-    if (heartbeatInterval != null) {
-      $result.heartbeatInterval = heartbeatInterval;
-    }
-    if (commitSnapshotInterval != null) {
-      $result.commitSnapshotInterval = commitSnapshotInterval;
-    }
-    return $result;
+    final result = create();
+    if (instanceId != null) result.instanceId = instanceId;
+    if (clientTime != null) result.clientTime = clientTime;
+    if (heartbeatInterval != null) result.heartbeatInterval = heartbeatInterval;
+    if (commitSnapshotInterval != null) result.commitSnapshotInterval = commitSnapshotInterval;
+    return result;
   }
-  HeartbeatRequest._() : super();
-  factory HeartbeatRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory HeartbeatRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  HeartbeatRequest._();
+
+  factory HeartbeatRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory HeartbeatRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'HeartbeatRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sentinel'), createEmptyInstance: create)
     ..aInt64(1, _omitFieldNames ? '' : 'instanceId')
@@ -149,21 +136,17 @@ class HeartbeatRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   HeartbeatRequest clone() => HeartbeatRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   HeartbeatRequest copyWith(void Function(HeartbeatRequest) updates) => super.copyWith((message) => updates(message as HeartbeatRequest)) as HeartbeatRequest;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static HeartbeatRequest create() => HeartbeatRequest._();
+  @$core.override
   HeartbeatRequest createEmptyInstance() => create();
   static $pb.PbList<HeartbeatRequest> createRepeated() => $pb.PbList<HeartbeatRequest>();
   @$core.pragma('dart2js:noInline')
@@ -174,7 +157,7 @@ class HeartbeatRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $fixnum.Int64 get instanceId => $_getI64(0);
   @$pb.TagNumber(1)
-  set instanceId($fixnum.Int64 v) { $_setInt64(0, v); }
+  set instanceId($fixnum.Int64 value) => $_setInt64(0, value);
   @$pb.TagNumber(1)
   $core.bool hasInstanceId() => $_has(0);
   @$pb.TagNumber(1)
@@ -183,7 +166,7 @@ class HeartbeatRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $1.Timestamp get clientTime => $_getN(1);
   @$pb.TagNumber(2)
-  set clientTime($1.Timestamp v) { $_setField(2, v); }
+  set clientTime($1.Timestamp value) => $_setField(2, value);
   @$pb.TagNumber(2)
   $core.bool hasClientTime() => $_has(1);
   @$pb.TagNumber(2)
@@ -194,7 +177,7 @@ class HeartbeatRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $2.Duration get heartbeatInterval => $_getN(2);
   @$pb.TagNumber(3)
-  set heartbeatInterval($2.Duration v) { $_setField(3, v); }
+  set heartbeatInterval($2.Duration value) => $_setField(3, value);
   @$pb.TagNumber(3)
   $core.bool hasHeartbeatInterval() => $_has(2);
   @$pb.TagNumber(3)
@@ -205,7 +188,7 @@ class HeartbeatRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $2.Duration get commitSnapshotInterval => $_getN(3);
   @$pb.TagNumber(4)
-  set commitSnapshotInterval($2.Duration v) { $_setField(4, v); }
+  set commitSnapshotInterval($2.Duration value) => $_setField(4, value);
   @$pb.TagNumber(4)
   $core.bool hasCommitSnapshotInterval() => $_has(3);
   @$pb.TagNumber(4)
@@ -216,29 +199,27 @@ class HeartbeatRequest extends $pb.GeneratedMessage {
 
 class HeartbeatResponse extends $pb.GeneratedMessage {
   factory HeartbeatResponse() => create();
-  HeartbeatResponse._() : super();
-  factory HeartbeatResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory HeartbeatResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  HeartbeatResponse._();
+
+  factory HeartbeatResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory HeartbeatResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'HeartbeatResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sentinel'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   HeartbeatResponse clone() => HeartbeatResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   HeartbeatResponse copyWith(void Function(HeartbeatResponse) updates) => super.copyWith((message) => updates(message as HeartbeatResponse)) as HeartbeatResponse;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static HeartbeatResponse create() => HeartbeatResponse._();
+  @$core.override
   HeartbeatResponse createEmptyInstance() => create();
   static $pb.PbList<HeartbeatResponse> createRepeated() => $pb.PbList<HeartbeatResponse>();
   @$core.pragma('dart2js:noInline')
@@ -254,27 +235,19 @@ class ReportSentinelInformationRequest extends $pb.GeneratedMessage {
     $core.String? downloadFileBasePath,
     $core.Iterable<SentinelLibrary>? libraries,
   }) {
-    final $result = create();
-    if (url != null) {
-      $result.url = url;
-    }
-    if (urlAlternatives != null) {
-      $result.urlAlternatives.addAll(urlAlternatives);
-    }
-    if (getTokenPath != null) {
-      $result.getTokenPath = getTokenPath;
-    }
-    if (downloadFileBasePath != null) {
-      $result.downloadFileBasePath = downloadFileBasePath;
-    }
-    if (libraries != null) {
-      $result.libraries.addAll(libraries);
-    }
-    return $result;
+    final result = create();
+    if (url != null) result.url = url;
+    if (urlAlternatives != null) result.urlAlternatives.addAll(urlAlternatives);
+    if (getTokenPath != null) result.getTokenPath = getTokenPath;
+    if (downloadFileBasePath != null) result.downloadFileBasePath = downloadFileBasePath;
+    if (libraries != null) result.libraries.addAll(libraries);
+    return result;
   }
-  ReportSentinelInformationRequest._() : super();
-  factory ReportSentinelInformationRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ReportSentinelInformationRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  ReportSentinelInformationRequest._();
+
+  factory ReportSentinelInformationRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ReportSentinelInformationRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReportSentinelInformationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sentinel'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'url')
@@ -285,21 +258,17 @@ class ReportSentinelInformationRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ReportSentinelInformationRequest clone() => ReportSentinelInformationRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ReportSentinelInformationRequest copyWith(void Function(ReportSentinelInformationRequest) updates) => super.copyWith((message) => updates(message as ReportSentinelInformationRequest)) as ReportSentinelInformationRequest;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static ReportSentinelInformationRequest create() => ReportSentinelInformationRequest._();
+  @$core.override
   ReportSentinelInformationRequest createEmptyInstance() => create();
   static $pb.PbList<ReportSentinelInformationRequest> createRepeated() => $pb.PbList<ReportSentinelInformationRequest>();
   @$core.pragma('dart2js:noInline')
@@ -309,7 +278,7 @@ class ReportSentinelInformationRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get url => $_getSZ(0);
   @$pb.TagNumber(1)
-  set url($core.String v) { $_setString(0, v); }
+  set url($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasUrl() => $_has(0);
   @$pb.TagNumber(1)
@@ -322,7 +291,7 @@ class ReportSentinelInformationRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.String get getTokenPath => $_getSZ(2);
   @$pb.TagNumber(3)
-  set getTokenPath($core.String v) { $_setString(2, v); }
+  set getTokenPath($core.String value) => $_setString(2, value);
   @$pb.TagNumber(3)
   $core.bool hasGetTokenPath() => $_has(2);
   @$pb.TagNumber(3)
@@ -331,7 +300,7 @@ class ReportSentinelInformationRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.String get downloadFileBasePath => $_getSZ(3);
   @$pb.TagNumber(4)
-  set downloadFileBasePath($core.String v) { $_setString(3, v); }
+  set downloadFileBasePath($core.String value) => $_setString(3, value);
   @$pb.TagNumber(4)
   $core.bool hasDownloadFileBasePath() => $_has(3);
   @$pb.TagNumber(4)
@@ -343,29 +312,27 @@ class ReportSentinelInformationRequest extends $pb.GeneratedMessage {
 
 class ReportSentinelInformationResponse extends $pb.GeneratedMessage {
   factory ReportSentinelInformationResponse() => create();
-  ReportSentinelInformationResponse._() : super();
-  factory ReportSentinelInformationResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ReportSentinelInformationResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  ReportSentinelInformationResponse._();
+
+  factory ReportSentinelInformationResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ReportSentinelInformationResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReportSentinelInformationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sentinel'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ReportSentinelInformationResponse clone() => ReportSentinelInformationResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ReportSentinelInformationResponse copyWith(void Function(ReportSentinelInformationResponse) updates) => super.copyWith((message) => updates(message as ReportSentinelInformationResponse)) as ReportSentinelInformationResponse;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static ReportSentinelInformationResponse create() => ReportSentinelInformationResponse._();
+  @$core.override
   ReportSentinelInformationResponse createEmptyInstance() => create();
   static $pb.PbList<ReportSentinelInformationResponse> createRepeated() => $pb.PbList<ReportSentinelInformationResponse>();
   @$core.pragma('dart2js:noInline')
@@ -379,21 +346,17 @@ class ReportAppBinariesRequest extends $pb.GeneratedMessage {
     $1.Timestamp? snapshotTime,
     $core.bool? commitSnapshot,
   }) {
-    final $result = create();
-    if (appBinaries != null) {
-      $result.appBinaries.addAll(appBinaries);
-    }
-    if (snapshotTime != null) {
-      $result.snapshotTime = snapshotTime;
-    }
-    if (commitSnapshot != null) {
-      $result.commitSnapshot = commitSnapshot;
-    }
-    return $result;
+    final result = create();
+    if (appBinaries != null) result.appBinaries.addAll(appBinaries);
+    if (snapshotTime != null) result.snapshotTime = snapshotTime;
+    if (commitSnapshot != null) result.commitSnapshot = commitSnapshot;
+    return result;
   }
-  ReportAppBinariesRequest._() : super();
-  factory ReportAppBinariesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ReportAppBinariesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  ReportAppBinariesRequest._();
+
+  factory ReportAppBinariesRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ReportAppBinariesRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReportAppBinariesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sentinel'), createEmptyInstance: create)
     ..pc<SentinelLibraryAppBinary>(1, _omitFieldNames ? '' : 'appBinaries', $pb.PbFieldType.PM, subBuilder: SentinelLibraryAppBinary.create)
@@ -402,21 +365,17 @@ class ReportAppBinariesRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ReportAppBinariesRequest clone() => ReportAppBinariesRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ReportAppBinariesRequest copyWith(void Function(ReportAppBinariesRequest) updates) => super.copyWith((message) => updates(message as ReportAppBinariesRequest)) as ReportAppBinariesRequest;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static ReportAppBinariesRequest create() => ReportAppBinariesRequest._();
+  @$core.override
   ReportAppBinariesRequest createEmptyInstance() => create();
   static $pb.PbList<ReportAppBinariesRequest> createRepeated() => $pb.PbList<ReportAppBinariesRequest>();
   @$core.pragma('dart2js:noInline')
@@ -434,7 +393,7 @@ class ReportAppBinariesRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $1.Timestamp get snapshotTime => $_getN(1);
   @$pb.TagNumber(2)
-  set snapshotTime($1.Timestamp v) { $_setField(2, v); }
+  set snapshotTime($1.Timestamp value) => $_setField(2, value);
   @$pb.TagNumber(2)
   $core.bool hasSnapshotTime() => $_has(1);
   @$pb.TagNumber(2)
@@ -446,7 +405,7 @@ class ReportAppBinariesRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool get commitSnapshot => $_getBF(2);
   @$pb.TagNumber(3)
-  set commitSnapshot($core.bool v) { $_setBool(2, v); }
+  set commitSnapshot($core.bool value) => $_setBool(2, value);
   @$pb.TagNumber(3)
   $core.bool hasCommitSnapshot() => $_has(2);
   @$pb.TagNumber(3)
@@ -457,36 +416,32 @@ class ReportAppBinariesResponse extends $pb.GeneratedMessage {
   factory ReportAppBinariesResponse({
     $core.bool? commitSnapshotSuccess,
   }) {
-    final $result = create();
-    if (commitSnapshotSuccess != null) {
-      $result.commitSnapshotSuccess = commitSnapshotSuccess;
-    }
-    return $result;
+    final result = create();
+    if (commitSnapshotSuccess != null) result.commitSnapshotSuccess = commitSnapshotSuccess;
+    return result;
   }
-  ReportAppBinariesResponse._() : super();
-  factory ReportAppBinariesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ReportAppBinariesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  ReportAppBinariesResponse._();
+
+  factory ReportAppBinariesResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ReportAppBinariesResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ReportAppBinariesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sentinel'), createEmptyInstance: create)
     ..aOB(1, _omitFieldNames ? '' : 'commitSnapshotSuccess')
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ReportAppBinariesResponse clone() => ReportAppBinariesResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ReportAppBinariesResponse copyWith(void Function(ReportAppBinariesResponse) updates) => super.copyWith((message) => updates(message as ReportAppBinariesResponse)) as ReportAppBinariesResponse;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static ReportAppBinariesResponse create() => ReportAppBinariesResponse._();
+  @$core.override
   ReportAppBinariesResponse createEmptyInstance() => create();
   static $pb.PbList<ReportAppBinariesResponse> createRepeated() => $pb.PbList<ReportAppBinariesResponse>();
   @$core.pragma('dart2js:noInline')
@@ -497,7 +452,7 @@ class ReportAppBinariesResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.bool get commitSnapshotSuccess => $_getBF(0);
   @$pb.TagNumber(1)
-  set commitSnapshotSuccess($core.bool v) { $_setBool(0, v); }
+  set commitSnapshotSuccess($core.bool value) => $_setBool(0, value);
   @$pb.TagNumber(1)
   $core.bool hasCommitSnapshotSuccess() => $_has(0);
   @$pb.TagNumber(1)
@@ -509,18 +464,16 @@ class SentinelLibrary extends $pb.GeneratedMessage {
     $fixnum.Int64? id,
     $core.String? downloadBasePath,
   }) {
-    final $result = create();
-    if (id != null) {
-      $result.id = id;
-    }
-    if (downloadBasePath != null) {
-      $result.downloadBasePath = downloadBasePath;
-    }
-    return $result;
+    final result = create();
+    if (id != null) result.id = id;
+    if (downloadBasePath != null) result.downloadBasePath = downloadBasePath;
+    return result;
   }
-  SentinelLibrary._() : super();
-  factory SentinelLibrary.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory SentinelLibrary.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  SentinelLibrary._();
+
+  factory SentinelLibrary.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory SentinelLibrary.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SentinelLibrary', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sentinel'), createEmptyInstance: create)
     ..aInt64(1, _omitFieldNames ? '' : 'id')
@@ -528,21 +481,17 @@ class SentinelLibrary extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   SentinelLibrary clone() => SentinelLibrary()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   SentinelLibrary copyWith(void Function(SentinelLibrary) updates) => super.copyWith((message) => updates(message as SentinelLibrary)) as SentinelLibrary;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static SentinelLibrary create() => SentinelLibrary._();
+  @$core.override
   SentinelLibrary createEmptyInstance() => create();
   static $pb.PbList<SentinelLibrary> createRepeated() => $pb.PbList<SentinelLibrary>();
   @$core.pragma('dart2js:noInline')
@@ -552,7 +501,7 @@ class SentinelLibrary extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $fixnum.Int64 get id => $_getI64(0);
   @$pb.TagNumber(1)
-  set id($fixnum.Int64 v) { $_setInt64(0, v); }
+  set id($fixnum.Int64 value) => $_setInt64(0, value);
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
@@ -561,7 +510,7 @@ class SentinelLibrary extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get downloadBasePath => $_getSZ(1);
   @$pb.TagNumber(2)
-  set downloadBasePath($core.String v) { $_setString(1, v); }
+  set downloadBasePath($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasDownloadBasePath() => $_has(1);
   @$pb.TagNumber(2)
@@ -580,39 +529,23 @@ class SentinelLibraryAppBinary extends $pb.GeneratedMessage {
     $core.String? developer,
     $core.String? publisher,
   }) {
-    final $result = create();
-    if (sentinelLibraryId != null) {
-      $result.sentinelLibraryId = sentinelLibraryId;
-    }
-    if (sentinelGeneratedId != null) {
-      $result.sentinelGeneratedId = sentinelGeneratedId;
-    }
-    if (sizeBytes != null) {
-      $result.sizeBytes = sizeBytes;
-    }
-    if (needToken != null) {
-      $result.needToken = needToken;
-    }
-    if (files != null) {
-      $result.files.addAll(files);
-    }
-    if (name != null) {
-      $result.name = name;
-    }
-    if (version != null) {
-      $result.version = version;
-    }
-    if (developer != null) {
-      $result.developer = developer;
-    }
-    if (publisher != null) {
-      $result.publisher = publisher;
-    }
-    return $result;
+    final result = create();
+    if (sentinelLibraryId != null) result.sentinelLibraryId = sentinelLibraryId;
+    if (sentinelGeneratedId != null) result.sentinelGeneratedId = sentinelGeneratedId;
+    if (sizeBytes != null) result.sizeBytes = sizeBytes;
+    if (needToken != null) result.needToken = needToken;
+    if (files != null) result.files.addAll(files);
+    if (name != null) result.name = name;
+    if (version != null) result.version = version;
+    if (developer != null) result.developer = developer;
+    if (publisher != null) result.publisher = publisher;
+    return result;
   }
-  SentinelLibraryAppBinary._() : super();
-  factory SentinelLibraryAppBinary.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory SentinelLibraryAppBinary.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  SentinelLibraryAppBinary._();
+
+  factory SentinelLibraryAppBinary.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory SentinelLibraryAppBinary.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SentinelLibraryAppBinary', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sentinel'), createEmptyInstance: create)
     ..aInt64(1, _omitFieldNames ? '' : 'sentinelLibraryId')
@@ -627,21 +560,17 @@ class SentinelLibraryAppBinary extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   SentinelLibraryAppBinary clone() => SentinelLibraryAppBinary()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   SentinelLibraryAppBinary copyWith(void Function(SentinelLibraryAppBinary) updates) => super.copyWith((message) => updates(message as SentinelLibraryAppBinary)) as SentinelLibraryAppBinary;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static SentinelLibraryAppBinary create() => SentinelLibraryAppBinary._();
+  @$core.override
   SentinelLibraryAppBinary createEmptyInstance() => create();
   static $pb.PbList<SentinelLibraryAppBinary> createRepeated() => $pb.PbList<SentinelLibraryAppBinary>();
   @$core.pragma('dart2js:noInline')
@@ -651,7 +580,7 @@ class SentinelLibraryAppBinary extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $fixnum.Int64 get sentinelLibraryId => $_getI64(0);
   @$pb.TagNumber(1)
-  set sentinelLibraryId($fixnum.Int64 v) { $_setInt64(0, v); }
+  set sentinelLibraryId($fixnum.Int64 value) => $_setInt64(0, value);
   @$pb.TagNumber(1)
   $core.bool hasSentinelLibraryId() => $_has(0);
   @$pb.TagNumber(1)
@@ -660,7 +589,7 @@ class SentinelLibraryAppBinary extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get sentinelGeneratedId => $_getSZ(1);
   @$pb.TagNumber(2)
-  set sentinelGeneratedId($core.String v) { $_setString(1, v); }
+  set sentinelGeneratedId($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasSentinelGeneratedId() => $_has(1);
   @$pb.TagNumber(2)
@@ -669,7 +598,7 @@ class SentinelLibraryAppBinary extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $fixnum.Int64 get sizeBytes => $_getI64(2);
   @$pb.TagNumber(3)
-  set sizeBytes($fixnum.Int64 v) { $_setInt64(2, v); }
+  set sizeBytes($fixnum.Int64 value) => $_setInt64(2, value);
   @$pb.TagNumber(3)
   $core.bool hasSizeBytes() => $_has(2);
   @$pb.TagNumber(3)
@@ -678,7 +607,7 @@ class SentinelLibraryAppBinary extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool get needToken => $_getBF(3);
   @$pb.TagNumber(4)
-  set needToken($core.bool v) { $_setBool(3, v); }
+  set needToken($core.bool value) => $_setBool(3, value);
   @$pb.TagNumber(4)
   $core.bool hasNeedToken() => $_has(3);
   @$pb.TagNumber(4)
@@ -690,7 +619,7 @@ class SentinelLibraryAppBinary extends $pb.GeneratedMessage {
   @$pb.TagNumber(10)
   $core.String get name => $_getSZ(5);
   @$pb.TagNumber(10)
-  set name($core.String v) { $_setString(5, v); }
+  set name($core.String value) => $_setString(5, value);
   @$pb.TagNumber(10)
   $core.bool hasName() => $_has(5);
   @$pb.TagNumber(10)
@@ -699,7 +628,7 @@ class SentinelLibraryAppBinary extends $pb.GeneratedMessage {
   @$pb.TagNumber(11)
   $core.String get version => $_getSZ(6);
   @$pb.TagNumber(11)
-  set version($core.String v) { $_setString(6, v); }
+  set version($core.String value) => $_setString(6, value);
   @$pb.TagNumber(11)
   $core.bool hasVersion() => $_has(6);
   @$pb.TagNumber(11)
@@ -708,7 +637,7 @@ class SentinelLibraryAppBinary extends $pb.GeneratedMessage {
   @$pb.TagNumber(12)
   $core.String get developer => $_getSZ(7);
   @$pb.TagNumber(12)
-  set developer($core.String v) { $_setString(7, v); }
+  set developer($core.String value) => $_setString(7, value);
   @$pb.TagNumber(12)
   $core.bool hasDeveloper() => $_has(7);
   @$pb.TagNumber(12)
@@ -717,7 +646,7 @@ class SentinelLibraryAppBinary extends $pb.GeneratedMessage {
   @$pb.TagNumber(13)
   $core.String get publisher => $_getSZ(8);
   @$pb.TagNumber(13)
-  set publisher($core.String v) { $_setString(8, v); }
+  set publisher($core.String value) => $_setString(8, value);
   @$pb.TagNumber(13)
   $core.bool hasPublisher() => $_has(8);
   @$pb.TagNumber(13)
@@ -732,27 +661,19 @@ class SentinelLibraryAppBinaryFile extends $pb.GeneratedMessage {
     $core.String? serverFilePath,
     $core.String? chunksInfo,
   }) {
-    final $result = create();
-    if (name != null) {
-      $result.name = name;
-    }
-    if (sizeBytes != null) {
-      $result.sizeBytes = sizeBytes;
-    }
-    if (sha256 != null) {
-      $result.sha256 = sha256;
-    }
-    if (serverFilePath != null) {
-      $result.serverFilePath = serverFilePath;
-    }
-    if (chunksInfo != null) {
-      $result.chunksInfo = chunksInfo;
-    }
-    return $result;
+    final result = create();
+    if (name != null) result.name = name;
+    if (sizeBytes != null) result.sizeBytes = sizeBytes;
+    if (sha256 != null) result.sha256 = sha256;
+    if (serverFilePath != null) result.serverFilePath = serverFilePath;
+    if (chunksInfo != null) result.chunksInfo = chunksInfo;
+    return result;
   }
-  SentinelLibraryAppBinaryFile._() : super();
-  factory SentinelLibraryAppBinaryFile.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory SentinelLibraryAppBinaryFile.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  SentinelLibraryAppBinaryFile._();
+
+  factory SentinelLibraryAppBinaryFile.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory SentinelLibraryAppBinaryFile.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SentinelLibraryAppBinaryFile', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sentinel'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
@@ -763,21 +684,17 @@ class SentinelLibraryAppBinaryFile extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   SentinelLibraryAppBinaryFile clone() => SentinelLibraryAppBinaryFile()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   SentinelLibraryAppBinaryFile copyWith(void Function(SentinelLibraryAppBinaryFile) updates) => super.copyWith((message) => updates(message as SentinelLibraryAppBinaryFile)) as SentinelLibraryAppBinaryFile;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static SentinelLibraryAppBinaryFile create() => SentinelLibraryAppBinaryFile._();
+  @$core.override
   SentinelLibraryAppBinaryFile createEmptyInstance() => create();
   static $pb.PbList<SentinelLibraryAppBinaryFile> createRepeated() => $pb.PbList<SentinelLibraryAppBinaryFile>();
   @$core.pragma('dart2js:noInline')
@@ -787,7 +704,7 @@ class SentinelLibraryAppBinaryFile extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
-  set name($core.String v) { $_setString(0, v); }
+  set name($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasName() => $_has(0);
   @$pb.TagNumber(1)
@@ -796,7 +713,7 @@ class SentinelLibraryAppBinaryFile extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $fixnum.Int64 get sizeBytes => $_getI64(1);
   @$pb.TagNumber(2)
-  set sizeBytes($fixnum.Int64 v) { $_setInt64(1, v); }
+  set sizeBytes($fixnum.Int64 value) => $_setInt64(1, value);
   @$pb.TagNumber(2)
   $core.bool hasSizeBytes() => $_has(1);
   @$pb.TagNumber(2)
@@ -805,7 +722,7 @@ class SentinelLibraryAppBinaryFile extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.List<$core.int> get sha256 => $_getN(2);
   @$pb.TagNumber(3)
-  set sha256($core.List<$core.int> v) { $_setBytes(2, v); }
+  set sha256($core.List<$core.int> value) => $_setBytes(2, value);
   @$pb.TagNumber(3)
   $core.bool hasSha256() => $_has(2);
   @$pb.TagNumber(3)
@@ -815,7 +732,7 @@ class SentinelLibraryAppBinaryFile extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.String get serverFilePath => $_getSZ(3);
   @$pb.TagNumber(4)
-  set serverFilePath($core.String v) { $_setString(3, v); }
+  set serverFilePath($core.String value) => $_setString(3, value);
   @$pb.TagNumber(4)
   $core.bool hasServerFilePath() => $_has(3);
   @$pb.TagNumber(4)
@@ -824,7 +741,7 @@ class SentinelLibraryAppBinaryFile extends $pb.GeneratedMessage {
   @$pb.TagNumber(10)
   $core.String get chunksInfo => $_getSZ(4);
   @$pb.TagNumber(10)
-  set chunksInfo($core.String v) { $_setString(4, v); }
+  set chunksInfo($core.String value) => $_setString(4, value);
   @$pb.TagNumber(10)
   $core.bool hasChunksInfo() => $_has(4);
   @$pb.TagNumber(10)
@@ -832,5 +749,5 @@ class SentinelLibraryAppBinaryFile extends $pb.GeneratedMessage {
 }
 
 
-const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
-const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
+const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

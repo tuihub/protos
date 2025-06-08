@@ -5,9 +5,10 @@
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
-// ignore_for_file: constant_identifier_names, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_final_fields
-// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: curly_braces_in_flow_control_structures
+// ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
+// ignore_for_file: non_constant_identifier_names
 
 import 'dart:core' as $core;
 
@@ -16,7 +17,6 @@ import 'package:protobuf/protobuf.dart' as $pb;
 import '../../../../google/protobuf/timestamp.pb.dart' as $9;
 import '../../../v1/wellknown.pb.dart' as $5;
 import '../sephirah/tiphereth.pb.dart' as $8;
-import '../sephirah/tiphereth.pbenum.dart' as $8;
 import 'tiphereth.pbenum.dart';
 
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
@@ -29,21 +29,17 @@ class GetTokenRequest extends $pb.GeneratedMessage {
     $core.String? password,
     $5.InternalID? deviceId,
   }) {
-    final $result = create();
-    if (username != null) {
-      $result.username = username;
-    }
-    if (password != null) {
-      $result.password = password;
-    }
-    if (deviceId != null) {
-      $result.deviceId = deviceId;
-    }
-    return $result;
+    final result = create();
+    if (username != null) result.username = username;
+    if (password != null) result.password = password;
+    if (deviceId != null) result.deviceId = deviceId;
+    return result;
   }
-  GetTokenRequest._() : super();
-  factory GetTokenRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetTokenRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  GetTokenRequest._();
+
+  factory GetTokenRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetTokenRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetTokenRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'username')
@@ -52,21 +48,17 @@ class GetTokenRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetTokenRequest clone() => GetTokenRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetTokenRequest copyWith(void Function(GetTokenRequest) updates) => super.copyWith((message) => updates(message as GetTokenRequest)) as GetTokenRequest;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static GetTokenRequest create() => GetTokenRequest._();
+  @$core.override
   GetTokenRequest createEmptyInstance() => create();
   static $pb.PbList<GetTokenRequest> createRepeated() => $pb.PbList<GetTokenRequest>();
   @$core.pragma('dart2js:noInline')
@@ -76,7 +68,7 @@ class GetTokenRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get username => $_getSZ(0);
   @$pb.TagNumber(1)
-  set username($core.String v) { $_setString(0, v); }
+  set username($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasUsername() => $_has(0);
   @$pb.TagNumber(1)
@@ -85,7 +77,7 @@ class GetTokenRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get password => $_getSZ(1);
   @$pb.TagNumber(2)
-  set password($core.String v) { $_setString(1, v); }
+  set password($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasPassword() => $_has(1);
   @$pb.TagNumber(2)
@@ -96,7 +88,7 @@ class GetTokenRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $5.InternalID get deviceId => $_getN(2);
   @$pb.TagNumber(3)
-  set deviceId($5.InternalID v) { $_setField(3, v); }
+  set deviceId($5.InternalID value) => $_setField(3, value);
   @$pb.TagNumber(3)
   $core.bool hasDeviceId() => $_has(2);
   @$pb.TagNumber(3)
@@ -110,18 +102,16 @@ class GetTokenResponse extends $pb.GeneratedMessage {
     $core.String? accessToken,
     $core.String? refreshToken,
   }) {
-    final $result = create();
-    if (accessToken != null) {
-      $result.accessToken = accessToken;
-    }
-    if (refreshToken != null) {
-      $result.refreshToken = refreshToken;
-    }
-    return $result;
+    final result = create();
+    if (accessToken != null) result.accessToken = accessToken;
+    if (refreshToken != null) result.refreshToken = refreshToken;
+    return result;
   }
-  GetTokenResponse._() : super();
-  factory GetTokenResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetTokenResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  GetTokenResponse._();
+
+  factory GetTokenResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetTokenResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetTokenResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'accessToken')
@@ -129,21 +119,17 @@ class GetTokenResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetTokenResponse clone() => GetTokenResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetTokenResponse copyWith(void Function(GetTokenResponse) updates) => super.copyWith((message) => updates(message as GetTokenResponse)) as GetTokenResponse;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static GetTokenResponse create() => GetTokenResponse._();
+  @$core.override
   GetTokenResponse createEmptyInstance() => create();
   static $pb.PbList<GetTokenResponse> createRepeated() => $pb.PbList<GetTokenResponse>();
   @$core.pragma('dart2js:noInline')
@@ -153,7 +139,7 @@ class GetTokenResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get accessToken => $_getSZ(0);
   @$pb.TagNumber(1)
-  set accessToken($core.String v) { $_setString(0, v); }
+  set accessToken($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasAccessToken() => $_has(0);
   @$pb.TagNumber(1)
@@ -162,7 +148,7 @@ class GetTokenResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get refreshToken => $_getSZ(1);
   @$pb.TagNumber(2)
-  set refreshToken($core.String v) { $_setString(1, v); }
+  set refreshToken($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasRefreshToken() => $_has(1);
   @$pb.TagNumber(2)
@@ -173,36 +159,32 @@ class RefreshTokenRequest extends $pb.GeneratedMessage {
   factory RefreshTokenRequest({
     $5.InternalID? deviceId,
   }) {
-    final $result = create();
-    if (deviceId != null) {
-      $result.deviceId = deviceId;
-    }
-    return $result;
+    final result = create();
+    if (deviceId != null) result.deviceId = deviceId;
+    return result;
   }
-  RefreshTokenRequest._() : super();
-  factory RefreshTokenRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory RefreshTokenRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  RefreshTokenRequest._();
+
+  factory RefreshTokenRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RefreshTokenRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RefreshTokenRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
     ..aOM<$5.InternalID>(3, _omitFieldNames ? '' : 'deviceId', subBuilder: $5.InternalID.create)
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   RefreshTokenRequest clone() => RefreshTokenRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   RefreshTokenRequest copyWith(void Function(RefreshTokenRequest) updates) => super.copyWith((message) => updates(message as RefreshTokenRequest)) as RefreshTokenRequest;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static RefreshTokenRequest create() => RefreshTokenRequest._();
+  @$core.override
   RefreshTokenRequest createEmptyInstance() => create();
   static $pb.PbList<RefreshTokenRequest> createRepeated() => $pb.PbList<RefreshTokenRequest>();
   @$core.pragma('dart2js:noInline')
@@ -215,7 +197,7 @@ class RefreshTokenRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $5.InternalID get deviceId => $_getN(0);
   @$pb.TagNumber(3)
-  set deviceId($5.InternalID v) { $_setField(3, v); }
+  set deviceId($5.InternalID value) => $_setField(3, value);
   @$pb.TagNumber(3)
   $core.bool hasDeviceId() => $_has(0);
   @$pb.TagNumber(3)
@@ -229,18 +211,16 @@ class RefreshTokenResponse extends $pb.GeneratedMessage {
     $core.String? accessToken,
     $core.String? refreshToken,
   }) {
-    final $result = create();
-    if (accessToken != null) {
-      $result.accessToken = accessToken;
-    }
-    if (refreshToken != null) {
-      $result.refreshToken = refreshToken;
-    }
-    return $result;
+    final result = create();
+    if (accessToken != null) result.accessToken = accessToken;
+    if (refreshToken != null) result.refreshToken = refreshToken;
+    return result;
   }
-  RefreshTokenResponse._() : super();
-  factory RefreshTokenResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory RefreshTokenResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  RefreshTokenResponse._();
+
+  factory RefreshTokenResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory RefreshTokenResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RefreshTokenResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'accessToken')
@@ -248,21 +228,17 @@ class RefreshTokenResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   RefreshTokenResponse clone() => RefreshTokenResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   RefreshTokenResponse copyWith(void Function(RefreshTokenResponse) updates) => super.copyWith((message) => updates(message as RefreshTokenResponse)) as RefreshTokenResponse;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static RefreshTokenResponse create() => RefreshTokenResponse._();
+  @$core.override
   RefreshTokenResponse createEmptyInstance() => create();
   static $pb.PbList<RefreshTokenResponse> createRepeated() => $pb.PbList<RefreshTokenResponse>();
   @$core.pragma('dart2js:noInline')
@@ -272,7 +248,7 @@ class RefreshTokenResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get accessToken => $_getSZ(0);
   @$pb.TagNumber(1)
-  set accessToken($core.String v) { $_setString(0, v); }
+  set accessToken($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasAccessToken() => $_has(0);
   @$pb.TagNumber(1)
@@ -281,7 +257,7 @@ class RefreshTokenResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get refreshToken => $_getSZ(1);
   @$pb.TagNumber(2)
-  set refreshToken($core.String v) { $_setString(1, v); }
+  set refreshToken($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasRefreshToken() => $_has(1);
   @$pb.TagNumber(2)
@@ -292,36 +268,32 @@ class CreateUserRequest extends $pb.GeneratedMessage {
   factory CreateUserRequest({
     $8.User? user,
   }) {
-    final $result = create();
-    if (user != null) {
-      $result.user = user;
-    }
-    return $result;
+    final result = create();
+    if (user != null) result.user = user;
+    return result;
   }
-  CreateUserRequest._() : super();
-  factory CreateUserRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CreateUserRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  CreateUserRequest._();
+
+  factory CreateUserRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CreateUserRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateUserRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
     ..aOM<$8.User>(1, _omitFieldNames ? '' : 'user', subBuilder: $8.User.create)
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   CreateUserRequest clone() => CreateUserRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   CreateUserRequest copyWith(void Function(CreateUserRequest) updates) => super.copyWith((message) => updates(message as CreateUserRequest)) as CreateUserRequest;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static CreateUserRequest create() => CreateUserRequest._();
+  @$core.override
   CreateUserRequest createEmptyInstance() => create();
   static $pb.PbList<CreateUserRequest> createRepeated() => $pb.PbList<CreateUserRequest>();
   @$core.pragma('dart2js:noInline')
@@ -331,7 +303,7 @@ class CreateUserRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.User get user => $_getN(0);
   @$pb.TagNumber(1)
-  set user($8.User v) { $_setField(1, v); }
+  set user($8.User value) => $_setField(1, value);
   @$pb.TagNumber(1)
   $core.bool hasUser() => $_has(0);
   @$pb.TagNumber(1)
@@ -344,36 +316,32 @@ class CreateUserResponse extends $pb.GeneratedMessage {
   factory CreateUserResponse({
     $5.InternalID? id,
   }) {
-    final $result = create();
-    if (id != null) {
-      $result.id = id;
-    }
-    return $result;
+    final result = create();
+    if (id != null) result.id = id;
+    return result;
   }
-  CreateUserResponse._() : super();
-  factory CreateUserResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CreateUserResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  CreateUserResponse._();
+
+  factory CreateUserResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CreateUserResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateUserResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
     ..aOM<$5.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $5.InternalID.create)
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   CreateUserResponse clone() => CreateUserResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   CreateUserResponse copyWith(void Function(CreateUserResponse) updates) => super.copyWith((message) => updates(message as CreateUserResponse)) as CreateUserResponse;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static CreateUserResponse create() => CreateUserResponse._();
+  @$core.override
   CreateUserResponse createEmptyInstance() => create();
   static $pb.PbList<CreateUserResponse> createRepeated() => $pb.PbList<CreateUserResponse>();
   @$core.pragma('dart2js:noInline')
@@ -383,7 +351,7 @@ class CreateUserResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $5.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($5.InternalID v) { $_setField(1, v); }
+  set id($5.InternalID value) => $_setField(1, value);
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
@@ -398,21 +366,17 @@ class ListUsersRequest extends $pb.GeneratedMessage {
     $core.Iterable<$8.UserType>? typeFilter,
     $core.Iterable<$8.UserStatus>? statusFilter,
   }) {
-    final $result = create();
-    if (paging != null) {
-      $result.paging = paging;
-    }
-    if (typeFilter != null) {
-      $result.typeFilter.addAll(typeFilter);
-    }
-    if (statusFilter != null) {
-      $result.statusFilter.addAll(statusFilter);
-    }
-    return $result;
+    final result = create();
+    if (paging != null) result.paging = paging;
+    if (typeFilter != null) result.typeFilter.addAll(typeFilter);
+    if (statusFilter != null) result.statusFilter.addAll(statusFilter);
+    return result;
   }
-  ListUsersRequest._() : super();
-  factory ListUsersRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListUsersRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  ListUsersRequest._();
+
+  factory ListUsersRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListUsersRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListUsersRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
     ..aOM<$5.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $5.PagingRequest.create)
@@ -421,21 +385,17 @@ class ListUsersRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ListUsersRequest clone() => ListUsersRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ListUsersRequest copyWith(void Function(ListUsersRequest) updates) => super.copyWith((message) => updates(message as ListUsersRequest)) as ListUsersRequest;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static ListUsersRequest create() => ListUsersRequest._();
+  @$core.override
   ListUsersRequest createEmptyInstance() => create();
   static $pb.PbList<ListUsersRequest> createRepeated() => $pb.PbList<ListUsersRequest>();
   @$core.pragma('dart2js:noInline')
@@ -445,7 +405,7 @@ class ListUsersRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $5.PagingRequest get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($5.PagingRequest v) { $_setField(1, v); }
+  set paging($5.PagingRequest value) => $_setField(1, value);
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
@@ -465,18 +425,16 @@ class ListUsersResponse extends $pb.GeneratedMessage {
     $5.PagingResponse? paging,
     $core.Iterable<$8.User>? users,
   }) {
-    final $result = create();
-    if (paging != null) {
-      $result.paging = paging;
-    }
-    if (users != null) {
-      $result.users.addAll(users);
-    }
-    return $result;
+    final result = create();
+    if (paging != null) result.paging = paging;
+    if (users != null) result.users.addAll(users);
+    return result;
   }
-  ListUsersResponse._() : super();
-  factory ListUsersResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListUsersResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  ListUsersResponse._();
+
+  factory ListUsersResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListUsersResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListUsersResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
     ..aOM<$5.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $5.PagingResponse.create)
@@ -484,21 +442,17 @@ class ListUsersResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ListUsersResponse clone() => ListUsersResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ListUsersResponse copyWith(void Function(ListUsersResponse) updates) => super.copyWith((message) => updates(message as ListUsersResponse)) as ListUsersResponse;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static ListUsersResponse create() => ListUsersResponse._();
+  @$core.override
   ListUsersResponse createEmptyInstance() => create();
   static $pb.PbList<ListUsersResponse> createRepeated() => $pb.PbList<ListUsersResponse>();
   @$core.pragma('dart2js:noInline')
@@ -508,7 +462,7 @@ class ListUsersResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $5.PagingResponse get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($5.PagingResponse v) { $_setField(1, v); }
+  set paging($5.PagingResponse value) => $_setField(1, value);
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
@@ -524,36 +478,32 @@ class UpdateUserRequest extends $pb.GeneratedMessage {
   factory UpdateUserRequest({
     $8.User? user,
   }) {
-    final $result = create();
-    if (user != null) {
-      $result.user = user;
-    }
-    return $result;
+    final result = create();
+    if (user != null) result.user = user;
+    return result;
   }
-  UpdateUserRequest._() : super();
-  factory UpdateUserRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UpdateUserRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  UpdateUserRequest._();
+
+  factory UpdateUserRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpdateUserRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateUserRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
     ..aOM<$8.User>(1, _omitFieldNames ? '' : 'user', subBuilder: $8.User.create)
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UpdateUserRequest clone() => UpdateUserRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UpdateUserRequest copyWith(void Function(UpdateUserRequest) updates) => super.copyWith((message) => updates(message as UpdateUserRequest)) as UpdateUserRequest;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static UpdateUserRequest create() => UpdateUserRequest._();
+  @$core.override
   UpdateUserRequest createEmptyInstance() => create();
   static $pb.PbList<UpdateUserRequest> createRepeated() => $pb.PbList<UpdateUserRequest>();
   @$core.pragma('dart2js:noInline')
@@ -563,7 +513,7 @@ class UpdateUserRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $8.User get user => $_getN(0);
   @$pb.TagNumber(1)
-  set user($8.User v) { $_setField(1, v); }
+  set user($8.User value) => $_setField(1, value);
   @$pb.TagNumber(1)
   $core.bool hasUser() => $_has(0);
   @$pb.TagNumber(1)
@@ -574,29 +524,27 @@ class UpdateUserRequest extends $pb.GeneratedMessage {
 
 class UpdateUserResponse extends $pb.GeneratedMessage {
   factory UpdateUserResponse() => create();
-  UpdateUserResponse._() : super();
-  factory UpdateUserResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UpdateUserResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  UpdateUserResponse._();
+
+  factory UpdateUserResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpdateUserResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateUserResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UpdateUserResponse clone() => UpdateUserResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UpdateUserResponse copyWith(void Function(UpdateUserResponse) updates) => super.copyWith((message) => updates(message as UpdateUserResponse)) as UpdateUserResponse;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static UpdateUserResponse create() => UpdateUserResponse._();
+  @$core.override
   UpdateUserResponse createEmptyInstance() => create();
   static $pb.PbList<UpdateUserResponse> createRepeated() => $pb.PbList<UpdateUserResponse>();
   @$core.pragma('dart2js:noInline')
@@ -608,36 +556,32 @@ class ListPortersRequest extends $pb.GeneratedMessage {
   factory ListPortersRequest({
     $5.PagingRequest? paging,
   }) {
-    final $result = create();
-    if (paging != null) {
-      $result.paging = paging;
-    }
-    return $result;
+    final result = create();
+    if (paging != null) result.paging = paging;
+    return result;
   }
-  ListPortersRequest._() : super();
-  factory ListPortersRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListPortersRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  ListPortersRequest._();
+
+  factory ListPortersRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListPortersRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListPortersRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
     ..aOM<$5.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $5.PagingRequest.create)
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ListPortersRequest clone() => ListPortersRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ListPortersRequest copyWith(void Function(ListPortersRequest) updates) => super.copyWith((message) => updates(message as ListPortersRequest)) as ListPortersRequest;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static ListPortersRequest create() => ListPortersRequest._();
+  @$core.override
   ListPortersRequest createEmptyInstance() => create();
   static $pb.PbList<ListPortersRequest> createRepeated() => $pb.PbList<ListPortersRequest>();
   @$core.pragma('dart2js:noInline')
@@ -647,7 +591,7 @@ class ListPortersRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $5.PagingRequest get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($5.PagingRequest v) { $_setField(1, v); }
+  set paging($5.PagingRequest value) => $_setField(1, value);
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
@@ -661,18 +605,16 @@ class ListPortersResponse extends $pb.GeneratedMessage {
     $5.PagingResponse? paging,
     $core.Iterable<$8.Porter>? porters,
   }) {
-    final $result = create();
-    if (paging != null) {
-      $result.paging = paging;
-    }
-    if (porters != null) {
-      $result.porters.addAll(porters);
-    }
-    return $result;
+    final result = create();
+    if (paging != null) result.paging = paging;
+    if (porters != null) result.porters.addAll(porters);
+    return result;
   }
-  ListPortersResponse._() : super();
-  factory ListPortersResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListPortersResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  ListPortersResponse._();
+
+  factory ListPortersResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListPortersResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListPortersResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
     ..aOM<$5.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $5.PagingResponse.create)
@@ -680,21 +622,17 @@ class ListPortersResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ListPortersResponse clone() => ListPortersResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ListPortersResponse copyWith(void Function(ListPortersResponse) updates) => super.copyWith((message) => updates(message as ListPortersResponse)) as ListPortersResponse;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static ListPortersResponse create() => ListPortersResponse._();
+  @$core.override
   ListPortersResponse createEmptyInstance() => create();
   static $pb.PbList<ListPortersResponse> createRepeated() => $pb.PbList<ListPortersResponse>();
   @$core.pragma('dart2js:noInline')
@@ -704,7 +642,7 @@ class ListPortersResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $5.PagingResponse get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($5.PagingResponse v) { $_setField(1, v); }
+  set paging($5.PagingResponse value) => $_setField(1, value);
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
@@ -721,18 +659,16 @@ class UpdatePorterStatusRequest extends $pb.GeneratedMessage {
     $5.InternalID? porterId,
     $8.UserStatus? status,
   }) {
-    final $result = create();
-    if (porterId != null) {
-      $result.porterId = porterId;
-    }
-    if (status != null) {
-      $result.status = status;
-    }
-    return $result;
+    final result = create();
+    if (porterId != null) result.porterId = porterId;
+    if (status != null) result.status = status;
+    return result;
   }
-  UpdatePorterStatusRequest._() : super();
-  factory UpdatePorterStatusRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UpdatePorterStatusRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  UpdatePorterStatusRequest._();
+
+  factory UpdatePorterStatusRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpdatePorterStatusRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdatePorterStatusRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
     ..aOM<$5.InternalID>(1, _omitFieldNames ? '' : 'porterId', subBuilder: $5.InternalID.create)
@@ -740,21 +676,17 @@ class UpdatePorterStatusRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UpdatePorterStatusRequest clone() => UpdatePorterStatusRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UpdatePorterStatusRequest copyWith(void Function(UpdatePorterStatusRequest) updates) => super.copyWith((message) => updates(message as UpdatePorterStatusRequest)) as UpdatePorterStatusRequest;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static UpdatePorterStatusRequest create() => UpdatePorterStatusRequest._();
+  @$core.override
   UpdatePorterStatusRequest createEmptyInstance() => create();
   static $pb.PbList<UpdatePorterStatusRequest> createRepeated() => $pb.PbList<UpdatePorterStatusRequest>();
   @$core.pragma('dart2js:noInline')
@@ -764,7 +696,7 @@ class UpdatePorterStatusRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $5.InternalID get porterId => $_getN(0);
   @$pb.TagNumber(1)
-  set porterId($5.InternalID v) { $_setField(1, v); }
+  set porterId($5.InternalID value) => $_setField(1, value);
   @$pb.TagNumber(1)
   $core.bool hasPorterId() => $_has(0);
   @$pb.TagNumber(1)
@@ -775,7 +707,7 @@ class UpdatePorterStatusRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $8.UserStatus get status => $_getN(1);
   @$pb.TagNumber(2)
-  set status($8.UserStatus v) { $_setField(2, v); }
+  set status($8.UserStatus value) => $_setField(2, value);
   @$pb.TagNumber(2)
   $core.bool hasStatus() => $_has(1);
   @$pb.TagNumber(2)
@@ -784,29 +716,27 @@ class UpdatePorterStatusRequest extends $pb.GeneratedMessage {
 
 class UpdatePorterStatusResponse extends $pb.GeneratedMessage {
   factory UpdatePorterStatusResponse() => create();
-  UpdatePorterStatusResponse._() : super();
-  factory UpdatePorterStatusResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UpdatePorterStatusResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  UpdatePorterStatusResponse._();
+
+  factory UpdatePorterStatusResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpdatePorterStatusResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdatePorterStatusResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UpdatePorterStatusResponse clone() => UpdatePorterStatusResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UpdatePorterStatusResponse copyWith(void Function(UpdatePorterStatusResponse) updates) => super.copyWith((message) => updates(message as UpdatePorterStatusResponse)) as UpdatePorterStatusResponse;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static UpdatePorterStatusResponse create() => UpdatePorterStatusResponse._();
+  @$core.override
   UpdatePorterStatusResponse createEmptyInstance() => create();
   static $pb.PbList<UpdatePorterStatusResponse> createRepeated() => $pb.PbList<UpdatePorterStatusResponse>();
   @$core.pragma('dart2js:noInline')
@@ -818,36 +748,32 @@ class DeletePorterRequest extends $pb.GeneratedMessage {
   factory DeletePorterRequest({
     $5.InternalID? porterId,
   }) {
-    final $result = create();
-    if (porterId != null) {
-      $result.porterId = porterId;
-    }
-    return $result;
+    final result = create();
+    if (porterId != null) result.porterId = porterId;
+    return result;
   }
-  DeletePorterRequest._() : super();
-  factory DeletePorterRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory DeletePorterRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  DeletePorterRequest._();
+
+  factory DeletePorterRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory DeletePorterRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeletePorterRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
     ..aOM<$5.InternalID>(1, _omitFieldNames ? '' : 'porterId', subBuilder: $5.InternalID.create)
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   DeletePorterRequest clone() => DeletePorterRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   DeletePorterRequest copyWith(void Function(DeletePorterRequest) updates) => super.copyWith((message) => updates(message as DeletePorterRequest)) as DeletePorterRequest;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static DeletePorterRequest create() => DeletePorterRequest._();
+  @$core.override
   DeletePorterRequest createEmptyInstance() => create();
   static $pb.PbList<DeletePorterRequest> createRepeated() => $pb.PbList<DeletePorterRequest>();
   @$core.pragma('dart2js:noInline')
@@ -857,7 +783,7 @@ class DeletePorterRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $5.InternalID get porterId => $_getN(0);
   @$pb.TagNumber(1)
-  set porterId($5.InternalID v) { $_setField(1, v); }
+  set porterId($5.InternalID value) => $_setField(1, value);
   @$pb.TagNumber(1)
   $core.bool hasPorterId() => $_has(0);
   @$pb.TagNumber(1)
@@ -868,29 +794,27 @@ class DeletePorterRequest extends $pb.GeneratedMessage {
 
 class DeletePorterResponse extends $pb.GeneratedMessage {
   factory DeletePorterResponse() => create();
-  DeletePorterResponse._() : super();
-  factory DeletePorterResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory DeletePorterResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  DeletePorterResponse._();
+
+  factory DeletePorterResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory DeletePorterResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeletePorterResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   DeletePorterResponse clone() => DeletePorterResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   DeletePorterResponse copyWith(void Function(DeletePorterResponse) updates) => super.copyWith((message) => updates(message as DeletePorterResponse)) as DeletePorterResponse;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static DeletePorterResponse create() => DeletePorterResponse._();
+  @$core.override
   DeletePorterResponse createEmptyInstance() => create();
   static $pb.PbList<DeletePorterResponse> createRepeated() => $pb.PbList<DeletePorterResponse>();
   @$core.pragma('dart2js:noInline')
@@ -902,36 +826,32 @@ class CreateSentinelRequest extends $pb.GeneratedMessage {
   factory CreateSentinelRequest({
     Sentinel? sentinel,
   }) {
-    final $result = create();
-    if (sentinel != null) {
-      $result.sentinel = sentinel;
-    }
-    return $result;
+    final result = create();
+    if (sentinel != null) result.sentinel = sentinel;
+    return result;
   }
-  CreateSentinelRequest._() : super();
-  factory CreateSentinelRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CreateSentinelRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  CreateSentinelRequest._();
+
+  factory CreateSentinelRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CreateSentinelRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateSentinelRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
     ..aOM<Sentinel>(1, _omitFieldNames ? '' : 'sentinel', subBuilder: Sentinel.create)
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   CreateSentinelRequest clone() => CreateSentinelRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   CreateSentinelRequest copyWith(void Function(CreateSentinelRequest) updates) => super.copyWith((message) => updates(message as CreateSentinelRequest)) as CreateSentinelRequest;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static CreateSentinelRequest create() => CreateSentinelRequest._();
+  @$core.override
   CreateSentinelRequest createEmptyInstance() => create();
   static $pb.PbList<CreateSentinelRequest> createRepeated() => $pb.PbList<CreateSentinelRequest>();
   @$core.pragma('dart2js:noInline')
@@ -941,7 +861,7 @@ class CreateSentinelRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   Sentinel get sentinel => $_getN(0);
   @$pb.TagNumber(1)
-  set sentinel(Sentinel v) { $_setField(1, v); }
+  set sentinel(Sentinel value) => $_setField(1, value);
   @$pb.TagNumber(1)
   $core.bool hasSentinel() => $_has(0);
   @$pb.TagNumber(1)
@@ -954,36 +874,32 @@ class CreateSentinelResponse extends $pb.GeneratedMessage {
   factory CreateSentinelResponse({
     $5.InternalID? id,
   }) {
-    final $result = create();
-    if (id != null) {
-      $result.id = id;
-    }
-    return $result;
+    final result = create();
+    if (id != null) result.id = id;
+    return result;
   }
-  CreateSentinelResponse._() : super();
-  factory CreateSentinelResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory CreateSentinelResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  CreateSentinelResponse._();
+
+  factory CreateSentinelResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory CreateSentinelResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CreateSentinelResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
     ..aOM<$5.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $5.InternalID.create)
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   CreateSentinelResponse clone() => CreateSentinelResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   CreateSentinelResponse copyWith(void Function(CreateSentinelResponse) updates) => super.copyWith((message) => updates(message as CreateSentinelResponse)) as CreateSentinelResponse;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static CreateSentinelResponse create() => CreateSentinelResponse._();
+  @$core.override
   CreateSentinelResponse createEmptyInstance() => create();
   static $pb.PbList<CreateSentinelResponse> createRepeated() => $pb.PbList<CreateSentinelResponse>();
   @$core.pragma('dart2js:noInline')
@@ -993,7 +909,7 @@ class CreateSentinelResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $5.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($5.InternalID v) { $_setField(1, v); }
+  set id($5.InternalID value) => $_setField(1, value);
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
@@ -1006,36 +922,32 @@ class ListSentinelsRequest extends $pb.GeneratedMessage {
   factory ListSentinelsRequest({
     $5.PagingRequest? paging,
   }) {
-    final $result = create();
-    if (paging != null) {
-      $result.paging = paging;
-    }
-    return $result;
+    final result = create();
+    if (paging != null) result.paging = paging;
+    return result;
   }
-  ListSentinelsRequest._() : super();
-  factory ListSentinelsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListSentinelsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  ListSentinelsRequest._();
+
+  factory ListSentinelsRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListSentinelsRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListSentinelsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
     ..aOM<$5.PagingRequest>(1, _omitFieldNames ? '' : 'paging', subBuilder: $5.PagingRequest.create)
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ListSentinelsRequest clone() => ListSentinelsRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ListSentinelsRequest copyWith(void Function(ListSentinelsRequest) updates) => super.copyWith((message) => updates(message as ListSentinelsRequest)) as ListSentinelsRequest;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static ListSentinelsRequest create() => ListSentinelsRequest._();
+  @$core.override
   ListSentinelsRequest createEmptyInstance() => create();
   static $pb.PbList<ListSentinelsRequest> createRepeated() => $pb.PbList<ListSentinelsRequest>();
   @$core.pragma('dart2js:noInline')
@@ -1045,7 +957,7 @@ class ListSentinelsRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $5.PagingRequest get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($5.PagingRequest v) { $_setField(1, v); }
+  set paging($5.PagingRequest value) => $_setField(1, value);
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
@@ -1059,18 +971,16 @@ class ListSentinelsResponse extends $pb.GeneratedMessage {
     $5.PagingResponse? paging,
     $core.Iterable<Sentinel>? sentinels,
   }) {
-    final $result = create();
-    if (paging != null) {
-      $result.paging = paging;
-    }
-    if (sentinels != null) {
-      $result.sentinels.addAll(sentinels);
-    }
-    return $result;
+    final result = create();
+    if (paging != null) result.paging = paging;
+    if (sentinels != null) result.sentinels.addAll(sentinels);
+    return result;
   }
-  ListSentinelsResponse._() : super();
-  factory ListSentinelsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ListSentinelsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  ListSentinelsResponse._();
+
+  factory ListSentinelsResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ListSentinelsResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ListSentinelsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
     ..aOM<$5.PagingResponse>(1, _omitFieldNames ? '' : 'paging', subBuilder: $5.PagingResponse.create)
@@ -1078,21 +988,17 @@ class ListSentinelsResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ListSentinelsResponse clone() => ListSentinelsResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ListSentinelsResponse copyWith(void Function(ListSentinelsResponse) updates) => super.copyWith((message) => updates(message as ListSentinelsResponse)) as ListSentinelsResponse;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static ListSentinelsResponse create() => ListSentinelsResponse._();
+  @$core.override
   ListSentinelsResponse createEmptyInstance() => create();
   static $pb.PbList<ListSentinelsResponse> createRepeated() => $pb.PbList<ListSentinelsResponse>();
   @$core.pragma('dart2js:noInline')
@@ -1102,7 +1008,7 @@ class ListSentinelsResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $5.PagingResponse get paging => $_getN(0);
   @$pb.TagNumber(1)
-  set paging($5.PagingResponse v) { $_setField(1, v); }
+  set paging($5.PagingResponse value) => $_setField(1, value);
   @$pb.TagNumber(1)
   $core.bool hasPaging() => $_has(0);
   @$pb.TagNumber(1)
@@ -1119,18 +1025,16 @@ class GetSentinelTokenRequest extends $pb.GeneratedMessage {
     $5.InternalID? sentinelId,
     $9.Timestamp? expirationTime,
   }) {
-    final $result = create();
-    if (sentinelId != null) {
-      $result.sentinelId = sentinelId;
-    }
-    if (expirationTime != null) {
-      $result.expirationTime = expirationTime;
-    }
-    return $result;
+    final result = create();
+    if (sentinelId != null) result.sentinelId = sentinelId;
+    if (expirationTime != null) result.expirationTime = expirationTime;
+    return result;
   }
-  GetSentinelTokenRequest._() : super();
-  factory GetSentinelTokenRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetSentinelTokenRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  GetSentinelTokenRequest._();
+
+  factory GetSentinelTokenRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetSentinelTokenRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSentinelTokenRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
     ..aOM<$5.InternalID>(1, _omitFieldNames ? '' : 'sentinelId', subBuilder: $5.InternalID.create)
@@ -1138,21 +1042,17 @@ class GetSentinelTokenRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetSentinelTokenRequest clone() => GetSentinelTokenRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetSentinelTokenRequest copyWith(void Function(GetSentinelTokenRequest) updates) => super.copyWith((message) => updates(message as GetSentinelTokenRequest)) as GetSentinelTokenRequest;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static GetSentinelTokenRequest create() => GetSentinelTokenRequest._();
+  @$core.override
   GetSentinelTokenRequest createEmptyInstance() => create();
   static $pb.PbList<GetSentinelTokenRequest> createRepeated() => $pb.PbList<GetSentinelTokenRequest>();
   @$core.pragma('dart2js:noInline')
@@ -1162,7 +1062,7 @@ class GetSentinelTokenRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $5.InternalID get sentinelId => $_getN(0);
   @$pb.TagNumber(1)
-  set sentinelId($5.InternalID v) { $_setField(1, v); }
+  set sentinelId($5.InternalID value) => $_setField(1, value);
   @$pb.TagNumber(1)
   $core.bool hasSentinelId() => $_has(0);
   @$pb.TagNumber(1)
@@ -1173,7 +1073,7 @@ class GetSentinelTokenRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $9.Timestamp get expirationTime => $_getN(1);
   @$pb.TagNumber(2)
-  set expirationTime($9.Timestamp v) { $_setField(2, v); }
+  set expirationTime($9.Timestamp value) => $_setField(2, value);
   @$pb.TagNumber(2)
   $core.bool hasExpirationTime() => $_has(1);
   @$pb.TagNumber(2)
@@ -1186,36 +1086,32 @@ class GetSentinelTokenResponse extends $pb.GeneratedMessage {
   factory GetSentinelTokenResponse({
     $core.String? refreshToken,
   }) {
-    final $result = create();
-    if (refreshToken != null) {
-      $result.refreshToken = refreshToken;
-    }
-    return $result;
+    final result = create();
+    if (refreshToken != null) result.refreshToken = refreshToken;
+    return result;
   }
-  GetSentinelTokenResponse._() : super();
-  factory GetSentinelTokenResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetSentinelTokenResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  GetSentinelTokenResponse._();
+
+  factory GetSentinelTokenResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetSentinelTokenResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetSentinelTokenResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'refreshToken')
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetSentinelTokenResponse clone() => GetSentinelTokenResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetSentinelTokenResponse copyWith(void Function(GetSentinelTokenResponse) updates) => super.copyWith((message) => updates(message as GetSentinelTokenResponse)) as GetSentinelTokenResponse;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static GetSentinelTokenResponse create() => GetSentinelTokenResponse._();
+  @$core.override
   GetSentinelTokenResponse createEmptyInstance() => create();
   static $pb.PbList<GetSentinelTokenResponse> createRepeated() => $pb.PbList<GetSentinelTokenResponse>();
   @$core.pragma('dart2js:noInline')
@@ -1225,7 +1121,7 @@ class GetSentinelTokenResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get refreshToken => $_getSZ(0);
   @$pb.TagNumber(1)
-  set refreshToken($core.String v) { $_setString(0, v); }
+  set refreshToken($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasRefreshToken() => $_has(0);
   @$pb.TagNumber(1)
@@ -1236,36 +1132,32 @@ class UpdateSentinelRequest extends $pb.GeneratedMessage {
   factory UpdateSentinelRequest({
     Sentinel? sentinel,
   }) {
-    final $result = create();
-    if (sentinel != null) {
-      $result.sentinel = sentinel;
-    }
-    return $result;
+    final result = create();
+    if (sentinel != null) result.sentinel = sentinel;
+    return result;
   }
-  UpdateSentinelRequest._() : super();
-  factory UpdateSentinelRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UpdateSentinelRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  UpdateSentinelRequest._();
+
+  factory UpdateSentinelRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpdateSentinelRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateSentinelRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
     ..aOM<Sentinel>(1, _omitFieldNames ? '' : 'sentinel', subBuilder: Sentinel.create)
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UpdateSentinelRequest clone() => UpdateSentinelRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UpdateSentinelRequest copyWith(void Function(UpdateSentinelRequest) updates) => super.copyWith((message) => updates(message as UpdateSentinelRequest)) as UpdateSentinelRequest;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static UpdateSentinelRequest create() => UpdateSentinelRequest._();
+  @$core.override
   UpdateSentinelRequest createEmptyInstance() => create();
   static $pb.PbList<UpdateSentinelRequest> createRepeated() => $pb.PbList<UpdateSentinelRequest>();
   @$core.pragma('dart2js:noInline')
@@ -1275,7 +1167,7 @@ class UpdateSentinelRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   Sentinel get sentinel => $_getN(0);
   @$pb.TagNumber(1)
-  set sentinel(Sentinel v) { $_setField(1, v); }
+  set sentinel(Sentinel value) => $_setField(1, value);
   @$pb.TagNumber(1)
   $core.bool hasSentinel() => $_has(0);
   @$pb.TagNumber(1)
@@ -1286,29 +1178,27 @@ class UpdateSentinelRequest extends $pb.GeneratedMessage {
 
 class UpdateSentinelResponse extends $pb.GeneratedMessage {
   factory UpdateSentinelResponse() => create();
-  UpdateSentinelResponse._() : super();
-  factory UpdateSentinelResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory UpdateSentinelResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  UpdateSentinelResponse._();
+
+  factory UpdateSentinelResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory UpdateSentinelResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateSentinelResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UpdateSentinelResponse clone() => UpdateSentinelResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UpdateSentinelResponse copyWith(void Function(UpdateSentinelResponse) updates) => super.copyWith((message) => updates(message as UpdateSentinelResponse)) as UpdateSentinelResponse;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static UpdateSentinelResponse create() => UpdateSentinelResponse._();
+  @$core.override
   UpdateSentinelResponse createEmptyInstance() => create();
   static $pb.PbList<UpdateSentinelResponse> createRepeated() => $pb.PbList<UpdateSentinelResponse>();
   @$core.pragma('dart2js:noInline')
@@ -1320,36 +1210,32 @@ class DeleteSentinelRequest extends $pb.GeneratedMessage {
   factory DeleteSentinelRequest({
     $5.InternalID? sentinelId,
   }) {
-    final $result = create();
-    if (sentinelId != null) {
-      $result.sentinelId = sentinelId;
-    }
-    return $result;
+    final result = create();
+    if (sentinelId != null) result.sentinelId = sentinelId;
+    return result;
   }
-  DeleteSentinelRequest._() : super();
-  factory DeleteSentinelRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory DeleteSentinelRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  DeleteSentinelRequest._();
+
+  factory DeleteSentinelRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory DeleteSentinelRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteSentinelRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
     ..aOM<$5.InternalID>(1, _omitFieldNames ? '' : 'sentinelId', subBuilder: $5.InternalID.create)
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   DeleteSentinelRequest clone() => DeleteSentinelRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   DeleteSentinelRequest copyWith(void Function(DeleteSentinelRequest) updates) => super.copyWith((message) => updates(message as DeleteSentinelRequest)) as DeleteSentinelRequest;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static DeleteSentinelRequest create() => DeleteSentinelRequest._();
+  @$core.override
   DeleteSentinelRequest createEmptyInstance() => create();
   static $pb.PbList<DeleteSentinelRequest> createRepeated() => $pb.PbList<DeleteSentinelRequest>();
   @$core.pragma('dart2js:noInline')
@@ -1359,7 +1245,7 @@ class DeleteSentinelRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $5.InternalID get sentinelId => $_getN(0);
   @$pb.TagNumber(1)
-  set sentinelId($5.InternalID v) { $_setField(1, v); }
+  set sentinelId($5.InternalID value) => $_setField(1, value);
   @$pb.TagNumber(1)
   $core.bool hasSentinelId() => $_has(0);
   @$pb.TagNumber(1)
@@ -1370,29 +1256,27 @@ class DeleteSentinelRequest extends $pb.GeneratedMessage {
 
 class DeleteSentinelResponse extends $pb.GeneratedMessage {
   factory DeleteSentinelResponse() => create();
-  DeleteSentinelResponse._() : super();
-  factory DeleteSentinelResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory DeleteSentinelResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  DeleteSentinelResponse._();
+
+  factory DeleteSentinelResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory DeleteSentinelResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DeleteSentinelResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   DeleteSentinelResponse clone() => DeleteSentinelResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   DeleteSentinelResponse copyWith(void Function(DeleteSentinelResponse) updates) => super.copyWith((message) => updates(message as DeleteSentinelResponse)) as DeleteSentinelResponse;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static DeleteSentinelResponse create() => DeleteSentinelResponse._();
+  @$core.override
   DeleteSentinelResponse createEmptyInstance() => create();
   static $pb.PbList<DeleteSentinelResponse> createRepeated() => $pb.PbList<DeleteSentinelResponse>();
   @$core.pragma('dart2js:noInline')
@@ -1409,30 +1293,20 @@ class Sentinel extends $pb.GeneratedMessage {
     $core.Iterable<$core.String>? allowedIps,
     SentinelStatus? status,
   }) {
-    final $result = create();
-    if (id != null) {
-      $result.id = id;
-    }
-    if (name != null) {
-      $result.name = name;
-    }
-    if (description != null) {
-      $result.description = description;
-    }
-    if (createUserId != null) {
-      $result.createUserId = createUserId;
-    }
-    if (allowedIps != null) {
-      $result.allowedIps.addAll(allowedIps);
-    }
-    if (status != null) {
-      $result.status = status;
-    }
-    return $result;
+    final result = create();
+    if (id != null) result.id = id;
+    if (name != null) result.name = name;
+    if (description != null) result.description = description;
+    if (createUserId != null) result.createUserId = createUserId;
+    if (allowedIps != null) result.allowedIps.addAll(allowedIps);
+    if (status != null) result.status = status;
+    return result;
   }
-  Sentinel._() : super();
-  factory Sentinel.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Sentinel.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  Sentinel._();
+
+  factory Sentinel.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory Sentinel.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Sentinel', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
     ..aOM<$5.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $5.InternalID.create)
@@ -1444,21 +1318,17 @@ class Sentinel extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   Sentinel clone() => Sentinel()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   Sentinel copyWith(void Function(Sentinel) updates) => super.copyWith((message) => updates(message as Sentinel)) as Sentinel;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static Sentinel create() => Sentinel._();
+  @$core.override
   Sentinel createEmptyInstance() => create();
   static $pb.PbList<Sentinel> createRepeated() => $pb.PbList<Sentinel>();
   @$core.pragma('dart2js:noInline')
@@ -1468,7 +1338,7 @@ class Sentinel extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $5.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($5.InternalID v) { $_setField(1, v); }
+  set id($5.InternalID value) => $_setField(1, value);
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
@@ -1479,7 +1349,7 @@ class Sentinel extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
   @$pb.TagNumber(2)
-  set name($core.String v) { $_setString(1, v); }
+  set name($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
@@ -1488,7 +1358,7 @@ class Sentinel extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.String get description => $_getSZ(2);
   @$pb.TagNumber(3)
-  set description($core.String v) { $_setString(2, v); }
+  set description($core.String value) => $_setString(2, value);
   @$pb.TagNumber(3)
   $core.bool hasDescription() => $_has(2);
   @$pb.TagNumber(3)
@@ -1497,7 +1367,7 @@ class Sentinel extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $5.InternalID get createUserId => $_getN(3);
   @$pb.TagNumber(4)
-  set createUserId($5.InternalID v) { $_setField(4, v); }
+  set createUserId($5.InternalID value) => $_setField(4, value);
   @$pb.TagNumber(4)
   $core.bool hasCreateUserId() => $_has(3);
   @$pb.TagNumber(4)
@@ -1511,7 +1381,7 @@ class Sentinel extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   SentinelStatus get status => $_getN(5);
   @$pb.TagNumber(6)
-  set status(SentinelStatus v) { $_setField(6, v); }
+  set status(SentinelStatus value) => $_setField(6, value);
   @$pb.TagNumber(6)
   $core.bool hasStatus() => $_has(5);
   @$pb.TagNumber(6)
@@ -1519,5 +1389,5 @@ class Sentinel extends $pb.GeneratedMessage {
 }
 
 
-const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
-const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
+const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

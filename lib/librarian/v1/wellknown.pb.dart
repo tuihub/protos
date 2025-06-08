@@ -5,9 +5,10 @@
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
-// ignore_for_file: constant_identifier_names, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_final_fields
-// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: curly_braces_in_flow_control_structures
+// ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
+// ignore_for_file: non_constant_identifier_names
 
 import 'dart:core' as $core;
 
@@ -27,18 +28,16 @@ class PagingRequest extends $pb.GeneratedMessage {
     $fixnum.Int64? pageNum,
     $fixnum.Int64? pageSize,
   }) {
-    final $result = create();
-    if (pageNum != null) {
-      $result.pageNum = pageNum;
-    }
-    if (pageSize != null) {
-      $result.pageSize = pageSize;
-    }
-    return $result;
+    final result = create();
+    if (pageNum != null) result.pageNum = pageNum;
+    if (pageSize != null) result.pageSize = pageSize;
+    return result;
   }
-  PagingRequest._() : super();
-  factory PagingRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory PagingRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  PagingRequest._();
+
+  factory PagingRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory PagingRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PagingRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
     ..aInt64(1, _omitFieldNames ? '' : 'pageNum')
@@ -46,21 +45,17 @@ class PagingRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PagingRequest clone() => PagingRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PagingRequest copyWith(void Function(PagingRequest) updates) => super.copyWith((message) => updates(message as PagingRequest)) as PagingRequest;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static PagingRequest create() => PagingRequest._();
+  @$core.override
   PagingRequest createEmptyInstance() => create();
   static $pb.PbList<PagingRequest> createRepeated() => $pb.PbList<PagingRequest>();
   @$core.pragma('dart2js:noInline')
@@ -71,7 +66,7 @@ class PagingRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $fixnum.Int64 get pageNum => $_getI64(0);
   @$pb.TagNumber(1)
-  set pageNum($fixnum.Int64 v) { $_setInt64(0, v); }
+  set pageNum($fixnum.Int64 value) => $_setInt64(0, value);
   @$pb.TagNumber(1)
   $core.bool hasPageNum() => $_has(0);
   @$pb.TagNumber(1)
@@ -80,7 +75,7 @@ class PagingRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $fixnum.Int64 get pageSize => $_getI64(1);
   @$pb.TagNumber(2)
-  set pageSize($fixnum.Int64 v) { $_setInt64(1, v); }
+  set pageSize($fixnum.Int64 value) => $_setInt64(1, value);
   @$pb.TagNumber(2)
   $core.bool hasPageSize() => $_has(1);
   @$pb.TagNumber(2)
@@ -91,36 +86,32 @@ class PagingResponse extends $pb.GeneratedMessage {
   factory PagingResponse({
     $fixnum.Int64? totalSize,
   }) {
-    final $result = create();
-    if (totalSize != null) {
-      $result.totalSize = totalSize;
-    }
-    return $result;
+    final result = create();
+    if (totalSize != null) result.totalSize = totalSize;
+    return result;
   }
-  PagingResponse._() : super();
-  factory PagingResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory PagingResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  PagingResponse._();
+
+  factory PagingResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory PagingResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PagingResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
     ..aInt64(1, _omitFieldNames ? '' : 'totalSize')
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PagingResponse clone() => PagingResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PagingResponse copyWith(void Function(PagingResponse) updates) => super.copyWith((message) => updates(message as PagingResponse)) as PagingResponse;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static PagingResponse create() => PagingResponse._();
+  @$core.override
   PagingResponse createEmptyInstance() => create();
   static $pb.PbList<PagingResponse> createRepeated() => $pb.PbList<PagingResponse>();
   @$core.pragma('dart2js:noInline')
@@ -130,7 +121,7 @@ class PagingResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $fixnum.Int64 get totalSize => $_getI64(0);
   @$pb.TagNumber(1)
-  set totalSize($fixnum.Int64 v) { $_setInt64(0, v); }
+  set totalSize($fixnum.Int64 value) => $_setInt64(0, value);
   @$pb.TagNumber(1)
   $core.bool hasTotalSize() => $_has(0);
   @$pb.TagNumber(1)
@@ -149,18 +140,16 @@ class TimeRange extends $pb.GeneratedMessage {
     $1.Timestamp? startTime,
     $2.Duration? duration,
   }) {
-    final $result = create();
-    if (startTime != null) {
-      $result.startTime = startTime;
-    }
-    if (duration != null) {
-      $result.duration = duration;
-    }
-    return $result;
+    final result = create();
+    if (startTime != null) result.startTime = startTime;
+    if (duration != null) result.duration = duration;
+    return result;
   }
-  TimeRange._() : super();
-  factory TimeRange.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory TimeRange.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  TimeRange._();
+
+  factory TimeRange.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory TimeRange.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TimeRange', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
     ..aOM<$1.Timestamp>(1, _omitFieldNames ? '' : 'startTime', subBuilder: $1.Timestamp.create)
@@ -168,21 +157,17 @@ class TimeRange extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   TimeRange clone() => TimeRange()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   TimeRange copyWith(void Function(TimeRange) updates) => super.copyWith((message) => updates(message as TimeRange)) as TimeRange;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static TimeRange create() => TimeRange._();
+  @$core.override
   TimeRange createEmptyInstance() => create();
   static $pb.PbList<TimeRange> createRepeated() => $pb.PbList<TimeRange>();
   @$core.pragma('dart2js:noInline')
@@ -192,7 +177,7 @@ class TimeRange extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $1.Timestamp get startTime => $_getN(0);
   @$pb.TagNumber(1)
-  set startTime($1.Timestamp v) { $_setField(1, v); }
+  set startTime($1.Timestamp value) => $_setField(1, value);
   @$pb.TagNumber(1)
   $core.bool hasStartTime() => $_has(0);
   @$pb.TagNumber(1)
@@ -203,7 +188,7 @@ class TimeRange extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $2.Duration get duration => $_getN(1);
   @$pb.TagNumber(2)
-  set duration($2.Duration v) { $_setField(2, v); }
+  set duration($2.Duration value) => $_setField(2, value);
   @$pb.TagNumber(2)
   $core.bool hasDuration() => $_has(1);
   @$pb.TagNumber(2)
@@ -217,36 +202,32 @@ class InternalID extends $pb.GeneratedMessage {
   factory InternalID({
     $fixnum.Int64? id,
   }) {
-    final $result = create();
-    if (id != null) {
-      $result.id = id;
-    }
-    return $result;
+    final result = create();
+    if (id != null) result.id = id;
+    return result;
   }
-  InternalID._() : super();
-  factory InternalID.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory InternalID.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  InternalID._();
+
+  factory InternalID.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory InternalID.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'InternalID', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
     ..aInt64(1, _omitFieldNames ? '' : 'id')
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   InternalID clone() => InternalID()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   InternalID copyWith(void Function(InternalID) updates) => super.copyWith((message) => updates(message as InternalID)) as InternalID;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static InternalID create() => InternalID._();
+  @$core.override
   InternalID createEmptyInstance() => create();
   static $pb.PbList<InternalID> createRepeated() => $pb.PbList<InternalID>();
   @$core.pragma('dart2js:noInline')
@@ -256,7 +237,7 @@ class InternalID extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $fixnum.Int64 get id => $_getI64(0);
   @$pb.TagNumber(1)
-  set id($fixnum.Int64 v) { $_setInt64(0, v); }
+  set id($fixnum.Int64 value) => $_setInt64(0, value);
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
@@ -268,18 +249,16 @@ class I18NString extends $pb.GeneratedMessage {
     $core.String? key,
     $core.String? value,
   }) {
-    final $result = create();
-    if (key != null) {
-      $result.key = key;
-    }
-    if (value != null) {
-      $result.value = value;
-    }
-    return $result;
+    final result = create();
+    if (key != null) result.key = key;
+    if (value != null) result.value = value;
+    return result;
   }
-  I18NString._() : super();
-  factory I18NString.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory I18NString.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  I18NString._();
+
+  factory I18NString.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory I18NString.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'I18NString', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'key')
@@ -287,21 +266,17 @@ class I18NString extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   I18NString clone() => I18NString()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   I18NString copyWith(void Function(I18NString) updates) => super.copyWith((message) => updates(message as I18NString)) as I18NString;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static I18NString create() => I18NString._();
+  @$core.override
   I18NString createEmptyInstance() => create();
   static $pb.PbList<I18NString> createRepeated() => $pb.PbList<I18NString>();
   @$core.pragma('dart2js:noInline')
@@ -312,7 +287,7 @@ class I18NString extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get key => $_getSZ(0);
   @$pb.TagNumber(1)
-  set key($core.String v) { $_setString(0, v); }
+  set key($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasKey() => $_has(0);
   @$pb.TagNumber(1)
@@ -322,7 +297,7 @@ class I18NString extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get value => $_getSZ(1);
   @$pb.TagNumber(2)
-  set value($core.String v) { $_setString(1, v); }
+  set value($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasValue() => $_has(1);
   @$pb.TagNumber(2)
@@ -338,30 +313,20 @@ class FileMetadata extends $pb.GeneratedMessage {
     $core.List<$core.int>? sha256,
     $1.Timestamp? createTime,
   }) {
-    final $result = create();
-    if (id != null) {
-      $result.id = id;
-    }
-    if (name != null) {
-      $result.name = name;
-    }
-    if (sizeBytes != null) {
-      $result.sizeBytes = sizeBytes;
-    }
-    if (type != null) {
-      $result.type = type;
-    }
-    if (sha256 != null) {
-      $result.sha256 = sha256;
-    }
-    if (createTime != null) {
-      $result.createTime = createTime;
-    }
-    return $result;
+    final result = create();
+    if (id != null) result.id = id;
+    if (name != null) result.name = name;
+    if (sizeBytes != null) result.sizeBytes = sizeBytes;
+    if (type != null) result.type = type;
+    if (sha256 != null) result.sha256 = sha256;
+    if (createTime != null) result.createTime = createTime;
+    return result;
   }
-  FileMetadata._() : super();
-  factory FileMetadata.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory FileMetadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  FileMetadata._();
+
+  factory FileMetadata.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory FileMetadata.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FileMetadata', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
     ..aOM<InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: InternalID.create)
@@ -373,21 +338,17 @@ class FileMetadata extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   FileMetadata clone() => FileMetadata()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   FileMetadata copyWith(void Function(FileMetadata) updates) => super.copyWith((message) => updates(message as FileMetadata)) as FileMetadata;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static FileMetadata create() => FileMetadata._();
+  @$core.override
   FileMetadata createEmptyInstance() => create();
   static $pb.PbList<FileMetadata> createRepeated() => $pb.PbList<FileMetadata>();
   @$core.pragma('dart2js:noInline')
@@ -397,7 +358,7 @@ class FileMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id(InternalID v) { $_setField(1, v); }
+  set id(InternalID value) => $_setField(1, value);
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
@@ -408,7 +369,7 @@ class FileMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
   @$pb.TagNumber(2)
-  set name($core.String v) { $_setString(1, v); }
+  set name($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
@@ -417,7 +378,7 @@ class FileMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $fixnum.Int64 get sizeBytes => $_getI64(2);
   @$pb.TagNumber(3)
-  set sizeBytes($fixnum.Int64 v) { $_setInt64(2, v); }
+  set sizeBytes($fixnum.Int64 value) => $_setInt64(2, value);
   @$pb.TagNumber(3)
   $core.bool hasSizeBytes() => $_has(2);
   @$pb.TagNumber(3)
@@ -426,7 +387,7 @@ class FileMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   FileType get type => $_getN(3);
   @$pb.TagNumber(4)
-  set type(FileType v) { $_setField(4, v); }
+  set type(FileType value) => $_setField(4, value);
   @$pb.TagNumber(4)
   $core.bool hasType() => $_has(3);
   @$pb.TagNumber(4)
@@ -435,7 +396,7 @@ class FileMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.List<$core.int> get sha256 => $_getN(4);
   @$pb.TagNumber(5)
-  set sha256($core.List<$core.int> v) { $_setBytes(4, v); }
+  set sha256($core.List<$core.int> value) => $_setBytes(4, value);
   @$pb.TagNumber(5)
   $core.bool hasSha256() => $_has(4);
   @$pb.TagNumber(5)
@@ -444,7 +405,7 @@ class FileMetadata extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $1.Timestamp get createTime => $_getN(5);
   @$pb.TagNumber(6)
-  set createTime($1.Timestamp v) { $_setField(6, v); }
+  set createTime($1.Timestamp value) => $_setField(6, value);
   @$pb.TagNumber(6)
   $core.bool hasCreateTime() => $_has(5);
   @$pb.TagNumber(6)
@@ -464,30 +425,20 @@ class FeatureFlag extends $pb.GeneratedMessage {
     $core.bool? requireContext,
     $core.Iterable<$core.MapEntry<$core.String, $core.String>>? extra,
   }) {
-    final $result = create();
-    if (id != null) {
-      $result.id = id;
-    }
-    if (name != null) {
-      $result.name = name;
-    }
-    if (description != null) {
-      $result.description = description;
-    }
-    if (configJsonSchema != null) {
-      $result.configJsonSchema = configJsonSchema;
-    }
-    if (requireContext != null) {
-      $result.requireContext = requireContext;
-    }
-    if (extra != null) {
-      $result.extra.addEntries(extra);
-    }
-    return $result;
+    final result = create();
+    if (id != null) result.id = id;
+    if (name != null) result.name = name;
+    if (description != null) result.description = description;
+    if (configJsonSchema != null) result.configJsonSchema = configJsonSchema;
+    if (requireContext != null) result.requireContext = requireContext;
+    if (extra != null) result.extra.addEntries(extra);
+    return result;
   }
-  FeatureFlag._() : super();
-  factory FeatureFlag.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory FeatureFlag.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  FeatureFlag._();
+
+  factory FeatureFlag.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory FeatureFlag.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FeatureFlag', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
@@ -499,21 +450,17 @@ class FeatureFlag extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   FeatureFlag clone() => FeatureFlag()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   FeatureFlag copyWith(void Function(FeatureFlag) updates) => super.copyWith((message) => updates(message as FeatureFlag)) as FeatureFlag;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static FeatureFlag create() => FeatureFlag._();
+  @$core.override
   FeatureFlag createEmptyInstance() => create();
   static $pb.PbList<FeatureFlag> createRepeated() => $pb.PbList<FeatureFlag>();
   @$core.pragma('dart2js:noInline')
@@ -525,7 +472,7 @@ class FeatureFlag extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get id => $_getSZ(0);
   @$pb.TagNumber(1)
-  set id($core.String v) { $_setString(0, v); }
+  set id($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
@@ -535,7 +482,7 @@ class FeatureFlag extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
   @$pb.TagNumber(2)
-  set name($core.String v) { $_setString(1, v); }
+  set name($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasName() => $_has(1);
   @$pb.TagNumber(2)
@@ -545,7 +492,7 @@ class FeatureFlag extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.String get description => $_getSZ(2);
   @$pb.TagNumber(3)
-  set description($core.String v) { $_setString(2, v); }
+  set description($core.String value) => $_setString(2, value);
   @$pb.TagNumber(3)
   $core.bool hasDescription() => $_has(2);
   @$pb.TagNumber(3)
@@ -555,7 +502,7 @@ class FeatureFlag extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.String get configJsonSchema => $_getSZ(3);
   @$pb.TagNumber(4)
-  set configJsonSchema($core.String v) { $_setString(3, v); }
+  set configJsonSchema($core.String value) => $_setString(3, value);
   @$pb.TagNumber(4)
   $core.bool hasConfigJsonSchema() => $_has(3);
   @$pb.TagNumber(4)
@@ -565,7 +512,7 @@ class FeatureFlag extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.bool get requireContext => $_getBF(4);
   @$pb.TagNumber(5)
-  set requireContext($core.bool v) { $_setBool(4, v); }
+  set requireContext($core.bool value) => $_setBool(4, value);
   @$pb.TagNumber(5)
   $core.bool hasRequireContext() => $_has(4);
   @$pb.TagNumber(5)
@@ -584,24 +531,18 @@ class FeatureRequest extends $pb.GeneratedMessage {
     $core.String? configJson,
     InternalID? contextId,
   }) {
-    final $result = create();
-    if (id != null) {
-      $result.id = id;
-    }
-    if (region != null) {
-      $result.region = region;
-    }
-    if (configJson != null) {
-      $result.configJson = configJson;
-    }
-    if (contextId != null) {
-      $result.contextId = contextId;
-    }
-    return $result;
+    final result = create();
+    if (id != null) result.id = id;
+    if (region != null) result.region = region;
+    if (configJson != null) result.configJson = configJson;
+    if (contextId != null) result.contextId = contextId;
+    return result;
   }
-  FeatureRequest._() : super();
-  factory FeatureRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory FeatureRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  FeatureRequest._();
+
+  factory FeatureRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory FeatureRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FeatureRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
@@ -611,21 +552,17 @@ class FeatureRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   FeatureRequest clone() => FeatureRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   FeatureRequest copyWith(void Function(FeatureRequest) updates) => super.copyWith((message) => updates(message as FeatureRequest)) as FeatureRequest;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static FeatureRequest create() => FeatureRequest._();
+  @$core.override
   FeatureRequest createEmptyInstance() => create();
   static $pb.PbList<FeatureRequest> createRepeated() => $pb.PbList<FeatureRequest>();
   @$core.pragma('dart2js:noInline')
@@ -636,7 +573,7 @@ class FeatureRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get id => $_getSZ(0);
   @$pb.TagNumber(1)
-  set id($core.String v) { $_setString(0, v); }
+  set id($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
@@ -646,7 +583,7 @@ class FeatureRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get region => $_getSZ(1);
   @$pb.TagNumber(2)
-  set region($core.String v) { $_setString(1, v); }
+  set region($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasRegion() => $_has(1);
   @$pb.TagNumber(2)
@@ -656,7 +593,7 @@ class FeatureRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.String get configJson => $_getSZ(2);
   @$pb.TagNumber(3)
-  set configJson($core.String v) { $_setString(2, v); }
+  set configJson($core.String value) => $_setString(2, value);
   @$pb.TagNumber(3)
   $core.bool hasConfigJson() => $_has(2);
   @$pb.TagNumber(3)
@@ -666,7 +603,7 @@ class FeatureRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   InternalID get contextId => $_getN(3);
   @$pb.TagNumber(4)
-  set contextId(InternalID v) { $_setField(4, v); }
+  set contextId(InternalID value) => $_setField(4, value);
   @$pb.TagNumber(4)
   $core.bool hasContextId() => $_has(3);
   @$pb.TagNumber(4)
@@ -685,33 +622,21 @@ class FeatureSummary extends $pb.GeneratedMessage {
     $core.Iterable<FeatureFlag>? feedSetters,
     $core.Iterable<FeatureFlag>? feedGetters,
   }) {
-    final $result = create();
-    if (accountPlatforms != null) {
-      $result.accountPlatforms.addAll(accountPlatforms);
-    }
-    if (appInfoSources != null) {
-      $result.appInfoSources.addAll(appInfoSources);
-    }
-    if (feedSources != null) {
-      $result.feedSources.addAll(feedSources);
-    }
-    if (notifyDestinations != null) {
-      $result.notifyDestinations.addAll(notifyDestinations);
-    }
-    if (feedItemActions != null) {
-      $result.feedItemActions.addAll(feedItemActions);
-    }
-    if (feedSetters != null) {
-      $result.feedSetters.addAll(feedSetters);
-    }
-    if (feedGetters != null) {
-      $result.feedGetters.addAll(feedGetters);
-    }
-    return $result;
+    final result = create();
+    if (accountPlatforms != null) result.accountPlatforms.addAll(accountPlatforms);
+    if (appInfoSources != null) result.appInfoSources.addAll(appInfoSources);
+    if (feedSources != null) result.feedSources.addAll(feedSources);
+    if (notifyDestinations != null) result.notifyDestinations.addAll(notifyDestinations);
+    if (feedItemActions != null) result.feedItemActions.addAll(feedItemActions);
+    if (feedSetters != null) result.feedSetters.addAll(feedSetters);
+    if (feedGetters != null) result.feedGetters.addAll(feedGetters);
+    return result;
   }
-  FeatureSummary._() : super();
-  factory FeatureSummary.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory FeatureSummary.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  FeatureSummary._();
+
+  factory FeatureSummary.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory FeatureSummary.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FeatureSummary', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
     ..pc<FeatureFlag>(1, _omitFieldNames ? '' : 'accountPlatforms', $pb.PbFieldType.PM, subBuilder: FeatureFlag.create)
@@ -724,21 +649,17 @@ class FeatureSummary extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   FeatureSummary clone() => FeatureSummary()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   FeatureSummary copyWith(void Function(FeatureSummary) updates) => super.copyWith((message) => updates(message as FeatureSummary)) as FeatureSummary;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static FeatureSummary create() => FeatureSummary._();
+  @$core.override
   FeatureSummary createEmptyInstance() => create();
   static $pb.PbList<FeatureSummary> createRepeated() => $pb.PbList<FeatureSummary>();
   @$core.pragma('dart2js:noInline')
@@ -780,5 +701,5 @@ class Wellknown {
 }
 
 
-const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
-const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
+const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

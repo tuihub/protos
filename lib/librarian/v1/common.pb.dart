@@ -5,9 +5,10 @@
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
-// ignore_for_file: constant_identifier_names, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_final_fields
-// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: curly_braces_in_flow_control_structures
+// ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
+// ignore_for_file: non_constant_identifier_names
 
 import 'dart:core' as $core;
 
@@ -30,36 +31,22 @@ class Feed extends $pb.GeneratedMessage {
     FeedImage? image,
     $core.Iterable<FeedPerson>? authors,
   }) {
-    final $result = create();
-    if (id != null) {
-      $result.id = id;
-    }
-    if (title != null) {
-      $result.title = title;
-    }
-    if (link != null) {
-      $result.link = link;
-    }
-    if (description != null) {
-      $result.description = description;
-    }
-    if (items != null) {
-      $result.items.addAll(items);
-    }
-    if (language != null) {
-      $result.language = language;
-    }
-    if (image != null) {
-      $result.image = image;
-    }
-    if (authors != null) {
-      $result.authors.addAll(authors);
-    }
-    return $result;
+    final result = create();
+    if (id != null) result.id = id;
+    if (title != null) result.title = title;
+    if (link != null) result.link = link;
+    if (description != null) result.description = description;
+    if (items != null) result.items.addAll(items);
+    if (language != null) result.language = language;
+    if (image != null) result.image = image;
+    if (authors != null) result.authors.addAll(authors);
+    return result;
   }
-  Feed._() : super();
-  factory Feed.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Feed.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  Feed._();
+
+  factory Feed.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory Feed.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Feed', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
     ..aOM<$0.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $0.InternalID.create)
@@ -73,21 +60,17 @@ class Feed extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   Feed clone() => Feed()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   Feed copyWith(void Function(Feed) updates) => super.copyWith((message) => updates(message as Feed)) as Feed;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static Feed create() => Feed._();
+  @$core.override
   Feed createEmptyInstance() => create();
   static $pb.PbList<Feed> createRepeated() => $pb.PbList<Feed>();
   @$core.pragma('dart2js:noInline')
@@ -97,7 +80,7 @@ class Feed extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $0.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($0.InternalID v) { $_setField(1, v); }
+  set id($0.InternalID value) => $_setField(1, value);
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
@@ -109,7 +92,7 @@ class Feed extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get title => $_getSZ(1);
   @$pb.TagNumber(2)
-  set title($core.String v) { $_setString(1, v); }
+  set title($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasTitle() => $_has(1);
   @$pb.TagNumber(2)
@@ -119,7 +102,7 @@ class Feed extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.String get link => $_getSZ(2);
   @$pb.TagNumber(3)
-  set link($core.String v) { $_setString(2, v); }
+  set link($core.String value) => $_setString(2, value);
   @$pb.TagNumber(3)
   $core.bool hasLink() => $_has(2);
   @$pb.TagNumber(3)
@@ -129,7 +112,7 @@ class Feed extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.String get description => $_getSZ(3);
   @$pb.TagNumber(4)
-  set description($core.String v) { $_setString(3, v); }
+  set description($core.String value) => $_setString(3, value);
   @$pb.TagNumber(4)
   $core.bool hasDescription() => $_has(3);
   @$pb.TagNumber(4)
@@ -143,7 +126,7 @@ class Feed extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.String get language => $_getSZ(5);
   @$pb.TagNumber(6)
-  set language($core.String v) { $_setString(5, v); }
+  set language($core.String value) => $_setString(5, value);
   @$pb.TagNumber(6)
   $core.bool hasLanguage() => $_has(5);
   @$pb.TagNumber(6)
@@ -153,7 +136,7 @@ class Feed extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   FeedImage get image => $_getN(6);
   @$pb.TagNumber(7)
-  set image(FeedImage v) { $_setField(7, v); }
+  set image(FeedImage value) => $_setField(7, value);
   @$pb.TagNumber(7)
   $core.bool hasImage() => $_has(6);
   @$pb.TagNumber(7)
@@ -184,57 +167,29 @@ class FeedItem extends $pb.GeneratedMessage {
     $core.String? publishPlatform,
     $fixnum.Int64? readCount,
   }) {
-    final $result = create();
-    if (id != null) {
-      $result.id = id;
-    }
-    if (title != null) {
-      $result.title = title;
-    }
-    if (authors != null) {
-      $result.authors.addAll(authors);
-    }
-    if (description != null) {
-      $result.description = description;
-    }
-    if (content != null) {
-      $result.content = content;
-    }
-    if (guid != null) {
-      $result.guid = guid;
-    }
-    if (link != null) {
-      $result.link = link;
-    }
-    if (image != null) {
-      $result.image = image;
-    }
-    if (published != null) {
-      $result.published = published;
-    }
-    if (publishedParsed != null) {
-      $result.publishedParsed = publishedParsed;
-    }
-    if (updated != null) {
-      $result.updated = updated;
-    }
-    if (updatedParsed != null) {
-      $result.updatedParsed = updatedParsed;
-    }
-    if (enclosures != null) {
-      $result.enclosures.addAll(enclosures);
-    }
-    if (publishPlatform != null) {
-      $result.publishPlatform = publishPlatform;
-    }
-    if (readCount != null) {
-      $result.readCount = readCount;
-    }
-    return $result;
+    final result = create();
+    if (id != null) result.id = id;
+    if (title != null) result.title = title;
+    if (authors != null) result.authors.addAll(authors);
+    if (description != null) result.description = description;
+    if (content != null) result.content = content;
+    if (guid != null) result.guid = guid;
+    if (link != null) result.link = link;
+    if (image != null) result.image = image;
+    if (published != null) result.published = published;
+    if (publishedParsed != null) result.publishedParsed = publishedParsed;
+    if (updated != null) result.updated = updated;
+    if (updatedParsed != null) result.updatedParsed = updatedParsed;
+    if (enclosures != null) result.enclosures.addAll(enclosures);
+    if (publishPlatform != null) result.publishPlatform = publishPlatform;
+    if (readCount != null) result.readCount = readCount;
+    return result;
   }
-  FeedItem._() : super();
-  factory FeedItem.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory FeedItem.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  FeedItem._();
+
+  factory FeedItem.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory FeedItem.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FeedItem', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
     ..aOM<$0.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $0.InternalID.create)
@@ -255,21 +210,17 @@ class FeedItem extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   FeedItem clone() => FeedItem()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   FeedItem copyWith(void Function(FeedItem) updates) => super.copyWith((message) => updates(message as FeedItem)) as FeedItem;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static FeedItem create() => FeedItem._();
+  @$core.override
   FeedItem createEmptyInstance() => create();
   static $pb.PbList<FeedItem> createRepeated() => $pb.PbList<FeedItem>();
   @$core.pragma('dart2js:noInline')
@@ -279,7 +230,7 @@ class FeedItem extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $0.InternalID get id => $_getN(0);
   @$pb.TagNumber(1)
-  set id($0.InternalID v) { $_setField(1, v); }
+  set id($0.InternalID value) => $_setField(1, value);
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
@@ -291,7 +242,7 @@ class FeedItem extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get title => $_getSZ(1);
   @$pb.TagNumber(2)
-  set title($core.String v) { $_setString(1, v); }
+  set title($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasTitle() => $_has(1);
   @$pb.TagNumber(2)
@@ -305,7 +256,7 @@ class FeedItem extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.String get description => $_getSZ(3);
   @$pb.TagNumber(4)
-  set description($core.String v) { $_setString(3, v); }
+  set description($core.String value) => $_setString(3, value);
   @$pb.TagNumber(4)
   $core.bool hasDescription() => $_has(3);
   @$pb.TagNumber(4)
@@ -315,7 +266,7 @@ class FeedItem extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.String get content => $_getSZ(4);
   @$pb.TagNumber(5)
-  set content($core.String v) { $_setString(4, v); }
+  set content($core.String value) => $_setString(4, value);
   @$pb.TagNumber(5)
   $core.bool hasContent() => $_has(4);
   @$pb.TagNumber(5)
@@ -325,7 +276,7 @@ class FeedItem extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.String get guid => $_getSZ(5);
   @$pb.TagNumber(6)
-  set guid($core.String v) { $_setString(5, v); }
+  set guid($core.String value) => $_setString(5, value);
   @$pb.TagNumber(6)
   $core.bool hasGuid() => $_has(5);
   @$pb.TagNumber(6)
@@ -335,7 +286,7 @@ class FeedItem extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   $core.String get link => $_getSZ(6);
   @$pb.TagNumber(7)
-  set link($core.String v) { $_setString(6, v); }
+  set link($core.String value) => $_setString(6, value);
   @$pb.TagNumber(7)
   $core.bool hasLink() => $_has(6);
   @$pb.TagNumber(7)
@@ -345,7 +296,7 @@ class FeedItem extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   FeedImage get image => $_getN(7);
   @$pb.TagNumber(8)
-  set image(FeedImage v) { $_setField(8, v); }
+  set image(FeedImage value) => $_setField(8, value);
   @$pb.TagNumber(8)
   $core.bool hasImage() => $_has(7);
   @$pb.TagNumber(8)
@@ -357,7 +308,7 @@ class FeedItem extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   $core.String get published => $_getSZ(8);
   @$pb.TagNumber(9)
-  set published($core.String v) { $_setString(8, v); }
+  set published($core.String value) => $_setString(8, value);
   @$pb.TagNumber(9)
   $core.bool hasPublished() => $_has(8);
   @$pb.TagNumber(9)
@@ -368,7 +319,7 @@ class FeedItem extends $pb.GeneratedMessage {
   @$pb.TagNumber(10)
   $1.Timestamp get publishedParsed => $_getN(9);
   @$pb.TagNumber(10)
-  set publishedParsed($1.Timestamp v) { $_setField(10, v); }
+  set publishedParsed($1.Timestamp value) => $_setField(10, value);
   @$pb.TagNumber(10)
   $core.bool hasPublishedParsed() => $_has(9);
   @$pb.TagNumber(10)
@@ -380,7 +331,7 @@ class FeedItem extends $pb.GeneratedMessage {
   @$pb.TagNumber(11)
   $core.String get updated => $_getSZ(10);
   @$pb.TagNumber(11)
-  set updated($core.String v) { $_setString(10, v); }
+  set updated($core.String value) => $_setString(10, value);
   @$pb.TagNumber(11)
   $core.bool hasUpdated() => $_has(10);
   @$pb.TagNumber(11)
@@ -389,7 +340,7 @@ class FeedItem extends $pb.GeneratedMessage {
   @$pb.TagNumber(12)
   $1.Timestamp get updatedParsed => $_getN(11);
   @$pb.TagNumber(12)
-  set updatedParsed($1.Timestamp v) { $_setField(12, v); }
+  set updatedParsed($1.Timestamp value) => $_setField(12, value);
   @$pb.TagNumber(12)
   $core.bool hasUpdatedParsed() => $_has(11);
   @$pb.TagNumber(12)
@@ -405,7 +356,7 @@ class FeedItem extends $pb.GeneratedMessage {
   @$pb.TagNumber(14)
   $core.String get publishPlatform => $_getSZ(13);
   @$pb.TagNumber(14)
-  set publishPlatform($core.String v) { $_setString(13, v); }
+  set publishPlatform($core.String value) => $_setString(13, value);
   @$pb.TagNumber(14)
   $core.bool hasPublishPlatform() => $_has(13);
   @$pb.TagNumber(14)
@@ -415,7 +366,7 @@ class FeedItem extends $pb.GeneratedMessage {
   @$pb.TagNumber(15)
   $fixnum.Int64 get readCount => $_getI64(14);
   @$pb.TagNumber(15)
-  set readCount($fixnum.Int64 v) { $_setInt64(14, v); }
+  set readCount($fixnum.Int64 value) => $_setInt64(14, value);
   @$pb.TagNumber(15)
   $core.bool hasReadCount() => $_has(14);
   @$pb.TagNumber(15)
@@ -429,18 +380,16 @@ class FeedPerson extends $pb.GeneratedMessage {
     $core.String? name,
     $core.String? email,
   }) {
-    final $result = create();
-    if (name != null) {
-      $result.name = name;
-    }
-    if (email != null) {
-      $result.email = email;
-    }
-    return $result;
+    final result = create();
+    if (name != null) result.name = name;
+    if (email != null) result.email = email;
+    return result;
   }
-  FeedPerson._() : super();
-  factory FeedPerson.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory FeedPerson.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  FeedPerson._();
+
+  factory FeedPerson.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory FeedPerson.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FeedPerson', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
@@ -448,21 +397,17 @@ class FeedPerson extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   FeedPerson clone() => FeedPerson()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   FeedPerson copyWith(void Function(FeedPerson) updates) => super.copyWith((message) => updates(message as FeedPerson)) as FeedPerson;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static FeedPerson create() => FeedPerson._();
+  @$core.override
   FeedPerson createEmptyInstance() => create();
   static $pb.PbList<FeedPerson> createRepeated() => $pb.PbList<FeedPerson>();
   @$core.pragma('dart2js:noInline')
@@ -473,7 +418,7 @@ class FeedPerson extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
-  set name($core.String v) { $_setString(0, v); }
+  set name($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasName() => $_has(0);
   @$pb.TagNumber(1)
@@ -483,7 +428,7 @@ class FeedPerson extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get email => $_getSZ(1);
   @$pb.TagNumber(2)
-  set email($core.String v) { $_setString(1, v); }
+  set email($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasEmail() => $_has(1);
   @$pb.TagNumber(2)
@@ -497,18 +442,16 @@ class FeedImage extends $pb.GeneratedMessage {
     $core.String? url,
     $core.String? title,
   }) {
-    final $result = create();
-    if (url != null) {
-      $result.url = url;
-    }
-    if (title != null) {
-      $result.title = title;
-    }
-    return $result;
+    final result = create();
+    if (url != null) result.url = url;
+    if (title != null) result.title = title;
+    return result;
   }
-  FeedImage._() : super();
-  factory FeedImage.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory FeedImage.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  FeedImage._();
+
+  factory FeedImage.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory FeedImage.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FeedImage', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'url')
@@ -516,21 +459,17 @@ class FeedImage extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   FeedImage clone() => FeedImage()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   FeedImage copyWith(void Function(FeedImage) updates) => super.copyWith((message) => updates(message as FeedImage)) as FeedImage;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static FeedImage create() => FeedImage._();
+  @$core.override
   FeedImage createEmptyInstance() => create();
   static $pb.PbList<FeedImage> createRepeated() => $pb.PbList<FeedImage>();
   @$core.pragma('dart2js:noInline')
@@ -541,7 +480,7 @@ class FeedImage extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get url => $_getSZ(0);
   @$pb.TagNumber(1)
-  set url($core.String v) { $_setString(0, v); }
+  set url($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasUrl() => $_has(0);
   @$pb.TagNumber(1)
@@ -551,7 +490,7 @@ class FeedImage extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get title => $_getSZ(1);
   @$pb.TagNumber(2)
-  set title($core.String v) { $_setString(1, v); }
+  set title($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasTitle() => $_has(1);
   @$pb.TagNumber(2)
@@ -565,21 +504,17 @@ class FeedEnclosure extends $pb.GeneratedMessage {
     $core.String? length,
     $core.String? type,
   }) {
-    final $result = create();
-    if (url != null) {
-      $result.url = url;
-    }
-    if (length != null) {
-      $result.length = length;
-    }
-    if (type != null) {
-      $result.type = type;
-    }
-    return $result;
+    final result = create();
+    if (url != null) result.url = url;
+    if (length != null) result.length = length;
+    if (type != null) result.type = type;
+    return result;
   }
-  FeedEnclosure._() : super();
-  factory FeedEnclosure.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory FeedEnclosure.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  FeedEnclosure._();
+
+  factory FeedEnclosure.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory FeedEnclosure.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FeedEnclosure', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'url')
@@ -588,21 +523,17 @@ class FeedEnclosure extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   FeedEnclosure clone() => FeedEnclosure()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   FeedEnclosure copyWith(void Function(FeedEnclosure) updates) => super.copyWith((message) => updates(message as FeedEnclosure)) as FeedEnclosure;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static FeedEnclosure create() => FeedEnclosure._();
+  @$core.override
   FeedEnclosure createEmptyInstance() => create();
   static $pb.PbList<FeedEnclosure> createRepeated() => $pb.PbList<FeedEnclosure>();
   @$core.pragma('dart2js:noInline')
@@ -613,7 +544,7 @@ class FeedEnclosure extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get url => $_getSZ(0);
   @$pb.TagNumber(1)
-  set url($core.String v) { $_setString(0, v); }
+  set url($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasUrl() => $_has(0);
   @$pb.TagNumber(1)
@@ -623,7 +554,7 @@ class FeedEnclosure extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get length => $_getSZ(1);
   @$pb.TagNumber(2)
-  set length($core.String v) { $_setString(1, v); }
+  set length($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasLength() => $_has(1);
   @$pb.TagNumber(2)
@@ -633,7 +564,7 @@ class FeedEnclosure extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.String get type => $_getSZ(2);
   @$pb.TagNumber(3)
-  set type($core.String v) { $_setString(2, v); }
+  set type($core.String value) => $_setString(2, value);
   @$pb.TagNumber(3)
   $core.bool hasType() => $_has(2);
   @$pb.TagNumber(3)
@@ -649,30 +580,20 @@ class PorterBinarySummary extends $pb.GeneratedMessage {
     $core.String? version,
     $core.String? description,
   }) {
-    final $result = create();
-    if (sourceCodeAddress != null) {
-      $result.sourceCodeAddress = sourceCodeAddress;
-    }
-    if (buildVersion != null) {
-      $result.buildVersion = buildVersion;
-    }
-    if (buildDate != null) {
-      $result.buildDate = buildDate;
-    }
-    if (name != null) {
-      $result.name = name;
-    }
-    if (version != null) {
-      $result.version = version;
-    }
-    if (description != null) {
-      $result.description = description;
-    }
-    return $result;
+    final result = create();
+    if (sourceCodeAddress != null) result.sourceCodeAddress = sourceCodeAddress;
+    if (buildVersion != null) result.buildVersion = buildVersion;
+    if (buildDate != null) result.buildDate = buildDate;
+    if (name != null) result.name = name;
+    if (version != null) result.version = version;
+    if (description != null) result.description = description;
+    return result;
   }
-  PorterBinarySummary._() : super();
-  factory PorterBinarySummary.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory PorterBinarySummary.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  PorterBinarySummary._();
+
+  factory PorterBinarySummary.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory PorterBinarySummary.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PorterBinarySummary', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'sourceCodeAddress')
@@ -684,21 +605,17 @@ class PorterBinarySummary extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PorterBinarySummary clone() => PorterBinarySummary()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PorterBinarySummary copyWith(void Function(PorterBinarySummary) updates) => super.copyWith((message) => updates(message as PorterBinarySummary)) as PorterBinarySummary;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static PorterBinarySummary create() => PorterBinarySummary._();
+  @$core.override
   PorterBinarySummary createEmptyInstance() => create();
   static $pb.PbList<PorterBinarySummary> createRepeated() => $pb.PbList<PorterBinarySummary>();
   @$core.pragma('dart2js:noInline')
@@ -710,7 +627,7 @@ class PorterBinarySummary extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get sourceCodeAddress => $_getSZ(0);
   @$pb.TagNumber(1)
-  set sourceCodeAddress($core.String v) { $_setString(0, v); }
+  set sourceCodeAddress($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasSourceCodeAddress() => $_has(0);
   @$pb.TagNumber(1)
@@ -722,7 +639,7 @@ class PorterBinarySummary extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get buildVersion => $_getSZ(1);
   @$pb.TagNumber(2)
-  set buildVersion($core.String v) { $_setString(1, v); }
+  set buildVersion($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasBuildVersion() => $_has(1);
   @$pb.TagNumber(2)
@@ -733,7 +650,7 @@ class PorterBinarySummary extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.String get buildDate => $_getSZ(2);
   @$pb.TagNumber(3)
-  set buildDate($core.String v) { $_setString(2, v); }
+  set buildDate($core.String value) => $_setString(2, value);
   @$pb.TagNumber(3)
   $core.bool hasBuildDate() => $_has(2);
   @$pb.TagNumber(3)
@@ -743,7 +660,7 @@ class PorterBinarySummary extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.String get name => $_getSZ(3);
   @$pb.TagNumber(4)
-  set name($core.String v) { $_setString(3, v); }
+  set name($core.String value) => $_setString(3, value);
   @$pb.TagNumber(4)
   $core.bool hasName() => $_has(3);
   @$pb.TagNumber(4)
@@ -753,7 +670,7 @@ class PorterBinarySummary extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.String get version => $_getSZ(4);
   @$pb.TagNumber(5)
-  set version($core.String v) { $_setString(4, v); }
+  set version($core.String value) => $_setString(4, value);
   @$pb.TagNumber(5)
   $core.bool hasVersion() => $_has(4);
   @$pb.TagNumber(5)
@@ -763,7 +680,7 @@ class PorterBinarySummary extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.String get description => $_getSZ(5);
   @$pb.TagNumber(6)
-  set description($core.String v) { $_setString(5, v); }
+  set description($core.String value) => $_setString(5, value);
   @$pb.TagNumber(6)
   $core.bool hasDescription() => $_has(5);
   @$pb.TagNumber(6)
@@ -771,5 +688,5 @@ class PorterBinarySummary extends $pb.GeneratedMessage {
 }
 
 
-const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
-const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
+const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

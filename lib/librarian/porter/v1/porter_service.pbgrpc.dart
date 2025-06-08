@@ -5,9 +5,10 @@
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
-// ignore_for_file: constant_identifier_names, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_final_fields
-// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: curly_braces_in_flow_control_structures
+// ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
+// ignore_for_file: non_constant_identifier_names
 
 import 'dart:async' as $async;
 import 'dart:core' as $core;
@@ -23,6 +24,14 @@ export 'porter_service.pb.dart';
 
 @$pb.GrpcServiceName('librarian.porter.v1.LibrarianPorterService')
 class LibrarianPorterServiceClient extends $grpc.Client {
+  /// The hostname for this service.
+  static const $core.String defaultHost = '';
+
+  /// OAuth scopes needed for the client.
+  static const $core.List<$core.String> oauthScopes = [
+    '',
+  ];
+
   static final _$getPorterInformation = $grpc.ClientMethod<$0.GetPorterInformationRequest, $0.GetPorterInformationResponse>(
       '/librarian.porter.v1.LibrarianPorterService/GetPorterInformation',
       ($0.GetPorterInformationRequest value) => value.writeToBuffer(),
@@ -90,6 +99,7 @@ class LibrarianPorterServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getPorterInformation, request, options: options);
   }
 
+  /// Used to enable porter and heartbeat.
   $grpc.ResponseFuture<$0.EnablePorterResponse> enablePorter($0.EnablePorterRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$enablePorter, request, options: options);
   }
@@ -102,46 +112,59 @@ class LibrarianPorterServiceClient extends $grpc.Client {
     return $createUnaryCall(_$disableContext, request, options: options);
   }
 
+  /// `Tiphereth`
   $grpc.ResponseFuture<$1.GetAccountResponse> getAccount($1.GetAccountRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getAccount, request, options: options);
   }
 
+  /// `Gebura`
   $grpc.ResponseFuture<$2.SearchAppInfoResponse> searchAppInfo($2.SearchAppInfoRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$searchAppInfo, request, options: options);
   }
 
+  /// `Gebura` Get app info from source.
   $grpc.ResponseFuture<$2.GetAppInfoResponse> getAppInfo($2.GetAppInfoRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getAppInfo, request, options: options);
   }
 
+  /// `Gebura` Parse app info from json.
   $grpc.ResponseFuture<$2.ParseRawAppInfoResponse> parseRawAppInfo($2.ParseRawAppInfoRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$parseRawAppInfo, request, options: options);
   }
 
+  /// `Yesod`
   $grpc.ResponseFuture<$0.PullFeedResponse> pullFeed($0.PullFeedRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$pullFeed, request, options: options);
   }
 
+  /// `Yesod`
   $grpc.ResponseFuture<$0.ExecFeedItemActionResponse> execFeedItemAction($0.ExecFeedItemActionRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$execFeedItemAction, request, options: options);
   }
 
+  /// `Yesod` Enabled Setter can add items to feed through `LibrarianSephirahService.PUpsertFeed`
+  /// without extra permissions.
   $grpc.ResponseFuture<$0.EnableFeedSetterResponse> enableFeedSetter($0.EnableFeedSetterRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$enableFeedSetter, request, options: options);
   }
 
+  /// `Yesod`
   $grpc.ResponseFuture<$0.DisableFeedSetterResponse> disableFeedSetter($0.DisableFeedSetterRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$disableFeedSetter, request, options: options);
   }
 
+  /// `Yesod` Enabled Getter can get items from feed through `LibrarianSephirahService.PGetFeed`
+  /// without extra permissions.
   $grpc.ResponseFuture<$0.EnableFeedGetterResponse> enableFeedGetter($0.EnableFeedGetterRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$enableFeedGetter, request, options: options);
   }
 
+  /// `Yesod`
   $grpc.ResponseFuture<$0.DisableFeedGetterResponse> disableFeedGetter($0.DisableFeedGetterRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$disableFeedGetter, request, options: options);
   }
 
+  /// `Netzach`
   $grpc.ResponseFuture<$0.PushFeedItemsResponse> pushFeedItems($0.PushFeedItemsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$pushFeedItems, request, options: options);
   }

@@ -5,9 +5,10 @@
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
-// ignore_for_file: constant_identifier_names, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_final_fields
-// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: curly_braces_in_flow_control_structures
+// ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
+// ignore_for_file: non_constant_identifier_names
 
 import 'dart:async' as $async;
 import 'dart:core' as $core;
@@ -22,8 +23,18 @@ import 'tiphereth.pb.dart' as $1;
 
 export 'angela_service.pb.dart';
 
+///
+///  Angela provides the admin control interface
 @$pb.GrpcServiceName('librarian.sephirah.v1.angela.LibrarianAngelaService')
 class LibrarianAngelaServiceClient extends $grpc.Client {
+  /// The hostname for this service.
+  static const $core.String defaultHost = '';
+
+  /// OAuth scopes needed for the client.
+  static const $core.List<$core.String> oauthScopes = [
+    '',
+  ];
+
   static final _$getServerInformation = $grpc.ClientMethod<$0.GetServerInformationRequest, $0.GetServerInformationResponse>(
       '/librarian.sephirah.v1.angela.LibrarianAngelaService/GetServerInformation',
       ($0.GetServerInformationRequest value) => value.writeToBuffer(),
@@ -163,6 +174,7 @@ class LibrarianAngelaServiceClient extends $grpc.Client {
 
   LibrarianAngelaServiceClient(super.channel, {super.options, super.interceptors});
 
+  /// Allow anonymous call, use accessToken to get complete information
   $grpc.ResponseFuture<$0.GetServerInformationResponse> getServerInformation($0.GetServerInformationRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getServerInformation, request, options: options);
   }
@@ -175,126 +187,164 @@ class LibrarianAngelaServiceClient extends $grpc.Client {
     return $createUnaryCall(_$updateServerConfig, request, options: options);
   }
 
+  /// `Tiphereth` Login via password and get two token
   $grpc.ResponseFuture<$1.GetTokenResponse> getToken($1.GetTokenRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getToken, request, options: options);
   }
 
+  /// `Tiphereth` Use valid refresh_token and get two new token, a refresh_token can only be used once
   $grpc.ResponseFuture<$1.RefreshTokenResponse> refreshToken($1.RefreshTokenRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$refreshToken, request, options: options);
   }
 
+  /// `Tiphereth`
   $grpc.ResponseFuture<$1.CreateUserResponse> createUser($1.CreateUserRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createUser, request, options: options);
   }
 
+  /// `Tiphereth`
   $grpc.ResponseFuture<$1.UpdateUserResponse> updateUser($1.UpdateUserRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateUser, request, options: options);
   }
 
+  /// `Tiphereth`
   $grpc.ResponseFuture<$1.ListUsersResponse> listUsers($1.ListUsersRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listUsers, request, options: options);
   }
 
+  /// `Tiphereth`
   $grpc.ResponseFuture<$1.ListPortersResponse> listPorters($1.ListPortersRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listPorters, request, options: options);
   }
 
+  /// `Tiphereth`
   $grpc.ResponseFuture<$1.UpdatePorterStatusResponse> updatePorterStatus($1.UpdatePorterStatusRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updatePorterStatus, request, options: options);
   }
 
+  /// `Tiphereth` Delete porter, only when porter is disabled
   $grpc.ResponseFuture<$1.DeletePorterResponse> deletePorter($1.DeletePorterRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$deletePorter, request, options: options);
   }
 
+  /// `Tiphereth`
   $grpc.ResponseFuture<$1.CreateSentinelResponse> createSentinel($1.CreateSentinelRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createSentinel, request, options: options);
   }
 
+  /// `Tiphereth`
   $grpc.ResponseFuture<$1.GetSentinelTokenResponse> getSentinelToken($1.GetSentinelTokenRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getSentinelToken, request, options: options);
   }
 
+  /// `Tiphereth`
   $grpc.ResponseFuture<$1.UpdateSentinelResponse> updateSentinel($1.UpdateSentinelRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateSentinel, request, options: options);
   }
 
+  /// `Tiphereth`
   $grpc.ResponseFuture<$1.ListSentinelsResponse> listSentinels($1.ListSentinelsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listSentinels, request, options: options);
   }
 
+  /// `Tiphereth`
   $grpc.ResponseFuture<$1.DeleteSentinelResponse> deleteSentinel($1.DeleteSentinelRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$deleteSentinel, request, options: options);
   }
 
+  /// `Binah`
   $grpc.ResponseFuture<$2.ListStorageCapacityUsageResponse> listStorageCapacityUsage($2.ListStorageCapacityUsageRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listStorageCapacityUsage, request, options: options);
   }
 
+  /// `Binah` `upload_token`
+  /// Maximum 256M
+  /// Server must send response at least once a minute to keepalive.
+  /// Client should ignore in_process response and wait for success or error response.
   $grpc.ResponseStream<$2.SimpleUploadFileResponse> simpleUploadFile($async.Stream<$2.SimpleUploadFileRequest> request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$simpleUploadFile, request, options: options);
   }
 
+  /// `Binah` `download_token`
+  /// Server will not check the receiving state
   $grpc.ResponseStream<$2.SimpleDownloadFileResponse> simpleDownloadFile($2.SimpleDownloadFileRequest request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$simpleDownloadFile, $async.Stream.fromIterable([request]), options: options);
   }
 
+  /// `Binah` `upload_token`
+  /// Upload file through http url
   $grpc.ResponseFuture<$2.PresignedUploadFileResponse> presignedUploadFile($2.PresignedUploadFileRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$presignedUploadFile, request, options: options);
   }
 
+  /// `Binah` `upload_token`
+  /// Report file transfer status. Mainly used to trigger server post-process immediately
   $grpc.ResponseFuture<$2.PresignedUploadFileStatusResponse> presignedUploadFileStatus($2.PresignedUploadFileStatusRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$presignedUploadFileStatus, request, options: options);
   }
 
+  /// `Binah` `download_token`
+  /// Download file through http url
   $grpc.ResponseFuture<$2.PresignedDownloadFileResponse> presignedDownloadFile($2.PresignedDownloadFileRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$presignedDownloadFile, request, options: options);
   }
 
+  /// `Gebura`
   $grpc.ResponseFuture<$3.SearchAppInfosResponse> searchAppInfos($3.SearchAppInfosRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$searchAppInfos, request, options: options);
   }
 
+  /// `Gebura`
   $grpc.ResponseFuture<$3.CreateStoreAppResponse> createStoreApp($3.CreateStoreAppRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createStoreApp, request, options: options);
   }
 
+  /// `Gebura`
   $grpc.ResponseFuture<$3.UpdateStoreAppResponse> updateStoreApp($3.UpdateStoreAppRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateStoreApp, request, options: options);
   }
 
+  /// `Gebura`
   $grpc.ResponseFuture<$3.ListStoreAppsResponse> listStoreApps($3.ListStoreAppsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listStoreApps, request, options: options);
   }
 
+  /// `Gebura`
   $grpc.ResponseFuture<$3.ListStoreAppBinariesResponse> listStoreAppBinaries($3.ListStoreAppBinariesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listStoreAppBinaries, request, options: options);
   }
 
+  /// `Gebura`
   $grpc.ResponseFuture<$3.UpdateStoreAppBinaryResponse> updateStoreAppBinary($3.UpdateStoreAppBinaryRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateStoreAppBinary, request, options: options);
   }
 
+  /// `Gebura`
   $grpc.ResponseFuture<$3.ListStoreAppBinaryFilesResponse> listStoreAppBinaryFiles($3.ListStoreAppBinaryFilesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listStoreAppBinaryFiles, request, options: options);
   }
 
+  /// `Gebura`
   $grpc.ResponseFuture<$3.CreateStoreAppSaveFileResponse> createStoreAppSaveFile($3.CreateStoreAppSaveFileRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createStoreAppSaveFile, request, options: options);
   }
 
+  /// `Gebura`
   $grpc.ResponseFuture<$3.UpdateStoreAppSaveFileResponse> updateStoreAppSaveFile($3.UpdateStoreAppSaveFileRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateStoreAppSaveFile, request, options: options);
   }
 
+  /// `Gebura`
   $grpc.ResponseFuture<$3.UploadStoreAppSaveFileResponse> uploadStoreAppSaveFile($3.UploadStoreAppSaveFileRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$uploadStoreAppSaveFile, request, options: options);
   }
 
+  /// `Gebura`
   $grpc.ResponseFuture<$3.ListStoreAppSaveFilesResponse> listStoreAppSaveFiles($3.ListStoreAppSaveFilesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listStoreAppSaveFiles, request, options: options);
   }
 
+  /// `Gebura`
   $grpc.ResponseFuture<$3.DeleteStoreAppSaveFileResponse> deleteStoreAppSaveFile($3.DeleteStoreAppSaveFileRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$deleteStoreAppSaveFile, request, options: options);
   }

@@ -5,9 +5,10 @@
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
-// ignore_for_file: constant_identifier_names, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_final_fields
-// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: curly_braces_in_flow_control_structures
+// ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
+// ignore_for_file: non_constant_identifier_names
 
 import 'dart:async' as $async;
 import 'dart:core' as $core;
@@ -21,6 +22,14 @@ export 'sephirah_porter_service.pb.dart';
 
 @$pb.GrpcServiceName('librarian.sephirah.v1.porter.LibrarianSephirahPorterService')
 class LibrarianSephirahPorterServiceClient extends $grpc.Client {
+  /// The hostname for this service.
+  static const $core.String defaultHost = '';
+
+  /// OAuth scopes needed for the client.
+  static const $core.List<$core.String> oauthScopes = [
+    '',
+  ];
+
   static final _$acquireUserToken = $grpc.ClientMethod<$0.AcquireUserTokenRequest, $0.AcquireUserTokenResponse>(
       '/librarian.sephirah.v1.porter.LibrarianSephirahPorterService/AcquireUserToken',
       ($0.AcquireUserTokenRequest value) => value.writeToBuffer(),
@@ -40,18 +49,23 @@ class LibrarianSephirahPorterServiceClient extends $grpc.Client {
 
   LibrarianSephirahPorterServiceClient(super.channel, {super.options, super.interceptors});
 
+  /// `Tiphereth` `Porter` Obtain access_token of a specific user after user authorization.
+  /// This token can be used to perform actions on behalf of the user.
   $grpc.ResponseFuture<$0.AcquireUserTokenResponse> acquireUserToken($0.AcquireUserTokenRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$acquireUserToken, request, options: options);
   }
 
+  /// `Netzach` `Porter`
   $grpc.ResponseFuture<$0.GetNotifyTargetItemsResponse> getNotifyTargetItems($0.GetNotifyTargetItemsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getNotifyTargetItems, request, options: options);
   }
 
+  /// `Yesod` `Porter`
   $grpc.ResponseFuture<$0.UpsertFeedResponse> upsertFeed($0.UpsertFeedRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$upsertFeed, request, options: options);
   }
 
+  /// `Yesod` `Porter`
   $grpc.ResponseFuture<$0.GetFeedResponse> getFeed($0.GetFeedRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getFeed, request, options: options);
   }

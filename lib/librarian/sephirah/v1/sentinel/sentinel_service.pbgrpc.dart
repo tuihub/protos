@@ -5,9 +5,10 @@
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
-// ignore_for_file: constant_identifier_names, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_final_fields
-// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: curly_braces_in_flow_control_structures
+// ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
+// ignore_for_file: non_constant_identifier_names
 
 import 'dart:async' as $async;
 import 'dart:core' as $core;
@@ -21,6 +22,14 @@ export 'sentinel_service.pb.dart';
 
 @$pb.GrpcServiceName('librarian.sephirah.v1.sentinel.LibrarianSentinelService')
 class LibrarianSentinelServiceClient extends $grpc.Client {
+  /// The hostname for this service.
+  static const $core.String defaultHost = '';
+
+  /// OAuth scopes needed for the client.
+  static const $core.List<$core.String> oauthScopes = [
+    '',
+  ];
+
   static final _$refreshToken = $grpc.ClientMethod<$0.RefreshTokenRequest, $0.RefreshTokenResponse>(
       '/librarian.sephirah.v1.sentinel.LibrarianSentinelService/RefreshToken',
       ($0.RefreshTokenRequest value) => value.writeToBuffer(),
@@ -40,18 +49,23 @@ class LibrarianSentinelServiceClient extends $grpc.Client {
 
   LibrarianSentinelServiceClient(super.channel, {super.options, super.interceptors});
 
+  /// `Tiphereth` Use valid refresh_token and get two new token, a refresh_token can only be used once
   $grpc.ResponseFuture<$0.RefreshTokenResponse> refreshToken($0.RefreshTokenRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$refreshToken, request, options: options);
   }
 
+  /// `Tiphereth`
   $grpc.ResponseFuture<$0.HeartbeatResponse> heartbeat($0.HeartbeatRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$heartbeat, request, options: options);
   }
 
+  /// `Gebura`
   $grpc.ResponseFuture<$0.ReportSentinelInformationResponse> reportSentinelInformation($0.ReportSentinelInformationRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$reportSentinelInformation, request, options: options);
   }
 
+  /// `Gebura`
+  /// Full update, changes are handled by librarian
   $grpc.ResponseFuture<$0.ReportAppBinariesResponse> reportAppBinaries($0.ReportAppBinariesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$reportAppBinaries, request, options: options);
   }

@@ -5,9 +5,10 @@
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
-// ignore_for_file: constant_identifier_names, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_final_fields
-// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: curly_braces_in_flow_control_structures
+// ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
+// ignore_for_file: non_constant_identifier_names
 
 import 'dart:core' as $core;
 
@@ -27,30 +28,20 @@ class ServerInformation extends $pb.GeneratedMessage {
     ServerInstanceSummary? serverInstanceSummary,
     $core.String? statusReport,
   }) {
-    final $result = create();
-    if (serverBinarySummary != null) {
-      $result.serverBinarySummary = serverBinarySummary;
-    }
-    if (protocolSummary != null) {
-      $result.protocolSummary = protocolSummary;
-    }
-    if (currentTime != null) {
-      $result.currentTime = currentTime;
-    }
-    if (featureSummary != null) {
-      $result.featureSummary = featureSummary;
-    }
-    if (serverInstanceSummary != null) {
-      $result.serverInstanceSummary = serverInstanceSummary;
-    }
-    if (statusReport != null) {
-      $result.statusReport = statusReport;
-    }
-    return $result;
+    final result = create();
+    if (serverBinarySummary != null) result.serverBinarySummary = serverBinarySummary;
+    if (protocolSummary != null) result.protocolSummary = protocolSummary;
+    if (currentTime != null) result.currentTime = currentTime;
+    if (featureSummary != null) result.featureSummary = featureSummary;
+    if (serverInstanceSummary != null) result.serverInstanceSummary = serverInstanceSummary;
+    if (statusReport != null) result.statusReport = statusReport;
+    return result;
   }
-  ServerInformation._() : super();
-  factory ServerInformation.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ServerInformation.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  ServerInformation._();
+
+  factory ServerInformation.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ServerInformation.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ServerInformation', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
     ..aOM<ServerBinarySummary>(1, _omitFieldNames ? '' : 'serverBinarySummary', subBuilder: ServerBinarySummary.create)
@@ -62,21 +53,17 @@ class ServerInformation extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ServerInformation clone() => ServerInformation()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ServerInformation copyWith(void Function(ServerInformation) updates) => super.copyWith((message) => updates(message as ServerInformation)) as ServerInformation;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static ServerInformation create() => ServerInformation._();
+  @$core.override
   ServerInformation createEmptyInstance() => create();
   static $pb.PbList<ServerInformation> createRepeated() => $pb.PbList<ServerInformation>();
   @$core.pragma('dart2js:noInline')
@@ -87,7 +74,7 @@ class ServerInformation extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   ServerBinarySummary get serverBinarySummary => $_getN(0);
   @$pb.TagNumber(1)
-  set serverBinarySummary(ServerBinarySummary v) { $_setField(1, v); }
+  set serverBinarySummary(ServerBinarySummary value) => $_setField(1, value);
   @$pb.TagNumber(1)
   $core.bool hasServerBinarySummary() => $_has(0);
   @$pb.TagNumber(1)
@@ -99,7 +86,7 @@ class ServerInformation extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   ServerProtocolSummary get protocolSummary => $_getN(1);
   @$pb.TagNumber(2)
-  set protocolSummary(ServerProtocolSummary v) { $_setField(2, v); }
+  set protocolSummary(ServerProtocolSummary value) => $_setField(2, value);
   @$pb.TagNumber(2)
   $core.bool hasProtocolSummary() => $_has(1);
   @$pb.TagNumber(2)
@@ -112,7 +99,7 @@ class ServerInformation extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $7.Timestamp get currentTime => $_getN(2);
   @$pb.TagNumber(3)
-  set currentTime($7.Timestamp v) { $_setField(3, v); }
+  set currentTime($7.Timestamp value) => $_setField(3, value);
   @$pb.TagNumber(3)
   $core.bool hasCurrentTime() => $_has(2);
   @$pb.TagNumber(3)
@@ -124,7 +111,7 @@ class ServerInformation extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $8.FeatureSummary get featureSummary => $_getN(3);
   @$pb.TagNumber(4)
-  set featureSummary($8.FeatureSummary v) { $_setField(4, v); }
+  set featureSummary($8.FeatureSummary value) => $_setField(4, value);
   @$pb.TagNumber(4)
   $core.bool hasFeatureSummary() => $_has(3);
   @$pb.TagNumber(4)
@@ -136,7 +123,7 @@ class ServerInformation extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   ServerInstanceSummary get serverInstanceSummary => $_getN(4);
   @$pb.TagNumber(5)
-  set serverInstanceSummary(ServerInstanceSummary v) { $_setField(5, v); }
+  set serverInstanceSummary(ServerInstanceSummary value) => $_setField(5, value);
   @$pb.TagNumber(5)
   $core.bool hasServerInstanceSummary() => $_has(4);
   @$pb.TagNumber(5)
@@ -149,7 +136,7 @@ class ServerInformation extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $core.String get statusReport => $_getSZ(5);
   @$pb.TagNumber(6)
-  set statusReport($core.String v) { $_setString(5, v); }
+  set statusReport($core.String value) => $_setString(5, value);
   @$pb.TagNumber(6)
   $core.bool hasStatusReport() => $_has(5);
   @$pb.TagNumber(6)
@@ -162,21 +149,17 @@ class ServerBinarySummary extends $pb.GeneratedMessage {
     $core.String? buildVersion,
     $core.String? buildDate,
   }) {
-    final $result = create();
-    if (sourceCodeAddress != null) {
-      $result.sourceCodeAddress = sourceCodeAddress;
-    }
-    if (buildVersion != null) {
-      $result.buildVersion = buildVersion;
-    }
-    if (buildDate != null) {
-      $result.buildDate = buildDate;
-    }
-    return $result;
+    final result = create();
+    if (sourceCodeAddress != null) result.sourceCodeAddress = sourceCodeAddress;
+    if (buildVersion != null) result.buildVersion = buildVersion;
+    if (buildDate != null) result.buildDate = buildDate;
+    return result;
   }
-  ServerBinarySummary._() : super();
-  factory ServerBinarySummary.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ServerBinarySummary.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  ServerBinarySummary._();
+
+  factory ServerBinarySummary.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ServerBinarySummary.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ServerBinarySummary', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'sourceCodeAddress')
@@ -185,21 +168,17 @@ class ServerBinarySummary extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ServerBinarySummary clone() => ServerBinarySummary()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ServerBinarySummary copyWith(void Function(ServerBinarySummary) updates) => super.copyWith((message) => updates(message as ServerBinarySummary)) as ServerBinarySummary;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static ServerBinarySummary create() => ServerBinarySummary._();
+  @$core.override
   ServerBinarySummary createEmptyInstance() => create();
   static $pb.PbList<ServerBinarySummary> createRepeated() => $pb.PbList<ServerBinarySummary>();
   @$core.pragma('dart2js:noInline')
@@ -211,7 +190,7 @@ class ServerBinarySummary extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get sourceCodeAddress => $_getSZ(0);
   @$pb.TagNumber(1)
-  set sourceCodeAddress($core.String v) { $_setString(0, v); }
+  set sourceCodeAddress($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasSourceCodeAddress() => $_has(0);
   @$pb.TagNumber(1)
@@ -223,7 +202,7 @@ class ServerBinarySummary extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get buildVersion => $_getSZ(1);
   @$pb.TagNumber(2)
-  set buildVersion($core.String v) { $_setString(1, v); }
+  set buildVersion($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasBuildVersion() => $_has(1);
   @$pb.TagNumber(2)
@@ -234,7 +213,7 @@ class ServerBinarySummary extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.String get buildDate => $_getSZ(2);
   @$pb.TagNumber(3)
-  set buildDate($core.String v) { $_setString(2, v); }
+  set buildDate($core.String value) => $_setString(2, value);
   @$pb.TagNumber(3)
   $core.bool hasBuildDate() => $_has(2);
   @$pb.TagNumber(3)
@@ -245,36 +224,32 @@ class ServerProtocolSummary extends $pb.GeneratedMessage {
   factory ServerProtocolSummary({
     $core.String? version,
   }) {
-    final $result = create();
-    if (version != null) {
-      $result.version = version;
-    }
-    return $result;
+    final result = create();
+    if (version != null) result.version = version;
+    return result;
   }
-  ServerProtocolSummary._() : super();
-  factory ServerProtocolSummary.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ServerProtocolSummary.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  ServerProtocolSummary._();
+
+  factory ServerProtocolSummary.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ServerProtocolSummary.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ServerProtocolSummary', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'version')
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ServerProtocolSummary clone() => ServerProtocolSummary()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ServerProtocolSummary copyWith(void Function(ServerProtocolSummary) updates) => super.copyWith((message) => updates(message as ServerProtocolSummary)) as ServerProtocolSummary;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static ServerProtocolSummary create() => ServerProtocolSummary._();
+  @$core.override
   ServerProtocolSummary createEmptyInstance() => create();
   static $pb.PbList<ServerProtocolSummary> createRepeated() => $pb.PbList<ServerProtocolSummary>();
   @$core.pragma('dart2js:noInline')
@@ -287,7 +262,7 @@ class ServerProtocolSummary extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get version => $_getSZ(0);
   @$pb.TagNumber(1)
-  set version($core.String v) { $_setString(0, v); }
+  set version($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasVersion() => $_has(0);
   @$pb.TagNumber(1)
@@ -302,27 +277,19 @@ class ServerInstanceSummary extends $pb.GeneratedMessage {
     $core.String? logoUrl,
     $core.String? backgroundUrl,
   }) {
-    final $result = create();
-    if (name != null) {
-      $result.name = name;
-    }
-    if (description != null) {
-      $result.description = description;
-    }
-    if (websiteUrl != null) {
-      $result.websiteUrl = websiteUrl;
-    }
-    if (logoUrl != null) {
-      $result.logoUrl = logoUrl;
-    }
-    if (backgroundUrl != null) {
-      $result.backgroundUrl = backgroundUrl;
-    }
-    return $result;
+    final result = create();
+    if (name != null) result.name = name;
+    if (description != null) result.description = description;
+    if (websiteUrl != null) result.websiteUrl = websiteUrl;
+    if (logoUrl != null) result.logoUrl = logoUrl;
+    if (backgroundUrl != null) result.backgroundUrl = backgroundUrl;
+    return result;
   }
-  ServerInstanceSummary._() : super();
-  factory ServerInstanceSummary.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory ServerInstanceSummary.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  ServerInstanceSummary._();
+
+  factory ServerInstanceSummary.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory ServerInstanceSummary.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ServerInstanceSummary', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
@@ -333,21 +300,17 @@ class ServerInstanceSummary extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ServerInstanceSummary clone() => ServerInstanceSummary()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ServerInstanceSummary copyWith(void Function(ServerInstanceSummary) updates) => super.copyWith((message) => updates(message as ServerInstanceSummary)) as ServerInstanceSummary;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static ServerInstanceSummary create() => ServerInstanceSummary._();
+  @$core.override
   ServerInstanceSummary createEmptyInstance() => create();
   static $pb.PbList<ServerInstanceSummary> createRepeated() => $pb.PbList<ServerInstanceSummary>();
   @$core.pragma('dart2js:noInline')
@@ -357,7 +320,7 @@ class ServerInstanceSummary extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
   @$pb.TagNumber(1)
-  set name($core.String v) { $_setString(0, v); }
+  set name($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasName() => $_has(0);
   @$pb.TagNumber(1)
@@ -366,7 +329,7 @@ class ServerInstanceSummary extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get description => $_getSZ(1);
   @$pb.TagNumber(2)
-  set description($core.String v) { $_setString(1, v); }
+  set description($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasDescription() => $_has(1);
   @$pb.TagNumber(2)
@@ -375,7 +338,7 @@ class ServerInstanceSummary extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.String get websiteUrl => $_getSZ(2);
   @$pb.TagNumber(3)
-  set websiteUrl($core.String v) { $_setString(2, v); }
+  set websiteUrl($core.String value) => $_setString(2, value);
   @$pb.TagNumber(3)
   $core.bool hasWebsiteUrl() => $_has(2);
   @$pb.TagNumber(3)
@@ -384,7 +347,7 @@ class ServerInstanceSummary extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.String get logoUrl => $_getSZ(3);
   @$pb.TagNumber(4)
-  set logoUrl($core.String v) { $_setString(3, v); }
+  set logoUrl($core.String value) => $_setString(3, value);
   @$pb.TagNumber(4)
   $core.bool hasLogoUrl() => $_has(3);
   @$pb.TagNumber(4)
@@ -393,7 +356,7 @@ class ServerInstanceSummary extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.String get backgroundUrl => $_getSZ(4);
   @$pb.TagNumber(5)
-  set backgroundUrl($core.String v) { $_setString(4, v); }
+  set backgroundUrl($core.String value) => $_setString(4, value);
   @$pb.TagNumber(5)
   $core.bool hasBackgroundUrl() => $_has(4);
   @$pb.TagNumber(5)
@@ -401,5 +364,5 @@ class ServerInstanceSummary extends $pb.GeneratedMessage {
 }
 
 
-const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
-const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
+const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

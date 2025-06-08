@@ -5,9 +5,10 @@
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
-// ignore_for_file: constant_identifier_names, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_final_fields
-// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: curly_braces_in_flow_control_structures
+// ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
+// ignore_for_file: non_constant_identifier_names
 
 import 'dart:core' as $core;
 
@@ -32,10 +33,10 @@ class SystemType extends $pb.ProtobufEnum {
     SYSTEM_TYPE_WEB,
   ];
 
-  static final $core.Map<$core.int, SystemType> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static SystemType? valueOf($core.int value) => _byValue[value];
+  static final $core.List<SystemType?> _byValue = $pb.ProtobufEnum.$_initByValueList(values, 6);
+  static SystemType? valueOf($core.int value) =>  value < 0 || value >= _byValue.length ? null : _byValue[value];
 
-  const SystemType._(super.v, super.n);
+  const SystemType._(super.value, super.name);
 }
 
 class UserType extends $pb.ProtobufEnum {
@@ -49,10 +50,10 @@ class UserType extends $pb.ProtobufEnum {
     USER_TYPE_NORMAL,
   ];
 
-  static final $core.Map<$core.int, UserType> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static UserType? valueOf($core.int value) => _byValue[value];
+  static final $core.List<UserType?> _byValue = $pb.ProtobufEnum.$_initByValueList(values, 2);
+  static UserType? valueOf($core.int value) =>  value < 0 || value >= _byValue.length ? null : _byValue[value];
 
-  const UserType._(super.v, super.n);
+  const UserType._(super.value, super.name);
 }
 
 class UserStatus extends $pb.ProtobufEnum {
@@ -66,10 +67,10 @@ class UserStatus extends $pb.ProtobufEnum {
     USER_STATUS_BLOCKED,
   ];
 
-  static final $core.Map<$core.int, UserStatus> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static UserStatus? valueOf($core.int value) => _byValue[value];
+  static final $core.List<UserStatus?> _byValue = $pb.ProtobufEnum.$_initByValueList(values, 2);
+  static UserStatus? valueOf($core.int value) =>  value < 0 || value >= _byValue.length ? null : _byValue[value];
 
-  const UserStatus._(super.v, super.n);
+  const UserStatus._(super.value, super.name);
 }
 
 class PorterConnectionStatus extends $pb.ProtobufEnum {
@@ -94,10 +95,10 @@ class PorterConnectionStatus extends $pb.ProtobufEnum {
     PORTER_CONNECTION_STATUS_DOWNGRADED,
   ];
 
-  static final $core.Map<$core.int, PorterConnectionStatus> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static PorterConnectionStatus? valueOf($core.int value) => _byValue[value];
+  static final $core.List<PorterConnectionStatus?> _byValue = $pb.ProtobufEnum.$_initByValueList(values, 5);
+  static PorterConnectionStatus? valueOf($core.int value) =>  value < 0 || value >= _byValue.length ? null : _byValue[value];
 
-  const PorterConnectionStatus._(super.v, super.n);
+  const PorterConnectionStatus._(super.value, super.name);
 }
 
 class PorterContextStatus extends $pb.ProtobufEnum {
@@ -111,10 +112,10 @@ class PorterContextStatus extends $pb.ProtobufEnum {
     PORTER_CONTEXT_STATUS_DISABLED,
   ];
 
-  static final $core.Map<$core.int, PorterContextStatus> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static PorterContextStatus? valueOf($core.int value) => _byValue[value];
+  static final $core.List<PorterContextStatus?> _byValue = $pb.ProtobufEnum.$_initByValueList(values, 2);
+  static PorterContextStatus? valueOf($core.int value) =>  value < 0 || value >= _byValue.length ? null : _byValue[value];
 
-  const PorterContextStatus._(super.v, super.n);
+  const PorterContextStatus._(super.value, super.name);
 }
 
 class PorterContextHandleStatus extends $pb.ProtobufEnum {
@@ -136,11 +137,11 @@ class PorterContextHandleStatus extends $pb.ProtobufEnum {
     PORTER_CONTEXT_HANDLE_STATUS_BLOCKED,
   ];
 
-  static final $core.Map<$core.int, PorterContextHandleStatus> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static PorterContextHandleStatus? valueOf($core.int value) => _byValue[value];
+  static final $core.List<PorterContextHandleStatus?> _byValue = $pb.ProtobufEnum.$_initByValueList(values, 4);
+  static PorterContextHandleStatus? valueOf($core.int value) =>  value < 0 || value >= _byValue.length ? null : _byValue[value];
 
-  const PorterContextHandleStatus._(super.v, super.n);
+  const PorterContextHandleStatus._(super.value, super.name);
 }
 
 
-const _omitEnumNames = $core.bool.fromEnvironment('protobuf.omit_enum_names');
+const $core.bool _omitEnumNames = $core.bool.fromEnvironment('protobuf.omit_enum_names');

@@ -5,9 +5,10 @@
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
-// ignore_for_file: constant_identifier_names, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_final_fields
-// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: curly_braces_in_flow_control_structures
+// ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
+// ignore_for_file: non_constant_identifier_names
 
 import 'dart:async' as $async;
 import 'dart:core' as $core;
@@ -25,8 +26,23 @@ import 'yesod.pb.dart' as $6;
 
 export 'sephirah_service.pb.dart';
 
+///
+///  Sephirah contains the core logic and currently divided into the following modules:
+///  1. `Tiphereth` handles account data and provides permission verification
+///  2. `Gebura` handles application data
+///  3. `Binah` handles file transfer
+///  4. `Yesod` handles feed data
+///  5. `Netzach` handles notifications
 @$pb.GrpcServiceName('librarian.sephirah.v1.sephirah.LibrarianSephirahService')
 class LibrarianSephirahServiceClient extends $grpc.Client {
+  /// The hostname for this service.
+  static const $core.String defaultHost = '';
+
+  /// OAuth scopes needed for the client.
+  static const $core.List<$core.String> oauthScopes = [
+    '',
+  ];
+
   static final _$getServerInformation = $grpc.ClientMethod<$0.GetServerInformationRequest, $0.GetServerInformationResponse>(
       '/librarian.sephirah.v1.sephirah.LibrarianSephirahService/GetServerInformation',
       ($0.GetServerInformationRequest value) => value.writeToBuffer(),
@@ -370,342 +386,444 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
 
   LibrarianSephirahServiceClient(super.channel, {super.options, super.interceptors});
 
+  /// Allow anonymous call, use accessToken to get complete information
   $grpc.ResponseFuture<$0.GetServerInformationResponse> getServerInformation($0.GetServerInformationRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getServerInformation, request, options: options);
   }
 
+  /// `Normal` Client can use this to subscribe to server events.
+  ///
+  /// Server should send `SERVER_EVENT_LISTENER_CONNECTED` event immediately if the connection is valid.
+  /// Otherwise, client should treat the connection as failed.
+  ///
+  /// Server can close the stream at any time, client should reconnect if needed **with backoff**.
+  /// Only used to improve real-time experience, no guarantee of delivery.
   $grpc.ResponseStream<$0.ListenServerEventResponse> listenServerEvent($0.ListenServerEventRequest request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$listenServerEvent, $async.Stream.fromIterable([request]), options: options);
   }
 
+  /// `Tiphereth` `Normal` Login via password and get two token
   $grpc.ResponseFuture<$1.GetTokenResponse> getToken($1.GetTokenRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getToken, request, options: options);
   }
 
+  /// `Tiphereth` `Normal` Use valid refresh_token and get two new token, a refresh_token can only be used once
   $grpc.ResponseFuture<$1.RefreshTokenResponse> refreshToken($1.RefreshTokenRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$refreshToken, request, options: options);
   }
 
+  /// `Tiphereth`
   $grpc.ResponseFuture<$1.GetUserResponse> getUser($1.GetUserRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getUser, request, options: options);
   }
 
+  /// `Tiphereth` Self register as a new normal user
   $grpc.ResponseFuture<$1.RegisterUserResponse> registerUser($1.RegisterUserRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$registerUser, request, options: options);
   }
 
+  /// `Tiphereth` `Normal` Update self user info
   $grpc.ResponseFuture<$1.UpdateUserResponse> updateUser($1.UpdateUserRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateUser, request, options: options);
   }
 
+  /// `Tiphereth` `Normal` Client should register device after the first login
+  /// and store the device_id locally.
+  /// The server could add extra limits to non-registered device
   $grpc.ResponseFuture<$1.RegisterDeviceResponse> registerDevice($1.RegisterDeviceRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$registerDevice, request, options: options);
   }
 
+  /// `Tiphereth` `Normal`
   $grpc.ResponseFuture<$1.ListUserSessionsResponse> listUserSessions($1.ListUserSessionsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listUserSessions, request, options: options);
   }
 
+  /// `Tiphereth` `Normal` delete session will revoke refresh_token immediately.
+  /// NOTE: This can also be used to log out at server side.
+  /// NOTE2: Delete session will not affect device registration.
   $grpc.ResponseFuture<$1.DeleteUserSessionResponse> deleteUserSession($1.DeleteUserSessionRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$deleteUserSession, request, options: options);
   }
 
+  /// `Tiphereth` `Normal` Bind third-party account to current user.
   $grpc.ResponseFuture<$1.LinkAccountResponse> linkAccount($1.LinkAccountRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$linkAccount, request, options: options);
   }
 
+  /// `Tiphereth` `Normal` Unbind third-party account from current user.
   $grpc.ResponseFuture<$1.UnLinkAccountResponse> unLinkAccount($1.UnLinkAccountRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$unLinkAccount, request, options: options);
   }
 
+  /// `Tiphereth` `Normal` List third-party account binded to current user.
   $grpc.ResponseFuture<$1.ListLinkAccountsResponse> listLinkAccounts($1.ListLinkAccountsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listLinkAccounts, request, options: options);
   }
 
+  /// `Tiphereth` `Normal`
   $grpc.ResponseFuture<$1.ListPorterDigestsResponse> listPorterDigests($1.ListPorterDigestsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listPorterDigests, request, options: options);
   }
 
+  /// `Tiphereth` `Normal`
   $grpc.ResponseFuture<$1.CreatePorterContextResponse> createPorterContext($1.CreatePorterContextRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createPorterContext, request, options: options);
   }
 
+  /// `Tiphereth` `Normal`
   $grpc.ResponseFuture<$1.ListPorterContextsResponse> listPorterContexts($1.ListPorterContextsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listPorterContexts, request, options: options);
   }
 
+  /// `Tiphereth` `Normal` Set porter context.
   $grpc.ResponseFuture<$1.UpdatePorterContextResponse> updatePorterContext($1.UpdatePorterContextRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updatePorterContext, request, options: options);
   }
 
+  /// `Binah` `Normal`
   $grpc.ResponseFuture<$2.GetStorageCapacityUsageResponse> getStorageCapacityUsage($2.GetStorageCapacityUsageRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getStorageCapacityUsage, request, options: options);
   }
 
+  /// `Binah` `upload_token`
   $grpc.ResponseStream<$2.UploadFileResponse> uploadFile($async.Stream<$2.UploadFileRequest> request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$uploadFile, request, options: options);
   }
 
+  /// `Binah` `download_token`
   $grpc.ResponseStream<$2.DownloadFileResponse> downloadFile($async.Stream<$2.DownloadFileRequest> request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$downloadFile, request, options: options);
   }
 
+  /// `Binah` `upload_token`
+  /// Maximum 256M
+  /// Server must send response at least once a minute to keepalive.
+  /// Client should ignore in_process response and wait for success or error response.
   $grpc.ResponseStream<$2.SimpleUploadFileResponse> simpleUploadFile($async.Stream<$2.SimpleUploadFileRequest> request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$simpleUploadFile, request, options: options);
   }
 
+  /// `Binah` `download_token`
+  /// Server will not check the receiving state
   $grpc.ResponseStream<$2.SimpleDownloadFileResponse> simpleDownloadFile($2.SimpleDownloadFileRequest request, {$grpc.CallOptions? options}) {
     return $createStreamingCall(_$simpleDownloadFile, $async.Stream.fromIterable([request]), options: options);
   }
 
+  /// `Binah` `upload_token`
+  /// Upload file through http url
   $grpc.ResponseFuture<$2.PresignedUploadFileResponse> presignedUploadFile($2.PresignedUploadFileRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$presignedUploadFile, request, options: options);
   }
 
+  /// `Binah` `upload_token`
+  /// Report file transfer status. Mainly used to trigger server post-process immediately
   $grpc.ResponseFuture<$2.PresignedUploadFileStatusResponse> presignedUploadFileStatus($2.PresignedUploadFileStatusRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$presignedUploadFileStatus, request, options: options);
   }
 
+  /// `Binah` `download_token`
+  /// Download file through http url
   $grpc.ResponseFuture<$2.PresignedDownloadFileResponse> presignedDownloadFile($2.PresignedDownloadFileRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$presignedDownloadFile, request, options: options);
   }
 
+  /// `Chesed` `Normal`
   $grpc.ResponseFuture<$3.UploadImageResponse> uploadImage($3.UploadImageRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$uploadImage, request, options: options);
   }
 
+  /// `Chesed` `Normal`
   $grpc.ResponseFuture<$3.UpdateImageResponse> updateImage($3.UpdateImageRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateImage, request, options: options);
   }
 
+  /// `Chesed` `Normal`
   $grpc.ResponseFuture<$3.ListImagesResponse> listImages($3.ListImagesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listImages, request, options: options);
   }
 
+  /// `Chesed` `Normal`
   $grpc.ResponseFuture<$3.SearchImagesResponse> searchImages($3.SearchImagesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$searchImages, request, options: options);
   }
 
+  /// `Chesed` `Normal`
   $grpc.ResponseFuture<$3.GetImageResponse> getImage($3.GetImageRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getImage, request, options: options);
   }
 
+  /// `Chesed` `Normal`
   $grpc.ResponseFuture<$3.DownloadImageResponse> downloadImage($3.DownloadImageRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$downloadImage, request, options: options);
   }
 
+  /// `Gebura` `Normal`
   $grpc.ResponseFuture<$4.SearchStoreAppsResponse> searchStoreApps($4.SearchStoreAppsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$searchStoreApps, request, options: options);
   }
 
+  /// `Gebura` `Normal`
   $grpc.ResponseFuture<$4.GetStoreAppSummaryResponse> getStoreAppSummary($4.GetStoreAppSummaryRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getStoreAppSummary, request, options: options);
   }
 
+  /// `Gebura` `Normal`
   $grpc.ResponseFuture<$4.AcquireStoreAppResponse> acquireStoreApp($4.AcquireStoreAppRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$acquireStoreApp, request, options: options);
   }
 
+  /// `Gebura` `Normal`
   $grpc.ResponseFuture<$4.ListStoreAppBinariesResponse> listStoreAppBinaries($4.ListStoreAppBinariesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listStoreAppBinaries, request, options: options);
   }
 
+  /// `Gebura` `Normal`
   $grpc.ResponseFuture<$4.ListStoreAppBinaryFilesResponse> listStoreAppBinaryFiles($4.ListStoreAppBinaryFilesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listStoreAppBinaryFiles, request, options: options);
   }
 
+  /// `Gebura` `Normal`
   $grpc.ResponseFuture<$4.DownloadStoreAppBinaryResponse> downloadStoreAppBinary($4.DownloadStoreAppBinaryRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$downloadStoreAppBinary, request, options: options);
   }
 
+  /// `Gebura` `Normal`
   $grpc.ResponseFuture<$4.ListStoreAppSaveFilesResponse> listStoreAppSaveFiles($4.ListStoreAppSaveFilesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listStoreAppSaveFiles, request, options: options);
   }
 
+  /// `Gebura` `Normal`
   $grpc.ResponseFuture<$4.DownloadStoreAppSaveFileResponse> downloadStoreAppSaveFile($4.DownloadStoreAppSaveFileRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$downloadStoreAppSaveFile, request, options: options);
   }
 
+  /// `Gebura` `Normal` Search app infos
   $grpc.ResponseFuture<$4.SearchAppInfosResponse> searchAppInfos($4.SearchAppInfosRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$searchAppInfos, request, options: options);
   }
 
+  /// `Gebura` `Normal`
   $grpc.ResponseFuture<$4.CreateAppResponse> createApp($4.CreateAppRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createApp, request, options: options);
   }
 
+  /// `Gebura` `Normal`
   $grpc.ResponseFuture<$4.UpdateAppResponse> updateApp($4.UpdateAppRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateApp, request, options: options);
   }
 
+  /// `Gebura` `Normal`
   $grpc.ResponseFuture<$4.ListAppsResponse> listApps($4.ListAppsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listApps, request, options: options);
   }
 
+  /// `Gebura` `Normal`
   $grpc.ResponseFuture<$4.BatchCreateAppRunTimeResponse> batchCreateAppRunTime($4.BatchCreateAppRunTimeRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$batchCreateAppRunTime, request, options: options);
   }
 
+  /// `Gebura` `Normal`
   $grpc.ResponseFuture<$4.SumAppRunTimeResponse> sumAppRunTime($4.SumAppRunTimeRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$sumAppRunTime, request, options: options);
   }
 
+  /// `Gebura` `Normal`
   $grpc.ResponseFuture<$4.ListAppRunTimesResponse> listAppRunTimes($4.ListAppRunTimesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listAppRunTimes, request, options: options);
   }
 
+  /// `Gebura` `Normal`
   $grpc.ResponseFuture<$4.DeleteAppRunTimeResponse> deleteAppRunTime($4.DeleteAppRunTimeRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$deleteAppRunTime, request, options: options);
   }
 
+  /// `Gebura` `Normal`
   $grpc.ResponseFuture<$4.UploadAppSaveFileResponse> uploadAppSaveFile($4.UploadAppSaveFileRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$uploadAppSaveFile, request, options: options);
   }
 
+  /// `Gebura` `Normal`
   $grpc.ResponseFuture<$4.DownloadAppSaveFileResponse> downloadAppSaveFile($4.DownloadAppSaveFileRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$downloadAppSaveFile, request, options: options);
   }
 
+  /// `Gebura` `Normal`
   $grpc.ResponseFuture<$4.ListAppSaveFilesResponse> listAppSaveFiles($4.ListAppSaveFilesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listAppSaveFiles, request, options: options);
   }
 
+  /// `Gebura` `Normal`
   $grpc.ResponseFuture<$4.DeleteAppSaveFileResponse> deleteAppSaveFile($4.DeleteAppSaveFileRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$deleteAppSaveFile, request, options: options);
   }
 
+  /// `Gebura` `Normal`
   $grpc.ResponseFuture<$4.PinAppSaveFileResponse> pinAppSaveFile($4.PinAppSaveFileRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$pinAppSaveFile, request, options: options);
   }
 
+  /// `Gebura` `Normal`
   $grpc.ResponseFuture<$4.UnpinAppSaveFileResponse> unpinAppSaveFile($4.UnpinAppSaveFileRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$unpinAppSaveFile, request, options: options);
   }
 
+  /// `Gebura` `Normal`
   $grpc.ResponseFuture<$4.GetAppSaveFileCapacityResponse> getAppSaveFileCapacity($4.GetAppSaveFileCapacityRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getAppSaveFileCapacity, request, options: options);
   }
 
+  /// `Gebura` `Normal`
   $grpc.ResponseFuture<$4.SetAppSaveFileCapacityResponse> setAppSaveFileCapacity($4.SetAppSaveFileCapacityRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$setAppSaveFileCapacity, request, options: options);
   }
 
+  /// `Gebura` `Normal`
   $grpc.ResponseFuture<$4.ListAppCategoriesResponse> listAppCategories($4.ListAppCategoriesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listAppCategories, request, options: options);
   }
 
+  /// `Gebura` `Normal`
   $grpc.ResponseFuture<$4.CreateAppCategoryResponse> createAppCategory($4.CreateAppCategoryRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createAppCategory, request, options: options);
   }
 
+  /// `Gebura` `Normal`
   $grpc.ResponseFuture<$4.UpdateAppCategoryResponse> updateAppCategory($4.UpdateAppCategoryRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateAppCategory, request, options: options);
   }
 
+  /// `Gebura` `Normal`
   $grpc.ResponseFuture<$4.DeleteAppCategoryResponse> deleteAppCategory($4.DeleteAppCategoryRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$deleteAppCategory, request, options: options);
   }
 
+  /// `Netzach` `Normal`
   $grpc.ResponseFuture<$5.CreateNotifyTargetResponse> createNotifyTarget($5.CreateNotifyTargetRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createNotifyTarget, request, options: options);
   }
 
+  /// `Netzach` `Normal`
   $grpc.ResponseFuture<$5.UpdateNotifyTargetResponse> updateNotifyTarget($5.UpdateNotifyTargetRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateNotifyTarget, request, options: options);
   }
 
+  /// `Netzach` `Normal`
   $grpc.ResponseFuture<$5.ListNotifyTargetsResponse> listNotifyTargets($5.ListNotifyTargetsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listNotifyTargets, request, options: options);
   }
 
+  /// `Netzach` `Normal`
   $grpc.ResponseFuture<$5.CreateNotifyFlowResponse> createNotifyFlow($5.CreateNotifyFlowRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createNotifyFlow, request, options: options);
   }
 
+  /// `Netzach` `Normal`
   $grpc.ResponseFuture<$5.UpdateNotifyFlowResponse> updateNotifyFlow($5.UpdateNotifyFlowRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateNotifyFlow, request, options: options);
   }
 
+  /// `Netzach` `Normal`
   $grpc.ResponseFuture<$5.ListNotifyFlowsResponse> listNotifyFlows($5.ListNotifyFlowsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listNotifyFlows, request, options: options);
   }
 
+  /// `Netzach` `Normal`
   $grpc.ResponseFuture<$5.ListSystemNotificationsResponse> listSystemNotifications($5.ListSystemNotificationsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listSystemNotifications, request, options: options);
   }
 
+  /// `Netzach` `Normal`
   $grpc.ResponseFuture<$5.UpdateSystemNotificationResponse> updateSystemNotification($5.UpdateSystemNotificationRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateSystemNotification, request, options: options);
   }
 
+  /// `Yesod` `Normal`
   $grpc.ResponseFuture<$6.CreateFeedConfigResponse> createFeedConfig($6.CreateFeedConfigRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createFeedConfig, request, options: options);
   }
 
+  /// `Yesod` `Normal`
   $grpc.ResponseFuture<$6.UpdateFeedConfigResponse> updateFeedConfig($6.UpdateFeedConfigRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateFeedConfig, request, options: options);
   }
 
+  /// `Yesod` `Normal`
   $grpc.ResponseFuture<$6.ListFeedConfigsResponse> listFeedConfigs($6.ListFeedConfigsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listFeedConfigs, request, options: options);
   }
 
+  /// `Yesod` `Normal`
   $grpc.ResponseFuture<$6.CreateFeedActionSetResponse> createFeedActionSet($6.CreateFeedActionSetRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createFeedActionSet, request, options: options);
   }
 
+  /// `Yesod` `Normal`
   $grpc.ResponseFuture<$6.UpdateFeedActionSetResponse> updateFeedActionSet($6.UpdateFeedActionSetRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateFeedActionSet, request, options: options);
   }
 
+  /// `Yesod` `Normal`
   $grpc.ResponseFuture<$6.ListFeedActionSetsResponse> listFeedActionSets($6.ListFeedActionSetsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listFeedActionSets, request, options: options);
   }
 
+  /// `Yesod` `Normal`
   $grpc.ResponseFuture<$6.ListFeedCategoriesResponse> listFeedCategories($6.ListFeedCategoriesRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listFeedCategories, request, options: options);
   }
 
+  /// `Yesod` `Normal`
   $grpc.ResponseFuture<$6.ListFeedPlatformsResponse> listFeedPlatforms($6.ListFeedPlatformsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listFeedPlatforms, request, options: options);
   }
 
+  /// `Yesod` `Normal`
   $grpc.ResponseFuture<$6.ListFeedItemsResponse> listFeedItems($6.ListFeedItemsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listFeedItems, request, options: options);
   }
 
+  /// `Yesod` `Normal`
   $grpc.ResponseFuture<$6.GetFeedItemResponse> getFeedItem($6.GetFeedItemRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getFeedItem, request, options: options);
   }
 
+  /// `Yesod` `Normal`
   $grpc.ResponseFuture<$6.GetBatchFeedItemsResponse> getBatchFeedItems($6.GetBatchFeedItemsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getBatchFeedItems, request, options: options);
   }
 
+  /// `Yesod` `Normal`
   $grpc.ResponseFuture<$6.ReadFeedItemResponse> readFeedItem($6.ReadFeedItemRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$readFeedItem, request, options: options);
   }
 
+  /// `Yesod` `Normal`
   $grpc.ResponseFuture<$6.CreateFeedItemCollectionResponse> createFeedItemCollection($6.CreateFeedItemCollectionRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$createFeedItemCollection, request, options: options);
   }
 
+  /// `Yesod` `Normal`
   $grpc.ResponseFuture<$6.UpdateFeedItemCollectionResponse> updateFeedItemCollection($6.UpdateFeedItemCollectionRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$updateFeedItemCollection, request, options: options);
   }
 
+  /// `Yesod` `Normal`
   $grpc.ResponseFuture<$6.ListFeedItemCollectionsResponse> listFeedItemCollections($6.ListFeedItemCollectionsRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listFeedItemCollections, request, options: options);
   }
 
+  /// `Yesod` `Normal`
   $grpc.ResponseFuture<$6.AddFeedItemToCollectionResponse> addFeedItemToCollection($6.AddFeedItemToCollectionRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$addFeedItemToCollection, request, options: options);
   }
 
+  /// `Yesod` `Normal`
   $grpc.ResponseFuture<$6.RemoveFeedItemFromCollectionResponse> removeFeedItemFromCollection($6.RemoveFeedItemFromCollectionRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$removeFeedItemFromCollection, request, options: options);
   }
 
+  /// `Yesod` `Normal`
   $grpc.ResponseFuture<$6.ListFeedItemsInCollectionResponse> listFeedItemsInCollection($6.ListFeedItemsInCollectionRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$listFeedItemsInCollection, request, options: options);
   }

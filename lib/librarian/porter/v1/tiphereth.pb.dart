@@ -5,9 +5,10 @@
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
-// ignore_for_file: constant_identifier_names, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_final_fields
-// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: curly_braces_in_flow_control_structures
+// ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
+// ignore_for_file: non_constant_identifier_names
 
 import 'dart:core' as $core;
 
@@ -20,18 +21,16 @@ class GetAccountRequest extends $pb.GeneratedMessage {
     $core.String? platform,
     $core.String? platformAccountId,
   }) {
-    final $result = create();
-    if (platform != null) {
-      $result.platform = platform;
-    }
-    if (platformAccountId != null) {
-      $result.platformAccountId = platformAccountId;
-    }
-    return $result;
+    final result = create();
+    if (platform != null) result.platform = platform;
+    if (platformAccountId != null) result.platformAccountId = platformAccountId;
+    return result;
   }
-  GetAccountRequest._() : super();
-  factory GetAccountRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetAccountRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  GetAccountRequest._();
+
+  factory GetAccountRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetAccountRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAccountRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'platform')
@@ -39,21 +38,17 @@ class GetAccountRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetAccountRequest clone() => GetAccountRequest()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetAccountRequest copyWith(void Function(GetAccountRequest) updates) => super.copyWith((message) => updates(message as GetAccountRequest)) as GetAccountRequest;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static GetAccountRequest create() => GetAccountRequest._();
+  @$core.override
   GetAccountRequest createEmptyInstance() => create();
   static $pb.PbList<GetAccountRequest> createRepeated() => $pb.PbList<GetAccountRequest>();
   @$core.pragma('dart2js:noInline')
@@ -64,7 +59,7 @@ class GetAccountRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get platform => $_getSZ(0);
   @$pb.TagNumber(1)
-  set platform($core.String v) { $_setString(0, v); }
+  set platform($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasPlatform() => $_has(0);
   @$pb.TagNumber(1)
@@ -73,7 +68,7 @@ class GetAccountRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get platformAccountId => $_getSZ(1);
   @$pb.TagNumber(2)
-  set platformAccountId($core.String v) { $_setString(1, v); }
+  set platformAccountId($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasPlatformAccountId() => $_has(1);
   @$pb.TagNumber(2)
@@ -84,36 +79,32 @@ class GetAccountResponse extends $pb.GeneratedMessage {
   factory GetAccountResponse({
     Account? account,
   }) {
-    final $result = create();
-    if (account != null) {
-      $result.account = account;
-    }
-    return $result;
+    final result = create();
+    if (account != null) result.account = account;
+    return result;
   }
-  GetAccountResponse._() : super();
-  factory GetAccountResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory GetAccountResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  GetAccountResponse._();
+
+  factory GetAccountResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory GetAccountResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAccountResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
     ..aOM<Account>(1, _omitFieldNames ? '' : 'account', subBuilder: Account.create)
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetAccountResponse clone() => GetAccountResponse()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetAccountResponse copyWith(void Function(GetAccountResponse) updates) => super.copyWith((message) => updates(message as GetAccountResponse)) as GetAccountResponse;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static GetAccountResponse create() => GetAccountResponse._();
+  @$core.override
   GetAccountResponse createEmptyInstance() => create();
   static $pb.PbList<GetAccountResponse> createRepeated() => $pb.PbList<GetAccountResponse>();
   @$core.pragma('dart2js:noInline')
@@ -123,7 +114,7 @@ class GetAccountResponse extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   Account get account => $_getN(0);
   @$pb.TagNumber(1)
-  set account(Account v) { $_setField(1, v); }
+  set account(Account value) => $_setField(1, value);
   @$pb.TagNumber(1)
   $core.bool hasAccount() => $_has(0);
   @$pb.TagNumber(1)
@@ -140,27 +131,19 @@ class Account extends $pb.GeneratedMessage {
     $core.String? profileUrl,
     $core.String? avatarUrl,
   }) {
-    final $result = create();
-    if (platform != null) {
-      $result.platform = platform;
-    }
-    if (platformAccountId != null) {
-      $result.platformAccountId = platformAccountId;
-    }
-    if (name != null) {
-      $result.name = name;
-    }
-    if (profileUrl != null) {
-      $result.profileUrl = profileUrl;
-    }
-    if (avatarUrl != null) {
-      $result.avatarUrl = avatarUrl;
-    }
-    return $result;
+    final result = create();
+    if (platform != null) result.platform = platform;
+    if (platformAccountId != null) result.platformAccountId = platformAccountId;
+    if (name != null) result.name = name;
+    if (profileUrl != null) result.profileUrl = profileUrl;
+    if (avatarUrl != null) result.avatarUrl = avatarUrl;
+    return result;
   }
-  Account._() : super();
-  factory Account.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory Account.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  Account._();
+
+  factory Account.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
+  factory Account.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Account', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'platform')
@@ -171,21 +154,17 @@ class Account extends $pb.GeneratedMessage {
     ..hasRequiredFields = false
   ;
 
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   Account clone() => Account()..mergeFromMessage(this);
-  @$core.Deprecated(
-  'Using this can add significant overhead to your binary. '
-  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-  'Will be removed in next major version')
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   Account copyWith(void Function(Account) updates) => super.copyWith((message) => updates(message as Account)) as Account;
 
+  @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
   static Account create() => Account._();
+  @$core.override
   Account createEmptyInstance() => create();
   static $pb.PbList<Account> createRepeated() => $pb.PbList<Account>();
   @$core.pragma('dart2js:noInline')
@@ -196,7 +175,7 @@ class Account extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   $core.String get platform => $_getSZ(0);
   @$pb.TagNumber(1)
-  set platform($core.String v) { $_setString(0, v); }
+  set platform($core.String value) => $_setString(0, value);
   @$pb.TagNumber(1)
   $core.bool hasPlatform() => $_has(0);
   @$pb.TagNumber(1)
@@ -205,7 +184,7 @@ class Account extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get platformAccountId => $_getSZ(1);
   @$pb.TagNumber(2)
-  set platformAccountId($core.String v) { $_setString(1, v); }
+  set platformAccountId($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
   $core.bool hasPlatformAccountId() => $_has(1);
   @$pb.TagNumber(2)
@@ -214,7 +193,7 @@ class Account extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.String get name => $_getSZ(2);
   @$pb.TagNumber(3)
-  set name($core.String v) { $_setString(2, v); }
+  set name($core.String value) => $_setString(2, value);
   @$pb.TagNumber(3)
   $core.bool hasName() => $_has(2);
   @$pb.TagNumber(3)
@@ -223,7 +202,7 @@ class Account extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.String get profileUrl => $_getSZ(3);
   @$pb.TagNumber(4)
-  set profileUrl($core.String v) { $_setString(3, v); }
+  set profileUrl($core.String value) => $_setString(3, value);
   @$pb.TagNumber(4)
   $core.bool hasProfileUrl() => $_has(3);
   @$pb.TagNumber(4)
@@ -232,7 +211,7 @@ class Account extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   $core.String get avatarUrl => $_getSZ(4);
   @$pb.TagNumber(5)
-  set avatarUrl($core.String v) { $_setString(4, v); }
+  set avatarUrl($core.String value) => $_setString(4, value);
   @$pb.TagNumber(5)
   $core.bool hasAvatarUrl() => $_has(4);
   @$pb.TagNumber(5)
@@ -240,5 +219,5 @@ class Account extends $pb.GeneratedMessage {
 }
 
 
-const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
-const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
+const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

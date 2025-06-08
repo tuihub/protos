@@ -5,9 +5,10 @@
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
-// ignore_for_file: constant_identifier_names, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_final_fields
-// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: curly_braces_in_flow_control_structures
+// ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
+// ignore_for_file: non_constant_identifier_names
 
 import 'dart:async' as $async;
 import 'dart:core' as $core;
@@ -19,8 +20,18 @@ import 'miner.pb.dart' as $0;
 
 export 'miner.pb.dart';
 
+///
+/// The main role of Miner is to encapsulate compute-intensive tasks
 @$pb.GrpcServiceName('librarian.miner.v1.LibrarianMinerService')
 class LibrarianMinerServiceClient extends $grpc.Client {
+  /// The hostname for this service.
+  static const $core.String defaultHost = '';
+
+  /// OAuth scopes needed for the client.
+  static const $core.List<$core.String> oauthScopes = [
+    '',
+  ];
+
   static final _$recognizeImageBinary = $grpc.ClientMethod<$0.RecognizeImageBinaryRequest, $0.RecognizeImageBinaryResponse>(
       '/librarian.miner.v1.LibrarianMinerService/RecognizeImageBinary',
       ($0.RecognizeImageBinaryRequest value) => value.writeToBuffer(),

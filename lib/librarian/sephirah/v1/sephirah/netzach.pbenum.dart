@@ -5,9 +5,10 @@
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
-// ignore_for_file: constant_identifier_names, library_prefixes
-// ignore_for_file: non_constant_identifier_names, prefer_final_fields
-// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: curly_braces_in_flow_control_structures
+// ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
+// ignore_for_file: non_constant_identifier_names
 
 import 'dart:core' as $core;
 
@@ -24,10 +25,10 @@ class NotifyTargetStatus extends $pb.ProtobufEnum {
     NOTIFY_TARGET_STATUS_SUSPEND,
   ];
 
-  static final $core.Map<$core.int, NotifyTargetStatus> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static NotifyTargetStatus? valueOf($core.int value) => _byValue[value];
+  static final $core.List<NotifyTargetStatus?> _byValue = $pb.ProtobufEnum.$_initByValueList(values, 2);
+  static NotifyTargetStatus? valueOf($core.int value) =>  value < 0 || value >= _byValue.length ? null : _byValue[value];
 
-  const NotifyTargetStatus._(super.v, super.n);
+  const NotifyTargetStatus._(super.value, super.name);
 }
 
 class NotifyFlowStatus extends $pb.ProtobufEnum {
@@ -41,10 +42,10 @@ class NotifyFlowStatus extends $pb.ProtobufEnum {
     NOTIFY_FLOW_STATUS_SUSPEND,
   ];
 
-  static final $core.Map<$core.int, NotifyFlowStatus> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static NotifyFlowStatus? valueOf($core.int value) => _byValue[value];
+  static final $core.List<NotifyFlowStatus?> _byValue = $pb.ProtobufEnum.$_initByValueList(values, 2);
+  static NotifyFlowStatus? valueOf($core.int value) =>  value < 0 || value >= _byValue.length ? null : _byValue[value];
 
-  const NotifyFlowStatus._(super.v, super.n);
+  const NotifyFlowStatus._(super.value, super.name);
 }
 
 class SystemNotificationLevel extends $pb.ProtobufEnum {
@@ -62,10 +63,10 @@ class SystemNotificationLevel extends $pb.ProtobufEnum {
     SYSTEM_NOTIFICATION_LEVEL_INFO,
   ];
 
-  static final $core.Map<$core.int, SystemNotificationLevel> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static SystemNotificationLevel? valueOf($core.int value) => _byValue[value];
+  static final $core.List<SystemNotificationLevel?> _byValue = $pb.ProtobufEnum.$_initByValueList(values, 4);
+  static SystemNotificationLevel? valueOf($core.int value) =>  value < 0 || value >= _byValue.length ? null : _byValue[value];
 
-  const SystemNotificationLevel._(super.v, super.n);
+  const SystemNotificationLevel._(super.value, super.name);
 }
 
 class SystemNotificationStatus extends $pb.ProtobufEnum {
@@ -81,11 +82,11 @@ class SystemNotificationStatus extends $pb.ProtobufEnum {
     SYSTEM_NOTIFICATION_STATUS_DISMISSED,
   ];
 
-  static final $core.Map<$core.int, SystemNotificationStatus> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static SystemNotificationStatus? valueOf($core.int value) => _byValue[value];
+  static final $core.List<SystemNotificationStatus?> _byValue = $pb.ProtobufEnum.$_initByValueList(values, 3);
+  static SystemNotificationStatus? valueOf($core.int value) =>  value < 0 || value >= _byValue.length ? null : _byValue[value];
 
-  const SystemNotificationStatus._(super.v, super.n);
+  const SystemNotificationStatus._(super.value, super.name);
 }
 
 
-const _omitEnumNames = $core.bool.fromEnvironment('protobuf.omit_enum_names');
+const $core.bool _omitEnumNames = $core.bool.fromEnvironment('protobuf.omit_enum_names');
