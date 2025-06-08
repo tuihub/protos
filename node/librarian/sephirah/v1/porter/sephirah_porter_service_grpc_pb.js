@@ -72,6 +72,28 @@ function deserialize_librarian_sephirah_v1_porter_GetNotifyTargetItemsResponse(b
   return librarian_sephirah_v1_porter_sephirah_porter_service_pb.GetNotifyTargetItemsResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_sephirah_v1_porter_RefreshTokenRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_porter_sephirah_porter_service_pb.RefreshTokenRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.porter.RefreshTokenRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_porter_RefreshTokenRequest(buffer_arg) {
+  return librarian_sephirah_v1_porter_sephirah_porter_service_pb.RefreshTokenRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_porter_RefreshTokenResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_porter_sephirah_porter_service_pb.RefreshTokenResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.porter.RefreshTokenResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_porter_RefreshTokenResponse(buffer_arg) {
+  return librarian_sephirah_v1_porter_sephirah_porter_service_pb.RefreshTokenResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_porter_UpsertFeedRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_porter_sephirah_porter_service_pb.UpsertFeedRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.porter.UpsertFeedRequest');
@@ -96,6 +118,18 @@ function deserialize_librarian_sephirah_v1_porter_UpsertFeedResponse(buffer_arg)
 
 
 var LibrarianSephirahPorterServiceService = exports.LibrarianSephirahPorterServiceService = {
+  // `Tiphereth` Use valid refresh_token and get two new token, a refresh_token can only be used once
+refreshToken: {
+    path: '/librarian.sephirah.v1.porter.LibrarianSephirahPorterService/RefreshToken',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_porter_sephirah_porter_service_pb.RefreshTokenRequest,
+    responseType: librarian_sephirah_v1_porter_sephirah_porter_service_pb.RefreshTokenResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_porter_RefreshTokenRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_porter_RefreshTokenRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_porter_RefreshTokenResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_porter_RefreshTokenResponse,
+  },
   // `Tiphereth` `Porter` Obtain access_token of a specific user after user authorization.
 // This token can be used to perform actions on behalf of the user.
 acquireUserToken: {

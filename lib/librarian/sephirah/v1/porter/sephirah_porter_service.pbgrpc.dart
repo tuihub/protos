@@ -30,6 +30,10 @@ class LibrarianSephirahPorterServiceClient extends $grpc.Client {
     '',
   ];
 
+  static final _$refreshToken = $grpc.ClientMethod<$0.RefreshTokenRequest, $0.RefreshTokenResponse>(
+      '/librarian.sephirah.v1.porter.LibrarianSephirahPorterService/RefreshToken',
+      ($0.RefreshTokenRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.RefreshTokenResponse.fromBuffer(value));
   static final _$acquireUserToken = $grpc.ClientMethod<$0.AcquireUserTokenRequest, $0.AcquireUserTokenResponse>(
       '/librarian.sephirah.v1.porter.LibrarianSephirahPorterService/AcquireUserToken',
       ($0.AcquireUserTokenRequest value) => value.writeToBuffer(),
@@ -48,6 +52,11 @@ class LibrarianSephirahPorterServiceClient extends $grpc.Client {
       ($core.List<$core.int> value) => $0.GetFeedResponse.fromBuffer(value));
 
   LibrarianSephirahPorterServiceClient(super.channel, {super.options, super.interceptors});
+
+  /// `Tiphereth` Use valid refresh_token and get two new token, a refresh_token can only be used once
+  $grpc.ResponseFuture<$0.RefreshTokenResponse> refreshToken($0.RefreshTokenRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$refreshToken, request, options: options);
+  }
 
   /// `Tiphereth` `Porter` Obtain access_token of a specific user after user authorization.
   /// This token can be used to perform actions on behalf of the user.
@@ -76,6 +85,13 @@ abstract class LibrarianSephirahPorterServiceBase extends $grpc.Service {
   $core.String get $name => 'librarian.sephirah.v1.porter.LibrarianSephirahPorterService';
 
   LibrarianSephirahPorterServiceBase() {
+    $addMethod($grpc.ServiceMethod<$0.RefreshTokenRequest, $0.RefreshTokenResponse>(
+        'RefreshToken',
+        refreshToken_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.RefreshTokenRequest.fromBuffer(value),
+        ($0.RefreshTokenResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$0.AcquireUserTokenRequest, $0.AcquireUserTokenResponse>(
         'AcquireUserToken',
         acquireUserToken_Pre,
@@ -106,6 +122,10 @@ abstract class LibrarianSephirahPorterServiceBase extends $grpc.Service {
         ($0.GetFeedResponse value) => value.writeToBuffer()));
   }
 
+  $async.Future<$0.RefreshTokenResponse> refreshToken_Pre($grpc.ServiceCall $call, $async.Future<$0.RefreshTokenRequest> $request) async {
+    return refreshToken($call, await $request);
+  }
+
   $async.Future<$0.AcquireUserTokenResponse> acquireUserToken_Pre($grpc.ServiceCall $call, $async.Future<$0.AcquireUserTokenRequest> $request) async {
     return acquireUserToken($call, await $request);
   }
@@ -122,6 +142,7 @@ abstract class LibrarianSephirahPorterServiceBase extends $grpc.Service {
     return getFeed($call, await $request);
   }
 
+  $async.Future<$0.RefreshTokenResponse> refreshToken($grpc.ServiceCall call, $0.RefreshTokenRequest request);
   $async.Future<$0.AcquireUserTokenResponse> acquireUserToken($grpc.ServiceCall call, $0.AcquireUserTokenRequest request);
   $async.Future<$0.GetNotifyTargetItemsResponse> getNotifyTargetItems($grpc.ServiceCall call, $0.GetNotifyTargetItemsRequest request);
   $async.Future<$0.UpsertFeedResponse> upsertFeed($grpc.ServiceCall call, $0.UpsertFeedRequest request);

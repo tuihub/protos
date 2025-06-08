@@ -19,6 +19,7 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
+	LibrarianSephirahPorterService_RefreshToken_FullMethodName         = "/librarian.sephirah.v1.porter.LibrarianSephirahPorterService/RefreshToken"
 	LibrarianSephirahPorterService_AcquireUserToken_FullMethodName     = "/librarian.sephirah.v1.porter.LibrarianSephirahPorterService/AcquireUserToken"
 	LibrarianSephirahPorterService_GetNotifyTargetItems_FullMethodName = "/librarian.sephirah.v1.porter.LibrarianSephirahPorterService/GetNotifyTargetItems"
 	LibrarianSephirahPorterService_UpsertFeed_FullMethodName           = "/librarian.sephirah.v1.porter.LibrarianSephirahPorterService/UpsertFeed"
@@ -29,6 +30,8 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type LibrarianSephirahPorterServiceClient interface {
+	// `Tiphereth` Use valid refresh_token and get two new token, a refresh_token can only be used once
+	RefreshToken(ctx context.Context, in *RefreshTokenRequest, opts ...grpc.CallOption) (*RefreshTokenResponse, error)
 	// `Tiphereth` `Porter` Obtain access_token of a specific user after user authorization.
 	// This token can be used to perform actions on behalf of the user.
 	AcquireUserToken(ctx context.Context, in *AcquireUserTokenRequest, opts ...grpc.CallOption) (*AcquireUserTokenResponse, error)
@@ -46,6 +49,16 @@ type librarianSephirahPorterServiceClient struct {
 
 func NewLibrarianSephirahPorterServiceClient(cc grpc.ClientConnInterface) LibrarianSephirahPorterServiceClient {
 	return &librarianSephirahPorterServiceClient{cc}
+}
+
+func (c *librarianSephirahPorterServiceClient) RefreshToken(ctx context.Context, in *RefreshTokenRequest, opts ...grpc.CallOption) (*RefreshTokenResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RefreshTokenResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahPorterService_RefreshToken_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *librarianSephirahPorterServiceClient) AcquireUserToken(ctx context.Context, in *AcquireUserTokenRequest, opts ...grpc.CallOption) (*AcquireUserTokenResponse, error) {
@@ -92,6 +105,8 @@ func (c *librarianSephirahPorterServiceClient) GetFeed(ctx context.Context, in *
 // All implementations must embed UnimplementedLibrarianSephirahPorterServiceServer
 // for forward compatibility.
 type LibrarianSephirahPorterServiceServer interface {
+	// `Tiphereth` Use valid refresh_token and get two new token, a refresh_token can only be used once
+	RefreshToken(context.Context, *RefreshTokenRequest) (*RefreshTokenResponse, error)
 	// `Tiphereth` `Porter` Obtain access_token of a specific user after user authorization.
 	// This token can be used to perform actions on behalf of the user.
 	AcquireUserToken(context.Context, *AcquireUserTokenRequest) (*AcquireUserTokenResponse, error)
@@ -111,6 +126,9 @@ type LibrarianSephirahPorterServiceServer interface {
 // pointer dereference when methods are called.
 type UnimplementedLibrarianSephirahPorterServiceServer struct{}
 
+func (UnimplementedLibrarianSephirahPorterServiceServer) RefreshToken(context.Context, *RefreshTokenRequest) (*RefreshTokenResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RefreshToken not implemented")
+}
 func (UnimplementedLibrarianSephirahPorterServiceServer) AcquireUserToken(context.Context, *AcquireUserTokenRequest) (*AcquireUserTokenResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AcquireUserToken not implemented")
 }
@@ -143,6 +161,24 @@ func RegisterLibrarianSephirahPorterServiceServer(s grpc.ServiceRegistrar, srv L
 		t.testEmbeddedByValue()
 	}
 	s.RegisterService(&LibrarianSephirahPorterService_ServiceDesc, srv)
+}
+
+func _LibrarianSephirahPorterService_RefreshToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RefreshTokenRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahPorterServiceServer).RefreshToken(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahPorterService_RefreshToken_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahPorterServiceServer).RefreshToken(ctx, req.(*RefreshTokenRequest))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _LibrarianSephirahPorterService_AcquireUserToken_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -224,6 +260,10 @@ var LibrarianSephirahPorterService_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "librarian.sephirah.v1.porter.LibrarianSephirahPorterService",
 	HandlerType: (*LibrarianSephirahPorterServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "RefreshToken",
+			Handler:    _LibrarianSephirahPorterService_RefreshToken_Handler,
+		},
 		{
 			MethodName: "AcquireUserToken",
 			Handler:    _LibrarianSephirahPorterService_AcquireUserToken_Handler,

@@ -22,6 +22,94 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type RefreshTokenRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RefreshTokenRequest) Reset() {
+	*x = RefreshTokenRequest{}
+	mi := &file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RefreshTokenRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RefreshTokenRequest) ProtoMessage() {}
+
+func (x *RefreshTokenRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_msgTypes[0]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RefreshTokenRequest.ProtoReflect.Descriptor instead.
+func (*RefreshTokenRequest) Descriptor() ([]byte, []int) {
+	return file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_rawDescGZIP(), []int{0}
+}
+
+type RefreshTokenResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	AccessToken   string                 `protobuf:"bytes,1,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
+	RefreshToken  string                 `protobuf:"bytes,2,opt,name=refresh_token,json=refreshToken,proto3" json:"refresh_token,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RefreshTokenResponse) Reset() {
+	*x = RefreshTokenResponse{}
+	mi := &file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RefreshTokenResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RefreshTokenResponse) ProtoMessage() {}
+
+func (x *RefreshTokenResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RefreshTokenResponse.ProtoReflect.Descriptor instead.
+func (*RefreshTokenResponse) Descriptor() ([]byte, []int) {
+	return file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *RefreshTokenResponse) GetAccessToken() string {
+	if x != nil {
+		return x.AccessToken
+	}
+	return ""
+}
+
+func (x *RefreshTokenResponse) GetRefreshToken() string {
+	if x != nil {
+		return x.RefreshToken
+	}
+	return ""
+}
+
 type AcquireUserTokenRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	UserId        *v1.InternalID         `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
@@ -31,7 +119,7 @@ type AcquireUserTokenRequest struct {
 
 func (x *AcquireUserTokenRequest) Reset() {
 	*x = AcquireUserTokenRequest{}
-	mi := &file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_msgTypes[0]
+	mi := &file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -43,7 +131,7 @@ func (x *AcquireUserTokenRequest) String() string {
 func (*AcquireUserTokenRequest) ProtoMessage() {}
 
 func (x *AcquireUserTokenRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_msgTypes[0]
+	mi := &file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -56,7 +144,7 @@ func (x *AcquireUserTokenRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AcquireUserTokenRequest.ProtoReflect.Descriptor instead.
 func (*AcquireUserTokenRequest) Descriptor() ([]byte, []int) {
-	return file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_rawDescGZIP(), []int{0}
+	return file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *AcquireUserTokenRequest) GetUserId() *v1.InternalID {
@@ -75,7 +163,7 @@ type AcquireUserTokenResponse struct {
 
 func (x *AcquireUserTokenResponse) Reset() {
 	*x = AcquireUserTokenResponse{}
-	mi := &file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_msgTypes[1]
+	mi := &file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -87,7 +175,7 @@ func (x *AcquireUserTokenResponse) String() string {
 func (*AcquireUserTokenResponse) ProtoMessage() {}
 
 func (x *AcquireUserTokenResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_msgTypes[1]
+	mi := &file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -100,7 +188,7 @@ func (x *AcquireUserTokenResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AcquireUserTokenResponse.ProtoReflect.Descriptor instead.
 func (*AcquireUserTokenResponse) Descriptor() ([]byte, []int) {
-	return file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_rawDescGZIP(), []int{1}
+	return file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *AcquireUserTokenResponse) GetAccessToken() string {
@@ -120,7 +208,7 @@ type GetNotifyTargetItemsRequest struct {
 
 func (x *GetNotifyTargetItemsRequest) Reset() {
 	*x = GetNotifyTargetItemsRequest{}
-	mi := &file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_msgTypes[2]
+	mi := &file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -132,7 +220,7 @@ func (x *GetNotifyTargetItemsRequest) String() string {
 func (*GetNotifyTargetItemsRequest) ProtoMessage() {}
 
 func (x *GetNotifyTargetItemsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_msgTypes[2]
+	mi := &file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -145,7 +233,7 @@ func (x *GetNotifyTargetItemsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetNotifyTargetItemsRequest.ProtoReflect.Descriptor instead.
 func (*GetNotifyTargetItemsRequest) Descriptor() ([]byte, []int) {
-	return file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_rawDescGZIP(), []int{2}
+	return file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *GetNotifyTargetItemsRequest) GetId() *v1.InternalID {
@@ -173,7 +261,7 @@ type GetNotifyTargetItemsResponse struct {
 
 func (x *GetNotifyTargetItemsResponse) Reset() {
 	*x = GetNotifyTargetItemsResponse{}
-	mi := &file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_msgTypes[3]
+	mi := &file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -185,7 +273,7 @@ func (x *GetNotifyTargetItemsResponse) String() string {
 func (*GetNotifyTargetItemsResponse) ProtoMessage() {}
 
 func (x *GetNotifyTargetItemsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_msgTypes[3]
+	mi := &file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -198,7 +286,7 @@ func (x *GetNotifyTargetItemsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetNotifyTargetItemsResponse.ProtoReflect.Descriptor instead.
 func (*GetNotifyTargetItemsResponse) Descriptor() ([]byte, []int) {
-	return file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_rawDescGZIP(), []int{3}
+	return file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *GetNotifyTargetItemsResponse) GetPaging() *v1.PagingResponse {
@@ -232,7 +320,7 @@ type UpsertFeedRequest struct {
 
 func (x *UpsertFeedRequest) Reset() {
 	*x = UpsertFeedRequest{}
-	mi := &file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_msgTypes[4]
+	mi := &file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -244,7 +332,7 @@ func (x *UpsertFeedRequest) String() string {
 func (*UpsertFeedRequest) ProtoMessage() {}
 
 func (x *UpsertFeedRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_msgTypes[4]
+	mi := &file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -257,7 +345,7 @@ func (x *UpsertFeedRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpsertFeedRequest.ProtoReflect.Descriptor instead.
 func (*UpsertFeedRequest) Descriptor() ([]byte, []int) {
-	return file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_rawDescGZIP(), []int{4}
+	return file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *UpsertFeedRequest) GetId() *v1.InternalID {
@@ -282,7 +370,7 @@ type UpsertFeedResponse struct {
 
 func (x *UpsertFeedResponse) Reset() {
 	*x = UpsertFeedResponse{}
-	mi := &file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_msgTypes[5]
+	mi := &file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -294,7 +382,7 @@ func (x *UpsertFeedResponse) String() string {
 func (*UpsertFeedResponse) ProtoMessage() {}
 
 func (x *UpsertFeedResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_msgTypes[5]
+	mi := &file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -307,7 +395,7 @@ func (x *UpsertFeedResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpsertFeedResponse.ProtoReflect.Descriptor instead.
 func (*UpsertFeedResponse) Descriptor() ([]byte, []int) {
-	return file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_rawDescGZIP(), []int{5}
+	return file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_rawDescGZIP(), []int{7}
 }
 
 type GetFeedRequest struct {
@@ -319,7 +407,7 @@ type GetFeedRequest struct {
 
 func (x *GetFeedRequest) Reset() {
 	*x = GetFeedRequest{}
-	mi := &file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_msgTypes[6]
+	mi := &file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -331,7 +419,7 @@ func (x *GetFeedRequest) String() string {
 func (*GetFeedRequest) ProtoMessage() {}
 
 func (x *GetFeedRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_msgTypes[6]
+	mi := &file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -344,7 +432,7 @@ func (x *GetFeedRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetFeedRequest.ProtoReflect.Descriptor instead.
 func (*GetFeedRequest) Descriptor() ([]byte, []int) {
-	return file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_rawDescGZIP(), []int{6}
+	return file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *GetFeedRequest) GetId() *v1.InternalID {
@@ -363,7 +451,7 @@ type GetFeedResponse struct {
 
 func (x *GetFeedResponse) Reset() {
 	*x = GetFeedResponse{}
-	mi := &file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_msgTypes[7]
+	mi := &file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -375,7 +463,7 @@ func (x *GetFeedResponse) String() string {
 func (*GetFeedResponse) ProtoMessage() {}
 
 func (x *GetFeedResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_msgTypes[7]
+	mi := &file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -388,7 +476,7 @@ func (x *GetFeedResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetFeedResponse.ProtoReflect.Descriptor instead.
 func (*GetFeedResponse) Descriptor() ([]byte, []int) {
-	return file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_rawDescGZIP(), []int{7}
+	return file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *GetFeedResponse) GetData() *v1.Feed {
@@ -402,7 +490,11 @@ var File_librarian_sephirah_v1_porter_sephirah_porter_service_proto protoreflect
 
 const file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_rawDesc = "" +
 	"\n" +
-	":librarian/sephirah/v1/porter/sephirah_porter_service.proto\x12\x1clibrarian.sephirah.v1.porter\x1a\x19librarian/v1/common.proto\x1a\x1clibrarian/v1/wellknown.proto\"L\n" +
+	":librarian/sephirah/v1/porter/sephirah_porter_service.proto\x12\x1clibrarian.sephirah.v1.porter\x1a\x19librarian/v1/common.proto\x1a\x1clibrarian/v1/wellknown.proto\"\x15\n" +
+	"\x13RefreshTokenRequest\"^\n" +
+	"\x14RefreshTokenResponse\x12!\n" +
+	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\x12#\n" +
+	"\rrefresh_token\x18\x02 \x01(\tR\frefreshToken\"L\n" +
 	"\x17AcquireUserTokenRequest\x121\n" +
 	"\auser_id\x18\x01 \x01(\v2\x18.librarian.v1.InternalIDR\x06userId\"=\n" +
 	"\x18AcquireUserTokenResponse\x12!\n" +
@@ -421,8 +513,9 @@ const file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_rawDesc = 
 	"\x0eGetFeedRequest\x12(\n" +
 	"\x02id\x18\x01 \x01(\v2\x18.librarian.v1.InternalIDR\x02id\"9\n" +
 	"\x0fGetFeedResponse\x12&\n" +
-	"\x04data\x18\x01 \x01(\v2\x12.librarian.v1.FeedR\x04data2\x8d\x04\n" +
-	"\x1eLibrarianSephirahPorterService\x12\x81\x01\n" +
+	"\x04data\x18\x01 \x01(\v2\x12.librarian.v1.FeedR\x04data2\x84\x05\n" +
+	"\x1eLibrarianSephirahPorterService\x12u\n" +
+	"\fRefreshToken\x121.librarian.sephirah.v1.porter.RefreshTokenRequest\x1a2.librarian.sephirah.v1.porter.RefreshTokenResponse\x12\x81\x01\n" +
 	"\x10AcquireUserToken\x125.librarian.sephirah.v1.porter.AcquireUserTokenRequest\x1a6.librarian.sephirah.v1.porter.AcquireUserTokenResponse\x12\x8d\x01\n" +
 	"\x14GetNotifyTargetItems\x129.librarian.sephirah.v1.porter.GetNotifyTargetItemsRequest\x1a:.librarian.sephirah.v1.porter.GetNotifyTargetItemsResponse\x12o\n" +
 	"\n" +
@@ -441,44 +534,48 @@ func file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_rawDescGZIP
 	return file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_rawDescData
 }
 
-var file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
+var file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
 var file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_goTypes = []any{
-	(*AcquireUserTokenRequest)(nil),      // 0: librarian.sephirah.v1.porter.AcquireUserTokenRequest
-	(*AcquireUserTokenResponse)(nil),     // 1: librarian.sephirah.v1.porter.AcquireUserTokenResponse
-	(*GetNotifyTargetItemsRequest)(nil),  // 2: librarian.sephirah.v1.porter.GetNotifyTargetItemsRequest
-	(*GetNotifyTargetItemsResponse)(nil), // 3: librarian.sephirah.v1.porter.GetNotifyTargetItemsResponse
-	(*UpsertFeedRequest)(nil),            // 4: librarian.sephirah.v1.porter.UpsertFeedRequest
-	(*UpsertFeedResponse)(nil),           // 5: librarian.sephirah.v1.porter.UpsertFeedResponse
-	(*GetFeedRequest)(nil),               // 6: librarian.sephirah.v1.porter.GetFeedRequest
-	(*GetFeedResponse)(nil),              // 7: librarian.sephirah.v1.porter.GetFeedResponse
-	(*v1.InternalID)(nil),                // 8: librarian.v1.InternalID
-	(*v1.PagingRequest)(nil),             // 9: librarian.v1.PagingRequest
-	(*v1.PagingResponse)(nil),            // 10: librarian.v1.PagingResponse
-	(*v1.FeatureRequest)(nil),            // 11: librarian.v1.FeatureRequest
-	(*v1.FeedItem)(nil),                  // 12: librarian.v1.FeedItem
-	(*v1.Feed)(nil),                      // 13: librarian.v1.Feed
+	(*RefreshTokenRequest)(nil),          // 0: librarian.sephirah.v1.porter.RefreshTokenRequest
+	(*RefreshTokenResponse)(nil),         // 1: librarian.sephirah.v1.porter.RefreshTokenResponse
+	(*AcquireUserTokenRequest)(nil),      // 2: librarian.sephirah.v1.porter.AcquireUserTokenRequest
+	(*AcquireUserTokenResponse)(nil),     // 3: librarian.sephirah.v1.porter.AcquireUserTokenResponse
+	(*GetNotifyTargetItemsRequest)(nil),  // 4: librarian.sephirah.v1.porter.GetNotifyTargetItemsRequest
+	(*GetNotifyTargetItemsResponse)(nil), // 5: librarian.sephirah.v1.porter.GetNotifyTargetItemsResponse
+	(*UpsertFeedRequest)(nil),            // 6: librarian.sephirah.v1.porter.UpsertFeedRequest
+	(*UpsertFeedResponse)(nil),           // 7: librarian.sephirah.v1.porter.UpsertFeedResponse
+	(*GetFeedRequest)(nil),               // 8: librarian.sephirah.v1.porter.GetFeedRequest
+	(*GetFeedResponse)(nil),              // 9: librarian.sephirah.v1.porter.GetFeedResponse
+	(*v1.InternalID)(nil),                // 10: librarian.v1.InternalID
+	(*v1.PagingRequest)(nil),             // 11: librarian.v1.PagingRequest
+	(*v1.PagingResponse)(nil),            // 12: librarian.v1.PagingResponse
+	(*v1.FeatureRequest)(nil),            // 13: librarian.v1.FeatureRequest
+	(*v1.FeedItem)(nil),                  // 14: librarian.v1.FeedItem
+	(*v1.Feed)(nil),                      // 15: librarian.v1.Feed
 }
 var file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_depIdxs = []int32{
-	8,  // 0: librarian.sephirah.v1.porter.AcquireUserTokenRequest.user_id:type_name -> librarian.v1.InternalID
-	8,  // 1: librarian.sephirah.v1.porter.GetNotifyTargetItemsRequest.id:type_name -> librarian.v1.InternalID
-	9,  // 2: librarian.sephirah.v1.porter.GetNotifyTargetItemsRequest.paging:type_name -> librarian.v1.PagingRequest
-	10, // 3: librarian.sephirah.v1.porter.GetNotifyTargetItemsResponse.paging:type_name -> librarian.v1.PagingResponse
-	11, // 4: librarian.sephirah.v1.porter.GetNotifyTargetItemsResponse.destination:type_name -> librarian.v1.FeatureRequest
-	12, // 5: librarian.sephirah.v1.porter.GetNotifyTargetItemsResponse.items:type_name -> librarian.v1.FeedItem
-	8,  // 6: librarian.sephirah.v1.porter.UpsertFeedRequest.id:type_name -> librarian.v1.InternalID
-	13, // 7: librarian.sephirah.v1.porter.UpsertFeedRequest.data:type_name -> librarian.v1.Feed
-	8,  // 8: librarian.sephirah.v1.porter.GetFeedRequest.id:type_name -> librarian.v1.InternalID
-	13, // 9: librarian.sephirah.v1.porter.GetFeedResponse.data:type_name -> librarian.v1.Feed
-	0,  // 10: librarian.sephirah.v1.porter.LibrarianSephirahPorterService.AcquireUserToken:input_type -> librarian.sephirah.v1.porter.AcquireUserTokenRequest
-	2,  // 11: librarian.sephirah.v1.porter.LibrarianSephirahPorterService.GetNotifyTargetItems:input_type -> librarian.sephirah.v1.porter.GetNotifyTargetItemsRequest
-	4,  // 12: librarian.sephirah.v1.porter.LibrarianSephirahPorterService.UpsertFeed:input_type -> librarian.sephirah.v1.porter.UpsertFeedRequest
-	6,  // 13: librarian.sephirah.v1.porter.LibrarianSephirahPorterService.GetFeed:input_type -> librarian.sephirah.v1.porter.GetFeedRequest
-	1,  // 14: librarian.sephirah.v1.porter.LibrarianSephirahPorterService.AcquireUserToken:output_type -> librarian.sephirah.v1.porter.AcquireUserTokenResponse
-	3,  // 15: librarian.sephirah.v1.porter.LibrarianSephirahPorterService.GetNotifyTargetItems:output_type -> librarian.sephirah.v1.porter.GetNotifyTargetItemsResponse
-	5,  // 16: librarian.sephirah.v1.porter.LibrarianSephirahPorterService.UpsertFeed:output_type -> librarian.sephirah.v1.porter.UpsertFeedResponse
-	7,  // 17: librarian.sephirah.v1.porter.LibrarianSephirahPorterService.GetFeed:output_type -> librarian.sephirah.v1.porter.GetFeedResponse
-	14, // [14:18] is the sub-list for method output_type
-	10, // [10:14] is the sub-list for method input_type
+	10, // 0: librarian.sephirah.v1.porter.AcquireUserTokenRequest.user_id:type_name -> librarian.v1.InternalID
+	10, // 1: librarian.sephirah.v1.porter.GetNotifyTargetItemsRequest.id:type_name -> librarian.v1.InternalID
+	11, // 2: librarian.sephirah.v1.porter.GetNotifyTargetItemsRequest.paging:type_name -> librarian.v1.PagingRequest
+	12, // 3: librarian.sephirah.v1.porter.GetNotifyTargetItemsResponse.paging:type_name -> librarian.v1.PagingResponse
+	13, // 4: librarian.sephirah.v1.porter.GetNotifyTargetItemsResponse.destination:type_name -> librarian.v1.FeatureRequest
+	14, // 5: librarian.sephirah.v1.porter.GetNotifyTargetItemsResponse.items:type_name -> librarian.v1.FeedItem
+	10, // 6: librarian.sephirah.v1.porter.UpsertFeedRequest.id:type_name -> librarian.v1.InternalID
+	15, // 7: librarian.sephirah.v1.porter.UpsertFeedRequest.data:type_name -> librarian.v1.Feed
+	10, // 8: librarian.sephirah.v1.porter.GetFeedRequest.id:type_name -> librarian.v1.InternalID
+	15, // 9: librarian.sephirah.v1.porter.GetFeedResponse.data:type_name -> librarian.v1.Feed
+	0,  // 10: librarian.sephirah.v1.porter.LibrarianSephirahPorterService.RefreshToken:input_type -> librarian.sephirah.v1.porter.RefreshTokenRequest
+	2,  // 11: librarian.sephirah.v1.porter.LibrarianSephirahPorterService.AcquireUserToken:input_type -> librarian.sephirah.v1.porter.AcquireUserTokenRequest
+	4,  // 12: librarian.sephirah.v1.porter.LibrarianSephirahPorterService.GetNotifyTargetItems:input_type -> librarian.sephirah.v1.porter.GetNotifyTargetItemsRequest
+	6,  // 13: librarian.sephirah.v1.porter.LibrarianSephirahPorterService.UpsertFeed:input_type -> librarian.sephirah.v1.porter.UpsertFeedRequest
+	8,  // 14: librarian.sephirah.v1.porter.LibrarianSephirahPorterService.GetFeed:input_type -> librarian.sephirah.v1.porter.GetFeedRequest
+	1,  // 15: librarian.sephirah.v1.porter.LibrarianSephirahPorterService.RefreshToken:output_type -> librarian.sephirah.v1.porter.RefreshTokenResponse
+	3,  // 16: librarian.sephirah.v1.porter.LibrarianSephirahPorterService.AcquireUserToken:output_type -> librarian.sephirah.v1.porter.AcquireUserTokenResponse
+	5,  // 17: librarian.sephirah.v1.porter.LibrarianSephirahPorterService.GetNotifyTargetItems:output_type -> librarian.sephirah.v1.porter.GetNotifyTargetItemsResponse
+	7,  // 18: librarian.sephirah.v1.porter.LibrarianSephirahPorterService.UpsertFeed:output_type -> librarian.sephirah.v1.porter.UpsertFeedResponse
+	9,  // 19: librarian.sephirah.v1.porter.LibrarianSephirahPorterService.GetFeed:output_type -> librarian.sephirah.v1.porter.GetFeedResponse
+	15, // [15:20] is the sub-list for method output_type
+	10, // [10:15] is the sub-list for method input_type
 	10, // [10:10] is the sub-list for extension type_name
 	10, // [10:10] is the sub-list for extension extendee
 	0,  // [0:10] is the sub-list for field type_name
@@ -495,7 +592,7 @@ func file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_rawDesc), len(file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   8,
+			NumMessages:   10,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

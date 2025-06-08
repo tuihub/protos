@@ -5,6 +5,46 @@ import * as jspb from "google-protobuf";
 import * as librarian_v1_common_pb from "../../../../librarian/v1/common_pb";
 import * as librarian_v1_wellknown_pb from "../../../../librarian/v1/wellknown_pb";
 
+export class RefreshTokenRequest extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RefreshTokenRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: RefreshTokenRequest): RefreshTokenRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RefreshTokenRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RefreshTokenRequest;
+  static deserializeBinaryFromReader(message: RefreshTokenRequest, reader: jspb.BinaryReader): RefreshTokenRequest;
+}
+
+export namespace RefreshTokenRequest {
+  export type AsObject = {
+  }
+}
+
+export class RefreshTokenResponse extends jspb.Message {
+  getAccessToken(): string;
+  setAccessToken(value: string): void;
+
+  getRefreshToken(): string;
+  setRefreshToken(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RefreshTokenResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: RefreshTokenResponse): RefreshTokenResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RefreshTokenResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RefreshTokenResponse;
+  static deserializeBinaryFromReader(message: RefreshTokenResponse, reader: jspb.BinaryReader): RefreshTokenResponse;
+}
+
+export namespace RefreshTokenResponse {
+  export type AsObject = {
+    accessToken: string,
+    refreshToken: string,
+  }
+}
+
 export class AcquireUserTokenRequest extends jspb.Message {
   hasUserId(): boolean;
   clearUserId(): void;

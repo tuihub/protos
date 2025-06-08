@@ -46,6 +46,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Porter {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.RefreshTokenRequest> __Marshaller_librarian_sephirah_v1_porter_RefreshTokenRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.RefreshTokenRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.RefreshTokenResponse> __Marshaller_librarian_sephirah_v1_porter_RefreshTokenResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.RefreshTokenResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.AcquireUserTokenRequest> __Marshaller_librarian_sephirah_v1_porter_AcquireUserTokenRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.AcquireUserTokenRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.AcquireUserTokenResponse> __Marshaller_librarian_sephirah_v1_porter_AcquireUserTokenResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.AcquireUserTokenResponse.Parser));
@@ -61,6 +65,14 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Porter {
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.GetFeedRequest> __Marshaller_librarian_sephirah_v1_porter_GetFeedRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.GetFeedRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.GetFeedResponse> __Marshaller_librarian_sephirah_v1_porter_GetFeedResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.GetFeedResponse.Parser));
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.RefreshTokenRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.RefreshTokenResponse> __Method_RefreshToken = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.RefreshTokenRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.RefreshTokenResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "RefreshToken",
+        __Marshaller_librarian_sephirah_v1_porter_RefreshTokenRequest,
+        __Marshaller_librarian_sephirah_v1_porter_RefreshTokenResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.AcquireUserTokenRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.AcquireUserTokenResponse> __Method_AcquireUserToken = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.AcquireUserTokenRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.AcquireUserTokenResponse>(
@@ -104,6 +116,18 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Porter {
     [grpc::BindServiceMethod(typeof(LibrarianSephirahPorterService), "BindService")]
     public abstract partial class LibrarianSephirahPorterServiceBase
     {
+      /// <summary>
+      /// `Tiphereth` Use valid refresh_token and get two new token, a refresh_token can only be used once
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.RefreshTokenResponse> RefreshToken(global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.RefreshTokenRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
       /// <summary>
       /// `Tiphereth` `Porter` Obtain access_token of a specific user after user authorization.
       /// This token can be used to perform actions on behalf of the user.
@@ -182,6 +206,54 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Porter {
       {
       }
 
+      /// <summary>
+      /// `Tiphereth` Use valid refresh_token and get two new token, a refresh_token can only be used once
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.RefreshTokenResponse RefreshToken(global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.RefreshTokenRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return RefreshToken(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Tiphereth` Use valid refresh_token and get two new token, a refresh_token can only be used once
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.RefreshTokenResponse RefreshToken(global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.RefreshTokenRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_RefreshToken, null, options, request);
+      }
+      /// <summary>
+      /// `Tiphereth` Use valid refresh_token and get two new token, a refresh_token can only be used once
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.RefreshTokenResponse> RefreshTokenAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.RefreshTokenRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return RefreshTokenAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Tiphereth` Use valid refresh_token and get two new token, a refresh_token can only be used once
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.RefreshTokenResponse> RefreshTokenAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.RefreshTokenRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_RefreshToken, null, options, request);
+      }
       /// <summary>
       /// `Tiphereth` `Porter` Obtain access_token of a specific user after user authorization.
       /// This token can be used to perform actions on behalf of the user.
@@ -392,6 +464,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Porter {
     public static grpc::ServerServiceDefinition BindService(LibrarianSephirahPorterServiceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
+          .AddMethod(__Method_RefreshToken, serviceImpl.RefreshToken)
           .AddMethod(__Method_AcquireUserToken, serviceImpl.AcquireUserToken)
           .AddMethod(__Method_GetNotifyTargetItems, serviceImpl.GetNotifyTargetItems)
           .AddMethod(__Method_UpsertFeed, serviceImpl.UpsertFeed)
@@ -405,6 +478,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Porter {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public static void BindService(grpc::ServiceBinderBase serviceBinder, LibrarianSephirahPorterServiceBase serviceImpl)
     {
+      serviceBinder.AddMethod(__Method_RefreshToken, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.RefreshTokenRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.RefreshTokenResponse>(serviceImpl.RefreshToken));
       serviceBinder.AddMethod(__Method_AcquireUserToken, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.AcquireUserTokenRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.AcquireUserTokenResponse>(serviceImpl.AcquireUserToken));
       serviceBinder.AddMethod(__Method_GetNotifyTargetItems, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.GetNotifyTargetItemsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.GetNotifyTargetItemsResponse>(serviceImpl.GetNotifyTargetItems));
       serviceBinder.AddMethod(__Method_UpsertFeed, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.UpsertFeedRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Porter.UpsertFeedResponse>(serviceImpl.UpsertFeed));

@@ -86,6 +86,36 @@ pub mod librarian_sephirah_porter_service_client {
             self.inner = self.inner.max_encoding_message_size(limit);
             self
         }
+        pub async fn refresh_token(
+            &mut self,
+            request: impl tonic::IntoRequest<super::RefreshTokenRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::RefreshTokenResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.porter.LibrarianSephirahPorterService/RefreshToken",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.porter.LibrarianSephirahPorterService",
+                        "RefreshToken",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
+        }
         pub async fn acquire_user_token(
             &mut self,
             request: impl tonic::IntoRequest<super::AcquireUserTokenRequest>,
@@ -215,6 +245,13 @@ pub mod librarian_sephirah_porter_service_server {
     /// Generated trait containing gRPC methods that should be implemented for use with LibrarianSephirahPorterServiceServer.
     #[async_trait]
     pub trait LibrarianSephirahPorterService: Send + Sync + 'static {
+        async fn refresh_token(
+            &self,
+            request: tonic::Request<super::RefreshTokenRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::RefreshTokenResponse>,
+            tonic::Status,
+        >;
         async fn acquire_user_token(
             &self,
             request: tonic::Request<super::AcquireUserTokenRequest>,
@@ -318,6 +355,57 @@ pub mod librarian_sephirah_porter_service_server {
         }
         fn call(&mut self, req: http::Request<B>) -> Self::Future {
             match req.uri().path() {
+                "/librarian.sephirah.v1.porter.LibrarianSephirahPorterService/RefreshToken" => {
+                    #[allow(non_camel_case_types)]
+                    struct RefreshTokenSvc<T: LibrarianSephirahPorterService>(
+                        pub Arc<T>,
+                    );
+                    impl<
+                        T: LibrarianSephirahPorterService,
+                    > tonic::server::UnaryService<super::RefreshTokenRequest>
+                    for RefreshTokenSvc<T> {
+                        type Response = super::RefreshTokenResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::RefreshTokenRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as LibrarianSephirahPorterService>::refresh_token(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = RefreshTokenSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
                 "/librarian.sephirah.v1.porter.LibrarianSephirahPorterService/AcquireUserToken" => {
                     #[allow(non_camel_case_types)]
                     struct AcquireUserTokenSvc<T: LibrarianSephirahPorterService>(
