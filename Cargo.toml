@@ -12,7 +12,7 @@ pbjson = "0.7.0"
 pbjson-types = "0.7.0"
 prost = "0.13.5"
 serde = "1.0.219"
-tonic = { version = "0.13.1", features = ["gzip"] }
+tonic = { version = "0.12.3", features = ["gzip"] }
 
 [features]
 default = []
