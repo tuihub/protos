@@ -2,7 +2,6 @@ syntax = "proto3";
 
 package librarian.porter.v1;
 
-import "librarian/v1/common.proto";
 import "librarian/v1/wellknown.proto";
 
 option csharp_namespace = "TuiHub.Protos.Librarian.Porter.V1";
