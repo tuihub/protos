@@ -1,7 +1,7 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: librarian/sephirah/v1/errors.proto
-//
+// Generated from librarian/sephirah/v1/errors.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
@@ -15,4 +15,3 @@ import 'dart:core' as $core;
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 export 'errors.pbenum.dart';
-

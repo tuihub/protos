@@ -1,14 +1,14 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: librarian/sephirah/v1/sephirah/sephirah_service.proto
-//
+// Generated from librarian/sephirah/v1/sephirah/sephirah_service.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, unused_import
 
 import 'dart:convert' as $convert;
 import 'dart:core' as $core;
@@ -34,7 +34,15 @@ final $typed_data.Uint8List serverEventDescriptor = $convert.base64Decode(
 const GetServerInformationRequest$json = {
   '1': 'GetServerInformationRequest',
   '2': [
-    {'1': 'with_status_report', '3': 1, '4': 1, '5': 8, '9': 0, '10': 'withStatusReport', '17': true},
+    {
+      '1': 'with_status_report',
+      '3': 1,
+      '4': 1,
+      '5': 8,
+      '9': 0,
+      '10': 'withStatusReport',
+      '17': true
+    },
   ],
   '8': [
     {'1': '_with_status_report'},
@@ -42,23 +50,32 @@ const GetServerInformationRequest$json = {
 };
 
 /// Descriptor for `GetServerInformationRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getServerInformationRequestDescriptor = $convert.base64Decode(
-    'ChtHZXRTZXJ2ZXJJbmZvcm1hdGlvblJlcXVlc3QSMQoSd2l0aF9zdGF0dXNfcmVwb3J0GAEgAS'
-    'gISABSEHdpdGhTdGF0dXNSZXBvcnSIAQFCFQoTX3dpdGhfc3RhdHVzX3JlcG9ydA==');
+final $typed_data.Uint8List getServerInformationRequestDescriptor =
+    $convert.base64Decode(
+        'ChtHZXRTZXJ2ZXJJbmZvcm1hdGlvblJlcXVlc3QSMQoSd2l0aF9zdGF0dXNfcmVwb3J0GAEgAS'
+        'gISABSEHdpdGhTdGF0dXNSZXBvcnSIAQFCFQoTX3dpdGhfc3RhdHVzX3JlcG9ydA==');
 
 @$core.Deprecated('Use getServerInformationResponseDescriptor instead')
 const GetServerInformationResponse$json = {
   '1': 'GetServerInformationResponse',
   '2': [
-    {'1': 'server_information', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.sephirah.ServerInformation', '10': 'serverInformation'},
+    {
+      '1': 'server_information',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.sephirah.ServerInformation',
+      '10': 'serverInformation'
+    },
   ],
 };
 
 /// Descriptor for `GetServerInformationResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getServerInformationResponseDescriptor = $convert.base64Decode(
-    'ChxHZXRTZXJ2ZXJJbmZvcm1hdGlvblJlc3BvbnNlEmAKEnNlcnZlcl9pbmZvcm1hdGlvbhgBIA'
-    'EoCzIxLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5zZXBoaXJhaC5TZXJ2ZXJJbmZvcm1hdGlvblIR'
-    'c2VydmVySW5mb3JtYXRpb24=');
+final $typed_data.Uint8List getServerInformationResponseDescriptor =
+    $convert.base64Decode(
+        'ChxHZXRTZXJ2ZXJJbmZvcm1hdGlvblJlc3BvbnNlEmAKEnNlcnZlcl9pbmZvcm1hdGlvbhgBIA'
+        'EoCzIxLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5zZXBoaXJhaC5TZXJ2ZXJJbmZvcm1hdGlvblIR'
+        'c2VydmVySW5mb3JtYXRpb24=');
 
 @$core.Deprecated('Use listenServerEventRequestDescriptor instead')
 const ListenServerEventRequest$json = {
@@ -66,15 +83,29 @@ const ListenServerEventRequest$json = {
 };
 
 /// Descriptor for `ListenServerEventRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listenServerEventRequestDescriptor = $convert.base64Decode(
-    'ChhMaXN0ZW5TZXJ2ZXJFdmVudFJlcXVlc3Q=');
+final $typed_data.Uint8List listenServerEventRequestDescriptor =
+    $convert.base64Decode('ChhMaXN0ZW5TZXJ2ZXJFdmVudFJlcXVlc3Q=');
 
 @$core.Deprecated('Use listenServerEventResponseDescriptor instead')
 const ListenServerEventResponse$json = {
   '1': 'ListenServerEventResponse',
   '2': [
-    {'1': 'event', '3': 1, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.sephirah.ServerEvent', '10': 'event'},
-    {'1': 'occur_time', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'occurTime'},
+    {
+      '1': 'event',
+      '3': 1,
+      '4': 1,
+      '5': 14,
+      '6': '.librarian.sephirah.v1.sephirah.ServerEvent',
+      '10': 'event'
+    },
+    {
+      '1': 'occur_time',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'occurTime'
+    },
     {'1': 'payload', '3': 3, '4': 1, '5': 9, '10': 'payload'},
   ],
 };
@@ -85,4 +116,3 @@ final $typed_data.Uint8List listenServerEventResponseDescriptor = $convert.base6
     'NlcGhpcmFoLnYxLnNlcGhpcmFoLlNlcnZlckV2ZW50UgVldmVudBI5CgpvY2N1cl90aW1lGAIg'
     'ASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcFIJb2NjdXJUaW1lEhgKB3BheWxvYWQYAy'
     'ABKAlSB3BheWxvYWQ=');
-

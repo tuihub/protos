@@ -1,14 +1,14 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: librarian/sephirah/v1/sephirah/base.proto
-//
+// Generated from librarian/sephirah/v1/sephirah/base.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, unused_import
 
 import 'dart:convert' as $convert;
 import 'dart:core' as $core;
@@ -18,12 +18,57 @@ import 'dart:typed_data' as $typed_data;
 const ServerInformation$json = {
   '1': 'ServerInformation',
   '2': [
-    {'1': 'server_binary_summary', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.sephirah.ServerBinarySummary', '10': 'serverBinarySummary'},
-    {'1': 'protocol_summary', '3': 2, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.sephirah.ServerProtocolSummary', '10': 'protocolSummary'},
-    {'1': 'current_time', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'currentTime'},
-    {'1': 'feature_summary', '3': 4, '4': 1, '5': 11, '6': '.librarian.v1.FeatureSummary', '9': 0, '10': 'featureSummary', '17': true},
-    {'1': 'server_instance_summary', '3': 5, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.sephirah.ServerInstanceSummary', '10': 'serverInstanceSummary'},
-    {'1': 'status_report', '3': 6, '4': 1, '5': 9, '9': 1, '10': 'statusReport', '17': true},
+    {
+      '1': 'server_binary_summary',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.sephirah.ServerBinarySummary',
+      '10': 'serverBinarySummary'
+    },
+    {
+      '1': 'protocol_summary',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.sephirah.ServerProtocolSummary',
+      '10': 'protocolSummary'
+    },
+    {
+      '1': 'current_time',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'currentTime'
+    },
+    {
+      '1': 'feature_summary',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.FeatureSummary',
+      '9': 0,
+      '10': 'featureSummary',
+      '17': true
+    },
+    {
+      '1': 'server_instance_summary',
+      '3': 5,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.sephirah.ServerInstanceSummary',
+      '10': 'serverInstanceSummary'
+    },
+    {
+      '1': 'status_report',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '9': 1,
+      '10': 'statusReport',
+      '17': true
+    },
   ],
   '8': [
     {'1': '_feature_summary'},
@@ -48,7 +93,13 @@ final $typed_data.Uint8List serverInformationDescriptor = $convert.base64Decode(
 const ServerBinarySummary$json = {
   '1': 'ServerBinarySummary',
   '2': [
-    {'1': 'source_code_address', '3': 1, '4': 1, '5': 9, '10': 'sourceCodeAddress'},
+    {
+      '1': 'source_code_address',
+      '3': 1,
+      '4': 1,
+      '5': 9,
+      '10': 'sourceCodeAddress'
+    },
     {'1': 'build_version', '3': 2, '4': 1, '5': 9, '10': 'buildVersion'},
     {'1': 'build_date', '3': 3, '4': 1, '5': 9, '10': 'buildDate'},
   ],
@@ -69,8 +120,9 @@ const ServerProtocolSummary$json = {
 };
 
 /// Descriptor for `ServerProtocolSummary`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List serverProtocolSummaryDescriptor = $convert.base64Decode(
-    'ChVTZXJ2ZXJQcm90b2NvbFN1bW1hcnkSGAoHdmVyc2lvbhgBIAEoCVIHdmVyc2lvbg==');
+final $typed_data.Uint8List serverProtocolSummaryDescriptor =
+    $convert.base64Decode(
+        'ChVTZXJ2ZXJQcm90b2NvbFN1bW1hcnkSGAoHdmVyc2lvbhgBIAEoCVIHdmVyc2lvbg==');
 
 @$core.Deprecated('Use serverInstanceSummaryDescriptor instead')
 const ServerInstanceSummary$json = {
@@ -90,4 +142,3 @@ final $typed_data.Uint8List serverInstanceSummaryDescriptor = $convert.base64Dec
     'lvbhgCIAEoCVILZGVzY3JpcHRpb24SHwoLd2Vic2l0ZV91cmwYAyABKAlSCndlYnNpdGVVcmwS'
     'GQoIbG9nb191cmwYBCABKAlSB2xvZ29VcmwSJQoOYmFja2dyb3VuZF91cmwYBSABKAlSDWJhY2'
     'tncm91bmRVcmw=');
-

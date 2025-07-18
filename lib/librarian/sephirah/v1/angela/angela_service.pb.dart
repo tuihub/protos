@@ -1,7 +1,7 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: librarian/sephirah/v1/angela/angela_service.proto
-//
+// Generated from librarian/sephirah/v1/angela/angela_service.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
@@ -30,29 +30,44 @@ class GetServerInformationRequest extends $pb.GeneratedMessage {
 
   GetServerInformationRequest._();
 
-  factory GetServerInformationRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GetServerInformationRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GetServerInformationRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetServerInformationRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetServerInformationRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetServerInformationRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'librarian.sephirah.v1.angela'),
+      createEmptyInstance: create)
     ..aOB(1, _omitFieldNames ? '' : 'withStatusReport')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetServerInformationRequest clone() => GetServerInformationRequest()..mergeFromMessage(this);
+  GetServerInformationRequest clone() =>
+      GetServerInformationRequest()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetServerInformationRequest copyWith(void Function(GetServerInformationRequest) updates) => super.copyWith((message) => updates(message as GetServerInformationRequest)) as GetServerInformationRequest;
+  GetServerInformationRequest copyWith(
+          void Function(GetServerInformationRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetServerInformationRequest))
+          as GetServerInformationRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static GetServerInformationRequest create() => GetServerInformationRequest._();
+  static GetServerInformationRequest create() =>
+      GetServerInformationRequest._();
   @$core.override
   GetServerInformationRequest createEmptyInstance() => create();
-  static $pb.PbList<GetServerInformationRequest> createRepeated() => $pb.PbList<GetServerInformationRequest>();
+  static $pb.PbList<GetServerInformationRequest> createRepeated() =>
+      $pb.PbList<GetServerInformationRequest>();
   @$core.pragma('dart2js:noInline')
-  static GetServerInformationRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetServerInformationRequest>(create);
+  static GetServerInformationRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetServerInformationRequest>(create);
   static GetServerInformationRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -76,29 +91,45 @@ class GetServerInformationResponse extends $pb.GeneratedMessage {
 
   GetServerInformationResponse._();
 
-  factory GetServerInformationResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GetServerInformationResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GetServerInformationResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetServerInformationResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetServerInformationResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
-    ..aOM<$4.ServerInformation>(1, _omitFieldNames ? '' : 'serverInformation', subBuilder: $4.ServerInformation.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetServerInformationResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'librarian.sephirah.v1.angela'),
+      createEmptyInstance: create)
+    ..aOM<$4.ServerInformation>(1, _omitFieldNames ? '' : 'serverInformation',
+        subBuilder: $4.ServerInformation.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetServerInformationResponse clone() => GetServerInformationResponse()..mergeFromMessage(this);
+  GetServerInformationResponse clone() =>
+      GetServerInformationResponse()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetServerInformationResponse copyWith(void Function(GetServerInformationResponse) updates) => super.copyWith((message) => updates(message as GetServerInformationResponse)) as GetServerInformationResponse;
+  GetServerInformationResponse copyWith(
+          void Function(GetServerInformationResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetServerInformationResponse))
+          as GetServerInformationResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static GetServerInformationResponse create() => GetServerInformationResponse._();
+  static GetServerInformationResponse create() =>
+      GetServerInformationResponse._();
   @$core.override
   GetServerInformationResponse createEmptyInstance() => create();
-  static $pb.PbList<GetServerInformationResponse> createRepeated() => $pb.PbList<GetServerInformationResponse>();
+  static $pb.PbList<GetServerInformationResponse> createRepeated() =>
+      $pb.PbList<GetServerInformationResponse>();
   @$core.pragma('dart2js:noInline')
-  static GetServerInformationResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetServerInformationResponse>(create);
+  static GetServerInformationResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetServerInformationResponse>(create);
   static GetServerInformationResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -118,17 +149,28 @@ class GetServerConfigRequest extends $pb.GeneratedMessage {
 
   GetServerConfigRequest._();
 
-  factory GetServerConfigRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GetServerConfigRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GetServerConfigRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetServerConfigRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetServerConfigRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetServerConfigRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'librarian.sephirah.v1.angela'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetServerConfigRequest clone() => GetServerConfigRequest()..mergeFromMessage(this);
+  GetServerConfigRequest clone() =>
+      GetServerConfigRequest()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetServerConfigRequest copyWith(void Function(GetServerConfigRequest) updates) => super.copyWith((message) => updates(message as GetServerConfigRequest)) as GetServerConfigRequest;
+  GetServerConfigRequest copyWith(
+          void Function(GetServerConfigRequest) updates) =>
+      super.copyWith((message) => updates(message as GetServerConfigRequest))
+          as GetServerConfigRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -137,9 +179,11 @@ class GetServerConfigRequest extends $pb.GeneratedMessage {
   static GetServerConfigRequest create() => GetServerConfigRequest._();
   @$core.override
   GetServerConfigRequest createEmptyInstance() => create();
-  static $pb.PbList<GetServerConfigRequest> createRepeated() => $pb.PbList<GetServerConfigRequest>();
+  static $pb.PbList<GetServerConfigRequest> createRepeated() =>
+      $pb.PbList<GetServerConfigRequest>();
   @$core.pragma('dart2js:noInline')
-  static GetServerConfigRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetServerConfigRequest>(create);
+  static GetServerConfigRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetServerConfigRequest>(create);
   static GetServerConfigRequest? _defaultInstance;
 }
 
@@ -154,18 +198,31 @@ class GetServerConfigResponse extends $pb.GeneratedMessage {
 
   GetServerConfigResponse._();
 
-  factory GetServerConfigResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GetServerConfigResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GetServerConfigResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetServerConfigResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetServerConfigResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
-    ..pc<ServerConfigSection>(1, _omitFieldNames ? '' : 'sections', $pb.PbFieldType.PM, subBuilder: ServerConfigSection.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetServerConfigResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'librarian.sephirah.v1.angela'),
+      createEmptyInstance: create)
+    ..pc<ServerConfigSection>(
+        1, _omitFieldNames ? '' : 'sections', $pb.PbFieldType.PM,
+        subBuilder: ServerConfigSection.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetServerConfigResponse clone() => GetServerConfigResponse()..mergeFromMessage(this);
+  GetServerConfigResponse clone() =>
+      GetServerConfigResponse()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetServerConfigResponse copyWith(void Function(GetServerConfigResponse) updates) => super.copyWith((message) => updates(message as GetServerConfigResponse)) as GetServerConfigResponse;
+  GetServerConfigResponse copyWith(
+          void Function(GetServerConfigResponse) updates) =>
+      super.copyWith((message) => updates(message as GetServerConfigResponse))
+          as GetServerConfigResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -174,9 +231,11 @@ class GetServerConfigResponse extends $pb.GeneratedMessage {
   static GetServerConfigResponse create() => GetServerConfigResponse._();
   @$core.override
   GetServerConfigResponse createEmptyInstance() => create();
-  static $pb.PbList<GetServerConfigResponse> createRepeated() => $pb.PbList<GetServerConfigResponse>();
+  static $pb.PbList<GetServerConfigResponse> createRepeated() =>
+      $pb.PbList<GetServerConfigResponse>();
   @$core.pragma('dart2js:noInline')
-  static GetServerConfigResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetServerConfigResponse>(create);
+  static GetServerConfigResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetServerConfigResponse>(create);
   static GetServerConfigResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -194,18 +253,31 @@ class UpdateServerConfigRequest extends $pb.GeneratedMessage {
 
   UpdateServerConfigRequest._();
 
-  factory UpdateServerConfigRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory UpdateServerConfigRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory UpdateServerConfigRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdateServerConfigRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateServerConfigRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
-    ..pc<ServerConfigItem>(1, _omitFieldNames ? '' : 'items', $pb.PbFieldType.PM, subBuilder: ServerConfigItem.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpdateServerConfigRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'librarian.sephirah.v1.angela'),
+      createEmptyInstance: create)
+    ..pc<ServerConfigItem>(
+        1, _omitFieldNames ? '' : 'items', $pb.PbFieldType.PM,
+        subBuilder: ServerConfigItem.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UpdateServerConfigRequest clone() => UpdateServerConfigRequest()..mergeFromMessage(this);
+  UpdateServerConfigRequest clone() =>
+      UpdateServerConfigRequest()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UpdateServerConfigRequest copyWith(void Function(UpdateServerConfigRequest) updates) => super.copyWith((message) => updates(message as UpdateServerConfigRequest)) as UpdateServerConfigRequest;
+  UpdateServerConfigRequest copyWith(
+          void Function(UpdateServerConfigRequest) updates) =>
+      super.copyWith((message) => updates(message as UpdateServerConfigRequest))
+          as UpdateServerConfigRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -214,9 +286,11 @@ class UpdateServerConfigRequest extends $pb.GeneratedMessage {
   static UpdateServerConfigRequest create() => UpdateServerConfigRequest._();
   @$core.override
   UpdateServerConfigRequest createEmptyInstance() => create();
-  static $pb.PbList<UpdateServerConfigRequest> createRepeated() => $pb.PbList<UpdateServerConfigRequest>();
+  static $pb.PbList<UpdateServerConfigRequest> createRepeated() =>
+      $pb.PbList<UpdateServerConfigRequest>();
   @$core.pragma('dart2js:noInline')
-  static UpdateServerConfigRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateServerConfigRequest>(create);
+  static UpdateServerConfigRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpdateServerConfigRequest>(create);
   static UpdateServerConfigRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -228,17 +302,29 @@ class UpdateServerConfigResponse extends $pb.GeneratedMessage {
 
   UpdateServerConfigResponse._();
 
-  factory UpdateServerConfigResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory UpdateServerConfigResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory UpdateServerConfigResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UpdateServerConfigResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UpdateServerConfigResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UpdateServerConfigResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'librarian.sephirah.v1.angela'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UpdateServerConfigResponse clone() => UpdateServerConfigResponse()..mergeFromMessage(this);
+  UpdateServerConfigResponse clone() =>
+      UpdateServerConfigResponse()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UpdateServerConfigResponse copyWith(void Function(UpdateServerConfigResponse) updates) => super.copyWith((message) => updates(message as UpdateServerConfigResponse)) as UpdateServerConfigResponse;
+  UpdateServerConfigResponse copyWith(
+          void Function(UpdateServerConfigResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as UpdateServerConfigResponse))
+          as UpdateServerConfigResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -247,9 +333,11 @@ class UpdateServerConfigResponse extends $pb.GeneratedMessage {
   static UpdateServerConfigResponse create() => UpdateServerConfigResponse._();
   @$core.override
   UpdateServerConfigResponse createEmptyInstance() => create();
-  static $pb.PbList<UpdateServerConfigResponse> createRepeated() => $pb.PbList<UpdateServerConfigResponse>();
+  static $pb.PbList<UpdateServerConfigResponse> createRepeated() =>
+      $pb.PbList<UpdateServerConfigResponse>();
   @$core.pragma('dart2js:noInline')
-  static UpdateServerConfigResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UpdateServerConfigResponse>(create);
+  static UpdateServerConfigResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UpdateServerConfigResponse>(create);
   static UpdateServerConfigResponse? _defaultInstance;
 }
 
@@ -270,21 +358,34 @@ class ServerConfigSection extends $pb.GeneratedMessage {
 
   ServerConfigSection._();
 
-  factory ServerConfigSection.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ServerConfigSection.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ServerConfigSection.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ServerConfigSection.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ServerConfigSection', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ServerConfigSection',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'librarian.sephirah.v1.angela'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..aOM<$5.I18NString>(2, _omitFieldNames ? '' : 'name', subBuilder: $5.I18NString.create)
-    ..aOM<$5.I18NString>(3, _omitFieldNames ? '' : 'description', subBuilder: $5.I18NString.create)
-    ..pc<ServerConfigItem>(4, _omitFieldNames ? '' : 'items', $pb.PbFieldType.PM, subBuilder: ServerConfigItem.create)
-    ..hasRequiredFields = false
-  ;
+    ..aOM<$5.I18NString>(2, _omitFieldNames ? '' : 'name',
+        subBuilder: $5.I18NString.create)
+    ..aOM<$5.I18NString>(3, _omitFieldNames ? '' : 'description',
+        subBuilder: $5.I18NString.create)
+    ..pc<ServerConfigItem>(
+        4, _omitFieldNames ? '' : 'items', $pb.PbFieldType.PM,
+        subBuilder: ServerConfigItem.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ServerConfigSection clone() => ServerConfigSection()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ServerConfigSection copyWith(void Function(ServerConfigSection) updates) => super.copyWith((message) => updates(message as ServerConfigSection)) as ServerConfigSection;
+  ServerConfigSection copyWith(void Function(ServerConfigSection) updates) =>
+      super.copyWith((message) => updates(message as ServerConfigSection))
+          as ServerConfigSection;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -293,9 +394,11 @@ class ServerConfigSection extends $pb.GeneratedMessage {
   static ServerConfigSection create() => ServerConfigSection._();
   @$core.override
   ServerConfigSection createEmptyInstance() => create();
-  static $pb.PbList<ServerConfigSection> createRepeated() => $pb.PbList<ServerConfigSection>();
+  static $pb.PbList<ServerConfigSection> createRepeated() =>
+      $pb.PbList<ServerConfigSection>();
   @$core.pragma('dart2js:noInline')
-  static ServerConfigSection getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ServerConfigSection>(create);
+  static ServerConfigSection getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ServerConfigSection>(create);
   static ServerConfigSection? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -352,22 +455,33 @@ class ServerConfigItem extends $pb.GeneratedMessage {
 
   ServerConfigItem._();
 
-  factory ServerConfigItem.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ServerConfigItem.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ServerConfigItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ServerConfigItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ServerConfigItem', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ServerConfigItem',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'librarian.sephirah.v1.angela'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
-    ..aOM<$5.I18NString>(2, _omitFieldNames ? '' : 'name', subBuilder: $5.I18NString.create)
-    ..aOM<$5.I18NString>(3, _omitFieldNames ? '' : 'description', subBuilder: $5.I18NString.create)
+    ..aOM<$5.I18NString>(2, _omitFieldNames ? '' : 'name',
+        subBuilder: $5.I18NString.create)
+    ..aOM<$5.I18NString>(3, _omitFieldNames ? '' : 'description',
+        subBuilder: $5.I18NString.create)
     ..aOS(4, _omitFieldNames ? '' : 'defaultValue')
     ..aOS(5, _omitFieldNames ? '' : 'currentValue')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ServerConfigItem clone() => ServerConfigItem()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ServerConfigItem copyWith(void Function(ServerConfigItem) updates) => super.copyWith((message) => updates(message as ServerConfigItem)) as ServerConfigItem;
+  ServerConfigItem copyWith(void Function(ServerConfigItem) updates) =>
+      super.copyWith((message) => updates(message as ServerConfigItem))
+          as ServerConfigItem;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -376,9 +490,11 @@ class ServerConfigItem extends $pb.GeneratedMessage {
   static ServerConfigItem create() => ServerConfigItem._();
   @$core.override
   ServerConfigItem createEmptyInstance() => create();
-  static $pb.PbList<ServerConfigItem> createRepeated() => $pb.PbList<ServerConfigItem>();
+  static $pb.PbList<ServerConfigItem> createRepeated() =>
+      $pb.PbList<ServerConfigItem>();
   @$core.pragma('dart2js:noInline')
-  static ServerConfigItem getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ServerConfigItem>(create);
+  static ServerConfigItem getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ServerConfigItem>(create);
   static ServerConfigItem? _defaultInstance;
 
   /// id must be unique in sections
@@ -445,19 +561,30 @@ class ServerConfigItemUpdate extends $pb.GeneratedMessage {
 
   ServerConfigItemUpdate._();
 
-  factory ServerConfigItemUpdate.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ServerConfigItemUpdate.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ServerConfigItemUpdate.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ServerConfigItemUpdate.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ServerConfigItemUpdate', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.angela'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ServerConfigItemUpdate',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'librarian.sephirah.v1.angela'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'value')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ServerConfigItemUpdate clone() => ServerConfigItemUpdate()..mergeFromMessage(this);
+  ServerConfigItemUpdate clone() =>
+      ServerConfigItemUpdate()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ServerConfigItemUpdate copyWith(void Function(ServerConfigItemUpdate) updates) => super.copyWith((message) => updates(message as ServerConfigItemUpdate)) as ServerConfigItemUpdate;
+  ServerConfigItemUpdate copyWith(
+          void Function(ServerConfigItemUpdate) updates) =>
+      super.copyWith((message) => updates(message as ServerConfigItemUpdate))
+          as ServerConfigItemUpdate;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -466,9 +593,11 @@ class ServerConfigItemUpdate extends $pb.GeneratedMessage {
   static ServerConfigItemUpdate create() => ServerConfigItemUpdate._();
   @$core.override
   ServerConfigItemUpdate createEmptyInstance() => create();
-  static $pb.PbList<ServerConfigItemUpdate> createRepeated() => $pb.PbList<ServerConfigItemUpdate>();
+  static $pb.PbList<ServerConfigItemUpdate> createRepeated() =>
+      $pb.PbList<ServerConfigItemUpdate>();
   @$core.pragma('dart2js:noInline')
-  static ServerConfigItemUpdate getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ServerConfigItemUpdate>(create);
+  static ServerConfigItemUpdate getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ServerConfigItemUpdate>(create);
   static ServerConfigItemUpdate? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -490,6 +619,7 @@ class ServerConfigItemUpdate extends $pb.GeneratedMessage {
   void clearValue() => $_clearField(2);
 }
 
-
-const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
-const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
+const $core.bool _omitFieldNames =
+    $core.bool.fromEnvironment('protobuf.omit_field_names');
+const $core.bool _omitMessageNames =
+    $core.bool.fromEnvironment('protobuf.omit_message_names');

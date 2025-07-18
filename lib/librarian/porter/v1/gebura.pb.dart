@@ -1,7 +1,7 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: librarian/porter/v1/gebura.proto
-//
+// Generated from librarian/porter/v1/gebura.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
@@ -14,6 +14,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import '../../v1/wellknown.pb.dart' as $0;
 import 'gebura.pbenum.dart';
 
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
@@ -22,27 +23,41 @@ export 'gebura.pbenum.dart';
 
 class SearchAppInfoRequest extends $pb.GeneratedMessage {
   factory SearchAppInfoRequest({
+    $0.FeatureRequest? config,
     $core.String? nameLike,
   }) {
     final result = create();
+    if (config != null) result.config = config;
     if (nameLike != null) result.nameLike = nameLike;
     return result;
   }
 
   SearchAppInfoRequest._();
 
-  factory SearchAppInfoRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory SearchAppInfoRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory SearchAppInfoRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SearchAppInfoRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SearchAppInfoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'nameLike')
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SearchAppInfoRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'),
+      createEmptyInstance: create)
+    ..aOM<$0.FeatureRequest>(1, _omitFieldNames ? '' : 'config',
+        subBuilder: $0.FeatureRequest.create)
+    ..aOS(2, _omitFieldNames ? '' : 'nameLike')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SearchAppInfoRequest clone() => SearchAppInfoRequest()..mergeFromMessage(this);
+  SearchAppInfoRequest clone() =>
+      SearchAppInfoRequest()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SearchAppInfoRequest copyWith(void Function(SearchAppInfoRequest) updates) => super.copyWith((message) => updates(message as SearchAppInfoRequest)) as SearchAppInfoRequest;
+  SearchAppInfoRequest copyWith(void Function(SearchAppInfoRequest) updates) =>
+      super.copyWith((message) => updates(message as SearchAppInfoRequest))
+          as SearchAppInfoRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -51,19 +66,32 @@ class SearchAppInfoRequest extends $pb.GeneratedMessage {
   static SearchAppInfoRequest create() => SearchAppInfoRequest._();
   @$core.override
   SearchAppInfoRequest createEmptyInstance() => create();
-  static $pb.PbList<SearchAppInfoRequest> createRepeated() => $pb.PbList<SearchAppInfoRequest>();
+  static $pb.PbList<SearchAppInfoRequest> createRepeated() =>
+      $pb.PbList<SearchAppInfoRequest>();
   @$core.pragma('dart2js:noInline')
-  static SearchAppInfoRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SearchAppInfoRequest>(create);
+  static SearchAppInfoRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SearchAppInfoRequest>(create);
   static SearchAppInfoRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get nameLike => $_getSZ(0);
+  $0.FeatureRequest get config => $_getN(0);
   @$pb.TagNumber(1)
-  set nameLike($core.String value) => $_setString(0, value);
+  set config($0.FeatureRequest value) => $_setField(1, value);
   @$pb.TagNumber(1)
-  $core.bool hasNameLike() => $_has(0);
+  $core.bool hasConfig() => $_has(0);
   @$pb.TagNumber(1)
-  void clearNameLike() => $_clearField(1);
+  void clearConfig() => $_clearField(1);
+  @$pb.TagNumber(1)
+  $0.FeatureRequest ensureConfig() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get nameLike => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set nameLike($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasNameLike() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearNameLike() => $_clearField(2);
 }
 
 class SearchAppInfoResponse extends $pb.GeneratedMessage {
@@ -77,18 +105,30 @@ class SearchAppInfoResponse extends $pb.GeneratedMessage {
 
   SearchAppInfoResponse._();
 
-  factory SearchAppInfoResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory SearchAppInfoResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory SearchAppInfoResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SearchAppInfoResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SearchAppInfoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..pc<AppInfo>(1, _omitFieldNames ? '' : 'appInfos', $pb.PbFieldType.PM, subBuilder: AppInfo.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SearchAppInfoResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'),
+      createEmptyInstance: create)
+    ..pc<AppInfo>(1, _omitFieldNames ? '' : 'appInfos', $pb.PbFieldType.PM,
+        subBuilder: AppInfo.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SearchAppInfoResponse clone() => SearchAppInfoResponse()..mergeFromMessage(this);
+  SearchAppInfoResponse clone() =>
+      SearchAppInfoResponse()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SearchAppInfoResponse copyWith(void Function(SearchAppInfoResponse) updates) => super.copyWith((message) => updates(message as SearchAppInfoResponse)) as SearchAppInfoResponse;
+  SearchAppInfoResponse copyWith(
+          void Function(SearchAppInfoResponse) updates) =>
+      super.copyWith((message) => updates(message as SearchAppInfoResponse))
+          as SearchAppInfoResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -97,9 +137,11 @@ class SearchAppInfoResponse extends $pb.GeneratedMessage {
   static SearchAppInfoResponse create() => SearchAppInfoResponse._();
   @$core.override
   SearchAppInfoResponse createEmptyInstance() => create();
-  static $pb.PbList<SearchAppInfoResponse> createRepeated() => $pb.PbList<SearchAppInfoResponse>();
+  static $pb.PbList<SearchAppInfoResponse> createRepeated() =>
+      $pb.PbList<SearchAppInfoResponse>();
   @$core.pragma('dart2js:noInline')
-  static SearchAppInfoResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SearchAppInfoResponse>(create);
+  static SearchAppInfoResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SearchAppInfoResponse>(create);
   static SearchAppInfoResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -108,10 +150,12 @@ class SearchAppInfoResponse extends $pb.GeneratedMessage {
 
 class GetAppInfoRequest extends $pb.GeneratedMessage {
   factory GetAppInfoRequest({
+    $0.FeatureRequest? config,
     $core.String? source,
     $core.String? sourceAppId,
   }) {
     final result = create();
+    if (config != null) result.config = config;
     if (source != null) result.source = source;
     if (sourceAppId != null) result.sourceAppId = sourceAppId;
     return result;
@@ -119,19 +163,30 @@ class GetAppInfoRequest extends $pb.GeneratedMessage {
 
   GetAppInfoRequest._();
 
-  factory GetAppInfoRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GetAppInfoRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GetAppInfoRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetAppInfoRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAppInfoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'source')
-    ..aOS(2, _omitFieldNames ? '' : 'sourceAppId')
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetAppInfoRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'),
+      createEmptyInstance: create)
+    ..aOM<$0.FeatureRequest>(1, _omitFieldNames ? '' : 'config',
+        subBuilder: $0.FeatureRequest.create)
+    ..aOS(2, _omitFieldNames ? '' : 'source')
+    ..aOS(3, _omitFieldNames ? '' : 'sourceAppId')
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetAppInfoRequest clone() => GetAppInfoRequest()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetAppInfoRequest copyWith(void Function(GetAppInfoRequest) updates) => super.copyWith((message) => updates(message as GetAppInfoRequest)) as GetAppInfoRequest;
+  GetAppInfoRequest copyWith(void Function(GetAppInfoRequest) updates) =>
+      super.copyWith((message) => updates(message as GetAppInfoRequest))
+          as GetAppInfoRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -140,29 +195,42 @@ class GetAppInfoRequest extends $pb.GeneratedMessage {
   static GetAppInfoRequest create() => GetAppInfoRequest._();
   @$core.override
   GetAppInfoRequest createEmptyInstance() => create();
-  static $pb.PbList<GetAppInfoRequest> createRepeated() => $pb.PbList<GetAppInfoRequest>();
+  static $pb.PbList<GetAppInfoRequest> createRepeated() =>
+      $pb.PbList<GetAppInfoRequest>();
   @$core.pragma('dart2js:noInline')
-  static GetAppInfoRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetAppInfoRequest>(create);
+  static GetAppInfoRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetAppInfoRequest>(create);
   static GetAppInfoRequest? _defaultInstance;
 
-  /// WellKnownAppInfoSource
   @$pb.TagNumber(1)
-  $core.String get source => $_getSZ(0);
+  $0.FeatureRequest get config => $_getN(0);
   @$pb.TagNumber(1)
-  set source($core.String value) => $_setString(0, value);
+  set config($0.FeatureRequest value) => $_setField(1, value);
   @$pb.TagNumber(1)
-  $core.bool hasSource() => $_has(0);
+  $core.bool hasConfig() => $_has(0);
   @$pb.TagNumber(1)
-  void clearSource() => $_clearField(1);
+  void clearConfig() => $_clearField(1);
+  @$pb.TagNumber(1)
+  $0.FeatureRequest ensureConfig() => $_ensure(0);
 
+  /// WellKnownAppInfoSource
   @$pb.TagNumber(2)
-  $core.String get sourceAppId => $_getSZ(1);
+  $core.String get source => $_getSZ(1);
   @$pb.TagNumber(2)
-  set sourceAppId($core.String value) => $_setString(1, value);
+  set source($core.String value) => $_setString(1, value);
   @$pb.TagNumber(2)
-  $core.bool hasSourceAppId() => $_has(1);
+  $core.bool hasSource() => $_has(1);
   @$pb.TagNumber(2)
-  void clearSourceAppId() => $_clearField(2);
+  void clearSource() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get sourceAppId => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set sourceAppId($core.String value) => $_setString(2, value);
+  @$pb.TagNumber(3)
+  $core.bool hasSourceAppId() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearSourceAppId() => $_clearField(3);
 }
 
 class GetAppInfoResponse extends $pb.GeneratedMessage {
@@ -176,18 +244,28 @@ class GetAppInfoResponse extends $pb.GeneratedMessage {
 
   GetAppInfoResponse._();
 
-  factory GetAppInfoResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GetAppInfoResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GetAppInfoResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetAppInfoResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetAppInfoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..aOM<AppInfo>(1, _omitFieldNames ? '' : 'appInfo', subBuilder: AppInfo.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetAppInfoResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'),
+      createEmptyInstance: create)
+    ..aOM<AppInfo>(1, _omitFieldNames ? '' : 'appInfo',
+        subBuilder: AppInfo.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetAppInfoResponse clone() => GetAppInfoResponse()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetAppInfoResponse copyWith(void Function(GetAppInfoResponse) updates) => super.copyWith((message) => updates(message as GetAppInfoResponse)) as GetAppInfoResponse;
+  GetAppInfoResponse copyWith(void Function(GetAppInfoResponse) updates) =>
+      super.copyWith((message) => updates(message as GetAppInfoResponse))
+          as GetAppInfoResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -196,9 +274,11 @@ class GetAppInfoResponse extends $pb.GeneratedMessage {
   static GetAppInfoResponse create() => GetAppInfoResponse._();
   @$core.override
   GetAppInfoResponse createEmptyInstance() => create();
-  static $pb.PbList<GetAppInfoResponse> createRepeated() => $pb.PbList<GetAppInfoResponse>();
+  static $pb.PbList<GetAppInfoResponse> createRepeated() =>
+      $pb.PbList<GetAppInfoResponse>();
   @$core.pragma('dart2js:noInline')
-  static GetAppInfoResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetAppInfoResponse>(create);
+  static GetAppInfoResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetAppInfoResponse>(create);
   static GetAppInfoResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -228,20 +308,31 @@ class ParseRawAppInfoRequest extends $pb.GeneratedMessage {
 
   ParseRawAppInfoRequest._();
 
-  factory ParseRawAppInfoRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ParseRawAppInfoRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ParseRawAppInfoRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ParseRawAppInfoRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ParseRawAppInfoRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ParseRawAppInfoRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'source')
     ..aOS(2, _omitFieldNames ? '' : 'sourceAppId')
     ..aOS(3, _omitFieldNames ? '' : 'rawDataJson')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ParseRawAppInfoRequest clone() => ParseRawAppInfoRequest()..mergeFromMessage(this);
+  ParseRawAppInfoRequest clone() =>
+      ParseRawAppInfoRequest()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ParseRawAppInfoRequest copyWith(void Function(ParseRawAppInfoRequest) updates) => super.copyWith((message) => updates(message as ParseRawAppInfoRequest)) as ParseRawAppInfoRequest;
+  ParseRawAppInfoRequest copyWith(
+          void Function(ParseRawAppInfoRequest) updates) =>
+      super.copyWith((message) => updates(message as ParseRawAppInfoRequest))
+          as ParseRawAppInfoRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -250,9 +341,11 @@ class ParseRawAppInfoRequest extends $pb.GeneratedMessage {
   static ParseRawAppInfoRequest create() => ParseRawAppInfoRequest._();
   @$core.override
   ParseRawAppInfoRequest createEmptyInstance() => create();
-  static $pb.PbList<ParseRawAppInfoRequest> createRepeated() => $pb.PbList<ParseRawAppInfoRequest>();
+  static $pb.PbList<ParseRawAppInfoRequest> createRepeated() =>
+      $pb.PbList<ParseRawAppInfoRequest>();
   @$core.pragma('dart2js:noInline')
-  static ParseRawAppInfoRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ParseRawAppInfoRequest>(create);
+  static ParseRawAppInfoRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ParseRawAppInfoRequest>(create);
   static ParseRawAppInfoRequest? _defaultInstance;
 
   /// WellKnownAppInfoSource
@@ -295,18 +388,30 @@ class ParseRawAppInfoResponse extends $pb.GeneratedMessage {
 
   ParseRawAppInfoResponse._();
 
-  factory ParseRawAppInfoResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ParseRawAppInfoResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ParseRawAppInfoResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ParseRawAppInfoResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ParseRawAppInfoResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
-    ..aOM<AppInfo>(1, _omitFieldNames ? '' : 'appInfo', subBuilder: AppInfo.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ParseRawAppInfoResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'),
+      createEmptyInstance: create)
+    ..aOM<AppInfo>(1, _omitFieldNames ? '' : 'appInfo',
+        subBuilder: AppInfo.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ParseRawAppInfoResponse clone() => ParseRawAppInfoResponse()..mergeFromMessage(this);
+  ParseRawAppInfoResponse clone() =>
+      ParseRawAppInfoResponse()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ParseRawAppInfoResponse copyWith(void Function(ParseRawAppInfoResponse) updates) => super.copyWith((message) => updates(message as ParseRawAppInfoResponse)) as ParseRawAppInfoResponse;
+  ParseRawAppInfoResponse copyWith(
+          void Function(ParseRawAppInfoResponse) updates) =>
+      super.copyWith((message) => updates(message as ParseRawAppInfoResponse))
+          as ParseRawAppInfoResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -315,9 +420,11 @@ class ParseRawAppInfoResponse extends $pb.GeneratedMessage {
   static ParseRawAppInfoResponse create() => ParseRawAppInfoResponse._();
   @$core.override
   ParseRawAppInfoResponse createEmptyInstance() => create();
-  static $pb.PbList<ParseRawAppInfoResponse> createRepeated() => $pb.PbList<ParseRawAppInfoResponse>();
+  static $pb.PbList<ParseRawAppInfoResponse> createRepeated() =>
+      $pb.PbList<ParseRawAppInfoResponse>();
   @$core.pragma('dart2js:noInline')
-  static ParseRawAppInfoResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ParseRawAppInfoResponse>(create);
+  static ParseRawAppInfoResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ParseRawAppInfoResponse>(create);
   static ParseRawAppInfoResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -358,39 +465,53 @@ class AppInfo extends $pb.GeneratedMessage {
     if (type != null) result.type = type;
     if (shortDescription != null) result.shortDescription = shortDescription;
     if (iconImageUrl != null) result.iconImageUrl = iconImageUrl;
-    if (backgroundImageUrl != null) result.backgroundImageUrl = backgroundImageUrl;
+    if (backgroundImageUrl != null)
+      result.backgroundImageUrl = backgroundImageUrl;
     if (coverImageUrl != null) result.coverImageUrl = coverImageUrl;
     if (tags != null) result.tags.addAll(tags);
-    if (nameAlternatives != null) result.nameAlternatives.addAll(nameAlternatives);
+    if (nameAlternatives != null)
+      result.nameAlternatives.addAll(nameAlternatives);
     return result;
   }
 
   AppInfo._();
 
-  factory AppInfo.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory AppInfo.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory AppInfo.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AppInfo.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AppInfo', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AppInfo',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'source')
     ..aOS(2, _omitFieldNames ? '' : 'sourceAppId')
     ..aOS(3, _omitFieldNames ? '' : 'sourceUrl')
     ..aOS(4, _omitFieldNames ? '' : 'rawDataJson')
-    ..aOM<AppInfoDetails>(5, _omitFieldNames ? '' : 'details', subBuilder: AppInfoDetails.create)
+    ..aOM<AppInfoDetails>(5, _omitFieldNames ? '' : 'details',
+        subBuilder: AppInfoDetails.create)
     ..aOS(6, _omitFieldNames ? '' : 'name')
-    ..e<AppType>(7, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: AppType.APP_TYPE_UNSPECIFIED, valueOf: AppType.valueOf, enumValues: AppType.values)
+    ..e<AppType>(7, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE,
+        defaultOrMaker: AppType.APP_TYPE_UNSPECIFIED,
+        valueOf: AppType.valueOf,
+        enumValues: AppType.values)
     ..aOS(8, _omitFieldNames ? '' : 'shortDescription')
     ..aOS(9, _omitFieldNames ? '' : 'iconImageUrl')
     ..aOS(10, _omitFieldNames ? '' : 'backgroundImageUrl')
     ..aOS(11, _omitFieldNames ? '' : 'coverImageUrl')
     ..pPS(12, _omitFieldNames ? '' : 'tags')
     ..pPS(13, _omitFieldNames ? '' : 'nameAlternatives')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   AppInfo clone() => AppInfo()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  AppInfo copyWith(void Function(AppInfo) updates) => super.copyWith((message) => updates(message as AppInfo)) as AppInfo;
+  AppInfo copyWith(void Function(AppInfo) updates) =>
+      super.copyWith((message) => updates(message as AppInfo)) as AppInfo;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -401,7 +522,8 @@ class AppInfo extends $pb.GeneratedMessage {
   AppInfo createEmptyInstance() => create();
   static $pb.PbList<AppInfo> createRepeated() => $pb.PbList<AppInfo>();
   @$core.pragma('dart2js:noInline')
-  static AppInfo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AppInfo>(create);
+  static AppInfo getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AppInfo>(create);
   static AppInfo? _defaultInstance;
 
   /// WellKnownAppInfoSource
@@ -537,23 +659,32 @@ class AppInfoDetails extends $pb.GeneratedMessage {
 
   AppInfoDetails._();
 
-  factory AppInfoDetails.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory AppInfoDetails.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory AppInfoDetails.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory AppInfoDetails.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AppInfoDetails', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'AppInfoDetails',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'description')
     ..aOS(2, _omitFieldNames ? '' : 'releaseDate')
     ..aOS(3, _omitFieldNames ? '' : 'developer')
     ..aOS(4, _omitFieldNames ? '' : 'publisher')
     ..aOS(5, _omitFieldNames ? '' : 'version')
     ..pPS(6, _omitFieldNames ? '' : 'imageUrls')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   AppInfoDetails clone() => AppInfoDetails()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  AppInfoDetails copyWith(void Function(AppInfoDetails) updates) => super.copyWith((message) => updates(message as AppInfoDetails)) as AppInfoDetails;
+  AppInfoDetails copyWith(void Function(AppInfoDetails) updates) =>
+      super.copyWith((message) => updates(message as AppInfoDetails))
+          as AppInfoDetails;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -562,9 +693,11 @@ class AppInfoDetails extends $pb.GeneratedMessage {
   static AppInfoDetails create() => AppInfoDetails._();
   @$core.override
   AppInfoDetails createEmptyInstance() => create();
-  static $pb.PbList<AppInfoDetails> createRepeated() => $pb.PbList<AppInfoDetails>();
+  static $pb.PbList<AppInfoDetails> createRepeated() =>
+      $pb.PbList<AppInfoDetails>();
   @$core.pragma('dart2js:noInline')
-  static AppInfoDetails getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AppInfoDetails>(create);
+  static AppInfoDetails getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<AppInfoDetails>(create);
   static AppInfoDetails? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -616,6 +749,7 @@ class AppInfoDetails extends $pb.GeneratedMessage {
   $pb.PbList<$core.String> get imageUrls => $_getList(5);
 }
 
-
-const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
-const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
+const $core.bool _omitFieldNames =
+    $core.bool.fromEnvironment('protobuf.omit_field_names');
+const $core.bool _omitMessageNames =
+    $core.bool.fromEnvironment('protobuf.omit_message_names');

@@ -1,14 +1,14 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: buf/validate/expression.proto
-//
+// Generated from buf/validate/expression.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, unused_import
 
 import 'dart:convert' as $convert;
 import 'dart:core' as $core;
@@ -33,7 +33,14 @@ final $typed_data.Uint8List constraintDescriptor = $convert.base64Decode(
 const Violations$json = {
   '1': 'Violations',
   '2': [
-    {'1': 'violations', '3': 1, '4': 3, '5': 11, '6': '.buf.validate.Violation', '10': 'violations'},
+    {
+      '1': 'violations',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.buf.validate.Violation',
+      '10': 'violations'
+    },
   ],
 };
 
@@ -56,4 +63,3 @@ const Violation$json = {
 final $typed_data.Uint8List violationDescriptor = $convert.base64Decode(
     'CglWaW9sYXRpb24SHQoKZmllbGRfcGF0aBgBIAEoCVIJZmllbGRQYXRoEiMKDWNvbnN0cmFpbn'
     'RfaWQYAiABKAlSDGNvbnN0cmFpbnRJZBIYCgdtZXNzYWdlGAMgASgJUgdtZXNzYWdl');
-

@@ -1,7 +1,7 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: errors/errors.proto
-//
+// Generated from errors/errors.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
@@ -33,21 +33,32 @@ class Error extends $pb.GeneratedMessage {
 
   Error._();
 
-  factory Error.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory Error.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory Error.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory Error.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Error', package: const $pb.PackageName(_omitMessageNames ? '' : 'errors'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'Error',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'errors'),
+      createEmptyInstance: create)
     ..a<$core.int>(1, _omitFieldNames ? '' : 'code', $pb.PbFieldType.O3)
     ..aOS(2, _omitFieldNames ? '' : 'reason')
     ..aOS(3, _omitFieldNames ? '' : 'message')
-    ..m<$core.String, $core.String>(4, _omitFieldNames ? '' : 'metadata', entryClassName: 'Error.MetadataEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('errors'))
-    ..hasRequiredFields = false
-  ;
+    ..m<$core.String, $core.String>(4, _omitFieldNames ? '' : 'metadata',
+        entryClassName: 'Error.MetadataEntry',
+        keyFieldType: $pb.PbFieldType.OS,
+        valueFieldType: $pb.PbFieldType.OS,
+        packageName: const $pb.PackageName('errors'))
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   Error clone() => Error()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  Error copyWith(void Function(Error) updates) => super.copyWith((message) => updates(message as Error)) as Error;
+  Error copyWith(void Function(Error) updates) =>
+      super.copyWith((message) => updates(message as Error)) as Error;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -58,7 +69,8 @@ class Error extends $pb.GeneratedMessage {
   Error createEmptyInstance() => create();
   static $pb.PbList<Error> createRepeated() => $pb.PbList<Error>();
   @$core.pragma('dart2js:noInline')
-  static Error getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Error>(create);
+  static Error getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Error>(create);
   static Error? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -93,14 +105,23 @@ class Error extends $pb.GeneratedMessage {
 }
 
 class Errors {
-  static final defaultCode = $pb.Extension<$core.int>(_omitMessageNames ? '' : 'google.protobuf.EnumOptions', _omitFieldNames ? '' : 'defaultCode', 1108, $pb.PbFieldType.O3);
-  static final code = $pb.Extension<$core.int>(_omitMessageNames ? '' : 'google.protobuf.EnumValueOptions', _omitFieldNames ? '' : 'code', 1109, $pb.PbFieldType.O3);
+  static final defaultCode = $pb.Extension<$core.int>(
+      _omitMessageNames ? '' : 'google.protobuf.EnumOptions',
+      _omitFieldNames ? '' : 'defaultCode',
+      1108,
+      $pb.PbFieldType.O3);
+  static final code = $pb.Extension<$core.int>(
+      _omitMessageNames ? '' : 'google.protobuf.EnumValueOptions',
+      _omitFieldNames ? '' : 'code',
+      1109,
+      $pb.PbFieldType.O3);
   static void registerAllExtensions($pb.ExtensionRegistry registry) {
     registry.add(defaultCode);
     registry.add(code);
   }
 }
 
-
-const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
-const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
+const $core.bool _omitFieldNames =
+    $core.bool.fromEnvironment('protobuf.omit_field_names');
+const $core.bool _omitMessageNames =
+    $core.bool.fromEnvironment('protobuf.omit_message_names');

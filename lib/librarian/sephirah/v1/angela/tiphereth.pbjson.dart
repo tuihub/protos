@@ -1,14 +1,14 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: librarian/sephirah/v1/angela/tiphereth.proto
-//
+// Generated from librarian/sephirah/v1/angela/tiphereth.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, unused_import
 
 import 'dart:convert' as $convert;
 import 'dart:core' as $core;
@@ -35,7 +35,16 @@ const GetTokenRequest$json = {
   '2': [
     {'1': 'username', '3': 1, '4': 1, '5': 9, '10': 'username'},
     {'1': 'password', '3': 2, '4': 1, '5': 9, '10': 'password'},
-    {'1': 'device_id', '3': 3, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '9': 0, '10': 'deviceId', '17': true},
+    {
+      '1': 'device_id',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '9': 0,
+      '10': 'deviceId',
+      '17': true
+    },
   ],
   '8': [
     {'1': '_device_id'},
@@ -66,7 +75,16 @@ final $typed_data.Uint8List getTokenResponseDescriptor = $convert.base64Decode(
 const RefreshTokenRequest$json = {
   '1': 'RefreshTokenRequest',
   '2': [
-    {'1': 'device_id', '3': 3, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '9': 0, '10': 'deviceId', '17': true},
+    {
+      '1': 'device_id',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '9': 0,
+      '10': 'deviceId',
+      '17': true
+    },
   ],
   '8': [
     {'1': '_device_id'},
@@ -96,7 +114,14 @@ final $typed_data.Uint8List refreshTokenResponseDescriptor = $convert.base64Deco
 const CreateUserRequest$json = {
   '1': 'CreateUserRequest',
   '2': [
-    {'1': 'user', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.sephirah.User', '10': 'user'},
+    {
+      '1': 'user',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.sephirah.User',
+      '10': 'user'
+    },
   ],
 };
 
@@ -109,7 +134,14 @@ final $typed_data.Uint8List createUserRequestDescriptor = $convert.base64Decode(
 const CreateUserResponse$json = {
   '1': 'CreateUserResponse',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+    {
+      '1': 'id',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'id'
+    },
   ],
 };
 
@@ -122,9 +154,30 @@ final $typed_data.Uint8List createUserResponseDescriptor = $convert.base64Decode
 const ListUsersRequest$json = {
   '1': 'ListUsersRequest',
   '2': [
-    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
-    {'1': 'type_filter', '3': 2, '4': 3, '5': 14, '6': '.librarian.sephirah.v1.sephirah.UserType', '10': 'typeFilter'},
-    {'1': 'status_filter', '3': 3, '4': 3, '5': 14, '6': '.librarian.sephirah.v1.sephirah.UserStatus', '10': 'statusFilter'},
+    {
+      '1': 'paging',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.PagingRequest',
+      '10': 'paging'
+    },
+    {
+      '1': 'type_filter',
+      '3': 2,
+      '4': 3,
+      '5': 14,
+      '6': '.librarian.sephirah.v1.sephirah.UserType',
+      '10': 'typeFilter'
+    },
+    {
+      '1': 'status_filter',
+      '3': 3,
+      '4': 3,
+      '5': 14,
+      '6': '.librarian.sephirah.v1.sephirah.UserStatus',
+      '10': 'statusFilter'
+    },
   ],
 };
 
@@ -140,8 +193,22 @@ final $typed_data.Uint8List listUsersRequestDescriptor = $convert.base64Decode(
 const ListUsersResponse$json = {
   '1': 'ListUsersResponse',
   '2': [
-    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingResponse', '10': 'paging'},
-    {'1': 'users', '3': 2, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.sephirah.User', '10': 'users'},
+    {
+      '1': 'paging',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.PagingResponse',
+      '10': 'paging'
+    },
+    {
+      '1': 'users',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.sephirah.User',
+      '10': 'users'
+    },
   ],
 };
 
@@ -155,7 +222,14 @@ final $typed_data.Uint8List listUsersResponseDescriptor = $convert.base64Decode(
 const UpdateUserRequest$json = {
   '1': 'UpdateUserRequest',
   '2': [
-    {'1': 'user', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.sephirah.User', '10': 'user'},
+    {
+      '1': 'user',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.sephirah.User',
+      '10': 'user'
+    },
   ],
 };
 
@@ -170,14 +244,21 @@ const UpdateUserResponse$json = {
 };
 
 /// Descriptor for `UpdateUserResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List updateUserResponseDescriptor = $convert.base64Decode(
-    'ChJVcGRhdGVVc2VyUmVzcG9uc2U=');
+final $typed_data.Uint8List updateUserResponseDescriptor =
+    $convert.base64Decode('ChJVcGRhdGVVc2VyUmVzcG9uc2U=');
 
 @$core.Deprecated('Use listPortersRequestDescriptor instead')
 const ListPortersRequest$json = {
   '1': 'ListPortersRequest',
   '2': [
-    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
+    {
+      '1': 'paging',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.PagingRequest',
+      '10': 'paging'
+    },
   ],
 };
 
@@ -190,8 +271,22 @@ final $typed_data.Uint8List listPortersRequestDescriptor = $convert.base64Decode
 const ListPortersResponse$json = {
   '1': 'ListPortersResponse',
   '2': [
-    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingResponse', '10': 'paging'},
-    {'1': 'porters', '3': 2, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.sephirah.Porter', '10': 'porters'},
+    {
+      '1': 'paging',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.PagingResponse',
+      '10': 'paging'
+    },
+    {
+      '1': 'porters',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.sephirah.Porter',
+      '10': 'porters'
+    },
   ],
 };
 
@@ -205,8 +300,22 @@ final $typed_data.Uint8List listPortersResponseDescriptor = $convert.base64Decod
 const UpdatePorterStatusRequest$json = {
   '1': 'UpdatePorterStatusRequest',
   '2': [
-    {'1': 'porter_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'porterId'},
-    {'1': 'status', '3': 2, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.sephirah.UserStatus', '10': 'status'},
+    {
+      '1': 'porter_id',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'porterId'
+    },
+    {
+      '1': 'status',
+      '3': 2,
+      '4': 1,
+      '5': 14,
+      '6': '.librarian.sephirah.v1.sephirah.UserStatus',
+      '10': 'status'
+    },
   ],
 };
 
@@ -222,14 +331,21 @@ const UpdatePorterStatusResponse$json = {
 };
 
 /// Descriptor for `UpdatePorterStatusResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List updatePorterStatusResponseDescriptor = $convert.base64Decode(
-    'ChpVcGRhdGVQb3J0ZXJTdGF0dXNSZXNwb25zZQ==');
+final $typed_data.Uint8List updatePorterStatusResponseDescriptor =
+    $convert.base64Decode('ChpVcGRhdGVQb3J0ZXJTdGF0dXNSZXNwb25zZQ==');
 
 @$core.Deprecated('Use deletePorterRequestDescriptor instead')
 const DeletePorterRequest$json = {
   '1': 'DeletePorterRequest',
   '2': [
-    {'1': 'porter_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'porterId'},
+    {
+      '1': 'porter_id',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'porterId'
+    },
   ],
 };
 
@@ -244,14 +360,21 @@ const DeletePorterResponse$json = {
 };
 
 /// Descriptor for `DeletePorterResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List deletePorterResponseDescriptor = $convert.base64Decode(
-    'ChREZWxldGVQb3J0ZXJSZXNwb25zZQ==');
+final $typed_data.Uint8List deletePorterResponseDescriptor =
+    $convert.base64Decode('ChREZWxldGVQb3J0ZXJSZXNwb25zZQ==');
 
 @$core.Deprecated('Use createSentinelRequestDescriptor instead')
 const CreateSentinelRequest$json = {
   '1': 'CreateSentinelRequest',
   '2': [
-    {'1': 'sentinel', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.angela.Sentinel', '10': 'sentinel'},
+    {
+      '1': 'sentinel',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.angela.Sentinel',
+      '10': 'sentinel'
+    },
   ],
 };
 
@@ -264,20 +387,35 @@ final $typed_data.Uint8List createSentinelRequestDescriptor = $convert.base64Dec
 const CreateSentinelResponse$json = {
   '1': 'CreateSentinelResponse',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+    {
+      '1': 'id',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'id'
+    },
   ],
 };
 
 /// Descriptor for `CreateSentinelResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List createSentinelResponseDescriptor = $convert.base64Decode(
-    'ChZDcmVhdGVTZW50aW5lbFJlc3BvbnNlEigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludG'
-    'VybmFsSURSAmlk');
+final $typed_data.Uint8List createSentinelResponseDescriptor =
+    $convert.base64Decode(
+        'ChZDcmVhdGVTZW50aW5lbFJlc3BvbnNlEigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludG'
+        'VybmFsSURSAmlk');
 
 @$core.Deprecated('Use listSentinelsRequestDescriptor instead')
 const ListSentinelsRequest$json = {
   '1': 'ListSentinelsRequest',
   '2': [
-    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
+    {
+      '1': 'paging',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.PagingRequest',
+      '10': 'paging'
+    },
   ],
 };
 
@@ -290,8 +428,22 @@ final $typed_data.Uint8List listSentinelsRequestDescriptor = $convert.base64Deco
 const ListSentinelsResponse$json = {
   '1': 'ListSentinelsResponse',
   '2': [
-    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingResponse', '10': 'paging'},
-    {'1': 'sentinels', '3': 2, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.angela.Sentinel', '10': 'sentinels'},
+    {
+      '1': 'paging',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.PagingResponse',
+      '10': 'paging'
+    },
+    {
+      '1': 'sentinels',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.angela.Sentinel',
+      '10': 'sentinels'
+    },
   ],
 };
 
@@ -305,8 +457,22 @@ final $typed_data.Uint8List listSentinelsResponseDescriptor = $convert.base64Dec
 const GetSentinelTokenRequest$json = {
   '1': 'GetSentinelTokenRequest',
   '2': [
-    {'1': 'sentinel_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'sentinelId'},
-    {'1': 'expiration_time', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'expirationTime'},
+    {
+      '1': 'sentinel_id',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'sentinelId'
+    },
+    {
+      '1': 'expiration_time',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'expirationTime'
+    },
   ],
 };
 
@@ -325,15 +491,23 @@ const GetSentinelTokenResponse$json = {
 };
 
 /// Descriptor for `GetSentinelTokenResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List getSentinelTokenResponseDescriptor = $convert.base64Decode(
-    'ChhHZXRTZW50aW5lbFRva2VuUmVzcG9uc2USIwoNcmVmcmVzaF90b2tlbhgBIAEoCVIMcmVmcm'
-    'VzaFRva2Vu');
+final $typed_data.Uint8List getSentinelTokenResponseDescriptor =
+    $convert.base64Decode(
+        'ChhHZXRTZW50aW5lbFRva2VuUmVzcG9uc2USIwoNcmVmcmVzaF90b2tlbhgBIAEoCVIMcmVmcm'
+        'VzaFRva2Vu');
 
 @$core.Deprecated('Use updateSentinelRequestDescriptor instead')
 const UpdateSentinelRequest$json = {
   '1': 'UpdateSentinelRequest',
   '2': [
-    {'1': 'sentinel', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.angela.Sentinel', '10': 'sentinel'},
+    {
+      '1': 'sentinel',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.angela.Sentinel',
+      '10': 'sentinel'
+    },
   ],
 };
 
@@ -348,14 +522,21 @@ const UpdateSentinelResponse$json = {
 };
 
 /// Descriptor for `UpdateSentinelResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List updateSentinelResponseDescriptor = $convert.base64Decode(
-    'ChZVcGRhdGVTZW50aW5lbFJlc3BvbnNl');
+final $typed_data.Uint8List updateSentinelResponseDescriptor =
+    $convert.base64Decode('ChZVcGRhdGVTZW50aW5lbFJlc3BvbnNl');
 
 @$core.Deprecated('Use deleteSentinelRequestDescriptor instead')
 const DeleteSentinelRequest$json = {
   '1': 'DeleteSentinelRequest',
   '2': [
-    {'1': 'sentinel_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'sentinelId'},
+    {
+      '1': 'sentinel_id',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'sentinelId'
+    },
   ],
 };
 
@@ -370,19 +551,40 @@ const DeleteSentinelResponse$json = {
 };
 
 /// Descriptor for `DeleteSentinelResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List deleteSentinelResponseDescriptor = $convert.base64Decode(
-    'ChZEZWxldGVTZW50aW5lbFJlc3BvbnNl');
+final $typed_data.Uint8List deleteSentinelResponseDescriptor =
+    $convert.base64Decode('ChZEZWxldGVTZW50aW5lbFJlc3BvbnNl');
 
 @$core.Deprecated('Use sentinelDescriptor instead')
 const Sentinel$json = {
   '1': 'Sentinel',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+    {
+      '1': 'id',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'id'
+    },
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
-    {'1': 'create_user_id', '3': 4, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'createUserId'},
+    {
+      '1': 'create_user_id',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'createUserId'
+    },
     {'1': 'allowed_ips', '3': 5, '4': 3, '5': 9, '10': 'allowedIps'},
-    {'1': 'status', '3': 6, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.angela.SentinelStatus', '10': 'status'},
+    {
+      '1': 'status',
+      '3': 6,
+      '4': 1,
+      '5': 14,
+      '6': '.librarian.sephirah.v1.angela.SentinelStatus',
+      '10': 'status'
+    },
   ],
 };
 
@@ -393,4 +595,3 @@ final $typed_data.Uint8List sentinelDescriptor = $convert.base64Decode(
     'cmVhdGVfdXNlcl9pZBgEIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgxjcmVhdGVVc2'
     'VySWQSHwoLYWxsb3dlZF9pcHMYBSADKAlSCmFsbG93ZWRJcHMSRAoGc3RhdHVzGAYgASgOMiwu'
     'bGlicmFyaWFuLnNlcGhpcmFoLnYxLmFuZ2VsYS5TZW50aW5lbFN0YXR1c1IGc3RhdHVz');
-

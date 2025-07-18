@@ -2,8 +2,14 @@
 // file: librarian/porter/v1/gebura.proto
 
 import * as jspb from "google-protobuf";
+import * as librarian_v1_wellknown_pb from "../../../librarian/v1/wellknown_pb";
 
 export class SearchAppInfoRequest extends jspb.Message {
+  hasConfig(): boolean;
+  clearConfig(): void;
+  getConfig(): librarian_v1_wellknown_pb.FeatureRequest | undefined;
+  setConfig(value?: librarian_v1_wellknown_pb.FeatureRequest): void;
+
   getNameLike(): string;
   setNameLike(value: string): void;
 
@@ -19,6 +25,7 @@ export class SearchAppInfoRequest extends jspb.Message {
 
 export namespace SearchAppInfoRequest {
   export type AsObject = {
+    config?: librarian_v1_wellknown_pb.FeatureRequest.AsObject,
     nameLike: string,
   }
 }
@@ -46,6 +53,11 @@ export namespace SearchAppInfoResponse {
 }
 
 export class GetAppInfoRequest extends jspb.Message {
+  hasConfig(): boolean;
+  clearConfig(): void;
+  getConfig(): librarian_v1_wellknown_pb.FeatureRequest | undefined;
+  setConfig(value?: librarian_v1_wellknown_pb.FeatureRequest): void;
+
   getSource(): string;
   setSource(value: string): void;
 
@@ -64,6 +76,7 @@ export class GetAppInfoRequest extends jspb.Message {
 
 export namespace GetAppInfoRequest {
   export type AsObject = {
+    config?: librarian_v1_wellknown_pb.FeatureRequest.AsObject,
     source: string,
     sourceAppId: string,
   }

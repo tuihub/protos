@@ -1,14 +1,14 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: librarian/sephirah/v1/angela/binah.proto
-//
+// Generated from librarian/sephirah/v1/angela/binah.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, unused_import
 
 import 'dart:convert' as $convert;
 import 'dart:core' as $core;
@@ -18,21 +18,44 @@ import 'dart:typed_data' as $typed_data;
 const ListStorageCapacityUsageRequest$json = {
   '1': 'ListStorageCapacityUsageRequest',
   '2': [
-    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
+    {
+      '1': 'paging',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.PagingRequest',
+      '10': 'paging'
+    },
   ],
 };
 
 /// Descriptor for `ListStorageCapacityUsageRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listStorageCapacityUsageRequestDescriptor = $convert.base64Decode(
-    'Ch9MaXN0U3RvcmFnZUNhcGFjaXR5VXNhZ2VSZXF1ZXN0EjMKBnBhZ2luZxgBIAEoCzIbLmxpYn'
-    'Jhcmlhbi52MS5QYWdpbmdSZXF1ZXN0UgZwYWdpbmc=');
+final $typed_data.Uint8List listStorageCapacityUsageRequestDescriptor =
+    $convert.base64Decode(
+        'Ch9MaXN0U3RvcmFnZUNhcGFjaXR5VXNhZ2VSZXF1ZXN0EjMKBnBhZ2luZxgBIAEoCzIbLmxpYn'
+        'Jhcmlhbi52MS5QYWdpbmdSZXF1ZXN0UgZwYWdpbmc=');
 
 @$core.Deprecated('Use listStorageCapacityUsageResponseDescriptor instead')
 const ListStorageCapacityUsageResponse$json = {
   '1': 'ListStorageCapacityUsageResponse',
   '2': [
-    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingResponse', '10': 'paging'},
-    {'1': 'items', '3': 2, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.angela.ListStorageCapacityUsageResponse.Item', '10': 'items'},
+    {
+      '1': 'paging',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.PagingResponse',
+      '10': 'paging'
+    },
+    {
+      '1': 'items',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6':
+          '.librarian.sephirah.v1.angela.ListStorageCapacityUsageResponse.Item',
+      '10': 'items'
+    },
   ],
   '3': [ListStorageCapacityUsageResponse_Item$json],
 };
@@ -41,8 +64,22 @@ const ListStorageCapacityUsageResponse$json = {
 const ListStorageCapacityUsageResponse_Item$json = {
   '1': 'Item',
   '2': [
-    {'1': 'user_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'userId'},
-    {'1': 'storage_capacity_usage', '3': 2, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.sephirah.StorageCapacityUsage', '10': 'storageCapacityUsage'},
+    {
+      '1': 'user_id',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'userId'
+    },
+    {
+      '1': 'storage_capacity_usage',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.sephirah.StorageCapacityUsage',
+      '10': 'storageCapacityUsage'
+    },
   ],
 };
 
@@ -65,21 +102,30 @@ const SimpleUploadFileRequest$json = {
 };
 
 /// Descriptor for `SimpleUploadFileRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List simpleUploadFileRequestDescriptor = $convert.base64Decode(
-    'ChdTaW1wbGVVcGxvYWRGaWxlUmVxdWVzdBISCgRkYXRhGAEgASgMUgRkYXRh');
+final $typed_data.Uint8List simpleUploadFileRequestDescriptor =
+    $convert.base64Decode(
+        'ChdTaW1wbGVVcGxvYWRGaWxlUmVxdWVzdBISCgRkYXRhGAEgASgMUgRkYXRh');
 
 @$core.Deprecated('Use simpleUploadFileResponseDescriptor instead')
 const SimpleUploadFileResponse$json = {
   '1': 'SimpleUploadFileResponse',
   '2': [
-    {'1': 'status', '3': 1, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.sephirah.FileTransferStatus', '10': 'status'},
+    {
+      '1': 'status',
+      '3': 1,
+      '4': 1,
+      '5': 14,
+      '6': '.librarian.sephirah.v1.sephirah.FileTransferStatus',
+      '10': 'status'
+    },
   ],
 };
 
 /// Descriptor for `SimpleUploadFileResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List simpleUploadFileResponseDescriptor = $convert.base64Decode(
-    'ChhTaW1wbGVVcGxvYWRGaWxlUmVzcG9uc2USSgoGc3RhdHVzGAEgASgOMjIubGlicmFyaWFuLn'
-    'NlcGhpcmFoLnYxLnNlcGhpcmFoLkZpbGVUcmFuc2ZlclN0YXR1c1IGc3RhdHVz');
+final $typed_data.Uint8List simpleUploadFileResponseDescriptor =
+    $convert.base64Decode(
+        'ChhTaW1wbGVVcGxvYWRGaWxlUmVzcG9uc2USSgoGc3RhdHVzGAEgASgOMjIubGlicmFyaWFuLn'
+        'NlcGhpcmFoLnYxLnNlcGhpcmFoLkZpbGVUcmFuc2ZlclN0YXR1c1IGc3RhdHVz');
 
 @$core.Deprecated('Use simpleDownloadFileRequestDescriptor instead')
 const SimpleDownloadFileRequest$json = {
@@ -87,8 +133,8 @@ const SimpleDownloadFileRequest$json = {
 };
 
 /// Descriptor for `SimpleDownloadFileRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List simpleDownloadFileRequestDescriptor = $convert.base64Decode(
-    'ChlTaW1wbGVEb3dubG9hZEZpbGVSZXF1ZXN0');
+final $typed_data.Uint8List simpleDownloadFileRequestDescriptor =
+    $convert.base64Decode('ChlTaW1wbGVEb3dubG9hZEZpbGVSZXF1ZXN0');
 
 @$core.Deprecated('Use simpleDownloadFileResponseDescriptor instead')
 const SimpleDownloadFileResponse$json = {
@@ -99,8 +145,9 @@ const SimpleDownloadFileResponse$json = {
 };
 
 /// Descriptor for `SimpleDownloadFileResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List simpleDownloadFileResponseDescriptor = $convert.base64Decode(
-    'ChpTaW1wbGVEb3dubG9hZEZpbGVSZXNwb25zZRISCgRkYXRhGAEgASgMUgRkYXRh');
+final $typed_data.Uint8List simpleDownloadFileResponseDescriptor =
+    $convert.base64Decode(
+        'ChpTaW1wbGVEb3dubG9hZEZpbGVSZXNwb25zZRISCgRkYXRhGAEgASgMUgRkYXRh');
 
 @$core.Deprecated('Use presignedUploadFileRequestDescriptor instead')
 const PresignedUploadFileRequest$json = {
@@ -108,8 +155,8 @@ const PresignedUploadFileRequest$json = {
 };
 
 /// Descriptor for `PresignedUploadFileRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List presignedUploadFileRequestDescriptor = $convert.base64Decode(
-    'ChpQcmVzaWduZWRVcGxvYWRGaWxlUmVxdWVzdA==');
+final $typed_data.Uint8List presignedUploadFileRequestDescriptor =
+    $convert.base64Decode('ChpQcmVzaWduZWRVcGxvYWRGaWxlUmVxdWVzdA==');
 
 @$core.Deprecated('Use presignedUploadFileResponseDescriptor instead')
 const PresignedUploadFileResponse$json = {
@@ -120,22 +167,31 @@ const PresignedUploadFileResponse$json = {
 };
 
 /// Descriptor for `PresignedUploadFileResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List presignedUploadFileResponseDescriptor = $convert.base64Decode(
-    'ChtQcmVzaWduZWRVcGxvYWRGaWxlUmVzcG9uc2USHQoKdXBsb2FkX3VybBgBIAEoCVIJdXBsb2'
-    'FkVXJs');
+final $typed_data.Uint8List presignedUploadFileResponseDescriptor =
+    $convert.base64Decode(
+        'ChtQcmVzaWduZWRVcGxvYWRGaWxlUmVzcG9uc2USHQoKdXBsb2FkX3VybBgBIAEoCVIJdXBsb2'
+        'FkVXJs');
 
 @$core.Deprecated('Use presignedUploadFileStatusRequestDescriptor instead')
 const PresignedUploadFileStatusRequest$json = {
   '1': 'PresignedUploadFileStatusRequest',
   '2': [
-    {'1': 'status', '3': 1, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.sephirah.FileTransferStatus', '10': 'status'},
+    {
+      '1': 'status',
+      '3': 1,
+      '4': 1,
+      '5': 14,
+      '6': '.librarian.sephirah.v1.sephirah.FileTransferStatus',
+      '10': 'status'
+    },
   ],
 };
 
 /// Descriptor for `PresignedUploadFileStatusRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List presignedUploadFileStatusRequestDescriptor = $convert.base64Decode(
-    'CiBQcmVzaWduZWRVcGxvYWRGaWxlU3RhdHVzUmVxdWVzdBJKCgZzdGF0dXMYASABKA4yMi5saW'
-    'JyYXJpYW4uc2VwaGlyYWgudjEuc2VwaGlyYWguRmlsZVRyYW5zZmVyU3RhdHVzUgZzdGF0dXM=');
+final $typed_data.Uint8List presignedUploadFileStatusRequestDescriptor =
+    $convert.base64Decode(
+        'CiBQcmVzaWduZWRVcGxvYWRGaWxlU3RhdHVzUmVxdWVzdBJKCgZzdGF0dXMYASABKA4yMi5saW'
+        'JyYXJpYW4uc2VwaGlyYWgudjEuc2VwaGlyYWguRmlsZVRyYW5zZmVyU3RhdHVzUgZzdGF0dXM=');
 
 @$core.Deprecated('Use presignedUploadFileStatusResponseDescriptor instead')
 const PresignedUploadFileStatusResponse$json = {
@@ -143,8 +199,8 @@ const PresignedUploadFileStatusResponse$json = {
 };
 
 /// Descriptor for `PresignedUploadFileStatusResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List presignedUploadFileStatusResponseDescriptor = $convert.base64Decode(
-    'CiFQcmVzaWduZWRVcGxvYWRGaWxlU3RhdHVzUmVzcG9uc2U=');
+final $typed_data.Uint8List presignedUploadFileStatusResponseDescriptor =
+    $convert.base64Decode('CiFQcmVzaWduZWRVcGxvYWRGaWxlU3RhdHVzUmVzcG9uc2U=');
 
 @$core.Deprecated('Use presignedDownloadFileRequestDescriptor instead')
 const PresignedDownloadFileRequest$json = {
@@ -152,8 +208,8 @@ const PresignedDownloadFileRequest$json = {
 };
 
 /// Descriptor for `PresignedDownloadFileRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List presignedDownloadFileRequestDescriptor = $convert.base64Decode(
-    'ChxQcmVzaWduZWREb3dubG9hZEZpbGVSZXF1ZXN0');
+final $typed_data.Uint8List presignedDownloadFileRequestDescriptor =
+    $convert.base64Decode('ChxQcmVzaWduZWREb3dubG9hZEZpbGVSZXF1ZXN0');
 
 @$core.Deprecated('Use presignedDownloadFileResponseDescriptor instead')
 const PresignedDownloadFileResponse$json = {
@@ -164,7 +220,7 @@ const PresignedDownloadFileResponse$json = {
 };
 
 /// Descriptor for `PresignedDownloadFileResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List presignedDownloadFileResponseDescriptor = $convert.base64Decode(
-    'Ch1QcmVzaWduZWREb3dubG9hZEZpbGVSZXNwb25zZRIhCgxkb3dubG9hZF91cmwYASABKAlSC2'
-    'Rvd25sb2FkVXJs');
-
+final $typed_data.Uint8List presignedDownloadFileResponseDescriptor =
+    $convert.base64Decode(
+        'Ch1QcmVzaWduZWREb3dubG9hZEZpbGVSZXNwb25zZRIhCgxkb3dubG9hZF91cmwYASABKAlSC2'
+        'Rvd25sb2FkVXJs');

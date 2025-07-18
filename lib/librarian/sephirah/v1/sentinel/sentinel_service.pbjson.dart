@@ -1,14 +1,14 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: librarian/sephirah/v1/sentinel/sentinel_service.proto
-//
+// Generated from librarian/sephirah/v1/sentinel/sentinel_service.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, unused_import
 
 import 'dart:convert' as $convert;
 import 'dart:core' as $core;
@@ -20,8 +20,8 @@ const RefreshTokenRequest$json = {
 };
 
 /// Descriptor for `RefreshTokenRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List refreshTokenRequestDescriptor = $convert.base64Decode(
-    'ChNSZWZyZXNoVG9rZW5SZXF1ZXN0');
+final $typed_data.Uint8List refreshTokenRequestDescriptor =
+    $convert.base64Decode('ChNSZWZyZXNoVG9rZW5SZXF1ZXN0');
 
 @$core.Deprecated('Use refreshTokenResponseDescriptor instead')
 const RefreshTokenResponse$json = {
@@ -42,9 +42,30 @@ const HeartbeatRequest$json = {
   '1': 'HeartbeatRequest',
   '2': [
     {'1': 'instance_id', '3': 1, '4': 1, '5': 3, '10': 'instanceId'},
-    {'1': 'client_time', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'clientTime'},
-    {'1': 'heartbeat_interval', '3': 3, '4': 1, '5': 11, '6': '.google.protobuf.Duration', '10': 'heartbeatInterval'},
-    {'1': 'commit_snapshot_interval', '3': 4, '4': 1, '5': 11, '6': '.google.protobuf.Duration', '10': 'commitSnapshotInterval'},
+    {
+      '1': 'client_time',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'clientTime'
+    },
+    {
+      '1': 'heartbeat_interval',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Duration',
+      '10': 'heartbeatInterval'
+    },
+    {
+      '1': 'commit_snapshot_interval',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Duration',
+      '10': 'commitSnapshotInterval'
+    },
   ],
 };
 
@@ -62,8 +83,8 @@ const HeartbeatResponse$json = {
 };
 
 /// Descriptor for `HeartbeatResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List heartbeatResponseDescriptor = $convert.base64Decode(
-    'ChFIZWFydGJlYXRSZXNwb25zZQ==');
+final $typed_data.Uint8List heartbeatResponseDescriptor =
+    $convert.base64Decode('ChFIZWFydGJlYXRSZXNwb25zZQ==');
 
 @$core.Deprecated('Use reportSentinelInformationRequestDescriptor instead')
 const ReportSentinelInformationRequest$json = {
@@ -72,8 +93,21 @@ const ReportSentinelInformationRequest$json = {
     {'1': 'url', '3': 1, '4': 1, '5': 9, '10': 'url'},
     {'1': 'url_alternatives', '3': 2, '4': 3, '5': 9, '10': 'urlAlternatives'},
     {'1': 'get_token_path', '3': 3, '4': 1, '5': 9, '10': 'getTokenPath'},
-    {'1': 'download_file_base_path', '3': 4, '4': 1, '5': 9, '10': 'downloadFileBasePath'},
-    {'1': 'libraries', '3': 5, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.sentinel.SentinelLibrary', '10': 'libraries'},
+    {
+      '1': 'download_file_base_path',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'downloadFileBasePath'
+    },
+    {
+      '1': 'libraries',
+      '3': 5,
+      '4': 3,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.sentinel.SentinelLibrary',
+      '10': 'libraries'
+    },
   ],
 };
 
@@ -91,16 +125,40 @@ const ReportSentinelInformationResponse$json = {
 };
 
 /// Descriptor for `ReportSentinelInformationResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List reportSentinelInformationResponseDescriptor = $convert.base64Decode(
-    'CiFSZXBvcnRTZW50aW5lbEluZm9ybWF0aW9uUmVzcG9uc2U=');
+final $typed_data.Uint8List reportSentinelInformationResponseDescriptor =
+    $convert.base64Decode('CiFSZXBvcnRTZW50aW5lbEluZm9ybWF0aW9uUmVzcG9uc2U=');
 
 @$core.Deprecated('Use reportAppBinariesRequestDescriptor instead')
 const ReportAppBinariesRequest$json = {
   '1': 'ReportAppBinariesRequest',
   '2': [
-    {'1': 'app_binaries', '3': 1, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.sentinel.SentinelLibraryAppBinary', '10': 'appBinaries'},
-    {'1': 'snapshot_time', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '9': 0, '10': 'snapshotTime', '17': true},
-    {'1': 'commit_snapshot', '3': 3, '4': 1, '5': 8, '9': 1, '10': 'commitSnapshot', '17': true},
+    {
+      '1': 'app_binaries',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.sentinel.SentinelLibraryAppBinary',
+      '10': 'appBinaries'
+    },
+    {
+      '1': 'snapshot_time',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '9': 0,
+      '10': 'snapshotTime',
+      '17': true
+    },
+    {
+      '1': 'commit_snapshot',
+      '3': 3,
+      '4': 1,
+      '5': 8,
+      '9': 1,
+      '10': 'commitSnapshot',
+      '17': true
+    },
   ],
   '8': [
     {'1': '_snapshot_time'},
@@ -120,7 +178,15 @@ final $typed_data.Uint8List reportAppBinariesRequestDescriptor = $convert.base64
 const ReportAppBinariesResponse$json = {
   '1': 'ReportAppBinariesResponse',
   '2': [
-    {'1': 'commit_snapshot_success', '3': 1, '4': 1, '5': 8, '9': 0, '10': 'commitSnapshotSuccess', '17': true},
+    {
+      '1': 'commit_snapshot_success',
+      '3': 1,
+      '4': 1,
+      '5': 8,
+      '9': 0,
+      '10': 'commitSnapshotSuccess',
+      '17': true
+    },
   ],
   '8': [
     {'1': '_commit_snapshot_success'},
@@ -138,7 +204,13 @@ const SentinelLibrary$json = {
   '1': 'SentinelLibrary',
   '2': [
     {'1': 'id', '3': 1, '4': 1, '5': 3, '10': 'id'},
-    {'1': 'download_base_path', '3': 2, '4': 1, '5': 9, '10': 'downloadBasePath'},
+    {
+      '1': 'download_base_path',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'downloadBasePath'
+    },
   ],
 };
 
@@ -151,11 +223,30 @@ final $typed_data.Uint8List sentinelLibraryDescriptor = $convert.base64Decode(
 const SentinelLibraryAppBinary$json = {
   '1': 'SentinelLibraryAppBinary',
   '2': [
-    {'1': 'sentinel_library_id', '3': 1, '4': 1, '5': 3, '10': 'sentinelLibraryId'},
-    {'1': 'sentinel_generated_id', '3': 2, '4': 1, '5': 9, '10': 'sentinelGeneratedId'},
+    {
+      '1': 'sentinel_library_id',
+      '3': 1,
+      '4': 1,
+      '5': 3,
+      '10': 'sentinelLibraryId'
+    },
+    {
+      '1': 'sentinel_generated_id',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'sentinelGeneratedId'
+    },
     {'1': 'size_bytes', '3': 3, '4': 1, '5': 3, '10': 'sizeBytes'},
     {'1': 'need_token', '3': 4, '4': 1, '5': 8, '10': 'needToken'},
-    {'1': 'files', '3': 5, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.sentinel.SentinelLibraryAppBinaryFile', '10': 'files'},
+    {
+      '1': 'files',
+      '3': 5,
+      '4': 3,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.sentinel.SentinelLibraryAppBinaryFile',
+      '10': 'files'
+    },
     {'1': 'name', '3': 10, '4': 1, '5': 9, '10': 'name'},
     {'1': 'version', '3': 11, '4': 1, '5': 9, '10': 'version'},
     {'1': 'developer', '3': 12, '4': 1, '5': 9, '10': 'developer'},
@@ -181,7 +272,15 @@ const SentinelLibraryAppBinaryFile$json = {
     {'1': 'size_bytes', '3': 2, '4': 1, '5': 3, '10': 'sizeBytes'},
     {'1': 'sha256', '3': 3, '4': 1, '5': 12, '10': 'sha256'},
     {'1': 'server_file_path', '3': 4, '4': 1, '5': 9, '10': 'serverFilePath'},
-    {'1': 'chunks_info', '3': 10, '4': 1, '5': 9, '9': 0, '10': 'chunksInfo', '17': true},
+    {
+      '1': 'chunks_info',
+      '3': 10,
+      '4': 1,
+      '5': 9,
+      '9': 0,
+      '10': 'chunksInfo',
+      '17': true
+    },
   ],
   '8': [
     {'1': '_chunks_info'},
@@ -194,4 +293,3 @@ final $typed_data.Uint8List sentinelLibraryAppBinaryFileDescriptor = $convert.ba
     'l6ZV9ieXRlcxgCIAEoA1IJc2l6ZUJ5dGVzEhYKBnNoYTI1NhgDIAEoDFIGc2hhMjU2EigKEHNl'
     'cnZlcl9maWxlX3BhdGgYBCABKAlSDnNlcnZlckZpbGVQYXRoEiQKC2NodW5rc19pbmZvGAogAS'
     'gJSABSCmNodW5rc0luZm+IAQFCDgoMX2NodW5rc19pbmZv');
-

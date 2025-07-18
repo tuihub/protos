@@ -1,14 +1,14 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: librarian/sephirah/v1/sephirah/netzach.proto
-//
+// Generated from librarian/sephirah/v1/sephirah/netzach.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, unused_import
 
 import 'dart:convert' as $convert;
 import 'dart:core' as $core;
@@ -87,40 +87,64 @@ final $typed_data.Uint8List systemNotificationStatusDescriptor = $convert.base64
 const CreateNotifyTargetRequest$json = {
   '1': 'CreateNotifyTargetRequest',
   '2': [
-    {'1': 'target', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.sephirah.NotifyTarget', '10': 'target'},
+    {
+      '1': 'target',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.sephirah.NotifyTarget',
+      '10': 'target'
+    },
   ],
 };
 
 /// Descriptor for `CreateNotifyTargetRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List createNotifyTargetRequestDescriptor = $convert.base64Decode(
-    'ChlDcmVhdGVOb3RpZnlUYXJnZXRSZXF1ZXN0EkQKBnRhcmdldBgBIAEoCzIsLmxpYnJhcmlhbi'
-    '5zZXBoaXJhaC52MS5zZXBoaXJhaC5Ob3RpZnlUYXJnZXRSBnRhcmdldA==');
+final $typed_data.Uint8List createNotifyTargetRequestDescriptor =
+    $convert.base64Decode(
+        'ChlDcmVhdGVOb3RpZnlUYXJnZXRSZXF1ZXN0EkQKBnRhcmdldBgBIAEoCzIsLmxpYnJhcmlhbi'
+        '5zZXBoaXJhaC52MS5zZXBoaXJhaC5Ob3RpZnlUYXJnZXRSBnRhcmdldA==');
 
 @$core.Deprecated('Use createNotifyTargetResponseDescriptor instead')
 const CreateNotifyTargetResponse$json = {
   '1': 'CreateNotifyTargetResponse',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+    {
+      '1': 'id',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'id'
+    },
   ],
 };
 
 /// Descriptor for `CreateNotifyTargetResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List createNotifyTargetResponseDescriptor = $convert.base64Decode(
-    'ChpDcmVhdGVOb3RpZnlUYXJnZXRSZXNwb25zZRIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS'
-    '5JbnRlcm5hbElEUgJpZA==');
+final $typed_data.Uint8List createNotifyTargetResponseDescriptor =
+    $convert.base64Decode(
+        'ChpDcmVhdGVOb3RpZnlUYXJnZXRSZXNwb25zZRIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS'
+        '5JbnRlcm5hbElEUgJpZA==');
 
 @$core.Deprecated('Use updateNotifyTargetRequestDescriptor instead')
 const UpdateNotifyTargetRequest$json = {
   '1': 'UpdateNotifyTargetRequest',
   '2': [
-    {'1': 'target', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.sephirah.NotifyTarget', '10': 'target'},
+    {
+      '1': 'target',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.sephirah.NotifyTarget',
+      '10': 'target'
+    },
   ],
 };
 
 /// Descriptor for `UpdateNotifyTargetRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List updateNotifyTargetRequestDescriptor = $convert.base64Decode(
-    'ChlVcGRhdGVOb3RpZnlUYXJnZXRSZXF1ZXN0EkQKBnRhcmdldBgBIAEoCzIsLmxpYnJhcmlhbi'
-    '5zZXBoaXJhaC52MS5zZXBoaXJhaC5Ob3RpZnlUYXJnZXRSBnRhcmdldA==');
+final $typed_data.Uint8List updateNotifyTargetRequestDescriptor =
+    $convert.base64Decode(
+        'ChlVcGRhdGVOb3RpZnlUYXJnZXRSZXF1ZXN0EkQKBnRhcmdldBgBIAEoCzIsLmxpYnJhcmlhbi'
+        '5zZXBoaXJhaC52MS5zZXBoaXJhaC5Ob3RpZnlUYXJnZXRSBnRhcmdldA==');
 
 @$core.Deprecated('Use updateNotifyTargetResponseDescriptor instead')
 const UpdateNotifyTargetResponse$json = {
@@ -128,16 +152,37 @@ const UpdateNotifyTargetResponse$json = {
 };
 
 /// Descriptor for `UpdateNotifyTargetResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List updateNotifyTargetResponseDescriptor = $convert.base64Decode(
-    'ChpVcGRhdGVOb3RpZnlUYXJnZXRSZXNwb25zZQ==');
+final $typed_data.Uint8List updateNotifyTargetResponseDescriptor =
+    $convert.base64Decode('ChpVcGRhdGVOb3RpZnlUYXJnZXRSZXNwb25zZQ==');
 
 @$core.Deprecated('Use listNotifyTargetsRequestDescriptor instead')
 const ListNotifyTargetsRequest$json = {
   '1': 'ListNotifyTargetsRequest',
   '2': [
-    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
-    {'1': 'id_filter', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'idFilter'},
-    {'1': 'status_filter', '3': 4, '4': 3, '5': 14, '6': '.librarian.sephirah.v1.sephirah.NotifyTargetStatus', '10': 'statusFilter'},
+    {
+      '1': 'paging',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.PagingRequest',
+      '10': 'paging'
+    },
+    {
+      '1': 'id_filter',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'idFilter'
+    },
+    {
+      '1': 'status_filter',
+      '3': 4,
+      '4': 3,
+      '5': 14,
+      '6': '.librarian.sephirah.v1.sephirah.NotifyTargetStatus',
+      '10': 'statusFilter'
+    },
   ],
 };
 
@@ -153,8 +198,22 @@ final $typed_data.Uint8List listNotifyTargetsRequestDescriptor = $convert.base64
 const ListNotifyTargetsResponse$json = {
   '1': 'ListNotifyTargetsResponse',
   '2': [
-    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingResponse', '10': 'paging'},
-    {'1': 'targets', '3': 2, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.sephirah.NotifyTarget', '10': 'targets'},
+    {
+      '1': 'paging',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.PagingResponse',
+      '10': 'paging'
+    },
+    {
+      '1': 'targets',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.sephirah.NotifyTarget',
+      '10': 'targets'
+    },
   ],
 };
 
@@ -168,40 +227,64 @@ final $typed_data.Uint8List listNotifyTargetsResponseDescriptor = $convert.base6
 const CreateNotifyFlowRequest$json = {
   '1': 'CreateNotifyFlowRequest',
   '2': [
-    {'1': 'flow', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.sephirah.NotifyFlow', '10': 'flow'},
+    {
+      '1': 'flow',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.sephirah.NotifyFlow',
+      '10': 'flow'
+    },
   ],
 };
 
 /// Descriptor for `CreateNotifyFlowRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List createNotifyFlowRequestDescriptor = $convert.base64Decode(
-    'ChdDcmVhdGVOb3RpZnlGbG93UmVxdWVzdBI+CgRmbG93GAEgASgLMioubGlicmFyaWFuLnNlcG'
-    'hpcmFoLnYxLnNlcGhpcmFoLk5vdGlmeUZsb3dSBGZsb3c=');
+final $typed_data.Uint8List createNotifyFlowRequestDescriptor =
+    $convert.base64Decode(
+        'ChdDcmVhdGVOb3RpZnlGbG93UmVxdWVzdBI+CgRmbG93GAEgASgLMioubGlicmFyaWFuLnNlcG'
+        'hpcmFoLnYxLnNlcGhpcmFoLk5vdGlmeUZsb3dSBGZsb3c=');
 
 @$core.Deprecated('Use createNotifyFlowResponseDescriptor instead')
 const CreateNotifyFlowResponse$json = {
   '1': 'CreateNotifyFlowResponse',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+    {
+      '1': 'id',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'id'
+    },
   ],
 };
 
 /// Descriptor for `CreateNotifyFlowResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List createNotifyFlowResponseDescriptor = $convert.base64Decode(
-    'ChhDcmVhdGVOb3RpZnlGbG93UmVzcG9uc2USKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW'
-    '50ZXJuYWxJRFICaWQ=');
+final $typed_data.Uint8List createNotifyFlowResponseDescriptor =
+    $convert.base64Decode(
+        'ChhDcmVhdGVOb3RpZnlGbG93UmVzcG9uc2USKAoCaWQYASABKAsyGC5saWJyYXJpYW4udjEuSW'
+        '50ZXJuYWxJRFICaWQ=');
 
 @$core.Deprecated('Use updateNotifyFlowRequestDescriptor instead')
 const UpdateNotifyFlowRequest$json = {
   '1': 'UpdateNotifyFlowRequest',
   '2': [
-    {'1': 'flow', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.sephirah.NotifyFlow', '10': 'flow'},
+    {
+      '1': 'flow',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.sephirah.NotifyFlow',
+      '10': 'flow'
+    },
   ],
 };
 
 /// Descriptor for `UpdateNotifyFlowRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List updateNotifyFlowRequestDescriptor = $convert.base64Decode(
-    'ChdVcGRhdGVOb3RpZnlGbG93UmVxdWVzdBI+CgRmbG93GAEgASgLMioubGlicmFyaWFuLnNlcG'
-    'hpcmFoLnYxLnNlcGhpcmFoLk5vdGlmeUZsb3dSBGZsb3c=');
+final $typed_data.Uint8List updateNotifyFlowRequestDescriptor =
+    $convert.base64Decode(
+        'ChdVcGRhdGVOb3RpZnlGbG93UmVxdWVzdBI+CgRmbG93GAEgASgLMioubGlicmFyaWFuLnNlcG'
+        'hpcmFoLnYxLnNlcGhpcmFoLk5vdGlmeUZsb3dSBGZsb3c=');
 
 @$core.Deprecated('Use updateNotifyFlowResponseDescriptor instead')
 const UpdateNotifyFlowResponse$json = {
@@ -209,15 +292,29 @@ const UpdateNotifyFlowResponse$json = {
 };
 
 /// Descriptor for `UpdateNotifyFlowResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List updateNotifyFlowResponseDescriptor = $convert.base64Decode(
-    'ChhVcGRhdGVOb3RpZnlGbG93UmVzcG9uc2U=');
+final $typed_data.Uint8List updateNotifyFlowResponseDescriptor =
+    $convert.base64Decode('ChhVcGRhdGVOb3RpZnlGbG93UmVzcG9uc2U=');
 
 @$core.Deprecated('Use listNotifyFlowsRequestDescriptor instead')
 const ListNotifyFlowsRequest$json = {
   '1': 'ListNotifyFlowsRequest',
   '2': [
-    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
-    {'1': 'id_filter', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'idFilter'},
+    {
+      '1': 'paging',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.PagingRequest',
+      '10': 'paging'
+    },
+    {
+      '1': 'id_filter',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'idFilter'
+    },
   ],
 };
 
@@ -231,8 +328,22 @@ final $typed_data.Uint8List listNotifyFlowsRequestDescriptor = $convert.base64De
 const ListNotifyFlowsResponse$json = {
   '1': 'ListNotifyFlowsResponse',
   '2': [
-    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingResponse', '10': 'paging'},
-    {'1': 'flows', '3': 2, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.sephirah.NotifyFlow', '10': 'flows'},
+    {
+      '1': 'paging',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.PagingResponse',
+      '10': 'paging'
+    },
+    {
+      '1': 'flows',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.sephirah.NotifyFlow',
+      '10': 'flows'
+    },
   ],
 };
 
@@ -246,11 +357,32 @@ final $typed_data.Uint8List listNotifyFlowsResponseDescriptor = $convert.base64D
 const NotifyTarget$json = {
   '1': 'NotifyTarget',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+    {
+      '1': 'id',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'id'
+    },
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
-    {'1': 'destination', '3': 4, '4': 1, '5': 11, '6': '.librarian.v1.FeatureRequest', '10': 'destination'},
-    {'1': 'status', '3': 5, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.sephirah.NotifyTargetStatus', '10': 'status'},
+    {
+      '1': 'destination',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.FeatureRequest',
+      '10': 'destination'
+    },
+    {
+      '1': 'status',
+      '3': 5,
+      '4': 1,
+      '5': 14,
+      '6': '.librarian.sephirah.v1.sephirah.NotifyTargetStatus',
+      '10': 'status'
+    },
   ],
 };
 
@@ -266,12 +398,40 @@ final $typed_data.Uint8List notifyTargetDescriptor = $convert.base64Decode(
 const NotifyFlow$json = {
   '1': 'NotifyFlow',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+    {
+      '1': 'id',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'id'
+    },
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
-    {'1': 'sources', '3': 4, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.sephirah.NotifyFlowSource', '10': 'sources'},
-    {'1': 'targets', '3': 5, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.sephirah.NotifyFlowTarget', '10': 'targets'},
-    {'1': 'status', '3': 6, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.sephirah.NotifyFlowStatus', '10': 'status'},
+    {
+      '1': 'sources',
+      '3': 4,
+      '4': 3,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.sephirah.NotifyFlowSource',
+      '10': 'sources'
+    },
+    {
+      '1': 'targets',
+      '3': 5,
+      '4': 3,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.sephirah.NotifyFlowTarget',
+      '10': 'targets'
+    },
+    {
+      '1': 'status',
+      '3': 6,
+      '4': 1,
+      '5': 14,
+      '6': '.librarian.sephirah.v1.sephirah.NotifyFlowStatus',
+      '10': 'status'
+    },
   ],
 };
 
@@ -289,8 +449,22 @@ final $typed_data.Uint8List notifyFlowDescriptor = $convert.base64Decode(
 const NotifyFlowSource$json = {
   '1': 'NotifyFlowSource',
   '2': [
-    {'1': 'filter', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.sephirah.NotifyFilter', '10': 'filter'},
-    {'1': 'source_id', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'sourceId'},
+    {
+      '1': 'filter',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.sephirah.NotifyFilter',
+      '10': 'filter'
+    },
+    {
+      '1': 'source_id',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'sourceId'
+    },
   ],
 };
 
@@ -304,8 +478,22 @@ final $typed_data.Uint8List notifyFlowSourceDescriptor = $convert.base64Decode(
 const NotifyFlowTarget$json = {
   '1': 'NotifyFlowTarget',
   '2': [
-    {'1': 'filter', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.sephirah.NotifyFilter', '10': 'filter'},
-    {'1': 'target_id', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'targetId'},
+    {
+      '1': 'filter',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.sephirah.NotifyFilter',
+      '10': 'filter'
+    },
+    {
+      '1': 'target_id',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'targetId'
+    },
   ],
 };
 
@@ -333,9 +521,30 @@ final $typed_data.Uint8List notifyFilterDescriptor = $convert.base64Decode(
 const ListSystemNotificationsRequest$json = {
   '1': 'ListSystemNotificationsRequest',
   '2': [
-    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
-    {'1': 'level_filter', '3': 3, '4': 3, '5': 14, '6': '.librarian.sephirah.v1.sephirah.SystemNotificationLevel', '10': 'levelFilter'},
-    {'1': 'status_filter', '3': 4, '4': 3, '5': 14, '6': '.librarian.sephirah.v1.sephirah.SystemNotificationStatus', '10': 'statusFilter'},
+    {
+      '1': 'paging',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.PagingRequest',
+      '10': 'paging'
+    },
+    {
+      '1': 'level_filter',
+      '3': 3,
+      '4': 3,
+      '5': 14,
+      '6': '.librarian.sephirah.v1.sephirah.SystemNotificationLevel',
+      '10': 'levelFilter'
+    },
+    {
+      '1': 'status_filter',
+      '3': 4,
+      '4': 3,
+      '5': 14,
+      '6': '.librarian.sephirah.v1.sephirah.SystemNotificationStatus',
+      '10': 'statusFilter'
+    },
   ],
 };
 
@@ -351,32 +560,62 @@ final $typed_data.Uint8List listSystemNotificationsRequestDescriptor = $convert.
 const ListSystemNotificationsResponse$json = {
   '1': 'ListSystemNotificationsResponse',
   '2': [
-    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingResponse', '10': 'paging'},
-    {'1': 'notifications', '3': 2, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.sephirah.SystemNotification', '10': 'notifications'},
+    {
+      '1': 'paging',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.PagingResponse',
+      '10': 'paging'
+    },
+    {
+      '1': 'notifications',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.sephirah.SystemNotification',
+      '10': 'notifications'
+    },
   ],
 };
 
 /// Descriptor for `ListSystemNotificationsResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listSystemNotificationsResponseDescriptor = $convert.base64Decode(
-    'Ch9MaXN0U3lzdGVtTm90aWZpY2F0aW9uc1Jlc3BvbnNlEjQKBnBhZ2luZxgBIAEoCzIcLmxpYn'
-    'Jhcmlhbi52MS5QYWdpbmdSZXNwb25zZVIGcGFnaW5nElgKDW5vdGlmaWNhdGlvbnMYAiADKAsy'
-    'Mi5saWJyYXJpYW4uc2VwaGlyYWgudjEuc2VwaGlyYWguU3lzdGVtTm90aWZpY2F0aW9uUg1ub3'
-    'RpZmljYXRpb25z');
+final $typed_data.Uint8List listSystemNotificationsResponseDescriptor =
+    $convert.base64Decode(
+        'Ch9MaXN0U3lzdGVtTm90aWZpY2F0aW9uc1Jlc3BvbnNlEjQKBnBhZ2luZxgBIAEoCzIcLmxpYn'
+        'Jhcmlhbi52MS5QYWdpbmdSZXNwb25zZVIGcGFnaW5nElgKDW5vdGlmaWNhdGlvbnMYAiADKAsy'
+        'Mi5saWJyYXJpYW4uc2VwaGlyYWgudjEuc2VwaGlyYWguU3lzdGVtTm90aWZpY2F0aW9uUg1ub3'
+        'RpZmljYXRpb25z');
 
 @$core.Deprecated('Use updateSystemNotificationRequestDescriptor instead')
 const UpdateSystemNotificationRequest$json = {
   '1': 'UpdateSystemNotificationRequest',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
-    {'1': 'status', '3': 2, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.sephirah.SystemNotificationStatus', '10': 'status'},
+    {
+      '1': 'id',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'id'
+    },
+    {
+      '1': 'status',
+      '3': 2,
+      '4': 1,
+      '5': 14,
+      '6': '.librarian.sephirah.v1.sephirah.SystemNotificationStatus',
+      '10': 'status'
+    },
   ],
 };
 
 /// Descriptor for `UpdateSystemNotificationRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List updateSystemNotificationRequestDescriptor = $convert.base64Decode(
-    'Ch9VcGRhdGVTeXN0ZW1Ob3RpZmljYXRpb25SZXF1ZXN0EigKAmlkGAEgASgLMhgubGlicmFyaW'
-    'FuLnYxLkludGVybmFsSURSAmlkElAKBnN0YXR1cxgCIAEoDjI4LmxpYnJhcmlhbi5zZXBoaXJh'
-    'aC52MS5zZXBoaXJhaC5TeXN0ZW1Ob3RpZmljYXRpb25TdGF0dXNSBnN0YXR1cw==');
+final $typed_data.Uint8List updateSystemNotificationRequestDescriptor =
+    $convert.base64Decode(
+        'Ch9VcGRhdGVTeXN0ZW1Ob3RpZmljYXRpb25SZXF1ZXN0EigKAmlkGAEgASgLMhgubGlicmFyaW'
+        'FuLnYxLkludGVybmFsSURSAmlkElAKBnN0YXR1cxgCIAEoDjI4LmxpYnJhcmlhbi5zZXBoaXJh'
+        'aC52MS5zZXBoaXJhaC5TeXN0ZW1Ob3RpZmljYXRpb25TdGF0dXNSBnN0YXR1cw==');
 
 @$core.Deprecated('Use updateSystemNotificationResponseDescriptor instead')
 const UpdateSystemNotificationResponse$json = {
@@ -384,20 +623,55 @@ const UpdateSystemNotificationResponse$json = {
 };
 
 /// Descriptor for `UpdateSystemNotificationResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List updateSystemNotificationResponseDescriptor = $convert.base64Decode(
-    'CiBVcGRhdGVTeXN0ZW1Ob3RpZmljYXRpb25SZXNwb25zZQ==');
+final $typed_data.Uint8List updateSystemNotificationResponseDescriptor =
+    $convert.base64Decode('CiBVcGRhdGVTeXN0ZW1Ob3RpZmljYXRpb25SZXNwb25zZQ==');
 
 @$core.Deprecated('Use systemNotificationDescriptor instead')
 const SystemNotification$json = {
   '1': 'SystemNotification',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
-    {'1': 'level', '3': 3, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.sephirah.SystemNotificationLevel', '10': 'level'},
-    {'1': 'status', '3': 4, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.sephirah.SystemNotificationStatus', '10': 'status'},
+    {
+      '1': 'id',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'id'
+    },
+    {
+      '1': 'level',
+      '3': 3,
+      '4': 1,
+      '5': 14,
+      '6': '.librarian.sephirah.v1.sephirah.SystemNotificationLevel',
+      '10': 'level'
+    },
+    {
+      '1': 'status',
+      '3': 4,
+      '4': 1,
+      '5': 14,
+      '6': '.librarian.sephirah.v1.sephirah.SystemNotificationStatus',
+      '10': 'status'
+    },
     {'1': 'title', '3': 5, '4': 1, '5': 9, '10': 'title'},
     {'1': 'content', '3': 6, '4': 1, '5': 9, '10': 'content'},
-    {'1': 'create_time', '3': 7, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createTime'},
-    {'1': 'update_time', '3': 8, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'updateTime'},
+    {
+      '1': 'create_time',
+      '3': 7,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createTime'
+    },
+    {
+      '1': 'update_time',
+      '3': 8,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'updateTime'
+    },
   ],
 };
 
@@ -411,4 +685,3 @@ final $typed_data.Uint8List systemNotificationDescriptor = $convert.base64Decode
     'VhdGVfdGltZRgHIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCmNyZWF0ZVRpbWUS'
     'OwoLdXBkYXRlX3RpbWUYCCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgp1cGRhdG'
     'VUaW1l');
-

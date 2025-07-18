@@ -1,7 +1,7 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: librarian/miner/v1/miner.proto
-//
+// Generated from librarian/miner/v1/miner.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
@@ -27,29 +27,45 @@ class RecognizeImageBinaryRequest extends $pb.GeneratedMessage {
 
   RecognizeImageBinaryRequest._();
 
-  factory RecognizeImageBinaryRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory RecognizeImageBinaryRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory RecognizeImageBinaryRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecognizeImageBinaryRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RecognizeImageBinaryRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.miner.v1'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'data', $pb.PbFieldType.OY)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecognizeImageBinaryRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'librarian.miner.v1'),
+      createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(
+        1, _omitFieldNames ? '' : 'data', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RecognizeImageBinaryRequest clone() => RecognizeImageBinaryRequest()..mergeFromMessage(this);
+  RecognizeImageBinaryRequest clone() =>
+      RecognizeImageBinaryRequest()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RecognizeImageBinaryRequest copyWith(void Function(RecognizeImageBinaryRequest) updates) => super.copyWith((message) => updates(message as RecognizeImageBinaryRequest)) as RecognizeImageBinaryRequest;
+  RecognizeImageBinaryRequest copyWith(
+          void Function(RecognizeImageBinaryRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as RecognizeImageBinaryRequest))
+          as RecognizeImageBinaryRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static RecognizeImageBinaryRequest create() => RecognizeImageBinaryRequest._();
+  static RecognizeImageBinaryRequest create() =>
+      RecognizeImageBinaryRequest._();
   @$core.override
   RecognizeImageBinaryRequest createEmptyInstance() => create();
-  static $pb.PbList<RecognizeImageBinaryRequest> createRepeated() => $pb.PbList<RecognizeImageBinaryRequest>();
+  static $pb.PbList<RecognizeImageBinaryRequest> createRepeated() =>
+      $pb.PbList<RecognizeImageBinaryRequest>();
   @$core.pragma('dart2js:noInline')
-  static RecognizeImageBinaryRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RecognizeImageBinaryRequest>(create);
+  static RecognizeImageBinaryRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RecognizeImageBinaryRequest>(create);
   static RecognizeImageBinaryRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -73,29 +89,46 @@ class RecognizeImageBinaryResponse extends $pb.GeneratedMessage {
 
   RecognizeImageBinaryResponse._();
 
-  factory RecognizeImageBinaryResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory RecognizeImageBinaryResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory RecognizeImageBinaryResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecognizeImageBinaryResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RecognizeImageBinaryResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.miner.v1'), createEmptyInstance: create)
-    ..pc<RecognizeImageResult>(1, _omitFieldNames ? '' : 'results', $pb.PbFieldType.PM, subBuilder: RecognizeImageResult.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecognizeImageBinaryResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'librarian.miner.v1'),
+      createEmptyInstance: create)
+    ..pc<RecognizeImageResult>(
+        1, _omitFieldNames ? '' : 'results', $pb.PbFieldType.PM,
+        subBuilder: RecognizeImageResult.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RecognizeImageBinaryResponse clone() => RecognizeImageBinaryResponse()..mergeFromMessage(this);
+  RecognizeImageBinaryResponse clone() =>
+      RecognizeImageBinaryResponse()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RecognizeImageBinaryResponse copyWith(void Function(RecognizeImageBinaryResponse) updates) => super.copyWith((message) => updates(message as RecognizeImageBinaryResponse)) as RecognizeImageBinaryResponse;
+  RecognizeImageBinaryResponse copyWith(
+          void Function(RecognizeImageBinaryResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as RecognizeImageBinaryResponse))
+          as RecognizeImageBinaryResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static RecognizeImageBinaryResponse create() => RecognizeImageBinaryResponse._();
+  static RecognizeImageBinaryResponse create() =>
+      RecognizeImageBinaryResponse._();
   @$core.override
   RecognizeImageBinaryResponse createEmptyInstance() => create();
-  static $pb.PbList<RecognizeImageBinaryResponse> createRepeated() => $pb.PbList<RecognizeImageBinaryResponse>();
+  static $pb.PbList<RecognizeImageBinaryResponse> createRepeated() =>
+      $pb.PbList<RecognizeImageBinaryResponse>();
   @$core.pragma('dart2js:noInline')
-  static RecognizeImageBinaryResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RecognizeImageBinaryResponse>(create);
+  static RecognizeImageBinaryResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RecognizeImageBinaryResponse>(create);
   static RecognizeImageBinaryResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -113,18 +146,29 @@ class RecognizeImageURLRequest extends $pb.GeneratedMessage {
 
   RecognizeImageURLRequest._();
 
-  factory RecognizeImageURLRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory RecognizeImageURLRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory RecognizeImageURLRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecognizeImageURLRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RecognizeImageURLRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.miner.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecognizeImageURLRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'librarian.miner.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'url')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RecognizeImageURLRequest clone() => RecognizeImageURLRequest()..mergeFromMessage(this);
+  RecognizeImageURLRequest clone() =>
+      RecognizeImageURLRequest()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RecognizeImageURLRequest copyWith(void Function(RecognizeImageURLRequest) updates) => super.copyWith((message) => updates(message as RecognizeImageURLRequest)) as RecognizeImageURLRequest;
+  RecognizeImageURLRequest copyWith(
+          void Function(RecognizeImageURLRequest) updates) =>
+      super.copyWith((message) => updates(message as RecognizeImageURLRequest))
+          as RecognizeImageURLRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -133,9 +177,11 @@ class RecognizeImageURLRequest extends $pb.GeneratedMessage {
   static RecognizeImageURLRequest create() => RecognizeImageURLRequest._();
   @$core.override
   RecognizeImageURLRequest createEmptyInstance() => create();
-  static $pb.PbList<RecognizeImageURLRequest> createRepeated() => $pb.PbList<RecognizeImageURLRequest>();
+  static $pb.PbList<RecognizeImageURLRequest> createRepeated() =>
+      $pb.PbList<RecognizeImageURLRequest>();
   @$core.pragma('dart2js:noInline')
-  static RecognizeImageURLRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RecognizeImageURLRequest>(create);
+  static RecognizeImageURLRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RecognizeImageURLRequest>(create);
   static RecognizeImageURLRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -159,18 +205,31 @@ class RecognizeImageURLResponse extends $pb.GeneratedMessage {
 
   RecognizeImageURLResponse._();
 
-  factory RecognizeImageURLResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory RecognizeImageURLResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory RecognizeImageURLResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecognizeImageURLResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RecognizeImageURLResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.miner.v1'), createEmptyInstance: create)
-    ..pc<RecognizeImageResult>(1, _omitFieldNames ? '' : 'results', $pb.PbFieldType.PM, subBuilder: RecognizeImageResult.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecognizeImageURLResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'librarian.miner.v1'),
+      createEmptyInstance: create)
+    ..pc<RecognizeImageResult>(
+        1, _omitFieldNames ? '' : 'results', $pb.PbFieldType.PM,
+        subBuilder: RecognizeImageResult.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RecognizeImageURLResponse clone() => RecognizeImageURLResponse()..mergeFromMessage(this);
+  RecognizeImageURLResponse clone() =>
+      RecognizeImageURLResponse()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RecognizeImageURLResponse copyWith(void Function(RecognizeImageURLResponse) updates) => super.copyWith((message) => updates(message as RecognizeImageURLResponse)) as RecognizeImageURLResponse;
+  RecognizeImageURLResponse copyWith(
+          void Function(RecognizeImageURLResponse) updates) =>
+      super.copyWith((message) => updates(message as RecognizeImageURLResponse))
+          as RecognizeImageURLResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -179,9 +238,11 @@ class RecognizeImageURLResponse extends $pb.GeneratedMessage {
   static RecognizeImageURLResponse create() => RecognizeImageURLResponse._();
   @$core.override
   RecognizeImageURLResponse createEmptyInstance() => create();
-  static $pb.PbList<RecognizeImageURLResponse> createRepeated() => $pb.PbList<RecognizeImageURLResponse>();
+  static $pb.PbList<RecognizeImageURLResponse> createRepeated() =>
+      $pb.PbList<RecognizeImageURLResponse>();
   @$core.pragma('dart2js:noInline')
-  static RecognizeImageURLResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RecognizeImageURLResponse>(create);
+  static RecognizeImageURLResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RecognizeImageURLResponse>(create);
   static RecognizeImageURLResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -201,19 +262,30 @@ class RecognizeImageResult extends $pb.GeneratedMessage {
 
   RecognizeImageResult._();
 
-  factory RecognizeImageResult.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory RecognizeImageResult.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory RecognizeImageResult.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory RecognizeImageResult.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RecognizeImageResult', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.miner.v1'), createEmptyInstance: create)
-    ..a<$core.double>(1, _omitFieldNames ? '' : 'confidence', $pb.PbFieldType.OD)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'RecognizeImageResult',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'librarian.miner.v1'),
+      createEmptyInstance: create)
+    ..a<$core.double>(
+        1, _omitFieldNames ? '' : 'confidence', $pb.PbFieldType.OD)
     ..aOS(2, _omitFieldNames ? '' : 'text')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RecognizeImageResult clone() => RecognizeImageResult()..mergeFromMessage(this);
+  RecognizeImageResult clone() =>
+      RecognizeImageResult()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RecognizeImageResult copyWith(void Function(RecognizeImageResult) updates) => super.copyWith((message) => updates(message as RecognizeImageResult)) as RecognizeImageResult;
+  RecognizeImageResult copyWith(void Function(RecognizeImageResult) updates) =>
+      super.copyWith((message) => updates(message as RecognizeImageResult))
+          as RecognizeImageResult;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -222,9 +294,11 @@ class RecognizeImageResult extends $pb.GeneratedMessage {
   static RecognizeImageResult create() => RecognizeImageResult._();
   @$core.override
   RecognizeImageResult createEmptyInstance() => create();
-  static $pb.PbList<RecognizeImageResult> createRepeated() => $pb.PbList<RecognizeImageResult>();
+  static $pb.PbList<RecognizeImageResult> createRepeated() =>
+      $pb.PbList<RecognizeImageResult>();
   @$core.pragma('dart2js:noInline')
-  static RecognizeImageResult getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RecognizeImageResult>(create);
+  static RecognizeImageResult getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RecognizeImageResult>(create);
   static RecognizeImageResult? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -246,6 +320,7 @@ class RecognizeImageResult extends $pb.GeneratedMessage {
   void clearText() => $_clearField(2);
 }
 
-
-const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
-const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
+const $core.bool _omitFieldNames =
+    $core.bool.fromEnvironment('protobuf.omit_field_names');
+const $core.bool _omitMessageNames =
+    $core.bool.fromEnvironment('protobuf.omit_message_names');

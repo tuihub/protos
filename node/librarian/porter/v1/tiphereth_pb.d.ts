@@ -2,8 +2,14 @@
 // file: librarian/porter/v1/tiphereth.proto
 
 import * as jspb from "google-protobuf";
+import * as librarian_v1_wellknown_pb from "../../../librarian/v1/wellknown_pb";
 
 export class GetAccountRequest extends jspb.Message {
+  hasConfig(): boolean;
+  clearConfig(): void;
+  getConfig(): librarian_v1_wellknown_pb.FeatureRequest | undefined;
+  setConfig(value?: librarian_v1_wellknown_pb.FeatureRequest): void;
+
   getPlatform(): string;
   setPlatform(value: string): void;
 
@@ -22,6 +28,7 @@ export class GetAccountRequest extends jspb.Message {
 
 export namespace GetAccountRequest {
   export type AsObject = {
+    config?: librarian_v1_wellknown_pb.FeatureRequest.AsObject,
     platform: string,
     platformAccountId: string,
   }

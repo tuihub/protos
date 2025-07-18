@@ -1,14 +1,14 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: librarian/v1/common.proto
-//
+// Generated from librarian/v1/common.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, unused_import
 
 import 'dart:convert' as $convert;
 import 'dart:core' as $core;
@@ -18,14 +18,42 @@ import 'dart:typed_data' as $typed_data;
 const Feed$json = {
   '1': 'Feed',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+    {
+      '1': 'id',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'id'
+    },
     {'1': 'title', '3': 2, '4': 1, '5': 9, '10': 'title'},
     {'1': 'link', '3': 3, '4': 1, '5': 9, '10': 'link'},
     {'1': 'description', '3': 4, '4': 1, '5': 9, '10': 'description'},
-    {'1': 'items', '3': 5, '4': 3, '5': 11, '6': '.librarian.v1.FeedItem', '10': 'items'},
+    {
+      '1': 'items',
+      '3': 5,
+      '4': 3,
+      '5': 11,
+      '6': '.librarian.v1.FeedItem',
+      '10': 'items'
+    },
     {'1': 'language', '3': 6, '4': 1, '5': 9, '10': 'language'},
-    {'1': 'image', '3': 7, '4': 1, '5': 11, '6': '.librarian.v1.FeedImage', '10': 'image'},
-    {'1': 'authors', '3': 8, '4': 3, '5': 11, '6': '.librarian.v1.FeedPerson', '10': 'authors'},
+    {
+      '1': 'image',
+      '3': 7,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.FeedImage',
+      '10': 'image'
+    },
+    {
+      '1': 'authors',
+      '3': 8,
+      '4': 3,
+      '5': 11,
+      '6': '.librarian.v1.FeedPerson',
+      '10': 'authors'
+    },
   ],
 };
 
@@ -42,19 +70,65 @@ final $typed_data.Uint8List feedDescriptor = $convert.base64Decode(
 const FeedItem$json = {
   '1': 'FeedItem',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+    {
+      '1': 'id',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'id'
+    },
     {'1': 'title', '3': 2, '4': 1, '5': 9, '10': 'title'},
-    {'1': 'authors', '3': 3, '4': 3, '5': 11, '6': '.librarian.v1.FeedPerson', '10': 'authors'},
+    {
+      '1': 'authors',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.librarian.v1.FeedPerson',
+      '10': 'authors'
+    },
     {'1': 'description', '3': 4, '4': 1, '5': 9, '10': 'description'},
     {'1': 'content', '3': 5, '4': 1, '5': 9, '10': 'content'},
     {'1': 'guid', '3': 6, '4': 1, '5': 9, '10': 'guid'},
     {'1': 'link', '3': 7, '4': 1, '5': 9, '10': 'link'},
-    {'1': 'image', '3': 8, '4': 1, '5': 11, '6': '.librarian.v1.FeedImage', '10': 'image'},
+    {
+      '1': 'image',
+      '3': 8,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.FeedImage',
+      '10': 'image'
+    },
     {'1': 'published', '3': 9, '4': 1, '5': 9, '10': 'published'},
-    {'1': 'published_parsed', '3': 10, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '9': 0, '10': 'publishedParsed', '17': true},
+    {
+      '1': 'published_parsed',
+      '3': 10,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '9': 0,
+      '10': 'publishedParsed',
+      '17': true
+    },
     {'1': 'updated', '3': 11, '4': 1, '5': 9, '10': 'updated'},
-    {'1': 'updated_parsed', '3': 12, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '9': 1, '10': 'updatedParsed', '17': true},
-    {'1': 'enclosures', '3': 13, '4': 3, '5': 11, '6': '.librarian.v1.FeedEnclosure', '10': 'enclosures'},
+    {
+      '1': 'updated_parsed',
+      '3': 12,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '9': 1,
+      '10': 'updatedParsed',
+      '17': true
+    },
+    {
+      '1': 'enclosures',
+      '3': 13,
+      '4': 3,
+      '5': 11,
+      '6': '.librarian.v1.FeedEnclosure',
+      '10': 'enclosures'
+    },
     {'1': 'publish_platform', '3': 14, '4': 1, '5': 9, '10': 'publishPlatform'},
     {'1': 'read_count', '3': 15, '4': 1, '5': 3, '10': 'readCount'},
   ],
@@ -124,7 +198,13 @@ final $typed_data.Uint8List feedEnclosureDescriptor = $convert.base64Decode(
 const PorterBinarySummary$json = {
   '1': 'PorterBinarySummary',
   '2': [
-    {'1': 'source_code_address', '3': 1, '4': 1, '5': 9, '10': 'sourceCodeAddress'},
+    {
+      '1': 'source_code_address',
+      '3': 1,
+      '4': 1,
+      '5': 9,
+      '10': 'sourceCodeAddress'
+    },
     {'1': 'build_version', '3': 2, '4': 1, '5': 9, '10': 'buildVersion'},
     {'1': 'build_date', '3': 3, '4': 1, '5': 9, '10': 'buildDate'},
     {'1': 'name', '3': 4, '4': 1, '5': 9, '10': 'name'},
@@ -139,4 +219,3 @@ final $typed_data.Uint8List porterBinarySummaryDescriptor = $convert.base64Decod
     'JjZUNvZGVBZGRyZXNzEiMKDWJ1aWxkX3ZlcnNpb24YAiABKAlSDGJ1aWxkVmVyc2lvbhIdCgpi'
     'dWlsZF9kYXRlGAMgASgJUglidWlsZERhdGUSEgoEbmFtZRgEIAEoCVIEbmFtZRIYCgd2ZXJzaW'
     '9uGAUgASgJUgd2ZXJzaW9uEiAKC2Rlc2NyaXB0aW9uGAYgASgJUgtkZXNjcmlwdGlvbg==');
-

@@ -7,6 +7,7 @@
 package v1
 
 import (
+	v1 "github.com/tuihub/protos/pkg/librarian/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -22,10 +23,11 @@ const (
 )
 
 type GetAccountRequest struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
+	state  protoimpl.MessageState `protogen:"open.v1"`
+	Config *v1.FeatureRequest     `protobuf:"bytes,1,opt,name=config,proto3" json:"config,omitempty"`
 	// WellKnownAccountPlatform
-	Platform          string `protobuf:"bytes,1,opt,name=platform,proto3" json:"platform,omitempty"`
-	PlatformAccountId string `protobuf:"bytes,2,opt,name=platform_account_id,json=platformAccountId,proto3" json:"platform_account_id,omitempty"`
+	Platform          string `protobuf:"bytes,2,opt,name=platform,proto3" json:"platform,omitempty"`
+	PlatformAccountId string `protobuf:"bytes,3,opt,name=platform_account_id,json=platformAccountId,proto3" json:"platform_account_id,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -58,6 +60,13 @@ func (x *GetAccountRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetAccountRequest.ProtoReflect.Descriptor instead.
 func (*GetAccountRequest) Descriptor() ([]byte, []int) {
 	return file_librarian_porter_v1_tiphereth_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *GetAccountRequest) GetConfig() *v1.FeatureRequest {
+	if x != nil {
+		return x.Config
+	}
+	return nil
 }
 
 func (x *GetAccountRequest) GetPlatform() string {
@@ -199,10 +208,11 @@ var File_librarian_porter_v1_tiphereth_proto protoreflect.FileDescriptor
 
 const file_librarian_porter_v1_tiphereth_proto_rawDesc = "" +
 	"\n" +
-	"#librarian/porter/v1/tiphereth.proto\x12\x13librarian.porter.v1\"_\n" +
-	"\x11GetAccountRequest\x12\x1a\n" +
-	"\bplatform\x18\x01 \x01(\tR\bplatform\x12.\n" +
-	"\x13platform_account_id\x18\x02 \x01(\tR\x11platformAccountId\"L\n" +
+	"#librarian/porter/v1/tiphereth.proto\x12\x13librarian.porter.v1\x1a\x1clibrarian/v1/wellknown.proto\"\x95\x01\n" +
+	"\x11GetAccountRequest\x124\n" +
+	"\x06config\x18\x01 \x01(\v2\x1c.librarian.v1.FeatureRequestR\x06config\x12\x1a\n" +
+	"\bplatform\x18\x02 \x01(\tR\bplatform\x12.\n" +
+	"\x13platform_account_id\x18\x03 \x01(\tR\x11platformAccountId\"L\n" +
 	"\x12GetAccountResponse\x126\n" +
 	"\aaccount\x18\x01 \x01(\v2\x1c.librarian.porter.v1.AccountR\aaccount\"\xa9\x01\n" +
 	"\aAccount\x12\x1a\n" +
@@ -231,14 +241,16 @@ var file_librarian_porter_v1_tiphereth_proto_goTypes = []any{
 	(*GetAccountRequest)(nil),  // 0: librarian.porter.v1.GetAccountRequest
 	(*GetAccountResponse)(nil), // 1: librarian.porter.v1.GetAccountResponse
 	(*Account)(nil),            // 2: librarian.porter.v1.Account
+	(*v1.FeatureRequest)(nil),  // 3: librarian.v1.FeatureRequest
 }
 var file_librarian_porter_v1_tiphereth_proto_depIdxs = []int32{
-	2, // 0: librarian.porter.v1.GetAccountResponse.account:type_name -> librarian.porter.v1.Account
-	1, // [1:1] is the sub-list for method output_type
-	1, // [1:1] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	3, // 0: librarian.porter.v1.GetAccountRequest.config:type_name -> librarian.v1.FeatureRequest
+	2, // 1: librarian.porter.v1.GetAccountResponse.account:type_name -> librarian.porter.v1.Account
+	2, // [2:2] is the sub-list for method output_type
+	2, // [2:2] is the sub-list for method input_type
+	2, // [2:2] is the sub-list for extension type_name
+	2, // [2:2] is the sub-list for extension extendee
+	0, // [0:2] is the sub-list for field type_name
 }
 
 func init() { file_librarian_porter_v1_tiphereth_proto_init() }

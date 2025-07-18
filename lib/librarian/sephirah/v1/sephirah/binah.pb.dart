@@ -1,7 +1,7 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: librarian/sephirah/v1/sephirah/binah.proto
-//
+// Generated from librarian/sephirah/v1/sephirah/binah.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
@@ -15,7 +15,7 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../v1/wellknown.pbenum.dart' as $8;
+import '../../../v1/wellknown.pbenum.dart' as $0;
 import 'binah.pbenum.dart';
 
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
@@ -27,28 +27,43 @@ class GetStorageCapacityUsageRequest extends $pb.GeneratedMessage {
 
   GetStorageCapacityUsageRequest._();
 
-  factory GetStorageCapacityUsageRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GetStorageCapacityUsageRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GetStorageCapacityUsageRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetStorageCapacityUsageRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetStorageCapacityUsageRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetStorageCapacityUsageRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetStorageCapacityUsageRequest clone() => GetStorageCapacityUsageRequest()..mergeFromMessage(this);
+  GetStorageCapacityUsageRequest clone() =>
+      GetStorageCapacityUsageRequest()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetStorageCapacityUsageRequest copyWith(void Function(GetStorageCapacityUsageRequest) updates) => super.copyWith((message) => updates(message as GetStorageCapacityUsageRequest)) as GetStorageCapacityUsageRequest;
+  GetStorageCapacityUsageRequest copyWith(
+          void Function(GetStorageCapacityUsageRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetStorageCapacityUsageRequest))
+          as GetStorageCapacityUsageRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static GetStorageCapacityUsageRequest create() => GetStorageCapacityUsageRequest._();
+  static GetStorageCapacityUsageRequest create() =>
+      GetStorageCapacityUsageRequest._();
   @$core.override
   GetStorageCapacityUsageRequest createEmptyInstance() => create();
-  static $pb.PbList<GetStorageCapacityUsageRequest> createRepeated() => $pb.PbList<GetStorageCapacityUsageRequest>();
+  static $pb.PbList<GetStorageCapacityUsageRequest> createRepeated() =>
+      $pb.PbList<GetStorageCapacityUsageRequest>();
   @$core.pragma('dart2js:noInline')
-  static GetStorageCapacityUsageRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetStorageCapacityUsageRequest>(create);
+  static GetStorageCapacityUsageRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetStorageCapacityUsageRequest>(create);
   static GetStorageCapacityUsageRequest? _defaultInstance;
 }
 
@@ -57,35 +72,54 @@ class GetStorageCapacityUsageResponse extends $pb.GeneratedMessage {
     StorageCapacityUsage? storageCapacityUsage,
   }) {
     final result = create();
-    if (storageCapacityUsage != null) result.storageCapacityUsage = storageCapacityUsage;
+    if (storageCapacityUsage != null)
+      result.storageCapacityUsage = storageCapacityUsage;
     return result;
   }
 
   GetStorageCapacityUsageResponse._();
 
-  factory GetStorageCapacityUsageResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory GetStorageCapacityUsageResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory GetStorageCapacityUsageResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetStorageCapacityUsageResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'GetStorageCapacityUsageResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
-    ..aOM<StorageCapacityUsage>(1, _omitFieldNames ? '' : 'storageCapacityUsage', subBuilder: StorageCapacityUsage.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetStorageCapacityUsageResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'),
+      createEmptyInstance: create)
+    ..aOM<StorageCapacityUsage>(
+        1, _omitFieldNames ? '' : 'storageCapacityUsage',
+        subBuilder: StorageCapacityUsage.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetStorageCapacityUsageResponse clone() => GetStorageCapacityUsageResponse()..mergeFromMessage(this);
+  GetStorageCapacityUsageResponse clone() =>
+      GetStorageCapacityUsageResponse()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetStorageCapacityUsageResponse copyWith(void Function(GetStorageCapacityUsageResponse) updates) => super.copyWith((message) => updates(message as GetStorageCapacityUsageResponse)) as GetStorageCapacityUsageResponse;
+  GetStorageCapacityUsageResponse copyWith(
+          void Function(GetStorageCapacityUsageResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as GetStorageCapacityUsageResponse))
+          as GetStorageCapacityUsageResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static GetStorageCapacityUsageResponse create() => GetStorageCapacityUsageResponse._();
+  static GetStorageCapacityUsageResponse create() =>
+      GetStorageCapacityUsageResponse._();
   @$core.override
   GetStorageCapacityUsageResponse createEmptyInstance() => create();
-  static $pb.PbList<GetStorageCapacityUsageResponse> createRepeated() => $pb.PbList<GetStorageCapacityUsageResponse>();
+  static $pb.PbList<GetStorageCapacityUsageResponse> createRepeated() =>
+      $pb.PbList<GetStorageCapacityUsageResponse>();
   @$core.pragma('dart2js:noInline')
-  static GetStorageCapacityUsageResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetStorageCapacityUsageResponse>(create);
+  static GetStorageCapacityUsageResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetStorageCapacityUsageResponse>(
+          create);
   static GetStorageCapacityUsageResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -107,28 +141,42 @@ class StorageCapacityUsage extends $pb.GeneratedMessage {
     $core.Iterable<StorageCapacityUsageDetail>? details,
   }) {
     final result = create();
-    if (totalLimitSizeBytes != null) result.totalLimitSizeBytes = totalLimitSizeBytes;
-    if (totalUsedSizeBytes != null) result.totalUsedSizeBytes = totalUsedSizeBytes;
+    if (totalLimitSizeBytes != null)
+      result.totalLimitSizeBytes = totalLimitSizeBytes;
+    if (totalUsedSizeBytes != null)
+      result.totalUsedSizeBytes = totalUsedSizeBytes;
     if (details != null) result.details.addAll(details);
     return result;
   }
 
   StorageCapacityUsage._();
 
-  factory StorageCapacityUsage.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory StorageCapacityUsage.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory StorageCapacityUsage.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory StorageCapacityUsage.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StorageCapacityUsage', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'StorageCapacityUsage',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'),
+      createEmptyInstance: create)
     ..aInt64(1, _omitFieldNames ? '' : 'totalLimitSizeBytes')
     ..aInt64(2, _omitFieldNames ? '' : 'totalUsedSizeBytes')
-    ..pc<StorageCapacityUsageDetail>(3, _omitFieldNames ? '' : 'details', $pb.PbFieldType.PM, subBuilder: StorageCapacityUsageDetail.create)
-    ..hasRequiredFields = false
-  ;
+    ..pc<StorageCapacityUsageDetail>(
+        3, _omitFieldNames ? '' : 'details', $pb.PbFieldType.PM,
+        subBuilder: StorageCapacityUsageDetail.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  StorageCapacityUsage clone() => StorageCapacityUsage()..mergeFromMessage(this);
+  StorageCapacityUsage clone() =>
+      StorageCapacityUsage()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  StorageCapacityUsage copyWith(void Function(StorageCapacityUsage) updates) => super.copyWith((message) => updates(message as StorageCapacityUsage)) as StorageCapacityUsage;
+  StorageCapacityUsage copyWith(void Function(StorageCapacityUsage) updates) =>
+      super.copyWith((message) => updates(message as StorageCapacityUsage))
+          as StorageCapacityUsage;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -137,9 +185,11 @@ class StorageCapacityUsage extends $pb.GeneratedMessage {
   static StorageCapacityUsage create() => StorageCapacityUsage._();
   @$core.override
   StorageCapacityUsage createEmptyInstance() => create();
-  static $pb.PbList<StorageCapacityUsage> createRepeated() => $pb.PbList<StorageCapacityUsage>();
+  static $pb.PbList<StorageCapacityUsage> createRepeated() =>
+      $pb.PbList<StorageCapacityUsage>();
   @$core.pragma('dart2js:noInline')
-  static StorageCapacityUsage getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StorageCapacityUsage>(create);
+  static StorageCapacityUsage getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<StorageCapacityUsage>(create);
   static StorageCapacityUsage? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -167,7 +217,7 @@ class StorageCapacityUsage extends $pb.GeneratedMessage {
 
 class StorageCapacityUsageDetail extends $pb.GeneratedMessage {
   factory StorageCapacityUsageDetail({
-    $8.FileType? type,
+    $0.FileType? type,
     $fixnum.Int64? limitSizeBytes,
     $fixnum.Int64? usedSizeBytes,
   }) {
@@ -180,20 +230,35 @@ class StorageCapacityUsageDetail extends $pb.GeneratedMessage {
 
   StorageCapacityUsageDetail._();
 
-  factory StorageCapacityUsageDetail.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory StorageCapacityUsageDetail.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory StorageCapacityUsageDetail.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory StorageCapacityUsageDetail.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'StorageCapacityUsageDetail', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
-    ..e<$8.FileType>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: $8.FileType.FILE_TYPE_UNSPECIFIED, valueOf: $8.FileType.valueOf, enumValues: $8.FileType.values)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'StorageCapacityUsageDetail',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'),
+      createEmptyInstance: create)
+    ..e<$0.FileType>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE,
+        defaultOrMaker: $0.FileType.FILE_TYPE_UNSPECIFIED,
+        valueOf: $0.FileType.valueOf,
+        enumValues: $0.FileType.values)
     ..aInt64(2, _omitFieldNames ? '' : 'limitSizeBytes')
     ..aInt64(3, _omitFieldNames ? '' : 'usedSizeBytes')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  StorageCapacityUsageDetail clone() => StorageCapacityUsageDetail()..mergeFromMessage(this);
+  StorageCapacityUsageDetail clone() =>
+      StorageCapacityUsageDetail()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  StorageCapacityUsageDetail copyWith(void Function(StorageCapacityUsageDetail) updates) => super.copyWith((message) => updates(message as StorageCapacityUsageDetail)) as StorageCapacityUsageDetail;
+  StorageCapacityUsageDetail copyWith(
+          void Function(StorageCapacityUsageDetail) updates) =>
+      super.copyWith(
+              (message) => updates(message as StorageCapacityUsageDetail))
+          as StorageCapacityUsageDetail;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -202,15 +267,17 @@ class StorageCapacityUsageDetail extends $pb.GeneratedMessage {
   static StorageCapacityUsageDetail create() => StorageCapacityUsageDetail._();
   @$core.override
   StorageCapacityUsageDetail createEmptyInstance() => create();
-  static $pb.PbList<StorageCapacityUsageDetail> createRepeated() => $pb.PbList<StorageCapacityUsageDetail>();
+  static $pb.PbList<StorageCapacityUsageDetail> createRepeated() =>
+      $pb.PbList<StorageCapacityUsageDetail>();
   @$core.pragma('dart2js:noInline')
-  static StorageCapacityUsageDetail getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StorageCapacityUsageDetail>(create);
+  static StorageCapacityUsageDetail getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<StorageCapacityUsageDetail>(create);
   static StorageCapacityUsageDetail? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $8.FileType get type => $_getN(0);
+  $0.FileType get type => $_getN(0);
   @$pb.TagNumber(1)
-  set type($8.FileType value) => $_setField(1, value);
+  set type($0.FileType value) => $_setField(1, value);
   @$pb.TagNumber(1)
   $core.bool hasType() => $_has(0);
   @$pb.TagNumber(1)
@@ -235,11 +302,7 @@ class StorageCapacityUsageDetail extends $pb.GeneratedMessage {
   void clearUsedSizeBytes() => $_clearField(3);
 }
 
-enum UploadFileRequest_Content {
-  fileChunk, 
-  requireFileStatus, 
-  notSet
-}
+enum UploadFileRequest_Content { fileChunk, requireFileStatus, notSet }
 
 class UploadFileRequest extends $pb.GeneratedMessage {
   factory UploadFileRequest({
@@ -254,25 +317,36 @@ class UploadFileRequest extends $pb.GeneratedMessage {
 
   UploadFileRequest._();
 
-  factory UploadFileRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory UploadFileRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory UploadFileRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UploadFileRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static const $core.Map<$core.int, UploadFileRequest_Content> _UploadFileRequest_ContentByTag = {
-    1 : UploadFileRequest_Content.fileChunk,
-    2 : UploadFileRequest_Content.requireFileStatus,
-    0 : UploadFileRequest_Content.notSet
+  static const $core.Map<$core.int, UploadFileRequest_Content>
+      _UploadFileRequest_ContentByTag = {
+    1: UploadFileRequest_Content.fileChunk,
+    2: UploadFileRequest_Content.requireFileStatus,
+    0: UploadFileRequest_Content.notSet
   };
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UploadFileRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UploadFileRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'),
+      createEmptyInstance: create)
     ..oo(0, [1, 2])
-    ..aOM<FileChunk>(1, _omitFieldNames ? '' : 'fileChunk', subBuilder: FileChunk.create)
+    ..aOM<FileChunk>(1, _omitFieldNames ? '' : 'fileChunk',
+        subBuilder: FileChunk.create)
     ..aOB(2, _omitFieldNames ? '' : 'requireFileStatus')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UploadFileRequest clone() => UploadFileRequest()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UploadFileRequest copyWith(void Function(UploadFileRequest) updates) => super.copyWith((message) => updates(message as UploadFileRequest)) as UploadFileRequest;
+  UploadFileRequest copyWith(void Function(UploadFileRequest) updates) =>
+      super.copyWith((message) => updates(message as UploadFileRequest))
+          as UploadFileRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -281,12 +355,15 @@ class UploadFileRequest extends $pb.GeneratedMessage {
   static UploadFileRequest create() => UploadFileRequest._();
   @$core.override
   UploadFileRequest createEmptyInstance() => create();
-  static $pb.PbList<UploadFileRequest> createRepeated() => $pb.PbList<UploadFileRequest>();
+  static $pb.PbList<UploadFileRequest> createRepeated() =>
+      $pb.PbList<UploadFileRequest>();
   @$core.pragma('dart2js:noInline')
-  static UploadFileRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UploadFileRequest>(create);
+  static UploadFileRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UploadFileRequest>(create);
   static UploadFileRequest? _defaultInstance;
 
-  UploadFileRequest_Content whichContent() => _UploadFileRequest_ContentByTag[$_whichOneof(0)]!;
+  UploadFileRequest_Content whichContent() =>
+      _UploadFileRequest_ContentByTag[$_whichOneof(0)]!;
   void clearContent() => $_clearField($_whichOneof(0));
 
   @$pb.TagNumber(1)
@@ -323,30 +400,49 @@ class UploadFileResponse_ChunkStatus extends $pb.GeneratedMessage {
 
   UploadFileResponse_ChunkStatus._();
 
-  factory UploadFileResponse_ChunkStatus.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory UploadFileResponse_ChunkStatus.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory UploadFileResponse_ChunkStatus.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UploadFileResponse_ChunkStatus.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UploadFileResponse.ChunkStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UploadFileResponse.ChunkStatus',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'),
+      createEmptyInstance: create)
     ..aInt64(1, _omitFieldNames ? '' : 'chunkNumber')
-    ..e<ChunkTransferStatus>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: ChunkTransferStatus.CHUNK_TRANSFER_STATUS_UNSPECIFIED, valueOf: ChunkTransferStatus.valueOf, enumValues: ChunkTransferStatus.values)
-    ..hasRequiredFields = false
-  ;
+    ..e<ChunkTransferStatus>(
+        2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE,
+        defaultOrMaker: ChunkTransferStatus.CHUNK_TRANSFER_STATUS_UNSPECIFIED,
+        valueOf: ChunkTransferStatus.valueOf,
+        enumValues: ChunkTransferStatus.values)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UploadFileResponse_ChunkStatus clone() => UploadFileResponse_ChunkStatus()..mergeFromMessage(this);
+  UploadFileResponse_ChunkStatus clone() =>
+      UploadFileResponse_ChunkStatus()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UploadFileResponse_ChunkStatus copyWith(void Function(UploadFileResponse_ChunkStatus) updates) => super.copyWith((message) => updates(message as UploadFileResponse_ChunkStatus)) as UploadFileResponse_ChunkStatus;
+  UploadFileResponse_ChunkStatus copyWith(
+          void Function(UploadFileResponse_ChunkStatus) updates) =>
+      super.copyWith(
+              (message) => updates(message as UploadFileResponse_ChunkStatus))
+          as UploadFileResponse_ChunkStatus;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static UploadFileResponse_ChunkStatus create() => UploadFileResponse_ChunkStatus._();
+  static UploadFileResponse_ChunkStatus create() =>
+      UploadFileResponse_ChunkStatus._();
   @$core.override
   UploadFileResponse_ChunkStatus createEmptyInstance() => create();
-  static $pb.PbList<UploadFileResponse_ChunkStatus> createRepeated() => $pb.PbList<UploadFileResponse_ChunkStatus>();
+  static $pb.PbList<UploadFileResponse_ChunkStatus> createRepeated() =>
+      $pb.PbList<UploadFileResponse_ChunkStatus>();
   @$core.pragma('dart2js:noInline')
-  static UploadFileResponse_ChunkStatus getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UploadFileResponse_ChunkStatus>(create);
+  static UploadFileResponse_ChunkStatus getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UploadFileResponse_ChunkStatus>(create);
   static UploadFileResponse_ChunkStatus? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -374,37 +470,58 @@ class UploadFileResponse_FileStatus extends $pb.GeneratedMessage {
     FileTransferStatus? status,
   }) {
     final result = create();
-    if (missingChunkList != null) result.missingChunkList.addAll(missingChunkList);
+    if (missingChunkList != null)
+      result.missingChunkList.addAll(missingChunkList);
     if (status != null) result.status = status;
     return result;
   }
 
   UploadFileResponse_FileStatus._();
 
-  factory UploadFileResponse_FileStatus.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory UploadFileResponse_FileStatus.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory UploadFileResponse_FileStatus.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UploadFileResponse_FileStatus.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UploadFileResponse.FileStatus', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
-    ..p<$fixnum.Int64>(1, _omitFieldNames ? '' : 'missingChunkList', $pb.PbFieldType.K6)
-    ..e<FileTransferStatus>(2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: FileTransferStatus.FILE_TRANSFER_STATUS_UNSPECIFIED, valueOf: FileTransferStatus.valueOf, enumValues: FileTransferStatus.values)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UploadFileResponse.FileStatus',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'),
+      createEmptyInstance: create)
+    ..p<$fixnum.Int64>(
+        1, _omitFieldNames ? '' : 'missingChunkList', $pb.PbFieldType.K6)
+    ..e<FileTransferStatus>(
+        2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE,
+        defaultOrMaker: FileTransferStatus.FILE_TRANSFER_STATUS_UNSPECIFIED,
+        valueOf: FileTransferStatus.valueOf,
+        enumValues: FileTransferStatus.values)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UploadFileResponse_FileStatus clone() => UploadFileResponse_FileStatus()..mergeFromMessage(this);
+  UploadFileResponse_FileStatus clone() =>
+      UploadFileResponse_FileStatus()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UploadFileResponse_FileStatus copyWith(void Function(UploadFileResponse_FileStatus) updates) => super.copyWith((message) => updates(message as UploadFileResponse_FileStatus)) as UploadFileResponse_FileStatus;
+  UploadFileResponse_FileStatus copyWith(
+          void Function(UploadFileResponse_FileStatus) updates) =>
+      super.copyWith(
+              (message) => updates(message as UploadFileResponse_FileStatus))
+          as UploadFileResponse_FileStatus;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static UploadFileResponse_FileStatus create() => UploadFileResponse_FileStatus._();
+  static UploadFileResponse_FileStatus create() =>
+      UploadFileResponse_FileStatus._();
   @$core.override
   UploadFileResponse_FileStatus createEmptyInstance() => create();
-  static $pb.PbList<UploadFileResponse_FileStatus> createRepeated() => $pb.PbList<UploadFileResponse_FileStatus>();
+  static $pb.PbList<UploadFileResponse_FileStatus> createRepeated() =>
+      $pb.PbList<UploadFileResponse_FileStatus>();
   @$core.pragma('dart2js:noInline')
-  static UploadFileResponse_FileStatus getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UploadFileResponse_FileStatus>(create);
+  static UploadFileResponse_FileStatus getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UploadFileResponse_FileStatus>(create);
   static UploadFileResponse_FileStatus? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -420,11 +537,7 @@ class UploadFileResponse_FileStatus extends $pb.GeneratedMessage {
   void clearStatus() => $_clearField(2);
 }
 
-enum UploadFileResponse_Content {
-  chunkStatus, 
-  fileStatus, 
-  notSet
-}
+enum UploadFileResponse_Content { chunkStatus, fileStatus, notSet }
 
 class UploadFileResponse extends $pb.GeneratedMessage {
   factory UploadFileResponse({
@@ -439,25 +552,38 @@ class UploadFileResponse extends $pb.GeneratedMessage {
 
   UploadFileResponse._();
 
-  factory UploadFileResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory UploadFileResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory UploadFileResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory UploadFileResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static const $core.Map<$core.int, UploadFileResponse_Content> _UploadFileResponse_ContentByTag = {
-    1 : UploadFileResponse_Content.chunkStatus,
-    2 : UploadFileResponse_Content.fileStatus,
-    0 : UploadFileResponse_Content.notSet
+  static const $core.Map<$core.int, UploadFileResponse_Content>
+      _UploadFileResponse_ContentByTag = {
+    1: UploadFileResponse_Content.chunkStatus,
+    2: UploadFileResponse_Content.fileStatus,
+    0: UploadFileResponse_Content.notSet
   };
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'UploadFileResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'UploadFileResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'),
+      createEmptyInstance: create)
     ..oo(0, [1, 2])
-    ..aOM<UploadFileResponse_ChunkStatus>(1, _omitFieldNames ? '' : 'chunkStatus', subBuilder: UploadFileResponse_ChunkStatus.create)
-    ..aOM<UploadFileResponse_FileStatus>(2, _omitFieldNames ? '' : 'fileStatus', subBuilder: UploadFileResponse_FileStatus.create)
-    ..hasRequiredFields = false
-  ;
+    ..aOM<UploadFileResponse_ChunkStatus>(
+        1, _omitFieldNames ? '' : 'chunkStatus',
+        subBuilder: UploadFileResponse_ChunkStatus.create)
+    ..aOM<UploadFileResponse_FileStatus>(2, _omitFieldNames ? '' : 'fileStatus',
+        subBuilder: UploadFileResponse_FileStatus.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UploadFileResponse clone() => UploadFileResponse()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UploadFileResponse copyWith(void Function(UploadFileResponse) updates) => super.copyWith((message) => updates(message as UploadFileResponse)) as UploadFileResponse;
+  UploadFileResponse copyWith(void Function(UploadFileResponse) updates) =>
+      super.copyWith((message) => updates(message as UploadFileResponse))
+          as UploadFileResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -466,12 +592,15 @@ class UploadFileResponse extends $pb.GeneratedMessage {
   static UploadFileResponse create() => UploadFileResponse._();
   @$core.override
   UploadFileResponse createEmptyInstance() => create();
-  static $pb.PbList<UploadFileResponse> createRepeated() => $pb.PbList<UploadFileResponse>();
+  static $pb.PbList<UploadFileResponse> createRepeated() =>
+      $pb.PbList<UploadFileResponse>();
   @$core.pragma('dart2js:noInline')
-  static UploadFileResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<UploadFileResponse>(create);
+  static UploadFileResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<UploadFileResponse>(create);
   static UploadFileResponse? _defaultInstance;
 
-  UploadFileResponse_Content whichContent() => _UploadFileResponse_ContentByTag[$_whichOneof(0)]!;
+  UploadFileResponse_Content whichContent() =>
+      _UploadFileResponse_ContentByTag[$_whichOneof(0)]!;
   void clearContent() => $_clearField($_whichOneof(0));
 
   @$pb.TagNumber(1)
@@ -510,19 +639,28 @@ class DownloadFileRequest extends $pb.GeneratedMessage {
 
   DownloadFileRequest._();
 
-  factory DownloadFileRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory DownloadFileRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory DownloadFileRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DownloadFileRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DownloadFileRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DownloadFileRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'),
+      createEmptyInstance: create)
     ..aInt64(1, _omitFieldNames ? '' : 'startChunkNumber')
     ..aInt64(2, _omitFieldNames ? '' : 'endChunkNumber')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   DownloadFileRequest clone() => DownloadFileRequest()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  DownloadFileRequest copyWith(void Function(DownloadFileRequest) updates) => super.copyWith((message) => updates(message as DownloadFileRequest)) as DownloadFileRequest;
+  DownloadFileRequest copyWith(void Function(DownloadFileRequest) updates) =>
+      super.copyWith((message) => updates(message as DownloadFileRequest))
+          as DownloadFileRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -531,9 +669,11 @@ class DownloadFileRequest extends $pb.GeneratedMessage {
   static DownloadFileRequest create() => DownloadFileRequest._();
   @$core.override
   DownloadFileRequest createEmptyInstance() => create();
-  static $pb.PbList<DownloadFileRequest> createRepeated() => $pb.PbList<DownloadFileRequest>();
+  static $pb.PbList<DownloadFileRequest> createRepeated() =>
+      $pb.PbList<DownloadFileRequest>();
   @$core.pragma('dart2js:noInline')
-  static DownloadFileRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DownloadFileRequest>(create);
+  static DownloadFileRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DownloadFileRequest>(create);
   static DownloadFileRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -566,18 +706,29 @@ class DownloadFileResponse extends $pb.GeneratedMessage {
 
   DownloadFileResponse._();
 
-  factory DownloadFileResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory DownloadFileResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory DownloadFileResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DownloadFileResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DownloadFileResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
-    ..aOM<FileChunk>(1, _omitFieldNames ? '' : 'fileChunk', subBuilder: FileChunk.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DownloadFileResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'),
+      createEmptyInstance: create)
+    ..aOM<FileChunk>(1, _omitFieldNames ? '' : 'fileChunk',
+        subBuilder: FileChunk.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  DownloadFileResponse clone() => DownloadFileResponse()..mergeFromMessage(this);
+  DownloadFileResponse clone() =>
+      DownloadFileResponse()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  DownloadFileResponse copyWith(void Function(DownloadFileResponse) updates) => super.copyWith((message) => updates(message as DownloadFileResponse)) as DownloadFileResponse;
+  DownloadFileResponse copyWith(void Function(DownloadFileResponse) updates) =>
+      super.copyWith((message) => updates(message as DownloadFileResponse))
+          as DownloadFileResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -586,9 +737,11 @@ class DownloadFileResponse extends $pb.GeneratedMessage {
   static DownloadFileResponse create() => DownloadFileResponse._();
   @$core.override
   DownloadFileResponse createEmptyInstance() => create();
-  static $pb.PbList<DownloadFileResponse> createRepeated() => $pb.PbList<DownloadFileResponse>();
+  static $pb.PbList<DownloadFileResponse> createRepeated() =>
+      $pb.PbList<DownloadFileResponse>();
   @$core.pragma('dart2js:noInline')
-  static DownloadFileResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DownloadFileResponse>(create);
+  static DownloadFileResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DownloadFileResponse>(create);
   static DownloadFileResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -614,18 +767,30 @@ class SimpleUploadFileRequest extends $pb.GeneratedMessage {
 
   SimpleUploadFileRequest._();
 
-  factory SimpleUploadFileRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory SimpleUploadFileRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory SimpleUploadFileRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SimpleUploadFileRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SimpleUploadFileRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'data', $pb.PbFieldType.OY)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SimpleUploadFileRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'),
+      createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(
+        1, _omitFieldNames ? '' : 'data', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SimpleUploadFileRequest clone() => SimpleUploadFileRequest()..mergeFromMessage(this);
+  SimpleUploadFileRequest clone() =>
+      SimpleUploadFileRequest()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SimpleUploadFileRequest copyWith(void Function(SimpleUploadFileRequest) updates) => super.copyWith((message) => updates(message as SimpleUploadFileRequest)) as SimpleUploadFileRequest;
+  SimpleUploadFileRequest copyWith(
+          void Function(SimpleUploadFileRequest) updates) =>
+      super.copyWith((message) => updates(message as SimpleUploadFileRequest))
+          as SimpleUploadFileRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -634,9 +799,11 @@ class SimpleUploadFileRequest extends $pb.GeneratedMessage {
   static SimpleUploadFileRequest create() => SimpleUploadFileRequest._();
   @$core.override
   SimpleUploadFileRequest createEmptyInstance() => create();
-  static $pb.PbList<SimpleUploadFileRequest> createRepeated() => $pb.PbList<SimpleUploadFileRequest>();
+  static $pb.PbList<SimpleUploadFileRequest> createRepeated() =>
+      $pb.PbList<SimpleUploadFileRequest>();
   @$core.pragma('dart2js:noInline')
-  static SimpleUploadFileRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SimpleUploadFileRequest>(create);
+  static SimpleUploadFileRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SimpleUploadFileRequest>(create);
   static SimpleUploadFileRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -660,18 +827,33 @@ class SimpleUploadFileResponse extends $pb.GeneratedMessage {
 
   SimpleUploadFileResponse._();
 
-  factory SimpleUploadFileResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory SimpleUploadFileResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory SimpleUploadFileResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SimpleUploadFileResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SimpleUploadFileResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
-    ..e<FileTransferStatus>(1, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: FileTransferStatus.FILE_TRANSFER_STATUS_UNSPECIFIED, valueOf: FileTransferStatus.valueOf, enumValues: FileTransferStatus.values)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SimpleUploadFileResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'),
+      createEmptyInstance: create)
+    ..e<FileTransferStatus>(
+        1, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE,
+        defaultOrMaker: FileTransferStatus.FILE_TRANSFER_STATUS_UNSPECIFIED,
+        valueOf: FileTransferStatus.valueOf,
+        enumValues: FileTransferStatus.values)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SimpleUploadFileResponse clone() => SimpleUploadFileResponse()..mergeFromMessage(this);
+  SimpleUploadFileResponse clone() =>
+      SimpleUploadFileResponse()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SimpleUploadFileResponse copyWith(void Function(SimpleUploadFileResponse) updates) => super.copyWith((message) => updates(message as SimpleUploadFileResponse)) as SimpleUploadFileResponse;
+  SimpleUploadFileResponse copyWith(
+          void Function(SimpleUploadFileResponse) updates) =>
+      super.copyWith((message) => updates(message as SimpleUploadFileResponse))
+          as SimpleUploadFileResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -680,9 +862,11 @@ class SimpleUploadFileResponse extends $pb.GeneratedMessage {
   static SimpleUploadFileResponse create() => SimpleUploadFileResponse._();
   @$core.override
   SimpleUploadFileResponse createEmptyInstance() => create();
-  static $pb.PbList<SimpleUploadFileResponse> createRepeated() => $pb.PbList<SimpleUploadFileResponse>();
+  static $pb.PbList<SimpleUploadFileResponse> createRepeated() =>
+      $pb.PbList<SimpleUploadFileResponse>();
   @$core.pragma('dart2js:noInline')
-  static SimpleUploadFileResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SimpleUploadFileResponse>(create);
+  static SimpleUploadFileResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SimpleUploadFileResponse>(create);
   static SimpleUploadFileResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -700,17 +884,28 @@ class SimpleDownloadFileRequest extends $pb.GeneratedMessage {
 
   SimpleDownloadFileRequest._();
 
-  factory SimpleDownloadFileRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory SimpleDownloadFileRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory SimpleDownloadFileRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SimpleDownloadFileRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SimpleDownloadFileRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SimpleDownloadFileRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SimpleDownloadFileRequest clone() => SimpleDownloadFileRequest()..mergeFromMessage(this);
+  SimpleDownloadFileRequest clone() =>
+      SimpleDownloadFileRequest()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SimpleDownloadFileRequest copyWith(void Function(SimpleDownloadFileRequest) updates) => super.copyWith((message) => updates(message as SimpleDownloadFileRequest)) as SimpleDownloadFileRequest;
+  SimpleDownloadFileRequest copyWith(
+          void Function(SimpleDownloadFileRequest) updates) =>
+      super.copyWith((message) => updates(message as SimpleDownloadFileRequest))
+          as SimpleDownloadFileRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -719,9 +914,11 @@ class SimpleDownloadFileRequest extends $pb.GeneratedMessage {
   static SimpleDownloadFileRequest create() => SimpleDownloadFileRequest._();
   @$core.override
   SimpleDownloadFileRequest createEmptyInstance() => create();
-  static $pb.PbList<SimpleDownloadFileRequest> createRepeated() => $pb.PbList<SimpleDownloadFileRequest>();
+  static $pb.PbList<SimpleDownloadFileRequest> createRepeated() =>
+      $pb.PbList<SimpleDownloadFileRequest>();
   @$core.pragma('dart2js:noInline')
-  static SimpleDownloadFileRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SimpleDownloadFileRequest>(create);
+  static SimpleDownloadFileRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SimpleDownloadFileRequest>(create);
   static SimpleDownloadFileRequest? _defaultInstance;
 }
 
@@ -736,18 +933,31 @@ class SimpleDownloadFileResponse extends $pb.GeneratedMessage {
 
   SimpleDownloadFileResponse._();
 
-  factory SimpleDownloadFileResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory SimpleDownloadFileResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory SimpleDownloadFileResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory SimpleDownloadFileResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SimpleDownloadFileResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'data', $pb.PbFieldType.OY)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'SimpleDownloadFileResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'),
+      createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(
+        1, _omitFieldNames ? '' : 'data', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SimpleDownloadFileResponse clone() => SimpleDownloadFileResponse()..mergeFromMessage(this);
+  SimpleDownloadFileResponse clone() =>
+      SimpleDownloadFileResponse()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SimpleDownloadFileResponse copyWith(void Function(SimpleDownloadFileResponse) updates) => super.copyWith((message) => updates(message as SimpleDownloadFileResponse)) as SimpleDownloadFileResponse;
+  SimpleDownloadFileResponse copyWith(
+          void Function(SimpleDownloadFileResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as SimpleDownloadFileResponse))
+          as SimpleDownloadFileResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -756,9 +966,11 @@ class SimpleDownloadFileResponse extends $pb.GeneratedMessage {
   static SimpleDownloadFileResponse create() => SimpleDownloadFileResponse._();
   @$core.override
   SimpleDownloadFileResponse createEmptyInstance() => create();
-  static $pb.PbList<SimpleDownloadFileResponse> createRepeated() => $pb.PbList<SimpleDownloadFileResponse>();
+  static $pb.PbList<SimpleDownloadFileResponse> createRepeated() =>
+      $pb.PbList<SimpleDownloadFileResponse>();
   @$core.pragma('dart2js:noInline')
-  static SimpleDownloadFileResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SimpleDownloadFileResponse>(create);
+  static SimpleDownloadFileResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<SimpleDownloadFileResponse>(create);
   static SimpleDownloadFileResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -776,17 +988,29 @@ class PresignedUploadFileRequest extends $pb.GeneratedMessage {
 
   PresignedUploadFileRequest._();
 
-  factory PresignedUploadFileRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory PresignedUploadFileRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory PresignedUploadFileRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PresignedUploadFileRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PresignedUploadFileRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PresignedUploadFileRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PresignedUploadFileRequest clone() => PresignedUploadFileRequest()..mergeFromMessage(this);
+  PresignedUploadFileRequest clone() =>
+      PresignedUploadFileRequest()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PresignedUploadFileRequest copyWith(void Function(PresignedUploadFileRequest) updates) => super.copyWith((message) => updates(message as PresignedUploadFileRequest)) as PresignedUploadFileRequest;
+  PresignedUploadFileRequest copyWith(
+          void Function(PresignedUploadFileRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as PresignedUploadFileRequest))
+          as PresignedUploadFileRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -795,9 +1019,11 @@ class PresignedUploadFileRequest extends $pb.GeneratedMessage {
   static PresignedUploadFileRequest create() => PresignedUploadFileRequest._();
   @$core.override
   PresignedUploadFileRequest createEmptyInstance() => create();
-  static $pb.PbList<PresignedUploadFileRequest> createRepeated() => $pb.PbList<PresignedUploadFileRequest>();
+  static $pb.PbList<PresignedUploadFileRequest> createRepeated() =>
+      $pb.PbList<PresignedUploadFileRequest>();
   @$core.pragma('dart2js:noInline')
-  static PresignedUploadFileRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PresignedUploadFileRequest>(create);
+  static PresignedUploadFileRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<PresignedUploadFileRequest>(create);
   static PresignedUploadFileRequest? _defaultInstance;
 }
 
@@ -812,29 +1038,44 @@ class PresignedUploadFileResponse extends $pb.GeneratedMessage {
 
   PresignedUploadFileResponse._();
 
-  factory PresignedUploadFileResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory PresignedUploadFileResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory PresignedUploadFileResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PresignedUploadFileResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PresignedUploadFileResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PresignedUploadFileResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'uploadUrl')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PresignedUploadFileResponse clone() => PresignedUploadFileResponse()..mergeFromMessage(this);
+  PresignedUploadFileResponse clone() =>
+      PresignedUploadFileResponse()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PresignedUploadFileResponse copyWith(void Function(PresignedUploadFileResponse) updates) => super.copyWith((message) => updates(message as PresignedUploadFileResponse)) as PresignedUploadFileResponse;
+  PresignedUploadFileResponse copyWith(
+          void Function(PresignedUploadFileResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as PresignedUploadFileResponse))
+          as PresignedUploadFileResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static PresignedUploadFileResponse create() => PresignedUploadFileResponse._();
+  static PresignedUploadFileResponse create() =>
+      PresignedUploadFileResponse._();
   @$core.override
   PresignedUploadFileResponse createEmptyInstance() => create();
-  static $pb.PbList<PresignedUploadFileResponse> createRepeated() => $pb.PbList<PresignedUploadFileResponse>();
+  static $pb.PbList<PresignedUploadFileResponse> createRepeated() =>
+      $pb.PbList<PresignedUploadFileResponse>();
   @$core.pragma('dart2js:noInline')
-  static PresignedUploadFileResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PresignedUploadFileResponse>(create);
+  static PresignedUploadFileResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<PresignedUploadFileResponse>(create);
   static PresignedUploadFileResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -858,29 +1099,50 @@ class PresignedUploadFileStatusRequest extends $pb.GeneratedMessage {
 
   PresignedUploadFileStatusRequest._();
 
-  factory PresignedUploadFileStatusRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory PresignedUploadFileStatusRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory PresignedUploadFileStatusRequest.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PresignedUploadFileStatusRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PresignedUploadFileStatusRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
-    ..e<FileTransferStatus>(1, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE, defaultOrMaker: FileTransferStatus.FILE_TRANSFER_STATUS_UNSPECIFIED, valueOf: FileTransferStatus.valueOf, enumValues: FileTransferStatus.values)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PresignedUploadFileStatusRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'),
+      createEmptyInstance: create)
+    ..e<FileTransferStatus>(
+        1, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE,
+        defaultOrMaker: FileTransferStatus.FILE_TRANSFER_STATUS_UNSPECIFIED,
+        valueOf: FileTransferStatus.valueOf,
+        enumValues: FileTransferStatus.values)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PresignedUploadFileStatusRequest clone() => PresignedUploadFileStatusRequest()..mergeFromMessage(this);
+  PresignedUploadFileStatusRequest clone() =>
+      PresignedUploadFileStatusRequest()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PresignedUploadFileStatusRequest copyWith(void Function(PresignedUploadFileStatusRequest) updates) => super.copyWith((message) => updates(message as PresignedUploadFileStatusRequest)) as PresignedUploadFileStatusRequest;
+  PresignedUploadFileStatusRequest copyWith(
+          void Function(PresignedUploadFileStatusRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as PresignedUploadFileStatusRequest))
+          as PresignedUploadFileStatusRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static PresignedUploadFileStatusRequest create() => PresignedUploadFileStatusRequest._();
+  static PresignedUploadFileStatusRequest create() =>
+      PresignedUploadFileStatusRequest._();
   @$core.override
   PresignedUploadFileStatusRequest createEmptyInstance() => create();
-  static $pb.PbList<PresignedUploadFileStatusRequest> createRepeated() => $pb.PbList<PresignedUploadFileStatusRequest>();
+  static $pb.PbList<PresignedUploadFileStatusRequest> createRepeated() =>
+      $pb.PbList<PresignedUploadFileStatusRequest>();
   @$core.pragma('dart2js:noInline')
-  static PresignedUploadFileStatusRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PresignedUploadFileStatusRequest>(create);
+  static PresignedUploadFileStatusRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<PresignedUploadFileStatusRequest>(
+          create);
   static PresignedUploadFileStatusRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -898,28 +1160,45 @@ class PresignedUploadFileStatusResponse extends $pb.GeneratedMessage {
 
   PresignedUploadFileStatusResponse._();
 
-  factory PresignedUploadFileStatusResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory PresignedUploadFileStatusResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory PresignedUploadFileStatusResponse.fromBuffer(
+          $core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PresignedUploadFileStatusResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PresignedUploadFileStatusResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PresignedUploadFileStatusResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PresignedUploadFileStatusResponse clone() => PresignedUploadFileStatusResponse()..mergeFromMessage(this);
+  PresignedUploadFileStatusResponse clone() =>
+      PresignedUploadFileStatusResponse()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PresignedUploadFileStatusResponse copyWith(void Function(PresignedUploadFileStatusResponse) updates) => super.copyWith((message) => updates(message as PresignedUploadFileStatusResponse)) as PresignedUploadFileStatusResponse;
+  PresignedUploadFileStatusResponse copyWith(
+          void Function(PresignedUploadFileStatusResponse) updates) =>
+      super.copyWith((message) =>
+              updates(message as PresignedUploadFileStatusResponse))
+          as PresignedUploadFileStatusResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static PresignedUploadFileStatusResponse create() => PresignedUploadFileStatusResponse._();
+  static PresignedUploadFileStatusResponse create() =>
+      PresignedUploadFileStatusResponse._();
   @$core.override
   PresignedUploadFileStatusResponse createEmptyInstance() => create();
-  static $pb.PbList<PresignedUploadFileStatusResponse> createRepeated() => $pb.PbList<PresignedUploadFileStatusResponse>();
+  static $pb.PbList<PresignedUploadFileStatusResponse> createRepeated() =>
+      $pb.PbList<PresignedUploadFileStatusResponse>();
   @$core.pragma('dart2js:noInline')
-  static PresignedUploadFileStatusResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PresignedUploadFileStatusResponse>(create);
+  static PresignedUploadFileStatusResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<PresignedUploadFileStatusResponse>(
+          create);
   static PresignedUploadFileStatusResponse? _defaultInstance;
 }
 
@@ -928,28 +1207,43 @@ class PresignedDownloadFileRequest extends $pb.GeneratedMessage {
 
   PresignedDownloadFileRequest._();
 
-  factory PresignedDownloadFileRequest.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory PresignedDownloadFileRequest.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory PresignedDownloadFileRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PresignedDownloadFileRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PresignedDownloadFileRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PresignedDownloadFileRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PresignedDownloadFileRequest clone() => PresignedDownloadFileRequest()..mergeFromMessage(this);
+  PresignedDownloadFileRequest clone() =>
+      PresignedDownloadFileRequest()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PresignedDownloadFileRequest copyWith(void Function(PresignedDownloadFileRequest) updates) => super.copyWith((message) => updates(message as PresignedDownloadFileRequest)) as PresignedDownloadFileRequest;
+  PresignedDownloadFileRequest copyWith(
+          void Function(PresignedDownloadFileRequest) updates) =>
+      super.copyWith(
+              (message) => updates(message as PresignedDownloadFileRequest))
+          as PresignedDownloadFileRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static PresignedDownloadFileRequest create() => PresignedDownloadFileRequest._();
+  static PresignedDownloadFileRequest create() =>
+      PresignedDownloadFileRequest._();
   @$core.override
   PresignedDownloadFileRequest createEmptyInstance() => create();
-  static $pb.PbList<PresignedDownloadFileRequest> createRepeated() => $pb.PbList<PresignedDownloadFileRequest>();
+  static $pb.PbList<PresignedDownloadFileRequest> createRepeated() =>
+      $pb.PbList<PresignedDownloadFileRequest>();
   @$core.pragma('dart2js:noInline')
-  static PresignedDownloadFileRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PresignedDownloadFileRequest>(create);
+  static PresignedDownloadFileRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<PresignedDownloadFileRequest>(create);
   static PresignedDownloadFileRequest? _defaultInstance;
 }
 
@@ -964,29 +1258,44 @@ class PresignedDownloadFileResponse extends $pb.GeneratedMessage {
 
   PresignedDownloadFileResponse._();
 
-  factory PresignedDownloadFileResponse.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory PresignedDownloadFileResponse.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory PresignedDownloadFileResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PresignedDownloadFileResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PresignedDownloadFileResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PresignedDownloadFileResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'downloadUrl')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PresignedDownloadFileResponse clone() => PresignedDownloadFileResponse()..mergeFromMessage(this);
+  PresignedDownloadFileResponse clone() =>
+      PresignedDownloadFileResponse()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PresignedDownloadFileResponse copyWith(void Function(PresignedDownloadFileResponse) updates) => super.copyWith((message) => updates(message as PresignedDownloadFileResponse)) as PresignedDownloadFileResponse;
+  PresignedDownloadFileResponse copyWith(
+          void Function(PresignedDownloadFileResponse) updates) =>
+      super.copyWith(
+              (message) => updates(message as PresignedDownloadFileResponse))
+          as PresignedDownloadFileResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static PresignedDownloadFileResponse create() => PresignedDownloadFileResponse._();
+  static PresignedDownloadFileResponse create() =>
+      PresignedDownloadFileResponse._();
   @$core.override
   PresignedDownloadFileResponse createEmptyInstance() => create();
-  static $pb.PbList<PresignedDownloadFileResponse> createRepeated() => $pb.PbList<PresignedDownloadFileResponse>();
+  static $pb.PbList<PresignedDownloadFileResponse> createRepeated() =>
+      $pb.PbList<PresignedDownloadFileResponse>();
   @$core.pragma('dart2js:noInline')
-  static PresignedDownloadFileResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PresignedDownloadFileResponse>(create);
+  static PresignedDownloadFileResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<PresignedDownloadFileResponse>(create);
   static PresignedDownloadFileResponse? _defaultInstance;
 
   /// Should follow AWS S3 API
@@ -1013,19 +1322,28 @@ class FileChunk extends $pb.GeneratedMessage {
 
   FileChunk._();
 
-  factory FileChunk.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory FileChunk.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory FileChunk.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory FileChunk.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FileChunk', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'FileChunk',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'),
+      createEmptyInstance: create)
     ..aInt64(1, _omitFieldNames ? '' : 'chunkNumber')
-    ..a<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'data', $pb.PbFieldType.OY)
-    ..hasRequiredFields = false
-  ;
+    ..a<$core.List<$core.int>>(
+        2, _omitFieldNames ? '' : 'data', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   FileChunk clone() => FileChunk()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  FileChunk copyWith(void Function(FileChunk) updates) => super.copyWith((message) => updates(message as FileChunk)) as FileChunk;
+  FileChunk copyWith(void Function(FileChunk) updates) =>
+      super.copyWith((message) => updates(message as FileChunk)) as FileChunk;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -1036,7 +1354,8 @@ class FileChunk extends $pb.GeneratedMessage {
   FileChunk createEmptyInstance() => create();
   static $pb.PbList<FileChunk> createRepeated() => $pb.PbList<FileChunk>();
   @$core.pragma('dart2js:noInline')
-  static FileChunk getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FileChunk>(create);
+  static FileChunk getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FileChunk>(create);
   static FileChunk? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -1058,6 +1377,7 @@ class FileChunk extends $pb.GeneratedMessage {
   void clearData() => $_clearField(2);
 }
 
-
-const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
-const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
+const $core.bool _omitFieldNames =
+    $core.bool.fromEnvironment('protobuf.omit_field_names');
+const $core.bool _omitMessageNames =
+    $core.bool.fromEnvironment('protobuf.omit_message_names');

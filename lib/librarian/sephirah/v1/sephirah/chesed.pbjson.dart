@@ -1,14 +1,14 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: librarian/sephirah/v1/sephirah/chesed.proto
-//
+// Generated from librarian/sephirah/v1/sephirah/chesed.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, unused_import
 
 import 'dart:convert' as $convert;
 import 'dart:core' as $core;
@@ -18,7 +18,14 @@ import 'dart:typed_data' as $typed_data;
 const UploadImageRequest$json = {
   '1': 'UploadImageRequest',
   '2': [
-    {'1': 'file_metadata', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.FileMetadata', '10': 'fileMetadata'},
+    {
+      '1': 'file_metadata',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.FileMetadata',
+      '10': 'fileMetadata'
+    },
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
   ],
@@ -47,7 +54,14 @@ final $typed_data.Uint8List uploadImageResponseDescriptor = $convert.base64Decod
 const UpdateImageRequest$json = {
   '1': 'UpdateImageRequest',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+    {
+      '1': 'id',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'id'
+    },
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
   ],
@@ -65,15 +79,31 @@ const UpdateImageResponse$json = {
 };
 
 /// Descriptor for `UpdateImageResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List updateImageResponseDescriptor = $convert.base64Decode(
-    'ChNVcGRhdGVJbWFnZVJlc3BvbnNl');
+final $typed_data.Uint8List updateImageResponseDescriptor =
+    $convert.base64Decode('ChNVcGRhdGVJbWFnZVJlc3BvbnNl');
 
 @$core.Deprecated('Use listImagesRequestDescriptor instead')
 const ListImagesRequest$json = {
   '1': 'ListImagesRequest',
   '2': [
-    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
-    {'1': 'time_range', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.TimeRange', '9': 0, '10': 'timeRange', '17': true},
+    {
+      '1': 'paging',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.PagingRequest',
+      '10': 'paging'
+    },
+    {
+      '1': 'time_range',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.TimeRange',
+      '9': 0,
+      '10': 'timeRange',
+      '17': true
+    },
   ],
   '8': [
     {'1': '_time_range'},
@@ -90,8 +120,22 @@ final $typed_data.Uint8List listImagesRequestDescriptor = $convert.base64Decode(
 const ListImagesResponse$json = {
   '1': 'ListImagesResponse',
   '2': [
-    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingResponse', '10': 'paging'},
-    {'1': 'ids', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'ids'},
+    {
+      '1': 'paging',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.PagingResponse',
+      '10': 'paging'
+    },
+    {
+      '1': 'ids',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'ids'
+    },
   ],
 };
 
@@ -105,7 +149,14 @@ final $typed_data.Uint8List listImagesResponseDescriptor = $convert.base64Decode
 const SearchImagesRequest$json = {
   '1': 'SearchImagesRequest',
   '2': [
-    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
+    {
+      '1': 'paging',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.PagingRequest',
+      '10': 'paging'
+    },
     {'1': 'keywords', '3': 2, '4': 1, '5': 9, '10': 'keywords'},
   ],
 };
@@ -119,8 +170,22 @@ final $typed_data.Uint8List searchImagesRequestDescriptor = $convert.base64Decod
 const SearchImagesResponse$json = {
   '1': 'SearchImagesResponse',
   '2': [
-    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingResponse', '10': 'paging'},
-    {'1': 'ids', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.InternalID', '10': 'ids'},
+    {
+      '1': 'paging',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.PagingResponse',
+      '10': 'paging'
+    },
+    {
+      '1': 'ids',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'ids'
+    },
   ],
 };
 
@@ -134,7 +199,14 @@ final $typed_data.Uint8List searchImagesResponseDescriptor = $convert.base64Deco
 const GetImageRequest$json = {
   '1': 'GetImageRequest',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+    {
+      '1': 'id',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'id'
+    },
   ],
 };
 
@@ -147,7 +219,14 @@ final $typed_data.Uint8List getImageRequestDescriptor = $convert.base64Decode(
 const GetImageResponse$json = {
   '1': 'GetImageResponse',
   '2': [
-    {'1': 'file_metadata', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.FileMetadata', '10': 'fileMetadata'},
+    {
+      '1': 'file_metadata',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.FileMetadata',
+      '10': 'fileMetadata'
+    },
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
   ],
@@ -163,7 +242,14 @@ final $typed_data.Uint8List getImageResponseDescriptor = $convert.base64Decode(
 const DownloadImageRequest$json = {
   '1': 'DownloadImageRequest',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+    {
+      '1': 'id',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'id'
+    },
   ],
 };
 
@@ -184,4 +270,3 @@ const DownloadImageResponse$json = {
 final $typed_data.Uint8List downloadImageResponseDescriptor = $convert.base64Decode(
     'ChVEb3dubG9hZEltYWdlUmVzcG9uc2USJQoOZG93bmxvYWRfdG9rZW4YASABKAlSDWRvd25sb2'
     'FkVG9rZW4=');
-

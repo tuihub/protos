@@ -21,6 +21,8 @@ var global =
     (function () { return this; }).call(null) ||
     Function('return this')();
 
+var librarian_v1_wellknown_pb = require('../../../librarian/v1/wellknown_pb.js');
+goog.object.extend(proto, librarian_v1_wellknown_pb);
 goog.exportSymbol('proto.librarian.porter.v1.Account', null, global);
 goog.exportSymbol('proto.librarian.porter.v1.GetAccountRequest', null, global);
 goog.exportSymbol('proto.librarian.porter.v1.GetAccountResponse', null, global);
@@ -119,8 +121,9 @@ proto.librarian.porter.v1.GetAccountRequest.prototype.toObject = function(opt_in
  */
 proto.librarian.porter.v1.GetAccountRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-platform: jspb.Message.getFieldWithDefault(msg, 1, ""),
-platformAccountId: jspb.Message.getFieldWithDefault(msg, 2, "")
+config: (f = msg.getConfig()) && librarian_v1_wellknown_pb.FeatureRequest.toObject(includeInstance, f),
+platform: jspb.Message.getFieldWithDefault(msg, 2, ""),
+platformAccountId: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -158,10 +161,15 @@ proto.librarian.porter.v1.GetAccountRequest.deserializeBinaryFromReader = functi
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = new librarian_v1_wellknown_pb.FeatureRequest;
+      reader.readMessage(value,librarian_v1_wellknown_pb.FeatureRequest.deserializeBinaryFromReader);
+      msg.setConfig(value);
+      break;
+    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setPlatform(value);
       break;
-    case 2:
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setPlatformAccountId(value);
       break;
@@ -194,46 +202,73 @@ proto.librarian.porter.v1.GetAccountRequest.prototype.serializeBinary = function
  */
 proto.librarian.porter.v1.GetAccountRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPlatform();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getConfig();
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
+      f,
+      librarian_v1_wellknown_pb.FeatureRequest.serializeBinaryToWriter
     );
   }
-  f = message.getPlatformAccountId();
+  f = message.getPlatform();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
+  f = message.getPlatformAccountId();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
 };
 
 
 /**
- * optional string platform = 1;
+ * optional librarian.v1.FeatureRequest config = 1;
+ * @return {?proto.librarian.v1.FeatureRequest}
+ */
+proto.librarian.porter.v1.GetAccountRequest.prototype.getConfig = function() {
+  return /** @type{?proto.librarian.v1.FeatureRequest} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_wellknown_pb.FeatureRequest, 1));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.FeatureRequest|undefined} value
+ * @return {!proto.librarian.porter.v1.GetAccountRequest} returns this
+*/
+proto.librarian.porter.v1.GetAccountRequest.prototype.setConfig = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.porter.v1.GetAccountRequest} returns this
+ */
+proto.librarian.porter.v1.GetAccountRequest.prototype.clearConfig = function() {
+  return this.setConfig(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.porter.v1.GetAccountRequest.prototype.hasConfig = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string platform = 2;
  * @return {string}
  */
 proto.librarian.porter.v1.GetAccountRequest.prototype.getPlatform = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.librarian.porter.v1.GetAccountRequest} returns this
- */
-proto.librarian.porter.v1.GetAccountRequest.prototype.setPlatform = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string platform_account_id = 2;
- * @return {string}
- */
-proto.librarian.porter.v1.GetAccountRequest.prototype.getPlatformAccountId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -242,8 +277,26 @@ proto.librarian.porter.v1.GetAccountRequest.prototype.getPlatformAccountId = fun
  * @param {string} value
  * @return {!proto.librarian.porter.v1.GetAccountRequest} returns this
  */
-proto.librarian.porter.v1.GetAccountRequest.prototype.setPlatformAccountId = function(value) {
+proto.librarian.porter.v1.GetAccountRequest.prototype.setPlatform = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string platform_account_id = 3;
+ * @return {string}
+ */
+proto.librarian.porter.v1.GetAccountRequest.prototype.getPlatformAccountId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.librarian.porter.v1.GetAccountRequest} returns this
+ */
+proto.librarian.porter.v1.GetAccountRequest.prototype.setPlatformAccountId = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 

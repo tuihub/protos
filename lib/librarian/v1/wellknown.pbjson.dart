@@ -1,14 +1,14 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: librarian/v1/wellknown.proto
-//
+// Generated from librarian/v1/wellknown.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, unused_import
 
 import 'dart:convert' as $convert;
 import 'dart:core' as $core;
@@ -88,10 +88,11 @@ const WellKnownNotifyDestination$json = {
 };
 
 /// Descriptor for `WellKnownNotifyDestination`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List wellKnownNotifyDestinationDescriptor = $convert.base64Decode(
-    'ChpXZWxsS25vd25Ob3RpZnlEZXN0aW5hdGlvbhIyCilXRUxMX0tOT1dOX05PVElGWV9ERVNUSU'
-    '5BVElPTl9VTlNQRUNJRklFRBAAGgPCPgASNwomV0VMTF9LTk9XTl9OT1RJRllfREVTVElOQVRJ'
-    'T05fVEVMRUdSQU0QARoLwj4IdGVsZWdyYW0=');
+final $typed_data.Uint8List wellKnownNotifyDestinationDescriptor =
+    $convert.base64Decode(
+        'ChpXZWxsS25vd25Ob3RpZnlEZXN0aW5hdGlvbhIyCilXRUxMX0tOT1dOX05PVElGWV9ERVNUSU'
+        '5BVElPTl9VTlNQRUNJRklFRBAAGgPCPgASNwomV0VMTF9LTk9XTl9OT1RJRllfREVTVElOQVRJ'
+        'T05fVEVMRUdSQU0QARoLwj4IdGVsZWdyYW0=');
 
 @$core.Deprecated('Use wellKnownFeedItemActionDescriptor instead')
 const WellKnownFeedItemAction$json = {
@@ -142,8 +143,23 @@ final $typed_data.Uint8List pagingResponseDescriptor = $convert.base64Decode(
 const TimeRange$json = {
   '1': 'TimeRange',
   '2': [
-    {'1': 'start_time', '3': 1, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'startTime'},
-    {'1': 'duration', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Duration', '8': {}, '10': 'duration'},
+    {
+      '1': 'start_time',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'startTime'
+    },
+    {
+      '1': 'duration',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Duration',
+      '8': {},
+      '10': 'duration'
+    },
   ],
 };
 
@@ -162,8 +178,8 @@ const InternalID$json = {
 };
 
 /// Descriptor for `InternalID`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List internalIDDescriptor = $convert.base64Decode(
-    'CgpJbnRlcm5hbElEEg4KAmlkGAEgASgDUgJpZA==');
+final $typed_data.Uint8List internalIDDescriptor =
+    $convert.base64Decode('CgpJbnRlcm5hbElEEg4KAmlkGAEgASgDUgJpZA==');
 
 @$core.Deprecated('Use i18NStringDescriptor instead')
 const I18NString$json = {
@@ -182,12 +198,33 @@ final $typed_data.Uint8List i18NStringDescriptor = $convert.base64Decode(
 const FileMetadata$json = {
   '1': 'FileMetadata',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+    {
+      '1': 'id',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'id'
+    },
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'size_bytes', '3': 3, '4': 1, '5': 3, '10': 'sizeBytes'},
-    {'1': 'type', '3': 4, '4': 1, '5': 14, '6': '.librarian.v1.FileType', '10': 'type'},
+    {
+      '1': 'type',
+      '3': 4,
+      '4': 1,
+      '5': 14,
+      '6': '.librarian.v1.FileType',
+      '10': 'type'
+    },
     {'1': 'sha256', '3': 5, '4': 1, '5': 12, '10': 'sha256'},
-    {'1': 'create_time', '3': 6, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createTime'},
+    {
+      '1': 'create_time',
+      '3': 6,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createTime'
+    },
   ],
 };
 
@@ -206,9 +243,22 @@ const FeatureFlag$json = {
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     {'1': 'name', '3': 2, '4': 1, '5': 9, '10': 'name'},
     {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
-    {'1': 'config_json_schema', '3': 4, '4': 1, '5': 9, '10': 'configJsonSchema'},
+    {
+      '1': 'config_json_schema',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '10': 'configJsonSchema'
+    },
     {'1': 'require_context', '3': 5, '4': 1, '5': 8, '10': 'requireContext'},
-    {'1': 'extra', '3': 6, '4': 3, '5': 11, '6': '.librarian.v1.FeatureFlag.ExtraEntry', '10': 'extra'},
+    {
+      '1': 'extra',
+      '3': 6,
+      '4': 3,
+      '5': 11,
+      '6': '.librarian.v1.FeatureFlag.ExtraEntry',
+      '10': 'extra'
+    },
   ],
   '3': [FeatureFlag_ExtraEntry$json],
 };
@@ -239,7 +289,16 @@ const FeatureRequest$json = {
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     {'1': 'region', '3': 2, '4': 1, '5': 9, '10': 'region'},
     {'1': 'config_json', '3': 3, '4': 1, '5': 9, '10': 'configJson'},
-    {'1': 'context_id', '3': 4, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '9': 0, '10': 'contextId', '17': true},
+    {
+      '1': 'context_id',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '9': 0,
+      '10': 'contextId',
+      '17': true
+    },
   ],
   '8': [
     {'1': '_context_id'},
@@ -257,13 +316,62 @@ final $typed_data.Uint8List featureRequestDescriptor = $convert.base64Decode(
 const FeatureSummary$json = {
   '1': 'FeatureSummary',
   '2': [
-    {'1': 'account_platforms', '3': 1, '4': 3, '5': 11, '6': '.librarian.v1.FeatureFlag', '10': 'accountPlatforms'},
-    {'1': 'app_info_sources', '3': 2, '4': 3, '5': 11, '6': '.librarian.v1.FeatureFlag', '10': 'appInfoSources'},
-    {'1': 'feed_sources', '3': 3, '4': 3, '5': 11, '6': '.librarian.v1.FeatureFlag', '10': 'feedSources'},
-    {'1': 'notify_destinations', '3': 4, '4': 3, '5': 11, '6': '.librarian.v1.FeatureFlag', '10': 'notifyDestinations'},
-    {'1': 'feed_item_actions', '3': 5, '4': 3, '5': 11, '6': '.librarian.v1.FeatureFlag', '10': 'feedItemActions'},
-    {'1': 'feed_setters', '3': 6, '4': 3, '5': 11, '6': '.librarian.v1.FeatureFlag', '10': 'feedSetters'},
-    {'1': 'feed_getters', '3': 7, '4': 3, '5': 11, '6': '.librarian.v1.FeatureFlag', '10': 'feedGetters'},
+    {
+      '1': 'account_platforms',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.librarian.v1.FeatureFlag',
+      '10': 'accountPlatforms'
+    },
+    {
+      '1': 'app_info_sources',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.librarian.v1.FeatureFlag',
+      '10': 'appInfoSources'
+    },
+    {
+      '1': 'feed_sources',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.librarian.v1.FeatureFlag',
+      '10': 'feedSources'
+    },
+    {
+      '1': 'notify_destinations',
+      '3': 4,
+      '4': 3,
+      '5': 11,
+      '6': '.librarian.v1.FeatureFlag',
+      '10': 'notifyDestinations'
+    },
+    {
+      '1': 'feed_item_actions',
+      '3': 5,
+      '4': 3,
+      '5': 11,
+      '6': '.librarian.v1.FeatureFlag',
+      '10': 'feedItemActions'
+    },
+    {
+      '1': 'feed_setters',
+      '3': 6,
+      '4': 3,
+      '5': 11,
+      '6': '.librarian.v1.FeatureFlag',
+      '10': 'feedSetters'
+    },
+    {
+      '1': 'feed_getters',
+      '3': 7,
+      '4': 3,
+      '5': 11,
+      '6': '.librarian.v1.FeatureFlag',
+      '10': 'feedGetters'
+    },
   ],
 };
 
@@ -278,4 +386,3 @@ final $typed_data.Uint8List featureSummaryDescriptor = $convert.base64Decode(
     'bi52MS5GZWF0dXJlRmxhZ1IPZmVlZEl0ZW1BY3Rpb25zEjwKDGZlZWRfc2V0dGVycxgGIAMoCz'
     'IZLmxpYnJhcmlhbi52MS5GZWF0dXJlRmxhZ1ILZmVlZFNldHRlcnMSPAoMZmVlZF9nZXR0ZXJz'
     'GAcgAygLMhkubGlicmFyaWFuLnYxLkZlYXR1cmVGbGFnUgtmZWVkR2V0dGVycw==');
-

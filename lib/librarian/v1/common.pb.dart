@@ -1,7 +1,7 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: librarian/v1/common.proto
-//
+// Generated from librarian/v1/common.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
@@ -45,25 +45,36 @@ class Feed extends $pb.GeneratedMessage {
 
   Feed._();
 
-  factory Feed.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory Feed.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory Feed.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory Feed.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Feed', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
-    ..aOM<$0.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $0.InternalID.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'Feed',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'),
+      createEmptyInstance: create)
+    ..aOM<$0.InternalID>(1, _omitFieldNames ? '' : 'id',
+        subBuilder: $0.InternalID.create)
     ..aOS(2, _omitFieldNames ? '' : 'title')
     ..aOS(3, _omitFieldNames ? '' : 'link')
     ..aOS(4, _omitFieldNames ? '' : 'description')
-    ..pc<FeedItem>(5, _omitFieldNames ? '' : 'items', $pb.PbFieldType.PM, subBuilder: FeedItem.create)
+    ..pc<FeedItem>(5, _omitFieldNames ? '' : 'items', $pb.PbFieldType.PM,
+        subBuilder: FeedItem.create)
     ..aOS(6, _omitFieldNames ? '' : 'language')
-    ..aOM<FeedImage>(7, _omitFieldNames ? '' : 'image', subBuilder: FeedImage.create)
-    ..pc<FeedPerson>(8, _omitFieldNames ? '' : 'authors', $pb.PbFieldType.PM, subBuilder: FeedPerson.create)
-    ..hasRequiredFields = false
-  ;
+    ..aOM<FeedImage>(7, _omitFieldNames ? '' : 'image',
+        subBuilder: FeedImage.create)
+    ..pc<FeedPerson>(8, _omitFieldNames ? '' : 'authors', $pb.PbFieldType.PM,
+        subBuilder: FeedPerson.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   Feed clone() => Feed()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  Feed copyWith(void Function(Feed) updates) => super.copyWith((message) => updates(message as Feed)) as Feed;
+  Feed copyWith(void Function(Feed) updates) =>
+      super.copyWith((message) => updates(message as Feed)) as Feed;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -74,7 +85,8 @@ class Feed extends $pb.GeneratedMessage {
   Feed createEmptyInstance() => create();
   static $pb.PbList<Feed> createRepeated() => $pb.PbList<Feed>();
   @$core.pragma('dart2js:noInline')
-  static Feed getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Feed>(create);
+  static Feed getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Feed>(create);
   static Feed? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -188,32 +200,46 @@ class FeedItem extends $pb.GeneratedMessage {
 
   FeedItem._();
 
-  factory FeedItem.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory FeedItem.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory FeedItem.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory FeedItem.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FeedItem', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
-    ..aOM<$0.InternalID>(1, _omitFieldNames ? '' : 'id', subBuilder: $0.InternalID.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'FeedItem',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'),
+      createEmptyInstance: create)
+    ..aOM<$0.InternalID>(1, _omitFieldNames ? '' : 'id',
+        subBuilder: $0.InternalID.create)
     ..aOS(2, _omitFieldNames ? '' : 'title')
-    ..pc<FeedPerson>(3, _omitFieldNames ? '' : 'authors', $pb.PbFieldType.PM, subBuilder: FeedPerson.create)
+    ..pc<FeedPerson>(3, _omitFieldNames ? '' : 'authors', $pb.PbFieldType.PM,
+        subBuilder: FeedPerson.create)
     ..aOS(4, _omitFieldNames ? '' : 'description')
     ..aOS(5, _omitFieldNames ? '' : 'content')
     ..aOS(6, _omitFieldNames ? '' : 'guid')
     ..aOS(7, _omitFieldNames ? '' : 'link')
-    ..aOM<FeedImage>(8, _omitFieldNames ? '' : 'image', subBuilder: FeedImage.create)
+    ..aOM<FeedImage>(8, _omitFieldNames ? '' : 'image',
+        subBuilder: FeedImage.create)
     ..aOS(9, _omitFieldNames ? '' : 'published')
-    ..aOM<$1.Timestamp>(10, _omitFieldNames ? '' : 'publishedParsed', subBuilder: $1.Timestamp.create)
+    ..aOM<$1.Timestamp>(10, _omitFieldNames ? '' : 'publishedParsed',
+        subBuilder: $1.Timestamp.create)
     ..aOS(11, _omitFieldNames ? '' : 'updated')
-    ..aOM<$1.Timestamp>(12, _omitFieldNames ? '' : 'updatedParsed', subBuilder: $1.Timestamp.create)
-    ..pc<FeedEnclosure>(13, _omitFieldNames ? '' : 'enclosures', $pb.PbFieldType.PM, subBuilder: FeedEnclosure.create)
+    ..aOM<$1.Timestamp>(12, _omitFieldNames ? '' : 'updatedParsed',
+        subBuilder: $1.Timestamp.create)
+    ..pc<FeedEnclosure>(
+        13, _omitFieldNames ? '' : 'enclosures', $pb.PbFieldType.PM,
+        subBuilder: FeedEnclosure.create)
     ..aOS(14, _omitFieldNames ? '' : 'publishPlatform')
     ..aInt64(15, _omitFieldNames ? '' : 'readCount')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   FeedItem clone() => FeedItem()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  FeedItem copyWith(void Function(FeedItem) updates) => super.copyWith((message) => updates(message as FeedItem)) as FeedItem;
+  FeedItem copyWith(void Function(FeedItem) updates) =>
+      super.copyWith((message) => updates(message as FeedItem)) as FeedItem;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -224,7 +250,8 @@ class FeedItem extends $pb.GeneratedMessage {
   FeedItem createEmptyInstance() => create();
   static $pb.PbList<FeedItem> createRepeated() => $pb.PbList<FeedItem>();
   @$core.pragma('dart2js:noInline')
-  static FeedItem getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FeedItem>(create);
+  static FeedItem getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FeedItem>(create);
   static FeedItem? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -388,19 +415,26 @@ class FeedPerson extends $pb.GeneratedMessage {
 
   FeedPerson._();
 
-  factory FeedPerson.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory FeedPerson.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory FeedPerson.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory FeedPerson.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FeedPerson', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'FeedPerson',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOS(2, _omitFieldNames ? '' : 'email')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   FeedPerson clone() => FeedPerson()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  FeedPerson copyWith(void Function(FeedPerson) updates) => super.copyWith((message) => updates(message as FeedPerson)) as FeedPerson;
+  FeedPerson copyWith(void Function(FeedPerson) updates) =>
+      super.copyWith((message) => updates(message as FeedPerson)) as FeedPerson;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -411,7 +445,8 @@ class FeedPerson extends $pb.GeneratedMessage {
   FeedPerson createEmptyInstance() => create();
   static $pb.PbList<FeedPerson> createRepeated() => $pb.PbList<FeedPerson>();
   @$core.pragma('dart2js:noInline')
-  static FeedPerson getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FeedPerson>(create);
+  static FeedPerson getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<FeedPerson>(create);
   static FeedPerson? _defaultInstance;
 
   /// `standard field`
@@ -450,19 +485,26 @@ class FeedImage extends $pb.GeneratedMessage {
 
   FeedImage._();
 
-  factory FeedImage.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory FeedImage.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory FeedImage.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory FeedImage.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FeedImage', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'FeedImage',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'url')
     ..aOS(2, _omitFieldNames ? '' : 'title')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   FeedImage clone() => FeedImage()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  FeedImage copyWith(void Function(FeedImage) updates) => super.copyWith((message) => updates(message as FeedImage)) as FeedImage;
+  FeedImage copyWith(void Function(FeedImage) updates) =>
+      super.copyWith((message) => updates(message as FeedImage)) as FeedImage;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -473,7 +515,8 @@ class FeedImage extends $pb.GeneratedMessage {
   FeedImage createEmptyInstance() => create();
   static $pb.PbList<FeedImage> createRepeated() => $pb.PbList<FeedImage>();
   @$core.pragma('dart2js:noInline')
-  static FeedImage getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FeedImage>(create);
+  static FeedImage getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FeedImage>(create);
   static FeedImage? _defaultInstance;
 
   /// `standard field`
@@ -513,20 +556,28 @@ class FeedEnclosure extends $pb.GeneratedMessage {
 
   FeedEnclosure._();
 
-  factory FeedEnclosure.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory FeedEnclosure.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory FeedEnclosure.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory FeedEnclosure.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FeedEnclosure', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'FeedEnclosure',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'url')
     ..aOS(2, _omitFieldNames ? '' : 'length')
     ..aOS(3, _omitFieldNames ? '' : 'type')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   FeedEnclosure clone() => FeedEnclosure()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  FeedEnclosure copyWith(void Function(FeedEnclosure) updates) => super.copyWith((message) => updates(message as FeedEnclosure)) as FeedEnclosure;
+  FeedEnclosure copyWith(void Function(FeedEnclosure) updates) =>
+      super.copyWith((message) => updates(message as FeedEnclosure))
+          as FeedEnclosure;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -535,9 +586,11 @@ class FeedEnclosure extends $pb.GeneratedMessage {
   static FeedEnclosure create() => FeedEnclosure._();
   @$core.override
   FeedEnclosure createEmptyInstance() => create();
-  static $pb.PbList<FeedEnclosure> createRepeated() => $pb.PbList<FeedEnclosure>();
+  static $pb.PbList<FeedEnclosure> createRepeated() =>
+      $pb.PbList<FeedEnclosure>();
   @$core.pragma('dart2js:noInline')
-  static FeedEnclosure getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FeedEnclosure>(create);
+  static FeedEnclosure getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<FeedEnclosure>(create);
   static FeedEnclosure? _defaultInstance;
 
   /// `standard field`
@@ -592,23 +645,31 @@ class PorterBinarySummary extends $pb.GeneratedMessage {
 
   PorterBinarySummary._();
 
-  factory PorterBinarySummary.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory PorterBinarySummary.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory PorterBinarySummary.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory PorterBinarySummary.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'PorterBinarySummary', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'PorterBinarySummary',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'sourceCodeAddress')
     ..aOS(2, _omitFieldNames ? '' : 'buildVersion')
     ..aOS(3, _omitFieldNames ? '' : 'buildDate')
     ..aOS(4, _omitFieldNames ? '' : 'name')
     ..aOS(5, _omitFieldNames ? '' : 'version')
     ..aOS(6, _omitFieldNames ? '' : 'description')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PorterBinarySummary clone() => PorterBinarySummary()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PorterBinarySummary copyWith(void Function(PorterBinarySummary) updates) => super.copyWith((message) => updates(message as PorterBinarySummary)) as PorterBinarySummary;
+  PorterBinarySummary copyWith(void Function(PorterBinarySummary) updates) =>
+      super.copyWith((message) => updates(message as PorterBinarySummary))
+          as PorterBinarySummary;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -617,9 +678,11 @@ class PorterBinarySummary extends $pb.GeneratedMessage {
   static PorterBinarySummary create() => PorterBinarySummary._();
   @$core.override
   PorterBinarySummary createEmptyInstance() => create();
-  static $pb.PbList<PorterBinarySummary> createRepeated() => $pb.PbList<PorterBinarySummary>();
+  static $pb.PbList<PorterBinarySummary> createRepeated() =>
+      $pb.PbList<PorterBinarySummary>();
   @$core.pragma('dart2js:noInline')
-  static PorterBinarySummary getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PorterBinarySummary>(create);
+  static PorterBinarySummary getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<PorterBinarySummary>(create);
   static PorterBinarySummary? _defaultInstance;
 
   /// Server source code address.
@@ -687,6 +750,7 @@ class PorterBinarySummary extends $pb.GeneratedMessage {
   void clearDescription() => $_clearField(6);
 }
 
-
-const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
-const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
+const $core.bool _omitFieldNames =
+    $core.bool.fromEnvironment('protobuf.omit_field_names');
+const $core.bool _omitMessageNames =
+    $core.bool.fromEnvironment('protobuf.omit_message_names');

@@ -21,6 +21,8 @@ var global =
     (function () { return this; }).call(null) ||
     Function('return this')();
 
+var librarian_v1_wellknown_pb = require('../../../librarian/v1/wellknown_pb.js');
+goog.object.extend(proto, librarian_v1_wellknown_pb);
 goog.exportSymbol('proto.librarian.porter.v1.AppInfo', null, global);
 goog.exportSymbol('proto.librarian.porter.v1.AppInfoDetails', null, global);
 goog.exportSymbol('proto.librarian.porter.v1.AppType', null, global);
@@ -230,7 +232,8 @@ proto.librarian.porter.v1.SearchAppInfoRequest.prototype.toObject = function(opt
  */
 proto.librarian.porter.v1.SearchAppInfoRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-nameLike: jspb.Message.getFieldWithDefault(msg, 1, "")
+config: (f = msg.getConfig()) && librarian_v1_wellknown_pb.FeatureRequest.toObject(includeInstance, f),
+nameLike: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -268,6 +271,11 @@ proto.librarian.porter.v1.SearchAppInfoRequest.deserializeBinaryFromReader = fun
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = new librarian_v1_wellknown_pb.FeatureRequest;
+      reader.readMessage(value,librarian_v1_wellknown_pb.FeatureRequest.deserializeBinaryFromReader);
+      msg.setConfig(value);
+      break;
+    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setNameLike(value);
       break;
@@ -300,10 +308,18 @@ proto.librarian.porter.v1.SearchAppInfoRequest.prototype.serializeBinary = funct
  */
 proto.librarian.porter.v1.SearchAppInfoRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getConfig();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      librarian_v1_wellknown_pb.FeatureRequest.serializeBinaryToWriter
+    );
+  }
   f = message.getNameLike();
   if (f.length > 0) {
     writer.writeString(
-      1,
+      2,
       f
     );
   }
@@ -311,11 +327,48 @@ proto.librarian.porter.v1.SearchAppInfoRequest.serializeBinaryToWriter = functio
 
 
 /**
- * optional string name_like = 1;
+ * optional librarian.v1.FeatureRequest config = 1;
+ * @return {?proto.librarian.v1.FeatureRequest}
+ */
+proto.librarian.porter.v1.SearchAppInfoRequest.prototype.getConfig = function() {
+  return /** @type{?proto.librarian.v1.FeatureRequest} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_wellknown_pb.FeatureRequest, 1));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.FeatureRequest|undefined} value
+ * @return {!proto.librarian.porter.v1.SearchAppInfoRequest} returns this
+*/
+proto.librarian.porter.v1.SearchAppInfoRequest.prototype.setConfig = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.porter.v1.SearchAppInfoRequest} returns this
+ */
+proto.librarian.porter.v1.SearchAppInfoRequest.prototype.clearConfig = function() {
+  return this.setConfig(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.porter.v1.SearchAppInfoRequest.prototype.hasConfig = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string name_like = 2;
  * @return {string}
  */
 proto.librarian.porter.v1.SearchAppInfoRequest.prototype.getNameLike = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -324,7 +377,7 @@ proto.librarian.porter.v1.SearchAppInfoRequest.prototype.getNameLike = function(
  * @return {!proto.librarian.porter.v1.SearchAppInfoRequest} returns this
  */
 proto.librarian.porter.v1.SearchAppInfoRequest.prototype.setNameLike = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -520,8 +573,9 @@ proto.librarian.porter.v1.GetAppInfoRequest.prototype.toObject = function(opt_in
  */
 proto.librarian.porter.v1.GetAppInfoRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-source: jspb.Message.getFieldWithDefault(msg, 1, ""),
-sourceAppId: jspb.Message.getFieldWithDefault(msg, 2, "")
+config: (f = msg.getConfig()) && librarian_v1_wellknown_pb.FeatureRequest.toObject(includeInstance, f),
+source: jspb.Message.getFieldWithDefault(msg, 2, ""),
+sourceAppId: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -559,10 +613,15 @@ proto.librarian.porter.v1.GetAppInfoRequest.deserializeBinaryFromReader = functi
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = new librarian_v1_wellknown_pb.FeatureRequest;
+      reader.readMessage(value,librarian_v1_wellknown_pb.FeatureRequest.deserializeBinaryFromReader);
+      msg.setConfig(value);
+      break;
+    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setSource(value);
       break;
-    case 2:
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setSourceAppId(value);
       break;
@@ -595,46 +654,73 @@ proto.librarian.porter.v1.GetAppInfoRequest.prototype.serializeBinary = function
  */
 proto.librarian.porter.v1.GetAppInfoRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getSource();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getConfig();
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
+      f,
+      librarian_v1_wellknown_pb.FeatureRequest.serializeBinaryToWriter
     );
   }
-  f = message.getSourceAppId();
+  f = message.getSource();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
+  f = message.getSourceAppId();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
 };
 
 
 /**
- * optional string source = 1;
+ * optional librarian.v1.FeatureRequest config = 1;
+ * @return {?proto.librarian.v1.FeatureRequest}
+ */
+proto.librarian.porter.v1.GetAppInfoRequest.prototype.getConfig = function() {
+  return /** @type{?proto.librarian.v1.FeatureRequest} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_wellknown_pb.FeatureRequest, 1));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.FeatureRequest|undefined} value
+ * @return {!proto.librarian.porter.v1.GetAppInfoRequest} returns this
+*/
+proto.librarian.porter.v1.GetAppInfoRequest.prototype.setConfig = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.porter.v1.GetAppInfoRequest} returns this
+ */
+proto.librarian.porter.v1.GetAppInfoRequest.prototype.clearConfig = function() {
+  return this.setConfig(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.porter.v1.GetAppInfoRequest.prototype.hasConfig = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string source = 2;
  * @return {string}
  */
 proto.librarian.porter.v1.GetAppInfoRequest.prototype.getSource = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.librarian.porter.v1.GetAppInfoRequest} returns this
- */
-proto.librarian.porter.v1.GetAppInfoRequest.prototype.setSource = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional string source_app_id = 2;
- * @return {string}
- */
-proto.librarian.porter.v1.GetAppInfoRequest.prototype.getSourceAppId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -643,8 +729,26 @@ proto.librarian.porter.v1.GetAppInfoRequest.prototype.getSourceAppId = function(
  * @param {string} value
  * @return {!proto.librarian.porter.v1.GetAppInfoRequest} returns this
  */
-proto.librarian.porter.v1.GetAppInfoRequest.prototype.setSourceAppId = function(value) {
+proto.librarian.porter.v1.GetAppInfoRequest.prototype.setSource = function(value) {
   return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string source_app_id = 3;
+ * @return {string}
+ */
+proto.librarian.porter.v1.GetAppInfoRequest.prototype.getSourceAppId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.librarian.porter.v1.GetAppInfoRequest} returns this
+ */
+proto.librarian.porter.v1.GetAppInfoRequest.prototype.setSourceAppId = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 

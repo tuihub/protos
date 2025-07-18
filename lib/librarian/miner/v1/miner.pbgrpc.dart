@@ -1,7 +1,7 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: librarian/miner/v1/miner.proto
-//
+// Generated from librarian/miner/v1/miner.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
@@ -32,24 +32,37 @@ class LibrarianMinerServiceClient extends $grpc.Client {
     '',
   ];
 
-  static final _$recognizeImageBinary = $grpc.ClientMethod<$0.RecognizeImageBinaryRequest, $0.RecognizeImageBinaryResponse>(
-      '/librarian.miner.v1.LibrarianMinerService/RecognizeImageBinary',
-      ($0.RecognizeImageBinaryRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.RecognizeImageBinaryResponse.fromBuffer(value));
-  static final _$recognizeImageURL = $grpc.ClientMethod<$0.RecognizeImageURLRequest, $0.RecognizeImageURLResponse>(
-      '/librarian.miner.v1.LibrarianMinerService/RecognizeImageURL',
-      ($0.RecognizeImageURLRequest value) => value.writeToBuffer(),
-      ($core.List<$core.int> value) => $0.RecognizeImageURLResponse.fromBuffer(value));
+  LibrarianMinerServiceClient(super.channel,
+      {super.options, super.interceptors});
 
-  LibrarianMinerServiceClient(super.channel, {super.options, super.interceptors});
-
-  $grpc.ResponseFuture<$0.RecognizeImageBinaryResponse> recognizeImageBinary($async.Stream<$0.RecognizeImageBinaryRequest> request, {$grpc.CallOptions? options}) {
-    return $createStreamingCall(_$recognizeImageBinary, request, options: options).single;
+  $grpc.ResponseFuture<$0.RecognizeImageBinaryResponse> recognizeImageBinary(
+    $async.Stream<$0.RecognizeImageBinaryRequest> request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createStreamingCall(_$recognizeImageBinary, request,
+            options: options)
+        .single;
   }
 
-  $grpc.ResponseFuture<$0.RecognizeImageURLResponse> recognizeImageURL($0.RecognizeImageURLRequest request, {$grpc.CallOptions? options}) {
+  $grpc.ResponseFuture<$0.RecognizeImageURLResponse> recognizeImageURL(
+    $0.RecognizeImageURLRequest request, {
+    $grpc.CallOptions? options,
+  }) {
     return $createUnaryCall(_$recognizeImageURL, request, options: options);
   }
+
+  // method descriptors
+
+  static final _$recognizeImageBinary = $grpc.ClientMethod<
+          $0.RecognizeImageBinaryRequest, $0.RecognizeImageBinaryResponse>(
+      '/librarian.miner.v1.LibrarianMinerService/RecognizeImageBinary',
+      ($0.RecognizeImageBinaryRequest value) => value.writeToBuffer(),
+      $0.RecognizeImageBinaryResponse.fromBuffer);
+  static final _$recognizeImageURL = $grpc.ClientMethod<
+          $0.RecognizeImageURLRequest, $0.RecognizeImageURLResponse>(
+      '/librarian.miner.v1.LibrarianMinerService/RecognizeImageURL',
+      ($0.RecognizeImageURLRequest value) => value.writeToBuffer(),
+      $0.RecognizeImageURLResponse.fromBuffer);
 }
 
 @$pb.GrpcServiceName('librarian.miner.v1.LibrarianMinerService')
@@ -57,26 +70,36 @@ abstract class LibrarianMinerServiceBase extends $grpc.Service {
   $core.String get $name => 'librarian.miner.v1.LibrarianMinerService';
 
   LibrarianMinerServiceBase() {
-    $addMethod($grpc.ServiceMethod<$0.RecognizeImageBinaryRequest, $0.RecognizeImageBinaryResponse>(
+    $addMethod($grpc.ServiceMethod<$0.RecognizeImageBinaryRequest,
+            $0.RecognizeImageBinaryResponse>(
         'RecognizeImageBinary',
         recognizeImageBinary,
         true,
         false,
-        ($core.List<$core.int> value) => $0.RecognizeImageBinaryRequest.fromBuffer(value),
+        ($core.List<$core.int> value) =>
+            $0.RecognizeImageBinaryRequest.fromBuffer(value),
         ($0.RecognizeImageBinaryResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.RecognizeImageURLRequest, $0.RecognizeImageURLResponse>(
+    $addMethod($grpc.ServiceMethod<$0.RecognizeImageURLRequest,
+            $0.RecognizeImageURLResponse>(
         'RecognizeImageURL',
         recognizeImageURL_Pre,
         false,
         false,
-        ($core.List<$core.int> value) => $0.RecognizeImageURLRequest.fromBuffer(value),
+        ($core.List<$core.int> value) =>
+            $0.RecognizeImageURLRequest.fromBuffer(value),
         ($0.RecognizeImageURLResponse value) => value.writeToBuffer()));
   }
 
-  $async.Future<$0.RecognizeImageURLResponse> recognizeImageURL_Pre($grpc.ServiceCall $call, $async.Future<$0.RecognizeImageURLRequest> $request) async {
+  $async.Future<$0.RecognizeImageBinaryResponse> recognizeImageBinary(
+      $grpc.ServiceCall call,
+      $async.Stream<$0.RecognizeImageBinaryRequest> request);
+
+  $async.Future<$0.RecognizeImageURLResponse> recognizeImageURL_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$0.RecognizeImageURLRequest> $request) async {
     return recognizeImageURL($call, await $request);
   }
 
-  $async.Future<$0.RecognizeImageBinaryResponse> recognizeImageBinary($grpc.ServiceCall call, $async.Stream<$0.RecognizeImageBinaryRequest> request);
-  $async.Future<$0.RecognizeImageURLResponse> recognizeImageURL($grpc.ServiceCall call, $0.RecognizeImageURLRequest request);
+  $async.Future<$0.RecognizeImageURLResponse> recognizeImageURL(
+      $grpc.ServiceCall call, $0.RecognizeImageURLRequest request);
 }

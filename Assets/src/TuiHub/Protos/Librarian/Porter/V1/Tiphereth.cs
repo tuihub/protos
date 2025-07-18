@@ -25,21 +25,23 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CiNsaWJyYXJpYW4vcG9ydGVyL3YxL3RpcGhlcmV0aC5wcm90bxITbGlicmFy",
-            "aWFuLnBvcnRlci52MSJfChFHZXRBY2NvdW50UmVxdWVzdBIaCghwbGF0Zm9y",
-            "bRgBIAEoCVIIcGxhdGZvcm0SLgoTcGxhdGZvcm1fYWNjb3VudF9pZBgCIAEo",
-            "CVIRcGxhdGZvcm1BY2NvdW50SWQiTAoSR2V0QWNjb3VudFJlc3BvbnNlEjYK",
-            "B2FjY291bnQYASABKAsyHC5saWJyYXJpYW4ucG9ydGVyLnYxLkFjY291bnRS",
-            "B2FjY291bnQiqQEKB0FjY291bnQSGgoIcGxhdGZvcm0YASABKAlSCHBsYXRm",
-            "b3JtEi4KE3BsYXRmb3JtX2FjY291bnRfaWQYAiABKAlSEXBsYXRmb3JtQWNj",
-            "b3VudElkEhIKBG5hbWUYAyABKAlSBG5hbWUSHwoLcHJvZmlsZV91cmwYBCAB",
-            "KAlSCnByb2ZpbGVVcmwSHQoKYXZhdGFyX3VybBgFIAEoCVIJYXZhdGFyVXJs",
-            "QllaM2dpdGh1Yi5jb20vdHVpaHViL3Byb3Rvcy9wa2cvbGlicmFyaWFuL3Bv",
-            "cnRlci92MTt2MaoCIVR1aUh1Yi5Qcm90b3MuTGlicmFyaWFuLlBvcnRlci5W",
-            "MWIGcHJvdG8z"));
+            "aWFuLnBvcnRlci52MRocbGlicmFyaWFuL3YxL3dlbGxrbm93bi5wcm90byKV",
+            "AQoRR2V0QWNjb3VudFJlcXVlc3QSNAoGY29uZmlnGAEgASgLMhwubGlicmFy",
+            "aWFuLnYxLkZlYXR1cmVSZXF1ZXN0UgZjb25maWcSGgoIcGxhdGZvcm0YAiAB",
+            "KAlSCHBsYXRmb3JtEi4KE3BsYXRmb3JtX2FjY291bnRfaWQYAyABKAlSEXBs",
+            "YXRmb3JtQWNjb3VudElkIkwKEkdldEFjY291bnRSZXNwb25zZRI2CgdhY2Nv",
+            "dW50GAEgASgLMhwubGlicmFyaWFuLnBvcnRlci52MS5BY2NvdW50UgdhY2Nv",
+            "dW50IqkBCgdBY2NvdW50EhoKCHBsYXRmb3JtGAEgASgJUghwbGF0Zm9ybRIu",
+            "ChNwbGF0Zm9ybV9hY2NvdW50X2lkGAIgASgJUhFwbGF0Zm9ybUFjY291bnRJ",
+            "ZBISCgRuYW1lGAMgASgJUgRuYW1lEh8KC3Byb2ZpbGVfdXJsGAQgASgJUgpw",
+            "cm9maWxlVXJsEh0KCmF2YXRhcl91cmwYBSABKAlSCWF2YXRhclVybEJZWjNn",
+            "aXRodWIuY29tL3R1aWh1Yi9wcm90b3MvcGtnL2xpYnJhcmlhbi9wb3J0ZXIv",
+            "djE7djGqAiFUdWlIdWIuUHJvdG9zLkxpYnJhcmlhbi5Qb3J0ZXIuVjFiBnBy",
+            "b3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { },
+          new pbr::FileDescriptor[] { global::TuiHub.Protos.Librarian.V1.WellknownReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Porter.V1.GetAccountRequest), global::TuiHub.Protos.Librarian.Porter.V1.GetAccountRequest.Parser, new[]{ "Platform", "PlatformAccountId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Porter.V1.GetAccountRequest), global::TuiHub.Protos.Librarian.Porter.V1.GetAccountRequest.Parser, new[]{ "Config", "Platform", "PlatformAccountId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Porter.V1.GetAccountResponse), global::TuiHub.Protos.Librarian.Porter.V1.GetAccountResponse.Parser, new[]{ "Account" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Porter.V1.Account), global::TuiHub.Protos.Librarian.Porter.V1.Account.Parser, new[]{ "Platform", "PlatformAccountId", "Name", "ProfileUrl", "AvatarUrl" }, null, null, null, null)
           }));
@@ -82,6 +84,7 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public GetAccountRequest(GetAccountRequest other) : this() {
+      config_ = other.config_ != null ? other.config_.Clone() : null;
       platform_ = other.platform_;
       platformAccountId_ = other.platformAccountId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -93,8 +96,20 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
       return new GetAccountRequest(this);
     }
 
+    /// <summary>Field number for the "config" field.</summary>
+    public const int ConfigFieldNumber = 1;
+    private global::TuiHub.Protos.Librarian.V1.FeatureRequest config_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::TuiHub.Protos.Librarian.V1.FeatureRequest Config {
+      get { return config_; }
+      set {
+        config_ = value;
+      }
+    }
+
     /// <summary>Field number for the "platform" field.</summary>
-    public const int PlatformFieldNumber = 1;
+    public const int PlatformFieldNumber = 2;
     private string platform_ = "";
     /// <summary>
     /// WellKnownAccountPlatform
@@ -109,7 +124,7 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
     }
 
     /// <summary>Field number for the "platform_account_id" field.</summary>
-    public const int PlatformAccountIdFieldNumber = 2;
+    public const int PlatformAccountIdFieldNumber = 3;
     private string platformAccountId_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -135,6 +150,7 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (!object.Equals(Config, other.Config)) return false;
       if (Platform != other.Platform) return false;
       if (PlatformAccountId != other.PlatformAccountId) return false;
       return Equals(_unknownFields, other._unknownFields);
@@ -144,6 +160,7 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (config_ != null) hash ^= Config.GetHashCode();
       if (Platform.Length != 0) hash ^= Platform.GetHashCode();
       if (PlatformAccountId.Length != 0) hash ^= PlatformAccountId.GetHashCode();
       if (_unknownFields != null) {
@@ -164,12 +181,16 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Platform.Length != 0) {
+      if (config_ != null) {
         output.WriteRawTag(10);
+        output.WriteMessage(Config);
+      }
+      if (Platform.Length != 0) {
+        output.WriteRawTag(18);
         output.WriteString(Platform);
       }
       if (PlatformAccountId.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(26);
         output.WriteString(PlatformAccountId);
       }
       if (_unknownFields != null) {
@@ -182,12 +203,16 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Platform.Length != 0) {
+      if (config_ != null) {
         output.WriteRawTag(10);
+        output.WriteMessage(Config);
+      }
+      if (Platform.Length != 0) {
+        output.WriteRawTag(18);
         output.WriteString(Platform);
       }
       if (PlatformAccountId.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(26);
         output.WriteString(PlatformAccountId);
       }
       if (_unknownFields != null) {
@@ -200,6 +225,9 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (config_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Config);
+      }
       if (Platform.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Platform);
       }
@@ -217,6 +245,12 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
     public void MergeFrom(GetAccountRequest other) {
       if (other == null) {
         return;
+      }
+      if (other.config_ != null) {
+        if (config_ == null) {
+          Config = new global::TuiHub.Protos.Librarian.V1.FeatureRequest();
+        }
+        Config.MergeFrom(other.Config);
       }
       if (other.Platform.Length != 0) {
         Platform = other.Platform;
@@ -240,10 +274,17 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            Platform = input.ReadString();
+            if (config_ == null) {
+              Config = new global::TuiHub.Protos.Librarian.V1.FeatureRequest();
+            }
+            input.ReadMessage(Config);
             break;
           }
           case 18: {
+            Platform = input.ReadString();
+            break;
+          }
+          case 26: {
             PlatformAccountId = input.ReadString();
             break;
           }
@@ -263,10 +304,17 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            Platform = input.ReadString();
+            if (config_ == null) {
+              Config = new global::TuiHub.Protos.Librarian.V1.FeatureRequest();
+            }
+            input.ReadMessage(Config);
             break;
           }
           case 18: {
+            Platform = input.ReadString();
+            break;
+          }
+          case 26: {
             PlatformAccountId = input.ReadString();
             break;
           }

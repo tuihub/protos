@@ -1,14 +1,14 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: librarian/sephirah/v1/sephirah/tiphereth.proto
-//
+// Generated from librarian/sephirah/v1/sephirah/tiphereth.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, unused_import
 
 import 'dart:convert' as $convert;
 import 'dart:core' as $core;
@@ -128,7 +128,16 @@ const GetTokenRequest$json = {
   '2': [
     {'1': 'username', '3': 1, '4': 1, '5': 9, '10': 'username'},
     {'1': 'password', '3': 2, '4': 1, '5': 9, '10': 'password'},
-    {'1': 'device_id', '3': 3, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '9': 0, '10': 'deviceId', '17': true},
+    {
+      '1': 'device_id',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '9': 0,
+      '10': 'deviceId',
+      '17': true
+    },
   ],
   '8': [
     {'1': '_device_id'},
@@ -159,7 +168,16 @@ final $typed_data.Uint8List getTokenResponseDescriptor = $convert.base64Decode(
 const RefreshTokenRequest$json = {
   '1': 'RefreshTokenRequest',
   '2': [
-    {'1': 'device_id', '3': 3, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '9': 0, '10': 'deviceId', '17': true},
+    {
+      '1': 'device_id',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '9': 0,
+      '10': 'deviceId',
+      '17': true
+    },
   ],
   '8': [
     {'1': '_device_id'},
@@ -191,7 +209,16 @@ const RegisterUserRequest$json = {
   '2': [
     {'1': 'username', '3': 1, '4': 1, '5': 9, '10': 'username'},
     {'1': 'password', '3': 2, '4': 1, '5': 9, '10': 'password'},
-    {'1': 'captcha', '3': 3, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.sephirah.RegisterUserRequest.Captcha', '9': 0, '10': 'captcha', '17': true},
+    {
+      '1': 'captcha',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.sephirah.RegisterUserRequest.Captcha',
+      '9': 0,
+      '10': 'captcha',
+      '17': true
+    },
   ],
   '3': [RegisterUserRequest_Captcha$json],
   '8': [
@@ -220,8 +247,23 @@ final $typed_data.Uint8List registerUserRequestDescriptor = $convert.base64Decod
 const RegisterUserResponse$json = {
   '1': 'RegisterUserResponse',
   '2': [
-    {'1': 'captcha', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.sephirah.RegisterUserResponse.ImageCaptcha', '9': 0, '10': 'captcha'},
-    {'1': 'refresh_token', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'refreshToken'},
+    {
+      '1': 'captcha',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.sephirah.RegisterUserResponse.ImageCaptcha',
+      '9': 0,
+      '10': 'captcha'
+    },
+    {
+      '1': 'refresh_token',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '9': 0,
+      '10': 'refreshToken'
+    },
   ],
   '3': [RegisterUserResponse_ImageCaptcha$json],
   '8': [
@@ -249,8 +291,23 @@ final $typed_data.Uint8List registerUserResponseDescriptor = $convert.base64Deco
 const RegisterDeviceRequest$json = {
   '1': 'RegisterDeviceRequest',
   '2': [
-    {'1': 'device_info', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.sephirah.Device', '10': 'deviceInfo'},
-    {'1': 'client_local_id', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'clientLocalId', '17': true},
+    {
+      '1': 'device_info',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.sephirah.Device',
+      '10': 'deviceInfo'
+    },
+    {
+      '1': 'client_local_id',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '9': 0,
+      '10': 'clientLocalId',
+      '17': true
+    },
   ],
   '8': [
     {'1': '_client_local_id'},
@@ -267,14 +324,22 @@ final $typed_data.Uint8List registerDeviceRequestDescriptor = $convert.base64Dec
 const RegisterDeviceResponse$json = {
   '1': 'RegisterDeviceResponse',
   '2': [
-    {'1': 'device_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'deviceId'},
+    {
+      '1': 'device_id',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'deviceId'
+    },
   ],
 };
 
 /// Descriptor for `RegisterDeviceResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List registerDeviceResponseDescriptor = $convert.base64Decode(
-    'ChZSZWdpc3RlckRldmljZVJlc3BvbnNlEjUKCWRldmljZV9pZBgBIAEoCzIYLmxpYnJhcmlhbi'
-    '52MS5JbnRlcm5hbElEUghkZXZpY2VJZA==');
+final $typed_data.Uint8List registerDeviceResponseDescriptor =
+    $convert.base64Decode(
+        'ChZSZWdpc3RlckRldmljZVJlc3BvbnNlEjUKCWRldmljZV9pZBgBIAEoCzIYLmxpYnJhcmlhbi'
+        '52MS5JbnRlcm5hbElEUghkZXZpY2VJZA==');
 
 @$core.Deprecated('Use listUserSessionsRequestDescriptor instead')
 const ListUserSessionsRequest$json = {
@@ -282,34 +347,50 @@ const ListUserSessionsRequest$json = {
 };
 
 /// Descriptor for `ListUserSessionsRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listUserSessionsRequestDescriptor = $convert.base64Decode(
-    'ChdMaXN0VXNlclNlc3Npb25zUmVxdWVzdA==');
+final $typed_data.Uint8List listUserSessionsRequestDescriptor =
+    $convert.base64Decode('ChdMaXN0VXNlclNlc3Npb25zUmVxdWVzdA==');
 
 @$core.Deprecated('Use listUserSessionsResponseDescriptor instead')
 const ListUserSessionsResponse$json = {
   '1': 'ListUserSessionsResponse',
   '2': [
-    {'1': 'sessions', '3': 1, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.sephirah.UserSession', '10': 'sessions'},
+    {
+      '1': 'sessions',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.sephirah.UserSession',
+      '10': 'sessions'
+    },
   ],
 };
 
 /// Descriptor for `ListUserSessionsResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listUserSessionsResponseDescriptor = $convert.base64Decode(
-    'ChhMaXN0VXNlclNlc3Npb25zUmVzcG9uc2USRwoIc2Vzc2lvbnMYASADKAsyKy5saWJyYXJpYW'
-    '4uc2VwaGlyYWgudjEuc2VwaGlyYWguVXNlclNlc3Npb25SCHNlc3Npb25z');
+final $typed_data.Uint8List listUserSessionsResponseDescriptor =
+    $convert.base64Decode(
+        'ChhMaXN0VXNlclNlc3Npb25zUmVzcG9uc2USRwoIc2Vzc2lvbnMYASADKAsyKy5saWJyYXJpYW'
+        '4uc2VwaGlyYWgudjEuc2VwaGlyYWguVXNlclNlc3Npb25SCHNlc3Npb25z');
 
 @$core.Deprecated('Use deleteUserSessionRequestDescriptor instead')
 const DeleteUserSessionRequest$json = {
   '1': 'DeleteUserSessionRequest',
   '2': [
-    {'1': 'session_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'sessionId'},
+    {
+      '1': 'session_id',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'sessionId'
+    },
   ],
 };
 
 /// Descriptor for `DeleteUserSessionRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List deleteUserSessionRequestDescriptor = $convert.base64Decode(
-    'ChhEZWxldGVVc2VyU2Vzc2lvblJlcXVlc3QSNwoKc2Vzc2lvbl9pZBgBIAEoCzIYLmxpYnJhcm'
-    'lhbi52MS5JbnRlcm5hbElEUglzZXNzaW9uSWQ=');
+final $typed_data.Uint8List deleteUserSessionRequestDescriptor =
+    $convert.base64Decode(
+        'ChhEZWxldGVVc2VyU2Vzc2lvblJlcXVlc3QSNwoKc2Vzc2lvbl9pZBgBIAEoCzIYLmxpYnJhcm'
+        'lhbi52MS5JbnRlcm5hbElEUglzZXNzaW9uSWQ=');
 
 @$core.Deprecated('Use deleteUserSessionResponseDescriptor instead')
 const DeleteUserSessionResponse$json = {
@@ -317,15 +398,30 @@ const DeleteUserSessionResponse$json = {
 };
 
 /// Descriptor for `DeleteUserSessionResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List deleteUserSessionResponseDescriptor = $convert.base64Decode(
-    'ChlEZWxldGVVc2VyU2Vzc2lvblJlc3BvbnNl');
+final $typed_data.Uint8List deleteUserSessionResponseDescriptor =
+    $convert.base64Decode('ChlEZWxldGVVc2VyU2Vzc2lvblJlc3BvbnNl');
 
 @$core.Deprecated('Use updateUserRequestDescriptor instead')
 const UpdateUserRequest$json = {
   '1': 'UpdateUserRequest',
   '2': [
-    {'1': 'user', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.sephirah.User', '10': 'user'},
-    {'1': 'password', '3': 2, '4': 1, '5': 9, '9': 0, '10': 'password', '17': true},
+    {
+      '1': 'user',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.sephirah.User',
+      '10': 'user'
+    },
+    {
+      '1': 'password',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '9': 0,
+      '10': 'password',
+      '17': true
+    },
   ],
   '8': [
     {'1': '_password'},
@@ -344,14 +440,23 @@ const UpdateUserResponse$json = {
 };
 
 /// Descriptor for `UpdateUserResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List updateUserResponseDescriptor = $convert.base64Decode(
-    'ChJVcGRhdGVVc2VyUmVzcG9uc2U=');
+final $typed_data.Uint8List updateUserResponseDescriptor =
+    $convert.base64Decode('ChJVcGRhdGVVc2VyUmVzcG9uc2U=');
 
 @$core.Deprecated('Use getUserRequestDescriptor instead')
 const GetUserRequest$json = {
   '1': 'GetUserRequest',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '9': 0, '10': 'id', '17': true},
+    {
+      '1': 'id',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '9': 0,
+      '10': 'id',
+      '17': true
+    },
   ],
   '8': [
     {'1': '_id'},
@@ -367,7 +472,14 @@ final $typed_data.Uint8List getUserRequestDescriptor = $convert.base64Decode(
 const GetUserResponse$json = {
   '1': 'GetUserResponse',
   '2': [
-    {'1': 'user', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.sephirah.User', '10': 'user'},
+    {
+      '1': 'user',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.sephirah.User',
+      '10': 'user'
+    },
   ],
 };
 
@@ -381,7 +493,13 @@ const LinkAccountRequest$json = {
   '1': 'LinkAccountRequest',
   '2': [
     {'1': 'platform', '3': 1, '4': 1, '5': 9, '10': 'platform'},
-    {'1': 'platform_account_id', '3': 2, '4': 1, '5': 9, '10': 'platformAccountId'},
+    {
+      '1': 'platform_account_id',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'platformAccountId'
+    },
   ],
 };
 
@@ -394,7 +512,14 @@ final $typed_data.Uint8List linkAccountRequestDescriptor = $convert.base64Decode
 const LinkAccountResponse$json = {
   '1': 'LinkAccountResponse',
   '2': [
-    {'1': 'account_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'accountId'},
+    {
+      '1': 'account_id',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'accountId'
+    },
   ],
 };
 
@@ -408,7 +533,13 @@ const UnLinkAccountRequest$json = {
   '1': 'UnLinkAccountRequest',
   '2': [
     {'1': 'platform', '3': 1, '4': 1, '5': 9, '10': 'platform'},
-    {'1': 'platform_account_id', '3': 2, '4': 1, '5': 9, '10': 'platformAccountId'},
+    {
+      '1': 'platform_account_id',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '10': 'platformAccountId'
+    },
   ],
 };
 
@@ -423,14 +554,23 @@ const UnLinkAccountResponse$json = {
 };
 
 /// Descriptor for `UnLinkAccountResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List unLinkAccountResponseDescriptor = $convert.base64Decode(
-    'ChVVbkxpbmtBY2NvdW50UmVzcG9uc2U=');
+final $typed_data.Uint8List unLinkAccountResponseDescriptor =
+    $convert.base64Decode('ChVVbkxpbmtBY2NvdW50UmVzcG9uc2U=');
 
 @$core.Deprecated('Use listLinkAccountsRequestDescriptor instead')
 const ListLinkAccountsRequest$json = {
   '1': 'ListLinkAccountsRequest',
   '2': [
-    {'1': 'user_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '9': 0, '10': 'userId', '17': true},
+    {
+      '1': 'user_id',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '9': 0,
+      '10': 'userId',
+      '17': true
+    },
   ],
   '8': [
     {'1': '_user_id'},
@@ -438,29 +578,52 @@ const ListLinkAccountsRequest$json = {
 };
 
 /// Descriptor for `ListLinkAccountsRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listLinkAccountsRequestDescriptor = $convert.base64Decode(
-    'ChdMaXN0TGlua0FjY291bnRzUmVxdWVzdBI2Cgd1c2VyX2lkGAEgASgLMhgubGlicmFyaWFuLn'
-    'YxLkludGVybmFsSURIAFIGdXNlcklkiAEBQgoKCF91c2VyX2lk');
+final $typed_data.Uint8List listLinkAccountsRequestDescriptor =
+    $convert.base64Decode(
+        'ChdMaXN0TGlua0FjY291bnRzUmVxdWVzdBI2Cgd1c2VyX2lkGAEgASgLMhgubGlicmFyaWFuLn'
+        'YxLkludGVybmFsSURIAFIGdXNlcklkiAEBQgoKCF91c2VyX2lk');
 
 @$core.Deprecated('Use listLinkAccountsResponseDescriptor instead')
 const ListLinkAccountsResponse$json = {
   '1': 'ListLinkAccountsResponse',
   '2': [
-    {'1': 'accounts', '3': 1, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.sephirah.Account', '10': 'accounts'},
+    {
+      '1': 'accounts',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.sephirah.Account',
+      '10': 'accounts'
+    },
   ],
 };
 
 /// Descriptor for `ListLinkAccountsResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listLinkAccountsResponseDescriptor = $convert.base64Decode(
-    'ChhMaXN0TGlua0FjY291bnRzUmVzcG9uc2USQwoIYWNjb3VudHMYASADKAsyJy5saWJyYXJpYW'
-    '4uc2VwaGlyYWgudjEuc2VwaGlyYWguQWNjb3VudFIIYWNjb3VudHM=');
+final $typed_data.Uint8List listLinkAccountsResponseDescriptor =
+    $convert.base64Decode(
+        'ChhMaXN0TGlua0FjY291bnRzUmVzcG9uc2USQwoIYWNjb3VudHMYASADKAsyJy5saWJyYXJpYW'
+        '4uc2VwaGlyYWgudjEuc2VwaGlyYWguQWNjb3VudFIIYWNjb3VudHM=');
 
 @$core.Deprecated('Use listPorterDigestsRequestDescriptor instead')
 const ListPorterDigestsRequest$json = {
   '1': 'ListPorterDigestsRequest',
   '2': [
-    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
-    {'1': 'status_filter', '3': 2, '4': 3, '5': 14, '6': '.librarian.sephirah.v1.sephirah.UserStatus', '10': 'statusFilter'},
+    {
+      '1': 'paging',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.PagingRequest',
+      '10': 'paging'
+    },
+    {
+      '1': 'status_filter',
+      '3': 2,
+      '4': 3,
+      '5': 14,
+      '6': '.librarian.sephirah.v1.sephirah.UserStatus',
+      '10': 'statusFilter'
+    },
   ],
 };
 
@@ -474,8 +637,22 @@ final $typed_data.Uint8List listPorterDigestsRequestDescriptor = $convert.base64
 const ListPorterDigestsResponse$json = {
   '1': 'ListPorterDigestsResponse',
   '2': [
-    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingResponse', '10': 'paging'},
-    {'1': 'porter_digests', '3': 2, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.sephirah.PorterDigest', '10': 'porterDigests'},
+    {
+      '1': 'paging',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.PagingResponse',
+      '10': 'paging'
+    },
+    {
+      '1': 'porter_digests',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.sephirah.PorterDigest',
+      '10': 'porterDigests'
+    },
   ],
 };
 
@@ -490,68 +667,115 @@ final $typed_data.Uint8List listPorterDigestsResponseDescriptor = $convert.base6
 const CreatePorterContextRequest$json = {
   '1': 'CreatePorterContextRequest',
   '2': [
-    {'1': 'context', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.sephirah.PorterContext', '10': 'context'},
+    {
+      '1': 'context',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.sephirah.PorterContext',
+      '10': 'context'
+    },
   ],
 };
 
 /// Descriptor for `CreatePorterContextRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List createPorterContextRequestDescriptor = $convert.base64Decode(
-    'ChpDcmVhdGVQb3J0ZXJDb250ZXh0UmVxdWVzdBJHCgdjb250ZXh0GAEgASgLMi0ubGlicmFyaW'
-    'FuLnNlcGhpcmFoLnYxLnNlcGhpcmFoLlBvcnRlckNvbnRleHRSB2NvbnRleHQ=');
+final $typed_data.Uint8List createPorterContextRequestDescriptor =
+    $convert.base64Decode(
+        'ChpDcmVhdGVQb3J0ZXJDb250ZXh0UmVxdWVzdBJHCgdjb250ZXh0GAEgASgLMi0ubGlicmFyaW'
+        'FuLnNlcGhpcmFoLnYxLnNlcGhpcmFoLlBvcnRlckNvbnRleHRSB2NvbnRleHQ=');
 
 @$core.Deprecated('Use createPorterContextResponseDescriptor instead')
 const CreatePorterContextResponse$json = {
   '1': 'CreatePorterContextResponse',
   '2': [
-    {'1': 'context_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'contextId'},
+    {
+      '1': 'context_id',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'contextId'
+    },
   ],
 };
 
 /// Descriptor for `CreatePorterContextResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List createPorterContextResponseDescriptor = $convert.base64Decode(
-    'ChtDcmVhdGVQb3J0ZXJDb250ZXh0UmVzcG9uc2USNwoKY29udGV4dF9pZBgBIAEoCzIYLmxpYn'
-    'Jhcmlhbi52MS5JbnRlcm5hbElEUgljb250ZXh0SWQ=');
+final $typed_data.Uint8List createPorterContextResponseDescriptor =
+    $convert.base64Decode(
+        'ChtDcmVhdGVQb3J0ZXJDb250ZXh0UmVzcG9uc2USNwoKY29udGV4dF9pZBgBIAEoCzIYLmxpYn'
+        'Jhcmlhbi52MS5JbnRlcm5hbElEUgljb250ZXh0SWQ=');
 
 @$core.Deprecated('Use listPorterContextsRequestDescriptor instead')
 const ListPorterContextsRequest$json = {
   '1': 'ListPorterContextsRequest',
   '2': [
-    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingRequest', '10': 'paging'},
+    {
+      '1': 'paging',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.PagingRequest',
+      '10': 'paging'
+    },
   ],
 };
 
 /// Descriptor for `ListPorterContextsRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listPorterContextsRequestDescriptor = $convert.base64Decode(
-    'ChlMaXN0UG9ydGVyQ29udGV4dHNSZXF1ZXN0EjMKBnBhZ2luZxgBIAEoCzIbLmxpYnJhcmlhbi'
-    '52MS5QYWdpbmdSZXF1ZXN0UgZwYWdpbmc=');
+final $typed_data.Uint8List listPorterContextsRequestDescriptor =
+    $convert.base64Decode(
+        'ChlMaXN0UG9ydGVyQ29udGV4dHNSZXF1ZXN0EjMKBnBhZ2luZxgBIAEoCzIbLmxpYnJhcmlhbi'
+        '52MS5QYWdpbmdSZXF1ZXN0UgZwYWdpbmc=');
 
 @$core.Deprecated('Use listPorterContextsResponseDescriptor instead')
 const ListPorterContextsResponse$json = {
   '1': 'ListPorterContextsResponse',
   '2': [
-    {'1': 'paging', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PagingResponse', '10': 'paging'},
-    {'1': 'contexts', '3': 2, '4': 3, '5': 11, '6': '.librarian.sephirah.v1.sephirah.PorterContext', '10': 'contexts'},
+    {
+      '1': 'paging',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.PagingResponse',
+      '10': 'paging'
+    },
+    {
+      '1': 'contexts',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.sephirah.PorterContext',
+      '10': 'contexts'
+    },
   ],
 };
 
 /// Descriptor for `ListPorterContextsResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listPorterContextsResponseDescriptor = $convert.base64Decode(
-    'ChpMaXN0UG9ydGVyQ29udGV4dHNSZXNwb25zZRI0CgZwYWdpbmcYASABKAsyHC5saWJyYXJpYW'
-    '4udjEuUGFnaW5nUmVzcG9uc2VSBnBhZ2luZxJJCghjb250ZXh0cxgCIAMoCzItLmxpYnJhcmlh'
-    'bi5zZXBoaXJhaC52MS5zZXBoaXJhaC5Qb3J0ZXJDb250ZXh0Ughjb250ZXh0cw==');
+final $typed_data.Uint8List listPorterContextsResponseDescriptor =
+    $convert.base64Decode(
+        'ChpMaXN0UG9ydGVyQ29udGV4dHNSZXNwb25zZRI0CgZwYWdpbmcYASABKAsyHC5saWJyYXJpYW'
+        '4udjEuUGFnaW5nUmVzcG9uc2VSBnBhZ2luZxJJCghjb250ZXh0cxgCIAMoCzItLmxpYnJhcmlh'
+        'bi5zZXBoaXJhaC52MS5zZXBoaXJhaC5Qb3J0ZXJDb250ZXh0Ughjb250ZXh0cw==');
 
 @$core.Deprecated('Use updatePorterContextRequestDescriptor instead')
 const UpdatePorterContextRequest$json = {
   '1': 'UpdatePorterContextRequest',
   '2': [
-    {'1': 'context', '3': 1, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.sephirah.PorterContext', '10': 'context'},
+    {
+      '1': 'context',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.sephirah.PorterContext',
+      '10': 'context'
+    },
   ],
 };
 
 /// Descriptor for `UpdatePorterContextRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List updatePorterContextRequestDescriptor = $convert.base64Decode(
-    'ChpVcGRhdGVQb3J0ZXJDb250ZXh0UmVxdWVzdBJHCgdjb250ZXh0GAEgASgLMi0ubGlicmFyaW'
-    'FuLnNlcGhpcmFoLnYxLnNlcGhpcmFoLlBvcnRlckNvbnRleHRSB2NvbnRleHQ=');
+final $typed_data.Uint8List updatePorterContextRequestDescriptor =
+    $convert.base64Decode(
+        'ChpVcGRhdGVQb3J0ZXJDb250ZXh0UmVxdWVzdBJHCgdjb250ZXh0GAEgASgLMi0ubGlicmFyaW'
+        'FuLnNlcGhpcmFoLnYxLnNlcGhpcmFoLlBvcnRlckNvbnRleHRSB2NvbnRleHQ=');
 
 @$core.Deprecated('Use updatePorterContextResponseDescriptor instead')
 const UpdatePorterContextResponse$json = {
@@ -559,21 +783,29 @@ const UpdatePorterContextResponse$json = {
 };
 
 /// Descriptor for `UpdatePorterContextResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List updatePorterContextResponseDescriptor = $convert.base64Decode(
-    'ChtVcGRhdGVQb3J0ZXJDb250ZXh0UmVzcG9uc2U=');
+final $typed_data.Uint8List updatePorterContextResponseDescriptor =
+    $convert.base64Decode('ChtVcGRhdGVQb3J0ZXJDb250ZXh0UmVzcG9uc2U=');
 
 @$core.Deprecated('Use deletePorterContextRequestDescriptor instead')
 const DeletePorterContextRequest$json = {
   '1': 'DeletePorterContextRequest',
   '2': [
-    {'1': 'context_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'contextId'},
+    {
+      '1': 'context_id',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'contextId'
+    },
   ],
 };
 
 /// Descriptor for `DeletePorterContextRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List deletePorterContextRequestDescriptor = $convert.base64Decode(
-    'ChpEZWxldGVQb3J0ZXJDb250ZXh0UmVxdWVzdBI3Cgpjb250ZXh0X2lkGAEgASgLMhgubGlicm'
-    'FyaWFuLnYxLkludGVybmFsSURSCWNvbnRleHRJZA==');
+final $typed_data.Uint8List deletePorterContextRequestDescriptor =
+    $convert.base64Decode(
+        'ChpEZWxldGVQb3J0ZXJDb250ZXh0UmVxdWVzdBI3Cgpjb250ZXh0X2lkGAEgASgLMhgubGlicm'
+        'FyaWFuLnYxLkludGVybmFsSURSCWNvbnRleHRJZA==');
 
 @$core.Deprecated('Use deletePorterContextResponseDescriptor instead')
 const DeletePorterContextResponse$json = {
@@ -581,20 +813,40 @@ const DeletePorterContextResponse$json = {
 };
 
 /// Descriptor for `DeletePorterContextResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List deletePorterContextResponseDescriptor = $convert.base64Decode(
-    'ChtEZWxldGVQb3J0ZXJDb250ZXh0UmVzcG9uc2U=');
+final $typed_data.Uint8List deletePorterContextResponseDescriptor =
+    $convert.base64Decode('ChtEZWxldGVQb3J0ZXJDb250ZXh0UmVzcG9uc2U=');
 
 @$core.Deprecated('Use accountDescriptor instead')
 const Account$json = {
   '1': 'Account',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+    {
+      '1': 'id',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'id'
+    },
     {'1': 'platform', '3': 2, '4': 1, '5': 9, '10': 'platform'},
-    {'1': 'platform_account_id', '3': 3, '4': 1, '5': 9, '10': 'platformAccountId'},
+    {
+      '1': 'platform_account_id',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '10': 'platformAccountId'
+    },
     {'1': 'name', '3': 4, '4': 1, '5': 9, '10': 'name'},
     {'1': 'profile_url', '3': 5, '4': 1, '5': 9, '10': 'profileUrl'},
     {'1': 'avatar_url', '3': 6, '4': 1, '5': 9, '10': 'avatarUrl'},
-    {'1': 'latest_update_time', '3': 7, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'latestUpdateTime'},
+    {
+      '1': 'latest_update_time',
+      '3': 7,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'latestUpdateTime'
+    },
   ],
 };
 
@@ -611,11 +863,32 @@ final $typed_data.Uint8List accountDescriptor = $convert.base64Decode(
 const User$json = {
   '1': 'User',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+    {
+      '1': 'id',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'id'
+    },
     {'1': 'username', '3': 2, '4': 1, '5': 9, '10': 'username'},
     {'1': 'password', '3': 3, '4': 1, '5': 9, '10': 'password'},
-    {'1': 'type', '3': 4, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.sephirah.UserType', '10': 'type'},
-    {'1': 'status', '3': 5, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.sephirah.UserStatus', '10': 'status'},
+    {
+      '1': 'type',
+      '3': 4,
+      '4': 1,
+      '5': 14,
+      '6': '.librarian.sephirah.v1.sephirah.UserType',
+      '10': 'type'
+    },
+    {
+      '1': 'status',
+      '3': 5,
+      '4': 1,
+      '5': 14,
+      '6': '.librarian.sephirah.v1.sephirah.UserStatus',
+      '10': 'status'
+    },
   ],
 };
 
@@ -631,11 +904,46 @@ final $typed_data.Uint8List userDescriptor = $convert.base64Decode(
 const UserSession$json = {
   '1': 'UserSession',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
-    {'1': 'user_id', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'userId'},
-    {'1': 'device_info', '3': 3, '4': 1, '5': 11, '6': '.librarian.sephirah.v1.sephirah.Device', '10': 'deviceInfo'},
-    {'1': 'create_time', '3': 4, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'createTime'},
-    {'1': 'expire_time', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '10': 'expireTime'},
+    {
+      '1': 'id',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'id'
+    },
+    {
+      '1': 'user_id',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'userId'
+    },
+    {
+      '1': 'device_info',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.sephirah.Device',
+      '10': 'deviceInfo'
+    },
+    {
+      '1': 'create_time',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'createTime'
+    },
+    {
+      '1': 'expire_time',
+      '3': 5,
+      '4': 1,
+      '5': 11,
+      '6': '.google.protobuf.Timestamp',
+      '10': 'expireTime'
+    },
   ],
 };
 
@@ -652,12 +960,32 @@ final $typed_data.Uint8List userSessionDescriptor = $convert.base64Decode(
 const Device$json = {
   '1': 'Device',
   '2': [
-    {'1': 'device_id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'deviceId'},
+    {
+      '1': 'device_id',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'deviceId'
+    },
     {'1': 'device_name', '3': 2, '4': 1, '5': 9, '10': 'deviceName'},
-    {'1': 'system_type', '3': 3, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.sephirah.SystemType', '10': 'systemType'},
+    {
+      '1': 'system_type',
+      '3': 3,
+      '4': 1,
+      '5': 14,
+      '6': '.librarian.sephirah.v1.sephirah.SystemType',
+      '10': 'systemType'
+    },
     {'1': 'system_version', '3': 4, '4': 1, '5': 9, '10': 'systemVersion'},
     {'1': 'client_name', '3': 5, '4': 1, '5': 9, '10': 'clientName'},
-    {'1': 'client_source_code_address', '3': 6, '4': 1, '5': 9, '10': 'clientSourceCodeAddress'},
+    {
+      '1': 'client_source_code_address',
+      '3': 6,
+      '4': 1,
+      '5': 9,
+      '10': 'clientSourceCodeAddress'
+    },
     {'1': 'client_version', '3': 7, '4': 1, '5': 9, '10': 'clientVersion'},
   ],
 };
@@ -676,15 +1004,64 @@ final $typed_data.Uint8List deviceDescriptor = $convert.base64Decode(
 const Porter$json = {
   '1': 'Porter',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
-    {'1': 'binary_summary', '3': 2, '4': 1, '5': 11, '6': '.librarian.v1.PorterBinarySummary', '10': 'binarySummary'},
+    {
+      '1': 'id',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'id'
+    },
+    {
+      '1': 'binary_summary',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.PorterBinarySummary',
+      '10': 'binarySummary'
+    },
     {'1': 'global_name', '3': 3, '4': 1, '5': 9, '10': 'globalName'},
     {'1': 'region', '3': 4, '4': 1, '5': 9, '10': 'region'},
-    {'1': 'feature_summary', '3': 5, '4': 1, '5': 11, '6': '.librarian.v1.FeatureSummary', '10': 'featureSummary'},
-    {'1': 'status', '3': 6, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.sephirah.UserStatus', '10': 'status'},
-    {'1': 'connection_status', '3': 7, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.sephirah.PorterConnectionStatus', '10': 'connectionStatus'},
-    {'1': 'context_json_schema', '3': 8, '4': 1, '5': 9, '9': 0, '10': 'contextJsonSchema', '17': true},
-    {'1': 'connection_status_message', '3': 9, '4': 1, '5': 9, '10': 'connectionStatusMessage'},
+    {
+      '1': 'feature_summary',
+      '3': 5,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.FeatureSummary',
+      '10': 'featureSummary'
+    },
+    {
+      '1': 'status',
+      '3': 6,
+      '4': 1,
+      '5': 14,
+      '6': '.librarian.sephirah.v1.sephirah.UserStatus',
+      '10': 'status'
+    },
+    {
+      '1': 'connection_status',
+      '3': 7,
+      '4': 1,
+      '5': 14,
+      '6': '.librarian.sephirah.v1.sephirah.PorterConnectionStatus',
+      '10': 'connectionStatus'
+    },
+    {
+      '1': 'context_json_schema',
+      '3': 8,
+      '4': 1,
+      '5': 9,
+      '9': 0,
+      '10': 'contextJsonSchema',
+      '17': true
+    },
+    {
+      '1': 'connection_status_message',
+      '3': 9,
+      '4': 1,
+      '5': 9,
+      '10': 'connectionStatusMessage'
+    },
   ],
   '8': [
     {'1': '_context_json_schema'},
@@ -709,15 +1086,42 @@ final $typed_data.Uint8List porterDescriptor = $convert.base64Decode(
 const PorterContext$json = {
   '1': 'PorterContext',
   '2': [
-    {'1': 'id', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.InternalID', '10': 'id'},
+    {
+      '1': 'id',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'id'
+    },
     {'1': 'global_name', '3': 2, '4': 1, '5': 9, '10': 'globalName'},
     {'1': 'region', '3': 3, '4': 1, '5': 9, '10': 'region'},
     {'1': 'context_json', '3': 4, '4': 1, '5': 9, '10': 'contextJson'},
     {'1': 'name', '3': 5, '4': 1, '5': 9, '10': 'name'},
     {'1': 'description', '3': 6, '4': 1, '5': 9, '10': 'description'},
-    {'1': 'status', '3': 7, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.sephirah.PorterContextStatus', '10': 'status'},
-    {'1': 'handle_status', '3': 8, '4': 1, '5': 14, '6': '.librarian.sephirah.v1.sephirah.PorterContextHandleStatus', '10': 'handleStatus'},
-    {'1': 'handle_status_message', '3': 9, '4': 1, '5': 9, '10': 'handleStatusMessage'},
+    {
+      '1': 'status',
+      '3': 7,
+      '4': 1,
+      '5': 14,
+      '6': '.librarian.sephirah.v1.sephirah.PorterContextStatus',
+      '10': 'status'
+    },
+    {
+      '1': 'handle_status',
+      '3': 8,
+      '4': 1,
+      '5': 14,
+      '6': '.librarian.sephirah.v1.sephirah.PorterContextHandleStatus',
+      '10': 'handleStatus'
+    },
+    {
+      '1': 'handle_status_message',
+      '3': 9,
+      '4': 1,
+      '5': 9,
+      '10': 'handleStatusMessage'
+    },
   ],
 };
 
@@ -736,11 +1140,33 @@ final $typed_data.Uint8List porterContextDescriptor = $convert.base64Decode(
 const PorterDigest$json = {
   '1': 'PorterDigest',
   '2': [
-    {'1': 'binary_summary', '3': 1, '4': 1, '5': 11, '6': '.librarian.v1.PorterBinarySummary', '10': 'binarySummary'},
+    {
+      '1': 'binary_summary',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.PorterBinarySummary',
+      '10': 'binarySummary'
+    },
     {'1': 'global_name', '3': 2, '4': 1, '5': 9, '10': 'globalName'},
     {'1': 'regions', '3': 3, '4': 3, '5': 9, '10': 'regions'},
-    {'1': 'context_json_schema', '3': 4, '4': 1, '5': 9, '9': 0, '10': 'contextJsonSchema', '17': true},
-    {'1': 'feature_summary', '3': 5, '4': 1, '5': 11, '6': '.librarian.v1.FeatureSummary', '10': 'featureSummary'},
+    {
+      '1': 'context_json_schema',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '9': 0,
+      '10': 'contextJsonSchema',
+      '17': true
+    },
+    {
+      '1': 'feature_summary',
+      '3': 5,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.FeatureSummary',
+      '10': 'featureSummary'
+    },
   ],
   '8': [
     {'1': '_context_json_schema'},
@@ -755,4 +1181,3 @@ final $typed_data.Uint8List porterDigestDescriptor = $convert.base64Decode(
     'hlbWEYBCABKAlIAFIRY29udGV4dEpzb25TY2hlbWGIAQESRQoPZmVhdHVyZV9zdW1tYXJ5GAUg'
     'ASgLMhwubGlicmFyaWFuLnYxLkZlYXR1cmVTdW1tYXJ5Ug5mZWF0dXJlU3VtbWFyeUIWChRfY2'
     '9udGV4dF9qc29uX3NjaGVtYQ==');
-

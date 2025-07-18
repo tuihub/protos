@@ -1,7 +1,7 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: librarian/sephirah/v1/sephirah/base.proto
-//
+// Generated from librarian/sephirah/v1/sephirah/base.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
@@ -14,8 +14,8 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../../google/protobuf/timestamp.pb.dart' as $7;
-import '../../../v1/wellknown.pb.dart' as $8;
+import '../../../../google/protobuf/timestamp.pb.dart' as $0;
+import '../../../v1/wellknown.pb.dart' as $1;
 
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
@@ -23,40 +23,57 @@ class ServerInformation extends $pb.GeneratedMessage {
   factory ServerInformation({
     ServerBinarySummary? serverBinarySummary,
     ServerProtocolSummary? protocolSummary,
-    $7.Timestamp? currentTime,
-    $8.FeatureSummary? featureSummary,
+    $0.Timestamp? currentTime,
+    $1.FeatureSummary? featureSummary,
     ServerInstanceSummary? serverInstanceSummary,
     $core.String? statusReport,
   }) {
     final result = create();
-    if (serverBinarySummary != null) result.serverBinarySummary = serverBinarySummary;
+    if (serverBinarySummary != null)
+      result.serverBinarySummary = serverBinarySummary;
     if (protocolSummary != null) result.protocolSummary = protocolSummary;
     if (currentTime != null) result.currentTime = currentTime;
     if (featureSummary != null) result.featureSummary = featureSummary;
-    if (serverInstanceSummary != null) result.serverInstanceSummary = serverInstanceSummary;
+    if (serverInstanceSummary != null)
+      result.serverInstanceSummary = serverInstanceSummary;
     if (statusReport != null) result.statusReport = statusReport;
     return result;
   }
 
   ServerInformation._();
 
-  factory ServerInformation.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ServerInformation.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ServerInformation.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ServerInformation.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ServerInformation', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
-    ..aOM<ServerBinarySummary>(1, _omitFieldNames ? '' : 'serverBinarySummary', subBuilder: ServerBinarySummary.create)
-    ..aOM<ServerProtocolSummary>(2, _omitFieldNames ? '' : 'protocolSummary', subBuilder: ServerProtocolSummary.create)
-    ..aOM<$7.Timestamp>(3, _omitFieldNames ? '' : 'currentTime', subBuilder: $7.Timestamp.create)
-    ..aOM<$8.FeatureSummary>(4, _omitFieldNames ? '' : 'featureSummary', subBuilder: $8.FeatureSummary.create)
-    ..aOM<ServerInstanceSummary>(5, _omitFieldNames ? '' : 'serverInstanceSummary', subBuilder: ServerInstanceSummary.create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ServerInformation',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'),
+      createEmptyInstance: create)
+    ..aOM<ServerBinarySummary>(1, _omitFieldNames ? '' : 'serverBinarySummary',
+        subBuilder: ServerBinarySummary.create)
+    ..aOM<ServerProtocolSummary>(2, _omitFieldNames ? '' : 'protocolSummary',
+        subBuilder: ServerProtocolSummary.create)
+    ..aOM<$0.Timestamp>(3, _omitFieldNames ? '' : 'currentTime',
+        subBuilder: $0.Timestamp.create)
+    ..aOM<$1.FeatureSummary>(4, _omitFieldNames ? '' : 'featureSummary',
+        subBuilder: $1.FeatureSummary.create)
+    ..aOM<ServerInstanceSummary>(
+        5, _omitFieldNames ? '' : 'serverInstanceSummary',
+        subBuilder: ServerInstanceSummary.create)
     ..aOS(6, _omitFieldNames ? '' : 'statusReport')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ServerInformation clone() => ServerInformation()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ServerInformation copyWith(void Function(ServerInformation) updates) => super.copyWith((message) => updates(message as ServerInformation)) as ServerInformation;
+  ServerInformation copyWith(void Function(ServerInformation) updates) =>
+      super.copyWith((message) => updates(message as ServerInformation))
+          as ServerInformation;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -65,9 +82,11 @@ class ServerInformation extends $pb.GeneratedMessage {
   static ServerInformation create() => ServerInformation._();
   @$core.override
   ServerInformation createEmptyInstance() => create();
-  static $pb.PbList<ServerInformation> createRepeated() => $pb.PbList<ServerInformation>();
+  static $pb.PbList<ServerInformation> createRepeated() =>
+      $pb.PbList<ServerInformation>();
   @$core.pragma('dart2js:noInline')
-  static ServerInformation getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ServerInformation>(create);
+  static ServerInformation getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ServerInformation>(create);
   static ServerInformation? _defaultInstance;
 
   /// For manual inspection only, the client may display but should not parse the response.
@@ -97,33 +116,34 @@ class ServerInformation extends $pb.GeneratedMessage {
   /// The time that server received the request,
   /// note that there is a transmission delay between server and client.
   @$pb.TagNumber(3)
-  $7.Timestamp get currentTime => $_getN(2);
+  $0.Timestamp get currentTime => $_getN(2);
   @$pb.TagNumber(3)
-  set currentTime($7.Timestamp value) => $_setField(3, value);
+  set currentTime($0.Timestamp value) => $_setField(3, value);
   @$pb.TagNumber(3)
   $core.bool hasCurrentTime() => $_has(2);
   @$pb.TagNumber(3)
   void clearCurrentTime() => $_clearField(3);
   @$pb.TagNumber(3)
-  $7.Timestamp ensureCurrentTime() => $_ensure(2);
+  $0.Timestamp ensureCurrentTime() => $_ensure(2);
 
   /// Valid when accessToken is provided.
   @$pb.TagNumber(4)
-  $8.FeatureSummary get featureSummary => $_getN(3);
+  $1.FeatureSummary get featureSummary => $_getN(3);
   @$pb.TagNumber(4)
-  set featureSummary($8.FeatureSummary value) => $_setField(4, value);
+  set featureSummary($1.FeatureSummary value) => $_setField(4, value);
   @$pb.TagNumber(4)
   $core.bool hasFeatureSummary() => $_has(3);
   @$pb.TagNumber(4)
   void clearFeatureSummary() => $_clearField(4);
   @$pb.TagNumber(4)
-  $8.FeatureSummary ensureFeatureSummary() => $_ensure(3);
+  $1.FeatureSummary ensureFeatureSummary() => $_ensure(3);
 
   /// For showing to user, customizable by server owner.
   @$pb.TagNumber(5)
   ServerInstanceSummary get serverInstanceSummary => $_getN(4);
   @$pb.TagNumber(5)
-  set serverInstanceSummary(ServerInstanceSummary value) => $_setField(5, value);
+  set serverInstanceSummary(ServerInstanceSummary value) =>
+      $_setField(5, value);
   @$pb.TagNumber(5)
   $core.bool hasServerInstanceSummary() => $_has(4);
   @$pb.TagNumber(5)
@@ -158,20 +178,29 @@ class ServerBinarySummary extends $pb.GeneratedMessage {
 
   ServerBinarySummary._();
 
-  factory ServerBinarySummary.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ServerBinarySummary.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ServerBinarySummary.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ServerBinarySummary.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ServerBinarySummary', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ServerBinarySummary',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'sourceCodeAddress')
     ..aOS(2, _omitFieldNames ? '' : 'buildVersion')
     ..aOS(3, _omitFieldNames ? '' : 'buildDate')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ServerBinarySummary clone() => ServerBinarySummary()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ServerBinarySummary copyWith(void Function(ServerBinarySummary) updates) => super.copyWith((message) => updates(message as ServerBinarySummary)) as ServerBinarySummary;
+  ServerBinarySummary copyWith(void Function(ServerBinarySummary) updates) =>
+      super.copyWith((message) => updates(message as ServerBinarySummary))
+          as ServerBinarySummary;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -180,9 +209,11 @@ class ServerBinarySummary extends $pb.GeneratedMessage {
   static ServerBinarySummary create() => ServerBinarySummary._();
   @$core.override
   ServerBinarySummary createEmptyInstance() => create();
-  static $pb.PbList<ServerBinarySummary> createRepeated() => $pb.PbList<ServerBinarySummary>();
+  static $pb.PbList<ServerBinarySummary> createRepeated() =>
+      $pb.PbList<ServerBinarySummary>();
   @$core.pragma('dart2js:noInline')
-  static ServerBinarySummary getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ServerBinarySummary>(create);
+  static ServerBinarySummary getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ServerBinarySummary>(create);
   static ServerBinarySummary? _defaultInstance;
 
   /// Server source code address.
@@ -231,18 +262,29 @@ class ServerProtocolSummary extends $pb.GeneratedMessage {
 
   ServerProtocolSummary._();
 
-  factory ServerProtocolSummary.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ServerProtocolSummary.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ServerProtocolSummary.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ServerProtocolSummary.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ServerProtocolSummary', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ServerProtocolSummary',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'version')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ServerProtocolSummary clone() => ServerProtocolSummary()..mergeFromMessage(this);
+  ServerProtocolSummary clone() =>
+      ServerProtocolSummary()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ServerProtocolSummary copyWith(void Function(ServerProtocolSummary) updates) => super.copyWith((message) => updates(message as ServerProtocolSummary)) as ServerProtocolSummary;
+  ServerProtocolSummary copyWith(
+          void Function(ServerProtocolSummary) updates) =>
+      super.copyWith((message) => updates(message as ServerProtocolSummary))
+          as ServerProtocolSummary;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -251,9 +293,11 @@ class ServerProtocolSummary extends $pb.GeneratedMessage {
   static ServerProtocolSummary create() => ServerProtocolSummary._();
   @$core.override
   ServerProtocolSummary createEmptyInstance() => create();
-  static $pb.PbList<ServerProtocolSummary> createRepeated() => $pb.PbList<ServerProtocolSummary>();
+  static $pb.PbList<ServerProtocolSummary> createRepeated() =>
+      $pb.PbList<ServerProtocolSummary>();
   @$core.pragma('dart2js:noInline')
-  static ServerProtocolSummary getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ServerProtocolSummary>(create);
+  static ServerProtocolSummary getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ServerProtocolSummary>(create);
   static ServerProtocolSummary? _defaultInstance;
 
   /// Protocol version used by server.
@@ -288,22 +332,33 @@ class ServerInstanceSummary extends $pb.GeneratedMessage {
 
   ServerInstanceSummary._();
 
-  factory ServerInstanceSummary.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory ServerInstanceSummary.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory ServerInstanceSummary.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory ServerInstanceSummary.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ServerInstanceSummary', package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'ServerInstanceSummary',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOS(2, _omitFieldNames ? '' : 'description')
     ..aOS(3, _omitFieldNames ? '' : 'websiteUrl')
     ..aOS(4, _omitFieldNames ? '' : 'logoUrl')
     ..aOS(5, _omitFieldNames ? '' : 'backgroundUrl')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ServerInstanceSummary clone() => ServerInstanceSummary()..mergeFromMessage(this);
+  ServerInstanceSummary clone() =>
+      ServerInstanceSummary()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ServerInstanceSummary copyWith(void Function(ServerInstanceSummary) updates) => super.copyWith((message) => updates(message as ServerInstanceSummary)) as ServerInstanceSummary;
+  ServerInstanceSummary copyWith(
+          void Function(ServerInstanceSummary) updates) =>
+      super.copyWith((message) => updates(message as ServerInstanceSummary))
+          as ServerInstanceSummary;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -312,9 +367,11 @@ class ServerInstanceSummary extends $pb.GeneratedMessage {
   static ServerInstanceSummary create() => ServerInstanceSummary._();
   @$core.override
   ServerInstanceSummary createEmptyInstance() => create();
-  static $pb.PbList<ServerInstanceSummary> createRepeated() => $pb.PbList<ServerInstanceSummary>();
+  static $pb.PbList<ServerInstanceSummary> createRepeated() =>
+      $pb.PbList<ServerInstanceSummary>();
   @$core.pragma('dart2js:noInline')
-  static ServerInstanceSummary getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ServerInstanceSummary>(create);
+  static ServerInstanceSummary getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<ServerInstanceSummary>(create);
   static ServerInstanceSummary? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -363,6 +420,7 @@ class ServerInstanceSummary extends $pb.GeneratedMessage {
   void clearBackgroundUrl() => $_clearField(5);
 }
 
-
-const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
-const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
+const $core.bool _omitFieldNames =
+    $core.bool.fromEnvironment('protobuf.omit_field_names');
+const $core.bool _omitMessageNames =
+    $core.bool.fromEnvironment('protobuf.omit_message_names');

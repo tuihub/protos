@@ -1,14 +1,14 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: librarian/porter/v1/gebura.proto
-//
+// Generated from librarian/porter/v1/gebura.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, unused_import
 
 import 'dart:convert' as $convert;
 import 'dart:core' as $core;
@@ -31,19 +31,35 @@ final $typed_data.Uint8List appTypeDescriptor = $convert.base64Decode(
 const SearchAppInfoRequest$json = {
   '1': 'SearchAppInfoRequest',
   '2': [
-    {'1': 'name_like', '3': 1, '4': 1, '5': 9, '10': 'nameLike'},
+    {
+      '1': 'config',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.FeatureRequest',
+      '10': 'config'
+    },
+    {'1': 'name_like', '3': 2, '4': 1, '5': 9, '10': 'nameLike'},
   ],
 };
 
 /// Descriptor for `SearchAppInfoRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List searchAppInfoRequestDescriptor = $convert.base64Decode(
-    'ChRTZWFyY2hBcHBJbmZvUmVxdWVzdBIbCgluYW1lX2xpa2UYASABKAlSCG5hbWVMaWtl');
+    'ChRTZWFyY2hBcHBJbmZvUmVxdWVzdBI0CgZjb25maWcYASABKAsyHC5saWJyYXJpYW4udjEuRm'
+    'VhdHVyZVJlcXVlc3RSBmNvbmZpZxIbCgluYW1lX2xpa2UYAiABKAlSCG5hbWVMaWtl');
 
 @$core.Deprecated('Use searchAppInfoResponseDescriptor instead')
 const SearchAppInfoResponse$json = {
   '1': 'SearchAppInfoResponse',
   '2': [
-    {'1': 'app_infos', '3': 1, '4': 3, '5': 11, '6': '.librarian.porter.v1.AppInfo', '10': 'appInfos'},
+    {
+      '1': 'app_infos',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.librarian.porter.v1.AppInfo',
+      '10': 'appInfos'
+    },
   ],
 };
 
@@ -56,21 +72,37 @@ final $typed_data.Uint8List searchAppInfoResponseDescriptor = $convert.base64Dec
 const GetAppInfoRequest$json = {
   '1': 'GetAppInfoRequest',
   '2': [
-    {'1': 'source', '3': 1, '4': 1, '5': 9, '10': 'source'},
-    {'1': 'source_app_id', '3': 2, '4': 1, '5': 9, '10': 'sourceAppId'},
+    {
+      '1': 'config',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.FeatureRequest',
+      '10': 'config'
+    },
+    {'1': 'source', '3': 2, '4': 1, '5': 9, '10': 'source'},
+    {'1': 'source_app_id', '3': 3, '4': 1, '5': 9, '10': 'sourceAppId'},
   ],
 };
 
 /// Descriptor for `GetAppInfoRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getAppInfoRequestDescriptor = $convert.base64Decode(
-    'ChFHZXRBcHBJbmZvUmVxdWVzdBIWCgZzb3VyY2UYASABKAlSBnNvdXJjZRIiCg1zb3VyY2VfYX'
-    'BwX2lkGAIgASgJUgtzb3VyY2VBcHBJZA==');
+    'ChFHZXRBcHBJbmZvUmVxdWVzdBI0CgZjb25maWcYASABKAsyHC5saWJyYXJpYW4udjEuRmVhdH'
+    'VyZVJlcXVlc3RSBmNvbmZpZxIWCgZzb3VyY2UYAiABKAlSBnNvdXJjZRIiCg1zb3VyY2VfYXBw'
+    'X2lkGAMgASgJUgtzb3VyY2VBcHBJZA==');
 
 @$core.Deprecated('Use getAppInfoResponseDescriptor instead')
 const GetAppInfoResponse$json = {
   '1': 'GetAppInfoResponse',
   '2': [
-    {'1': 'app_info', '3': 1, '4': 1, '5': 11, '6': '.librarian.porter.v1.AppInfo', '10': 'appInfo'},
+    {
+      '1': 'app_info',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.porter.v1.AppInfo',
+      '10': 'appInfo'
+    },
   ],
 };
 
@@ -99,14 +131,22 @@ final $typed_data.Uint8List parseRawAppInfoRequestDescriptor = $convert.base64De
 const ParseRawAppInfoResponse$json = {
   '1': 'ParseRawAppInfoResponse',
   '2': [
-    {'1': 'app_info', '3': 1, '4': 1, '5': 11, '6': '.librarian.porter.v1.AppInfo', '10': 'appInfo'},
+    {
+      '1': 'app_info',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.porter.v1.AppInfo',
+      '10': 'appInfo'
+    },
   ],
 };
 
 /// Descriptor for `ParseRawAppInfoResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List parseRawAppInfoResponseDescriptor = $convert.base64Decode(
-    'ChdQYXJzZVJhd0FwcEluZm9SZXNwb25zZRI3CghhcHBfaW5mbxgBIAEoCzIcLmxpYnJhcmlhbi'
-    '5wb3J0ZXIudjEuQXBwSW5mb1IHYXBwSW5mbw==');
+final $typed_data.Uint8List parseRawAppInfoResponseDescriptor =
+    $convert.base64Decode(
+        'ChdQYXJzZVJhd0FwcEluZm9SZXNwb25zZRI3CghhcHBfaW5mbxgBIAEoCzIcLmxpYnJhcmlhbi'
+        '5wb3J0ZXIudjEuQXBwSW5mb1IHYXBwSW5mbw==');
 
 @$core.Deprecated('Use appInfoDescriptor instead')
 const AppInfo$json = {
@@ -114,17 +154,59 @@ const AppInfo$json = {
   '2': [
     {'1': 'source', '3': 1, '4': 1, '5': 9, '10': 'source'},
     {'1': 'source_app_id', '3': 2, '4': 1, '5': 9, '10': 'sourceAppId'},
-    {'1': 'source_url', '3': 3, '4': 1, '5': 9, '9': 0, '10': 'sourceUrl', '17': true},
+    {
+      '1': 'source_url',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '9': 0,
+      '10': 'sourceUrl',
+      '17': true
+    },
     {'1': 'raw_data_json', '3': 4, '4': 1, '5': 9, '10': 'rawDataJson'},
-    {'1': 'details', '3': 5, '4': 1, '5': 11, '6': '.librarian.porter.v1.AppInfoDetails', '9': 1, '10': 'details', '17': true},
+    {
+      '1': 'details',
+      '3': 5,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.porter.v1.AppInfoDetails',
+      '9': 1,
+      '10': 'details',
+      '17': true
+    },
     {'1': 'name', '3': 6, '4': 1, '5': 9, '10': 'name'},
-    {'1': 'type', '3': 7, '4': 1, '5': 14, '6': '.librarian.porter.v1.AppType', '10': 'type'},
-    {'1': 'short_description', '3': 8, '4': 1, '5': 9, '10': 'shortDescription'},
+    {
+      '1': 'type',
+      '3': 7,
+      '4': 1,
+      '5': 14,
+      '6': '.librarian.porter.v1.AppType',
+      '10': 'type'
+    },
+    {
+      '1': 'short_description',
+      '3': 8,
+      '4': 1,
+      '5': 9,
+      '10': 'shortDescription'
+    },
     {'1': 'icon_image_url', '3': 9, '4': 1, '5': 9, '10': 'iconImageUrl'},
-    {'1': 'background_image_url', '3': 10, '4': 1, '5': 9, '10': 'backgroundImageUrl'},
+    {
+      '1': 'background_image_url',
+      '3': 10,
+      '4': 1,
+      '5': 9,
+      '10': 'backgroundImageUrl'
+    },
     {'1': 'cover_image_url', '3': 11, '4': 1, '5': 9, '10': 'coverImageUrl'},
     {'1': 'tags', '3': 12, '4': 3, '5': 9, '10': 'tags'},
-    {'1': 'name_alternatives', '3': 13, '4': 3, '5': 9, '10': 'nameAlternatives'},
+    {
+      '1': 'name_alternatives',
+      '3': 13,
+      '4': 3,
+      '5': 9,
+      '10': 'nameAlternatives'
+    },
   ],
   '8': [
     {'1': '_source_url'},
@@ -164,4 +246,3 @@ final $typed_data.Uint8List appInfoDetailsDescriptor = $convert.base64Decode(
     'VsZWFzZV9kYXRlGAIgASgJUgtyZWxlYXNlRGF0ZRIcCglkZXZlbG9wZXIYAyABKAlSCWRldmVs'
     'b3BlchIcCglwdWJsaXNoZXIYBCABKAlSCXB1Ymxpc2hlchIYCgd2ZXJzaW9uGAUgASgJUgd2ZX'
     'JzaW9uEh0KCmltYWdlX3VybHMYBiADKAlSCWltYWdlVXJscw==');
-

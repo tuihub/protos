@@ -7,6 +7,7 @@
 package v1
 
 import (
+	v1 "github.com/tuihub/protos/pkg/librarian/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -69,7 +70,8 @@ func (AppType) EnumDescriptor() ([]byte, []int) {
 
 type SearchAppInfoRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	NameLike      string                 `protobuf:"bytes,1,opt,name=name_like,json=nameLike,proto3" json:"name_like,omitempty"`
+	Config        *v1.FeatureRequest     `protobuf:"bytes,1,opt,name=config,proto3" json:"config,omitempty"`
+	NameLike      string                 `protobuf:"bytes,2,opt,name=name_like,json=nameLike,proto3" json:"name_like,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -102,6 +104,13 @@ func (x *SearchAppInfoRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use SearchAppInfoRequest.ProtoReflect.Descriptor instead.
 func (*SearchAppInfoRequest) Descriptor() ([]byte, []int) {
 	return file_librarian_porter_v1_gebura_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *SearchAppInfoRequest) GetConfig() *v1.FeatureRequest {
+	if x != nil {
+		return x.Config
+	}
+	return nil
 }
 
 func (x *SearchAppInfoRequest) GetNameLike() string {
@@ -156,10 +165,11 @@ func (x *SearchAppInfoResponse) GetAppInfos() []*AppInfo {
 }
 
 type GetAppInfoRequest struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
+	state  protoimpl.MessageState `protogen:"open.v1"`
+	Config *v1.FeatureRequest     `protobuf:"bytes,1,opt,name=config,proto3" json:"config,omitempty"`
 	// WellKnownAppInfoSource
-	Source        string `protobuf:"bytes,1,opt,name=source,proto3" json:"source,omitempty"`
-	SourceAppId   string `protobuf:"bytes,2,opt,name=source_app_id,json=sourceAppId,proto3" json:"source_app_id,omitempty"`
+	Source        string `protobuf:"bytes,2,opt,name=source,proto3" json:"source,omitempty"`
+	SourceAppId   string `protobuf:"bytes,3,opt,name=source_app_id,json=sourceAppId,proto3" json:"source_app_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -192,6 +202,13 @@ func (x *GetAppInfoRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use GetAppInfoRequest.ProtoReflect.Descriptor instead.
 func (*GetAppInfoRequest) Descriptor() ([]byte, []int) {
 	return file_librarian_porter_v1_gebura_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *GetAppInfoRequest) GetConfig() *v1.FeatureRequest {
+	if x != nil {
+		return x.Config
+	}
+	return nil
 }
 
 func (x *GetAppInfoRequest) GetSource() string {
@@ -589,14 +606,16 @@ var File_librarian_porter_v1_gebura_proto protoreflect.FileDescriptor
 
 const file_librarian_porter_v1_gebura_proto_rawDesc = "" +
 	"\n" +
-	" librarian/porter/v1/gebura.proto\x12\x13librarian.porter.v1\"3\n" +
-	"\x14SearchAppInfoRequest\x12\x1b\n" +
-	"\tname_like\x18\x01 \x01(\tR\bnameLike\"R\n" +
+	" librarian/porter/v1/gebura.proto\x12\x13librarian.porter.v1\x1a\x1clibrarian/v1/wellknown.proto\"i\n" +
+	"\x14SearchAppInfoRequest\x124\n" +
+	"\x06config\x18\x01 \x01(\v2\x1c.librarian.v1.FeatureRequestR\x06config\x12\x1b\n" +
+	"\tname_like\x18\x02 \x01(\tR\bnameLike\"R\n" +
 	"\x15SearchAppInfoResponse\x129\n" +
-	"\tapp_infos\x18\x01 \x03(\v2\x1c.librarian.porter.v1.AppInfoR\bappInfos\"O\n" +
-	"\x11GetAppInfoRequest\x12\x16\n" +
-	"\x06source\x18\x01 \x01(\tR\x06source\x12\"\n" +
-	"\rsource_app_id\x18\x02 \x01(\tR\vsourceAppId\"M\n" +
+	"\tapp_infos\x18\x01 \x03(\v2\x1c.librarian.porter.v1.AppInfoR\bappInfos\"\x85\x01\n" +
+	"\x11GetAppInfoRequest\x124\n" +
+	"\x06config\x18\x01 \x01(\v2\x1c.librarian.v1.FeatureRequestR\x06config\x12\x16\n" +
+	"\x06source\x18\x02 \x01(\tR\x06source\x12\"\n" +
+	"\rsource_app_id\x18\x03 \x01(\tR\vsourceAppId\"M\n" +
 	"\x12GetAppInfoResponse\x127\n" +
 	"\bapp_info\x18\x01 \x01(\v2\x1c.librarian.porter.v1.AppInfoR\aappInfo\"x\n" +
 	"\x16ParseRawAppInfoRequest\x12\x16\n" +
@@ -660,18 +679,21 @@ var file_librarian_porter_v1_gebura_proto_goTypes = []any{
 	(*ParseRawAppInfoResponse)(nil), // 6: librarian.porter.v1.ParseRawAppInfoResponse
 	(*AppInfo)(nil),                 // 7: librarian.porter.v1.AppInfo
 	(*AppInfoDetails)(nil),          // 8: librarian.porter.v1.AppInfoDetails
+	(*v1.FeatureRequest)(nil),       // 9: librarian.v1.FeatureRequest
 }
 var file_librarian_porter_v1_gebura_proto_depIdxs = []int32{
-	7, // 0: librarian.porter.v1.SearchAppInfoResponse.app_infos:type_name -> librarian.porter.v1.AppInfo
-	7, // 1: librarian.porter.v1.GetAppInfoResponse.app_info:type_name -> librarian.porter.v1.AppInfo
-	7, // 2: librarian.porter.v1.ParseRawAppInfoResponse.app_info:type_name -> librarian.porter.v1.AppInfo
-	8, // 3: librarian.porter.v1.AppInfo.details:type_name -> librarian.porter.v1.AppInfoDetails
-	0, // 4: librarian.porter.v1.AppInfo.type:type_name -> librarian.porter.v1.AppType
-	5, // [5:5] is the sub-list for method output_type
-	5, // [5:5] is the sub-list for method input_type
-	5, // [5:5] is the sub-list for extension type_name
-	5, // [5:5] is the sub-list for extension extendee
-	0, // [0:5] is the sub-list for field type_name
+	9, // 0: librarian.porter.v1.SearchAppInfoRequest.config:type_name -> librarian.v1.FeatureRequest
+	7, // 1: librarian.porter.v1.SearchAppInfoResponse.app_infos:type_name -> librarian.porter.v1.AppInfo
+	9, // 2: librarian.porter.v1.GetAppInfoRequest.config:type_name -> librarian.v1.FeatureRequest
+	7, // 3: librarian.porter.v1.GetAppInfoResponse.app_info:type_name -> librarian.porter.v1.AppInfo
+	7, // 4: librarian.porter.v1.ParseRawAppInfoResponse.app_info:type_name -> librarian.porter.v1.AppInfo
+	8, // 5: librarian.porter.v1.AppInfo.details:type_name -> librarian.porter.v1.AppInfoDetails
+	0, // 6: librarian.porter.v1.AppInfo.type:type_name -> librarian.porter.v1.AppType
+	7, // [7:7] is the sub-list for method output_type
+	7, // [7:7] is the sub-list for method input_type
+	7, // [7:7] is the sub-list for extension type_name
+	7, // [7:7] is the sub-list for extension extendee
+	0, // [0:7] is the sub-list for field type_name
 }
 
 func init() { file_librarian_porter_v1_gebura_proto_init() }

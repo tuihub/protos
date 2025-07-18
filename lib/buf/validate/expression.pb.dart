@@ -1,7 +1,7 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: buf/validate/expression.proto
-//
+// Generated from buf/validate/expression.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
@@ -46,20 +46,27 @@ class Constraint extends $pb.GeneratedMessage {
 
   Constraint._();
 
-  factory Constraint.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory Constraint.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory Constraint.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory Constraint.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Constraint', package: const $pb.PackageName(_omitMessageNames ? '' : 'buf.validate'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'Constraint',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'buf.validate'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'message')
     ..aOS(3, _omitFieldNames ? '' : 'expression')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   Constraint clone() => Constraint()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  Constraint copyWith(void Function(Constraint) updates) => super.copyWith((message) => updates(message as Constraint)) as Constraint;
+  Constraint copyWith(void Function(Constraint) updates) =>
+      super.copyWith((message) => updates(message as Constraint)) as Constraint;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -70,7 +77,8 @@ class Constraint extends $pb.GeneratedMessage {
   Constraint createEmptyInstance() => create();
   static $pb.PbList<Constraint> createRepeated() => $pb.PbList<Constraint>();
   @$core.pragma('dart2js:noInline')
-  static Constraint getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Constraint>(create);
+  static Constraint getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<Constraint>(create);
   static Constraint? _defaultInstance;
 
   /// `id` is a string that serves as a machine-readable name for this Constraint.
@@ -125,18 +133,26 @@ class Violations extends $pb.GeneratedMessage {
 
   Violations._();
 
-  factory Violations.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory Violations.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory Violations.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory Violations.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Violations', package: const $pb.PackageName(_omitMessageNames ? '' : 'buf.validate'), createEmptyInstance: create)
-    ..pc<Violation>(1, _omitFieldNames ? '' : 'violations', $pb.PbFieldType.PM, subBuilder: Violation.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'Violations',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'buf.validate'),
+      createEmptyInstance: create)
+    ..pc<Violation>(1, _omitFieldNames ? '' : 'violations', $pb.PbFieldType.PM,
+        subBuilder: Violation.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   Violations clone() => Violations()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  Violations copyWith(void Function(Violations) updates) => super.copyWith((message) => updates(message as Violations)) as Violations;
+  Violations copyWith(void Function(Violations) updates) =>
+      super.copyWith((message) => updates(message as Violations)) as Violations;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -147,7 +163,8 @@ class Violations extends $pb.GeneratedMessage {
   Violations createEmptyInstance() => create();
   static $pb.PbList<Violations> createRepeated() => $pb.PbList<Violations>();
   @$core.pragma('dart2js:noInline')
-  static Violations getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Violations>(create);
+  static Violations getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<Violations>(create);
   static Violations? _defaultInstance;
 
   /// `violations` is a repeated field that contains all the `Violation` messages corresponding to the violations detected.
@@ -182,20 +199,27 @@ class Violation extends $pb.GeneratedMessage {
 
   Violation._();
 
-  factory Violation.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory Violation.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory Violation.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory Violation.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Violation', package: const $pb.PackageName(_omitMessageNames ? '' : 'buf.validate'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'Violation',
+      package: const $pb.PackageName(_omitMessageNames ? '' : 'buf.validate'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'fieldPath')
     ..aOS(2, _omitFieldNames ? '' : 'constraintId')
     ..aOS(3, _omitFieldNames ? '' : 'message')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   Violation clone() => Violation()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  Violation copyWith(void Function(Violation) updates) => super.copyWith((message) => updates(message as Violation)) as Violation;
+  Violation copyWith(void Function(Violation) updates) =>
+      super.copyWith((message) => updates(message as Violation)) as Violation;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -206,7 +230,8 @@ class Violation extends $pb.GeneratedMessage {
   Violation createEmptyInstance() => create();
   static $pb.PbList<Violation> createRepeated() => $pb.PbList<Violation>();
   @$core.pragma('dart2js:noInline')
-  static Violation getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Violation>(create);
+  static Violation getDefault() =>
+      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Violation>(create);
   static Violation? _defaultInstance;
 
   /// `field_path` is a machine-readable identifier that points to the specific field that failed the validation.
@@ -243,6 +268,7 @@ class Violation extends $pb.GeneratedMessage {
   void clearMessage() => $_clearField(3);
 }
 
-
-const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
-const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
+const $core.bool _omitFieldNames =
+    $core.bool.fromEnvironment('protobuf.omit_field_names');
+const $core.bool _omitMessageNames =
+    $core.bool.fromEnvironment('protobuf.omit_message_names');

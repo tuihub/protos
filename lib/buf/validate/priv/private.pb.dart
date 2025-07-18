@@ -1,7 +1,7 @@
+// This is a generated file - do not edit.
 //
-//  Generated code. Do not modify.
-//  source: buf/validate/priv/private.proto
-//
+// Generated from buf/validate/priv/private.proto.
+
 // @dart = 3.3
 
 // ignore_for_file: annotate_overrides, camel_case_types, comment_references
@@ -28,18 +28,28 @@ class FieldConstraints extends $pb.GeneratedMessage {
 
   FieldConstraints._();
 
-  factory FieldConstraints.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory FieldConstraints.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory FieldConstraints.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory FieldConstraints.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'FieldConstraints', package: const $pb.PackageName(_omitMessageNames ? '' : 'buf.validate.priv'), createEmptyInstance: create)
-    ..pc<Constraint>(1, _omitFieldNames ? '' : 'cel', $pb.PbFieldType.PM, subBuilder: Constraint.create)
-    ..hasRequiredFields = false
-  ;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'FieldConstraints',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'buf.validate.priv'),
+      createEmptyInstance: create)
+    ..pc<Constraint>(1, _omitFieldNames ? '' : 'cel', $pb.PbFieldType.PM,
+        subBuilder: Constraint.create)
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   FieldConstraints clone() => FieldConstraints()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  FieldConstraints copyWith(void Function(FieldConstraints) updates) => super.copyWith((message) => updates(message as FieldConstraints)) as FieldConstraints;
+  FieldConstraints copyWith(void Function(FieldConstraints) updates) =>
+      super.copyWith((message) => updates(message as FieldConstraints))
+          as FieldConstraints;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -48,9 +58,11 @@ class FieldConstraints extends $pb.GeneratedMessage {
   static FieldConstraints create() => FieldConstraints._();
   @$core.override
   FieldConstraints createEmptyInstance() => create();
-  static $pb.PbList<FieldConstraints> createRepeated() => $pb.PbList<FieldConstraints>();
+  static $pb.PbList<FieldConstraints> createRepeated() =>
+      $pb.PbList<FieldConstraints>();
   @$core.pragma('dart2js:noInline')
-  static FieldConstraints getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FieldConstraints>(create);
+  static FieldConstraints getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<FieldConstraints>(create);
   static FieldConstraints? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -73,20 +85,28 @@ class Constraint extends $pb.GeneratedMessage {
 
   Constraint._();
 
-  factory Constraint.fromBuffer($core.List<$core.int> data, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(data, registry);
-  factory Constraint.fromJson($core.String json, [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(json, registry);
+  factory Constraint.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory Constraint.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
 
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Constraint', package: const $pb.PackageName(_omitMessageNames ? '' : 'buf.validate.priv'), createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'Constraint',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'buf.validate.priv'),
+      createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOS(2, _omitFieldNames ? '' : 'message')
     ..aOS(3, _omitFieldNames ? '' : 'expression')
-    ..hasRequiredFields = false
-  ;
+    ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   Constraint clone() => Constraint()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  Constraint copyWith(void Function(Constraint) updates) => super.copyWith((message) => updates(message as Constraint)) as Constraint;
+  Constraint copyWith(void Function(Constraint) updates) =>
+      super.copyWith((message) => updates(message as Constraint)) as Constraint;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
@@ -97,7 +117,8 @@ class Constraint extends $pb.GeneratedMessage {
   Constraint createEmptyInstance() => create();
   static $pb.PbList<Constraint> createRepeated() => $pb.PbList<Constraint>();
   @$core.pragma('dart2js:noInline')
-  static Constraint getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Constraint>(create);
+  static Constraint getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<Constraint>(create);
   static Constraint? _defaultInstance;
 
   @$pb.TagNumber(1)
@@ -129,12 +150,19 @@ class Constraint extends $pb.GeneratedMessage {
 }
 
 class Private {
-  static final field_51072 = $pb.Extension<FieldConstraints>(_omitMessageNames ? '' : 'google.protobuf.FieldOptions', _omitFieldNames ? '' : 'field_51072', 51072, $pb.PbFieldType.OM, defaultOrMaker: FieldConstraints.getDefault, subBuilder: FieldConstraints.create);
+  static final field_51072 = $pb.Extension<FieldConstraints>(
+      _omitMessageNames ? '' : 'google.protobuf.FieldOptions',
+      _omitFieldNames ? '' : 'field_51072',
+      51072,
+      $pb.PbFieldType.OM,
+      defaultOrMaker: FieldConstraints.getDefault,
+      subBuilder: FieldConstraints.create);
   static void registerAllExtensions($pb.ExtensionRegistry registry) {
     registry.add(field_51072);
   }
 }
 
-
-const $core.bool _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
-const $core.bool _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');
+const $core.bool _omitFieldNames =
+    $core.bool.fromEnvironment('protobuf.omit_field_names');
+const $core.bool _omitMessageNames =
+    $core.bool.fromEnvironment('protobuf.omit_message_names');
