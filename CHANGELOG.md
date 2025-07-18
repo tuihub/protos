@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.7](https://github.com/tuihub/protos/compare/v0.5.6...v0.5.7) (2025-07-18)
+
+
+### Features
+
+* **porter:** add FeatureRequest for game platforms ([ee4fd81](https://github.com/tuihub/protos/commit/ee4fd8136c3723148962bbcbfe299740b74ee293))
+
 ## [0.5.6](https://github.com/tuihub/protos/compare/v0.5.5...v0.5.6) (2025-06-08)
 
 
