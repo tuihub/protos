@@ -14,6 +14,24 @@ import 'dart:convert' as $convert;
 import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
 
+@$core.Deprecated('Use wellKnownDetectDataDescriptor instead')
+const WellKnownDetectData$json = {
+  '1': 'WellKnownDetectData',
+  '2': [
+    {'1': 'WELL_KNOWN_DETECT_DATA_UNSPECIFIED', '2': 0, '3': {}},
+    {'1': 'WELL_KNOWN_DETECT_DATA_NAME', '2': 1, '3': {}},
+    {'1': 'WELL_KNOWN_DETECT_DATA_DEVELOPER', '2': 2, '3': {}},
+    {'1': 'WELL_KNOWN_DETECT_DATA_PUBLISHER', '2': 3, '3': {}},
+  ],
+};
+
+/// Descriptor for `WellKnownDetectData`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List wellKnownDetectDataDescriptor = $convert.base64Decode(
+    'ChNXZWxsS25vd25EZXRlY3REYXRhEisKIldFTExfS05PV05fREVURUNUX0RBVEFfVU5TUEVDSU'
+    'ZJRUQQABoDwj4AEigKG1dFTExfS05PV05fREVURUNUX0RBVEFfTkFNRRABGgfCPgRuYW1lEjIK'
+    'IFdFTExfS05PV05fREVURUNUX0RBVEFfREVWRUxPUEVSEAIaDMI+CWRldmVsb3BlchIyCiBXRU'
+    'xMX0tOT1dOX0RFVEVDVF9EQVRBX1BVQkxJU0hFUhADGgzCPglwdWJsaXNoZXI=');
+
 @$core.Deprecated('Use appTypeDescriptor instead')
 const AppType$json = {
   '1': 'AppType',
@@ -27,6 +45,73 @@ const AppType$json = {
 final $typed_data.Uint8List appTypeDescriptor = $convert.base64Decode(
     'CgdBcHBUeXBlEhgKFEFQUF9UWVBFX1VOU1BFQ0lGSUVEEAASEQoNQVBQX1RZUEVfR0FNRRAB');
 
+@$core.Deprecated('Use detectAppInfoRequestDescriptor instead')
+const DetectAppInfoRequest$json = {
+  '1': 'DetectAppInfoRequest',
+  '2': [
+    {
+      '1': 'data',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.librarian.porter.v1.DetectAppInfoRequest.DataEntry',
+      '10': 'data'
+    },
+    {
+      '1': 'context_id',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '9': 0,
+      '10': 'contextId',
+      '17': true
+    },
+  ],
+  '3': [DetectAppInfoRequest_DataEntry$json],
+  '8': [
+    {'1': '_context_id'},
+  ],
+};
+
+@$core.Deprecated('Use detectAppInfoRequestDescriptor instead')
+const DetectAppInfoRequest_DataEntry$json = {
+  '1': 'DataEntry',
+  '2': [
+    {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
+  ],
+  '7': {'7': true},
+};
+
+/// Descriptor for `DetectAppInfoRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List detectAppInfoRequestDescriptor = $convert.base64Decode(
+    'ChREZXRlY3RBcHBJbmZvUmVxdWVzdBJHCgRkYXRhGAEgAygLMjMubGlicmFyaWFuLnBvcnRlci'
+    '52MS5EZXRlY3RBcHBJbmZvUmVxdWVzdC5EYXRhRW50cnlSBGRhdGESPAoKY29udGV4dF9pZBgC'
+    'IAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElESABSCWNvbnRleHRJZIgBARo3CglEYXRhRW'
+    '50cnkSEAoDa2V5GAEgASgJUgNrZXkSFAoFdmFsdWUYAiABKAlSBXZhbHVlOgI4AUINCgtfY29u'
+    'dGV4dF9pZA==');
+
+@$core.Deprecated('Use detectAppInfoResponseDescriptor instead')
+const DetectAppInfoResponse$json = {
+  '1': 'DetectAppInfoResponse',
+  '2': [
+    {
+      '1': 'app_info',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.porter.v1.AppInfo',
+      '10': 'appInfo'
+    },
+  ],
+};
+
+/// Descriptor for `DetectAppInfoResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List detectAppInfoResponseDescriptor = $convert.base64Decode(
+    'ChVEZXRlY3RBcHBJbmZvUmVzcG9uc2USNwoIYXBwX2luZm8YASABKAsyHC5saWJyYXJpYW4ucG'
+    '9ydGVyLnYxLkFwcEluZm9SB2FwcEluZm8=');
+
 @$core.Deprecated('Use searchAppInfoRequestDescriptor instead')
 const SearchAppInfoRequest$json = {
   '1': 'SearchAppInfoRequest',
@@ -39,14 +124,13 @@ const SearchAppInfoRequest$json = {
       '6': '.librarian.v1.FeatureRequest',
       '10': 'config'
     },
-    {'1': 'name_like', '3': 2, '4': 1, '5': 9, '10': 'nameLike'},
   ],
 };
 
 /// Descriptor for `SearchAppInfoRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List searchAppInfoRequestDescriptor = $convert.base64Decode(
     'ChRTZWFyY2hBcHBJbmZvUmVxdWVzdBI0CgZjb25maWcYASABKAsyHC5saWJyYXJpYW4udjEuRm'
-    'VhdHVyZVJlcXVlc3RSBmNvbmZpZxIbCgluYW1lX2xpa2UYAiABKAlSCG5hbWVMaWtl');
+    'VhdHVyZVJlcXVlc3RSBmNvbmZpZw==');
 
 @$core.Deprecated('Use searchAppInfoResponseDescriptor instead')
 const SearchAppInfoResponse$json = {
@@ -80,16 +164,13 @@ const GetAppInfoRequest$json = {
       '6': '.librarian.v1.FeatureRequest',
       '10': 'config'
     },
-    {'1': 'source', '3': 2, '4': 1, '5': 9, '10': 'source'},
-    {'1': 'source_app_id', '3': 3, '4': 1, '5': 9, '10': 'sourceAppId'},
   ],
 };
 
 /// Descriptor for `GetAppInfoRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getAppInfoRequestDescriptor = $convert.base64Decode(
     'ChFHZXRBcHBJbmZvUmVxdWVzdBI0CgZjb25maWcYASABKAsyHC5saWJyYXJpYW4udjEuRmVhdH'
-    'VyZVJlcXVlc3RSBmNvbmZpZxIWCgZzb3VyY2UYAiABKAlSBnNvdXJjZRIiCg1zb3VyY2VfYXBw'
-    'X2lkGAMgASgJUgtzb3VyY2VBcHBJZA==');
+    'VyZVJlcXVlc3RSBmNvbmZpZw==');
 
 @$core.Deprecated('Use getAppInfoResponseDescriptor instead')
 const GetAppInfoResponse$json = {
@@ -115,17 +196,15 @@ final $typed_data.Uint8List getAppInfoResponseDescriptor = $convert.base64Decode
 const ParseRawAppInfoRequest$json = {
   '1': 'ParseRawAppInfoRequest',
   '2': [
-    {'1': 'source', '3': 1, '4': 1, '5': 9, '10': 'source'},
-    {'1': 'source_app_id', '3': 2, '4': 1, '5': 9, '10': 'sourceAppId'},
     {'1': 'raw_data_json', '3': 3, '4': 1, '5': 9, '10': 'rawDataJson'},
   ],
 };
 
 /// Descriptor for `ParseRawAppInfoRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List parseRawAppInfoRequestDescriptor = $convert.base64Decode(
-    'ChZQYXJzZVJhd0FwcEluZm9SZXF1ZXN0EhYKBnNvdXJjZRgBIAEoCVIGc291cmNlEiIKDXNvdX'
-    'JjZV9hcHBfaWQYAiABKAlSC3NvdXJjZUFwcElkEiIKDXJhd19kYXRhX2pzb24YAyABKAlSC3Jh'
-    'd0RhdGFKc29u');
+final $typed_data.Uint8List parseRawAppInfoRequestDescriptor =
+    $convert.base64Decode(
+        'ChZQYXJzZVJhd0FwcEluZm9SZXF1ZXN0EiIKDXJhd19kYXRhX2pzb24YAyABKAlSC3Jhd0RhdG'
+        'FKc29u');
 
 @$core.Deprecated('Use parseRawAppInfoResponseDescriptor instead')
 const ParseRawAppInfoResponse$json = {

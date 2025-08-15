@@ -10,12 +10,6 @@ export class GetAccountRequest extends jspb.Message {
   getConfig(): librarian_v1_wellknown_pb.FeatureRequest | undefined;
   setConfig(value?: librarian_v1_wellknown_pb.FeatureRequest): void;
 
-  getPlatform(): string;
-  setPlatform(value: string): void;
-
-  getPlatformAccountId(): string;
-  setPlatformAccountId(value: string): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetAccountRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetAccountRequest): GetAccountRequest.AsObject;
@@ -29,8 +23,6 @@ export class GetAccountRequest extends jspb.Message {
 export namespace GetAccountRequest {
   export type AsObject = {
     config?: librarian_v1_wellknown_pb.FeatureRequest.AsObject,
-    platform: string,
-    platformAccountId: string,
   }
 }
 

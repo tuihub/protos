@@ -73,6 +73,14 @@ class LibrarianPorterServiceClient extends $grpc.Client {
   }
 
   /// `Gebura`
+  $grpc.ResponseFuture<$2.DetectAppInfoResponse> detectAppInfo(
+    $2.DetectAppInfoRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$detectAppInfo, request, options: options);
+  }
+
+  /// `Gebura`
   $grpc.ResponseFuture<$2.SearchAppInfoResponse> searchAppInfo(
     $2.SearchAppInfoRequest request, {
     $grpc.CallOptions? options,
@@ -181,6 +189,11 @@ class LibrarianPorterServiceClient extends $grpc.Client {
           '/librarian.porter.v1.LibrarianPorterService/GetAccount',
           ($1.GetAccountRequest value) => value.writeToBuffer(),
           $1.GetAccountResponse.fromBuffer);
+  static final _$detectAppInfo =
+      $grpc.ClientMethod<$2.DetectAppInfoRequest, $2.DetectAppInfoResponse>(
+          '/librarian.porter.v1.LibrarianPorterService/DetectAppInfo',
+          ($2.DetectAppInfoRequest value) => value.writeToBuffer(),
+          $2.DetectAppInfoResponse.fromBuffer);
   static final _$searchAppInfo =
       $grpc.ClientMethod<$2.SearchAppInfoRequest, $2.SearchAppInfoResponse>(
           '/librarian.porter.v1.LibrarianPorterService/SearchAppInfo',
@@ -281,6 +294,15 @@ abstract class LibrarianPorterServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $1.GetAccountRequest.fromBuffer(value),
         ($1.GetAccountResponse value) => value.writeToBuffer()));
+    $addMethod(
+        $grpc.ServiceMethod<$2.DetectAppInfoRequest, $2.DetectAppInfoResponse>(
+            'DetectAppInfo',
+            detectAppInfo_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $2.DetectAppInfoRequest.fromBuffer(value),
+            ($2.DetectAppInfoResponse value) => value.writeToBuffer()));
     $addMethod(
         $grpc.ServiceMethod<$2.SearchAppInfoRequest, $2.SearchAppInfoResponse>(
             'SearchAppInfo',
@@ -412,6 +434,15 @@ abstract class LibrarianPorterServiceBase extends $grpc.Service {
 
   $async.Future<$1.GetAccountResponse> getAccount(
       $grpc.ServiceCall call, $1.GetAccountRequest request);
+
+  $async.Future<$2.DetectAppInfoResponse> detectAppInfo_Pre(
+      $grpc.ServiceCall $call,
+      $async.Future<$2.DetectAppInfoRequest> $request) async {
+    return detectAppInfo($call, await $request);
+  }
+
+  $async.Future<$2.DetectAppInfoResponse> detectAppInfo(
+      $grpc.ServiceCall call, $2.DetectAppInfoRequest request);
 
   $async.Future<$2.SearchAppInfoResponse> searchAppInfo_Pre(
       $grpc.ServiceCall $call,

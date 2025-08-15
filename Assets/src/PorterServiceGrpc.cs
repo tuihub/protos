@@ -66,6 +66,10 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.GetAccountResponse> __Marshaller_librarian_porter_v1_GetAccountResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.GetAccountResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.DetectAppInfoRequest> __Marshaller_librarian_porter_v1_DetectAppInfoRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.DetectAppInfoRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.DetectAppInfoResponse> __Marshaller_librarian_porter_v1_DetectAppInfoResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.DetectAppInfoResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.SearchAppInfoRequest> __Marshaller_librarian_porter_v1_SearchAppInfoRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.SearchAppInfoRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Porter.V1.SearchAppInfoResponse> __Marshaller_librarian_porter_v1_SearchAppInfoResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Porter.V1.SearchAppInfoResponse.Parser));
@@ -145,6 +149,14 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
         "GetAccount",
         __Marshaller_librarian_porter_v1_GetAccountRequest,
         __Marshaller_librarian_porter_v1_GetAccountResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Porter.V1.DetectAppInfoRequest, global::TuiHub.Protos.Librarian.Porter.V1.DetectAppInfoResponse> __Method_DetectAppInfo = new grpc::Method<global::TuiHub.Protos.Librarian.Porter.V1.DetectAppInfoRequest, global::TuiHub.Protos.Librarian.Porter.V1.DetectAppInfoResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "DetectAppInfo",
+        __Marshaller_librarian_porter_v1_DetectAppInfoRequest,
+        __Marshaller_librarian_porter_v1_DetectAppInfoResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::TuiHub.Protos.Librarian.Porter.V1.SearchAppInfoRequest, global::TuiHub.Protos.Librarian.Porter.V1.SearchAppInfoResponse> __Method_SearchAppInfo = new grpc::Method<global::TuiHub.Protos.Librarian.Porter.V1.SearchAppInfoRequest, global::TuiHub.Protos.Librarian.Porter.V1.SearchAppInfoResponse>(
@@ -274,6 +286,18 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
       public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Porter.V1.GetAccountResponse> GetAccount(global::TuiHub.Protos.Librarian.Porter.V1.GetAccountRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Gebura`
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Porter.V1.DetectAppInfoResponse> DetectAppInfo(global::TuiHub.Protos.Librarian.Porter.V1.DetectAppInfoRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -584,6 +608,54 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
       public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Porter.V1.GetAccountResponse> GetAccountAsync(global::TuiHub.Protos.Librarian.Porter.V1.GetAccountRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetAccount, null, options, request);
+      }
+      /// <summary>
+      /// `Gebura`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Porter.V1.DetectAppInfoResponse DetectAppInfo(global::TuiHub.Protos.Librarian.Porter.V1.DetectAppInfoRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return DetectAppInfo(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Gebura`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Porter.V1.DetectAppInfoResponse DetectAppInfo(global::TuiHub.Protos.Librarian.Porter.V1.DetectAppInfoRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_DetectAppInfo, null, options, request);
+      }
+      /// <summary>
+      /// `Gebura`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Porter.V1.DetectAppInfoResponse> DetectAppInfoAsync(global::TuiHub.Protos.Librarian.Porter.V1.DetectAppInfoRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return DetectAppInfoAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Gebura`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Porter.V1.DetectAppInfoResponse> DetectAppInfoAsync(global::TuiHub.Protos.Librarian.Porter.V1.DetectAppInfoRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_DetectAppInfo, null, options, request);
       }
       /// <summary>
       /// `Gebura`
@@ -1092,6 +1164,7 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
           .AddMethod(__Method_EnableContext, serviceImpl.EnableContext)
           .AddMethod(__Method_DisableContext, serviceImpl.DisableContext)
           .AddMethod(__Method_GetAccount, serviceImpl.GetAccount)
+          .AddMethod(__Method_DetectAppInfo, serviceImpl.DetectAppInfo)
           .AddMethod(__Method_SearchAppInfo, serviceImpl.SearchAppInfo)
           .AddMethod(__Method_GetAppInfo, serviceImpl.GetAppInfo)
           .AddMethod(__Method_ParseRawAppInfo, serviceImpl.ParseRawAppInfo)
@@ -1116,6 +1189,7 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
       serviceBinder.AddMethod(__Method_EnableContext, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Porter.V1.EnableContextRequest, global::TuiHub.Protos.Librarian.Porter.V1.EnableContextResponse>(serviceImpl.EnableContext));
       serviceBinder.AddMethod(__Method_DisableContext, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Porter.V1.DisableContextRequest, global::TuiHub.Protos.Librarian.Porter.V1.DisableContextResponse>(serviceImpl.DisableContext));
       serviceBinder.AddMethod(__Method_GetAccount, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Porter.V1.GetAccountRequest, global::TuiHub.Protos.Librarian.Porter.V1.GetAccountResponse>(serviceImpl.GetAccount));
+      serviceBinder.AddMethod(__Method_DetectAppInfo, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Porter.V1.DetectAppInfoRequest, global::TuiHub.Protos.Librarian.Porter.V1.DetectAppInfoResponse>(serviceImpl.DetectAppInfo));
       serviceBinder.AddMethod(__Method_SearchAppInfo, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Porter.V1.SearchAppInfoRequest, global::TuiHub.Protos.Librarian.Porter.V1.SearchAppInfoResponse>(serviceImpl.SearchAppInfo));
       serviceBinder.AddMethod(__Method_GetAppInfo, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Porter.V1.GetAppInfoRequest, global::TuiHub.Protos.Librarian.Porter.V1.GetAppInfoResponse>(serviceImpl.GetAppInfo));
       serviceBinder.AddMethod(__Method_ParseRawAppInfo, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Porter.V1.ParseRawAppInfoRequest, global::TuiHub.Protos.Librarian.Porter.V1.ParseRawAppInfoResponse>(serviceImpl.ParseRawAppInfo));

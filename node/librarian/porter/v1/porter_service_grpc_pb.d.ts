@@ -14,6 +14,7 @@ interface ILibrarianPorterServiceService extends grpc.ServiceDefinition<grpc.Unt
   enableContext: grpc.MethodDefinition<librarian_porter_v1_porter_service_pb.EnableContextRequest, librarian_porter_v1_porter_service_pb.EnableContextResponse>;
   disableContext: grpc.MethodDefinition<librarian_porter_v1_porter_service_pb.DisableContextRequest, librarian_porter_v1_porter_service_pb.DisableContextResponse>;
   getAccount: grpc.MethodDefinition<librarian_porter_v1_tiphereth_pb.GetAccountRequest, librarian_porter_v1_tiphereth_pb.GetAccountResponse>;
+  detectAppInfo: grpc.MethodDefinition<librarian_porter_v1_gebura_pb.DetectAppInfoRequest, librarian_porter_v1_gebura_pb.DetectAppInfoResponse>;
   searchAppInfo: grpc.MethodDefinition<librarian_porter_v1_gebura_pb.SearchAppInfoRequest, librarian_porter_v1_gebura_pb.SearchAppInfoResponse>;
   getAppInfo: grpc.MethodDefinition<librarian_porter_v1_gebura_pb.GetAppInfoRequest, librarian_porter_v1_gebura_pb.GetAppInfoResponse>;
   parseRawAppInfo: grpc.MethodDefinition<librarian_porter_v1_gebura_pb.ParseRawAppInfoRequest, librarian_porter_v1_gebura_pb.ParseRawAppInfoResponse>;
@@ -34,6 +35,7 @@ export interface ILibrarianPorterServiceServer extends grpc.UntypedServiceImplem
   enableContext: grpc.handleUnaryCall<librarian_porter_v1_porter_service_pb.EnableContextRequest, librarian_porter_v1_porter_service_pb.EnableContextResponse>;
   disableContext: grpc.handleUnaryCall<librarian_porter_v1_porter_service_pb.DisableContextRequest, librarian_porter_v1_porter_service_pb.DisableContextResponse>;
   getAccount: grpc.handleUnaryCall<librarian_porter_v1_tiphereth_pb.GetAccountRequest, librarian_porter_v1_tiphereth_pb.GetAccountResponse>;
+  detectAppInfo: grpc.handleUnaryCall<librarian_porter_v1_gebura_pb.DetectAppInfoRequest, librarian_porter_v1_gebura_pb.DetectAppInfoResponse>;
   searchAppInfo: grpc.handleUnaryCall<librarian_porter_v1_gebura_pb.SearchAppInfoRequest, librarian_porter_v1_gebura_pb.SearchAppInfoResponse>;
   getAppInfo: grpc.handleUnaryCall<librarian_porter_v1_gebura_pb.GetAppInfoRequest, librarian_porter_v1_gebura_pb.GetAppInfoResponse>;
   parseRawAppInfo: grpc.handleUnaryCall<librarian_porter_v1_gebura_pb.ParseRawAppInfoRequest, librarian_porter_v1_gebura_pb.ParseRawAppInfoResponse>;
@@ -63,6 +65,9 @@ export class LibrarianPorterServiceClient extends grpc.Client {
   getAccount(argument: librarian_porter_v1_tiphereth_pb.GetAccountRequest, callback: grpc.requestCallback<librarian_porter_v1_tiphereth_pb.GetAccountResponse>): grpc.ClientUnaryCall;
   getAccount(argument: librarian_porter_v1_tiphereth_pb.GetAccountRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_tiphereth_pb.GetAccountResponse>): grpc.ClientUnaryCall;
   getAccount(argument: librarian_porter_v1_tiphereth_pb.GetAccountRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_tiphereth_pb.GetAccountResponse>): grpc.ClientUnaryCall;
+  detectAppInfo(argument: librarian_porter_v1_gebura_pb.DetectAppInfoRequest, callback: grpc.requestCallback<librarian_porter_v1_gebura_pb.DetectAppInfoResponse>): grpc.ClientUnaryCall;
+  detectAppInfo(argument: librarian_porter_v1_gebura_pb.DetectAppInfoRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_gebura_pb.DetectAppInfoResponse>): grpc.ClientUnaryCall;
+  detectAppInfo(argument: librarian_porter_v1_gebura_pb.DetectAppInfoRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_gebura_pb.DetectAppInfoResponse>): grpc.ClientUnaryCall;
   searchAppInfo(argument: librarian_porter_v1_gebura_pb.SearchAppInfoRequest, callback: grpc.requestCallback<librarian_porter_v1_gebura_pb.SearchAppInfoResponse>): grpc.ClientUnaryCall;
   searchAppInfo(argument: librarian_porter_v1_gebura_pb.SearchAppInfoRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_gebura_pb.SearchAppInfoResponse>): grpc.ClientUnaryCall;
   searchAppInfo(argument: librarian_porter_v1_gebura_pb.SearchAppInfoRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_porter_v1_gebura_pb.SearchAppInfoResponse>): grpc.ClientUnaryCall;

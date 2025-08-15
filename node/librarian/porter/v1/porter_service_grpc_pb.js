@@ -8,6 +8,28 @@ var librarian_porter_v1_tiphereth_pb = require('../../../librarian/porter/v1/tip
 var librarian_v1_common_pb = require('../../../librarian/v1/common_pb.js');
 var librarian_v1_wellknown_pb = require('../../../librarian/v1/wellknown_pb.js');
 
+function serialize_librarian_porter_v1_DetectAppInfoRequest(arg) {
+  if (!(arg instanceof librarian_porter_v1_gebura_pb.DetectAppInfoRequest)) {
+    throw new Error('Expected argument of type librarian.porter.v1.DetectAppInfoRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_porter_v1_DetectAppInfoRequest(buffer_arg) {
+  return librarian_porter_v1_gebura_pb.DetectAppInfoRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_porter_v1_DetectAppInfoResponse(arg) {
+  if (!(arg instanceof librarian_porter_v1_gebura_pb.DetectAppInfoResponse)) {
+    throw new Error('Expected argument of type librarian.porter.v1.DetectAppInfoResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_porter_v1_DetectAppInfoResponse(buffer_arg) {
+  return librarian_porter_v1_gebura_pb.DetectAppInfoResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_porter_v1_DisableContextRequest(arg) {
   if (!(arg instanceof librarian_porter_v1_porter_service_pb.DisableContextRequest)) {
     throw new Error('Expected argument of type librarian.porter.v1.DisableContextRequest');
@@ -396,6 +418,18 @@ getAccount: {
     requestDeserialize: deserialize_librarian_porter_v1_GetAccountRequest,
     responseSerialize: serialize_librarian_porter_v1_GetAccountResponse,
     responseDeserialize: deserialize_librarian_porter_v1_GetAccountResponse,
+  },
+  // `Gebura`
+detectAppInfo: {
+    path: '/librarian.porter.v1.LibrarianPorterService/DetectAppInfo',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_porter_v1_gebura_pb.DetectAppInfoRequest,
+    responseType: librarian_porter_v1_gebura_pb.DetectAppInfoResponse,
+    requestSerialize: serialize_librarian_porter_v1_DetectAppInfoRequest,
+    requestDeserialize: deserialize_librarian_porter_v1_DetectAppInfoRequest,
+    responseSerialize: serialize_librarian_porter_v1_DetectAppInfoResponse,
+    responseDeserialize: deserialize_librarian_porter_v1_DetectAppInfoResponse,
   },
   // `Gebura`
 searchAppInfo: {

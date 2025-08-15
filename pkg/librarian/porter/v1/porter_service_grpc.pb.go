@@ -24,6 +24,7 @@ const (
 	LibrarianPorterService_EnableContext_FullMethodName        = "/librarian.porter.v1.LibrarianPorterService/EnableContext"
 	LibrarianPorterService_DisableContext_FullMethodName       = "/librarian.porter.v1.LibrarianPorterService/DisableContext"
 	LibrarianPorterService_GetAccount_FullMethodName           = "/librarian.porter.v1.LibrarianPorterService/GetAccount"
+	LibrarianPorterService_DetectAppInfo_FullMethodName        = "/librarian.porter.v1.LibrarianPorterService/DetectAppInfo"
 	LibrarianPorterService_SearchAppInfo_FullMethodName        = "/librarian.porter.v1.LibrarianPorterService/SearchAppInfo"
 	LibrarianPorterService_GetAppInfo_FullMethodName           = "/librarian.porter.v1.LibrarianPorterService/GetAppInfo"
 	LibrarianPorterService_ParseRawAppInfo_FullMethodName      = "/librarian.porter.v1.LibrarianPorterService/ParseRawAppInfo"
@@ -47,6 +48,8 @@ type LibrarianPorterServiceClient interface {
 	DisableContext(ctx context.Context, in *DisableContextRequest, opts ...grpc.CallOption) (*DisableContextResponse, error)
 	// `Tiphereth`
 	GetAccount(ctx context.Context, in *GetAccountRequest, opts ...grpc.CallOption) (*GetAccountResponse, error)
+	// `Gebura`
+	DetectAppInfo(ctx context.Context, in *DetectAppInfoRequest, opts ...grpc.CallOption) (*DetectAppInfoResponse, error)
 	// `Gebura`
 	SearchAppInfo(ctx context.Context, in *SearchAppInfoRequest, opts ...grpc.CallOption) (*SearchAppInfoResponse, error)
 	// `Gebura` Get app info from source.
@@ -123,6 +126,16 @@ func (c *librarianPorterServiceClient) GetAccount(ctx context.Context, in *GetAc
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetAccountResponse)
 	err := c.cc.Invoke(ctx, LibrarianPorterService_GetAccount_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *librarianPorterServiceClient) DetectAppInfo(ctx context.Context, in *DetectAppInfoRequest, opts ...grpc.CallOption) (*DetectAppInfoResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DetectAppInfoResponse)
+	err := c.cc.Invoke(ctx, LibrarianPorterService_DetectAppInfo_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -241,6 +254,8 @@ type LibrarianPorterServiceServer interface {
 	// `Tiphereth`
 	GetAccount(context.Context, *GetAccountRequest) (*GetAccountResponse, error)
 	// `Gebura`
+	DetectAppInfo(context.Context, *DetectAppInfoRequest) (*DetectAppInfoResponse, error)
+	// `Gebura`
 	SearchAppInfo(context.Context, *SearchAppInfoRequest) (*SearchAppInfoResponse, error)
 	// `Gebura` Get app info from source.
 	GetAppInfo(context.Context, *GetAppInfoRequest) (*GetAppInfoResponse, error)
@@ -286,6 +301,9 @@ func (UnimplementedLibrarianPorterServiceServer) DisableContext(context.Context,
 }
 func (UnimplementedLibrarianPorterServiceServer) GetAccount(context.Context, *GetAccountRequest) (*GetAccountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAccount not implemented")
+}
+func (UnimplementedLibrarianPorterServiceServer) DetectAppInfo(context.Context, *DetectAppInfoRequest) (*DetectAppInfoResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DetectAppInfo not implemented")
 }
 func (UnimplementedLibrarianPorterServiceServer) SearchAppInfo(context.Context, *SearchAppInfoRequest) (*SearchAppInfoResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SearchAppInfo not implemented")
@@ -425,6 +443,24 @@ func _LibrarianPorterService_GetAccount_Handler(srv interface{}, ctx context.Con
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LibrarianPorterServiceServer).GetAccount(ctx, req.(*GetAccountRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianPorterService_DetectAppInfo_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DetectAppInfoRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianPorterServiceServer).DetectAppInfo(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianPorterService_DetectAppInfo_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianPorterServiceServer).DetectAppInfo(ctx, req.(*DetectAppInfoRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -635,6 +671,10 @@ var LibrarianPorterService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetAccount",
 			Handler:    _LibrarianPorterService_GetAccount_Handler,
+		},
+		{
+			MethodName: "DetectAppInfo",
+			Handler:    _LibrarianPorterService_DetectAppInfo_Handler,
 		},
 		{
 			MethodName: "SearchAppInfo",

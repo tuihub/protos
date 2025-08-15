@@ -21,13 +21,9 @@ export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 class GetAccountRequest extends $pb.GeneratedMessage {
   factory GetAccountRequest({
     $0.FeatureRequest? config,
-    $core.String? platform,
-    $core.String? platformAccountId,
   }) {
     final result = create();
     if (config != null) result.config = config;
-    if (platform != null) result.platform = platform;
-    if (platformAccountId != null) result.platformAccountId = platformAccountId;
     return result;
   }
 
@@ -47,8 +43,6 @@ class GetAccountRequest extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOM<$0.FeatureRequest>(1, _omitFieldNames ? '' : 'config',
         subBuilder: $0.FeatureRequest.create)
-    ..aOS(2, _omitFieldNames ? '' : 'platform')
-    ..aOS(3, _omitFieldNames ? '' : 'platformAccountId')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -82,25 +76,6 @@ class GetAccountRequest extends $pb.GeneratedMessage {
   void clearConfig() => $_clearField(1);
   @$pb.TagNumber(1)
   $0.FeatureRequest ensureConfig() => $_ensure(0);
-
-  /// WellKnownAccountPlatform
-  @$pb.TagNumber(2)
-  $core.String get platform => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set platform($core.String value) => $_setString(1, value);
-  @$pb.TagNumber(2)
-  $core.bool hasPlatform() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearPlatform() => $_clearField(2);
-
-  @$pb.TagNumber(3)
-  $core.String get platformAccountId => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set platformAccountId($core.String value) => $_setString(2, value);
-  @$pb.TagNumber(3)
-  $core.bool hasPlatformAccountId() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearPlatformAccountId() => $_clearField(3);
 }
 
 class GetAccountResponse extends $pb.GeneratedMessage {

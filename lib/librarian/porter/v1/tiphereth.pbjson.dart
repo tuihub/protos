@@ -26,22 +26,13 @@ const GetAccountRequest$json = {
       '6': '.librarian.v1.FeatureRequest',
       '10': 'config'
     },
-    {'1': 'platform', '3': 2, '4': 1, '5': 9, '10': 'platform'},
-    {
-      '1': 'platform_account_id',
-      '3': 3,
-      '4': 1,
-      '5': 9,
-      '10': 'platformAccountId'
-    },
   ],
 };
 
 /// Descriptor for `GetAccountRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getAccountRequestDescriptor = $convert.base64Decode(
     'ChFHZXRBY2NvdW50UmVxdWVzdBI0CgZjb25maWcYASABKAsyHC5saWJyYXJpYW4udjEuRmVhdH'
-    'VyZVJlcXVlc3RSBmNvbmZpZxIaCghwbGF0Zm9ybRgCIAEoCVIIcGxhdGZvcm0SLgoTcGxhdGZv'
-    'cm1fYWNjb3VudF9pZBgDIAEoCVIRcGxhdGZvcm1BY2NvdW50SWQ=');
+    'VyZVJlcXVlc3RSBmNvbmZpZw==');
 
 @$core.Deprecated('Use getAccountResponseDescriptor instead')
 const GetAccountResponse$json = {

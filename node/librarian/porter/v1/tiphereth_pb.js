@@ -121,9 +121,7 @@ proto.librarian.porter.v1.GetAccountRequest.prototype.toObject = function(opt_in
  */
 proto.librarian.porter.v1.GetAccountRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-config: (f = msg.getConfig()) && librarian_v1_wellknown_pb.FeatureRequest.toObject(includeInstance, f),
-platform: jspb.Message.getFieldWithDefault(msg, 2, ""),
-platformAccountId: jspb.Message.getFieldWithDefault(msg, 3, "")
+config: (f = msg.getConfig()) && librarian_v1_wellknown_pb.FeatureRequest.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -165,14 +163,6 @@ proto.librarian.porter.v1.GetAccountRequest.deserializeBinaryFromReader = functi
       reader.readMessage(value,librarian_v1_wellknown_pb.FeatureRequest.deserializeBinaryFromReader);
       msg.setConfig(value);
       break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPlatform(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPlatformAccountId(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -208,20 +198,6 @@ proto.librarian.porter.v1.GetAccountRequest.serializeBinaryToWriter = function(m
       1,
       f,
       librarian_v1_wellknown_pb.FeatureRequest.serializeBinaryToWriter
-    );
-  }
-  f = message.getPlatform();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-  f = message.getPlatformAccountId();
-  if (f.length > 0) {
-    writer.writeString(
-      3,
-      f
     );
   }
 };
@@ -261,42 +237,6 @@ proto.librarian.porter.v1.GetAccountRequest.prototype.clearConfig = function() {
  */
 proto.librarian.porter.v1.GetAccountRequest.prototype.hasConfig = function() {
   return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional string platform = 2;
- * @return {string}
- */
-proto.librarian.porter.v1.GetAccountRequest.prototype.getPlatform = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.librarian.porter.v1.GetAccountRequest} returns this
- */
-proto.librarian.porter.v1.GetAccountRequest.prototype.setPlatform = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
-};
-
-
-/**
- * optional string platform_account_id = 3;
- * @return {string}
- */
-proto.librarian.porter.v1.GetAccountRequest.prototype.getPlatformAccountId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.librarian.porter.v1.GetAccountRequest} returns this
- */
-proto.librarian.porter.v1.GetAccountRequest.prototype.setPlatformAccountId = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 

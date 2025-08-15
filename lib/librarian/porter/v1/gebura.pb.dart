@@ -21,14 +21,146 @@ export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
 export 'gebura.pbenum.dart';
 
+class DetectAppInfoRequest extends $pb.GeneratedMessage {
+  factory DetectAppInfoRequest({
+    $core.Iterable<$core.MapEntry<$core.String, $core.String>>? data,
+    $0.InternalID? contextId,
+  }) {
+    final result = create();
+    if (data != null) result.data.addEntries(data);
+    if (contextId != null) result.contextId = contextId;
+    return result;
+  }
+
+  DetectAppInfoRequest._();
+
+  factory DetectAppInfoRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DetectAppInfoRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DetectAppInfoRequest',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'),
+      createEmptyInstance: create)
+    ..m<$core.String, $core.String>(1, _omitFieldNames ? '' : 'data',
+        entryClassName: 'DetectAppInfoRequest.DataEntry',
+        keyFieldType: $pb.PbFieldType.OS,
+        valueFieldType: $pb.PbFieldType.OS,
+        packageName: const $pb.PackageName('librarian.porter.v1'))
+    ..aOM<$0.InternalID>(2, _omitFieldNames ? '' : 'contextId',
+        subBuilder: $0.InternalID.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DetectAppInfoRequest clone() =>
+      DetectAppInfoRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DetectAppInfoRequest copyWith(void Function(DetectAppInfoRequest) updates) =>
+      super.copyWith((message) => updates(message as DetectAppInfoRequest))
+          as DetectAppInfoRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DetectAppInfoRequest create() => DetectAppInfoRequest._();
+  @$core.override
+  DetectAppInfoRequest createEmptyInstance() => create();
+  static $pb.PbList<DetectAppInfoRequest> createRepeated() =>
+      $pb.PbList<DetectAppInfoRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DetectAppInfoRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DetectAppInfoRequest>(create);
+  static DetectAppInfoRequest? _defaultInstance;
+
+  /// WellKnownDetectData
+  @$pb.TagNumber(1)
+  $pb.PbMap<$core.String, $core.String> get data => $_getMap(0);
+
+  @$pb.TagNumber(2)
+  $0.InternalID get contextId => $_getN(1);
+  @$pb.TagNumber(2)
+  set contextId($0.InternalID value) => $_setField(2, value);
+  @$pb.TagNumber(2)
+  $core.bool hasContextId() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearContextId() => $_clearField(2);
+  @$pb.TagNumber(2)
+  $0.InternalID ensureContextId() => $_ensure(1);
+}
+
+class DetectAppInfoResponse extends $pb.GeneratedMessage {
+  factory DetectAppInfoResponse({
+    AppInfo? appInfo,
+  }) {
+    final result = create();
+    if (appInfo != null) result.appInfo = appInfo;
+    return result;
+  }
+
+  DetectAppInfoResponse._();
+
+  factory DetectAppInfoResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DetectAppInfoResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DetectAppInfoResponse',
+      package:
+          const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'),
+      createEmptyInstance: create)
+    ..aOM<AppInfo>(1, _omitFieldNames ? '' : 'appInfo',
+        subBuilder: AppInfo.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DetectAppInfoResponse clone() =>
+      DetectAppInfoResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DetectAppInfoResponse copyWith(
+          void Function(DetectAppInfoResponse) updates) =>
+      super.copyWith((message) => updates(message as DetectAppInfoResponse))
+          as DetectAppInfoResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DetectAppInfoResponse create() => DetectAppInfoResponse._();
+  @$core.override
+  DetectAppInfoResponse createEmptyInstance() => create();
+  static $pb.PbList<DetectAppInfoResponse> createRepeated() =>
+      $pb.PbList<DetectAppInfoResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DetectAppInfoResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DetectAppInfoResponse>(create);
+  static DetectAppInfoResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  AppInfo get appInfo => $_getN(0);
+  @$pb.TagNumber(1)
+  set appInfo(AppInfo value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasAppInfo() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearAppInfo() => $_clearField(1);
+  @$pb.TagNumber(1)
+  AppInfo ensureAppInfo() => $_ensure(0);
+}
+
 class SearchAppInfoRequest extends $pb.GeneratedMessage {
   factory SearchAppInfoRequest({
     $0.FeatureRequest? config,
-    $core.String? nameLike,
   }) {
     final result = create();
     if (config != null) result.config = config;
-    if (nameLike != null) result.nameLike = nameLike;
     return result;
   }
 
@@ -48,7 +180,6 @@ class SearchAppInfoRequest extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOM<$0.FeatureRequest>(1, _omitFieldNames ? '' : 'config',
         subBuilder: $0.FeatureRequest.create)
-    ..aOS(2, _omitFieldNames ? '' : 'nameLike')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -83,15 +214,6 @@ class SearchAppInfoRequest extends $pb.GeneratedMessage {
   void clearConfig() => $_clearField(1);
   @$pb.TagNumber(1)
   $0.FeatureRequest ensureConfig() => $_ensure(0);
-
-  @$pb.TagNumber(2)
-  $core.String get nameLike => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set nameLike($core.String value) => $_setString(1, value);
-  @$pb.TagNumber(2)
-  $core.bool hasNameLike() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearNameLike() => $_clearField(2);
 }
 
 class SearchAppInfoResponse extends $pb.GeneratedMessage {
@@ -151,13 +273,9 @@ class SearchAppInfoResponse extends $pb.GeneratedMessage {
 class GetAppInfoRequest extends $pb.GeneratedMessage {
   factory GetAppInfoRequest({
     $0.FeatureRequest? config,
-    $core.String? source,
-    $core.String? sourceAppId,
   }) {
     final result = create();
     if (config != null) result.config = config;
-    if (source != null) result.source = source;
-    if (sourceAppId != null) result.sourceAppId = sourceAppId;
     return result;
   }
 
@@ -177,8 +295,6 @@ class GetAppInfoRequest extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOM<$0.FeatureRequest>(1, _omitFieldNames ? '' : 'config',
         subBuilder: $0.FeatureRequest.create)
-    ..aOS(2, _omitFieldNames ? '' : 'source')
-    ..aOS(3, _omitFieldNames ? '' : 'sourceAppId')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -212,25 +328,6 @@ class GetAppInfoRequest extends $pb.GeneratedMessage {
   void clearConfig() => $_clearField(1);
   @$pb.TagNumber(1)
   $0.FeatureRequest ensureConfig() => $_ensure(0);
-
-  /// WellKnownAppInfoSource
-  @$pb.TagNumber(2)
-  $core.String get source => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set source($core.String value) => $_setString(1, value);
-  @$pb.TagNumber(2)
-  $core.bool hasSource() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearSource() => $_clearField(2);
-
-  @$pb.TagNumber(3)
-  $core.String get sourceAppId => $_getSZ(2);
-  @$pb.TagNumber(3)
-  set sourceAppId($core.String value) => $_setString(2, value);
-  @$pb.TagNumber(3)
-  $core.bool hasSourceAppId() => $_has(2);
-  @$pb.TagNumber(3)
-  void clearSourceAppId() => $_clearField(3);
 }
 
 class GetAppInfoResponse extends $pb.GeneratedMessage {
@@ -295,13 +392,9 @@ class GetAppInfoResponse extends $pb.GeneratedMessage {
 
 class ParseRawAppInfoRequest extends $pb.GeneratedMessage {
   factory ParseRawAppInfoRequest({
-    $core.String? source,
-    $core.String? sourceAppId,
     $core.String? rawDataJson,
   }) {
     final result = create();
-    if (source != null) result.source = source;
-    if (sourceAppId != null) result.sourceAppId = sourceAppId;
     if (rawDataJson != null) result.rawDataJson = rawDataJson;
     return result;
   }
@@ -320,8 +413,6 @@ class ParseRawAppInfoRequest extends $pb.GeneratedMessage {
       package:
           const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'),
       createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'source')
-    ..aOS(2, _omitFieldNames ? '' : 'sourceAppId')
     ..aOS(3, _omitFieldNames ? '' : 'rawDataJson')
     ..hasRequiredFields = false;
 
@@ -348,31 +439,12 @@ class ParseRawAppInfoRequest extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<ParseRawAppInfoRequest>(create);
   static ParseRawAppInfoRequest? _defaultInstance;
 
-  /// WellKnownAppInfoSource
-  @$pb.TagNumber(1)
-  $core.String get source => $_getSZ(0);
-  @$pb.TagNumber(1)
-  set source($core.String value) => $_setString(0, value);
-  @$pb.TagNumber(1)
-  $core.bool hasSource() => $_has(0);
-  @$pb.TagNumber(1)
-  void clearSource() => $_clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.String get sourceAppId => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set sourceAppId($core.String value) => $_setString(1, value);
-  @$pb.TagNumber(2)
-  $core.bool hasSourceAppId() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearSourceAppId() => $_clearField(2);
-
   @$pb.TagNumber(3)
-  $core.String get rawDataJson => $_getSZ(2);
+  $core.String get rawDataJson => $_getSZ(0);
   @$pb.TagNumber(3)
-  set rawDataJson($core.String value) => $_setString(2, value);
+  set rawDataJson($core.String value) => $_setString(0, value);
   @$pb.TagNumber(3)
-  $core.bool hasRawDataJson() => $_has(2);
+  $core.bool hasRawDataJson() => $_has(0);
   @$pb.TagNumber(3)
   void clearRawDataJson() => $_clearField(3);
 }

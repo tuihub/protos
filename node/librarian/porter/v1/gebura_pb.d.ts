@@ -4,14 +4,58 @@
 import * as jspb from "google-protobuf";
 import * as librarian_v1_wellknown_pb from "../../../librarian/v1/wellknown_pb";
 
+export class DetectAppInfoRequest extends jspb.Message {
+  getDataMap(): jspb.Map<string, string>;
+  clearDataMap(): void;
+  hasContextId(): boolean;
+  clearContextId(): void;
+  getContextId(): librarian_v1_wellknown_pb.InternalID | undefined;
+  setContextId(value?: librarian_v1_wellknown_pb.InternalID): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DetectAppInfoRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DetectAppInfoRequest): DetectAppInfoRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DetectAppInfoRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DetectAppInfoRequest;
+  static deserializeBinaryFromReader(message: DetectAppInfoRequest, reader: jspb.BinaryReader): DetectAppInfoRequest;
+}
+
+export namespace DetectAppInfoRequest {
+  export type AsObject = {
+    dataMap: Array<[string, string]>,
+    contextId?: librarian_v1_wellknown_pb.InternalID.AsObject,
+  }
+}
+
+export class DetectAppInfoResponse extends jspb.Message {
+  hasAppInfo(): boolean;
+  clearAppInfo(): void;
+  getAppInfo(): AppInfo | undefined;
+  setAppInfo(value?: AppInfo): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DetectAppInfoResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DetectAppInfoResponse): DetectAppInfoResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DetectAppInfoResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DetectAppInfoResponse;
+  static deserializeBinaryFromReader(message: DetectAppInfoResponse, reader: jspb.BinaryReader): DetectAppInfoResponse;
+}
+
+export namespace DetectAppInfoResponse {
+  export type AsObject = {
+    appInfo?: AppInfo.AsObject,
+  }
+}
+
 export class SearchAppInfoRequest extends jspb.Message {
   hasConfig(): boolean;
   clearConfig(): void;
   getConfig(): librarian_v1_wellknown_pb.FeatureRequest | undefined;
   setConfig(value?: librarian_v1_wellknown_pb.FeatureRequest): void;
-
-  getNameLike(): string;
-  setNameLike(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SearchAppInfoRequest.AsObject;
@@ -26,7 +70,6 @@ export class SearchAppInfoRequest extends jspb.Message {
 export namespace SearchAppInfoRequest {
   export type AsObject = {
     config?: librarian_v1_wellknown_pb.FeatureRequest.AsObject,
-    nameLike: string,
   }
 }
 
@@ -58,12 +101,6 @@ export class GetAppInfoRequest extends jspb.Message {
   getConfig(): librarian_v1_wellknown_pb.FeatureRequest | undefined;
   setConfig(value?: librarian_v1_wellknown_pb.FeatureRequest): void;
 
-  getSource(): string;
-  setSource(value: string): void;
-
-  getSourceAppId(): string;
-  setSourceAppId(value: string): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetAppInfoRequest.AsObject;
   static toObject(includeInstance: boolean, msg: GetAppInfoRequest): GetAppInfoRequest.AsObject;
@@ -77,8 +114,6 @@ export class GetAppInfoRequest extends jspb.Message {
 export namespace GetAppInfoRequest {
   export type AsObject = {
     config?: librarian_v1_wellknown_pb.FeatureRequest.AsObject,
-    source: string,
-    sourceAppId: string,
   }
 }
 
@@ -105,12 +140,6 @@ export namespace GetAppInfoResponse {
 }
 
 export class ParseRawAppInfoRequest extends jspb.Message {
-  getSource(): string;
-  setSource(value: string): void;
-
-  getSourceAppId(): string;
-  setSourceAppId(value: string): void;
-
   getRawDataJson(): string;
   setRawDataJson(value: string): void;
 
@@ -126,8 +155,6 @@ export class ParseRawAppInfoRequest extends jspb.Message {
 
 export namespace ParseRawAppInfoRequest {
   export type AsObject = {
-    source: string,
-    sourceAppId: string,
     rawDataJson: string,
   }
 }
@@ -271,6 +298,15 @@ export namespace AppInfoDetails {
     imageUrlsList: Array<string>,
   }
 }
+
+export interface WellKnownDetectDataMap {
+  WELL_KNOWN_DETECT_DATA_UNSPECIFIED: 0;
+  WELL_KNOWN_DETECT_DATA_NAME: 1;
+  WELL_KNOWN_DETECT_DATA_DEVELOPER: 2;
+  WELL_KNOWN_DETECT_DATA_PUBLISHER: 3;
+}
+
+export const WellKnownDetectData: WellKnownDetectDataMap;
 
 export interface AppTypeMap {
   APP_TYPE_UNSPECIFIED: 0;
