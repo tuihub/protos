@@ -22,6 +22,8 @@ service LibrarianPorterService {
   rpc GetAccount(GetAccountRequest) returns (GetAccountResponse);
 
   // `Gebura`
+  rpc DetectAppInfo(DetectAppInfoRequest) returns (DetectAppInfoResponse);
+  // `Gebura`
   rpc SearchAppInfo(SearchAppInfoRequest) returns (SearchAppInfoResponse);
   // `Gebura` Get app info from source.
   rpc GetAppInfo(GetAppInfoRequest) returns (GetAppInfoResponse);

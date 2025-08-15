@@ -7,9 +7,25 @@ import "librarian/v1/wellknown.proto";
 option csharp_namespace = "TuiHub.Protos.Librarian.Porter.V1";
 option go_package = "github.com/tuihub/protos/pkg/librarian/porter/v1;v1";
 
+message DetectAppInfoRequest {
+  // WellKnownDetectData
+  map<string, string> data = 1;
+  optional librarian.v1.InternalID context_id = 2;
+}
+
+message DetectAppInfoResponse {
+  AppInfo app_info = 1;
+}
+
+enum WellKnownDetectData {
+  WELL_KNOWN_DETECT_DATA_UNSPECIFIED = 0 [(librarian.v1.to_string) = ""];
+  WELL_KNOWN_DETECT_DATA_NAME = 1 [(librarian.v1.to_string) = "name"];
+  WELL_KNOWN_DETECT_DATA_DEVELOPER = 2 [(librarian.v1.to_string) = "developer"];
+  WELL_KNOWN_DETECT_DATA_PUBLISHER = 3 [(librarian.v1.to_string) = "publisher"];
+}
+
 message SearchAppInfoRequest {
   librarian.v1.FeatureRequest config = 1;
-  string name_like = 2;
 }
 
 message SearchAppInfoResponse {
@@ -18,18 +34,12 @@ message SearchAppInfoResponse {
 
 message GetAppInfoRequest {
   librarian.v1.FeatureRequest config = 1;
-  // WellKnownAppInfoSource
-  string source = 2;
-  string source_app_id = 3;
 }
 message GetAppInfoResponse {
   AppInfo app_info = 1;
 }
 
 message ParseRawAppInfoRequest {
-  // WellKnownAppInfoSource
-  string source = 1;
-  string source_app_id = 2;
   string raw_data_json = 3;
 }
 

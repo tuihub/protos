@@ -9,9 +9,6 @@ option go_package = "github.com/tuihub/protos/pkg/librarian/porter/v1;v1";
 
 message GetAccountRequest {
   librarian.v1.FeatureRequest config = 1;
-  // WellKnownAccountPlatform
-  string platform = 2;
-  string platform_account_id = 3;
 }
 message GetAccountResponse {
   Account account = 1;
