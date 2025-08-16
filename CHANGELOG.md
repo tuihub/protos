@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.8](https://github.com/tuihub/protos/compare/v0.5.7...v0.5.8) (2025-08-16)
+
+
+### Features
+
+* add DetectAppInfo (trigger build) ([b1f9b83](https://github.com/tuihub/protos/commit/b1f9b83ae34a8ad5ec1898253720645c7090d11a))
+
 ## [0.5.7](https://github.com/tuihub/protos/compare/v0.5.6...v0.5.7) (2025-07-18)
 
 
