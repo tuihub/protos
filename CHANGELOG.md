@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.9](https://github.com/tuihub/protos/compare/v0.5.8...v0.5.9) (2025-08-16)
+
+
+### Features
+
+* **tiphereth:** add PORTER_CONNECTION_STATUS_QUEUEING ([e56978d](https://github.com/tuihub/protos/commit/e56978d8d9b142d6d9cb2c3e6a89fa912f6acf2f))
+
 ## [0.5.8](https://github.com/tuihub/protos/compare/v0.5.7...v0.5.8) (2025-08-16)
 
 
