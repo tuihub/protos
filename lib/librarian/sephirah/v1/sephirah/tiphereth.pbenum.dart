@@ -97,34 +97,40 @@ class PorterConnectionStatus extends $pb.ProtobufEnum {
       PorterConnectionStatus._(
           0, _omitEnumNames ? '' : 'PORTER_CONNECTION_STATUS_UNSPECIFIED');
 
+  /// Waiting for activation
+  static const PorterConnectionStatus PORTER_CONNECTION_STATUS_QUEUEING =
+      PorterConnectionStatus._(
+          1, _omitEnumNames ? '' : 'PORTER_CONNECTION_STATUS_QUEUEING');
+
   /// Available and not active
   static const PorterConnectionStatus PORTER_CONNECTION_STATUS_CONNECTED =
       PorterConnectionStatus._(
-          1, _omitEnumNames ? '' : 'PORTER_CONNECTION_STATUS_CONNECTED');
+          2, _omitEnumNames ? '' : 'PORTER_CONNECTION_STATUS_CONNECTED');
 
   /// Not available
   static const PorterConnectionStatus PORTER_CONNECTION_STATUS_DISCONNECTED =
       PorterConnectionStatus._(
-          2, _omitEnumNames ? '' : 'PORTER_CONNECTION_STATUS_DISCONNECTED');
+          3, _omitEnumNames ? '' : 'PORTER_CONNECTION_STATUS_DISCONNECTED');
 
   /// Available and active
   static const PorterConnectionStatus PORTER_CONNECTION_STATUS_ACTIVE =
       PorterConnectionStatus._(
-          3, _omitEnumNames ? '' : 'PORTER_CONNECTION_STATUS_ACTIVE');
+          4, _omitEnumNames ? '' : 'PORTER_CONNECTION_STATUS_ACTIVE');
 
   /// Available but failed to activate
   static const PorterConnectionStatus
-      PORTER_CONNECTION_STATUS_ACTIVATION_FAILED = PorterConnectionStatus._(4,
+      PORTER_CONNECTION_STATUS_ACTIVATION_FAILED = PorterConnectionStatus._(5,
           _omitEnumNames ? '' : 'PORTER_CONNECTION_STATUS_ACTIVATION_FAILED');
 
   /// Active but downgraded
   static const PorterConnectionStatus PORTER_CONNECTION_STATUS_DOWNGRADED =
       PorterConnectionStatus._(
-          5, _omitEnumNames ? '' : 'PORTER_CONNECTION_STATUS_DOWNGRADED');
+          6, _omitEnumNames ? '' : 'PORTER_CONNECTION_STATUS_DOWNGRADED');
 
   static const $core.List<PorterConnectionStatus> values =
       <PorterConnectionStatus>[
     PORTER_CONNECTION_STATUS_UNSPECIFIED,
+    PORTER_CONNECTION_STATUS_QUEUEING,
     PORTER_CONNECTION_STATUS_CONNECTED,
     PORTER_CONNECTION_STATUS_DISCONNECTED,
     PORTER_CONNECTION_STATUS_ACTIVE,
@@ -133,7 +139,7 @@ class PorterConnectionStatus extends $pb.ProtobufEnum {
   ];
 
   static final $core.List<PorterConnectionStatus?> _byValue =
-      $pb.ProtobufEnum.$_initByValueList(values, 5);
+      $pb.ProtobufEnum.$_initByValueList(values, 6);
   static PorterConnectionStatus? valueOf($core.int value) =>
       value < 0 || value >= _byValue.length ? null : _byValue[value];
 

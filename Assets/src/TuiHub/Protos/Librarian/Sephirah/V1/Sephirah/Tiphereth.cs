@@ -161,24 +161,25 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
             "VU5TUEVDSUZJRUQQABITCg9VU0VSX1RZUEVfQURNSU4QARIUChBVU0VSX1RZ",
             "UEVfTk9STUFMEAIqWgoKVXNlclN0YXR1cxIbChdVU0VSX1NUQVRVU19VTlNQ",
             "RUNJRklFRBAAEhYKElVTRVJfU1RBVFVTX0FDVElWRRABEhcKE1VTRVJfU1RB",
-            "VFVTX0JMT0NLRUQQAiqTAgoWUG9ydGVyQ29ubmVjdGlvblN0YXR1cxIoCiRQ",
-            "T1JURVJfQ09OTkVDVElPTl9TVEFUVVNfVU5TUEVDSUZJRUQQABImCiJQT1JU",
-            "RVJfQ09OTkVDVElPTl9TVEFUVVNfQ09OTkVDVEVEEAESKQolUE9SVEVSX0NP",
-            "Tk5FQ1RJT05fU1RBVFVTX0RJU0NPTk5FQ1RFRBACEiMKH1BPUlRFUl9DT05O",
-            "RUNUSU9OX1NUQVRVU19BQ1RJVkUQAxIuCipQT1JURVJfQ09OTkVDVElPTl9T",
-            "VEFUVVNfQUNUSVZBVElPTl9GQUlMRUQQBBInCiNQT1JURVJfQ09OTkVDVElP",
-            "Tl9TVEFUVVNfRE9XTkdSQURFRBAFKoIBChNQb3J0ZXJDb250ZXh0U3RhdHVz",
-            "EiUKIVBPUlRFUl9DT05URVhUX1NUQVRVU19VTlNQRUNJRklFRBAAEiAKHFBP",
-            "UlRFUl9DT05URVhUX1NUQVRVU19BQ1RJVkUQARIiCh5QT1JURVJfQ09OVEVY",
-            "VF9TVEFUVVNfRElTQUJMRUQQAir0AQoZUG9ydGVyQ29udGV4dEhhbmRsZVN0",
-            "YXR1cxIsCihQT1JURVJfQ09OVEVYVF9IQU5ETEVfU1RBVFVTX1VOU1BFQ0lG",
-            "SUVEEAASJwojUE9SVEVSX0NPTlRFWFRfSEFORExFX1NUQVRVU19BQ1RJVkUQ",
-            "ARIrCidQT1JURVJfQ09OVEVYVF9IQU5ETEVfU1RBVFVTX0RPV05HUkFERUQQ",
-            "AhIpCiVQT1JURVJfQ09OVEVYVF9IQU5ETEVfU1RBVFVTX1FVRVVFSU5HEAMS",
-            "KAokUE9SVEVSX0NPTlRFWFRfSEFORExFX1NUQVRVU19CTE9DS0VEEARCZlo1",
-            "Z2l0aHViLmNvbS90dWlodWIvcHJvdG9zL3BrZy9saWJyYXJpYW4vc2VwaGly",
-            "YWgvdjE7djGqAixUdWlIdWIuUHJvdG9zLkxpYnJhcmlhbi5TZXBoaXJhaC5W",
-            "MS5TZXBoaXJhaGIGcHJvdG8z"));
+            "VFVTX0JMT0NLRUQQAiq6AgoWUG9ydGVyQ29ubmVjdGlvblN0YXR1cxIoCiRQ",
+            "T1JURVJfQ09OTkVDVElPTl9TVEFUVVNfVU5TUEVDSUZJRUQQABIlCiFQT1JU",
+            "RVJfQ09OTkVDVElPTl9TVEFUVVNfUVVFVUVJTkcQARImCiJQT1JURVJfQ09O",
+            "TkVDVElPTl9TVEFUVVNfQ09OTkVDVEVEEAISKQolUE9SVEVSX0NPTk5FQ1RJ",
+            "T05fU1RBVFVTX0RJU0NPTk5FQ1RFRBADEiMKH1BPUlRFUl9DT05ORUNUSU9O",
+            "X1NUQVRVU19BQ1RJVkUQBBIuCipQT1JURVJfQ09OTkVDVElPTl9TVEFUVVNf",
+            "QUNUSVZBVElPTl9GQUlMRUQQBRInCiNQT1JURVJfQ09OTkVDVElPTl9TVEFU",
+            "VVNfRE9XTkdSQURFRBAGKoIBChNQb3J0ZXJDb250ZXh0U3RhdHVzEiUKIVBP",
+            "UlRFUl9DT05URVhUX1NUQVRVU19VTlNQRUNJRklFRBAAEiAKHFBPUlRFUl9D",
+            "T05URVhUX1NUQVRVU19BQ1RJVkUQARIiCh5QT1JURVJfQ09OVEVYVF9TVEFU",
+            "VVNfRElTQUJMRUQQAir0AQoZUG9ydGVyQ29udGV4dEhhbmRsZVN0YXR1cxIs",
+            "CihQT1JURVJfQ09OVEVYVF9IQU5ETEVfU1RBVFVTX1VOU1BFQ0lGSUVEEAAS",
+            "JwojUE9SVEVSX0NPTlRFWFRfSEFORExFX1NUQVRVU19BQ1RJVkUQARIrCidQ",
+            "T1JURVJfQ09OVEVYVF9IQU5ETEVfU1RBVFVTX0RPV05HUkFERUQQAhIpCiVQ",
+            "T1JURVJfQ09OVEVYVF9IQU5ETEVfU1RBVFVTX1FVRVVFSU5HEAMSKAokUE9S",
+            "VEVSX0NPTlRFWFRfSEFORExFX1NUQVRVU19CTE9DS0VEEARCZlo1Z2l0aHVi",
+            "LmNvbS90dWlodWIvcHJvdG9zL3BrZy9saWJyYXJpYW4vc2VwaGlyYWgvdjE7",
+            "djGqAixUdWlIdWIuUHJvdG9zLkxpYnJhcmlhbi5TZXBoaXJhaC5WMS5TZXBo",
+            "aXJhaGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.CommonReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.WellknownReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.SystemType), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UserType), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.UserStatus), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.PorterConnectionStatus), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.PorterContextStatus), typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.Sephirah.PorterContextHandleStatus), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -252,25 +253,29 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1.Sephirah {
   public enum PorterConnectionStatus {
     [pbr::OriginalName("PORTER_CONNECTION_STATUS_UNSPECIFIED")] Unspecified = 0,
     /// <summary>
+    /// Waiting for activation
+    /// </summary>
+    [pbr::OriginalName("PORTER_CONNECTION_STATUS_QUEUEING")] Queueing = 1,
+    /// <summary>
     /// Available and not active
     /// </summary>
-    [pbr::OriginalName("PORTER_CONNECTION_STATUS_CONNECTED")] Connected = 1,
+    [pbr::OriginalName("PORTER_CONNECTION_STATUS_CONNECTED")] Connected = 2,
     /// <summary>
     /// Not available
     /// </summary>
-    [pbr::OriginalName("PORTER_CONNECTION_STATUS_DISCONNECTED")] Disconnected = 2,
+    [pbr::OriginalName("PORTER_CONNECTION_STATUS_DISCONNECTED")] Disconnected = 3,
     /// <summary>
     /// Available and active
     /// </summary>
-    [pbr::OriginalName("PORTER_CONNECTION_STATUS_ACTIVE")] Active = 3,
+    [pbr::OriginalName("PORTER_CONNECTION_STATUS_ACTIVE")] Active = 4,
     /// <summary>
     /// Available but failed to activate
     /// </summary>
-    [pbr::OriginalName("PORTER_CONNECTION_STATUS_ACTIVATION_FAILED")] ActivationFailed = 4,
+    [pbr::OriginalName("PORTER_CONNECTION_STATUS_ACTIVATION_FAILED")] ActivationFailed = 5,
     /// <summary>
     /// Active but downgraded
     /// </summary>
-    [pbr::OriginalName("PORTER_CONNECTION_STATUS_DOWNGRADED")] Downgraded = 5,
+    [pbr::OriginalName("PORTER_CONNECTION_STATUS_DOWNGRADED")] Downgraded = 6,
   }
 
   public enum PorterContextStatus {

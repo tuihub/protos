@@ -15202,6 +15202,7 @@ impl serde::Serialize for PorterConnectionStatus {
     {
         let variant = match self {
             Self::Unspecified => "PORTER_CONNECTION_STATUS_UNSPECIFIED",
+            Self::Queueing => "PORTER_CONNECTION_STATUS_QUEUEING",
             Self::Connected => "PORTER_CONNECTION_STATUS_CONNECTED",
             Self::Disconnected => "PORTER_CONNECTION_STATUS_DISCONNECTED",
             Self::Active => "PORTER_CONNECTION_STATUS_ACTIVE",
@@ -15219,6 +15220,7 @@ impl<'de> serde::Deserialize<'de> for PorterConnectionStatus {
     {
         const FIELDS: &[&str] = &[
             "PORTER_CONNECTION_STATUS_UNSPECIFIED",
+            "PORTER_CONNECTION_STATUS_QUEUEING",
             "PORTER_CONNECTION_STATUS_CONNECTED",
             "PORTER_CONNECTION_STATUS_DISCONNECTED",
             "PORTER_CONNECTION_STATUS_ACTIVE",
@@ -15265,6 +15267,7 @@ impl<'de> serde::Deserialize<'de> for PorterConnectionStatus {
             {
                 match value {
                     "PORTER_CONNECTION_STATUS_UNSPECIFIED" => Ok(PorterConnectionStatus::Unspecified),
+                    "PORTER_CONNECTION_STATUS_QUEUEING" => Ok(PorterConnectionStatus::Queueing),
                     "PORTER_CONNECTION_STATUS_CONNECTED" => Ok(PorterConnectionStatus::Connected),
                     "PORTER_CONNECTION_STATUS_DISCONNECTED" => Ok(PorterConnectionStatus::Disconnected),
                     "PORTER_CONNECTION_STATUS_ACTIVE" => Ok(PorterConnectionStatus::Active),
