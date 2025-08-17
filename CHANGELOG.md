@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.10](https://github.com/tuihub/protos/compare/v0.5.9...v0.5.10) (2025-08-17)
+
+
+### Features
+
+* **sephirah:** update (Un)LinkAccount ([663bc4f](https://github.com/tuihub/protos/commit/663bc4f0d3168f85ce121aff3534be3b48563161))
+
 ## [0.5.9](https://github.com/tuihub/protos/compare/v0.5.8...v0.5.9) (2025-08-16)
 
 
