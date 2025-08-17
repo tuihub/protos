@@ -1150,12 +1150,10 @@ func (x *GetUserResponse) GetUser() *User {
 }
 
 type LinkAccountRequest struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	// WellKnownAccountPlatform
-	Platform          string `protobuf:"bytes,1,opt,name=platform,proto3" json:"platform,omitempty"`
-	PlatformAccountId string `protobuf:"bytes,2,opt,name=platform_account_id,json=platformAccountId,proto3" json:"platform_account_id,omitempty"`
-	unknownFields     protoimpl.UnknownFields
-	sizeCache         protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Config        *v1.FeatureRequest     `protobuf:"bytes,1,opt,name=config,proto3" json:"config,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *LinkAccountRequest) Reset() {
@@ -1188,18 +1186,11 @@ func (*LinkAccountRequest) Descriptor() ([]byte, []int) {
 	return file_librarian_sephirah_v1_sephirah_tiphereth_proto_rawDescGZIP(), []int{16}
 }
 
-func (x *LinkAccountRequest) GetPlatform() string {
+func (x *LinkAccountRequest) GetConfig() *v1.FeatureRequest {
 	if x != nil {
-		return x.Platform
+		return x.Config
 	}
-	return ""
-}
-
-func (x *LinkAccountRequest) GetPlatformAccountId() string {
-	if x != nil {
-		return x.PlatformAccountId
-	}
-	return ""
+	return nil
 }
 
 type LinkAccountResponse struct {
@@ -1247,12 +1238,10 @@ func (x *LinkAccountResponse) GetAccountId() *v1.InternalID {
 }
 
 type UnLinkAccountRequest struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	// WellKnownAccountPlatform
-	Platform          string `protobuf:"bytes,1,opt,name=platform,proto3" json:"platform,omitempty"`
-	PlatformAccountId string `protobuf:"bytes,2,opt,name=platform_account_id,json=platformAccountId,proto3" json:"platform_account_id,omitempty"`
-	unknownFields     protoimpl.UnknownFields
-	sizeCache         protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	AccountId     *v1.InternalID         `protobuf:"bytes,1,opt,name=account_id,json=accountId,proto3" json:"account_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *UnLinkAccountRequest) Reset() {
@@ -1285,18 +1274,11 @@ func (*UnLinkAccountRequest) Descriptor() ([]byte, []int) {
 	return file_librarian_sephirah_v1_sephirah_tiphereth_proto_rawDescGZIP(), []int{18}
 }
 
-func (x *UnLinkAccountRequest) GetPlatform() string {
+func (x *UnLinkAccountRequest) GetAccountId() *v1.InternalID {
 	if x != nil {
-		return x.Platform
+		return x.AccountId
 	}
-	return ""
-}
-
-func (x *UnLinkAccountRequest) GetPlatformAccountId() string {
-	if x != nil {
-		return x.PlatformAccountId
-	}
-	return ""
+	return nil
 }
 
 type UnLinkAccountResponse struct {
@@ -2671,16 +2653,15 @@ const file_librarian_sephirah_v1_sephirah_tiphereth_proto_rawDesc = "" +
 	"\x02id\x18\x01 \x01(\v2\x18.librarian.v1.InternalIDH\x00R\x02id\x88\x01\x01B\x05\n" +
 	"\x03_id\"K\n" +
 	"\x0fGetUserResponse\x128\n" +
-	"\x04user\x18\x01 \x01(\v2$.librarian.sephirah.v1.sephirah.UserR\x04user\"`\n" +
-	"\x12LinkAccountRequest\x12\x1a\n" +
-	"\bplatform\x18\x01 \x01(\tR\bplatform\x12.\n" +
-	"\x13platform_account_id\x18\x02 \x01(\tR\x11platformAccountId\"N\n" +
+	"\x04user\x18\x01 \x01(\v2$.librarian.sephirah.v1.sephirah.UserR\x04user\"J\n" +
+	"\x12LinkAccountRequest\x124\n" +
+	"\x06config\x18\x01 \x01(\v2\x1c.librarian.v1.FeatureRequestR\x06config\"N\n" +
 	"\x13LinkAccountResponse\x127\n" +
 	"\n" +
-	"account_id\x18\x01 \x01(\v2\x18.librarian.v1.InternalIDR\taccountId\"b\n" +
-	"\x14UnLinkAccountRequest\x12\x1a\n" +
-	"\bplatform\x18\x01 \x01(\tR\bplatform\x12.\n" +
-	"\x13platform_account_id\x18\x02 \x01(\tR\x11platformAccountId\"\x17\n" +
+	"account_id\x18\x01 \x01(\v2\x18.librarian.v1.InternalIDR\taccountId\"O\n" +
+	"\x14UnLinkAccountRequest\x127\n" +
+	"\n" +
+	"account_id\x18\x01 \x01(\v2\x18.librarian.v1.InternalIDR\taccountId\"\x17\n" +
 	"\x15UnLinkAccountResponse\"]\n" +
 	"\x17ListLinkAccountsRequest\x126\n" +
 	"\auser_id\x18\x01 \x01(\v2\x18.librarian.v1.InternalIDH\x00R\x06userId\x88\x01\x01B\n" +
@@ -2878,11 +2859,12 @@ var file_librarian_sephirah_v1_sephirah_tiphereth_proto_goTypes = []any{
 	(*RegisterUserRequest_Captcha)(nil),       // 45: librarian.sephirah.v1.sephirah.RegisterUserRequest.Captcha
 	(*RegisterUserResponse_ImageCaptcha)(nil), // 46: librarian.sephirah.v1.sephirah.RegisterUserResponse.ImageCaptcha
 	(*v1.InternalID)(nil),                     // 47: librarian.v1.InternalID
-	(*v1.PagingRequest)(nil),                  // 48: librarian.v1.PagingRequest
-	(*v1.PagingResponse)(nil),                 // 49: librarian.v1.PagingResponse
-	(*timestamppb.Timestamp)(nil),             // 50: google.protobuf.Timestamp
-	(*v1.PorterBinarySummary)(nil),            // 51: librarian.v1.PorterBinarySummary
-	(*v1.FeatureSummary)(nil),                 // 52: librarian.v1.FeatureSummary
+	(*v1.FeatureRequest)(nil),                 // 48: librarian.v1.FeatureRequest
+	(*v1.PagingRequest)(nil),                  // 49: librarian.v1.PagingRequest
+	(*v1.PagingResponse)(nil),                 // 50: librarian.v1.PagingResponse
+	(*timestamppb.Timestamp)(nil),             // 51: google.protobuf.Timestamp
+	(*v1.PorterBinarySummary)(nil),            // 52: librarian.v1.PorterBinarySummary
+	(*v1.FeatureSummary)(nil),                 // 53: librarian.v1.FeatureSummary
 }
 var file_librarian_sephirah_v1_sephirah_tiphereth_proto_depIdxs = []int32{
 	47, // 0: librarian.sephirah.v1.sephirah.GetTokenRequest.device_id:type_name -> librarian.v1.InternalID
@@ -2896,47 +2878,49 @@ var file_librarian_sephirah_v1_sephirah_tiphereth_proto_depIdxs = []int32{
 	39, // 8: librarian.sephirah.v1.sephirah.UpdateUserRequest.user:type_name -> librarian.sephirah.v1.sephirah.User
 	47, // 9: librarian.sephirah.v1.sephirah.GetUserRequest.id:type_name -> librarian.v1.InternalID
 	39, // 10: librarian.sephirah.v1.sephirah.GetUserResponse.user:type_name -> librarian.sephirah.v1.sephirah.User
-	47, // 11: librarian.sephirah.v1.sephirah.LinkAccountResponse.account_id:type_name -> librarian.v1.InternalID
-	47, // 12: librarian.sephirah.v1.sephirah.ListLinkAccountsRequest.user_id:type_name -> librarian.v1.InternalID
-	38, // 13: librarian.sephirah.v1.sephirah.ListLinkAccountsResponse.accounts:type_name -> librarian.sephirah.v1.sephirah.Account
-	48, // 14: librarian.sephirah.v1.sephirah.ListPorterDigestsRequest.paging:type_name -> librarian.v1.PagingRequest
-	2,  // 15: librarian.sephirah.v1.sephirah.ListPorterDigestsRequest.status_filter:type_name -> librarian.sephirah.v1.sephirah.UserStatus
-	49, // 16: librarian.sephirah.v1.sephirah.ListPorterDigestsResponse.paging:type_name -> librarian.v1.PagingResponse
-	44, // 17: librarian.sephirah.v1.sephirah.ListPorterDigestsResponse.porter_digests:type_name -> librarian.sephirah.v1.sephirah.PorterDigest
-	43, // 18: librarian.sephirah.v1.sephirah.CreatePorterContextRequest.context:type_name -> librarian.sephirah.v1.sephirah.PorterContext
-	47, // 19: librarian.sephirah.v1.sephirah.CreatePorterContextResponse.context_id:type_name -> librarian.v1.InternalID
-	48, // 20: librarian.sephirah.v1.sephirah.ListPorterContextsRequest.paging:type_name -> librarian.v1.PagingRequest
-	49, // 21: librarian.sephirah.v1.sephirah.ListPorterContextsResponse.paging:type_name -> librarian.v1.PagingResponse
-	43, // 22: librarian.sephirah.v1.sephirah.ListPorterContextsResponse.contexts:type_name -> librarian.sephirah.v1.sephirah.PorterContext
-	43, // 23: librarian.sephirah.v1.sephirah.UpdatePorterContextRequest.context:type_name -> librarian.sephirah.v1.sephirah.PorterContext
-	47, // 24: librarian.sephirah.v1.sephirah.DeletePorterContextRequest.context_id:type_name -> librarian.v1.InternalID
-	47, // 25: librarian.sephirah.v1.sephirah.Account.id:type_name -> librarian.v1.InternalID
-	50, // 26: librarian.sephirah.v1.sephirah.Account.latest_update_time:type_name -> google.protobuf.Timestamp
-	47, // 27: librarian.sephirah.v1.sephirah.User.id:type_name -> librarian.v1.InternalID
-	1,  // 28: librarian.sephirah.v1.sephirah.User.type:type_name -> librarian.sephirah.v1.sephirah.UserType
-	2,  // 29: librarian.sephirah.v1.sephirah.User.status:type_name -> librarian.sephirah.v1.sephirah.UserStatus
-	47, // 30: librarian.sephirah.v1.sephirah.UserSession.id:type_name -> librarian.v1.InternalID
-	47, // 31: librarian.sephirah.v1.sephirah.UserSession.user_id:type_name -> librarian.v1.InternalID
-	41, // 32: librarian.sephirah.v1.sephirah.UserSession.device_info:type_name -> librarian.sephirah.v1.sephirah.Device
-	50, // 33: librarian.sephirah.v1.sephirah.UserSession.create_time:type_name -> google.protobuf.Timestamp
-	50, // 34: librarian.sephirah.v1.sephirah.UserSession.expire_time:type_name -> google.protobuf.Timestamp
-	47, // 35: librarian.sephirah.v1.sephirah.Device.device_id:type_name -> librarian.v1.InternalID
-	0,  // 36: librarian.sephirah.v1.sephirah.Device.system_type:type_name -> librarian.sephirah.v1.sephirah.SystemType
-	47, // 37: librarian.sephirah.v1.sephirah.Porter.id:type_name -> librarian.v1.InternalID
-	51, // 38: librarian.sephirah.v1.sephirah.Porter.binary_summary:type_name -> librarian.v1.PorterBinarySummary
-	52, // 39: librarian.sephirah.v1.sephirah.Porter.feature_summary:type_name -> librarian.v1.FeatureSummary
-	2,  // 40: librarian.sephirah.v1.sephirah.Porter.status:type_name -> librarian.sephirah.v1.sephirah.UserStatus
-	3,  // 41: librarian.sephirah.v1.sephirah.Porter.connection_status:type_name -> librarian.sephirah.v1.sephirah.PorterConnectionStatus
-	47, // 42: librarian.sephirah.v1.sephirah.PorterContext.id:type_name -> librarian.v1.InternalID
-	4,  // 43: librarian.sephirah.v1.sephirah.PorterContext.status:type_name -> librarian.sephirah.v1.sephirah.PorterContextStatus
-	5,  // 44: librarian.sephirah.v1.sephirah.PorterContext.handle_status:type_name -> librarian.sephirah.v1.sephirah.PorterContextHandleStatus
-	51, // 45: librarian.sephirah.v1.sephirah.PorterDigest.binary_summary:type_name -> librarian.v1.PorterBinarySummary
-	52, // 46: librarian.sephirah.v1.sephirah.PorterDigest.feature_summary:type_name -> librarian.v1.FeatureSummary
-	47, // [47:47] is the sub-list for method output_type
-	47, // [47:47] is the sub-list for method input_type
-	47, // [47:47] is the sub-list for extension type_name
-	47, // [47:47] is the sub-list for extension extendee
-	0,  // [0:47] is the sub-list for field type_name
+	48, // 11: librarian.sephirah.v1.sephirah.LinkAccountRequest.config:type_name -> librarian.v1.FeatureRequest
+	47, // 12: librarian.sephirah.v1.sephirah.LinkAccountResponse.account_id:type_name -> librarian.v1.InternalID
+	47, // 13: librarian.sephirah.v1.sephirah.UnLinkAccountRequest.account_id:type_name -> librarian.v1.InternalID
+	47, // 14: librarian.sephirah.v1.sephirah.ListLinkAccountsRequest.user_id:type_name -> librarian.v1.InternalID
+	38, // 15: librarian.sephirah.v1.sephirah.ListLinkAccountsResponse.accounts:type_name -> librarian.sephirah.v1.sephirah.Account
+	49, // 16: librarian.sephirah.v1.sephirah.ListPorterDigestsRequest.paging:type_name -> librarian.v1.PagingRequest
+	2,  // 17: librarian.sephirah.v1.sephirah.ListPorterDigestsRequest.status_filter:type_name -> librarian.sephirah.v1.sephirah.UserStatus
+	50, // 18: librarian.sephirah.v1.sephirah.ListPorterDigestsResponse.paging:type_name -> librarian.v1.PagingResponse
+	44, // 19: librarian.sephirah.v1.sephirah.ListPorterDigestsResponse.porter_digests:type_name -> librarian.sephirah.v1.sephirah.PorterDigest
+	43, // 20: librarian.sephirah.v1.sephirah.CreatePorterContextRequest.context:type_name -> librarian.sephirah.v1.sephirah.PorterContext
+	47, // 21: librarian.sephirah.v1.sephirah.CreatePorterContextResponse.context_id:type_name -> librarian.v1.InternalID
+	49, // 22: librarian.sephirah.v1.sephirah.ListPorterContextsRequest.paging:type_name -> librarian.v1.PagingRequest
+	50, // 23: librarian.sephirah.v1.sephirah.ListPorterContextsResponse.paging:type_name -> librarian.v1.PagingResponse
+	43, // 24: librarian.sephirah.v1.sephirah.ListPorterContextsResponse.contexts:type_name -> librarian.sephirah.v1.sephirah.PorterContext
+	43, // 25: librarian.sephirah.v1.sephirah.UpdatePorterContextRequest.context:type_name -> librarian.sephirah.v1.sephirah.PorterContext
+	47, // 26: librarian.sephirah.v1.sephirah.DeletePorterContextRequest.context_id:type_name -> librarian.v1.InternalID
+	47, // 27: librarian.sephirah.v1.sephirah.Account.id:type_name -> librarian.v1.InternalID
+	51, // 28: librarian.sephirah.v1.sephirah.Account.latest_update_time:type_name -> google.protobuf.Timestamp
+	47, // 29: librarian.sephirah.v1.sephirah.User.id:type_name -> librarian.v1.InternalID
+	1,  // 30: librarian.sephirah.v1.sephirah.User.type:type_name -> librarian.sephirah.v1.sephirah.UserType
+	2,  // 31: librarian.sephirah.v1.sephirah.User.status:type_name -> librarian.sephirah.v1.sephirah.UserStatus
+	47, // 32: librarian.sephirah.v1.sephirah.UserSession.id:type_name -> librarian.v1.InternalID
+	47, // 33: librarian.sephirah.v1.sephirah.UserSession.user_id:type_name -> librarian.v1.InternalID
+	41, // 34: librarian.sephirah.v1.sephirah.UserSession.device_info:type_name -> librarian.sephirah.v1.sephirah.Device
+	51, // 35: librarian.sephirah.v1.sephirah.UserSession.create_time:type_name -> google.protobuf.Timestamp
+	51, // 36: librarian.sephirah.v1.sephirah.UserSession.expire_time:type_name -> google.protobuf.Timestamp
+	47, // 37: librarian.sephirah.v1.sephirah.Device.device_id:type_name -> librarian.v1.InternalID
+	0,  // 38: librarian.sephirah.v1.sephirah.Device.system_type:type_name -> librarian.sephirah.v1.sephirah.SystemType
+	47, // 39: librarian.sephirah.v1.sephirah.Porter.id:type_name -> librarian.v1.InternalID
+	52, // 40: librarian.sephirah.v1.sephirah.Porter.binary_summary:type_name -> librarian.v1.PorterBinarySummary
+	53, // 41: librarian.sephirah.v1.sephirah.Porter.feature_summary:type_name -> librarian.v1.FeatureSummary
+	2,  // 42: librarian.sephirah.v1.sephirah.Porter.status:type_name -> librarian.sephirah.v1.sephirah.UserStatus
+	3,  // 43: librarian.sephirah.v1.sephirah.Porter.connection_status:type_name -> librarian.sephirah.v1.sephirah.PorterConnectionStatus
+	47, // 44: librarian.sephirah.v1.sephirah.PorterContext.id:type_name -> librarian.v1.InternalID
+	4,  // 45: librarian.sephirah.v1.sephirah.PorterContext.status:type_name -> librarian.sephirah.v1.sephirah.PorterContextStatus
+	5,  // 46: librarian.sephirah.v1.sephirah.PorterContext.handle_status:type_name -> librarian.sephirah.v1.sephirah.PorterContextHandleStatus
+	52, // 47: librarian.sephirah.v1.sephirah.PorterDigest.binary_summary:type_name -> librarian.v1.PorterBinarySummary
+	53, // 48: librarian.sephirah.v1.sephirah.PorterDigest.feature_summary:type_name -> librarian.v1.FeatureSummary
+	49, // [49:49] is the sub-list for method output_type
+	49, // [49:49] is the sub-list for method input_type
+	49, // [49:49] is the sub-list for extension type_name
+	49, // [49:49] is the sub-list for extension extendee
+	0,  // [0:49] is the sub-list for field type_name
 }
 
 func init() { file_librarian_sephirah_v1_sephirah_tiphereth_proto_init() }

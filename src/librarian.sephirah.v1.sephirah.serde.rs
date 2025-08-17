@@ -8590,18 +8590,12 @@ impl serde::Serialize for LinkAccountRequest {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if !self.platform.is_empty() {
-            len += 1;
-        }
-        if !self.platform_account_id.is_empty() {
+        if self.config.is_some() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.sephirah.LinkAccountRequest", len)?;
-        if !self.platform.is_empty() {
-            struct_ser.serialize_field("platform", &self.platform)?;
-        }
-        if !self.platform_account_id.is_empty() {
-            struct_ser.serialize_field("platformAccountId", &self.platform_account_id)?;
+        if let Some(v) = self.config.as_ref() {
+            struct_ser.serialize_field("config", v)?;
         }
         struct_ser.end()
     }
@@ -8613,15 +8607,12 @@ impl<'de> serde::Deserialize<'de> for LinkAccountRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "platform",
-            "platform_account_id",
-            "platformAccountId",
+            "config",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            Platform,
-            PlatformAccountId,
+            Config,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -8643,8 +8634,7 @@ impl<'de> serde::Deserialize<'de> for LinkAccountRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "platform" => Ok(GeneratedField::Platform),
-                            "platformAccountId" | "platform_account_id" => Ok(GeneratedField::PlatformAccountId),
+                            "config" => Ok(GeneratedField::Config),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -8664,27 +8654,19 @@ impl<'de> serde::Deserialize<'de> for LinkAccountRequest {
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut platform__ = None;
-                let mut platform_account_id__ = None;
+                let mut config__ = None;
                 while let Some(k) = map_.next_key()? {
                     match k {
-                        GeneratedField::Platform => {
-                            if platform__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("platform"));
+                        GeneratedField::Config => {
+                            if config__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("config"));
                             }
-                            platform__ = Some(map_.next_value()?);
-                        }
-                        GeneratedField::PlatformAccountId => {
-                            if platform_account_id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("platformAccountId"));
-                            }
-                            platform_account_id__ = Some(map_.next_value()?);
+                            config__ = map_.next_value()?;
                         }
                     }
                 }
                 Ok(LinkAccountRequest {
-                    platform: platform__.unwrap_or_default(),
-                    platform_account_id: platform_account_id__.unwrap_or_default(),
+                    config: config__,
                 })
             }
         }
@@ -21530,18 +21512,12 @@ impl serde::Serialize for UnLinkAccountRequest {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
-        if !self.platform.is_empty() {
-            len += 1;
-        }
-        if !self.platform_account_id.is_empty() {
+        if self.account_id.is_some() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.sephirah.UnLinkAccountRequest", len)?;
-        if !self.platform.is_empty() {
-            struct_ser.serialize_field("platform", &self.platform)?;
-        }
-        if !self.platform_account_id.is_empty() {
-            struct_ser.serialize_field("platformAccountId", &self.platform_account_id)?;
+        if let Some(v) = self.account_id.as_ref() {
+            struct_ser.serialize_field("accountId", v)?;
         }
         struct_ser.end()
     }
@@ -21553,15 +21529,13 @@ impl<'de> serde::Deserialize<'de> for UnLinkAccountRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
-            "platform",
-            "platform_account_id",
-            "platformAccountId",
+            "account_id",
+            "accountId",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
-            Platform,
-            PlatformAccountId,
+            AccountId,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -21583,8 +21557,7 @@ impl<'de> serde::Deserialize<'de> for UnLinkAccountRequest {
                         E: serde::de::Error,
                     {
                         match value {
-                            "platform" => Ok(GeneratedField::Platform),
-                            "platformAccountId" | "platform_account_id" => Ok(GeneratedField::PlatformAccountId),
+                            "accountId" | "account_id" => Ok(GeneratedField::AccountId),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -21604,27 +21577,19 @@ impl<'de> serde::Deserialize<'de> for UnLinkAccountRequest {
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                let mut platform__ = None;
-                let mut platform_account_id__ = None;
+                let mut account_id__ = None;
                 while let Some(k) = map_.next_key()? {
                     match k {
-                        GeneratedField::Platform => {
-                            if platform__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("platform"));
+                        GeneratedField::AccountId => {
+                            if account_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("accountId"));
                             }
-                            platform__ = Some(map_.next_value()?);
-                        }
-                        GeneratedField::PlatformAccountId => {
-                            if platform_account_id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("platformAccountId"));
-                            }
-                            platform_account_id__ = Some(map_.next_value()?);
+                            account_id__ = map_.next_value()?;
                         }
                     }
                 }
                 Ok(UnLinkAccountRequest {
-                    platform: platform__.unwrap_or_default(),
-                    platform_account_id: platform_account_id__.unwrap_or_default(),
+                    account_id: account_id__,
                 })
             }
         }

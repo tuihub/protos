@@ -436,11 +436,10 @@ export namespace GetUserResponse {
 }
 
 export class LinkAccountRequest extends jspb.Message {
-  getPlatform(): string;
-  setPlatform(value: string): void;
-
-  getPlatformAccountId(): string;
-  setPlatformAccountId(value: string): void;
+  hasConfig(): boolean;
+  clearConfig(): void;
+  getConfig(): librarian_v1_wellknown_pb.FeatureRequest | undefined;
+  setConfig(value?: librarian_v1_wellknown_pb.FeatureRequest): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LinkAccountRequest.AsObject;
@@ -454,8 +453,7 @@ export class LinkAccountRequest extends jspb.Message {
 
 export namespace LinkAccountRequest {
   export type AsObject = {
-    platform: string,
-    platformAccountId: string,
+    config?: librarian_v1_wellknown_pb.FeatureRequest.AsObject,
   }
 }
 
@@ -482,11 +480,10 @@ export namespace LinkAccountResponse {
 }
 
 export class UnLinkAccountRequest extends jspb.Message {
-  getPlatform(): string;
-  setPlatform(value: string): void;
-
-  getPlatformAccountId(): string;
-  setPlatformAccountId(value: string): void;
+  hasAccountId(): boolean;
+  clearAccountId(): void;
+  getAccountId(): librarian_v1_wellknown_pb.InternalID | undefined;
+  setAccountId(value?: librarian_v1_wellknown_pb.InternalID): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UnLinkAccountRequest.AsObject;
@@ -500,8 +497,7 @@ export class UnLinkAccountRequest extends jspb.Message {
 
 export namespace UnLinkAccountRequest {
   export type AsObject = {
-    platform: string,
-    platformAccountId: string,
+    accountId?: librarian_v1_wellknown_pb.InternalID.AsObject,
   }
 }
 

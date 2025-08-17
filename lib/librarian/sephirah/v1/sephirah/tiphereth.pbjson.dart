@@ -494,21 +494,21 @@ final $typed_data.Uint8List getUserResponseDescriptor = $convert.base64Decode(
 const LinkAccountRequest$json = {
   '1': 'LinkAccountRequest',
   '2': [
-    {'1': 'platform', '3': 1, '4': 1, '5': 9, '10': 'platform'},
     {
-      '1': 'platform_account_id',
-      '3': 2,
+      '1': 'config',
+      '3': 1,
       '4': 1,
-      '5': 9,
-      '10': 'platformAccountId'
+      '5': 11,
+      '6': '.librarian.v1.FeatureRequest',
+      '10': 'config'
     },
   ],
 };
 
 /// Descriptor for `LinkAccountRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List linkAccountRequestDescriptor = $convert.base64Decode(
-    'ChJMaW5rQWNjb3VudFJlcXVlc3QSGgoIcGxhdGZvcm0YASABKAlSCHBsYXRmb3JtEi4KE3BsYX'
-    'Rmb3JtX2FjY291bnRfaWQYAiABKAlSEXBsYXRmb3JtQWNjb3VudElk');
+    'ChJMaW5rQWNjb3VudFJlcXVlc3QSNAoGY29uZmlnGAEgASgLMhwubGlicmFyaWFuLnYxLkZlYX'
+    'R1cmVSZXF1ZXN0UgZjb25maWc=');
 
 @$core.Deprecated('Use linkAccountResponseDescriptor instead')
 const LinkAccountResponse$json = {
@@ -534,21 +534,21 @@ final $typed_data.Uint8List linkAccountResponseDescriptor = $convert.base64Decod
 const UnLinkAccountRequest$json = {
   '1': 'UnLinkAccountRequest',
   '2': [
-    {'1': 'platform', '3': 1, '4': 1, '5': 9, '10': 'platform'},
     {
-      '1': 'platform_account_id',
-      '3': 2,
+      '1': 'account_id',
+      '3': 1,
       '4': 1,
-      '5': 9,
-      '10': 'platformAccountId'
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'accountId'
     },
   ],
 };
 
 /// Descriptor for `UnLinkAccountRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List unLinkAccountRequestDescriptor = $convert.base64Decode(
-    'ChRVbkxpbmtBY2NvdW50UmVxdWVzdBIaCghwbGF0Zm9ybRgBIAEoCVIIcGxhdGZvcm0SLgoTcG'
-    'xhdGZvcm1fYWNjb3VudF9pZBgCIAEoCVIRcGxhdGZvcm1BY2NvdW50SWQ=');
+    'ChRVbkxpbmtBY2NvdW50UmVxdWVzdBI3CgphY2NvdW50X2lkGAEgASgLMhgubGlicmFyaWFuLn'
+    'YxLkludGVybmFsSURSCWFjY291bnRJZA==');
 
 @$core.Deprecated('Use unLinkAccountResponseDescriptor instead')
 const UnLinkAccountResponse$json = {

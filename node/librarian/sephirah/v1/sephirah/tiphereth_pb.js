@@ -3895,8 +3895,7 @@ proto.librarian.sephirah.v1.sephirah.LinkAccountRequest.prototype.toObject = fun
  */
 proto.librarian.sephirah.v1.sephirah.LinkAccountRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-platform: jspb.Message.getFieldWithDefault(msg, 1, ""),
-platformAccountId: jspb.Message.getFieldWithDefault(msg, 2, "")
+config: (f = msg.getConfig()) && librarian_v1_wellknown_pb.FeatureRequest.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3934,12 +3933,9 @@ proto.librarian.sephirah.v1.sephirah.LinkAccountRequest.deserializeBinaryFromRea
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPlatform(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPlatformAccountId(value);
+      var value = new librarian_v1_wellknown_pb.FeatureRequest;
+      reader.readMessage(value,librarian_v1_wellknown_pb.FeatureRequest.deserializeBinaryFromReader);
+      msg.setConfig(value);
       break;
     default:
       reader.skipField();
@@ -3970,56 +3966,51 @@ proto.librarian.sephirah.v1.sephirah.LinkAccountRequest.prototype.serializeBinar
  */
 proto.librarian.sephirah.v1.sephirah.LinkAccountRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPlatform();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getConfig();
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
-    );
-  }
-  f = message.getPlatformAccountId();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
+      f,
+      librarian_v1_wellknown_pb.FeatureRequest.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string platform = 1;
- * @return {string}
+ * optional librarian.v1.FeatureRequest config = 1;
+ * @return {?proto.librarian.v1.FeatureRequest}
  */
-proto.librarian.sephirah.v1.sephirah.LinkAccountRequest.prototype.getPlatform = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.librarian.sephirah.v1.sephirah.LinkAccountRequest.prototype.getConfig = function() {
+  return /** @type{?proto.librarian.v1.FeatureRequest} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_wellknown_pb.FeatureRequest, 1));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.librarian.v1.FeatureRequest|undefined} value
+ * @return {!proto.librarian.sephirah.v1.sephirah.LinkAccountRequest} returns this
+*/
+proto.librarian.sephirah.v1.sephirah.LinkAccountRequest.prototype.setConfig = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.librarian.sephirah.v1.sephirah.LinkAccountRequest} returns this
  */
-proto.librarian.sephirah.v1.sephirah.LinkAccountRequest.prototype.setPlatform = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+proto.librarian.sephirah.v1.sephirah.LinkAccountRequest.prototype.clearConfig = function() {
+  return this.setConfig(undefined);
 };
 
 
 /**
- * optional string platform_account_id = 2;
- * @return {string}
+ * Returns whether this field is set.
+ * @return {boolean}
  */
-proto.librarian.sephirah.v1.sephirah.LinkAccountRequest.prototype.getPlatformAccountId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.librarian.sephirah.v1.sephirah.LinkAccountRequest} returns this
- */
-proto.librarian.sephirah.v1.sephirah.LinkAccountRequest.prototype.setPlatformAccountId = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+proto.librarian.sephirah.v1.sephirah.LinkAccountRequest.prototype.hasConfig = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -4206,8 +4197,7 @@ proto.librarian.sephirah.v1.sephirah.UnLinkAccountRequest.prototype.toObject = f
  */
 proto.librarian.sephirah.v1.sephirah.UnLinkAccountRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-platform: jspb.Message.getFieldWithDefault(msg, 1, ""),
-platformAccountId: jspb.Message.getFieldWithDefault(msg, 2, "")
+accountId: (f = msg.getAccountId()) && librarian_v1_wellknown_pb.InternalID.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4245,12 +4235,9 @@ proto.librarian.sephirah.v1.sephirah.UnLinkAccountRequest.deserializeBinaryFromR
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPlatform(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setPlatformAccountId(value);
+      var value = new librarian_v1_wellknown_pb.InternalID;
+      reader.readMessage(value,librarian_v1_wellknown_pb.InternalID.deserializeBinaryFromReader);
+      msg.setAccountId(value);
       break;
     default:
       reader.skipField();
@@ -4281,56 +4268,51 @@ proto.librarian.sephirah.v1.sephirah.UnLinkAccountRequest.prototype.serializeBin
  */
 proto.librarian.sephirah.v1.sephirah.UnLinkAccountRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPlatform();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getAccountId();
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
-    );
-  }
-  f = message.getPlatformAccountId();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
+      f,
+      librarian_v1_wellknown_pb.InternalID.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string platform = 1;
- * @return {string}
+ * optional librarian.v1.InternalID account_id = 1;
+ * @return {?proto.librarian.v1.InternalID}
  */
-proto.librarian.sephirah.v1.sephirah.UnLinkAccountRequest.prototype.getPlatform = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.librarian.sephirah.v1.sephirah.UnLinkAccountRequest.prototype.getAccountId = function() {
+  return /** @type{?proto.librarian.v1.InternalID} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_wellknown_pb.InternalID, 1));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.librarian.v1.InternalID|undefined} value
+ * @return {!proto.librarian.sephirah.v1.sephirah.UnLinkAccountRequest} returns this
+*/
+proto.librarian.sephirah.v1.sephirah.UnLinkAccountRequest.prototype.setAccountId = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.librarian.sephirah.v1.sephirah.UnLinkAccountRequest} returns this
  */
-proto.librarian.sephirah.v1.sephirah.UnLinkAccountRequest.prototype.setPlatform = function(value) {
-  return jspb.Message.setProto3StringField(this, 1, value);
+proto.librarian.sephirah.v1.sephirah.UnLinkAccountRequest.prototype.clearAccountId = function() {
+  return this.setAccountId(undefined);
 };
 
 
 /**
- * optional string platform_account_id = 2;
- * @return {string}
+ * Returns whether this field is set.
+ * @return {boolean}
  */
-proto.librarian.sephirah.v1.sephirah.UnLinkAccountRequest.prototype.getPlatformAccountId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.librarian.sephirah.v1.sephirah.UnLinkAccountRequest} returns this
- */
-proto.librarian.sephirah.v1.sephirah.UnLinkAccountRequest.prototype.setPlatformAccountId = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+proto.librarian.sephirah.v1.sephirah.UnLinkAccountRequest.prototype.hasAccountId = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 

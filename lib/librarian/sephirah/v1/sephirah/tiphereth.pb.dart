@@ -1207,12 +1207,10 @@ class GetUserResponse extends $pb.GeneratedMessage {
 
 class LinkAccountRequest extends $pb.GeneratedMessage {
   factory LinkAccountRequest({
-    $core.String? platform,
-    $core.String? platformAccountId,
+    $0.FeatureRequest? config,
   }) {
     final result = create();
-    if (platform != null) result.platform = platform;
-    if (platformAccountId != null) result.platformAccountId = platformAccountId;
+    if (config != null) result.config = config;
     return result;
   }
 
@@ -1230,8 +1228,8 @@ class LinkAccountRequest extends $pb.GeneratedMessage {
       package: const $pb.PackageName(
           _omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'),
       createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'platform')
-    ..aOS(2, _omitFieldNames ? '' : 'platformAccountId')
+    ..aOM<$0.FeatureRequest>(1, _omitFieldNames ? '' : 'config',
+        subBuilder: $0.FeatureRequest.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1255,24 +1253,16 @@ class LinkAccountRequest extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<LinkAccountRequest>(create);
   static LinkAccountRequest? _defaultInstance;
 
-  /// WellKnownAccountPlatform
   @$pb.TagNumber(1)
-  $core.String get platform => $_getSZ(0);
+  $0.FeatureRequest get config => $_getN(0);
   @$pb.TagNumber(1)
-  set platform($core.String value) => $_setString(0, value);
+  set config($0.FeatureRequest value) => $_setField(1, value);
   @$pb.TagNumber(1)
-  $core.bool hasPlatform() => $_has(0);
+  $core.bool hasConfig() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPlatform() => $_clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.String get platformAccountId => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set platformAccountId($core.String value) => $_setString(1, value);
-  @$pb.TagNumber(2)
-  $core.bool hasPlatformAccountId() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearPlatformAccountId() => $_clearField(2);
+  void clearConfig() => $_clearField(1);
+  @$pb.TagNumber(1)
+  $0.FeatureRequest ensureConfig() => $_ensure(0);
 }
 
 class LinkAccountResponse extends $pb.GeneratedMessage {
@@ -1337,12 +1327,10 @@ class LinkAccountResponse extends $pb.GeneratedMessage {
 
 class UnLinkAccountRequest extends $pb.GeneratedMessage {
   factory UnLinkAccountRequest({
-    $core.String? platform,
-    $core.String? platformAccountId,
+    $0.InternalID? accountId,
   }) {
     final result = create();
-    if (platform != null) result.platform = platform;
-    if (platformAccountId != null) result.platformAccountId = platformAccountId;
+    if (accountId != null) result.accountId = accountId;
     return result;
   }
 
@@ -1360,8 +1348,8 @@ class UnLinkAccountRequest extends $pb.GeneratedMessage {
       package: const $pb.PackageName(
           _omitMessageNames ? '' : 'librarian.sephirah.v1.sephirah'),
       createEmptyInstance: create)
-    ..aOS(1, _omitFieldNames ? '' : 'platform')
-    ..aOS(2, _omitFieldNames ? '' : 'platformAccountId')
+    ..aOM<$0.InternalID>(1, _omitFieldNames ? '' : 'accountId',
+        subBuilder: $0.InternalID.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -1386,24 +1374,16 @@ class UnLinkAccountRequest extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<UnLinkAccountRequest>(create);
   static UnLinkAccountRequest? _defaultInstance;
 
-  /// WellKnownAccountPlatform
   @$pb.TagNumber(1)
-  $core.String get platform => $_getSZ(0);
+  $0.InternalID get accountId => $_getN(0);
   @$pb.TagNumber(1)
-  set platform($core.String value) => $_setString(0, value);
+  set accountId($0.InternalID value) => $_setField(1, value);
   @$pb.TagNumber(1)
-  $core.bool hasPlatform() => $_has(0);
+  $core.bool hasAccountId() => $_has(0);
   @$pb.TagNumber(1)
-  void clearPlatform() => $_clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.String get platformAccountId => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set platformAccountId($core.String value) => $_setString(1, value);
-  @$pb.TagNumber(2)
-  $core.bool hasPlatformAccountId() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearPlatformAccountId() => $_clearField(2);
+  void clearAccountId() => $_clearField(1);
+  @$pb.TagNumber(1)
+  $0.InternalID ensureAccountId() => $_ensure(0);
 }
 
 class UnLinkAccountResponse extends $pb.GeneratedMessage {
