@@ -93,17 +93,13 @@ message GetUserResponse {
 }
 
 message LinkAccountRequest {
-  // WellKnownAccountPlatform
-  string platform = 1;
-  string platform_account_id = 2;
+  librarian.v1.FeatureRequest config = 1;
 }
 message LinkAccountResponse {
   librarian.v1.InternalID account_id = 1;
 }
 message UnLinkAccountRequest {
-  // WellKnownAccountPlatform
-  string platform = 1;
-  string platform_account_id = 2;
+  librarian.v1.InternalID account_id = 1;
 }
 message UnLinkAccountResponse {}
 
