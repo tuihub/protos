@@ -30,12 +30,9 @@ namespace Buf.Validate {
             "CgpWaW9sYXRpb25zEjcKCnZpb2xhdGlvbnMYASADKAsyFy5idWYudmFsaWRh",
             "dGUuVmlvbGF0aW9uUgp2aW9sYXRpb25zImkKCVZpb2xhdGlvbhIdCgpmaWVs",
             "ZF9wYXRoGAEgASgJUglmaWVsZFBhdGgSIwoNY29uc3RyYWludF9pZBgCIAEo",
-            "CVIMY29uc3RyYWludElkEhgKB21lc3NhZ2UYAyABKAlSB21lc3NhZ2VCvQEK",
-            "EGNvbS5idWYudmFsaWRhdGVCD0V4cHJlc3Npb25Qcm90b1ABWkdidWYuYnVp",
-            "bGQvZ2VuL2dvL2J1ZmJ1aWxkL3Byb3RvdmFsaWRhdGUvcHJvdG9jb2xidWZm",
-            "ZXJzL2dvL2J1Zi92YWxpZGF0ZaICA0JWWKoCDEJ1Zi5WYWxpZGF0ZcoCDEJ1",
-            "ZlxWYWxpZGF0ZeICGEJ1ZlxWYWxpZGF0ZVxHUEJNZXRhZGF0YeoCDUJ1Zjo6",
-            "VmFsaWRhdGViBnByb3RvMw=="));
+            "CVIMY29uc3RyYWludElkEhgKB21lc3NhZ2UYAyABKAlSB21lc3NhZ2VCSVpH",
+            "YnVmLmJ1aWxkL2dlbi9nby9idWZidWlsZC9wcm90b3ZhbGlkYXRlL3Byb3Rv",
+            "Y29sYnVmZmVycy9nby9idWYvdmFsaWRhdGViBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {

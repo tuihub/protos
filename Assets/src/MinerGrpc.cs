@@ -7,7 +7,7 @@
 
 using grpc = global::Grpc.Core;
 
-namespace Librarian.Miner.V1 {
+namespace TuiHub.Protos.Librarian.Miner.V1 {
   /// <summary>
   ///
   ///The main role of Miner is to encapsulate compute-intensive tasks
@@ -50,16 +50,16 @@ namespace Librarian.Miner.V1 {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Librarian.Miner.V1.RecognizeImageBinaryRequest> __Marshaller_librarian_miner_v1_RecognizeImageBinaryRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Librarian.Miner.V1.RecognizeImageBinaryRequest.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Miner.V1.RecognizeImageBinaryRequest> __Marshaller_librarian_miner_v1_RecognizeImageBinaryRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Miner.V1.RecognizeImageBinaryRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Librarian.Miner.V1.RecognizeImageBinaryResponse> __Marshaller_librarian_miner_v1_RecognizeImageBinaryResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Librarian.Miner.V1.RecognizeImageBinaryResponse.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Miner.V1.RecognizeImageBinaryResponse> __Marshaller_librarian_miner_v1_RecognizeImageBinaryResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Miner.V1.RecognizeImageBinaryResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Librarian.Miner.V1.RecognizeImageURLRequest> __Marshaller_librarian_miner_v1_RecognizeImageURLRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Librarian.Miner.V1.RecognizeImageURLRequest.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Miner.V1.RecognizeImageURLRequest> __Marshaller_librarian_miner_v1_RecognizeImageURLRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Miner.V1.RecognizeImageURLRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Librarian.Miner.V1.RecognizeImageURLResponse> __Marshaller_librarian_miner_v1_RecognizeImageURLResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Librarian.Miner.V1.RecognizeImageURLResponse.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Miner.V1.RecognizeImageURLResponse> __Marshaller_librarian_miner_v1_RecognizeImageURLResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Miner.V1.RecognizeImageURLResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::Librarian.Miner.V1.RecognizeImageBinaryRequest, global::Librarian.Miner.V1.RecognizeImageBinaryResponse> __Method_RecognizeImageBinary = new grpc::Method<global::Librarian.Miner.V1.RecognizeImageBinaryRequest, global::Librarian.Miner.V1.RecognizeImageBinaryResponse>(
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Miner.V1.RecognizeImageBinaryRequest, global::TuiHub.Protos.Librarian.Miner.V1.RecognizeImageBinaryResponse> __Method_RecognizeImageBinary = new grpc::Method<global::TuiHub.Protos.Librarian.Miner.V1.RecognizeImageBinaryRequest, global::TuiHub.Protos.Librarian.Miner.V1.RecognizeImageBinaryResponse>(
         grpc::MethodType.ClientStreaming,
         __ServiceName,
         "RecognizeImageBinary",
@@ -67,7 +67,7 @@ namespace Librarian.Miner.V1 {
         __Marshaller_librarian_miner_v1_RecognizeImageBinaryResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::Librarian.Miner.V1.RecognizeImageURLRequest, global::Librarian.Miner.V1.RecognizeImageURLResponse> __Method_RecognizeImageURL = new grpc::Method<global::Librarian.Miner.V1.RecognizeImageURLRequest, global::Librarian.Miner.V1.RecognizeImageURLResponse>(
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Miner.V1.RecognizeImageURLRequest, global::TuiHub.Protos.Librarian.Miner.V1.RecognizeImageURLResponse> __Method_RecognizeImageURL = new grpc::Method<global::TuiHub.Protos.Librarian.Miner.V1.RecognizeImageURLRequest, global::TuiHub.Protos.Librarian.Miner.V1.RecognizeImageURLResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "RecognizeImageURL",
@@ -77,7 +77,7 @@ namespace Librarian.Miner.V1 {
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
-      get { return global::Librarian.Miner.V1.MinerReflection.Descriptor.Services[0]; }
+      get { return global::TuiHub.Protos.Librarian.Miner.V1.MinerReflection.Descriptor.Services[0]; }
     }
 
     /// <summary>Base class for server-side implementations of LibrarianMinerService</summary>
@@ -85,13 +85,13 @@ namespace Librarian.Miner.V1 {
     public abstract partial class LibrarianMinerServiceBase
     {
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::Librarian.Miner.V1.RecognizeImageBinaryResponse> RecognizeImageBinary(grpc::IAsyncStreamReader<global::Librarian.Miner.V1.RecognizeImageBinaryRequest> requestStream, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Miner.V1.RecognizeImageBinaryResponse> RecognizeImageBinary(grpc::IAsyncStreamReader<global::TuiHub.Protos.Librarian.Miner.V1.RecognizeImageBinaryRequest> requestStream, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::Librarian.Miner.V1.RecognizeImageURLResponse> RecognizeImageURL(global::Librarian.Miner.V1.RecognizeImageURLRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Miner.V1.RecognizeImageURLResponse> RecognizeImageURL(global::TuiHub.Protos.Librarian.Miner.V1.RecognizeImageURLRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -126,32 +126,32 @@ namespace Librarian.Miner.V1 {
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncClientStreamingCall<global::Librarian.Miner.V1.RecognizeImageBinaryRequest, global::Librarian.Miner.V1.RecognizeImageBinaryResponse> RecognizeImageBinary(grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncClientStreamingCall<global::TuiHub.Protos.Librarian.Miner.V1.RecognizeImageBinaryRequest, global::TuiHub.Protos.Librarian.Miner.V1.RecognizeImageBinaryResponse> RecognizeImageBinary(grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return RecognizeImageBinary(new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncClientStreamingCall<global::Librarian.Miner.V1.RecognizeImageBinaryRequest, global::Librarian.Miner.V1.RecognizeImageBinaryResponse> RecognizeImageBinary(grpc::CallOptions options)
+      public virtual grpc::AsyncClientStreamingCall<global::TuiHub.Protos.Librarian.Miner.V1.RecognizeImageBinaryRequest, global::TuiHub.Protos.Librarian.Miner.V1.RecognizeImageBinaryResponse> RecognizeImageBinary(grpc::CallOptions options)
       {
         return CallInvoker.AsyncClientStreamingCall(__Method_RecognizeImageBinary, null, options);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Librarian.Miner.V1.RecognizeImageURLResponse RecognizeImageURL(global::Librarian.Miner.V1.RecognizeImageURLRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::TuiHub.Protos.Librarian.Miner.V1.RecognizeImageURLResponse RecognizeImageURL(global::TuiHub.Protos.Librarian.Miner.V1.RecognizeImageURLRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return RecognizeImageURL(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Librarian.Miner.V1.RecognizeImageURLResponse RecognizeImageURL(global::Librarian.Miner.V1.RecognizeImageURLRequest request, grpc::CallOptions options)
+      public virtual global::TuiHub.Protos.Librarian.Miner.V1.RecognizeImageURLResponse RecognizeImageURL(global::TuiHub.Protos.Librarian.Miner.V1.RecognizeImageURLRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_RecognizeImageURL, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Librarian.Miner.V1.RecognizeImageURLResponse> RecognizeImageURLAsync(global::Librarian.Miner.V1.RecognizeImageURLRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Miner.V1.RecognizeImageURLResponse> RecognizeImageURLAsync(global::TuiHub.Protos.Librarian.Miner.V1.RecognizeImageURLRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return RecognizeImageURLAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Librarian.Miner.V1.RecognizeImageURLResponse> RecognizeImageURLAsync(global::Librarian.Miner.V1.RecognizeImageURLRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Miner.V1.RecognizeImageURLResponse> RecognizeImageURLAsync(global::TuiHub.Protos.Librarian.Miner.V1.RecognizeImageURLRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_RecognizeImageURL, null, options, request);
       }
@@ -180,8 +180,8 @@ namespace Librarian.Miner.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public static void BindService(grpc::ServiceBinderBase serviceBinder, LibrarianMinerServiceBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_RecognizeImageBinary, serviceImpl == null ? null : new grpc::ClientStreamingServerMethod<global::Librarian.Miner.V1.RecognizeImageBinaryRequest, global::Librarian.Miner.V1.RecognizeImageBinaryResponse>(serviceImpl.RecognizeImageBinary));
-      serviceBinder.AddMethod(__Method_RecognizeImageURL, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Librarian.Miner.V1.RecognizeImageURLRequest, global::Librarian.Miner.V1.RecognizeImageURLResponse>(serviceImpl.RecognizeImageURL));
+      serviceBinder.AddMethod(__Method_RecognizeImageBinary, serviceImpl == null ? null : new grpc::ClientStreamingServerMethod<global::TuiHub.Protos.Librarian.Miner.V1.RecognizeImageBinaryRequest, global::TuiHub.Protos.Librarian.Miner.V1.RecognizeImageBinaryResponse>(serviceImpl.RecognizeImageBinary));
+      serviceBinder.AddMethod(__Method_RecognizeImageURL, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Miner.V1.RecognizeImageURLRequest, global::TuiHub.Protos.Librarian.Miner.V1.RecognizeImageURLResponse>(serviceImpl.RecognizeImageURL));
     }
 
   }

@@ -269,9 +269,7 @@ const file_librarian_miner_v1_miner_proto_rawDesc = "" +
 	"\x04text\x18\x02 \x01(\tR\x04text2\x86\x02\n" +
 	"\x15LibrarianMinerService\x12{\n" +
 	"\x14RecognizeImageBinary\x12/.librarian.miner.v1.RecognizeImageBinaryRequest\x1a0.librarian.miner.v1.RecognizeImageBinaryResponse(\x01\x12p\n" +
-	"\x11RecognizeImageURL\x12,.librarian.miner.v1.RecognizeImageURLRequest\x1a-.librarian.miner.v1.RecognizeImageURLResponseB\xc2\x01\n" +
-	"\x16com.librarian.miner.v1B\n" +
-	"MinerProtoP\x01Z2github.com/tuihub/protos/pkg/librarian/miner/v1;v1\xa2\x02\x03LMX\xaa\x02\x12Librarian.Miner.V1\xca\x02\x12Librarian\\Miner\\V1\xe2\x02\x1eLibrarian\\Miner\\V1\\GPBMetadata\xea\x02\x14Librarian::Miner::V1b\x06proto3"
+	"\x11RecognizeImageURL\x12,.librarian.miner.v1.RecognizeImageURLRequest\x1a-.librarian.miner.v1.RecognizeImageURLResponseBWZ2github.com/tuihub/protos/pkg/librarian/miner/v1;v1\xaa\x02 TuiHub.Protos.Librarian.Miner.V1b\x06proto3"
 
 var (
 	file_librarian_miner_v1_miner_proto_rawDescOnce sync.Once

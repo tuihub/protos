@@ -332,8 +332,7 @@ const file_librarian_sephirah_v1_sephirah_base_proto_rawDesc = "" +
 	"\vwebsite_url\x18\x03 \x01(\tR\n" +
 	"websiteUrl\x12\x19\n" +
 	"\blogo_url\x18\x04 \x01(\tR\alogoUrl\x12%\n" +
-	"\x0ebackground_url\x18\x05 \x01(\tR\rbackgroundUrlB\x82\x02\n" +
-	"\"com.librarian.sephirah.v1.sephirahB\tBaseProtoP\x01Z5github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1\xa2\x02\x04LSVS\xaa\x02\x1eLibrarian.Sephirah.V1.Sephirah\xca\x02\x1eLibrarian\\Sephirah\\V1\\Sephirah\xe2\x02*Librarian\\Sephirah\\V1\\Sephirah\\GPBMetadata\xea\x02!Librarian::Sephirah::V1::Sephirahb\x06proto3"
+	"\x0ebackground_url\x18\x05 \x01(\tR\rbackgroundUrlBfZ5github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1\xaa\x02,TuiHub.Protos.Librarian.Sephirah.V1.Sephirahb\x06proto3"
 
 var (
 	file_librarian_sephirah_v1_sephirah_base_proto_rawDescOnce sync.Once

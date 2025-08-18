@@ -175,8 +175,7 @@ const file_buf_validate_priv_private_proto_rawDesc = "" +
 	"\n" +
 	"expression\x18\x03 \x01(\tR\n" +
 	"expression:]\n" +
-	"\x05field\x12\x1d.google.protobuf.FieldOptions\x18\x80\x8f\x03 \x01(\v2#.buf.validate.priv.FieldConstraintsR\x05field\x88\x01\x01B\xd9\x01\n" +
-	"\x15com.buf.validate.privB\fPrivateProtoP\x01ZLbuf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate/priv\xa2\x02\x03BVP\xaa\x02\x11Buf.Validate.Priv\xca\x02\x11Buf\\Validate\\Priv\xe2\x02\x1dBuf\\Validate\\Priv\\GPBMetadata\xea\x02\x13Buf::Validate::Privb\x06proto3"
+	"\x05field\x12\x1d.google.protobuf.FieldOptions\x18\x80\x8f\x03 \x01(\v2#.buf.validate.priv.FieldConstraintsR\x05field\x88\x01\x01BNZLbuf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate/privb\x06proto3"
 
 var (
 	file_buf_validate_priv_private_proto_rawDescOnce sync.Once

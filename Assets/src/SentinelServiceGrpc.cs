@@ -7,7 +7,7 @@
 
 using grpc = global::Grpc.Core;
 
-namespace Librarian.Sephirah.V1.Sentinel {
+namespace TuiHub.Protos.Librarian.Sephirah.V1.Sentinel {
   public static partial class LibrarianSentinelService
   {
     static readonly string __ServiceName = "librarian.sephirah.v1.sentinel.LibrarianSentinelService";
@@ -46,24 +46,24 @@ namespace Librarian.Sephirah.V1.Sentinel {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Librarian.Sephirah.V1.Sentinel.RefreshTokenRequest> __Marshaller_librarian_sephirah_v1_sentinel_RefreshTokenRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Librarian.Sephirah.V1.Sentinel.RefreshTokenRequest.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.RefreshTokenRequest> __Marshaller_librarian_sephirah_v1_sentinel_RefreshTokenRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.RefreshTokenRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Librarian.Sephirah.V1.Sentinel.RefreshTokenResponse> __Marshaller_librarian_sephirah_v1_sentinel_RefreshTokenResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Librarian.Sephirah.V1.Sentinel.RefreshTokenResponse.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.RefreshTokenResponse> __Marshaller_librarian_sephirah_v1_sentinel_RefreshTokenResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.RefreshTokenResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Librarian.Sephirah.V1.Sentinel.HeartbeatRequest> __Marshaller_librarian_sephirah_v1_sentinel_HeartbeatRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Librarian.Sephirah.V1.Sentinel.HeartbeatRequest.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatRequest> __Marshaller_librarian_sephirah_v1_sentinel_HeartbeatRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Librarian.Sephirah.V1.Sentinel.HeartbeatResponse> __Marshaller_librarian_sephirah_v1_sentinel_HeartbeatResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Librarian.Sephirah.V1.Sentinel.HeartbeatResponse.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatResponse> __Marshaller_librarian_sephirah_v1_sentinel_HeartbeatResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationRequest> __Marshaller_librarian_sephirah_v1_sentinel_ReportSentinelInformationRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationRequest.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationRequest> __Marshaller_librarian_sephirah_v1_sentinel_ReportSentinelInformationRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationResponse> __Marshaller_librarian_sephirah_v1_sentinel_ReportSentinelInformationResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationResponse.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationResponse> __Marshaller_librarian_sephirah_v1_sentinel_ReportSentinelInformationResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Librarian.Sephirah.V1.Sentinel.ReportAppBinariesRequest> __Marshaller_librarian_sephirah_v1_sentinel_ReportAppBinariesRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Librarian.Sephirah.V1.Sentinel.ReportAppBinariesRequest.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportAppBinariesRequest> __Marshaller_librarian_sephirah_v1_sentinel_ReportAppBinariesRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportAppBinariesRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Librarian.Sephirah.V1.Sentinel.ReportAppBinariesResponse> __Marshaller_librarian_sephirah_v1_sentinel_ReportAppBinariesResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Librarian.Sephirah.V1.Sentinel.ReportAppBinariesResponse.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportAppBinariesResponse> __Marshaller_librarian_sephirah_v1_sentinel_ReportAppBinariesResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportAppBinariesResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::Librarian.Sephirah.V1.Sentinel.RefreshTokenRequest, global::Librarian.Sephirah.V1.Sentinel.RefreshTokenResponse> __Method_RefreshToken = new grpc::Method<global::Librarian.Sephirah.V1.Sentinel.RefreshTokenRequest, global::Librarian.Sephirah.V1.Sentinel.RefreshTokenResponse>(
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.RefreshTokenRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.RefreshTokenResponse> __Method_RefreshToken = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.RefreshTokenRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.RefreshTokenResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "RefreshToken",
@@ -71,7 +71,7 @@ namespace Librarian.Sephirah.V1.Sentinel {
         __Marshaller_librarian_sephirah_v1_sentinel_RefreshTokenResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::Librarian.Sephirah.V1.Sentinel.HeartbeatRequest, global::Librarian.Sephirah.V1.Sentinel.HeartbeatResponse> __Method_Heartbeat = new grpc::Method<global::Librarian.Sephirah.V1.Sentinel.HeartbeatRequest, global::Librarian.Sephirah.V1.Sentinel.HeartbeatResponse>(
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatResponse> __Method_Heartbeat = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "Heartbeat",
@@ -79,7 +79,7 @@ namespace Librarian.Sephirah.V1.Sentinel {
         __Marshaller_librarian_sephirah_v1_sentinel_HeartbeatResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationRequest, global::Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationResponse> __Method_ReportSentinelInformation = new grpc::Method<global::Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationRequest, global::Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationResponse>(
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationResponse> __Method_ReportSentinelInformation = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "ReportSentinelInformation",
@@ -87,7 +87,7 @@ namespace Librarian.Sephirah.V1.Sentinel {
         __Marshaller_librarian_sephirah_v1_sentinel_ReportSentinelInformationResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::Librarian.Sephirah.V1.Sentinel.ReportAppBinariesRequest, global::Librarian.Sephirah.V1.Sentinel.ReportAppBinariesResponse> __Method_ReportAppBinaries = new grpc::Method<global::Librarian.Sephirah.V1.Sentinel.ReportAppBinariesRequest, global::Librarian.Sephirah.V1.Sentinel.ReportAppBinariesResponse>(
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportAppBinariesRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportAppBinariesResponse> __Method_ReportAppBinaries = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportAppBinariesRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportAppBinariesResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "ReportAppBinaries",
@@ -97,7 +97,7 @@ namespace Librarian.Sephirah.V1.Sentinel {
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
-      get { return global::Librarian.Sephirah.V1.Sentinel.SentinelServiceReflection.Descriptor.Services[0]; }
+      get { return global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.SentinelServiceReflection.Descriptor.Services[0]; }
     }
 
     /// <summary>Base class for server-side implementations of LibrarianSentinelService</summary>
@@ -111,7 +111,7 @@ namespace Librarian.Sephirah.V1.Sentinel {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::Librarian.Sephirah.V1.Sentinel.RefreshTokenResponse> RefreshToken(global::Librarian.Sephirah.V1.Sentinel.RefreshTokenRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.RefreshTokenResponse> RefreshToken(global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.RefreshTokenRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -123,7 +123,7 @@ namespace Librarian.Sephirah.V1.Sentinel {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::Librarian.Sephirah.V1.Sentinel.HeartbeatResponse> Heartbeat(global::Librarian.Sephirah.V1.Sentinel.HeartbeatRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatResponse> Heartbeat(global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -135,7 +135,7 @@ namespace Librarian.Sephirah.V1.Sentinel {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationResponse> ReportSentinelInformation(global::Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationResponse> ReportSentinelInformation(global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -148,7 +148,7 @@ namespace Librarian.Sephirah.V1.Sentinel {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::Librarian.Sephirah.V1.Sentinel.ReportAppBinariesResponse> ReportAppBinaries(global::Librarian.Sephirah.V1.Sentinel.ReportAppBinariesRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportAppBinariesResponse> ReportAppBinaries(global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportAppBinariesRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -191,7 +191,7 @@ namespace Librarian.Sephirah.V1.Sentinel {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Librarian.Sephirah.V1.Sentinel.RefreshTokenResponse RefreshToken(global::Librarian.Sephirah.V1.Sentinel.RefreshTokenRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.RefreshTokenResponse RefreshToken(global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.RefreshTokenRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return RefreshToken(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -202,7 +202,7 @@ namespace Librarian.Sephirah.V1.Sentinel {
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Librarian.Sephirah.V1.Sentinel.RefreshTokenResponse RefreshToken(global::Librarian.Sephirah.V1.Sentinel.RefreshTokenRequest request, grpc::CallOptions options)
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.RefreshTokenResponse RefreshToken(global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.RefreshTokenRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_RefreshToken, null, options, request);
       }
@@ -215,7 +215,7 @@ namespace Librarian.Sephirah.V1.Sentinel {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Librarian.Sephirah.V1.Sentinel.RefreshTokenResponse> RefreshTokenAsync(global::Librarian.Sephirah.V1.Sentinel.RefreshTokenRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.RefreshTokenResponse> RefreshTokenAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.RefreshTokenRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return RefreshTokenAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -226,7 +226,7 @@ namespace Librarian.Sephirah.V1.Sentinel {
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Librarian.Sephirah.V1.Sentinel.RefreshTokenResponse> RefreshTokenAsync(global::Librarian.Sephirah.V1.Sentinel.RefreshTokenRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.RefreshTokenResponse> RefreshTokenAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.RefreshTokenRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_RefreshToken, null, options, request);
       }
@@ -239,7 +239,7 @@ namespace Librarian.Sephirah.V1.Sentinel {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Librarian.Sephirah.V1.Sentinel.HeartbeatResponse Heartbeat(global::Librarian.Sephirah.V1.Sentinel.HeartbeatRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatResponse Heartbeat(global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return Heartbeat(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -250,7 +250,7 @@ namespace Librarian.Sephirah.V1.Sentinel {
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Librarian.Sephirah.V1.Sentinel.HeartbeatResponse Heartbeat(global::Librarian.Sephirah.V1.Sentinel.HeartbeatRequest request, grpc::CallOptions options)
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatResponse Heartbeat(global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_Heartbeat, null, options, request);
       }
@@ -263,7 +263,7 @@ namespace Librarian.Sephirah.V1.Sentinel {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Librarian.Sephirah.V1.Sentinel.HeartbeatResponse> HeartbeatAsync(global::Librarian.Sephirah.V1.Sentinel.HeartbeatRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatResponse> HeartbeatAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return HeartbeatAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -274,7 +274,7 @@ namespace Librarian.Sephirah.V1.Sentinel {
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Librarian.Sephirah.V1.Sentinel.HeartbeatResponse> HeartbeatAsync(global::Librarian.Sephirah.V1.Sentinel.HeartbeatRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatResponse> HeartbeatAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_Heartbeat, null, options, request);
       }
@@ -287,7 +287,7 @@ namespace Librarian.Sephirah.V1.Sentinel {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationResponse ReportSentinelInformation(global::Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationResponse ReportSentinelInformation(global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return ReportSentinelInformation(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -298,7 +298,7 @@ namespace Librarian.Sephirah.V1.Sentinel {
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationResponse ReportSentinelInformation(global::Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationRequest request, grpc::CallOptions options)
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationResponse ReportSentinelInformation(global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_ReportSentinelInformation, null, options, request);
       }
@@ -311,7 +311,7 @@ namespace Librarian.Sephirah.V1.Sentinel {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationResponse> ReportSentinelInformationAsync(global::Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationResponse> ReportSentinelInformationAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return ReportSentinelInformationAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -322,7 +322,7 @@ namespace Librarian.Sephirah.V1.Sentinel {
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationResponse> ReportSentinelInformationAsync(global::Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationResponse> ReportSentinelInformationAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_ReportSentinelInformation, null, options, request);
       }
@@ -336,7 +336,7 @@ namespace Librarian.Sephirah.V1.Sentinel {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Librarian.Sephirah.V1.Sentinel.ReportAppBinariesResponse ReportAppBinaries(global::Librarian.Sephirah.V1.Sentinel.ReportAppBinariesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportAppBinariesResponse ReportAppBinaries(global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportAppBinariesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return ReportAppBinaries(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -348,7 +348,7 @@ namespace Librarian.Sephirah.V1.Sentinel {
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::Librarian.Sephirah.V1.Sentinel.ReportAppBinariesResponse ReportAppBinaries(global::Librarian.Sephirah.V1.Sentinel.ReportAppBinariesRequest request, grpc::CallOptions options)
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportAppBinariesResponse ReportAppBinaries(global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportAppBinariesRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_ReportAppBinaries, null, options, request);
       }
@@ -362,7 +362,7 @@ namespace Librarian.Sephirah.V1.Sentinel {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Librarian.Sephirah.V1.Sentinel.ReportAppBinariesResponse> ReportAppBinariesAsync(global::Librarian.Sephirah.V1.Sentinel.ReportAppBinariesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportAppBinariesResponse> ReportAppBinariesAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportAppBinariesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return ReportAppBinariesAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
@@ -374,7 +374,7 @@ namespace Librarian.Sephirah.V1.Sentinel {
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::Librarian.Sephirah.V1.Sentinel.ReportAppBinariesResponse> ReportAppBinariesAsync(global::Librarian.Sephirah.V1.Sentinel.ReportAppBinariesRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportAppBinariesResponse> ReportAppBinariesAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportAppBinariesRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_ReportAppBinaries, null, options, request);
       }
@@ -405,10 +405,10 @@ namespace Librarian.Sephirah.V1.Sentinel {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public static void BindService(grpc::ServiceBinderBase serviceBinder, LibrarianSentinelServiceBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_RefreshToken, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Librarian.Sephirah.V1.Sentinel.RefreshTokenRequest, global::Librarian.Sephirah.V1.Sentinel.RefreshTokenResponse>(serviceImpl.RefreshToken));
-      serviceBinder.AddMethod(__Method_Heartbeat, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Librarian.Sephirah.V1.Sentinel.HeartbeatRequest, global::Librarian.Sephirah.V1.Sentinel.HeartbeatResponse>(serviceImpl.Heartbeat));
-      serviceBinder.AddMethod(__Method_ReportSentinelInformation, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationRequest, global::Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationResponse>(serviceImpl.ReportSentinelInformation));
-      serviceBinder.AddMethod(__Method_ReportAppBinaries, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Librarian.Sephirah.V1.Sentinel.ReportAppBinariesRequest, global::Librarian.Sephirah.V1.Sentinel.ReportAppBinariesResponse>(serviceImpl.ReportAppBinaries));
+      serviceBinder.AddMethod(__Method_RefreshToken, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.RefreshTokenRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.RefreshTokenResponse>(serviceImpl.RefreshToken));
+      serviceBinder.AddMethod(__Method_Heartbeat, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.HeartbeatResponse>(serviceImpl.Heartbeat));
+      serviceBinder.AddMethod(__Method_ReportSentinelInformation, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportSentinelInformationResponse>(serviceImpl.ReportSentinelInformation));
+      serviceBinder.AddMethod(__Method_ReportAppBinaries, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportAppBinariesRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.Sentinel.ReportAppBinariesResponse>(serviceImpl.ReportAppBinaries));
     }
 
   }

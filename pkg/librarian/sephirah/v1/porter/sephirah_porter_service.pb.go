@@ -520,8 +520,7 @@ const file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_rawDesc = 
 	"\x14GetNotifyTargetItems\x129.librarian.sephirah.v1.porter.GetNotifyTargetItemsRequest\x1a:.librarian.sephirah.v1.porter.GetNotifyTargetItemsResponse\x12o\n" +
 	"\n" +
 	"UpsertFeed\x12/.librarian.sephirah.v1.porter.UpsertFeedRequest\x1a0.librarian.sephirah.v1.porter.UpsertFeedResponse\x12f\n" +
-	"\aGetFeed\x12,.librarian.sephirah.v1.porter.GetFeedRequest\x1a-.librarian.sephirah.v1.porter.GetFeedResponseB\x90\x02\n" +
-	" com.librarian.sephirah.v1.porterB\x1aSephirahPorterServiceProtoP\x01Z<github.com/tuihub/protos/pkg/librarian/sephirah/v1/porter;v1\xa2\x02\x04LSVP\xaa\x02\x1cLibrarian.Sephirah.V1.Porter\xca\x02\x1cLibrarian\\Sephirah\\V1\\Porter\xe2\x02(Librarian\\Sephirah\\V1\\Porter\\GPBMetadata\xea\x02\x1fLibrarian::Sephirah::V1::Porterb\x06proto3"
+	"\aGetFeed\x12,.librarian.sephirah.v1.porter.GetFeedRequest\x1a-.librarian.sephirah.v1.porter.GetFeedResponseBkZ<github.com/tuihub/protos/pkg/librarian/sephirah/v1/porter;v1\xaa\x02*TuiHub.Protos.Librarian.Sephirah.V1.Porterb\x06proto3"
 
 var (
 	file_librarian_sephirah_v1_porter_sephirah_porter_service_proto_rawDescOnce sync.Once

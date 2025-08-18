@@ -271,8 +271,7 @@ const file_buf_validate_expression_proto_rawDesc = "" +
 	"\n" +
 	"field_path\x18\x01 \x01(\tR\tfieldPath\x12#\n" +
 	"\rconstraint_id\x18\x02 \x01(\tR\fconstraintId\x12\x18\n" +
-	"\amessage\x18\x03 \x01(\tR\amessageB\xbd\x01\n" +
-	"\x10com.buf.validateB\x0fExpressionProtoP\x01ZGbuf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate\xa2\x02\x03BVX\xaa\x02\fBuf.Validate\xca\x02\fBuf\\Validate\xe2\x02\x18Buf\\Validate\\GPBMetadata\xea\x02\rBuf::Validateb\x06proto3"
+	"\amessage\x18\x03 \x01(\tR\amessageBIZGbuf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validateb\x06proto3"
 
 var (
 	file_buf_validate_expression_proto_rawDescOnce sync.Once

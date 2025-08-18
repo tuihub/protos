@@ -203,8 +203,7 @@ const file_librarian_porter_v1_tiphereth_proto_rawDesc = "" +
 	"\vprofile_url\x18\x04 \x01(\tR\n" +
 	"profileUrl\x12\x1d\n" +
 	"\n" +
-	"avatar_url\x18\x05 \x01(\tR\tavatarUrlB\xcc\x01\n" +
-	"\x17com.librarian.porter.v1B\x0eTipherethProtoP\x01Z3github.com/tuihub/protos/pkg/librarian/porter/v1;v1\xa2\x02\x03LPX\xaa\x02\x13Librarian.Porter.V1\xca\x02\x13Librarian\\Porter\\V1\xe2\x02\x1fLibrarian\\Porter\\V1\\GPBMetadata\xea\x02\x15Librarian::Porter::V1b\x06proto3"
+	"avatar_url\x18\x05 \x01(\tR\tavatarUrlBYZ3github.com/tuihub/protos/pkg/librarian/porter/v1;v1\xaa\x02!TuiHub.Protos.Librarian.Porter.V1b\x06proto3"
 
 var (
 	file_librarian_porter_v1_tiphereth_proto_rawDescOnce sync.Once

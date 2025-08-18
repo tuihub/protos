@@ -31,12 +31,9 @@ namespace Buf.Validate.Priv {
             "CVICaWQSGAoHbWVzc2FnZRgCIAEoCVIHbWVzc2FnZRIeCgpleHByZXNzaW9u",
             "GAMgASgJUgpleHByZXNzaW9uOl0KBWZpZWxkEh0uZ29vZ2xlLnByb3RvYnVm",
             "LkZpZWxkT3B0aW9ucxiAjwMgASgLMiMuYnVmLnZhbGlkYXRlLnByaXYuRmll",
-            "bGRDb25zdHJhaW50c1IFZmllbGSIAQFC2QEKFWNvbS5idWYudmFsaWRhdGUu",
-            "cHJpdkIMUHJpdmF0ZVByb3RvUAFaTGJ1Zi5idWlsZC9nZW4vZ28vYnVmYnVp",
-            "bGQvcHJvdG92YWxpZGF0ZS9wcm90b2NvbGJ1ZmZlcnMvZ28vYnVmL3ZhbGlk",
-            "YXRlL3ByaXaiAgNCVlCqAhFCdWYuVmFsaWRhdGUuUHJpdsoCEUJ1ZlxWYWxp",
-            "ZGF0ZVxQcml24gIdQnVmXFZhbGlkYXRlXFByaXZcR1BCTWV0YWRhdGHqAhNC",
-            "dWY6OlZhbGlkYXRlOjpQcml2YgZwcm90bzM="));
+            "bGRDb25zdHJhaW50c1IFZmllbGSIAQFCTlpMYnVmLmJ1aWxkL2dlbi9nby9i",
+            "dWZidWlsZC9wcm90b3ZhbGlkYXRlL3Byb3RvY29sYnVmZmVycy9nby9idWYv",
+            "dmFsaWRhdGUvcHJpdmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pb::Extension[] { PrivateExtensions.Field }, new pbr::GeneratedClrTypeInfo[] {

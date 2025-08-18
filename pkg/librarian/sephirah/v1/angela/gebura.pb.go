@@ -1240,8 +1240,7 @@ const file_librarian_sephirah_v1_angela_gebura_proto_rawDesc = "" +
 	"save_files\x18\x02 \x03(\v20.librarian.sephirah.v1.sephirah.StoreAppSaveFileR\tsaveFiles\"I\n" +
 	"\x1dDeleteStoreAppSaveFileRequest\x12(\n" +
 	"\x02id\x18\x01 \x01(\v2\x18.librarian.v1.InternalIDR\x02id\" \n" +
-	"\x1eDeleteStoreAppSaveFileResponseB\xfa\x01\n" +
-	" com.librarian.sephirah.v1.angelaB\vGeburaProtoP\x01Z5github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1\xa2\x02\x04LSVA\xaa\x02\x1cLibrarian.Sephirah.V1.Angela\xca\x02\x1cLibrarian\\Sephirah\\V1\\Angela\xe2\x02(Librarian\\Sephirah\\V1\\Angela\\GPBMetadata\xea\x02\x1fLibrarian::Sephirah::V1::Angelab\x06proto3"
+	"\x1eDeleteStoreAppSaveFileResponseBdZ5github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1\xaa\x02*TuiHub.Protos.Librarian.Sephirah.V1.Angelab\x06proto3"
 
 var (
 	file_librarian_sephirah_v1_angela_gebura_proto_rawDescOnce sync.Once

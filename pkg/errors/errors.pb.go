@@ -135,9 +135,8 @@ const file_errors_errors_proto_rawDesc = "" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01:@\n" +
 	"\fdefault_code\x12\x1c.google.protobuf.EnumOptions\x18\xd4\b \x01(\x05R\vdefaultCode:6\n" +
-	"\x04code\x12!.google.protobuf.EnumValueOptions\x18\xd5\b \x01(\x05R\x04codeB\x7f\n" +
-	"\n" +
-	"com.errorsB\vErrorsProtoP\x01Z,github.com/go-kratos/kratos/v2/errors;errors\xa2\x02\x03EXX\xaa\x02\x06Errors\xca\x02\x06Errors\xe2\x02\x12Errors\\GPBMetadata\xea\x02\x06Errorsb\x06proto3"
+	"\x04code\x12!.google.protobuf.EnumValueOptions\x18\xd5\b \x01(\x05R\x04codeBY\n" +
+	"\x18com.github.kratos.errorsP\x01Z,github.com/go-kratos/kratos/v2/errors;errors\xa2\x02\fKratosErrorsb\x06proto3"
 
 var (
 	file_errors_errors_proto_rawDescOnce sync.Once

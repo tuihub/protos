@@ -2449,9 +2449,7 @@ const file_librarian_sephirah_v1_sephirah_yesod_proto_rawDesc = "" +
 	"#FEED_CONFIG_PULL_STATUS_UNSPECIFIED\x10\x00\x12&\n" +
 	"\"FEED_CONFIG_PULL_STATUS_PROCESSING\x10\x01\x12#\n" +
 	"\x1fFEED_CONFIG_PULL_STATUS_SUCCESS\x10\x02\x12\"\n" +
-	"\x1eFEED_CONFIG_PULL_STATUS_FAILED\x10\x03B\x83\x02\n" +
-	"\"com.librarian.sephirah.v1.sephirahB\n" +
-	"YesodProtoP\x01Z5github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1\xa2\x02\x04LSVS\xaa\x02\x1eLibrarian.Sephirah.V1.Sephirah\xca\x02\x1eLibrarian\\Sephirah\\V1\\Sephirah\xe2\x02*Librarian\\Sephirah\\V1\\Sephirah\\GPBMetadata\xea\x02!Librarian::Sephirah::V1::Sephirahb\x06proto3"
+	"\x1eFEED_CONFIG_PULL_STATUS_FAILED\x10\x03BfZ5github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1\xaa\x02,TuiHub.Protos.Librarian.Sephirah.V1.Sephirahb\x06proto3"
 
 var (
 	file_librarian_sephirah_v1_sephirah_yesod_proto_rawDescOnce sync.Once

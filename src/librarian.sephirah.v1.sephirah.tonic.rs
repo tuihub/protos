@@ -146,6 +146,8 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.server_streaming(req, path, codec).await
         }
+        /** `Tiphereth` `Normal` Login via password and get two token
+*/
         pub async fn get_token(
             &mut self,
             request: impl tonic::IntoRequest<super::GetTokenRequest>,
@@ -2843,6 +2845,8 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<Self::ListenServerEventStream>,
             tonic::Status,
         >;
+        /** `Tiphereth` `Normal` Login via password and get two token
+*/
         async fn get_token(
             &self,
             request: tonic::Request<super::GetTokenRequest>,
