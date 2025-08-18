@@ -533,7 +533,8 @@ const file_librarian_sephirah_v1_angela_angela_service_proto_rawDesc = "" +
 	"\x16UpdateStoreAppSaveFile\x12;.librarian.sephirah.v1.angela.UpdateStoreAppSaveFileRequest\x1a<.librarian.sephirah.v1.angela.UpdateStoreAppSaveFileResponse\x12\x93\x01\n" +
 	"\x16UploadStoreAppSaveFile\x12;.librarian.sephirah.v1.angela.UploadStoreAppSaveFileRequest\x1a<.librarian.sephirah.v1.angela.UploadStoreAppSaveFileResponse\x12\x90\x01\n" +
 	"\x15ListStoreAppSaveFiles\x12:.librarian.sephirah.v1.angela.ListStoreAppSaveFilesRequest\x1a;.librarian.sephirah.v1.angela.ListStoreAppSaveFilesResponse\x12\x93\x01\n" +
-	"\x16DeleteStoreAppSaveFile\x12;.librarian.sephirah.v1.angela.DeleteStoreAppSaveFileRequest\x1a<.librarian.sephirah.v1.angela.DeleteStoreAppSaveFileResponseBdZ5github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1\xaa\x02*TuiHub.Protos.Librarian.Sephirah.V1.Angelab\x06proto3"
+	"\x16DeleteStoreAppSaveFile\x12;.librarian.sephirah.v1.angela.DeleteStoreAppSaveFileRequest\x1a<.librarian.sephirah.v1.angela.DeleteStoreAppSaveFileResponseB\x81\x02\n" +
+	" com.librarian.sephirah.v1.angelaB\x12AngelaServiceProtoP\x01Z5github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1\xa2\x02\x04LSVA\xaa\x02\x1cLibrarian.Sephirah.V1.Angela\xca\x02\x1cLibrarian\\Sephirah\\V1\\Angela\xe2\x02(Librarian\\Sephirah\\V1\\Angela\\GPBMetadata\xea\x02\x1fLibrarian::Sephirah::V1::Angelab\x06proto3"
 
 var (
 	file_librarian_sephirah_v1_angela_angela_service_proto_rawDescOnce sync.Once

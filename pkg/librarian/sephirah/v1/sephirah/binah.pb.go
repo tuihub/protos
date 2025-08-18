@@ -1229,7 +1229,9 @@ const file_librarian_sephirah_v1_sephirah_binah_proto_rawDesc = "" +
 	"\x1cFILE_TRANSFER_STATUS_PENDING\x10\x01\x12$\n" +
 	" FILE_TRANSFER_STATUS_IN_PROGRESS\x10\x02\x12 \n" +
 	"\x1cFILE_TRANSFER_STATUS_SUCCESS\x10\x03\x12\x1f\n" +
-	"\x1bFILE_TRANSFER_STATUS_FAILED\x10\x04BfZ5github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1\xaa\x02,TuiHub.Protos.Librarian.Sephirah.V1.Sephirahb\x06proto3"
+	"\x1bFILE_TRANSFER_STATUS_FAILED\x10\x04B\x83\x02\n" +
+	"\"com.librarian.sephirah.v1.sephirahB\n" +
+	"BinahProtoP\x01Z5github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1\xa2\x02\x04LSVS\xaa\x02\x1eLibrarian.Sephirah.V1.Sephirah\xca\x02\x1eLibrarian\\Sephirah\\V1\\Sephirah\xe2\x02*Librarian\\Sephirah\\V1\\Sephirah\\GPBMetadata\xea\x02!Librarian::Sephirah::V1::Sephirahb\x06proto3"
 
 var (
 	file_librarian_sephirah_v1_sephirah_binah_proto_rawDescOnce sync.Once

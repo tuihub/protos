@@ -1434,7 +1434,8 @@ const file_librarian_sephirah_v1_angela_tiphereth_proto_rawDesc = "" +
 	"\x0eSentinelStatus\x12\x1f\n" +
 	"\x1bSENTINEL_STATUS_UNSPECIFIED\x10\x00\x12\x1a\n" +
 	"\x16SENTINEL_STATUS_ACTIVE\x10\x01\x12\x1b\n" +
-	"\x17SENTINEL_STATUS_BLOCKED\x10\x02BdZ5github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1\xaa\x02*TuiHub.Protos.Librarian.Sephirah.V1.Angelab\x06proto3"
+	"\x17SENTINEL_STATUS_BLOCKED\x10\x02B\xfd\x01\n" +
+	" com.librarian.sephirah.v1.angelaB\x0eTipherethProtoP\x01Z5github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1\xa2\x02\x04LSVA\xaa\x02\x1cLibrarian.Sephirah.V1.Angela\xca\x02\x1cLibrarian\\Sephirah\\V1\\Angela\xe2\x02(Librarian\\Sephirah\\V1\\Angela\\GPBMetadata\xea\x02\x1fLibrarian::Sephirah::V1::Angelab\x06proto3"
 
 var (
 	file_librarian_sephirah_v1_angela_tiphereth_proto_rawDescOnce sync.Once

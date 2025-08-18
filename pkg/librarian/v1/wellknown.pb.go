@@ -1021,7 +1021,8 @@ const file_librarian_v1_wellknown_proto_rawDesc = "" +
 	"'WELL_KNOWN_FEED_ITEM_ACTION_UNSPECIFIED\x10\x00\x1a\x03\xc2>\x00\x12A\n" +
 	"*WELL_KNOWN_FEED_ITEM_ACTION_KEYWORD_FILTER\x10\x01\x1a\x11\xc2>\x0ekeyword_filter\x12O\n" +
 	"1WELL_KNOWN_FEED_ITEM_ACTION_DESCRIPTION_GENERATOR\x10\x02\x1a\x18\xc2>\x15description_generator:?\n" +
-	"\tto_string\x12!.google.protobuf.EnumValueOptions\x18\xe8\a \x01(\tR\btoStringBKZ,github.com/tuihub/protos/pkg/librarian/v1;v1\xaa\x02\x1aTuiHub.Protos.Librarian.V1b\x06proto3"
+	"\tto_string\x12!.google.protobuf.EnumValueOptions\x18\xe8\a \x01(\tR\btoStringB\xa1\x01\n" +
+	"\x10com.librarian.v1B\x0eWellknownProtoP\x01Z,github.com/tuihub/protos/pkg/librarian/v1;v1\xa2\x02\x03LXX\xaa\x02\fLibrarian.V1\xca\x02\fLibrarian\\V1\xe2\x02\x18Librarian\\V1\\GPBMetadata\xea\x02\rLibrarian::V1b\x06proto3"
 
 var (
 	file_librarian_v1_wellknown_proto_rawDescOnce sync.Once

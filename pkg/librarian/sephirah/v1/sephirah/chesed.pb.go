@@ -661,7 +661,8 @@ const file_librarian_sephirah_v1_sephirah_chesed_proto_rawDesc = "" +
 	"\x14DownloadImageRequest\x12(\n" +
 	"\x02id\x18\x01 \x01(\v2\x18.librarian.v1.InternalIDR\x02id\">\n" +
 	"\x15DownloadImageResponse\x12%\n" +
-	"\x0edownload_token\x18\x01 \x01(\tR\rdownloadTokenBfZ5github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1\xaa\x02,TuiHub.Protos.Librarian.Sephirah.V1.Sephirahb\x06proto3"
+	"\x0edownload_token\x18\x01 \x01(\tR\rdownloadTokenB\x84\x02\n" +
+	"\"com.librarian.sephirah.v1.sephirahB\vChesedProtoP\x01Z5github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1\xa2\x02\x04LSVS\xaa\x02\x1eLibrarian.Sephirah.V1.Sephirah\xca\x02\x1eLibrarian\\Sephirah\\V1\\Sephirah\xe2\x02*Librarian\\Sephirah\\V1\\Sephirah\\GPBMetadata\xea\x02!Librarian::Sephirah::V1::Sephirahb\x06proto3"
 
 var (
 	file_librarian_sephirah_v1_sephirah_chesed_proto_rawDescOnce sync.Once

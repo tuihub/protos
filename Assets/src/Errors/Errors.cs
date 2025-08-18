@@ -32,9 +32,10 @@ namespace Errors {
             "ASABKAlSA2tleRIUCgV2YWx1ZRgCIAEoCVIFdmFsdWU6AjgBOkAKDGRlZmF1",
             "bHRfY29kZRIcLmdvb2dsZS5wcm90b2J1Zi5FbnVtT3B0aW9ucxjUCCABKAVS",
             "C2RlZmF1bHRDb2RlOjYKBGNvZGUSIS5nb29nbGUucHJvdG9idWYuRW51bVZh",
-            "bHVlT3B0aW9ucxjVCCABKAVSBGNvZGVCWQoYY29tLmdpdGh1Yi5rcmF0b3Mu",
-            "ZXJyb3JzUAFaLGdpdGh1Yi5jb20vZ28ta3JhdG9zL2tyYXRvcy92Mi9lcnJv",
-            "cnM7ZXJyb3JzogIMS3JhdG9zRXJyb3JzYgZwcm90bzM="));
+            "bHVlT3B0aW9ucxjVCCABKAVSBGNvZGVCfwoKY29tLmVycm9yc0ILRXJyb3Jz",
+            "UHJvdG9QAVosZ2l0aHViLmNvbS9nby1rcmF0b3Mva3JhdG9zL3YyL2Vycm9y",
+            "cztlcnJvcnOiAgNFWFiqAgZFcnJvcnPKAgZFcnJvcnPiAhJFcnJvcnNcR1BC",
+            "TWV0YWRhdGHqAgZFcnJvcnNiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pb::Extension[] { ErrorsExtensions.DefaultCode, ErrorsExtensions.Code }, new pbr::GeneratedClrTypeInfo[] {

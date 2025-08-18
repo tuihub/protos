@@ -4197,7 +4197,8 @@ const file_librarian_sephirah_v1_sephirah_gebura_proto_rawDesc = "" +
 	"=APP_SAVE_FILE_CAPACITY_STRATEGY_DELETE_OLDEST_UNTIL_SATISFIED\x10\x03*6\n" +
 	"\aAppType\x12\x18\n" +
 	"\x14APP_TYPE_UNSPECIFIED\x10\x00\x12\x11\n" +
-	"\rAPP_TYPE_GAME\x10\x01BfZ5github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1\xaa\x02,TuiHub.Protos.Librarian.Sephirah.V1.Sephirahb\x06proto3"
+	"\rAPP_TYPE_GAME\x10\x01B\x84\x02\n" +
+	"\"com.librarian.sephirah.v1.sephirahB\vGeburaProtoP\x01Z5github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1\xa2\x02\x04LSVS\xaa\x02\x1eLibrarian.Sephirah.V1.Sephirah\xca\x02\x1eLibrarian\\Sephirah\\V1\\Sephirah\xe2\x02*Librarian\\Sephirah\\V1\\Sephirah\\GPBMetadata\xea\x02!Librarian::Sephirah::V1::Sephirahb\x06proto3"
 
 var (
 	file_librarian_sephirah_v1_sephirah_gebura_proto_rawDescOnce sync.Once

@@ -1215,7 +1215,8 @@ const file_librarian_porter_v1_porter_service_proto_rawDesc = "" +
 	"\x11DisableFeedSetter\x12-.librarian.porter.v1.DisableFeedSetterRequest\x1a..librarian.porter.v1.DisableFeedSetterResponse\x12o\n" +
 	"\x10EnableFeedGetter\x12,.librarian.porter.v1.EnableFeedGetterRequest\x1a-.librarian.porter.v1.EnableFeedGetterResponse\x12r\n" +
 	"\x11DisableFeedGetter\x12-.librarian.porter.v1.DisableFeedGetterRequest\x1a..librarian.porter.v1.DisableFeedGetterResponse\x12f\n" +
-	"\rPushFeedItems\x12).librarian.porter.v1.PushFeedItemsRequest\x1a*.librarian.porter.v1.PushFeedItemsResponseBYZ3github.com/tuihub/protos/pkg/librarian/porter/v1;v1\xaa\x02!TuiHub.Protos.Librarian.Porter.V1b\x06proto3"
+	"\rPushFeedItems\x12).librarian.porter.v1.PushFeedItemsRequest\x1a*.librarian.porter.v1.PushFeedItemsResponseB\xd0\x01\n" +
+	"\x17com.librarian.porter.v1B\x12PorterServiceProtoP\x01Z3github.com/tuihub/protos/pkg/librarian/porter/v1;v1\xa2\x02\x03LPX\xaa\x02\x13Librarian.Porter.V1\xca\x02\x13Librarian\\Porter\\V1\xe2\x02\x1fLibrarian\\Porter\\V1\\GPBMetadata\xea\x02\x15Librarian::Porter::V1b\x06proto3"
 
 var (
 	file_librarian_porter_v1_porter_service_proto_rawDescOnce sync.Once

@@ -1091,9 +1091,11 @@ namespace Buf.Validate {
             "aW9ucxj/jgMgASgLMh4uYnVmLnZhbGlkYXRlLk9uZW9mQ29uc3RyYWludHNS",
             "BW9uZW9miAEBOlgKBWZpZWxkEh0uZ29vZ2xlLnByb3RvYnVmLkZpZWxkT3B0",
             "aW9ucxj/jgMgASgLMh4uYnVmLnZhbGlkYXRlLkZpZWxkQ29uc3RyYWludHNS",
-            "BWZpZWxkiAEBQklaR2J1Zi5idWlsZC9nZW4vZ28vYnVmYnVpbGQvcHJvdG92",
-            "YWxpZGF0ZS9wcm90b2NvbGJ1ZmZlcnMvZ28vYnVmL3ZhbGlkYXRlYgZwcm90",
-            "bzM="));
+            "BWZpZWxkiAEBQrsBChBjb20uYnVmLnZhbGlkYXRlQg1WYWxpZGF0ZVByb3Rv",
+            "UAFaR2J1Zi5idWlsZC9nZW4vZ28vYnVmYnVpbGQvcHJvdG92YWxpZGF0ZS9w",
+            "cm90b2NvbGJ1ZmZlcnMvZ28vYnVmL3ZhbGlkYXRlogIDQlZYqgIMQnVmLlZh",
+            "bGlkYXRlygIMQnVmXFZhbGlkYXRl4gIYQnVmXFZhbGlkYXRlXEdQQk1ldGFk",
+            "YXRh6gINQnVmOjpWYWxpZGF0ZWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Buf.Validate.ExpressionReflection.Descriptor, global::Buf.Validate.Priv.PrivateReflection.Descriptor, global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Buf.Validate.KnownRegex), }, new pb::Extension[] { ValidateExtensions.Message, ValidateExtensions.Oneof, ValidateExtensions.Field }, new pbr::GeneratedClrTypeInfo[] {

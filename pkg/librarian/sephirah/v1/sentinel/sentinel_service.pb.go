@@ -740,7 +740,8 @@ const file_librarian_sephirah_v1_sentinel_sentinel_service_proto_rawDesc = "" +
 	"\fRefreshToken\x123.librarian.sephirah.v1.sentinel.RefreshTokenRequest\x1a4.librarian.sephirah.v1.sentinel.RefreshTokenResponse\x12p\n" +
 	"\tHeartbeat\x120.librarian.sephirah.v1.sentinel.HeartbeatRequest\x1a1.librarian.sephirah.v1.sentinel.HeartbeatResponse\x12\xa0\x01\n" +
 	"\x19ReportSentinelInformation\x12@.librarian.sephirah.v1.sentinel.ReportSentinelInformationRequest\x1aA.librarian.sephirah.v1.sentinel.ReportSentinelInformationResponse\x12\x88\x01\n" +
-	"\x11ReportAppBinaries\x128.librarian.sephirah.v1.sentinel.ReportAppBinariesRequest\x1a9.librarian.sephirah.v1.sentinel.ReportAppBinariesResponseBoZ>github.com/tuihub/protos/pkg/librarian/sephirah/v1/sentinel;v1\xaa\x02,TuiHub.Protos.Librarian.Sephirah.V1.Sentinelb\x06proto3"
+	"\x11ReportAppBinaries\x128.librarian.sephirah.v1.sentinel.ReportAppBinariesRequest\x1a9.librarian.sephirah.v1.sentinel.ReportAppBinariesResponseB\x96\x02\n" +
+	"\"com.librarian.sephirah.v1.sentinelB\x14SentinelServiceProtoP\x01Z>github.com/tuihub/protos/pkg/librarian/sephirah/v1/sentinel;v1\xa2\x02\x04LSVS\xaa\x02\x1eLibrarian.Sephirah.V1.Sentinel\xca\x02\x1eLibrarian\\Sephirah\\V1\\Sentinel\xe2\x02*Librarian\\Sephirah\\V1\\Sentinel\\GPBMetadata\xea\x02!Librarian::Sephirah::V1::Sentinelb\x06proto3"
 
 var (
 	file_librarian_sephirah_v1_sentinel_sentinel_service_proto_rawDescOnce sync.Once

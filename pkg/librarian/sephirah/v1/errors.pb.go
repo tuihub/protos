@@ -99,7 +99,8 @@ const file_librarian_sephirah_v1_errors_proto_rawDesc = "" +
 	"\x16ERROR_REASON_NOT_FOUND\x10\x04\x1a\x04\xa8E\x94\x03\x12)\n" +
 	"\x1fERROR_REASON_METHOD_NOT_ALLOWED\x10\x05\x1a\x04\xa8E\x95\x03\x12&\n" +
 	"\x1cERROR_REASON_NOT_IMPLEMENTED\x10\x06\x1a\x04\xa8E\xf5\x03\x12\"\n" +
-	"\x18ERROR_REASON_BAD_GATEWAY\x10\a\x1a\x04\xa8E\xf6\x03\x1a\x04\xa0E\xf4\x03B]Z5github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1\xaa\x02#TuiHub.Protos.Librarian.Sephirah.V1b\x06proto3"
+	"\x18ERROR_REASON_BAD_GATEWAY\x10\a\x1a\x04\xa8E\xf6\x03\x1a\x04\xa0E\xf4\x03B\xd5\x01\n" +
+	"\x19com.librarian.sephirah.v1B\vErrorsProtoP\x01Z5github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1\xa2\x02\x03LSX\xaa\x02\x15Librarian.Sephirah.V1\xca\x02\x15Librarian\\Sephirah\\V1\xe2\x02!Librarian\\Sephirah\\V1\\GPBMetadata\xea\x02\x17Librarian::Sephirah::V1b\x06proto3"
 
 var (
 	file_librarian_sephirah_v1_errors_proto_rawDescOnce sync.Once

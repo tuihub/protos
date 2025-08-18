@@ -623,7 +623,8 @@ const file_librarian_v1_common_proto_rawDesc = "" +
 	"build_date\x18\x03 \x01(\tR\tbuildDate\x12\x12\n" +
 	"\x04name\x18\x04 \x01(\tR\x04name\x12\x18\n" +
 	"\aversion\x18\x05 \x01(\tR\aversion\x12 \n" +
-	"\vdescription\x18\x06 \x01(\tR\vdescriptionBKZ,github.com/tuihub/protos/pkg/librarian/v1;v1\xaa\x02\x1aTuiHub.Protos.Librarian.V1b\x06proto3"
+	"\vdescription\x18\x06 \x01(\tR\vdescriptionB\x9e\x01\n" +
+	"\x10com.librarian.v1B\vCommonProtoP\x01Z,github.com/tuihub/protos/pkg/librarian/v1;v1\xa2\x02\x03LXX\xaa\x02\fLibrarian.V1\xca\x02\fLibrarian\\V1\xe2\x02\x18Librarian\\V1\\GPBMetadata\xea\x02\rLibrarian::V1b\x06proto3"
 
 var (
 	file_librarian_v1_common_proto_rawDescOnce sync.Once

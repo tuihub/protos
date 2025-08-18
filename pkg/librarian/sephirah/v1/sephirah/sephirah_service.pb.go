@@ -366,7 +366,8 @@ const file_librarian_sephirah_v1_sephirah_sephirah_service_proto_rawDesc = "" +
 	"\x17ListFeedItemCollections\x12>.librarian.sephirah.v1.sephirah.ListFeedItemCollectionsRequest\x1a?.librarian.sephirah.v1.sephirah.ListFeedItemCollectionsResponse\x12\x9a\x01\n" +
 	"\x17AddFeedItemToCollection\x12>.librarian.sephirah.v1.sephirah.AddFeedItemToCollectionRequest\x1a?.librarian.sephirah.v1.sephirah.AddFeedItemToCollectionResponse\x12\xa9\x01\n" +
 	"\x1cRemoveFeedItemFromCollection\x12C.librarian.sephirah.v1.sephirah.RemoveFeedItemFromCollectionRequest\x1aD.librarian.sephirah.v1.sephirah.RemoveFeedItemFromCollectionResponse\x12\xa0\x01\n" +
-	"\x19ListFeedItemsInCollection\x12@.librarian.sephirah.v1.sephirah.ListFeedItemsInCollectionRequest\x1aA.librarian.sephirah.v1.sephirah.ListFeedItemsInCollectionResponseBfZ5github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1\xaa\x02,TuiHub.Protos.Librarian.Sephirah.V1.Sephirahb\x06proto3"
+	"\x19ListFeedItemsInCollection\x12@.librarian.sephirah.v1.sephirah.ListFeedItemsInCollectionRequest\x1aA.librarian.sephirah.v1.sephirah.ListFeedItemsInCollectionResponseB\x8d\x02\n" +
+	"\"com.librarian.sephirah.v1.sephirahB\x14SephirahServiceProtoP\x01Z5github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1\xa2\x02\x04LSVS\xaa\x02\x1eLibrarian.Sephirah.V1.Sephirah\xca\x02\x1eLibrarian\\Sephirah\\V1\\Sephirah\xe2\x02*Librarian\\Sephirah\\V1\\Sephirah\\GPBMetadata\xea\x02!Librarian::Sephirah::V1::Sephirahb\x06proto3"
 
 var (
 	file_librarian_sephirah_v1_sephirah_sephirah_service_proto_rawDescOnce sync.Once

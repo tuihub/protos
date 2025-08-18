@@ -5838,7 +5838,8 @@ const file_buf_validate_validate_proto_rawDesc = "" +
 	"\x1dKNOWN_REGEX_HTTP_HEADER_VALUE\x10\x02:`\n" +
 	"\amessage\x12\x1f.google.protobuf.MessageOptions\x18\xff\x8e\x03 \x01(\v2 .buf.validate.MessageConstraintsR\amessage\x88\x01\x01:X\n" +
 	"\x05oneof\x12\x1d.google.protobuf.OneofOptions\x18\xff\x8e\x03 \x01(\v2\x1e.buf.validate.OneofConstraintsR\x05oneof\x88\x01\x01:X\n" +
-	"\x05field\x12\x1d.google.protobuf.FieldOptions\x18\xff\x8e\x03 \x01(\v2\x1e.buf.validate.FieldConstraintsR\x05field\x88\x01\x01BIZGbuf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validateb\x06proto3"
+	"\x05field\x12\x1d.google.protobuf.FieldOptions\x18\xff\x8e\x03 \x01(\v2\x1e.buf.validate.FieldConstraintsR\x05field\x88\x01\x01B\xbb\x01\n" +
+	"\x10com.buf.validateB\rValidateProtoP\x01ZGbuf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go/buf/validate\xa2\x02\x03BVX\xaa\x02\fBuf.Validate\xca\x02\fBuf\\Validate\xe2\x02\x18Buf\\Validate\\GPBMetadata\xea\x02\rBuf::Validateb\x06proto3"
 
 var (
 	file_buf_validate_validate_proto_rawDescOnce sync.Once

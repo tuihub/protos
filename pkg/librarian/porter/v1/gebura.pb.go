@@ -770,7 +770,8 @@ const file_librarian_porter_v1_gebura_proto_rawDesc = "" +
 	" WELL_KNOWN_DETECT_DATA_PUBLISHER\x10\x03\x1a\f\xc2>\tpublisher*6\n" +
 	"\aAppType\x12\x18\n" +
 	"\x14APP_TYPE_UNSPECIFIED\x10\x00\x12\x11\n" +
-	"\rAPP_TYPE_GAME\x10\x01BYZ3github.com/tuihub/protos/pkg/librarian/porter/v1;v1\xaa\x02!TuiHub.Protos.Librarian.Porter.V1b\x06proto3"
+	"\rAPP_TYPE_GAME\x10\x01B\xc9\x01\n" +
+	"\x17com.librarian.porter.v1B\vGeburaProtoP\x01Z3github.com/tuihub/protos/pkg/librarian/porter/v1;v1\xa2\x02\x03LPX\xaa\x02\x13Librarian.Porter.V1\xca\x02\x13Librarian\\Porter\\V1\xe2\x02\x1fLibrarian\\Porter\\V1\\GPBMetadata\xea\x02\x15Librarian::Porter::V1b\x06proto3"
 
 var (
 	file_librarian_porter_v1_gebura_proto_rawDescOnce sync.Once

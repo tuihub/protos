@@ -608,7 +608,9 @@ const file_librarian_sephirah_v1_angela_binah_proto_rawDesc = "" +
 	"!PresignedUploadFileStatusResponse\"\x1e\n" +
 	"\x1cPresignedDownloadFileRequest\"B\n" +
 	"\x1dPresignedDownloadFileResponse\x12!\n" +
-	"\fdownload_url\x18\x01 \x01(\tR\vdownloadUrlBdZ5github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1\xaa\x02*TuiHub.Protos.Librarian.Sephirah.V1.Angelab\x06proto3"
+	"\fdownload_url\x18\x01 \x01(\tR\vdownloadUrlB\xf9\x01\n" +
+	" com.librarian.sephirah.v1.angelaB\n" +
+	"BinahProtoP\x01Z5github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1\xa2\x02\x04LSVA\xaa\x02\x1cLibrarian.Sephirah.V1.Angela\xca\x02\x1cLibrarian\\Sephirah\\V1\\Angela\xe2\x02(Librarian\\Sephirah\\V1\\Angela\\GPBMetadata\xea\x02\x1fLibrarian::Sephirah::V1::Angelab\x06proto3"
 
 var (
 	file_librarian_sephirah_v1_angela_binah_proto_rawDescOnce sync.Once
