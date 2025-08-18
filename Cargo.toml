@@ -6,6 +6,7 @@ license = "MIT"
 readme = "README.md"
 
 [dependencies]
+buf = "0.2.3"
 bytes = "1.10.1"
 futures-core = "0.3.31"
 pbjson = "0.7.0"
