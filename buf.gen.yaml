@@ -44,6 +44,8 @@ plugins:
       - file_descriptor_set
   - remote: buf.build/community/neoeinstein-prost-serde:v0.3.1
     out: src
+    opt:
+      - extern_path=.google.protobuf=::pbjson_types
   - remote: buf.build/community/neoeinstein-tonic:v0.4.1
     out: src
     opt:
