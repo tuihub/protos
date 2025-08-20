@@ -5,6 +5,8 @@ install-plugins:
 	go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
 	go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
 	go install github.com/go-kratos/kratos/cmd/protoc-gen-go-errors/v2@latest
+	go install connectrpc.com/connect/cmd/protoc-gen-connect-go@latest
+	go install github.com/sudorandom/protoc-gen-connect-openapi@latest
 	npm install
 	cargo install --locked protoc-gen-prost-crate
 	dart pub global activate protoc_plugin

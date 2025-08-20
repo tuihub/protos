@@ -6,6 +6,13 @@ plugins:
     opt: docs/markdown.tmpl,protos.md
     strategy: all
 
+  - local: protoc-gen-connect-openapi
+    out: docs
+    opt:
+      - format=json
+      - path=openapi.json
+    strategy: all
+
   #Go
   - local: protoc-gen-go
     out: pkg
@@ -14,6 +21,9 @@ plugins:
     out: pkg
     opt: paths=source_relative
   - local: protoc-gen-go-errors
+    out: pkg
+    opt: paths=source_relative
+  - local: protoc-gen-connect-go
     out: pkg
     opt: paths=source_relative
 
