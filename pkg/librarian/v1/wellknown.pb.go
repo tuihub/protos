@@ -943,17 +943,17 @@ var File_librarian_v1_wellknown_proto protoreflect.FileDescriptor
 
 const file_librarian_v1_wellknown_proto_rawDesc = "" +
 	"\n" +
-	"\x1clibrarian/v1/wellknown.proto\x12\flibrarian.v1\x1a\x1bbuf/validate/validate.proto\x1a google/protobuf/descriptor.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"[\n" +
-	"\rPagingRequest\x12#\n" +
-	"\bpage_num\x18\x01 \x01(\x03B\b\xfa\xf7\x18\x04\"\x02 \x00R\apageNum\x12%\n" +
-	"\tpage_size\x18\x02 \x01(\x03B\b\xfa\xf7\x18\x04\"\x02 \x00R\bpageSize\"9\n" +
-	"\x0ePagingResponse\x12'\n" +
+	"\x1clibrarian/v1/wellknown.proto\x12\flibrarian.v1\x1a\x1bbuf/validate/validate.proto\x1a google/protobuf/descriptor.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"Y\n" +
+	"\rPagingRequest\x12\"\n" +
+	"\bpage_num\x18\x01 \x01(\x03B\a\xbaH\x04\"\x02 \x00R\apageNum\x12$\n" +
+	"\tpage_size\x18\x02 \x01(\x03B\a\xbaH\x04\"\x02 \x00R\bpageSize\"8\n" +
+	"\x0ePagingResponse\x12&\n" +
 	"\n" +
-	"total_size\x18\x01 \x01(\x03B\b\xfa\xf7\x18\x04\"\x02(\x00R\ttotalSize\"\x88\x01\n" +
+	"total_size\x18\x01 \x01(\x03B\a\xbaH\x04\"\x02(\x00R\ttotalSize\"\x87\x01\n" +
 	"\tTimeRange\x129\n" +
 	"\n" +
-	"start_time\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampR\tstartTime\x12@\n" +
-	"\bduration\x18\x02 \x01(\v2\x19.google.protobuf.DurationB\t\xfa\xf7\x18\x05\xaa\x01\x022\x00R\bduration\"\x1c\n" +
+	"start_time\x18\x01 \x01(\v2\x1a.google.protobuf.TimestampR\tstartTime\x12?\n" +
+	"\bduration\x18\x02 \x01(\v2\x19.google.protobuf.DurationB\b\xbaH\x05\xaa\x01\x022\x00R\bduration\"\x1c\n" +
 	"\n" +
 	"InternalID\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\x03R\x02id\"4\n" +

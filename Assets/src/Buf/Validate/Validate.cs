@@ -24,233 +24,257 @@ namespace Buf.Validate {
     static ValidateReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChtidWYvdmFsaWRhdGUvdmFsaWRhdGUucHJvdG8SDGJ1Zi52YWxpZGF0ZRod",
-            "YnVmL3ZhbGlkYXRlL2V4cHJlc3Npb24ucHJvdG8aH2J1Zi92YWxpZGF0ZS9w",
-            "cml2L3ByaXZhdGUucHJvdG8aIGdvb2dsZS9wcm90b2J1Zi9kZXNjcmlwdG9y",
-            "LnByb3RvGh5nb29nbGUvcHJvdG9idWYvZHVyYXRpb24ucHJvdG8aH2dvb2ds",
-            "ZS9wcm90b2J1Zi90aW1lc3RhbXAucHJvdG8ibgoSTWVzc2FnZUNvbnN0cmFp",
-            "bnRzEh8KCGRpc2FibGVkGAEgASgISABSCGRpc2FibGVkiAEBEioKA2NlbBgD",
-            "IAMoCzIYLmJ1Zi52YWxpZGF0ZS5Db25zdHJhaW50UgNjZWxCCwoJX2Rpc2Fi",
-            "bGVkIkAKEE9uZW9mQ29uc3RyYWludHMSHwoIcmVxdWlyZWQYASABKAhIAFII",
-            "cmVxdWlyZWSIAQFCCwoJX3JlcXVpcmVkIvUJChBGaWVsZENvbnN0cmFpbnRz",
-            "EioKA2NlbBgXIAMoCzIYLmJ1Zi52YWxpZGF0ZS5Db25zdHJhaW50UgNjZWwS",
-            "GAoHc2tpcHBlZBgYIAEoCFIHc2tpcHBlZBIaCghyZXF1aXJlZBgZIAEoCFII",
-            "cmVxdWlyZWQSIQoMaWdub3JlX2VtcHR5GBogASgIUgtpZ25vcmVFbXB0eRIw",
-            "CgVmbG9hdBgBIAEoCzIYLmJ1Zi52YWxpZGF0ZS5GbG9hdFJ1bGVzSABSBWZs",
-            "b2F0EjMKBmRvdWJsZRgCIAEoCzIZLmJ1Zi52YWxpZGF0ZS5Eb3VibGVSdWxl",
-            "c0gAUgZkb3VibGUSMAoFaW50MzIYAyABKAsyGC5idWYudmFsaWRhdGUuSW50",
-            "MzJSdWxlc0gAUgVpbnQzMhIwCgVpbnQ2NBgEIAEoCzIYLmJ1Zi52YWxpZGF0",
-            "ZS5JbnQ2NFJ1bGVzSABSBWludDY0EjMKBnVpbnQzMhgFIAEoCzIZLmJ1Zi52",
-            "YWxpZGF0ZS5VSW50MzJSdWxlc0gAUgZ1aW50MzISMwoGdWludDY0GAYgASgL",
-            "MhkuYnVmLnZhbGlkYXRlLlVJbnQ2NFJ1bGVzSABSBnVpbnQ2NBIzCgZzaW50",
-            "MzIYByABKAsyGS5idWYudmFsaWRhdGUuU0ludDMyUnVsZXNIAFIGc2ludDMy",
-            "EjMKBnNpbnQ2NBgIIAEoCzIZLmJ1Zi52YWxpZGF0ZS5TSW50NjRSdWxlc0gA",
-            "UgZzaW50NjQSNgoHZml4ZWQzMhgJIAEoCzIaLmJ1Zi52YWxpZGF0ZS5GaXhl",
-            "ZDMyUnVsZXNIAFIHZml4ZWQzMhI2CgdmaXhlZDY0GAogASgLMhouYnVmLnZh",
-            "bGlkYXRlLkZpeGVkNjRSdWxlc0gAUgdmaXhlZDY0EjkKCHNmaXhlZDMyGAsg",
-            "ASgLMhsuYnVmLnZhbGlkYXRlLlNGaXhlZDMyUnVsZXNIAFIIc2ZpeGVkMzIS",
-            "OQoIc2ZpeGVkNjQYDCABKAsyGy5idWYudmFsaWRhdGUuU0ZpeGVkNjRSdWxl",
-            "c0gAUghzZml4ZWQ2NBItCgRib29sGA0gASgLMhcuYnVmLnZhbGlkYXRlLkJv",
-            "b2xSdWxlc0gAUgRib29sEjMKBnN0cmluZxgOIAEoCzIZLmJ1Zi52YWxpZGF0",
-            "ZS5TdHJpbmdSdWxlc0gAUgZzdHJpbmcSMAoFYnl0ZXMYDyABKAsyGC5idWYu",
-            "dmFsaWRhdGUuQnl0ZXNSdWxlc0gAUgVieXRlcxItCgRlbnVtGBAgASgLMhcu",
-            "YnVmLnZhbGlkYXRlLkVudW1SdWxlc0gAUgRlbnVtEjkKCHJlcGVhdGVkGBIg",
-            "ASgLMhsuYnVmLnZhbGlkYXRlLlJlcGVhdGVkUnVsZXNIAFIIcmVwZWF0ZWQS",
-            "KgoDbWFwGBMgASgLMhYuYnVmLnZhbGlkYXRlLk1hcFJ1bGVzSABSA21hcBIq",
-            "CgNhbnkYFCABKAsyFi5idWYudmFsaWRhdGUuQW55UnVsZXNIAFIDYW55EjkK",
-            "CGR1cmF0aW9uGBUgASgLMhsuYnVmLnZhbGlkYXRlLkR1cmF0aW9uUnVsZXNI",
-            "AFIIZHVyYXRpb24SPAoJdGltZXN0YW1wGBYgASgLMhwuYnVmLnZhbGlkYXRl",
-            "LlRpbWVzdGFtcFJ1bGVzSABSCXRpbWVzdGFtcEIGCgR0eXBlIvYUCgpGbG9h",
-            "dFJ1bGVzEnYKBWNvbnN0GAEgASgCQluC+BhXClUKC2Zsb2F0LmNvbnN0GkZ0",
-            "aGlzICE9IHJ1bGVzLmNvbnN0ID8gJ3ZhbHVlIG11c3QgZXF1YWwgJXMnLmZv",
-            "cm1hdChbcnVsZXMuY29uc3RdKSA6ICcnSABSBWNvbnN0iAEBEpIBCgJsdBgC",
-            "IAEoAkJ9gvgYeQp3CghmbG9hdC5sdBprIWhhcyhydWxlcy5ndGUpICYmICFo",
-            "YXMocnVsZXMuZ3QpICYmIHRoaXMgPj0gcnVsZXMubHQ/ICd2YWx1ZSBtdXN0",
-            "IGJlIGxlc3MgdGhhbiAlcycuZm9ybWF0KFtydWxlcy5sdF0pIDogJydIAVIC",
-            "bHSIAQESpQEKA2x0ZRgDIAEoAkKNAYL4GIgBCoUBCglmbG9hdC5sdGUaeCFo",
-            "YXMocnVsZXMuZ3RlKSAmJiAhaGFzKHJ1bGVzLmd0KSAmJiB0aGlzID4gcnVs",
-            "ZXMubHRlPyAndmFsdWUgbXVzdCBiZSBsZXNzIHRoYW4gb3IgZXF1YWwgdG8g",
-            "JXMnLmZvcm1hdChbcnVsZXMubHRlXSkgOiAnJ0gCUgNsdGWIAQESnwcKAmd0",
-            "GAQgASgCQokHgvgYhAcKegoIZmxvYXQuZ3QabiFoYXMocnVsZXMubHQpICYm",
+            "ChtidWYvdmFsaWRhdGUvdmFsaWRhdGUucHJvdG8SDGJ1Zi52YWxpZGF0ZRog",
+            "Z29vZ2xlL3Byb3RvYnVmL2Rlc2NyaXB0b3IucHJvdG8aHmdvb2dsZS9wcm90",
+            "b2J1Zi9kdXJhdGlvbi5wcm90bxofZ29vZ2xlL3Byb3RvYnVmL3RpbWVzdGFt",
+            "cC5wcm90byJQCgRSdWxlEg4KAmlkGAEgASgJUgJpZBIYCgdtZXNzYWdlGAIg",
+            "ASgJUgdtZXNzYWdlEh4KCmV4cHJlc3Npb24YAyABKAlSCmV4cHJlc3Npb24i",
+            "egoMTWVzc2FnZVJ1bGVzEiQKA2NlbBgDIAMoCzISLmJ1Zi52YWxpZGF0ZS5S",
+            "dWxlUgNjZWwSNAoFb25lb2YYBCADKAsyHi5idWYudmFsaWRhdGUuTWVzc2Fn",
+            "ZU9uZW9mUnVsZVIFb25lb2ZKBAgBEAJSCGRpc2FibGVkIkYKEE1lc3NhZ2VP",
+            "bmVvZlJ1bGUSFgoGZmllbGRzGAEgAygJUgZmaWVsZHMSGgoIcmVxdWlyZWQY",
+            "AiABKAhSCHJlcXVpcmVkIigKCk9uZW9mUnVsZXMSGgoIcmVxdWlyZWQYASAB",
+            "KAhSCHJlcXVpcmVkIv0JCgpGaWVsZFJ1bGVzEiQKA2NlbBgXIAMoCzISLmJ1",
+            "Zi52YWxpZGF0ZS5SdWxlUgNjZWwSGgoIcmVxdWlyZWQYGSABKAhSCHJlcXVp",
+            "cmVkEiwKBmlnbm9yZRgbIAEoDjIULmJ1Zi52YWxpZGF0ZS5JZ25vcmVSBmln",
+            "bm9yZRIwCgVmbG9hdBgBIAEoCzIYLmJ1Zi52YWxpZGF0ZS5GbG9hdFJ1bGVz",
+            "SABSBWZsb2F0EjMKBmRvdWJsZRgCIAEoCzIZLmJ1Zi52YWxpZGF0ZS5Eb3Vi",
+            "bGVSdWxlc0gAUgZkb3VibGUSMAoFaW50MzIYAyABKAsyGC5idWYudmFsaWRh",
+            "dGUuSW50MzJSdWxlc0gAUgVpbnQzMhIwCgVpbnQ2NBgEIAEoCzIYLmJ1Zi52",
+            "YWxpZGF0ZS5JbnQ2NFJ1bGVzSABSBWludDY0EjMKBnVpbnQzMhgFIAEoCzIZ",
+            "LmJ1Zi52YWxpZGF0ZS5VSW50MzJSdWxlc0gAUgZ1aW50MzISMwoGdWludDY0",
+            "GAYgASgLMhkuYnVmLnZhbGlkYXRlLlVJbnQ2NFJ1bGVzSABSBnVpbnQ2NBIz",
+            "CgZzaW50MzIYByABKAsyGS5idWYudmFsaWRhdGUuU0ludDMyUnVsZXNIAFIG",
+            "c2ludDMyEjMKBnNpbnQ2NBgIIAEoCzIZLmJ1Zi52YWxpZGF0ZS5TSW50NjRS",
+            "dWxlc0gAUgZzaW50NjQSNgoHZml4ZWQzMhgJIAEoCzIaLmJ1Zi52YWxpZGF0",
+            "ZS5GaXhlZDMyUnVsZXNIAFIHZml4ZWQzMhI2CgdmaXhlZDY0GAogASgLMhou",
+            "YnVmLnZhbGlkYXRlLkZpeGVkNjRSdWxlc0gAUgdmaXhlZDY0EjkKCHNmaXhl",
+            "ZDMyGAsgASgLMhsuYnVmLnZhbGlkYXRlLlNGaXhlZDMyUnVsZXNIAFIIc2Zp",
+            "eGVkMzISOQoIc2ZpeGVkNjQYDCABKAsyGy5idWYudmFsaWRhdGUuU0ZpeGVk",
+            "NjRSdWxlc0gAUghzZml4ZWQ2NBItCgRib29sGA0gASgLMhcuYnVmLnZhbGlk",
+            "YXRlLkJvb2xSdWxlc0gAUgRib29sEjMKBnN0cmluZxgOIAEoCzIZLmJ1Zi52",
+            "YWxpZGF0ZS5TdHJpbmdSdWxlc0gAUgZzdHJpbmcSMAoFYnl0ZXMYDyABKAsy",
+            "GC5idWYudmFsaWRhdGUuQnl0ZXNSdWxlc0gAUgVieXRlcxItCgRlbnVtGBAg",
+            "ASgLMhcuYnVmLnZhbGlkYXRlLkVudW1SdWxlc0gAUgRlbnVtEjkKCHJlcGVh",
+            "dGVkGBIgASgLMhsuYnVmLnZhbGlkYXRlLlJlcGVhdGVkUnVsZXNIAFIIcmVw",
+            "ZWF0ZWQSKgoDbWFwGBMgASgLMhYuYnVmLnZhbGlkYXRlLk1hcFJ1bGVzSABS",
+            "A21hcBIqCgNhbnkYFCABKAsyFi5idWYudmFsaWRhdGUuQW55UnVsZXNIAFID",
+            "YW55EjkKCGR1cmF0aW9uGBUgASgLMhsuYnVmLnZhbGlkYXRlLkR1cmF0aW9u",
+            "UnVsZXNIAFIIZHVyYXRpb24SPAoJdGltZXN0YW1wGBYgASgLMhwuYnVmLnZh",
+            "bGlkYXRlLlRpbWVzdGFtcFJ1bGVzSABSCXRpbWVzdGFtcEIGCgR0eXBlSgQI",
+            "GBAZSgQIGhAbUgdza2lwcGVkUgxpZ25vcmVfZW1wdHkiWgoPUHJlZGVmaW5l",
+            "ZFJ1bGVzEiQKA2NlbBgBIAMoCzISLmJ1Zi52YWxpZGF0ZS5SdWxlUgNjZWxK",
+            "BAgYEBlKBAgaEBtSB3NraXBwZWRSDGlnbm9yZV9lbXB0eSKQGAoKRmxvYXRS",
+            "dWxlcxKKAQoFY29uc3QYASABKAJCdMJIcQpvCgtmbG9hdC5jb25zdBpgdGhp",
+            "cyAhPSBnZXRGaWVsZChydWxlcywgJ2NvbnN0JykgPyAndmFsdWUgbXVzdCBl",
+            "cXVhbCAlcycuZm9ybWF0KFtnZXRGaWVsZChydWxlcywgJ2NvbnN0JyldKSA6",
+            "ICcnUgVjb25zdBKjAQoCbHQYAiABKAJCkAHCSIwBCokBCghmbG9hdC5sdBp9",
+            "IWhhcyhydWxlcy5ndGUpICYmICFoYXMocnVsZXMuZ3QpICYmICh0aGlzLmlz",
+            "TmFuKCkgfHwgdGhpcyA+PSBydWxlcy5sdCk/ICd2YWx1ZSBtdXN0IGJlIGxl",
+            "c3MgdGhhbiAlcycuZm9ybWF0KFtydWxlcy5sdF0pIDogJydIAFICbHQStAEK",
+            "A2x0ZRgDIAEoAkKfAcJImwEKmAEKCWZsb2F0Lmx0ZRqKASFoYXMocnVsZXMu",
+            "Z3RlKSAmJiAhaGFzKHJ1bGVzLmd0KSAmJiAodGhpcy5pc05hbigpIHx8IHRo",
+            "aXMgPiBydWxlcy5sdGUpPyAndmFsdWUgbXVzdCBiZSBsZXNzIHRoYW4gb3Ig",
+            "ZXF1YWwgdG8gJXMnLmZvcm1hdChbcnVsZXMubHRlXSkgOiAnJ0gAUgNsdGUS",
+            "8wcKAmd0GAQgASgCQuAHwkjcBwqNAQoIZmxvYXQuZ3QagAEhaGFzKHJ1bGVz",
+            "Lmx0KSAmJiAhaGFzKHJ1bGVzLmx0ZSkgJiYgKHRoaXMuaXNOYW4oKSB8fCB0",
+            "aGlzIDw9IHJ1bGVzLmd0KT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFu",
+            "ICVzJy5mb3JtYXQoW3J1bGVzLmd0XSkgOiAnJwrDAQoLZmxvYXQuZ3RfbHQa",
+            "swFoYXMocnVsZXMubHQpICYmIHJ1bGVzLmx0ID49IHJ1bGVzLmd0ICYmICh0",
+            "aGlzLmlzTmFuKCkgfHwgdGhpcyA+PSBydWxlcy5sdCB8fCB0aGlzIDw9IHJ1",
+            "bGVzLmd0KT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuICVzIGFuZCBs",
+            "ZXNzIHRoYW4gJXMnLmZvcm1hdChbcnVsZXMuZ3QsIHJ1bGVzLmx0XSkgOiAn",
+            "JwrNAQoVZmxvYXQuZ3RfbHRfZXhjbHVzaXZlGrMBaGFzKHJ1bGVzLmx0KSAm",
+            "JiBydWxlcy5sdCA8IHJ1bGVzLmd0ICYmICh0aGlzLmlzTmFuKCkgfHwgKHJ1",
+            "bGVzLmx0IDw9IHRoaXMgJiYgdGhpcyA8PSBydWxlcy5ndCkpPyAndmFsdWUg",
+            "bXVzdCBiZSBncmVhdGVyIHRoYW4gJXMgb3IgbGVzcyB0aGFuICVzJy5mb3Jt",
+            "YXQoW3J1bGVzLmd0LCBydWxlcy5sdF0pIDogJycK0wEKDGZsb2F0Lmd0X2x0",
+            "ZRrCAWhhcyhydWxlcy5sdGUpICYmIHJ1bGVzLmx0ZSA+PSBydWxlcy5ndCAm",
+            "JiAodGhpcy5pc05hbigpIHx8IHRoaXMgPiBydWxlcy5sdGUgfHwgdGhpcyA8",
+            "PSBydWxlcy5ndCk/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiAlcyBh",
+            "bmQgbGVzcyB0aGFuIG9yIGVxdWFsIHRvICVzJy5mb3JtYXQoW3J1bGVzLmd0",
+            "LCBydWxlcy5sdGVdKSA6ICcnCt0BChZmbG9hdC5ndF9sdGVfZXhjbHVzaXZl",
+            "GsIBaGFzKHJ1bGVzLmx0ZSkgJiYgcnVsZXMubHRlIDwgcnVsZXMuZ3QgJiYg",
+            "KHRoaXMuaXNOYW4oKSB8fCAocnVsZXMubHRlIDwgdGhpcyAmJiB0aGlzIDw9",
+            "IHJ1bGVzLmd0KSk/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiAlcyBv",
+            "ciBsZXNzIHRoYW4gb3IgZXF1YWwgdG8gJXMnLmZvcm1hdChbcnVsZXMuZ3Qs",
+            "IHJ1bGVzLmx0ZV0pIDogJydIAVICZ3QSvwgKA2d0ZRgFIAEoAkKqCMJIpggK",
+            "mwEKCWZsb2F0Lmd0ZRqNASFoYXMocnVsZXMubHQpICYmICFoYXMocnVsZXMu",
+            "bHRlKSAmJiAodGhpcy5pc05hbigpIHx8IHRoaXMgPCBydWxlcy5ndGUpPyAn",
+            "dmFsdWUgbXVzdCBiZSBncmVhdGVyIHRoYW4gb3IgZXF1YWwgdG8gJXMnLmZv",
+            "cm1hdChbcnVsZXMuZ3RlXSkgOiAnJwrSAQoMZmxvYXQuZ3RlX2x0GsEBaGFz",
+            "KHJ1bGVzLmx0KSAmJiBydWxlcy5sdCA+PSBydWxlcy5ndGUgJiYgKHRoaXMu",
+            "aXNOYW4oKSB8fCB0aGlzID49IHJ1bGVzLmx0IHx8IHRoaXMgPCBydWxlcy5n",
+            "dGUpPyAndmFsdWUgbXVzdCBiZSBncmVhdGVyIHRoYW4gb3IgZXF1YWwgdG8g",
+            "JXMgYW5kIGxlc3MgdGhhbiAlcycuZm9ybWF0KFtydWxlcy5ndGUsIHJ1bGVz",
+            "Lmx0XSkgOiAnJwrcAQoWZmxvYXQuZ3RlX2x0X2V4Y2x1c2l2ZRrBAWhhcyhy",
+            "dWxlcy5sdCkgJiYgcnVsZXMubHQgPCBydWxlcy5ndGUgJiYgKHRoaXMuaXNO",
+            "YW4oKSB8fCAocnVsZXMubHQgPD0gdGhpcyAmJiB0aGlzIDwgcnVsZXMuZ3Rl",
+            "KSk/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiBvciBlcXVhbCB0byAl",
+            "cyBvciBsZXNzIHRoYW4gJXMnLmZvcm1hdChbcnVsZXMuZ3RlLCBydWxlcy5s",
+            "dF0pIDogJycK4gEKDWZsb2F0Lmd0ZV9sdGUa0AFoYXMocnVsZXMubHRlKSAm",
+            "JiBydWxlcy5sdGUgPj0gcnVsZXMuZ3RlICYmICh0aGlzLmlzTmFuKCkgfHwg",
+            "dGhpcyA+IHJ1bGVzLmx0ZSB8fCB0aGlzIDwgcnVsZXMuZ3RlKT8gJ3ZhbHVl",
+            "IG11c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVxdWFsIHRvICVzIGFuZCBsZXNz",
+            "IHRoYW4gb3IgZXF1YWwgdG8gJXMnLmZvcm1hdChbcnVsZXMuZ3RlLCBydWxl",
+            "cy5sdGVdKSA6ICcnCuwBChdmbG9hdC5ndGVfbHRlX2V4Y2x1c2l2ZRrQAWhh",
+            "cyhydWxlcy5sdGUpICYmIHJ1bGVzLmx0ZSA8IHJ1bGVzLmd0ZSAmJiAodGhp",
+            "cy5pc05hbigpIHx8IChydWxlcy5sdGUgPCB0aGlzICYmIHRoaXMgPCBydWxl",
+            "cy5ndGUpKT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVxdWFs",
+            "IHRvICVzIG9yIGxlc3MgdGhhbiBvciBlcXVhbCB0byAlcycuZm9ybWF0KFty",
+            "dWxlcy5ndGUsIHJ1bGVzLmx0ZV0pIDogJydIAVIDZ3RlEoMBCgJpbhgGIAMo",
+            "AkJzwkhwCm4KCGZsb2F0LmluGmIhKHRoaXMgaW4gZ2V0RmllbGQocnVsZXMs",
+            "ICdpbicpKSA/ICd2YWx1ZSBtdXN0IGJlIGluIGxpc3QgJXMnLmZvcm1hdChb",
+            "Z2V0RmllbGQocnVsZXMsICdpbicpXSkgOiAnJ1ICaW4SfQoGbm90X2luGAcg",
+            "AygCQmbCSGMKYQoMZmxvYXQubm90X2luGlF0aGlzIGluIHJ1bGVzLm5vdF9p",
+            "biA/ICd2YWx1ZSBtdXN0IG5vdCBiZSBpbiBsaXN0ICVzJy5mb3JtYXQoW3J1",
+            "bGVzLm5vdF9pbl0pIDogJydSBW5vdEluEn0KBmZpbml0ZRgIIAEoCEJlwkhi",
+            "CmAKDGZsb2F0LmZpbml0ZRpQcnVsZXMuZmluaXRlID8gKHRoaXMuaXNOYW4o",
+            "KSB8fCB0aGlzLmlzSW5mKCkgPyAndmFsdWUgbXVzdCBiZSBmaW5pdGUnIDog",
+            "JycpIDogJydSBmZpbml0ZRI0CgdleGFtcGxlGAkgAygCQhrCSBcKFQoNZmxv",
+            "YXQuZXhhbXBsZRoEdHJ1ZVIHZXhhbXBsZSoJCOgHEICAgIACQgsKCWxlc3Nf",
+            "dGhhbkIOCgxncmVhdGVyX3RoYW4iohgKC0RvdWJsZVJ1bGVzEosBCgVjb25z",
+            "dBgBIAEoAUJ1wkhyCnAKDGRvdWJsZS5jb25zdBpgdGhpcyAhPSBnZXRGaWVs",
+            "ZChydWxlcywgJ2NvbnN0JykgPyAndmFsdWUgbXVzdCBlcXVhbCAlcycuZm9y",
+            "bWF0KFtnZXRGaWVsZChydWxlcywgJ2NvbnN0JyldKSA6ICcnUgVjb25zdBKk",
+            "AQoCbHQYAiABKAFCkQHCSI0BCooBCglkb3VibGUubHQafSFoYXMocnVsZXMu",
+            "Z3RlKSAmJiAhaGFzKHJ1bGVzLmd0KSAmJiAodGhpcy5pc05hbigpIHx8IHRo",
+            "aXMgPj0gcnVsZXMubHQpPyAndmFsdWUgbXVzdCBiZSBsZXNzIHRoYW4gJXMn",
+            "LmZvcm1hdChbcnVsZXMubHRdKSA6ICcnSABSAmx0ErUBCgNsdGUYAyABKAFC",
+            "oAHCSJwBCpkBCgpkb3VibGUubHRlGooBIWhhcyhydWxlcy5ndGUpICYmICFo",
+            "YXMocnVsZXMuZ3QpICYmICh0aGlzLmlzTmFuKCkgfHwgdGhpcyA+IHJ1bGVz",
+            "Lmx0ZSk/ICd2YWx1ZSBtdXN0IGJlIGxlc3MgdGhhbiBvciBlcXVhbCB0byAl",
+            "cycuZm9ybWF0KFtydWxlcy5sdGVdKSA6ICcnSABSA2x0ZRL4BwoCZ3QYBCAB",
+            "KAFC5QfCSOEHCo4BCglkb3VibGUuZ3QagAEhaGFzKHJ1bGVzLmx0KSAmJiAh",
+            "aGFzKHJ1bGVzLmx0ZSkgJiYgKHRoaXMuaXNOYW4oKSB8fCB0aGlzIDw9IHJ1",
+            "bGVzLmd0KT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuICVzJy5mb3Jt",
+            "YXQoW3J1bGVzLmd0XSkgOiAnJwrEAQoMZG91YmxlLmd0X2x0GrMBaGFzKHJ1",
+            "bGVzLmx0KSAmJiBydWxlcy5sdCA+PSBydWxlcy5ndCAmJiAodGhpcy5pc05h",
+            "bigpIHx8IHRoaXMgPj0gcnVsZXMubHQgfHwgdGhpcyA8PSBydWxlcy5ndCk/",
+            "ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiAlcyBhbmQgbGVzcyB0aGFu",
+            "ICVzJy5mb3JtYXQoW3J1bGVzLmd0LCBydWxlcy5sdF0pIDogJycKzgEKFmRv",
+            "dWJsZS5ndF9sdF9leGNsdXNpdmUaswFoYXMocnVsZXMubHQpICYmIHJ1bGVz",
+            "Lmx0IDwgcnVsZXMuZ3QgJiYgKHRoaXMuaXNOYW4oKSB8fCAocnVsZXMubHQg",
+            "PD0gdGhpcyAmJiB0aGlzIDw9IHJ1bGVzLmd0KSk/ICd2YWx1ZSBtdXN0IGJl",
+            "IGdyZWF0ZXIgdGhhbiAlcyBvciBsZXNzIHRoYW4gJXMnLmZvcm1hdChbcnVs",
+            "ZXMuZ3QsIHJ1bGVzLmx0XSkgOiAnJwrUAQoNZG91YmxlLmd0X2x0ZRrCAWhh",
+            "cyhydWxlcy5sdGUpICYmIHJ1bGVzLmx0ZSA+PSBydWxlcy5ndCAmJiAodGhp",
+            "cy5pc05hbigpIHx8IHRoaXMgPiBydWxlcy5sdGUgfHwgdGhpcyA8PSBydWxl",
+            "cy5ndCk/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiAlcyBhbmQgbGVz",
+            "cyB0aGFuIG9yIGVxdWFsIHRvICVzJy5mb3JtYXQoW3J1bGVzLmd0LCBydWxl",
+            "cy5sdGVdKSA6ICcnCt4BChdkb3VibGUuZ3RfbHRlX2V4Y2x1c2l2ZRrCAWhh",
+            "cyhydWxlcy5sdGUpICYmIHJ1bGVzLmx0ZSA8IHJ1bGVzLmd0ICYmICh0aGlz",
+            "LmlzTmFuKCkgfHwgKHJ1bGVzLmx0ZSA8IHRoaXMgJiYgdGhpcyA8PSBydWxl",
+            "cy5ndCkpPyAndmFsdWUgbXVzdCBiZSBncmVhdGVyIHRoYW4gJXMgb3IgbGVz",
+            "cyB0aGFuIG9yIGVxdWFsIHRvICVzJy5mb3JtYXQoW3J1bGVzLmd0LCBydWxl",
+            "cy5sdGVdKSA6ICcnSAFSAmd0EsQICgNndGUYBSABKAFCrwjCSKsICpwBCgpk",
+            "b3VibGUuZ3RlGo0BIWhhcyhydWxlcy5sdCkgJiYgIWhhcyhydWxlcy5sdGUp",
+            "ICYmICh0aGlzLmlzTmFuKCkgfHwgdGhpcyA8IHJ1bGVzLmd0ZSk/ICd2YWx1",
+            "ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiBvciBlcXVhbCB0byAlcycuZm9ybWF0",
+            "KFtydWxlcy5ndGVdKSA6ICcnCtMBCg1kb3VibGUuZ3RlX2x0GsEBaGFzKHJ1",
+            "bGVzLmx0KSAmJiBydWxlcy5sdCA+PSBydWxlcy5ndGUgJiYgKHRoaXMuaXNO",
+            "YW4oKSB8fCB0aGlzID49IHJ1bGVzLmx0IHx8IHRoaXMgPCBydWxlcy5ndGUp",
+            "PyAndmFsdWUgbXVzdCBiZSBncmVhdGVyIHRoYW4gb3IgZXF1YWwgdG8gJXMg",
+            "YW5kIGxlc3MgdGhhbiAlcycuZm9ybWF0KFtydWxlcy5ndGUsIHJ1bGVzLmx0",
+            "XSkgOiAnJwrdAQoXZG91YmxlLmd0ZV9sdF9leGNsdXNpdmUawQFoYXMocnVs",
+            "ZXMubHQpICYmIHJ1bGVzLmx0IDwgcnVsZXMuZ3RlICYmICh0aGlzLmlzTmFu",
+            "KCkgfHwgKHJ1bGVzLmx0IDw9IHRoaXMgJiYgdGhpcyA8IHJ1bGVzLmd0ZSkp",
+            "PyAndmFsdWUgbXVzdCBiZSBncmVhdGVyIHRoYW4gb3IgZXF1YWwgdG8gJXMg",
+            "b3IgbGVzcyB0aGFuICVzJy5mb3JtYXQoW3J1bGVzLmd0ZSwgcnVsZXMubHRd",
+            "KSA6ICcnCuMBCg5kb3VibGUuZ3RlX2x0ZRrQAWhhcyhydWxlcy5sdGUpICYm",
+            "IHJ1bGVzLmx0ZSA+PSBydWxlcy5ndGUgJiYgKHRoaXMuaXNOYW4oKSB8fCB0",
+            "aGlzID4gcnVsZXMubHRlIHx8IHRoaXMgPCBydWxlcy5ndGUpPyAndmFsdWUg",
+            "bXVzdCBiZSBncmVhdGVyIHRoYW4gb3IgZXF1YWwgdG8gJXMgYW5kIGxlc3Mg",
+            "dGhhbiBvciBlcXVhbCB0byAlcycuZm9ybWF0KFtydWxlcy5ndGUsIHJ1bGVz",
+            "Lmx0ZV0pIDogJycK7QEKGGRvdWJsZS5ndGVfbHRlX2V4Y2x1c2l2ZRrQAWhh",
+            "cyhydWxlcy5sdGUpICYmIHJ1bGVzLmx0ZSA8IHJ1bGVzLmd0ZSAmJiAodGhp",
+            "cy5pc05hbigpIHx8IChydWxlcy5sdGUgPCB0aGlzICYmIHRoaXMgPCBydWxl",
+            "cy5ndGUpKT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVxdWFs",
+            "IHRvICVzIG9yIGxlc3MgdGhhbiBvciBlcXVhbCB0byAlcycuZm9ybWF0KFty",
+            "dWxlcy5ndGUsIHJ1bGVzLmx0ZV0pIDogJydIAVIDZ3RlEoQBCgJpbhgGIAMo",
+            "AUJ0wkhxCm8KCWRvdWJsZS5pbhpiISh0aGlzIGluIGdldEZpZWxkKHJ1bGVz",
+            "LCAnaW4nKSkgPyAndmFsdWUgbXVzdCBiZSBpbiBsaXN0ICVzJy5mb3JtYXQo",
+            "W2dldEZpZWxkKHJ1bGVzLCAnaW4nKV0pIDogJydSAmluEn4KBm5vdF9pbhgH",
+            "IAMoAUJnwkhkCmIKDWRvdWJsZS5ub3RfaW4aUXRoaXMgaW4gcnVsZXMubm90",
+            "X2luID8gJ3ZhbHVlIG11c3Qgbm90IGJlIGluIGxpc3QgJXMnLmZvcm1hdChb",
+            "cnVsZXMubm90X2luXSkgOiAnJ1IFbm90SW4SfgoGZmluaXRlGAggASgIQmbC",
+            "SGMKYQoNZG91YmxlLmZpbml0ZRpQcnVsZXMuZmluaXRlID8gKHRoaXMuaXNO",
+            "YW4oKSB8fCB0aGlzLmlzSW5mKCkgPyAndmFsdWUgbXVzdCBiZSBmaW5pdGUn",
+            "IDogJycpIDogJydSBmZpbml0ZRI1CgdleGFtcGxlGAkgAygBQhvCSBgKFgoO",
+            "ZG91YmxlLmV4YW1wbGUaBHRydWVSB2V4YW1wbGUqCQjoBxCAgICAAkILCgls",
+            "ZXNzX3RoYW5CDgoMZ3JlYXRlcl90aGFuIroVCgpJbnQzMlJ1bGVzEooBCgVj",
+            "b25zdBgBIAEoBUJ0wkhxCm8KC2ludDMyLmNvbnN0GmB0aGlzICE9IGdldEZp",
+            "ZWxkKHJ1bGVzLCAnY29uc3QnKSA/ICd2YWx1ZSBtdXN0IGVxdWFsICVzJy5m",
+            "b3JtYXQoW2dldEZpZWxkKHJ1bGVzLCAnY29uc3QnKV0pIDogJydSBWNvbnN0",
+            "Eo4BCgJsdBgCIAEoBUJ8wkh5CncKCGludDMyLmx0GmshaGFzKHJ1bGVzLmd0",
+            "ZSkgJiYgIWhhcyhydWxlcy5ndCkgJiYgdGhpcyA+PSBydWxlcy5sdD8gJ3Zh",
+            "bHVlIG11c3QgYmUgbGVzcyB0aGFuICVzJy5mb3JtYXQoW3J1bGVzLmx0XSkg",
+            "OiAnJ0gAUgJsdBKhAQoDbHRlGAMgASgFQowBwkiIAQqFAQoJaW50MzIubHRl",
+            "GnghaGFzKHJ1bGVzLmd0ZSkgJiYgIWhhcyhydWxlcy5ndCkgJiYgdGhpcyA+",
+            "IHJ1bGVzLmx0ZT8gJ3ZhbHVlIG11c3QgYmUgbGVzcyB0aGFuIG9yIGVxdWFs",
+            "IHRvICVzJy5mb3JtYXQoW3J1bGVzLmx0ZV0pIDogJydIAFIDbHRlEpsHCgJn",
+            "dBgEIAEoBUKIB8JIhAcKegoIaW50MzIuZ3QabiFoYXMocnVsZXMubHQpICYm",
             "ICFoYXMocnVsZXMubHRlKSAmJiB0aGlzIDw9IHJ1bGVzLmd0PyAndmFsdWUg",
             "bXVzdCBiZSBncmVhdGVyIHRoYW4gJXMnLmZvcm1hdChbcnVsZXMuZ3RdKSA6",
-            "ICcnCrMBCgtmbG9hdC5ndF9sdBqjAWhhcyhydWxlcy5sdCkgJiYgcnVsZXMu",
+            "ICcnCrMBCgtpbnQzMi5ndF9sdBqjAWhhcyhydWxlcy5sdCkgJiYgcnVsZXMu",
             "bHQgPj0gcnVsZXMuZ3QgJiYgKHRoaXMgPj0gcnVsZXMubHQgfHwgdGhpcyA8",
             "PSBydWxlcy5ndCk/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiAlcyBh",
             "bmQgbGVzcyB0aGFuICVzJy5mb3JtYXQoW3J1bGVzLmd0LCBydWxlcy5sdF0p",
-            "IDogJycKuwEKFWZsb2F0Lmd0X2x0X2V4Y2x1c2l2ZRqhAWhhcyhydWxlcy5s",
+            "IDogJycKuwEKFWludDMyLmd0X2x0X2V4Y2x1c2l2ZRqhAWhhcyhydWxlcy5s",
             "dCkgJiYgcnVsZXMubHQgPCBydWxlcy5ndCAmJiAocnVsZXMubHQgPD0gdGhp",
             "cyAmJiB0aGlzIDw9IHJ1bGVzLmd0KT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRl",
             "ciB0aGFuICVzIG9yIGxlc3MgdGhhbiAlcycuZm9ybWF0KFtydWxlcy5ndCwg",
-            "cnVsZXMubHRdKSA6ICcnCsMBCgxmbG9hdC5ndF9sdGUasgFoYXMocnVsZXMu",
+            "cnVsZXMubHRdKSA6ICcnCsMBCgxpbnQzMi5ndF9sdGUasgFoYXMocnVsZXMu",
             "bHRlKSAmJiBydWxlcy5sdGUgPj0gcnVsZXMuZ3QgJiYgKHRoaXMgPiBydWxl",
             "cy5sdGUgfHwgdGhpcyA8PSBydWxlcy5ndCk/ICd2YWx1ZSBtdXN0IGJlIGdy",
             "ZWF0ZXIgdGhhbiAlcyBhbmQgbGVzcyB0aGFuIG9yIGVxdWFsIHRvICVzJy5m",
-            "b3JtYXQoW3J1bGVzLmd0LCBydWxlcy5sdGVdKSA6ICcnCssBChZmbG9hdC5n",
+            "b3JtYXQoW3J1bGVzLmd0LCBydWxlcy5sdGVdKSA6ICcnCssBChZpbnQzMi5n",
             "dF9sdGVfZXhjbHVzaXZlGrABaGFzKHJ1bGVzLmx0ZSkgJiYgcnVsZXMubHRl",
             "IDwgcnVsZXMuZ3QgJiYgKHJ1bGVzLmx0ZSA8IHRoaXMgJiYgdGhpcyA8PSBy",
             "dWxlcy5ndCk/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiAlcyBvciBs",
             "ZXNzIHRoYW4gb3IgZXF1YWwgdG8gJXMnLmZvcm1hdChbcnVsZXMuZ3QsIHJ1",
-            "bGVzLmx0ZV0pIDogJydIA1ICZ3SIAQES7AcKA2d0ZRgFIAEoAkLUB4L4GM8H",
-            "CogBCglmbG9hdC5ndGUaeyFoYXMocnVsZXMubHQpICYmICFoYXMocnVsZXMu",
-            "bHRlKSAmJiB0aGlzIDwgcnVsZXMuZ3RlPyAndmFsdWUgbXVzdCBiZSBncmVh",
-            "dGVyIHRoYW4gb3IgZXF1YWwgdG8gJXMnLmZvcm1hdChbcnVsZXMuZ3RlXSkg",
-            "OiAnJwrCAQoMZmxvYXQuZ3RlX2x0GrEBaGFzKHJ1bGVzLmx0KSAmJiBydWxl",
-            "cy5sdCA+PSBydWxlcy5ndGUgJiYgKHRoaXMgPj0gcnVsZXMubHQgfHwgdGhp",
-            "cyA8IHJ1bGVzLmd0ZSk/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiBv",
-            "ciBlcXVhbCB0byAlcyBhbmQgbGVzcyB0aGFuICVzJy5mb3JtYXQoW3J1bGVz",
-            "Lmd0ZSwgcnVsZXMubHRdKSA6ICcnCsoBChZmbG9hdC5ndGVfbHRfZXhjbHVz",
-            "aXZlGq8BaGFzKHJ1bGVzLmx0KSAmJiBydWxlcy5sdCA8IHJ1bGVzLmd0ZSAm",
-            "JiAocnVsZXMubHQgPD0gdGhpcyAmJiB0aGlzIDwgcnVsZXMuZ3RlKT8gJ3Zh",
-            "bHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVxdWFsIHRvICVzIG9yIGxl",
-            "c3MgdGhhbiAlcycuZm9ybWF0KFtydWxlcy5ndGUsIHJ1bGVzLmx0XSkgOiAn",
-            "JwrSAQoNZmxvYXQuZ3RlX2x0ZRrAAWhhcyhydWxlcy5sdGUpICYmIHJ1bGVz",
-            "Lmx0ZSA+PSBydWxlcy5ndGUgJiYgKHRoaXMgPiBydWxlcy5sdGUgfHwgdGhp",
-            "cyA8IHJ1bGVzLmd0ZSk/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiBv",
-            "ciBlcXVhbCB0byAlcyBhbmQgbGVzcyB0aGFuIG9yIGVxdWFsIHRvICVzJy5m",
-            "b3JtYXQoW3J1bGVzLmd0ZSwgcnVsZXMubHRlXSkgOiAnJwraAQoXZmxvYXQu",
-            "Z3RlX2x0ZV9leGNsdXNpdmUavgFoYXMocnVsZXMubHRlKSAmJiBydWxlcy5s",
-            "dGUgPCBydWxlcy5ndGUgJiYgKHJ1bGVzLmx0ZSA8IHRoaXMgJiYgdGhpcyA8",
-            "IHJ1bGVzLmd0ZSk/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiBvciBl",
-            "cXVhbCB0byAlcyBvciBsZXNzIHRoYW4gb3IgZXF1YWwgdG8gJXMnLmZvcm1h",
-            "dChbcnVsZXMuZ3RlLCBydWxlcy5sdGVdKSA6ICcnSARSA2d0ZYgBARJ6CgJp",
-            "bhgGIAMoAkJqgvgYZgpkCghmbG9hdC5pbhpYISh0aGlzIGluIGR5bihydWxl",
-            "cylbJ2luJ10pID8gJ3ZhbHVlIG11c3QgYmUgaW4gbGlzdCAlcycuZm9ybWF0",
-            "KFtkeW4ocnVsZXMpWydpbiddXSkgOiAnJ1ICaW4SfgoGbm90X2luGAcgAygC",
-            "QmeC+BhjCmEKDGZsb2F0Lm5vdF9pbhpRdGhpcyBpbiBydWxlcy5ub3RfaW4g",
-            "PyAndmFsdWUgbXVzdCBub3QgYmUgaW4gbGlzdCAlcycuZm9ybWF0KFtydWxl",
-            "cy5ub3RfaW5dKSA6ICcnUgVub3RJbkIICgZfY29uc3RCBQoDX2x0QgYKBF9s",
-            "dGVCBQoDX2d0QgYKBF9ndGUihhUKC0RvdWJsZVJ1bGVzEncKBWNvbnN0GAEg",
-            "ASgBQlyC+BhYClYKDGRvdWJsZS5jb25zdBpGdGhpcyAhPSBydWxlcy5jb25z",
-            "dCA/ICd2YWx1ZSBtdXN0IGVxdWFsICVzJy5mb3JtYXQoW3J1bGVzLmNvbnN0",
-            "XSkgOiAnJ0gAUgVjb25zdIgBARKTAQoCbHQYAiABKAFCfoL4GHoKeAoJZG91",
-            "YmxlLmx0GmshaGFzKHJ1bGVzLmd0ZSkgJiYgIWhhcyhydWxlcy5ndCkgJiYg",
-            "dGhpcyA+PSBydWxlcy5sdD8gJ3ZhbHVlIG11c3QgYmUgbGVzcyB0aGFuICVz",
-            "Jy5mb3JtYXQoW3J1bGVzLmx0XSkgOiAnJ0gBUgJsdIgBARKmAQoDbHRlGAMg",
-            "ASgBQo4BgvgYiQEKhgEKCmRvdWJsZS5sdGUaeCFoYXMocnVsZXMuZ3RlKSAm",
-            "JiAhaGFzKHJ1bGVzLmd0KSAmJiB0aGlzID4gcnVsZXMubHRlPyAndmFsdWUg",
-            "bXVzdCBiZSBsZXNzIHRoYW4gb3IgZXF1YWwgdG8gJXMnLmZvcm1hdChbcnVs",
-            "ZXMubHRlXSkgOiAnJ0gCUgNsdGWIAQESpAcKAmd0GAQgASgBQo4HgvgYiQcK",
-            "ewoJZG91YmxlLmd0Gm4haGFzKHJ1bGVzLmx0KSAmJiAhaGFzKHJ1bGVzLmx0",
-            "ZSkgJiYgdGhpcyA8PSBydWxlcy5ndD8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRl",
-            "ciB0aGFuICVzJy5mb3JtYXQoW3J1bGVzLmd0XSkgOiAnJwq0AQoMZG91Ymxl",
-            "Lmd0X2x0GqMBaGFzKHJ1bGVzLmx0KSAmJiBydWxlcy5sdCA+PSBydWxlcy5n",
-            "dCAmJiAodGhpcyA+PSBydWxlcy5sdCB8fCB0aGlzIDw9IHJ1bGVzLmd0KT8g",
-            "J3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuICVzIGFuZCBsZXNzIHRoYW4g",
-            "JXMnLmZvcm1hdChbcnVsZXMuZ3QsIHJ1bGVzLmx0XSkgOiAnJwq8AQoWZG91",
-            "YmxlLmd0X2x0X2V4Y2x1c2l2ZRqhAWhhcyhydWxlcy5sdCkgJiYgcnVsZXMu",
-            "bHQgPCBydWxlcy5ndCAmJiAocnVsZXMubHQgPD0gdGhpcyAmJiB0aGlzIDw9",
-            "IHJ1bGVzLmd0KT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuICVzIG9y",
-            "IGxlc3MgdGhhbiAlcycuZm9ybWF0KFtydWxlcy5ndCwgcnVsZXMubHRdKSA6",
-            "ICcnCsQBCg1kb3VibGUuZ3RfbHRlGrIBaGFzKHJ1bGVzLmx0ZSkgJiYgcnVs",
-            "ZXMubHRlID49IHJ1bGVzLmd0ICYmICh0aGlzID4gcnVsZXMubHRlIHx8IHRo",
-            "aXMgPD0gcnVsZXMuZ3QpPyAndmFsdWUgbXVzdCBiZSBncmVhdGVyIHRoYW4g",
-            "JXMgYW5kIGxlc3MgdGhhbiBvciBlcXVhbCB0byAlcycuZm9ybWF0KFtydWxl",
-            "cy5ndCwgcnVsZXMubHRlXSkgOiAnJwrMAQoXZG91YmxlLmd0X2x0ZV9leGNs",
-            "dXNpdmUasAFoYXMocnVsZXMubHRlKSAmJiBydWxlcy5sdGUgPCBydWxlcy5n",
-            "dCAmJiAocnVsZXMubHRlIDwgdGhpcyAmJiB0aGlzIDw9IHJ1bGVzLmd0KT8g",
-            "J3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuICVzIG9yIGxlc3MgdGhhbiBv",
-            "ciBlcXVhbCB0byAlcycuZm9ybWF0KFtydWxlcy5ndCwgcnVsZXMubHRlXSkg",
-            "OiAnJ0gDUgJndIgBARLxBwoDZ3RlGAUgASgBQtkHgvgY1AcKiQEKCmRvdWJs",
-            "ZS5ndGUaeyFoYXMocnVsZXMubHQpICYmICFoYXMocnVsZXMubHRlKSAmJiB0",
-            "aGlzIDwgcnVsZXMuZ3RlPyAndmFsdWUgbXVzdCBiZSBncmVhdGVyIHRoYW4g",
-            "b3IgZXF1YWwgdG8gJXMnLmZvcm1hdChbcnVsZXMuZ3RlXSkgOiAnJwrDAQoN",
-            "ZG91YmxlLmd0ZV9sdBqxAWhhcyhydWxlcy5sdCkgJiYgcnVsZXMubHQgPj0g",
-            "cnVsZXMuZ3RlICYmICh0aGlzID49IHJ1bGVzLmx0IHx8IHRoaXMgPCBydWxl",
-            "cy5ndGUpPyAndmFsdWUgbXVzdCBiZSBncmVhdGVyIHRoYW4gb3IgZXF1YWwg",
-            "dG8gJXMgYW5kIGxlc3MgdGhhbiAlcycuZm9ybWF0KFtydWxlcy5ndGUsIHJ1",
-            "bGVzLmx0XSkgOiAnJwrLAQoXZG91YmxlLmd0ZV9sdF9leGNsdXNpdmUarwFo",
-            "YXMocnVsZXMubHQpICYmIHJ1bGVzLmx0IDwgcnVsZXMuZ3RlICYmIChydWxl",
-            "cy5sdCA8PSB0aGlzICYmIHRoaXMgPCBydWxlcy5ndGUpPyAndmFsdWUgbXVz",
-            "dCBiZSBncmVhdGVyIHRoYW4gb3IgZXF1YWwgdG8gJXMgb3IgbGVzcyB0aGFu",
-            "ICVzJy5mb3JtYXQoW3J1bGVzLmd0ZSwgcnVsZXMubHRdKSA6ICcnCtMBCg5k",
-            "b3VibGUuZ3RlX2x0ZRrAAWhhcyhydWxlcy5sdGUpICYmIHJ1bGVzLmx0ZSA+",
-            "PSBydWxlcy5ndGUgJiYgKHRoaXMgPiBydWxlcy5sdGUgfHwgdGhpcyA8IHJ1",
-            "bGVzLmd0ZSk/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiBvciBlcXVh",
-            "bCB0byAlcyBhbmQgbGVzcyB0aGFuIG9yIGVxdWFsIHRvICVzJy5mb3JtYXQo",
-            "W3J1bGVzLmd0ZSwgcnVsZXMubHRlXSkgOiAnJwrbAQoYZG91YmxlLmd0ZV9s",
-            "dGVfZXhjbHVzaXZlGr4BaGFzKHJ1bGVzLmx0ZSkgJiYgcnVsZXMubHRlIDwg",
-            "cnVsZXMuZ3RlICYmIChydWxlcy5sdGUgPCB0aGlzICYmIHRoaXMgPCBydWxl",
-            "cy5ndGUpPyAndmFsdWUgbXVzdCBiZSBncmVhdGVyIHRoYW4gb3IgZXF1YWwg",
-            "dG8gJXMgb3IgbGVzcyB0aGFuIG9yIGVxdWFsIHRvICVzJy5mb3JtYXQoW3J1",
-            "bGVzLmd0ZSwgcnVsZXMubHRlXSkgOiAnJ0gEUgNndGWIAQESewoCaW4YBiAD",
-            "KAFCa4L4GGcKZQoJZG91YmxlLmluGlghKHRoaXMgaW4gZHluKHJ1bGVzKVsn",
-            "aW4nXSkgPyAndmFsdWUgbXVzdCBiZSBpbiBsaXN0ICVzJy5mb3JtYXQoW2R5",
-            "bihydWxlcylbJ2luJ11dKSA6ICcnUgJpbhJ/CgZub3RfaW4YByADKAFCaIL4",
-            "GGQKYgoNZG91YmxlLm5vdF9pbhpRdGhpcyBpbiBydWxlcy5ub3RfaW4gPyAn",
-            "dmFsdWUgbXVzdCBub3QgYmUgaW4gbGlzdCAlcycuZm9ybWF0KFtydWxlcy5u",
-            "b3RfaW5dKSA6ICcnUgVub3RJbkIICgZfY29uc3RCBQoDX2x0QgYKBF9sdGVC",
-            "BQoDX2d0QgYKBF9ndGUi9hQKCkludDMyUnVsZXMSdgoFY29uc3QYASABKAVC",
-            "W4L4GFcKVQoLaW50MzIuY29uc3QaRnRoaXMgIT0gcnVsZXMuY29uc3QgPyAn",
-            "dmFsdWUgbXVzdCBlcXVhbCAlcycuZm9ybWF0KFtydWxlcy5jb25zdF0pIDog",
-            "JydIAFIFY29uc3SIAQESkgEKAmx0GAIgASgFQn2C+Bh5CncKCGludDMyLmx0",
-            "GmshaGFzKHJ1bGVzLmd0ZSkgJiYgIWhhcyhydWxlcy5ndCkgJiYgdGhpcyA+",
-            "PSBydWxlcy5sdD8gJ3ZhbHVlIG11c3QgYmUgbGVzcyB0aGFuICVzJy5mb3Jt",
-            "YXQoW3J1bGVzLmx0XSkgOiAnJ0gBUgJsdIgBARKlAQoDbHRlGAMgASgFQo0B",
-            "gvgYiAEKhQEKCWludDMyLmx0ZRp4IWhhcyhydWxlcy5ndGUpICYmICFoYXMo",
-            "cnVsZXMuZ3QpICYmIHRoaXMgPiBydWxlcy5sdGU/ICd2YWx1ZSBtdXN0IGJl",
-            "IGxlc3MgdGhhbiBvciBlcXVhbCB0byAlcycuZm9ybWF0KFtydWxlcy5sdGVd",
-            "KSA6ICcnSAJSA2x0ZYgBARKfBwoCZ3QYBCABKAVCiQeC+BiEBwp6CghpbnQz",
-            "Mi5ndBpuIWhhcyhydWxlcy5sdCkgJiYgIWhhcyhydWxlcy5sdGUpICYmIHRo",
-            "aXMgPD0gcnVsZXMuZ3Q/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiAl",
-            "cycuZm9ybWF0KFtydWxlcy5ndF0pIDogJycKswEKC2ludDMyLmd0X2x0GqMB",
-            "aGFzKHJ1bGVzLmx0KSAmJiBydWxlcy5sdCA+PSBydWxlcy5ndCAmJiAodGhp",
-            "cyA+PSBydWxlcy5sdCB8fCB0aGlzIDw9IHJ1bGVzLmd0KT8gJ3ZhbHVlIG11",
-            "c3QgYmUgZ3JlYXRlciB0aGFuICVzIGFuZCBsZXNzIHRoYW4gJXMnLmZvcm1h",
-            "dChbcnVsZXMuZ3QsIHJ1bGVzLmx0XSkgOiAnJwq7AQoVaW50MzIuZ3RfbHRf",
-            "ZXhjbHVzaXZlGqEBaGFzKHJ1bGVzLmx0KSAmJiBydWxlcy5sdCA8IHJ1bGVz",
-            "Lmd0ICYmIChydWxlcy5sdCA8PSB0aGlzICYmIHRoaXMgPD0gcnVsZXMuZ3Qp",
-            "PyAndmFsdWUgbXVzdCBiZSBncmVhdGVyIHRoYW4gJXMgb3IgbGVzcyB0aGFu",
-            "ICVzJy5mb3JtYXQoW3J1bGVzLmd0LCBydWxlcy5sdF0pIDogJycKwwEKDGlu",
-            "dDMyLmd0X2x0ZRqyAWhhcyhydWxlcy5sdGUpICYmIHJ1bGVzLmx0ZSA+PSBy",
-            "dWxlcy5ndCAmJiAodGhpcyA+IHJ1bGVzLmx0ZSB8fCB0aGlzIDw9IHJ1bGVz",
-            "Lmd0KT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuICVzIGFuZCBsZXNz",
-            "IHRoYW4gb3IgZXF1YWwgdG8gJXMnLmZvcm1hdChbcnVsZXMuZ3QsIHJ1bGVz",
-            "Lmx0ZV0pIDogJycKywEKFmludDMyLmd0X2x0ZV9leGNsdXNpdmUasAFoYXMo",
-            "cnVsZXMubHRlKSAmJiBydWxlcy5sdGUgPCBydWxlcy5ndCAmJiAocnVsZXMu",
-            "bHRlIDwgdGhpcyAmJiB0aGlzIDw9IHJ1bGVzLmd0KT8gJ3ZhbHVlIG11c3Qg",
-            "YmUgZ3JlYXRlciB0aGFuICVzIG9yIGxlc3MgdGhhbiBvciBlcXVhbCB0byAl",
-            "cycuZm9ybWF0KFtydWxlcy5ndCwgcnVsZXMubHRlXSkgOiAnJ0gDUgJndIgB",
-            "ARLsBwoDZ3RlGAUgASgFQtQHgvgYzwcKiAEKCWludDMyLmd0ZRp7IWhhcyhy",
-            "dWxlcy5sdCkgJiYgIWhhcyhydWxlcy5sdGUpICYmIHRoaXMgPCBydWxlcy5n",
-            "dGU/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiBvciBlcXVhbCB0byAl",
-            "cycuZm9ybWF0KFtydWxlcy5ndGVdKSA6ICcnCsIBCgxpbnQzMi5ndGVfbHQa",
-            "sQFoYXMocnVsZXMubHQpICYmIHJ1bGVzLmx0ID49IHJ1bGVzLmd0ZSAmJiAo",
-            "dGhpcyA+PSBydWxlcy5sdCB8fCB0aGlzIDwgcnVsZXMuZ3RlKT8gJ3ZhbHVl",
-            "IG11c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVxdWFsIHRvICVzIGFuZCBsZXNz",
-            "IHRoYW4gJXMnLmZvcm1hdChbcnVsZXMuZ3RlLCBydWxlcy5sdF0pIDogJycK",
-            "ygEKFmludDMyLmd0ZV9sdF9leGNsdXNpdmUarwFoYXMocnVsZXMubHQpICYm",
-            "IHJ1bGVzLmx0IDwgcnVsZXMuZ3RlICYmIChydWxlcy5sdCA8PSB0aGlzICYm",
-            "IHRoaXMgPCBydWxlcy5ndGUpPyAndmFsdWUgbXVzdCBiZSBncmVhdGVyIHRo",
-            "YW4gb3IgZXF1YWwgdG8gJXMgb3IgbGVzcyB0aGFuICVzJy5mb3JtYXQoW3J1",
-            "bGVzLmd0ZSwgcnVsZXMubHRdKSA6ICcnCtIBCg1pbnQzMi5ndGVfbHRlGsAB",
-            "aGFzKHJ1bGVzLmx0ZSkgJiYgcnVsZXMubHRlID49IHJ1bGVzLmd0ZSAmJiAo",
-            "dGhpcyA+IHJ1bGVzLmx0ZSB8fCB0aGlzIDwgcnVsZXMuZ3RlKT8gJ3ZhbHVl",
-            "IG11c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVxdWFsIHRvICVzIGFuZCBsZXNz",
-            "IHRoYW4gb3IgZXF1YWwgdG8gJXMnLmZvcm1hdChbcnVsZXMuZ3RlLCBydWxl",
-            "cy5sdGVdKSA6ICcnCtoBChdpbnQzMi5ndGVfbHRlX2V4Y2x1c2l2ZRq+AWhh",
-            "cyhydWxlcy5sdGUpICYmIHJ1bGVzLmx0ZSA8IHJ1bGVzLmd0ZSAmJiAocnVs",
-            "ZXMubHRlIDwgdGhpcyAmJiB0aGlzIDwgcnVsZXMuZ3RlKT8gJ3ZhbHVlIG11",
-            "c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVxdWFsIHRvICVzIG9yIGxlc3MgdGhh",
-            "biBvciBlcXVhbCB0byAlcycuZm9ybWF0KFtydWxlcy5ndGUsIHJ1bGVzLmx0",
-            "ZV0pIDogJydIBFIDZ3RliAEBEnoKAmluGAYgAygFQmqC+BhmCmQKCGludDMy",
-            "LmluGlghKHRoaXMgaW4gZHluKHJ1bGVzKVsnaW4nXSkgPyAndmFsdWUgbXVz",
-            "dCBiZSBpbiBsaXN0ICVzJy5mb3JtYXQoW2R5bihydWxlcylbJ2luJ11dKSA6",
-            "ICcnUgJpbhJ+CgZub3RfaW4YByADKAVCZ4L4GGMKYQoMaW50MzIubm90X2lu",
-            "GlF0aGlzIGluIHJ1bGVzLm5vdF9pbiA/ICd2YWx1ZSBtdXN0IG5vdCBiZSBp",
-            "biBsaXN0ICVzJy5mb3JtYXQoW3J1bGVzLm5vdF9pbl0pIDogJydSBW5vdElu",
-            "QggKBl9jb25zdEIFCgNfbHRCBgoEX2x0ZUIFCgNfZ3RCBgoEX2d0ZSL2FAoK",
-            "SW50NjRSdWxlcxJ2CgVjb25zdBgBIAEoA0JbgvgYVwpVCgtpbnQ2NC5jb25z",
-            "dBpGdGhpcyAhPSBydWxlcy5jb25zdCA/ICd2YWx1ZSBtdXN0IGVxdWFsICVz",
-            "Jy5mb3JtYXQoW3J1bGVzLmNvbnN0XSkgOiAnJ0gAUgVjb25zdIgBARKSAQoC",
-            "bHQYAiABKANCfYL4GHkKdwoIaW50NjQubHQaayFoYXMocnVsZXMuZ3RlKSAm",
-            "JiAhaGFzKHJ1bGVzLmd0KSAmJiB0aGlzID49IHJ1bGVzLmx0PyAndmFsdWUg",
-            "bXVzdCBiZSBsZXNzIHRoYW4gJXMnLmZvcm1hdChbcnVsZXMubHRdKSA6ICcn",
-            "SAFSAmx0iAEBEqUBCgNsdGUYAyABKANCjQGC+BiIAQqFAQoJaW50NjQubHRl",
-            "GnghaGFzKHJ1bGVzLmd0ZSkgJiYgIWhhcyhydWxlcy5ndCkgJiYgdGhpcyA+",
-            "IHJ1bGVzLmx0ZT8gJ3ZhbHVlIG11c3QgYmUgbGVzcyB0aGFuIG9yIGVxdWFs",
-            "IHRvICVzJy5mb3JtYXQoW3J1bGVzLmx0ZV0pIDogJydIAlIDbHRliAEBEp8H",
-            "CgJndBgEIAEoA0KJB4L4GIQHCnoKCGludDY0Lmd0Gm4haGFzKHJ1bGVzLmx0",
+            "bGVzLmx0ZV0pIDogJydIAVICZ3QS6AcKA2d0ZRgFIAEoBULTB8JIzwcKiAEK",
+            "CWludDMyLmd0ZRp7IWhhcyhydWxlcy5sdCkgJiYgIWhhcyhydWxlcy5sdGUp",
+            "ICYmIHRoaXMgPCBydWxlcy5ndGU/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIg",
+            "dGhhbiBvciBlcXVhbCB0byAlcycuZm9ybWF0KFtydWxlcy5ndGVdKSA6ICcn",
+            "CsIBCgxpbnQzMi5ndGVfbHQasQFoYXMocnVsZXMubHQpICYmIHJ1bGVzLmx0",
+            "ID49IHJ1bGVzLmd0ZSAmJiAodGhpcyA+PSBydWxlcy5sdCB8fCB0aGlzIDwg",
+            "cnVsZXMuZ3RlKT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVx",
+            "dWFsIHRvICVzIGFuZCBsZXNzIHRoYW4gJXMnLmZvcm1hdChbcnVsZXMuZ3Rl",
+            "LCBydWxlcy5sdF0pIDogJycKygEKFmludDMyLmd0ZV9sdF9leGNsdXNpdmUa",
+            "rwFoYXMocnVsZXMubHQpICYmIHJ1bGVzLmx0IDwgcnVsZXMuZ3RlICYmIChy",
+            "dWxlcy5sdCA8PSB0aGlzICYmIHRoaXMgPCBydWxlcy5ndGUpPyAndmFsdWUg",
+            "bXVzdCBiZSBncmVhdGVyIHRoYW4gb3IgZXF1YWwgdG8gJXMgb3IgbGVzcyB0",
+            "aGFuICVzJy5mb3JtYXQoW3J1bGVzLmd0ZSwgcnVsZXMubHRdKSA6ICcnCtIB",
+            "Cg1pbnQzMi5ndGVfbHRlGsABaGFzKHJ1bGVzLmx0ZSkgJiYgcnVsZXMubHRl",
+            "ID49IHJ1bGVzLmd0ZSAmJiAodGhpcyA+IHJ1bGVzLmx0ZSB8fCB0aGlzIDwg",
+            "cnVsZXMuZ3RlKT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVx",
+            "dWFsIHRvICVzIGFuZCBsZXNzIHRoYW4gb3IgZXF1YWwgdG8gJXMnLmZvcm1h",
+            "dChbcnVsZXMuZ3RlLCBydWxlcy5sdGVdKSA6ICcnCtoBChdpbnQzMi5ndGVf",
+            "bHRlX2V4Y2x1c2l2ZRq+AWhhcyhydWxlcy5sdGUpICYmIHJ1bGVzLmx0ZSA8",
+            "IHJ1bGVzLmd0ZSAmJiAocnVsZXMubHRlIDwgdGhpcyAmJiB0aGlzIDwgcnVs",
+            "ZXMuZ3RlKT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVxdWFs",
+            "IHRvICVzIG9yIGxlc3MgdGhhbiBvciBlcXVhbCB0byAlcycuZm9ybWF0KFty",
+            "dWxlcy5ndGUsIHJ1bGVzLmx0ZV0pIDogJydIAVIDZ3RlEoMBCgJpbhgGIAMo",
+            "BUJzwkhwCm4KCGludDMyLmluGmIhKHRoaXMgaW4gZ2V0RmllbGQocnVsZXMs",
+            "ICdpbicpKSA/ICd2YWx1ZSBtdXN0IGJlIGluIGxpc3QgJXMnLmZvcm1hdChb",
+            "Z2V0RmllbGQocnVsZXMsICdpbicpXSkgOiAnJ1ICaW4SfQoGbm90X2luGAcg",
+            "AygFQmbCSGMKYQoMaW50MzIubm90X2luGlF0aGlzIGluIHJ1bGVzLm5vdF9p",
+            "biA/ICd2YWx1ZSBtdXN0IG5vdCBiZSBpbiBsaXN0ICVzJy5mb3JtYXQoW3J1",
+            "bGVzLm5vdF9pbl0pIDogJydSBW5vdEluEjQKB2V4YW1wbGUYCCADKAVCGsJI",
+            "FwoVCg1pbnQzMi5leGFtcGxlGgR0cnVlUgdleGFtcGxlKgkI6AcQgICAgAJC",
+            "CwoJbGVzc190aGFuQg4KDGdyZWF0ZXJfdGhhbiK6FQoKSW50NjRSdWxlcxKK",
+            "AQoFY29uc3QYASABKANCdMJIcQpvCgtpbnQ2NC5jb25zdBpgdGhpcyAhPSBn",
+            "ZXRGaWVsZChydWxlcywgJ2NvbnN0JykgPyAndmFsdWUgbXVzdCBlcXVhbCAl",
+            "cycuZm9ybWF0KFtnZXRGaWVsZChydWxlcywgJ2NvbnN0JyldKSA6ICcnUgVj",
+            "b25zdBKOAQoCbHQYAiABKANCfMJIeQp3CghpbnQ2NC5sdBprIWhhcyhydWxl",
+            "cy5ndGUpICYmICFoYXMocnVsZXMuZ3QpICYmIHRoaXMgPj0gcnVsZXMubHQ/",
+            "ICd2YWx1ZSBtdXN0IGJlIGxlc3MgdGhhbiAlcycuZm9ybWF0KFtydWxlcy5s",
+            "dF0pIDogJydIAFICbHQSoQEKA2x0ZRgDIAEoA0KMAcJIiAEKhQEKCWludDY0",
+            "Lmx0ZRp4IWhhcyhydWxlcy5ndGUpICYmICFoYXMocnVsZXMuZ3QpICYmIHRo",
+            "aXMgPiBydWxlcy5sdGU/ICd2YWx1ZSBtdXN0IGJlIGxlc3MgdGhhbiBvciBl",
+            "cXVhbCB0byAlcycuZm9ybWF0KFtydWxlcy5sdGVdKSA6ICcnSABSA2x0ZRKb",
+            "BwoCZ3QYBCABKANCiAfCSIQHCnoKCGludDY0Lmd0Gm4haGFzKHJ1bGVzLmx0",
             "KSAmJiAhaGFzKHJ1bGVzLmx0ZSkgJiYgdGhpcyA8PSBydWxlcy5ndD8gJ3Zh",
             "bHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuICVzJy5mb3JtYXQoW3J1bGVzLmd0",
             "XSkgOiAnJwqzAQoLaW50NjQuZ3RfbHQaowFoYXMocnVsZXMubHQpICYmIHJ1",
@@ -270,857 +294,990 @@ namespace Buf.Validate {
             "Lmx0ZSA8IHJ1bGVzLmd0ICYmIChydWxlcy5sdGUgPCB0aGlzICYmIHRoaXMg",
             "PD0gcnVsZXMuZ3QpPyAndmFsdWUgbXVzdCBiZSBncmVhdGVyIHRoYW4gJXMg",
             "b3IgbGVzcyB0aGFuIG9yIGVxdWFsIHRvICVzJy5mb3JtYXQoW3J1bGVzLmd0",
-            "LCBydWxlcy5sdGVdKSA6ICcnSANSAmd0iAEBEuwHCgNndGUYBSABKANC1AeC",
-            "+BjPBwqIAQoJaW50NjQuZ3RlGnshaGFzKHJ1bGVzLmx0KSAmJiAhaGFzKHJ1",
-            "bGVzLmx0ZSkgJiYgdGhpcyA8IHJ1bGVzLmd0ZT8gJ3ZhbHVlIG11c3QgYmUg",
-            "Z3JlYXRlciB0aGFuIG9yIGVxdWFsIHRvICVzJy5mb3JtYXQoW3J1bGVzLmd0",
-            "ZV0pIDogJycKwgEKDGludDY0Lmd0ZV9sdBqxAWhhcyhydWxlcy5sdCkgJiYg",
-            "cnVsZXMubHQgPj0gcnVsZXMuZ3RlICYmICh0aGlzID49IHJ1bGVzLmx0IHx8",
-            "IHRoaXMgPCBydWxlcy5ndGUpPyAndmFsdWUgbXVzdCBiZSBncmVhdGVyIHRo",
-            "YW4gb3IgZXF1YWwgdG8gJXMgYW5kIGxlc3MgdGhhbiAlcycuZm9ybWF0KFty",
-            "dWxlcy5ndGUsIHJ1bGVzLmx0XSkgOiAnJwrKAQoWaW50NjQuZ3RlX2x0X2V4",
-            "Y2x1c2l2ZRqvAWhhcyhydWxlcy5sdCkgJiYgcnVsZXMubHQgPCBydWxlcy5n",
-            "dGUgJiYgKHJ1bGVzLmx0IDw9IHRoaXMgJiYgdGhpcyA8IHJ1bGVzLmd0ZSk/",
-            "ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiBvciBlcXVhbCB0byAlcyBv",
-            "ciBsZXNzIHRoYW4gJXMnLmZvcm1hdChbcnVsZXMuZ3RlLCBydWxlcy5sdF0p",
-            "IDogJycK0gEKDWludDY0Lmd0ZV9sdGUawAFoYXMocnVsZXMubHRlKSAmJiBy",
-            "dWxlcy5sdGUgPj0gcnVsZXMuZ3RlICYmICh0aGlzID4gcnVsZXMubHRlIHx8",
-            "IHRoaXMgPCBydWxlcy5ndGUpPyAndmFsdWUgbXVzdCBiZSBncmVhdGVyIHRo",
-            "YW4gb3IgZXF1YWwgdG8gJXMgYW5kIGxlc3MgdGhhbiBvciBlcXVhbCB0byAl",
-            "cycuZm9ybWF0KFtydWxlcy5ndGUsIHJ1bGVzLmx0ZV0pIDogJycK2gEKF2lu",
-            "dDY0Lmd0ZV9sdGVfZXhjbHVzaXZlGr4BaGFzKHJ1bGVzLmx0ZSkgJiYgcnVs",
-            "ZXMubHRlIDwgcnVsZXMuZ3RlICYmIChydWxlcy5sdGUgPCB0aGlzICYmIHRo",
-            "aXMgPCBydWxlcy5ndGUpPyAndmFsdWUgbXVzdCBiZSBncmVhdGVyIHRoYW4g",
-            "b3IgZXF1YWwgdG8gJXMgb3IgbGVzcyB0aGFuIG9yIGVxdWFsIHRvICVzJy5m",
-            "b3JtYXQoW3J1bGVzLmd0ZSwgcnVsZXMubHRlXSkgOiAnJ0gEUgNndGWIAQES",
-            "egoCaW4YBiADKANCaoL4GGYKZAoIaW50NjQuaW4aWCEodGhpcyBpbiBkeW4o",
-            "cnVsZXMpWydpbiddKSA/ICd2YWx1ZSBtdXN0IGJlIGluIGxpc3QgJXMnLmZv",
-            "cm1hdChbZHluKHJ1bGVzKVsnaW4nXV0pIDogJydSAmluEn4KBm5vdF9pbhgH",
-            "IAMoA0JngvgYYwphCgxpbnQ2NC5ub3RfaW4aUXRoaXMgaW4gcnVsZXMubm90",
-            "X2luID8gJ3ZhbHVlIG11c3Qgbm90IGJlIGluIGxpc3QgJXMnLmZvcm1hdChb",
-            "cnVsZXMubm90X2luXSkgOiAnJ1IFbm90SW5CCAoGX2NvbnN0QgUKA19sdEIG",
-            "CgRfbHRlQgUKA19ndEIGCgRfZ3RlIoYVCgtVSW50MzJSdWxlcxJ3CgVjb25z",
-            "dBgBIAEoDUJcgvgYWApWCgx1aW50MzIuY29uc3QaRnRoaXMgIT0gcnVsZXMu",
-            "Y29uc3QgPyAndmFsdWUgbXVzdCBlcXVhbCAlcycuZm9ybWF0KFtydWxlcy5j",
-            "b25zdF0pIDogJydIAFIFY29uc3SIAQESkwEKAmx0GAIgASgNQn6C+Bh6CngK",
-            "CXVpbnQzMi5sdBprIWhhcyhydWxlcy5ndGUpICYmICFoYXMocnVsZXMuZ3Qp",
-            "ICYmIHRoaXMgPj0gcnVsZXMubHQ/ICd2YWx1ZSBtdXN0IGJlIGxlc3MgdGhh",
-            "biAlcycuZm9ybWF0KFtydWxlcy5sdF0pIDogJydIAVICbHSIAQESpgEKA2x0",
-            "ZRgDIAEoDUKOAYL4GIkBCoYBCgp1aW50MzIubHRlGnghaGFzKHJ1bGVzLmd0",
-            "ZSkgJiYgIWhhcyhydWxlcy5ndCkgJiYgdGhpcyA+IHJ1bGVzLmx0ZT8gJ3Zh",
-            "bHVlIG11c3QgYmUgbGVzcyB0aGFuIG9yIGVxdWFsIHRvICVzJy5mb3JtYXQo",
-            "W3J1bGVzLmx0ZV0pIDogJydIAlIDbHRliAEBEqQHCgJndBgEIAEoDUKOB4L4",
-            "GIkHCnsKCXVpbnQzMi5ndBpuIWhhcyhydWxlcy5sdCkgJiYgIWhhcyhydWxl",
-            "cy5sdGUpICYmIHRoaXMgPD0gcnVsZXMuZ3Q/ICd2YWx1ZSBtdXN0IGJlIGdy",
-            "ZWF0ZXIgdGhhbiAlcycuZm9ybWF0KFtydWxlcy5ndF0pIDogJycKtAEKDHVp",
-            "bnQzMi5ndF9sdBqjAWhhcyhydWxlcy5sdCkgJiYgcnVsZXMubHQgPj0gcnVs",
-            "ZXMuZ3QgJiYgKHRoaXMgPj0gcnVsZXMubHQgfHwgdGhpcyA8PSBydWxlcy5n",
-            "dCk/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiAlcyBhbmQgbGVzcyB0",
-            "aGFuICVzJy5mb3JtYXQoW3J1bGVzLmd0LCBydWxlcy5sdF0pIDogJycKvAEK",
-            "FnVpbnQzMi5ndF9sdF9leGNsdXNpdmUaoQFoYXMocnVsZXMubHQpICYmIHJ1",
-            "bGVzLmx0IDwgcnVsZXMuZ3QgJiYgKHJ1bGVzLmx0IDw9IHRoaXMgJiYgdGhp",
-            "cyA8PSBydWxlcy5ndCk/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiAl",
-            "cyBvciBsZXNzIHRoYW4gJXMnLmZvcm1hdChbcnVsZXMuZ3QsIHJ1bGVzLmx0",
-            "XSkgOiAnJwrEAQoNdWludDMyLmd0X2x0ZRqyAWhhcyhydWxlcy5sdGUpICYm",
-            "IHJ1bGVzLmx0ZSA+PSBydWxlcy5ndCAmJiAodGhpcyA+IHJ1bGVzLmx0ZSB8",
-            "fCB0aGlzIDw9IHJ1bGVzLmd0KT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0",
-            "aGFuICVzIGFuZCBsZXNzIHRoYW4gb3IgZXF1YWwgdG8gJXMnLmZvcm1hdChb",
-            "cnVsZXMuZ3QsIHJ1bGVzLmx0ZV0pIDogJycKzAEKF3VpbnQzMi5ndF9sdGVf",
-            "ZXhjbHVzaXZlGrABaGFzKHJ1bGVzLmx0ZSkgJiYgcnVsZXMubHRlIDwgcnVs",
-            "ZXMuZ3QgJiYgKHJ1bGVzLmx0ZSA8IHRoaXMgJiYgdGhpcyA8PSBydWxlcy5n",
-            "dCk/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiAlcyBvciBsZXNzIHRo",
-            "YW4gb3IgZXF1YWwgdG8gJXMnLmZvcm1hdChbcnVsZXMuZ3QsIHJ1bGVzLmx0",
-            "ZV0pIDogJydIA1ICZ3SIAQES8QcKA2d0ZRgFIAEoDULZB4L4GNQHCokBCgp1",
-            "aW50MzIuZ3RlGnshaGFzKHJ1bGVzLmx0KSAmJiAhaGFzKHJ1bGVzLmx0ZSkg",
-            "JiYgdGhpcyA8IHJ1bGVzLmd0ZT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0",
-            "aGFuIG9yIGVxdWFsIHRvICVzJy5mb3JtYXQoW3J1bGVzLmd0ZV0pIDogJycK",
-            "wwEKDXVpbnQzMi5ndGVfbHQasQFoYXMocnVsZXMubHQpICYmIHJ1bGVzLmx0",
-            "ID49IHJ1bGVzLmd0ZSAmJiAodGhpcyA+PSBydWxlcy5sdCB8fCB0aGlzIDwg",
-            "cnVsZXMuZ3RlKT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVx",
-            "dWFsIHRvICVzIGFuZCBsZXNzIHRoYW4gJXMnLmZvcm1hdChbcnVsZXMuZ3Rl",
-            "LCBydWxlcy5sdF0pIDogJycKywEKF3VpbnQzMi5ndGVfbHRfZXhjbHVzaXZl",
-            "Gq8BaGFzKHJ1bGVzLmx0KSAmJiBydWxlcy5sdCA8IHJ1bGVzLmd0ZSAmJiAo",
-            "cnVsZXMubHQgPD0gdGhpcyAmJiB0aGlzIDwgcnVsZXMuZ3RlKT8gJ3ZhbHVl",
-            "IG11c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVxdWFsIHRvICVzIG9yIGxlc3Mg",
-            "dGhhbiAlcycuZm9ybWF0KFtydWxlcy5ndGUsIHJ1bGVzLmx0XSkgOiAnJwrT",
-            "AQoOdWludDMyLmd0ZV9sdGUawAFoYXMocnVsZXMubHRlKSAmJiBydWxlcy5s",
-            "dGUgPj0gcnVsZXMuZ3RlICYmICh0aGlzID4gcnVsZXMubHRlIHx8IHRoaXMg",
-            "PCBydWxlcy5ndGUpPyAndmFsdWUgbXVzdCBiZSBncmVhdGVyIHRoYW4gb3Ig",
-            "ZXF1YWwgdG8gJXMgYW5kIGxlc3MgdGhhbiBvciBlcXVhbCB0byAlcycuZm9y",
-            "bWF0KFtydWxlcy5ndGUsIHJ1bGVzLmx0ZV0pIDogJycK2wEKGHVpbnQzMi5n",
-            "dGVfbHRlX2V4Y2x1c2l2ZRq+AWhhcyhydWxlcy5sdGUpICYmIHJ1bGVzLmx0",
-            "ZSA8IHJ1bGVzLmd0ZSAmJiAocnVsZXMubHRlIDwgdGhpcyAmJiB0aGlzIDwg",
-            "cnVsZXMuZ3RlKT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVx",
-            "dWFsIHRvICVzIG9yIGxlc3MgdGhhbiBvciBlcXVhbCB0byAlcycuZm9ybWF0",
-            "KFtydWxlcy5ndGUsIHJ1bGVzLmx0ZV0pIDogJydIBFIDZ3RliAEBEnsKAmlu",
-            "GAYgAygNQmuC+BhnCmUKCXVpbnQzMi5pbhpYISh0aGlzIGluIGR5bihydWxl",
-            "cylbJ2luJ10pID8gJ3ZhbHVlIG11c3QgYmUgaW4gbGlzdCAlcycuZm9ybWF0",
-            "KFtkeW4ocnVsZXMpWydpbiddXSkgOiAnJ1ICaW4SfwoGbm90X2luGAcgAygN",
-            "QmiC+BhkCmIKDXVpbnQzMi5ub3RfaW4aUXRoaXMgaW4gcnVsZXMubm90X2lu",
-            "ID8gJ3ZhbHVlIG11c3Qgbm90IGJlIGluIGxpc3QgJXMnLmZvcm1hdChbcnVs",
-            "ZXMubm90X2luXSkgOiAnJ1IFbm90SW5CCAoGX2NvbnN0QgUKA19sdEIGCgRf",
-            "bHRlQgUKA19ndEIGCgRfZ3RlIoYVCgtVSW50NjRSdWxlcxJ3CgVjb25zdBgB",
-            "IAEoBEJcgvgYWApWCgx1aW50NjQuY29uc3QaRnRoaXMgIT0gcnVsZXMuY29u",
-            "c3QgPyAndmFsdWUgbXVzdCBlcXVhbCAlcycuZm9ybWF0KFtydWxlcy5jb25z",
-            "dF0pIDogJydIAFIFY29uc3SIAQESkwEKAmx0GAIgASgEQn6C+Bh6CngKCXVp",
-            "bnQ2NC5sdBprIWhhcyhydWxlcy5ndGUpICYmICFoYXMocnVsZXMuZ3QpICYm",
-            "IHRoaXMgPj0gcnVsZXMubHQ/ICd2YWx1ZSBtdXN0IGJlIGxlc3MgdGhhbiAl",
-            "cycuZm9ybWF0KFtydWxlcy5sdF0pIDogJydIAVICbHSIAQESpgEKA2x0ZRgD",
-            "IAEoBEKOAYL4GIkBCoYBCgp1aW50NjQubHRlGnghaGFzKHJ1bGVzLmd0ZSkg",
-            "JiYgIWhhcyhydWxlcy5ndCkgJiYgdGhpcyA+IHJ1bGVzLmx0ZT8gJ3ZhbHVl",
-            "IG11c3QgYmUgbGVzcyB0aGFuIG9yIGVxdWFsIHRvICVzJy5mb3JtYXQoW3J1",
-            "bGVzLmx0ZV0pIDogJydIAlIDbHRliAEBEqQHCgJndBgEIAEoBEKOB4L4GIkH",
-            "CnsKCXVpbnQ2NC5ndBpuIWhhcyhydWxlcy5sdCkgJiYgIWhhcyhydWxlcy5s",
-            "dGUpICYmIHRoaXMgPD0gcnVsZXMuZ3Q/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0",
-            "ZXIgdGhhbiAlcycuZm9ybWF0KFtydWxlcy5ndF0pIDogJycKtAEKDHVpbnQ2",
-            "NC5ndF9sdBqjAWhhcyhydWxlcy5sdCkgJiYgcnVsZXMubHQgPj0gcnVsZXMu",
-            "Z3QgJiYgKHRoaXMgPj0gcnVsZXMubHQgfHwgdGhpcyA8PSBydWxlcy5ndCk/",
-            "ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiAlcyBhbmQgbGVzcyB0aGFu",
-            "ICVzJy5mb3JtYXQoW3J1bGVzLmd0LCBydWxlcy5sdF0pIDogJycKvAEKFnVp",
-            "bnQ2NC5ndF9sdF9leGNsdXNpdmUaoQFoYXMocnVsZXMubHQpICYmIHJ1bGVz",
-            "Lmx0IDwgcnVsZXMuZ3QgJiYgKHJ1bGVzLmx0IDw9IHRoaXMgJiYgdGhpcyA8",
-            "PSBydWxlcy5ndCk/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiAlcyBv",
-            "ciBsZXNzIHRoYW4gJXMnLmZvcm1hdChbcnVsZXMuZ3QsIHJ1bGVzLmx0XSkg",
-            "OiAnJwrEAQoNdWludDY0Lmd0X2x0ZRqyAWhhcyhydWxlcy5sdGUpICYmIHJ1",
-            "bGVzLmx0ZSA+PSBydWxlcy5ndCAmJiAodGhpcyA+IHJ1bGVzLmx0ZSB8fCB0",
-            "aGlzIDw9IHJ1bGVzLmd0KT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFu",
-            "ICVzIGFuZCBsZXNzIHRoYW4gb3IgZXF1YWwgdG8gJXMnLmZvcm1hdChbcnVs",
-            "ZXMuZ3QsIHJ1bGVzLmx0ZV0pIDogJycKzAEKF3VpbnQ2NC5ndF9sdGVfZXhj",
-            "bHVzaXZlGrABaGFzKHJ1bGVzLmx0ZSkgJiYgcnVsZXMubHRlIDwgcnVsZXMu",
-            "Z3QgJiYgKHJ1bGVzLmx0ZSA8IHRoaXMgJiYgdGhpcyA8PSBydWxlcy5ndCk/",
-            "ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiAlcyBvciBsZXNzIHRoYW4g",
-            "b3IgZXF1YWwgdG8gJXMnLmZvcm1hdChbcnVsZXMuZ3QsIHJ1bGVzLmx0ZV0p",
-            "IDogJydIA1ICZ3SIAQES8QcKA2d0ZRgFIAEoBELZB4L4GNQHCokBCgp1aW50",
-            "NjQuZ3RlGnshaGFzKHJ1bGVzLmx0KSAmJiAhaGFzKHJ1bGVzLmx0ZSkgJiYg",
-            "dGhpcyA8IHJ1bGVzLmd0ZT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFu",
-            "IG9yIGVxdWFsIHRvICVzJy5mb3JtYXQoW3J1bGVzLmd0ZV0pIDogJycKwwEK",
-            "DXVpbnQ2NC5ndGVfbHQasQFoYXMocnVsZXMubHQpICYmIHJ1bGVzLmx0ID49",
-            "IHJ1bGVzLmd0ZSAmJiAodGhpcyA+PSBydWxlcy5sdCB8fCB0aGlzIDwgcnVs",
-            "ZXMuZ3RlKT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVxdWFs",
-            "IHRvICVzIGFuZCBsZXNzIHRoYW4gJXMnLmZvcm1hdChbcnVsZXMuZ3RlLCBy",
-            "dWxlcy5sdF0pIDogJycKywEKF3VpbnQ2NC5ndGVfbHRfZXhjbHVzaXZlGq8B",
-            "aGFzKHJ1bGVzLmx0KSAmJiBydWxlcy5sdCA8IHJ1bGVzLmd0ZSAmJiAocnVs",
-            "ZXMubHQgPD0gdGhpcyAmJiB0aGlzIDwgcnVsZXMuZ3RlKT8gJ3ZhbHVlIG11",
-            "c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVxdWFsIHRvICVzIG9yIGxlc3MgdGhh",
-            "biAlcycuZm9ybWF0KFtydWxlcy5ndGUsIHJ1bGVzLmx0XSkgOiAnJwrTAQoO",
-            "dWludDY0Lmd0ZV9sdGUawAFoYXMocnVsZXMubHRlKSAmJiBydWxlcy5sdGUg",
-            "Pj0gcnVsZXMuZ3RlICYmICh0aGlzID4gcnVsZXMubHRlIHx8IHRoaXMgPCBy",
-            "dWxlcy5ndGUpPyAndmFsdWUgbXVzdCBiZSBncmVhdGVyIHRoYW4gb3IgZXF1",
-            "YWwgdG8gJXMgYW5kIGxlc3MgdGhhbiBvciBlcXVhbCB0byAlcycuZm9ybWF0",
-            "KFtydWxlcy5ndGUsIHJ1bGVzLmx0ZV0pIDogJycK2wEKGHVpbnQ2NC5ndGVf",
-            "bHRlX2V4Y2x1c2l2ZRq+AWhhcyhydWxlcy5sdGUpICYmIHJ1bGVzLmx0ZSA8",
-            "IHJ1bGVzLmd0ZSAmJiAocnVsZXMubHRlIDwgdGhpcyAmJiB0aGlzIDwgcnVs",
-            "ZXMuZ3RlKT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVxdWFs",
-            "IHRvICVzIG9yIGxlc3MgdGhhbiBvciBlcXVhbCB0byAlcycuZm9ybWF0KFty",
-            "dWxlcy5ndGUsIHJ1bGVzLmx0ZV0pIDogJydIBFIDZ3RliAEBEnsKAmluGAYg",
-            "AygEQmuC+BhnCmUKCXVpbnQ2NC5pbhpYISh0aGlzIGluIGR5bihydWxlcylb",
-            "J2luJ10pID8gJ3ZhbHVlIG11c3QgYmUgaW4gbGlzdCAlcycuZm9ybWF0KFtk",
-            "eW4ocnVsZXMpWydpbiddXSkgOiAnJ1ICaW4SfwoGbm90X2luGAcgAygEQmiC",
-            "+BhkCmIKDXVpbnQ2NC5ub3RfaW4aUXRoaXMgaW4gcnVsZXMubm90X2luID8g",
-            "J3ZhbHVlIG11c3Qgbm90IGJlIGluIGxpc3QgJXMnLmZvcm1hdChbcnVsZXMu",
-            "bm90X2luXSkgOiAnJ1IFbm90SW5CCAoGX2NvbnN0QgUKA19sdEIGCgRfbHRl",
-            "QgUKA19ndEIGCgRfZ3RlIoYVCgtTSW50MzJSdWxlcxJ3CgVjb25zdBgBIAEo",
-            "EUJcgvgYWApWCgxzaW50MzIuY29uc3QaRnRoaXMgIT0gcnVsZXMuY29uc3Qg",
-            "PyAndmFsdWUgbXVzdCBlcXVhbCAlcycuZm9ybWF0KFtydWxlcy5jb25zdF0p",
-            "IDogJydIAFIFY29uc3SIAQESkwEKAmx0GAIgASgRQn6C+Bh6CngKCXNpbnQz",
-            "Mi5sdBprIWhhcyhydWxlcy5ndGUpICYmICFoYXMocnVsZXMuZ3QpICYmIHRo",
-            "aXMgPj0gcnVsZXMubHQ/ICd2YWx1ZSBtdXN0IGJlIGxlc3MgdGhhbiAlcycu",
-            "Zm9ybWF0KFtydWxlcy5sdF0pIDogJydIAVICbHSIAQESpgEKA2x0ZRgDIAEo",
-            "EUKOAYL4GIkBCoYBCgpzaW50MzIubHRlGnghaGFzKHJ1bGVzLmd0ZSkgJiYg",
-            "IWhhcyhydWxlcy5ndCkgJiYgdGhpcyA+IHJ1bGVzLmx0ZT8gJ3ZhbHVlIG11",
-            "c3QgYmUgbGVzcyB0aGFuIG9yIGVxdWFsIHRvICVzJy5mb3JtYXQoW3J1bGVz",
-            "Lmx0ZV0pIDogJydIAlIDbHRliAEBEqQHCgJndBgEIAEoEUKOB4L4GIkHCnsK",
-            "CXNpbnQzMi5ndBpuIWhhcyhydWxlcy5sdCkgJiYgIWhhcyhydWxlcy5sdGUp",
-            "ICYmIHRoaXMgPD0gcnVsZXMuZ3Q/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIg",
-            "dGhhbiAlcycuZm9ybWF0KFtydWxlcy5ndF0pIDogJycKtAEKDHNpbnQzMi5n",
-            "dF9sdBqjAWhhcyhydWxlcy5sdCkgJiYgcnVsZXMubHQgPj0gcnVsZXMuZ3Qg",
-            "JiYgKHRoaXMgPj0gcnVsZXMubHQgfHwgdGhpcyA8PSBydWxlcy5ndCk/ICd2",
-            "YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiAlcyBhbmQgbGVzcyB0aGFuICVz",
-            "Jy5mb3JtYXQoW3J1bGVzLmd0LCBydWxlcy5sdF0pIDogJycKvAEKFnNpbnQz",
-            "Mi5ndF9sdF9leGNsdXNpdmUaoQFoYXMocnVsZXMubHQpICYmIHJ1bGVzLmx0",
-            "IDwgcnVsZXMuZ3QgJiYgKHJ1bGVzLmx0IDw9IHRoaXMgJiYgdGhpcyA8PSBy",
-            "dWxlcy5ndCk/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiAlcyBvciBs",
-            "ZXNzIHRoYW4gJXMnLmZvcm1hdChbcnVsZXMuZ3QsIHJ1bGVzLmx0XSkgOiAn",
-            "JwrEAQoNc2ludDMyLmd0X2x0ZRqyAWhhcyhydWxlcy5sdGUpICYmIHJ1bGVz",
-            "Lmx0ZSA+PSBydWxlcy5ndCAmJiAodGhpcyA+IHJ1bGVzLmx0ZSB8fCB0aGlz",
-            "IDw9IHJ1bGVzLmd0KT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuICVz",
-            "IGFuZCBsZXNzIHRoYW4gb3IgZXF1YWwgdG8gJXMnLmZvcm1hdChbcnVsZXMu",
-            "Z3QsIHJ1bGVzLmx0ZV0pIDogJycKzAEKF3NpbnQzMi5ndF9sdGVfZXhjbHVz",
-            "aXZlGrABaGFzKHJ1bGVzLmx0ZSkgJiYgcnVsZXMubHRlIDwgcnVsZXMuZ3Qg",
-            "JiYgKHJ1bGVzLmx0ZSA8IHRoaXMgJiYgdGhpcyA8PSBydWxlcy5ndCk/ICd2",
-            "YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiAlcyBvciBsZXNzIHRoYW4gb3Ig",
-            "ZXF1YWwgdG8gJXMnLmZvcm1hdChbcnVsZXMuZ3QsIHJ1bGVzLmx0ZV0pIDog",
-            "JydIA1ICZ3SIAQES8QcKA2d0ZRgFIAEoEULZB4L4GNQHCokBCgpzaW50MzIu",
-            "Z3RlGnshaGFzKHJ1bGVzLmx0KSAmJiAhaGFzKHJ1bGVzLmx0ZSkgJiYgdGhp",
-            "cyA8IHJ1bGVzLmd0ZT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuIG9y",
-            "IGVxdWFsIHRvICVzJy5mb3JtYXQoW3J1bGVzLmd0ZV0pIDogJycKwwEKDXNp",
-            "bnQzMi5ndGVfbHQasQFoYXMocnVsZXMubHQpICYmIHJ1bGVzLmx0ID49IHJ1",
-            "bGVzLmd0ZSAmJiAodGhpcyA+PSBydWxlcy5sdCB8fCB0aGlzIDwgcnVsZXMu",
-            "Z3RlKT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVxdWFsIHRv",
-            "ICVzIGFuZCBsZXNzIHRoYW4gJXMnLmZvcm1hdChbcnVsZXMuZ3RlLCBydWxl",
-            "cy5sdF0pIDogJycKywEKF3NpbnQzMi5ndGVfbHRfZXhjbHVzaXZlGq8BaGFz",
-            "KHJ1bGVzLmx0KSAmJiBydWxlcy5sdCA8IHJ1bGVzLmd0ZSAmJiAocnVsZXMu",
-            "bHQgPD0gdGhpcyAmJiB0aGlzIDwgcnVsZXMuZ3RlKT8gJ3ZhbHVlIG11c3Qg",
-            "YmUgZ3JlYXRlciB0aGFuIG9yIGVxdWFsIHRvICVzIG9yIGxlc3MgdGhhbiAl",
-            "cycuZm9ybWF0KFtydWxlcy5ndGUsIHJ1bGVzLmx0XSkgOiAnJwrTAQoOc2lu",
-            "dDMyLmd0ZV9sdGUawAFoYXMocnVsZXMubHRlKSAmJiBydWxlcy5sdGUgPj0g",
-            "cnVsZXMuZ3RlICYmICh0aGlzID4gcnVsZXMubHRlIHx8IHRoaXMgPCBydWxl",
-            "cy5ndGUpPyAndmFsdWUgbXVzdCBiZSBncmVhdGVyIHRoYW4gb3IgZXF1YWwg",
-            "dG8gJXMgYW5kIGxlc3MgdGhhbiBvciBlcXVhbCB0byAlcycuZm9ybWF0KFty",
-            "dWxlcy5ndGUsIHJ1bGVzLmx0ZV0pIDogJycK2wEKGHNpbnQzMi5ndGVfbHRl",
-            "X2V4Y2x1c2l2ZRq+AWhhcyhydWxlcy5sdGUpICYmIHJ1bGVzLmx0ZSA8IHJ1",
-            "bGVzLmd0ZSAmJiAocnVsZXMubHRlIDwgdGhpcyAmJiB0aGlzIDwgcnVsZXMu",
-            "Z3RlKT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVxdWFsIHRv",
-            "ICVzIG9yIGxlc3MgdGhhbiBvciBlcXVhbCB0byAlcycuZm9ybWF0KFtydWxl",
-            "cy5ndGUsIHJ1bGVzLmx0ZV0pIDogJydIBFIDZ3RliAEBEnsKAmluGAYgAygR",
-            "QmuC+BhnCmUKCXNpbnQzMi5pbhpYISh0aGlzIGluIGR5bihydWxlcylbJ2lu",
-            "J10pID8gJ3ZhbHVlIG11c3QgYmUgaW4gbGlzdCAlcycuZm9ybWF0KFtkeW4o",
-            "cnVsZXMpWydpbiddXSkgOiAnJ1ICaW4SfwoGbm90X2luGAcgAygRQmiC+Bhk",
-            "CmIKDXNpbnQzMi5ub3RfaW4aUXRoaXMgaW4gcnVsZXMubm90X2luID8gJ3Zh",
-            "bHVlIG11c3Qgbm90IGJlIGluIGxpc3QgJXMnLmZvcm1hdChbcnVsZXMubm90",
-            "X2luXSkgOiAnJ1IFbm90SW5CCAoGX2NvbnN0QgUKA19sdEIGCgRfbHRlQgUK",
-            "A19ndEIGCgRfZ3RlIoYVCgtTSW50NjRSdWxlcxJ3CgVjb25zdBgBIAEoEkJc",
-            "gvgYWApWCgxzaW50NjQuY29uc3QaRnRoaXMgIT0gcnVsZXMuY29uc3QgPyAn",
-            "dmFsdWUgbXVzdCBlcXVhbCAlcycuZm9ybWF0KFtydWxlcy5jb25zdF0pIDog",
-            "JydIAFIFY29uc3SIAQESkwEKAmx0GAIgASgSQn6C+Bh6CngKCXNpbnQ2NC5s",
-            "dBprIWhhcyhydWxlcy5ndGUpICYmICFoYXMocnVsZXMuZ3QpICYmIHRoaXMg",
-            "Pj0gcnVsZXMubHQ/ICd2YWx1ZSBtdXN0IGJlIGxlc3MgdGhhbiAlcycuZm9y",
-            "bWF0KFtydWxlcy5sdF0pIDogJydIAVICbHSIAQESpgEKA2x0ZRgDIAEoEkKO",
-            "AYL4GIkBCoYBCgpzaW50NjQubHRlGnghaGFzKHJ1bGVzLmd0ZSkgJiYgIWhh",
-            "cyhydWxlcy5ndCkgJiYgdGhpcyA+IHJ1bGVzLmx0ZT8gJ3ZhbHVlIG11c3Qg",
-            "YmUgbGVzcyB0aGFuIG9yIGVxdWFsIHRvICVzJy5mb3JtYXQoW3J1bGVzLmx0",
-            "ZV0pIDogJydIAlIDbHRliAEBEqQHCgJndBgEIAEoEkKOB4L4GIkHCnsKCXNp",
-            "bnQ2NC5ndBpuIWhhcyhydWxlcy5sdCkgJiYgIWhhcyhydWxlcy5sdGUpICYm",
-            "IHRoaXMgPD0gcnVsZXMuZ3Q/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhh",
-            "biAlcycuZm9ybWF0KFtydWxlcy5ndF0pIDogJycKtAEKDHNpbnQ2NC5ndF9s",
-            "dBqjAWhhcyhydWxlcy5sdCkgJiYgcnVsZXMubHQgPj0gcnVsZXMuZ3QgJiYg",
-            "KHRoaXMgPj0gcnVsZXMubHQgfHwgdGhpcyA8PSBydWxlcy5ndCk/ICd2YWx1",
-            "ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiAlcyBhbmQgbGVzcyB0aGFuICVzJy5m",
-            "b3JtYXQoW3J1bGVzLmd0LCBydWxlcy5sdF0pIDogJycKvAEKFnNpbnQ2NC5n",
-            "dF9sdF9leGNsdXNpdmUaoQFoYXMocnVsZXMubHQpICYmIHJ1bGVzLmx0IDwg",
-            "cnVsZXMuZ3QgJiYgKHJ1bGVzLmx0IDw9IHRoaXMgJiYgdGhpcyA8PSBydWxl",
-            "cy5ndCk/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiAlcyBvciBsZXNz",
-            "IHRoYW4gJXMnLmZvcm1hdChbcnVsZXMuZ3QsIHJ1bGVzLmx0XSkgOiAnJwrE",
-            "AQoNc2ludDY0Lmd0X2x0ZRqyAWhhcyhydWxlcy5sdGUpICYmIHJ1bGVzLmx0",
-            "ZSA+PSBydWxlcy5ndCAmJiAodGhpcyA+IHJ1bGVzLmx0ZSB8fCB0aGlzIDw9",
-            "IHJ1bGVzLmd0KT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuICVzIGFu",
-            "ZCBsZXNzIHRoYW4gb3IgZXF1YWwgdG8gJXMnLmZvcm1hdChbcnVsZXMuZ3Qs",
-            "IHJ1bGVzLmx0ZV0pIDogJycKzAEKF3NpbnQ2NC5ndF9sdGVfZXhjbHVzaXZl",
-            "GrABaGFzKHJ1bGVzLmx0ZSkgJiYgcnVsZXMubHRlIDwgcnVsZXMuZ3QgJiYg",
-            "KHJ1bGVzLmx0ZSA8IHRoaXMgJiYgdGhpcyA8PSBydWxlcy5ndCk/ICd2YWx1",
-            "ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiAlcyBvciBsZXNzIHRoYW4gb3IgZXF1",
-            "YWwgdG8gJXMnLmZvcm1hdChbcnVsZXMuZ3QsIHJ1bGVzLmx0ZV0pIDogJydI",
-            "A1ICZ3SIAQES8QcKA2d0ZRgFIAEoEkLZB4L4GNQHCokBCgpzaW50NjQuZ3Rl",
-            "GnshaGFzKHJ1bGVzLmx0KSAmJiAhaGFzKHJ1bGVzLmx0ZSkgJiYgdGhpcyA8",
-            "IHJ1bGVzLmd0ZT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVx",
-            "dWFsIHRvICVzJy5mb3JtYXQoW3J1bGVzLmd0ZV0pIDogJycKwwEKDXNpbnQ2",
-            "NC5ndGVfbHQasQFoYXMocnVsZXMubHQpICYmIHJ1bGVzLmx0ID49IHJ1bGVz",
-            "Lmd0ZSAmJiAodGhpcyA+PSBydWxlcy5sdCB8fCB0aGlzIDwgcnVsZXMuZ3Rl",
-            "KT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVxdWFsIHRvICVz",
-            "IGFuZCBsZXNzIHRoYW4gJXMnLmZvcm1hdChbcnVsZXMuZ3RlLCBydWxlcy5s",
-            "dF0pIDogJycKywEKF3NpbnQ2NC5ndGVfbHRfZXhjbHVzaXZlGq8BaGFzKHJ1",
-            "bGVzLmx0KSAmJiBydWxlcy5sdCA8IHJ1bGVzLmd0ZSAmJiAocnVsZXMubHQg",
-            "PD0gdGhpcyAmJiB0aGlzIDwgcnVsZXMuZ3RlKT8gJ3ZhbHVlIG11c3QgYmUg",
-            "Z3JlYXRlciB0aGFuIG9yIGVxdWFsIHRvICVzIG9yIGxlc3MgdGhhbiAlcycu",
-            "Zm9ybWF0KFtydWxlcy5ndGUsIHJ1bGVzLmx0XSkgOiAnJwrTAQoOc2ludDY0",
-            "Lmd0ZV9sdGUawAFoYXMocnVsZXMubHRlKSAmJiBydWxlcy5sdGUgPj0gcnVs",
-            "ZXMuZ3RlICYmICh0aGlzID4gcnVsZXMubHRlIHx8IHRoaXMgPCBydWxlcy5n",
-            "dGUpPyAndmFsdWUgbXVzdCBiZSBncmVhdGVyIHRoYW4gb3IgZXF1YWwgdG8g",
-            "JXMgYW5kIGxlc3MgdGhhbiBvciBlcXVhbCB0byAlcycuZm9ybWF0KFtydWxl",
-            "cy5ndGUsIHJ1bGVzLmx0ZV0pIDogJycK2wEKGHNpbnQ2NC5ndGVfbHRlX2V4",
-            "Y2x1c2l2ZRq+AWhhcyhydWxlcy5sdGUpICYmIHJ1bGVzLmx0ZSA8IHJ1bGVz",
-            "Lmd0ZSAmJiAocnVsZXMubHRlIDwgdGhpcyAmJiB0aGlzIDwgcnVsZXMuZ3Rl",
-            "KT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVxdWFsIHRvICVz",
-            "IG9yIGxlc3MgdGhhbiBvciBlcXVhbCB0byAlcycuZm9ybWF0KFtydWxlcy5n",
-            "dGUsIHJ1bGVzLmx0ZV0pIDogJydIBFIDZ3RliAEBEnsKAmluGAYgAygSQmuC",
-            "+BhnCmUKCXNpbnQ2NC5pbhpYISh0aGlzIGluIGR5bihydWxlcylbJ2luJ10p",
-            "ID8gJ3ZhbHVlIG11c3QgYmUgaW4gbGlzdCAlcycuZm9ybWF0KFtkeW4ocnVs",
-            "ZXMpWydpbiddXSkgOiAnJ1ICaW4SfwoGbm90X2luGAcgAygSQmiC+BhkCmIK",
-            "DXNpbnQ2NC5ub3RfaW4aUXRoaXMgaW4gcnVsZXMubm90X2luID8gJ3ZhbHVl",
-            "IG11c3Qgbm90IGJlIGluIGxpc3QgJXMnLmZvcm1hdChbcnVsZXMubm90X2lu",
-            "XSkgOiAnJ1IFbm90SW5CCAoGX2NvbnN0QgUKA19sdEIGCgRfbHRlQgUKA19n",
-            "dEIGCgRfZ3RlIpcVCgxGaXhlZDMyUnVsZXMSeAoFY29uc3QYASABKAdCXYL4",
-            "GFkKVwoNZml4ZWQzMi5jb25zdBpGdGhpcyAhPSBydWxlcy5jb25zdCA/ICd2",
-            "YWx1ZSBtdXN0IGVxdWFsICVzJy5mb3JtYXQoW3J1bGVzLmNvbnN0XSkgOiAn",
-            "J0gAUgVjb25zdIgBARKUAQoCbHQYAiABKAdCf4L4GHsKeQoKZml4ZWQzMi5s",
-            "dBprIWhhcyhydWxlcy5ndGUpICYmICFoYXMocnVsZXMuZ3QpICYmIHRoaXMg",
-            "Pj0gcnVsZXMubHQ/ICd2YWx1ZSBtdXN0IGJlIGxlc3MgdGhhbiAlcycuZm9y",
-            "bWF0KFtydWxlcy5sdF0pIDogJydIAVICbHSIAQESpwEKA2x0ZRgDIAEoB0KP",
-            "AYL4GIoBCocBCgtmaXhlZDMyLmx0ZRp4IWhhcyhydWxlcy5ndGUpICYmICFo",
-            "YXMocnVsZXMuZ3QpICYmIHRoaXMgPiBydWxlcy5sdGU/ICd2YWx1ZSBtdXN0",
-            "IGJlIGxlc3MgdGhhbiBvciBlcXVhbCB0byAlcycuZm9ybWF0KFtydWxlcy5s",
-            "dGVdKSA6ICcnSAJSA2x0ZYgBARKpBwoCZ3QYBCABKAdCkweC+BiOBwp8Cgpm",
-            "aXhlZDMyLmd0Gm4haGFzKHJ1bGVzLmx0KSAmJiAhaGFzKHJ1bGVzLmx0ZSkg",
-            "JiYgdGhpcyA8PSBydWxlcy5ndD8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0",
-            "aGFuICVzJy5mb3JtYXQoW3J1bGVzLmd0XSkgOiAnJwq1AQoNZml4ZWQzMi5n",
-            "dF9sdBqjAWhhcyhydWxlcy5sdCkgJiYgcnVsZXMubHQgPj0gcnVsZXMuZ3Qg",
-            "JiYgKHRoaXMgPj0gcnVsZXMubHQgfHwgdGhpcyA8PSBydWxlcy5ndCk/ICd2",
-            "YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiAlcyBhbmQgbGVzcyB0aGFuICVz",
-            "Jy5mb3JtYXQoW3J1bGVzLmd0LCBydWxlcy5sdF0pIDogJycKvQEKF2ZpeGVk",
-            "MzIuZ3RfbHRfZXhjbHVzaXZlGqEBaGFzKHJ1bGVzLmx0KSAmJiBydWxlcy5s",
-            "dCA8IHJ1bGVzLmd0ICYmIChydWxlcy5sdCA8PSB0aGlzICYmIHRoaXMgPD0g",
-            "cnVsZXMuZ3QpPyAndmFsdWUgbXVzdCBiZSBncmVhdGVyIHRoYW4gJXMgb3Ig",
-            "bGVzcyB0aGFuICVzJy5mb3JtYXQoW3J1bGVzLmd0LCBydWxlcy5sdF0pIDog",
-            "JycKxQEKDmZpeGVkMzIuZ3RfbHRlGrIBaGFzKHJ1bGVzLmx0ZSkgJiYgcnVs",
-            "ZXMubHRlID49IHJ1bGVzLmd0ICYmICh0aGlzID4gcnVsZXMubHRlIHx8IHRo",
-            "aXMgPD0gcnVsZXMuZ3QpPyAndmFsdWUgbXVzdCBiZSBncmVhdGVyIHRoYW4g",
-            "JXMgYW5kIGxlc3MgdGhhbiBvciBlcXVhbCB0byAlcycuZm9ybWF0KFtydWxl",
-            "cy5ndCwgcnVsZXMubHRlXSkgOiAnJwrNAQoYZml4ZWQzMi5ndF9sdGVfZXhj",
-            "bHVzaXZlGrABaGFzKHJ1bGVzLmx0ZSkgJiYgcnVsZXMubHRlIDwgcnVsZXMu",
-            "Z3QgJiYgKHJ1bGVzLmx0ZSA8IHRoaXMgJiYgdGhpcyA8PSBydWxlcy5ndCk/",
-            "ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiAlcyBvciBsZXNzIHRoYW4g",
-            "b3IgZXF1YWwgdG8gJXMnLmZvcm1hdChbcnVsZXMuZ3QsIHJ1bGVzLmx0ZV0p",
-            "IDogJydIA1ICZ3SIAQES9gcKA2d0ZRgFIAEoB0LeB4L4GNkHCooBCgtmaXhl",
-            "ZDMyLmd0ZRp7IWhhcyhydWxlcy5sdCkgJiYgIWhhcyhydWxlcy5sdGUpICYm",
-            "IHRoaXMgPCBydWxlcy5ndGU/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhh",
-            "biBvciBlcXVhbCB0byAlcycuZm9ybWF0KFtydWxlcy5ndGVdKSA6ICcnCsQB",
-            "Cg5maXhlZDMyLmd0ZV9sdBqxAWhhcyhydWxlcy5sdCkgJiYgcnVsZXMubHQg",
-            "Pj0gcnVsZXMuZ3RlICYmICh0aGlzID49IHJ1bGVzLmx0IHx8IHRoaXMgPCBy",
-            "dWxlcy5ndGUpPyAndmFsdWUgbXVzdCBiZSBncmVhdGVyIHRoYW4gb3IgZXF1",
-            "YWwgdG8gJXMgYW5kIGxlc3MgdGhhbiAlcycuZm9ybWF0KFtydWxlcy5ndGUs",
-            "IHJ1bGVzLmx0XSkgOiAnJwrMAQoYZml4ZWQzMi5ndGVfbHRfZXhjbHVzaXZl",
-            "Gq8BaGFzKHJ1bGVzLmx0KSAmJiBydWxlcy5sdCA8IHJ1bGVzLmd0ZSAmJiAo",
-            "cnVsZXMubHQgPD0gdGhpcyAmJiB0aGlzIDwgcnVsZXMuZ3RlKT8gJ3ZhbHVl",
-            "IG11c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVxdWFsIHRvICVzIG9yIGxlc3Mg",
-            "dGhhbiAlcycuZm9ybWF0KFtydWxlcy5ndGUsIHJ1bGVzLmx0XSkgOiAnJwrU",
-            "AQoPZml4ZWQzMi5ndGVfbHRlGsABaGFzKHJ1bGVzLmx0ZSkgJiYgcnVsZXMu",
-            "bHRlID49IHJ1bGVzLmd0ZSAmJiAodGhpcyA+IHJ1bGVzLmx0ZSB8fCB0aGlz",
-            "IDwgcnVsZXMuZ3RlKT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuIG9y",
-            "IGVxdWFsIHRvICVzIGFuZCBsZXNzIHRoYW4gb3IgZXF1YWwgdG8gJXMnLmZv",
-            "cm1hdChbcnVsZXMuZ3RlLCBydWxlcy5sdGVdKSA6ICcnCtwBChlmaXhlZDMy",
-            "Lmd0ZV9sdGVfZXhjbHVzaXZlGr4BaGFzKHJ1bGVzLmx0ZSkgJiYgcnVsZXMu",
-            "bHRlIDwgcnVsZXMuZ3RlICYmIChydWxlcy5sdGUgPCB0aGlzICYmIHRoaXMg",
-            "PCBydWxlcy5ndGUpPyAndmFsdWUgbXVzdCBiZSBncmVhdGVyIHRoYW4gb3Ig",
-            "ZXF1YWwgdG8gJXMgb3IgbGVzcyB0aGFuIG9yIGVxdWFsIHRvICVzJy5mb3Jt",
-            "YXQoW3J1bGVzLmd0ZSwgcnVsZXMubHRlXSkgOiAnJ0gEUgNndGWIAQESfAoC",
-            "aW4YBiADKAdCbIL4GGgKZgoKZml4ZWQzMi5pbhpYISh0aGlzIGluIGR5bihy",
-            "dWxlcylbJ2luJ10pID8gJ3ZhbHVlIG11c3QgYmUgaW4gbGlzdCAlcycuZm9y",
-            "bWF0KFtkeW4ocnVsZXMpWydpbiddXSkgOiAnJ1ICaW4SgAEKBm5vdF9pbhgH",
-            "IAMoB0JpgvgYZQpjCg5maXhlZDMyLm5vdF9pbhpRdGhpcyBpbiBydWxlcy5u",
-            "b3RfaW4gPyAndmFsdWUgbXVzdCBub3QgYmUgaW4gbGlzdCAlcycuZm9ybWF0",
-            "KFtydWxlcy5ub3RfaW5dKSA6ICcnUgVub3RJbkIICgZfY29uc3RCBQoDX2x0",
-            "QgYKBF9sdGVCBQoDX2d0QgYKBF9ndGUilxUKDEZpeGVkNjRSdWxlcxJ4CgVj",
-            "b25zdBgBIAEoBkJdgvgYWQpXCg1maXhlZDY0LmNvbnN0GkZ0aGlzICE9IHJ1",
-            "bGVzLmNvbnN0ID8gJ3ZhbHVlIG11c3QgZXF1YWwgJXMnLmZvcm1hdChbcnVs",
-            "ZXMuY29uc3RdKSA6ICcnSABSBWNvbnN0iAEBEpQBCgJsdBgCIAEoBkJ/gvgY",
-            "ewp5CgpmaXhlZDY0Lmx0GmshaGFzKHJ1bGVzLmd0ZSkgJiYgIWhhcyhydWxl",
-            "cy5ndCkgJiYgdGhpcyA+PSBydWxlcy5sdD8gJ3ZhbHVlIG11c3QgYmUgbGVz",
-            "cyB0aGFuICVzJy5mb3JtYXQoW3J1bGVzLmx0XSkgOiAnJ0gBUgJsdIgBARKn",
-            "AQoDbHRlGAMgASgGQo8BgvgYigEKhwEKC2ZpeGVkNjQubHRlGnghaGFzKHJ1",
-            "bGVzLmd0ZSkgJiYgIWhhcyhydWxlcy5ndCkgJiYgdGhpcyA+IHJ1bGVzLmx0",
-            "ZT8gJ3ZhbHVlIG11c3QgYmUgbGVzcyB0aGFuIG9yIGVxdWFsIHRvICVzJy5m",
-            "b3JtYXQoW3J1bGVzLmx0ZV0pIDogJydIAlIDbHRliAEBEqkHCgJndBgEIAEo",
-            "BkKTB4L4GI4HCnwKCmZpeGVkNjQuZ3QabiFoYXMocnVsZXMubHQpICYmICFo",
-            "YXMocnVsZXMubHRlKSAmJiB0aGlzIDw9IHJ1bGVzLmd0PyAndmFsdWUgbXVz",
-            "dCBiZSBncmVhdGVyIHRoYW4gJXMnLmZvcm1hdChbcnVsZXMuZ3RdKSA6ICcn",
-            "CrUBCg1maXhlZDY0Lmd0X2x0GqMBaGFzKHJ1bGVzLmx0KSAmJiBydWxlcy5s",
-            "dCA+PSBydWxlcy5ndCAmJiAodGhpcyA+PSBydWxlcy5sdCB8fCB0aGlzIDw9",
-            "IHJ1bGVzLmd0KT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuICVzIGFu",
-            "ZCBsZXNzIHRoYW4gJXMnLmZvcm1hdChbcnVsZXMuZ3QsIHJ1bGVzLmx0XSkg",
-            "OiAnJwq9AQoXZml4ZWQ2NC5ndF9sdF9leGNsdXNpdmUaoQFoYXMocnVsZXMu",
-            "bHQpICYmIHJ1bGVzLmx0IDwgcnVsZXMuZ3QgJiYgKHJ1bGVzLmx0IDw9IHRo",
-            "aXMgJiYgdGhpcyA8PSBydWxlcy5ndCk/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0",
-            "ZXIgdGhhbiAlcyBvciBsZXNzIHRoYW4gJXMnLmZvcm1hdChbcnVsZXMuZ3Qs",
-            "IHJ1bGVzLmx0XSkgOiAnJwrFAQoOZml4ZWQ2NC5ndF9sdGUasgFoYXMocnVs",
-            "ZXMubHRlKSAmJiBydWxlcy5sdGUgPj0gcnVsZXMuZ3QgJiYgKHRoaXMgPiBy",
-            "dWxlcy5sdGUgfHwgdGhpcyA8PSBydWxlcy5ndCk/ICd2YWx1ZSBtdXN0IGJl",
-            "IGdyZWF0ZXIgdGhhbiAlcyBhbmQgbGVzcyB0aGFuIG9yIGVxdWFsIHRvICVz",
-            "Jy5mb3JtYXQoW3J1bGVzLmd0LCBydWxlcy5sdGVdKSA6ICcnCs0BChhmaXhl",
-            "ZDY0Lmd0X2x0ZV9leGNsdXNpdmUasAFoYXMocnVsZXMubHRlKSAmJiBydWxl",
-            "cy5sdGUgPCBydWxlcy5ndCAmJiAocnVsZXMubHRlIDwgdGhpcyAmJiB0aGlz",
-            "IDw9IHJ1bGVzLmd0KT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuICVz",
-            "IG9yIGxlc3MgdGhhbiBvciBlcXVhbCB0byAlcycuZm9ybWF0KFtydWxlcy5n",
-            "dCwgcnVsZXMubHRlXSkgOiAnJ0gDUgJndIgBARL2BwoDZ3RlGAUgASgGQt4H",
-            "gvgY2QcKigEKC2ZpeGVkNjQuZ3RlGnshaGFzKHJ1bGVzLmx0KSAmJiAhaGFz",
-            "KHJ1bGVzLmx0ZSkgJiYgdGhpcyA8IHJ1bGVzLmd0ZT8gJ3ZhbHVlIG11c3Qg",
-            "YmUgZ3JlYXRlciB0aGFuIG9yIGVxdWFsIHRvICVzJy5mb3JtYXQoW3J1bGVz",
-            "Lmd0ZV0pIDogJycKxAEKDmZpeGVkNjQuZ3RlX2x0GrEBaGFzKHJ1bGVzLmx0",
-            "KSAmJiBydWxlcy5sdCA+PSBydWxlcy5ndGUgJiYgKHRoaXMgPj0gcnVsZXMu",
-            "bHQgfHwgdGhpcyA8IHJ1bGVzLmd0ZSk/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0",
-            "ZXIgdGhhbiBvciBlcXVhbCB0byAlcyBhbmQgbGVzcyB0aGFuICVzJy5mb3Jt",
-            "YXQoW3J1bGVzLmd0ZSwgcnVsZXMubHRdKSA6ICcnCswBChhmaXhlZDY0Lmd0",
-            "ZV9sdF9leGNsdXNpdmUarwFoYXMocnVsZXMubHQpICYmIHJ1bGVzLmx0IDwg",
-            "cnVsZXMuZ3RlICYmIChydWxlcy5sdCA8PSB0aGlzICYmIHRoaXMgPCBydWxl",
-            "cy5ndGUpPyAndmFsdWUgbXVzdCBiZSBncmVhdGVyIHRoYW4gb3IgZXF1YWwg",
-            "dG8gJXMgb3IgbGVzcyB0aGFuICVzJy5mb3JtYXQoW3J1bGVzLmd0ZSwgcnVs",
-            "ZXMubHRdKSA6ICcnCtQBCg9maXhlZDY0Lmd0ZV9sdGUawAFoYXMocnVsZXMu",
-            "bHRlKSAmJiBydWxlcy5sdGUgPj0gcnVsZXMuZ3RlICYmICh0aGlzID4gcnVs",
-            "ZXMubHRlIHx8IHRoaXMgPCBydWxlcy5ndGUpPyAndmFsdWUgbXVzdCBiZSBn",
-            "cmVhdGVyIHRoYW4gb3IgZXF1YWwgdG8gJXMgYW5kIGxlc3MgdGhhbiBvciBl",
-            "cXVhbCB0byAlcycuZm9ybWF0KFtydWxlcy5ndGUsIHJ1bGVzLmx0ZV0pIDog",
-            "JycK3AEKGWZpeGVkNjQuZ3RlX2x0ZV9leGNsdXNpdmUavgFoYXMocnVsZXMu",
-            "bHRlKSAmJiBydWxlcy5sdGUgPCBydWxlcy5ndGUgJiYgKHJ1bGVzLmx0ZSA8",
-            "IHRoaXMgJiYgdGhpcyA8IHJ1bGVzLmd0ZSk/ICd2YWx1ZSBtdXN0IGJlIGdy",
-            "ZWF0ZXIgdGhhbiBvciBlcXVhbCB0byAlcyBvciBsZXNzIHRoYW4gb3IgZXF1",
-            "YWwgdG8gJXMnLmZvcm1hdChbcnVsZXMuZ3RlLCBydWxlcy5sdGVdKSA6ICcn",
-            "SARSA2d0ZYgBARJ8CgJpbhgGIAMoBkJsgvgYaApmCgpmaXhlZDY0LmluGlgh",
-            "KHRoaXMgaW4gZHluKHJ1bGVzKVsnaW4nXSkgPyAndmFsdWUgbXVzdCBiZSBp",
-            "biBsaXN0ICVzJy5mb3JtYXQoW2R5bihydWxlcylbJ2luJ11dKSA6ICcnUgJp",
-            "bhKAAQoGbm90X2luGAcgAygGQmmC+BhlCmMKDmZpeGVkNjQubm90X2luGlF0",
-            "aGlzIGluIHJ1bGVzLm5vdF9pbiA/ICd2YWx1ZSBtdXN0IG5vdCBiZSBpbiBs",
-            "aXN0ICVzJy5mb3JtYXQoW3J1bGVzLm5vdF9pbl0pIDogJydSBW5vdEluQggK",
-            "Bl9jb25zdEIFCgNfbHRCBgoEX2x0ZUIFCgNfZ3RCBgoEX2d0ZSKoFQoNU0Zp",
-            "eGVkMzJSdWxlcxJ5CgVjb25zdBgBIAEoD0JegvgYWgpYCg5zZml4ZWQzMi5j",
-            "b25zdBpGdGhpcyAhPSBydWxlcy5jb25zdCA/ICd2YWx1ZSBtdXN0IGVxdWFs",
-            "ICVzJy5mb3JtYXQoW3J1bGVzLmNvbnN0XSkgOiAnJ0gAUgVjb25zdIgBARKW",
-            "AQoCbHQYAiABKA9CgAGC+Bh8CnoKC3NmaXhlZDMyLmx0GmshaGFzKHJ1bGVz",
-            "Lmd0ZSkgJiYgIWhhcyhydWxlcy5ndCkgJiYgdGhpcyA+PSBydWxlcy5sdD8g",
-            "J3ZhbHVlIG11c3QgYmUgbGVzcyB0aGFuICVzJy5mb3JtYXQoW3J1bGVzLmx0",
-            "XSkgOiAnJ0gBUgJsdIgBARKoAQoDbHRlGAMgASgPQpABgvgYiwEKiAEKDHNm",
-            "aXhlZDMyLmx0ZRp4IWhhcyhydWxlcy5ndGUpICYmICFoYXMocnVsZXMuZ3Qp",
-            "ICYmIHRoaXMgPiBydWxlcy5sdGU/ICd2YWx1ZSBtdXN0IGJlIGxlc3MgdGhh",
-            "biBvciBlcXVhbCB0byAlcycuZm9ybWF0KFtydWxlcy5sdGVdKSA6ICcnSAJS",
-            "A2x0ZYgBARKuBwoCZ3QYBCABKA9CmAeC+BiTBwp9CgtzZml4ZWQzMi5ndBpu",
-            "IWhhcyhydWxlcy5sdCkgJiYgIWhhcyhydWxlcy5sdGUpICYmIHRoaXMgPD0g",
-            "cnVsZXMuZ3Q/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiAlcycuZm9y",
-            "bWF0KFtydWxlcy5ndF0pIDogJycKtgEKDnNmaXhlZDMyLmd0X2x0GqMBaGFz",
-            "KHJ1bGVzLmx0KSAmJiBydWxlcy5sdCA+PSBydWxlcy5ndCAmJiAodGhpcyA+",
-            "PSBydWxlcy5sdCB8fCB0aGlzIDw9IHJ1bGVzLmd0KT8gJ3ZhbHVlIG11c3Qg",
-            "YmUgZ3JlYXRlciB0aGFuICVzIGFuZCBsZXNzIHRoYW4gJXMnLmZvcm1hdChb",
-            "cnVsZXMuZ3QsIHJ1bGVzLmx0XSkgOiAnJwq+AQoYc2ZpeGVkMzIuZ3RfbHRf",
-            "ZXhjbHVzaXZlGqEBaGFzKHJ1bGVzLmx0KSAmJiBydWxlcy5sdCA8IHJ1bGVz",
-            "Lmd0ICYmIChydWxlcy5sdCA8PSB0aGlzICYmIHRoaXMgPD0gcnVsZXMuZ3Qp",
-            "PyAndmFsdWUgbXVzdCBiZSBncmVhdGVyIHRoYW4gJXMgb3IgbGVzcyB0aGFu",
-            "ICVzJy5mb3JtYXQoW3J1bGVzLmd0LCBydWxlcy5sdF0pIDogJycKxgEKD3Nm",
-            "aXhlZDMyLmd0X2x0ZRqyAWhhcyhydWxlcy5sdGUpICYmIHJ1bGVzLmx0ZSA+",
-            "PSBydWxlcy5ndCAmJiAodGhpcyA+IHJ1bGVzLmx0ZSB8fCB0aGlzIDw9IHJ1",
-            "bGVzLmd0KT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuICVzIGFuZCBs",
-            "ZXNzIHRoYW4gb3IgZXF1YWwgdG8gJXMnLmZvcm1hdChbcnVsZXMuZ3QsIHJ1",
-            "bGVzLmx0ZV0pIDogJycKzgEKGXNmaXhlZDMyLmd0X2x0ZV9leGNsdXNpdmUa",
-            "sAFoYXMocnVsZXMubHRlKSAmJiBydWxlcy5sdGUgPCBydWxlcy5ndCAmJiAo",
-            "cnVsZXMubHRlIDwgdGhpcyAmJiB0aGlzIDw9IHJ1bGVzLmd0KT8gJ3ZhbHVl",
-            "IG11c3QgYmUgZ3JlYXRlciB0aGFuICVzIG9yIGxlc3MgdGhhbiBvciBlcXVh",
-            "bCB0byAlcycuZm9ybWF0KFtydWxlcy5ndCwgcnVsZXMubHRlXSkgOiAnJ0gD",
-            "UgJndIgBARL7BwoDZ3RlGAUgASgPQuMHgvgY3gcKiwEKDHNmaXhlZDMyLmd0",
-            "ZRp7IWhhcyhydWxlcy5sdCkgJiYgIWhhcyhydWxlcy5sdGUpICYmIHRoaXMg",
-            "PCBydWxlcy5ndGU/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiBvciBl",
-            "cXVhbCB0byAlcycuZm9ybWF0KFtydWxlcy5ndGVdKSA6ICcnCsUBCg9zZml4",
-            "ZWQzMi5ndGVfbHQasQFoYXMocnVsZXMubHQpICYmIHJ1bGVzLmx0ID49IHJ1",
-            "bGVzLmd0ZSAmJiAodGhpcyA+PSBydWxlcy5sdCB8fCB0aGlzIDwgcnVsZXMu",
-            "Z3RlKT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVxdWFsIHRv",
-            "ICVzIGFuZCBsZXNzIHRoYW4gJXMnLmZvcm1hdChbcnVsZXMuZ3RlLCBydWxl",
-            "cy5sdF0pIDogJycKzQEKGXNmaXhlZDMyLmd0ZV9sdF9leGNsdXNpdmUarwFo",
-            "YXMocnVsZXMubHQpICYmIHJ1bGVzLmx0IDwgcnVsZXMuZ3RlICYmIChydWxl",
-            "cy5sdCA8PSB0aGlzICYmIHRoaXMgPCBydWxlcy5ndGUpPyAndmFsdWUgbXVz",
-            "dCBiZSBncmVhdGVyIHRoYW4gb3IgZXF1YWwgdG8gJXMgb3IgbGVzcyB0aGFu",
-            "ICVzJy5mb3JtYXQoW3J1bGVzLmd0ZSwgcnVsZXMubHRdKSA6ICcnCtUBChBz",
-            "Zml4ZWQzMi5ndGVfbHRlGsABaGFzKHJ1bGVzLmx0ZSkgJiYgcnVsZXMubHRl",
-            "ID49IHJ1bGVzLmd0ZSAmJiAodGhpcyA+IHJ1bGVzLmx0ZSB8fCB0aGlzIDwg",
-            "cnVsZXMuZ3RlKT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVx",
-            "dWFsIHRvICVzIGFuZCBsZXNzIHRoYW4gb3IgZXF1YWwgdG8gJXMnLmZvcm1h",
-            "dChbcnVsZXMuZ3RlLCBydWxlcy5sdGVdKSA6ICcnCt0BChpzZml4ZWQzMi5n",
-            "dGVfbHRlX2V4Y2x1c2l2ZRq+AWhhcyhydWxlcy5sdGUpICYmIHJ1bGVzLmx0",
-            "ZSA8IHJ1bGVzLmd0ZSAmJiAocnVsZXMubHRlIDwgdGhpcyAmJiB0aGlzIDwg",
-            "cnVsZXMuZ3RlKT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVx",
-            "dWFsIHRvICVzIG9yIGxlc3MgdGhhbiBvciBlcXVhbCB0byAlcycuZm9ybWF0",
-            "KFtydWxlcy5ndGUsIHJ1bGVzLmx0ZV0pIDogJydIBFIDZ3RliAEBEn0KAmlu",
-            "GAYgAygPQm2C+BhpCmcKC3NmaXhlZDMyLmluGlghKHRoaXMgaW4gZHluKHJ1",
-            "bGVzKVsnaW4nXSkgPyAndmFsdWUgbXVzdCBiZSBpbiBsaXN0ICVzJy5mb3Jt",
-            "YXQoW2R5bihydWxlcylbJ2luJ11dKSA6ICcnUgJpbhKBAQoGbm90X2luGAcg",
-            "AygPQmqC+BhmCmQKD3NmaXhlZDMyLm5vdF9pbhpRdGhpcyBpbiBydWxlcy5u",
-            "b3RfaW4gPyAndmFsdWUgbXVzdCBub3QgYmUgaW4gbGlzdCAlcycuZm9ybWF0",
-            "KFtydWxlcy5ub3RfaW5dKSA6ICcnUgVub3RJbkIICgZfY29uc3RCBQoDX2x0",
-            "QgYKBF9sdGVCBQoDX2d0QgYKBF9ndGUiqBUKDVNGaXhlZDY0UnVsZXMSeQoF",
-            "Y29uc3QYASABKBBCXoL4GFoKWAoOc2ZpeGVkNjQuY29uc3QaRnRoaXMgIT0g",
-            "cnVsZXMuY29uc3QgPyAndmFsdWUgbXVzdCBlcXVhbCAlcycuZm9ybWF0KFty",
-            "dWxlcy5jb25zdF0pIDogJydIAFIFY29uc3SIAQESlgEKAmx0GAIgASgQQoAB",
-            "gvgYfAp6CgtzZml4ZWQ2NC5sdBprIWhhcyhydWxlcy5ndGUpICYmICFoYXMo",
-            "cnVsZXMuZ3QpICYmIHRoaXMgPj0gcnVsZXMubHQ/ICd2YWx1ZSBtdXN0IGJl",
-            "IGxlc3MgdGhhbiAlcycuZm9ybWF0KFtydWxlcy5sdF0pIDogJydIAVICbHSI",
-            "AQESqAEKA2x0ZRgDIAEoEEKQAYL4GIsBCogBCgxzZml4ZWQ2NC5sdGUaeCFo",
-            "YXMocnVsZXMuZ3RlKSAmJiAhaGFzKHJ1bGVzLmd0KSAmJiB0aGlzID4gcnVs",
-            "ZXMubHRlPyAndmFsdWUgbXVzdCBiZSBsZXNzIHRoYW4gb3IgZXF1YWwgdG8g",
-            "JXMnLmZvcm1hdChbcnVsZXMubHRlXSkgOiAnJ0gCUgNsdGWIAQESrgcKAmd0",
-            "GAQgASgQQpgHgvgYkwcKfQoLc2ZpeGVkNjQuZ3QabiFoYXMocnVsZXMubHQp",
-            "ICYmICFoYXMocnVsZXMubHRlKSAmJiB0aGlzIDw9IHJ1bGVzLmd0PyAndmFs",
-            "dWUgbXVzdCBiZSBncmVhdGVyIHRoYW4gJXMnLmZvcm1hdChbcnVsZXMuZ3Rd",
-            "KSA6ICcnCrYBCg5zZml4ZWQ2NC5ndF9sdBqjAWhhcyhydWxlcy5sdCkgJiYg",
-            "cnVsZXMubHQgPj0gcnVsZXMuZ3QgJiYgKHRoaXMgPj0gcnVsZXMubHQgfHwg",
-            "dGhpcyA8PSBydWxlcy5ndCk/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhh",
-            "biAlcyBhbmQgbGVzcyB0aGFuICVzJy5mb3JtYXQoW3J1bGVzLmd0LCBydWxl",
-            "cy5sdF0pIDogJycKvgEKGHNmaXhlZDY0Lmd0X2x0X2V4Y2x1c2l2ZRqhAWhh",
-            "cyhydWxlcy5sdCkgJiYgcnVsZXMubHQgPCBydWxlcy5ndCAmJiAocnVsZXMu",
-            "bHQgPD0gdGhpcyAmJiB0aGlzIDw9IHJ1bGVzLmd0KT8gJ3ZhbHVlIG11c3Qg",
-            "YmUgZ3JlYXRlciB0aGFuICVzIG9yIGxlc3MgdGhhbiAlcycuZm9ybWF0KFty",
-            "dWxlcy5ndCwgcnVsZXMubHRdKSA6ICcnCsYBCg9zZml4ZWQ2NC5ndF9sdGUa",
-            "sgFoYXMocnVsZXMubHRlKSAmJiBydWxlcy5sdGUgPj0gcnVsZXMuZ3QgJiYg",
-            "KHRoaXMgPiBydWxlcy5sdGUgfHwgdGhpcyA8PSBydWxlcy5ndCk/ICd2YWx1",
-            "ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiAlcyBhbmQgbGVzcyB0aGFuIG9yIGVx",
-            "dWFsIHRvICVzJy5mb3JtYXQoW3J1bGVzLmd0LCBydWxlcy5sdGVdKSA6ICcn",
-            "Cs4BChlzZml4ZWQ2NC5ndF9sdGVfZXhjbHVzaXZlGrABaGFzKHJ1bGVzLmx0",
-            "ZSkgJiYgcnVsZXMubHRlIDwgcnVsZXMuZ3QgJiYgKHJ1bGVzLmx0ZSA8IHRo",
-            "aXMgJiYgdGhpcyA8PSBydWxlcy5ndCk/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0",
-            "ZXIgdGhhbiAlcyBvciBsZXNzIHRoYW4gb3IgZXF1YWwgdG8gJXMnLmZvcm1h",
-            "dChbcnVsZXMuZ3QsIHJ1bGVzLmx0ZV0pIDogJydIA1ICZ3SIAQES+wcKA2d0",
-            "ZRgFIAEoEELjB4L4GN4HCosBCgxzZml4ZWQ2NC5ndGUaeyFoYXMocnVsZXMu",
-            "bHQpICYmICFoYXMocnVsZXMubHRlKSAmJiB0aGlzIDwgcnVsZXMuZ3RlPyAn",
-            "dmFsdWUgbXVzdCBiZSBncmVhdGVyIHRoYW4gb3IgZXF1YWwgdG8gJXMnLmZv",
-            "cm1hdChbcnVsZXMuZ3RlXSkgOiAnJwrFAQoPc2ZpeGVkNjQuZ3RlX2x0GrEB",
-            "aGFzKHJ1bGVzLmx0KSAmJiBydWxlcy5sdCA+PSBydWxlcy5ndGUgJiYgKHRo",
-            "aXMgPj0gcnVsZXMubHQgfHwgdGhpcyA8IHJ1bGVzLmd0ZSk/ICd2YWx1ZSBt",
-            "dXN0IGJlIGdyZWF0ZXIgdGhhbiBvciBlcXVhbCB0byAlcyBhbmQgbGVzcyB0",
-            "aGFuICVzJy5mb3JtYXQoW3J1bGVzLmd0ZSwgcnVsZXMubHRdKSA6ICcnCs0B",
-            "ChlzZml4ZWQ2NC5ndGVfbHRfZXhjbHVzaXZlGq8BaGFzKHJ1bGVzLmx0KSAm",
-            "JiBydWxlcy5sdCA8IHJ1bGVzLmd0ZSAmJiAocnVsZXMubHQgPD0gdGhpcyAm",
-            "JiB0aGlzIDwgcnVsZXMuZ3RlKT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0",
-            "aGFuIG9yIGVxdWFsIHRvICVzIG9yIGxlc3MgdGhhbiAlcycuZm9ybWF0KFty",
-            "dWxlcy5ndGUsIHJ1bGVzLmx0XSkgOiAnJwrVAQoQc2ZpeGVkNjQuZ3RlX2x0",
-            "ZRrAAWhhcyhydWxlcy5sdGUpICYmIHJ1bGVzLmx0ZSA+PSBydWxlcy5ndGUg",
-            "JiYgKHRoaXMgPiBydWxlcy5sdGUgfHwgdGhpcyA8IHJ1bGVzLmd0ZSk/ICd2",
-            "YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiBvciBlcXVhbCB0byAlcyBhbmQg",
-            "bGVzcyB0aGFuIG9yIGVxdWFsIHRvICVzJy5mb3JtYXQoW3J1bGVzLmd0ZSwg",
-            "cnVsZXMubHRlXSkgOiAnJwrdAQoac2ZpeGVkNjQuZ3RlX2x0ZV9leGNsdXNp",
-            "dmUavgFoYXMocnVsZXMubHRlKSAmJiBydWxlcy5sdGUgPCBydWxlcy5ndGUg",
-            "JiYgKHJ1bGVzLmx0ZSA8IHRoaXMgJiYgdGhpcyA8IHJ1bGVzLmd0ZSk/ICd2",
-            "YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiBvciBlcXVhbCB0byAlcyBvciBs",
-            "ZXNzIHRoYW4gb3IgZXF1YWwgdG8gJXMnLmZvcm1hdChbcnVsZXMuZ3RlLCBy",
-            "dWxlcy5sdGVdKSA6ICcnSARSA2d0ZYgBARJ9CgJpbhgGIAMoEEJtgvgYaQpn",
-            "CgtzZml4ZWQ2NC5pbhpYISh0aGlzIGluIGR5bihydWxlcylbJ2luJ10pID8g",
-            "J3ZhbHVlIG11c3QgYmUgaW4gbGlzdCAlcycuZm9ybWF0KFtkeW4ocnVsZXMp",
-            "WydpbiddXSkgOiAnJ1ICaW4SgQEKBm5vdF9pbhgHIAMoEEJqgvgYZgpkCg9z",
-            "Zml4ZWQ2NC5ub3RfaW4aUXRoaXMgaW4gcnVsZXMubm90X2luID8gJ3ZhbHVl",
-            "IG11c3Qgbm90IGJlIGluIGxpc3QgJXMnLmZvcm1hdChbcnVsZXMubm90X2lu",
-            "XSkgOiAnJ1IFbm90SW5CCAoGX2NvbnN0QgUKA19sdEIGCgRfbHRlQgUKA19n",
-            "dEIGCgRfZ3RlIowBCglCb29sUnVsZXMSdQoFY29uc3QYASABKAhCWoL4GFYK",
-            "VAoKYm9vbC5jb25zdBpGdGhpcyAhPSBydWxlcy5jb25zdCA/ICd2YWx1ZSBt",
-            "dXN0IGVxdWFsICVzJy5mb3JtYXQoW3J1bGVzLmNvbnN0XSkgOiAnJ0gAUgVj",
-            "b25zdIgBAUIICgZfY29uc3Qi1B4KC1N0cmluZ1J1bGVzEnkKBWNvbnN0GAEg",
-            "ASgJQl6C+BhaClgKDHN0cmluZy5jb25zdBpIdGhpcyAhPSBydWxlcy5jb25z",
-            "dCA/ICd2YWx1ZSBtdXN0IGVxdWFsIGAlc2AnLmZvcm1hdChbcnVsZXMuY29u",
-            "c3RdKSA6ICcnSAFSBWNvbnN0iAEBEokBCgNsZW4YEyABKARCcoL4GG4KbAoK",
-            "c3RyaW5nLmxlbhpedWludCh0aGlzLnNpemUoKSkgIT0gcnVsZXMubGVuID8g",
-            "J3ZhbHVlIGxlbmd0aCBtdXN0IGJlICVzIGNoYXJhY3RlcnMnLmZvcm1hdChb",
-            "cnVsZXMubGVuXSkgOiAnJ0gCUgNsZW6IAQESpwEKB21pbl9sZW4YAiABKARC",
-            "iAGC+BiDAQqAAQoOc3RyaW5nLm1pbl9sZW4abnVpbnQodGhpcy5zaXplKCkp",
-            "IDwgcnVsZXMubWluX2xlbiA/ICd2YWx1ZSBsZW5ndGggbXVzdCBiZSBhdCBs",
-            "ZWFzdCAlcyBjaGFyYWN0ZXJzJy5mb3JtYXQoW3J1bGVzLm1pbl9sZW5dKSA6",
-            "ICcnSANSBm1pbkxlbogBARKlAQoHbWF4X2xlbhgDIAEoBEKGAYL4GIEBCn8K",
-            "DnN0cmluZy5tYXhfbGVuGm11aW50KHRoaXMuc2l6ZSgpKSA+IHJ1bGVzLm1h",
-            "eF9sZW4gPyAndmFsdWUgbGVuZ3RoIG11c3QgYmUgYXQgbW9zdCAlcyBjaGFy",
-            "YWN0ZXJzJy5mb3JtYXQoW3J1bGVzLm1heF9sZW5dKSA6ICcnSARSBm1heExl",
-            "bogBARKrAQoJbGVuX2J5dGVzGBQgASgEQogBgvgYgwEKgAEKEHN0cmluZy5s",
-            "ZW5fYnl0ZXMabHVpbnQoYnl0ZXModGhpcykuc2l6ZSgpKSAhPSBydWxlcy5s",
-            "ZW5fYnl0ZXMgPyAndmFsdWUgbGVuZ3RoIG11c3QgYmUgJXMgYnl0ZXMnLmZv",
-            "cm1hdChbcnVsZXMubGVuX2J5dGVzXSkgOiAnJ0gFUghsZW5CeXRlc4gBARKz",
-            "AQoJbWluX2J5dGVzGAQgASgEQpABgvgYiwEKiAEKEHN0cmluZy5taW5fYnl0",
-            "ZXMadHVpbnQoYnl0ZXModGhpcykuc2l6ZSgpKSA8IHJ1bGVzLm1pbl9ieXRl",
-            "cyA/ICd2YWx1ZSBsZW5ndGggbXVzdCBiZSBhdCBsZWFzdCAlcyBieXRlcycu",
-            "Zm9ybWF0KFtydWxlcy5taW5fYnl0ZXNdKSA6ICcnSAZSCG1pbkJ5dGVziAEB",
-            "ErIBCgltYXhfYnl0ZXMYBSABKARCjwGC+BiKAQqHAQoQc3RyaW5nLm1heF9i",
-            "eXRlcxpzdWludChieXRlcyh0aGlzKS5zaXplKCkpID4gcnVsZXMubWF4X2J5",
-            "dGVzID8gJ3ZhbHVlIGxlbmd0aCBtdXN0IGJlIGF0IG1vc3QgJXMgYnl0ZXMn",
-            "LmZvcm1hdChbcnVsZXMubWF4X2J5dGVzXSkgOiAnJ0gHUghtYXhCeXRlc4gB",
-            "ARKcAQoHcGF0dGVybhgGIAEoCUJ9gvgYeQp3Cg5zdHJpbmcucGF0dGVybhpl",
-            "IXRoaXMubWF0Y2hlcyhydWxlcy5wYXR0ZXJuKSA/ICd2YWx1ZSBkb2VzIG5v",
-            "dCBtYXRjaCByZWdleCBwYXR0ZXJuIGAlc2AnLmZvcm1hdChbcnVsZXMucGF0",
-            "dGVybl0pIDogJydICFIHcGF0dGVybogBARKSAQoGcHJlZml4GAcgASgJQnWC",
-            "+BhxCm8KDXN0cmluZy5wcmVmaXgaXiF0aGlzLnN0YXJ0c1dpdGgocnVsZXMu",
-            "cHJlZml4KSA/ICd2YWx1ZSBkb2VzIG5vdCBoYXZlIHByZWZpeCBgJXNgJy5m",
-            "b3JtYXQoW3J1bGVzLnByZWZpeF0pIDogJydICVIGcHJlZml4iAEBEpABCgZz",
-            "dWZmaXgYCCABKAlCc4L4GG8KbQoNc3RyaW5nLnN1ZmZpeBpcIXRoaXMuZW5k",
-            "c1dpdGgocnVsZXMuc3VmZml4KSA/ICd2YWx1ZSBkb2VzIG5vdCBoYXZlIHN1",
-            "ZmZpeCBgJXNgJy5mb3JtYXQoW3J1bGVzLnN1ZmZpeF0pIDogJydIClIGc3Vm",
-            "Zml4iAEBEqABCghjb250YWlucxgJIAEoCUJ/gvgYewp5Cg9zdHJpbmcuY29u",
-            "dGFpbnMaZiF0aGlzLmNvbnRhaW5zKHJ1bGVzLmNvbnRhaW5zKSA/ICd2YWx1",
-            "ZSBkb2VzIG5vdCBjb250YWluIHN1YnN0cmluZyBgJXNgJy5mb3JtYXQoW3J1",
-            "bGVzLmNvbnRhaW5zXSkgOiAnJ0gLUghjb250YWluc4gBARKrAQoMbm90X2Nv",
-            "bnRhaW5zGBcgASgJQoIBgvgYfgp8ChNzdHJpbmcubm90X2NvbnRhaW5zGmV0",
-            "aGlzLmNvbnRhaW5zKHJ1bGVzLm5vdF9jb250YWlucykgPyAndmFsdWUgY29u",
-            "dGFpbnMgc3Vic3RyaW5nIGAlc2AnLmZvcm1hdChbcnVsZXMubm90X2NvbnRh",
-            "aW5zXSkgOiAnJ0gMUgtub3RDb250YWluc4gBARJ7CgJpbhgKIAMoCUJrgvgY",
-            "ZwplCglzdHJpbmcuaW4aWCEodGhpcyBpbiBkeW4ocnVsZXMpWydpbiddKSA/",
-            "ICd2YWx1ZSBtdXN0IGJlIGluIGxpc3QgJXMnLmZvcm1hdChbZHluKHJ1bGVz",
-            "KVsnaW4nXV0pIDogJydSAmluEn8KBm5vdF9pbhgLIAMoCUJogvgYZApiCg1z",
-            "dHJpbmcubm90X2luGlF0aGlzIGluIHJ1bGVzLm5vdF9pbiA/ICd2YWx1ZSBt",
-            "dXN0IG5vdCBiZSBpbiBsaXN0ICVzJy5mb3JtYXQoW3J1bGVzLm5vdF9pbl0p",
-            "IDogJydSBW5vdEluEmEKBWVtYWlsGAwgASgIQkmC+BhFCkMKDHN0cmluZy5l",
-            "bWFpbBIjdmFsdWUgbXVzdCBiZSBhIHZhbGlkIGVtYWlsIGFkZHJlc3MaDnRo",
-            "aXMuaXNFbWFpbCgpSABSBWVtYWlsEmgKCGhvc3RuYW1lGA0gASgIQkqC+BhG",
-            "CkQKD3N0cmluZy5ob3N0bmFtZRIedmFsdWUgbXVzdCBiZSBhIHZhbGlkIGhv",
-            "c3RuYW1lGhF0aGlzLmlzSG9zdG5hbWUoKUgAUghob3N0bmFtZRJSCgJpcBgO",
-            "IAEoCEJAgvgYPAo6CglzdHJpbmcuaXASIHZhbHVlIG11c3QgYmUgYSB2YWxp",
-            "ZCBJUCBhZGRyZXNzGgt0aGlzLmlzSXAoKUgAUgJpcBJbCgRpcHY0GA8gASgI",
-            "QkWC+BhBCj8KC3N0cmluZy5pcHY0EiJ2YWx1ZSBtdXN0IGJlIGEgdmFsaWQg",
-            "SVB2NCBhZGRyZXNzGgx0aGlzLmlzSXAoNClIAFIEaXB2NBJbCgRpcHY2GBAg",
-            "ASgIQkWC+BhBCj8KC3N0cmluZy5pcHY2EiJ2YWx1ZSBtdXN0IGJlIGEgdmFs",
-            "aWQgSVB2NiBhZGRyZXNzGgx0aGlzLmlzSXAoNilIAFIEaXB2NhJPCgN1cmkY",
-            "ESABKAhCO4L4GDcKNQoKc3RyaW5nLnVyaRIZdmFsdWUgbXVzdCBiZSBhIHZh",
-            "bGlkIFVSSRoMdGhpcy5pc1VyaSgpSABSA3VyaRJdCgd1cmlfcmVmGBIgASgI",
-            "QkKC+Bg+CjwKDnN0cmluZy51cmlfcmVmEhl2YWx1ZSBtdXN0IGJlIGEgdmFs",
-            "aWQgVVJJGg90aGlzLmlzVXJpUmVmKClIAFIGdXJpUmVmEoMBCgdhZGRyZXNz",
-            "GBUgASgIQmeC+BhjCmEKDnN0cmluZy5hZGRyZXNzEi12YWx1ZSBtdXN0IGJl",
-            "IGEgdmFsaWQgaG9zdG5hbWUsIG9yIGlwIGFkZHJlc3MaIHRoaXMuaXNIb3N0",
-            "bmFtZSgpIHx8IHRoaXMuaXNJcCgpSABSB2FkZHJlc3MSsQEKBHV1aWQYFiAB",
-            "KAhCmgGC+BiVAQqSAQoLc3RyaW5nLnV1aWQaggEhdGhpcy5tYXRjaGVzKCde",
-            "WzAtOWEtZkEtRl17OH0tWzAtOWEtZkEtRl17NH0tWzAtOWEtZkEtRl17NH0t",
-            "WzAtOWEtZkEtRl17NH0tWzAtOWEtZkEtRl17MTJ9JCcpID8gJ3ZhbHVlIG11",
-            "c3QgYmUgYSB2YWxpZCBVVUlEJyA6ICcnSABSBHV1aWQSrQQKEHdlbGxfa25v",
-            "d25fcmVnZXgYGCABKA4yGC5idWYudmFsaWRhdGUuS25vd25SZWdleELmA4L4",
-            "GOEDCusBCiNzdHJpbmcud2VsbF9rbm93bl9yZWdleC5oZWFkZXJfbmFtZRrD",
-            "AXJ1bGVzLndlbGxfa25vd25fcmVnZXggPT0gMSAmJiAhdGhpcy5tYXRjaGVz",
-            "KCFoYXMocnVsZXMuc3RyaWN0KSB8fCBydWxlcy5zdHJpY3QgPydeOj9bMC05",
-            "YS16QS1aISMkJSZcJyorLS5eX3x+XHg2MF0rJCcgOideW15cdTAwMDBcdTAw",
-            "MEFcdTAwMERdKyQnKSA/ICd2YWx1ZSBtdXN0IGJlIGEgdmFsaWQgSFRUUCBo",
-            "ZWFkZXIgbmFtZScgOiAnJwrwAQokc3RyaW5nLndlbGxfa25vd25fcmVnZXgu",
-            "aGVhZGVyX3ZhbHVlGscBcnVsZXMud2VsbF9rbm93bl9yZWdleCA9PSAyICYm",
-            "ICF0aGlzLm1hdGNoZXMoIWhhcyhydWxlcy5zdHJpY3QpIHx8IHJ1bGVzLnN0",
-            "cmljdCA/J15bXlx1MDAwMC1cdTAwMDhcdTAwMEEtXHUwMDFGXHUwMDdGXSok",
-            "JyA6J15bXlx1MDAwMFx1MDAwQVx1MDAwRF0qJCcpID8gJ3ZhbHVlIG11c3Qg",
-            "YmUgYSB2YWxpZCBIVFRQIGhlYWRlciB2YWx1ZScgOiAnJ0gAUg53ZWxsS25v",
-            "d25SZWdleBIbCgZzdHJpY3QYGSABKAhIDVIGc3RyaWN0iAEBQgwKCndlbGxf",
-            "a25vd25CCAoGX2NvbnN0QgYKBF9sZW5CCgoIX21pbl9sZW5CCgoIX21heF9s",
-            "ZW5CDAoKX2xlbl9ieXRlc0IMCgpfbWluX2J5dGVzQgwKCl9tYXhfYnl0ZXNC",
-            "CgoIX3BhdHRlcm5CCQoHX3ByZWZpeEIJCgdfc3VmZml4QgsKCV9jb250YWlu",
-            "c0IPCg1fbm90X2NvbnRhaW5zQgkKB19zdHJpY3Qi6Q4KCkJ5dGVzUnVsZXMS",
-            "cwoFY29uc3QYASABKAxCWIL4GFQKUgoLYnl0ZXMuY29uc3QaQ3RoaXMgIT0g",
-            "cnVsZXMuY29uc3QgPyAndmFsdWUgbXVzdCBiZSAleCcuZm9ybWF0KFtydWxl",
-            "cy5jb25zdF0pIDogJydIAVIFY29uc3SIAQESgwEKA2xlbhgNIAEoBEJsgvgY",
-            "aApmCglieXRlcy5sZW4aWXVpbnQodGhpcy5zaXplKCkpICE9IHJ1bGVzLmxl",
-            "biA/ICd2YWx1ZSBsZW5ndGggbXVzdCBiZSAlcyBieXRlcycuZm9ybWF0KFty",
-            "dWxlcy5sZW5dKSA6ICcnSAJSA2xlbogBARKfAQoHbWluX2xlbhgCIAEoBEKA",
-            "AYL4GHwKegoNYnl0ZXMubWluX2xlbhppdWludCh0aGlzLnNpemUoKSkgPCBy",
-            "dWxlcy5taW5fbGVuID8gJ3ZhbHVlIGxlbmd0aCBtdXN0IGJlIGF0IGxlYXN0",
-            "ICVzIGJ5dGVzJy5mb3JtYXQoW3J1bGVzLm1pbl9sZW5dKSA6ICcnSANSBm1p",
-            "bkxlbogBARKWAQoHbWF4X2xlbhgDIAEoBEJ4gvgYdApyCg1ieXRlcy5tYXhf",
-            "bGVuGmF1aW50KHRoaXMuc2l6ZSgpKSA+IHJ1bGVzLm1heF9sZW4gPyAndmFs",
-            "dWUgbXVzdCBiZSBhdCBtb3N0ICVzIGJ5dGVzJy5mb3JtYXQoW3J1bGVzLm1h",
-            "eF9sZW5dKSA6ICcnSARSBm1heExlbogBARKgAQoHcGF0dGVybhgEIAEoCUKA",
-            "AYL4GHwKegoNYnl0ZXMucGF0dGVybhppIXN0cmluZyh0aGlzKS5tYXRjaGVz",
-            "KHJ1bGVzLnBhdHRlcm4pID8gJ3ZhbHVlIG11c3QgbWF0Y2ggcmVnZXggcGF0",
-            "dGVybiBgJXNgJy5mb3JtYXQoW3J1bGVzLnBhdHRlcm5dKSA6ICcnSAVSB3Bh",
-            "dHRlcm6IAQESjwEKBnByZWZpeBgFIAEoDEJygvgYbgpsCgxieXRlcy5wcmVm",
-            "aXgaXCF0aGlzLnN0YXJ0c1dpdGgocnVsZXMucHJlZml4KSA/ICd2YWx1ZSBk",
-            "b2VzIG5vdCBoYXZlIHByZWZpeCAleCcuZm9ybWF0KFtydWxlcy5wcmVmaXhd",
-            "KSA6ICcnSAZSBnByZWZpeIgBARKNAQoGc3VmZml4GAYgASgMQnCC+BhsCmoK",
-            "DGJ5dGVzLnN1ZmZpeBpaIXRoaXMuZW5kc1dpdGgocnVsZXMuc3VmZml4KSA/",
-            "ICd2YWx1ZSBkb2VzIG5vdCBoYXZlIHN1ZmZpeCAleCcuZm9ybWF0KFtydWxl",
-            "cy5zdWZmaXhdKSA6ICcnSAdSBnN1ZmZpeIgBARKTAQoIY29udGFpbnMYByAB",
-            "KAxCcoL4GG4KbAoOYnl0ZXMuY29udGFpbnMaWiF0aGlzLmNvbnRhaW5zKHJ1",
-            "bGVzLmNvbnRhaW5zKSA/ICd2YWx1ZSBkb2VzIG5vdCBjb250YWluICV4Jy5m",
-            "b3JtYXQoW3J1bGVzLmNvbnRhaW5zXSkgOiAnJ0gIUghjb250YWluc4gBARKc",
-            "AQoCaW4YCCADKAxCiwGC+BiGAQqDAQoIYnl0ZXMuaW4ad2R5bihydWxlcylb",
-            "J2luJ10uc2l6ZSgpID4gMCAmJiAhKHRoaXMgaW4gZHluKHJ1bGVzKVsnaW4n",
-            "XSkgPyAndmFsdWUgbXVzdCBiZSBpbiBsaXN0ICVzJy5mb3JtYXQoW2R5bihy",
-            "dWxlcylbJ2luJ11dKSA6ICcnUgJpbhJ+CgZub3RfaW4YCSADKAxCZ4L4GGMK",
-            "YQoMYnl0ZXMubm90X2luGlF0aGlzIGluIHJ1bGVzLm5vdF9pbiA/ICd2YWx1",
-            "ZSBtdXN0IG5vdCBiZSBpbiBsaXN0ICVzJy5mb3JtYXQoW3J1bGVzLm5vdF9p",
-            "bl0pIDogJydSBW5vdEluEnMKAmlwGAogASgIQmGC+BhdClsKCGJ5dGVzLmlw",
-            "Gk90aGlzLnNpemUoKSAhPSA0ICYmIHRoaXMuc2l6ZSgpICE9IDE2ID8gJ3Zh",
-            "bHVlIG11c3QgYmUgYSB2YWxpZCBJUCBhZGRyZXNzJyA6ICcnSABSAmlwEmYK",
-            "BGlwdjQYCyABKAhCUIL4GEwKSgoKYnl0ZXMuaXB2NBo8dGhpcy5zaXplKCkg",
-            "IT0gNCA/ICd2YWx1ZSBtdXN0IGJlIGEgdmFsaWQgSVB2NCBhZGRyZXNzJyA6",
-            "ICcnSABSBGlwdjQSZwoEaXB2NhgMIAEoCEJRgvgYTQpLCgpieXRlcy5pcHY2",
-            "Gj10aGlzLnNpemUoKSAhPSAxNiA/ICd2YWx1ZSBtdXN0IGJlIGEgdmFsaWQg",
-            "SVB2NiBhZGRyZXNzJyA6ICcnSABSBGlwdjZCDAoKd2VsbF9rbm93bkIICgZf",
-            "Y29uc3RCBgoEX2xlbkIKCghfbWluX2xlbkIKCghfbWF4X2xlbkIKCghfcGF0",
-            "dGVybkIJCgdfcHJlZml4QgkKB19zdWZmaXhCCwoJX2NvbnRhaW5zIr8DCglF",
-            "bnVtUnVsZXMSdQoFY29uc3QYASABKAVCWoL4GFYKVAoKZW51bS5jb25zdBpG",
-            "dGhpcyAhPSBydWxlcy5jb25zdCA/ICd2YWx1ZSBtdXN0IGVxdWFsICVzJy5m",
-            "b3JtYXQoW3J1bGVzLmNvbnN0XSkgOiAnJ0gAUgVjb25zdIgBARImCgxkZWZp",
-            "bmVkX29ubHkYAiABKAhIAVILZGVmaW5lZE9ubHmIAQESeQoCaW4YAyADKAVC",
-            "aYL4GGUKYwoHZW51bS5pbhpYISh0aGlzIGluIGR5bihydWxlcylbJ2luJ10p",
-            "ID8gJ3ZhbHVlIG11c3QgYmUgaW4gbGlzdCAlcycuZm9ybWF0KFtkeW4ocnVs",
-            "ZXMpWydpbiddXSkgOiAnJ1ICaW4SfQoGbm90X2luGAQgAygFQmaC+BhiCmAK",
-            "C2VudW0ubm90X2luGlF0aGlzIGluIHJ1bGVzLm5vdF9pbiA/ICd2YWx1ZSBt",
-            "dXN0IG5vdCBiZSBpbiBsaXN0ICVzJy5mb3JtYXQoW3J1bGVzLm5vdF9pbl0p",
-            "IDogJydSBW5vdEluQggKBl9jb25zdEIPCg1fZGVmaW5lZF9vbmx5ItAECg1S",
-            "ZXBlYXRlZFJ1bGVzEq4BCgltaW5faXRlbXMYASABKARCiwGC+BiGAQqDAQoS",
-            "cmVwZWF0ZWQubWluX2l0ZW1zGm11aW50KHRoaXMuc2l6ZSgpKSA8IHJ1bGVz",
-            "Lm1pbl9pdGVtcyA/ICd2YWx1ZSBtdXN0IGNvbnRhaW4gYXQgbGVhc3QgJWQg",
-            "aXRlbShzKScuZm9ybWF0KFtydWxlcy5taW5faXRlbXNdKSA6ICcnSABSCG1p",
-            "bkl0ZW1ziAEBErIBCgltYXhfaXRlbXMYAiABKARCjwGC+BiKAQqHAQoScmVw",
-            "ZWF0ZWQubWF4X2l0ZW1zGnF1aW50KHRoaXMuc2l6ZSgpKSA+IHJ1bGVzLm1h",
-            "eF9pdGVtcyA/ICd2YWx1ZSBtdXN0IGNvbnRhaW4gbm8gbW9yZSB0aGFuICVz",
-            "IGl0ZW0ocyknLmZvcm1hdChbcnVsZXMubWF4X2l0ZW1zXSkgOiAnJ0gBUght",
-            "YXhJdGVtc4gBARJtCgZ1bmlxdWUYAyABKAhCUIL4GEwKSgoPcmVwZWF0ZWQu",
-            "dW5pcXVlEihyZXBlYXRlZCB2YWx1ZSBtdXN0IGNvbnRhaW4gdW5pcXVlIGl0",
-            "ZW1zGg10aGlzLnVuaXF1ZSgpSAJSBnVuaXF1ZYgBARI5CgVpdGVtcxgEIAEo",
-            "CzIeLmJ1Zi52YWxpZGF0ZS5GaWVsZENvbnN0cmFpbnRzSANSBWl0ZW1ziAEB",
-            "QgwKCl9taW5faXRlbXNCDAoKX21heF9pdGVtc0IJCgdfdW5pcXVlQggKBl9p",
-            "dGVtcyLzAwoITWFwUnVsZXMSnwEKCW1pbl9wYWlycxgBIAEoBEJ9gvgYeQp3",
-            "Cg1tYXAubWluX3BhaXJzGmZ1aW50KHRoaXMuc2l6ZSgpKSA8IHJ1bGVzLm1p",
-            "bl9wYWlycyA/ICdtYXAgbXVzdCBiZSBhdCBsZWFzdCAlZCBlbnRyaWVzJy5m",
-            "b3JtYXQoW3J1bGVzLm1pbl9wYWlyc10pIDogJydIAFIIbWluUGFpcnOIAQES",
-            "ngEKCW1heF9wYWlycxgCIAEoBEJ8gvgYeAp2Cg1tYXAubWF4X3BhaXJzGmV1",
-            "aW50KHRoaXMuc2l6ZSgpKSA+IHJ1bGVzLm1heF9wYWlycyA/ICdtYXAgbXVz",
-            "dCBiZSBhdCBtb3N0ICVkIGVudHJpZXMnLmZvcm1hdChbcnVsZXMubWF4X3Bh",
-            "aXJzXSkgOiAnJ0gBUghtYXhQYWlyc4gBARI3CgRrZXlzGAQgASgLMh4uYnVm",
-            "LnZhbGlkYXRlLkZpZWxkQ29uc3RyYWludHNIAlIEa2V5c4gBARI7CgZ2YWx1",
-            "ZXMYBSABKAsyHi5idWYudmFsaWRhdGUuRmllbGRDb25zdHJhaW50c0gDUgZ2",
-            "YWx1ZXOIAQFCDAoKX21pbl9wYWlyc0IMCgpfbWF4X3BhaXJzQgcKBV9rZXlz",
-            "QgkKB192YWx1ZXMiMQoIQW55UnVsZXMSDgoCaW4YAiADKAlSAmluEhUKBm5v",
-            "dF9pbhgDIAMoCVIFbm90SW4i5xYKDUR1cmF0aW9uUnVsZXMSlAEKBWNvbnN0",
-            "GAIgASgLMhkuZ29vZ2xlLnByb3RvYnVmLkR1cmF0aW9uQl6C+BhaClgKDmR1",
-            "cmF0aW9uLmNvbnN0GkZ0aGlzICE9IHJ1bGVzLmNvbnN0ID8gJ3ZhbHVlIG11",
-            "c3QgZXF1YWwgJXMnLmZvcm1hdChbcnVsZXMuY29uc3RdKSA6ICcnSABSBWNv",
-            "bnN0iAEBErEBCgJsdBgDIAEoCzIZLmdvb2dsZS5wcm90b2J1Zi5EdXJhdGlv",
-            "bkKAAYL4GHwKegoLZHVyYXRpb24ubHQaayFoYXMocnVsZXMuZ3RlKSAmJiAh",
-            "aGFzKHJ1bGVzLmd0KSAmJiB0aGlzID49IHJ1bGVzLmx0PyAndmFsdWUgbXVz",
-            "dCBiZSBsZXNzIHRoYW4gJXMnLmZvcm1hdChbcnVsZXMubHRdKSA6ICcnSAFS",
-            "Amx0iAEBEsMBCgNsdGUYBCABKAsyGS5nb29nbGUucHJvdG9idWYuRHVyYXRp",
-            "b25CkAGC+BiLAQqIAQoMZHVyYXRpb24ubHRlGnghaGFzKHJ1bGVzLmd0ZSkg",
-            "JiYgIWhhcyhydWxlcy5ndCkgJiYgdGhpcyA+IHJ1bGVzLmx0ZT8gJ3ZhbHVl",
-            "IG11c3QgYmUgbGVzcyB0aGFuIG9yIGVxdWFsIHRvICVzJy5mb3JtYXQoW3J1",
-            "bGVzLmx0ZV0pIDogJydIAlIDbHRliAEBEskHCgJndBgFIAEoCzIZLmdvb2ds",
-            "ZS5wcm90b2J1Zi5EdXJhdGlvbkKYB4L4GJMHCn0KC2R1cmF0aW9uLmd0Gm4h",
-            "aGFzKHJ1bGVzLmx0KSAmJiAhaGFzKHJ1bGVzLmx0ZSkgJiYgdGhpcyA8PSBy",
-            "dWxlcy5ndD8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuICVzJy5mb3Jt",
-            "YXQoW3J1bGVzLmd0XSkgOiAnJwq2AQoOZHVyYXRpb24uZ3RfbHQaowFoYXMo",
-            "cnVsZXMubHQpICYmIHJ1bGVzLmx0ID49IHJ1bGVzLmd0ICYmICh0aGlzID49",
-            "IHJ1bGVzLmx0IHx8IHRoaXMgPD0gcnVsZXMuZ3QpPyAndmFsdWUgbXVzdCBi",
-            "ZSBncmVhdGVyIHRoYW4gJXMgYW5kIGxlc3MgdGhhbiAlcycuZm9ybWF0KFty",
-            "dWxlcy5ndCwgcnVsZXMubHRdKSA6ICcnCr4BChhkdXJhdGlvbi5ndF9sdF9l",
-            "eGNsdXNpdmUaoQFoYXMocnVsZXMubHQpICYmIHJ1bGVzLmx0IDwgcnVsZXMu",
-            "Z3QgJiYgKHJ1bGVzLmx0IDw9IHRoaXMgJiYgdGhpcyA8PSBydWxlcy5ndCk/",
-            "ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiAlcyBvciBsZXNzIHRoYW4g",
-            "JXMnLmZvcm1hdChbcnVsZXMuZ3QsIHJ1bGVzLmx0XSkgOiAnJwrGAQoPZHVy",
-            "YXRpb24uZ3RfbHRlGrIBaGFzKHJ1bGVzLmx0ZSkgJiYgcnVsZXMubHRlID49",
-            "IHJ1bGVzLmd0ICYmICh0aGlzID4gcnVsZXMubHRlIHx8IHRoaXMgPD0gcnVs",
-            "ZXMuZ3QpPyAndmFsdWUgbXVzdCBiZSBncmVhdGVyIHRoYW4gJXMgYW5kIGxl",
-            "c3MgdGhhbiBvciBlcXVhbCB0byAlcycuZm9ybWF0KFtydWxlcy5ndCwgcnVs",
-            "ZXMubHRlXSkgOiAnJwrOAQoZZHVyYXRpb24uZ3RfbHRlX2V4Y2x1c2l2ZRqw",
-            "AWhhcyhydWxlcy5sdGUpICYmIHJ1bGVzLmx0ZSA8IHJ1bGVzLmd0ICYmIChy",
-            "dWxlcy5sdGUgPCB0aGlzICYmIHRoaXMgPD0gcnVsZXMuZ3QpPyAndmFsdWUg",
-            "bXVzdCBiZSBncmVhdGVyIHRoYW4gJXMgb3IgbGVzcyB0aGFuIG9yIGVxdWFs",
-            "IHRvICVzJy5mb3JtYXQoW3J1bGVzLmd0LCBydWxlcy5sdGVdKSA6ICcnSANS",
-            "Amd0iAEBEpYICgNndGUYBiABKAsyGS5nb29nbGUucHJvdG9idWYuRHVyYXRp",
-            "b25C4weC+BjeBwqLAQoMZHVyYXRpb24uZ3RlGnshaGFzKHJ1bGVzLmx0KSAm",
-            "JiAhaGFzKHJ1bGVzLmx0ZSkgJiYgdGhpcyA8IHJ1bGVzLmd0ZT8gJ3ZhbHVl",
-            "IG11c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVxdWFsIHRvICVzJy5mb3JtYXQo",
-            "W3J1bGVzLmd0ZV0pIDogJycKxQEKD2R1cmF0aW9uLmd0ZV9sdBqxAWhhcyhy",
-            "dWxlcy5sdCkgJiYgcnVsZXMubHQgPj0gcnVsZXMuZ3RlICYmICh0aGlzID49",
-            "IHJ1bGVzLmx0IHx8IHRoaXMgPCBydWxlcy5ndGUpPyAndmFsdWUgbXVzdCBi",
-            "ZSBncmVhdGVyIHRoYW4gb3IgZXF1YWwgdG8gJXMgYW5kIGxlc3MgdGhhbiAl",
-            "cycuZm9ybWF0KFtydWxlcy5ndGUsIHJ1bGVzLmx0XSkgOiAnJwrNAQoZZHVy",
-            "YXRpb24uZ3RlX2x0X2V4Y2x1c2l2ZRqvAWhhcyhydWxlcy5sdCkgJiYgcnVs",
-            "ZXMubHQgPCBydWxlcy5ndGUgJiYgKHJ1bGVzLmx0IDw9IHRoaXMgJiYgdGhp",
+            "LCBydWxlcy5sdGVdKSA6ICcnSAFSAmd0EugHCgNndGUYBSABKANC0wfCSM8H",
+            "CogBCglpbnQ2NC5ndGUaeyFoYXMocnVsZXMubHQpICYmICFoYXMocnVsZXMu",
+            "bHRlKSAmJiB0aGlzIDwgcnVsZXMuZ3RlPyAndmFsdWUgbXVzdCBiZSBncmVh",
+            "dGVyIHRoYW4gb3IgZXF1YWwgdG8gJXMnLmZvcm1hdChbcnVsZXMuZ3RlXSkg",
+            "OiAnJwrCAQoMaW50NjQuZ3RlX2x0GrEBaGFzKHJ1bGVzLmx0KSAmJiBydWxl",
+            "cy5sdCA+PSBydWxlcy5ndGUgJiYgKHRoaXMgPj0gcnVsZXMubHQgfHwgdGhp",
             "cyA8IHJ1bGVzLmd0ZSk/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiBv",
-            "ciBlcXVhbCB0byAlcyBvciBsZXNzIHRoYW4gJXMnLmZvcm1hdChbcnVsZXMu",
-            "Z3RlLCBydWxlcy5sdF0pIDogJycK1QEKEGR1cmF0aW9uLmd0ZV9sdGUawAFo",
-            "YXMocnVsZXMubHRlKSAmJiBydWxlcy5sdGUgPj0gcnVsZXMuZ3RlICYmICh0",
-            "aGlzID4gcnVsZXMubHRlIHx8IHRoaXMgPCBydWxlcy5ndGUpPyAndmFsdWUg",
-            "bXVzdCBiZSBncmVhdGVyIHRoYW4gb3IgZXF1YWwgdG8gJXMgYW5kIGxlc3Mg",
-            "dGhhbiBvciBlcXVhbCB0byAlcycuZm9ybWF0KFtydWxlcy5ndGUsIHJ1bGVz",
-            "Lmx0ZV0pIDogJycK3QEKGmR1cmF0aW9uLmd0ZV9sdGVfZXhjbHVzaXZlGr4B",
-            "aGFzKHJ1bGVzLmx0ZSkgJiYgcnVsZXMubHRlIDwgcnVsZXMuZ3RlICYmIChy",
-            "dWxlcy5sdGUgPCB0aGlzICYmIHRoaXMgPCBydWxlcy5ndGUpPyAndmFsdWUg",
-            "bXVzdCBiZSBncmVhdGVyIHRoYW4gb3IgZXF1YWwgdG8gJXMgb3IgbGVzcyB0",
-            "aGFuIG9yIGVxdWFsIHRvICVzJy5mb3JtYXQoW3J1bGVzLmd0ZSwgcnVsZXMu",
-            "bHRlXSkgOiAnJ0gEUgNndGWIAQESmAEKAmluGAcgAygLMhkuZ29vZ2xlLnBy",
-            "b3RvYnVmLkR1cmF0aW9uQm2C+BhpCmcKC2R1cmF0aW9uLmluGlghKHRoaXMg",
-            "aW4gZHluKHJ1bGVzKVsnaW4nXSkgPyAndmFsdWUgbXVzdCBiZSBpbiBsaXN0",
-            "ICVzJy5mb3JtYXQoW2R5bihydWxlcylbJ2luJ11dKSA6ICcnUgJpbhKcAQoG",
-            "bm90X2luGAggAygLMhkuZ29vZ2xlLnByb3RvYnVmLkR1cmF0aW9uQmqC+Bhm",
-            "CmQKD2R1cmF0aW9uLm5vdF9pbhpRdGhpcyBpbiBydWxlcy5ub3RfaW4gPyAn",
-            "dmFsdWUgbXVzdCBub3QgYmUgaW4gbGlzdCAlcycuZm9ybWF0KFtydWxlcy5u",
-            "b3RfaW5dKSA6ICcnUgVub3RJbkIICgZfY29uc3RCBQoDX2x0QgYKBF9sdGVC",
-            "BQoDX2d0QgYKBF9ndGUi+xcKDlRpbWVzdGFtcFJ1bGVzEpYBCgVjb25zdBgC",
-            "IAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCX4L4GFsKWQoPdGlt",
-            "ZXN0YW1wLmNvbnN0GkZ0aGlzICE9IHJ1bGVzLmNvbnN0ID8gJ3ZhbHVlIG11",
-            "c3QgZXF1YWwgJXMnLmZvcm1hdChbcnVsZXMuY29uc3RdKSA6ICcnSABSBWNv",
-            "bnN0iAEBErMBCgJsdBgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3Rh",
-            "bXBCgQGC+Bh9CnsKDHRpbWVzdGFtcC5sdBprIWhhcyhydWxlcy5ndGUpICYm",
-            "ICFoYXMocnVsZXMuZ3QpICYmIHRoaXMgPj0gcnVsZXMubHQ/ICd2YWx1ZSBt",
-            "dXN0IGJlIGxlc3MgdGhhbiAlcycuZm9ybWF0KFtydWxlcy5sdF0pIDogJydI",
-            "AVICbHSIAQESxQEKA2x0ZRgEIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1l",
-            "c3RhbXBCkQGC+BiMAQqJAQoNdGltZXN0YW1wLmx0ZRp4IWhhcyhydWxlcy5n",
-            "dGUpICYmICFoYXMocnVsZXMuZ3QpICYmIHRoaXMgPiBydWxlcy5sdGU/ICd2",
-            "YWx1ZSBtdXN0IGJlIGxlc3MgdGhhbiBvciBlcXVhbCB0byAlcycuZm9ybWF0",
-            "KFtydWxlcy5sdGVdKSA6ICcnSAJSA2x0ZYgBARLPBwoCZ3QYBSABKAsyGi5n",
-            "b29nbGUucHJvdG9idWYuVGltZXN0YW1wQp0HgvgYmAcKfgoMdGltZXN0YW1w",
-            "Lmd0Gm4haGFzKHJ1bGVzLmx0KSAmJiAhaGFzKHJ1bGVzLmx0ZSkgJiYgdGhp",
-            "cyA8PSBydWxlcy5ndD8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuICVz",
-            "Jy5mb3JtYXQoW3J1bGVzLmd0XSkgOiAnJwq3AQoPdGltZXN0YW1wLmd0X2x0",
-            "GqMBaGFzKHJ1bGVzLmx0KSAmJiBydWxlcy5sdCA+PSBydWxlcy5ndCAmJiAo",
-            "dGhpcyA+PSBydWxlcy5sdCB8fCB0aGlzIDw9IHJ1bGVzLmd0KT8gJ3ZhbHVl",
-            "IG11c3QgYmUgZ3JlYXRlciB0aGFuICVzIGFuZCBsZXNzIHRoYW4gJXMnLmZv",
-            "cm1hdChbcnVsZXMuZ3QsIHJ1bGVzLmx0XSkgOiAnJwq/AQoZdGltZXN0YW1w",
-            "Lmd0X2x0X2V4Y2x1c2l2ZRqhAWhhcyhydWxlcy5sdCkgJiYgcnVsZXMubHQg",
-            "PCBydWxlcy5ndCAmJiAocnVsZXMubHQgPD0gdGhpcyAmJiB0aGlzIDw9IHJ1",
-            "bGVzLmd0KT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuICVzIG9yIGxl",
-            "c3MgdGhhbiAlcycuZm9ybWF0KFtydWxlcy5ndCwgcnVsZXMubHRdKSA6ICcn",
-            "CscBChB0aW1lc3RhbXAuZ3RfbHRlGrIBaGFzKHJ1bGVzLmx0ZSkgJiYgcnVs",
-            "ZXMubHRlID49IHJ1bGVzLmd0ICYmICh0aGlzID4gcnVsZXMubHRlIHx8IHRo",
-            "aXMgPD0gcnVsZXMuZ3QpPyAndmFsdWUgbXVzdCBiZSBncmVhdGVyIHRoYW4g",
-            "JXMgYW5kIGxlc3MgdGhhbiBvciBlcXVhbCB0byAlcycuZm9ybWF0KFtydWxl",
-            "cy5ndCwgcnVsZXMubHRlXSkgOiAnJwrPAQoadGltZXN0YW1wLmd0X2x0ZV9l",
+            "ciBlcXVhbCB0byAlcyBhbmQgbGVzcyB0aGFuICVzJy5mb3JtYXQoW3J1bGVz",
+            "Lmd0ZSwgcnVsZXMubHRdKSA6ICcnCsoBChZpbnQ2NC5ndGVfbHRfZXhjbHVz",
+            "aXZlGq8BaGFzKHJ1bGVzLmx0KSAmJiBydWxlcy5sdCA8IHJ1bGVzLmd0ZSAm",
+            "JiAocnVsZXMubHQgPD0gdGhpcyAmJiB0aGlzIDwgcnVsZXMuZ3RlKT8gJ3Zh",
+            "bHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVxdWFsIHRvICVzIG9yIGxl",
+            "c3MgdGhhbiAlcycuZm9ybWF0KFtydWxlcy5ndGUsIHJ1bGVzLmx0XSkgOiAn",
+            "JwrSAQoNaW50NjQuZ3RlX2x0ZRrAAWhhcyhydWxlcy5sdGUpICYmIHJ1bGVz",
+            "Lmx0ZSA+PSBydWxlcy5ndGUgJiYgKHRoaXMgPiBydWxlcy5sdGUgfHwgdGhp",
+            "cyA8IHJ1bGVzLmd0ZSk/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiBv",
+            "ciBlcXVhbCB0byAlcyBhbmQgbGVzcyB0aGFuIG9yIGVxdWFsIHRvICVzJy5m",
+            "b3JtYXQoW3J1bGVzLmd0ZSwgcnVsZXMubHRlXSkgOiAnJwraAQoXaW50NjQu",
+            "Z3RlX2x0ZV9leGNsdXNpdmUavgFoYXMocnVsZXMubHRlKSAmJiBydWxlcy5s",
+            "dGUgPCBydWxlcy5ndGUgJiYgKHJ1bGVzLmx0ZSA8IHRoaXMgJiYgdGhpcyA8",
+            "IHJ1bGVzLmd0ZSk/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiBvciBl",
+            "cXVhbCB0byAlcyBvciBsZXNzIHRoYW4gb3IgZXF1YWwgdG8gJXMnLmZvcm1h",
+            "dChbcnVsZXMuZ3RlLCBydWxlcy5sdGVdKSA6ICcnSAFSA2d0ZRKDAQoCaW4Y",
+            "BiADKANCc8JIcApuCghpbnQ2NC5pbhpiISh0aGlzIGluIGdldEZpZWxkKHJ1",
+            "bGVzLCAnaW4nKSkgPyAndmFsdWUgbXVzdCBiZSBpbiBsaXN0ICVzJy5mb3Jt",
+            "YXQoW2dldEZpZWxkKHJ1bGVzLCAnaW4nKV0pIDogJydSAmluEn0KBm5vdF9p",
+            "bhgHIAMoA0JmwkhjCmEKDGludDY0Lm5vdF9pbhpRdGhpcyBpbiBydWxlcy5u",
+            "b3RfaW4gPyAndmFsdWUgbXVzdCBub3QgYmUgaW4gbGlzdCAlcycuZm9ybWF0",
+            "KFtydWxlcy5ub3RfaW5dKSA6ICcnUgVub3RJbhI0CgdleGFtcGxlGAkgAygD",
+            "QhrCSBcKFQoNaW50NjQuZXhhbXBsZRoEdHJ1ZVIHZXhhbXBsZSoJCOgHEICA",
+            "gIACQgsKCWxlc3NfdGhhbkIOCgxncmVhdGVyX3RoYW4iyxUKC1VJbnQzMlJ1",
+            "bGVzEosBCgVjb25zdBgBIAEoDUJ1wkhyCnAKDHVpbnQzMi5jb25zdBpgdGhp",
+            "cyAhPSBnZXRGaWVsZChydWxlcywgJ2NvbnN0JykgPyAndmFsdWUgbXVzdCBl",
+            "cXVhbCAlcycuZm9ybWF0KFtnZXRGaWVsZChydWxlcywgJ2NvbnN0JyldKSA6",
+            "ICcnUgVjb25zdBKPAQoCbHQYAiABKA1CfcJIegp4Cgl1aW50MzIubHQaayFo",
+            "YXMocnVsZXMuZ3RlKSAmJiAhaGFzKHJ1bGVzLmd0KSAmJiB0aGlzID49IHJ1",
+            "bGVzLmx0PyAndmFsdWUgbXVzdCBiZSBsZXNzIHRoYW4gJXMnLmZvcm1hdChb",
+            "cnVsZXMubHRdKSA6ICcnSABSAmx0EqIBCgNsdGUYAyABKA1CjQHCSIkBCoYB",
+            "Cgp1aW50MzIubHRlGnghaGFzKHJ1bGVzLmd0ZSkgJiYgIWhhcyhydWxlcy5n",
+            "dCkgJiYgdGhpcyA+IHJ1bGVzLmx0ZT8gJ3ZhbHVlIG11c3QgYmUgbGVzcyB0",
+            "aGFuIG9yIGVxdWFsIHRvICVzJy5mb3JtYXQoW3J1bGVzLmx0ZV0pIDogJydI",
+            "AFIDbHRlEqAHCgJndBgEIAEoDUKNB8JIiQcKewoJdWludDMyLmd0Gm4haGFz",
+            "KHJ1bGVzLmx0KSAmJiAhaGFzKHJ1bGVzLmx0ZSkgJiYgdGhpcyA8PSBydWxl",
+            "cy5ndD8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuICVzJy5mb3JtYXQo",
+            "W3J1bGVzLmd0XSkgOiAnJwq0AQoMdWludDMyLmd0X2x0GqMBaGFzKHJ1bGVz",
+            "Lmx0KSAmJiBydWxlcy5sdCA+PSBydWxlcy5ndCAmJiAodGhpcyA+PSBydWxl",
+            "cy5sdCB8fCB0aGlzIDw9IHJ1bGVzLmd0KT8gJ3ZhbHVlIG11c3QgYmUgZ3Jl",
+            "YXRlciB0aGFuICVzIGFuZCBsZXNzIHRoYW4gJXMnLmZvcm1hdChbcnVsZXMu",
+            "Z3QsIHJ1bGVzLmx0XSkgOiAnJwq8AQoWdWludDMyLmd0X2x0X2V4Y2x1c2l2",
+            "ZRqhAWhhcyhydWxlcy5sdCkgJiYgcnVsZXMubHQgPCBydWxlcy5ndCAmJiAo",
+            "cnVsZXMubHQgPD0gdGhpcyAmJiB0aGlzIDw9IHJ1bGVzLmd0KT8gJ3ZhbHVl",
+            "IG11c3QgYmUgZ3JlYXRlciB0aGFuICVzIG9yIGxlc3MgdGhhbiAlcycuZm9y",
+            "bWF0KFtydWxlcy5ndCwgcnVsZXMubHRdKSA6ICcnCsQBCg11aW50MzIuZ3Rf",
+            "bHRlGrIBaGFzKHJ1bGVzLmx0ZSkgJiYgcnVsZXMubHRlID49IHJ1bGVzLmd0",
+            "ICYmICh0aGlzID4gcnVsZXMubHRlIHx8IHRoaXMgPD0gcnVsZXMuZ3QpPyAn",
+            "dmFsdWUgbXVzdCBiZSBncmVhdGVyIHRoYW4gJXMgYW5kIGxlc3MgdGhhbiBv",
+            "ciBlcXVhbCB0byAlcycuZm9ybWF0KFtydWxlcy5ndCwgcnVsZXMubHRlXSkg",
+            "OiAnJwrMAQoXdWludDMyLmd0X2x0ZV9leGNsdXNpdmUasAFoYXMocnVsZXMu",
+            "bHRlKSAmJiBydWxlcy5sdGUgPCBydWxlcy5ndCAmJiAocnVsZXMubHRlIDwg",
+            "dGhpcyAmJiB0aGlzIDw9IHJ1bGVzLmd0KT8gJ3ZhbHVlIG11c3QgYmUgZ3Jl",
+            "YXRlciB0aGFuICVzIG9yIGxlc3MgdGhhbiBvciBlcXVhbCB0byAlcycuZm9y",
+            "bWF0KFtydWxlcy5ndCwgcnVsZXMubHRlXSkgOiAnJ0gBUgJndBLtBwoDZ3Rl",
+            "GAUgASgNQtgHwkjUBwqJAQoKdWludDMyLmd0ZRp7IWhhcyhydWxlcy5sdCkg",
+            "JiYgIWhhcyhydWxlcy5sdGUpICYmIHRoaXMgPCBydWxlcy5ndGU/ICd2YWx1",
+            "ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiBvciBlcXVhbCB0byAlcycuZm9ybWF0",
+            "KFtydWxlcy5ndGVdKSA6ICcnCsMBCg11aW50MzIuZ3RlX2x0GrEBaGFzKHJ1",
+            "bGVzLmx0KSAmJiBydWxlcy5sdCA+PSBydWxlcy5ndGUgJiYgKHRoaXMgPj0g",
+            "cnVsZXMubHQgfHwgdGhpcyA8IHJ1bGVzLmd0ZSk/ICd2YWx1ZSBtdXN0IGJl",
+            "IGdyZWF0ZXIgdGhhbiBvciBlcXVhbCB0byAlcyBhbmQgbGVzcyB0aGFuICVz",
+            "Jy5mb3JtYXQoW3J1bGVzLmd0ZSwgcnVsZXMubHRdKSA6ICcnCssBChd1aW50",
+            "MzIuZ3RlX2x0X2V4Y2x1c2l2ZRqvAWhhcyhydWxlcy5sdCkgJiYgcnVsZXMu",
+            "bHQgPCBydWxlcy5ndGUgJiYgKHJ1bGVzLmx0IDw9IHRoaXMgJiYgdGhpcyA8",
+            "IHJ1bGVzLmd0ZSk/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiBvciBl",
+            "cXVhbCB0byAlcyBvciBsZXNzIHRoYW4gJXMnLmZvcm1hdChbcnVsZXMuZ3Rl",
+            "LCBydWxlcy5sdF0pIDogJycK0wEKDnVpbnQzMi5ndGVfbHRlGsABaGFzKHJ1",
+            "bGVzLmx0ZSkgJiYgcnVsZXMubHRlID49IHJ1bGVzLmd0ZSAmJiAodGhpcyA+",
+            "IHJ1bGVzLmx0ZSB8fCB0aGlzIDwgcnVsZXMuZ3RlKT8gJ3ZhbHVlIG11c3Qg",
+            "YmUgZ3JlYXRlciB0aGFuIG9yIGVxdWFsIHRvICVzIGFuZCBsZXNzIHRoYW4g",
+            "b3IgZXF1YWwgdG8gJXMnLmZvcm1hdChbcnVsZXMuZ3RlLCBydWxlcy5sdGVd",
+            "KSA6ICcnCtsBChh1aW50MzIuZ3RlX2x0ZV9leGNsdXNpdmUavgFoYXMocnVs",
+            "ZXMubHRlKSAmJiBydWxlcy5sdGUgPCBydWxlcy5ndGUgJiYgKHJ1bGVzLmx0",
+            "ZSA8IHRoaXMgJiYgdGhpcyA8IHJ1bGVzLmd0ZSk/ICd2YWx1ZSBtdXN0IGJl",
+            "IGdyZWF0ZXIgdGhhbiBvciBlcXVhbCB0byAlcyBvciBsZXNzIHRoYW4gb3Ig",
+            "ZXF1YWwgdG8gJXMnLmZvcm1hdChbcnVsZXMuZ3RlLCBydWxlcy5sdGVdKSA6",
+            "ICcnSAFSA2d0ZRKEAQoCaW4YBiADKA1CdMJIcQpvCgl1aW50MzIuaW4aYiEo",
+            "dGhpcyBpbiBnZXRGaWVsZChydWxlcywgJ2luJykpID8gJ3ZhbHVlIG11c3Qg",
+            "YmUgaW4gbGlzdCAlcycuZm9ybWF0KFtnZXRGaWVsZChydWxlcywgJ2luJyld",
+            "KSA6ICcnUgJpbhJ+CgZub3RfaW4YByADKA1CZ8JIZApiCg11aW50MzIubm90",
+            "X2luGlF0aGlzIGluIHJ1bGVzLm5vdF9pbiA/ICd2YWx1ZSBtdXN0IG5vdCBi",
+            "ZSBpbiBsaXN0ICVzJy5mb3JtYXQoW3J1bGVzLm5vdF9pbl0pIDogJydSBW5v",
+            "dEluEjUKB2V4YW1wbGUYCCADKA1CG8JIGAoWCg51aW50MzIuZXhhbXBsZRoE",
+            "dHJ1ZVIHZXhhbXBsZSoJCOgHEICAgIACQgsKCWxlc3NfdGhhbkIOCgxncmVh",
+            "dGVyX3RoYW4iyxUKC1VJbnQ2NFJ1bGVzEosBCgVjb25zdBgBIAEoBEJ1wkhy",
+            "CnAKDHVpbnQ2NC5jb25zdBpgdGhpcyAhPSBnZXRGaWVsZChydWxlcywgJ2Nv",
+            "bnN0JykgPyAndmFsdWUgbXVzdCBlcXVhbCAlcycuZm9ybWF0KFtnZXRGaWVs",
+            "ZChydWxlcywgJ2NvbnN0JyldKSA6ICcnUgVjb25zdBKPAQoCbHQYAiABKARC",
+            "fcJIegp4Cgl1aW50NjQubHQaayFoYXMocnVsZXMuZ3RlKSAmJiAhaGFzKHJ1",
+            "bGVzLmd0KSAmJiB0aGlzID49IHJ1bGVzLmx0PyAndmFsdWUgbXVzdCBiZSBs",
+            "ZXNzIHRoYW4gJXMnLmZvcm1hdChbcnVsZXMubHRdKSA6ICcnSABSAmx0EqIB",
+            "CgNsdGUYAyABKARCjQHCSIkBCoYBCgp1aW50NjQubHRlGnghaGFzKHJ1bGVz",
+            "Lmd0ZSkgJiYgIWhhcyhydWxlcy5ndCkgJiYgdGhpcyA+IHJ1bGVzLmx0ZT8g",
+            "J3ZhbHVlIG11c3QgYmUgbGVzcyB0aGFuIG9yIGVxdWFsIHRvICVzJy5mb3Jt",
+            "YXQoW3J1bGVzLmx0ZV0pIDogJydIAFIDbHRlEqAHCgJndBgEIAEoBEKNB8JI",
+            "iQcKewoJdWludDY0Lmd0Gm4haGFzKHJ1bGVzLmx0KSAmJiAhaGFzKHJ1bGVz",
+            "Lmx0ZSkgJiYgdGhpcyA8PSBydWxlcy5ndD8gJ3ZhbHVlIG11c3QgYmUgZ3Jl",
+            "YXRlciB0aGFuICVzJy5mb3JtYXQoW3J1bGVzLmd0XSkgOiAnJwq0AQoMdWlu",
+            "dDY0Lmd0X2x0GqMBaGFzKHJ1bGVzLmx0KSAmJiBydWxlcy5sdCA+PSBydWxl",
+            "cy5ndCAmJiAodGhpcyA+PSBydWxlcy5sdCB8fCB0aGlzIDw9IHJ1bGVzLmd0",
+            "KT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuICVzIGFuZCBsZXNzIHRo",
+            "YW4gJXMnLmZvcm1hdChbcnVsZXMuZ3QsIHJ1bGVzLmx0XSkgOiAnJwq8AQoW",
+            "dWludDY0Lmd0X2x0X2V4Y2x1c2l2ZRqhAWhhcyhydWxlcy5sdCkgJiYgcnVs",
+            "ZXMubHQgPCBydWxlcy5ndCAmJiAocnVsZXMubHQgPD0gdGhpcyAmJiB0aGlz",
+            "IDw9IHJ1bGVzLmd0KT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuICVz",
+            "IG9yIGxlc3MgdGhhbiAlcycuZm9ybWF0KFtydWxlcy5ndCwgcnVsZXMubHRd",
+            "KSA6ICcnCsQBCg11aW50NjQuZ3RfbHRlGrIBaGFzKHJ1bGVzLmx0ZSkgJiYg",
+            "cnVsZXMubHRlID49IHJ1bGVzLmd0ICYmICh0aGlzID4gcnVsZXMubHRlIHx8",
+            "IHRoaXMgPD0gcnVsZXMuZ3QpPyAndmFsdWUgbXVzdCBiZSBncmVhdGVyIHRo",
+            "YW4gJXMgYW5kIGxlc3MgdGhhbiBvciBlcXVhbCB0byAlcycuZm9ybWF0KFty",
+            "dWxlcy5ndCwgcnVsZXMubHRlXSkgOiAnJwrMAQoXdWludDY0Lmd0X2x0ZV9l",
             "eGNsdXNpdmUasAFoYXMocnVsZXMubHRlKSAmJiBydWxlcy5sdGUgPCBydWxl",
             "cy5ndCAmJiAocnVsZXMubHRlIDwgdGhpcyAmJiB0aGlzIDw9IHJ1bGVzLmd0",
             "KT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuICVzIG9yIGxlc3MgdGhh",
             "biBvciBlcXVhbCB0byAlcycuZm9ybWF0KFtydWxlcy5ndCwgcnVsZXMubHRl",
-            "XSkgOiAnJ0gDUgJndIgBARKcCAoDZ3RlGAYgASgLMhouZ29vZ2xlLnByb3Rv",
-            "YnVmLlRpbWVzdGFtcELoB4L4GOMHCowBCg10aW1lc3RhbXAuZ3RlGnshaGFz",
+            "XSkgOiAnJ0gBUgJndBLtBwoDZ3RlGAUgASgEQtgHwkjUBwqJAQoKdWludDY0",
+            "Lmd0ZRp7IWhhcyhydWxlcy5sdCkgJiYgIWhhcyhydWxlcy5sdGUpICYmIHRo",
+            "aXMgPCBydWxlcy5ndGU/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiBv",
+            "ciBlcXVhbCB0byAlcycuZm9ybWF0KFtydWxlcy5ndGVdKSA6ICcnCsMBCg11",
+            "aW50NjQuZ3RlX2x0GrEBaGFzKHJ1bGVzLmx0KSAmJiBydWxlcy5sdCA+PSBy",
+            "dWxlcy5ndGUgJiYgKHRoaXMgPj0gcnVsZXMubHQgfHwgdGhpcyA8IHJ1bGVz",
+            "Lmd0ZSk/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiBvciBlcXVhbCB0",
+            "byAlcyBhbmQgbGVzcyB0aGFuICVzJy5mb3JtYXQoW3J1bGVzLmd0ZSwgcnVs",
+            "ZXMubHRdKSA6ICcnCssBChd1aW50NjQuZ3RlX2x0X2V4Y2x1c2l2ZRqvAWhh",
+            "cyhydWxlcy5sdCkgJiYgcnVsZXMubHQgPCBydWxlcy5ndGUgJiYgKHJ1bGVz",
+            "Lmx0IDw9IHRoaXMgJiYgdGhpcyA8IHJ1bGVzLmd0ZSk/ICd2YWx1ZSBtdXN0",
+            "IGJlIGdyZWF0ZXIgdGhhbiBvciBlcXVhbCB0byAlcyBvciBsZXNzIHRoYW4g",
+            "JXMnLmZvcm1hdChbcnVsZXMuZ3RlLCBydWxlcy5sdF0pIDogJycK0wEKDnVp",
+            "bnQ2NC5ndGVfbHRlGsABaGFzKHJ1bGVzLmx0ZSkgJiYgcnVsZXMubHRlID49",
+            "IHJ1bGVzLmd0ZSAmJiAodGhpcyA+IHJ1bGVzLmx0ZSB8fCB0aGlzIDwgcnVs",
+            "ZXMuZ3RlKT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVxdWFs",
+            "IHRvICVzIGFuZCBsZXNzIHRoYW4gb3IgZXF1YWwgdG8gJXMnLmZvcm1hdChb",
+            "cnVsZXMuZ3RlLCBydWxlcy5sdGVdKSA6ICcnCtsBChh1aW50NjQuZ3RlX2x0",
+            "ZV9leGNsdXNpdmUavgFoYXMocnVsZXMubHRlKSAmJiBydWxlcy5sdGUgPCBy",
+            "dWxlcy5ndGUgJiYgKHJ1bGVzLmx0ZSA8IHRoaXMgJiYgdGhpcyA8IHJ1bGVz",
+            "Lmd0ZSk/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiBvciBlcXVhbCB0",
+            "byAlcyBvciBsZXNzIHRoYW4gb3IgZXF1YWwgdG8gJXMnLmZvcm1hdChbcnVs",
+            "ZXMuZ3RlLCBydWxlcy5sdGVdKSA6ICcnSAFSA2d0ZRKEAQoCaW4YBiADKARC",
+            "dMJIcQpvCgl1aW50NjQuaW4aYiEodGhpcyBpbiBnZXRGaWVsZChydWxlcywg",
+            "J2luJykpID8gJ3ZhbHVlIG11c3QgYmUgaW4gbGlzdCAlcycuZm9ybWF0KFtn",
+            "ZXRGaWVsZChydWxlcywgJ2luJyldKSA6ICcnUgJpbhJ+CgZub3RfaW4YByAD",
+            "KARCZ8JIZApiCg11aW50NjQubm90X2luGlF0aGlzIGluIHJ1bGVzLm5vdF9p",
+            "biA/ICd2YWx1ZSBtdXN0IG5vdCBiZSBpbiBsaXN0ICVzJy5mb3JtYXQoW3J1",
+            "bGVzLm5vdF9pbl0pIDogJydSBW5vdEluEjUKB2V4YW1wbGUYCCADKARCG8JI",
+            "GAoWCg51aW50NjQuZXhhbXBsZRoEdHJ1ZVIHZXhhbXBsZSoJCOgHEICAgIAC",
+            "QgsKCWxlc3NfdGhhbkIOCgxncmVhdGVyX3RoYW4iyxUKC1NJbnQzMlJ1bGVz",
+            "EosBCgVjb25zdBgBIAEoEUJ1wkhyCnAKDHNpbnQzMi5jb25zdBpgdGhpcyAh",
+            "PSBnZXRGaWVsZChydWxlcywgJ2NvbnN0JykgPyAndmFsdWUgbXVzdCBlcXVh",
+            "bCAlcycuZm9ybWF0KFtnZXRGaWVsZChydWxlcywgJ2NvbnN0JyldKSA6ICcn",
+            "UgVjb25zdBKPAQoCbHQYAiABKBFCfcJIegp4CglzaW50MzIubHQaayFoYXMo",
+            "cnVsZXMuZ3RlKSAmJiAhaGFzKHJ1bGVzLmd0KSAmJiB0aGlzID49IHJ1bGVz",
+            "Lmx0PyAndmFsdWUgbXVzdCBiZSBsZXNzIHRoYW4gJXMnLmZvcm1hdChbcnVs",
+            "ZXMubHRdKSA6ICcnSABSAmx0EqIBCgNsdGUYAyABKBFCjQHCSIkBCoYBCgpz",
+            "aW50MzIubHRlGnghaGFzKHJ1bGVzLmd0ZSkgJiYgIWhhcyhydWxlcy5ndCkg",
+            "JiYgdGhpcyA+IHJ1bGVzLmx0ZT8gJ3ZhbHVlIG11c3QgYmUgbGVzcyB0aGFu",
+            "IG9yIGVxdWFsIHRvICVzJy5mb3JtYXQoW3J1bGVzLmx0ZV0pIDogJydIAFID",
+            "bHRlEqAHCgJndBgEIAEoEUKNB8JIiQcKewoJc2ludDMyLmd0Gm4haGFzKHJ1",
+            "bGVzLmx0KSAmJiAhaGFzKHJ1bGVzLmx0ZSkgJiYgdGhpcyA8PSBydWxlcy5n",
+            "dD8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuICVzJy5mb3JtYXQoW3J1",
+            "bGVzLmd0XSkgOiAnJwq0AQoMc2ludDMyLmd0X2x0GqMBaGFzKHJ1bGVzLmx0",
+            "KSAmJiBydWxlcy5sdCA+PSBydWxlcy5ndCAmJiAodGhpcyA+PSBydWxlcy5s",
+            "dCB8fCB0aGlzIDw9IHJ1bGVzLmd0KT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRl",
+            "ciB0aGFuICVzIGFuZCBsZXNzIHRoYW4gJXMnLmZvcm1hdChbcnVsZXMuZ3Qs",
+            "IHJ1bGVzLmx0XSkgOiAnJwq8AQoWc2ludDMyLmd0X2x0X2V4Y2x1c2l2ZRqh",
+            "AWhhcyhydWxlcy5sdCkgJiYgcnVsZXMubHQgPCBydWxlcy5ndCAmJiAocnVs",
+            "ZXMubHQgPD0gdGhpcyAmJiB0aGlzIDw9IHJ1bGVzLmd0KT8gJ3ZhbHVlIG11",
+            "c3QgYmUgZ3JlYXRlciB0aGFuICVzIG9yIGxlc3MgdGhhbiAlcycuZm9ybWF0",
+            "KFtydWxlcy5ndCwgcnVsZXMubHRdKSA6ICcnCsQBCg1zaW50MzIuZ3RfbHRl",
+            "GrIBaGFzKHJ1bGVzLmx0ZSkgJiYgcnVsZXMubHRlID49IHJ1bGVzLmd0ICYm",
+            "ICh0aGlzID4gcnVsZXMubHRlIHx8IHRoaXMgPD0gcnVsZXMuZ3QpPyAndmFs",
+            "dWUgbXVzdCBiZSBncmVhdGVyIHRoYW4gJXMgYW5kIGxlc3MgdGhhbiBvciBl",
+            "cXVhbCB0byAlcycuZm9ybWF0KFtydWxlcy5ndCwgcnVsZXMubHRlXSkgOiAn",
+            "JwrMAQoXc2ludDMyLmd0X2x0ZV9leGNsdXNpdmUasAFoYXMocnVsZXMubHRl",
+            "KSAmJiBydWxlcy5sdGUgPCBydWxlcy5ndCAmJiAocnVsZXMubHRlIDwgdGhp",
+            "cyAmJiB0aGlzIDw9IHJ1bGVzLmd0KT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRl",
+            "ciB0aGFuICVzIG9yIGxlc3MgdGhhbiBvciBlcXVhbCB0byAlcycuZm9ybWF0",
+            "KFtydWxlcy5ndCwgcnVsZXMubHRlXSkgOiAnJ0gBUgJndBLtBwoDZ3RlGAUg",
+            "ASgRQtgHwkjUBwqJAQoKc2ludDMyLmd0ZRp7IWhhcyhydWxlcy5sdCkgJiYg",
+            "IWhhcyhydWxlcy5sdGUpICYmIHRoaXMgPCBydWxlcy5ndGU/ICd2YWx1ZSBt",
+            "dXN0IGJlIGdyZWF0ZXIgdGhhbiBvciBlcXVhbCB0byAlcycuZm9ybWF0KFty",
+            "dWxlcy5ndGVdKSA6ICcnCsMBCg1zaW50MzIuZ3RlX2x0GrEBaGFzKHJ1bGVz",
+            "Lmx0KSAmJiBydWxlcy5sdCA+PSBydWxlcy5ndGUgJiYgKHRoaXMgPj0gcnVs",
+            "ZXMubHQgfHwgdGhpcyA8IHJ1bGVzLmd0ZSk/ICd2YWx1ZSBtdXN0IGJlIGdy",
+            "ZWF0ZXIgdGhhbiBvciBlcXVhbCB0byAlcyBhbmQgbGVzcyB0aGFuICVzJy5m",
+            "b3JtYXQoW3J1bGVzLmd0ZSwgcnVsZXMubHRdKSA6ICcnCssBChdzaW50MzIu",
+            "Z3RlX2x0X2V4Y2x1c2l2ZRqvAWhhcyhydWxlcy5sdCkgJiYgcnVsZXMubHQg",
+            "PCBydWxlcy5ndGUgJiYgKHJ1bGVzLmx0IDw9IHRoaXMgJiYgdGhpcyA8IHJ1",
+            "bGVzLmd0ZSk/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiBvciBlcXVh",
+            "bCB0byAlcyBvciBsZXNzIHRoYW4gJXMnLmZvcm1hdChbcnVsZXMuZ3RlLCBy",
+            "dWxlcy5sdF0pIDogJycK0wEKDnNpbnQzMi5ndGVfbHRlGsABaGFzKHJ1bGVz",
+            "Lmx0ZSkgJiYgcnVsZXMubHRlID49IHJ1bGVzLmd0ZSAmJiAodGhpcyA+IHJ1",
+            "bGVzLmx0ZSB8fCB0aGlzIDwgcnVsZXMuZ3RlKT8gJ3ZhbHVlIG11c3QgYmUg",
+            "Z3JlYXRlciB0aGFuIG9yIGVxdWFsIHRvICVzIGFuZCBsZXNzIHRoYW4gb3Ig",
+            "ZXF1YWwgdG8gJXMnLmZvcm1hdChbcnVsZXMuZ3RlLCBydWxlcy5sdGVdKSA6",
+            "ICcnCtsBChhzaW50MzIuZ3RlX2x0ZV9leGNsdXNpdmUavgFoYXMocnVsZXMu",
+            "bHRlKSAmJiBydWxlcy5sdGUgPCBydWxlcy5ndGUgJiYgKHJ1bGVzLmx0ZSA8",
+            "IHRoaXMgJiYgdGhpcyA8IHJ1bGVzLmd0ZSk/ICd2YWx1ZSBtdXN0IGJlIGdy",
+            "ZWF0ZXIgdGhhbiBvciBlcXVhbCB0byAlcyBvciBsZXNzIHRoYW4gb3IgZXF1",
+            "YWwgdG8gJXMnLmZvcm1hdChbcnVsZXMuZ3RlLCBydWxlcy5sdGVdKSA6ICcn",
+            "SAFSA2d0ZRKEAQoCaW4YBiADKBFCdMJIcQpvCglzaW50MzIuaW4aYiEodGhp",
+            "cyBpbiBnZXRGaWVsZChydWxlcywgJ2luJykpID8gJ3ZhbHVlIG11c3QgYmUg",
+            "aW4gbGlzdCAlcycuZm9ybWF0KFtnZXRGaWVsZChydWxlcywgJ2luJyldKSA6",
+            "ICcnUgJpbhJ+CgZub3RfaW4YByADKBFCZ8JIZApiCg1zaW50MzIubm90X2lu",
+            "GlF0aGlzIGluIHJ1bGVzLm5vdF9pbiA/ICd2YWx1ZSBtdXN0IG5vdCBiZSBp",
+            "biBsaXN0ICVzJy5mb3JtYXQoW3J1bGVzLm5vdF9pbl0pIDogJydSBW5vdElu",
+            "EjUKB2V4YW1wbGUYCCADKBFCG8JIGAoWCg5zaW50MzIuZXhhbXBsZRoEdHJ1",
+            "ZVIHZXhhbXBsZSoJCOgHEICAgIACQgsKCWxlc3NfdGhhbkIOCgxncmVhdGVy",
+            "X3RoYW4iyxUKC1NJbnQ2NFJ1bGVzEosBCgVjb25zdBgBIAEoEkJ1wkhyCnAK",
+            "DHNpbnQ2NC5jb25zdBpgdGhpcyAhPSBnZXRGaWVsZChydWxlcywgJ2NvbnN0",
+            "JykgPyAndmFsdWUgbXVzdCBlcXVhbCAlcycuZm9ybWF0KFtnZXRGaWVsZChy",
+            "dWxlcywgJ2NvbnN0JyldKSA6ICcnUgVjb25zdBKPAQoCbHQYAiABKBJCfcJI",
+            "egp4CglzaW50NjQubHQaayFoYXMocnVsZXMuZ3RlKSAmJiAhaGFzKHJ1bGVz",
+            "Lmd0KSAmJiB0aGlzID49IHJ1bGVzLmx0PyAndmFsdWUgbXVzdCBiZSBsZXNz",
+            "IHRoYW4gJXMnLmZvcm1hdChbcnVsZXMubHRdKSA6ICcnSABSAmx0EqIBCgNs",
+            "dGUYAyABKBJCjQHCSIkBCoYBCgpzaW50NjQubHRlGnghaGFzKHJ1bGVzLmd0",
+            "ZSkgJiYgIWhhcyhydWxlcy5ndCkgJiYgdGhpcyA+IHJ1bGVzLmx0ZT8gJ3Zh",
+            "bHVlIG11c3QgYmUgbGVzcyB0aGFuIG9yIGVxdWFsIHRvICVzJy5mb3JtYXQo",
+            "W3J1bGVzLmx0ZV0pIDogJydIAFIDbHRlEqAHCgJndBgEIAEoEkKNB8JIiQcK",
+            "ewoJc2ludDY0Lmd0Gm4haGFzKHJ1bGVzLmx0KSAmJiAhaGFzKHJ1bGVzLmx0",
+            "ZSkgJiYgdGhpcyA8PSBydWxlcy5ndD8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRl",
+            "ciB0aGFuICVzJy5mb3JtYXQoW3J1bGVzLmd0XSkgOiAnJwq0AQoMc2ludDY0",
+            "Lmd0X2x0GqMBaGFzKHJ1bGVzLmx0KSAmJiBydWxlcy5sdCA+PSBydWxlcy5n",
+            "dCAmJiAodGhpcyA+PSBydWxlcy5sdCB8fCB0aGlzIDw9IHJ1bGVzLmd0KT8g",
+            "J3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuICVzIGFuZCBsZXNzIHRoYW4g",
+            "JXMnLmZvcm1hdChbcnVsZXMuZ3QsIHJ1bGVzLmx0XSkgOiAnJwq8AQoWc2lu",
+            "dDY0Lmd0X2x0X2V4Y2x1c2l2ZRqhAWhhcyhydWxlcy5sdCkgJiYgcnVsZXMu",
+            "bHQgPCBydWxlcy5ndCAmJiAocnVsZXMubHQgPD0gdGhpcyAmJiB0aGlzIDw9",
+            "IHJ1bGVzLmd0KT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuICVzIG9y",
+            "IGxlc3MgdGhhbiAlcycuZm9ybWF0KFtydWxlcy5ndCwgcnVsZXMubHRdKSA6",
+            "ICcnCsQBCg1zaW50NjQuZ3RfbHRlGrIBaGFzKHJ1bGVzLmx0ZSkgJiYgcnVs",
+            "ZXMubHRlID49IHJ1bGVzLmd0ICYmICh0aGlzID4gcnVsZXMubHRlIHx8IHRo",
+            "aXMgPD0gcnVsZXMuZ3QpPyAndmFsdWUgbXVzdCBiZSBncmVhdGVyIHRoYW4g",
+            "JXMgYW5kIGxlc3MgdGhhbiBvciBlcXVhbCB0byAlcycuZm9ybWF0KFtydWxl",
+            "cy5ndCwgcnVsZXMubHRlXSkgOiAnJwrMAQoXc2ludDY0Lmd0X2x0ZV9leGNs",
+            "dXNpdmUasAFoYXMocnVsZXMubHRlKSAmJiBydWxlcy5sdGUgPCBydWxlcy5n",
+            "dCAmJiAocnVsZXMubHRlIDwgdGhpcyAmJiB0aGlzIDw9IHJ1bGVzLmd0KT8g",
+            "J3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuICVzIG9yIGxlc3MgdGhhbiBv",
+            "ciBlcXVhbCB0byAlcycuZm9ybWF0KFtydWxlcy5ndCwgcnVsZXMubHRlXSkg",
+            "OiAnJ0gBUgJndBLtBwoDZ3RlGAUgASgSQtgHwkjUBwqJAQoKc2ludDY0Lmd0",
+            "ZRp7IWhhcyhydWxlcy5sdCkgJiYgIWhhcyhydWxlcy5sdGUpICYmIHRoaXMg",
+            "PCBydWxlcy5ndGU/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiBvciBl",
+            "cXVhbCB0byAlcycuZm9ybWF0KFtydWxlcy5ndGVdKSA6ICcnCsMBCg1zaW50",
+            "NjQuZ3RlX2x0GrEBaGFzKHJ1bGVzLmx0KSAmJiBydWxlcy5sdCA+PSBydWxl",
+            "cy5ndGUgJiYgKHRoaXMgPj0gcnVsZXMubHQgfHwgdGhpcyA8IHJ1bGVzLmd0",
+            "ZSk/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiBvciBlcXVhbCB0byAl",
+            "cyBhbmQgbGVzcyB0aGFuICVzJy5mb3JtYXQoW3J1bGVzLmd0ZSwgcnVsZXMu",
+            "bHRdKSA6ICcnCssBChdzaW50NjQuZ3RlX2x0X2V4Y2x1c2l2ZRqvAWhhcyhy",
+            "dWxlcy5sdCkgJiYgcnVsZXMubHQgPCBydWxlcy5ndGUgJiYgKHJ1bGVzLmx0",
+            "IDw9IHRoaXMgJiYgdGhpcyA8IHJ1bGVzLmd0ZSk/ICd2YWx1ZSBtdXN0IGJl",
+            "IGdyZWF0ZXIgdGhhbiBvciBlcXVhbCB0byAlcyBvciBsZXNzIHRoYW4gJXMn",
+            "LmZvcm1hdChbcnVsZXMuZ3RlLCBydWxlcy5sdF0pIDogJycK0wEKDnNpbnQ2",
+            "NC5ndGVfbHRlGsABaGFzKHJ1bGVzLmx0ZSkgJiYgcnVsZXMubHRlID49IHJ1",
+            "bGVzLmd0ZSAmJiAodGhpcyA+IHJ1bGVzLmx0ZSB8fCB0aGlzIDwgcnVsZXMu",
+            "Z3RlKT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVxdWFsIHRv",
+            "ICVzIGFuZCBsZXNzIHRoYW4gb3IgZXF1YWwgdG8gJXMnLmZvcm1hdChbcnVs",
+            "ZXMuZ3RlLCBydWxlcy5sdGVdKSA6ICcnCtsBChhzaW50NjQuZ3RlX2x0ZV9l",
+            "eGNsdXNpdmUavgFoYXMocnVsZXMubHRlKSAmJiBydWxlcy5sdGUgPCBydWxl",
+            "cy5ndGUgJiYgKHJ1bGVzLmx0ZSA8IHRoaXMgJiYgdGhpcyA8IHJ1bGVzLmd0",
+            "ZSk/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiBvciBlcXVhbCB0byAl",
+            "cyBvciBsZXNzIHRoYW4gb3IgZXF1YWwgdG8gJXMnLmZvcm1hdChbcnVsZXMu",
+            "Z3RlLCBydWxlcy5sdGVdKSA6ICcnSAFSA2d0ZRKEAQoCaW4YBiADKBJCdMJI",
+            "cQpvCglzaW50NjQuaW4aYiEodGhpcyBpbiBnZXRGaWVsZChydWxlcywgJ2lu",
+            "JykpID8gJ3ZhbHVlIG11c3QgYmUgaW4gbGlzdCAlcycuZm9ybWF0KFtnZXRG",
+            "aWVsZChydWxlcywgJ2luJyldKSA6ICcnUgJpbhJ+CgZub3RfaW4YByADKBJC",
+            "Z8JIZApiCg1zaW50NjQubm90X2luGlF0aGlzIGluIHJ1bGVzLm5vdF9pbiA/",
+            "ICd2YWx1ZSBtdXN0IG5vdCBiZSBpbiBsaXN0ICVzJy5mb3JtYXQoW3J1bGVz",
+            "Lm5vdF9pbl0pIDogJydSBW5vdEluEjUKB2V4YW1wbGUYCCADKBJCG8JIGAoW",
+            "Cg5zaW50NjQuZXhhbXBsZRoEdHJ1ZVIHZXhhbXBsZSoJCOgHEICAgIACQgsK",
+            "CWxlc3NfdGhhbkIOCgxncmVhdGVyX3RoYW4i3BUKDEZpeGVkMzJSdWxlcxKM",
+            "AQoFY29uc3QYASABKAdCdsJIcwpxCg1maXhlZDMyLmNvbnN0GmB0aGlzICE9",
+            "IGdldEZpZWxkKHJ1bGVzLCAnY29uc3QnKSA/ICd2YWx1ZSBtdXN0IGVxdWFs",
+            "ICVzJy5mb3JtYXQoW2dldEZpZWxkKHJ1bGVzLCAnY29uc3QnKV0pIDogJydS",
+            "BWNvbnN0EpABCgJsdBgCIAEoB0J+wkh7CnkKCmZpeGVkMzIubHQaayFoYXMo",
+            "cnVsZXMuZ3RlKSAmJiAhaGFzKHJ1bGVzLmd0KSAmJiB0aGlzID49IHJ1bGVz",
+            "Lmx0PyAndmFsdWUgbXVzdCBiZSBsZXNzIHRoYW4gJXMnLmZvcm1hdChbcnVs",
+            "ZXMubHRdKSA6ICcnSABSAmx0EqMBCgNsdGUYAyABKAdCjgHCSIoBCocBCgtm",
+            "aXhlZDMyLmx0ZRp4IWhhcyhydWxlcy5ndGUpICYmICFoYXMocnVsZXMuZ3Qp",
+            "ICYmIHRoaXMgPiBydWxlcy5sdGU/ICd2YWx1ZSBtdXN0IGJlIGxlc3MgdGhh",
+            "biBvciBlcXVhbCB0byAlcycuZm9ybWF0KFtydWxlcy5sdGVdKSA6ICcnSABS",
+            "A2x0ZRKlBwoCZ3QYBCABKAdCkgfCSI4HCnwKCmZpeGVkMzIuZ3QabiFoYXMo",
+            "cnVsZXMubHQpICYmICFoYXMocnVsZXMubHRlKSAmJiB0aGlzIDw9IHJ1bGVz",
+            "Lmd0PyAndmFsdWUgbXVzdCBiZSBncmVhdGVyIHRoYW4gJXMnLmZvcm1hdChb",
+            "cnVsZXMuZ3RdKSA6ICcnCrUBCg1maXhlZDMyLmd0X2x0GqMBaGFzKHJ1bGVz",
+            "Lmx0KSAmJiBydWxlcy5sdCA+PSBydWxlcy5ndCAmJiAodGhpcyA+PSBydWxl",
+            "cy5sdCB8fCB0aGlzIDw9IHJ1bGVzLmd0KT8gJ3ZhbHVlIG11c3QgYmUgZ3Jl",
+            "YXRlciB0aGFuICVzIGFuZCBsZXNzIHRoYW4gJXMnLmZvcm1hdChbcnVsZXMu",
+            "Z3QsIHJ1bGVzLmx0XSkgOiAnJwq9AQoXZml4ZWQzMi5ndF9sdF9leGNsdXNp",
+            "dmUaoQFoYXMocnVsZXMubHQpICYmIHJ1bGVzLmx0IDwgcnVsZXMuZ3QgJiYg",
+            "KHJ1bGVzLmx0IDw9IHRoaXMgJiYgdGhpcyA8PSBydWxlcy5ndCk/ICd2YWx1",
+            "ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiAlcyBvciBsZXNzIHRoYW4gJXMnLmZv",
+            "cm1hdChbcnVsZXMuZ3QsIHJ1bGVzLmx0XSkgOiAnJwrFAQoOZml4ZWQzMi5n",
+            "dF9sdGUasgFoYXMocnVsZXMubHRlKSAmJiBydWxlcy5sdGUgPj0gcnVsZXMu",
+            "Z3QgJiYgKHRoaXMgPiBydWxlcy5sdGUgfHwgdGhpcyA8PSBydWxlcy5ndCk/",
+            "ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiAlcyBhbmQgbGVzcyB0aGFu",
+            "IG9yIGVxdWFsIHRvICVzJy5mb3JtYXQoW3J1bGVzLmd0LCBydWxlcy5sdGVd",
+            "KSA6ICcnCs0BChhmaXhlZDMyLmd0X2x0ZV9leGNsdXNpdmUasAFoYXMocnVs",
+            "ZXMubHRlKSAmJiBydWxlcy5sdGUgPCBydWxlcy5ndCAmJiAocnVsZXMubHRl",
+            "IDwgdGhpcyAmJiB0aGlzIDw9IHJ1bGVzLmd0KT8gJ3ZhbHVlIG11c3QgYmUg",
+            "Z3JlYXRlciB0aGFuICVzIG9yIGxlc3MgdGhhbiBvciBlcXVhbCB0byAlcycu",
+            "Zm9ybWF0KFtydWxlcy5ndCwgcnVsZXMubHRlXSkgOiAnJ0gBUgJndBLyBwoD",
+            "Z3RlGAUgASgHQt0HwkjZBwqKAQoLZml4ZWQzMi5ndGUaeyFoYXMocnVsZXMu",
+            "bHQpICYmICFoYXMocnVsZXMubHRlKSAmJiB0aGlzIDwgcnVsZXMuZ3RlPyAn",
+            "dmFsdWUgbXVzdCBiZSBncmVhdGVyIHRoYW4gb3IgZXF1YWwgdG8gJXMnLmZv",
+            "cm1hdChbcnVsZXMuZ3RlXSkgOiAnJwrEAQoOZml4ZWQzMi5ndGVfbHQasQFo",
+            "YXMocnVsZXMubHQpICYmIHJ1bGVzLmx0ID49IHJ1bGVzLmd0ZSAmJiAodGhp",
+            "cyA+PSBydWxlcy5sdCB8fCB0aGlzIDwgcnVsZXMuZ3RlKT8gJ3ZhbHVlIG11",
+            "c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVxdWFsIHRvICVzIGFuZCBsZXNzIHRo",
+            "YW4gJXMnLmZvcm1hdChbcnVsZXMuZ3RlLCBydWxlcy5sdF0pIDogJycKzAEK",
+            "GGZpeGVkMzIuZ3RlX2x0X2V4Y2x1c2l2ZRqvAWhhcyhydWxlcy5sdCkgJiYg",
+            "cnVsZXMubHQgPCBydWxlcy5ndGUgJiYgKHJ1bGVzLmx0IDw9IHRoaXMgJiYg",
+            "dGhpcyA8IHJ1bGVzLmd0ZSk/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhh",
+            "biBvciBlcXVhbCB0byAlcyBvciBsZXNzIHRoYW4gJXMnLmZvcm1hdChbcnVs",
+            "ZXMuZ3RlLCBydWxlcy5sdF0pIDogJycK1AEKD2ZpeGVkMzIuZ3RlX2x0ZRrA",
+            "AWhhcyhydWxlcy5sdGUpICYmIHJ1bGVzLmx0ZSA+PSBydWxlcy5ndGUgJiYg",
+            "KHRoaXMgPiBydWxlcy5sdGUgfHwgdGhpcyA8IHJ1bGVzLmd0ZSk/ICd2YWx1",
+            "ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiBvciBlcXVhbCB0byAlcyBhbmQgbGVz",
+            "cyB0aGFuIG9yIGVxdWFsIHRvICVzJy5mb3JtYXQoW3J1bGVzLmd0ZSwgcnVs",
+            "ZXMubHRlXSkgOiAnJwrcAQoZZml4ZWQzMi5ndGVfbHRlX2V4Y2x1c2l2ZRq+",
+            "AWhhcyhydWxlcy5sdGUpICYmIHJ1bGVzLmx0ZSA8IHJ1bGVzLmd0ZSAmJiAo",
+            "cnVsZXMubHRlIDwgdGhpcyAmJiB0aGlzIDwgcnVsZXMuZ3RlKT8gJ3ZhbHVl",
+            "IG11c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVxdWFsIHRvICVzIG9yIGxlc3Mg",
+            "dGhhbiBvciBlcXVhbCB0byAlcycuZm9ybWF0KFtydWxlcy5ndGUsIHJ1bGVz",
+            "Lmx0ZV0pIDogJydIAVIDZ3RlEoUBCgJpbhgGIAMoB0J1wkhyCnAKCmZpeGVk",
+            "MzIuaW4aYiEodGhpcyBpbiBnZXRGaWVsZChydWxlcywgJ2luJykpID8gJ3Zh",
+            "bHVlIG11c3QgYmUgaW4gbGlzdCAlcycuZm9ybWF0KFtnZXRGaWVsZChydWxl",
+            "cywgJ2luJyldKSA6ICcnUgJpbhJ/CgZub3RfaW4YByADKAdCaMJIZQpjCg5m",
+            "aXhlZDMyLm5vdF9pbhpRdGhpcyBpbiBydWxlcy5ub3RfaW4gPyAndmFsdWUg",
+            "bXVzdCBub3QgYmUgaW4gbGlzdCAlcycuZm9ybWF0KFtydWxlcy5ub3RfaW5d",
+            "KSA6ICcnUgVub3RJbhI2CgdleGFtcGxlGAggAygHQhzCSBkKFwoPZml4ZWQz",
+            "Mi5leGFtcGxlGgR0cnVlUgdleGFtcGxlKgkI6AcQgICAgAJCCwoJbGVzc190",
+            "aGFuQg4KDGdyZWF0ZXJfdGhhbiLcFQoMRml4ZWQ2NFJ1bGVzEowBCgVjb25z",
+            "dBgBIAEoBkJ2wkhzCnEKDWZpeGVkNjQuY29uc3QaYHRoaXMgIT0gZ2V0Rmll",
+            "bGQocnVsZXMsICdjb25zdCcpID8gJ3ZhbHVlIG11c3QgZXF1YWwgJXMnLmZv",
+            "cm1hdChbZ2V0RmllbGQocnVsZXMsICdjb25zdCcpXSkgOiAnJ1IFY29uc3QS",
+            "kAEKAmx0GAIgASgGQn7CSHsKeQoKZml4ZWQ2NC5sdBprIWhhcyhydWxlcy5n",
+            "dGUpICYmICFoYXMocnVsZXMuZ3QpICYmIHRoaXMgPj0gcnVsZXMubHQ/ICd2",
+            "YWx1ZSBtdXN0IGJlIGxlc3MgdGhhbiAlcycuZm9ybWF0KFtydWxlcy5sdF0p",
+            "IDogJydIAFICbHQSowEKA2x0ZRgDIAEoBkKOAcJIigEKhwEKC2ZpeGVkNjQu",
+            "bHRlGnghaGFzKHJ1bGVzLmd0ZSkgJiYgIWhhcyhydWxlcy5ndCkgJiYgdGhp",
+            "cyA+IHJ1bGVzLmx0ZT8gJ3ZhbHVlIG11c3QgYmUgbGVzcyB0aGFuIG9yIGVx",
+            "dWFsIHRvICVzJy5mb3JtYXQoW3J1bGVzLmx0ZV0pIDogJydIAFIDbHRlEqUH",
+            "CgJndBgEIAEoBkKSB8JIjgcKfAoKZml4ZWQ2NC5ndBpuIWhhcyhydWxlcy5s",
+            "dCkgJiYgIWhhcyhydWxlcy5sdGUpICYmIHRoaXMgPD0gcnVsZXMuZ3Q/ICd2",
+            "YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiAlcycuZm9ybWF0KFtydWxlcy5n",
+            "dF0pIDogJycKtQEKDWZpeGVkNjQuZ3RfbHQaowFoYXMocnVsZXMubHQpICYm",
+            "IHJ1bGVzLmx0ID49IHJ1bGVzLmd0ICYmICh0aGlzID49IHJ1bGVzLmx0IHx8",
+            "IHRoaXMgPD0gcnVsZXMuZ3QpPyAndmFsdWUgbXVzdCBiZSBncmVhdGVyIHRo",
+            "YW4gJXMgYW5kIGxlc3MgdGhhbiAlcycuZm9ybWF0KFtydWxlcy5ndCwgcnVs",
+            "ZXMubHRdKSA6ICcnCr0BChdmaXhlZDY0Lmd0X2x0X2V4Y2x1c2l2ZRqhAWhh",
+            "cyhydWxlcy5sdCkgJiYgcnVsZXMubHQgPCBydWxlcy5ndCAmJiAocnVsZXMu",
+            "bHQgPD0gdGhpcyAmJiB0aGlzIDw9IHJ1bGVzLmd0KT8gJ3ZhbHVlIG11c3Qg",
+            "YmUgZ3JlYXRlciB0aGFuICVzIG9yIGxlc3MgdGhhbiAlcycuZm9ybWF0KFty",
+            "dWxlcy5ndCwgcnVsZXMubHRdKSA6ICcnCsUBCg5maXhlZDY0Lmd0X2x0ZRqy",
+            "AWhhcyhydWxlcy5sdGUpICYmIHJ1bGVzLmx0ZSA+PSBydWxlcy5ndCAmJiAo",
+            "dGhpcyA+IHJ1bGVzLmx0ZSB8fCB0aGlzIDw9IHJ1bGVzLmd0KT8gJ3ZhbHVl",
+            "IG11c3QgYmUgZ3JlYXRlciB0aGFuICVzIGFuZCBsZXNzIHRoYW4gb3IgZXF1",
+            "YWwgdG8gJXMnLmZvcm1hdChbcnVsZXMuZ3QsIHJ1bGVzLmx0ZV0pIDogJycK",
+            "zQEKGGZpeGVkNjQuZ3RfbHRlX2V4Y2x1c2l2ZRqwAWhhcyhydWxlcy5sdGUp",
+            "ICYmIHJ1bGVzLmx0ZSA8IHJ1bGVzLmd0ICYmIChydWxlcy5sdGUgPCB0aGlz",
+            "ICYmIHRoaXMgPD0gcnVsZXMuZ3QpPyAndmFsdWUgbXVzdCBiZSBncmVhdGVy",
+            "IHRoYW4gJXMgb3IgbGVzcyB0aGFuIG9yIGVxdWFsIHRvICVzJy5mb3JtYXQo",
+            "W3J1bGVzLmd0LCBydWxlcy5sdGVdKSA6ICcnSAFSAmd0EvIHCgNndGUYBSAB",
+            "KAZC3QfCSNkHCooBCgtmaXhlZDY0Lmd0ZRp7IWhhcyhydWxlcy5sdCkgJiYg",
+            "IWhhcyhydWxlcy5sdGUpICYmIHRoaXMgPCBydWxlcy5ndGU/ICd2YWx1ZSBt",
+            "dXN0IGJlIGdyZWF0ZXIgdGhhbiBvciBlcXVhbCB0byAlcycuZm9ybWF0KFty",
+            "dWxlcy5ndGVdKSA6ICcnCsQBCg5maXhlZDY0Lmd0ZV9sdBqxAWhhcyhydWxl",
+            "cy5sdCkgJiYgcnVsZXMubHQgPj0gcnVsZXMuZ3RlICYmICh0aGlzID49IHJ1",
+            "bGVzLmx0IHx8IHRoaXMgPCBydWxlcy5ndGUpPyAndmFsdWUgbXVzdCBiZSBn",
+            "cmVhdGVyIHRoYW4gb3IgZXF1YWwgdG8gJXMgYW5kIGxlc3MgdGhhbiAlcycu",
+            "Zm9ybWF0KFtydWxlcy5ndGUsIHJ1bGVzLmx0XSkgOiAnJwrMAQoYZml4ZWQ2",
+            "NC5ndGVfbHRfZXhjbHVzaXZlGq8BaGFzKHJ1bGVzLmx0KSAmJiBydWxlcy5s",
+            "dCA8IHJ1bGVzLmd0ZSAmJiAocnVsZXMubHQgPD0gdGhpcyAmJiB0aGlzIDwg",
+            "cnVsZXMuZ3RlKT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVx",
+            "dWFsIHRvICVzIG9yIGxlc3MgdGhhbiAlcycuZm9ybWF0KFtydWxlcy5ndGUs",
+            "IHJ1bGVzLmx0XSkgOiAnJwrUAQoPZml4ZWQ2NC5ndGVfbHRlGsABaGFzKHJ1",
+            "bGVzLmx0ZSkgJiYgcnVsZXMubHRlID49IHJ1bGVzLmd0ZSAmJiAodGhpcyA+",
+            "IHJ1bGVzLmx0ZSB8fCB0aGlzIDwgcnVsZXMuZ3RlKT8gJ3ZhbHVlIG11c3Qg",
+            "YmUgZ3JlYXRlciB0aGFuIG9yIGVxdWFsIHRvICVzIGFuZCBsZXNzIHRoYW4g",
+            "b3IgZXF1YWwgdG8gJXMnLmZvcm1hdChbcnVsZXMuZ3RlLCBydWxlcy5sdGVd",
+            "KSA6ICcnCtwBChlmaXhlZDY0Lmd0ZV9sdGVfZXhjbHVzaXZlGr4BaGFzKHJ1",
+            "bGVzLmx0ZSkgJiYgcnVsZXMubHRlIDwgcnVsZXMuZ3RlICYmIChydWxlcy5s",
+            "dGUgPCB0aGlzICYmIHRoaXMgPCBydWxlcy5ndGUpPyAndmFsdWUgbXVzdCBi",
+            "ZSBncmVhdGVyIHRoYW4gb3IgZXF1YWwgdG8gJXMgb3IgbGVzcyB0aGFuIG9y",
+            "IGVxdWFsIHRvICVzJy5mb3JtYXQoW3J1bGVzLmd0ZSwgcnVsZXMubHRlXSkg",
+            "OiAnJ0gBUgNndGUShQEKAmluGAYgAygGQnXCSHIKcAoKZml4ZWQ2NC5pbhpi",
+            "ISh0aGlzIGluIGdldEZpZWxkKHJ1bGVzLCAnaW4nKSkgPyAndmFsdWUgbXVz",
+            "dCBiZSBpbiBsaXN0ICVzJy5mb3JtYXQoW2dldEZpZWxkKHJ1bGVzLCAnaW4n",
+            "KV0pIDogJydSAmluEn8KBm5vdF9pbhgHIAMoBkJowkhlCmMKDmZpeGVkNjQu",
+            "bm90X2luGlF0aGlzIGluIHJ1bGVzLm5vdF9pbiA/ICd2YWx1ZSBtdXN0IG5v",
+            "dCBiZSBpbiBsaXN0ICVzJy5mb3JtYXQoW3J1bGVzLm5vdF9pbl0pIDogJydS",
+            "BW5vdEluEjYKB2V4YW1wbGUYCCADKAZCHMJIGQoXCg9maXhlZDY0LmV4YW1w",
+            "bGUaBHRydWVSB2V4YW1wbGUqCQjoBxCAgICAAkILCglsZXNzX3RoYW5CDgoM",
+            "Z3JlYXRlcl90aGFuIu4VCg1TRml4ZWQzMlJ1bGVzEo0BCgVjb25zdBgBIAEo",
+            "D0J3wkh0CnIKDnNmaXhlZDMyLmNvbnN0GmB0aGlzICE9IGdldEZpZWxkKHJ1",
+            "bGVzLCAnY29uc3QnKSA/ICd2YWx1ZSBtdXN0IGVxdWFsICVzJy5mb3JtYXQo",
+            "W2dldEZpZWxkKHJ1bGVzLCAnY29uc3QnKV0pIDogJydSBWNvbnN0EpEBCgJs",
+            "dBgCIAEoD0J/wkh8CnoKC3NmaXhlZDMyLmx0GmshaGFzKHJ1bGVzLmd0ZSkg",
+            "JiYgIWhhcyhydWxlcy5ndCkgJiYgdGhpcyA+PSBydWxlcy5sdD8gJ3ZhbHVl",
+            "IG11c3QgYmUgbGVzcyB0aGFuICVzJy5mb3JtYXQoW3J1bGVzLmx0XSkgOiAn",
+            "J0gAUgJsdBKkAQoDbHRlGAMgASgPQo8BwkiLAQqIAQoMc2ZpeGVkMzIubHRl",
+            "GnghaGFzKHJ1bGVzLmd0ZSkgJiYgIWhhcyhydWxlcy5ndCkgJiYgdGhpcyA+",
+            "IHJ1bGVzLmx0ZT8gJ3ZhbHVlIG11c3QgYmUgbGVzcyB0aGFuIG9yIGVxdWFs",
+            "IHRvICVzJy5mb3JtYXQoW3J1bGVzLmx0ZV0pIDogJydIAFIDbHRlEqoHCgJn",
+            "dBgEIAEoD0KXB8JIkwcKfQoLc2ZpeGVkMzIuZ3QabiFoYXMocnVsZXMubHQp",
+            "ICYmICFoYXMocnVsZXMubHRlKSAmJiB0aGlzIDw9IHJ1bGVzLmd0PyAndmFs",
+            "dWUgbXVzdCBiZSBncmVhdGVyIHRoYW4gJXMnLmZvcm1hdChbcnVsZXMuZ3Rd",
+            "KSA6ICcnCrYBCg5zZml4ZWQzMi5ndF9sdBqjAWhhcyhydWxlcy5sdCkgJiYg",
+            "cnVsZXMubHQgPj0gcnVsZXMuZ3QgJiYgKHRoaXMgPj0gcnVsZXMubHQgfHwg",
+            "dGhpcyA8PSBydWxlcy5ndCk/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhh",
+            "biAlcyBhbmQgbGVzcyB0aGFuICVzJy5mb3JtYXQoW3J1bGVzLmd0LCBydWxl",
+            "cy5sdF0pIDogJycKvgEKGHNmaXhlZDMyLmd0X2x0X2V4Y2x1c2l2ZRqhAWhh",
+            "cyhydWxlcy5sdCkgJiYgcnVsZXMubHQgPCBydWxlcy5ndCAmJiAocnVsZXMu",
+            "bHQgPD0gdGhpcyAmJiB0aGlzIDw9IHJ1bGVzLmd0KT8gJ3ZhbHVlIG11c3Qg",
+            "YmUgZ3JlYXRlciB0aGFuICVzIG9yIGxlc3MgdGhhbiAlcycuZm9ybWF0KFty",
+            "dWxlcy5ndCwgcnVsZXMubHRdKSA6ICcnCsYBCg9zZml4ZWQzMi5ndF9sdGUa",
+            "sgFoYXMocnVsZXMubHRlKSAmJiBydWxlcy5sdGUgPj0gcnVsZXMuZ3QgJiYg",
+            "KHRoaXMgPiBydWxlcy5sdGUgfHwgdGhpcyA8PSBydWxlcy5ndCk/ICd2YWx1",
+            "ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiAlcyBhbmQgbGVzcyB0aGFuIG9yIGVx",
+            "dWFsIHRvICVzJy5mb3JtYXQoW3J1bGVzLmd0LCBydWxlcy5sdGVdKSA6ICcn",
+            "Cs4BChlzZml4ZWQzMi5ndF9sdGVfZXhjbHVzaXZlGrABaGFzKHJ1bGVzLmx0",
+            "ZSkgJiYgcnVsZXMubHRlIDwgcnVsZXMuZ3QgJiYgKHJ1bGVzLmx0ZSA8IHRo",
+            "aXMgJiYgdGhpcyA8PSBydWxlcy5ndCk/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0",
+            "ZXIgdGhhbiAlcyBvciBsZXNzIHRoYW4gb3IgZXF1YWwgdG8gJXMnLmZvcm1h",
+            "dChbcnVsZXMuZ3QsIHJ1bGVzLmx0ZV0pIDogJydIAVICZ3QS9wcKA2d0ZRgF",
+            "IAEoD0LiB8JI3gcKiwEKDHNmaXhlZDMyLmd0ZRp7IWhhcyhydWxlcy5sdCkg",
+            "JiYgIWhhcyhydWxlcy5sdGUpICYmIHRoaXMgPCBydWxlcy5ndGU/ICd2YWx1",
+            "ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiBvciBlcXVhbCB0byAlcycuZm9ybWF0",
+            "KFtydWxlcy5ndGVdKSA6ICcnCsUBCg9zZml4ZWQzMi5ndGVfbHQasQFoYXMo",
+            "cnVsZXMubHQpICYmIHJ1bGVzLmx0ID49IHJ1bGVzLmd0ZSAmJiAodGhpcyA+",
+            "PSBydWxlcy5sdCB8fCB0aGlzIDwgcnVsZXMuZ3RlKT8gJ3ZhbHVlIG11c3Qg",
+            "YmUgZ3JlYXRlciB0aGFuIG9yIGVxdWFsIHRvICVzIGFuZCBsZXNzIHRoYW4g",
+            "JXMnLmZvcm1hdChbcnVsZXMuZ3RlLCBydWxlcy5sdF0pIDogJycKzQEKGXNm",
+            "aXhlZDMyLmd0ZV9sdF9leGNsdXNpdmUarwFoYXMocnVsZXMubHQpICYmIHJ1",
+            "bGVzLmx0IDwgcnVsZXMuZ3RlICYmIChydWxlcy5sdCA8PSB0aGlzICYmIHRo",
+            "aXMgPCBydWxlcy5ndGUpPyAndmFsdWUgbXVzdCBiZSBncmVhdGVyIHRoYW4g",
+            "b3IgZXF1YWwgdG8gJXMgb3IgbGVzcyB0aGFuICVzJy5mb3JtYXQoW3J1bGVz",
+            "Lmd0ZSwgcnVsZXMubHRdKSA6ICcnCtUBChBzZml4ZWQzMi5ndGVfbHRlGsAB",
+            "aGFzKHJ1bGVzLmx0ZSkgJiYgcnVsZXMubHRlID49IHJ1bGVzLmd0ZSAmJiAo",
+            "dGhpcyA+IHJ1bGVzLmx0ZSB8fCB0aGlzIDwgcnVsZXMuZ3RlKT8gJ3ZhbHVl",
+            "IG11c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVxdWFsIHRvICVzIGFuZCBsZXNz",
+            "IHRoYW4gb3IgZXF1YWwgdG8gJXMnLmZvcm1hdChbcnVsZXMuZ3RlLCBydWxl",
+            "cy5sdGVdKSA6ICcnCt0BChpzZml4ZWQzMi5ndGVfbHRlX2V4Y2x1c2l2ZRq+",
+            "AWhhcyhydWxlcy5sdGUpICYmIHJ1bGVzLmx0ZSA8IHJ1bGVzLmd0ZSAmJiAo",
+            "cnVsZXMubHRlIDwgdGhpcyAmJiB0aGlzIDwgcnVsZXMuZ3RlKT8gJ3ZhbHVl",
+            "IG11c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVxdWFsIHRvICVzIG9yIGxlc3Mg",
+            "dGhhbiBvciBlcXVhbCB0byAlcycuZm9ybWF0KFtydWxlcy5ndGUsIHJ1bGVz",
+            "Lmx0ZV0pIDogJydIAVIDZ3RlEoYBCgJpbhgGIAMoD0J2wkhzCnEKC3NmaXhl",
+            "ZDMyLmluGmIhKHRoaXMgaW4gZ2V0RmllbGQocnVsZXMsICdpbicpKSA/ICd2",
+            "YWx1ZSBtdXN0IGJlIGluIGxpc3QgJXMnLmZvcm1hdChbZ2V0RmllbGQocnVs",
+            "ZXMsICdpbicpXSkgOiAnJ1ICaW4SgAEKBm5vdF9pbhgHIAMoD0JpwkhmCmQK",
+            "D3NmaXhlZDMyLm5vdF9pbhpRdGhpcyBpbiBydWxlcy5ub3RfaW4gPyAndmFs",
+            "dWUgbXVzdCBub3QgYmUgaW4gbGlzdCAlcycuZm9ybWF0KFtydWxlcy5ub3Rf",
+            "aW5dKSA6ICcnUgVub3RJbhI3CgdleGFtcGxlGAggAygPQh3CSBoKGAoQc2Zp",
+            "eGVkMzIuZXhhbXBsZRoEdHJ1ZVIHZXhhbXBsZSoJCOgHEICAgIACQgsKCWxl",
+            "c3NfdGhhbkIOCgxncmVhdGVyX3RoYW4i7hUKDVNGaXhlZDY0UnVsZXMSjQEK",
+            "BWNvbnN0GAEgASgQQnfCSHQKcgoOc2ZpeGVkNjQuY29uc3QaYHRoaXMgIT0g",
+            "Z2V0RmllbGQocnVsZXMsICdjb25zdCcpID8gJ3ZhbHVlIG11c3QgZXF1YWwg",
+            "JXMnLmZvcm1hdChbZ2V0RmllbGQocnVsZXMsICdjb25zdCcpXSkgOiAnJ1IF",
+            "Y29uc3QSkQEKAmx0GAIgASgQQn/CSHwKegoLc2ZpeGVkNjQubHQaayFoYXMo",
+            "cnVsZXMuZ3RlKSAmJiAhaGFzKHJ1bGVzLmd0KSAmJiB0aGlzID49IHJ1bGVz",
+            "Lmx0PyAndmFsdWUgbXVzdCBiZSBsZXNzIHRoYW4gJXMnLmZvcm1hdChbcnVs",
+            "ZXMubHRdKSA6ICcnSABSAmx0EqQBCgNsdGUYAyABKBBCjwHCSIsBCogBCgxz",
+            "Zml4ZWQ2NC5sdGUaeCFoYXMocnVsZXMuZ3RlKSAmJiAhaGFzKHJ1bGVzLmd0",
+            "KSAmJiB0aGlzID4gcnVsZXMubHRlPyAndmFsdWUgbXVzdCBiZSBsZXNzIHRo",
+            "YW4gb3IgZXF1YWwgdG8gJXMnLmZvcm1hdChbcnVsZXMubHRlXSkgOiAnJ0gA",
+            "UgNsdGUSqgcKAmd0GAQgASgQQpcHwkiTBwp9CgtzZml4ZWQ2NC5ndBpuIWhh",
+            "cyhydWxlcy5sdCkgJiYgIWhhcyhydWxlcy5sdGUpICYmIHRoaXMgPD0gcnVs",
+            "ZXMuZ3Q/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiAlcycuZm9ybWF0",
+            "KFtydWxlcy5ndF0pIDogJycKtgEKDnNmaXhlZDY0Lmd0X2x0GqMBaGFzKHJ1",
+            "bGVzLmx0KSAmJiBydWxlcy5sdCA+PSBydWxlcy5ndCAmJiAodGhpcyA+PSBy",
+            "dWxlcy5sdCB8fCB0aGlzIDw9IHJ1bGVzLmd0KT8gJ3ZhbHVlIG11c3QgYmUg",
+            "Z3JlYXRlciB0aGFuICVzIGFuZCBsZXNzIHRoYW4gJXMnLmZvcm1hdChbcnVs",
+            "ZXMuZ3QsIHJ1bGVzLmx0XSkgOiAnJwq+AQoYc2ZpeGVkNjQuZ3RfbHRfZXhj",
+            "bHVzaXZlGqEBaGFzKHJ1bGVzLmx0KSAmJiBydWxlcy5sdCA8IHJ1bGVzLmd0",
+            "ICYmIChydWxlcy5sdCA8PSB0aGlzICYmIHRoaXMgPD0gcnVsZXMuZ3QpPyAn",
+            "dmFsdWUgbXVzdCBiZSBncmVhdGVyIHRoYW4gJXMgb3IgbGVzcyB0aGFuICVz",
+            "Jy5mb3JtYXQoW3J1bGVzLmd0LCBydWxlcy5sdF0pIDogJycKxgEKD3NmaXhl",
+            "ZDY0Lmd0X2x0ZRqyAWhhcyhydWxlcy5sdGUpICYmIHJ1bGVzLmx0ZSA+PSBy",
+            "dWxlcy5ndCAmJiAodGhpcyA+IHJ1bGVzLmx0ZSB8fCB0aGlzIDw9IHJ1bGVz",
+            "Lmd0KT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuICVzIGFuZCBsZXNz",
+            "IHRoYW4gb3IgZXF1YWwgdG8gJXMnLmZvcm1hdChbcnVsZXMuZ3QsIHJ1bGVz",
+            "Lmx0ZV0pIDogJycKzgEKGXNmaXhlZDY0Lmd0X2x0ZV9leGNsdXNpdmUasAFo",
+            "YXMocnVsZXMubHRlKSAmJiBydWxlcy5sdGUgPCBydWxlcy5ndCAmJiAocnVs",
+            "ZXMubHRlIDwgdGhpcyAmJiB0aGlzIDw9IHJ1bGVzLmd0KT8gJ3ZhbHVlIG11",
+            "c3QgYmUgZ3JlYXRlciB0aGFuICVzIG9yIGxlc3MgdGhhbiBvciBlcXVhbCB0",
+            "byAlcycuZm9ybWF0KFtydWxlcy5ndCwgcnVsZXMubHRlXSkgOiAnJ0gBUgJn",
+            "dBL3BwoDZ3RlGAUgASgQQuIHwkjeBwqLAQoMc2ZpeGVkNjQuZ3RlGnshaGFz",
             "KHJ1bGVzLmx0KSAmJiAhaGFzKHJ1bGVzLmx0ZSkgJiYgdGhpcyA8IHJ1bGVz",
             "Lmd0ZT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVxdWFsIHRv",
-            "ICVzJy5mb3JtYXQoW3J1bGVzLmd0ZV0pIDogJycKxgEKEHRpbWVzdGFtcC5n",
-            "dGVfbHQasQFoYXMocnVsZXMubHQpICYmIHJ1bGVzLmx0ID49IHJ1bGVzLmd0",
-            "ZSAmJiAodGhpcyA+PSBydWxlcy5sdCB8fCB0aGlzIDwgcnVsZXMuZ3RlKT8g",
-            "J3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVxdWFsIHRvICVzIGFu",
-            "ZCBsZXNzIHRoYW4gJXMnLmZvcm1hdChbcnVsZXMuZ3RlLCBydWxlcy5sdF0p",
-            "IDogJycKzgEKGnRpbWVzdGFtcC5ndGVfbHRfZXhjbHVzaXZlGq8BaGFzKHJ1",
-            "bGVzLmx0KSAmJiBydWxlcy5sdCA8IHJ1bGVzLmd0ZSAmJiAocnVsZXMubHQg",
-            "PD0gdGhpcyAmJiB0aGlzIDwgcnVsZXMuZ3RlKT8gJ3ZhbHVlIG11c3QgYmUg",
-            "Z3JlYXRlciB0aGFuIG9yIGVxdWFsIHRvICVzIG9yIGxlc3MgdGhhbiAlcycu",
-            "Zm9ybWF0KFtydWxlcy5ndGUsIHJ1bGVzLmx0XSkgOiAnJwrWAQoRdGltZXN0",
-            "YW1wLmd0ZV9sdGUawAFoYXMocnVsZXMubHRlKSAmJiBydWxlcy5sdGUgPj0g",
-            "cnVsZXMuZ3RlICYmICh0aGlzID4gcnVsZXMubHRlIHx8IHRoaXMgPCBydWxl",
-            "cy5ndGUpPyAndmFsdWUgbXVzdCBiZSBncmVhdGVyIHRoYW4gb3IgZXF1YWwg",
-            "dG8gJXMgYW5kIGxlc3MgdGhhbiBvciBlcXVhbCB0byAlcycuZm9ybWF0KFty",
-            "dWxlcy5ndGUsIHJ1bGVzLmx0ZV0pIDogJycK3gEKG3RpbWVzdGFtcC5ndGVf",
-            "bHRlX2V4Y2x1c2l2ZRq+AWhhcyhydWxlcy5sdGUpICYmIHJ1bGVzLmx0ZSA8",
-            "IHJ1bGVzLmd0ZSAmJiAocnVsZXMubHRlIDwgdGhpcyAmJiB0aGlzIDwgcnVs",
-            "ZXMuZ3RlKT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVxdWFs",
-            "IHRvICVzIG9yIGxlc3MgdGhhbiBvciBlcXVhbCB0byAlcycuZm9ybWF0KFty",
-            "dWxlcy5ndGUsIHJ1bGVzLmx0ZV0pIDogJydIBFIDZ3RliAEBEmUKBmx0X25v",
-            "dxgHIAEoCEJJgvgYRQpDChB0aW1lc3RhbXAubHRfbm93Gi90aGlzID4gbm93",
-            "ID8gJ3ZhbHVlIG11c3QgYmUgbGVzcyB0aGFuIG5vdycgOiAnJ0gFUgVsdE5v",
-            "d4gBARJoCgZndF9ub3cYCCABKAhCTIL4GEgKRgoQdGltZXN0YW1wLmd0X25v",
-            "dxoydGhpcyA8IG5vdyA/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhhbiBu",
-            "b3cnIDogJydIBlIFZ3ROb3eIAQESxgEKBndpdGhpbhgJIAEoCzIZLmdvb2ds",
-            "ZS5wcm90b2J1Zi5EdXJhdGlvbkKNAYL4GIgBCoUBChB0aW1lc3RhbXAud2l0",
-            "aGluGnF0aGlzIDwgbm93LXJ1bGVzLndpdGhpbiB8fCB0aGlzID4gbm93K3J1",
-            "bGVzLndpdGhpbiA/ICd2YWx1ZSBtdXN0IGJlIHdpdGhpbiAlcyBvZiBub3cn",
-            "LmZvcm1hdChbcnVsZXMud2l0aGluXSkgOiAnJ0gHUgZ3aXRoaW6IAQFCCAoG",
-            "X2NvbnN0QgUKA19sdEIGCgRfbHRlQgUKA19ndEIGCgRfZ3RlQgkKB19sdF9u",
-            "b3dCCQoHX2d0X25vd0IJCgdfd2l0aGluKm4KCktub3duUmVnZXgSGwoXS05P",
-            "V05fUkVHRVhfVU5TUEVDSUZJRUQQABIgChxLTk9XTl9SRUdFWF9IVFRQX0hF",
-            "QURFUl9OQU1FEAESIQodS05PV05fUkVHRVhfSFRUUF9IRUFERVJfVkFMVUUQ",
-            "AjpgCgdtZXNzYWdlEh8uZ29vZ2xlLnByb3RvYnVmLk1lc3NhZ2VPcHRpb25z",
-            "GP+OAyABKAsyIC5idWYudmFsaWRhdGUuTWVzc2FnZUNvbnN0cmFpbnRzUgdt",
-            "ZXNzYWdliAEBOlgKBW9uZW9mEh0uZ29vZ2xlLnByb3RvYnVmLk9uZW9mT3B0",
-            "aW9ucxj/jgMgASgLMh4uYnVmLnZhbGlkYXRlLk9uZW9mQ29uc3RyYWludHNS",
-            "BW9uZW9miAEBOlgKBWZpZWxkEh0uZ29vZ2xlLnByb3RvYnVmLkZpZWxkT3B0",
-            "aW9ucxj/jgMgASgLMh4uYnVmLnZhbGlkYXRlLkZpZWxkQ29uc3RyYWludHNS",
-            "BWZpZWxkiAEBQklaR2J1Zi5idWlsZC9nZW4vZ28vYnVmYnVpbGQvcHJvdG92",
-            "YWxpZGF0ZS9wcm90b2NvbGJ1ZmZlcnMvZ28vYnVmL3ZhbGlkYXRlYgZwcm90",
-            "bzM="));
+            "ICVzJy5mb3JtYXQoW3J1bGVzLmd0ZV0pIDogJycKxQEKD3NmaXhlZDY0Lmd0",
+            "ZV9sdBqxAWhhcyhydWxlcy5sdCkgJiYgcnVsZXMubHQgPj0gcnVsZXMuZ3Rl",
+            "ICYmICh0aGlzID49IHJ1bGVzLmx0IHx8IHRoaXMgPCBydWxlcy5ndGUpPyAn",
+            "dmFsdWUgbXVzdCBiZSBncmVhdGVyIHRoYW4gb3IgZXF1YWwgdG8gJXMgYW5k",
+            "IGxlc3MgdGhhbiAlcycuZm9ybWF0KFtydWxlcy5ndGUsIHJ1bGVzLmx0XSkg",
+            "OiAnJwrNAQoZc2ZpeGVkNjQuZ3RlX2x0X2V4Y2x1c2l2ZRqvAWhhcyhydWxl",
+            "cy5sdCkgJiYgcnVsZXMubHQgPCBydWxlcy5ndGUgJiYgKHJ1bGVzLmx0IDw9",
+            "IHRoaXMgJiYgdGhpcyA8IHJ1bGVzLmd0ZSk/ICd2YWx1ZSBtdXN0IGJlIGdy",
+            "ZWF0ZXIgdGhhbiBvciBlcXVhbCB0byAlcyBvciBsZXNzIHRoYW4gJXMnLmZv",
+            "cm1hdChbcnVsZXMuZ3RlLCBydWxlcy5sdF0pIDogJycK1QEKEHNmaXhlZDY0",
+            "Lmd0ZV9sdGUawAFoYXMocnVsZXMubHRlKSAmJiBydWxlcy5sdGUgPj0gcnVs",
+            "ZXMuZ3RlICYmICh0aGlzID4gcnVsZXMubHRlIHx8IHRoaXMgPCBydWxlcy5n",
+            "dGUpPyAndmFsdWUgbXVzdCBiZSBncmVhdGVyIHRoYW4gb3IgZXF1YWwgdG8g",
+            "JXMgYW5kIGxlc3MgdGhhbiBvciBlcXVhbCB0byAlcycuZm9ybWF0KFtydWxl",
+            "cy5ndGUsIHJ1bGVzLmx0ZV0pIDogJycK3QEKGnNmaXhlZDY0Lmd0ZV9sdGVf",
+            "ZXhjbHVzaXZlGr4BaGFzKHJ1bGVzLmx0ZSkgJiYgcnVsZXMubHRlIDwgcnVs",
+            "ZXMuZ3RlICYmIChydWxlcy5sdGUgPCB0aGlzICYmIHRoaXMgPCBydWxlcy5n",
+            "dGUpPyAndmFsdWUgbXVzdCBiZSBncmVhdGVyIHRoYW4gb3IgZXF1YWwgdG8g",
+            "JXMgb3IgbGVzcyB0aGFuIG9yIGVxdWFsIHRvICVzJy5mb3JtYXQoW3J1bGVz",
+            "Lmd0ZSwgcnVsZXMubHRlXSkgOiAnJ0gBUgNndGUShgEKAmluGAYgAygQQnbC",
+            "SHMKcQoLc2ZpeGVkNjQuaW4aYiEodGhpcyBpbiBnZXRGaWVsZChydWxlcywg",
+            "J2luJykpID8gJ3ZhbHVlIG11c3QgYmUgaW4gbGlzdCAlcycuZm9ybWF0KFtn",
+            "ZXRGaWVsZChydWxlcywgJ2luJyldKSA6ICcnUgJpbhKAAQoGbm90X2luGAcg",
+            "AygQQmnCSGYKZAoPc2ZpeGVkNjQubm90X2luGlF0aGlzIGluIHJ1bGVzLm5v",
+            "dF9pbiA/ICd2YWx1ZSBtdXN0IG5vdCBiZSBpbiBsaXN0ICVzJy5mb3JtYXQo",
+            "W3J1bGVzLm5vdF9pbl0pIDogJydSBW5vdEluEjcKB2V4YW1wbGUYCCADKBBC",
+            "HcJIGgoYChBzZml4ZWQ2NC5leGFtcGxlGgR0cnVlUgdleGFtcGxlKgkI6AcQ",
+            "gICAgAJCCwoJbGVzc190aGFuQg4KDGdyZWF0ZXJfdGhhbiLXAQoJQm9vbFJ1",
+            "bGVzEokBCgVjb25zdBgBIAEoCEJzwkhwCm4KCmJvb2wuY29uc3QaYHRoaXMg",
+            "IT0gZ2V0RmllbGQocnVsZXMsICdjb25zdCcpID8gJ3ZhbHVlIG11c3QgZXF1",
+            "YWwgJXMnLmZvcm1hdChbZ2V0RmllbGQocnVsZXMsICdjb25zdCcpXSkgOiAn",
+            "J1IFY29uc3QSMwoHZXhhbXBsZRgCIAMoCEIZwkgWChQKDGJvb2wuZXhhbXBs",
+            "ZRoEdHJ1ZVIHZXhhbXBsZSoJCOgHEICAgIACItE5CgtTdHJpbmdSdWxlcxKN",
+            "AQoFY29uc3QYASABKAlCd8JIdApyCgxzdHJpbmcuY29uc3QaYnRoaXMgIT0g",
+            "Z2V0RmllbGQocnVsZXMsICdjb25zdCcpID8gJ3ZhbHVlIG11c3QgZXF1YWwg",
+            "YCVzYCcuZm9ybWF0KFtnZXRGaWVsZChydWxlcywgJ2NvbnN0JyldKSA6ICcn",
+            "UgVjb25zdBKDAQoDbGVuGBMgASgEQnHCSG4KbAoKc3RyaW5nLmxlbhpedWlu",
+            "dCh0aGlzLnNpemUoKSkgIT0gcnVsZXMubGVuID8gJ3ZhbHVlIGxlbmd0aCBt",
+            "dXN0IGJlICVzIGNoYXJhY3RlcnMnLmZvcm1hdChbcnVsZXMubGVuXSkgOiAn",
+            "J1IDbGVuEqEBCgdtaW5fbGVuGAIgASgEQocBwkiDAQqAAQoOc3RyaW5nLm1p",
+            "bl9sZW4abnVpbnQodGhpcy5zaXplKCkpIDwgcnVsZXMubWluX2xlbiA/ICd2",
+            "YWx1ZSBsZW5ndGggbXVzdCBiZSBhdCBsZWFzdCAlcyBjaGFyYWN0ZXJzJy5m",
+            "b3JtYXQoW3J1bGVzLm1pbl9sZW5dKSA6ICcnUgZtaW5MZW4SnwEKB21heF9s",
+            "ZW4YAyABKARChQHCSIEBCn8KDnN0cmluZy5tYXhfbGVuGm11aW50KHRoaXMu",
+            "c2l6ZSgpKSA+IHJ1bGVzLm1heF9sZW4gPyAndmFsdWUgbGVuZ3RoIG11c3Qg",
+            "YmUgYXQgbW9zdCAlcyBjaGFyYWN0ZXJzJy5mb3JtYXQoW3J1bGVzLm1heF9s",
+            "ZW5dKSA6ICcnUgZtYXhMZW4SpQEKCWxlbl9ieXRlcxgUIAEoBEKHAcJIgwEK",
+            "gAEKEHN0cmluZy5sZW5fYnl0ZXMabHVpbnQoYnl0ZXModGhpcykuc2l6ZSgp",
+            "KSAhPSBydWxlcy5sZW5fYnl0ZXMgPyAndmFsdWUgbGVuZ3RoIG11c3QgYmUg",
+            "JXMgYnl0ZXMnLmZvcm1hdChbcnVsZXMubGVuX2J5dGVzXSkgOiAnJ1IIbGVu",
+            "Qnl0ZXMSrQEKCW1pbl9ieXRlcxgEIAEoBEKPAcJIiwEKiAEKEHN0cmluZy5t",
+            "aW5fYnl0ZXMadHVpbnQoYnl0ZXModGhpcykuc2l6ZSgpKSA8IHJ1bGVzLm1p",
+            "bl9ieXRlcyA/ICd2YWx1ZSBsZW5ndGggbXVzdCBiZSBhdCBsZWFzdCAlcyBi",
+            "eXRlcycuZm9ybWF0KFtydWxlcy5taW5fYnl0ZXNdKSA6ICcnUghtaW5CeXRl",
+            "cxKsAQoJbWF4X2J5dGVzGAUgASgEQo4BwkiKAQqHAQoQc3RyaW5nLm1heF9i",
+            "eXRlcxpzdWludChieXRlcyh0aGlzKS5zaXplKCkpID4gcnVsZXMubWF4X2J5",
+            "dGVzID8gJ3ZhbHVlIGxlbmd0aCBtdXN0IGJlIGF0IG1vc3QgJXMgYnl0ZXMn",
+            "LmZvcm1hdChbcnVsZXMubWF4X2J5dGVzXSkgOiAnJ1IIbWF4Qnl0ZXMSlgEK",
+            "B3BhdHRlcm4YBiABKAlCfMJIeQp3Cg5zdHJpbmcucGF0dGVybhplIXRoaXMu",
+            "bWF0Y2hlcyhydWxlcy5wYXR0ZXJuKSA/ICd2YWx1ZSBkb2VzIG5vdCBtYXRj",
+            "aCByZWdleCBwYXR0ZXJuIGAlc2AnLmZvcm1hdChbcnVsZXMucGF0dGVybl0p",
+            "IDogJydSB3BhdHRlcm4SjAEKBnByZWZpeBgHIAEoCUJ0wkhxCm8KDXN0cmlu",
+            "Zy5wcmVmaXgaXiF0aGlzLnN0YXJ0c1dpdGgocnVsZXMucHJlZml4KSA/ICd2",
+            "YWx1ZSBkb2VzIG5vdCBoYXZlIHByZWZpeCBgJXNgJy5mb3JtYXQoW3J1bGVz",
+            "LnByZWZpeF0pIDogJydSBnByZWZpeBKKAQoGc3VmZml4GAggASgJQnLCSG8K",
+            "bQoNc3RyaW5nLnN1ZmZpeBpcIXRoaXMuZW5kc1dpdGgocnVsZXMuc3VmZml4",
+            "KSA/ICd2YWx1ZSBkb2VzIG5vdCBoYXZlIHN1ZmZpeCBgJXNgJy5mb3JtYXQo",
+            "W3J1bGVzLnN1ZmZpeF0pIDogJydSBnN1ZmZpeBKaAQoIY29udGFpbnMYCSAB",
+            "KAlCfsJIewp5Cg9zdHJpbmcuY29udGFpbnMaZiF0aGlzLmNvbnRhaW5zKHJ1",
+            "bGVzLmNvbnRhaW5zKSA/ICd2YWx1ZSBkb2VzIG5vdCBjb250YWluIHN1YnN0",
+            "cmluZyBgJXNgJy5mb3JtYXQoW3J1bGVzLmNvbnRhaW5zXSkgOiAnJ1IIY29u",
+            "dGFpbnMSpQEKDG5vdF9jb250YWlucxgXIAEoCUKBAcJIfgp8ChNzdHJpbmcu",
+            "bm90X2NvbnRhaW5zGmV0aGlzLmNvbnRhaW5zKHJ1bGVzLm5vdF9jb250YWlu",
+            "cykgPyAndmFsdWUgY29udGFpbnMgc3Vic3RyaW5nIGAlc2AnLmZvcm1hdChb",
+            "cnVsZXMubm90X2NvbnRhaW5zXSkgOiAnJ1ILbm90Q29udGFpbnMShAEKAmlu",
+            "GAogAygJQnTCSHEKbwoJc3RyaW5nLmluGmIhKHRoaXMgaW4gZ2V0RmllbGQo",
+            "cnVsZXMsICdpbicpKSA/ICd2YWx1ZSBtdXN0IGJlIGluIGxpc3QgJXMnLmZv",
+            "cm1hdChbZ2V0RmllbGQocnVsZXMsICdpbicpXSkgOiAnJ1ICaW4SfgoGbm90",
+            "X2luGAsgAygJQmfCSGQKYgoNc3RyaW5nLm5vdF9pbhpRdGhpcyBpbiBydWxl",
+            "cy5ub3RfaW4gPyAndmFsdWUgbXVzdCBub3QgYmUgaW4gbGlzdCAlcycuZm9y",
+            "bWF0KFtydWxlcy5ub3RfaW5dKSA6ICcnUgVub3RJbhLmAQoFZW1haWwYDCAB",
+            "KAhCzQHCSMkBCmEKDHN0cmluZy5lbWFpbBIjdmFsdWUgbXVzdCBiZSBhIHZh",
+            "bGlkIGVtYWlsIGFkZHJlc3MaLCFydWxlcy5lbWFpbCB8fCB0aGlzID09ICcn",
+            "IHx8IHRoaXMuaXNFbWFpbCgpCmQKEnN0cmluZy5lbWFpbF9lbXB0eRIydmFs",
+            "dWUgaXMgZW1wdHksIHdoaWNoIGlzIG5vdCBhIHZhbGlkIGVtYWlsIGFkZHJl",
+            "c3MaGiFydWxlcy5lbWFpbCB8fCB0aGlzICE9ICcnSABSBWVtYWlsEvEBCgho",
+            "b3N0bmFtZRgNIAEoCELSAcJIzgEKZQoPc3RyaW5nLmhvc3RuYW1lEh52YWx1",
+            "ZSBtdXN0IGJlIGEgdmFsaWQgaG9zdG5hbWUaMiFydWxlcy5ob3N0bmFtZSB8",
+            "fCB0aGlzID09ICcnIHx8IHRoaXMuaXNIb3N0bmFtZSgpCmUKFXN0cmluZy5o",
+            "b3N0bmFtZV9lbXB0eRItdmFsdWUgaXMgZW1wdHksIHdoaWNoIGlzIG5vdCBh",
+            "IHZhbGlkIGhvc3RuYW1lGh0hcnVsZXMuaG9zdG5hbWUgfHwgdGhpcyAhPSAn",
+            "J0gAUghob3N0bmFtZRLLAQoCaXAYDiABKAhCuAHCSLQBClUKCXN0cmluZy5p",
+            "cBIgdmFsdWUgbXVzdCBiZSBhIHZhbGlkIElQIGFkZHJlc3MaJiFydWxlcy5p",
+            "cCB8fCB0aGlzID09ICcnIHx8IHRoaXMuaXNJcCgpClsKD3N0cmluZy5pcF9l",
+            "bXB0eRIvdmFsdWUgaXMgZW1wdHksIHdoaWNoIGlzIG5vdCBhIHZhbGlkIElQ",
+            "IGFkZHJlc3MaFyFydWxlcy5pcCB8fCB0aGlzICE9ICcnSABSAmlwEtwBCgRp",
+            "cHY0GA8gASgIQsUBwkjBAQpcCgtzdHJpbmcuaXB2NBIidmFsdWUgbXVzdCBi",
+            "ZSBhIHZhbGlkIElQdjQgYWRkcmVzcxopIXJ1bGVzLmlwdjQgfHwgdGhpcyA9",
+            "PSAnJyB8fCB0aGlzLmlzSXAoNCkKYQoRc3RyaW5nLmlwdjRfZW1wdHkSMXZh",
+            "bHVlIGlzIGVtcHR5LCB3aGljaCBpcyBub3QgYSB2YWxpZCBJUHY0IGFkZHJl",
+            "c3MaGSFydWxlcy5pcHY0IHx8IHRoaXMgIT0gJydIAFIEaXB2NBLcAQoEaXB2",
+            "NhgQIAEoCELFAcJIwQEKXAoLc3RyaW5nLmlwdjYSInZhbHVlIG11c3QgYmUg",
+            "YSB2YWxpZCBJUHY2IGFkZHJlc3MaKSFydWxlcy5pcHY2IHx8IHRoaXMgPT0g",
+            "JycgfHwgdGhpcy5pc0lwKDYpCmEKEXN0cmluZy5pcHY2X2VtcHR5EjF2YWx1",
+            "ZSBpcyBlbXB0eSwgd2hpY2ggaXMgbm90IGEgdmFsaWQgSVB2NiBhZGRyZXNz",
+            "GhkhcnVsZXMuaXB2NiB8fCB0aGlzICE9ICcnSABSBGlwdjYSxAEKA3VyaRgR",
+            "IAEoCEKvAcJIqwEKUQoKc3RyaW5nLnVyaRIZdmFsdWUgbXVzdCBiZSBhIHZh",
+            "bGlkIFVSSRooIXJ1bGVzLnVyaSB8fCB0aGlzID09ICcnIHx8IHRoaXMuaXNV",
+            "cmkoKQpWChBzdHJpbmcudXJpX2VtcHR5Eih2YWx1ZSBpcyBlbXB0eSwgd2hp",
+            "Y2ggaXMgbm90IGEgdmFsaWQgVVJJGhghcnVsZXMudXJpIHx8IHRoaXMgIT0g",
+            "JydIAFIDdXJpEngKB3VyaV9yZWYYEiABKAhCXcJIWgpYCg5zdHJpbmcudXJp",
+            "X3JlZhIjdmFsdWUgbXVzdCBiZSBhIHZhbGlkIFVSSSBSZWZlcmVuY2UaISFy",
+            "dWxlcy51cmlfcmVmIHx8IHRoaXMuaXNVcmlSZWYoKUgAUgZ1cmlSZWYSmQIK",
+            "B2FkZHJlc3MYFSABKAhC/AHCSPgBCoEBCg5zdHJpbmcuYWRkcmVzcxItdmFs",
+            "dWUgbXVzdCBiZSBhIHZhbGlkIGhvc3RuYW1lLCBvciBpcCBhZGRyZXNzGkAh",
+            "cnVsZXMuYWRkcmVzcyB8fCB0aGlzID09ICcnIHx8IHRoaXMuaXNIb3N0bmFt",
+            "ZSgpIHx8IHRoaXMuaXNJcCgpCnIKFHN0cmluZy5hZGRyZXNzX2VtcHR5Ejx2",
+            "YWx1ZSBpcyBlbXB0eSwgd2hpY2ggaXMgbm90IGEgdmFsaWQgaG9zdG5hbWUs",
+            "IG9yIGlwIGFkZHJlc3MaHCFydWxlcy5hZGRyZXNzIHx8IHRoaXMgIT0gJydI",
+            "AFIHYWRkcmVzcxKeAgoEdXVpZBgWIAEoCEKHAsJIgwIKpQEKC3N0cmluZy51",
+            "dWlkEhp2YWx1ZSBtdXN0IGJlIGEgdmFsaWQgVVVJRBp6IXJ1bGVzLnV1aWQg",
+            "fHwgdGhpcyA9PSAnJyB8fCB0aGlzLm1hdGNoZXMoJ15bMC05YS1mQS1GXXs4",
+            "fS1bMC05YS1mQS1GXXs0fS1bMC05YS1mQS1GXXs0fS1bMC05YS1mQS1GXXs0",
+            "fS1bMC05YS1mQS1GXXsxMn0kJykKWQoRc3RyaW5nLnV1aWRfZW1wdHkSKXZh",
+            "bHVlIGlzIGVtcHR5LCB3aGljaCBpcyBub3QgYSB2YWxpZCBVVUlEGhkhcnVs",
+            "ZXMudXVpZCB8fCB0aGlzICE9ICcnSABSBHV1aWQS9wEKBXR1dWlkGCEgASgI",
+            "Qt4BwkjaAQpzCgxzdHJpbmcudHV1aWQSInZhbHVlIG11c3QgYmUgYSB2YWxp",
+            "ZCB0cmltbWVkIFVVSUQaPyFydWxlcy50dXVpZCB8fCB0aGlzID09ICcnIHx8",
+            "IHRoaXMubWF0Y2hlcygnXlswLTlhLWZBLUZdezMyfSQnKQpjChJzdHJpbmcu",
+            "dHV1aWRfZW1wdHkSMXZhbHVlIGlzIGVtcHR5LCB3aGljaCBpcyBub3QgYSB2",
+            "YWxpZCB0cmltbWVkIFVVSUQaGiFydWxlcy50dXVpZCB8fCB0aGlzICE9ICcn",
+            "SABSBXR1dWlkEqcCChFpcF93aXRoX3ByZWZpeGxlbhgaIAEoCEL4AcJI9AEK",
+            "eAoYc3RyaW5nLmlwX3dpdGhfcHJlZml4bGVuEh92YWx1ZSBtdXN0IGJlIGEg",
+            "dmFsaWQgSVAgcHJlZml4GjshcnVsZXMuaXBfd2l0aF9wcmVmaXhsZW4gfHwg",
+            "dGhpcyA9PSAnJyB8fCB0aGlzLmlzSXBQcmVmaXgoKQp4Ch5zdHJpbmcuaXBf",
+            "d2l0aF9wcmVmaXhsZW5fZW1wdHkSLnZhbHVlIGlzIGVtcHR5LCB3aGljaCBp",
+            "cyBub3QgYSB2YWxpZCBJUCBwcmVmaXgaJiFydWxlcy5pcF93aXRoX3ByZWZp",
+            "eGxlbiB8fCB0aGlzICE9ICcnSABSD2lwV2l0aFByZWZpeGxlbhLiAgoTaXB2",
+            "NF93aXRoX3ByZWZpeGxlbhgbIAEoCEKvAsJIqwIKkwEKGnN0cmluZy5pcHY0",
+            "X3dpdGhfcHJlZml4bGVuEjV2YWx1ZSBtdXN0IGJlIGEgdmFsaWQgSVB2NCBh",
+            "ZGRyZXNzIHdpdGggcHJlZml4IGxlbmd0aBo+IXJ1bGVzLmlwdjRfd2l0aF9w",
+            "cmVmaXhsZW4gfHwgdGhpcyA9PSAnJyB8fCB0aGlzLmlzSXBQcmVmaXgoNCkK",
+            "kgEKIHN0cmluZy5pcHY0X3dpdGhfcHJlZml4bGVuX2VtcHR5EkR2YWx1ZSBp",
+            "cyBlbXB0eSwgd2hpY2ggaXMgbm90IGEgdmFsaWQgSVB2NCBhZGRyZXNzIHdp",
+            "dGggcHJlZml4IGxlbmd0aBooIXJ1bGVzLmlwdjRfd2l0aF9wcmVmaXhsZW4g",
+            "fHwgdGhpcyAhPSAnJ0gAUhFpcHY0V2l0aFByZWZpeGxlbhLiAgoTaXB2Nl93",
+            "aXRoX3ByZWZpeGxlbhgcIAEoCEKvAsJIqwIKkwEKGnN0cmluZy5pcHY2X3dp",
+            "dGhfcHJlZml4bGVuEjV2YWx1ZSBtdXN0IGJlIGEgdmFsaWQgSVB2NiBhZGRy",
+            "ZXNzIHdpdGggcHJlZml4IGxlbmd0aBo+IXJ1bGVzLmlwdjZfd2l0aF9wcmVm",
+            "aXhsZW4gfHwgdGhpcyA9PSAnJyB8fCB0aGlzLmlzSXBQcmVmaXgoNikKkgEK",
+            "IHN0cmluZy5pcHY2X3dpdGhfcHJlZml4bGVuX2VtcHR5EkR2YWx1ZSBpcyBl",
+            "bXB0eSwgd2hpY2ggaXMgbm90IGEgdmFsaWQgSVB2NiBhZGRyZXNzIHdpdGgg",
+            "cHJlZml4IGxlbmd0aBooIXJ1bGVzLmlwdjZfd2l0aF9wcmVmaXhsZW4gfHwg",
+            "dGhpcyAhPSAnJ0gAUhFpcHY2V2l0aFByZWZpeGxlbhL8AQoJaXBfcHJlZml4",
+            "GB0gASgIQtwBwkjYAQpsChBzdHJpbmcuaXBfcHJlZml4Eh92YWx1ZSBtdXN0",
+            "IGJlIGEgdmFsaWQgSVAgcHJlZml4GjchcnVsZXMuaXBfcHJlZml4IHx8IHRo",
+            "aXMgPT0gJycgfHwgdGhpcy5pc0lwUHJlZml4KHRydWUpCmgKFnN0cmluZy5p",
+            "cF9wcmVmaXhfZW1wdHkSLnZhbHVlIGlzIGVtcHR5LCB3aGljaCBpcyBub3Qg",
+            "YSB2YWxpZCBJUCBwcmVmaXgaHiFydWxlcy5pcF9wcmVmaXggfHwgdGhpcyAh",
+            "PSAnJ0gAUghpcFByZWZpeBKPAgoLaXB2NF9wcmVmaXgYHiABKAhC6wHCSOcB",
+            "CnUKEnN0cmluZy5pcHY0X3ByZWZpeBIhdmFsdWUgbXVzdCBiZSBhIHZhbGlk",
+            "IElQdjQgcHJlZml4GjwhcnVsZXMuaXB2NF9wcmVmaXggfHwgdGhpcyA9PSAn",
+            "JyB8fCB0aGlzLmlzSXBQcmVmaXgoNCwgdHJ1ZSkKbgoYc3RyaW5nLmlwdjRf",
+            "cHJlZml4X2VtcHR5EjB2YWx1ZSBpcyBlbXB0eSwgd2hpY2ggaXMgbm90IGEg",
+            "dmFsaWQgSVB2NCBwcmVmaXgaICFydWxlcy5pcHY0X3ByZWZpeCB8fCB0aGlz",
+            "ICE9ICcnSABSCmlwdjRQcmVmaXgSjwIKC2lwdjZfcHJlZml4GB8gASgIQusB",
+            "wkjnAQp1ChJzdHJpbmcuaXB2Nl9wcmVmaXgSIXZhbHVlIG11c3QgYmUgYSB2",
+            "YWxpZCBJUHY2IHByZWZpeBo8IXJ1bGVzLmlwdjZfcHJlZml4IHx8IHRoaXMg",
+            "PT0gJycgfHwgdGhpcy5pc0lwUHJlZml4KDYsIHRydWUpCm4KGHN0cmluZy5p",
+            "cHY2X3ByZWZpeF9lbXB0eRIwdmFsdWUgaXMgZW1wdHksIHdoaWNoIGlzIG5v",
+            "dCBhIHZhbGlkIElQdjYgcHJlZml4GiAhcnVsZXMuaXB2Nl9wcmVmaXggfHwg",
+            "dGhpcyAhPSAnJ0gAUgppcHY2UHJlZml4EsICCg1ob3N0X2FuZF9wb3J0GCAg",
+            "ASgIQpsCwkiXAgqZAQoUc3RyaW5nLmhvc3RfYW5kX3BvcnQSQXZhbHVlIG11",
+            "c3QgYmUgYSB2YWxpZCBob3N0IChob3N0bmFtZSBvciBJUCBhZGRyZXNzKSBh",
+            "bmQgcG9ydCBwYWlyGj4hcnVsZXMuaG9zdF9hbmRfcG9ydCB8fCB0aGlzID09",
+            "ICcnIHx8IHRoaXMuaXNIb3N0QW5kUG9ydCh0cnVlKQp5ChpzdHJpbmcuaG9z",
+            "dF9hbmRfcG9ydF9lbXB0eRI3dmFsdWUgaXMgZW1wdHksIHdoaWNoIGlzIG5v",
+            "dCBhIHZhbGlkIGhvc3QgYW5kIHBvcnQgcGFpchoiIXJ1bGVzLmhvc3RfYW5k",
+            "X3BvcnQgfHwgdGhpcyAhPSAnJ0gAUgtob3N0QW5kUG9ydBK4BQoQd2VsbF9r",
+            "bm93bl9yZWdleBgYIAEoDjIYLmJ1Zi52YWxpZGF0ZS5Lbm93blJlZ2V4QvEE",
+            "wkjtBArwAQojc3RyaW5nLndlbGxfa25vd25fcmVnZXguaGVhZGVyX25hbWUS",
+            "JnZhbHVlIG11c3QgYmUgYSB2YWxpZCBIVFRQIGhlYWRlciBuYW1lGqABcnVs",
+            "ZXMud2VsbF9rbm93bl9yZWdleCAhPSAxIHx8IHRoaXMgPT0gJycgfHwgdGhp",
+            "cy5tYXRjaGVzKCFoYXMocnVsZXMuc3RyaWN0KSB8fCBydWxlcy5zdHJpY3Qg",
+            "PydeOj9bMC05YS16QS1aISMkJSZcJyorLS5eX3x+XHg2MF0rJCcgOideW15c",
+            "dTAwMDBcdTAwMEFcdTAwMERdKyQnKQqNAQopc3RyaW5nLndlbGxfa25vd25f",
+            "cmVnZXguaGVhZGVyX25hbWVfZW1wdHkSNXZhbHVlIGlzIGVtcHR5LCB3aGlj",
+            "aCBpcyBub3QgYSB2YWxpZCBIVFRQIGhlYWRlciBuYW1lGilydWxlcy53ZWxs",
+            "X2tub3duX3JlZ2V4ICE9IDEgfHwgdGhpcyAhPSAnJwrnAQokc3RyaW5nLndl",
+            "bGxfa25vd25fcmVnZXguaGVhZGVyX3ZhbHVlEid2YWx1ZSBtdXN0IGJlIGEg",
+            "dmFsaWQgSFRUUCBoZWFkZXIgdmFsdWUalQFydWxlcy53ZWxsX2tub3duX3Jl",
+            "Z2V4ICE9IDIgfHwgdGhpcy5tYXRjaGVzKCFoYXMocnVsZXMuc3RyaWN0KSB8",
+            "fCBydWxlcy5zdHJpY3QgPydeW15cdTAwMDAtXHUwMDA4XHUwMDBBLVx1MDAx",
+            "Rlx1MDA3Rl0qJCcgOideW15cdTAwMDBcdTAwMEFcdTAwMERdKiQnKUgAUg53",
+            "ZWxsS25vd25SZWdleBIWCgZzdHJpY3QYGSABKAhSBnN0cmljdBI1CgdleGFt",
+            "cGxlGCIgAygJQhvCSBgKFgoOc3RyaW5nLmV4YW1wbGUaBHRydWVSB2V4YW1w",
+            "bGUqCQjoBxCAgICAAkIMCgp3ZWxsX2tub3duIs4RCgpCeXRlc1J1bGVzEocB",
+            "CgVjb25zdBgBIAEoDEJxwkhuCmwKC2J5dGVzLmNvbnN0Gl10aGlzICE9IGdl",
+            "dEZpZWxkKHJ1bGVzLCAnY29uc3QnKSA/ICd2YWx1ZSBtdXN0IGJlICV4Jy5m",
+            "b3JtYXQoW2dldEZpZWxkKHJ1bGVzLCAnY29uc3QnKV0pIDogJydSBWNvbnN0",
+            "En0KA2xlbhgNIAEoBEJrwkhoCmYKCWJ5dGVzLmxlbhpZdWludCh0aGlzLnNp",
+            "emUoKSkgIT0gcnVsZXMubGVuID8gJ3ZhbHVlIGxlbmd0aCBtdXN0IGJlICVz",
+            "IGJ5dGVzJy5mb3JtYXQoW3J1bGVzLmxlbl0pIDogJydSA2xlbhKYAQoHbWlu",
+            "X2xlbhgCIAEoBEJ/wkh8CnoKDWJ5dGVzLm1pbl9sZW4aaXVpbnQodGhpcy5z",
+            "aXplKCkpIDwgcnVsZXMubWluX2xlbiA/ICd2YWx1ZSBsZW5ndGggbXVzdCBi",
+            "ZSBhdCBsZWFzdCAlcyBieXRlcycuZm9ybWF0KFtydWxlcy5taW5fbGVuXSkg",
+            "OiAnJ1IGbWluTGVuEpABCgdtYXhfbGVuGAMgASgEQnfCSHQKcgoNYnl0ZXMu",
+            "bWF4X2xlbhphdWludCh0aGlzLnNpemUoKSkgPiBydWxlcy5tYXhfbGVuID8g",
+            "J3ZhbHVlIG11c3QgYmUgYXQgbW9zdCAlcyBieXRlcycuZm9ybWF0KFtydWxl",
+            "cy5tYXhfbGVuXSkgOiAnJ1IGbWF4TGVuEpkBCgdwYXR0ZXJuGAQgASgJQn/C",
+            "SHwKegoNYnl0ZXMucGF0dGVybhppIXN0cmluZyh0aGlzKS5tYXRjaGVzKHJ1",
+            "bGVzLnBhdHRlcm4pID8gJ3ZhbHVlIG11c3QgbWF0Y2ggcmVnZXggcGF0dGVy",
+            "biBgJXNgJy5mb3JtYXQoW3J1bGVzLnBhdHRlcm5dKSA6ICcnUgdwYXR0ZXJu",
+            "EokBCgZwcmVmaXgYBSABKAxCccJIbgpsCgxieXRlcy5wcmVmaXgaXCF0aGlz",
+            "LnN0YXJ0c1dpdGgocnVsZXMucHJlZml4KSA/ICd2YWx1ZSBkb2VzIG5vdCBo",
+            "YXZlIHByZWZpeCAleCcuZm9ybWF0KFtydWxlcy5wcmVmaXhdKSA6ICcnUgZw",
+            "cmVmaXgShwEKBnN1ZmZpeBgGIAEoDEJvwkhsCmoKDGJ5dGVzLnN1ZmZpeBpa",
+            "IXRoaXMuZW5kc1dpdGgocnVsZXMuc3VmZml4KSA/ICd2YWx1ZSBkb2VzIG5v",
+            "dCBoYXZlIHN1ZmZpeCAleCcuZm9ybWF0KFtydWxlcy5zdWZmaXhdKSA6ICcn",
+            "UgZzdWZmaXgSjQEKCGNvbnRhaW5zGAcgASgMQnHCSG4KbAoOYnl0ZXMuY29u",
+            "dGFpbnMaWiF0aGlzLmNvbnRhaW5zKHJ1bGVzLmNvbnRhaW5zKSA/ICd2YWx1",
+            "ZSBkb2VzIG5vdCBjb250YWluICV4Jy5mb3JtYXQoW3J1bGVzLmNvbnRhaW5z",
+            "XSkgOiAnJ1IIY29udGFpbnMSqwEKAmluGAggAygMQpoBwkiWAQqTAQoIYnl0",
+            "ZXMuaW4ahgFnZXRGaWVsZChydWxlcywgJ2luJykuc2l6ZSgpID4gMCAmJiAh",
+            "KHRoaXMgaW4gZ2V0RmllbGQocnVsZXMsICdpbicpKSA/ICd2YWx1ZSBtdXN0",
+            "IGJlIGluIGxpc3QgJXMnLmZvcm1hdChbZ2V0RmllbGQocnVsZXMsICdpbicp",
+            "XSkgOiAnJ1ICaW4SfQoGbm90X2luGAkgAygMQmbCSGMKYQoMYnl0ZXMubm90",
+            "X2luGlF0aGlzIGluIHJ1bGVzLm5vdF9pbiA/ICd2YWx1ZSBtdXN0IG5vdCBi",
+            "ZSBpbiBsaXN0ICVzJy5mb3JtYXQoW3J1bGVzLm5vdF9pbl0pIDogJydSBW5v",
+            "dEluEu8BCgJpcBgKIAEoCELcAcJI2AEKdAoIYnl0ZXMuaXASIHZhbHVlIG11",
+            "c3QgYmUgYSB2YWxpZCBJUCBhZGRyZXNzGkYhcnVsZXMuaXAgfHwgdGhpcy5z",
+            "aXplKCkgPT0gMCB8fCB0aGlzLnNpemUoKSA9PSA0IHx8IHRoaXMuc2l6ZSgp",
+            "ID09IDE2CmAKDmJ5dGVzLmlwX2VtcHR5Ei92YWx1ZSBpcyBlbXB0eSwgd2hp",
+            "Y2ggaXMgbm90IGEgdmFsaWQgSVAgYWRkcmVzcxodIXJ1bGVzLmlwIHx8IHRo",
+            "aXMuc2l6ZSgpICE9IDBIAFICaXAS6gEKBGlwdjQYCyABKAhC0wHCSM8BCmUK",
+            "CmJ5dGVzLmlwdjQSInZhbHVlIG11c3QgYmUgYSB2YWxpZCBJUHY0IGFkZHJl",
+            "c3MaMyFydWxlcy5pcHY0IHx8IHRoaXMuc2l6ZSgpID09IDAgfHwgdGhpcy5z",
+            "aXplKCkgPT0gNApmChBieXRlcy5pcHY0X2VtcHR5EjF2YWx1ZSBpcyBlbXB0",
+            "eSwgd2hpY2ggaXMgbm90IGEgdmFsaWQgSVB2NCBhZGRyZXNzGh8hcnVsZXMu",
+            "aXB2NCB8fCB0aGlzLnNpemUoKSAhPSAwSABSBGlwdjQS6wEKBGlwdjYYDCAB",
+            "KAhC1AHCSNABCmYKCmJ5dGVzLmlwdjYSInZhbHVlIG11c3QgYmUgYSB2YWxp",
+            "ZCBJUHY2IGFkZHJlc3MaNCFydWxlcy5pcHY2IHx8IHRoaXMuc2l6ZSgpID09",
+            "IDAgfHwgdGhpcy5zaXplKCkgPT0gMTYKZgoQYnl0ZXMuaXB2Nl9lbXB0eRIx",
+            "dmFsdWUgaXMgZW1wdHksIHdoaWNoIGlzIG5vdCBhIHZhbGlkIElQdjYgYWRk",
+            "cmVzcxofIXJ1bGVzLmlwdjYgfHwgdGhpcy5zaXplKCkgIT0gMEgAUgRpcHY2",
+            "EjQKB2V4YW1wbGUYDiADKAxCGsJIFwoVCg1ieXRlcy5leGFtcGxlGgR0cnVl",
+            "UgdleGFtcGxlKgkI6AcQgICAgAJCDAoKd2VsbF9rbm93biL9AwoJRW51bVJ1",
+            "bGVzEokBCgVjb25zdBgBIAEoBUJzwkhwCm4KCmVudW0uY29uc3QaYHRoaXMg",
+            "IT0gZ2V0RmllbGQocnVsZXMsICdjb25zdCcpID8gJ3ZhbHVlIG11c3QgZXF1",
+            "YWwgJXMnLmZvcm1hdChbZ2V0RmllbGQocnVsZXMsICdjb25zdCcpXSkgOiAn",
+            "J1IFY29uc3QSIQoMZGVmaW5lZF9vbmx5GAIgASgIUgtkZWZpbmVkT25seRKC",
+            "AQoCaW4YAyADKAVCcsJIbwptCgdlbnVtLmluGmIhKHRoaXMgaW4gZ2V0Rmll",
+            "bGQocnVsZXMsICdpbicpKSA/ICd2YWx1ZSBtdXN0IGJlIGluIGxpc3QgJXMn",
+            "LmZvcm1hdChbZ2V0RmllbGQocnVsZXMsICdpbicpXSkgOiAnJ1ICaW4SfAoG",
+            "bm90X2luGAQgAygFQmXCSGIKYAoLZW51bS5ub3RfaW4aUXRoaXMgaW4gcnVs",
+            "ZXMubm90X2luID8gJ3ZhbHVlIG11c3Qgbm90IGJlIGluIGxpc3QgJXMnLmZv",
+            "cm1hdChbcnVsZXMubm90X2luXSkgOiAnJ1IFbm90SW4SMwoHZXhhbXBsZRgF",
+            "IAMoBUIZwkgWChQKDGVudW0uZXhhbXBsZRoEdHJ1ZVIHZXhhbXBsZSoJCOgH",
+            "EICAgIACIp4ECg1SZXBlYXRlZFJ1bGVzEqgBCgltaW5faXRlbXMYASABKARC",
+            "igHCSIYBCoMBChJyZXBlYXRlZC5taW5faXRlbXMabXVpbnQodGhpcy5zaXpl",
+            "KCkpIDwgcnVsZXMubWluX2l0ZW1zID8gJ3ZhbHVlIG11c3QgY29udGFpbiBh",
+            "dCBsZWFzdCAlZCBpdGVtKHMpJy5mb3JtYXQoW3J1bGVzLm1pbl9pdGVtc10p",
+            "IDogJydSCG1pbkl0ZW1zEqwBCgltYXhfaXRlbXMYAiABKARCjgHCSIoBCocB",
+            "ChJyZXBlYXRlZC5tYXhfaXRlbXMacXVpbnQodGhpcy5zaXplKCkpID4gcnVs",
+            "ZXMubWF4X2l0ZW1zID8gJ3ZhbHVlIG11c3QgY29udGFpbiBubyBtb3JlIHRo",
+            "YW4gJXMgaXRlbShzKScuZm9ybWF0KFtydWxlcy5tYXhfaXRlbXNdKSA6ICcn",
+            "UghtYXhJdGVtcxJ4CgZ1bmlxdWUYAyABKAhCYMJIXQpbCg9yZXBlYXRlZC51",
+            "bmlxdWUSKHJlcGVhdGVkIHZhbHVlIG11c3QgY29udGFpbiB1bmlxdWUgaXRl",
+            "bXMaHiFydWxlcy51bmlxdWUgfHwgdGhpcy51bmlxdWUoKVIGdW5pcXVlEi4K",
+            "BWl0ZW1zGAQgASgLMhguYnVmLnZhbGlkYXRlLkZpZWxkUnVsZXNSBWl0ZW1z",
+            "KgkI6AcQgICAgAIirAMKCE1hcFJ1bGVzEpkBCgltaW5fcGFpcnMYASABKARC",
+            "fMJIeQp3Cg1tYXAubWluX3BhaXJzGmZ1aW50KHRoaXMuc2l6ZSgpKSA8IHJ1",
+            "bGVzLm1pbl9wYWlycyA/ICdtYXAgbXVzdCBiZSBhdCBsZWFzdCAlZCBlbnRy",
+            "aWVzJy5mb3JtYXQoW3J1bGVzLm1pbl9wYWlyc10pIDogJydSCG1pblBhaXJz",
+            "EpgBCgltYXhfcGFpcnMYAiABKARCe8JIeAp2Cg1tYXAubWF4X3BhaXJzGmV1",
+            "aW50KHRoaXMuc2l6ZSgpKSA+IHJ1bGVzLm1heF9wYWlycyA/ICdtYXAgbXVz",
+            "dCBiZSBhdCBtb3N0ICVkIGVudHJpZXMnLmZvcm1hdChbcnVsZXMubWF4X3Bh",
+            "aXJzXSkgOiAnJ1IIbWF4UGFpcnMSLAoEa2V5cxgEIAEoCzIYLmJ1Zi52YWxp",
+            "ZGF0ZS5GaWVsZFJ1bGVzUgRrZXlzEjAKBnZhbHVlcxgFIAEoCzIYLmJ1Zi52",
+            "YWxpZGF0ZS5GaWVsZFJ1bGVzUgZ2YWx1ZXMqCQjoBxCAgICAAiIxCghBbnlS",
+            "dWxlcxIOCgJpbhgCIAMoCVICaW4SFQoGbm90X2luGAMgAygJUgVub3RJbiLG",
+            "FwoNRHVyYXRpb25SdWxlcxKoAQoFY29uc3QYAiABKAsyGS5nb29nbGUucHJv",
+            "dG9idWYuRHVyYXRpb25Cd8JIdApyCg5kdXJhdGlvbi5jb25zdBpgdGhpcyAh",
+            "PSBnZXRGaWVsZChydWxlcywgJ2NvbnN0JykgPyAndmFsdWUgbXVzdCBlcXVh",
+            "bCAlcycuZm9ybWF0KFtnZXRGaWVsZChydWxlcywgJ2NvbnN0JyldKSA6ICcn",
+            "UgVjb25zdBKsAQoCbHQYAyABKAsyGS5nb29nbGUucHJvdG9idWYuRHVyYXRp",
+            "b25Cf8JIfAp6CgtkdXJhdGlvbi5sdBprIWhhcyhydWxlcy5ndGUpICYmICFo",
+            "YXMocnVsZXMuZ3QpICYmIHRoaXMgPj0gcnVsZXMubHQ/ICd2YWx1ZSBtdXN0",
+            "IGJlIGxlc3MgdGhhbiAlcycuZm9ybWF0KFtydWxlcy5sdF0pIDogJydIAFIC",
+            "bHQSvwEKA2x0ZRgEIAEoCzIZLmdvb2dsZS5wcm90b2J1Zi5EdXJhdGlvbkKP",
+            "AcJIiwEKiAEKDGR1cmF0aW9uLmx0ZRp4IWhhcyhydWxlcy5ndGUpICYmICFo",
+            "YXMocnVsZXMuZ3QpICYmIHRoaXMgPiBydWxlcy5sdGU/ICd2YWx1ZSBtdXN0",
+            "IGJlIGxlc3MgdGhhbiBvciBlcXVhbCB0byAlcycuZm9ybWF0KFtydWxlcy5s",
+            "dGVdKSA6ICcnSABSA2x0ZRLFBwoCZ3QYBSABKAsyGS5nb29nbGUucHJvdG9i",
+            "dWYuRHVyYXRpb25ClwfCSJMHCn0KC2R1cmF0aW9uLmd0Gm4haGFzKHJ1bGVz",
+            "Lmx0KSAmJiAhaGFzKHJ1bGVzLmx0ZSkgJiYgdGhpcyA8PSBydWxlcy5ndD8g",
+            "J3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuICVzJy5mb3JtYXQoW3J1bGVz",
+            "Lmd0XSkgOiAnJwq2AQoOZHVyYXRpb24uZ3RfbHQaowFoYXMocnVsZXMubHQp",
+            "ICYmIHJ1bGVzLmx0ID49IHJ1bGVzLmd0ICYmICh0aGlzID49IHJ1bGVzLmx0",
+            "IHx8IHRoaXMgPD0gcnVsZXMuZ3QpPyAndmFsdWUgbXVzdCBiZSBncmVhdGVy",
+            "IHRoYW4gJXMgYW5kIGxlc3MgdGhhbiAlcycuZm9ybWF0KFtydWxlcy5ndCwg",
+            "cnVsZXMubHRdKSA6ICcnCr4BChhkdXJhdGlvbi5ndF9sdF9leGNsdXNpdmUa",
+            "oQFoYXMocnVsZXMubHQpICYmIHJ1bGVzLmx0IDwgcnVsZXMuZ3QgJiYgKHJ1",
+            "bGVzLmx0IDw9IHRoaXMgJiYgdGhpcyA8PSBydWxlcy5ndCk/ICd2YWx1ZSBt",
+            "dXN0IGJlIGdyZWF0ZXIgdGhhbiAlcyBvciBsZXNzIHRoYW4gJXMnLmZvcm1h",
+            "dChbcnVsZXMuZ3QsIHJ1bGVzLmx0XSkgOiAnJwrGAQoPZHVyYXRpb24uZ3Rf",
+            "bHRlGrIBaGFzKHJ1bGVzLmx0ZSkgJiYgcnVsZXMubHRlID49IHJ1bGVzLmd0",
+            "ICYmICh0aGlzID4gcnVsZXMubHRlIHx8IHRoaXMgPD0gcnVsZXMuZ3QpPyAn",
+            "dmFsdWUgbXVzdCBiZSBncmVhdGVyIHRoYW4gJXMgYW5kIGxlc3MgdGhhbiBv",
+            "ciBlcXVhbCB0byAlcycuZm9ybWF0KFtydWxlcy5ndCwgcnVsZXMubHRlXSkg",
+            "OiAnJwrOAQoZZHVyYXRpb24uZ3RfbHRlX2V4Y2x1c2l2ZRqwAWhhcyhydWxl",
+            "cy5sdGUpICYmIHJ1bGVzLmx0ZSA8IHJ1bGVzLmd0ICYmIChydWxlcy5sdGUg",
+            "PCB0aGlzICYmIHRoaXMgPD0gcnVsZXMuZ3QpPyAndmFsdWUgbXVzdCBiZSBn",
+            "cmVhdGVyIHRoYW4gJXMgb3IgbGVzcyB0aGFuIG9yIGVxdWFsIHRvICVzJy5m",
+            "b3JtYXQoW3J1bGVzLmd0LCBydWxlcy5sdGVdKSA6ICcnSAFSAmd0EpIICgNn",
+            "dGUYBiABKAsyGS5nb29nbGUucHJvdG9idWYuRHVyYXRpb25C4gfCSN4HCosB",
+            "CgxkdXJhdGlvbi5ndGUaeyFoYXMocnVsZXMubHQpICYmICFoYXMocnVsZXMu",
+            "bHRlKSAmJiB0aGlzIDwgcnVsZXMuZ3RlPyAndmFsdWUgbXVzdCBiZSBncmVh",
+            "dGVyIHRoYW4gb3IgZXF1YWwgdG8gJXMnLmZvcm1hdChbcnVsZXMuZ3RlXSkg",
+            "OiAnJwrFAQoPZHVyYXRpb24uZ3RlX2x0GrEBaGFzKHJ1bGVzLmx0KSAmJiBy",
+            "dWxlcy5sdCA+PSBydWxlcy5ndGUgJiYgKHRoaXMgPj0gcnVsZXMubHQgfHwg",
+            "dGhpcyA8IHJ1bGVzLmd0ZSk/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0ZXIgdGhh",
+            "biBvciBlcXVhbCB0byAlcyBhbmQgbGVzcyB0aGFuICVzJy5mb3JtYXQoW3J1",
+            "bGVzLmd0ZSwgcnVsZXMubHRdKSA6ICcnCs0BChlkdXJhdGlvbi5ndGVfbHRf",
+            "ZXhjbHVzaXZlGq8BaGFzKHJ1bGVzLmx0KSAmJiBydWxlcy5sdCA8IHJ1bGVz",
+            "Lmd0ZSAmJiAocnVsZXMubHQgPD0gdGhpcyAmJiB0aGlzIDwgcnVsZXMuZ3Rl",
+            "KT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFuIG9yIGVxdWFsIHRvICVz",
+            "IG9yIGxlc3MgdGhhbiAlcycuZm9ybWF0KFtydWxlcy5ndGUsIHJ1bGVzLmx0",
+            "XSkgOiAnJwrVAQoQZHVyYXRpb24uZ3RlX2x0ZRrAAWhhcyhydWxlcy5sdGUp",
+            "ICYmIHJ1bGVzLmx0ZSA+PSBydWxlcy5ndGUgJiYgKHRoaXMgPiBydWxlcy5s",
+            "dGUgfHwgdGhpcyA8IHJ1bGVzLmd0ZSk/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0",
+            "ZXIgdGhhbiBvciBlcXVhbCB0byAlcyBhbmQgbGVzcyB0aGFuIG9yIGVxdWFs",
+            "IHRvICVzJy5mb3JtYXQoW3J1bGVzLmd0ZSwgcnVsZXMubHRlXSkgOiAnJwrd",
+            "AQoaZHVyYXRpb24uZ3RlX2x0ZV9leGNsdXNpdmUavgFoYXMocnVsZXMubHRl",
+            "KSAmJiBydWxlcy5sdGUgPCBydWxlcy5ndGUgJiYgKHJ1bGVzLmx0ZSA8IHRo",
+            "aXMgJiYgdGhpcyA8IHJ1bGVzLmd0ZSk/ICd2YWx1ZSBtdXN0IGJlIGdyZWF0",
+            "ZXIgdGhhbiBvciBlcXVhbCB0byAlcyBvciBsZXNzIHRoYW4gb3IgZXF1YWwg",
+            "dG8gJXMnLmZvcm1hdChbcnVsZXMuZ3RlLCBydWxlcy5sdGVdKSA6ICcnSAFS",
+            "A2d0ZRKhAQoCaW4YByADKAsyGS5nb29nbGUucHJvdG9idWYuRHVyYXRpb25C",
+            "dsJIcwpxCgtkdXJhdGlvbi5pbhpiISh0aGlzIGluIGdldEZpZWxkKHJ1bGVz",
+            "LCAnaW4nKSkgPyAndmFsdWUgbXVzdCBiZSBpbiBsaXN0ICVzJy5mb3JtYXQo",
+            "W2dldEZpZWxkKHJ1bGVzLCAnaW4nKV0pIDogJydSAmluEpsBCgZub3RfaW4Y",
+            "CCADKAsyGS5nb29nbGUucHJvdG9idWYuRHVyYXRpb25CacJIZgpkCg9kdXJh",
+            "dGlvbi5ub3RfaW4aUXRoaXMgaW4gcnVsZXMubm90X2luID8gJ3ZhbHVlIG11",
+            "c3Qgbm90IGJlIGluIGxpc3QgJXMnLmZvcm1hdChbcnVsZXMubm90X2luXSkg",
+            "OiAnJ1IFbm90SW4SUgoHZXhhbXBsZRgJIAMoCzIZLmdvb2dsZS5wcm90b2J1",
+            "Zi5EdXJhdGlvbkIdwkgaChgKEGR1cmF0aW9uLmV4YW1wbGUaBHRydWVSB2V4",
+            "YW1wbGUqCQjoBxCAgICAAkILCglsZXNzX3RoYW5CDgoMZ3JlYXRlcl90aGFu",
+            "IsoYCg5UaW1lc3RhbXBSdWxlcxKqAQoFY29uc3QYAiABKAsyGi5nb29nbGUu",
+            "cHJvdG9idWYuVGltZXN0YW1wQnjCSHUKcwoPdGltZXN0YW1wLmNvbnN0GmB0",
+            "aGlzICE9IGdldEZpZWxkKHJ1bGVzLCAnY29uc3QnKSA/ICd2YWx1ZSBtdXN0",
+            "IGVxdWFsICVzJy5mb3JtYXQoW2dldEZpZWxkKHJ1bGVzLCAnY29uc3QnKV0p",
+            "IDogJydSBWNvbnN0Eq8BCgJsdBgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5U",
+            "aW1lc3RhbXBCgAHCSH0KewoMdGltZXN0YW1wLmx0GmshaGFzKHJ1bGVzLmd0",
+            "ZSkgJiYgIWhhcyhydWxlcy5ndCkgJiYgdGhpcyA+PSBydWxlcy5sdD8gJ3Zh",
+            "bHVlIG11c3QgYmUgbGVzcyB0aGFuICVzJy5mb3JtYXQoW3J1bGVzLmx0XSkg",
+            "OiAnJ0gAUgJsdBLBAQoDbHRlGAQgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRp",
+            "bWVzdGFtcEKQAcJIjAEKiQEKDXRpbWVzdGFtcC5sdGUaeCFoYXMocnVsZXMu",
+            "Z3RlKSAmJiAhaGFzKHJ1bGVzLmd0KSAmJiB0aGlzID4gcnVsZXMubHRlPyAn",
+            "dmFsdWUgbXVzdCBiZSBsZXNzIHRoYW4gb3IgZXF1YWwgdG8gJXMnLmZvcm1h",
+            "dChbcnVsZXMubHRlXSkgOiAnJ0gAUgNsdGUScwoGbHRfbm93GAcgASgIQlrC",
+            "SFcKVQoQdGltZXN0YW1wLmx0X25vdxpBKHJ1bGVzLmx0X25vdyAmJiB0aGlz",
+            "ID4gbm93KSA/ICd2YWx1ZSBtdXN0IGJlIGxlc3MgdGhhbiBub3cnIDogJydI",
+            "AFIFbHROb3cSywcKAmd0GAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVz",
+            "dGFtcEKcB8JImAcKfgoMdGltZXN0YW1wLmd0Gm4haGFzKHJ1bGVzLmx0KSAm",
+            "JiAhaGFzKHJ1bGVzLmx0ZSkgJiYgdGhpcyA8PSBydWxlcy5ndD8gJ3ZhbHVl",
+            "IG11c3QgYmUgZ3JlYXRlciB0aGFuICVzJy5mb3JtYXQoW3J1bGVzLmd0XSkg",
+            "OiAnJwq3AQoPdGltZXN0YW1wLmd0X2x0GqMBaGFzKHJ1bGVzLmx0KSAmJiBy",
+            "dWxlcy5sdCA+PSBydWxlcy5ndCAmJiAodGhpcyA+PSBydWxlcy5sdCB8fCB0",
+            "aGlzIDw9IHJ1bGVzLmd0KT8gJ3ZhbHVlIG11c3QgYmUgZ3JlYXRlciB0aGFu",
+            "ICVzIGFuZCBsZXNzIHRoYW4gJXMnLmZvcm1hdChbcnVsZXMuZ3QsIHJ1bGVz",
+            "Lmx0XSkgOiAnJwq/AQoZdGltZXN0YW1wLmd0X2x0X2V4Y2x1c2l2ZRqhAWhh",
+            "cyhydWxlcy5sdCkgJiYgcnVsZXMubHQgPCBydWxlcy5ndCAmJiAocnVsZXMu",
+            "bHQgPD0gdGhpcyAmJiB0aGlzIDw9IHJ1bGVzLmd0KT8gJ3ZhbHVlIG11c3Qg",
+            "YmUgZ3JlYXRlciB0aGFuICVzIG9yIGxlc3MgdGhhbiAlcycuZm9ybWF0KFty",
+            "dWxlcy5ndCwgcnVsZXMubHRdKSA6ICcnCscBChB0aW1lc3RhbXAuZ3RfbHRl",
+            "GrIBaGFzKHJ1bGVzLmx0ZSkgJiYgcnVsZXMubHRlID49IHJ1bGVzLmd0ICYm",
+            "ICh0aGlzID4gcnVsZXMubHRlIHx8IHRoaXMgPD0gcnVsZXMuZ3QpPyAndmFs",
+            "dWUgbXVzdCBiZSBncmVhdGVyIHRoYW4gJXMgYW5kIGxlc3MgdGhhbiBvciBl",
+            "cXVhbCB0byAlcycuZm9ybWF0KFtydWxlcy5ndCwgcnVsZXMubHRlXSkgOiAn",
+            "JwrPAQoadGltZXN0YW1wLmd0X2x0ZV9leGNsdXNpdmUasAFoYXMocnVsZXMu",
+            "bHRlKSAmJiBydWxlcy5sdGUgPCBydWxlcy5ndCAmJiAocnVsZXMubHRlIDwg",
+            "dGhpcyAmJiB0aGlzIDw9IHJ1bGVzLmd0KT8gJ3ZhbHVlIG11c3QgYmUgZ3Jl",
+            "YXRlciB0aGFuICVzIG9yIGxlc3MgdGhhbiBvciBlcXVhbCB0byAlcycuZm9y",
+            "bWF0KFtydWxlcy5ndCwgcnVsZXMubHRlXSkgOiAnJ0gBUgJndBKYCAoDZ3Rl",
+            "GAYgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcELnB8JI4wcKjAEK",
+            "DXRpbWVzdGFtcC5ndGUaeyFoYXMocnVsZXMubHQpICYmICFoYXMocnVsZXMu",
+            "bHRlKSAmJiB0aGlzIDwgcnVsZXMuZ3RlPyAndmFsdWUgbXVzdCBiZSBncmVh",
+            "dGVyIHRoYW4gb3IgZXF1YWwgdG8gJXMnLmZvcm1hdChbcnVsZXMuZ3RlXSkg",
+            "OiAnJwrGAQoQdGltZXN0YW1wLmd0ZV9sdBqxAWhhcyhydWxlcy5sdCkgJiYg",
+            "cnVsZXMubHQgPj0gcnVsZXMuZ3RlICYmICh0aGlzID49IHJ1bGVzLmx0IHx8",
+            "IHRoaXMgPCBydWxlcy5ndGUpPyAndmFsdWUgbXVzdCBiZSBncmVhdGVyIHRo",
+            "YW4gb3IgZXF1YWwgdG8gJXMgYW5kIGxlc3MgdGhhbiAlcycuZm9ybWF0KFty",
+            "dWxlcy5ndGUsIHJ1bGVzLmx0XSkgOiAnJwrOAQoadGltZXN0YW1wLmd0ZV9s",
+            "dF9leGNsdXNpdmUarwFoYXMocnVsZXMubHQpICYmIHJ1bGVzLmx0IDwgcnVs",
+            "ZXMuZ3RlICYmIChydWxlcy5sdCA8PSB0aGlzICYmIHRoaXMgPCBydWxlcy5n",
+            "dGUpPyAndmFsdWUgbXVzdCBiZSBncmVhdGVyIHRoYW4gb3IgZXF1YWwgdG8g",
+            "JXMgb3IgbGVzcyB0aGFuICVzJy5mb3JtYXQoW3J1bGVzLmd0ZSwgcnVsZXMu",
+            "bHRdKSA6ICcnCtYBChF0aW1lc3RhbXAuZ3RlX2x0ZRrAAWhhcyhydWxlcy5s",
+            "dGUpICYmIHJ1bGVzLmx0ZSA+PSBydWxlcy5ndGUgJiYgKHRoaXMgPiBydWxl",
+            "cy5sdGUgfHwgdGhpcyA8IHJ1bGVzLmd0ZSk/ICd2YWx1ZSBtdXN0IGJlIGdy",
+            "ZWF0ZXIgdGhhbiBvciBlcXVhbCB0byAlcyBhbmQgbGVzcyB0aGFuIG9yIGVx",
+            "dWFsIHRvICVzJy5mb3JtYXQoW3J1bGVzLmd0ZSwgcnVsZXMubHRlXSkgOiAn",
+            "JwreAQobdGltZXN0YW1wLmd0ZV9sdGVfZXhjbHVzaXZlGr4BaGFzKHJ1bGVz",
+            "Lmx0ZSkgJiYgcnVsZXMubHRlIDwgcnVsZXMuZ3RlICYmIChydWxlcy5sdGUg",
+            "PCB0aGlzICYmIHRoaXMgPCBydWxlcy5ndGUpPyAndmFsdWUgbXVzdCBiZSBn",
+            "cmVhdGVyIHRoYW4gb3IgZXF1YWwgdG8gJXMgb3IgbGVzcyB0aGFuIG9yIGVx",
+            "dWFsIHRvICVzJy5mb3JtYXQoW3J1bGVzLmd0ZSwgcnVsZXMubHRlXSkgOiAn",
+            "J0gBUgNndGUSdgoGZ3Rfbm93GAggASgIQl3CSFoKWAoQdGltZXN0YW1wLmd0",
+            "X25vdxpEKHJ1bGVzLmd0X25vdyAmJiB0aGlzIDwgbm93KSA/ICd2YWx1ZSBt",
+            "dXN0IGJlIGdyZWF0ZXIgdGhhbiBub3cnIDogJydIAVIFZ3ROb3cSwAEKBndp",
+            "dGhpbhgJIAEoCzIZLmdvb2dsZS5wcm90b2J1Zi5EdXJhdGlvbkKMAcJIiAEK",
+            "hQEKEHRpbWVzdGFtcC53aXRoaW4acXRoaXMgPCBub3ctcnVsZXMud2l0aGlu",
+            "IHx8IHRoaXMgPiBub3crcnVsZXMud2l0aGluID8gJ3ZhbHVlIG11c3QgYmUg",
+            "d2l0aGluICVzIG9mIG5vdycuZm9ybWF0KFtydWxlcy53aXRoaW5dKSA6ICcn",
+            "UgZ3aXRoaW4SVAoHZXhhbXBsZRgKIAMoCzIaLmdvb2dsZS5wcm90b2J1Zi5U",
+            "aW1lc3RhbXBCHsJIGwoZChF0aW1lc3RhbXAuZXhhbXBsZRoEdHJ1ZVIHZXhh",
+            "bXBsZSoJCOgHEICAgIACQgsKCWxlc3NfdGhhbkIOCgxncmVhdGVyX3RoYW4i",
+            "RQoKVmlvbGF0aW9ucxI3Cgp2aW9sYXRpb25zGAEgAygLMhcuYnVmLnZhbGlk",
+            "YXRlLlZpb2xhdGlvblIKdmlvbGF0aW9ucyLFAQoJVmlvbGF0aW9uEi0KBWZp",
+            "ZWxkGAUgASgLMhcuYnVmLnZhbGlkYXRlLkZpZWxkUGF0aFIFZmllbGQSKwoE",
+            "cnVsZRgGIAEoCzIXLmJ1Zi52YWxpZGF0ZS5GaWVsZFBhdGhSBHJ1bGUSFwoH",
+            "cnVsZV9pZBgCIAEoCVIGcnVsZUlkEhgKB21lc3NhZ2UYAyABKAlSB21lc3Nh",
+            "Z2USFwoHZm9yX2tleRgEIAEoCFIGZm9yS2V5SgQIARACUgpmaWVsZF9wYXRo",
+            "IkcKCUZpZWxkUGF0aBI6CghlbGVtZW50cxgBIAMoCzIeLmJ1Zi52YWxpZGF0",
+            "ZS5GaWVsZFBhdGhFbGVtZW50UghlbGVtZW50cyLMAwoQRmllbGRQYXRoRWxl",
+            "bWVudBIhCgxmaWVsZF9udW1iZXIYASABKAVSC2ZpZWxkTnVtYmVyEh0KCmZp",
+            "ZWxkX25hbWUYAiABKAlSCWZpZWxkTmFtZRJJCgpmaWVsZF90eXBlGAMgASgO",
+            "MiouZ29vZ2xlLnByb3RvYnVmLkZpZWxkRGVzY3JpcHRvclByb3RvLlR5cGVS",
+            "CWZpZWxkVHlwZRJFCghrZXlfdHlwZRgEIAEoDjIqLmdvb2dsZS5wcm90b2J1",
+            "Zi5GaWVsZERlc2NyaXB0b3JQcm90by5UeXBlUgdrZXlUeXBlEkkKCnZhbHVl",
+            "X3R5cGUYBSABKA4yKi5nb29nbGUucHJvdG9idWYuRmllbGREZXNjcmlwdG9y",
+            "UHJvdG8uVHlwZVIJdmFsdWVUeXBlEhYKBWluZGV4GAYgASgESABSBWluZGV4",
+            "EhsKCGJvb2xfa2V5GAcgASgISABSB2Jvb2xLZXkSGQoHaW50X2tleRgIIAEo",
+            "A0gAUgZpbnRLZXkSGwoIdWludF9rZXkYCSABKARIAFIHdWludEtleRIfCgpz",
+            "dHJpbmdfa2V5GAogASgJSABSCXN0cmluZ0tleUILCglzdWJzY3JpcHQqoQEK",
+            "Bklnbm9yZRIWChJJR05PUkVfVU5TUEVDSUZJRUQQABIYChRJR05PUkVfSUZf",
+            "WkVST19WQUxVRRABEhEKDUlHTk9SRV9BTFdBWVMQAyIECAIQAioMSUdOT1JF",
+            "X0VNUFRZKg5JR05PUkVfREVGQVVMVCoXSUdOT1JFX0lGX0RFRkFVTFRfVkFM",
+            "VUUqFUlHTk9SRV9JRl9VTlBPUFVMQVRFRCpuCgpLbm93blJlZ2V4EhsKF0tO",
+            "T1dOX1JFR0VYX1VOU1BFQ0lGSUVEEAASIAocS05PV05fUkVHRVhfSFRUUF9I",
+            "RUFERVJfTkFNRRABEiEKHUtOT1dOX1JFR0VYX0hUVFBfSEVBREVSX1ZBTFVF",
+            "EAI6VgoHbWVzc2FnZRIfLmdvb2dsZS5wcm90b2J1Zi5NZXNzYWdlT3B0aW9u",
+            "cxiHCSABKAsyGi5idWYudmFsaWRhdGUuTWVzc2FnZVJ1bGVzUgdtZXNzYWdl",
+            "Ok4KBW9uZW9mEh0uZ29vZ2xlLnByb3RvYnVmLk9uZW9mT3B0aW9ucxiHCSAB",
+            "KAsyGC5idWYudmFsaWRhdGUuT25lb2ZSdWxlc1IFb25lb2Y6TgoFZmllbGQS",
+            "HS5nb29nbGUucHJvdG9idWYuRmllbGRPcHRpb25zGIcJIAEoCzIYLmJ1Zi52",
+            "YWxpZGF0ZS5GaWVsZFJ1bGVzUgVmaWVsZDpdCgpwcmVkZWZpbmVkEh0uZ29v",
+            "Z2xlLnByb3RvYnVmLkZpZWxkT3B0aW9ucxiICSABKAsyHS5idWYudmFsaWRh",
+            "dGUuUHJlZGVmaW5lZFJ1bGVzUgpwcmVkZWZpbmVkQm4KEmJ1aWxkLmJ1Zi52",
+            "YWxpZGF0ZUINVmFsaWRhdGVQcm90b1ABWkdidWYuYnVpbGQvZ2VuL2dvL2J1",
+            "ZmJ1aWxkL3Byb3RvdmFsaWRhdGUvcHJvdG9jb2xidWZmZXJzL2dvL2J1Zi92",
+            "YWxpZGF0ZQ=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Buf.Validate.ExpressionReflection.Descriptor, global::Buf.Validate.Priv.PrivateReflection.Descriptor, global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Buf.Validate.KnownRegex), }, new pb::Extension[] { ValidateExtensions.Message, ValidateExtensions.Oneof, ValidateExtensions.Field }, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.MessageConstraints), global::Buf.Validate.MessageConstraints.Parser, new[]{ "Disabled", "Cel" }, new[]{ "Disabled" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.OneofConstraints), global::Buf.Validate.OneofConstraints.Parser, new[]{ "Required" }, new[]{ "Required" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.FieldConstraints), global::Buf.Validate.FieldConstraints.Parser, new[]{ "Cel", "Skipped", "Required", "IgnoreEmpty", "Float", "Double", "Int32", "Int64", "Uint32", "Uint64", "Sint32", "Sint64", "Fixed32", "Fixed64", "Sfixed32", "Sfixed64", "Bool", "String", "Bytes", "Enum", "Repeated", "Map", "Any", "Duration", "Timestamp" }, new[]{ "Type" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.FloatRules), global::Buf.Validate.FloatRules.Parser, new[]{ "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn" }, new[]{ "Const", "Lt", "Lte", "Gt", "Gte" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.DoubleRules), global::Buf.Validate.DoubleRules.Parser, new[]{ "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn" }, new[]{ "Const", "Lt", "Lte", "Gt", "Gte" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.Int32Rules), global::Buf.Validate.Int32Rules.Parser, new[]{ "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn" }, new[]{ "Const", "Lt", "Lte", "Gt", "Gte" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.Int64Rules), global::Buf.Validate.Int64Rules.Parser, new[]{ "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn" }, new[]{ "Const", "Lt", "Lte", "Gt", "Gte" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.UInt32Rules), global::Buf.Validate.UInt32Rules.Parser, new[]{ "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn" }, new[]{ "Const", "Lt", "Lte", "Gt", "Gte" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.UInt64Rules), global::Buf.Validate.UInt64Rules.Parser, new[]{ "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn" }, new[]{ "Const", "Lt", "Lte", "Gt", "Gte" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.SInt32Rules), global::Buf.Validate.SInt32Rules.Parser, new[]{ "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn" }, new[]{ "Const", "Lt", "Lte", "Gt", "Gte" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.SInt64Rules), global::Buf.Validate.SInt64Rules.Parser, new[]{ "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn" }, new[]{ "Const", "Lt", "Lte", "Gt", "Gte" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.Fixed32Rules), global::Buf.Validate.Fixed32Rules.Parser, new[]{ "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn" }, new[]{ "Const", "Lt", "Lte", "Gt", "Gte" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.Fixed64Rules), global::Buf.Validate.Fixed64Rules.Parser, new[]{ "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn" }, new[]{ "Const", "Lt", "Lte", "Gt", "Gte" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.SFixed32Rules), global::Buf.Validate.SFixed32Rules.Parser, new[]{ "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn" }, new[]{ "Const", "Lt", "Lte", "Gt", "Gte" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.SFixed64Rules), global::Buf.Validate.SFixed64Rules.Parser, new[]{ "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn" }, new[]{ "Const", "Lt", "Lte", "Gt", "Gte" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.BoolRules), global::Buf.Validate.BoolRules.Parser, new[]{ "Const" }, new[]{ "Const" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.StringRules), global::Buf.Validate.StringRules.Parser, new[]{ "Const", "Len", "MinLen", "MaxLen", "LenBytes", "MinBytes", "MaxBytes", "Pattern", "Prefix", "Suffix", "Contains", "NotContains", "In", "NotIn", "Email", "Hostname", "Ip", "Ipv4", "Ipv6", "Uri", "UriRef", "Address", "Uuid", "WellKnownRegex", "Strict" }, new[]{ "WellKnown", "Const", "Len", "MinLen", "MaxLen", "LenBytes", "MinBytes", "MaxBytes", "Pattern", "Prefix", "Suffix", "Contains", "NotContains", "Strict" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.BytesRules), global::Buf.Validate.BytesRules.Parser, new[]{ "Const", "Len", "MinLen", "MaxLen", "Pattern", "Prefix", "Suffix", "Contains", "In", "NotIn", "Ip", "Ipv4", "Ipv6" }, new[]{ "WellKnown", "Const", "Len", "MinLen", "MaxLen", "Pattern", "Prefix", "Suffix", "Contains" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.EnumRules), global::Buf.Validate.EnumRules.Parser, new[]{ "Const", "DefinedOnly", "In", "NotIn" }, new[]{ "Const", "DefinedOnly" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.RepeatedRules), global::Buf.Validate.RepeatedRules.Parser, new[]{ "MinItems", "MaxItems", "Unique", "Items" }, new[]{ "MinItems", "MaxItems", "Unique", "Items" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.MapRules), global::Buf.Validate.MapRules.Parser, new[]{ "MinPairs", "MaxPairs", "Keys", "Values" }, new[]{ "MinPairs", "MaxPairs", "Keys", "Values" }, null, null, null),
+          new pbr::FileDescriptor[] { global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Buf.Validate.Ignore), typeof(global::Buf.Validate.KnownRegex), }, new pb::Extension[] { ValidateExtensions.Message, ValidateExtensions.Oneof, ValidateExtensions.Field, ValidateExtensions.Predefined }, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.Rule), global::Buf.Validate.Rule.Parser, new[]{ "Id", "Message", "Expression" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.MessageRules), global::Buf.Validate.MessageRules.Parser, new[]{ "Cel", "Oneof" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.MessageOneofRule), global::Buf.Validate.MessageOneofRule.Parser, new[]{ "Fields", "Required" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.OneofRules), global::Buf.Validate.OneofRules.Parser, new[]{ "Required" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.FieldRules), global::Buf.Validate.FieldRules.Parser, new[]{ "Cel", "Required", "Ignore", "Float", "Double", "Int32", "Int64", "Uint32", "Uint64", "Sint32", "Sint64", "Fixed32", "Fixed64", "Sfixed32", "Sfixed64", "Bool", "String", "Bytes", "Enum", "Repeated", "Map", "Any", "Duration", "Timestamp" }, new[]{ "Type" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.PredefinedRules), global::Buf.Validate.PredefinedRules.Parser, new[]{ "Cel" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.FloatRules), global::Buf.Validate.FloatRules.Parser, new[]{ "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "Finite", "Example" }, new[]{ "LessThan", "GreaterThan" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.DoubleRules), global::Buf.Validate.DoubleRules.Parser, new[]{ "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "Finite", "Example" }, new[]{ "LessThan", "GreaterThan" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.Int32Rules), global::Buf.Validate.Int32Rules.Parser, new[]{ "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "Example" }, new[]{ "LessThan", "GreaterThan" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.Int64Rules), global::Buf.Validate.Int64Rules.Parser, new[]{ "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "Example" }, new[]{ "LessThan", "GreaterThan" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.UInt32Rules), global::Buf.Validate.UInt32Rules.Parser, new[]{ "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "Example" }, new[]{ "LessThan", "GreaterThan" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.UInt64Rules), global::Buf.Validate.UInt64Rules.Parser, new[]{ "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "Example" }, new[]{ "LessThan", "GreaterThan" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.SInt32Rules), global::Buf.Validate.SInt32Rules.Parser, new[]{ "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "Example" }, new[]{ "LessThan", "GreaterThan" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.SInt64Rules), global::Buf.Validate.SInt64Rules.Parser, new[]{ "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "Example" }, new[]{ "LessThan", "GreaterThan" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.Fixed32Rules), global::Buf.Validate.Fixed32Rules.Parser, new[]{ "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "Example" }, new[]{ "LessThan", "GreaterThan" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.Fixed64Rules), global::Buf.Validate.Fixed64Rules.Parser, new[]{ "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "Example" }, new[]{ "LessThan", "GreaterThan" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.SFixed32Rules), global::Buf.Validate.SFixed32Rules.Parser, new[]{ "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "Example" }, new[]{ "LessThan", "GreaterThan" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.SFixed64Rules), global::Buf.Validate.SFixed64Rules.Parser, new[]{ "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "Example" }, new[]{ "LessThan", "GreaterThan" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.BoolRules), global::Buf.Validate.BoolRules.Parser, new[]{ "Const", "Example" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.StringRules), global::Buf.Validate.StringRules.Parser, new[]{ "Const", "Len", "MinLen", "MaxLen", "LenBytes", "MinBytes", "MaxBytes", "Pattern", "Prefix", "Suffix", "Contains", "NotContains", "In", "NotIn", "Email", "Hostname", "Ip", "Ipv4", "Ipv6", "Uri", "UriRef", "Address", "Uuid", "Tuuid", "IpWithPrefixlen", "Ipv4WithPrefixlen", "Ipv6WithPrefixlen", "IpPrefix", "Ipv4Prefix", "Ipv6Prefix", "HostAndPort", "WellKnownRegex", "Strict", "Example" }, new[]{ "WellKnown" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.BytesRules), global::Buf.Validate.BytesRules.Parser, new[]{ "Const", "Len", "MinLen", "MaxLen", "Pattern", "Prefix", "Suffix", "Contains", "In", "NotIn", "Ip", "Ipv4", "Ipv6", "Example" }, new[]{ "WellKnown" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.EnumRules), global::Buf.Validate.EnumRules.Parser, new[]{ "Const", "DefinedOnly", "In", "NotIn", "Example" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.RepeatedRules), global::Buf.Validate.RepeatedRules.Parser, new[]{ "MinItems", "MaxItems", "Unique", "Items" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.MapRules), global::Buf.Validate.MapRules.Parser, new[]{ "MinPairs", "MaxPairs", "Keys", "Values" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.AnyRules), global::Buf.Validate.AnyRules.Parser, new[]{ "In", "NotIn" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.DurationRules), global::Buf.Validate.DurationRules.Parser, new[]{ "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn" }, new[]{ "Const", "Lt", "Lte", "Gt", "Gte" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.TimestampRules), global::Buf.Validate.TimestampRules.Parser, new[]{ "Const", "Lt", "Lte", "Gt", "Gte", "LtNow", "GtNow", "Within" }, new[]{ "Const", "Lt", "Lte", "Gt", "Gte", "LtNow", "GtNow", "Within" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.DurationRules), global::Buf.Validate.DurationRules.Parser, new[]{ "Const", "Lt", "Lte", "Gt", "Gte", "In", "NotIn", "Example" }, new[]{ "LessThan", "GreaterThan" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.TimestampRules), global::Buf.Validate.TimestampRules.Parser, new[]{ "Const", "Lt", "Lte", "LtNow", "Gt", "Gte", "GtNow", "Within", "Example" }, new[]{ "LessThan", "GreaterThan" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.Violations), global::Buf.Validate.Violations.Parser, new[]{ "Violations_" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.Violation), global::Buf.Validate.Violation.Parser, new[]{ "Field", "Rule", "RuleId", "Message", "ForKey" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.FieldPath), global::Buf.Validate.FieldPath.Parser, new[]{ "Elements" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Buf.Validate.FieldPathElement), global::Buf.Validate.FieldPathElement.Parser, new[]{ "FieldNumber", "FieldName", "FieldType", "KeyType", "ValueType", "Index", "BoolKey", "IntKey", "UintKey", "StringKey" }, new[]{ "Subscript" }, null, null, null)
           }));
     }
     #endregion
@@ -1132,34 +1289,148 @@ namespace Buf.Validate {
     /// Rules specify the validations to be performed on this message. By default,
     /// no validation is performed against a message.
     /// </summary>
-    public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::Buf.Validate.MessageConstraints> Message =
-      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::Buf.Validate.MessageConstraints>(51071, pb::FieldCodec.ForMessage(408570, global::Buf.Validate.MessageConstraints.Parser));
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::Buf.Validate.MessageRules> Message =
+      new pb::Extension<global::Google.Protobuf.Reflection.MessageOptions, global::Buf.Validate.MessageRules>(1159, pb::FieldCodec.ForMessage(9274, global::Buf.Validate.MessageRules.Parser));
     /// <summary>
     /// Rules specify the validations to be performed on this oneof. By default,
     /// no validation is performed against a oneof.
     /// </summary>
-    public static readonly pb::Extension<global::Google.Protobuf.Reflection.OneofOptions, global::Buf.Validate.OneofConstraints> Oneof =
-      new pb::Extension<global::Google.Protobuf.Reflection.OneofOptions, global::Buf.Validate.OneofConstraints>(51071, pb::FieldCodec.ForMessage(408570, global::Buf.Validate.OneofConstraints.Parser));
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.OneofOptions, global::Buf.Validate.OneofRules> Oneof =
+      new pb::Extension<global::Google.Protobuf.Reflection.OneofOptions, global::Buf.Validate.OneofRules>(1159, pb::FieldCodec.ForMessage(9274, global::Buf.Validate.OneofRules.Parser));
     /// <summary>
     /// Rules specify the validations to be performed on this field. By default,
     /// no validation is performed against a field.
     /// </summary>
-    public static readonly pb::Extension<global::Google.Protobuf.Reflection.FieldOptions, global::Buf.Validate.FieldConstraints> Field =
-      new pb::Extension<global::Google.Protobuf.Reflection.FieldOptions, global::Buf.Validate.FieldConstraints>(51071, pb::FieldCodec.ForMessage(408570, global::Buf.Validate.FieldConstraints.Parser));
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.FieldOptions, global::Buf.Validate.FieldRules> Field =
+      new pb::Extension<global::Google.Protobuf.Reflection.FieldOptions, global::Buf.Validate.FieldRules>(1159, pb::FieldCodec.ForMessage(9274, global::Buf.Validate.FieldRules.Parser));
+    /// <summary>
+    /// Specifies predefined rules. When extending a standard rule message,
+    /// this adds additional CEL expressions that apply when the extension is used.
+    ///
+    /// ```proto
+    /// extend buf.validate.Int32Rules {
+    ///   bool is_zero [(buf.validate.predefined).cel = {
+    ///     id: "int32.is_zero",
+    ///     message: "value must be zero",
+    ///     expression: "!rule || this == 0",
+    ///   }];
+    /// }
+    ///
+    /// message Foo {
+    ///   int32 reserved = 1 [(buf.validate.field).int32.(is_zero) = true];
+    /// }
+    /// ```
+    /// </summary>
+    public static readonly pb::Extension<global::Google.Protobuf.Reflection.FieldOptions, global::Buf.Validate.PredefinedRules> Predefined =
+      new pb::Extension<global::Google.Protobuf.Reflection.FieldOptions, global::Buf.Validate.PredefinedRules>(1160, pb::FieldCodec.ForMessage(9282, global::Buf.Validate.PredefinedRules.Parser));
   }
 
   #region Enums
   /// <summary>
-  /// WellKnownRegex contain some well-known patterns.
+  /// Specifies how `FieldRules.ignore` behaves, depending on the field's value, and
+  /// whether the field tracks presence.
+  /// </summary>
+  public enum Ignore {
+    /// <summary>
+    /// Ignore rules if the field tracks presence and is unset. This is the default
+    /// behavior.
+    ///
+    /// In proto3, only message fields, members of a Protobuf `oneof`, and fields
+    /// with the `optional` label track presence. Consequently, the following fields
+    /// are always validated, whether a value is set or not:
+    ///
+    /// ```proto
+    /// syntax="proto3";
+    ///
+    /// message RulesApply {
+    ///   string email = 1 [
+    ///     (buf.validate.field).string.email = true
+    ///   ];
+    ///   int32 age = 2 [
+    ///     (buf.validate.field).int32.gt = 0
+    ///   ];
+    ///   repeated string labels = 3 [
+    ///     (buf.validate.field).repeated.min_items = 1
+    ///   ];
+    /// }
+    /// ```
+    ///
+    /// In contrast, the following fields track presence, and are only validated if
+    /// a value is set:
+    ///
+    /// ```proto
+    /// syntax="proto3";
+    ///
+    /// message RulesApplyIfSet {
+    ///   optional string email = 1 [
+    ///     (buf.validate.field).string.email = true
+    ///   ];
+    ///   oneof ref {
+    ///     string reference = 2 [
+    ///       (buf.validate.field).string.uuid = true
+    ///     ];
+    ///     string name = 3 [
+    ///       (buf.validate.field).string.min_len = 4
+    ///     ];
+    ///   }
+    ///   SomeMessage msg = 4 [
+    ///     (buf.validate.field).cel = {/* ... */}
+    ///   ];
+    /// }
+    /// ```
+    ///
+    /// To ensure that such a field is set, add the `required` rule.
+    ///
+    /// To learn which fields track presence, see the
+    /// [Field Presence cheat sheet](https://protobuf.dev/programming-guides/field_presence/#cheat).
+    /// </summary>
+    [pbr::OriginalName("IGNORE_UNSPECIFIED")] Unspecified = 0,
+    /// <summary>
+    /// Ignore rules if the field is unset, or set to the zero value.
+    ///
+    /// The zero value depends on the field type:
+    /// - For strings, the zero value is the empty string.
+    /// - For bytes, the zero value is empty bytes.
+    /// - For bool, the zero value is false.
+    /// - For numeric types, the zero value is zero.
+    /// - For enums, the zero value is the first defined enum value.
+    /// - For repeated fields, the zero is an empty list.
+    /// - For map fields, the zero is an empty map.
+    /// - For message fields, absence of the message (typically a null-value) is considered zero value.
+    ///
+    /// For fields that track presence (e.g. adding the `optional` label in proto3),
+    /// this a no-op and behavior is the same as the default `IGNORE_UNSPECIFIED`.
+    /// </summary>
+    [pbr::OriginalName("IGNORE_IF_ZERO_VALUE")] IfZeroValue = 1,
+    /// <summary>
+    /// Always ignore rules, including the `required` rule.
+    ///
+    /// This is useful for ignoring the rules of a referenced message, or to
+    /// temporarily ignore rules during development.
+    ///
+    /// ```proto
+    /// message MyMessage {
+    ///   // The field's rules will always be ignored, including any validations
+    ///   // on value's fields.
+    ///   MyOtherMessage value = 1 [
+    ///     (buf.validate.field).ignore = IGNORE_ALWAYS];
+    /// }
+    /// ```
+    /// </summary>
+    [pbr::OriginalName("IGNORE_ALWAYS")] Always = 3,
+  }
+
+  /// <summary>
+  /// KnownRegex contains some well-known patterns.
   /// </summary>
   public enum KnownRegex {
     [pbr::OriginalName("KNOWN_REGEX_UNSPECIFIED")] Unspecified = 0,
     /// <summary>
-    /// HTTP header name as defined by [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2).
+    /// HTTP header name as defined by [RFC 7230](https://datatracker.ietf.org/doc/html/rfc7230#section-3.2).
     /// </summary>
     [pbr::OriginalName("KNOWN_REGEX_HTTP_HEADER_NAME")] HttpHeaderName = 1,
     /// <summary>
-    /// HTTP header value as defined by [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2.4).
+    /// HTTP header value as defined by [RFC 7230](https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.4).
     /// </summary>
     [pbr::OriginalName("KNOWN_REGEX_HTTP_HEADER_VALUE")] HttpHeaderValue = 2,
   }
@@ -1168,20 +1439,32 @@ namespace Buf.Validate {
 
   #region Messages
   /// <summary>
-  /// MessageConstraints represents validation rules that are applied to the entire message.
-  /// It includes disabling options and a list of Constraint messages representing Common Expression Language (CEL) validation rules.
+  /// `Rule` represents a validation rule written in the Common Expression
+  /// Language (CEL) syntax. Each Rule includes a unique identifier, an
+  /// optional error message, and the CEL expression to evaluate. For more
+  /// information, [see our documentation](https://buf.build/docs/protovalidate/schemas/custom-rules/).
+  ///
+  /// ```proto
+  /// message Foo {
+  ///   option (buf.validate.message).cel = {
+  ///     id: "foo.bar"
+  ///     message: "bar must be greater than 0"
+  ///     expression: "this.bar > 0"
+  ///   };
+  ///   int32 bar = 1;
+  /// }
+  /// ```
   /// </summary>
-  public sealed partial class MessageConstraints : pb::IMessage<MessageConstraints>
+  public sealed partial class Rule : pb::IMessage<Rule>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<MessageConstraints> _parser = new pb::MessageParser<MessageConstraints>(() => new MessageConstraints());
+    private static readonly pb::MessageParser<Rule> _parser = new pb::MessageParser<Rule>(() => new Rule());
     private pb::UnknownFieldSet _unknownFields;
-    private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<MessageConstraints> Parser { get { return _parser; } }
+    public static pb::MessageParser<Rule> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1197,7 +1480,7 @@ namespace Buf.Validate {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public MessageConstraints() {
+    public Rule() {
       OnConstruction();
     }
 
@@ -1205,102 +1488,131 @@ namespace Buf.Validate {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public MessageConstraints(MessageConstraints other) : this() {
-      _hasBits0 = other._hasBits0;
-      disabled_ = other.disabled_;
-      cel_ = other.cel_.Clone();
+    public Rule(Rule other) : this() {
+      id_ = other.id_;
+      message_ = other.message_;
+      expression_ = other.expression_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public MessageConstraints Clone() {
-      return new MessageConstraints(this);
+    public Rule Clone() {
+      return new Rule(this);
     }
 
-    /// <summary>Field number for the "disabled" field.</summary>
-    public const int DisabledFieldNumber = 1;
-    private readonly static bool DisabledDefaultValue = false;
+    /// <summary>Field number for the "id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private readonly static string IdDefaultValue = "";
 
-    private bool disabled_;
+    private string id_;
     /// <summary>
-    /// disabled is a boolean flag that, when set to true, nullifies any validation rules for this message.
-    /// This includes any fields within the message that would otherwise support validation.
-    ///
-    /// ```proto
-    /// message MyMessage {
-    ///   // validation will be bypassed for this message
-    ///   option (buf.validate.message).disabled = true;
-    /// }
-    /// ```
+    /// `id` is a string that serves as a machine-readable name for this Rule.
+    /// It should be unique within its scope, which could be either a message or a field.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Disabled {
-      get { if ((_hasBits0 & 1) != 0) { return disabled_; } else { return DisabledDefaultValue; } }
+    public string Id {
+      get { return id_ ?? IdDefaultValue; }
       set {
-        _hasBits0 |= 1;
-        disabled_ = value;
+        id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
-    /// <summary>Gets whether the "disabled" field is set</summary>
+    /// <summary>Gets whether the "id" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool HasDisabled {
-      get { return (_hasBits0 & 1) != 0; }
+    public bool HasId {
+      get { return id_ != null; }
     }
-    /// <summary>Clears the value of the "disabled" field</summary>
+    /// <summary>Clears the value of the "id" field</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearDisabled() {
-      _hasBits0 &= ~1;
+    public void ClearId() {
+      id_ = null;
     }
 
-    /// <summary>Field number for the "cel" field.</summary>
-    public const int CelFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Buf.Validate.Constraint> _repeated_cel_codec
-        = pb::FieldCodec.ForMessage(26, global::Buf.Validate.Constraint.Parser);
-    private readonly pbc::RepeatedField<global::Buf.Validate.Constraint> cel_ = new pbc::RepeatedField<global::Buf.Validate.Constraint>();
+    /// <summary>Field number for the "message" field.</summary>
+    public const int MessageFieldNumber = 2;
+    private readonly static string MessageDefaultValue = "";
+
+    private string message_;
     /// <summary>
-    /// cel is a repeated field of type Constraint. Each Constraint specifies a validation rule to be applied to this message.
-    /// These constraints are written in Common Expression Language (CEL) syntax. For more information on
-    /// CEL, [see our documentation](https://github.com/bufbuild/protovalidate/blob/main/docs/cel.md).
-    ///
-    ///```proto
-    ///message MyMessage {
-    ///  // The field `foo` must be greater than 42.
-    ///  option (buf.validate.message).cel = {
-    ///    id: "my_message.value",
-    ///    message: "value must be greater than 42",
-    ///    expression: "this.foo > 42",
-    ///  };
-    ///  optional int32 foo = 1;
-    ///}
-    ///```
+    /// `message` is an optional field that provides a human-readable error message
+    /// for this Rule when the CEL expression evaluates to false. If a
+    /// non-empty message is provided, any strings resulting from the CEL
+    /// expression evaluation are ignored.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Buf.Validate.Constraint> Cel {
-      get { return cel_; }
+    public string Message {
+      get { return message_ ?? MessageDefaultValue; }
+      set {
+        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+    /// <summary>Gets whether the "message" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasMessage {
+      get { return message_ != null; }
+    }
+    /// <summary>Clears the value of the "message" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearMessage() {
+      message_ = null;
+    }
+
+    /// <summary>Field number for the "expression" field.</summary>
+    public const int ExpressionFieldNumber = 3;
+    private readonly static string ExpressionDefaultValue = "";
+
+    private string expression_;
+    /// <summary>
+    /// `expression` is the actual CEL expression that will be evaluated for
+    /// validation. This string must resolve to either a boolean or a string
+    /// value. If the expression evaluates to false or a non-empty string, the
+    /// validation is considered failed, and the message is rejected.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Expression {
+      get { return expression_ ?? ExpressionDefaultValue; }
+      set {
+        expression_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+    /// <summary>Gets whether the "expression" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasExpression {
+      get { return expression_ != null; }
+    }
+    /// <summary>Clears the value of the "expression" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearExpression() {
+      expression_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as MessageConstraints);
+      return Equals(other as Rule);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(MessageConstraints other) {
+    public bool Equals(Rule other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Disabled != other.Disabled) return false;
-      if(!cel_.Equals(other.cel_)) return false;
+      if (Id != other.Id) return false;
+      if (Message != other.Message) return false;
+      if (Expression != other.Expression) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1308,8 +1620,9 @@ namespace Buf.Validate {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (HasDisabled) hash ^= Disabled.GetHashCode();
-      hash ^= cel_.GetHashCode();
+      if (HasId) hash ^= Id.GetHashCode();
+      if (HasMessage) hash ^= Message.GetHashCode();
+      if (HasExpression) hash ^= Expression.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1328,11 +1641,18 @@ namespace Buf.Validate {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (HasDisabled) {
-        output.WriteRawTag(8);
-        output.WriteBool(Disabled);
+      if (HasId) {
+        output.WriteRawTag(10);
+        output.WriteString(Id);
       }
-      cel_.WriteTo(output, _repeated_cel_codec);
+      if (HasMessage) {
+        output.WriteRawTag(18);
+        output.WriteString(Message);
+      }
+      if (HasExpression) {
+        output.WriteRawTag(26);
+        output.WriteString(Expression);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1343,11 +1663,18 @@ namespace Buf.Validate {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (HasDisabled) {
-        output.WriteRawTag(8);
-        output.WriteBool(Disabled);
+      if (HasId) {
+        output.WriteRawTag(10);
+        output.WriteString(Id);
       }
-      cel_.WriteTo(ref output, _repeated_cel_codec);
+      if (HasMessage) {
+        output.WriteRawTag(18);
+        output.WriteString(Message);
+      }
+      if (HasExpression) {
+        output.WriteRawTag(26);
+        output.WriteString(Expression);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1358,10 +1685,15 @@ namespace Buf.Validate {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (HasDisabled) {
-        size += 1 + 1;
+      if (HasId) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
       }
-      size += cel_.CalculateSize(_repeated_cel_codec);
+      if (HasMessage) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
+      }
+      if (HasExpression) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Expression);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -1370,14 +1702,19 @@ namespace Buf.Validate {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(MessageConstraints other) {
+    public void MergeFrom(Rule other) {
       if (other == null) {
         return;
       }
-      if (other.HasDisabled) {
-        Disabled = other.Disabled;
+      if (other.HasId) {
+        Id = other.Id;
       }
-      cel_.Add(other.cel_);
+      if (other.HasMessage) {
+        Message = other.Message;
+      }
+      if (other.HasExpression) {
+        Expression = other.Expression;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -1393,12 +1730,16 @@ namespace Buf.Validate {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 8: {
-            Disabled = input.ReadBool();
+          case 10: {
+            Id = input.ReadString();
+            break;
+          }
+          case 18: {
+            Message = input.ReadString();
             break;
           }
           case 26: {
-            cel_.AddEntriesFrom(input, _repeated_cel_codec);
+            Expression = input.ReadString();
             break;
           }
         }
@@ -1416,12 +1757,16 @@ namespace Buf.Validate {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 8: {
-            Disabled = input.ReadBool();
+          case 10: {
+            Id = input.ReadString();
+            break;
+          }
+          case 18: {
+            Message = input.ReadString();
             break;
           }
           case 26: {
-            cel_.AddEntriesFrom(ref input, _repeated_cel_codec);
+            Expression = input.ReadString();
             break;
           }
         }
@@ -1432,22 +1777,19 @@ namespace Buf.Validate {
   }
 
   /// <summary>
-  /// The `OneofConstraints` message type enables you to manage constraints for
-  /// oneof fields in your protobuf messages. Use the `required` constraint to ensure
-  /// that exactly one of the fields within a oneof is set; validation will fail
-  /// if none of the fields in the oneof are set:
+  /// MessageRules represents validation rules that are applied to the entire message.
+  /// It includes disabling options and a list of Rule messages representing Common Expression Language (CEL) validation rules.
   /// </summary>
-  public sealed partial class OneofConstraints : pb::IMessage<OneofConstraints>
+  public sealed partial class MessageRules : pb::IMessage<MessageRules>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<OneofConstraints> _parser = new pb::MessageParser<OneofConstraints>(() => new OneofConstraints());
+    private static readonly pb::MessageParser<MessageRules> _parser = new pb::MessageParser<MessageRules>(() => new MessageRules());
     private pb::UnknownFieldSet _unknownFields;
-    private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<OneofConstraints> Parser { get { return _parser; } }
+    public static pb::MessageParser<MessageRules> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1463,7 +1805,7 @@ namespace Buf.Validate {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public OneofConstraints() {
+    public MessageRules() {
       OnConstruction();
     }
 
@@ -1471,38 +1813,300 @@ namespace Buf.Validate {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public OneofConstraints(OneofConstraints other) : this() {
+    public MessageRules(MessageRules other) : this() {
+      cel_ = other.cel_.Clone();
+      oneof_ = other.oneof_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MessageRules Clone() {
+      return new MessageRules(this);
+    }
+
+    /// <summary>Field number for the "cel" field.</summary>
+    public const int CelFieldNumber = 3;
+    private static readonly pb::FieldCodec<global::Buf.Validate.Rule> _repeated_cel_codec
+        = pb::FieldCodec.ForMessage(26, global::Buf.Validate.Rule.Parser);
+    private readonly pbc::RepeatedField<global::Buf.Validate.Rule> cel_ = new pbc::RepeatedField<global::Buf.Validate.Rule>();
+    /// <summary>
+    /// `cel` is a repeated field of type Rule. Each Rule specifies a validation rule to be applied to this message.
+    /// These rules are written in Common Expression Language (CEL) syntax. For more information,
+    /// [see our documentation](https://buf.build/docs/protovalidate/schemas/custom-rules/).
+    ///
+    /// ```proto
+    /// message MyMessage {
+    ///   // The field `foo` must be greater than 42.
+    ///   option (buf.validate.message).cel = {
+    ///     id: "my_message.value",
+    ///     message: "value must be greater than 42",
+    ///     expression: "this.foo > 42",
+    ///   };
+    ///   optional int32 foo = 1;
+    /// }
+    /// ```
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Buf.Validate.Rule> Cel {
+      get { return cel_; }
+    }
+
+    /// <summary>Field number for the "oneof" field.</summary>
+    public const int OneofFieldNumber = 4;
+    private static readonly pb::FieldCodec<global::Buf.Validate.MessageOneofRule> _repeated_oneof_codec
+        = pb::FieldCodec.ForMessage(34, global::Buf.Validate.MessageOneofRule.Parser);
+    private readonly pbc::RepeatedField<global::Buf.Validate.MessageOneofRule> oneof_ = new pbc::RepeatedField<global::Buf.Validate.MessageOneofRule>();
+    /// <summary>
+    /// `oneof` is a repeated field of type MessageOneofRule that specifies a list of fields
+    /// of which at most one can be present. If `required` is also specified, then exactly one
+    /// of the specified fields _must_ be present.
+    ///
+    /// This will enforce oneof-like constraints with a few features not provided by
+    /// actual Protobuf oneof declarations:
+    ///   1. Repeated and map fields are allowed in this validation. In a Protobuf oneof,
+    ///      only scalar fields are allowed.
+    ///   2. Fields with implicit presence are allowed. In a Protobuf oneof, all member
+    ///      fields have explicit presence. This means that, for the purpose of determining
+    ///      how many fields are set, explicitly setting such a field to its zero value is
+    ///      effectively the same as not setting it at all.
+    ///   3. This will always generate validation errors for a message unmarshalled from
+    ///      serialized data that sets more than one field. With a Protobuf oneof, when
+    ///      multiple fields are present in the serialized form, earlier values are usually
+    ///      silently ignored when unmarshalling, with only the last field being set when
+    ///      unmarshalling completes.
+    ///
+    /// Note that adding a field to a `oneof` will also set the IGNORE_IF_ZERO_VALUE on the fields. This means
+    /// only the field that is set will be validated and the unset fields are not validated according to the field rules.
+    /// This behavior can be overridden by setting `ignore` against a field.
+    ///
+    /// ```proto
+    /// message MyMessage {
+    ///   // Only one of `field1` or `field2` _can_ be present in this message.
+    ///   option (buf.validate.message).oneof = { fields: ["field1", "field2"] };
+    ///   // Exactly one of `field3` or `field4` _must_ be present in this message.
+    ///   option (buf.validate.message).oneof = { fields: ["field3", "field4"], required: true };
+    ///   string field1 = 1;
+    ///   bytes field2 = 2;
+    ///   bool field3 = 3;
+    ///   int32 field4 = 4;
+    /// }
+    /// ```
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Buf.Validate.MessageOneofRule> Oneof {
+      get { return oneof_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as MessageRules);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(MessageRules other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!cel_.Equals(other.cel_)) return false;
+      if(!oneof_.Equals(other.oneof_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= cel_.GetHashCode();
+      hash ^= oneof_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      cel_.WriteTo(output, _repeated_cel_codec);
+      oneof_.WriteTo(output, _repeated_oneof_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      cel_.WriteTo(ref output, _repeated_cel_codec);
+      oneof_.WriteTo(ref output, _repeated_oneof_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += cel_.CalculateSize(_repeated_cel_codec);
+      size += oneof_.CalculateSize(_repeated_oneof_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(MessageRules other) {
+      if (other == null) {
+        return;
+      }
+      cel_.Add(other.cel_);
+      oneof_.Add(other.oneof_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 26: {
+            cel_.AddEntriesFrom(input, _repeated_cel_codec);
+            break;
+          }
+          case 34: {
+            oneof_.AddEntriesFrom(input, _repeated_oneof_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 26: {
+            cel_.AddEntriesFrom(ref input, _repeated_cel_codec);
+            break;
+          }
+          case 34: {
+            oneof_.AddEntriesFrom(ref input, _repeated_oneof_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class MessageOneofRule : pb::IMessage<MessageOneofRule>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<MessageOneofRule> _parser = new pb::MessageParser<MessageOneofRule>(() => new MessageOneofRule());
+    private pb::UnknownFieldSet _unknownFields;
+    private int _hasBits0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<MessageOneofRule> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MessageOneofRule() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public MessageOneofRule(MessageOneofRule other) : this() {
       _hasBits0 = other._hasBits0;
+      fields_ = other.fields_.Clone();
       required_ = other.required_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public OneofConstraints Clone() {
-      return new OneofConstraints(this);
+    public MessageOneofRule Clone() {
+      return new MessageOneofRule(this);
+    }
+
+    /// <summary>Field number for the "fields" field.</summary>
+    public const int FieldsFieldNumber = 1;
+    private static readonly pb::FieldCodec<string> _repeated_fields_codec
+        = pb::FieldCodec.ForString(10);
+    private readonly pbc::RepeatedField<string> fields_ = new pbc::RepeatedField<string>();
+    /// <summary>
+    /// A list of field names to include in the oneof. All field names must be
+    /// defined in the message. At least one field must be specified, and
+    /// duplicates are not permitted.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<string> Fields {
+      get { return fields_; }
     }
 
     /// <summary>Field number for the "required" field.</summary>
-    public const int RequiredFieldNumber = 1;
+    public const int RequiredFieldNumber = 2;
     private readonly static bool RequiredDefaultValue = false;
 
     private bool required_;
     /// <summary>
-    ///`required` is an optional boolean attribute that ensures that
-    ///exactly one of the field options in a oneof is set; validation fails if
-    ///no fields in the oneof are set.
-    ///
-    ///```proto
-    ///message MyMessage {
-    ///  oneof value {
-    ///    // The field `a` or `b` must be set.
-    ///    option [(buf.validate.oneof).required = true]
-    ///    optional string a = 1;
-    ///    optional string b = 2;
-    ///  }
-    ///}
-    ///```
+    /// If true, one of the fields specified _must_ be set.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1529,12 +2133,254 @@ namespace Buf.Validate {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as OneofConstraints);
+      return Equals(other as MessageOneofRule);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(OneofConstraints other) {
+    public bool Equals(MessageOneofRule other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!fields_.Equals(other.fields_)) return false;
+      if (Required != other.Required) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= fields_.GetHashCode();
+      if (HasRequired) hash ^= Required.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      fields_.WriteTo(output, _repeated_fields_codec);
+      if (HasRequired) {
+        output.WriteRawTag(16);
+        output.WriteBool(Required);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      fields_.WriteTo(ref output, _repeated_fields_codec);
+      if (HasRequired) {
+        output.WriteRawTag(16);
+        output.WriteBool(Required);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += fields_.CalculateSize(_repeated_fields_codec);
+      if (HasRequired) {
+        size += 1 + 1;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(MessageOneofRule other) {
+      if (other == null) {
+        return;
+      }
+      fields_.Add(other.fields_);
+      if (other.HasRequired) {
+        Required = other.Required;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            fields_.AddEntriesFrom(input, _repeated_fields_codec);
+            break;
+          }
+          case 16: {
+            Required = input.ReadBool();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            fields_.AddEntriesFrom(ref input, _repeated_fields_codec);
+            break;
+          }
+          case 16: {
+            Required = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// The `OneofRules` message type enables you to manage rules for
+  /// oneof fields in your protobuf messages.
+  /// </summary>
+  public sealed partial class OneofRules : pb::IMessage<OneofRules>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<OneofRules> _parser = new pb::MessageParser<OneofRules>(() => new OneofRules());
+    private pb::UnknownFieldSet _unknownFields;
+    private int _hasBits0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<OneofRules> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public OneofRules() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public OneofRules(OneofRules other) : this() {
+      _hasBits0 = other._hasBits0;
+      required_ = other.required_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public OneofRules Clone() {
+      return new OneofRules(this);
+    }
+
+    /// <summary>Field number for the "required" field.</summary>
+    public const int RequiredFieldNumber = 1;
+    private readonly static bool RequiredDefaultValue = false;
+
+    private bool required_;
+    /// <summary>
+    /// If `required` is true, exactly one field of the oneof must be set. A
+    /// validation error is returned if no fields in the oneof are set. Further rules
+    /// should be placed on the fields themselves to ensure they are valid values,
+    /// such as `min_len` or `gt`.
+    ///
+    /// ```proto
+    /// message MyMessage {
+    ///   oneof value {
+    ///     // Either `a` or `b` must be set. If `a` is set, it must also be
+    ///     // non-empty; whereas if `b` is set, it can still be an empty string.
+    ///     option (buf.validate.oneof).required = true;
+    ///     string a = 1 [(buf.validate.field).string.min_len = 1];
+    ///     string b = 2;
+    ///   }
+    /// }
+    /// ```
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Required {
+      get { if ((_hasBits0 & 1) != 0) { return required_; } else { return RequiredDefaultValue; } }
+      set {
+        _hasBits0 |= 1;
+        required_ = value;
+      }
+    }
+    /// <summary>Gets whether the "required" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasRequired {
+      get { return (_hasBits0 & 1) != 0; }
+    }
+    /// <summary>Clears the value of the "required" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearRequired() {
+      _hasBits0 &= ~1;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as OneofRules);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(OneofRules other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -1607,7 +2453,7 @@ namespace Buf.Validate {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(OneofConstraints other) {
+    public void MergeFrom(OneofRules other) {
       if (other == null) {
         return;
       }
@@ -1660,24 +2506,25 @@ namespace Buf.Validate {
   }
 
   /// <summary>
-  /// FieldRules encapsulates the rules for each type of field. Depending on the
-  /// field, the correct set should be used to ensure proper validations.
+  /// FieldRules encapsulates the rules for each type of field. Depending on
+  /// the field, the correct set should be used to ensure proper validations.
   /// </summary>
-  public sealed partial class FieldConstraints : pb::IMessage<FieldConstraints>
+  public sealed partial class FieldRules : pb::IMessage<FieldRules>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<FieldConstraints> _parser = new pb::MessageParser<FieldConstraints>(() => new FieldConstraints());
+    private static readonly pb::MessageParser<FieldRules> _parser = new pb::MessageParser<FieldRules>(() => new FieldRules());
     private pb::UnknownFieldSet _unknownFields;
+    private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<FieldConstraints> Parser { get { return _parser; } }
+    public static pb::MessageParser<FieldRules> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1688,7 +2535,7 @@ namespace Buf.Validate {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public FieldConstraints() {
+    public FieldRules() {
       OnConstruction();
     }
 
@@ -1696,11 +2543,11 @@ namespace Buf.Validate {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public FieldConstraints(FieldConstraints other) : this() {
+    public FieldRules(FieldRules other) : this() {
+      _hasBits0 = other._hasBits0;
       cel_ = other.cel_.Clone();
-      skipped_ = other.skipped_;
       required_ = other.required_;
-      ignoreEmpty_ = other.ignoreEmpty_;
+      ignore_ = other.ignore_;
       switch (other.TypeCase) {
         case TypeOneofCase.Float:
           Float = other.Float.Clone();
@@ -1772,107 +2619,155 @@ namespace Buf.Validate {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public FieldConstraints Clone() {
-      return new FieldConstraints(this);
+    public FieldRules Clone() {
+      return new FieldRules(this);
     }
 
     /// <summary>Field number for the "cel" field.</summary>
     public const int CelFieldNumber = 23;
-    private static readonly pb::FieldCodec<global::Buf.Validate.Constraint> _repeated_cel_codec
-        = pb::FieldCodec.ForMessage(186, global::Buf.Validate.Constraint.Parser);
-    private readonly pbc::RepeatedField<global::Buf.Validate.Constraint> cel_ = new pbc::RepeatedField<global::Buf.Validate.Constraint>();
+    private static readonly pb::FieldCodec<global::Buf.Validate.Rule> _repeated_cel_codec
+        = pb::FieldCodec.ForMessage(186, global::Buf.Validate.Rule.Parser);
+    private readonly pbc::RepeatedField<global::Buf.Validate.Rule> cel_ = new pbc::RepeatedField<global::Buf.Validate.Rule>();
     /// <summary>
-    /// `Constraint` is a repeated field used to represent a textual expression
-    /// in the Common Expression Language (CEL) syntax. For more information on
-    /// CEL, [see our documentation](https://github.com/bufbuild/protovalidate/blob/main/docs/cel.md).
+    /// `cel` is a repeated field used to represent a textual expression
+    /// in the Common Expression Language (CEL) syntax. For more information,
+    /// [see our documentation](https://buf.build/docs/protovalidate/schemas/custom-rules/).
     ///
-    ///```proto
-    ///message MyMessage {
-    ///  // The field `value` must be greater than 42.
-    ///  optional int32 value = 1 [(buf.validate.field).cel = {
-    ///    id: "my_message.value",
-    ///    message: "value must be greater than 42",
-    ///    expression: "this > 42",
-    ///  }];
-    ///}
-    ///```
+    /// ```proto
+    /// message MyMessage {
+    ///   // The field `value` must be greater than 42.
+    ///   optional int32 value = 1 [(buf.validate.field).cel = {
+    ///     id: "my_message.value",
+    ///     message: "value must be greater than 42",
+    ///     expression: "this > 42",
+    ///   }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Buf.Validate.Constraint> Cel {
+    public pbc::RepeatedField<global::Buf.Validate.Rule> Cel {
       get { return cel_; }
-    }
-
-    /// <summary>Field number for the "skipped" field.</summary>
-    public const int SkippedFieldNumber = 24;
-    private bool skipped_;
-    /// <summary>
-    ///`skipped` is an optional boolean attribute that specifies that the
-    ///validation rules of this field should not be evaluated. If skipped is set to
-    ///true, any validation rules set for the field will be ignored.
-    ///
-    ///```proto
-    ///message MyMessage {
-    ///  // The field `value` must not be set.
-    ///  optional MyOtherMessage value = 1 [(buf.validate.field).skipped = true];
-    ///}
-    ///```
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Skipped {
-      get { return skipped_; }
-      set {
-        skipped_ = value;
-      }
     }
 
     /// <summary>Field number for the "required" field.</summary>
     public const int RequiredFieldNumber = 25;
+    private readonly static bool RequiredDefaultValue = false;
+
     private bool required_;
     /// <summary>
-    ///`required` is an optional boolean attribute that specifies that
-    ///this field must be set. If required is set to true, the field value must
-    ///not be empty; otherwise, an error message will be generated.
+    /// If `required` is true, the field must be set. A validation error is returned
+    /// if the field is not set.
     ///
-    ///```proto
-    ///message MyMessage {
-    ///  // The field `value` must be set.
-    ///  optional MyOtherMessage value = 1 [(buf.validate.field).required = true];
-    ///}
-    ///```
+    /// ```proto
+    /// syntax="proto3";
+    ///
+    /// message FieldsWithPresence {
+    ///   // Requires any string to be set, including the empty string.
+    ///   optional string link = 1 [
+    ///     (buf.validate.field).required = true
+    ///   ];
+    ///   // Requires true or false to be set.
+    ///   optional bool disabled = 2 [
+    ///     (buf.validate.field).required = true
+    ///   ];
+    ///   // Requires a message to be set, including the empty message.
+    ///   SomeMessage msg = 4 [
+    ///     (buf.validate.field).required = true
+    ///   ];
+    /// }
+    /// ```
+    ///
+    /// All fields in the example above track presence. By default, Protovalidate
+    /// ignores rules on those fields if no value is set. `required` ensures that
+    /// the fields are set and valid.
+    ///
+    /// Fields that don't track presence are always validated by Protovalidate,
+    /// whether they are set or not. It is not necessary to add `required`:
+    ///
+    /// ```proto
+    /// syntax="proto3";
+    ///
+    /// message FieldsWithoutPresence {
+    ///   // `string.email` always applies, even to an empty string.
+    ///   string link = 1 [
+    ///     (buf.validate.field).string.email = true
+    ///   ];
+    ///   // `repeated.min_items` always applies, even to an empty list.
+    ///   repeated string labels = 4 [
+    ///     (buf.validate.field).repeated.min_items = 1
+    ///   ];
+    /// }
+    /// ```
+    ///
+    /// To learn which fields track presence, see the
+    /// [Field Presence cheat sheet](https://protobuf.dev/programming-guides/field_presence/#cheat).
+    ///
+    /// Note: While field rules can be applied to repeated items, map keys, and map
+    /// values, the elements are always considered to be set. Consequently,
+    /// specifying `repeated.items.required` is redundant.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool Required {
-      get { return required_; }
+      get { if ((_hasBits0 & 1) != 0) { return required_; } else { return RequiredDefaultValue; } }
       set {
+        _hasBits0 |= 1;
         required_ = value;
       }
     }
+    /// <summary>Gets whether the "required" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasRequired {
+      get { return (_hasBits0 & 1) != 0; }
+    }
+    /// <summary>Clears the value of the "required" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearRequired() {
+      _hasBits0 &= ~1;
+    }
 
-    /// <summary>Field number for the "ignore_empty" field.</summary>
-    public const int IgnoreEmptyFieldNumber = 26;
-    private bool ignoreEmpty_;
+    /// <summary>Field number for the "ignore" field.</summary>
+    public const int IgnoreFieldNumber = 27;
+    private readonly static global::Buf.Validate.Ignore IgnoreDefaultValue = global::Buf.Validate.Ignore.Unspecified;
+
+    private global::Buf.Validate.Ignore ignore_;
     /// <summary>
-    ///`ignore_empty` specifies that the validation rules of this field should be
-    ///evaluated only if the field isn't empty. If the field is empty, no validation
-    ///rules are applied.
+    /// Ignore validation rules on the field if its value matches the specified
+    /// criteria. See the `Ignore` enum for details.
     ///
-    ///```proto
-    ///message MyRepeated {
-    ///  // The field `value` validation rules should be evaluated only if the field isn't empty.
-    ///  repeated string value = 1 [(buf.validate.field).ignore_empty = true];
-    ///}
-    ///```
+    /// ```proto
+    /// message UpdateRequest {
+    ///   // The uri rule only applies if the field is not an empty string.
+    ///   string url = 1 [
+    ///     (buf.validate.field).ignore = IGNORE_IF_ZERO_VALUE,
+    ///     (buf.validate.field).string.uri = true
+    ///   ];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool IgnoreEmpty {
-      get { return ignoreEmpty_; }
+    public global::Buf.Validate.Ignore Ignore {
+      get { if ((_hasBits0 & 2) != 0) { return ignore_; } else { return IgnoreDefaultValue; } }
       set {
-        ignoreEmpty_ = value;
+        _hasBits0 |= 2;
+        ignore_ = value;
       }
+    }
+    /// <summary>Gets whether the "ignore" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasIgnore {
+      get { return (_hasBits0 & 2) != 0; }
+    }
+    /// <summary>Clears the value of the "ignore" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearIgnore() {
+      _hasBits0 &= ~2;
     }
 
     /// <summary>Field number for the "float" field.</summary>
@@ -2179,12 +3074,12 @@ namespace Buf.Validate {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as FieldConstraints);
+      return Equals(other as FieldRules);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(FieldConstraints other) {
+    public bool Equals(FieldRules other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -2192,9 +3087,8 @@ namespace Buf.Validate {
         return true;
       }
       if(!cel_.Equals(other.cel_)) return false;
-      if (Skipped != other.Skipped) return false;
       if (Required != other.Required) return false;
-      if (IgnoreEmpty != other.IgnoreEmpty) return false;
+      if (Ignore != other.Ignore) return false;
       if (!object.Equals(Float, other.Float)) return false;
       if (!object.Equals(Double, other.Double)) return false;
       if (!object.Equals(Int32, other.Int32)) return false;
@@ -2225,9 +3119,8 @@ namespace Buf.Validate {
     public override int GetHashCode() {
       int hash = 1;
       hash ^= cel_.GetHashCode();
-      if (Skipped != false) hash ^= Skipped.GetHashCode();
-      if (Required != false) hash ^= Required.GetHashCode();
-      if (IgnoreEmpty != false) hash ^= IgnoreEmpty.GetHashCode();
+      if (HasRequired) hash ^= Required.GetHashCode();
+      if (HasIgnore) hash ^= Ignore.GetHashCode();
       if (typeCase_ == TypeOneofCase.Float) hash ^= Float.GetHashCode();
       if (typeCase_ == TypeOneofCase.Double) hash ^= Double.GetHashCode();
       if (typeCase_ == TypeOneofCase.Int32) hash ^= Int32.GetHashCode();
@@ -2353,17 +3246,13 @@ namespace Buf.Validate {
         output.WriteMessage(Timestamp);
       }
       cel_.WriteTo(output, _repeated_cel_codec);
-      if (Skipped != false) {
-        output.WriteRawTag(192, 1);
-        output.WriteBool(Skipped);
-      }
-      if (Required != false) {
+      if (HasRequired) {
         output.WriteRawTag(200, 1);
         output.WriteBool(Required);
       }
-      if (IgnoreEmpty != false) {
-        output.WriteRawTag(208, 1);
-        output.WriteBool(IgnoreEmpty);
+      if (HasIgnore) {
+        output.WriteRawTag(216, 1);
+        output.WriteEnum((int) Ignore);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -2460,17 +3349,13 @@ namespace Buf.Validate {
         output.WriteMessage(Timestamp);
       }
       cel_.WriteTo(ref output, _repeated_cel_codec);
-      if (Skipped != false) {
-        output.WriteRawTag(192, 1);
-        output.WriteBool(Skipped);
-      }
-      if (Required != false) {
+      if (HasRequired) {
         output.WriteRawTag(200, 1);
         output.WriteBool(Required);
       }
-      if (IgnoreEmpty != false) {
-        output.WriteRawTag(208, 1);
-        output.WriteBool(IgnoreEmpty);
+      if (HasIgnore) {
+        output.WriteRawTag(216, 1);
+        output.WriteEnum((int) Ignore);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -2483,14 +3368,11 @@ namespace Buf.Validate {
     public int CalculateSize() {
       int size = 0;
       size += cel_.CalculateSize(_repeated_cel_codec);
-      if (Skipped != false) {
+      if (HasRequired) {
         size += 2 + 1;
       }
-      if (Required != false) {
-        size += 2 + 1;
-      }
-      if (IgnoreEmpty != false) {
-        size += 2 + 1;
+      if (HasIgnore) {
+        size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) Ignore);
       }
       if (typeCase_ == TypeOneofCase.Float) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Float);
@@ -2563,19 +3445,16 @@ namespace Buf.Validate {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(FieldConstraints other) {
+    public void MergeFrom(FieldRules other) {
       if (other == null) {
         return;
       }
       cel_.Add(other.cel_);
-      if (other.Skipped != false) {
-        Skipped = other.Skipped;
-      }
-      if (other.Required != false) {
+      if (other.HasRequired) {
         Required = other.Required;
       }
-      if (other.IgnoreEmpty != false) {
-        IgnoreEmpty = other.IgnoreEmpty;
+      if (other.HasIgnore) {
+        Ignore = other.Ignore;
       }
       switch (other.TypeCase) {
         case TypeOneofCase.Float:
@@ -2914,16 +3793,12 @@ namespace Buf.Validate {
             cel_.AddEntriesFrom(input, _repeated_cel_codec);
             break;
           }
-          case 192: {
-            Skipped = input.ReadBool();
-            break;
-          }
           case 200: {
             Required = input.ReadBool();
             break;
           }
-          case 208: {
-            IgnoreEmpty = input.ReadBool();
+          case 216: {
+            Ignore = (global::Buf.Validate.Ignore) input.ReadEnum();
             break;
           }
         }
@@ -3134,16 +4009,12 @@ namespace Buf.Validate {
             cel_.AddEntriesFrom(ref input, _repeated_cel_codec);
             break;
           }
-          case 192: {
-            Skipped = input.ReadBool();
-            break;
-          }
           case 200: {
             Required = input.ReadBool();
             break;
           }
-          case 208: {
-            IgnoreEmpty = input.ReadBool();
+          case 216: {
+            Ignore = (global::Buf.Validate.Ignore) input.ReadEnum();
             break;
           }
         }
@@ -3154,16 +4025,216 @@ namespace Buf.Validate {
   }
 
   /// <summary>
-  /// FloatRules describes the constraints applied to `float` values. These
+  /// PredefinedRules are custom rules that can be re-used with
+  /// multiple fields.
+  /// </summary>
+  public sealed partial class PredefinedRules : pb::IMessage<PredefinedRules>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<PredefinedRules> _parser = new pb::MessageParser<PredefinedRules>(() => new PredefinedRules());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<PredefinedRules> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PredefinedRules() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PredefinedRules(PredefinedRules other) : this() {
+      cel_ = other.cel_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public PredefinedRules Clone() {
+      return new PredefinedRules(this);
+    }
+
+    /// <summary>Field number for the "cel" field.</summary>
+    public const int CelFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Buf.Validate.Rule> _repeated_cel_codec
+        = pb::FieldCodec.ForMessage(10, global::Buf.Validate.Rule.Parser);
+    private readonly pbc::RepeatedField<global::Buf.Validate.Rule> cel_ = new pbc::RepeatedField<global::Buf.Validate.Rule>();
+    /// <summary>
+    /// `cel` is a repeated field used to represent a textual expression
+    /// in the Common Expression Language (CEL) syntax. For more information,
+    /// [see our documentation](https://buf.build/docs/protovalidate/schemas/predefined-rules/).
+    ///
+    /// ```proto
+    /// message MyMessage {
+    ///   // The field `value` must be greater than 42.
+    ///   optional int32 value = 1 [(buf.validate.predefined).cel = {
+    ///     id: "my_message.value",
+    ///     message: "value must be greater than 42",
+    ///     expression: "this > 42",
+    ///   }];
+    /// }
+    /// ```
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Buf.Validate.Rule> Cel {
+      get { return cel_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as PredefinedRules);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(PredefinedRules other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!cel_.Equals(other.cel_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= cel_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      cel_.WriteTo(output, _repeated_cel_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      cel_.WriteTo(ref output, _repeated_cel_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += cel_.CalculateSize(_repeated_cel_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(PredefinedRules other) {
+      if (other == null) {
+        return;
+      }
+      cel_.Add(other.cel_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            cel_.AddEntriesFrom(input, _repeated_cel_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            cel_.AddEntriesFrom(ref input, _repeated_cel_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// FloatRules describes the rules applied to `float` values. These
   /// rules may also be applied to the `google.protobuf.FloatValue` Well-Known-Type.
   /// </summary>
-  public sealed partial class FloatRules : pb::IMessage<FloatRules>
+  public sealed partial class FloatRules : pb::IExtendableMessage<FloatRules>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
     private static readonly pb::MessageParser<FloatRules> _parser = new pb::MessageParser<FloatRules>(() => new FloatRules());
     private pb::UnknownFieldSet _unknownFields;
+    private pb::ExtensionSet<FloatRules> _extensions;
+    private pb::ExtensionSet<FloatRules> _Extensions { get { return _extensions; } }
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3172,7 +4243,7 @@ namespace Buf.Validate {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3194,13 +4265,30 @@ namespace Buf.Validate {
     public FloatRules(FloatRules other) : this() {
       _hasBits0 = other._hasBits0;
       const_ = other.const_;
-      lt_ = other.lt_;
-      lte_ = other.lte_;
-      gt_ = other.gt_;
-      gte_ = other.gte_;
       in_ = other.in_.Clone();
       notIn_ = other.notIn_.Clone();
+      finite_ = other.finite_;
+      example_ = other.example_.Clone();
+      switch (other.LessThanCase) {
+        case LessThanOneofCase.Lt:
+          Lt = other.Lt;
+          break;
+        case LessThanOneofCase.Lte:
+          Lte = other.Lte;
+          break;
+      }
+
+      switch (other.GreaterThanCase) {
+        case GreaterThanOneofCase.Gt:
+          Gt = other.Gt;
+          break;
+        case GreaterThanOneofCase.Gte:
+          Gte = other.Gte;
+          break;
+      }
+
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+      _extensions = pb::ExtensionSet.Clone(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3215,15 +4303,15 @@ namespace Buf.Validate {
 
     private float const_;
     /// <summary>
-    ///`const` requires the field value to exactly match the specified value. If
+    /// `const` requires the field value to exactly match the specified value. If
     /// the field value doesn't match, an error message is generated.
     ///
-    ///```proto
-    ///message MyFloat {
-    ///  // value must equal 42.0
+    /// ```proto
+    /// message MyFloat {
+    ///   // value must equal 42.0
     ///   float value = 1 [(buf.validate.field).float.const = 42.0];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3249,192 +4337,188 @@ namespace Buf.Validate {
 
     /// <summary>Field number for the "lt" field.</summary>
     public const int LtFieldNumber = 2;
-    private readonly static float LtDefaultValue = 0F;
-
-    private float lt_;
     /// <summary>
-    ///`lt` requires the field value to be less than the specified value (field &lt;
+    /// `lt` requires the field value to be less than the specified value (field &lt;
     /// value). If the field value is equal to or greater than the specified value,
     /// an error message is generated.
     ///
-    ///```proto
-    ///message MyFloat {
-    ///  // value must be less than 10.0
+    /// ```proto
+    /// message MyFloat {
+    ///   // value must be less than 10.0
     ///   float value = 1 [(buf.validate.field).float.lt = 10.0];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public float Lt {
-      get { if ((_hasBits0 & 2) != 0) { return lt_; } else { return LtDefaultValue; } }
+      get { return HasLt ? (float) lessThan_ : 0F; }
       set {
-        _hasBits0 |= 2;
-        lt_ = value;
+        lessThan_ = value;
+        lessThanCase_ = LessThanOneofCase.Lt;
       }
     }
     /// <summary>Gets whether the "lt" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasLt {
-      get { return (_hasBits0 & 2) != 0; }
+      get { return lessThanCase_ == LessThanOneofCase.Lt; }
     }
-    /// <summary>Clears the value of the "lt" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "lt" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearLt() {
-      _hasBits0 &= ~2;
+      if (HasLt) {
+        ClearLessThan();
+      }
     }
 
     /// <summary>Field number for the "lte" field.</summary>
     public const int LteFieldNumber = 3;
-    private readonly static float LteDefaultValue = 0F;
-
-    private float lte_;
     /// <summary>
-    ///`lte` requires the field value to be less than or equal to the specified
+    /// `lte` requires the field value to be less than or equal to the specified
     /// value (field &lt;= value). If the field value is greater than the specified
     /// value, an error message is generated.
     ///
-    ///```proto
-    ///message MyFloat {
-    ///  // value must be less than or equal to 10.0
+    /// ```proto
+    /// message MyFloat {
+    ///   // value must be less than or equal to 10.0
     ///   float value = 1 [(buf.validate.field).float.lte = 10.0];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public float Lte {
-      get { if ((_hasBits0 & 4) != 0) { return lte_; } else { return LteDefaultValue; } }
+      get { return HasLte ? (float) lessThan_ : 0F; }
       set {
-        _hasBits0 |= 4;
-        lte_ = value;
+        lessThan_ = value;
+        lessThanCase_ = LessThanOneofCase.Lte;
       }
     }
     /// <summary>Gets whether the "lte" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasLte {
-      get { return (_hasBits0 & 4) != 0; }
+      get { return lessThanCase_ == LessThanOneofCase.Lte; }
     }
-    /// <summary>Clears the value of the "lte" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "lte" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearLte() {
-      _hasBits0 &= ~4;
+      if (HasLte) {
+        ClearLessThan();
+      }
     }
 
     /// <summary>Field number for the "gt" field.</summary>
     public const int GtFieldNumber = 4;
-    private readonly static float GtDefaultValue = 0F;
-
-    private float gt_;
     /// <summary>
-    ///`gt` requires the field value to be greater than the specified value
+    /// `gt` requires the field value to be greater than the specified value
     /// (exclusive). If the value of `gt` is larger than a specified `lt` or
     /// `lte`, the range is reversed, and the field value must be outside the
     /// specified range. If the field value doesn't meet the required conditions,
     /// an error message is generated.
     ///
-    ///```proto
-    ///message MyFloat {
-    ///  // value must be greater than 5.0 [float.gt]
-    ///  float value = 1 [(buf.validate.field).float.gt = 5.0];
+    /// ```proto
+    /// message MyFloat {
+    ///   // value must be greater than 5.0 [float.gt]
+    ///   float value = 1 [(buf.validate.field).float.gt = 5.0];
     ///
-    ///  // value must be greater than 5 and less than 10.0 [float.gt_lt]
-    ///  float other_value = 2 [(buf.validate.field).float = { gt: 5.0, lt: 10.0 }];
+    ///   // value must be greater than 5 and less than 10.0 [float.gt_lt]
+    ///   float other_value = 2 [(buf.validate.field).float = { gt: 5.0, lt: 10.0 }];
     ///
-    ///  // value must be greater than 10 or less than 5.0 [float.gt_lt_exclusive]
-    ///  float another_value = 3 [(buf.validate.field).float = { gt: 10.0, lt: 5.0 }];
-    ///}
-    ///```
+    ///   // value must be greater than 10 or less than 5.0 [float.gt_lt_exclusive]
+    ///   float another_value = 3 [(buf.validate.field).float = { gt: 10.0, lt: 5.0 }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public float Gt {
-      get { if ((_hasBits0 & 8) != 0) { return gt_; } else { return GtDefaultValue; } }
+      get { return HasGt ? (float) greaterThan_ : 0F; }
       set {
-        _hasBits0 |= 8;
-        gt_ = value;
+        greaterThan_ = value;
+        greaterThanCase_ = GreaterThanOneofCase.Gt;
       }
     }
     /// <summary>Gets whether the "gt" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasGt {
-      get { return (_hasBits0 & 8) != 0; }
+      get { return greaterThanCase_ == GreaterThanOneofCase.Gt; }
     }
-    /// <summary>Clears the value of the "gt" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "gt" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearGt() {
-      _hasBits0 &= ~8;
+      if (HasGt) {
+        ClearGreaterThan();
+      }
     }
 
     /// <summary>Field number for the "gte" field.</summary>
     public const int GteFieldNumber = 5;
-    private readonly static float GteDefaultValue = 0F;
-
-    private float gte_;
     /// <summary>
-    ///`gte` requires the field value to be greater than or equal to the specified
+    /// `gte` requires the field value to be greater than or equal to the specified
     /// value (exclusive). If the value of `gte` is larger than a specified `lt`
     /// or `lte`, the range is reversed, and the field value must be outside the
     /// specified range. If the field value doesn't meet the required conditions,
     /// an error message is generated.
     ///
-    ///```proto
-    ///message MyFloat {
-    ///  // value must be greater than or equal to 5.0 [float.gte]
-    ///  float value = 1 [(buf.validate.field).float.gte = 5.0];
+    /// ```proto
+    /// message MyFloat {
+    ///   // value must be greater than or equal to 5.0 [float.gte]
+    ///   float value = 1 [(buf.validate.field).float.gte = 5.0];
     ///
-    ///  // value must be greater than or equal to 5.0 and less than 10.0 [float.gte_lt]
-    ///  float other_value = 2 [(buf.validate.field).float = { gte: 5.0, lt: 10.0 }];
+    ///   // value must be greater than or equal to 5.0 and less than 10.0 [float.gte_lt]
+    ///   float other_value = 2 [(buf.validate.field).float = { gte: 5.0, lt: 10.0 }];
     ///
-    ///  // value must be greater than or equal to 10.0 or less than 5.0 [float.gte_lt_exclusive]
-    ///  float another_value = 3 [(buf.validate.field).float = { gte: 10.0, lt: 5.0 }];
-    ///}
-    ///```
+    ///   // value must be greater than or equal to 10.0 or less than 5.0 [float.gte_lt_exclusive]
+    ///   float another_value = 3 [(buf.validate.field).float = { gte: 10.0, lt: 5.0 }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public float Gte {
-      get { if ((_hasBits0 & 16) != 0) { return gte_; } else { return GteDefaultValue; } }
+      get { return HasGte ? (float) greaterThan_ : 0F; }
       set {
-        _hasBits0 |= 16;
-        gte_ = value;
+        greaterThan_ = value;
+        greaterThanCase_ = GreaterThanOneofCase.Gte;
       }
     }
     /// <summary>Gets whether the "gte" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasGte {
-      get { return (_hasBits0 & 16) != 0; }
+      get { return greaterThanCase_ == GreaterThanOneofCase.Gte; }
     }
-    /// <summary>Clears the value of the "gte" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "gte" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearGte() {
-      _hasBits0 &= ~16;
+      if (HasGte) {
+        ClearGreaterThan();
+      }
     }
 
     /// <summary>Field number for the "in" field.</summary>
     public const int InFieldNumber = 6;
     private static readonly pb::FieldCodec<float> _repeated_in_codec
-        = pb::FieldCodec.ForFloat(50);
+        = pb::FieldCodec.ForFloat(53);
     private readonly pbc::RepeatedField<float> in_ = new pbc::RepeatedField<float>();
     /// <summary>
-    ///`in` requires the field value to be equal to one of the specified values.
+    /// `in` requires the field value to be equal to one of the specified values.
     /// If the field value isn't one of the specified values, an error message
     /// is generated.
     ///
-    ///```proto
-    ///message MyFloat {
-    ///  // value must be in list [1.0, 2.0, 3.0]
-    ///  repeated float value = 1 (buf.validate.field).float = { in: [1.0, 2.0, 3.0] };
-    ///}
-    ///```
+    /// ```proto
+    /// message MyFloat {
+    ///   // value must be in list [1.0, 2.0, 3.0]
+    ///   float value = 1 [(buf.validate.field).float = { in: [1.0, 2.0, 3.0] }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3445,24 +4529,122 @@ namespace Buf.Validate {
     /// <summary>Field number for the "not_in" field.</summary>
     public const int NotInFieldNumber = 7;
     private static readonly pb::FieldCodec<float> _repeated_notIn_codec
-        = pb::FieldCodec.ForFloat(58);
+        = pb::FieldCodec.ForFloat(61);
     private readonly pbc::RepeatedField<float> notIn_ = new pbc::RepeatedField<float>();
     /// <summary>
-    ///`in` requires the field value to not be equal to any of the specified
+    /// `in` requires the field value to not be equal to any of the specified
     /// values. If the field value is one of the specified values, an error
     /// message is generated.
     ///
-    ///```proto
-    ///message MyFloat {
-    ///  // value must not be in list [1.0, 2.0, 3.0]
-    ///  repeated float value = 1 (buf.validate.field).float = { not_in: [1.0, 2.0, 3.0] };
-    ///}
-    ///```
+    /// ```proto
+    /// message MyFloat {
+    ///   // value must not be in list [1.0, 2.0, 3.0]
+    ///   float value = 1 [(buf.validate.field).float = { not_in: [1.0, 2.0, 3.0] }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<float> NotIn {
       get { return notIn_; }
+    }
+
+    /// <summary>Field number for the "finite" field.</summary>
+    public const int FiniteFieldNumber = 8;
+    private readonly static bool FiniteDefaultValue = false;
+
+    private bool finite_;
+    /// <summary>
+    /// `finite` requires the field value to be finite. If the field value is
+    /// infinite or NaN, an error message is generated.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Finite {
+      get { if ((_hasBits0 & 2) != 0) { return finite_; } else { return FiniteDefaultValue; } }
+      set {
+        _hasBits0 |= 2;
+        finite_ = value;
+      }
+    }
+    /// <summary>Gets whether the "finite" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasFinite {
+      get { return (_hasBits0 & 2) != 0; }
+    }
+    /// <summary>Clears the value of the "finite" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearFinite() {
+      _hasBits0 &= ~2;
+    }
+
+    /// <summary>Field number for the "example" field.</summary>
+    public const int ExampleFieldNumber = 9;
+    private static readonly pb::FieldCodec<float> _repeated_example_codec
+        = pb::FieldCodec.ForFloat(77);
+    private readonly pbc::RepeatedField<float> example_ = new pbc::RepeatedField<float>();
+    /// <summary>
+    /// `example` specifies values that the field may have. These values SHOULD
+    /// conform to other rules. `example` values will not impact validation
+    /// but may be used as helpful guidance on how to populate the given field.
+    ///
+    /// ```proto
+    /// message MyFloat {
+    ///   float value = 1 [
+    ///     (buf.validate.field).float.example = 1.0,
+    ///     (buf.validate.field).float.example = inf
+    ///   ];
+    /// }
+    /// ```
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<float> Example {
+      get { return example_; }
+    }
+
+    private object lessThan_;
+    /// <summary>Enum of possible cases for the "less_than" oneof.</summary>
+    public enum LessThanOneofCase {
+      None = 0,
+      Lt = 2,
+      Lte = 3,
+    }
+    private LessThanOneofCase lessThanCase_ = LessThanOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public LessThanOneofCase LessThanCase {
+      get { return lessThanCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearLessThan() {
+      lessThanCase_ = LessThanOneofCase.None;
+      lessThan_ = null;
+    }
+
+    private object greaterThan_;
+    /// <summary>Enum of possible cases for the "greater_than" oneof.</summary>
+    public enum GreaterThanOneofCase {
+      None = 0,
+      Gt = 4,
+      Gte = 5,
+    }
+    private GreaterThanOneofCase greaterThanCase_ = GreaterThanOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GreaterThanOneofCase GreaterThanCase {
+      get { return greaterThanCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearGreaterThan() {
+      greaterThanCase_ = GreaterThanOneofCase.None;
+      greaterThan_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3487,6 +4669,13 @@ namespace Buf.Validate {
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Gte, other.Gte)) return false;
       if(!in_.Equals(other.in_)) return false;
       if(!notIn_.Equals(other.notIn_)) return false;
+      if (Finite != other.Finite) return false;
+      if(!example_.Equals(other.example_)) return false;
+      if (LessThanCase != other.LessThanCase) return false;
+      if (GreaterThanCase != other.GreaterThanCase) return false;
+      if (!Equals(_extensions, other._extensions)) {
+        return false;
+      }
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -3501,6 +4690,13 @@ namespace Buf.Validate {
       if (HasGte) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Gte);
       hash ^= in_.GetHashCode();
       hash ^= notIn_.GetHashCode();
+      if (HasFinite) hash ^= Finite.GetHashCode();
+      hash ^= example_.GetHashCode();
+      hash ^= (int) lessThanCase_;
+      hash ^= (int) greaterThanCase_;
+      if (_extensions != null) {
+        hash ^= _extensions.GetHashCode();
+      }
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -3541,6 +4737,14 @@ namespace Buf.Validate {
       }
       in_.WriteTo(output, _repeated_in_codec);
       notIn_.WriteTo(output, _repeated_notIn_codec);
+      if (HasFinite) {
+        output.WriteRawTag(64);
+        output.WriteBool(Finite);
+      }
+      example_.WriteTo(output, _repeated_example_codec);
+      if (_extensions != null) {
+        _extensions.WriteTo(output);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -3573,6 +4777,14 @@ namespace Buf.Validate {
       }
       in_.WriteTo(ref output, _repeated_in_codec);
       notIn_.WriteTo(ref output, _repeated_notIn_codec);
+      if (HasFinite) {
+        output.WriteRawTag(64);
+        output.WriteBool(Finite);
+      }
+      example_.WriteTo(ref output, _repeated_example_codec);
+      if (_extensions != null) {
+        _extensions.WriteTo(ref output);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -3600,6 +4812,13 @@ namespace Buf.Validate {
       }
       size += in_.CalculateSize(_repeated_in_codec);
       size += notIn_.CalculateSize(_repeated_notIn_codec);
+      if (HasFinite) {
+        size += 1 + 1;
+      }
+      size += example_.CalculateSize(_repeated_example_codec);
+      if (_extensions != null) {
+        size += _extensions.CalculateSize();
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -3615,20 +4834,31 @@ namespace Buf.Validate {
       if (other.HasConst) {
         Const = other.Const;
       }
-      if (other.HasLt) {
-        Lt = other.Lt;
-      }
-      if (other.HasLte) {
-        Lte = other.Lte;
-      }
-      if (other.HasGt) {
-        Gt = other.Gt;
-      }
-      if (other.HasGte) {
-        Gte = other.Gte;
-      }
       in_.Add(other.in_);
       notIn_.Add(other.notIn_);
+      if (other.HasFinite) {
+        Finite = other.Finite;
+      }
+      example_.Add(other.example_);
+      switch (other.LessThanCase) {
+        case LessThanOneofCase.Lt:
+          Lt = other.Lt;
+          break;
+        case LessThanOneofCase.Lte:
+          Lte = other.Lte;
+          break;
+      }
+
+      switch (other.GreaterThanCase) {
+        case GreaterThanOneofCase.Gt:
+          Gt = other.Gt;
+          break;
+        case GreaterThanOneofCase.Gte:
+          Gte = other.Gte;
+          break;
+      }
+
+      pb::ExtensionSet.MergeFrom(ref _extensions, other._extensions);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -3642,7 +4872,9 @@ namespace Buf.Validate {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            }
             break;
           case 13: {
             Const = input.ReadFloat();
@@ -3674,6 +4906,15 @@ namespace Buf.Validate {
             notIn_.AddEntriesFrom(input, _repeated_notIn_codec);
             break;
           }
+          case 64: {
+            Finite = input.ReadBool();
+            break;
+          }
+          case 74:
+          case 77: {
+            example_.AddEntriesFrom(input, _repeated_example_codec);
+            break;
+          }
         }
       }
     #endif
@@ -3687,7 +4928,9 @@ namespace Buf.Validate {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, ref input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            }
             break;
           case 13: {
             Const = input.ReadFloat();
@@ -3719,24 +4962,57 @@ namespace Buf.Validate {
             notIn_.AddEntriesFrom(ref input, _repeated_notIn_codec);
             break;
           }
+          case 64: {
+            Finite = input.ReadBool();
+            break;
+          }
+          case 74:
+          case 77: {
+            example_.AddEntriesFrom(ref input, _repeated_example_codec);
+            break;
+          }
         }
       }
     }
     #endif
 
+    public TValue GetExtension<TValue>(pb::Extension<FloatRules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<FloatRules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>(pb::RepeatedExtension<FloatRules, TValue> extension) {
+      return pb::ExtensionSet.GetOrInitialize(ref _extensions, extension);
+    }
+    public void SetExtension<TValue>(pb::Extension<FloatRules, TValue> extension, TValue value) {
+      pb::ExtensionSet.Set(ref _extensions, extension, value);
+    }
+    public bool HasExtension<TValue>(pb::Extension<FloatRules, TValue> extension) {
+      return pb::ExtensionSet.Has(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::Extension<FloatRules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::RepeatedExtension<FloatRules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+
   }
 
   /// <summary>
-  /// DoubleRules describes the constraints applied to `double` values. These
+  /// DoubleRules describes the rules applied to `double` values. These
   /// rules may also be applied to the `google.protobuf.DoubleValue` Well-Known-Type.
   /// </summary>
-  public sealed partial class DoubleRules : pb::IMessage<DoubleRules>
+  public sealed partial class DoubleRules : pb::IExtendableMessage<DoubleRules>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
     private static readonly pb::MessageParser<DoubleRules> _parser = new pb::MessageParser<DoubleRules>(() => new DoubleRules());
     private pb::UnknownFieldSet _unknownFields;
+    private pb::ExtensionSet<DoubleRules> _extensions;
+    private pb::ExtensionSet<DoubleRules> _Extensions { get { return _extensions; } }
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3745,7 +5021,7 @@ namespace Buf.Validate {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[7]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3767,13 +5043,30 @@ namespace Buf.Validate {
     public DoubleRules(DoubleRules other) : this() {
       _hasBits0 = other._hasBits0;
       const_ = other.const_;
-      lt_ = other.lt_;
-      lte_ = other.lte_;
-      gt_ = other.gt_;
-      gte_ = other.gte_;
       in_ = other.in_.Clone();
       notIn_ = other.notIn_.Clone();
+      finite_ = other.finite_;
+      example_ = other.example_.Clone();
+      switch (other.LessThanCase) {
+        case LessThanOneofCase.Lt:
+          Lt = other.Lt;
+          break;
+        case LessThanOneofCase.Lte:
+          Lte = other.Lte;
+          break;
+      }
+
+      switch (other.GreaterThanCase) {
+        case GreaterThanOneofCase.Gt:
+          Gt = other.Gt;
+          break;
+        case GreaterThanOneofCase.Gte:
+          Gte = other.Gte;
+          break;
+      }
+
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+      _extensions = pb::ExtensionSet.Clone(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3788,15 +5081,15 @@ namespace Buf.Validate {
 
     private double const_;
     /// <summary>
-    ///`const` requires the field value to exactly match the specified value. If
+    /// `const` requires the field value to exactly match the specified value. If
     /// the field value doesn't match, an error message is generated.
     ///
-    ///```proto
-    ///message MyDouble {
-    ///  // value must equal 42.0
+    /// ```proto
+    /// message MyDouble {
+    ///   // value must equal 42.0
     ///   double value = 1 [(buf.validate.field).double.const = 42.0];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3822,87 +5115,82 @@ namespace Buf.Validate {
 
     /// <summary>Field number for the "lt" field.</summary>
     public const int LtFieldNumber = 2;
-    private readonly static double LtDefaultValue = 0D;
-
-    private double lt_;
     /// <summary>
     /// `lt` requires the field value to be less than the specified value (field &lt;
     /// value). If the field value is equal to or greater than the specified
     /// value, an error message is generated.
     ///
-    ///```proto
-    ///message MyDouble {
-    ///  // value must be less than 10.0
+    /// ```proto
+    /// message MyDouble {
+    ///   // value must be less than 10.0
     ///   double value = 1 [(buf.validate.field).double.lt = 10.0];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double Lt {
-      get { if ((_hasBits0 & 2) != 0) { return lt_; } else { return LtDefaultValue; } }
+      get { return HasLt ? (double) lessThan_ : 0D; }
       set {
-        _hasBits0 |= 2;
-        lt_ = value;
+        lessThan_ = value;
+        lessThanCase_ = LessThanOneofCase.Lt;
       }
     }
     /// <summary>Gets whether the "lt" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasLt {
-      get { return (_hasBits0 & 2) != 0; }
+      get { return lessThanCase_ == LessThanOneofCase.Lt; }
     }
-    /// <summary>Clears the value of the "lt" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "lt" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearLt() {
-      _hasBits0 &= ~2;
+      if (HasLt) {
+        ClearLessThan();
+      }
     }
 
     /// <summary>Field number for the "lte" field.</summary>
     public const int LteFieldNumber = 3;
-    private readonly static double LteDefaultValue = 0D;
-
-    private double lte_;
     /// <summary>
-    ///`lte` requires the field value to be less than or equal to the specified value
+    /// `lte` requires the field value to be less than or equal to the specified value
     /// (field &lt;= value). If the field value is greater than the specified value,
     /// an error message is generated.
     ///
-    ///```proto
-    ///message MyDouble {
-    ///  // value must be less than or equal to 10.0
+    /// ```proto
+    /// message MyDouble {
+    ///   // value must be less than or equal to 10.0
     ///   double value = 1 [(buf.validate.field).double.lte = 10.0];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double Lte {
-      get { if ((_hasBits0 & 4) != 0) { return lte_; } else { return LteDefaultValue; } }
+      get { return HasLte ? (double) lessThan_ : 0D; }
       set {
-        _hasBits0 |= 4;
-        lte_ = value;
+        lessThan_ = value;
+        lessThanCase_ = LessThanOneofCase.Lte;
       }
     }
     /// <summary>Gets whether the "lte" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasLte {
-      get { return (_hasBits0 & 4) != 0; }
+      get { return lessThanCase_ == LessThanOneofCase.Lte; }
     }
-    /// <summary>Clears the value of the "lte" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "lte" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearLte() {
-      _hasBits0 &= ~4;
+      if (HasLte) {
+        ClearLessThan();
+      }
     }
 
     /// <summary>Field number for the "gt" field.</summary>
     public const int GtFieldNumber = 4;
-    private readonly static double GtDefaultValue = 0D;
-
-    private double gt_;
     /// <summary>
     /// `gt` requires the field value to be greater than the specified value
     /// (exclusive). If the value of `gt` is larger than a specified `lt` or `lte`,
@@ -3910,46 +5198,45 @@ namespace Buf.Validate {
     /// range. If the field value doesn't meet the required conditions, an error
     /// message is generated.
     ///
-    ///```proto
-    ///message MyDouble {
-    ///  // value must be greater than 5.0 [double.gt]
-    ///  double value = 1 [(buf.validate.field).double.gt = 5.0];
+    /// ```proto
+    /// message MyDouble {
+    ///   // value must be greater than 5.0 [double.gt]
+    ///   double value = 1 [(buf.validate.field).double.gt = 5.0];
     ///
-    ///  // value must be greater than 5 and less than 10.0 [double.gt_lt]
-    ///  double other_value = 2 [(buf.validate.field).double = { gt: 5.0, lt: 10.0 }];
+    ///   // value must be greater than 5 and less than 10.0 [double.gt_lt]
+    ///   double other_value = 2 [(buf.validate.field).double = { gt: 5.0, lt: 10.0 }];
     ///
-    ///  // value must be greater than 10 or less than 5.0 [double.gt_lt_exclusive]
-    ///  double another_value = 3 [(buf.validate.field).double = { gt: 10.0, lt: 5.0 }];
-    ///}
-    ///```
+    ///   // value must be greater than 10 or less than 5.0 [double.gt_lt_exclusive]
+    ///   double another_value = 3 [(buf.validate.field).double = { gt: 10.0, lt: 5.0 }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double Gt {
-      get { if ((_hasBits0 & 8) != 0) { return gt_; } else { return GtDefaultValue; } }
+      get { return HasGt ? (double) greaterThan_ : 0D; }
       set {
-        _hasBits0 |= 8;
-        gt_ = value;
+        greaterThan_ = value;
+        greaterThanCase_ = GreaterThanOneofCase.Gt;
       }
     }
     /// <summary>Gets whether the "gt" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasGt {
-      get { return (_hasBits0 & 8) != 0; }
+      get { return greaterThanCase_ == GreaterThanOneofCase.Gt; }
     }
-    /// <summary>Clears the value of the "gt" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "gt" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearGt() {
-      _hasBits0 &= ~8;
+      if (HasGt) {
+        ClearGreaterThan();
+      }
     }
 
     /// <summary>Field number for the "gte" field.</summary>
     public const int GteFieldNumber = 5;
-    private readonly static double GteDefaultValue = 0D;
-
-    private double gte_;
     /// <summary>
     /// `gte` requires the field value to be greater than or equal to the specified
     /// value (exclusive). If the value of `gte` is larger than a specified `lt` or
@@ -3957,57 +5244,59 @@ namespace Buf.Validate {
     /// specified range. If the field value doesn't meet the required conditions,
     /// an error message is generated.
     ///
-    ///```proto
-    ///message MyDouble {
-    ///  // value must be greater than or equal to 5.0 [double.gte]
-    ///  double value = 1 [(buf.validate.field).double.gte = 5.0];
+    /// ```proto
+    /// message MyDouble {
+    ///   // value must be greater than or equal to 5.0 [double.gte]
+    ///   double value = 1 [(buf.validate.field).double.gte = 5.0];
     ///
-    ///  // value must be greater than or equal to 5.0 and less than 10.0 [double.gte_lt]
-    ///  double other_value = 2 [(buf.validate.field).double = { gte: 5.0, lt: 10.0 }];
+    ///   // value must be greater than or equal to 5.0 and less than 10.0 [double.gte_lt]
+    ///   double other_value = 2 [(buf.validate.field).double = { gte: 5.0, lt: 10.0 }];
     ///
-    ///  // value must be greater than or equal to 10.0 or less than 5.0 [double.gte_lt_exclusive]
-    ///  double another_value = 3 [(buf.validate.field).double = { gte: 10.0, lt: 5.0 }];
-    ///}
-    ///```
+    ///   // value must be greater than or equal to 10.0 or less than 5.0 [double.gte_lt_exclusive]
+    ///   double another_value = 3 [(buf.validate.field).double = { gte: 10.0, lt: 5.0 }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public double Gte {
-      get { if ((_hasBits0 & 16) != 0) { return gte_; } else { return GteDefaultValue; } }
+      get { return HasGte ? (double) greaterThan_ : 0D; }
       set {
-        _hasBits0 |= 16;
-        gte_ = value;
+        greaterThan_ = value;
+        greaterThanCase_ = GreaterThanOneofCase.Gte;
       }
     }
     /// <summary>Gets whether the "gte" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasGte {
-      get { return (_hasBits0 & 16) != 0; }
+      get { return greaterThanCase_ == GreaterThanOneofCase.Gte; }
     }
-    /// <summary>Clears the value of the "gte" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "gte" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearGte() {
-      _hasBits0 &= ~16;
+      if (HasGte) {
+        ClearGreaterThan();
+      }
     }
 
     /// <summary>Field number for the "in" field.</summary>
     public const int InFieldNumber = 6;
     private static readonly pb::FieldCodec<double> _repeated_in_codec
-        = pb::FieldCodec.ForDouble(50);
+        = pb::FieldCodec.ForDouble(49);
     private readonly pbc::RepeatedField<double> in_ = new pbc::RepeatedField<double>();
     /// <summary>
     /// `in` requires the field value to be equal to one of the specified values.
     /// If the field value isn't one of the specified values, an error message is
     /// generated.
     ///
-    ///```proto
-    ///message MyDouble {
-    ///  // value must be in list [1.0, 2.0, 3.0]
-    ///  repeated double value = 1 (buf.validate.field).double = { in: [1.0, 2.0, 3.0] };
-    ///}
-    ///```
+    /// ```proto
+    /// message MyDouble {
+    ///   // value must be in list [1.0, 2.0, 3.0]
+    ///   double value = 1 [(buf.validate.field).double = { in: [1.0, 2.0, 3.0] }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4018,24 +5307,122 @@ namespace Buf.Validate {
     /// <summary>Field number for the "not_in" field.</summary>
     public const int NotInFieldNumber = 7;
     private static readonly pb::FieldCodec<double> _repeated_notIn_codec
-        = pb::FieldCodec.ForDouble(58);
+        = pb::FieldCodec.ForDouble(57);
     private readonly pbc::RepeatedField<double> notIn_ = new pbc::RepeatedField<double>();
     /// <summary>
-    ///`not_in` requires the field value to not be equal to any of the specified
+    /// `not_in` requires the field value to not be equal to any of the specified
     /// values. If the field value is one of the specified values, an error
     /// message is generated.
     ///
-    ///```proto
-    ///message MyDouble {
-    ///  // value must not be in list [1.0, 2.0, 3.0]
-    ///  repeated double value = 1 (buf.validate.field).double = { not_in: [1.0, 2.0, 3.0] };
-    ///}
-    ///```
+    /// ```proto
+    /// message MyDouble {
+    ///   // value must not be in list [1.0, 2.0, 3.0]
+    ///   double value = 1 [(buf.validate.field).double = { not_in: [1.0, 2.0, 3.0] }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<double> NotIn {
       get { return notIn_; }
+    }
+
+    /// <summary>Field number for the "finite" field.</summary>
+    public const int FiniteFieldNumber = 8;
+    private readonly static bool FiniteDefaultValue = false;
+
+    private bool finite_;
+    /// <summary>
+    /// `finite` requires the field value to be finite. If the field value is
+    /// infinite or NaN, an error message is generated.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Finite {
+      get { if ((_hasBits0 & 2) != 0) { return finite_; } else { return FiniteDefaultValue; } }
+      set {
+        _hasBits0 |= 2;
+        finite_ = value;
+      }
+    }
+    /// <summary>Gets whether the "finite" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasFinite {
+      get { return (_hasBits0 & 2) != 0; }
+    }
+    /// <summary>Clears the value of the "finite" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearFinite() {
+      _hasBits0 &= ~2;
+    }
+
+    /// <summary>Field number for the "example" field.</summary>
+    public const int ExampleFieldNumber = 9;
+    private static readonly pb::FieldCodec<double> _repeated_example_codec
+        = pb::FieldCodec.ForDouble(73);
+    private readonly pbc::RepeatedField<double> example_ = new pbc::RepeatedField<double>();
+    /// <summary>
+    /// `example` specifies values that the field may have. These values SHOULD
+    /// conform to other rules. `example` values will not impact validation
+    /// but may be used as helpful guidance on how to populate the given field.
+    ///
+    /// ```proto
+    /// message MyDouble {
+    ///   double value = 1 [
+    ///     (buf.validate.field).double.example = 1.0,
+    ///     (buf.validate.field).double.example = inf
+    ///   ];
+    /// }
+    /// ```
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<double> Example {
+      get { return example_; }
+    }
+
+    private object lessThan_;
+    /// <summary>Enum of possible cases for the "less_than" oneof.</summary>
+    public enum LessThanOneofCase {
+      None = 0,
+      Lt = 2,
+      Lte = 3,
+    }
+    private LessThanOneofCase lessThanCase_ = LessThanOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public LessThanOneofCase LessThanCase {
+      get { return lessThanCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearLessThan() {
+      lessThanCase_ = LessThanOneofCase.None;
+      lessThan_ = null;
+    }
+
+    private object greaterThan_;
+    /// <summary>Enum of possible cases for the "greater_than" oneof.</summary>
+    public enum GreaterThanOneofCase {
+      None = 0,
+      Gt = 4,
+      Gte = 5,
+    }
+    private GreaterThanOneofCase greaterThanCase_ = GreaterThanOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GreaterThanOneofCase GreaterThanCase {
+      get { return greaterThanCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearGreaterThan() {
+      greaterThanCase_ = GreaterThanOneofCase.None;
+      greaterThan_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4060,6 +5447,13 @@ namespace Buf.Validate {
       if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Gte, other.Gte)) return false;
       if(!in_.Equals(other.in_)) return false;
       if(!notIn_.Equals(other.notIn_)) return false;
+      if (Finite != other.Finite) return false;
+      if(!example_.Equals(other.example_)) return false;
+      if (LessThanCase != other.LessThanCase) return false;
+      if (GreaterThanCase != other.GreaterThanCase) return false;
+      if (!Equals(_extensions, other._extensions)) {
+        return false;
+      }
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -4074,6 +5468,13 @@ namespace Buf.Validate {
       if (HasGte) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Gte);
       hash ^= in_.GetHashCode();
       hash ^= notIn_.GetHashCode();
+      if (HasFinite) hash ^= Finite.GetHashCode();
+      hash ^= example_.GetHashCode();
+      hash ^= (int) lessThanCase_;
+      hash ^= (int) greaterThanCase_;
+      if (_extensions != null) {
+        hash ^= _extensions.GetHashCode();
+      }
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -4114,6 +5515,14 @@ namespace Buf.Validate {
       }
       in_.WriteTo(output, _repeated_in_codec);
       notIn_.WriteTo(output, _repeated_notIn_codec);
+      if (HasFinite) {
+        output.WriteRawTag(64);
+        output.WriteBool(Finite);
+      }
+      example_.WriteTo(output, _repeated_example_codec);
+      if (_extensions != null) {
+        _extensions.WriteTo(output);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -4146,6 +5555,14 @@ namespace Buf.Validate {
       }
       in_.WriteTo(ref output, _repeated_in_codec);
       notIn_.WriteTo(ref output, _repeated_notIn_codec);
+      if (HasFinite) {
+        output.WriteRawTag(64);
+        output.WriteBool(Finite);
+      }
+      example_.WriteTo(ref output, _repeated_example_codec);
+      if (_extensions != null) {
+        _extensions.WriteTo(ref output);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -4173,6 +5590,13 @@ namespace Buf.Validate {
       }
       size += in_.CalculateSize(_repeated_in_codec);
       size += notIn_.CalculateSize(_repeated_notIn_codec);
+      if (HasFinite) {
+        size += 1 + 1;
+      }
+      size += example_.CalculateSize(_repeated_example_codec);
+      if (_extensions != null) {
+        size += _extensions.CalculateSize();
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -4188,20 +5612,31 @@ namespace Buf.Validate {
       if (other.HasConst) {
         Const = other.Const;
       }
-      if (other.HasLt) {
-        Lt = other.Lt;
-      }
-      if (other.HasLte) {
-        Lte = other.Lte;
-      }
-      if (other.HasGt) {
-        Gt = other.Gt;
-      }
-      if (other.HasGte) {
-        Gte = other.Gte;
-      }
       in_.Add(other.in_);
       notIn_.Add(other.notIn_);
+      if (other.HasFinite) {
+        Finite = other.Finite;
+      }
+      example_.Add(other.example_);
+      switch (other.LessThanCase) {
+        case LessThanOneofCase.Lt:
+          Lt = other.Lt;
+          break;
+        case LessThanOneofCase.Lte:
+          Lte = other.Lte;
+          break;
+      }
+
+      switch (other.GreaterThanCase) {
+        case GreaterThanOneofCase.Gt:
+          Gt = other.Gt;
+          break;
+        case GreaterThanOneofCase.Gte:
+          Gte = other.Gte;
+          break;
+      }
+
+      pb::ExtensionSet.MergeFrom(ref _extensions, other._extensions);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -4215,7 +5650,9 @@ namespace Buf.Validate {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            }
             break;
           case 9: {
             Const = input.ReadDouble();
@@ -4247,6 +5684,15 @@ namespace Buf.Validate {
             notIn_.AddEntriesFrom(input, _repeated_notIn_codec);
             break;
           }
+          case 64: {
+            Finite = input.ReadBool();
+            break;
+          }
+          case 74:
+          case 73: {
+            example_.AddEntriesFrom(input, _repeated_example_codec);
+            break;
+          }
         }
       }
     #endif
@@ -4260,7 +5706,9 @@ namespace Buf.Validate {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, ref input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            }
             break;
           case 9: {
             Const = input.ReadDouble();
@@ -4292,24 +5740,57 @@ namespace Buf.Validate {
             notIn_.AddEntriesFrom(ref input, _repeated_notIn_codec);
             break;
           }
+          case 64: {
+            Finite = input.ReadBool();
+            break;
+          }
+          case 74:
+          case 73: {
+            example_.AddEntriesFrom(ref input, _repeated_example_codec);
+            break;
+          }
         }
       }
     }
     #endif
 
+    public TValue GetExtension<TValue>(pb::Extension<DoubleRules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<DoubleRules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>(pb::RepeatedExtension<DoubleRules, TValue> extension) {
+      return pb::ExtensionSet.GetOrInitialize(ref _extensions, extension);
+    }
+    public void SetExtension<TValue>(pb::Extension<DoubleRules, TValue> extension, TValue value) {
+      pb::ExtensionSet.Set(ref _extensions, extension, value);
+    }
+    public bool HasExtension<TValue>(pb::Extension<DoubleRules, TValue> extension) {
+      return pb::ExtensionSet.Has(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::Extension<DoubleRules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::RepeatedExtension<DoubleRules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+
   }
 
   /// <summary>
-  /// Int32Rules describes the constraints applied to `int32` values. These
+  /// Int32Rules describes the rules applied to `int32` values. These
   /// rules may also be applied to the `google.protobuf.Int32Value` Well-Known-Type.
   /// </summary>
-  public sealed partial class Int32Rules : pb::IMessage<Int32Rules>
+  public sealed partial class Int32Rules : pb::IExtendableMessage<Int32Rules>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
     private static readonly pb::MessageParser<Int32Rules> _parser = new pb::MessageParser<Int32Rules>(() => new Int32Rules());
     private pb::UnknownFieldSet _unknownFields;
+    private pb::ExtensionSet<Int32Rules> _extensions;
+    private pb::ExtensionSet<Int32Rules> _Extensions { get { return _extensions; } }
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4318,7 +5799,7 @@ namespace Buf.Validate {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4340,13 +5821,29 @@ namespace Buf.Validate {
     public Int32Rules(Int32Rules other) : this() {
       _hasBits0 = other._hasBits0;
       const_ = other.const_;
-      lt_ = other.lt_;
-      lte_ = other.lte_;
-      gt_ = other.gt_;
-      gte_ = other.gte_;
       in_ = other.in_.Clone();
       notIn_ = other.notIn_.Clone();
+      example_ = other.example_.Clone();
+      switch (other.LessThanCase) {
+        case LessThanOneofCase.Lt:
+          Lt = other.Lt;
+          break;
+        case LessThanOneofCase.Lte:
+          Lte = other.Lte;
+          break;
+      }
+
+      switch (other.GreaterThanCase) {
+        case GreaterThanOneofCase.Gt:
+          Gt = other.Gt;
+          break;
+        case GreaterThanOneofCase.Gte:
+          Gte = other.Gte;
+          break;
+      }
+
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+      _extensions = pb::ExtensionSet.Clone(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4361,15 +5858,15 @@ namespace Buf.Validate {
 
     private int const_;
     /// <summary>
-    ///`const` requires the field value to exactly match the specified value. If
+    /// `const` requires the field value to exactly match the specified value. If
     /// the field value doesn't match, an error message is generated.
     ///
-    ///```proto
-    ///message MyInt32 {
-    ///  // value must equal 42
+    /// ```proto
+    /// message MyInt32 {
+    ///   // value must equal 42
     ///   int32 value = 1 [(buf.validate.field).int32.const = 42];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4395,192 +5892,188 @@ namespace Buf.Validate {
 
     /// <summary>Field number for the "lt" field.</summary>
     public const int LtFieldNumber = 2;
-    private readonly static int LtDefaultValue = 0;
-
-    private int lt_;
     /// <summary>
     /// `lt` requires the field value to be less than the specified value (field
     /// &lt; value). If the field value is equal to or greater than the specified
     /// value, an error message is generated.
     ///
-    ///```proto
-    ///message MyInt32 {
-    ///  // value must be less than 10
+    /// ```proto
+    /// message MyInt32 {
+    ///   // value must be less than 10
     ///   int32 value = 1 [(buf.validate.field).int32.lt = 10];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int Lt {
-      get { if ((_hasBits0 & 2) != 0) { return lt_; } else { return LtDefaultValue; } }
+      get { return HasLt ? (int) lessThan_ : 0; }
       set {
-        _hasBits0 |= 2;
-        lt_ = value;
+        lessThan_ = value;
+        lessThanCase_ = LessThanOneofCase.Lt;
       }
     }
     /// <summary>Gets whether the "lt" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasLt {
-      get { return (_hasBits0 & 2) != 0; }
+      get { return lessThanCase_ == LessThanOneofCase.Lt; }
     }
-    /// <summary>Clears the value of the "lt" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "lt" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearLt() {
-      _hasBits0 &= ~2;
+      if (HasLt) {
+        ClearLessThan();
+      }
     }
 
     /// <summary>Field number for the "lte" field.</summary>
     public const int LteFieldNumber = 3;
-    private readonly static int LteDefaultValue = 0;
-
-    private int lte_;
     /// <summary>
-    ///`lte` requires the field value to be less than or equal to the specified
+    /// `lte` requires the field value to be less than or equal to the specified
     /// value (field &lt;= value). If the field value is greater than the specified
     /// value, an error message is generated.
     ///
-    ///```proto
-    ///message MyInt32 {
-    ///  // value must be less than or equal to 10
+    /// ```proto
+    /// message MyInt32 {
+    ///   // value must be less than or equal to 10
     ///   int32 value = 1 [(buf.validate.field).int32.lte = 10];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int Lte {
-      get { if ((_hasBits0 & 4) != 0) { return lte_; } else { return LteDefaultValue; } }
+      get { return HasLte ? (int) lessThan_ : 0; }
       set {
-        _hasBits0 |= 4;
-        lte_ = value;
+        lessThan_ = value;
+        lessThanCase_ = LessThanOneofCase.Lte;
       }
     }
     /// <summary>Gets whether the "lte" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasLte {
-      get { return (_hasBits0 & 4) != 0; }
+      get { return lessThanCase_ == LessThanOneofCase.Lte; }
     }
-    /// <summary>Clears the value of the "lte" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "lte" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearLte() {
-      _hasBits0 &= ~4;
+      if (HasLte) {
+        ClearLessThan();
+      }
     }
 
     /// <summary>Field number for the "gt" field.</summary>
     public const int GtFieldNumber = 4;
-    private readonly static int GtDefaultValue = 0;
-
-    private int gt_;
     /// <summary>
-    ///`gt` requires the field value to be greater than the specified value
+    /// `gt` requires the field value to be greater than the specified value
     /// (exclusive). If the value of `gt` is larger than a specified `lt` or
     /// `lte`, the range is reversed, and the field value must be outside the
     /// specified range. If the field value doesn't meet the required conditions,
     /// an error message is generated.
     ///
-    ///```proto
-    ///message MyInt32 {
-    ///  // value must be greater than 5 [int32.gt]
-    ///  int32 value = 1 [(buf.validate.field).int32.gt = 5];
+    /// ```proto
+    /// message MyInt32 {
+    ///   // value must be greater than 5 [int32.gt]
+    ///   int32 value = 1 [(buf.validate.field).int32.gt = 5];
     ///
-    ///  // value must be greater than 5 and less than 10 [int32.gt_lt]
-    ///  int32 other_value = 2 [(buf.validate.field).int32 = { gt: 5, lt: 10 }];
+    ///   // value must be greater than 5 and less than 10 [int32.gt_lt]
+    ///   int32 other_value = 2 [(buf.validate.field).int32 = { gt: 5, lt: 10 }];
     ///
-    ///  // value must be greater than 10 or less than 5 [int32.gt_lt_exclusive]
-    ///  int32 another_value = 3 [(buf.validate.field).int32 = { gt: 10, lt: 5 }];
-    ///}
-    ///```
+    ///   // value must be greater than 10 or less than 5 [int32.gt_lt_exclusive]
+    ///   int32 another_value = 3 [(buf.validate.field).int32 = { gt: 10, lt: 5 }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int Gt {
-      get { if ((_hasBits0 & 8) != 0) { return gt_; } else { return GtDefaultValue; } }
+      get { return HasGt ? (int) greaterThan_ : 0; }
       set {
-        _hasBits0 |= 8;
-        gt_ = value;
+        greaterThan_ = value;
+        greaterThanCase_ = GreaterThanOneofCase.Gt;
       }
     }
     /// <summary>Gets whether the "gt" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasGt {
-      get { return (_hasBits0 & 8) != 0; }
+      get { return greaterThanCase_ == GreaterThanOneofCase.Gt; }
     }
-    /// <summary>Clears the value of the "gt" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "gt" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearGt() {
-      _hasBits0 &= ~8;
+      if (HasGt) {
+        ClearGreaterThan();
+      }
     }
 
     /// <summary>Field number for the "gte" field.</summary>
     public const int GteFieldNumber = 5;
-    private readonly static int GteDefaultValue = 0;
-
-    private int gte_;
     /// <summary>
-    ///`gte` requires the field value to be greater than or equal to the specified value
+    /// `gte` requires the field value to be greater than or equal to the specified value
     /// (exclusive). If the value of `gte` is larger than a specified `lt` or
     /// `lte`, the range is reversed, and the field value must be outside the
     /// specified range. If the field value doesn't meet the required conditions,
     /// an error message is generated.
     ///
-    ///```proto
-    ///message MyInt32 {
-    ///  // value must be greater than or equal to 5 [int32.gte]
-    ///  int32 value = 1 [(buf.validate.field).int32.gte = 5];
+    /// ```proto
+    /// message MyInt32 {
+    ///   // value must be greater than or equal to 5 [int32.gte]
+    ///   int32 value = 1 [(buf.validate.field).int32.gte = 5];
     ///
-    ///  // value must be greater than or equal to 5 and less than 10 [int32.gte_lt]
-    ///  int32 other_value = 2 [(buf.validate.field).int32 = { gte: 5, lt: 10 }];
+    ///   // value must be greater than or equal to 5 and less than 10 [int32.gte_lt]
+    ///   int32 other_value = 2 [(buf.validate.field).int32 = { gte: 5, lt: 10 }];
     ///
-    ///  // value must be greater than or equal to 10 or less than 5 [int32.gte_lt_exclusive]
-    ///  int32 another_value = 3 [(buf.validate.field).int32 = { gte: 10, lt: 5 }];
-    ///}
-    ///```
+    ///   // value must be greater than or equal to 10 or less than 5 [int32.gte_lt_exclusive]
+    ///   int32 another_value = 3 [(buf.validate.field).int32 = { gte: 10, lt: 5 }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int Gte {
-      get { if ((_hasBits0 & 16) != 0) { return gte_; } else { return GteDefaultValue; } }
+      get { return HasGte ? (int) greaterThan_ : 0; }
       set {
-        _hasBits0 |= 16;
-        gte_ = value;
+        greaterThan_ = value;
+        greaterThanCase_ = GreaterThanOneofCase.Gte;
       }
     }
     /// <summary>Gets whether the "gte" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasGte {
-      get { return (_hasBits0 & 16) != 0; }
+      get { return greaterThanCase_ == GreaterThanOneofCase.Gte; }
     }
-    /// <summary>Clears the value of the "gte" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "gte" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearGte() {
-      _hasBits0 &= ~16;
+      if (HasGte) {
+        ClearGreaterThan();
+      }
     }
 
     /// <summary>Field number for the "in" field.</summary>
     public const int InFieldNumber = 6;
     private static readonly pb::FieldCodec<int> _repeated_in_codec
-        = pb::FieldCodec.ForInt32(50);
+        = pb::FieldCodec.ForInt32(48);
     private readonly pbc::RepeatedField<int> in_ = new pbc::RepeatedField<int>();
     /// <summary>
-    ///`in` requires the field value to be equal to one of the specified values.
+    /// `in` requires the field value to be equal to one of the specified values.
     /// If the field value isn't one of the specified values, an error message is
     /// generated.
     ///
-    ///```proto
-    ///message MyInt32 {
-    ///  // value must be in list [1, 2, 3]
-    ///  repeated int32 value = 1 (buf.validate.field).int32 = { in: [1, 2, 3] };
-    ///}
-    ///```
+    /// ```proto
+    /// message MyInt32 {
+    ///   // value must be in list [1, 2, 3]
+    ///   int32 value = 1 [(buf.validate.field).int32 = { in: [1, 2, 3] }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4591,24 +6084,91 @@ namespace Buf.Validate {
     /// <summary>Field number for the "not_in" field.</summary>
     public const int NotInFieldNumber = 7;
     private static readonly pb::FieldCodec<int> _repeated_notIn_codec
-        = pb::FieldCodec.ForInt32(58);
+        = pb::FieldCodec.ForInt32(56);
     private readonly pbc::RepeatedField<int> notIn_ = new pbc::RepeatedField<int>();
     /// <summary>
-    ///`not_in` requires the field value to not be equal to any of the specified
+    /// `not_in` requires the field value to not be equal to any of the specified
     /// values. If the field value is one of the specified values, an error message
     /// is generated.
     ///
-    ///```proto
-    ///message MyInt32 {
-    ///  // value must not be in list [1, 2, 3]
-    ///  repeated int32 value = 1 (buf.validate.field).int32 = { not_in: [1, 2, 3] };
-    ///}
-    ///```
+    /// ```proto
+    /// message MyInt32 {
+    ///   // value must not be in list [1, 2, 3]
+    ///   int32 value = 1 [(buf.validate.field).int32 = { not_in: [1, 2, 3] }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<int> NotIn {
       get { return notIn_; }
+    }
+
+    /// <summary>Field number for the "example" field.</summary>
+    public const int ExampleFieldNumber = 8;
+    private static readonly pb::FieldCodec<int> _repeated_example_codec
+        = pb::FieldCodec.ForInt32(64);
+    private readonly pbc::RepeatedField<int> example_ = new pbc::RepeatedField<int>();
+    /// <summary>
+    /// `example` specifies values that the field may have. These values SHOULD
+    /// conform to other rules. `example` values will not impact validation
+    /// but may be used as helpful guidance on how to populate the given field.
+    ///
+    /// ```proto
+    /// message MyInt32 {
+    ///   int32 value = 1 [
+    ///     (buf.validate.field).int32.example = 1,
+    ///     (buf.validate.field).int32.example = -10
+    ///   ];
+    /// }
+    /// ```
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<int> Example {
+      get { return example_; }
+    }
+
+    private object lessThan_;
+    /// <summary>Enum of possible cases for the "less_than" oneof.</summary>
+    public enum LessThanOneofCase {
+      None = 0,
+      Lt = 2,
+      Lte = 3,
+    }
+    private LessThanOneofCase lessThanCase_ = LessThanOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public LessThanOneofCase LessThanCase {
+      get { return lessThanCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearLessThan() {
+      lessThanCase_ = LessThanOneofCase.None;
+      lessThan_ = null;
+    }
+
+    private object greaterThan_;
+    /// <summary>Enum of possible cases for the "greater_than" oneof.</summary>
+    public enum GreaterThanOneofCase {
+      None = 0,
+      Gt = 4,
+      Gte = 5,
+    }
+    private GreaterThanOneofCase greaterThanCase_ = GreaterThanOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GreaterThanOneofCase GreaterThanCase {
+      get { return greaterThanCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearGreaterThan() {
+      greaterThanCase_ = GreaterThanOneofCase.None;
+      greaterThan_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4633,6 +6193,12 @@ namespace Buf.Validate {
       if (Gte != other.Gte) return false;
       if(!in_.Equals(other.in_)) return false;
       if(!notIn_.Equals(other.notIn_)) return false;
+      if(!example_.Equals(other.example_)) return false;
+      if (LessThanCase != other.LessThanCase) return false;
+      if (GreaterThanCase != other.GreaterThanCase) return false;
+      if (!Equals(_extensions, other._extensions)) {
+        return false;
+      }
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -4647,6 +6213,12 @@ namespace Buf.Validate {
       if (HasGte) hash ^= Gte.GetHashCode();
       hash ^= in_.GetHashCode();
       hash ^= notIn_.GetHashCode();
+      hash ^= example_.GetHashCode();
+      hash ^= (int) lessThanCase_;
+      hash ^= (int) greaterThanCase_;
+      if (_extensions != null) {
+        hash ^= _extensions.GetHashCode();
+      }
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -4687,6 +6259,10 @@ namespace Buf.Validate {
       }
       in_.WriteTo(output, _repeated_in_codec);
       notIn_.WriteTo(output, _repeated_notIn_codec);
+      example_.WriteTo(output, _repeated_example_codec);
+      if (_extensions != null) {
+        _extensions.WriteTo(output);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -4719,6 +6295,10 @@ namespace Buf.Validate {
       }
       in_.WriteTo(ref output, _repeated_in_codec);
       notIn_.WriteTo(ref output, _repeated_notIn_codec);
+      example_.WriteTo(ref output, _repeated_example_codec);
+      if (_extensions != null) {
+        _extensions.WriteTo(ref output);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -4746,6 +6326,10 @@ namespace Buf.Validate {
       }
       size += in_.CalculateSize(_repeated_in_codec);
       size += notIn_.CalculateSize(_repeated_notIn_codec);
+      size += example_.CalculateSize(_repeated_example_codec);
+      if (_extensions != null) {
+        size += _extensions.CalculateSize();
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -4761,20 +6345,28 @@ namespace Buf.Validate {
       if (other.HasConst) {
         Const = other.Const;
       }
-      if (other.HasLt) {
-        Lt = other.Lt;
-      }
-      if (other.HasLte) {
-        Lte = other.Lte;
-      }
-      if (other.HasGt) {
-        Gt = other.Gt;
-      }
-      if (other.HasGte) {
-        Gte = other.Gte;
-      }
       in_.Add(other.in_);
       notIn_.Add(other.notIn_);
+      example_.Add(other.example_);
+      switch (other.LessThanCase) {
+        case LessThanOneofCase.Lt:
+          Lt = other.Lt;
+          break;
+        case LessThanOneofCase.Lte:
+          Lte = other.Lte;
+          break;
+      }
+
+      switch (other.GreaterThanCase) {
+        case GreaterThanOneofCase.Gt:
+          Gt = other.Gt;
+          break;
+        case GreaterThanOneofCase.Gte:
+          Gte = other.Gte;
+          break;
+      }
+
+      pb::ExtensionSet.MergeFrom(ref _extensions, other._extensions);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -4788,7 +6380,9 @@ namespace Buf.Validate {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            }
             break;
           case 8: {
             Const = input.ReadInt32();
@@ -4820,6 +6414,11 @@ namespace Buf.Validate {
             notIn_.AddEntriesFrom(input, _repeated_notIn_codec);
             break;
           }
+          case 66:
+          case 64: {
+            example_.AddEntriesFrom(input, _repeated_example_codec);
+            break;
+          }
         }
       }
     #endif
@@ -4833,7 +6432,9 @@ namespace Buf.Validate {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, ref input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            }
             break;
           case 8: {
             Const = input.ReadInt32();
@@ -4865,24 +6466,53 @@ namespace Buf.Validate {
             notIn_.AddEntriesFrom(ref input, _repeated_notIn_codec);
             break;
           }
+          case 66:
+          case 64: {
+            example_.AddEntriesFrom(ref input, _repeated_example_codec);
+            break;
+          }
         }
       }
     }
     #endif
 
+    public TValue GetExtension<TValue>(pb::Extension<Int32Rules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<Int32Rules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>(pb::RepeatedExtension<Int32Rules, TValue> extension) {
+      return pb::ExtensionSet.GetOrInitialize(ref _extensions, extension);
+    }
+    public void SetExtension<TValue>(pb::Extension<Int32Rules, TValue> extension, TValue value) {
+      pb::ExtensionSet.Set(ref _extensions, extension, value);
+    }
+    public bool HasExtension<TValue>(pb::Extension<Int32Rules, TValue> extension) {
+      return pb::ExtensionSet.Has(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::Extension<Int32Rules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::RepeatedExtension<Int32Rules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+
   }
 
   /// <summary>
-  /// Int64Rules describes the constraints applied to `int64` values. These
+  /// Int64Rules describes the rules applied to `int64` values. These
   /// rules may also be applied to the `google.protobuf.Int64Value` Well-Known-Type.
   /// </summary>
-  public sealed partial class Int64Rules : pb::IMessage<Int64Rules>
+  public sealed partial class Int64Rules : pb::IExtendableMessage<Int64Rules>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
     private static readonly pb::MessageParser<Int64Rules> _parser = new pb::MessageParser<Int64Rules>(() => new Int64Rules());
     private pb::UnknownFieldSet _unknownFields;
+    private pb::ExtensionSet<Int64Rules> _extensions;
+    private pb::ExtensionSet<Int64Rules> _Extensions { get { return _extensions; } }
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4891,7 +6521,7 @@ namespace Buf.Validate {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[9]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4913,13 +6543,29 @@ namespace Buf.Validate {
     public Int64Rules(Int64Rules other) : this() {
       _hasBits0 = other._hasBits0;
       const_ = other.const_;
-      lt_ = other.lt_;
-      lte_ = other.lte_;
-      gt_ = other.gt_;
-      gte_ = other.gte_;
       in_ = other.in_.Clone();
       notIn_ = other.notIn_.Clone();
+      example_ = other.example_.Clone();
+      switch (other.LessThanCase) {
+        case LessThanOneofCase.Lt:
+          Lt = other.Lt;
+          break;
+        case LessThanOneofCase.Lte:
+          Lte = other.Lte;
+          break;
+      }
+
+      switch (other.GreaterThanCase) {
+        case GreaterThanOneofCase.Gt:
+          Gt = other.Gt;
+          break;
+        case GreaterThanOneofCase.Gte:
+          Gte = other.Gte;
+          break;
+      }
+
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+      _extensions = pb::ExtensionSet.Clone(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4934,15 +6580,15 @@ namespace Buf.Validate {
 
     private long const_;
     /// <summary>
-    ///`const` requires the field value to exactly match the specified value. If
+    /// `const` requires the field value to exactly match the specified value. If
     /// the field value doesn't match, an error message is generated.
     ///
-    ///```proto
-    ///message MyInt64 {
-    ///  // value must equal 42
+    /// ```proto
+    /// message MyInt64 {
+    ///   // value must equal 42
     ///   int64 value = 1 [(buf.validate.field).int64.const = 42];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4968,192 +6614,188 @@ namespace Buf.Validate {
 
     /// <summary>Field number for the "lt" field.</summary>
     public const int LtFieldNumber = 2;
-    private readonly static long LtDefaultValue = 0L;
-
-    private long lt_;
     /// <summary>
-    ///`lt` requires the field value to be less than the specified value (field &lt;
+    /// `lt` requires the field value to be less than the specified value (field &lt;
     /// value). If the field value is equal to or greater than the specified value,
     /// an error message is generated.
     ///
-    ///```proto
-    ///message MyInt64 {
-    ///  // value must be less than 10
+    /// ```proto
+    /// message MyInt64 {
+    ///   // value must be less than 10
     ///   int64 value = 1 [(buf.validate.field).int64.lt = 10];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long Lt {
-      get { if ((_hasBits0 & 2) != 0) { return lt_; } else { return LtDefaultValue; } }
+      get { return HasLt ? (long) lessThan_ : 0L; }
       set {
-        _hasBits0 |= 2;
-        lt_ = value;
+        lessThan_ = value;
+        lessThanCase_ = LessThanOneofCase.Lt;
       }
     }
     /// <summary>Gets whether the "lt" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasLt {
-      get { return (_hasBits0 & 2) != 0; }
+      get { return lessThanCase_ == LessThanOneofCase.Lt; }
     }
-    /// <summary>Clears the value of the "lt" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "lt" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearLt() {
-      _hasBits0 &= ~2;
+      if (HasLt) {
+        ClearLessThan();
+      }
     }
 
     /// <summary>Field number for the "lte" field.</summary>
     public const int LteFieldNumber = 3;
-    private readonly static long LteDefaultValue = 0L;
-
-    private long lte_;
     /// <summary>
-    ///`lte` requires the field value to be less than or equal to the specified
+    /// `lte` requires the field value to be less than or equal to the specified
     /// value (field &lt;= value). If the field value is greater than the specified
     /// value, an error message is generated.
     ///
-    ///```proto
-    ///message MyInt64 {
-    ///  // value must be less than or equal to 10
+    /// ```proto
+    /// message MyInt64 {
+    ///   // value must be less than or equal to 10
     ///   int64 value = 1 [(buf.validate.field).int64.lte = 10];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long Lte {
-      get { if ((_hasBits0 & 4) != 0) { return lte_; } else { return LteDefaultValue; } }
+      get { return HasLte ? (long) lessThan_ : 0L; }
       set {
-        _hasBits0 |= 4;
-        lte_ = value;
+        lessThan_ = value;
+        lessThanCase_ = LessThanOneofCase.Lte;
       }
     }
     /// <summary>Gets whether the "lte" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasLte {
-      get { return (_hasBits0 & 4) != 0; }
+      get { return lessThanCase_ == LessThanOneofCase.Lte; }
     }
-    /// <summary>Clears the value of the "lte" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "lte" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearLte() {
-      _hasBits0 &= ~4;
+      if (HasLte) {
+        ClearLessThan();
+      }
     }
 
     /// <summary>Field number for the "gt" field.</summary>
     public const int GtFieldNumber = 4;
-    private readonly static long GtDefaultValue = 0L;
-
-    private long gt_;
     /// <summary>
-    ///`gt` requires the field value to be greater than the specified value
+    /// `gt` requires the field value to be greater than the specified value
     /// (exclusive). If the value of `gt` is larger than a specified `lt` or
     /// `lte`, the range is reversed, and the field value must be outside the
     /// specified range. If the field value doesn't meet the required conditions,
     /// an error message is generated.
     ///
-    ///```proto
-    ///message MyInt64 {
-    ///  // value must be greater than 5 [int64.gt]
-    ///  int64 value = 1 [(buf.validate.field).int64.gt = 5];
+    /// ```proto
+    /// message MyInt64 {
+    ///   // value must be greater than 5 [int64.gt]
+    ///   int64 value = 1 [(buf.validate.field).int64.gt = 5];
     ///
-    ///  // value must be greater than 5 and less than 10 [int64.gt_lt]
-    ///  int64 other_value = 2 [(buf.validate.field).int64 = { gt: 5, lt: 10 }];
+    ///   // value must be greater than 5 and less than 10 [int64.gt_lt]
+    ///   int64 other_value = 2 [(buf.validate.field).int64 = { gt: 5, lt: 10 }];
     ///
-    ///  // value must be greater than 10 or less than 5 [int64.gt_lt_exclusive]
-    ///  int64 another_value = 3 [(buf.validate.field).int64 = { gt: 10, lt: 5 }];
-    ///}
-    ///```
+    ///   // value must be greater than 10 or less than 5 [int64.gt_lt_exclusive]
+    ///   int64 another_value = 3 [(buf.validate.field).int64 = { gt: 10, lt: 5 }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long Gt {
-      get { if ((_hasBits0 & 8) != 0) { return gt_; } else { return GtDefaultValue; } }
+      get { return HasGt ? (long) greaterThan_ : 0L; }
       set {
-        _hasBits0 |= 8;
-        gt_ = value;
+        greaterThan_ = value;
+        greaterThanCase_ = GreaterThanOneofCase.Gt;
       }
     }
     /// <summary>Gets whether the "gt" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasGt {
-      get { return (_hasBits0 & 8) != 0; }
+      get { return greaterThanCase_ == GreaterThanOneofCase.Gt; }
     }
-    /// <summary>Clears the value of the "gt" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "gt" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearGt() {
-      _hasBits0 &= ~8;
+      if (HasGt) {
+        ClearGreaterThan();
+      }
     }
 
     /// <summary>Field number for the "gte" field.</summary>
     public const int GteFieldNumber = 5;
-    private readonly static long GteDefaultValue = 0L;
-
-    private long gte_;
     /// <summary>
-    ///`gte` requires the field value to be greater than or equal to the specified
+    /// `gte` requires the field value to be greater than or equal to the specified
     /// value (exclusive). If the value of `gte` is larger than a specified `lt`
     /// or `lte`, the range is reversed, and the field value must be outside the
     /// specified range. If the field value doesn't meet the required conditions,
     /// an error message is generated.
     ///
-    ///```proto
-    ///message MyInt64 {
-    ///  // value must be greater than or equal to 5 [int64.gte]
-    ///  int64 value = 1 [(buf.validate.field).int64.gte = 5];
+    /// ```proto
+    /// message MyInt64 {
+    ///   // value must be greater than or equal to 5 [int64.gte]
+    ///   int64 value = 1 [(buf.validate.field).int64.gte = 5];
     ///
-    ///  // value must be greater than or equal to 5 and less than 10 [int64.gte_lt]
-    ///  int64 other_value = 2 [(buf.validate.field).int64 = { gte: 5, lt: 10 }];
+    ///   // value must be greater than or equal to 5 and less than 10 [int64.gte_lt]
+    ///   int64 other_value = 2 [(buf.validate.field).int64 = { gte: 5, lt: 10 }];
     ///
-    ///  // value must be greater than or equal to 10 or less than 5 [int64.gte_lt_exclusive]
-    ///  int64 another_value = 3 [(buf.validate.field).int64 = { gte: 10, lt: 5 }];
-    ///}
-    ///```
+    ///   // value must be greater than or equal to 10 or less than 5 [int64.gte_lt_exclusive]
+    ///   int64 another_value = 3 [(buf.validate.field).int64 = { gte: 10, lt: 5 }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long Gte {
-      get { if ((_hasBits0 & 16) != 0) { return gte_; } else { return GteDefaultValue; } }
+      get { return HasGte ? (long) greaterThan_ : 0L; }
       set {
-        _hasBits0 |= 16;
-        gte_ = value;
+        greaterThan_ = value;
+        greaterThanCase_ = GreaterThanOneofCase.Gte;
       }
     }
     /// <summary>Gets whether the "gte" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasGte {
-      get { return (_hasBits0 & 16) != 0; }
+      get { return greaterThanCase_ == GreaterThanOneofCase.Gte; }
     }
-    /// <summary>Clears the value of the "gte" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "gte" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearGte() {
-      _hasBits0 &= ~16;
+      if (HasGte) {
+        ClearGreaterThan();
+      }
     }
 
     /// <summary>Field number for the "in" field.</summary>
     public const int InFieldNumber = 6;
     private static readonly pb::FieldCodec<long> _repeated_in_codec
-        = pb::FieldCodec.ForInt64(50);
+        = pb::FieldCodec.ForInt64(48);
     private readonly pbc::RepeatedField<long> in_ = new pbc::RepeatedField<long>();
     /// <summary>
-    ///`in` requires the field value to be equal to one of the specified values.
+    /// `in` requires the field value to be equal to one of the specified values.
     /// If the field value isn't one of the specified values, an error message is
     /// generated.
     ///
-    ///```proto
-    ///message MyInt64 {
-    ///  // value must be in list [1, 2, 3]
-    ///  repeated int64 value = 1 (buf.validate.field).int64 = { in: [1, 2, 3] };
-    ///}
-    ///```
+    /// ```proto
+    /// message MyInt64 {
+    ///   // value must be in list [1, 2, 3]
+    ///   int64 value = 1 [(buf.validate.field).int64 = { in: [1, 2, 3] }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -5164,24 +6806,91 @@ namespace Buf.Validate {
     /// <summary>Field number for the "not_in" field.</summary>
     public const int NotInFieldNumber = 7;
     private static readonly pb::FieldCodec<long> _repeated_notIn_codec
-        = pb::FieldCodec.ForInt64(58);
+        = pb::FieldCodec.ForInt64(56);
     private readonly pbc::RepeatedField<long> notIn_ = new pbc::RepeatedField<long>();
     /// <summary>
-    ///`not_in` requires the field value to not be equal to any of the specified
+    /// `not_in` requires the field value to not be equal to any of the specified
     /// values. If the field value is one of the specified values, an error
     /// message is generated.
     ///
-    ///```proto
-    ///message MyInt64 {
-    ///  // value must not be in list [1, 2, 3]
-    ///  repeated int64 value = 1 (buf.validate.field).int64 = { not_in: [1, 2, 3] };
-    ///}
-    ///```
+    /// ```proto
+    /// message MyInt64 {
+    ///   // value must not be in list [1, 2, 3]
+    ///   int64 value = 1 [(buf.validate.field).int64 = { not_in: [1, 2, 3] }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<long> NotIn {
       get { return notIn_; }
+    }
+
+    /// <summary>Field number for the "example" field.</summary>
+    public const int ExampleFieldNumber = 9;
+    private static readonly pb::FieldCodec<long> _repeated_example_codec
+        = pb::FieldCodec.ForInt64(72);
+    private readonly pbc::RepeatedField<long> example_ = new pbc::RepeatedField<long>();
+    /// <summary>
+    /// `example` specifies values that the field may have. These values SHOULD
+    /// conform to other rules. `example` values will not impact validation
+    /// but may be used as helpful guidance on how to populate the given field.
+    ///
+    /// ```proto
+    /// message MyInt64 {
+    ///   int64 value = 1 [
+    ///     (buf.validate.field).int64.example = 1,
+    ///     (buf.validate.field).int64.example = -10
+    ///   ];
+    /// }
+    /// ```
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<long> Example {
+      get { return example_; }
+    }
+
+    private object lessThan_;
+    /// <summary>Enum of possible cases for the "less_than" oneof.</summary>
+    public enum LessThanOneofCase {
+      None = 0,
+      Lt = 2,
+      Lte = 3,
+    }
+    private LessThanOneofCase lessThanCase_ = LessThanOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public LessThanOneofCase LessThanCase {
+      get { return lessThanCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearLessThan() {
+      lessThanCase_ = LessThanOneofCase.None;
+      lessThan_ = null;
+    }
+
+    private object greaterThan_;
+    /// <summary>Enum of possible cases for the "greater_than" oneof.</summary>
+    public enum GreaterThanOneofCase {
+      None = 0,
+      Gt = 4,
+      Gte = 5,
+    }
+    private GreaterThanOneofCase greaterThanCase_ = GreaterThanOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GreaterThanOneofCase GreaterThanCase {
+      get { return greaterThanCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearGreaterThan() {
+      greaterThanCase_ = GreaterThanOneofCase.None;
+      greaterThan_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5206,6 +6915,12 @@ namespace Buf.Validate {
       if (Gte != other.Gte) return false;
       if(!in_.Equals(other.in_)) return false;
       if(!notIn_.Equals(other.notIn_)) return false;
+      if(!example_.Equals(other.example_)) return false;
+      if (LessThanCase != other.LessThanCase) return false;
+      if (GreaterThanCase != other.GreaterThanCase) return false;
+      if (!Equals(_extensions, other._extensions)) {
+        return false;
+      }
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -5220,6 +6935,12 @@ namespace Buf.Validate {
       if (HasGte) hash ^= Gte.GetHashCode();
       hash ^= in_.GetHashCode();
       hash ^= notIn_.GetHashCode();
+      hash ^= example_.GetHashCode();
+      hash ^= (int) lessThanCase_;
+      hash ^= (int) greaterThanCase_;
+      if (_extensions != null) {
+        hash ^= _extensions.GetHashCode();
+      }
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -5260,6 +6981,10 @@ namespace Buf.Validate {
       }
       in_.WriteTo(output, _repeated_in_codec);
       notIn_.WriteTo(output, _repeated_notIn_codec);
+      example_.WriteTo(output, _repeated_example_codec);
+      if (_extensions != null) {
+        _extensions.WriteTo(output);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -5292,6 +7017,10 @@ namespace Buf.Validate {
       }
       in_.WriteTo(ref output, _repeated_in_codec);
       notIn_.WriteTo(ref output, _repeated_notIn_codec);
+      example_.WriteTo(ref output, _repeated_example_codec);
+      if (_extensions != null) {
+        _extensions.WriteTo(ref output);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -5319,6 +7048,10 @@ namespace Buf.Validate {
       }
       size += in_.CalculateSize(_repeated_in_codec);
       size += notIn_.CalculateSize(_repeated_notIn_codec);
+      size += example_.CalculateSize(_repeated_example_codec);
+      if (_extensions != null) {
+        size += _extensions.CalculateSize();
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -5334,20 +7067,28 @@ namespace Buf.Validate {
       if (other.HasConst) {
         Const = other.Const;
       }
-      if (other.HasLt) {
-        Lt = other.Lt;
-      }
-      if (other.HasLte) {
-        Lte = other.Lte;
-      }
-      if (other.HasGt) {
-        Gt = other.Gt;
-      }
-      if (other.HasGte) {
-        Gte = other.Gte;
-      }
       in_.Add(other.in_);
       notIn_.Add(other.notIn_);
+      example_.Add(other.example_);
+      switch (other.LessThanCase) {
+        case LessThanOneofCase.Lt:
+          Lt = other.Lt;
+          break;
+        case LessThanOneofCase.Lte:
+          Lte = other.Lte;
+          break;
+      }
+
+      switch (other.GreaterThanCase) {
+        case GreaterThanOneofCase.Gt:
+          Gt = other.Gt;
+          break;
+        case GreaterThanOneofCase.Gte:
+          Gte = other.Gte;
+          break;
+      }
+
+      pb::ExtensionSet.MergeFrom(ref _extensions, other._extensions);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -5361,7 +7102,9 @@ namespace Buf.Validate {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            }
             break;
           case 8: {
             Const = input.ReadInt64();
@@ -5393,6 +7136,11 @@ namespace Buf.Validate {
             notIn_.AddEntriesFrom(input, _repeated_notIn_codec);
             break;
           }
+          case 74:
+          case 72: {
+            example_.AddEntriesFrom(input, _repeated_example_codec);
+            break;
+          }
         }
       }
     #endif
@@ -5406,7 +7154,9 @@ namespace Buf.Validate {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, ref input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            }
             break;
           case 8: {
             Const = input.ReadInt64();
@@ -5438,24 +7188,53 @@ namespace Buf.Validate {
             notIn_.AddEntriesFrom(ref input, _repeated_notIn_codec);
             break;
           }
+          case 74:
+          case 72: {
+            example_.AddEntriesFrom(ref input, _repeated_example_codec);
+            break;
+          }
         }
       }
     }
     #endif
 
+    public TValue GetExtension<TValue>(pb::Extension<Int64Rules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<Int64Rules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>(pb::RepeatedExtension<Int64Rules, TValue> extension) {
+      return pb::ExtensionSet.GetOrInitialize(ref _extensions, extension);
+    }
+    public void SetExtension<TValue>(pb::Extension<Int64Rules, TValue> extension, TValue value) {
+      pb::ExtensionSet.Set(ref _extensions, extension, value);
+    }
+    public bool HasExtension<TValue>(pb::Extension<Int64Rules, TValue> extension) {
+      return pb::ExtensionSet.Has(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::Extension<Int64Rules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::RepeatedExtension<Int64Rules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+
   }
 
   /// <summary>
-  /// UInt32Rules describes the constraints applied to `uint32` values. These
+  /// UInt32Rules describes the rules applied to `uint32` values. These
   /// rules may also be applied to the `google.protobuf.UInt32Value` Well-Known-Type.
   /// </summary>
-  public sealed partial class UInt32Rules : pb::IMessage<UInt32Rules>
+  public sealed partial class UInt32Rules : pb::IExtendableMessage<UInt32Rules>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
     private static readonly pb::MessageParser<UInt32Rules> _parser = new pb::MessageParser<UInt32Rules>(() => new UInt32Rules());
     private pb::UnknownFieldSet _unknownFields;
+    private pb::ExtensionSet<UInt32Rules> _extensions;
+    private pb::ExtensionSet<UInt32Rules> _Extensions { get { return _extensions; } }
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -5464,7 +7243,7 @@ namespace Buf.Validate {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[10]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5486,13 +7265,29 @@ namespace Buf.Validate {
     public UInt32Rules(UInt32Rules other) : this() {
       _hasBits0 = other._hasBits0;
       const_ = other.const_;
-      lt_ = other.lt_;
-      lte_ = other.lte_;
-      gt_ = other.gt_;
-      gte_ = other.gte_;
       in_ = other.in_.Clone();
       notIn_ = other.notIn_.Clone();
+      example_ = other.example_.Clone();
+      switch (other.LessThanCase) {
+        case LessThanOneofCase.Lt:
+          Lt = other.Lt;
+          break;
+        case LessThanOneofCase.Lte:
+          Lte = other.Lte;
+          break;
+      }
+
+      switch (other.GreaterThanCase) {
+        case GreaterThanOneofCase.Gt:
+          Gt = other.Gt;
+          break;
+        case GreaterThanOneofCase.Gte:
+          Gte = other.Gte;
+          break;
+      }
+
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+      _extensions = pb::ExtensionSet.Clone(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5507,15 +7302,15 @@ namespace Buf.Validate {
 
     private uint const_;
     /// <summary>
-    ///`const` requires the field value to exactly match the specified value. If
+    /// `const` requires the field value to exactly match the specified value. If
     /// the field value doesn't match, an error message is generated.
     ///
-    ///```proto
-    ///message MyUInt32 {
-    ///  // value must equal 42
+    /// ```proto
+    /// message MyUInt32 {
+    ///   // value must equal 42
     ///   uint32 value = 1 [(buf.validate.field).uint32.const = 42];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -5541,192 +7336,188 @@ namespace Buf.Validate {
 
     /// <summary>Field number for the "lt" field.</summary>
     public const int LtFieldNumber = 2;
-    private readonly static uint LtDefaultValue = 0;
-
-    private uint lt_;
     /// <summary>
-    ///`lt` requires the field value to be less than the specified value (field &lt;
+    /// `lt` requires the field value to be less than the specified value (field &lt;
     /// value). If the field value is equal to or greater than the specified value,
     /// an error message is generated.
     ///
-    ///```proto
-    ///message MyUInt32 {
-    ///  // value must be less than 10
+    /// ```proto
+    /// message MyUInt32 {
+    ///   // value must be less than 10
     ///   uint32 value = 1 [(buf.validate.field).uint32.lt = 10];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint Lt {
-      get { if ((_hasBits0 & 2) != 0) { return lt_; } else { return LtDefaultValue; } }
+      get { return HasLt ? (uint) lessThan_ : 0; }
       set {
-        _hasBits0 |= 2;
-        lt_ = value;
+        lessThan_ = value;
+        lessThanCase_ = LessThanOneofCase.Lt;
       }
     }
     /// <summary>Gets whether the "lt" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasLt {
-      get { return (_hasBits0 & 2) != 0; }
+      get { return lessThanCase_ == LessThanOneofCase.Lt; }
     }
-    /// <summary>Clears the value of the "lt" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "lt" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearLt() {
-      _hasBits0 &= ~2;
+      if (HasLt) {
+        ClearLessThan();
+      }
     }
 
     /// <summary>Field number for the "lte" field.</summary>
     public const int LteFieldNumber = 3;
-    private readonly static uint LteDefaultValue = 0;
-
-    private uint lte_;
     /// <summary>
-    ///`lte` requires the field value to be less than or equal to the specified
+    /// `lte` requires the field value to be less than or equal to the specified
     /// value (field &lt;= value). If the field value is greater than the specified
     /// value, an error message is generated.
     ///
-    ///```proto
-    ///message MyUInt32 {
-    ///  // value must be less than or equal to 10
+    /// ```proto
+    /// message MyUInt32 {
+    ///   // value must be less than or equal to 10
     ///   uint32 value = 1 [(buf.validate.field).uint32.lte = 10];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint Lte {
-      get { if ((_hasBits0 & 4) != 0) { return lte_; } else { return LteDefaultValue; } }
+      get { return HasLte ? (uint) lessThan_ : 0; }
       set {
-        _hasBits0 |= 4;
-        lte_ = value;
+        lessThan_ = value;
+        lessThanCase_ = LessThanOneofCase.Lte;
       }
     }
     /// <summary>Gets whether the "lte" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasLte {
-      get { return (_hasBits0 & 4) != 0; }
+      get { return lessThanCase_ == LessThanOneofCase.Lte; }
     }
-    /// <summary>Clears the value of the "lte" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "lte" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearLte() {
-      _hasBits0 &= ~4;
+      if (HasLte) {
+        ClearLessThan();
+      }
     }
 
     /// <summary>Field number for the "gt" field.</summary>
     public const int GtFieldNumber = 4;
-    private readonly static uint GtDefaultValue = 0;
-
-    private uint gt_;
     /// <summary>
-    ///`gt` requires the field value to be greater than the specified value
+    /// `gt` requires the field value to be greater than the specified value
     /// (exclusive). If the value of `gt` is larger than a specified `lt` or
     /// `lte`, the range is reversed, and the field value must be outside the
     /// specified range. If the field value doesn't meet the required conditions,
     /// an error message is generated.
     ///
-    ///```proto
-    ///message MyUInt32 {
-    ///  // value must be greater than 5 [uint32.gt]
-    ///  uint32 value = 1 [(buf.validate.field).uint32.gt = 5];
+    /// ```proto
+    /// message MyUInt32 {
+    ///   // value must be greater than 5 [uint32.gt]
+    ///   uint32 value = 1 [(buf.validate.field).uint32.gt = 5];
     ///
-    ///  // value must be greater than 5 and less than 10 [uint32.gt_lt]
-    ///  uint32 other_value = 2 [(buf.validate.field).uint32 = { gt: 5, lt: 10 }];
+    ///   // value must be greater than 5 and less than 10 [uint32.gt_lt]
+    ///   uint32 other_value = 2 [(buf.validate.field).uint32 = { gt: 5, lt: 10 }];
     ///
-    ///  // value must be greater than 10 or less than 5 [uint32.gt_lt_exclusive]
-    ///  uint32 another_value = 3 [(buf.validate.field).uint32 = { gt: 10, lt: 5 }];
-    ///}
-    ///```
+    ///   // value must be greater than 10 or less than 5 [uint32.gt_lt_exclusive]
+    ///   uint32 another_value = 3 [(buf.validate.field).uint32 = { gt: 10, lt: 5 }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint Gt {
-      get { if ((_hasBits0 & 8) != 0) { return gt_; } else { return GtDefaultValue; } }
+      get { return HasGt ? (uint) greaterThan_ : 0; }
       set {
-        _hasBits0 |= 8;
-        gt_ = value;
+        greaterThan_ = value;
+        greaterThanCase_ = GreaterThanOneofCase.Gt;
       }
     }
     /// <summary>Gets whether the "gt" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasGt {
-      get { return (_hasBits0 & 8) != 0; }
+      get { return greaterThanCase_ == GreaterThanOneofCase.Gt; }
     }
-    /// <summary>Clears the value of the "gt" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "gt" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearGt() {
-      _hasBits0 &= ~8;
+      if (HasGt) {
+        ClearGreaterThan();
+      }
     }
 
     /// <summary>Field number for the "gte" field.</summary>
     public const int GteFieldNumber = 5;
-    private readonly static uint GteDefaultValue = 0;
-
-    private uint gte_;
     /// <summary>
-    ///`gte` requires the field value to be greater than or equal to the specified
+    /// `gte` requires the field value to be greater than or equal to the specified
     /// value (exclusive). If the value of `gte` is larger than a specified `lt`
     /// or `lte`, the range is reversed, and the field value must be outside the
     /// specified range. If the field value doesn't meet the required conditions,
     /// an error message is generated.
     ///
-    ///```proto
-    ///message MyUInt32 {
-    ///  // value must be greater than or equal to 5 [uint32.gte]
-    ///  uint32 value = 1 [(buf.validate.field).uint32.gte = 5];
+    /// ```proto
+    /// message MyUInt32 {
+    ///   // value must be greater than or equal to 5 [uint32.gte]
+    ///   uint32 value = 1 [(buf.validate.field).uint32.gte = 5];
     ///
-    ///  // value must be greater than or equal to 5 and less than 10 [uint32.gte_lt]
-    ///  uint32 other_value = 2 [(buf.validate.field).uint32 = { gte: 5, lt: 10 }];
+    ///   // value must be greater than or equal to 5 and less than 10 [uint32.gte_lt]
+    ///   uint32 other_value = 2 [(buf.validate.field).uint32 = { gte: 5, lt: 10 }];
     ///
-    ///  // value must be greater than or equal to 10 or less than 5 [uint32.gte_lt_exclusive]
-    ///  uint32 another_value = 3 [(buf.validate.field).uint32 = { gte: 10, lt: 5 }];
-    ///}
-    ///```
+    ///   // value must be greater than or equal to 10 or less than 5 [uint32.gte_lt_exclusive]
+    ///   uint32 another_value = 3 [(buf.validate.field).uint32 = { gte: 10, lt: 5 }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint Gte {
-      get { if ((_hasBits0 & 16) != 0) { return gte_; } else { return GteDefaultValue; } }
+      get { return HasGte ? (uint) greaterThan_ : 0; }
       set {
-        _hasBits0 |= 16;
-        gte_ = value;
+        greaterThan_ = value;
+        greaterThanCase_ = GreaterThanOneofCase.Gte;
       }
     }
     /// <summary>Gets whether the "gte" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasGte {
-      get { return (_hasBits0 & 16) != 0; }
+      get { return greaterThanCase_ == GreaterThanOneofCase.Gte; }
     }
-    /// <summary>Clears the value of the "gte" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "gte" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearGte() {
-      _hasBits0 &= ~16;
+      if (HasGte) {
+        ClearGreaterThan();
+      }
     }
 
     /// <summary>Field number for the "in" field.</summary>
     public const int InFieldNumber = 6;
     private static readonly pb::FieldCodec<uint> _repeated_in_codec
-        = pb::FieldCodec.ForUInt32(50);
+        = pb::FieldCodec.ForUInt32(48);
     private readonly pbc::RepeatedField<uint> in_ = new pbc::RepeatedField<uint>();
     /// <summary>
-    ///`in` requires the field value to be equal to one of the specified values.
+    /// `in` requires the field value to be equal to one of the specified values.
     /// If the field value isn't one of the specified values, an error message is
     /// generated.
     ///
-    ///```proto
-    ///message MyUInt32 {
-    ///  // value must be in list [1, 2, 3]
-    ///  repeated uint32 value = 1 (buf.validate.field).uint32 = { in: [1, 2, 3] };
-    ///}
-    ///```
+    /// ```proto
+    /// message MyUInt32 {
+    ///   // value must be in list [1, 2, 3]
+    ///   uint32 value = 1 [(buf.validate.field).uint32 = { in: [1, 2, 3] }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -5737,24 +7528,91 @@ namespace Buf.Validate {
     /// <summary>Field number for the "not_in" field.</summary>
     public const int NotInFieldNumber = 7;
     private static readonly pb::FieldCodec<uint> _repeated_notIn_codec
-        = pb::FieldCodec.ForUInt32(58);
+        = pb::FieldCodec.ForUInt32(56);
     private readonly pbc::RepeatedField<uint> notIn_ = new pbc::RepeatedField<uint>();
     /// <summary>
-    ///`not_in` requires the field value to not be equal to any of the specified
+    /// `not_in` requires the field value to not be equal to any of the specified
     /// values. If the field value is one of the specified values, an error
     /// message is generated.
     ///
-    ///```proto
-    ///message MyUInt32 {
-    ///  // value must not be in list [1, 2, 3]
-    ///  repeated uint32 value = 1 (buf.validate.field).uint32 = { not_in: [1, 2, 3] };
-    ///}
-    ///```
+    /// ```proto
+    /// message MyUInt32 {
+    ///   // value must not be in list [1, 2, 3]
+    ///   uint32 value = 1 [(buf.validate.field).uint32 = { not_in: [1, 2, 3] }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<uint> NotIn {
       get { return notIn_; }
+    }
+
+    /// <summary>Field number for the "example" field.</summary>
+    public const int ExampleFieldNumber = 8;
+    private static readonly pb::FieldCodec<uint> _repeated_example_codec
+        = pb::FieldCodec.ForUInt32(64);
+    private readonly pbc::RepeatedField<uint> example_ = new pbc::RepeatedField<uint>();
+    /// <summary>
+    /// `example` specifies values that the field may have. These values SHOULD
+    /// conform to other rules. `example` values will not impact validation
+    /// but may be used as helpful guidance on how to populate the given field.
+    ///
+    /// ```proto
+    /// message MyUInt32 {
+    ///   uint32 value = 1 [
+    ///     (buf.validate.field).uint32.example = 1,
+    ///     (buf.validate.field).uint32.example = 10
+    ///   ];
+    /// }
+    /// ```
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> Example {
+      get { return example_; }
+    }
+
+    private object lessThan_;
+    /// <summary>Enum of possible cases for the "less_than" oneof.</summary>
+    public enum LessThanOneofCase {
+      None = 0,
+      Lt = 2,
+      Lte = 3,
+    }
+    private LessThanOneofCase lessThanCase_ = LessThanOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public LessThanOneofCase LessThanCase {
+      get { return lessThanCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearLessThan() {
+      lessThanCase_ = LessThanOneofCase.None;
+      lessThan_ = null;
+    }
+
+    private object greaterThan_;
+    /// <summary>Enum of possible cases for the "greater_than" oneof.</summary>
+    public enum GreaterThanOneofCase {
+      None = 0,
+      Gt = 4,
+      Gte = 5,
+    }
+    private GreaterThanOneofCase greaterThanCase_ = GreaterThanOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GreaterThanOneofCase GreaterThanCase {
+      get { return greaterThanCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearGreaterThan() {
+      greaterThanCase_ = GreaterThanOneofCase.None;
+      greaterThan_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5779,6 +7637,12 @@ namespace Buf.Validate {
       if (Gte != other.Gte) return false;
       if(!in_.Equals(other.in_)) return false;
       if(!notIn_.Equals(other.notIn_)) return false;
+      if(!example_.Equals(other.example_)) return false;
+      if (LessThanCase != other.LessThanCase) return false;
+      if (GreaterThanCase != other.GreaterThanCase) return false;
+      if (!Equals(_extensions, other._extensions)) {
+        return false;
+      }
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -5793,6 +7657,12 @@ namespace Buf.Validate {
       if (HasGte) hash ^= Gte.GetHashCode();
       hash ^= in_.GetHashCode();
       hash ^= notIn_.GetHashCode();
+      hash ^= example_.GetHashCode();
+      hash ^= (int) lessThanCase_;
+      hash ^= (int) greaterThanCase_;
+      if (_extensions != null) {
+        hash ^= _extensions.GetHashCode();
+      }
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -5833,6 +7703,10 @@ namespace Buf.Validate {
       }
       in_.WriteTo(output, _repeated_in_codec);
       notIn_.WriteTo(output, _repeated_notIn_codec);
+      example_.WriteTo(output, _repeated_example_codec);
+      if (_extensions != null) {
+        _extensions.WriteTo(output);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -5865,6 +7739,10 @@ namespace Buf.Validate {
       }
       in_.WriteTo(ref output, _repeated_in_codec);
       notIn_.WriteTo(ref output, _repeated_notIn_codec);
+      example_.WriteTo(ref output, _repeated_example_codec);
+      if (_extensions != null) {
+        _extensions.WriteTo(ref output);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -5892,6 +7770,10 @@ namespace Buf.Validate {
       }
       size += in_.CalculateSize(_repeated_in_codec);
       size += notIn_.CalculateSize(_repeated_notIn_codec);
+      size += example_.CalculateSize(_repeated_example_codec);
+      if (_extensions != null) {
+        size += _extensions.CalculateSize();
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -5907,20 +7789,28 @@ namespace Buf.Validate {
       if (other.HasConst) {
         Const = other.Const;
       }
-      if (other.HasLt) {
-        Lt = other.Lt;
-      }
-      if (other.HasLte) {
-        Lte = other.Lte;
-      }
-      if (other.HasGt) {
-        Gt = other.Gt;
-      }
-      if (other.HasGte) {
-        Gte = other.Gte;
-      }
       in_.Add(other.in_);
       notIn_.Add(other.notIn_);
+      example_.Add(other.example_);
+      switch (other.LessThanCase) {
+        case LessThanOneofCase.Lt:
+          Lt = other.Lt;
+          break;
+        case LessThanOneofCase.Lte:
+          Lte = other.Lte;
+          break;
+      }
+
+      switch (other.GreaterThanCase) {
+        case GreaterThanOneofCase.Gt:
+          Gt = other.Gt;
+          break;
+        case GreaterThanOneofCase.Gte:
+          Gte = other.Gte;
+          break;
+      }
+
+      pb::ExtensionSet.MergeFrom(ref _extensions, other._extensions);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -5934,7 +7824,9 @@ namespace Buf.Validate {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            }
             break;
           case 8: {
             Const = input.ReadUInt32();
@@ -5966,6 +7858,11 @@ namespace Buf.Validate {
             notIn_.AddEntriesFrom(input, _repeated_notIn_codec);
             break;
           }
+          case 66:
+          case 64: {
+            example_.AddEntriesFrom(input, _repeated_example_codec);
+            break;
+          }
         }
       }
     #endif
@@ -5979,7 +7876,9 @@ namespace Buf.Validate {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, ref input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            }
             break;
           case 8: {
             Const = input.ReadUInt32();
@@ -6011,24 +7910,53 @@ namespace Buf.Validate {
             notIn_.AddEntriesFrom(ref input, _repeated_notIn_codec);
             break;
           }
+          case 66:
+          case 64: {
+            example_.AddEntriesFrom(ref input, _repeated_example_codec);
+            break;
+          }
         }
       }
     }
     #endif
 
+    public TValue GetExtension<TValue>(pb::Extension<UInt32Rules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<UInt32Rules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>(pb::RepeatedExtension<UInt32Rules, TValue> extension) {
+      return pb::ExtensionSet.GetOrInitialize(ref _extensions, extension);
+    }
+    public void SetExtension<TValue>(pb::Extension<UInt32Rules, TValue> extension, TValue value) {
+      pb::ExtensionSet.Set(ref _extensions, extension, value);
+    }
+    public bool HasExtension<TValue>(pb::Extension<UInt32Rules, TValue> extension) {
+      return pb::ExtensionSet.Has(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::Extension<UInt32Rules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::RepeatedExtension<UInt32Rules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+
   }
 
   /// <summary>
-  /// UInt64Rules describes the constraints applied to `uint64` values. These
+  /// UInt64Rules describes the rules applied to `uint64` values. These
   /// rules may also be applied to the `google.protobuf.UInt64Value` Well-Known-Type.
   /// </summary>
-  public sealed partial class UInt64Rules : pb::IMessage<UInt64Rules>
+  public sealed partial class UInt64Rules : pb::IExtendableMessage<UInt64Rules>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
     private static readonly pb::MessageParser<UInt64Rules> _parser = new pb::MessageParser<UInt64Rules>(() => new UInt64Rules());
     private pb::UnknownFieldSet _unknownFields;
+    private pb::ExtensionSet<UInt64Rules> _extensions;
+    private pb::ExtensionSet<UInt64Rules> _Extensions { get { return _extensions; } }
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -6037,7 +7965,7 @@ namespace Buf.Validate {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[11]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6059,13 +7987,29 @@ namespace Buf.Validate {
     public UInt64Rules(UInt64Rules other) : this() {
       _hasBits0 = other._hasBits0;
       const_ = other.const_;
-      lt_ = other.lt_;
-      lte_ = other.lte_;
-      gt_ = other.gt_;
-      gte_ = other.gte_;
       in_ = other.in_.Clone();
       notIn_ = other.notIn_.Clone();
+      example_ = other.example_.Clone();
+      switch (other.LessThanCase) {
+        case LessThanOneofCase.Lt:
+          Lt = other.Lt;
+          break;
+        case LessThanOneofCase.Lte:
+          Lte = other.Lte;
+          break;
+      }
+
+      switch (other.GreaterThanCase) {
+        case GreaterThanOneofCase.Gt:
+          Gt = other.Gt;
+          break;
+        case GreaterThanOneofCase.Gte:
+          Gte = other.Gte;
+          break;
+      }
+
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+      _extensions = pb::ExtensionSet.Clone(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6080,15 +8024,15 @@ namespace Buf.Validate {
 
     private ulong const_;
     /// <summary>
-    ///`const` requires the field value to exactly match the specified value. If
+    /// `const` requires the field value to exactly match the specified value. If
     /// the field value doesn't match, an error message is generated.
     ///
-    ///```proto
-    ///message MyUInt64 {
-    ///  // value must equal 42
+    /// ```proto
+    /// message MyUInt64 {
+    ///   // value must equal 42
     ///   uint64 value = 1 [(buf.validate.field).uint64.const = 42];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -6114,192 +8058,188 @@ namespace Buf.Validate {
 
     /// <summary>Field number for the "lt" field.</summary>
     public const int LtFieldNumber = 2;
-    private readonly static ulong LtDefaultValue = 0UL;
-
-    private ulong lt_;
     /// <summary>
-    ///`lt` requires the field value to be less than the specified value (field &lt;
+    /// `lt` requires the field value to be less than the specified value (field &lt;
     /// value). If the field value is equal to or greater than the specified value,
     /// an error message is generated.
     ///
-    ///```proto
-    ///message MyUInt64 {
-    ///  // value must be less than 10
+    /// ```proto
+    /// message MyUInt64 {
+    ///   // value must be less than 10
     ///   uint64 value = 1 [(buf.validate.field).uint64.lt = 10];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ulong Lt {
-      get { if ((_hasBits0 & 2) != 0) { return lt_; } else { return LtDefaultValue; } }
+      get { return HasLt ? (ulong) lessThan_ : 0UL; }
       set {
-        _hasBits0 |= 2;
-        lt_ = value;
+        lessThan_ = value;
+        lessThanCase_ = LessThanOneofCase.Lt;
       }
     }
     /// <summary>Gets whether the "lt" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasLt {
-      get { return (_hasBits0 & 2) != 0; }
+      get { return lessThanCase_ == LessThanOneofCase.Lt; }
     }
-    /// <summary>Clears the value of the "lt" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "lt" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearLt() {
-      _hasBits0 &= ~2;
+      if (HasLt) {
+        ClearLessThan();
+      }
     }
 
     /// <summary>Field number for the "lte" field.</summary>
     public const int LteFieldNumber = 3;
-    private readonly static ulong LteDefaultValue = 0UL;
-
-    private ulong lte_;
     /// <summary>
-    ///`lte` requires the field value to be less than or equal to the specified
+    /// `lte` requires the field value to be less than or equal to the specified
     /// value (field &lt;= value). If the field value is greater than the specified
     /// value, an error message is generated.
     ///
-    ///```proto
-    ///message MyUInt64 {
-    ///  // value must be less than or equal to 10
+    /// ```proto
+    /// message MyUInt64 {
+    ///   // value must be less than or equal to 10
     ///   uint64 value = 1 [(buf.validate.field).uint64.lte = 10];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ulong Lte {
-      get { if ((_hasBits0 & 4) != 0) { return lte_; } else { return LteDefaultValue; } }
+      get { return HasLte ? (ulong) lessThan_ : 0UL; }
       set {
-        _hasBits0 |= 4;
-        lte_ = value;
+        lessThan_ = value;
+        lessThanCase_ = LessThanOneofCase.Lte;
       }
     }
     /// <summary>Gets whether the "lte" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasLte {
-      get { return (_hasBits0 & 4) != 0; }
+      get { return lessThanCase_ == LessThanOneofCase.Lte; }
     }
-    /// <summary>Clears the value of the "lte" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "lte" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearLte() {
-      _hasBits0 &= ~4;
+      if (HasLte) {
+        ClearLessThan();
+      }
     }
 
     /// <summary>Field number for the "gt" field.</summary>
     public const int GtFieldNumber = 4;
-    private readonly static ulong GtDefaultValue = 0UL;
-
-    private ulong gt_;
     /// <summary>
-    ///`gt` requires the field value to be greater than the specified value
+    /// `gt` requires the field value to be greater than the specified value
     /// (exclusive). If the value of `gt` is larger than a specified `lt` or
     /// `lte`, the range is reversed, and the field value must be outside the
     /// specified range. If the field value doesn't meet the required conditions,
     /// an error message is generated.
     ///
-    ///```proto
-    ///message MyUInt64 {
-    ///  // value must be greater than 5 [uint64.gt]
-    ///  uint64 value = 1 [(buf.validate.field).uint64.gt = 5];
+    /// ```proto
+    /// message MyUInt64 {
+    ///   // value must be greater than 5 [uint64.gt]
+    ///   uint64 value = 1 [(buf.validate.field).uint64.gt = 5];
     ///
-    ///  // value must be greater than 5 and less than 10 [uint64.gt_lt]
-    ///  uint64 other_value = 2 [(buf.validate.field).uint64 = { gt: 5, lt: 10 }];
+    ///   // value must be greater than 5 and less than 10 [uint64.gt_lt]
+    ///   uint64 other_value = 2 [(buf.validate.field).uint64 = { gt: 5, lt: 10 }];
     ///
-    ///  // value must be greater than 10 or less than 5 [uint64.gt_lt_exclusive]
-    ///  uint64 another_value = 3 [(buf.validate.field).uint64 = { gt: 10, lt: 5 }];
-    ///}
-    ///```
+    ///   // value must be greater than 10 or less than 5 [uint64.gt_lt_exclusive]
+    ///   uint64 another_value = 3 [(buf.validate.field).uint64 = { gt: 10, lt: 5 }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ulong Gt {
-      get { if ((_hasBits0 & 8) != 0) { return gt_; } else { return GtDefaultValue; } }
+      get { return HasGt ? (ulong) greaterThan_ : 0UL; }
       set {
-        _hasBits0 |= 8;
-        gt_ = value;
+        greaterThan_ = value;
+        greaterThanCase_ = GreaterThanOneofCase.Gt;
       }
     }
     /// <summary>Gets whether the "gt" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasGt {
-      get { return (_hasBits0 & 8) != 0; }
+      get { return greaterThanCase_ == GreaterThanOneofCase.Gt; }
     }
-    /// <summary>Clears the value of the "gt" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "gt" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearGt() {
-      _hasBits0 &= ~8;
+      if (HasGt) {
+        ClearGreaterThan();
+      }
     }
 
     /// <summary>Field number for the "gte" field.</summary>
     public const int GteFieldNumber = 5;
-    private readonly static ulong GteDefaultValue = 0UL;
-
-    private ulong gte_;
     /// <summary>
-    ///`gte` requires the field value to be greater than or equal to the specified
+    /// `gte` requires the field value to be greater than or equal to the specified
     /// value (exclusive). If the value of `gte` is larger than a specified `lt`
     /// or `lte`, the range is reversed, and the field value must be outside the
     /// specified range. If the field value doesn't meet the required conditions,
     /// an error message is generated.
     ///
-    ///```proto
-    ///message MyUInt64 {
-    ///  // value must be greater than or equal to 5 [uint64.gte]
-    ///  uint64 value = 1 [(buf.validate.field).uint64.gte = 5];
+    /// ```proto
+    /// message MyUInt64 {
+    ///   // value must be greater than or equal to 5 [uint64.gte]
+    ///   uint64 value = 1 [(buf.validate.field).uint64.gte = 5];
     ///
-    ///  // value must be greater than or equal to 5 and less than 10 [uint64.gte_lt]
-    ///  uint64 other_value = 2 [(buf.validate.field).uint64 = { gte: 5, lt: 10 }];
+    ///   // value must be greater than or equal to 5 and less than 10 [uint64.gte_lt]
+    ///   uint64 other_value = 2 [(buf.validate.field).uint64 = { gte: 5, lt: 10 }];
     ///
-    ///  // value must be greater than or equal to 10 or less than 5 [uint64.gte_lt_exclusive]
-    ///  uint64 another_value = 3 [(buf.validate.field).uint64 = { gte: 10, lt: 5 }];
-    ///}
-    ///```
+    ///   // value must be greater than or equal to 10 or less than 5 [uint64.gte_lt_exclusive]
+    ///   uint64 another_value = 3 [(buf.validate.field).uint64 = { gte: 10, lt: 5 }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ulong Gte {
-      get { if ((_hasBits0 & 16) != 0) { return gte_; } else { return GteDefaultValue; } }
+      get { return HasGte ? (ulong) greaterThan_ : 0UL; }
       set {
-        _hasBits0 |= 16;
-        gte_ = value;
+        greaterThan_ = value;
+        greaterThanCase_ = GreaterThanOneofCase.Gte;
       }
     }
     /// <summary>Gets whether the "gte" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasGte {
-      get { return (_hasBits0 & 16) != 0; }
+      get { return greaterThanCase_ == GreaterThanOneofCase.Gte; }
     }
-    /// <summary>Clears the value of the "gte" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "gte" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearGte() {
-      _hasBits0 &= ~16;
+      if (HasGte) {
+        ClearGreaterThan();
+      }
     }
 
     /// <summary>Field number for the "in" field.</summary>
     public const int InFieldNumber = 6;
     private static readonly pb::FieldCodec<ulong> _repeated_in_codec
-        = pb::FieldCodec.ForUInt64(50);
+        = pb::FieldCodec.ForUInt64(48);
     private readonly pbc::RepeatedField<ulong> in_ = new pbc::RepeatedField<ulong>();
     /// <summary>
-    ///`in` requires the field value to be equal to one of the specified values.
+    /// `in` requires the field value to be equal to one of the specified values.
     /// If the field value isn't one of the specified values, an error message is
     /// generated.
     ///
-    ///```proto
-    ///message MyUInt64 {
-    ///  // value must be in list [1, 2, 3]
-    ///  repeated uint64 value = 1 (buf.validate.field).uint64 = { in: [1, 2, 3] };
-    ///}
-    ///```
+    /// ```proto
+    /// message MyUInt64 {
+    ///   // value must be in list [1, 2, 3]
+    ///   uint64 value = 1 [(buf.validate.field).uint64 = { in: [1, 2, 3] }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -6310,24 +8250,91 @@ namespace Buf.Validate {
     /// <summary>Field number for the "not_in" field.</summary>
     public const int NotInFieldNumber = 7;
     private static readonly pb::FieldCodec<ulong> _repeated_notIn_codec
-        = pb::FieldCodec.ForUInt64(58);
+        = pb::FieldCodec.ForUInt64(56);
     private readonly pbc::RepeatedField<ulong> notIn_ = new pbc::RepeatedField<ulong>();
     /// <summary>
-    ///`not_in` requires the field value to not be equal to any of the specified
+    /// `not_in` requires the field value to not be equal to any of the specified
     /// values. If the field value is one of the specified values, an error
     /// message is generated.
     ///
-    ///```proto
-    ///message MyUInt64 {
-    ///  // value must not be in list [1, 2, 3]
-    ///  repeated uint64 value = 1 (buf.validate.field).uint64 = { not_in: [1, 2, 3] };
-    ///}
-    ///```
+    /// ```proto
+    /// message MyUInt64 {
+    ///   // value must not be in list [1, 2, 3]
+    ///   uint64 value = 1 [(buf.validate.field).uint64 = { not_in: [1, 2, 3] }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<ulong> NotIn {
       get { return notIn_; }
+    }
+
+    /// <summary>Field number for the "example" field.</summary>
+    public const int ExampleFieldNumber = 8;
+    private static readonly pb::FieldCodec<ulong> _repeated_example_codec
+        = pb::FieldCodec.ForUInt64(64);
+    private readonly pbc::RepeatedField<ulong> example_ = new pbc::RepeatedField<ulong>();
+    /// <summary>
+    /// `example` specifies values that the field may have. These values SHOULD
+    /// conform to other rules. `example` values will not impact validation
+    /// but may be used as helpful guidance on how to populate the given field.
+    ///
+    /// ```proto
+    /// message MyUInt64 {
+    ///   uint64 value = 1 [
+    ///     (buf.validate.field).uint64.example = 1,
+    ///     (buf.validate.field).uint64.example = -10
+    ///   ];
+    /// }
+    /// ```
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<ulong> Example {
+      get { return example_; }
+    }
+
+    private object lessThan_;
+    /// <summary>Enum of possible cases for the "less_than" oneof.</summary>
+    public enum LessThanOneofCase {
+      None = 0,
+      Lt = 2,
+      Lte = 3,
+    }
+    private LessThanOneofCase lessThanCase_ = LessThanOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public LessThanOneofCase LessThanCase {
+      get { return lessThanCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearLessThan() {
+      lessThanCase_ = LessThanOneofCase.None;
+      lessThan_ = null;
+    }
+
+    private object greaterThan_;
+    /// <summary>Enum of possible cases for the "greater_than" oneof.</summary>
+    public enum GreaterThanOneofCase {
+      None = 0,
+      Gt = 4,
+      Gte = 5,
+    }
+    private GreaterThanOneofCase greaterThanCase_ = GreaterThanOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GreaterThanOneofCase GreaterThanCase {
+      get { return greaterThanCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearGreaterThan() {
+      greaterThanCase_ = GreaterThanOneofCase.None;
+      greaterThan_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6352,6 +8359,12 @@ namespace Buf.Validate {
       if (Gte != other.Gte) return false;
       if(!in_.Equals(other.in_)) return false;
       if(!notIn_.Equals(other.notIn_)) return false;
+      if(!example_.Equals(other.example_)) return false;
+      if (LessThanCase != other.LessThanCase) return false;
+      if (GreaterThanCase != other.GreaterThanCase) return false;
+      if (!Equals(_extensions, other._extensions)) {
+        return false;
+      }
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -6366,6 +8379,12 @@ namespace Buf.Validate {
       if (HasGte) hash ^= Gte.GetHashCode();
       hash ^= in_.GetHashCode();
       hash ^= notIn_.GetHashCode();
+      hash ^= example_.GetHashCode();
+      hash ^= (int) lessThanCase_;
+      hash ^= (int) greaterThanCase_;
+      if (_extensions != null) {
+        hash ^= _extensions.GetHashCode();
+      }
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -6406,6 +8425,10 @@ namespace Buf.Validate {
       }
       in_.WriteTo(output, _repeated_in_codec);
       notIn_.WriteTo(output, _repeated_notIn_codec);
+      example_.WriteTo(output, _repeated_example_codec);
+      if (_extensions != null) {
+        _extensions.WriteTo(output);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -6438,6 +8461,10 @@ namespace Buf.Validate {
       }
       in_.WriteTo(ref output, _repeated_in_codec);
       notIn_.WriteTo(ref output, _repeated_notIn_codec);
+      example_.WriteTo(ref output, _repeated_example_codec);
+      if (_extensions != null) {
+        _extensions.WriteTo(ref output);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -6465,6 +8492,10 @@ namespace Buf.Validate {
       }
       size += in_.CalculateSize(_repeated_in_codec);
       size += notIn_.CalculateSize(_repeated_notIn_codec);
+      size += example_.CalculateSize(_repeated_example_codec);
+      if (_extensions != null) {
+        size += _extensions.CalculateSize();
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -6480,20 +8511,28 @@ namespace Buf.Validate {
       if (other.HasConst) {
         Const = other.Const;
       }
-      if (other.HasLt) {
-        Lt = other.Lt;
-      }
-      if (other.HasLte) {
-        Lte = other.Lte;
-      }
-      if (other.HasGt) {
-        Gt = other.Gt;
-      }
-      if (other.HasGte) {
-        Gte = other.Gte;
-      }
       in_.Add(other.in_);
       notIn_.Add(other.notIn_);
+      example_.Add(other.example_);
+      switch (other.LessThanCase) {
+        case LessThanOneofCase.Lt:
+          Lt = other.Lt;
+          break;
+        case LessThanOneofCase.Lte:
+          Lte = other.Lte;
+          break;
+      }
+
+      switch (other.GreaterThanCase) {
+        case GreaterThanOneofCase.Gt:
+          Gt = other.Gt;
+          break;
+        case GreaterThanOneofCase.Gte:
+          Gte = other.Gte;
+          break;
+      }
+
+      pb::ExtensionSet.MergeFrom(ref _extensions, other._extensions);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -6507,7 +8546,9 @@ namespace Buf.Validate {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            }
             break;
           case 8: {
             Const = input.ReadUInt64();
@@ -6539,6 +8580,11 @@ namespace Buf.Validate {
             notIn_.AddEntriesFrom(input, _repeated_notIn_codec);
             break;
           }
+          case 66:
+          case 64: {
+            example_.AddEntriesFrom(input, _repeated_example_codec);
+            break;
+          }
         }
       }
     #endif
@@ -6552,7 +8598,9 @@ namespace Buf.Validate {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, ref input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            }
             break;
           case 8: {
             Const = input.ReadUInt64();
@@ -6584,23 +8632,52 @@ namespace Buf.Validate {
             notIn_.AddEntriesFrom(ref input, _repeated_notIn_codec);
             break;
           }
+          case 66:
+          case 64: {
+            example_.AddEntriesFrom(ref input, _repeated_example_codec);
+            break;
+          }
         }
       }
     }
     #endif
 
+    public TValue GetExtension<TValue>(pb::Extension<UInt64Rules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<UInt64Rules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>(pb::RepeatedExtension<UInt64Rules, TValue> extension) {
+      return pb::ExtensionSet.GetOrInitialize(ref _extensions, extension);
+    }
+    public void SetExtension<TValue>(pb::Extension<UInt64Rules, TValue> extension, TValue value) {
+      pb::ExtensionSet.Set(ref _extensions, extension, value);
+    }
+    public bool HasExtension<TValue>(pb::Extension<UInt64Rules, TValue> extension) {
+      return pb::ExtensionSet.Has(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::Extension<UInt64Rules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::RepeatedExtension<UInt64Rules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+
   }
 
   /// <summary>
-  /// SInt32Rules describes the constraints applied to `sint32` values.
+  /// SInt32Rules describes the rules applied to `sint32` values.
   /// </summary>
-  public sealed partial class SInt32Rules : pb::IMessage<SInt32Rules>
+  public sealed partial class SInt32Rules : pb::IExtendableMessage<SInt32Rules>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
     private static readonly pb::MessageParser<SInt32Rules> _parser = new pb::MessageParser<SInt32Rules>(() => new SInt32Rules());
     private pb::UnknownFieldSet _unknownFields;
+    private pb::ExtensionSet<SInt32Rules> _extensions;
+    private pb::ExtensionSet<SInt32Rules> _Extensions { get { return _extensions; } }
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -6609,7 +8686,7 @@ namespace Buf.Validate {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[12]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6631,13 +8708,29 @@ namespace Buf.Validate {
     public SInt32Rules(SInt32Rules other) : this() {
       _hasBits0 = other._hasBits0;
       const_ = other.const_;
-      lt_ = other.lt_;
-      lte_ = other.lte_;
-      gt_ = other.gt_;
-      gte_ = other.gte_;
       in_ = other.in_.Clone();
       notIn_ = other.notIn_.Clone();
+      example_ = other.example_.Clone();
+      switch (other.LessThanCase) {
+        case LessThanOneofCase.Lt:
+          Lt = other.Lt;
+          break;
+        case LessThanOneofCase.Lte:
+          Lte = other.Lte;
+          break;
+      }
+
+      switch (other.GreaterThanCase) {
+        case GreaterThanOneofCase.Gt:
+          Gt = other.Gt;
+          break;
+        case GreaterThanOneofCase.Gte:
+          Gte = other.Gte;
+          break;
+      }
+
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+      _extensions = pb::ExtensionSet.Clone(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6652,15 +8745,15 @@ namespace Buf.Validate {
 
     private int const_;
     /// <summary>
-    ///`const` requires the field value to exactly match the specified value. If
+    /// `const` requires the field value to exactly match the specified value. If
     /// the field value doesn't match, an error message is generated.
     ///
-    ///```proto
-    ///message MySInt32 {
-    ///  // value must equal 42
+    /// ```proto
+    /// message MySInt32 {
+    ///   // value must equal 42
     ///   sint32 value = 1 [(buf.validate.field).sint32.const = 42];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -6686,143 +8779,137 @@ namespace Buf.Validate {
 
     /// <summary>Field number for the "lt" field.</summary>
     public const int LtFieldNumber = 2;
-    private readonly static int LtDefaultValue = 0;
-
-    private int lt_;
     /// <summary>
-    ///`lt` requires the field value to be less than the specified value (field
+    /// `lt` requires the field value to be less than the specified value (field
     /// &lt; value). If the field value is equal to or greater than the specified
     /// value, an error message is generated.
     ///
-    ///```proto
-    ///message MySInt32 {
-    ///  // value must be less than 10
+    /// ```proto
+    /// message MySInt32 {
+    ///   // value must be less than 10
     ///   sint32 value = 1 [(buf.validate.field).sint32.lt = 10];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int Lt {
-      get { if ((_hasBits0 & 2) != 0) { return lt_; } else { return LtDefaultValue; } }
+      get { return HasLt ? (int) lessThan_ : 0; }
       set {
-        _hasBits0 |= 2;
-        lt_ = value;
+        lessThan_ = value;
+        lessThanCase_ = LessThanOneofCase.Lt;
       }
     }
     /// <summary>Gets whether the "lt" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasLt {
-      get { return (_hasBits0 & 2) != 0; }
+      get { return lessThanCase_ == LessThanOneofCase.Lt; }
     }
-    /// <summary>Clears the value of the "lt" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "lt" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearLt() {
-      _hasBits0 &= ~2;
+      if (HasLt) {
+        ClearLessThan();
+      }
     }
 
     /// <summary>Field number for the "lte" field.</summary>
     public const int LteFieldNumber = 3;
-    private readonly static int LteDefaultValue = 0;
-
-    private int lte_;
     /// <summary>
-    ///`lte` requires the field value to be less than or equal to the specified
+    /// `lte` requires the field value to be less than or equal to the specified
     /// value (field &lt;= value). If the field value is greater than the specified
     /// value, an error message is generated.
     ///
-    ///```proto
-    ///message MySInt32 {
-    ///  // value must be less than or equal to 10
+    /// ```proto
+    /// message MySInt32 {
+    ///   // value must be less than or equal to 10
     ///   sint32 value = 1 [(buf.validate.field).sint32.lte = 10];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int Lte {
-      get { if ((_hasBits0 & 4) != 0) { return lte_; } else { return LteDefaultValue; } }
+      get { return HasLte ? (int) lessThan_ : 0; }
       set {
-        _hasBits0 |= 4;
-        lte_ = value;
+        lessThan_ = value;
+        lessThanCase_ = LessThanOneofCase.Lte;
       }
     }
     /// <summary>Gets whether the "lte" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasLte {
-      get { return (_hasBits0 & 4) != 0; }
+      get { return lessThanCase_ == LessThanOneofCase.Lte; }
     }
-    /// <summary>Clears the value of the "lte" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "lte" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearLte() {
-      _hasBits0 &= ~4;
+      if (HasLte) {
+        ClearLessThan();
+      }
     }
 
     /// <summary>Field number for the "gt" field.</summary>
     public const int GtFieldNumber = 4;
-    private readonly static int GtDefaultValue = 0;
-
-    private int gt_;
     /// <summary>
-    ///`gt` requires the field value to be greater than the specified value
+    /// `gt` requires the field value to be greater than the specified value
     /// (exclusive). If the value of `gt` is larger than a specified `lt` or
     /// `lte`, the range is reversed, and the field value must be outside the
     /// specified range. If the field value doesn't meet the required conditions,
     /// an error message is generated.
     ///
-    ///```proto
-    ///message MySInt32 {
-    ///  // value must be greater than 5 [sint32.gt]
-    ///  sint32 value = 1 [(buf.validate.field).sint32.gt = 5];
+    /// ```proto
+    /// message MySInt32 {
+    ///   // value must be greater than 5 [sint32.gt]
+    ///   sint32 value = 1 [(buf.validate.field).sint32.gt = 5];
     ///
-    ///  // value must be greater than 5 and less than 10 [sint32.gt_lt]
-    ///  sint32 other_value = 2 [(buf.validate.field).sint32 = { gt: 5, lt: 10 }];
+    ///   // value must be greater than 5 and less than 10 [sint32.gt_lt]
+    ///   sint32 other_value = 2 [(buf.validate.field).sint32 = { gt: 5, lt: 10 }];
     ///
-    ///  // value must be greater than 10 or less than 5 [sint32.gt_lt_exclusive]
-    ///  sint32 another_value = 3 [(buf.validate.field).sint32 = { gt: 10, lt: 5 }];
-    ///}
-    ///```
+    ///   // value must be greater than 10 or less than 5 [sint32.gt_lt_exclusive]
+    ///   sint32 another_value = 3 [(buf.validate.field).sint32 = { gt: 10, lt: 5 }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int Gt {
-      get { if ((_hasBits0 & 8) != 0) { return gt_; } else { return GtDefaultValue; } }
+      get { return HasGt ? (int) greaterThan_ : 0; }
       set {
-        _hasBits0 |= 8;
-        gt_ = value;
+        greaterThan_ = value;
+        greaterThanCase_ = GreaterThanOneofCase.Gt;
       }
     }
     /// <summary>Gets whether the "gt" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasGt {
-      get { return (_hasBits0 & 8) != 0; }
+      get { return greaterThanCase_ == GreaterThanOneofCase.Gt; }
     }
-    /// <summary>Clears the value of the "gt" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "gt" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearGt() {
-      _hasBits0 &= ~8;
+      if (HasGt) {
+        ClearGreaterThan();
+      }
     }
 
     /// <summary>Field number for the "gte" field.</summary>
     public const int GteFieldNumber = 5;
-    private readonly static int GteDefaultValue = 0;
-
-    private int gte_;
     /// <summary>
-    ///`gte` requires the field value to be greater than or equal to the specified
+    /// `gte` requires the field value to be greater than or equal to the specified
     /// value (exclusive). If the value of `gte` is larger than a specified `lt`
     /// or `lte`, the range is reversed, and the field value must be outside the
     /// specified range. If the field value doesn't meet the required conditions,
     /// an error message is generated.
     ///
-    ///```proto
-    ///message MySInt32 {
+    /// ```proto
+    /// message MySInt32 {
     ///  // value must be greater than or equal to 5 [sint32.gte]
     ///  sint32 value = 1 [(buf.validate.field).sint32.gte = 5];
     ///
@@ -6831,47 +8918,49 @@ namespace Buf.Validate {
     ///
     ///  // value must be greater than or equal to 10 or less than 5 [sint32.gte_lt_exclusive]
     ///  sint32 another_value = 3 [(buf.validate.field).sint32 = { gte: 10, lt: 5 }];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int Gte {
-      get { if ((_hasBits0 & 16) != 0) { return gte_; } else { return GteDefaultValue; } }
+      get { return HasGte ? (int) greaterThan_ : 0; }
       set {
-        _hasBits0 |= 16;
-        gte_ = value;
+        greaterThan_ = value;
+        greaterThanCase_ = GreaterThanOneofCase.Gte;
       }
     }
     /// <summary>Gets whether the "gte" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasGte {
-      get { return (_hasBits0 & 16) != 0; }
+      get { return greaterThanCase_ == GreaterThanOneofCase.Gte; }
     }
-    /// <summary>Clears the value of the "gte" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "gte" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearGte() {
-      _hasBits0 &= ~16;
+      if (HasGte) {
+        ClearGreaterThan();
+      }
     }
 
     /// <summary>Field number for the "in" field.</summary>
     public const int InFieldNumber = 6;
     private static readonly pb::FieldCodec<int> _repeated_in_codec
-        = pb::FieldCodec.ForSInt32(50);
+        = pb::FieldCodec.ForSInt32(48);
     private readonly pbc::RepeatedField<int> in_ = new pbc::RepeatedField<int>();
     /// <summary>
-    ///`in` requires the field value to be equal to one of the specified values.
+    /// `in` requires the field value to be equal to one of the specified values.
     /// If the field value isn't one of the specified values, an error message is
     /// generated.
     ///
-    ///```proto
-    ///message MySInt32 {
-    ///  // value must be in list [1, 2, 3]
-    ///  repeated sint32 value = 1 (buf.validate.field).sint32 = { in: [1, 2, 3] };
-    ///}
-    ///```
+    /// ```proto
+    /// message MySInt32 {
+    ///   // value must be in list [1, 2, 3]
+    ///   sint32 value = 1 [(buf.validate.field).sint32 = { in: [1, 2, 3] }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -6882,24 +8971,91 @@ namespace Buf.Validate {
     /// <summary>Field number for the "not_in" field.</summary>
     public const int NotInFieldNumber = 7;
     private static readonly pb::FieldCodec<int> _repeated_notIn_codec
-        = pb::FieldCodec.ForSInt32(58);
+        = pb::FieldCodec.ForSInt32(56);
     private readonly pbc::RepeatedField<int> notIn_ = new pbc::RepeatedField<int>();
     /// <summary>
-    ///`not_in` requires the field value to not be equal to any of the specified
+    /// `not_in` requires the field value to not be equal to any of the specified
     /// values. If the field value is one of the specified values, an error
     /// message is generated.
     ///
-    ///```proto
-    ///message MySInt32 {
-    ///  // value must not be in list [1, 2, 3]
-    ///  repeated sint32 value = 1 (buf.validate.field).sint32 = { not_in: [1, 2, 3] };
-    ///}
-    ///```
+    /// ```proto
+    /// message MySInt32 {
+    ///   // value must not be in list [1, 2, 3]
+    ///   sint32 value = 1 [(buf.validate.field).sint32 = { not_in: [1, 2, 3] }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<int> NotIn {
       get { return notIn_; }
+    }
+
+    /// <summary>Field number for the "example" field.</summary>
+    public const int ExampleFieldNumber = 8;
+    private static readonly pb::FieldCodec<int> _repeated_example_codec
+        = pb::FieldCodec.ForSInt32(64);
+    private readonly pbc::RepeatedField<int> example_ = new pbc::RepeatedField<int>();
+    /// <summary>
+    /// `example` specifies values that the field may have. These values SHOULD
+    /// conform to other rules. `example` values will not impact validation
+    /// but may be used as helpful guidance on how to populate the given field.
+    ///
+    /// ```proto
+    /// message MySInt32 {
+    ///   sint32 value = 1 [
+    ///     (buf.validate.field).sint32.example = 1,
+    ///     (buf.validate.field).sint32.example = -10
+    ///   ];
+    /// }
+    /// ```
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<int> Example {
+      get { return example_; }
+    }
+
+    private object lessThan_;
+    /// <summary>Enum of possible cases for the "less_than" oneof.</summary>
+    public enum LessThanOneofCase {
+      None = 0,
+      Lt = 2,
+      Lte = 3,
+    }
+    private LessThanOneofCase lessThanCase_ = LessThanOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public LessThanOneofCase LessThanCase {
+      get { return lessThanCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearLessThan() {
+      lessThanCase_ = LessThanOneofCase.None;
+      lessThan_ = null;
+    }
+
+    private object greaterThan_;
+    /// <summary>Enum of possible cases for the "greater_than" oneof.</summary>
+    public enum GreaterThanOneofCase {
+      None = 0,
+      Gt = 4,
+      Gte = 5,
+    }
+    private GreaterThanOneofCase greaterThanCase_ = GreaterThanOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GreaterThanOneofCase GreaterThanCase {
+      get { return greaterThanCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearGreaterThan() {
+      greaterThanCase_ = GreaterThanOneofCase.None;
+      greaterThan_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -6924,6 +9080,12 @@ namespace Buf.Validate {
       if (Gte != other.Gte) return false;
       if(!in_.Equals(other.in_)) return false;
       if(!notIn_.Equals(other.notIn_)) return false;
+      if(!example_.Equals(other.example_)) return false;
+      if (LessThanCase != other.LessThanCase) return false;
+      if (GreaterThanCase != other.GreaterThanCase) return false;
+      if (!Equals(_extensions, other._extensions)) {
+        return false;
+      }
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -6938,6 +9100,12 @@ namespace Buf.Validate {
       if (HasGte) hash ^= Gte.GetHashCode();
       hash ^= in_.GetHashCode();
       hash ^= notIn_.GetHashCode();
+      hash ^= example_.GetHashCode();
+      hash ^= (int) lessThanCase_;
+      hash ^= (int) greaterThanCase_;
+      if (_extensions != null) {
+        hash ^= _extensions.GetHashCode();
+      }
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -6978,6 +9146,10 @@ namespace Buf.Validate {
       }
       in_.WriteTo(output, _repeated_in_codec);
       notIn_.WriteTo(output, _repeated_notIn_codec);
+      example_.WriteTo(output, _repeated_example_codec);
+      if (_extensions != null) {
+        _extensions.WriteTo(output);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -7010,6 +9182,10 @@ namespace Buf.Validate {
       }
       in_.WriteTo(ref output, _repeated_in_codec);
       notIn_.WriteTo(ref output, _repeated_notIn_codec);
+      example_.WriteTo(ref output, _repeated_example_codec);
+      if (_extensions != null) {
+        _extensions.WriteTo(ref output);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -7037,6 +9213,10 @@ namespace Buf.Validate {
       }
       size += in_.CalculateSize(_repeated_in_codec);
       size += notIn_.CalculateSize(_repeated_notIn_codec);
+      size += example_.CalculateSize(_repeated_example_codec);
+      if (_extensions != null) {
+        size += _extensions.CalculateSize();
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -7052,20 +9232,28 @@ namespace Buf.Validate {
       if (other.HasConst) {
         Const = other.Const;
       }
-      if (other.HasLt) {
-        Lt = other.Lt;
-      }
-      if (other.HasLte) {
-        Lte = other.Lte;
-      }
-      if (other.HasGt) {
-        Gt = other.Gt;
-      }
-      if (other.HasGte) {
-        Gte = other.Gte;
-      }
       in_.Add(other.in_);
       notIn_.Add(other.notIn_);
+      example_.Add(other.example_);
+      switch (other.LessThanCase) {
+        case LessThanOneofCase.Lt:
+          Lt = other.Lt;
+          break;
+        case LessThanOneofCase.Lte:
+          Lte = other.Lte;
+          break;
+      }
+
+      switch (other.GreaterThanCase) {
+        case GreaterThanOneofCase.Gt:
+          Gt = other.Gt;
+          break;
+        case GreaterThanOneofCase.Gte:
+          Gte = other.Gte;
+          break;
+      }
+
+      pb::ExtensionSet.MergeFrom(ref _extensions, other._extensions);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -7079,7 +9267,9 @@ namespace Buf.Validate {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            }
             break;
           case 8: {
             Const = input.ReadSInt32();
@@ -7111,6 +9301,11 @@ namespace Buf.Validate {
             notIn_.AddEntriesFrom(input, _repeated_notIn_codec);
             break;
           }
+          case 66:
+          case 64: {
+            example_.AddEntriesFrom(input, _repeated_example_codec);
+            break;
+          }
         }
       }
     #endif
@@ -7124,7 +9319,9 @@ namespace Buf.Validate {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, ref input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            }
             break;
           case 8: {
             Const = input.ReadSInt32();
@@ -7156,23 +9353,52 @@ namespace Buf.Validate {
             notIn_.AddEntriesFrom(ref input, _repeated_notIn_codec);
             break;
           }
+          case 66:
+          case 64: {
+            example_.AddEntriesFrom(ref input, _repeated_example_codec);
+            break;
+          }
         }
       }
     }
     #endif
 
+    public TValue GetExtension<TValue>(pb::Extension<SInt32Rules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<SInt32Rules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>(pb::RepeatedExtension<SInt32Rules, TValue> extension) {
+      return pb::ExtensionSet.GetOrInitialize(ref _extensions, extension);
+    }
+    public void SetExtension<TValue>(pb::Extension<SInt32Rules, TValue> extension, TValue value) {
+      pb::ExtensionSet.Set(ref _extensions, extension, value);
+    }
+    public bool HasExtension<TValue>(pb::Extension<SInt32Rules, TValue> extension) {
+      return pb::ExtensionSet.Has(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::Extension<SInt32Rules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::RepeatedExtension<SInt32Rules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+
   }
 
   /// <summary>
-  /// SInt64Rules describes the constraints applied to `sint64` values.
+  /// SInt64Rules describes the rules applied to `sint64` values.
   /// </summary>
-  public sealed partial class SInt64Rules : pb::IMessage<SInt64Rules>
+  public sealed partial class SInt64Rules : pb::IExtendableMessage<SInt64Rules>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
     private static readonly pb::MessageParser<SInt64Rules> _parser = new pb::MessageParser<SInt64Rules>(() => new SInt64Rules());
     private pb::UnknownFieldSet _unknownFields;
+    private pb::ExtensionSet<SInt64Rules> _extensions;
+    private pb::ExtensionSet<SInt64Rules> _Extensions { get { return _extensions; } }
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -7181,7 +9407,7 @@ namespace Buf.Validate {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[10]; }
+      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[13]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7203,13 +9429,29 @@ namespace Buf.Validate {
     public SInt64Rules(SInt64Rules other) : this() {
       _hasBits0 = other._hasBits0;
       const_ = other.const_;
-      lt_ = other.lt_;
-      lte_ = other.lte_;
-      gt_ = other.gt_;
-      gte_ = other.gte_;
       in_ = other.in_.Clone();
       notIn_ = other.notIn_.Clone();
+      example_ = other.example_.Clone();
+      switch (other.LessThanCase) {
+        case LessThanOneofCase.Lt:
+          Lt = other.Lt;
+          break;
+        case LessThanOneofCase.Lte:
+          Lte = other.Lte;
+          break;
+      }
+
+      switch (other.GreaterThanCase) {
+        case GreaterThanOneofCase.Gt:
+          Gt = other.Gt;
+          break;
+        case GreaterThanOneofCase.Gte:
+          Gte = other.Gte;
+          break;
+      }
+
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+      _extensions = pb::ExtensionSet.Clone(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7224,15 +9466,15 @@ namespace Buf.Validate {
 
     private long const_;
     /// <summary>
-    ///`const` requires the field value to exactly match the specified value. If
+    /// `const` requires the field value to exactly match the specified value. If
     /// the field value doesn't match, an error message is generated.
     ///
-    ///```proto
-    ///message MySInt64 {
-    ///  // value must equal 42
+    /// ```proto
+    /// message MySInt64 {
+    ///   // value must equal 42
     ///   sint64 value = 1 [(buf.validate.field).sint64.const = 42];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -7258,192 +9500,188 @@ namespace Buf.Validate {
 
     /// <summary>Field number for the "lt" field.</summary>
     public const int LtFieldNumber = 2;
-    private readonly static long LtDefaultValue = 0L;
-
-    private long lt_;
     /// <summary>
-    ///`lt` requires the field value to be less than the specified value (field
+    /// `lt` requires the field value to be less than the specified value (field
     /// &lt; value). If the field value is equal to or greater than the specified
     /// value, an error message is generated.
     ///
-    ///```proto
-    ///message MySInt64 {
-    ///  // value must be less than 10
+    /// ```proto
+    /// message MySInt64 {
+    ///   // value must be less than 10
     ///   sint64 value = 1 [(buf.validate.field).sint64.lt = 10];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long Lt {
-      get { if ((_hasBits0 & 2) != 0) { return lt_; } else { return LtDefaultValue; } }
+      get { return HasLt ? (long) lessThan_ : 0L; }
       set {
-        _hasBits0 |= 2;
-        lt_ = value;
+        lessThan_ = value;
+        lessThanCase_ = LessThanOneofCase.Lt;
       }
     }
     /// <summary>Gets whether the "lt" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasLt {
-      get { return (_hasBits0 & 2) != 0; }
+      get { return lessThanCase_ == LessThanOneofCase.Lt; }
     }
-    /// <summary>Clears the value of the "lt" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "lt" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearLt() {
-      _hasBits0 &= ~2;
+      if (HasLt) {
+        ClearLessThan();
+      }
     }
 
     /// <summary>Field number for the "lte" field.</summary>
     public const int LteFieldNumber = 3;
-    private readonly static long LteDefaultValue = 0L;
-
-    private long lte_;
     /// <summary>
-    ///`lte` requires the field value to be less than or equal to the specified
+    /// `lte` requires the field value to be less than or equal to the specified
     /// value (field &lt;= value). If the field value is greater than the specified
     /// value, an error message is generated.
     ///
-    ///```proto
-    ///message MySInt64 {
-    ///  // value must be less than or equal to 10
+    /// ```proto
+    /// message MySInt64 {
+    ///   // value must be less than or equal to 10
     ///   sint64 value = 1 [(buf.validate.field).sint64.lte = 10];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long Lte {
-      get { if ((_hasBits0 & 4) != 0) { return lte_; } else { return LteDefaultValue; } }
+      get { return HasLte ? (long) lessThan_ : 0L; }
       set {
-        _hasBits0 |= 4;
-        lte_ = value;
+        lessThan_ = value;
+        lessThanCase_ = LessThanOneofCase.Lte;
       }
     }
     /// <summary>Gets whether the "lte" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasLte {
-      get { return (_hasBits0 & 4) != 0; }
+      get { return lessThanCase_ == LessThanOneofCase.Lte; }
     }
-    /// <summary>Clears the value of the "lte" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "lte" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearLte() {
-      _hasBits0 &= ~4;
+      if (HasLte) {
+        ClearLessThan();
+      }
     }
 
     /// <summary>Field number for the "gt" field.</summary>
     public const int GtFieldNumber = 4;
-    private readonly static long GtDefaultValue = 0L;
-
-    private long gt_;
     /// <summary>
-    ///`gt` requires the field value to be greater than the specified value
+    /// `gt` requires the field value to be greater than the specified value
     /// (exclusive). If the value of `gt` is larger than a specified `lt` or
     /// `lte`, the range is reversed, and the field value must be outside the
     /// specified range. If the field value doesn't meet the required conditions,
     /// an error message is generated.
     ///
-    ///```proto
-    ///message MySInt64 {
-    ///  // value must be greater than 5 [sint64.gt]
-    ///  sint64 value = 1 [(buf.validate.field).sint64.gt = 5];
+    /// ```proto
+    /// message MySInt64 {
+    ///   // value must be greater than 5 [sint64.gt]
+    ///   sint64 value = 1 [(buf.validate.field).sint64.gt = 5];
     ///
-    ///  // value must be greater than 5 and less than 10 [sint64.gt_lt]
-    ///  sint64 other_value = 2 [(buf.validate.field).sint64 = { gt: 5, lt: 10 }];
+    ///   // value must be greater than 5 and less than 10 [sint64.gt_lt]
+    ///   sint64 other_value = 2 [(buf.validate.field).sint64 = { gt: 5, lt: 10 }];
     ///
-    ///  // value must be greater than 10 or less than 5 [sint64.gt_lt_exclusive]
-    ///  sint64 another_value = 3 [(buf.validate.field).sint64 = { gt: 10, lt: 5 }];
-    ///}
-    ///```
+    ///   // value must be greater than 10 or less than 5 [sint64.gt_lt_exclusive]
+    ///   sint64 another_value = 3 [(buf.validate.field).sint64 = { gt: 10, lt: 5 }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long Gt {
-      get { if ((_hasBits0 & 8) != 0) { return gt_; } else { return GtDefaultValue; } }
+      get { return HasGt ? (long) greaterThan_ : 0L; }
       set {
-        _hasBits0 |= 8;
-        gt_ = value;
+        greaterThan_ = value;
+        greaterThanCase_ = GreaterThanOneofCase.Gt;
       }
     }
     /// <summary>Gets whether the "gt" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasGt {
-      get { return (_hasBits0 & 8) != 0; }
+      get { return greaterThanCase_ == GreaterThanOneofCase.Gt; }
     }
-    /// <summary>Clears the value of the "gt" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "gt" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearGt() {
-      _hasBits0 &= ~8;
+      if (HasGt) {
+        ClearGreaterThan();
+      }
     }
 
     /// <summary>Field number for the "gte" field.</summary>
     public const int GteFieldNumber = 5;
-    private readonly static long GteDefaultValue = 0L;
-
-    private long gte_;
     /// <summary>
-    ///`gte` requires the field value to be greater than or equal to the specified
+    /// `gte` requires the field value to be greater than or equal to the specified
     /// value (exclusive). If the value of `gte` is larger than a specified `lt`
     /// or `lte`, the range is reversed, and the field value must be outside the
     /// specified range. If the field value doesn't meet the required conditions,
     /// an error message is generated.
     ///
-    ///```proto
-    ///message MySInt64 {
-    ///  // value must be greater than or equal to 5 [sint64.gte]
-    ///  sint64 value = 1 [(buf.validate.field).sint64.gte = 5];
+    /// ```proto
+    /// message MySInt64 {
+    ///   // value must be greater than or equal to 5 [sint64.gte]
+    ///   sint64 value = 1 [(buf.validate.field).sint64.gte = 5];
     ///
-    ///  // value must be greater than or equal to 5 and less than 10 [sint64.gte_lt]
-    ///  sint64 other_value = 2 [(buf.validate.field).sint64 = { gte: 5, lt: 10 }];
+    ///   // value must be greater than or equal to 5 and less than 10 [sint64.gte_lt]
+    ///   sint64 other_value = 2 [(buf.validate.field).sint64 = { gte: 5, lt: 10 }];
     ///
-    ///  // value must be greater than or equal to 10 or less than 5 [sint64.gte_lt_exclusive]
-    ///  sint64 another_value = 3 [(buf.validate.field).sint64 = { gte: 10, lt: 5 }];
-    ///}
-    ///```
+    ///   // value must be greater than or equal to 10 or less than 5 [sint64.gte_lt_exclusive]
+    ///   sint64 another_value = 3 [(buf.validate.field).sint64 = { gte: 10, lt: 5 }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long Gte {
-      get { if ((_hasBits0 & 16) != 0) { return gte_; } else { return GteDefaultValue; } }
+      get { return HasGte ? (long) greaterThan_ : 0L; }
       set {
-        _hasBits0 |= 16;
-        gte_ = value;
+        greaterThan_ = value;
+        greaterThanCase_ = GreaterThanOneofCase.Gte;
       }
     }
     /// <summary>Gets whether the "gte" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasGte {
-      get { return (_hasBits0 & 16) != 0; }
+      get { return greaterThanCase_ == GreaterThanOneofCase.Gte; }
     }
-    /// <summary>Clears the value of the "gte" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "gte" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearGte() {
-      _hasBits0 &= ~16;
+      if (HasGte) {
+        ClearGreaterThan();
+      }
     }
 
     /// <summary>Field number for the "in" field.</summary>
     public const int InFieldNumber = 6;
     private static readonly pb::FieldCodec<long> _repeated_in_codec
-        = pb::FieldCodec.ForSInt64(50);
+        = pb::FieldCodec.ForSInt64(48);
     private readonly pbc::RepeatedField<long> in_ = new pbc::RepeatedField<long>();
     /// <summary>
-    ///`in` requires the field value to be equal to one of the specified values.
+    /// `in` requires the field value to be equal to one of the specified values.
     /// If the field value isn't one of the specified values, an error message
     /// is generated.
     ///
-    ///```proto
-    ///message MySInt64 {
-    ///  // value must be in list [1, 2, 3]
-    ///  repeated sint64 value = 1 (buf.validate.field).sint64 = { in: [1, 2, 3] };
-    ///}
-    ///```
+    /// ```proto
+    /// message MySInt64 {
+    ///   // value must be in list [1, 2, 3]
+    ///   sint64 value = 1 [(buf.validate.field).sint64 = { in: [1, 2, 3] }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -7454,24 +9692,91 @@ namespace Buf.Validate {
     /// <summary>Field number for the "not_in" field.</summary>
     public const int NotInFieldNumber = 7;
     private static readonly pb::FieldCodec<long> _repeated_notIn_codec
-        = pb::FieldCodec.ForSInt64(58);
+        = pb::FieldCodec.ForSInt64(56);
     private readonly pbc::RepeatedField<long> notIn_ = new pbc::RepeatedField<long>();
     /// <summary>
-    ///`not_in` requires the field value to not be equal to any of the specified
+    /// `not_in` requires the field value to not be equal to any of the specified
     /// values. If the field value is one of the specified values, an error
     /// message is generated.
     ///
-    ///```proto
-    ///message MySInt64 {
-    ///  // value must not be in list [1, 2, 3]
-    ///  repeated sint64 value = 1 (buf.validate.field).sint64 = { not_in: [1, 2, 3] };
-    ///}
-    ///```
+    /// ```proto
+    /// message MySInt64 {
+    ///   // value must not be in list [1, 2, 3]
+    ///   sint64 value = 1 [(buf.validate.field).sint64 = { not_in: [1, 2, 3] }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<long> NotIn {
       get { return notIn_; }
+    }
+
+    /// <summary>Field number for the "example" field.</summary>
+    public const int ExampleFieldNumber = 8;
+    private static readonly pb::FieldCodec<long> _repeated_example_codec
+        = pb::FieldCodec.ForSInt64(64);
+    private readonly pbc::RepeatedField<long> example_ = new pbc::RepeatedField<long>();
+    /// <summary>
+    /// `example` specifies values that the field may have. These values SHOULD
+    /// conform to other rules. `example` values will not impact validation
+    /// but may be used as helpful guidance on how to populate the given field.
+    ///
+    /// ```proto
+    /// message MySInt64 {
+    ///   sint64 value = 1 [
+    ///     (buf.validate.field).sint64.example = 1,
+    ///     (buf.validate.field).sint64.example = -10
+    ///   ];
+    /// }
+    /// ```
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<long> Example {
+      get { return example_; }
+    }
+
+    private object lessThan_;
+    /// <summary>Enum of possible cases for the "less_than" oneof.</summary>
+    public enum LessThanOneofCase {
+      None = 0,
+      Lt = 2,
+      Lte = 3,
+    }
+    private LessThanOneofCase lessThanCase_ = LessThanOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public LessThanOneofCase LessThanCase {
+      get { return lessThanCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearLessThan() {
+      lessThanCase_ = LessThanOneofCase.None;
+      lessThan_ = null;
+    }
+
+    private object greaterThan_;
+    /// <summary>Enum of possible cases for the "greater_than" oneof.</summary>
+    public enum GreaterThanOneofCase {
+      None = 0,
+      Gt = 4,
+      Gte = 5,
+    }
+    private GreaterThanOneofCase greaterThanCase_ = GreaterThanOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GreaterThanOneofCase GreaterThanCase {
+      get { return greaterThanCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearGreaterThan() {
+      greaterThanCase_ = GreaterThanOneofCase.None;
+      greaterThan_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7496,6 +9801,12 @@ namespace Buf.Validate {
       if (Gte != other.Gte) return false;
       if(!in_.Equals(other.in_)) return false;
       if(!notIn_.Equals(other.notIn_)) return false;
+      if(!example_.Equals(other.example_)) return false;
+      if (LessThanCase != other.LessThanCase) return false;
+      if (GreaterThanCase != other.GreaterThanCase) return false;
+      if (!Equals(_extensions, other._extensions)) {
+        return false;
+      }
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -7510,6 +9821,12 @@ namespace Buf.Validate {
       if (HasGte) hash ^= Gte.GetHashCode();
       hash ^= in_.GetHashCode();
       hash ^= notIn_.GetHashCode();
+      hash ^= example_.GetHashCode();
+      hash ^= (int) lessThanCase_;
+      hash ^= (int) greaterThanCase_;
+      if (_extensions != null) {
+        hash ^= _extensions.GetHashCode();
+      }
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -7550,6 +9867,10 @@ namespace Buf.Validate {
       }
       in_.WriteTo(output, _repeated_in_codec);
       notIn_.WriteTo(output, _repeated_notIn_codec);
+      example_.WriteTo(output, _repeated_example_codec);
+      if (_extensions != null) {
+        _extensions.WriteTo(output);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -7582,6 +9903,10 @@ namespace Buf.Validate {
       }
       in_.WriteTo(ref output, _repeated_in_codec);
       notIn_.WriteTo(ref output, _repeated_notIn_codec);
+      example_.WriteTo(ref output, _repeated_example_codec);
+      if (_extensions != null) {
+        _extensions.WriteTo(ref output);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -7609,6 +9934,10 @@ namespace Buf.Validate {
       }
       size += in_.CalculateSize(_repeated_in_codec);
       size += notIn_.CalculateSize(_repeated_notIn_codec);
+      size += example_.CalculateSize(_repeated_example_codec);
+      if (_extensions != null) {
+        size += _extensions.CalculateSize();
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -7624,20 +9953,28 @@ namespace Buf.Validate {
       if (other.HasConst) {
         Const = other.Const;
       }
-      if (other.HasLt) {
-        Lt = other.Lt;
-      }
-      if (other.HasLte) {
-        Lte = other.Lte;
-      }
-      if (other.HasGt) {
-        Gt = other.Gt;
-      }
-      if (other.HasGte) {
-        Gte = other.Gte;
-      }
       in_.Add(other.in_);
       notIn_.Add(other.notIn_);
+      example_.Add(other.example_);
+      switch (other.LessThanCase) {
+        case LessThanOneofCase.Lt:
+          Lt = other.Lt;
+          break;
+        case LessThanOneofCase.Lte:
+          Lte = other.Lte;
+          break;
+      }
+
+      switch (other.GreaterThanCase) {
+        case GreaterThanOneofCase.Gt:
+          Gt = other.Gt;
+          break;
+        case GreaterThanOneofCase.Gte:
+          Gte = other.Gte;
+          break;
+      }
+
+      pb::ExtensionSet.MergeFrom(ref _extensions, other._extensions);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -7651,7 +9988,9 @@ namespace Buf.Validate {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            }
             break;
           case 8: {
             Const = input.ReadSInt64();
@@ -7683,6 +10022,11 @@ namespace Buf.Validate {
             notIn_.AddEntriesFrom(input, _repeated_notIn_codec);
             break;
           }
+          case 66:
+          case 64: {
+            example_.AddEntriesFrom(input, _repeated_example_codec);
+            break;
+          }
         }
       }
     #endif
@@ -7696,7 +10040,9 @@ namespace Buf.Validate {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, ref input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            }
             break;
           case 8: {
             Const = input.ReadSInt64();
@@ -7728,23 +10074,52 @@ namespace Buf.Validate {
             notIn_.AddEntriesFrom(ref input, _repeated_notIn_codec);
             break;
           }
+          case 66:
+          case 64: {
+            example_.AddEntriesFrom(ref input, _repeated_example_codec);
+            break;
+          }
         }
       }
     }
     #endif
 
+    public TValue GetExtension<TValue>(pb::Extension<SInt64Rules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<SInt64Rules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>(pb::RepeatedExtension<SInt64Rules, TValue> extension) {
+      return pb::ExtensionSet.GetOrInitialize(ref _extensions, extension);
+    }
+    public void SetExtension<TValue>(pb::Extension<SInt64Rules, TValue> extension, TValue value) {
+      pb::ExtensionSet.Set(ref _extensions, extension, value);
+    }
+    public bool HasExtension<TValue>(pb::Extension<SInt64Rules, TValue> extension) {
+      return pb::ExtensionSet.Has(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::Extension<SInt64Rules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::RepeatedExtension<SInt64Rules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+
   }
 
   /// <summary>
-  /// Fixed32Rules describes the constraints applied to `fixed32` values.
+  /// Fixed32Rules describes the rules applied to `fixed32` values.
   /// </summary>
-  public sealed partial class Fixed32Rules : pb::IMessage<Fixed32Rules>
+  public sealed partial class Fixed32Rules : pb::IExtendableMessage<Fixed32Rules>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
     private static readonly pb::MessageParser<Fixed32Rules> _parser = new pb::MessageParser<Fixed32Rules>(() => new Fixed32Rules());
     private pb::UnknownFieldSet _unknownFields;
+    private pb::ExtensionSet<Fixed32Rules> _extensions;
+    private pb::ExtensionSet<Fixed32Rules> _Extensions { get { return _extensions; } }
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -7753,7 +10128,7 @@ namespace Buf.Validate {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[11]; }
+      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[14]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7775,13 +10150,29 @@ namespace Buf.Validate {
     public Fixed32Rules(Fixed32Rules other) : this() {
       _hasBits0 = other._hasBits0;
       const_ = other.const_;
-      lt_ = other.lt_;
-      lte_ = other.lte_;
-      gt_ = other.gt_;
-      gte_ = other.gte_;
       in_ = other.in_.Clone();
       notIn_ = other.notIn_.Clone();
+      example_ = other.example_.Clone();
+      switch (other.LessThanCase) {
+        case LessThanOneofCase.Lt:
+          Lt = other.Lt;
+          break;
+        case LessThanOneofCase.Lte:
+          Lte = other.Lte;
+          break;
+      }
+
+      switch (other.GreaterThanCase) {
+        case GreaterThanOneofCase.Gt:
+          Gt = other.Gt;
+          break;
+        case GreaterThanOneofCase.Gte:
+          Gte = other.Gte;
+          break;
+      }
+
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+      _extensions = pb::ExtensionSet.Clone(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -7796,15 +10187,15 @@ namespace Buf.Validate {
 
     private uint const_;
     /// <summary>
-    ///`const` requires the field value to exactly match the specified value.
+    /// `const` requires the field value to exactly match the specified value.
     /// If the field value doesn't match, an error message is generated.
     ///
-    ///```proto
-    ///message MyFixed32 {
-    ///  // value must equal 42
+    /// ```proto
+    /// message MyFixed32 {
+    ///   // value must equal 42
     ///   fixed32 value = 1 [(buf.validate.field).fixed32.const = 42];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -7830,192 +10221,188 @@ namespace Buf.Validate {
 
     /// <summary>Field number for the "lt" field.</summary>
     public const int LtFieldNumber = 2;
-    private readonly static uint LtDefaultValue = 0;
-
-    private uint lt_;
     /// <summary>
-    ///`lt` requires the field value to be less than the specified value (field &lt;
+    /// `lt` requires the field value to be less than the specified value (field &lt;
     /// value). If the field value is equal to or greater than the specified value,
     /// an error message is generated.
     ///
-    ///```proto
-    ///message MyFixed32 {
-    ///  // value must be less than 10
+    /// ```proto
+    /// message MyFixed32 {
+    ///   // value must be less than 10
     ///   fixed32 value = 1 [(buf.validate.field).fixed32.lt = 10];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint Lt {
-      get { if ((_hasBits0 & 2) != 0) { return lt_; } else { return LtDefaultValue; } }
+      get { return HasLt ? (uint) lessThan_ : 0; }
       set {
-        _hasBits0 |= 2;
-        lt_ = value;
+        lessThan_ = value;
+        lessThanCase_ = LessThanOneofCase.Lt;
       }
     }
     /// <summary>Gets whether the "lt" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasLt {
-      get { return (_hasBits0 & 2) != 0; }
+      get { return lessThanCase_ == LessThanOneofCase.Lt; }
     }
-    /// <summary>Clears the value of the "lt" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "lt" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearLt() {
-      _hasBits0 &= ~2;
+      if (HasLt) {
+        ClearLessThan();
+      }
     }
 
     /// <summary>Field number for the "lte" field.</summary>
     public const int LteFieldNumber = 3;
-    private readonly static uint LteDefaultValue = 0;
-
-    private uint lte_;
     /// <summary>
-    ///`lte` requires the field value to be less than or equal to the specified
+    /// `lte` requires the field value to be less than or equal to the specified
     /// value (field &lt;= value). If the field value is greater than the specified
     /// value, an error message is generated.
     ///
-    ///```proto
-    ///message MyFixed32 {
-    ///  // value must be less than or equal to 10
+    /// ```proto
+    /// message MyFixed32 {
+    ///   // value must be less than or equal to 10
     ///   fixed32 value = 1 [(buf.validate.field).fixed32.lte = 10];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint Lte {
-      get { if ((_hasBits0 & 4) != 0) { return lte_; } else { return LteDefaultValue; } }
+      get { return HasLte ? (uint) lessThan_ : 0; }
       set {
-        _hasBits0 |= 4;
-        lte_ = value;
+        lessThan_ = value;
+        lessThanCase_ = LessThanOneofCase.Lte;
       }
     }
     /// <summary>Gets whether the "lte" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasLte {
-      get { return (_hasBits0 & 4) != 0; }
+      get { return lessThanCase_ == LessThanOneofCase.Lte; }
     }
-    /// <summary>Clears the value of the "lte" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "lte" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearLte() {
-      _hasBits0 &= ~4;
+      if (HasLte) {
+        ClearLessThan();
+      }
     }
 
     /// <summary>Field number for the "gt" field.</summary>
     public const int GtFieldNumber = 4;
-    private readonly static uint GtDefaultValue = 0;
-
-    private uint gt_;
     /// <summary>
-    ///`gt` requires the field value to be greater than the specified value
+    /// `gt` requires the field value to be greater than the specified value
     /// (exclusive). If the value of `gt` is larger than a specified `lt` or
     /// `lte`, the range is reversed, and the field value must be outside the
     /// specified range. If the field value doesn't meet the required conditions,
     /// an error message is generated.
     ///
-    ///```proto
-    ///message MyFixed32 {
-    ///  // value must be greater than 5 [fixed32.gt]
-    ///  fixed32 value = 1 [(buf.validate.field).fixed32.gt = 5];
+    /// ```proto
+    /// message MyFixed32 {
+    ///   // value must be greater than 5 [fixed32.gt]
+    ///   fixed32 value = 1 [(buf.validate.field).fixed32.gt = 5];
     ///
-    ///  // value must be greater than 5 and less than 10 [fixed32.gt_lt]
-    ///  fixed32 other_value = 2 [(buf.validate.field).fixed32 = { gt: 5, lt: 10 }];
+    ///   // value must be greater than 5 and less than 10 [fixed32.gt_lt]
+    ///   fixed32 other_value = 2 [(buf.validate.field).fixed32 = { gt: 5, lt: 10 }];
     ///
-    ///  // value must be greater than 10 or less than 5 [fixed32.gt_lt_exclusive]
-    ///  fixed32 another_value = 3 [(buf.validate.field).fixed32 = { gt: 10, lt: 5 }];
-    ///}
-    ///```
+    ///   // value must be greater than 10 or less than 5 [fixed32.gt_lt_exclusive]
+    ///   fixed32 another_value = 3 [(buf.validate.field).fixed32 = { gt: 10, lt: 5 }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint Gt {
-      get { if ((_hasBits0 & 8) != 0) { return gt_; } else { return GtDefaultValue; } }
+      get { return HasGt ? (uint) greaterThan_ : 0; }
       set {
-        _hasBits0 |= 8;
-        gt_ = value;
+        greaterThan_ = value;
+        greaterThanCase_ = GreaterThanOneofCase.Gt;
       }
     }
     /// <summary>Gets whether the "gt" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasGt {
-      get { return (_hasBits0 & 8) != 0; }
+      get { return greaterThanCase_ == GreaterThanOneofCase.Gt; }
     }
-    /// <summary>Clears the value of the "gt" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "gt" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearGt() {
-      _hasBits0 &= ~8;
+      if (HasGt) {
+        ClearGreaterThan();
+      }
     }
 
     /// <summary>Field number for the "gte" field.</summary>
     public const int GteFieldNumber = 5;
-    private readonly static uint GteDefaultValue = 0;
-
-    private uint gte_;
     /// <summary>
-    ///`gte` requires the field value to be greater than or equal to the specified
+    /// `gte` requires the field value to be greater than or equal to the specified
     /// value (exclusive). If the value of `gte` is larger than a specified `lt`
     /// or `lte`, the range is reversed, and the field value must be outside the
     /// specified range. If the field value doesn't meet the required conditions,
     /// an error message is generated.
     ///
-    ///```proto
-    ///message MyFixed32 {
-    ///  // value must be greater than or equal to 5 [fixed32.gte]
-    ///  fixed32 value = 1 [(buf.validate.field).fixed32.gte = 5];
+    /// ```proto
+    /// message MyFixed32 {
+    ///   // value must be greater than or equal to 5 [fixed32.gte]
+    ///   fixed32 value = 1 [(buf.validate.field).fixed32.gte = 5];
     ///
-    ///  // value must be greater than or equal to 5 and less than 10 [fixed32.gte_lt]
-    ///  fixed32 other_value = 2 [(buf.validate.field).fixed32 = { gte: 5, lt: 10 }];
+    ///   // value must be greater than or equal to 5 and less than 10 [fixed32.gte_lt]
+    ///   fixed32 other_value = 2 [(buf.validate.field).fixed32 = { gte: 5, lt: 10 }];
     ///
-    ///  // value must be greater than or equal to 10 or less than 5 [fixed32.gte_lt_exclusive]
-    ///  fixed32 another_value = 3 [(buf.validate.field).fixed32 = { gte: 10, lt: 5 }];
-    ///}
-    ///```
+    ///   // value must be greater than or equal to 10 or less than 5 [fixed32.gte_lt_exclusive]
+    ///   fixed32 another_value = 3 [(buf.validate.field).fixed32 = { gte: 10, lt: 5 }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public uint Gte {
-      get { if ((_hasBits0 & 16) != 0) { return gte_; } else { return GteDefaultValue; } }
+      get { return HasGte ? (uint) greaterThan_ : 0; }
       set {
-        _hasBits0 |= 16;
-        gte_ = value;
+        greaterThan_ = value;
+        greaterThanCase_ = GreaterThanOneofCase.Gte;
       }
     }
     /// <summary>Gets whether the "gte" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasGte {
-      get { return (_hasBits0 & 16) != 0; }
+      get { return greaterThanCase_ == GreaterThanOneofCase.Gte; }
     }
-    /// <summary>Clears the value of the "gte" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "gte" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearGte() {
-      _hasBits0 &= ~16;
+      if (HasGte) {
+        ClearGreaterThan();
+      }
     }
 
     /// <summary>Field number for the "in" field.</summary>
     public const int InFieldNumber = 6;
     private static readonly pb::FieldCodec<uint> _repeated_in_codec
-        = pb::FieldCodec.ForFixed32(50);
+        = pb::FieldCodec.ForFixed32(53);
     private readonly pbc::RepeatedField<uint> in_ = new pbc::RepeatedField<uint>();
     /// <summary>
-    ///`in` requires the field value to be equal to one of the specified values.
+    /// `in` requires the field value to be equal to one of the specified values.
     /// If the field value isn't one of the specified values, an error message
     /// is generated.
     ///
-    ///```proto
-    ///message MyFixed32 {
-    ///  // value must be in list [1, 2, 3]
-    ///  repeated fixed32 value = 1 (buf.validate.field).fixed32 = { in: [1, 2, 3] };
-    ///}
-    ///```
+    /// ```proto
+    /// message MyFixed32 {
+    ///   // value must be in list [1, 2, 3]
+    ///   fixed32 value = 1 [(buf.validate.field).fixed32 = { in: [1, 2, 3] }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -8026,24 +10413,91 @@ namespace Buf.Validate {
     /// <summary>Field number for the "not_in" field.</summary>
     public const int NotInFieldNumber = 7;
     private static readonly pb::FieldCodec<uint> _repeated_notIn_codec
-        = pb::FieldCodec.ForFixed32(58);
+        = pb::FieldCodec.ForFixed32(61);
     private readonly pbc::RepeatedField<uint> notIn_ = new pbc::RepeatedField<uint>();
     /// <summary>
-    ///`not_in` requires the field value to not be equal to any of the specified
+    /// `not_in` requires the field value to not be equal to any of the specified
     /// values. If the field value is one of the specified values, an error
     /// message is generated.
     ///
-    ///```proto
-    ///message MyFixed32 {
-    ///  // value must not be in list [1, 2, 3]
-    ///  repeated fixed32 value = 1 (buf.validate.field).fixed32 = { not_in: [1, 2, 3] };
-    ///}
-    ///```
+    /// ```proto
+    /// message MyFixed32 {
+    ///   // value must not be in list [1, 2, 3]
+    ///   fixed32 value = 1 [(buf.validate.field).fixed32 = { not_in: [1, 2, 3] }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<uint> NotIn {
       get { return notIn_; }
+    }
+
+    /// <summary>Field number for the "example" field.</summary>
+    public const int ExampleFieldNumber = 8;
+    private static readonly pb::FieldCodec<uint> _repeated_example_codec
+        = pb::FieldCodec.ForFixed32(69);
+    private readonly pbc::RepeatedField<uint> example_ = new pbc::RepeatedField<uint>();
+    /// <summary>
+    /// `example` specifies values that the field may have. These values SHOULD
+    /// conform to other rules. `example` values will not impact validation
+    /// but may be used as helpful guidance on how to populate the given field.
+    ///
+    /// ```proto
+    /// message MyFixed32 {
+    ///   fixed32 value = 1 [
+    ///     (buf.validate.field).fixed32.example = 1,
+    ///     (buf.validate.field).fixed32.example = 2
+    ///   ];
+    /// }
+    /// ```
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<uint> Example {
+      get { return example_; }
+    }
+
+    private object lessThan_;
+    /// <summary>Enum of possible cases for the "less_than" oneof.</summary>
+    public enum LessThanOneofCase {
+      None = 0,
+      Lt = 2,
+      Lte = 3,
+    }
+    private LessThanOneofCase lessThanCase_ = LessThanOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public LessThanOneofCase LessThanCase {
+      get { return lessThanCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearLessThan() {
+      lessThanCase_ = LessThanOneofCase.None;
+      lessThan_ = null;
+    }
+
+    private object greaterThan_;
+    /// <summary>Enum of possible cases for the "greater_than" oneof.</summary>
+    public enum GreaterThanOneofCase {
+      None = 0,
+      Gt = 4,
+      Gte = 5,
+    }
+    private GreaterThanOneofCase greaterThanCase_ = GreaterThanOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GreaterThanOneofCase GreaterThanCase {
+      get { return greaterThanCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearGreaterThan() {
+      greaterThanCase_ = GreaterThanOneofCase.None;
+      greaterThan_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8068,6 +10522,12 @@ namespace Buf.Validate {
       if (Gte != other.Gte) return false;
       if(!in_.Equals(other.in_)) return false;
       if(!notIn_.Equals(other.notIn_)) return false;
+      if(!example_.Equals(other.example_)) return false;
+      if (LessThanCase != other.LessThanCase) return false;
+      if (GreaterThanCase != other.GreaterThanCase) return false;
+      if (!Equals(_extensions, other._extensions)) {
+        return false;
+      }
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -8082,6 +10542,12 @@ namespace Buf.Validate {
       if (HasGte) hash ^= Gte.GetHashCode();
       hash ^= in_.GetHashCode();
       hash ^= notIn_.GetHashCode();
+      hash ^= example_.GetHashCode();
+      hash ^= (int) lessThanCase_;
+      hash ^= (int) greaterThanCase_;
+      if (_extensions != null) {
+        hash ^= _extensions.GetHashCode();
+      }
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -8122,6 +10588,10 @@ namespace Buf.Validate {
       }
       in_.WriteTo(output, _repeated_in_codec);
       notIn_.WriteTo(output, _repeated_notIn_codec);
+      example_.WriteTo(output, _repeated_example_codec);
+      if (_extensions != null) {
+        _extensions.WriteTo(output);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -8154,6 +10624,10 @@ namespace Buf.Validate {
       }
       in_.WriteTo(ref output, _repeated_in_codec);
       notIn_.WriteTo(ref output, _repeated_notIn_codec);
+      example_.WriteTo(ref output, _repeated_example_codec);
+      if (_extensions != null) {
+        _extensions.WriteTo(ref output);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -8181,6 +10655,10 @@ namespace Buf.Validate {
       }
       size += in_.CalculateSize(_repeated_in_codec);
       size += notIn_.CalculateSize(_repeated_notIn_codec);
+      size += example_.CalculateSize(_repeated_example_codec);
+      if (_extensions != null) {
+        size += _extensions.CalculateSize();
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -8196,20 +10674,28 @@ namespace Buf.Validate {
       if (other.HasConst) {
         Const = other.Const;
       }
-      if (other.HasLt) {
-        Lt = other.Lt;
-      }
-      if (other.HasLte) {
-        Lte = other.Lte;
-      }
-      if (other.HasGt) {
-        Gt = other.Gt;
-      }
-      if (other.HasGte) {
-        Gte = other.Gte;
-      }
       in_.Add(other.in_);
       notIn_.Add(other.notIn_);
+      example_.Add(other.example_);
+      switch (other.LessThanCase) {
+        case LessThanOneofCase.Lt:
+          Lt = other.Lt;
+          break;
+        case LessThanOneofCase.Lte:
+          Lte = other.Lte;
+          break;
+      }
+
+      switch (other.GreaterThanCase) {
+        case GreaterThanOneofCase.Gt:
+          Gt = other.Gt;
+          break;
+        case GreaterThanOneofCase.Gte:
+          Gte = other.Gte;
+          break;
+      }
+
+      pb::ExtensionSet.MergeFrom(ref _extensions, other._extensions);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -8223,7 +10709,9 @@ namespace Buf.Validate {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            }
             break;
           case 13: {
             Const = input.ReadFixed32();
@@ -8255,6 +10743,11 @@ namespace Buf.Validate {
             notIn_.AddEntriesFrom(input, _repeated_notIn_codec);
             break;
           }
+          case 66:
+          case 69: {
+            example_.AddEntriesFrom(input, _repeated_example_codec);
+            break;
+          }
         }
       }
     #endif
@@ -8268,7 +10761,9 @@ namespace Buf.Validate {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, ref input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            }
             break;
           case 13: {
             Const = input.ReadFixed32();
@@ -8300,23 +10795,52 @@ namespace Buf.Validate {
             notIn_.AddEntriesFrom(ref input, _repeated_notIn_codec);
             break;
           }
+          case 66:
+          case 69: {
+            example_.AddEntriesFrom(ref input, _repeated_example_codec);
+            break;
+          }
         }
       }
     }
     #endif
 
+    public TValue GetExtension<TValue>(pb::Extension<Fixed32Rules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<Fixed32Rules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>(pb::RepeatedExtension<Fixed32Rules, TValue> extension) {
+      return pb::ExtensionSet.GetOrInitialize(ref _extensions, extension);
+    }
+    public void SetExtension<TValue>(pb::Extension<Fixed32Rules, TValue> extension, TValue value) {
+      pb::ExtensionSet.Set(ref _extensions, extension, value);
+    }
+    public bool HasExtension<TValue>(pb::Extension<Fixed32Rules, TValue> extension) {
+      return pb::ExtensionSet.Has(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::Extension<Fixed32Rules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::RepeatedExtension<Fixed32Rules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+
   }
 
   /// <summary>
-  /// Fixed64Rules describes the constraints applied to `fixed64` values.
+  /// Fixed64Rules describes the rules applied to `fixed64` values.
   /// </summary>
-  public sealed partial class Fixed64Rules : pb::IMessage<Fixed64Rules>
+  public sealed partial class Fixed64Rules : pb::IExtendableMessage<Fixed64Rules>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
     private static readonly pb::MessageParser<Fixed64Rules> _parser = new pb::MessageParser<Fixed64Rules>(() => new Fixed64Rules());
     private pb::UnknownFieldSet _unknownFields;
+    private pb::ExtensionSet<Fixed64Rules> _extensions;
+    private pb::ExtensionSet<Fixed64Rules> _Extensions { get { return _extensions; } }
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -8325,7 +10849,7 @@ namespace Buf.Validate {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[12]; }
+      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[15]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8347,13 +10871,29 @@ namespace Buf.Validate {
     public Fixed64Rules(Fixed64Rules other) : this() {
       _hasBits0 = other._hasBits0;
       const_ = other.const_;
-      lt_ = other.lt_;
-      lte_ = other.lte_;
-      gt_ = other.gt_;
-      gte_ = other.gte_;
       in_ = other.in_.Clone();
       notIn_ = other.notIn_.Clone();
+      example_ = other.example_.Clone();
+      switch (other.LessThanCase) {
+        case LessThanOneofCase.Lt:
+          Lt = other.Lt;
+          break;
+        case LessThanOneofCase.Lte:
+          Lte = other.Lte;
+          break;
+      }
+
+      switch (other.GreaterThanCase) {
+        case GreaterThanOneofCase.Gt:
+          Gt = other.Gt;
+          break;
+        case GreaterThanOneofCase.Gte:
+          Gte = other.Gte;
+          break;
+      }
+
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+      _extensions = pb::ExtensionSet.Clone(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8368,15 +10908,15 @@ namespace Buf.Validate {
 
     private ulong const_;
     /// <summary>
-    ///`const` requires the field value to exactly match the specified value. If
+    /// `const` requires the field value to exactly match the specified value. If
     /// the field value doesn't match, an error message is generated.
     ///
-    ///```proto
-    ///message MyFixed64 {
-    ///  // value must equal 42
+    /// ```proto
+    /// message MyFixed64 {
+    ///   // value must equal 42
     ///   fixed64 value = 1 [(buf.validate.field).fixed64.const = 42];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -8402,192 +10942,188 @@ namespace Buf.Validate {
 
     /// <summary>Field number for the "lt" field.</summary>
     public const int LtFieldNumber = 2;
-    private readonly static ulong LtDefaultValue = 0UL;
-
-    private ulong lt_;
     /// <summary>
-    ///`lt` requires the field value to be less than the specified value (field &lt;
+    /// `lt` requires the field value to be less than the specified value (field &lt;
     /// value). If the field value is equal to or greater than the specified value,
     /// an error message is generated.
     ///
-    ///```proto
-    ///message MyFixed64 {
-    ///  // value must be less than 10
+    /// ```proto
+    /// message MyFixed64 {
+    ///   // value must be less than 10
     ///   fixed64 value = 1 [(buf.validate.field).fixed64.lt = 10];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ulong Lt {
-      get { if ((_hasBits0 & 2) != 0) { return lt_; } else { return LtDefaultValue; } }
+      get { return HasLt ? (ulong) lessThan_ : 0UL; }
       set {
-        _hasBits0 |= 2;
-        lt_ = value;
+        lessThan_ = value;
+        lessThanCase_ = LessThanOneofCase.Lt;
       }
     }
     /// <summary>Gets whether the "lt" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasLt {
-      get { return (_hasBits0 & 2) != 0; }
+      get { return lessThanCase_ == LessThanOneofCase.Lt; }
     }
-    /// <summary>Clears the value of the "lt" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "lt" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearLt() {
-      _hasBits0 &= ~2;
+      if (HasLt) {
+        ClearLessThan();
+      }
     }
 
     /// <summary>Field number for the "lte" field.</summary>
     public const int LteFieldNumber = 3;
-    private readonly static ulong LteDefaultValue = 0UL;
-
-    private ulong lte_;
     /// <summary>
-    ///`lte` requires the field value to be less than or equal to the specified
+    /// `lte` requires the field value to be less than or equal to the specified
     /// value (field &lt;= value). If the field value is greater than the specified
     /// value, an error message is generated.
     ///
-    ///```proto
-    ///message MyFixed64 {
-    ///  // value must be less than or equal to 10
+    /// ```proto
+    /// message MyFixed64 {
+    ///   // value must be less than or equal to 10
     ///   fixed64 value = 1 [(buf.validate.field).fixed64.lte = 10];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ulong Lte {
-      get { if ((_hasBits0 & 4) != 0) { return lte_; } else { return LteDefaultValue; } }
+      get { return HasLte ? (ulong) lessThan_ : 0UL; }
       set {
-        _hasBits0 |= 4;
-        lte_ = value;
+        lessThan_ = value;
+        lessThanCase_ = LessThanOneofCase.Lte;
       }
     }
     /// <summary>Gets whether the "lte" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasLte {
-      get { return (_hasBits0 & 4) != 0; }
+      get { return lessThanCase_ == LessThanOneofCase.Lte; }
     }
-    /// <summary>Clears the value of the "lte" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "lte" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearLte() {
-      _hasBits0 &= ~4;
+      if (HasLte) {
+        ClearLessThan();
+      }
     }
 
     /// <summary>Field number for the "gt" field.</summary>
     public const int GtFieldNumber = 4;
-    private readonly static ulong GtDefaultValue = 0UL;
-
-    private ulong gt_;
     /// <summary>
-    ///`gt` requires the field value to be greater than the specified value
+    /// `gt` requires the field value to be greater than the specified value
     /// (exclusive). If the value of `gt` is larger than a specified `lt` or
     /// `lte`, the range is reversed, and the field value must be outside the
     /// specified range. If the field value doesn't meet the required conditions,
     /// an error message is generated.
     ///
-    ///```proto
-    ///message MyFixed64 {
-    ///  // value must be greater than 5 [fixed64.gt]
-    ///  fixed64 value = 1 [(buf.validate.field).fixed64.gt = 5];
+    /// ```proto
+    /// message MyFixed64 {
+    ///   // value must be greater than 5 [fixed64.gt]
+    ///   fixed64 value = 1 [(buf.validate.field).fixed64.gt = 5];
     ///
-    ///  // value must be greater than 5 and less than 10 [fixed64.gt_lt]
-    ///  fixed64 other_value = 2 [(buf.validate.field).fixed64 = { gt: 5, lt: 10 }];
+    ///   // value must be greater than 5 and less than 10 [fixed64.gt_lt]
+    ///   fixed64 other_value = 2 [(buf.validate.field).fixed64 = { gt: 5, lt: 10 }];
     ///
-    ///  // value must be greater than 10 or less than 5 [fixed64.gt_lt_exclusive]
-    ///  fixed64 another_value = 3 [(buf.validate.field).fixed64 = { gt: 10, lt: 5 }];
-    ///}
-    ///```
+    ///   // value must be greater than 10 or less than 5 [fixed64.gt_lt_exclusive]
+    ///   fixed64 another_value = 3 [(buf.validate.field).fixed64 = { gt: 10, lt: 5 }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ulong Gt {
-      get { if ((_hasBits0 & 8) != 0) { return gt_; } else { return GtDefaultValue; } }
+      get { return HasGt ? (ulong) greaterThan_ : 0UL; }
       set {
-        _hasBits0 |= 8;
-        gt_ = value;
+        greaterThan_ = value;
+        greaterThanCase_ = GreaterThanOneofCase.Gt;
       }
     }
     /// <summary>Gets whether the "gt" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasGt {
-      get { return (_hasBits0 & 8) != 0; }
+      get { return greaterThanCase_ == GreaterThanOneofCase.Gt; }
     }
-    /// <summary>Clears the value of the "gt" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "gt" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearGt() {
-      _hasBits0 &= ~8;
+      if (HasGt) {
+        ClearGreaterThan();
+      }
     }
 
     /// <summary>Field number for the "gte" field.</summary>
     public const int GteFieldNumber = 5;
-    private readonly static ulong GteDefaultValue = 0UL;
-
-    private ulong gte_;
     /// <summary>
-    ///`gte` requires the field value to be greater than or equal to the specified
+    /// `gte` requires the field value to be greater than or equal to the specified
     /// value (exclusive). If the value of `gte` is larger than a specified `lt`
     /// or `lte`, the range is reversed, and the field value must be outside the
     /// specified range. If the field value doesn't meet the required conditions,
     /// an error message is generated.
     ///
-    ///```proto
-    ///message MyFixed64 {
-    ///  // value must be greater than or equal to 5 [fixed64.gte]
-    ///  fixed64 value = 1 [(buf.validate.field).fixed64.gte = 5];
+    /// ```proto
+    /// message MyFixed64 {
+    ///   // value must be greater than or equal to 5 [fixed64.gte]
+    ///   fixed64 value = 1 [(buf.validate.field).fixed64.gte = 5];
     ///
-    ///  // value must be greater than or equal to 5 and less than 10 [fixed64.gte_lt]
-    ///  fixed64 other_value = 2 [(buf.validate.field).fixed64 = { gte: 5, lt: 10 }];
+    ///   // value must be greater than or equal to 5 and less than 10 [fixed64.gte_lt]
+    ///   fixed64 other_value = 2 [(buf.validate.field).fixed64 = { gte: 5, lt: 10 }];
     ///
-    ///  // value must be greater than or equal to 10 or less than 5 [fixed64.gte_lt_exclusive]
-    ///  fixed64 another_value = 3 [(buf.validate.field).fixed64 = { gte: 10, lt: 5 }];
-    ///}
-    ///```
+    ///   // value must be greater than or equal to 10 or less than 5 [fixed64.gte_lt_exclusive]
+    ///   fixed64 another_value = 3 [(buf.validate.field).fixed64 = { gte: 10, lt: 5 }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ulong Gte {
-      get { if ((_hasBits0 & 16) != 0) { return gte_; } else { return GteDefaultValue; } }
+      get { return HasGte ? (ulong) greaterThan_ : 0UL; }
       set {
-        _hasBits0 |= 16;
-        gte_ = value;
+        greaterThan_ = value;
+        greaterThanCase_ = GreaterThanOneofCase.Gte;
       }
     }
     /// <summary>Gets whether the "gte" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasGte {
-      get { return (_hasBits0 & 16) != 0; }
+      get { return greaterThanCase_ == GreaterThanOneofCase.Gte; }
     }
-    /// <summary>Clears the value of the "gte" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "gte" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearGte() {
-      _hasBits0 &= ~16;
+      if (HasGte) {
+        ClearGreaterThan();
+      }
     }
 
     /// <summary>Field number for the "in" field.</summary>
     public const int InFieldNumber = 6;
     private static readonly pb::FieldCodec<ulong> _repeated_in_codec
-        = pb::FieldCodec.ForFixed64(50);
+        = pb::FieldCodec.ForFixed64(49);
     private readonly pbc::RepeatedField<ulong> in_ = new pbc::RepeatedField<ulong>();
     /// <summary>
-    ///`in` requires the field value to be equal to one of the specified values.
+    /// `in` requires the field value to be equal to one of the specified values.
     /// If the field value isn't one of the specified values, an error message is
     /// generated.
     ///
-    ///```proto
-    ///message MyFixed64 {
-    ///  // value must be in list [1, 2, 3]
-    ///  repeated fixed64 value = 1 (buf.validate.field).fixed64 = { in: [1, 2, 3] };
-    ///}
-    ///```
+    /// ```proto
+    /// message MyFixed64 {
+    ///   // value must be in list [1, 2, 3]
+    ///   fixed64 value = 1 [(buf.validate.field).fixed64 = { in: [1, 2, 3] }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -8598,24 +11134,91 @@ namespace Buf.Validate {
     /// <summary>Field number for the "not_in" field.</summary>
     public const int NotInFieldNumber = 7;
     private static readonly pb::FieldCodec<ulong> _repeated_notIn_codec
-        = pb::FieldCodec.ForFixed64(58);
+        = pb::FieldCodec.ForFixed64(57);
     private readonly pbc::RepeatedField<ulong> notIn_ = new pbc::RepeatedField<ulong>();
     /// <summary>
-    ///`not_in` requires the field value to not be equal to any of the specified
+    /// `not_in` requires the field value to not be equal to any of the specified
     /// values. If the field value is one of the specified values, an error
     /// message is generated.
     ///
-    ///```proto
-    ///message MyFixed64 {
-    ///  // value must not be in list [1, 2, 3]
-    ///  repeated fixed64 value = 1 (buf.validate.field).fixed64 = { not_in: [1, 2, 3] };
-    ///}
-    ///```
+    /// ```proto
+    /// message MyFixed64 {
+    ///   // value must not be in list [1, 2, 3]
+    ///   fixed64 value = 1 [(buf.validate.field).fixed64 = { not_in: [1, 2, 3] }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<ulong> NotIn {
       get { return notIn_; }
+    }
+
+    /// <summary>Field number for the "example" field.</summary>
+    public const int ExampleFieldNumber = 8;
+    private static readonly pb::FieldCodec<ulong> _repeated_example_codec
+        = pb::FieldCodec.ForFixed64(65);
+    private readonly pbc::RepeatedField<ulong> example_ = new pbc::RepeatedField<ulong>();
+    /// <summary>
+    /// `example` specifies values that the field may have. These values SHOULD
+    /// conform to other rules. `example` values will not impact validation
+    /// but may be used as helpful guidance on how to populate the given field.
+    ///
+    /// ```proto
+    /// message MyFixed64 {
+    ///   fixed64 value = 1 [
+    ///     (buf.validate.field).fixed64.example = 1,
+    ///     (buf.validate.field).fixed64.example = 2
+    ///   ];
+    /// }
+    /// ```
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<ulong> Example {
+      get { return example_; }
+    }
+
+    private object lessThan_;
+    /// <summary>Enum of possible cases for the "less_than" oneof.</summary>
+    public enum LessThanOneofCase {
+      None = 0,
+      Lt = 2,
+      Lte = 3,
+    }
+    private LessThanOneofCase lessThanCase_ = LessThanOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public LessThanOneofCase LessThanCase {
+      get { return lessThanCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearLessThan() {
+      lessThanCase_ = LessThanOneofCase.None;
+      lessThan_ = null;
+    }
+
+    private object greaterThan_;
+    /// <summary>Enum of possible cases for the "greater_than" oneof.</summary>
+    public enum GreaterThanOneofCase {
+      None = 0,
+      Gt = 4,
+      Gte = 5,
+    }
+    private GreaterThanOneofCase greaterThanCase_ = GreaterThanOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GreaterThanOneofCase GreaterThanCase {
+      get { return greaterThanCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearGreaterThan() {
+      greaterThanCase_ = GreaterThanOneofCase.None;
+      greaterThan_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8640,6 +11243,12 @@ namespace Buf.Validate {
       if (Gte != other.Gte) return false;
       if(!in_.Equals(other.in_)) return false;
       if(!notIn_.Equals(other.notIn_)) return false;
+      if(!example_.Equals(other.example_)) return false;
+      if (LessThanCase != other.LessThanCase) return false;
+      if (GreaterThanCase != other.GreaterThanCase) return false;
+      if (!Equals(_extensions, other._extensions)) {
+        return false;
+      }
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -8654,6 +11263,12 @@ namespace Buf.Validate {
       if (HasGte) hash ^= Gte.GetHashCode();
       hash ^= in_.GetHashCode();
       hash ^= notIn_.GetHashCode();
+      hash ^= example_.GetHashCode();
+      hash ^= (int) lessThanCase_;
+      hash ^= (int) greaterThanCase_;
+      if (_extensions != null) {
+        hash ^= _extensions.GetHashCode();
+      }
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -8694,6 +11309,10 @@ namespace Buf.Validate {
       }
       in_.WriteTo(output, _repeated_in_codec);
       notIn_.WriteTo(output, _repeated_notIn_codec);
+      example_.WriteTo(output, _repeated_example_codec);
+      if (_extensions != null) {
+        _extensions.WriteTo(output);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -8726,6 +11345,10 @@ namespace Buf.Validate {
       }
       in_.WriteTo(ref output, _repeated_in_codec);
       notIn_.WriteTo(ref output, _repeated_notIn_codec);
+      example_.WriteTo(ref output, _repeated_example_codec);
+      if (_extensions != null) {
+        _extensions.WriteTo(ref output);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -8753,6 +11376,10 @@ namespace Buf.Validate {
       }
       size += in_.CalculateSize(_repeated_in_codec);
       size += notIn_.CalculateSize(_repeated_notIn_codec);
+      size += example_.CalculateSize(_repeated_example_codec);
+      if (_extensions != null) {
+        size += _extensions.CalculateSize();
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -8768,20 +11395,28 @@ namespace Buf.Validate {
       if (other.HasConst) {
         Const = other.Const;
       }
-      if (other.HasLt) {
-        Lt = other.Lt;
-      }
-      if (other.HasLte) {
-        Lte = other.Lte;
-      }
-      if (other.HasGt) {
-        Gt = other.Gt;
-      }
-      if (other.HasGte) {
-        Gte = other.Gte;
-      }
       in_.Add(other.in_);
       notIn_.Add(other.notIn_);
+      example_.Add(other.example_);
+      switch (other.LessThanCase) {
+        case LessThanOneofCase.Lt:
+          Lt = other.Lt;
+          break;
+        case LessThanOneofCase.Lte:
+          Lte = other.Lte;
+          break;
+      }
+
+      switch (other.GreaterThanCase) {
+        case GreaterThanOneofCase.Gt:
+          Gt = other.Gt;
+          break;
+        case GreaterThanOneofCase.Gte:
+          Gte = other.Gte;
+          break;
+      }
+
+      pb::ExtensionSet.MergeFrom(ref _extensions, other._extensions);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -8795,7 +11430,9 @@ namespace Buf.Validate {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            }
             break;
           case 9: {
             Const = input.ReadFixed64();
@@ -8827,6 +11464,11 @@ namespace Buf.Validate {
             notIn_.AddEntriesFrom(input, _repeated_notIn_codec);
             break;
           }
+          case 66:
+          case 65: {
+            example_.AddEntriesFrom(input, _repeated_example_codec);
+            break;
+          }
         }
       }
     #endif
@@ -8840,7 +11482,9 @@ namespace Buf.Validate {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, ref input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            }
             break;
           case 9: {
             Const = input.ReadFixed64();
@@ -8872,23 +11516,52 @@ namespace Buf.Validate {
             notIn_.AddEntriesFrom(ref input, _repeated_notIn_codec);
             break;
           }
+          case 66:
+          case 65: {
+            example_.AddEntriesFrom(ref input, _repeated_example_codec);
+            break;
+          }
         }
       }
     }
     #endif
 
+    public TValue GetExtension<TValue>(pb::Extension<Fixed64Rules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<Fixed64Rules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>(pb::RepeatedExtension<Fixed64Rules, TValue> extension) {
+      return pb::ExtensionSet.GetOrInitialize(ref _extensions, extension);
+    }
+    public void SetExtension<TValue>(pb::Extension<Fixed64Rules, TValue> extension, TValue value) {
+      pb::ExtensionSet.Set(ref _extensions, extension, value);
+    }
+    public bool HasExtension<TValue>(pb::Extension<Fixed64Rules, TValue> extension) {
+      return pb::ExtensionSet.Has(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::Extension<Fixed64Rules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::RepeatedExtension<Fixed64Rules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+
   }
 
   /// <summary>
-  /// SFixed32Rules describes the constraints applied to `fixed32` values.
+  /// SFixed32Rules describes the rules applied to `fixed32` values.
   /// </summary>
-  public sealed partial class SFixed32Rules : pb::IMessage<SFixed32Rules>
+  public sealed partial class SFixed32Rules : pb::IExtendableMessage<SFixed32Rules>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
     private static readonly pb::MessageParser<SFixed32Rules> _parser = new pb::MessageParser<SFixed32Rules>(() => new SFixed32Rules());
     private pb::UnknownFieldSet _unknownFields;
+    private pb::ExtensionSet<SFixed32Rules> _extensions;
+    private pb::ExtensionSet<SFixed32Rules> _Extensions { get { return _extensions; } }
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -8897,7 +11570,7 @@ namespace Buf.Validate {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[13]; }
+      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[16]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8919,13 +11592,29 @@ namespace Buf.Validate {
     public SFixed32Rules(SFixed32Rules other) : this() {
       _hasBits0 = other._hasBits0;
       const_ = other.const_;
-      lt_ = other.lt_;
-      lte_ = other.lte_;
-      gt_ = other.gt_;
-      gte_ = other.gte_;
       in_ = other.in_.Clone();
       notIn_ = other.notIn_.Clone();
+      example_ = other.example_.Clone();
+      switch (other.LessThanCase) {
+        case LessThanOneofCase.Lt:
+          Lt = other.Lt;
+          break;
+        case LessThanOneofCase.Lte:
+          Lte = other.Lte;
+          break;
+      }
+
+      switch (other.GreaterThanCase) {
+        case GreaterThanOneofCase.Gt:
+          Gt = other.Gt;
+          break;
+        case GreaterThanOneofCase.Gte:
+          Gte = other.Gte;
+          break;
+      }
+
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+      _extensions = pb::ExtensionSet.Clone(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -8940,15 +11629,15 @@ namespace Buf.Validate {
 
     private int const_;
     /// <summary>
-    ///`const` requires the field value to exactly match the specified value. If
+    /// `const` requires the field value to exactly match the specified value. If
     /// the field value doesn't match, an error message is generated.
     ///
-    ///```proto
-    ///message MySFixed32 {
-    ///  // value must equal 42
+    /// ```proto
+    /// message MySFixed32 {
+    ///   // value must equal 42
     ///   sfixed32 value = 1 [(buf.validate.field).sfixed32.const = 42];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -8974,192 +11663,188 @@ namespace Buf.Validate {
 
     /// <summary>Field number for the "lt" field.</summary>
     public const int LtFieldNumber = 2;
-    private readonly static int LtDefaultValue = 0;
-
-    private int lt_;
     /// <summary>
-    ///`lt` requires the field value to be less than the specified value (field &lt;
+    /// `lt` requires the field value to be less than the specified value (field &lt;
     /// value). If the field value is equal to or greater than the specified value,
     /// an error message is generated.
     ///
-    ///```proto
-    ///message MySFixed32 {
-    ///  // value must be less than 10
+    /// ```proto
+    /// message MySFixed32 {
+    ///   // value must be less than 10
     ///   sfixed32 value = 1 [(buf.validate.field).sfixed32.lt = 10];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int Lt {
-      get { if ((_hasBits0 & 2) != 0) { return lt_; } else { return LtDefaultValue; } }
+      get { return HasLt ? (int) lessThan_ : 0; }
       set {
-        _hasBits0 |= 2;
-        lt_ = value;
+        lessThan_ = value;
+        lessThanCase_ = LessThanOneofCase.Lt;
       }
     }
     /// <summary>Gets whether the "lt" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasLt {
-      get { return (_hasBits0 & 2) != 0; }
+      get { return lessThanCase_ == LessThanOneofCase.Lt; }
     }
-    /// <summary>Clears the value of the "lt" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "lt" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearLt() {
-      _hasBits0 &= ~2;
+      if (HasLt) {
+        ClearLessThan();
+      }
     }
 
     /// <summary>Field number for the "lte" field.</summary>
     public const int LteFieldNumber = 3;
-    private readonly static int LteDefaultValue = 0;
-
-    private int lte_;
     /// <summary>
-    ///`lte` requires the field value to be less than or equal to the specified
+    /// `lte` requires the field value to be less than or equal to the specified
     /// value (field &lt;= value). If the field value is greater than the specified
     /// value, an error message is generated.
     ///
-    ///```proto
-    ///message MySFixed32 {
-    ///  // value must be less than or equal to 10
+    /// ```proto
+    /// message MySFixed32 {
+    ///   // value must be less than or equal to 10
     ///   sfixed32 value = 1 [(buf.validate.field).sfixed32.lte = 10];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int Lte {
-      get { if ((_hasBits0 & 4) != 0) { return lte_; } else { return LteDefaultValue; } }
+      get { return HasLte ? (int) lessThan_ : 0; }
       set {
-        _hasBits0 |= 4;
-        lte_ = value;
+        lessThan_ = value;
+        lessThanCase_ = LessThanOneofCase.Lte;
       }
     }
     /// <summary>Gets whether the "lte" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasLte {
-      get { return (_hasBits0 & 4) != 0; }
+      get { return lessThanCase_ == LessThanOneofCase.Lte; }
     }
-    /// <summary>Clears the value of the "lte" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "lte" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearLte() {
-      _hasBits0 &= ~4;
+      if (HasLte) {
+        ClearLessThan();
+      }
     }
 
     /// <summary>Field number for the "gt" field.</summary>
     public const int GtFieldNumber = 4;
-    private readonly static int GtDefaultValue = 0;
-
-    private int gt_;
     /// <summary>
-    ///`gt` requires the field value to be greater than the specified value
+    /// `gt` requires the field value to be greater than the specified value
     /// (exclusive). If the value of `gt` is larger than a specified `lt` or
     /// `lte`, the range is reversed, and the field value must be outside the
     /// specified range. If the field value doesn't meet the required conditions,
     /// an error message is generated.
     ///
-    ///```proto
-    ///message MySFixed32 {
-    ///  // value must be greater than 5 [sfixed32.gt]
-    ///  sfixed32 value = 1 [(buf.validate.field).sfixed32.gt = 5];
+    /// ```proto
+    /// message MySFixed32 {
+    ///   // value must be greater than 5 [sfixed32.gt]
+    ///   sfixed32 value = 1 [(buf.validate.field).sfixed32.gt = 5];
     ///
-    ///  // value must be greater than 5 and less than 10 [sfixed32.gt_lt]
-    ///  sfixed32 other_value = 2 [(buf.validate.field).sfixed32 = { gt: 5, lt: 10 }];
+    ///   // value must be greater than 5 and less than 10 [sfixed32.gt_lt]
+    ///   sfixed32 other_value = 2 [(buf.validate.field).sfixed32 = { gt: 5, lt: 10 }];
     ///
-    ///  // value must be greater than 10 or less than 5 [sfixed32.gt_lt_exclusive]
-    ///  sfixed32 another_value = 3 [(buf.validate.field).sfixed32 = { gt: 10, lt: 5 }];
-    ///}
-    ///```
+    ///   // value must be greater than 10 or less than 5 [sfixed32.gt_lt_exclusive]
+    ///   sfixed32 another_value = 3 [(buf.validate.field).sfixed32 = { gt: 10, lt: 5 }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int Gt {
-      get { if ((_hasBits0 & 8) != 0) { return gt_; } else { return GtDefaultValue; } }
+      get { return HasGt ? (int) greaterThan_ : 0; }
       set {
-        _hasBits0 |= 8;
-        gt_ = value;
+        greaterThan_ = value;
+        greaterThanCase_ = GreaterThanOneofCase.Gt;
       }
     }
     /// <summary>Gets whether the "gt" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasGt {
-      get { return (_hasBits0 & 8) != 0; }
+      get { return greaterThanCase_ == GreaterThanOneofCase.Gt; }
     }
-    /// <summary>Clears the value of the "gt" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "gt" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearGt() {
-      _hasBits0 &= ~8;
+      if (HasGt) {
+        ClearGreaterThan();
+      }
     }
 
     /// <summary>Field number for the "gte" field.</summary>
     public const int GteFieldNumber = 5;
-    private readonly static int GteDefaultValue = 0;
-
-    private int gte_;
     /// <summary>
-    ///`gte` requires the field value to be greater than or equal to the specified
+    /// `gte` requires the field value to be greater than or equal to the specified
     /// value (exclusive). If the value of `gte` is larger than a specified `lt`
     /// or `lte`, the range is reversed, and the field value must be outside the
     /// specified range. If the field value doesn't meet the required conditions,
     /// an error message is generated.
     ///
-    ///```proto
-    ///message MySFixed32 {
-    ///  // value must be greater than or equal to 5 [sfixed32.gte]
-    ///  sfixed32 value = 1 [(buf.validate.field).sfixed32.gte = 5];
+    /// ```proto
+    /// message MySFixed32 {
+    ///   // value must be greater than or equal to 5 [sfixed32.gte]
+    ///   sfixed32 value = 1 [(buf.validate.field).sfixed32.gte = 5];
     ///
-    ///  // value must be greater than or equal to 5 and less than 10 [sfixed32.gte_lt]
-    ///  sfixed32 other_value = 2 [(buf.validate.field).sfixed32 = { gte: 5, lt: 10 }];
+    ///   // value must be greater than or equal to 5 and less than 10 [sfixed32.gte_lt]
+    ///   sfixed32 other_value = 2 [(buf.validate.field).sfixed32 = { gte: 5, lt: 10 }];
     ///
-    ///  // value must be greater than or equal to 10 or less than 5 [sfixed32.gte_lt_exclusive]
-    ///  sfixed32 another_value = 3 [(buf.validate.field).sfixed32 = { gte: 10, lt: 5 }];
-    ///}
-    ///```
+    ///   // value must be greater than or equal to 10 or less than 5 [sfixed32.gte_lt_exclusive]
+    ///   sfixed32 another_value = 3 [(buf.validate.field).sfixed32 = { gte: 10, lt: 5 }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int Gte {
-      get { if ((_hasBits0 & 16) != 0) { return gte_; } else { return GteDefaultValue; } }
+      get { return HasGte ? (int) greaterThan_ : 0; }
       set {
-        _hasBits0 |= 16;
-        gte_ = value;
+        greaterThan_ = value;
+        greaterThanCase_ = GreaterThanOneofCase.Gte;
       }
     }
     /// <summary>Gets whether the "gte" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasGte {
-      get { return (_hasBits0 & 16) != 0; }
+      get { return greaterThanCase_ == GreaterThanOneofCase.Gte; }
     }
-    /// <summary>Clears the value of the "gte" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "gte" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearGte() {
-      _hasBits0 &= ~16;
+      if (HasGte) {
+        ClearGreaterThan();
+      }
     }
 
     /// <summary>Field number for the "in" field.</summary>
     public const int InFieldNumber = 6;
     private static readonly pb::FieldCodec<int> _repeated_in_codec
-        = pb::FieldCodec.ForSFixed32(50);
+        = pb::FieldCodec.ForSFixed32(53);
     private readonly pbc::RepeatedField<int> in_ = new pbc::RepeatedField<int>();
     /// <summary>
-    ///`in` requires the field value to be equal to one of the specified values.
+    /// `in` requires the field value to be equal to one of the specified values.
     /// If the field value isn't one of the specified values, an error message is
     /// generated.
     ///
-    ///```proto
-    ///message MySFixed32 {
-    ///  // value must be in list [1, 2, 3]
-    ///  repeated sfixed32 value = 1 (buf.validate.field).sfixed32 = { in: [1, 2, 3] };
-    ///}
-    ///```
+    /// ```proto
+    /// message MySFixed32 {
+    ///   // value must be in list [1, 2, 3]
+    ///   sfixed32 value = 1 [(buf.validate.field).sfixed32 = { in: [1, 2, 3] }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -9170,24 +11855,91 @@ namespace Buf.Validate {
     /// <summary>Field number for the "not_in" field.</summary>
     public const int NotInFieldNumber = 7;
     private static readonly pb::FieldCodec<int> _repeated_notIn_codec
-        = pb::FieldCodec.ForSFixed32(58);
+        = pb::FieldCodec.ForSFixed32(61);
     private readonly pbc::RepeatedField<int> notIn_ = new pbc::RepeatedField<int>();
     /// <summary>
-    ///`not_in` requires the field value to not be equal to any of the specified
+    /// `not_in` requires the field value to not be equal to any of the specified
     /// values. If the field value is one of the specified values, an error
     /// message is generated.
     ///
-    ///```proto
-    ///message MySFixed32 {
-    ///  // value must not be in list [1, 2, 3]
-    ///  repeated sfixed32 value = 1 (buf.validate.field).sfixed32 = { not_in: [1, 2, 3] };
-    ///}
-    ///```
+    /// ```proto
+    /// message MySFixed32 {
+    ///   // value must not be in list [1, 2, 3]
+    ///   sfixed32 value = 1 [(buf.validate.field).sfixed32 = { not_in: [1, 2, 3] }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<int> NotIn {
       get { return notIn_; }
+    }
+
+    /// <summary>Field number for the "example" field.</summary>
+    public const int ExampleFieldNumber = 8;
+    private static readonly pb::FieldCodec<int> _repeated_example_codec
+        = pb::FieldCodec.ForSFixed32(69);
+    private readonly pbc::RepeatedField<int> example_ = new pbc::RepeatedField<int>();
+    /// <summary>
+    /// `example` specifies values that the field may have. These values SHOULD
+    /// conform to other rules. `example` values will not impact validation
+    /// but may be used as helpful guidance on how to populate the given field.
+    ///
+    /// ```proto
+    /// message MySFixed32 {
+    ///   sfixed32 value = 1 [
+    ///     (buf.validate.field).sfixed32.example = 1,
+    ///     (buf.validate.field).sfixed32.example = 2
+    ///   ];
+    /// }
+    /// ```
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<int> Example {
+      get { return example_; }
+    }
+
+    private object lessThan_;
+    /// <summary>Enum of possible cases for the "less_than" oneof.</summary>
+    public enum LessThanOneofCase {
+      None = 0,
+      Lt = 2,
+      Lte = 3,
+    }
+    private LessThanOneofCase lessThanCase_ = LessThanOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public LessThanOneofCase LessThanCase {
+      get { return lessThanCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearLessThan() {
+      lessThanCase_ = LessThanOneofCase.None;
+      lessThan_ = null;
+    }
+
+    private object greaterThan_;
+    /// <summary>Enum of possible cases for the "greater_than" oneof.</summary>
+    public enum GreaterThanOneofCase {
+      None = 0,
+      Gt = 4,
+      Gte = 5,
+    }
+    private GreaterThanOneofCase greaterThanCase_ = GreaterThanOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GreaterThanOneofCase GreaterThanCase {
+      get { return greaterThanCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearGreaterThan() {
+      greaterThanCase_ = GreaterThanOneofCase.None;
+      greaterThan_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9212,6 +11964,12 @@ namespace Buf.Validate {
       if (Gte != other.Gte) return false;
       if(!in_.Equals(other.in_)) return false;
       if(!notIn_.Equals(other.notIn_)) return false;
+      if(!example_.Equals(other.example_)) return false;
+      if (LessThanCase != other.LessThanCase) return false;
+      if (GreaterThanCase != other.GreaterThanCase) return false;
+      if (!Equals(_extensions, other._extensions)) {
+        return false;
+      }
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -9226,6 +11984,12 @@ namespace Buf.Validate {
       if (HasGte) hash ^= Gte.GetHashCode();
       hash ^= in_.GetHashCode();
       hash ^= notIn_.GetHashCode();
+      hash ^= example_.GetHashCode();
+      hash ^= (int) lessThanCase_;
+      hash ^= (int) greaterThanCase_;
+      if (_extensions != null) {
+        hash ^= _extensions.GetHashCode();
+      }
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -9266,6 +12030,10 @@ namespace Buf.Validate {
       }
       in_.WriteTo(output, _repeated_in_codec);
       notIn_.WriteTo(output, _repeated_notIn_codec);
+      example_.WriteTo(output, _repeated_example_codec);
+      if (_extensions != null) {
+        _extensions.WriteTo(output);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -9298,6 +12066,10 @@ namespace Buf.Validate {
       }
       in_.WriteTo(ref output, _repeated_in_codec);
       notIn_.WriteTo(ref output, _repeated_notIn_codec);
+      example_.WriteTo(ref output, _repeated_example_codec);
+      if (_extensions != null) {
+        _extensions.WriteTo(ref output);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -9325,6 +12097,10 @@ namespace Buf.Validate {
       }
       size += in_.CalculateSize(_repeated_in_codec);
       size += notIn_.CalculateSize(_repeated_notIn_codec);
+      size += example_.CalculateSize(_repeated_example_codec);
+      if (_extensions != null) {
+        size += _extensions.CalculateSize();
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -9340,20 +12116,28 @@ namespace Buf.Validate {
       if (other.HasConst) {
         Const = other.Const;
       }
-      if (other.HasLt) {
-        Lt = other.Lt;
-      }
-      if (other.HasLte) {
-        Lte = other.Lte;
-      }
-      if (other.HasGt) {
-        Gt = other.Gt;
-      }
-      if (other.HasGte) {
-        Gte = other.Gte;
-      }
       in_.Add(other.in_);
       notIn_.Add(other.notIn_);
+      example_.Add(other.example_);
+      switch (other.LessThanCase) {
+        case LessThanOneofCase.Lt:
+          Lt = other.Lt;
+          break;
+        case LessThanOneofCase.Lte:
+          Lte = other.Lte;
+          break;
+      }
+
+      switch (other.GreaterThanCase) {
+        case GreaterThanOneofCase.Gt:
+          Gt = other.Gt;
+          break;
+        case GreaterThanOneofCase.Gte:
+          Gte = other.Gte;
+          break;
+      }
+
+      pb::ExtensionSet.MergeFrom(ref _extensions, other._extensions);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -9367,7 +12151,9 @@ namespace Buf.Validate {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            }
             break;
           case 13: {
             Const = input.ReadSFixed32();
@@ -9399,6 +12185,11 @@ namespace Buf.Validate {
             notIn_.AddEntriesFrom(input, _repeated_notIn_codec);
             break;
           }
+          case 66:
+          case 69: {
+            example_.AddEntriesFrom(input, _repeated_example_codec);
+            break;
+          }
         }
       }
     #endif
@@ -9412,7 +12203,9 @@ namespace Buf.Validate {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, ref input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            }
             break;
           case 13: {
             Const = input.ReadSFixed32();
@@ -9444,23 +12237,52 @@ namespace Buf.Validate {
             notIn_.AddEntriesFrom(ref input, _repeated_notIn_codec);
             break;
           }
+          case 66:
+          case 69: {
+            example_.AddEntriesFrom(ref input, _repeated_example_codec);
+            break;
+          }
         }
       }
     }
     #endif
 
+    public TValue GetExtension<TValue>(pb::Extension<SFixed32Rules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<SFixed32Rules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>(pb::RepeatedExtension<SFixed32Rules, TValue> extension) {
+      return pb::ExtensionSet.GetOrInitialize(ref _extensions, extension);
+    }
+    public void SetExtension<TValue>(pb::Extension<SFixed32Rules, TValue> extension, TValue value) {
+      pb::ExtensionSet.Set(ref _extensions, extension, value);
+    }
+    public bool HasExtension<TValue>(pb::Extension<SFixed32Rules, TValue> extension) {
+      return pb::ExtensionSet.Has(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::Extension<SFixed32Rules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::RepeatedExtension<SFixed32Rules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+
   }
 
   /// <summary>
-  /// SFixed64Rules describes the constraints applied to `fixed64` values.
+  /// SFixed64Rules describes the rules applied to `fixed64` values.
   /// </summary>
-  public sealed partial class SFixed64Rules : pb::IMessage<SFixed64Rules>
+  public sealed partial class SFixed64Rules : pb::IExtendableMessage<SFixed64Rules>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
     private static readonly pb::MessageParser<SFixed64Rules> _parser = new pb::MessageParser<SFixed64Rules>(() => new SFixed64Rules());
     private pb::UnknownFieldSet _unknownFields;
+    private pb::ExtensionSet<SFixed64Rules> _extensions;
+    private pb::ExtensionSet<SFixed64Rules> _Extensions { get { return _extensions; } }
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -9469,7 +12291,7 @@ namespace Buf.Validate {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[14]; }
+      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[17]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9491,13 +12313,29 @@ namespace Buf.Validate {
     public SFixed64Rules(SFixed64Rules other) : this() {
       _hasBits0 = other._hasBits0;
       const_ = other.const_;
-      lt_ = other.lt_;
-      lte_ = other.lte_;
-      gt_ = other.gt_;
-      gte_ = other.gte_;
       in_ = other.in_.Clone();
       notIn_ = other.notIn_.Clone();
+      example_ = other.example_.Clone();
+      switch (other.LessThanCase) {
+        case LessThanOneofCase.Lt:
+          Lt = other.Lt;
+          break;
+        case LessThanOneofCase.Lte:
+          Lte = other.Lte;
+          break;
+      }
+
+      switch (other.GreaterThanCase) {
+        case GreaterThanOneofCase.Gt:
+          Gt = other.Gt;
+          break;
+        case GreaterThanOneofCase.Gte:
+          Gte = other.Gte;
+          break;
+      }
+
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+      _extensions = pb::ExtensionSet.Clone(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9512,15 +12350,15 @@ namespace Buf.Validate {
 
     private long const_;
     /// <summary>
-    ///`const` requires the field value to exactly match the specified value. If
+    /// `const` requires the field value to exactly match the specified value. If
     /// the field value doesn't match, an error message is generated.
     ///
-    ///```proto
-    ///message MySFixed64 {
-    ///  // value must equal 42
+    /// ```proto
+    /// message MySFixed64 {
+    ///   // value must equal 42
     ///   sfixed64 value = 1 [(buf.validate.field).sfixed64.const = 42];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -9546,192 +12384,188 @@ namespace Buf.Validate {
 
     /// <summary>Field number for the "lt" field.</summary>
     public const int LtFieldNumber = 2;
-    private readonly static long LtDefaultValue = 0L;
-
-    private long lt_;
     /// <summary>
-    ///`lt` requires the field value to be less than the specified value (field &lt;
+    /// `lt` requires the field value to be less than the specified value (field &lt;
     /// value). If the field value is equal to or greater than the specified value,
     /// an error message is generated.
     ///
-    ///```proto
-    ///message MySFixed64 {
-    ///  // value must be less than 10
+    /// ```proto
+    /// message MySFixed64 {
+    ///   // value must be less than 10
     ///   sfixed64 value = 1 [(buf.validate.field).sfixed64.lt = 10];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long Lt {
-      get { if ((_hasBits0 & 2) != 0) { return lt_; } else { return LtDefaultValue; } }
+      get { return HasLt ? (long) lessThan_ : 0L; }
       set {
-        _hasBits0 |= 2;
-        lt_ = value;
+        lessThan_ = value;
+        lessThanCase_ = LessThanOneofCase.Lt;
       }
     }
     /// <summary>Gets whether the "lt" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasLt {
-      get { return (_hasBits0 & 2) != 0; }
+      get { return lessThanCase_ == LessThanOneofCase.Lt; }
     }
-    /// <summary>Clears the value of the "lt" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "lt" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearLt() {
-      _hasBits0 &= ~2;
+      if (HasLt) {
+        ClearLessThan();
+      }
     }
 
     /// <summary>Field number for the "lte" field.</summary>
     public const int LteFieldNumber = 3;
-    private readonly static long LteDefaultValue = 0L;
-
-    private long lte_;
     /// <summary>
-    ///`lte` requires the field value to be less than or equal to the specified
+    /// `lte` requires the field value to be less than or equal to the specified
     /// value (field &lt;= value). If the field value is greater than the specified
     /// value, an error message is generated.
     ///
-    ///```proto
-    ///message MySFixed64 {
-    ///  // value must be less than or equal to 10
+    /// ```proto
+    /// message MySFixed64 {
+    ///   // value must be less than or equal to 10
     ///   sfixed64 value = 1 [(buf.validate.field).sfixed64.lte = 10];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long Lte {
-      get { if ((_hasBits0 & 4) != 0) { return lte_; } else { return LteDefaultValue; } }
+      get { return HasLte ? (long) lessThan_ : 0L; }
       set {
-        _hasBits0 |= 4;
-        lte_ = value;
+        lessThan_ = value;
+        lessThanCase_ = LessThanOneofCase.Lte;
       }
     }
     /// <summary>Gets whether the "lte" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasLte {
-      get { return (_hasBits0 & 4) != 0; }
+      get { return lessThanCase_ == LessThanOneofCase.Lte; }
     }
-    /// <summary>Clears the value of the "lte" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "lte" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearLte() {
-      _hasBits0 &= ~4;
+      if (HasLte) {
+        ClearLessThan();
+      }
     }
 
     /// <summary>Field number for the "gt" field.</summary>
     public const int GtFieldNumber = 4;
-    private readonly static long GtDefaultValue = 0L;
-
-    private long gt_;
     /// <summary>
-    ///`gt` requires the field value to be greater than the specified value
+    /// `gt` requires the field value to be greater than the specified value
     /// (exclusive). If the value of `gt` is larger than a specified `lt` or
     /// `lte`, the range is reversed, and the field value must be outside the
     /// specified range. If the field value doesn't meet the required conditions,
     /// an error message is generated.
     ///
-    ///```proto
-    ///message MySFixed64 {
-    ///  // value must be greater than 5 [sfixed64.gt]
-    ///  sfixed64 value = 1 [(buf.validate.field).sfixed64.gt = 5];
+    /// ```proto
+    /// message MySFixed64 {
+    ///   // value must be greater than 5 [sfixed64.gt]
+    ///   sfixed64 value = 1 [(buf.validate.field).sfixed64.gt = 5];
     ///
-    ///  // value must be greater than 5 and less than 10 [sfixed64.gt_lt]
-    ///  sfixed64 other_value = 2 [(buf.validate.field).sfixed64 = { gt: 5, lt: 10 }];
+    ///   // value must be greater than 5 and less than 10 [sfixed64.gt_lt]
+    ///   sfixed64 other_value = 2 [(buf.validate.field).sfixed64 = { gt: 5, lt: 10 }];
     ///
-    ///  // value must be greater than 10 or less than 5 [sfixed64.gt_lt_exclusive]
-    ///  sfixed64 another_value = 3 [(buf.validate.field).sfixed64 = { gt: 10, lt: 5 }];
-    ///}
-    ///```
+    ///   // value must be greater than 10 or less than 5 [sfixed64.gt_lt_exclusive]
+    ///   sfixed64 another_value = 3 [(buf.validate.field).sfixed64 = { gt: 10, lt: 5 }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long Gt {
-      get { if ((_hasBits0 & 8) != 0) { return gt_; } else { return GtDefaultValue; } }
+      get { return HasGt ? (long) greaterThan_ : 0L; }
       set {
-        _hasBits0 |= 8;
-        gt_ = value;
+        greaterThan_ = value;
+        greaterThanCase_ = GreaterThanOneofCase.Gt;
       }
     }
     /// <summary>Gets whether the "gt" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasGt {
-      get { return (_hasBits0 & 8) != 0; }
+      get { return greaterThanCase_ == GreaterThanOneofCase.Gt; }
     }
-    /// <summary>Clears the value of the "gt" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "gt" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearGt() {
-      _hasBits0 &= ~8;
+      if (HasGt) {
+        ClearGreaterThan();
+      }
     }
 
     /// <summary>Field number for the "gte" field.</summary>
     public const int GteFieldNumber = 5;
-    private readonly static long GteDefaultValue = 0L;
-
-    private long gte_;
     /// <summary>
-    ///`gte` requires the field value to be greater than or equal to the specified
+    /// `gte` requires the field value to be greater than or equal to the specified
     /// value (exclusive). If the value of `gte` is larger than a specified `lt`
     /// or `lte`, the range is reversed, and the field value must be outside the
     /// specified range. If the field value doesn't meet the required conditions,
     /// an error message is generated.
     ///
-    ///```proto
-    ///message MySFixed64 {
-    ///  // value must be greater than or equal to 5 [sfixed64.gte]
-    ///  sfixed64 value = 1 [(buf.validate.field).sfixed64.gte = 5];
+    /// ```proto
+    /// message MySFixed64 {
+    ///   // value must be greater than or equal to 5 [sfixed64.gte]
+    ///   sfixed64 value = 1 [(buf.validate.field).sfixed64.gte = 5];
     ///
-    ///  // value must be greater than or equal to 5 and less than 10 [sfixed64.gte_lt]
-    ///  sfixed64 other_value = 2 [(buf.validate.field).sfixed64 = { gte: 5, lt: 10 }];
+    ///   // value must be greater than or equal to 5 and less than 10 [sfixed64.gte_lt]
+    ///   sfixed64 other_value = 2 [(buf.validate.field).sfixed64 = { gte: 5, lt: 10 }];
     ///
-    ///  // value must be greater than or equal to 10 or less than 5 [sfixed64.gte_lt_exclusive]
-    ///  sfixed64 another_value = 3 [(buf.validate.field).sfixed64 = { gte: 10, lt: 5 }];
-    ///}
-    ///```
+    ///   // value must be greater than or equal to 10 or less than 5 [sfixed64.gte_lt_exclusive]
+    ///   sfixed64 another_value = 3 [(buf.validate.field).sfixed64 = { gte: 10, lt: 5 }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public long Gte {
-      get { if ((_hasBits0 & 16) != 0) { return gte_; } else { return GteDefaultValue; } }
+      get { return HasGte ? (long) greaterThan_ : 0L; }
       set {
-        _hasBits0 |= 16;
-        gte_ = value;
+        greaterThan_ = value;
+        greaterThanCase_ = GreaterThanOneofCase.Gte;
       }
     }
     /// <summary>Gets whether the "gte" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasGte {
-      get { return (_hasBits0 & 16) != 0; }
+      get { return greaterThanCase_ == GreaterThanOneofCase.Gte; }
     }
-    /// <summary>Clears the value of the "gte" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "gte" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearGte() {
-      _hasBits0 &= ~16;
+      if (HasGte) {
+        ClearGreaterThan();
+      }
     }
 
     /// <summary>Field number for the "in" field.</summary>
     public const int InFieldNumber = 6;
     private static readonly pb::FieldCodec<long> _repeated_in_codec
-        = pb::FieldCodec.ForSFixed64(50);
+        = pb::FieldCodec.ForSFixed64(49);
     private readonly pbc::RepeatedField<long> in_ = new pbc::RepeatedField<long>();
     /// <summary>
-    ///`in` requires the field value to be equal to one of the specified values.
+    /// `in` requires the field value to be equal to one of the specified values.
     /// If the field value isn't one of the specified values, an error message is
     /// generated.
     ///
-    ///```proto
-    ///message MySFixed64 {
-    ///  // value must be in list [1, 2, 3]
-    ///  repeated sfixed64 value = 1 (buf.validate.field).sfixed64 = { in: [1, 2, 3] };
-    ///}
-    ///```
+    /// ```proto
+    /// message MySFixed64 {
+    ///   // value must be in list [1, 2, 3]
+    ///   sfixed64 value = 1 [(buf.validate.field).sfixed64 = { in: [1, 2, 3] }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -9742,24 +12576,91 @@ namespace Buf.Validate {
     /// <summary>Field number for the "not_in" field.</summary>
     public const int NotInFieldNumber = 7;
     private static readonly pb::FieldCodec<long> _repeated_notIn_codec
-        = pb::FieldCodec.ForSFixed64(58);
+        = pb::FieldCodec.ForSFixed64(57);
     private readonly pbc::RepeatedField<long> notIn_ = new pbc::RepeatedField<long>();
     /// <summary>
-    ///`not_in` requires the field value to not be equal to any of the specified
+    /// `not_in` requires the field value to not be equal to any of the specified
     /// values. If the field value is one of the specified values, an error
     /// message is generated.
     ///
-    ///```proto
-    ///message MySFixed64 {
-    ///  // value must not be in list [1, 2, 3]
-    ///  repeated sfixed64 value = 1 (buf.validate.field).sfixed64 = { not_in: [1, 2, 3] };
-    ///}
-    ///```
+    /// ```proto
+    /// message MySFixed64 {
+    ///   // value must not be in list [1, 2, 3]
+    ///   sfixed64 value = 1 [(buf.validate.field).sfixed64 = { not_in: [1, 2, 3] }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<long> NotIn {
       get { return notIn_; }
+    }
+
+    /// <summary>Field number for the "example" field.</summary>
+    public const int ExampleFieldNumber = 8;
+    private static readonly pb::FieldCodec<long> _repeated_example_codec
+        = pb::FieldCodec.ForSFixed64(65);
+    private readonly pbc::RepeatedField<long> example_ = new pbc::RepeatedField<long>();
+    /// <summary>
+    /// `example` specifies values that the field may have. These values SHOULD
+    /// conform to other rules. `example` values will not impact validation
+    /// but may be used as helpful guidance on how to populate the given field.
+    ///
+    /// ```proto
+    /// message MySFixed64 {
+    ///   sfixed64 value = 1 [
+    ///     (buf.validate.field).sfixed64.example = 1,
+    ///     (buf.validate.field).sfixed64.example = 2
+    ///   ];
+    /// }
+    /// ```
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<long> Example {
+      get { return example_; }
+    }
+
+    private object lessThan_;
+    /// <summary>Enum of possible cases for the "less_than" oneof.</summary>
+    public enum LessThanOneofCase {
+      None = 0,
+      Lt = 2,
+      Lte = 3,
+    }
+    private LessThanOneofCase lessThanCase_ = LessThanOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public LessThanOneofCase LessThanCase {
+      get { return lessThanCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearLessThan() {
+      lessThanCase_ = LessThanOneofCase.None;
+      lessThan_ = null;
+    }
+
+    private object greaterThan_;
+    /// <summary>Enum of possible cases for the "greater_than" oneof.</summary>
+    public enum GreaterThanOneofCase {
+      None = 0,
+      Gt = 4,
+      Gte = 5,
+    }
+    private GreaterThanOneofCase greaterThanCase_ = GreaterThanOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GreaterThanOneofCase GreaterThanCase {
+      get { return greaterThanCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearGreaterThan() {
+      greaterThanCase_ = GreaterThanOneofCase.None;
+      greaterThan_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9784,6 +12685,12 @@ namespace Buf.Validate {
       if (Gte != other.Gte) return false;
       if(!in_.Equals(other.in_)) return false;
       if(!notIn_.Equals(other.notIn_)) return false;
+      if(!example_.Equals(other.example_)) return false;
+      if (LessThanCase != other.LessThanCase) return false;
+      if (GreaterThanCase != other.GreaterThanCase) return false;
+      if (!Equals(_extensions, other._extensions)) {
+        return false;
+      }
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -9798,6 +12705,12 @@ namespace Buf.Validate {
       if (HasGte) hash ^= Gte.GetHashCode();
       hash ^= in_.GetHashCode();
       hash ^= notIn_.GetHashCode();
+      hash ^= example_.GetHashCode();
+      hash ^= (int) lessThanCase_;
+      hash ^= (int) greaterThanCase_;
+      if (_extensions != null) {
+        hash ^= _extensions.GetHashCode();
+      }
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -9838,6 +12751,10 @@ namespace Buf.Validate {
       }
       in_.WriteTo(output, _repeated_in_codec);
       notIn_.WriteTo(output, _repeated_notIn_codec);
+      example_.WriteTo(output, _repeated_example_codec);
+      if (_extensions != null) {
+        _extensions.WriteTo(output);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -9870,6 +12787,10 @@ namespace Buf.Validate {
       }
       in_.WriteTo(ref output, _repeated_in_codec);
       notIn_.WriteTo(ref output, _repeated_notIn_codec);
+      example_.WriteTo(ref output, _repeated_example_codec);
+      if (_extensions != null) {
+        _extensions.WriteTo(ref output);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -9897,6 +12818,10 @@ namespace Buf.Validate {
       }
       size += in_.CalculateSize(_repeated_in_codec);
       size += notIn_.CalculateSize(_repeated_notIn_codec);
+      size += example_.CalculateSize(_repeated_example_codec);
+      if (_extensions != null) {
+        size += _extensions.CalculateSize();
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -9912,20 +12837,28 @@ namespace Buf.Validate {
       if (other.HasConst) {
         Const = other.Const;
       }
-      if (other.HasLt) {
-        Lt = other.Lt;
-      }
-      if (other.HasLte) {
-        Lte = other.Lte;
-      }
-      if (other.HasGt) {
-        Gt = other.Gt;
-      }
-      if (other.HasGte) {
-        Gte = other.Gte;
-      }
       in_.Add(other.in_);
       notIn_.Add(other.notIn_);
+      example_.Add(other.example_);
+      switch (other.LessThanCase) {
+        case LessThanOneofCase.Lt:
+          Lt = other.Lt;
+          break;
+        case LessThanOneofCase.Lte:
+          Lte = other.Lte;
+          break;
+      }
+
+      switch (other.GreaterThanCase) {
+        case GreaterThanOneofCase.Gt:
+          Gt = other.Gt;
+          break;
+        case GreaterThanOneofCase.Gte:
+          Gte = other.Gte;
+          break;
+      }
+
+      pb::ExtensionSet.MergeFrom(ref _extensions, other._extensions);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -9939,7 +12872,9 @@ namespace Buf.Validate {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            }
             break;
           case 9: {
             Const = input.ReadSFixed64();
@@ -9971,6 +12906,11 @@ namespace Buf.Validate {
             notIn_.AddEntriesFrom(input, _repeated_notIn_codec);
             break;
           }
+          case 66:
+          case 65: {
+            example_.AddEntriesFrom(input, _repeated_example_codec);
+            break;
+          }
         }
       }
     #endif
@@ -9984,7 +12924,9 @@ namespace Buf.Validate {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, ref input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            }
             break;
           case 9: {
             Const = input.ReadSFixed64();
@@ -10016,24 +12958,53 @@ namespace Buf.Validate {
             notIn_.AddEntriesFrom(ref input, _repeated_notIn_codec);
             break;
           }
+          case 66:
+          case 65: {
+            example_.AddEntriesFrom(ref input, _repeated_example_codec);
+            break;
+          }
         }
       }
     }
     #endif
 
+    public TValue GetExtension<TValue>(pb::Extension<SFixed64Rules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<SFixed64Rules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>(pb::RepeatedExtension<SFixed64Rules, TValue> extension) {
+      return pb::ExtensionSet.GetOrInitialize(ref _extensions, extension);
+    }
+    public void SetExtension<TValue>(pb::Extension<SFixed64Rules, TValue> extension, TValue value) {
+      pb::ExtensionSet.Set(ref _extensions, extension, value);
+    }
+    public bool HasExtension<TValue>(pb::Extension<SFixed64Rules, TValue> extension) {
+      return pb::ExtensionSet.Has(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::Extension<SFixed64Rules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::RepeatedExtension<SFixed64Rules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+
   }
 
   /// <summary>
-  /// BoolRules describes the constraints applied to `bool` values. These rules
+  /// BoolRules describes the rules applied to `bool` values. These rules
   /// may also be applied to the `google.protobuf.BoolValue` Well-Known-Type.
   /// </summary>
-  public sealed partial class BoolRules : pb::IMessage<BoolRules>
+  public sealed partial class BoolRules : pb::IExtendableMessage<BoolRules>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
     private static readonly pb::MessageParser<BoolRules> _parser = new pb::MessageParser<BoolRules>(() => new BoolRules());
     private pb::UnknownFieldSet _unknownFields;
+    private pb::ExtensionSet<BoolRules> _extensions;
+    private pb::ExtensionSet<BoolRules> _Extensions { get { return _extensions; } }
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -10042,7 +13013,7 @@ namespace Buf.Validate {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[15]; }
+      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[18]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10064,7 +13035,9 @@ namespace Buf.Validate {
     public BoolRules(BoolRules other) : this() {
       _hasBits0 = other._hasBits0;
       const_ = other.const_;
+      example_ = other.example_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+      _extensions = pb::ExtensionSet.Clone(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10079,15 +13052,15 @@ namespace Buf.Validate {
 
     private bool const_;
     /// <summary>
-    ///`const` requires the field value to exactly match the specified boolean value.
-    ///If the field value doesn't match, an error message is generated.
+    /// `const` requires the field value to exactly match the specified boolean value.
+    /// If the field value doesn't match, an error message is generated.
     ///
-    ///```proto
-    ///message MyBool {
-    ///  // value must equal true
+    /// ```proto
+    /// message MyBool {
+    ///   // value must equal true
     ///   bool value = 1 [(buf.validate.field).bool.const = true];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -10111,6 +13084,31 @@ namespace Buf.Validate {
       _hasBits0 &= ~1;
     }
 
+    /// <summary>Field number for the "example" field.</summary>
+    public const int ExampleFieldNumber = 2;
+    private static readonly pb::FieldCodec<bool> _repeated_example_codec
+        = pb::FieldCodec.ForBool(16);
+    private readonly pbc::RepeatedField<bool> example_ = new pbc::RepeatedField<bool>();
+    /// <summary>
+    /// `example` specifies values that the field may have. These values SHOULD
+    /// conform to other rules. `example` values will not impact validation
+    /// but may be used as helpful guidance on how to populate the given field.
+    ///
+    /// ```proto
+    /// message MyBool {
+    ///   bool value = 1 [
+    ///     (buf.validate.field).bool.example = 1,
+    ///     (buf.validate.field).bool.example = 2
+    ///   ];
+    /// }
+    /// ```
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<bool> Example {
+      get { return example_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -10127,6 +13125,10 @@ namespace Buf.Validate {
         return true;
       }
       if (Const != other.Const) return false;
+      if(!example_.Equals(other.example_)) return false;
+      if (!Equals(_extensions, other._extensions)) {
+        return false;
+      }
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -10135,6 +13137,10 @@ namespace Buf.Validate {
     public override int GetHashCode() {
       int hash = 1;
       if (HasConst) hash ^= Const.GetHashCode();
+      hash ^= example_.GetHashCode();
+      if (_extensions != null) {
+        hash ^= _extensions.GetHashCode();
+      }
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -10157,6 +13163,10 @@ namespace Buf.Validate {
         output.WriteRawTag(8);
         output.WriteBool(Const);
       }
+      example_.WriteTo(output, _repeated_example_codec);
+      if (_extensions != null) {
+        _extensions.WriteTo(output);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -10171,6 +13181,10 @@ namespace Buf.Validate {
         output.WriteRawTag(8);
         output.WriteBool(Const);
       }
+      example_.WriteTo(ref output, _repeated_example_codec);
+      if (_extensions != null) {
+        _extensions.WriteTo(ref output);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -10183,6 +13197,10 @@ namespace Buf.Validate {
       int size = 0;
       if (HasConst) {
         size += 1 + 1;
+      }
+      size += example_.CalculateSize(_repeated_example_codec);
+      if (_extensions != null) {
+        size += _extensions.CalculateSize();
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -10199,6 +13217,8 @@ namespace Buf.Validate {
       if (other.HasConst) {
         Const = other.Const;
       }
+      example_.Add(other.example_);
+      pb::ExtensionSet.MergeFrom(ref _extensions, other._extensions);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -10212,10 +13232,17 @@ namespace Buf.Validate {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            }
             break;
           case 8: {
             Const = input.ReadBool();
+            break;
+          }
+          case 18:
+          case 16: {
+            example_.AddEntriesFrom(input, _repeated_example_codec);
             break;
           }
         }
@@ -10231,10 +13258,17 @@ namespace Buf.Validate {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, ref input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            }
             break;
           case 8: {
             Const = input.ReadBool();
+            break;
+          }
+          case 18:
+          case 16: {
+            example_.AddEntriesFrom(ref input, _repeated_example_codec);
             break;
           }
         }
@@ -10242,19 +13276,43 @@ namespace Buf.Validate {
     }
     #endif
 
+    public TValue GetExtension<TValue>(pb::Extension<BoolRules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<BoolRules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>(pb::RepeatedExtension<BoolRules, TValue> extension) {
+      return pb::ExtensionSet.GetOrInitialize(ref _extensions, extension);
+    }
+    public void SetExtension<TValue>(pb::Extension<BoolRules, TValue> extension, TValue value) {
+      pb::ExtensionSet.Set(ref _extensions, extension, value);
+    }
+    public bool HasExtension<TValue>(pb::Extension<BoolRules, TValue> extension) {
+      return pb::ExtensionSet.Has(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::Extension<BoolRules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::RepeatedExtension<BoolRules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+
   }
 
   /// <summary>
-  /// StringRules describes the constraints applied to `string` values These
+  /// StringRules describes the rules applied to `string` values These
   /// rules may also be applied to the `google.protobuf.StringValue` Well-Known-Type.
   /// </summary>
-  public sealed partial class StringRules : pb::IMessage<StringRules>
+  public sealed partial class StringRules : pb::IExtendableMessage<StringRules>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
     private static readonly pb::MessageParser<StringRules> _parser = new pb::MessageParser<StringRules>(() => new StringRules());
     private pb::UnknownFieldSet _unknownFields;
+    private pb::ExtensionSet<StringRules> _extensions;
+    private pb::ExtensionSet<StringRules> _Extensions { get { return _extensions; } }
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -10263,7 +13321,7 @@ namespace Buf.Validate {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[16]; }
+      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[19]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10299,6 +13357,7 @@ namespace Buf.Validate {
       in_ = other.in_.Clone();
       notIn_ = other.notIn_.Clone();
       strict_ = other.strict_;
+      example_ = other.example_.Clone();
       switch (other.WellKnownCase) {
         case WellKnownOneofCase.Email:
           Email = other.Email;
@@ -10327,12 +13386,37 @@ namespace Buf.Validate {
         case WellKnownOneofCase.Uuid:
           Uuid = other.Uuid;
           break;
+        case WellKnownOneofCase.Tuuid:
+          Tuuid = other.Tuuid;
+          break;
+        case WellKnownOneofCase.IpWithPrefixlen:
+          IpWithPrefixlen = other.IpWithPrefixlen;
+          break;
+        case WellKnownOneofCase.Ipv4WithPrefixlen:
+          Ipv4WithPrefixlen = other.Ipv4WithPrefixlen;
+          break;
+        case WellKnownOneofCase.Ipv6WithPrefixlen:
+          Ipv6WithPrefixlen = other.Ipv6WithPrefixlen;
+          break;
+        case WellKnownOneofCase.IpPrefix:
+          IpPrefix = other.IpPrefix;
+          break;
+        case WellKnownOneofCase.Ipv4Prefix:
+          Ipv4Prefix = other.Ipv4Prefix;
+          break;
+        case WellKnownOneofCase.Ipv6Prefix:
+          Ipv6Prefix = other.Ipv6Prefix;
+          break;
+        case WellKnownOneofCase.HostAndPort:
+          HostAndPort = other.HostAndPort;
+          break;
         case WellKnownOneofCase.WellKnownRegex:
           WellKnownRegex = other.WellKnownRegex;
           break;
       }
 
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+      _extensions = pb::ExtensionSet.Clone(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -10347,15 +13431,15 @@ namespace Buf.Validate {
 
     private string const_;
     /// <summary>
-    ///`const` requires the field value to exactly match the specified value. If
-    ///the field value doesn't match, an error message is generated.
+    /// `const` requires the field value to exactly match the specified value. If
+    /// the field value doesn't match, an error message is generated.
     ///
-    ///```proto
-    ///message MyString {
-    ///  // value must equal `hello`
+    /// ```proto
+    /// message MyString {
+    ///   // value must equal `hello`
     ///   string value = 1 [(buf.validate.field).string.const = "hello"];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -10384,17 +13468,17 @@ namespace Buf.Validate {
 
     private ulong len_;
     /// <summary>
-    ///`len` dictates that the field value must have the specified
-    ///number of characters (Unicode code points), which may differ from the number
-    ///of bytes in the string. If the field value does not meet the specified
-    ///length, an error message will be generated.
+    /// `len` dictates that the field value must have the specified
+    /// number of characters (Unicode code points), which may differ from the number
+    /// of bytes in the string. If the field value does not meet the specified
+    /// length, an error message will be generated.
     ///
-    ///```proto
-    ///message MyString {
-    ///  // value length must be 5 characters
+    /// ```proto
+    /// message MyString {
+    ///   // value length must be 5 characters
     ///   string value = 1 [(buf.validate.field).string.len = 5];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -10424,17 +13508,17 @@ namespace Buf.Validate {
 
     private ulong minLen_;
     /// <summary>
-    ///`min_len` specifies that the field value must have at least the specified
-    ///number of characters (Unicode code points), which may differ from the number
-    ///of bytes in the string. If the field value contains fewer characters, an error
-    ///message will be generated.
+    /// `min_len` specifies that the field value must have at least the specified
+    /// number of characters (Unicode code points), which may differ from the number
+    /// of bytes in the string. If the field value contains fewer characters, an error
+    /// message will be generated.
     ///
-    ///```proto
-    ///message MyString {
-    ///  // value length must be at least 3 characters
+    /// ```proto
+    /// message MyString {
+    ///   // value length must be at least 3 characters
     ///   string value = 1 [(buf.validate.field).string.min_len = 3];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -10464,17 +13548,17 @@ namespace Buf.Validate {
 
     private ulong maxLen_;
     /// <summary>
-    ///`max_len` specifies that the field value must have no more than the specified
-    ///number of characters (Unicode code points), which may differ from the
-    ///number of bytes in the string. If the field value contains more characters,
-    ///an error message will be generated.
+    /// `max_len` specifies that the field value must have no more than the specified
+    /// number of characters (Unicode code points), which may differ from the
+    /// number of bytes in the string. If the field value contains more characters,
+    /// an error message will be generated.
     ///
-    ///```proto
-    ///message MyString {
-    ///  // value length must be at most 10 characters
+    /// ```proto
+    /// message MyString {
+    ///   // value length must be at most 10 characters
     ///   string value = 1 [(buf.validate.field).string.max_len = 10];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -10504,16 +13588,16 @@ namespace Buf.Validate {
 
     private ulong lenBytes_;
     /// <summary>
-    ///`len_bytes` dictates that the field value must have the specified number of
-    ///bytes. If the field value does not match the specified length in bytes,
-    ///an error message will be generated.
+    /// `len_bytes` dictates that the field value must have the specified number of
+    /// bytes. If the field value does not match the specified length in bytes,
+    /// an error message will be generated.
     ///
-    ///```proto
-    ///message MyString {
-    ///  // value length must be 6 bytes
+    /// ```proto
+    /// message MyString {
+    ///   // value length must be 6 bytes
     ///   string value = 1 [(buf.validate.field).string.len_bytes = 6];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -10543,17 +13627,17 @@ namespace Buf.Validate {
 
     private ulong minBytes_;
     /// <summary>
-    ///`min_bytes` specifies that the field value must have at least the specified
-    ///number of bytes. If the field value contains fewer bytes, an error message
-    ///will be generated.
+    /// `min_bytes` specifies that the field value must have at least the specified
+    /// number of bytes. If the field value contains fewer bytes, an error message
+    /// will be generated.
     ///
-    ///```proto
-    ///message MyString {
-    ///  // value length must be at least 4 bytes
+    /// ```proto
+    /// message MyString {
+    ///   // value length must be at least 4 bytes
     ///   string value = 1 [(buf.validate.field).string.min_bytes = 4];
-    ///}
+    /// }
     ///
-    ///```
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -10583,16 +13667,16 @@ namespace Buf.Validate {
 
     private ulong maxBytes_;
     /// <summary>
-    ///`max_bytes` specifies that the field value must have no more than the
+    /// `max_bytes` specifies that the field value must have no more than the
     ///specified number of bytes. If the field value contains more bytes, an
-    ///error message will be generated.
+    /// error message will be generated.
     ///
-    ///```proto
-    ///message MyString {
-    ///  // value length must be at most 8 bytes
+    /// ```proto
+    /// message MyString {
+    ///   // value length must be at most 8 bytes
     ///   string value = 1 [(buf.validate.field).string.max_bytes = 8];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -10622,17 +13706,17 @@ namespace Buf.Validate {
 
     private string pattern_;
     /// <summary>
-    ///`pattern` specifies that the field value must match the specified
-    ///regular expression (RE2 syntax), with the expression provided without any
-    ///delimiters. If the field value doesn't match the regular expression, an
-    ///error message will be generated.
+    /// `pattern` specifies that the field value must match the specified
+    /// regular expression (RE2 syntax), with the expression provided without any
+    /// delimiters. If the field value doesn't match the regular expression, an
+    /// error message will be generated.
     ///
-    ///```proto
-    ///message MyString {
-    ///  // value does not match regex pattern `^[a-zA-Z]//$`
+    /// ```proto
+    /// message MyString {
+    ///   // value does not match regex pattern `^[a-zA-Z]//$`
     ///   string value = 1 [(buf.validate.field).string.pattern = "^[a-zA-Z]//$"];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -10661,17 +13745,17 @@ namespace Buf.Validate {
 
     private string prefix_;
     /// <summary>
-    ///`prefix` specifies that the field value must have the
+    /// `prefix` specifies that the field value must have the
     ///specified substring at the beginning of the string. If the field value
-    ///doesn't start with the specified prefix, an error message will be
-    ///generated.
+    /// doesn't start with the specified prefix, an error message will be
+    /// generated.
     ///
-    ///```proto
-    ///message MyString {
-    ///  // value does not have prefix `pre`
+    /// ```proto
+    /// message MyString {
+    ///   // value does not have prefix `pre`
     ///   string value = 1 [(buf.validate.field).string.prefix = "pre"];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -10700,16 +13784,16 @@ namespace Buf.Validate {
 
     private string suffix_;
     /// <summary>
-    ///`suffix` specifies that the field value must have the
+    /// `suffix` specifies that the field value must have the
     ///specified substring at the end of the string. If the field value doesn't
-    ///end with the specified suffix, an error message will be generated.
+    /// end with the specified suffix, an error message will be generated.
     ///
-    ///```proto
-    ///message MyString {
-    ///  // value does not have suffix `post`
+    /// ```proto
+    /// message MyString {
+    ///   // value does not have suffix `post`
     ///   string value = 1 [(buf.validate.field).string.suffix = "post"];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -10738,16 +13822,16 @@ namespace Buf.Validate {
 
     private string contains_;
     /// <summary>
-    ///`contains` specifies that the field value must have the
+    /// `contains` specifies that the field value must have the
     ///specified substring anywhere in the string. If the field value doesn't
-    ///contain the specified substring, an error message will be generated.
+    /// contain the specified substring, an error message will be generated.
     ///
-    ///```proto
-    ///message MyString {
-    ///  // value does not contain substring `inside`.
+    /// ```proto
+    /// message MyString {
+    ///   // value does not contain substring `inside`.
     ///   string value = 1 [(buf.validate.field).string.contains = "inside"];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -10776,16 +13860,16 @@ namespace Buf.Validate {
 
     private string notContains_;
     /// <summary>
-    ///`not_contains` specifies that the field value must not have the
+    /// `not_contains` specifies that the field value must not have the
     ///specified substring anywhere in the string. If the field value contains
-    ///the specified substring, an error message will be generated.
+    /// the specified substring, an error message will be generated.
     ///
-    ///```proto
-    ///message MyString {
-    ///  // value contains substring `inside`.
+    /// ```proto
+    /// message MyString {
+    ///   // value contains substring `inside`.
     ///   string value = 1 [(buf.validate.field).string.not_contains = "inside"];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -10814,16 +13898,16 @@ namespace Buf.Validate {
         = pb::FieldCodec.ForString(82);
     private readonly pbc::RepeatedField<string> in_ = new pbc::RepeatedField<string>();
     /// <summary>
-    ///`in` specifies that the field value must be equal to one of the specified
-    ///values. If the field value isn't one of the specified values, an error
-    ///message will be generated.
+    /// `in` specifies that the field value must be equal to one of the specified
+    /// values. If the field value isn't one of the specified values, an error
+    /// message will be generated.
     ///
-    ///```proto
-    ///message MyString {
-    ///  // value must be in list ["apple", "banana"]
-    ///  repeated string value = 1 [(buf.validate.field).string.in = "apple", (buf.validate.field).string.in = "banana"];
-    ///}
-    ///```
+    /// ```proto
+    /// message MyString {
+    ///   // value must be in list ["apple", "banana"]
+    ///   string value = 1 [(buf.validate.field).string.in = "apple", (buf.validate.field).string.in = "banana"];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -10837,15 +13921,15 @@ namespace Buf.Validate {
         = pb::FieldCodec.ForString(90);
     private readonly pbc::RepeatedField<string> notIn_ = new pbc::RepeatedField<string>();
     /// <summary>
-    ///`not_in` specifies that the field value cannot be equal to any
-    ///of the specified values. If the field value is one of the specified values,
-    ///an error message will be generated.
-    ///```proto
-    ///message MyString {
-    ///  // value must not be in list ["orange", "grape"]
-    ///  repeated string value = 1 [(buf.validate.field).string.not_in = "orange", (buf.validate.field).string.not_in = "grape"];
-    ///}
-    ///```
+    /// `not_in` specifies that the field value cannot be equal to any
+    /// of the specified values. If the field value is one of the specified values,
+    /// an error message will be generated.
+    /// ```proto
+    /// message MyString {
+    ///   // value must not be in list ["orange", "grape"]
+    ///   string value = 1 [(buf.validate.field).string.not_in = "orange", (buf.validate.field).string.not_in = "grape"];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -10856,16 +13940,22 @@ namespace Buf.Validate {
     /// <summary>Field number for the "email" field.</summary>
     public const int EmailFieldNumber = 12;
     /// <summary>
-    ///`email` specifies that the field value must be a valid email address
-    ///(addr-spec only) as defined by [RFC 5322](https://tools.ietf.org/html/rfc5322#section-3.4.1).
-    ///If the field value isn't a valid email address, an error message will be generated.
+    /// `email` specifies that the field value must be a valid email address, for
+    /// example "foo@example.com".
     ///
-    ///```proto
-    ///message MyString {
-    ///  // value must be a valid email address
+    /// Conforms to the definition for a valid email address from the [HTML standard](https://html.spec.whatwg.org/multipage/input.html#valid-e-mail-address).
+    /// Note that this standard willfully deviates from [RFC 5322](https://datatracker.ietf.org/doc/html/rfc5322),
+    /// which allows many unexpected forms of email addresses and will easily match
+    /// a typographical error.
+    ///
+    /// If the field value isn't a valid email address, an error message will be generated.
+    ///
+    /// ```proto
+    /// message MyString {
+    ///   // value must be a valid email address
     ///   string value = 1 [(buf.validate.field).string.email = true];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -10894,17 +13984,25 @@ namespace Buf.Validate {
     /// <summary>Field number for the "hostname" field.</summary>
     public const int HostnameFieldNumber = 13;
     /// <summary>
-    ///`hostname` specifies that the field value must be a valid
-    ///hostname as defined by [RFC 1034](https://tools.ietf.org/html/rfc1034#section-3.5). This constraint doesn't support
-    ///internationalized domain names (IDNs). If the field value isn't a
-    ///valid hostname, an error message will be generated.
+    /// `hostname` specifies that the field value must be a valid hostname, for
+    /// example "foo.example.com".
     ///
-    ///```proto
-    ///message MyString {
-    ///  // value must be a valid hostname
+    /// A valid hostname follows the rules below:
+    /// - The name consists of one or more labels, separated by a dot (".").
+    /// - Each label can be 1 to 63 alphanumeric characters.
+    /// - A label can contain hyphens ("-"), but must not start or end with a hyphen.
+    /// - The right-most label must not be digits only.
+    /// - The name can have a trailing dot—for example, "foo.example.com.".
+    /// - The name can be 253 characters at most, excluding the optional trailing dot.
+    ///
+    /// If the field value isn't a valid hostname, an error message will be generated.
+    ///
+    /// ```proto
+    /// message MyString {
+    ///   // value must be a valid hostname
     ///   string value = 1 [(buf.validate.field).string.hostname = true];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -10933,17 +14031,24 @@ namespace Buf.Validate {
     /// <summary>Field number for the "ip" field.</summary>
     public const int IpFieldNumber = 14;
     /// <summary>
-    ///`ip` specifies that the field value must be a valid IP
-    ///(v4 or v6) address, without surrounding square brackets for IPv6 addresses.
-    ///If the field value isn't a valid IP address, an error message will be
-    ///generated.
+    /// `ip` specifies that the field value must be a valid IP (v4 or v6) address.
     ///
-    ///```proto
-    ///message MyString {
-    ///  // value must be a valid IP address
+    /// IPv4 addresses are expected in the dotted decimal format—for example, "192.168.5.21".
+    /// IPv6 addresses are expected in their text representation—for example, "::1",
+    /// or "2001:0DB8:ABCD:0012::0".
+    ///
+    /// Both formats are well-defined in the internet standard [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986).
+    /// Zone identifiers for IPv6 addresses (for example, "fe80::a%en1") are supported.
+    ///
+    /// If the field value isn't a valid IP address, an error message will be
+    /// generated.
+    ///
+    /// ```proto
+    /// message MyString {
+    ///   // value must be a valid IP address
     ///   string value = 1 [(buf.validate.field).string.ip = true];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -10972,16 +14077,16 @@ namespace Buf.Validate {
     /// <summary>Field number for the "ipv4" field.</summary>
     public const int Ipv4FieldNumber = 15;
     /// <summary>
-    ///`ipv4` specifies that the field value must be a valid IPv4
-    ///address. If the field value isn't a valid IPv4 address, an error message
-    ///will be generated.
+    /// `ipv4` specifies that the field value must be a valid IPv4 address—for
+    /// example "192.168.5.21". If the field value isn't a valid IPv4 address, an
+    /// error message will be generated.
     ///
-    ///```proto
-    ///message MyString {
-    ///  // value must be a valid IPv4 address
+    /// ```proto
+    /// message MyString {
+    ///   // value must be a valid IPv4 address
     ///   string value = 1 [(buf.validate.field).string.ipv4 = true];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -11010,16 +14115,16 @@ namespace Buf.Validate {
     /// <summary>Field number for the "ipv6" field.</summary>
     public const int Ipv6FieldNumber = 16;
     /// <summary>
-    ///`ipv6` specifies that the field value must be a valid
-    ///IPv6 address, without surrounding square brackets. If the field value is
-    ///not a valid IPv6 address, an error message will be generated.
+    /// `ipv6` specifies that the field value must be a valid IPv6 address—for
+    /// example "::1", or "d7a:115c:a1e0:ab12:4843:cd96:626b:430b". If the field
+    /// value is not a valid IPv6 address, an error message will be generated.
     ///
-    ///```proto
-    ///message MyString {
-    ///  // value must be a valid IPv6 address
+    /// ```proto
+    /// message MyString {
+    ///   // value must be a valid IPv6 address
     ///   string value = 1 [(buf.validate.field).string.ipv6 = true];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -11048,16 +14153,20 @@ namespace Buf.Validate {
     /// <summary>Field number for the "uri" field.</summary>
     public const int UriFieldNumber = 17;
     /// <summary>
-    ///`uri` specifies that the field value must be a valid,
-    ///absolute URI as defined by [RFC 3986](https://tools.ietf.org/html/rfc3986#section-3). If the field value isn't a valid,
-    ///absolute URI, an error message will be generated.
+    /// `uri` specifies that the field value must be a valid URI, for example
+    /// "https://example.com/foo/bar?baz=quux#frag".
     ///
-    ///```proto
-    ///message MyString {
-    ///  // value must be a valid URI
+    /// URI is defined in the internet standard [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986).
+    /// Zone Identifiers in IPv6 address literals are supported ([RFC 6874](https://datatracker.ietf.org/doc/html/rfc6874)).
+    ///
+    /// If the field value isn't a valid URI, an error message will be generated.
+    ///
+    /// ```proto
+    /// message MyString {
+    ///   // value must be a valid URI
     ///   string value = 1 [(buf.validate.field).string.uri = true];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -11086,16 +14195,23 @@ namespace Buf.Validate {
     /// <summary>Field number for the "uri_ref" field.</summary>
     public const int UriRefFieldNumber = 18;
     /// <summary>
-    ///`uri_ref` specifies that the field value must be a valid URI
-    ///as defined by [RFC 3986](https://tools.ietf.org/html/rfc3986#section-3) and may be either relative or absolute. If the
-    ///field value isn't a valid URI, an error message will be generated.
+    /// `uri_ref` specifies that the field value must be a valid URI Reference—either
+    /// a URI such as "https://example.com/foo/bar?baz=quux#frag", or a Relative
+    /// Reference such as "./foo/bar?query".
     ///
-    ///```proto
-    ///message MyString {
-    ///  // value must be a valid URI
+    /// URI, URI Reference, and Relative Reference are defined in the internet
+    /// standard [RFC 3986](https://datatracker.ietf.org/doc/html/rfc3986). Zone
+    /// Identifiers in IPv6 address literals are supported ([RFC 6874](https://datatracker.ietf.org/doc/html/rfc6874)).
+    ///
+    /// If the field value isn't a valid URI Reference, an error message will be
+    /// generated.
+    ///
+    /// ```proto
+    /// message MyString {
+    ///   // value must be a valid URI Reference
     ///   string value = 1 [(buf.validate.field).string.uri_ref = true];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -11124,18 +14240,17 @@ namespace Buf.Validate {
     /// <summary>Field number for the "address" field.</summary>
     public const int AddressFieldNumber = 21;
     /// <summary>
-    ///`address` specifies that the field value must be either a valid hostname
-    ///as defined by [RFC 1034](https://tools.ietf.org/html/rfc1034#section-3.5)
-    ///(which doesn't support internationalized domain names or IDNs) or a valid
-    ///IP (v4 or v6). If the field value isn't a valid hostname or IP, an error
-    ///message will be generated.
+    /// `address` specifies that the field value must be either a valid hostname
+    /// (for example, "example.com"), or a valid IP (v4 or v6) address (for example,
+    /// "192.168.0.1", or "::1"). If the field value isn't a valid hostname or IP,
+    /// an error message will be generated.
     ///
-    ///```proto
-    ///message MyString {
-    ///  // value must be a valid hostname, or ip address
+    /// ```proto
+    /// message MyString {
+    ///   // value must be a valid hostname, or ip address
     ///   string value = 1 [(buf.validate.field).string.address = true];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -11164,16 +14279,16 @@ namespace Buf.Validate {
     /// <summary>Field number for the "uuid" field.</summary>
     public const int UuidFieldNumber = 22;
     /// <summary>
-    ///`uuid` specifies that the field value must be a valid UUID as defined by
-    ///[RFC 4122](https://tools.ietf.org/html/rfc4122#section-4.1.2). If the
-    ///field value isn't a valid UUID, an error message will be generated.
+    /// `uuid` specifies that the field value must be a valid UUID as defined by
+    /// [RFC 4122](https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.2). If the
+    /// field value isn't a valid UUID, an error message will be generated.
     ///
-    ///```proto
-    ///message MyString {
-    ///  // value must be a valid UUID
+    /// ```proto
+    /// message MyString {
+    ///   // value must be a valid UUID
     ///   string value = 1 [(buf.validate.field).string.uuid = true];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -11199,29 +14314,355 @@ namespace Buf.Validate {
       }
     }
 
+    /// <summary>Field number for the "tuuid" field.</summary>
+    public const int TuuidFieldNumber = 33;
+    /// <summary>
+    /// `tuuid` (trimmed UUID) specifies that the field value must be a valid UUID as
+    /// defined by [RFC 4122](https://datatracker.ietf.org/doc/html/rfc4122#section-4.1.2) with all dashes
+    /// omitted. If the field value isn't a valid UUID without dashes, an error message
+    /// will be generated.
+    ///
+    /// ```proto
+    /// message MyString {
+    ///   // value must be a valid trimmed UUID
+    ///   string value = 1 [(buf.validate.field).string.tuuid = true];
+    /// }
+    /// ```
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Tuuid {
+      get { return HasTuuid ? (bool) wellKnown_ : false; }
+      set {
+        wellKnown_ = value;
+        wellKnownCase_ = WellKnownOneofCase.Tuuid;
+      }
+    }
+    /// <summary>Gets whether the "tuuid" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasTuuid {
+      get { return wellKnownCase_ == WellKnownOneofCase.Tuuid; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "tuuid" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearTuuid() {
+      if (HasTuuid) {
+        ClearWellKnown();
+      }
+    }
+
+    /// <summary>Field number for the "ip_with_prefixlen" field.</summary>
+    public const int IpWithPrefixlenFieldNumber = 26;
+    /// <summary>
+    /// `ip_with_prefixlen` specifies that the field value must be a valid IP
+    /// (v4 or v6) address with prefix length—for example, "192.168.5.21/16" or
+    /// "2001:0DB8:ABCD:0012::F1/64". If the field value isn't a valid IP with
+    /// prefix length, an error message will be generated.
+    ///
+    /// ```proto
+    /// message MyString {
+    ///   // value must be a valid IP with prefix length
+    ///    string value = 1 [(buf.validate.field).string.ip_with_prefixlen = true];
+    /// }
+    /// ```
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IpWithPrefixlen {
+      get { return HasIpWithPrefixlen ? (bool) wellKnown_ : false; }
+      set {
+        wellKnown_ = value;
+        wellKnownCase_ = WellKnownOneofCase.IpWithPrefixlen;
+      }
+    }
+    /// <summary>Gets whether the "ip_with_prefixlen" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasIpWithPrefixlen {
+      get { return wellKnownCase_ == WellKnownOneofCase.IpWithPrefixlen; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "ip_with_prefixlen" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearIpWithPrefixlen() {
+      if (HasIpWithPrefixlen) {
+        ClearWellKnown();
+      }
+    }
+
+    /// <summary>Field number for the "ipv4_with_prefixlen" field.</summary>
+    public const int Ipv4WithPrefixlenFieldNumber = 27;
+    /// <summary>
+    /// `ipv4_with_prefixlen` specifies that the field value must be a valid
+    /// IPv4 address with prefix length—for example, "192.168.5.21/16". If the
+    /// field value isn't a valid IPv4 address with prefix length, an error
+    /// message will be generated.
+    ///
+    /// ```proto
+    /// message MyString {
+    ///   // value must be a valid IPv4 address with prefix length
+    ///    string value = 1 [(buf.validate.field).string.ipv4_with_prefixlen = true];
+    /// }
+    /// ```
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Ipv4WithPrefixlen {
+      get { return HasIpv4WithPrefixlen ? (bool) wellKnown_ : false; }
+      set {
+        wellKnown_ = value;
+        wellKnownCase_ = WellKnownOneofCase.Ipv4WithPrefixlen;
+      }
+    }
+    /// <summary>Gets whether the "ipv4_with_prefixlen" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasIpv4WithPrefixlen {
+      get { return wellKnownCase_ == WellKnownOneofCase.Ipv4WithPrefixlen; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "ipv4_with_prefixlen" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearIpv4WithPrefixlen() {
+      if (HasIpv4WithPrefixlen) {
+        ClearWellKnown();
+      }
+    }
+
+    /// <summary>Field number for the "ipv6_with_prefixlen" field.</summary>
+    public const int Ipv6WithPrefixlenFieldNumber = 28;
+    /// <summary>
+    /// `ipv6_with_prefixlen` specifies that the field value must be a valid
+    /// IPv6 address with prefix length—for example, "2001:0DB8:ABCD:0012::F1/64".
+    /// If the field value is not a valid IPv6 address with prefix length,
+    /// an error message will be generated.
+    ///
+    /// ```proto
+    /// message MyString {
+    ///   // value must be a valid IPv6 address prefix length
+    ///    string value = 1 [(buf.validate.field).string.ipv6_with_prefixlen = true];
+    /// }
+    /// ```
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Ipv6WithPrefixlen {
+      get { return HasIpv6WithPrefixlen ? (bool) wellKnown_ : false; }
+      set {
+        wellKnown_ = value;
+        wellKnownCase_ = WellKnownOneofCase.Ipv6WithPrefixlen;
+      }
+    }
+    /// <summary>Gets whether the "ipv6_with_prefixlen" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasIpv6WithPrefixlen {
+      get { return wellKnownCase_ == WellKnownOneofCase.Ipv6WithPrefixlen; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "ipv6_with_prefixlen" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearIpv6WithPrefixlen() {
+      if (HasIpv6WithPrefixlen) {
+        ClearWellKnown();
+      }
+    }
+
+    /// <summary>Field number for the "ip_prefix" field.</summary>
+    public const int IpPrefixFieldNumber = 29;
+    /// <summary>
+    /// `ip_prefix` specifies that the field value must be a valid IP (v4 or v6)
+    /// prefix—for example, "192.168.0.0/16" or "2001:0DB8:ABCD:0012::0/64".
+    ///
+    /// The prefix must have all zeros for the unmasked bits. For example,
+    /// "2001:0DB8:ABCD:0012::0/64" designates the left-most 64 bits for the
+    /// prefix, and the remaining 64 bits must be zero.
+    ///
+    /// If the field value isn't a valid IP prefix, an error message will be
+    /// generated.
+    ///
+    /// ```proto
+    /// message MyString {
+    ///   // value must be a valid IP prefix
+    ///    string value = 1 [(buf.validate.field).string.ip_prefix = true];
+    /// }
+    /// ```
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IpPrefix {
+      get { return HasIpPrefix ? (bool) wellKnown_ : false; }
+      set {
+        wellKnown_ = value;
+        wellKnownCase_ = WellKnownOneofCase.IpPrefix;
+      }
+    }
+    /// <summary>Gets whether the "ip_prefix" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasIpPrefix {
+      get { return wellKnownCase_ == WellKnownOneofCase.IpPrefix; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "ip_prefix" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearIpPrefix() {
+      if (HasIpPrefix) {
+        ClearWellKnown();
+      }
+    }
+
+    /// <summary>Field number for the "ipv4_prefix" field.</summary>
+    public const int Ipv4PrefixFieldNumber = 30;
+    /// <summary>
+    /// `ipv4_prefix` specifies that the field value must be a valid IPv4
+    /// prefix, for example "192.168.0.0/16".
+    ///
+    /// The prefix must have all zeros for the unmasked bits. For example,
+    /// "192.168.0.0/16" designates the left-most 16 bits for the prefix,
+    /// and the remaining 16 bits must be zero.
+    ///
+    /// If the field value isn't a valid IPv4 prefix, an error message
+    /// will be generated.
+    ///
+    /// ```proto
+    /// message MyString {
+    ///   // value must be a valid IPv4 prefix
+    ///    string value = 1 [(buf.validate.field).string.ipv4_prefix = true];
+    /// }
+    /// ```
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Ipv4Prefix {
+      get { return HasIpv4Prefix ? (bool) wellKnown_ : false; }
+      set {
+        wellKnown_ = value;
+        wellKnownCase_ = WellKnownOneofCase.Ipv4Prefix;
+      }
+    }
+    /// <summary>Gets whether the "ipv4_prefix" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasIpv4Prefix {
+      get { return wellKnownCase_ == WellKnownOneofCase.Ipv4Prefix; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "ipv4_prefix" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearIpv4Prefix() {
+      if (HasIpv4Prefix) {
+        ClearWellKnown();
+      }
+    }
+
+    /// <summary>Field number for the "ipv6_prefix" field.</summary>
+    public const int Ipv6PrefixFieldNumber = 31;
+    /// <summary>
+    /// `ipv6_prefix` specifies that the field value must be a valid IPv6 prefix—for
+    /// example, "2001:0DB8:ABCD:0012::0/64".
+    ///
+    /// The prefix must have all zeros for the unmasked bits. For example,
+    /// "2001:0DB8:ABCD:0012::0/64" designates the left-most 64 bits for the
+    /// prefix, and the remaining 64 bits must be zero.
+    ///
+    /// If the field value is not a valid IPv6 prefix, an error message will be
+    /// generated.
+    ///
+    /// ```proto
+    /// message MyString {
+    ///   // value must be a valid IPv6 prefix
+    ///    string value = 1 [(buf.validate.field).string.ipv6_prefix = true];
+    /// }
+    /// ```
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Ipv6Prefix {
+      get { return HasIpv6Prefix ? (bool) wellKnown_ : false; }
+      set {
+        wellKnown_ = value;
+        wellKnownCase_ = WellKnownOneofCase.Ipv6Prefix;
+      }
+    }
+    /// <summary>Gets whether the "ipv6_prefix" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasIpv6Prefix {
+      get { return wellKnownCase_ == WellKnownOneofCase.Ipv6Prefix; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "ipv6_prefix" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearIpv6Prefix() {
+      if (HasIpv6Prefix) {
+        ClearWellKnown();
+      }
+    }
+
+    /// <summary>Field number for the "host_and_port" field.</summary>
+    public const int HostAndPortFieldNumber = 32;
+    /// <summary>
+    /// `host_and_port` specifies that the field value must be valid host/port
+    /// pair—for example, "example.com:8080".
+    ///
+    /// The host can be one of:
+    ///- An IPv4 address in dotted decimal format—for example, "192.168.5.21".
+    ///- An IPv6 address enclosed in square brackets—for example, "[2001:0DB8:ABCD:0012::F1]".
+    ///- A hostname—for example, "example.com".
+    ///
+    /// The port is separated by a colon. It must be non-empty, with a decimal number
+    /// in the range of 0-65535, inclusive.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HostAndPort {
+      get { return HasHostAndPort ? (bool) wellKnown_ : false; }
+      set {
+        wellKnown_ = value;
+        wellKnownCase_ = WellKnownOneofCase.HostAndPort;
+      }
+    }
+    /// <summary>Gets whether the "host_and_port" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasHostAndPort {
+      get { return wellKnownCase_ == WellKnownOneofCase.HostAndPort; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "host_and_port" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearHostAndPort() {
+      if (HasHostAndPort) {
+        ClearWellKnown();
+      }
+    }
+
     /// <summary>Field number for the "well_known_regex" field.</summary>
     public const int WellKnownRegexFieldNumber = 24;
     /// <summary>
-    ///`well_known_regex` specifies a common well-known pattern
-    ///defined as a regex. If the field value doesn't match the well-known
-    ///regex, an error message will be generated.
+    /// `well_known_regex` specifies a common well-known pattern
+    /// defined as a regex. If the field value doesn't match the well-known
+    /// regex, an error message will be generated.
     ///
-    ///```proto
-    ///message MyString {
-    ///  // value must be a valid HTTP header value
-    ///   string value = 1 [(buf.validate.field).string.well_known_regex = 2];
-    ///}
-    ///```
+    /// ```proto
+    /// message MyString {
+    ///   // value must be a valid HTTP header value
+    ///   string value = 1 [(buf.validate.field).string.well_known_regex = KNOWN_REGEX_HTTP_HEADER_VALUE];
+    /// }
+    /// ```
     ///
-    ///#### KnownRegex
+    /// #### KnownRegex
     ///
-    ///`well_known_regex` contains some well-known patterns.
+    /// `well_known_regex` contains some well-known patterns.
     ///
-    ///| Name                          | Number | Description                               |
-    ///|-------------------------------|--------|-------------------------------------------|
-    ///| KNOWN_REGEX_UNSPECIFIED       | 0      |                                           |
-    ///| KNOWN_REGEX_HTTP_HEADER_NAME  | 1      | HTTP header name as defined by [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2)  |
-    ///| KNOWN_REGEX_HTTP_HEADER_VALUE | 2      | HTTP header value as defined by [RFC 7230](https://tools.ietf.org/html/rfc7230#section-3.2.4) |
+    /// | Name                          | Number | Description                               |
+    /// |-------------------------------|--------|-------------------------------------------|
+    /// | KNOWN_REGEX_UNSPECIFIED       | 0      |                                           |
+    /// | KNOWN_REGEX_HTTP_HEADER_NAME  | 1      | HTTP header name as defined by [RFC 7230](https://datatracker.ietf.org/doc/html/rfc7230#section-3.2)  |
+    /// | KNOWN_REGEX_HTTP_HEADER_VALUE | 2      | HTTP header value as defined by [RFC 7230](https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.4) |
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -11253,18 +14694,18 @@ namespace Buf.Validate {
 
     private bool strict_;
     /// <summary>
-    ///This applies to regexes `HTTP_HEADER_NAME` and `HTTP_HEADER_VALUE` to
-    ///enable strict header validation. By default, this is true, and HTTP header
-    ///validations are [RFC-compliant](https://tools.ietf.org/html/rfc7230#section-3). Setting to false will enable looser
-    ///validations that only disallow `\r\n\0` characters, which can be used to
-    ///bypass header matching rules.
+    /// This applies to regexes `HTTP_HEADER_NAME` and `HTTP_HEADER_VALUE` to
+    /// enable strict header validation. By default, this is true, and HTTP header
+    /// validations are [RFC-compliant](https://datatracker.ietf.org/doc/html/rfc7230#section-3). Setting to false will enable looser
+    /// validations that only disallow `\r\n\0` characters, which can be used to
+    /// bypass header matching rules.
     ///
-    ///```proto
-    ///message MyString {
+    /// ```proto
+    /// message MyString {
     ///   // The field `value` must have be a valid HTTP headers, but not enforced with strict rules.
     ///   string value = 1 [(buf.validate.field).string.strict = false];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -11288,6 +14729,31 @@ namespace Buf.Validate {
       _hasBits0 &= ~64;
     }
 
+    /// <summary>Field number for the "example" field.</summary>
+    public const int ExampleFieldNumber = 34;
+    private static readonly pb::FieldCodec<string> _repeated_example_codec
+        = pb::FieldCodec.ForString(274);
+    private readonly pbc::RepeatedField<string> example_ = new pbc::RepeatedField<string>();
+    /// <summary>
+    /// `example` specifies values that the field may have. These values SHOULD
+    /// conform to other rules. `example` values will not impact validation
+    /// but may be used as helpful guidance on how to populate the given field.
+    ///
+    /// ```proto
+    /// message MyString {
+    ///   string value = 1 [
+    ///     (buf.validate.field).string.example = "hello",
+    ///     (buf.validate.field).string.example = "world"
+    ///   ];
+    /// }
+    /// ```
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<string> Example {
+      get { return example_; }
+    }
+
     private object wellKnown_;
     /// <summary>Enum of possible cases for the "well_known" oneof.</summary>
     public enum WellKnownOneofCase {
@@ -11301,6 +14767,14 @@ namespace Buf.Validate {
       UriRef = 18,
       Address = 21,
       Uuid = 22,
+      Tuuid = 33,
+      IpWithPrefixlen = 26,
+      Ipv4WithPrefixlen = 27,
+      Ipv6WithPrefixlen = 28,
+      IpPrefix = 29,
+      Ipv4Prefix = 30,
+      Ipv6Prefix = 31,
+      HostAndPort = 32,
       WellKnownRegex = 24,
     }
     private WellKnownOneofCase wellKnownCase_ = WellKnownOneofCase.None;
@@ -11355,9 +14829,21 @@ namespace Buf.Validate {
       if (UriRef != other.UriRef) return false;
       if (Address != other.Address) return false;
       if (Uuid != other.Uuid) return false;
+      if (Tuuid != other.Tuuid) return false;
+      if (IpWithPrefixlen != other.IpWithPrefixlen) return false;
+      if (Ipv4WithPrefixlen != other.Ipv4WithPrefixlen) return false;
+      if (Ipv6WithPrefixlen != other.Ipv6WithPrefixlen) return false;
+      if (IpPrefix != other.IpPrefix) return false;
+      if (Ipv4Prefix != other.Ipv4Prefix) return false;
+      if (Ipv6Prefix != other.Ipv6Prefix) return false;
+      if (HostAndPort != other.HostAndPort) return false;
       if (WellKnownRegex != other.WellKnownRegex) return false;
       if (Strict != other.Strict) return false;
+      if(!example_.Equals(other.example_)) return false;
       if (WellKnownCase != other.WellKnownCase) return false;
+      if (!Equals(_extensions, other._extensions)) {
+        return false;
+      }
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -11388,9 +14874,21 @@ namespace Buf.Validate {
       if (HasUriRef) hash ^= UriRef.GetHashCode();
       if (HasAddress) hash ^= Address.GetHashCode();
       if (HasUuid) hash ^= Uuid.GetHashCode();
+      if (HasTuuid) hash ^= Tuuid.GetHashCode();
+      if (HasIpWithPrefixlen) hash ^= IpWithPrefixlen.GetHashCode();
+      if (HasIpv4WithPrefixlen) hash ^= Ipv4WithPrefixlen.GetHashCode();
+      if (HasIpv6WithPrefixlen) hash ^= Ipv6WithPrefixlen.GetHashCode();
+      if (HasIpPrefix) hash ^= IpPrefix.GetHashCode();
+      if (HasIpv4Prefix) hash ^= Ipv4Prefix.GetHashCode();
+      if (HasIpv6Prefix) hash ^= Ipv6Prefix.GetHashCode();
+      if (HasHostAndPort) hash ^= HostAndPort.GetHashCode();
       if (HasWellKnownRegex) hash ^= WellKnownRegex.GetHashCode();
       if (HasStrict) hash ^= Strict.GetHashCode();
+      hash ^= example_.GetHashCode();
       hash ^= (int) wellKnownCase_;
+      if (_extensions != null) {
+        hash ^= _extensions.GetHashCode();
+      }
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -11503,6 +15001,42 @@ namespace Buf.Validate {
         output.WriteRawTag(200, 1);
         output.WriteBool(Strict);
       }
+      if (HasIpWithPrefixlen) {
+        output.WriteRawTag(208, 1);
+        output.WriteBool(IpWithPrefixlen);
+      }
+      if (HasIpv4WithPrefixlen) {
+        output.WriteRawTag(216, 1);
+        output.WriteBool(Ipv4WithPrefixlen);
+      }
+      if (HasIpv6WithPrefixlen) {
+        output.WriteRawTag(224, 1);
+        output.WriteBool(Ipv6WithPrefixlen);
+      }
+      if (HasIpPrefix) {
+        output.WriteRawTag(232, 1);
+        output.WriteBool(IpPrefix);
+      }
+      if (HasIpv4Prefix) {
+        output.WriteRawTag(240, 1);
+        output.WriteBool(Ipv4Prefix);
+      }
+      if (HasIpv6Prefix) {
+        output.WriteRawTag(248, 1);
+        output.WriteBool(Ipv6Prefix);
+      }
+      if (HasHostAndPort) {
+        output.WriteRawTag(128, 2);
+        output.WriteBool(HostAndPort);
+      }
+      if (HasTuuid) {
+        output.WriteRawTag(136, 2);
+        output.WriteBool(Tuuid);
+      }
+      example_.WriteTo(output, _repeated_example_codec);
+      if (_extensions != null) {
+        _extensions.WriteTo(output);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -11606,6 +15140,42 @@ namespace Buf.Validate {
       if (HasStrict) {
         output.WriteRawTag(200, 1);
         output.WriteBool(Strict);
+      }
+      if (HasIpWithPrefixlen) {
+        output.WriteRawTag(208, 1);
+        output.WriteBool(IpWithPrefixlen);
+      }
+      if (HasIpv4WithPrefixlen) {
+        output.WriteRawTag(216, 1);
+        output.WriteBool(Ipv4WithPrefixlen);
+      }
+      if (HasIpv6WithPrefixlen) {
+        output.WriteRawTag(224, 1);
+        output.WriteBool(Ipv6WithPrefixlen);
+      }
+      if (HasIpPrefix) {
+        output.WriteRawTag(232, 1);
+        output.WriteBool(IpPrefix);
+      }
+      if (HasIpv4Prefix) {
+        output.WriteRawTag(240, 1);
+        output.WriteBool(Ipv4Prefix);
+      }
+      if (HasIpv6Prefix) {
+        output.WriteRawTag(248, 1);
+        output.WriteBool(Ipv6Prefix);
+      }
+      if (HasHostAndPort) {
+        output.WriteRawTag(128, 2);
+        output.WriteBool(HostAndPort);
+      }
+      if (HasTuuid) {
+        output.WriteRawTag(136, 2);
+        output.WriteBool(Tuuid);
+      }
+      example_.WriteTo(ref output, _repeated_example_codec);
+      if (_extensions != null) {
+        _extensions.WriteTo(ref output);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -11682,11 +15252,39 @@ namespace Buf.Validate {
       if (HasUuid) {
         size += 2 + 1;
       }
+      if (HasTuuid) {
+        size += 2 + 1;
+      }
+      if (HasIpWithPrefixlen) {
+        size += 2 + 1;
+      }
+      if (HasIpv4WithPrefixlen) {
+        size += 2 + 1;
+      }
+      if (HasIpv6WithPrefixlen) {
+        size += 2 + 1;
+      }
+      if (HasIpPrefix) {
+        size += 2 + 1;
+      }
+      if (HasIpv4Prefix) {
+        size += 2 + 1;
+      }
+      if (HasIpv6Prefix) {
+        size += 2 + 1;
+      }
+      if (HasHostAndPort) {
+        size += 2 + 1;
+      }
       if (HasWellKnownRegex) {
         size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) WellKnownRegex);
       }
       if (HasStrict) {
         size += 2 + 1;
+      }
+      size += example_.CalculateSize(_repeated_example_codec);
+      if (_extensions != null) {
+        size += _extensions.CalculateSize();
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -11741,6 +15339,7 @@ namespace Buf.Validate {
       if (other.HasStrict) {
         Strict = other.Strict;
       }
+      example_.Add(other.example_);
       switch (other.WellKnownCase) {
         case WellKnownOneofCase.Email:
           Email = other.Email;
@@ -11769,11 +15368,36 @@ namespace Buf.Validate {
         case WellKnownOneofCase.Uuid:
           Uuid = other.Uuid;
           break;
+        case WellKnownOneofCase.Tuuid:
+          Tuuid = other.Tuuid;
+          break;
+        case WellKnownOneofCase.IpWithPrefixlen:
+          IpWithPrefixlen = other.IpWithPrefixlen;
+          break;
+        case WellKnownOneofCase.Ipv4WithPrefixlen:
+          Ipv4WithPrefixlen = other.Ipv4WithPrefixlen;
+          break;
+        case WellKnownOneofCase.Ipv6WithPrefixlen:
+          Ipv6WithPrefixlen = other.Ipv6WithPrefixlen;
+          break;
+        case WellKnownOneofCase.IpPrefix:
+          IpPrefix = other.IpPrefix;
+          break;
+        case WellKnownOneofCase.Ipv4Prefix:
+          Ipv4Prefix = other.Ipv4Prefix;
+          break;
+        case WellKnownOneofCase.Ipv6Prefix:
+          Ipv6Prefix = other.Ipv6Prefix;
+          break;
+        case WellKnownOneofCase.HostAndPort:
+          HostAndPort = other.HostAndPort;
+          break;
         case WellKnownOneofCase.WellKnownRegex:
           WellKnownRegex = other.WellKnownRegex;
           break;
       }
 
+      pb::ExtensionSet.MergeFrom(ref _extensions, other._extensions);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -11787,7 +15411,9 @@ namespace Buf.Validate {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            }
             break;
           case 10: {
             Const = input.ReadString();
@@ -11890,6 +15516,42 @@ namespace Buf.Validate {
             Strict = input.ReadBool();
             break;
           }
+          case 208: {
+            IpWithPrefixlen = input.ReadBool();
+            break;
+          }
+          case 216: {
+            Ipv4WithPrefixlen = input.ReadBool();
+            break;
+          }
+          case 224: {
+            Ipv6WithPrefixlen = input.ReadBool();
+            break;
+          }
+          case 232: {
+            IpPrefix = input.ReadBool();
+            break;
+          }
+          case 240: {
+            Ipv4Prefix = input.ReadBool();
+            break;
+          }
+          case 248: {
+            Ipv6Prefix = input.ReadBool();
+            break;
+          }
+          case 256: {
+            HostAndPort = input.ReadBool();
+            break;
+          }
+          case 264: {
+            Tuuid = input.ReadBool();
+            break;
+          }
+          case 274: {
+            example_.AddEntriesFrom(input, _repeated_example_codec);
+            break;
+          }
         }
       }
     #endif
@@ -11903,7 +15565,9 @@ namespace Buf.Validate {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, ref input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            }
             break;
           case 10: {
             Const = input.ReadString();
@@ -12006,24 +15670,84 @@ namespace Buf.Validate {
             Strict = input.ReadBool();
             break;
           }
+          case 208: {
+            IpWithPrefixlen = input.ReadBool();
+            break;
+          }
+          case 216: {
+            Ipv4WithPrefixlen = input.ReadBool();
+            break;
+          }
+          case 224: {
+            Ipv6WithPrefixlen = input.ReadBool();
+            break;
+          }
+          case 232: {
+            IpPrefix = input.ReadBool();
+            break;
+          }
+          case 240: {
+            Ipv4Prefix = input.ReadBool();
+            break;
+          }
+          case 248: {
+            Ipv6Prefix = input.ReadBool();
+            break;
+          }
+          case 256: {
+            HostAndPort = input.ReadBool();
+            break;
+          }
+          case 264: {
+            Tuuid = input.ReadBool();
+            break;
+          }
+          case 274: {
+            example_.AddEntriesFrom(ref input, _repeated_example_codec);
+            break;
+          }
         }
       }
     }
     #endif
 
+    public TValue GetExtension<TValue>(pb::Extension<StringRules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<StringRules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>(pb::RepeatedExtension<StringRules, TValue> extension) {
+      return pb::ExtensionSet.GetOrInitialize(ref _extensions, extension);
+    }
+    public void SetExtension<TValue>(pb::Extension<StringRules, TValue> extension, TValue value) {
+      pb::ExtensionSet.Set(ref _extensions, extension, value);
+    }
+    public bool HasExtension<TValue>(pb::Extension<StringRules, TValue> extension) {
+      return pb::ExtensionSet.Has(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::Extension<StringRules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::RepeatedExtension<StringRules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+
   }
 
   /// <summary>
-  /// BytesRules describe the constraints applied to `bytes` values. These rules
+  /// BytesRules describe the rules applied to `bytes` values. These rules
   /// may also be applied to the `google.protobuf.BytesValue` Well-Known-Type.
   /// </summary>
-  public sealed partial class BytesRules : pb::IMessage<BytesRules>
+  public sealed partial class BytesRules : pb::IExtendableMessage<BytesRules>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
     private static readonly pb::MessageParser<BytesRules> _parser = new pb::MessageParser<BytesRules>(() => new BytesRules());
     private pb::UnknownFieldSet _unknownFields;
+    private pb::ExtensionSet<BytesRules> _extensions;
+    private pb::ExtensionSet<BytesRules> _Extensions { get { return _extensions; } }
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -12032,7 +15756,7 @@ namespace Buf.Validate {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[17]; }
+      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[20]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -12063,6 +15787,7 @@ namespace Buf.Validate {
       contains_ = other.contains_;
       in_ = other.in_.Clone();
       notIn_ = other.notIn_.Clone();
+      example_ = other.example_.Clone();
       switch (other.WellKnownCase) {
         case WellKnownOneofCase.Ip:
           Ip = other.Ip;
@@ -12076,6 +15801,7 @@ namespace Buf.Validate {
       }
 
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+      _extensions = pb::ExtensionSet.Clone(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -12090,15 +15816,15 @@ namespace Buf.Validate {
 
     private pb::ByteString const_;
     /// <summary>
-    ///`const` requires the field value to exactly match the specified bytes
-    ///value. If the field value doesn't match, an error message is generated.
+    /// `const` requires the field value to exactly match the specified bytes
+    /// value. If the field value doesn't match, an error message is generated.
     ///
-    ///```proto
-    ///message MyBytes {
-    ///  // value must be "\x01\x02\x03\x04"
+    /// ```proto
+    /// message MyBytes {
+    ///   // value must be "\x01\x02\x03\x04"
     ///   bytes value = 1 [(buf.validate.field).bytes.const = "\x01\x02\x03\x04"];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -12127,15 +15853,15 @@ namespace Buf.Validate {
 
     private ulong len_;
     /// <summary>
-    ///`len` requires the field value to have the specified length in bytes.
-    ///If the field value doesn't match, an error message is generated.
+    /// `len` requires the field value to have the specified length in bytes.
+    /// If the field value doesn't match, an error message is generated.
     ///
-    ///```proto
-    ///message MyBytes {
-    ///      // value length must be 4 bytes.
-    ///      optional bytes value = 1 [(buf.validate.field).bytes.len = 4];
-    ///}
-    ///```
+    /// ```proto
+    /// message MyBytes {
+    ///   // value length must be 4 bytes.
+    ///   optional bytes value = 1 [(buf.validate.field).bytes.len = 4];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -12165,16 +15891,16 @@ namespace Buf.Validate {
 
     private ulong minLen_;
     /// <summary>
-    ///`min_len` requires the field value to have at least the specified minimum
-    ///length in bytes.
-    ///If the field value doesn't meet the requirement, an error message is generated.
+    /// `min_len` requires the field value to have at least the specified minimum
+    /// length in bytes.
+    /// If the field value doesn't meet the requirement, an error message is generated.
     ///
-    ///```proto
-    ///message MyBytes {
-    /// // value length must be at least 2 bytes.
-    /// optional bytes value = 1 [(buf.validate.field).bytes.min_len = 2];
-    ///}
-    ///```
+    /// ```proto
+    /// message MyBytes {
+    ///   // value length must be at least 2 bytes.
+    ///   optional bytes value = 1 [(buf.validate.field).bytes.min_len = 2];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -12204,16 +15930,16 @@ namespace Buf.Validate {
 
     private ulong maxLen_;
     /// <summary>
-    ///`max_len` requires the field value to have at most the specified maximum
-    ///length in bytes.
-    ///If the field value exceeds the requirement, an error message is generated.
+    /// `max_len` requires the field value to have at most the specified maximum
+    /// length in bytes.
+    /// If the field value exceeds the requirement, an error message is generated.
     ///
-    ///```proto
-    ///message MyBytes {
-    /// // value must be at most 6 bytes.
-    /// optional bytes value = 1 [(buf.validate.field).bytes.max_len = 6];
-    ///}
-    ///```
+    /// ```proto
+    /// message MyBytes {
+    ///   // value must be at most 6 bytes.
+    ///   optional bytes value = 1 [(buf.validate.field).bytes.max_len = 6];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -12243,18 +15969,18 @@ namespace Buf.Validate {
 
     private string pattern_;
     /// <summary>
-    ///`pattern` requires the field value to match the specified regular
-    ///expression ([RE2 syntax](https://github.com/google/re2/wiki/Syntax)).
-    ///The value of the field must be valid UTF-8 or validation will fail with a
-    ///runtime error.
-    ///If the field value doesn't match the pattern, an error message is generated.
+    /// `pattern` requires the field value to match the specified regular
+    /// expression ([RE2 syntax](https://github.com/google/re2/wiki/Syntax)).
+    /// The value of the field must be valid UTF-8 or validation will fail with a
+    /// runtime error.
+    /// If the field value doesn't match the pattern, an error message is generated.
     ///
-    ///```proto
-    ///message MyBytes {
-    /// // value must match regex pattern "^[a-zA-Z0-9]+$".
-    /// optional bytes value = 1 [(buf.validate.field).bytes.pattern = "^[a-zA-Z0-9]+$"];
-    ///}
-    ///```
+    /// ```proto
+    /// message MyBytes {
+    ///   // value must match regex pattern "^[a-zA-Z0-9]+$".
+    ///   optional bytes value = 1 [(buf.validate.field).bytes.pattern = "^[a-zA-Z0-9]+$"];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -12283,16 +16009,16 @@ namespace Buf.Validate {
 
     private pb::ByteString prefix_;
     /// <summary>
-    ///`prefix` requires the field value to have the specified bytes at the
-    ///beginning of the string.
-    ///If the field value doesn't meet the requirement, an error message is generated.
+    /// `prefix` requires the field value to have the specified bytes at the
+    /// beginning of the string.
+    /// If the field value doesn't meet the requirement, an error message is generated.
     ///
-    ///```proto
-    ///message MyBytes {
-    ///// value does not have prefix \x01\x02
-    ///optional bytes value = 1 [(buf.validate.field).bytes.prefix = "\x01\x02"];
-    ///}
-    ///```
+    /// ```proto
+    /// message MyBytes {
+    ///   // value does not have prefix \x01\x02
+    ///   optional bytes value = 1 [(buf.validate.field).bytes.prefix = "\x01\x02"];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -12321,16 +16047,16 @@ namespace Buf.Validate {
 
     private pb::ByteString suffix_;
     /// <summary>
-    ///`suffix` requires the field value to have the specified bytes at the end
-    ///of the string.
-    ///If the field value doesn't meet the requirement, an error message is generated.
+    /// `suffix` requires the field value to have the specified bytes at the end
+    /// of the string.
+    /// If the field value doesn't meet the requirement, an error message is generated.
     ///
-    ///```proto
-    ///message MyBytes {
-    /// // value does not have suffix \x03\x04
-    /// optional bytes value = 1 [(buf.validate.field).bytes.suffix = "\x03\x04"];
-    ///}
-    ///```
+    /// ```proto
+    /// message MyBytes {
+    ///   // value does not have suffix \x03\x04
+    ///   optional bytes value = 1 [(buf.validate.field).bytes.suffix = "\x03\x04"];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -12359,16 +16085,16 @@ namespace Buf.Validate {
 
     private pb::ByteString contains_;
     /// <summary>
-    ///`contains` requires the field value to have the specified bytes anywhere in
-    ///the string.
-    ///If the field value doesn't meet the requirement, an error message is generated.
+    /// `contains` requires the field value to have the specified bytes anywhere in
+    /// the string.
+    /// If the field value doesn't meet the requirement, an error message is generated.
     ///
-    ///```protobuf
-    ///message MyBytes {
-    /// // value does not contain \x02\x03
-    /// optional bytes value = 1 [(buf.validate.field).bytes.contains = "\x02\x03"];
-    ///}
-    ///```
+    /// ```protobuf
+    /// message MyBytes {
+    ///   // value does not contain \x02\x03
+    ///   optional bytes value = 1 [(buf.validate.field).bytes.contains = "\x02\x03"];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -12397,16 +16123,16 @@ namespace Buf.Validate {
         = pb::FieldCodec.ForBytes(66);
     private readonly pbc::RepeatedField<pb::ByteString> in_ = new pbc::RepeatedField<pb::ByteString>();
     /// <summary>
-    ///`in` requires the field value to be equal to one of the specified
-    ///values. If the field value doesn't match any of the specified values, an
-    ///error message is generated.
+    /// `in` requires the field value to be equal to one of the specified
+    /// values. If the field value doesn't match any of the specified values, an
+    /// error message is generated.
     ///
-    ///```protobuf
-    ///message MyBytes {
-    /// // value must in ["\x01\x02", "\x02\x03", "\x03\x04"]
-    /// optional bytes value = 1 [(buf.validate.field).bytes.in = {"\x01\x02", "\x02\x03", "\x03\x04"}];
-    ///}
-    ///```
+    /// ```protobuf
+    /// message MyBytes {
+    ///   // value must in ["\x01\x02", "\x02\x03", "\x03\x04"]
+    ///   optional bytes value = 1 [(buf.validate.field).bytes.in = {"\x01\x02", "\x02\x03", "\x03\x04"}];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -12420,17 +16146,17 @@ namespace Buf.Validate {
         = pb::FieldCodec.ForBytes(74);
     private readonly pbc::RepeatedField<pb::ByteString> notIn_ = new pbc::RepeatedField<pb::ByteString>();
     /// <summary>
-    ///`not_in` requires the field value to be not equal to any of the specified
-    ///values.
-    ///If the field value matches any of the specified values, an error message is
-    ///generated.
+    /// `not_in` requires the field value to be not equal to any of the specified
+    /// values.
+    /// If the field value matches any of the specified values, an error message is
+    /// generated.
     ///
-    ///```proto
-    ///message MyBytes {
-    /// // value must not in ["\x01\x02", "\x02\x03", "\x03\x04"]
-    /// optional bytes value = 1 [(buf.validate.field).bytes.not_in = {"\x01\x02", "\x02\x03", "\x03\x04"}];
-    ///}
-    ///```
+    /// ```proto
+    /// message MyBytes {
+    ///   // value must not in ["\x01\x02", "\x02\x03", "\x03\x04"]
+    ///   optional bytes value = 1 [(buf.validate.field).bytes.not_in = {"\x01\x02", "\x02\x03", "\x03\x04"}];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -12441,15 +16167,15 @@ namespace Buf.Validate {
     /// <summary>Field number for the "ip" field.</summary>
     public const int IpFieldNumber = 10;
     /// <summary>
-    ///`ip` ensures that the field `value` is a valid IP address (v4 or v6) in byte format.
-    ///If the field value doesn't meet this constraint, an error message is generated.
+    /// `ip` ensures that the field `value` is a valid IP address (v4 or v6) in byte format.
+    /// If the field value doesn't meet this rule, an error message is generated.
     ///
-    ///```proto
-    ///message MyBytes {
-    /// // value must be a valid IP address
-    /// optional bytes value = 1 [(buf.validate.field).bytes.ip = true];
-    ///}
-    ///```
+    /// ```proto
+    /// message MyBytes {
+    ///   // value must be a valid IP address
+    ///   optional bytes value = 1 [(buf.validate.field).bytes.ip = true];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -12478,15 +16204,15 @@ namespace Buf.Validate {
     /// <summary>Field number for the "ipv4" field.</summary>
     public const int Ipv4FieldNumber = 11;
     /// <summary>
-    ///`ipv4` ensures that the field `value` is a valid IPv4 address in byte format.
-    ///If the field value doesn't meet this constraint, an error message is generated.
+    /// `ipv4` ensures that the field `value` is a valid IPv4 address in byte format.
+    /// If the field value doesn't meet this rule, an error message is generated.
     ///
-    ///```proto
-    ///message MyBytes {
-    /// // value must be a valid IPv4 address
-    /// optional bytes value = 1 [(buf.validate.field).bytes.ipv4 = true];
-    ///}
-    ///```
+    /// ```proto
+    /// message MyBytes {
+    ///   // value must be a valid IPv4 address
+    ///   optional bytes value = 1 [(buf.validate.field).bytes.ipv4 = true];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -12515,14 +16241,14 @@ namespace Buf.Validate {
     /// <summary>Field number for the "ipv6" field.</summary>
     public const int Ipv6FieldNumber = 12;
     /// <summary>
-    ///`ipv6` ensures that the field `value` is a valid IPv6 address in byte format.
-    ///If the field value doesn't meet this constraint, an error message is generated.
-    ///```proto
-    ///message MyBytes {
-    /// // value must be a valid IPv6 address
-    /// optional bytes value = 1 [(buf.validate.field).bytes.ipv6 = true];
-    ///}
-    ///```
+    /// `ipv6` ensures that the field `value` is a valid IPv6 address in byte format.
+    /// If the field value doesn't meet this rule, an error message is generated.
+    /// ```proto
+    /// message MyBytes {
+    ///   // value must be a valid IPv6 address
+    ///   optional bytes value = 1 [(buf.validate.field).bytes.ipv6 = true];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -12546,6 +16272,31 @@ namespace Buf.Validate {
       if (HasIpv6) {
         ClearWellKnown();
       }
+    }
+
+    /// <summary>Field number for the "example" field.</summary>
+    public const int ExampleFieldNumber = 14;
+    private static readonly pb::FieldCodec<pb::ByteString> _repeated_example_codec
+        = pb::FieldCodec.ForBytes(114);
+    private readonly pbc::RepeatedField<pb::ByteString> example_ = new pbc::RepeatedField<pb::ByteString>();
+    /// <summary>
+    /// `example` specifies values that the field may have. These values SHOULD
+    /// conform to other rules. `example` values will not impact validation
+    /// but may be used as helpful guidance on how to populate the given field.
+    ///
+    /// ```proto
+    /// message MyBytes {
+    ///   bytes value = 1 [
+    ///     (buf.validate.field).bytes.example = "\x01\x02",
+    ///     (buf.validate.field).bytes.example = "\x02\x03"
+    ///   ];
+    /// }
+    /// ```
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<pb::ByteString> Example {
+      get { return example_; }
     }
 
     private object wellKnown_;
@@ -12598,7 +16349,11 @@ namespace Buf.Validate {
       if (Ip != other.Ip) return false;
       if (Ipv4 != other.Ipv4) return false;
       if (Ipv6 != other.Ipv6) return false;
+      if(!example_.Equals(other.example_)) return false;
       if (WellKnownCase != other.WellKnownCase) return false;
+      if (!Equals(_extensions, other._extensions)) {
+        return false;
+      }
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -12619,7 +16374,11 @@ namespace Buf.Validate {
       if (HasIp) hash ^= Ip.GetHashCode();
       if (HasIpv4) hash ^= Ipv4.GetHashCode();
       if (HasIpv6) hash ^= Ipv6.GetHashCode();
+      hash ^= example_.GetHashCode();
       hash ^= (int) wellKnownCase_;
+      if (_extensions != null) {
+        hash ^= _extensions.GetHashCode();
+      }
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -12684,6 +16443,10 @@ namespace Buf.Validate {
         output.WriteRawTag(104);
         output.WriteUInt64(Len);
       }
+      example_.WriteTo(output, _repeated_example_codec);
+      if (_extensions != null) {
+        _extensions.WriteTo(output);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -12739,6 +16502,10 @@ namespace Buf.Validate {
       if (HasLen) {
         output.WriteRawTag(104);
         output.WriteUInt64(Len);
+      }
+      example_.WriteTo(ref output, _repeated_example_codec);
+      if (_extensions != null) {
+        _extensions.WriteTo(ref output);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -12785,6 +16552,10 @@ namespace Buf.Validate {
       if (HasIpv6) {
         size += 1 + 1;
       }
+      size += example_.CalculateSize(_repeated_example_codec);
+      if (_extensions != null) {
+        size += _extensions.CalculateSize();
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -12823,6 +16594,7 @@ namespace Buf.Validate {
       }
       in_.Add(other.in_);
       notIn_.Add(other.notIn_);
+      example_.Add(other.example_);
       switch (other.WellKnownCase) {
         case WellKnownOneofCase.Ip:
           Ip = other.Ip;
@@ -12835,6 +16607,7 @@ namespace Buf.Validate {
           break;
       }
 
+      pb::ExtensionSet.MergeFrom(ref _extensions, other._extensions);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -12848,7 +16621,9 @@ namespace Buf.Validate {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            }
             break;
           case 10: {
             Const = input.ReadBytes();
@@ -12902,6 +16677,10 @@ namespace Buf.Validate {
             Len = input.ReadUInt64();
             break;
           }
+          case 114: {
+            example_.AddEntriesFrom(input, _repeated_example_codec);
+            break;
+          }
         }
       }
     #endif
@@ -12915,7 +16694,9 @@ namespace Buf.Validate {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, ref input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            }
             break;
           case 10: {
             Const = input.ReadBytes();
@@ -12969,23 +16750,51 @@ namespace Buf.Validate {
             Len = input.ReadUInt64();
             break;
           }
+          case 114: {
+            example_.AddEntriesFrom(ref input, _repeated_example_codec);
+            break;
+          }
         }
       }
     }
     #endif
 
+    public TValue GetExtension<TValue>(pb::Extension<BytesRules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<BytesRules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>(pb::RepeatedExtension<BytesRules, TValue> extension) {
+      return pb::ExtensionSet.GetOrInitialize(ref _extensions, extension);
+    }
+    public void SetExtension<TValue>(pb::Extension<BytesRules, TValue> extension, TValue value) {
+      pb::ExtensionSet.Set(ref _extensions, extension, value);
+    }
+    public bool HasExtension<TValue>(pb::Extension<BytesRules, TValue> extension) {
+      return pb::ExtensionSet.Has(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::Extension<BytesRules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::RepeatedExtension<BytesRules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+
   }
 
   /// <summary>
-  /// EnumRules describe the constraints applied to `enum` values.
+  /// EnumRules describe the rules applied to `enum` values.
   /// </summary>
-  public sealed partial class EnumRules : pb::IMessage<EnumRules>
+  public sealed partial class EnumRules : pb::IExtendableMessage<EnumRules>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
     private static readonly pb::MessageParser<EnumRules> _parser = new pb::MessageParser<EnumRules>(() => new EnumRules());
     private pb::UnknownFieldSet _unknownFields;
+    private pb::ExtensionSet<EnumRules> _extensions;
+    private pb::ExtensionSet<EnumRules> _Extensions { get { return _extensions; } }
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -12994,7 +16803,7 @@ namespace Buf.Validate {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[18]; }
+      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[21]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -13019,7 +16828,9 @@ namespace Buf.Validate {
       definedOnly_ = other.definedOnly_;
       in_ = other.in_.Clone();
       notIn_ = other.notIn_.Clone();
+      example_ = other.example_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+      _extensions = pb::ExtensionSet.Clone(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -13034,21 +16845,21 @@ namespace Buf.Validate {
 
     private int const_;
     /// <summary>
-    ///`const` requires the field value to exactly match the specified enum value.
-    ///If the field value doesn't match, an error message is generated.
+    /// `const` requires the field value to exactly match the specified enum value.
+    /// If the field value doesn't match, an error message is generated.
     ///
-    ///```proto
-    ///enum MyEnum {
-    ///  MY_ENUM_UNSPECIFIED = 0;
-    ///  MY_ENUM_VALUE1 = 1;
-    ///  MY_ENUM_VALUE2 = 2;
-    ///}
+    /// ```proto
+    /// enum MyEnum {
+    ///   MY_ENUM_UNSPECIFIED = 0;
+    ///   MY_ENUM_VALUE1 = 1;
+    ///   MY_ENUM_VALUE2 = 2;
+    /// }
     ///
-    ///message MyMessage {
-    ///  // The field `value` must be exactly MY_ENUM_VALUE1.
+    /// message MyMessage {
+    ///   // The field `value` must be exactly MY_ENUM_VALUE1.
     ///   MyEnum value = 1 [(buf.validate.field).enum.const = 1];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -13078,21 +16889,21 @@ namespace Buf.Validate {
 
     private bool definedOnly_;
     /// <summary>
-    ///`defined_only` requires the field value to be one of the defined values for
+    /// `defined_only` requires the field value to be one of the defined values for
     /// this enum, failing on any undefined value.
     ///
-    ///```proto
-    ///enum MyEnum {
-    ///  MY_ENUM_UNSPECIFIED = 0;
-    ///  MY_ENUM_VALUE1 = 1;
-    ///  MY_ENUM_VALUE2 = 2;
-    ///}
+    /// ```proto
+    /// enum MyEnum {
+    ///   MY_ENUM_UNSPECIFIED = 0;
+    ///   MY_ENUM_VALUE1 = 1;
+    ///   MY_ENUM_VALUE2 = 2;
+    /// }
     ///
-    ///message MyMessage {
-    ///  // The field `value` must be a defined value of MyEnum.
+    /// message MyMessage {
+    ///   // The field `value` must be a defined value of MyEnum.
     ///   MyEnum value = 1 [(buf.validate.field).enum.defined_only = true];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -13119,25 +16930,25 @@ namespace Buf.Validate {
     /// <summary>Field number for the "in" field.</summary>
     public const int InFieldNumber = 3;
     private static readonly pb::FieldCodec<int> _repeated_in_codec
-        = pb::FieldCodec.ForInt32(26);
+        = pb::FieldCodec.ForInt32(24);
     private readonly pbc::RepeatedField<int> in_ = new pbc::RepeatedField<int>();
     /// <summary>
-    ///`in` requires the field value to be equal to one of the
+    /// `in` requires the field value to be equal to one of the
     ///specified enum values. If the field value doesn't match any of the
     ///specified values, an error message is generated.
     ///
-    ///```proto
-    ///enum MyEnum {
-    ///  MY_ENUM_UNSPECIFIED = 0;
-    ///  MY_ENUM_VALUE1 = 1;
-    ///  MY_ENUM_VALUE2 = 2;
-    ///}
+    /// ```proto
+    /// enum MyEnum {
+    ///   MY_ENUM_UNSPECIFIED = 0;
+    ///   MY_ENUM_VALUE1 = 1;
+    ///   MY_ENUM_VALUE2 = 2;
+    /// }
     ///
-    ///message MyMessage {
-    ///  // The field `value` must be equal to one of the specified values.
-    ///   MyEnum value = 1 [(buf.validate.field).enum.in = {1, 2}];
-    ///}
-    ///```
+    /// message MyMessage {
+    ///   // The field `value` must be equal to one of the specified values.
+    ///   MyEnum value = 1 [(buf.validate.field).enum = { in: [1, 2]}];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -13148,30 +16959,59 @@ namespace Buf.Validate {
     /// <summary>Field number for the "not_in" field.</summary>
     public const int NotInFieldNumber = 4;
     private static readonly pb::FieldCodec<int> _repeated_notIn_codec
-        = pb::FieldCodec.ForInt32(34);
+        = pb::FieldCodec.ForInt32(32);
     private readonly pbc::RepeatedField<int> notIn_ = new pbc::RepeatedField<int>();
     /// <summary>
-    ///`not_in` requires the field value to be not equal to any of the
+    /// `not_in` requires the field value to be not equal to any of the
     ///specified enum values. If the field value matches one of the specified
-    ///values, an error message is generated.
+    /// values, an error message is generated.
     ///
-    ///```proto
-    ///enum MyEnum {
-    ///  MY_ENUM_UNSPECIFIED = 0;
-    ///  MY_ENUM_VALUE1 = 1;
-    ///  MY_ENUM_VALUE2 = 2;
-    ///}
+    /// ```proto
+    /// enum MyEnum {
+    ///   MY_ENUM_UNSPECIFIED = 0;
+    ///   MY_ENUM_VALUE1 = 1;
+    ///   MY_ENUM_VALUE2 = 2;
+    /// }
     ///
-    ///message MyMessage {
-    ///  // The field `value` must not be equal to any of the specified values.
-    ///   MyEnum value = 1 [(buf.validate.field).enum.not_in = {1, 2}];
-    ///}
-    ///```
+    /// message MyMessage {
+    ///   // The field `value` must not be equal to any of the specified values.
+    ///   MyEnum value = 1 [(buf.validate.field).enum = { not_in: [1, 2]}];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<int> NotIn {
       get { return notIn_; }
+    }
+
+    /// <summary>Field number for the "example" field.</summary>
+    public const int ExampleFieldNumber = 5;
+    private static readonly pb::FieldCodec<int> _repeated_example_codec
+        = pb::FieldCodec.ForInt32(40);
+    private readonly pbc::RepeatedField<int> example_ = new pbc::RepeatedField<int>();
+    /// <summary>
+    /// `example` specifies values that the field may have. These values SHOULD
+    /// conform to other rules. `example` values will not impact validation
+    /// but may be used as helpful guidance on how to populate the given field.
+    ///
+    /// ```proto
+    /// enum MyEnum {
+    ///   MY_ENUM_UNSPECIFIED = 0;
+    ///   MY_ENUM_VALUE1 = 1;
+    ///   MY_ENUM_VALUE2 = 2;
+    /// }
+    ///
+    /// message MyMessage {
+    ///     (buf.validate.field).enum.example = 1,
+    ///     (buf.validate.field).enum.example = 2
+    /// }
+    /// ```
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<int> Example {
+      get { return example_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -13193,6 +17033,10 @@ namespace Buf.Validate {
       if (DefinedOnly != other.DefinedOnly) return false;
       if(!in_.Equals(other.in_)) return false;
       if(!notIn_.Equals(other.notIn_)) return false;
+      if(!example_.Equals(other.example_)) return false;
+      if (!Equals(_extensions, other._extensions)) {
+        return false;
+      }
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -13204,6 +17048,10 @@ namespace Buf.Validate {
       if (HasDefinedOnly) hash ^= DefinedOnly.GetHashCode();
       hash ^= in_.GetHashCode();
       hash ^= notIn_.GetHashCode();
+      hash ^= example_.GetHashCode();
+      if (_extensions != null) {
+        hash ^= _extensions.GetHashCode();
+      }
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -13232,6 +17080,10 @@ namespace Buf.Validate {
       }
       in_.WriteTo(output, _repeated_in_codec);
       notIn_.WriteTo(output, _repeated_notIn_codec);
+      example_.WriteTo(output, _repeated_example_codec);
+      if (_extensions != null) {
+        _extensions.WriteTo(output);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -13252,6 +17104,10 @@ namespace Buf.Validate {
       }
       in_.WriteTo(ref output, _repeated_in_codec);
       notIn_.WriteTo(ref output, _repeated_notIn_codec);
+      example_.WriteTo(ref output, _repeated_example_codec);
+      if (_extensions != null) {
+        _extensions.WriteTo(ref output);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -13270,6 +17126,10 @@ namespace Buf.Validate {
       }
       size += in_.CalculateSize(_repeated_in_codec);
       size += notIn_.CalculateSize(_repeated_notIn_codec);
+      size += example_.CalculateSize(_repeated_example_codec);
+      if (_extensions != null) {
+        size += _extensions.CalculateSize();
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -13290,6 +17150,8 @@ namespace Buf.Validate {
       }
       in_.Add(other.in_);
       notIn_.Add(other.notIn_);
+      example_.Add(other.example_);
+      pb::ExtensionSet.MergeFrom(ref _extensions, other._extensions);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -13303,7 +17165,9 @@ namespace Buf.Validate {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            }
             break;
           case 8: {
             Const = input.ReadInt32();
@@ -13323,6 +17187,11 @@ namespace Buf.Validate {
             notIn_.AddEntriesFrom(input, _repeated_notIn_codec);
             break;
           }
+          case 42:
+          case 40: {
+            example_.AddEntriesFrom(input, _repeated_example_codec);
+            break;
+          }
         }
       }
     #endif
@@ -13336,7 +17205,9 @@ namespace Buf.Validate {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, ref input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            }
             break;
           case 8: {
             Const = input.ReadInt32();
@@ -13356,23 +17227,52 @@ namespace Buf.Validate {
             notIn_.AddEntriesFrom(ref input, _repeated_notIn_codec);
             break;
           }
+          case 42:
+          case 40: {
+            example_.AddEntriesFrom(ref input, _repeated_example_codec);
+            break;
+          }
         }
       }
     }
     #endif
 
+    public TValue GetExtension<TValue>(pb::Extension<EnumRules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<EnumRules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>(pb::RepeatedExtension<EnumRules, TValue> extension) {
+      return pb::ExtensionSet.GetOrInitialize(ref _extensions, extension);
+    }
+    public void SetExtension<TValue>(pb::Extension<EnumRules, TValue> extension, TValue value) {
+      pb::ExtensionSet.Set(ref _extensions, extension, value);
+    }
+    public bool HasExtension<TValue>(pb::Extension<EnumRules, TValue> extension) {
+      return pb::ExtensionSet.Has(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::Extension<EnumRules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::RepeatedExtension<EnumRules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+
   }
 
   /// <summary>
-  /// RepeatedRules describe the constraints applied to `repeated` values.
+  /// RepeatedRules describe the rules applied to `repeated` values.
   /// </summary>
-  public sealed partial class RepeatedRules : pb::IMessage<RepeatedRules>
+  public sealed partial class RepeatedRules : pb::IExtendableMessage<RepeatedRules>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
     private static readonly pb::MessageParser<RepeatedRules> _parser = new pb::MessageParser<RepeatedRules>(() => new RepeatedRules());
     private pb::UnknownFieldSet _unknownFields;
+    private pb::ExtensionSet<RepeatedRules> _extensions;
+    private pb::ExtensionSet<RepeatedRules> _Extensions { get { return _extensions; } }
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -13381,7 +17281,7 @@ namespace Buf.Validate {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[19]; }
+      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[22]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -13407,6 +17307,7 @@ namespace Buf.Validate {
       unique_ = other.unique_;
       items_ = other.items_ != null ? other.items_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+      _extensions = pb::ExtensionSet.Clone(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -13421,15 +17322,17 @@ namespace Buf.Validate {
 
     private ulong minItems_;
     /// <summary>
-    ///`min_items` requires that this field must contain at least the specified
-    ///minimum number of items.
+    /// `min_items` requires that this field must contain at least the specified
+    /// minimum number of items.
     ///
-    ///```proto
-    ///message MyRepeated {
-    ///  // value must contain at least  2 items
-    ///  repeated string value = 1 [(buf.validate.field).repeated.min_items = 2];
-    ///}
-    ///```
+    /// Note that `min_items = 1` is equivalent to setting a field as `required`.
+    ///
+    /// ```proto
+    /// message MyRepeated {
+    ///   // value must contain at least  2 items
+    ///   repeated string value = 1 [(buf.validate.field).repeated.min_items = 2];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -13459,17 +17362,17 @@ namespace Buf.Validate {
 
     private ulong maxItems_;
     /// <summary>
-    ///`max_items` denotes that this field must not exceed a
-    ///certain number of items as the upper limit. If the field contains more
-    ///items than specified, an error message will be generated, requiring the
-    ///field to maintain no more than the specified number of items.
+    /// `max_items` denotes that this field must not exceed a
+    /// certain number of items as the upper limit. If the field contains more
+    /// items than specified, an error message will be generated, requiring the
+    /// field to maintain no more than the specified number of items.
     ///
-    ///```proto
-    ///message MyRepeated {
-    ///  // value must contain no more than 3 item(s)
-    ///  repeated string value = 1 [(buf.validate.field).repeated.max_items = 3];
-    ///}
-    ///```
+    /// ```proto
+    /// message MyRepeated {
+    ///   // value must contain no more than 3 item(s)
+    ///   repeated string value = 1 [(buf.validate.field).repeated.max_items = 3];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -13499,16 +17402,16 @@ namespace Buf.Validate {
 
     private bool unique_;
     /// <summary>
-    ///`unique` indicates that all elements in this field must
-    ///be unique. This constraint is strictly applicable to scalar and enum
-    ///types, with message types not being supported.
+    /// `unique` indicates that all elements in this field must
+    /// be unique. This rule is strictly applicable to scalar and enum
+    /// types, with message types not being supported.
     ///
-    ///```proto
-    ///message MyRepeated {
-    /// // repeated value must contain unique items
-    /// repeated string value = 1 [(buf.validate.field).repeated.unique = true];
-    ///}
-    ///```
+    /// ```proto
+    /// message MyRepeated {
+    ///   // repeated value must contain unique items
+    ///   repeated string value = 1 [(buf.validate.field).repeated.unique = true];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -13534,26 +17437,30 @@ namespace Buf.Validate {
 
     /// <summary>Field number for the "items" field.</summary>
     public const int ItemsFieldNumber = 4;
-    private global::Buf.Validate.FieldConstraints items_;
+    private global::Buf.Validate.FieldRules items_;
     /// <summary>
-    ///`items` details the constraints to be applied to each item
-    ///in the field. Even for repeated message fields, validation is executed
-    ///against each item unless skip is explicitly specified.
+    /// `items` details the rules to be applied to each item
+    /// in the field. Even for repeated message fields, validation is executed
+    /// against each item unless `ignore` is specified.
     ///
-    ///```proto
-    ///message MyRepeated {
-    ///  // The items in the field `value` must follow the specified constraints.
-    ///  repeated string value = 1 [(buf.validate.field).repeated.items = {
-    ///    string: {
-    ///      min_len: 3
-    ///      max_len: 10
-    ///    }
-    ///  }];
-    ///}
+    /// ```proto
+    /// message MyRepeated {
+    ///   // The items in the field `value` must follow the specified rules.
+    ///   repeated string value = 1 [(buf.validate.field).repeated.items = {
+    ///     string: {
+    ///       min_len: 3
+    ///       max_len: 10
+    ///     }
+    ///   }];
+    /// }
+    /// ```
+    ///
+    /// Note that the `required` rule does not apply. Repeated items
+    /// cannot be unset.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Buf.Validate.FieldConstraints Items {
+    public global::Buf.Validate.FieldRules Items {
       get { return items_; }
       set {
         items_ = value;
@@ -13579,6 +17486,9 @@ namespace Buf.Validate {
       if (MaxItems != other.MaxItems) return false;
       if (Unique != other.Unique) return false;
       if (!object.Equals(Items, other.Items)) return false;
+      if (!Equals(_extensions, other._extensions)) {
+        return false;
+      }
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -13590,6 +17500,9 @@ namespace Buf.Validate {
       if (HasMaxItems) hash ^= MaxItems.GetHashCode();
       if (HasUnique) hash ^= Unique.GetHashCode();
       if (items_ != null) hash ^= Items.GetHashCode();
+      if (_extensions != null) {
+        hash ^= _extensions.GetHashCode();
+      }
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -13624,6 +17537,9 @@ namespace Buf.Validate {
         output.WriteRawTag(34);
         output.WriteMessage(Items);
       }
+      if (_extensions != null) {
+        _extensions.WriteTo(output);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -13650,6 +17566,9 @@ namespace Buf.Validate {
         output.WriteRawTag(34);
         output.WriteMessage(Items);
       }
+      if (_extensions != null) {
+        _extensions.WriteTo(ref output);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -13671,6 +17590,9 @@ namespace Buf.Validate {
       }
       if (items_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Items);
+      }
+      if (_extensions != null) {
+        size += _extensions.CalculateSize();
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -13695,10 +17617,11 @@ namespace Buf.Validate {
       }
       if (other.items_ != null) {
         if (items_ == null) {
-          Items = new global::Buf.Validate.FieldConstraints();
+          Items = new global::Buf.Validate.FieldRules();
         }
         Items.MergeFrom(other.Items);
       }
+      pb::ExtensionSet.MergeFrom(ref _extensions, other._extensions);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -13712,7 +17635,9 @@ namespace Buf.Validate {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            }
             break;
           case 8: {
             MinItems = input.ReadUInt64();
@@ -13728,7 +17653,7 @@ namespace Buf.Validate {
           }
           case 34: {
             if (items_ == null) {
-              Items = new global::Buf.Validate.FieldConstraints();
+              Items = new global::Buf.Validate.FieldRules();
             }
             input.ReadMessage(Items);
             break;
@@ -13746,7 +17671,9 @@ namespace Buf.Validate {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, ref input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            }
             break;
           case 8: {
             MinItems = input.ReadUInt64();
@@ -13762,7 +17689,7 @@ namespace Buf.Validate {
           }
           case 34: {
             if (items_ == null) {
-              Items = new global::Buf.Validate.FieldConstraints();
+              Items = new global::Buf.Validate.FieldRules();
             }
             input.ReadMessage(Items);
             break;
@@ -13772,18 +17699,42 @@ namespace Buf.Validate {
     }
     #endif
 
+    public TValue GetExtension<TValue>(pb::Extension<RepeatedRules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<RepeatedRules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>(pb::RepeatedExtension<RepeatedRules, TValue> extension) {
+      return pb::ExtensionSet.GetOrInitialize(ref _extensions, extension);
+    }
+    public void SetExtension<TValue>(pb::Extension<RepeatedRules, TValue> extension, TValue value) {
+      pb::ExtensionSet.Set(ref _extensions, extension, value);
+    }
+    public bool HasExtension<TValue>(pb::Extension<RepeatedRules, TValue> extension) {
+      return pb::ExtensionSet.Has(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::Extension<RepeatedRules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::RepeatedExtension<RepeatedRules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+
   }
 
   /// <summary>
-  /// MapRules describe the constraints applied to `map` values.
+  /// MapRules describe the rules applied to `map` values.
   /// </summary>
-  public sealed partial class MapRules : pb::IMessage<MapRules>
+  public sealed partial class MapRules : pb::IExtendableMessage<MapRules>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
     private static readonly pb::MessageParser<MapRules> _parser = new pb::MessageParser<MapRules>(() => new MapRules());
     private pb::UnknownFieldSet _unknownFields;
+    private pb::ExtensionSet<MapRules> _extensions;
+    private pb::ExtensionSet<MapRules> _Extensions { get { return _extensions; } }
     private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -13792,7 +17743,7 @@ namespace Buf.Validate {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[20]; }
+      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[23]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -13818,6 +17769,7 @@ namespace Buf.Validate {
       keys_ = other.keys_ != null ? other.keys_.Clone() : null;
       values_ = other.values_ != null ? other.values_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+      _extensions = pb::ExtensionSet.Clone(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -13832,15 +17784,15 @@ namespace Buf.Validate {
 
     private ulong minPairs_;
     /// <summary>
-    ///Specifies the minimum number of key-value pairs allowed. If the field has
-    ///fewer key-value pairs than specified, an error message is generated.
+    /// Specifies the minimum number of key-value pairs allowed. If the field has
+    /// fewer key-value pairs than specified, an error message is generated.
     ///
-    ///```proto
-    ///message MyMap {
-    ///  // The field `value` must have at least 2 key-value pairs.
-    ///  map&lt;string, string> value = 1 [(buf.validate.field).map.min_pairs = 2];
-    ///}
-    ///```
+    /// ```proto
+    /// message MyMap {
+    ///   // The field `value` must have at least 2 key-value pairs.
+    ///   map&lt;string, string> value = 1 [(buf.validate.field).map.min_pairs = 2];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -13870,15 +17822,15 @@ namespace Buf.Validate {
 
     private ulong maxPairs_;
     /// <summary>
-    ///Specifies the maximum number of key-value pairs allowed. If the field has
-    ///more key-value pairs than specified, an error message is generated.
+    /// Specifies the maximum number of key-value pairs allowed. If the field has
+    /// more key-value pairs than specified, an error message is generated.
     ///
-    ///```proto
-    ///message MyMap {
-    ///  // The field `value` must have at most 3 key-value pairs.
-    ///  map&lt;string, string> value = 1 [(buf.validate.field).map.max_pairs = 3];
-    ///}
-    ///```
+    /// ```proto
+    /// message MyMap {
+    ///   // The field `value` must have at most 3 key-value pairs.
+    ///   map&lt;string, string> value = 1 [(buf.validate.field).map.max_pairs = 3];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -13904,25 +17856,27 @@ namespace Buf.Validate {
 
     /// <summary>Field number for the "keys" field.</summary>
     public const int KeysFieldNumber = 4;
-    private global::Buf.Validate.FieldConstraints keys_;
+    private global::Buf.Validate.FieldRules keys_;
     /// <summary>
-    ///Specifies the constraints to be applied to each key in the field.
+    /// Specifies the rules to be applied to each key in the field.
     ///
-    ///```proto
-    ///message MyMap {
-    ///  // The keys in the field `value` must follow the specified constraints.
-    ///  map&lt;string, string> value = 1 [(buf.validate.field).map.keys = {
-    ///    string: {
-    ///      min_len: 3
-    ///      max_len: 10
-    ///    }
-    ///  }];
-    ///}
-    ///```
+    /// ```proto
+    /// message MyMap {
+    ///   // The keys in the field `value` must follow the specified rules.
+    ///   map&lt;string, string> value = 1 [(buf.validate.field).map.keys = {
+    ///     string: {
+    ///       min_len: 3
+    ///       max_len: 10
+    ///     }
+    ///   }];
+    /// }
+    /// ```
+    ///
+    /// Note that the `required` rule does not apply. Map keys cannot be unset.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Buf.Validate.FieldConstraints Keys {
+    public global::Buf.Validate.FieldRules Keys {
       get { return keys_; }
       set {
         keys_ = value;
@@ -13931,27 +17885,28 @@ namespace Buf.Validate {
 
     /// <summary>Field number for the "values" field.</summary>
     public const int ValuesFieldNumber = 5;
-    private global::Buf.Validate.FieldConstraints values_;
+    private global::Buf.Validate.FieldRules values_;
     /// <summary>
-    ///Specifies the constraints to be applied to the value of each key in the
-    ///field. Message values will still have their validations evaluated unless
-    ///skip is specified here.
+    /// Specifies the rules to be applied to the value of each key in the
+    /// field. Message values will still have their validations evaluated unless
+    /// `ignore` is specified.
     ///
-    ///```proto
-    ///message MyMap {
-    ///  // The values in the field `value` must follow the specified constraints.
-    ///  map&lt;string, string> value = 1 [(buf.validate.field).map.values = {
-    ///    string: {
-    ///      min_len: 5
-    ///      max_len: 20
-    ///    }
-    ///  }];
-    ///}
-    ///```
+    /// ```proto
+    /// message MyMap {
+    ///   // The values in the field `value` must follow the specified rules.
+    ///   map&lt;string, string> value = 1 [(buf.validate.field).map.values = {
+    ///     string: {
+    ///       min_len: 5
+    ///       max_len: 20
+    ///     }
+    ///   }];
+    /// }
+    /// ```
+    /// Note that the `required` rule does not apply. Map values cannot be unset.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Buf.Validate.FieldConstraints Values {
+    public global::Buf.Validate.FieldRules Values {
       get { return values_; }
       set {
         values_ = value;
@@ -13977,6 +17932,9 @@ namespace Buf.Validate {
       if (MaxPairs != other.MaxPairs) return false;
       if (!object.Equals(Keys, other.Keys)) return false;
       if (!object.Equals(Values, other.Values)) return false;
+      if (!Equals(_extensions, other._extensions)) {
+        return false;
+      }
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -13988,6 +17946,9 @@ namespace Buf.Validate {
       if (HasMaxPairs) hash ^= MaxPairs.GetHashCode();
       if (keys_ != null) hash ^= Keys.GetHashCode();
       if (values_ != null) hash ^= Values.GetHashCode();
+      if (_extensions != null) {
+        hash ^= _extensions.GetHashCode();
+      }
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -14022,6 +17983,9 @@ namespace Buf.Validate {
         output.WriteRawTag(42);
         output.WriteMessage(Values);
       }
+      if (_extensions != null) {
+        _extensions.WriteTo(output);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -14048,6 +18012,9 @@ namespace Buf.Validate {
         output.WriteRawTag(42);
         output.WriteMessage(Values);
       }
+      if (_extensions != null) {
+        _extensions.WriteTo(ref output);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -14070,6 +18037,9 @@ namespace Buf.Validate {
       if (values_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Values);
       }
+      if (_extensions != null) {
+        size += _extensions.CalculateSize();
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -14090,16 +18060,17 @@ namespace Buf.Validate {
       }
       if (other.keys_ != null) {
         if (keys_ == null) {
-          Keys = new global::Buf.Validate.FieldConstraints();
+          Keys = new global::Buf.Validate.FieldRules();
         }
         Keys.MergeFrom(other.Keys);
       }
       if (other.values_ != null) {
         if (values_ == null) {
-          Values = new global::Buf.Validate.FieldConstraints();
+          Values = new global::Buf.Validate.FieldRules();
         }
         Values.MergeFrom(other.Values);
       }
+      pb::ExtensionSet.MergeFrom(ref _extensions, other._extensions);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -14113,7 +18084,9 @@ namespace Buf.Validate {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            }
             break;
           case 8: {
             MinPairs = input.ReadUInt64();
@@ -14125,14 +18098,14 @@ namespace Buf.Validate {
           }
           case 34: {
             if (keys_ == null) {
-              Keys = new global::Buf.Validate.FieldConstraints();
+              Keys = new global::Buf.Validate.FieldRules();
             }
             input.ReadMessage(Keys);
             break;
           }
           case 42: {
             if (values_ == null) {
-              Values = new global::Buf.Validate.FieldConstraints();
+              Values = new global::Buf.Validate.FieldRules();
             }
             input.ReadMessage(Values);
             break;
@@ -14150,7 +18123,9 @@ namespace Buf.Validate {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, ref input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            }
             break;
           case 8: {
             MinPairs = input.ReadUInt64();
@@ -14162,14 +18137,14 @@ namespace Buf.Validate {
           }
           case 34: {
             if (keys_ == null) {
-              Keys = new global::Buf.Validate.FieldConstraints();
+              Keys = new global::Buf.Validate.FieldRules();
             }
             input.ReadMessage(Keys);
             break;
           }
           case 42: {
             if (values_ == null) {
-              Values = new global::Buf.Validate.FieldConstraints();
+              Values = new global::Buf.Validate.FieldRules();
             }
             input.ReadMessage(Values);
             break;
@@ -14179,10 +18154,32 @@ namespace Buf.Validate {
     }
     #endif
 
+    public TValue GetExtension<TValue>(pb::Extension<MapRules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<MapRules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>(pb::RepeatedExtension<MapRules, TValue> extension) {
+      return pb::ExtensionSet.GetOrInitialize(ref _extensions, extension);
+    }
+    public void SetExtension<TValue>(pb::Extension<MapRules, TValue> extension, TValue value) {
+      pb::ExtensionSet.Set(ref _extensions, extension, value);
+    }
+    public bool HasExtension<TValue>(pb::Extension<MapRules, TValue> extension) {
+      return pb::ExtensionSet.Has(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::Extension<MapRules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::RepeatedExtension<MapRules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+
   }
 
   /// <summary>
-  /// AnyRules describe constraints applied exclusively to the `google.protobuf.Any` well-known type.
+  /// AnyRules describe rules applied exclusively to the `google.protobuf.Any` well-known type.
   /// </summary>
   public sealed partial class AnyRules : pb::IMessage<AnyRules>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -14198,7 +18195,7 @@ namespace Buf.Validate {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[21]; }
+      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[24]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -14235,16 +18232,18 @@ namespace Buf.Validate {
         = pb::FieldCodec.ForString(18);
     private readonly pbc::RepeatedField<string> in_ = new pbc::RepeatedField<string>();
     /// <summary>
-    ///`in` requires the field's `type_url` to be equal to one of the
+    /// `in` requires the field's `type_url` to be equal to one of the
     ///specified values. If it doesn't match any of the specified values, an error
-    ///message is generated.
+    /// message is generated.
     ///
-    ///```proto
-    ///message MyAny {
-    ///  //  The `value` field must have a `type_url` equal to one of the specified values.
-    ///   google.protobuf.Any value = 1 [(buf.validate.field).any.in = ["type.googleapis.com/MyType1", "type.googleapis.com/MyType2"]];
-    ///}
-    ///```
+    /// ```proto
+    /// message MyAny {
+    ///   //  The `value` field must have a `type_url` equal to one of the specified values.
+    ///   google.protobuf.Any value = 1 [(buf.validate.field).any = {
+    ///       in: ["type.googleapis.com/MyType1", "type.googleapis.com/MyType2"]
+    ///   }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -14260,12 +18259,14 @@ namespace Buf.Validate {
     /// <summary>
     /// requires the field's type_url to be not equal to any of the specified values. If it matches any of the specified values, an error message is generated.
     ///
-    ///```proto
-    ///message MyAny {
-    ///  // The field `value` must not have a `type_url` equal to any of the specified values.
-    ///   google.protobuf.Any value = 1 [(buf.validate.field).any.not_in = ["type.googleapis.com/ForbiddenType1", "type.googleapis.com/ForbiddenType2"]];
-    ///}
-    ///```
+    /// ```proto
+    /// message MyAny {
+    ///   //  The `value` field must not have a `type_url` equal to any of the specified values.
+    ///   google.protobuf.Any value = 1 [(buf.validate.field).any = {
+    ///       not_in: ["type.googleapis.com/ForbiddenType1", "type.googleapis.com/ForbiddenType2"]
+    ///   }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -14411,15 +18412,17 @@ namespace Buf.Validate {
   }
 
   /// <summary>
-  /// DurationRules describe the constraints applied exclusively to the `google.protobuf.Duration` well-known type.
+  /// DurationRules describe the rules applied exclusively to the `google.protobuf.Duration` well-known type.
   /// </summary>
-  public sealed partial class DurationRules : pb::IMessage<DurationRules>
+  public sealed partial class DurationRules : pb::IExtendableMessage<DurationRules>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
     private static readonly pb::MessageParser<DurationRules> _parser = new pb::MessageParser<DurationRules>(() => new DurationRules());
     private pb::UnknownFieldSet _unknownFields;
+    private pb::ExtensionSet<DurationRules> _extensions;
+    private pb::ExtensionSet<DurationRules> _Extensions { get { return _extensions; } }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<DurationRules> Parser { get { return _parser; } }
@@ -14427,7 +18430,7 @@ namespace Buf.Validate {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[22]; }
+      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[25]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -14448,13 +18451,29 @@ namespace Buf.Validate {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public DurationRules(DurationRules other) : this() {
       const_ = other.const_ != null ? other.const_.Clone() : null;
-      lt_ = other.lt_ != null ? other.lt_.Clone() : null;
-      lte_ = other.lte_ != null ? other.lte_.Clone() : null;
-      gt_ = other.gt_ != null ? other.gt_.Clone() : null;
-      gte_ = other.gte_ != null ? other.gte_.Clone() : null;
       in_ = other.in_.Clone();
       notIn_ = other.notIn_.Clone();
+      example_ = other.example_.Clone();
+      switch (other.LessThanCase) {
+        case LessThanOneofCase.Lt:
+          Lt = other.Lt.Clone();
+          break;
+        case LessThanOneofCase.Lte:
+          Lte = other.Lte.Clone();
+          break;
+      }
+
+      switch (other.GreaterThanCase) {
+        case GreaterThanOneofCase.Gt:
+          Gt = other.Gt.Clone();
+          break;
+        case GreaterThanOneofCase.Gte:
+          Gte = other.Gte.Clone();
+          break;
+      }
+
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+      _extensions = pb::ExtensionSet.Clone(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -14467,16 +18486,16 @@ namespace Buf.Validate {
     public const int ConstFieldNumber = 2;
     private global::Google.Protobuf.WellKnownTypes.Duration const_;
     /// <summary>
-    ///`const` dictates that the field must match the specified value of the `google.protobuf.Duration` type exactly.
-    ///If the field's value deviates from the specified value, an error message
-    ///will be generated.
+    /// `const` dictates that the field must match the specified value of the `google.protobuf.Duration` type exactly.
+    /// If the field's value deviates from the specified value, an error message
+    /// will be generated.
     ///
-    ///```proto
-    ///message MyDuration {
-    ///  // value must equal 5s
+    /// ```proto
+    /// message MyDuration {
+    ///   // value must equal 5s
     ///   google.protobuf.Duration value = 1 [(buf.validate.field).duration.const = "5s"];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -14489,55 +18508,54 @@ namespace Buf.Validate {
 
     /// <summary>Field number for the "lt" field.</summary>
     public const int LtFieldNumber = 3;
-    private global::Google.Protobuf.WellKnownTypes.Duration lt_;
     /// <summary>
-    ///`lt` stipulates that the field must be less than the specified value of the `google.protobuf.Duration` type,
-    ///exclusive. If the field's value is greater than or equal to the specified
-    ///value, an error message will be generated.
+    /// `lt` stipulates that the field must be less than the specified value of the `google.protobuf.Duration` type,
+    /// exclusive. If the field's value is greater than or equal to the specified
+    /// value, an error message will be generated.
     ///
-    ///```proto
-    ///message MyDuration {
-    ///  // value must be less than 5s
+    /// ```proto
+    /// message MyDuration {
+    ///   // value must be less than 5s
     ///   google.protobuf.Duration value = 1 [(buf.validate.field).duration.lt = "5s"];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Duration Lt {
-      get { return lt_; }
+      get { return lessThanCase_ == LessThanOneofCase.Lt ? (global::Google.Protobuf.WellKnownTypes.Duration) lessThan_ : null; }
       set {
-        lt_ = value;
+        lessThan_ = value;
+        lessThanCase_ = value == null ? LessThanOneofCase.None : LessThanOneofCase.Lt;
       }
     }
 
     /// <summary>Field number for the "lte" field.</summary>
     public const int LteFieldNumber = 4;
-    private global::Google.Protobuf.WellKnownTypes.Duration lte_;
     /// <summary>
-    ///`lte` indicates that the field must be less than or equal to the specified
-    ///value of the `google.protobuf.Duration` type, inclusive. If the field's value is greater than the specified value,
-    ///an error message will be generated.
+    /// `lte` indicates that the field must be less than or equal to the specified
+    /// value of the `google.protobuf.Duration` type, inclusive. If the field's value is greater than the specified value,
+    /// an error message will be generated.
     ///
-    ///```proto
-    ///message MyDuration {
-    ///  // value must be less than or equal to 10s
+    /// ```proto
+    /// message MyDuration {
+    ///   // value must be less than or equal to 10s
     ///   google.protobuf.Duration value = 1 [(buf.validate.field).duration.lte = "10s"];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Duration Lte {
-      get { return lte_; }
+      get { return lessThanCase_ == LessThanOneofCase.Lte ? (global::Google.Protobuf.WellKnownTypes.Duration) lessThan_ : null; }
       set {
-        lte_ = value;
+        lessThan_ = value;
+        lessThanCase_ = value == null ? LessThanOneofCase.None : LessThanOneofCase.Lte;
       }
     }
 
     /// <summary>Field number for the "gt" field.</summary>
     public const int GtFieldNumber = 5;
-    private global::Google.Protobuf.WellKnownTypes.Duration gt_;
     /// <summary>
     /// `gt` requires the duration field value to be greater than the specified
     /// value (exclusive). If the value of `gt` is larger than a specified `lt`
@@ -14545,31 +18563,31 @@ namespace Buf.Validate {
     /// specified range. If the field value doesn't meet the required conditions,
     /// an error message is generated.
     ///
-    ///```proto
-    ///message MyDuration {
-    ///  // duration must be greater than 5s [duration.gt]
-    ///  google.protobuf.Duration value = 1 [(buf.validate.field).duration.gt = { seconds: 5 }];
+    /// ```proto
+    /// message MyDuration {
+    ///   // duration must be greater than 5s [duration.gt]
+    ///   google.protobuf.Duration value = 1 [(buf.validate.field).duration.gt = { seconds: 5 }];
     ///
-    ///  // duration must be greater than 5s and less than 10s [duration.gt_lt]
-    ///  google.protobuf.Duration another_value = 2 [(buf.validate.field).duration = { gt: { seconds: 5 }, lt: { seconds: 10 } }];
+    ///   // duration must be greater than 5s and less than 10s [duration.gt_lt]
+    ///   google.protobuf.Duration another_value = 2 [(buf.validate.field).duration = { gt: { seconds: 5 }, lt: { seconds: 10 } }];
     ///
-    ///  // duration must be greater than 10s or less than 5s [duration.gt_lt_exclusive]
-    ///  google.protobuf.Duration other_value = 3 [(buf.validate.field).duration = { gt: { seconds: 10 }, lt: { seconds: 5 } }];
-    ///}
-    ///```
+    ///   // duration must be greater than 10s or less than 5s [duration.gt_lt_exclusive]
+    ///   google.protobuf.Duration other_value = 3 [(buf.validate.field).duration = { gt: { seconds: 10 }, lt: { seconds: 5 } }];
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Duration Gt {
-      get { return gt_; }
+      get { return greaterThanCase_ == GreaterThanOneofCase.Gt ? (global::Google.Protobuf.WellKnownTypes.Duration) greaterThan_ : null; }
       set {
-        gt_ = value;
+        greaterThan_ = value;
+        greaterThanCase_ = value == null ? GreaterThanOneofCase.None : GreaterThanOneofCase.Gt;
       }
     }
 
     /// <summary>Field number for the "gte" field.</summary>
     public const int GteFieldNumber = 6;
-    private global::Google.Protobuf.WellKnownTypes.Duration gte_;
     /// <summary>
     /// `gte` requires the duration field value to be greater than or equal to the
     /// specified value (exclusive). If the value of `gte` is larger than a
@@ -14577,8 +18595,8 @@ namespace Buf.Validate {
     /// be outside the specified range. If the field value doesn't meet the
     /// required conditions, an error message is generated.
     ///
-    ///```proto
-    ///message MyDuration {
+    /// ```proto
+    /// message MyDuration {
     ///  // duration must be greater than or equal to 5s [duration.gte]
     ///  google.protobuf.Duration value = 1 [(buf.validate.field).duration.gte = { seconds: 5 }];
     ///
@@ -14587,15 +18605,16 @@ namespace Buf.Validate {
     ///
     ///  // duration must be greater than or equal to 10s or less than 5s [duration.gte_lt_exclusive]
     ///  google.protobuf.Duration other_value = 3 [(buf.validate.field).duration = { gte: { seconds: 10 }, lt: { seconds: 5 } }];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Duration Gte {
-      get { return gte_; }
+      get { return greaterThanCase_ == GreaterThanOneofCase.Gte ? (global::Google.Protobuf.WellKnownTypes.Duration) greaterThan_ : null; }
       set {
-        gte_ = value;
+        greaterThan_ = value;
+        greaterThanCase_ = value == null ? GreaterThanOneofCase.None : GreaterThanOneofCase.Gte;
       }
     }
 
@@ -14605,16 +18624,16 @@ namespace Buf.Validate {
         = pb::FieldCodec.ForMessage(58, global::Google.Protobuf.WellKnownTypes.Duration.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Duration> in_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Duration>();
     /// <summary>
-    ///`in` asserts that the field must be equal to one of the specified values of the `google.protobuf.Duration` type.
-    ///If the field's value doesn't correspond to any of the specified values,
-    ///an error message will be generated.
+    /// `in` asserts that the field must be equal to one of the specified values of the `google.protobuf.Duration` type.
+    /// If the field's value doesn't correspond to any of the specified values,
+    /// an error message will be generated.
     ///
-    ///```proto
-    ///message MyDuration {
-    ///  // value must be in list [1s, 2s, 3s]
+    /// ```proto
+    /// message MyDuration {
+    ///   // value must be in list [1s, 2s, 3s]
     ///   google.protobuf.Duration value = 1 [(buf.validate.field).duration.in = ["1s", "2s", "3s"]];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -14628,22 +18647,89 @@ namespace Buf.Validate {
         = pb::FieldCodec.ForMessage(66, global::Google.Protobuf.WellKnownTypes.Duration.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Duration> notIn_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Duration>();
     /// <summary>
-    ///`not_in` denotes that the field must not be equal to
-    ///any of the specified values of the `google.protobuf.Duration` type.
-    ///If the field's value matches any of these values, an error message will be
-    ///generated.
+    /// `not_in` denotes that the field must not be equal to
+    /// any of the specified values of the `google.protobuf.Duration` type.
+    /// If the field's value matches any of these values, an error message will be
+    /// generated.
     ///
-    ///```proto
-    ///message MyDuration {
-    ///  // value must not be in list [1s, 2s, 3s]
+    /// ```proto
+    /// message MyDuration {
+    ///   // value must not be in list [1s, 2s, 3s]
     ///   google.protobuf.Duration value = 1 [(buf.validate.field).duration.not_in = ["1s", "2s", "3s"]];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Duration> NotIn {
       get { return notIn_; }
+    }
+
+    /// <summary>Field number for the "example" field.</summary>
+    public const int ExampleFieldNumber = 9;
+    private static readonly pb::FieldCodec<global::Google.Protobuf.WellKnownTypes.Duration> _repeated_example_codec
+        = pb::FieldCodec.ForMessage(74, global::Google.Protobuf.WellKnownTypes.Duration.Parser);
+    private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Duration> example_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Duration>();
+    /// <summary>
+    /// `example` specifies values that the field may have. These values SHOULD
+    /// conform to other rules. `example` values will not impact validation
+    /// but may be used as helpful guidance on how to populate the given field.
+    ///
+    /// ```proto
+    /// message MyDuration {
+    ///   google.protobuf.Duration value = 1 [
+    ///     (buf.validate.field).duration.example = { seconds: 1 },
+    ///     (buf.validate.field).duration.example = { seconds: 2 },
+    ///   ];
+    /// }
+    /// ```
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Duration> Example {
+      get { return example_; }
+    }
+
+    private object lessThan_;
+    /// <summary>Enum of possible cases for the "less_than" oneof.</summary>
+    public enum LessThanOneofCase {
+      None = 0,
+      Lt = 3,
+      Lte = 4,
+    }
+    private LessThanOneofCase lessThanCase_ = LessThanOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public LessThanOneofCase LessThanCase {
+      get { return lessThanCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearLessThan() {
+      lessThanCase_ = LessThanOneofCase.None;
+      lessThan_ = null;
+    }
+
+    private object greaterThan_;
+    /// <summary>Enum of possible cases for the "greater_than" oneof.</summary>
+    public enum GreaterThanOneofCase {
+      None = 0,
+      Gt = 5,
+      Gte = 6,
+    }
+    private GreaterThanOneofCase greaterThanCase_ = GreaterThanOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GreaterThanOneofCase GreaterThanCase {
+      get { return greaterThanCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearGreaterThan() {
+      greaterThanCase_ = GreaterThanOneofCase.None;
+      greaterThan_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -14668,6 +18754,12 @@ namespace Buf.Validate {
       if (!object.Equals(Gte, other.Gte)) return false;
       if(!in_.Equals(other.in_)) return false;
       if(!notIn_.Equals(other.notIn_)) return false;
+      if(!example_.Equals(other.example_)) return false;
+      if (LessThanCase != other.LessThanCase) return false;
+      if (GreaterThanCase != other.GreaterThanCase) return false;
+      if (!Equals(_extensions, other._extensions)) {
+        return false;
+      }
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -14676,12 +18768,18 @@ namespace Buf.Validate {
     public override int GetHashCode() {
       int hash = 1;
       if (const_ != null) hash ^= Const.GetHashCode();
-      if (lt_ != null) hash ^= Lt.GetHashCode();
-      if (lte_ != null) hash ^= Lte.GetHashCode();
-      if (gt_ != null) hash ^= Gt.GetHashCode();
-      if (gte_ != null) hash ^= Gte.GetHashCode();
+      if (lessThanCase_ == LessThanOneofCase.Lt) hash ^= Lt.GetHashCode();
+      if (lessThanCase_ == LessThanOneofCase.Lte) hash ^= Lte.GetHashCode();
+      if (greaterThanCase_ == GreaterThanOneofCase.Gt) hash ^= Gt.GetHashCode();
+      if (greaterThanCase_ == GreaterThanOneofCase.Gte) hash ^= Gte.GetHashCode();
       hash ^= in_.GetHashCode();
       hash ^= notIn_.GetHashCode();
+      hash ^= example_.GetHashCode();
+      hash ^= (int) lessThanCase_;
+      hash ^= (int) greaterThanCase_;
+      if (_extensions != null) {
+        hash ^= _extensions.GetHashCode();
+      }
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -14704,24 +18802,28 @@ namespace Buf.Validate {
         output.WriteRawTag(18);
         output.WriteMessage(Const);
       }
-      if (lt_ != null) {
+      if (lessThanCase_ == LessThanOneofCase.Lt) {
         output.WriteRawTag(26);
         output.WriteMessage(Lt);
       }
-      if (lte_ != null) {
+      if (lessThanCase_ == LessThanOneofCase.Lte) {
         output.WriteRawTag(34);
         output.WriteMessage(Lte);
       }
-      if (gt_ != null) {
+      if (greaterThanCase_ == GreaterThanOneofCase.Gt) {
         output.WriteRawTag(42);
         output.WriteMessage(Gt);
       }
-      if (gte_ != null) {
+      if (greaterThanCase_ == GreaterThanOneofCase.Gte) {
         output.WriteRawTag(50);
         output.WriteMessage(Gte);
       }
       in_.WriteTo(output, _repeated_in_codec);
       notIn_.WriteTo(output, _repeated_notIn_codec);
+      example_.WriteTo(output, _repeated_example_codec);
+      if (_extensions != null) {
+        _extensions.WriteTo(output);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -14736,24 +18838,28 @@ namespace Buf.Validate {
         output.WriteRawTag(18);
         output.WriteMessage(Const);
       }
-      if (lt_ != null) {
+      if (lessThanCase_ == LessThanOneofCase.Lt) {
         output.WriteRawTag(26);
         output.WriteMessage(Lt);
       }
-      if (lte_ != null) {
+      if (lessThanCase_ == LessThanOneofCase.Lte) {
         output.WriteRawTag(34);
         output.WriteMessage(Lte);
       }
-      if (gt_ != null) {
+      if (greaterThanCase_ == GreaterThanOneofCase.Gt) {
         output.WriteRawTag(42);
         output.WriteMessage(Gt);
       }
-      if (gte_ != null) {
+      if (greaterThanCase_ == GreaterThanOneofCase.Gte) {
         output.WriteRawTag(50);
         output.WriteMessage(Gte);
       }
       in_.WriteTo(ref output, _repeated_in_codec);
       notIn_.WriteTo(ref output, _repeated_notIn_codec);
+      example_.WriteTo(ref output, _repeated_example_codec);
+      if (_extensions != null) {
+        _extensions.WriteTo(ref output);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -14767,20 +18873,24 @@ namespace Buf.Validate {
       if (const_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Const);
       }
-      if (lt_ != null) {
+      if (lessThanCase_ == LessThanOneofCase.Lt) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Lt);
       }
-      if (lte_ != null) {
+      if (lessThanCase_ == LessThanOneofCase.Lte) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Lte);
       }
-      if (gt_ != null) {
+      if (greaterThanCase_ == GreaterThanOneofCase.Gt) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Gt);
       }
-      if (gte_ != null) {
+      if (greaterThanCase_ == GreaterThanOneofCase.Gte) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Gte);
       }
       size += in_.CalculateSize(_repeated_in_codec);
       size += notIn_.CalculateSize(_repeated_notIn_codec);
+      size += example_.CalculateSize(_repeated_example_codec);
+      if (_extensions != null) {
+        size += _extensions.CalculateSize();
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -14799,32 +18909,40 @@ namespace Buf.Validate {
         }
         Const.MergeFrom(other.Const);
       }
-      if (other.lt_ != null) {
-        if (lt_ == null) {
-          Lt = new global::Google.Protobuf.WellKnownTypes.Duration();
-        }
-        Lt.MergeFrom(other.Lt);
-      }
-      if (other.lte_ != null) {
-        if (lte_ == null) {
-          Lte = new global::Google.Protobuf.WellKnownTypes.Duration();
-        }
-        Lte.MergeFrom(other.Lte);
-      }
-      if (other.gt_ != null) {
-        if (gt_ == null) {
-          Gt = new global::Google.Protobuf.WellKnownTypes.Duration();
-        }
-        Gt.MergeFrom(other.Gt);
-      }
-      if (other.gte_ != null) {
-        if (gte_ == null) {
-          Gte = new global::Google.Protobuf.WellKnownTypes.Duration();
-        }
-        Gte.MergeFrom(other.Gte);
-      }
       in_.Add(other.in_);
       notIn_.Add(other.notIn_);
+      example_.Add(other.example_);
+      switch (other.LessThanCase) {
+        case LessThanOneofCase.Lt:
+          if (Lt == null) {
+            Lt = new global::Google.Protobuf.WellKnownTypes.Duration();
+          }
+          Lt.MergeFrom(other.Lt);
+          break;
+        case LessThanOneofCase.Lte:
+          if (Lte == null) {
+            Lte = new global::Google.Protobuf.WellKnownTypes.Duration();
+          }
+          Lte.MergeFrom(other.Lte);
+          break;
+      }
+
+      switch (other.GreaterThanCase) {
+        case GreaterThanOneofCase.Gt:
+          if (Gt == null) {
+            Gt = new global::Google.Protobuf.WellKnownTypes.Duration();
+          }
+          Gt.MergeFrom(other.Gt);
+          break;
+        case GreaterThanOneofCase.Gte:
+          if (Gte == null) {
+            Gte = new global::Google.Protobuf.WellKnownTypes.Duration();
+          }
+          Gte.MergeFrom(other.Gte);
+          break;
+      }
+
+      pb::ExtensionSet.MergeFrom(ref _extensions, other._extensions);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -14838,7 +18956,9 @@ namespace Buf.Validate {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            }
             break;
           case 18: {
             if (const_ == null) {
@@ -14848,31 +18968,39 @@ namespace Buf.Validate {
             break;
           }
           case 26: {
-            if (lt_ == null) {
-              Lt = new global::Google.Protobuf.WellKnownTypes.Duration();
+            global::Google.Protobuf.WellKnownTypes.Duration subBuilder = new global::Google.Protobuf.WellKnownTypes.Duration();
+            if (lessThanCase_ == LessThanOneofCase.Lt) {
+              subBuilder.MergeFrom(Lt);
             }
-            input.ReadMessage(Lt);
+            input.ReadMessage(subBuilder);
+            Lt = subBuilder;
             break;
           }
           case 34: {
-            if (lte_ == null) {
-              Lte = new global::Google.Protobuf.WellKnownTypes.Duration();
+            global::Google.Protobuf.WellKnownTypes.Duration subBuilder = new global::Google.Protobuf.WellKnownTypes.Duration();
+            if (lessThanCase_ == LessThanOneofCase.Lte) {
+              subBuilder.MergeFrom(Lte);
             }
-            input.ReadMessage(Lte);
+            input.ReadMessage(subBuilder);
+            Lte = subBuilder;
             break;
           }
           case 42: {
-            if (gt_ == null) {
-              Gt = new global::Google.Protobuf.WellKnownTypes.Duration();
+            global::Google.Protobuf.WellKnownTypes.Duration subBuilder = new global::Google.Protobuf.WellKnownTypes.Duration();
+            if (greaterThanCase_ == GreaterThanOneofCase.Gt) {
+              subBuilder.MergeFrom(Gt);
             }
-            input.ReadMessage(Gt);
+            input.ReadMessage(subBuilder);
+            Gt = subBuilder;
             break;
           }
           case 50: {
-            if (gte_ == null) {
-              Gte = new global::Google.Protobuf.WellKnownTypes.Duration();
+            global::Google.Protobuf.WellKnownTypes.Duration subBuilder = new global::Google.Protobuf.WellKnownTypes.Duration();
+            if (greaterThanCase_ == GreaterThanOneofCase.Gte) {
+              subBuilder.MergeFrom(Gte);
             }
-            input.ReadMessage(Gte);
+            input.ReadMessage(subBuilder);
+            Gte = subBuilder;
             break;
           }
           case 58: {
@@ -14881,6 +19009,10 @@ namespace Buf.Validate {
           }
           case 66: {
             notIn_.AddEntriesFrom(input, _repeated_notIn_codec);
+            break;
+          }
+          case 74: {
+            example_.AddEntriesFrom(input, _repeated_example_codec);
             break;
           }
         }
@@ -14896,7 +19028,9 @@ namespace Buf.Validate {
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, ref input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            }
             break;
           case 18: {
             if (const_ == null) {
@@ -14906,31 +19040,39 @@ namespace Buf.Validate {
             break;
           }
           case 26: {
-            if (lt_ == null) {
-              Lt = new global::Google.Protobuf.WellKnownTypes.Duration();
+            global::Google.Protobuf.WellKnownTypes.Duration subBuilder = new global::Google.Protobuf.WellKnownTypes.Duration();
+            if (lessThanCase_ == LessThanOneofCase.Lt) {
+              subBuilder.MergeFrom(Lt);
             }
-            input.ReadMessage(Lt);
+            input.ReadMessage(subBuilder);
+            Lt = subBuilder;
             break;
           }
           case 34: {
-            if (lte_ == null) {
-              Lte = new global::Google.Protobuf.WellKnownTypes.Duration();
+            global::Google.Protobuf.WellKnownTypes.Duration subBuilder = new global::Google.Protobuf.WellKnownTypes.Duration();
+            if (lessThanCase_ == LessThanOneofCase.Lte) {
+              subBuilder.MergeFrom(Lte);
             }
-            input.ReadMessage(Lte);
+            input.ReadMessage(subBuilder);
+            Lte = subBuilder;
             break;
           }
           case 42: {
-            if (gt_ == null) {
-              Gt = new global::Google.Protobuf.WellKnownTypes.Duration();
+            global::Google.Protobuf.WellKnownTypes.Duration subBuilder = new global::Google.Protobuf.WellKnownTypes.Duration();
+            if (greaterThanCase_ == GreaterThanOneofCase.Gt) {
+              subBuilder.MergeFrom(Gt);
             }
-            input.ReadMessage(Gt);
+            input.ReadMessage(subBuilder);
+            Gt = subBuilder;
             break;
           }
           case 50: {
-            if (gte_ == null) {
-              Gte = new global::Google.Protobuf.WellKnownTypes.Duration();
+            global::Google.Protobuf.WellKnownTypes.Duration subBuilder = new global::Google.Protobuf.WellKnownTypes.Duration();
+            if (greaterThanCase_ == GreaterThanOneofCase.Gte) {
+              subBuilder.MergeFrom(Gte);
             }
-            input.ReadMessage(Gte);
+            input.ReadMessage(subBuilder);
+            Gte = subBuilder;
             break;
           }
           case 58: {
@@ -14941,24 +19083,51 @@ namespace Buf.Validate {
             notIn_.AddEntriesFrom(ref input, _repeated_notIn_codec);
             break;
           }
+          case 74: {
+            example_.AddEntriesFrom(ref input, _repeated_example_codec);
+            break;
+          }
         }
       }
     }
     #endif
 
+    public TValue GetExtension<TValue>(pb::Extension<DurationRules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<DurationRules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>(pb::RepeatedExtension<DurationRules, TValue> extension) {
+      return pb::ExtensionSet.GetOrInitialize(ref _extensions, extension);
+    }
+    public void SetExtension<TValue>(pb::Extension<DurationRules, TValue> extension, TValue value) {
+      pb::ExtensionSet.Set(ref _extensions, extension, value);
+    }
+    public bool HasExtension<TValue>(pb::Extension<DurationRules, TValue> extension) {
+      return pb::ExtensionSet.Has(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::Extension<DurationRules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::RepeatedExtension<DurationRules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+
   }
 
   /// <summary>
-  /// TimestampRules describe the constraints applied exclusively to the `google.protobuf.Timestamp` well-known type.
+  /// TimestampRules describe the rules applied exclusively to the `google.protobuf.Timestamp` well-known type.
   /// </summary>
-  public sealed partial class TimestampRules : pb::IMessage<TimestampRules>
+  public sealed partial class TimestampRules : pb::IExtendableMessage<TimestampRules>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
     private static readonly pb::MessageParser<TimestampRules> _parser = new pb::MessageParser<TimestampRules>(() => new TimestampRules());
     private pb::UnknownFieldSet _unknownFields;
-    private int _hasBits0;
+    private pb::ExtensionSet<TimestampRules> _extensions;
+    private pb::ExtensionSet<TimestampRules> _Extensions { get { return _extensions; } }
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pb::MessageParser<TimestampRules> Parser { get { return _parser; } }
@@ -14966,7 +19135,7 @@ namespace Buf.Validate {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[23]; }
+      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[26]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -14986,16 +19155,35 @@ namespace Buf.Validate {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public TimestampRules(TimestampRules other) : this() {
-      _hasBits0 = other._hasBits0;
       const_ = other.const_ != null ? other.const_.Clone() : null;
-      lt_ = other.lt_ != null ? other.lt_.Clone() : null;
-      lte_ = other.lte_ != null ? other.lte_.Clone() : null;
-      gt_ = other.gt_ != null ? other.gt_.Clone() : null;
-      gte_ = other.gte_ != null ? other.gte_.Clone() : null;
-      ltNow_ = other.ltNow_;
-      gtNow_ = other.gtNow_;
       within_ = other.within_ != null ? other.within_.Clone() : null;
+      example_ = other.example_.Clone();
+      switch (other.LessThanCase) {
+        case LessThanOneofCase.Lt:
+          Lt = other.Lt.Clone();
+          break;
+        case LessThanOneofCase.Lte:
+          Lte = other.Lte.Clone();
+          break;
+        case LessThanOneofCase.LtNow:
+          LtNow = other.LtNow;
+          break;
+      }
+
+      switch (other.GreaterThanCase) {
+        case GreaterThanOneofCase.Gt:
+          Gt = other.Gt.Clone();
+          break;
+        case GreaterThanOneofCase.Gte:
+          Gte = other.Gte.Clone();
+          break;
+        case GreaterThanOneofCase.GtNow:
+          GtNow = other.GtNow;
+          break;
+      }
+
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+      _extensions = pb::ExtensionSet.Clone(other._extensions);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15008,14 +19196,14 @@ namespace Buf.Validate {
     public const int ConstFieldNumber = 2;
     private global::Google.Protobuf.WellKnownTypes.Timestamp const_;
     /// <summary>
-    ///`const` dictates that this field, of the `google.protobuf.Timestamp` type, must exactly match the specified value. If the field value doesn't correspond to the specified timestamp, an error message will be generated.
+    /// `const` dictates that this field, of the `google.protobuf.Timestamp` type, must exactly match the specified value. If the field value doesn't correspond to the specified timestamp, an error message will be generated.
     ///
-    ///```proto
-    ///message MyTimestamp {
-    ///  // value must equal 2023-05-03T10:00:00Z
+    /// ```proto
+    /// message MyTimestamp {
+    ///   // value must equal 2023-05-03T10:00:00Z
     ///   google.protobuf.Timestamp created_at = 1 [(buf.validate.field).timestamp.const = {seconds: 1727998800}];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -15028,7 +19216,6 @@ namespace Buf.Validate {
 
     /// <summary>Field number for the "lt" field.</summary>
     public const int LtFieldNumber = 3;
-    private global::Google.Protobuf.WellKnownTypes.Timestamp lt_;
     /// <summary>
     /// requires the duration field value to be less than the specified value (field &lt; value). If the field value doesn't meet the required conditions, an error message is generated.
     ///
@@ -15042,15 +19229,15 @@ namespace Buf.Validate {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp Lt {
-      get { return lt_; }
+      get { return lessThanCase_ == LessThanOneofCase.Lt ? (global::Google.Protobuf.WellKnownTypes.Timestamp) lessThan_ : null; }
       set {
-        lt_ = value;
+        lessThan_ = value;
+        lessThanCase_ = value == null ? LessThanOneofCase.None : LessThanOneofCase.Lt;
       }
     }
 
     /// <summary>Field number for the "lte" field.</summary>
     public const int LteFieldNumber = 4;
-    private global::Google.Protobuf.WellKnownTypes.Timestamp lte_;
     /// <summary>
     /// requires the timestamp field value to be less than or equal to the specified value (field &lt;= value). If the field value doesn't meet the required conditions, an error message is generated.
     ///
@@ -15064,148 +19251,147 @@ namespace Buf.Validate {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp Lte {
-      get { return lte_; }
+      get { return lessThanCase_ == LessThanOneofCase.Lte ? (global::Google.Protobuf.WellKnownTypes.Timestamp) lessThan_ : null; }
       set {
-        lte_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "gt" field.</summary>
-    public const int GtFieldNumber = 5;
-    private global::Google.Protobuf.WellKnownTypes.Timestamp gt_;
-    /// <summary>
-    ///`gt` requires the timestamp field value to be greater than the specified
-    /// value (exclusive). If the value of `gt` is larger than a specified `lt`
-    /// or `lte`, the range is reversed, and the field value must be outside the
-    /// specified range. If the field value doesn't meet the required conditions,
-    /// an error message is generated.
-    ///
-    ///```proto
-    ///message MyTimestamp {
-    ///  // timestamp must be greater than '2023-01-01T00:00:00Z' [timestamp.gt]
-    ///  google.protobuf.Timestamp value = 1 [(buf.validate.field).timestamp.gt = { seconds: 1672444800 }];
-    ///
-    ///  // timestamp must be greater than '2023-01-01T00:00:00Z' and less than '2023-01-02T00:00:00Z' [timestamp.gt_lt]
-    ///  google.protobuf.Timestamp another_value = 2 [(buf.validate.field).timestamp = { gt: { seconds: 1672444800 }, lt: { seconds: 1672531200 } }];
-    ///
-    ///  // timestamp must be greater than '2023-01-02T00:00:00Z' or less than '2023-01-01T00:00:00Z' [timestamp.gt_lt_exclusive]
-    ///  google.protobuf.Timestamp other_value = 3 [(buf.validate.field).timestamp = { gt: { seconds: 1672531200 }, lt: { seconds: 1672444800 } }];
-    ///}
-    ///```
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Google.Protobuf.WellKnownTypes.Timestamp Gt {
-      get { return gt_; }
-      set {
-        gt_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "gte" field.</summary>
-    public const int GteFieldNumber = 6;
-    private global::Google.Protobuf.WellKnownTypes.Timestamp gte_;
-    /// <summary>
-    ///`gte` requires the timestamp field value to be greater than or equal to the
-    /// specified value (exclusive). If the value of `gte` is larger than a
-    /// specified `lt` or `lte`, the range is reversed, and the field value
-    /// must be outside the specified range. If the field value doesn't meet
-    /// the required conditions, an error message is generated.
-    ///
-    ///```proto
-    ///message MyTimestamp {
-    ///  // timestamp must be greater than or equal to '2023-01-01T00:00:00Z' [timestamp.gte]
-    ///  google.protobuf.Timestamp value = 1 [(buf.validate.field).timestamp.gte = { seconds: 1672444800 }];
-    ///
-    ///  // timestamp must be greater than or equal to '2023-01-01T00:00:00Z' and less than '2023-01-02T00:00:00Z' [timestamp.gte_lt]
-    ///  google.protobuf.Timestamp another_value = 2 [(buf.validate.field).timestamp = { gte: { seconds: 1672444800 }, lt: { seconds: 1672531200 } }];
-    ///
-    ///  // timestamp must be greater than or equal to '2023-01-02T00:00:00Z' or less than '2023-01-01T00:00:00Z' [timestamp.gte_lt_exclusive]
-    ///  google.protobuf.Timestamp other_value = 3 [(buf.validate.field).timestamp = { gte: { seconds: 1672531200 }, lt: { seconds: 1672444800 } }];
-    ///}
-    ///```
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Google.Protobuf.WellKnownTypes.Timestamp Gte {
-      get { return gte_; }
-      set {
-        gte_ = value;
+        lessThan_ = value;
+        lessThanCase_ = value == null ? LessThanOneofCase.None : LessThanOneofCase.Lte;
       }
     }
 
     /// <summary>Field number for the "lt_now" field.</summary>
     public const int LtNowFieldNumber = 7;
-    private readonly static bool LtNowDefaultValue = false;
-
-    private bool ltNow_;
     /// <summary>
-    ///`lt_now` specifies that this field, of the `google.protobuf.Timestamp` type, must be less than the current time. `lt_now` can only be used with the `within` rule.
+    /// `lt_now` specifies that this field, of the `google.protobuf.Timestamp` type, must be less than the current time. `lt_now` can only be used with the `within` rule.
     ///
-    ///```proto
-    ///message MyTimestamp {
+    /// ```proto
+    /// message MyTimestamp {
     ///  // value must be less than now
     ///   google.protobuf.Timestamp created_at = 1 [(buf.validate.field).timestamp.lt_now = true];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool LtNow {
-      get { if ((_hasBits0 & 1) != 0) { return ltNow_; } else { return LtNowDefaultValue; } }
+      get { return HasLtNow ? (bool) lessThan_ : false; }
       set {
-        _hasBits0 |= 1;
-        ltNow_ = value;
+        lessThan_ = value;
+        lessThanCase_ = LessThanOneofCase.LtNow;
       }
     }
     /// <summary>Gets whether the "lt_now" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasLtNow {
-      get { return (_hasBits0 & 1) != 0; }
+      get { return lessThanCase_ == LessThanOneofCase.LtNow; }
     }
-    /// <summary>Clears the value of the "lt_now" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "lt_now" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearLtNow() {
-      _hasBits0 &= ~1;
+      if (HasLtNow) {
+        ClearLessThan();
+      }
+    }
+
+    /// <summary>Field number for the "gt" field.</summary>
+    public const int GtFieldNumber = 5;
+    /// <summary>
+    /// `gt` requires the timestamp field value to be greater than the specified
+    /// value (exclusive). If the value of `gt` is larger than a specified `lt`
+    /// or `lte`, the range is reversed, and the field value must be outside the
+    /// specified range. If the field value doesn't meet the required conditions,
+    /// an error message is generated.
+    ///
+    /// ```proto
+    /// message MyTimestamp {
+    ///   // timestamp must be greater than '2023-01-01T00:00:00Z' [timestamp.gt]
+    ///   google.protobuf.Timestamp value = 1 [(buf.validate.field).timestamp.gt = { seconds: 1672444800 }];
+    ///
+    ///   // timestamp must be greater than '2023-01-01T00:00:00Z' and less than '2023-01-02T00:00:00Z' [timestamp.gt_lt]
+    ///   google.protobuf.Timestamp another_value = 2 [(buf.validate.field).timestamp = { gt: { seconds: 1672444800 }, lt: { seconds: 1672531200 } }];
+    ///
+    ///   // timestamp must be greater than '2023-01-02T00:00:00Z' or less than '2023-01-01T00:00:00Z' [timestamp.gt_lt_exclusive]
+    ///   google.protobuf.Timestamp other_value = 3 [(buf.validate.field).timestamp = { gt: { seconds: 1672531200 }, lt: { seconds: 1672444800 } }];
+    /// }
+    /// ```
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp Gt {
+      get { return greaterThanCase_ == GreaterThanOneofCase.Gt ? (global::Google.Protobuf.WellKnownTypes.Timestamp) greaterThan_ : null; }
+      set {
+        greaterThan_ = value;
+        greaterThanCase_ = value == null ? GreaterThanOneofCase.None : GreaterThanOneofCase.Gt;
+      }
+    }
+
+    /// <summary>Field number for the "gte" field.</summary>
+    public const int GteFieldNumber = 6;
+    /// <summary>
+    /// `gte` requires the timestamp field value to be greater than or equal to the
+    /// specified value (exclusive). If the value of `gte` is larger than a
+    /// specified `lt` or `lte`, the range is reversed, and the field value
+    /// must be outside the specified range. If the field value doesn't meet
+    /// the required conditions, an error message is generated.
+    ///
+    /// ```proto
+    /// message MyTimestamp {
+    ///   // timestamp must be greater than or equal to '2023-01-01T00:00:00Z' [timestamp.gte]
+    ///   google.protobuf.Timestamp value = 1 [(buf.validate.field).timestamp.gte = { seconds: 1672444800 }];
+    ///
+    ///   // timestamp must be greater than or equal to '2023-01-01T00:00:00Z' and less than '2023-01-02T00:00:00Z' [timestamp.gte_lt]
+    ///   google.protobuf.Timestamp another_value = 2 [(buf.validate.field).timestamp = { gte: { seconds: 1672444800 }, lt: { seconds: 1672531200 } }];
+    ///
+    ///   // timestamp must be greater than or equal to '2023-01-02T00:00:00Z' or less than '2023-01-01T00:00:00Z' [timestamp.gte_lt_exclusive]
+    ///   google.protobuf.Timestamp other_value = 3 [(buf.validate.field).timestamp = { gte: { seconds: 1672531200 }, lt: { seconds: 1672444800 } }];
+    /// }
+    /// ```
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp Gte {
+      get { return greaterThanCase_ == GreaterThanOneofCase.Gte ? (global::Google.Protobuf.WellKnownTypes.Timestamp) greaterThan_ : null; }
+      set {
+        greaterThan_ = value;
+        greaterThanCase_ = value == null ? GreaterThanOneofCase.None : GreaterThanOneofCase.Gte;
+      }
     }
 
     /// <summary>Field number for the "gt_now" field.</summary>
     public const int GtNowFieldNumber = 8;
-    private readonly static bool GtNowDefaultValue = false;
-
-    private bool gtNow_;
     /// <summary>
-    ///`gt_now` specifies that this field, of the `google.protobuf.Timestamp` type, must be greater than the current time. `gt_now` can only be used with the `within` rule.
+    /// `gt_now` specifies that this field, of the `google.protobuf.Timestamp` type, must be greater than the current time. `gt_now` can only be used with the `within` rule.
     ///
-    ///```proto
-    ///message MyTimestamp {
-    ///  // value must be greater than now
+    /// ```proto
+    /// message MyTimestamp {
+    ///   // value must be greater than now
     ///   google.protobuf.Timestamp created_at = 1 [(buf.validate.field).timestamp.gt_now = true];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool GtNow {
-      get { if ((_hasBits0 & 2) != 0) { return gtNow_; } else { return GtNowDefaultValue; } }
+      get { return HasGtNow ? (bool) greaterThan_ : false; }
       set {
-        _hasBits0 |= 2;
-        gtNow_ = value;
+        greaterThan_ = value;
+        greaterThanCase_ = GreaterThanOneofCase.GtNow;
       }
     }
     /// <summary>Gets whether the "gt_now" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public bool HasGtNow {
-      get { return (_hasBits0 & 2) != 0; }
+      get { return greaterThanCase_ == GreaterThanOneofCase.GtNow; }
     }
-    /// <summary>Clears the value of the "gt_now" field</summary>
+    /// <summary> Clears the value of the oneof if it's currently set to "gt_now" </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public void ClearGtNow() {
-      _hasBits0 &= ~2;
+      if (HasGtNow) {
+        ClearGreaterThan();
+      }
     }
 
     /// <summary>Field number for the "within" field.</summary>
@@ -15214,12 +19400,12 @@ namespace Buf.Validate {
     /// <summary>
     /// `within` specifies that this field, of the `google.protobuf.Timestamp` type, must be within the specified duration of the current time. If the field value isn't within the duration, an error message is generated.
     ///
-    ///```proto
-    ///message MyTimestamp {
-    ///  // value must be within 1 hour of now
+    /// ```proto
+    /// message MyTimestamp {
+    ///   // value must be within 1 hour of now
     ///   google.protobuf.Timestamp created_at = 1 [(buf.validate.field).timestamp.within = {seconds: 3600}];
-    ///}
-    ///```
+    /// }
+    /// ```
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -15228,6 +19414,75 @@ namespace Buf.Validate {
       set {
         within_ = value;
       }
+    }
+
+    /// <summary>Field number for the "example" field.</summary>
+    public const int ExampleFieldNumber = 10;
+    private static readonly pb::FieldCodec<global::Google.Protobuf.WellKnownTypes.Timestamp> _repeated_example_codec
+        = pb::FieldCodec.ForMessage(82, global::Google.Protobuf.WellKnownTypes.Timestamp.Parser);
+    private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Timestamp> example_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Timestamp>();
+    /// <summary>
+    /// `example` specifies values that the field may have. These values SHOULD
+    /// conform to other rules. `example` values will not impact validation
+    /// but may be used as helpful guidance on how to populate the given field.
+    ///
+    /// ```proto
+    /// message MyTimestamp {
+    ///   google.protobuf.Timestamp value = 1 [
+    ///     (buf.validate.field).timestamp.example = { seconds: 1672444800 },
+    ///     (buf.validate.field).timestamp.example = { seconds: 1672531200 },
+    ///   ];
+    /// }
+    /// ```
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Timestamp> Example {
+      get { return example_; }
+    }
+
+    private object lessThan_;
+    /// <summary>Enum of possible cases for the "less_than" oneof.</summary>
+    public enum LessThanOneofCase {
+      None = 0,
+      Lt = 3,
+      Lte = 4,
+      LtNow = 7,
+    }
+    private LessThanOneofCase lessThanCase_ = LessThanOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public LessThanOneofCase LessThanCase {
+      get { return lessThanCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearLessThan() {
+      lessThanCase_ = LessThanOneofCase.None;
+      lessThan_ = null;
+    }
+
+    private object greaterThan_;
+    /// <summary>Enum of possible cases for the "greater_than" oneof.</summary>
+    public enum GreaterThanOneofCase {
+      None = 0,
+      Gt = 5,
+      Gte = 6,
+      GtNow = 8,
+    }
+    private GreaterThanOneofCase greaterThanCase_ = GreaterThanOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public GreaterThanOneofCase GreaterThanCase {
+      get { return greaterThanCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearGreaterThan() {
+      greaterThanCase_ = GreaterThanOneofCase.None;
+      greaterThan_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -15248,11 +19503,17 @@ namespace Buf.Validate {
       if (!object.Equals(Const, other.Const)) return false;
       if (!object.Equals(Lt, other.Lt)) return false;
       if (!object.Equals(Lte, other.Lte)) return false;
+      if (LtNow != other.LtNow) return false;
       if (!object.Equals(Gt, other.Gt)) return false;
       if (!object.Equals(Gte, other.Gte)) return false;
-      if (LtNow != other.LtNow) return false;
       if (GtNow != other.GtNow) return false;
       if (!object.Equals(Within, other.Within)) return false;
+      if(!example_.Equals(other.example_)) return false;
+      if (LessThanCase != other.LessThanCase) return false;
+      if (GreaterThanCase != other.GreaterThanCase) return false;
+      if (!Equals(_extensions, other._extensions)) {
+        return false;
+      }
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -15261,13 +19522,19 @@ namespace Buf.Validate {
     public override int GetHashCode() {
       int hash = 1;
       if (const_ != null) hash ^= Const.GetHashCode();
-      if (lt_ != null) hash ^= Lt.GetHashCode();
-      if (lte_ != null) hash ^= Lte.GetHashCode();
-      if (gt_ != null) hash ^= Gt.GetHashCode();
-      if (gte_ != null) hash ^= Gte.GetHashCode();
+      if (lessThanCase_ == LessThanOneofCase.Lt) hash ^= Lt.GetHashCode();
+      if (lessThanCase_ == LessThanOneofCase.Lte) hash ^= Lte.GetHashCode();
       if (HasLtNow) hash ^= LtNow.GetHashCode();
+      if (greaterThanCase_ == GreaterThanOneofCase.Gt) hash ^= Gt.GetHashCode();
+      if (greaterThanCase_ == GreaterThanOneofCase.Gte) hash ^= Gte.GetHashCode();
       if (HasGtNow) hash ^= GtNow.GetHashCode();
       if (within_ != null) hash ^= Within.GetHashCode();
+      hash ^= example_.GetHashCode();
+      hash ^= (int) lessThanCase_;
+      hash ^= (int) greaterThanCase_;
+      if (_extensions != null) {
+        hash ^= _extensions.GetHashCode();
+      }
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -15290,19 +19557,19 @@ namespace Buf.Validate {
         output.WriteRawTag(18);
         output.WriteMessage(Const);
       }
-      if (lt_ != null) {
+      if (lessThanCase_ == LessThanOneofCase.Lt) {
         output.WriteRawTag(26);
         output.WriteMessage(Lt);
       }
-      if (lte_ != null) {
+      if (lessThanCase_ == LessThanOneofCase.Lte) {
         output.WriteRawTag(34);
         output.WriteMessage(Lte);
       }
-      if (gt_ != null) {
+      if (greaterThanCase_ == GreaterThanOneofCase.Gt) {
         output.WriteRawTag(42);
         output.WriteMessage(Gt);
       }
-      if (gte_ != null) {
+      if (greaterThanCase_ == GreaterThanOneofCase.Gte) {
         output.WriteRawTag(50);
         output.WriteMessage(Gte);
       }
@@ -15317,6 +19584,10 @@ namespace Buf.Validate {
       if (within_ != null) {
         output.WriteRawTag(74);
         output.WriteMessage(Within);
+      }
+      example_.WriteTo(output, _repeated_example_codec);
+      if (_extensions != null) {
+        _extensions.WriteTo(output);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -15332,19 +19603,19 @@ namespace Buf.Validate {
         output.WriteRawTag(18);
         output.WriteMessage(Const);
       }
-      if (lt_ != null) {
+      if (lessThanCase_ == LessThanOneofCase.Lt) {
         output.WriteRawTag(26);
         output.WriteMessage(Lt);
       }
-      if (lte_ != null) {
+      if (lessThanCase_ == LessThanOneofCase.Lte) {
         output.WriteRawTag(34);
         output.WriteMessage(Lte);
       }
-      if (gt_ != null) {
+      if (greaterThanCase_ == GreaterThanOneofCase.Gt) {
         output.WriteRawTag(42);
         output.WriteMessage(Gt);
       }
-      if (gte_ != null) {
+      if (greaterThanCase_ == GreaterThanOneofCase.Gte) {
         output.WriteRawTag(50);
         output.WriteMessage(Gte);
       }
@@ -15360,6 +19631,10 @@ namespace Buf.Validate {
         output.WriteRawTag(74);
         output.WriteMessage(Within);
       }
+      example_.WriteTo(ref output, _repeated_example_codec);
+      if (_extensions != null) {
+        _extensions.WriteTo(ref output);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -15373,26 +19648,30 @@ namespace Buf.Validate {
       if (const_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Const);
       }
-      if (lt_ != null) {
+      if (lessThanCase_ == LessThanOneofCase.Lt) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Lt);
       }
-      if (lte_ != null) {
+      if (lessThanCase_ == LessThanOneofCase.Lte) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Lte);
-      }
-      if (gt_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Gt);
-      }
-      if (gte_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Gte);
       }
       if (HasLtNow) {
         size += 1 + 1;
+      }
+      if (greaterThanCase_ == GreaterThanOneofCase.Gt) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Gt);
+      }
+      if (greaterThanCase_ == GreaterThanOneofCase.Gte) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Gte);
       }
       if (HasGtNow) {
         size += 1 + 1;
       }
       if (within_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Within);
+      }
+      size += example_.CalculateSize(_repeated_example_codec);
+      if (_extensions != null) {
+        size += _extensions.CalculateSize();
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -15412,41 +19691,840 @@ namespace Buf.Validate {
         }
         Const.MergeFrom(other.Const);
       }
-      if (other.lt_ != null) {
-        if (lt_ == null) {
-          Lt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
-        }
-        Lt.MergeFrom(other.Lt);
-      }
-      if (other.lte_ != null) {
-        if (lte_ == null) {
-          Lte = new global::Google.Protobuf.WellKnownTypes.Timestamp();
-        }
-        Lte.MergeFrom(other.Lte);
-      }
-      if (other.gt_ != null) {
-        if (gt_ == null) {
-          Gt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
-        }
-        Gt.MergeFrom(other.Gt);
-      }
-      if (other.gte_ != null) {
-        if (gte_ == null) {
-          Gte = new global::Google.Protobuf.WellKnownTypes.Timestamp();
-        }
-        Gte.MergeFrom(other.Gte);
-      }
-      if (other.HasLtNow) {
-        LtNow = other.LtNow;
-      }
-      if (other.HasGtNow) {
-        GtNow = other.GtNow;
-      }
       if (other.within_ != null) {
         if (within_ == null) {
           Within = new global::Google.Protobuf.WellKnownTypes.Duration();
         }
         Within.MergeFrom(other.Within);
+      }
+      example_.Add(other.example_);
+      switch (other.LessThanCase) {
+        case LessThanOneofCase.Lt:
+          if (Lt == null) {
+            Lt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+          }
+          Lt.MergeFrom(other.Lt);
+          break;
+        case LessThanOneofCase.Lte:
+          if (Lte == null) {
+            Lte = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+          }
+          Lte.MergeFrom(other.Lte);
+          break;
+        case LessThanOneofCase.LtNow:
+          LtNow = other.LtNow;
+          break;
+      }
+
+      switch (other.GreaterThanCase) {
+        case GreaterThanOneofCase.Gt:
+          if (Gt == null) {
+            Gt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+          }
+          Gt.MergeFrom(other.Gt);
+          break;
+        case GreaterThanOneofCase.Gte:
+          if (Gte == null) {
+            Gte = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+          }
+          Gte.MergeFrom(other.Gte);
+          break;
+        case GreaterThanOneofCase.GtNow:
+          GtNow = other.GtNow;
+          break;
+      }
+
+      pb::ExtensionSet.MergeFrom(ref _extensions, other._extensions);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            }
+            break;
+          case 18: {
+            if (const_ == null) {
+              Const = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(Const);
+            break;
+          }
+          case 26: {
+            global::Google.Protobuf.WellKnownTypes.Timestamp subBuilder = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            if (lessThanCase_ == LessThanOneofCase.Lt) {
+              subBuilder.MergeFrom(Lt);
+            }
+            input.ReadMessage(subBuilder);
+            Lt = subBuilder;
+            break;
+          }
+          case 34: {
+            global::Google.Protobuf.WellKnownTypes.Timestamp subBuilder = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            if (lessThanCase_ == LessThanOneofCase.Lte) {
+              subBuilder.MergeFrom(Lte);
+            }
+            input.ReadMessage(subBuilder);
+            Lte = subBuilder;
+            break;
+          }
+          case 42: {
+            global::Google.Protobuf.WellKnownTypes.Timestamp subBuilder = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            if (greaterThanCase_ == GreaterThanOneofCase.Gt) {
+              subBuilder.MergeFrom(Gt);
+            }
+            input.ReadMessage(subBuilder);
+            Gt = subBuilder;
+            break;
+          }
+          case 50: {
+            global::Google.Protobuf.WellKnownTypes.Timestamp subBuilder = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            if (greaterThanCase_ == GreaterThanOneofCase.Gte) {
+              subBuilder.MergeFrom(Gte);
+            }
+            input.ReadMessage(subBuilder);
+            Gte = subBuilder;
+            break;
+          }
+          case 56: {
+            LtNow = input.ReadBool();
+            break;
+          }
+          case 64: {
+            GtNow = input.ReadBool();
+            break;
+          }
+          case 74: {
+            if (within_ == null) {
+              Within = new global::Google.Protobuf.WellKnownTypes.Duration();
+            }
+            input.ReadMessage(Within);
+            break;
+          }
+          case 82: {
+            example_.AddEntriesFrom(input, _repeated_example_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            if (!pb::ExtensionSet.TryMergeFieldFrom(ref _extensions, ref input)) {
+              _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            }
+            break;
+          case 18: {
+            if (const_ == null) {
+              Const = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(Const);
+            break;
+          }
+          case 26: {
+            global::Google.Protobuf.WellKnownTypes.Timestamp subBuilder = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            if (lessThanCase_ == LessThanOneofCase.Lt) {
+              subBuilder.MergeFrom(Lt);
+            }
+            input.ReadMessage(subBuilder);
+            Lt = subBuilder;
+            break;
+          }
+          case 34: {
+            global::Google.Protobuf.WellKnownTypes.Timestamp subBuilder = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            if (lessThanCase_ == LessThanOneofCase.Lte) {
+              subBuilder.MergeFrom(Lte);
+            }
+            input.ReadMessage(subBuilder);
+            Lte = subBuilder;
+            break;
+          }
+          case 42: {
+            global::Google.Protobuf.WellKnownTypes.Timestamp subBuilder = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            if (greaterThanCase_ == GreaterThanOneofCase.Gt) {
+              subBuilder.MergeFrom(Gt);
+            }
+            input.ReadMessage(subBuilder);
+            Gt = subBuilder;
+            break;
+          }
+          case 50: {
+            global::Google.Protobuf.WellKnownTypes.Timestamp subBuilder = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            if (greaterThanCase_ == GreaterThanOneofCase.Gte) {
+              subBuilder.MergeFrom(Gte);
+            }
+            input.ReadMessage(subBuilder);
+            Gte = subBuilder;
+            break;
+          }
+          case 56: {
+            LtNow = input.ReadBool();
+            break;
+          }
+          case 64: {
+            GtNow = input.ReadBool();
+            break;
+          }
+          case 74: {
+            if (within_ == null) {
+              Within = new global::Google.Protobuf.WellKnownTypes.Duration();
+            }
+            input.ReadMessage(Within);
+            break;
+          }
+          case 82: {
+            example_.AddEntriesFrom(ref input, _repeated_example_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+    public TValue GetExtension<TValue>(pb::Extension<TimestampRules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetExtension<TValue>(pb::RepeatedExtension<TimestampRules, TValue> extension) {
+      return pb::ExtensionSet.Get(ref _extensions, extension);
+    }
+    public pbc::RepeatedField<TValue> GetOrInitializeExtension<TValue>(pb::RepeatedExtension<TimestampRules, TValue> extension) {
+      return pb::ExtensionSet.GetOrInitialize(ref _extensions, extension);
+    }
+    public void SetExtension<TValue>(pb::Extension<TimestampRules, TValue> extension, TValue value) {
+      pb::ExtensionSet.Set(ref _extensions, extension, value);
+    }
+    public bool HasExtension<TValue>(pb::Extension<TimestampRules, TValue> extension) {
+      return pb::ExtensionSet.Has(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::Extension<TimestampRules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+    public void ClearExtension<TValue>(pb::RepeatedExtension<TimestampRules, TValue> extension) {
+      pb::ExtensionSet.Clear(ref _extensions, extension);
+    }
+
+  }
+
+  /// <summary>
+  /// `Violations` is a collection of `Violation` messages. This message type is returned by
+  /// Protovalidate when a proto message fails to meet the requirements set by the `Rule` validation rules.
+  /// Each individual violation is represented by a `Violation` message.
+  /// </summary>
+  public sealed partial class Violations : pb::IMessage<Violations>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<Violations> _parser = new pb::MessageParser<Violations>(() => new Violations());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<Violations> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[27]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public Violations() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public Violations(Violations other) : this() {
+      violations_ = other.violations_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public Violations Clone() {
+      return new Violations(this);
+    }
+
+    /// <summary>Field number for the "violations" field.</summary>
+    public const int Violations_FieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Buf.Validate.Violation> _repeated_violations_codec
+        = pb::FieldCodec.ForMessage(10, global::Buf.Validate.Violation.Parser);
+    private readonly pbc::RepeatedField<global::Buf.Validate.Violation> violations_ = new pbc::RepeatedField<global::Buf.Validate.Violation>();
+    /// <summary>
+    /// `violations` is a repeated field that contains all the `Violation` messages corresponding to the violations detected.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Buf.Validate.Violation> Violations_ {
+      get { return violations_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as Violations);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(Violations other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!violations_.Equals(other.violations_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= violations_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      violations_.WriteTo(output, _repeated_violations_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      violations_.WriteTo(ref output, _repeated_violations_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += violations_.CalculateSize(_repeated_violations_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(Violations other) {
+      if (other == null) {
+        return;
+      }
+      violations_.Add(other.violations_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            violations_.AddEntriesFrom(input, _repeated_violations_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            violations_.AddEntriesFrom(ref input, _repeated_violations_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// `Violation` represents a single instance where a validation rule, expressed
+  /// as a `Rule`, was not met. It provides information about the field that
+  /// caused the violation, the specific rule that wasn't fulfilled, and a
+  /// human-readable error message.
+  ///
+  /// For example, consider the following message:
+  ///
+  /// ```proto
+  /// message User {
+  ///     int32 age = 1 [(buf.validate.field).cel = {
+  ///         id: "user.age",
+  ///         expression: "this &lt; 18 ? 'User must be at least 18 years old' : ''",
+  ///     }];
+  /// }
+  /// ```
+  ///
+  /// It could produce the following violation:
+  ///
+  /// ```json
+  /// {
+  ///   "ruleId": "user.age",
+  ///   "message": "User must be at least 18 years old",
+  ///   "field": {
+  ///     "elements": [
+  ///       {
+  ///         "fieldNumber": 1,
+  ///         "fieldName": "age",
+  ///         "fieldType": "TYPE_INT32"
+  ///       }
+  ///     ]
+  ///   },
+  ///   "rule": {
+  ///     "elements": [
+  ///       {
+  ///         "fieldNumber": 23,
+  ///         "fieldName": "cel",
+  ///         "fieldType": "TYPE_MESSAGE",
+  ///         "index": "0"
+  ///       }
+  ///     ]
+  ///   }
+  /// }
+  /// ```
+  /// </summary>
+  public sealed partial class Violation : pb::IMessage<Violation>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<Violation> _parser = new pb::MessageParser<Violation>(() => new Violation());
+    private pb::UnknownFieldSet _unknownFields;
+    private int _hasBits0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<Violation> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[28]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public Violation() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public Violation(Violation other) : this() {
+      _hasBits0 = other._hasBits0;
+      field_ = other.field_ != null ? other.field_.Clone() : null;
+      rule_ = other.rule_ != null ? other.rule_.Clone() : null;
+      ruleId_ = other.ruleId_;
+      message_ = other.message_;
+      forKey_ = other.forKey_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public Violation Clone() {
+      return new Violation(this);
+    }
+
+    /// <summary>Field number for the "field" field.</summary>
+    public const int FieldFieldNumber = 5;
+    private global::Buf.Validate.FieldPath field_;
+    /// <summary>
+    /// `field` is a machine-readable path to the field that failed validation.
+    /// This could be a nested field, in which case the path will include all the parent fields leading to the actual field that caused the violation.
+    ///
+    /// For example, consider the following message:
+    ///
+    /// ```proto
+    /// message Message {
+    ///   bool a = 1 [(buf.validate.field).required = true];
+    /// }
+    /// ```
+    ///
+    /// It could produce the following violation:
+    ///
+    /// ```textproto
+    /// violation {
+    ///   field { element { field_number: 1, field_name: "a", field_type: 8 } }
+    ///   ...
+    /// }
+    /// ```
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Buf.Validate.FieldPath Field {
+      get { return field_; }
+      set {
+        field_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "rule" field.</summary>
+    public const int RuleFieldNumber = 6;
+    private global::Buf.Validate.FieldPath rule_;
+    /// <summary>
+    /// `rule` is a machine-readable path that points to the specific rule that failed validation.
+    /// This will be a nested field starting from the FieldRules of the field that failed validation.
+    /// For custom rules, this will provide the path of the rule, e.g. `cel[0]`.
+    ///
+    /// For example, consider the following message:
+    ///
+    /// ```proto
+    /// message Message {
+    ///   bool a = 1 [(buf.validate.field).required = true];
+    ///   bool b = 2 [(buf.validate.field).cel = {
+    ///     id: "custom_rule",
+    ///     expression: "!this ? 'b must be true': ''"
+    ///   }]
+    /// }
+    /// ```
+    ///
+    /// It could produce the following violations:
+    ///
+    /// ```textproto
+    /// violation {
+    ///   rule { element { field_number: 25, field_name: "required", field_type: 8 } }
+    ///   ...
+    /// }
+    /// violation {
+    ///   rule { element { field_number: 23, field_name: "cel", field_type: 11, index: 0 } }
+    ///   ...
+    /// }
+    /// ```
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Buf.Validate.FieldPath Rule {
+      get { return rule_; }
+      set {
+        rule_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "rule_id" field.</summary>
+    public const int RuleIdFieldNumber = 2;
+    private readonly static string RuleIdDefaultValue = "";
+
+    private string ruleId_;
+    /// <summary>
+    /// `rule_id` is the unique identifier of the `Rule` that was not fulfilled.
+    /// This is the same `id` that was specified in the `Rule` message, allowing easy tracing of which rule was violated.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string RuleId {
+      get { return ruleId_ ?? RuleIdDefaultValue; }
+      set {
+        ruleId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+    /// <summary>Gets whether the "rule_id" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasRuleId {
+      get { return ruleId_ != null; }
+    }
+    /// <summary>Clears the value of the "rule_id" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearRuleId() {
+      ruleId_ = null;
+    }
+
+    /// <summary>Field number for the "message" field.</summary>
+    public const int MessageFieldNumber = 3;
+    private readonly static string MessageDefaultValue = "";
+
+    private string message_;
+    /// <summary>
+    /// `message` is a human-readable error message that describes the nature of the violation.
+    /// This can be the default error message from the violated `Rule`, or it can be a custom message that gives more context about the violation.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Message {
+      get { return message_ ?? MessageDefaultValue; }
+      set {
+        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+    /// <summary>Gets whether the "message" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasMessage {
+      get { return message_ != null; }
+    }
+    /// <summary>Clears the value of the "message" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearMessage() {
+      message_ = null;
+    }
+
+    /// <summary>Field number for the "for_key" field.</summary>
+    public const int ForKeyFieldNumber = 4;
+    private readonly static bool ForKeyDefaultValue = false;
+
+    private bool forKey_;
+    /// <summary>
+    /// `for_key` indicates whether the violation was caused by a map key, rather than a value.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool ForKey {
+      get { if ((_hasBits0 & 1) != 0) { return forKey_; } else { return ForKeyDefaultValue; } }
+      set {
+        _hasBits0 |= 1;
+        forKey_ = value;
+      }
+    }
+    /// <summary>Gets whether the "for_key" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasForKey {
+      get { return (_hasBits0 & 1) != 0; }
+    }
+    /// <summary>Clears the value of the "for_key" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearForKey() {
+      _hasBits0 &= ~1;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as Violation);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(Violation other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Field, other.Field)) return false;
+      if (!object.Equals(Rule, other.Rule)) return false;
+      if (RuleId != other.RuleId) return false;
+      if (Message != other.Message) return false;
+      if (ForKey != other.ForKey) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (field_ != null) hash ^= Field.GetHashCode();
+      if (rule_ != null) hash ^= Rule.GetHashCode();
+      if (HasRuleId) hash ^= RuleId.GetHashCode();
+      if (HasMessage) hash ^= Message.GetHashCode();
+      if (HasForKey) hash ^= ForKey.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (HasRuleId) {
+        output.WriteRawTag(18);
+        output.WriteString(RuleId);
+      }
+      if (HasMessage) {
+        output.WriteRawTag(26);
+        output.WriteString(Message);
+      }
+      if (HasForKey) {
+        output.WriteRawTag(32);
+        output.WriteBool(ForKey);
+      }
+      if (field_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(Field);
+      }
+      if (rule_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(Rule);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (HasRuleId) {
+        output.WriteRawTag(18);
+        output.WriteString(RuleId);
+      }
+      if (HasMessage) {
+        output.WriteRawTag(26);
+        output.WriteString(Message);
+      }
+      if (HasForKey) {
+        output.WriteRawTag(32);
+        output.WriteBool(ForKey);
+      }
+      if (field_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(Field);
+      }
+      if (rule_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(Rule);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (field_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Field);
+      }
+      if (rule_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Rule);
+      }
+      if (HasRuleId) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(RuleId);
+      }
+      if (HasMessage) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
+      }
+      if (HasForKey) {
+        size += 1 + 1;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(Violation other) {
+      if (other == null) {
+        return;
+      }
+      if (other.field_ != null) {
+        if (field_ == null) {
+          Field = new global::Buf.Validate.FieldPath();
+        }
+        Field.MergeFrom(other.Field);
+      }
+      if (other.rule_ != null) {
+        if (rule_ == null) {
+          Rule = new global::Buf.Validate.FieldPath();
+        }
+        Rule.MergeFrom(other.Rule);
+      }
+      if (other.HasRuleId) {
+        RuleId = other.RuleId;
+      }
+      if (other.HasMessage) {
+        Message = other.Message;
+      }
+      if (other.HasForKey) {
+        ForKey = other.ForKey;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -15464,53 +20542,29 @@ namespace Buf.Validate {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 18: {
-            if (const_ == null) {
-              Const = new global::Google.Protobuf.WellKnownTypes.Timestamp();
-            }
-            input.ReadMessage(Const);
+            RuleId = input.ReadString();
             break;
           }
           case 26: {
-            if (lt_ == null) {
-              Lt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
-            }
-            input.ReadMessage(Lt);
+            Message = input.ReadString();
             break;
           }
-          case 34: {
-            if (lte_ == null) {
-              Lte = new global::Google.Protobuf.WellKnownTypes.Timestamp();
-            }
-            input.ReadMessage(Lte);
+          case 32: {
+            ForKey = input.ReadBool();
             break;
           }
           case 42: {
-            if (gt_ == null) {
-              Gt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            if (field_ == null) {
+              Field = new global::Buf.Validate.FieldPath();
             }
-            input.ReadMessage(Gt);
+            input.ReadMessage(Field);
             break;
           }
           case 50: {
-            if (gte_ == null) {
-              Gte = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            if (rule_ == null) {
+              Rule = new global::Buf.Validate.FieldPath();
             }
-            input.ReadMessage(Gte);
-            break;
-          }
-          case 56: {
-            LtNow = input.ReadBool();
-            break;
-          }
-          case 64: {
-            GtNow = input.ReadBool();
-            break;
-          }
-          case 74: {
-            if (within_ == null) {
-              Within = new global::Google.Protobuf.WellKnownTypes.Duration();
-            }
-            input.ReadMessage(Within);
+            input.ReadMessage(Rule);
             break;
           }
         }
@@ -15529,53 +20583,976 @@ namespace Buf.Validate {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 18: {
-            if (const_ == null) {
-              Const = new global::Google.Protobuf.WellKnownTypes.Timestamp();
-            }
-            input.ReadMessage(Const);
+            RuleId = input.ReadString();
             break;
           }
           case 26: {
-            if (lt_ == null) {
-              Lt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
-            }
-            input.ReadMessage(Lt);
+            Message = input.ReadString();
             break;
           }
-          case 34: {
-            if (lte_ == null) {
-              Lte = new global::Google.Protobuf.WellKnownTypes.Timestamp();
-            }
-            input.ReadMessage(Lte);
+          case 32: {
+            ForKey = input.ReadBool();
             break;
           }
           case 42: {
-            if (gt_ == null) {
-              Gt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            if (field_ == null) {
+              Field = new global::Buf.Validate.FieldPath();
             }
-            input.ReadMessage(Gt);
+            input.ReadMessage(Field);
             break;
           }
           case 50: {
-            if (gte_ == null) {
-              Gte = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            if (rule_ == null) {
+              Rule = new global::Buf.Validate.FieldPath();
             }
-            input.ReadMessage(Gte);
+            input.ReadMessage(Rule);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// `FieldPath` provides a path to a nested protobuf field.
+  ///
+  /// This message provides enough information to render a dotted field path even without protobuf descriptors.
+  /// It also provides enough information to resolve a nested field through unknown wire data.
+  /// </summary>
+  public sealed partial class FieldPath : pb::IMessage<FieldPath>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<FieldPath> _parser = new pb::MessageParser<FieldPath>(() => new FieldPath());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<FieldPath> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[29]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FieldPath() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FieldPath(FieldPath other) : this() {
+      elements_ = other.elements_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FieldPath Clone() {
+      return new FieldPath(this);
+    }
+
+    /// <summary>Field number for the "elements" field.</summary>
+    public const int ElementsFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Buf.Validate.FieldPathElement> _repeated_elements_codec
+        = pb::FieldCodec.ForMessage(10, global::Buf.Validate.FieldPathElement.Parser);
+    private readonly pbc::RepeatedField<global::Buf.Validate.FieldPathElement> elements_ = new pbc::RepeatedField<global::Buf.Validate.FieldPathElement>();
+    /// <summary>
+    /// `elements` contains each element of the path, starting from the root and recursing downward.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Buf.Validate.FieldPathElement> Elements {
+      get { return elements_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as FieldPath);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(FieldPath other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!elements_.Equals(other.elements_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= elements_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      elements_.WriteTo(output, _repeated_elements_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      elements_.WriteTo(ref output, _repeated_elements_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += elements_.CalculateSize(_repeated_elements_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(FieldPath other) {
+      if (other == null) {
+        return;
+      }
+      elements_.Add(other.elements_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            elements_.AddEntriesFrom(input, _repeated_elements_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            elements_.AddEntriesFrom(ref input, _repeated_elements_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// `FieldPathElement` provides enough information to nest through a single protobuf field.
+  ///
+  /// If the selected field is a map or repeated field, the `subscript` value selects a specific element from it.
+  /// A path that refers to a value nested under a map key or repeated field index will have a `subscript` value.
+  /// The `field_type` field allows unambiguous resolution of a field even if descriptors are not available.
+  /// </summary>
+  public sealed partial class FieldPathElement : pb::IMessage<FieldPathElement>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<FieldPathElement> _parser = new pb::MessageParser<FieldPathElement>(() => new FieldPathElement());
+    private pb::UnknownFieldSet _unknownFields;
+    private int _hasBits0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<FieldPathElement> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Buf.Validate.ValidateReflection.Descriptor.MessageTypes[30]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FieldPathElement() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FieldPathElement(FieldPathElement other) : this() {
+      _hasBits0 = other._hasBits0;
+      fieldNumber_ = other.fieldNumber_;
+      fieldName_ = other.fieldName_;
+      fieldType_ = other.fieldType_;
+      keyType_ = other.keyType_;
+      valueType_ = other.valueType_;
+      switch (other.SubscriptCase) {
+        case SubscriptOneofCase.Index:
+          Index = other.Index;
+          break;
+        case SubscriptOneofCase.BoolKey:
+          BoolKey = other.BoolKey;
+          break;
+        case SubscriptOneofCase.IntKey:
+          IntKey = other.IntKey;
+          break;
+        case SubscriptOneofCase.UintKey:
+          UintKey = other.UintKey;
+          break;
+        case SubscriptOneofCase.StringKey:
+          StringKey = other.StringKey;
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public FieldPathElement Clone() {
+      return new FieldPathElement(this);
+    }
+
+    /// <summary>Field number for the "field_number" field.</summary>
+    public const int FieldNumberFieldNumber = 1;
+    private readonly static int FieldNumberDefaultValue = 0;
+
+    private int fieldNumber_;
+    /// <summary>
+    /// `field_number` is the field number this path element refers to.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int FieldNumber {
+      get { if ((_hasBits0 & 1) != 0) { return fieldNumber_; } else { return FieldNumberDefaultValue; } }
+      set {
+        _hasBits0 |= 1;
+        fieldNumber_ = value;
+      }
+    }
+    /// <summary>Gets whether the "field_number" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasFieldNumber {
+      get { return (_hasBits0 & 1) != 0; }
+    }
+    /// <summary>Clears the value of the "field_number" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearFieldNumber() {
+      _hasBits0 &= ~1;
+    }
+
+    /// <summary>Field number for the "field_name" field.</summary>
+    public const int FieldNameFieldNumber = 2;
+    private readonly static string FieldNameDefaultValue = "";
+
+    private string fieldName_;
+    /// <summary>
+    /// `field_name` contains the field name this path element refers to.
+    /// This can be used to display a human-readable path even if the field number is unknown.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string FieldName {
+      get { return fieldName_ ?? FieldNameDefaultValue; }
+      set {
+        fieldName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+    /// <summary>Gets whether the "field_name" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasFieldName {
+      get { return fieldName_ != null; }
+    }
+    /// <summary>Clears the value of the "field_name" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearFieldName() {
+      fieldName_ = null;
+    }
+
+    /// <summary>Field number for the "field_type" field.</summary>
+    public const int FieldTypeFieldNumber = 3;
+    private readonly static global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Type FieldTypeDefaultValue = global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Type.Double;
+
+    private global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Type fieldType_;
+    /// <summary>
+    /// `field_type` specifies the type of this field. When using reflection, this value is not needed.
+    ///
+    /// This value is provided to make it possible to traverse unknown fields through wire data.
+    /// When traversing wire data, be mindful of both packed[1] and delimited[2] encoding schemes.
+    ///
+    /// [1]: https://protobuf.dev/programming-guides/encoding/#packed
+    /// [2]: https://protobuf.dev/programming-guides/encoding/#groups
+    ///
+    /// N.B.: Although groups are deprecated, the corresponding delimited encoding scheme is not, and
+    /// can be explicitly used in Protocol Buffers 2023 Edition.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Type FieldType {
+      get { if ((_hasBits0 & 2) != 0) { return fieldType_; } else { return FieldTypeDefaultValue; } }
+      set {
+        _hasBits0 |= 2;
+        fieldType_ = value;
+      }
+    }
+    /// <summary>Gets whether the "field_type" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasFieldType {
+      get { return (_hasBits0 & 2) != 0; }
+    }
+    /// <summary>Clears the value of the "field_type" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearFieldType() {
+      _hasBits0 &= ~2;
+    }
+
+    /// <summary>Field number for the "key_type" field.</summary>
+    public const int KeyTypeFieldNumber = 4;
+    private readonly static global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Type KeyTypeDefaultValue = global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Type.Double;
+
+    private global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Type keyType_;
+    /// <summary>
+    /// `key_type` specifies the map key type of this field. This value is useful when traversing
+    /// unknown fields through wire data: specifically, it allows handling the differences between
+    /// different integer encodings.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Type KeyType {
+      get { if ((_hasBits0 & 4) != 0) { return keyType_; } else { return KeyTypeDefaultValue; } }
+      set {
+        _hasBits0 |= 4;
+        keyType_ = value;
+      }
+    }
+    /// <summary>Gets whether the "key_type" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasKeyType {
+      get { return (_hasBits0 & 4) != 0; }
+    }
+    /// <summary>Clears the value of the "key_type" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearKeyType() {
+      _hasBits0 &= ~4;
+    }
+
+    /// <summary>Field number for the "value_type" field.</summary>
+    public const int ValueTypeFieldNumber = 5;
+    private readonly static global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Type ValueTypeDefaultValue = global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Type.Double;
+
+    private global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Type valueType_;
+    /// <summary>
+    /// `value_type` specifies map value type of this field. This is useful if you want to display a
+    /// value inside unknown fields through wire data.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Type ValueType {
+      get { if ((_hasBits0 & 8) != 0) { return valueType_; } else { return ValueTypeDefaultValue; } }
+      set {
+        _hasBits0 |= 8;
+        valueType_ = value;
+      }
+    }
+    /// <summary>Gets whether the "value_type" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasValueType {
+      get { return (_hasBits0 & 8) != 0; }
+    }
+    /// <summary>Clears the value of the "value_type" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearValueType() {
+      _hasBits0 &= ~8;
+    }
+
+    /// <summary>Field number for the "index" field.</summary>
+    public const int IndexFieldNumber = 6;
+    /// <summary>
+    /// `index` specifies a 0-based index into a repeated field.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong Index {
+      get { return HasIndex ? (ulong) subscript_ : 0UL; }
+      set {
+        subscript_ = value;
+        subscriptCase_ = SubscriptOneofCase.Index;
+      }
+    }
+    /// <summary>Gets whether the "index" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasIndex {
+      get { return subscriptCase_ == SubscriptOneofCase.Index; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "index" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearIndex() {
+      if (HasIndex) {
+        ClearSubscript();
+      }
+    }
+
+    /// <summary>Field number for the "bool_key" field.</summary>
+    public const int BoolKeyFieldNumber = 7;
+    /// <summary>
+    /// `bool_key` specifies a map key of type bool.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool BoolKey {
+      get { return HasBoolKey ? (bool) subscript_ : false; }
+      set {
+        subscript_ = value;
+        subscriptCase_ = SubscriptOneofCase.BoolKey;
+      }
+    }
+    /// <summary>Gets whether the "bool_key" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasBoolKey {
+      get { return subscriptCase_ == SubscriptOneofCase.BoolKey; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "bool_key" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearBoolKey() {
+      if (HasBoolKey) {
+        ClearSubscript();
+      }
+    }
+
+    /// <summary>Field number for the "int_key" field.</summary>
+    public const int IntKeyFieldNumber = 8;
+    /// <summary>
+    /// `int_key` specifies a map key of type int32, int64, sint32, sint64, sfixed32 or sfixed64.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public long IntKey {
+      get { return HasIntKey ? (long) subscript_ : 0L; }
+      set {
+        subscript_ = value;
+        subscriptCase_ = SubscriptOneofCase.IntKey;
+      }
+    }
+    /// <summary>Gets whether the "int_key" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasIntKey {
+      get { return subscriptCase_ == SubscriptOneofCase.IntKey; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "int_key" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearIntKey() {
+      if (HasIntKey) {
+        ClearSubscript();
+      }
+    }
+
+    /// <summary>Field number for the "uint_key" field.</summary>
+    public const int UintKeyFieldNumber = 9;
+    /// <summary>
+    /// `uint_key` specifies a map key of type uint32, uint64, fixed32 or fixed64.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public ulong UintKey {
+      get { return HasUintKey ? (ulong) subscript_ : 0UL; }
+      set {
+        subscript_ = value;
+        subscriptCase_ = SubscriptOneofCase.UintKey;
+      }
+    }
+    /// <summary>Gets whether the "uint_key" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasUintKey {
+      get { return subscriptCase_ == SubscriptOneofCase.UintKey; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "uint_key" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearUintKey() {
+      if (HasUintKey) {
+        ClearSubscript();
+      }
+    }
+
+    /// <summary>Field number for the "string_key" field.</summary>
+    public const int StringKeyFieldNumber = 10;
+    /// <summary>
+    /// `string_key` specifies a map key of type string.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string StringKey {
+      get { return HasStringKey ? (string) subscript_ : ""; }
+      set {
+        subscript_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        subscriptCase_ = SubscriptOneofCase.StringKey;
+      }
+    }
+    /// <summary>Gets whether the "string_key" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasStringKey {
+      get { return subscriptCase_ == SubscriptOneofCase.StringKey; }
+    }
+    /// <summary> Clears the value of the oneof if it's currently set to "string_key" </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearStringKey() {
+      if (HasStringKey) {
+        ClearSubscript();
+      }
+    }
+
+    private object subscript_;
+    /// <summary>Enum of possible cases for the "subscript" oneof.</summary>
+    public enum SubscriptOneofCase {
+      None = 0,
+      Index = 6,
+      BoolKey = 7,
+      IntKey = 8,
+      UintKey = 9,
+      StringKey = 10,
+    }
+    private SubscriptOneofCase subscriptCase_ = SubscriptOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public SubscriptOneofCase SubscriptCase {
+      get { return subscriptCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearSubscript() {
+      subscriptCase_ = SubscriptOneofCase.None;
+      subscript_ = null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as FieldPathElement);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(FieldPathElement other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (FieldNumber != other.FieldNumber) return false;
+      if (FieldName != other.FieldName) return false;
+      if (FieldType != other.FieldType) return false;
+      if (KeyType != other.KeyType) return false;
+      if (ValueType != other.ValueType) return false;
+      if (Index != other.Index) return false;
+      if (BoolKey != other.BoolKey) return false;
+      if (IntKey != other.IntKey) return false;
+      if (UintKey != other.UintKey) return false;
+      if (StringKey != other.StringKey) return false;
+      if (SubscriptCase != other.SubscriptCase) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (HasFieldNumber) hash ^= FieldNumber.GetHashCode();
+      if (HasFieldName) hash ^= FieldName.GetHashCode();
+      if (HasFieldType) hash ^= FieldType.GetHashCode();
+      if (HasKeyType) hash ^= KeyType.GetHashCode();
+      if (HasValueType) hash ^= ValueType.GetHashCode();
+      if (HasIndex) hash ^= Index.GetHashCode();
+      if (HasBoolKey) hash ^= BoolKey.GetHashCode();
+      if (HasIntKey) hash ^= IntKey.GetHashCode();
+      if (HasUintKey) hash ^= UintKey.GetHashCode();
+      if (HasStringKey) hash ^= StringKey.GetHashCode();
+      hash ^= (int) subscriptCase_;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (HasFieldNumber) {
+        output.WriteRawTag(8);
+        output.WriteInt32(FieldNumber);
+      }
+      if (HasFieldName) {
+        output.WriteRawTag(18);
+        output.WriteString(FieldName);
+      }
+      if (HasFieldType) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) FieldType);
+      }
+      if (HasKeyType) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) KeyType);
+      }
+      if (HasValueType) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) ValueType);
+      }
+      if (HasIndex) {
+        output.WriteRawTag(48);
+        output.WriteUInt64(Index);
+      }
+      if (HasBoolKey) {
+        output.WriteRawTag(56);
+        output.WriteBool(BoolKey);
+      }
+      if (HasIntKey) {
+        output.WriteRawTag(64);
+        output.WriteInt64(IntKey);
+      }
+      if (HasUintKey) {
+        output.WriteRawTag(72);
+        output.WriteUInt64(UintKey);
+      }
+      if (HasStringKey) {
+        output.WriteRawTag(82);
+        output.WriteString(StringKey);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (HasFieldNumber) {
+        output.WriteRawTag(8);
+        output.WriteInt32(FieldNumber);
+      }
+      if (HasFieldName) {
+        output.WriteRawTag(18);
+        output.WriteString(FieldName);
+      }
+      if (HasFieldType) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) FieldType);
+      }
+      if (HasKeyType) {
+        output.WriteRawTag(32);
+        output.WriteEnum((int) KeyType);
+      }
+      if (HasValueType) {
+        output.WriteRawTag(40);
+        output.WriteEnum((int) ValueType);
+      }
+      if (HasIndex) {
+        output.WriteRawTag(48);
+        output.WriteUInt64(Index);
+      }
+      if (HasBoolKey) {
+        output.WriteRawTag(56);
+        output.WriteBool(BoolKey);
+      }
+      if (HasIntKey) {
+        output.WriteRawTag(64);
+        output.WriteInt64(IntKey);
+      }
+      if (HasUintKey) {
+        output.WriteRawTag(72);
+        output.WriteUInt64(UintKey);
+      }
+      if (HasStringKey) {
+        output.WriteRawTag(82);
+        output.WriteString(StringKey);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (HasFieldNumber) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(FieldNumber);
+      }
+      if (HasFieldName) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(FieldName);
+      }
+      if (HasFieldType) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) FieldType);
+      }
+      if (HasKeyType) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) KeyType);
+      }
+      if (HasValueType) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) ValueType);
+      }
+      if (HasIndex) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Index);
+      }
+      if (HasBoolKey) {
+        size += 1 + 1;
+      }
+      if (HasIntKey) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(IntKey);
+      }
+      if (HasUintKey) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt64Size(UintKey);
+      }
+      if (HasStringKey) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(StringKey);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(FieldPathElement other) {
+      if (other == null) {
+        return;
+      }
+      if (other.HasFieldNumber) {
+        FieldNumber = other.FieldNumber;
+      }
+      if (other.HasFieldName) {
+        FieldName = other.FieldName;
+      }
+      if (other.HasFieldType) {
+        FieldType = other.FieldType;
+      }
+      if (other.HasKeyType) {
+        KeyType = other.KeyType;
+      }
+      if (other.HasValueType) {
+        ValueType = other.ValueType;
+      }
+      switch (other.SubscriptCase) {
+        case SubscriptOneofCase.Index:
+          Index = other.Index;
+          break;
+        case SubscriptOneofCase.BoolKey:
+          BoolKey = other.BoolKey;
+          break;
+        case SubscriptOneofCase.IntKey:
+          IntKey = other.IntKey;
+          break;
+        case SubscriptOneofCase.UintKey:
+          UintKey = other.UintKey;
+          break;
+        case SubscriptOneofCase.StringKey:
+          StringKey = other.StringKey;
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            FieldNumber = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            FieldName = input.ReadString();
+            break;
+          }
+          case 24: {
+            FieldType = (global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Type) input.ReadEnum();
+            break;
+          }
+          case 32: {
+            KeyType = (global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Type) input.ReadEnum();
+            break;
+          }
+          case 40: {
+            ValueType = (global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Type) input.ReadEnum();
+            break;
+          }
+          case 48: {
+            Index = input.ReadUInt64();
             break;
           }
           case 56: {
-            LtNow = input.ReadBool();
+            BoolKey = input.ReadBool();
             break;
           }
           case 64: {
-            GtNow = input.ReadBool();
+            IntKey = input.ReadInt64();
             break;
           }
-          case 74: {
-            if (within_ == null) {
-              Within = new global::Google.Protobuf.WellKnownTypes.Duration();
-            }
-            input.ReadMessage(Within);
+          case 72: {
+            UintKey = input.ReadUInt64();
+            break;
+          }
+          case 82: {
+            StringKey = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            FieldNumber = input.ReadInt32();
+            break;
+          }
+          case 18: {
+            FieldName = input.ReadString();
+            break;
+          }
+          case 24: {
+            FieldType = (global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Type) input.ReadEnum();
+            break;
+          }
+          case 32: {
+            KeyType = (global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Type) input.ReadEnum();
+            break;
+          }
+          case 40: {
+            ValueType = (global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Type) input.ReadEnum();
+            break;
+          }
+          case 48: {
+            Index = input.ReadUInt64();
+            break;
+          }
+          case 56: {
+            BoolKey = input.ReadBool();
+            break;
+          }
+          case 64: {
+            IntKey = input.ReadInt64();
+            break;
+          }
+          case 72: {
+            UintKey = input.ReadUInt64();
+            break;
+          }
+          case 82: {
+            StringKey = input.ReadString();
             break;
           }
         }

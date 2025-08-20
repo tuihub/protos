@@ -123,8 +123,8 @@ const PagingRequest$json = {
 
 /// Descriptor for `PagingRequest`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List pagingRequestDescriptor = $convert.base64Decode(
-    'Cg1QYWdpbmdSZXF1ZXN0EiMKCHBhZ2VfbnVtGAEgASgDQgj69xgEIgIgAFIHcGFnZU51bRIlCg'
-    'lwYWdlX3NpemUYAiABKANCCPr3GAQiAiAAUghwYWdlU2l6ZQ==');
+    'Cg1QYWdpbmdSZXF1ZXN0EiIKCHBhZ2VfbnVtGAEgASgDQge6SAQiAiAAUgdwYWdlTnVtEiQKCX'
+    'BhZ2Vfc2l6ZRgCIAEoA0IHukgEIgIgAFIIcGFnZVNpemU=');
 
 @$core.Deprecated('Use pagingResponseDescriptor instead')
 const PagingResponse$json = {
@@ -136,8 +136,8 @@ const PagingResponse$json = {
 
 /// Descriptor for `PagingResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List pagingResponseDescriptor = $convert.base64Decode(
-    'Cg5QYWdpbmdSZXNwb25zZRInCgp0b3RhbF9zaXplGAEgASgDQgj69xgEIgIoAFIJdG90YWxTaX'
-    'pl');
+    'Cg5QYWdpbmdSZXNwb25zZRImCgp0b3RhbF9zaXplGAEgASgDQge6SAQiAigAUgl0b3RhbFNpem'
+    'U=');
 
 @$core.Deprecated('Use timeRangeDescriptor instead')
 const TimeRange$json = {
@@ -166,8 +166,8 @@ const TimeRange$json = {
 /// Descriptor for `TimeRange`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List timeRangeDescriptor = $convert.base64Decode(
     'CglUaW1lUmFuZ2USOQoKc3RhcnRfdGltZRgBIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3'
-    'RhbXBSCXN0YXJ0VGltZRJACghkdXJhdGlvbhgCIAEoCzIZLmdvb2dsZS5wcm90b2J1Zi5EdXJh'
-    'dGlvbkIJ+vcYBaoBAjIAUghkdXJhdGlvbg==');
+    'RhbXBSCXN0YXJ0VGltZRI/CghkdXJhdGlvbhgCIAEoCzIZLmdvb2dsZS5wcm90b2J1Zi5EdXJh'
+    'dGlvbkIIukgFqgECMgBSCGR1cmF0aW9u');
 
 @$core.Deprecated('Use internalIDDescriptor instead')
 const InternalID$json = {

@@ -21,10 +21,6 @@ var global =
     (function () { return this; }).call(null) ||
     Function('return this')();
 
-var buf_validate_expression_pb = require('../../buf/validate/expression_pb.js');
-goog.object.extend(proto, buf_validate_expression_pb);
-var buf_validate_priv_private_pb = require('../../buf/validate/priv/private_pb.js');
-goog.object.extend(proto, buf_validate_priv_private_pb);
 var google_protobuf_descriptor_pb = require('google-protobuf/google/protobuf/descriptor_pb.js');
 goog.object.extend(proto, google_protobuf_descriptor_pb);
 var google_protobuf_duration_pb = require('google-protobuf/google/protobuf/duration_pb.js');
@@ -36,32 +32,70 @@ goog.exportSymbol('proto.buf.validate.BoolRules', null, global);
 goog.exportSymbol('proto.buf.validate.BytesRules', null, global);
 goog.exportSymbol('proto.buf.validate.BytesRules.WellKnownCase', null, global);
 goog.exportSymbol('proto.buf.validate.DoubleRules', null, global);
+goog.exportSymbol('proto.buf.validate.DoubleRules.GreaterThanCase', null, global);
+goog.exportSymbol('proto.buf.validate.DoubleRules.LessThanCase', null, global);
 goog.exportSymbol('proto.buf.validate.DurationRules', null, global);
+goog.exportSymbol('proto.buf.validate.DurationRules.GreaterThanCase', null, global);
+goog.exportSymbol('proto.buf.validate.DurationRules.LessThanCase', null, global);
 goog.exportSymbol('proto.buf.validate.EnumRules', null, global);
-goog.exportSymbol('proto.buf.validate.FieldConstraints', null, global);
-goog.exportSymbol('proto.buf.validate.FieldConstraints.TypeCase', null, global);
+goog.exportSymbol('proto.buf.validate.FieldPath', null, global);
+goog.exportSymbol('proto.buf.validate.FieldPathElement', null, global);
+goog.exportSymbol('proto.buf.validate.FieldPathElement.SubscriptCase', null, global);
+goog.exportSymbol('proto.buf.validate.FieldRules', null, global);
+goog.exportSymbol('proto.buf.validate.FieldRules.TypeCase', null, global);
 goog.exportSymbol('proto.buf.validate.Fixed32Rules', null, global);
+goog.exportSymbol('proto.buf.validate.Fixed32Rules.GreaterThanCase', null, global);
+goog.exportSymbol('proto.buf.validate.Fixed32Rules.LessThanCase', null, global);
 goog.exportSymbol('proto.buf.validate.Fixed64Rules', null, global);
+goog.exportSymbol('proto.buf.validate.Fixed64Rules.GreaterThanCase', null, global);
+goog.exportSymbol('proto.buf.validate.Fixed64Rules.LessThanCase', null, global);
 goog.exportSymbol('proto.buf.validate.FloatRules', null, global);
+goog.exportSymbol('proto.buf.validate.FloatRules.GreaterThanCase', null, global);
+goog.exportSymbol('proto.buf.validate.FloatRules.LessThanCase', null, global);
+goog.exportSymbol('proto.buf.validate.Ignore', null, global);
 goog.exportSymbol('proto.buf.validate.Int32Rules', null, global);
+goog.exportSymbol('proto.buf.validate.Int32Rules.GreaterThanCase', null, global);
+goog.exportSymbol('proto.buf.validate.Int32Rules.LessThanCase', null, global);
 goog.exportSymbol('proto.buf.validate.Int64Rules', null, global);
+goog.exportSymbol('proto.buf.validate.Int64Rules.GreaterThanCase', null, global);
+goog.exportSymbol('proto.buf.validate.Int64Rules.LessThanCase', null, global);
 goog.exportSymbol('proto.buf.validate.KnownRegex', null, global);
 goog.exportSymbol('proto.buf.validate.MapRules', null, global);
-goog.exportSymbol('proto.buf.validate.MessageConstraints', null, global);
-goog.exportSymbol('proto.buf.validate.OneofConstraints', null, global);
+goog.exportSymbol('proto.buf.validate.MessageOneofRule', null, global);
+goog.exportSymbol('proto.buf.validate.MessageRules', null, global);
+goog.exportSymbol('proto.buf.validate.OneofRules', null, global);
+goog.exportSymbol('proto.buf.validate.PredefinedRules', null, global);
 goog.exportSymbol('proto.buf.validate.RepeatedRules', null, global);
+goog.exportSymbol('proto.buf.validate.Rule', null, global);
 goog.exportSymbol('proto.buf.validate.SFixed32Rules', null, global);
+goog.exportSymbol('proto.buf.validate.SFixed32Rules.GreaterThanCase', null, global);
+goog.exportSymbol('proto.buf.validate.SFixed32Rules.LessThanCase', null, global);
 goog.exportSymbol('proto.buf.validate.SFixed64Rules', null, global);
+goog.exportSymbol('proto.buf.validate.SFixed64Rules.GreaterThanCase', null, global);
+goog.exportSymbol('proto.buf.validate.SFixed64Rules.LessThanCase', null, global);
 goog.exportSymbol('proto.buf.validate.SInt32Rules', null, global);
+goog.exportSymbol('proto.buf.validate.SInt32Rules.GreaterThanCase', null, global);
+goog.exportSymbol('proto.buf.validate.SInt32Rules.LessThanCase', null, global);
 goog.exportSymbol('proto.buf.validate.SInt64Rules', null, global);
+goog.exportSymbol('proto.buf.validate.SInt64Rules.GreaterThanCase', null, global);
+goog.exportSymbol('proto.buf.validate.SInt64Rules.LessThanCase', null, global);
 goog.exportSymbol('proto.buf.validate.StringRules', null, global);
 goog.exportSymbol('proto.buf.validate.StringRules.WellKnownCase', null, global);
 goog.exportSymbol('proto.buf.validate.TimestampRules', null, global);
+goog.exportSymbol('proto.buf.validate.TimestampRules.GreaterThanCase', null, global);
+goog.exportSymbol('proto.buf.validate.TimestampRules.LessThanCase', null, global);
 goog.exportSymbol('proto.buf.validate.UInt32Rules', null, global);
+goog.exportSymbol('proto.buf.validate.UInt32Rules.GreaterThanCase', null, global);
+goog.exportSymbol('proto.buf.validate.UInt32Rules.LessThanCase', null, global);
 goog.exportSymbol('proto.buf.validate.UInt64Rules', null, global);
+goog.exportSymbol('proto.buf.validate.UInt64Rules.GreaterThanCase', null, global);
+goog.exportSymbol('proto.buf.validate.UInt64Rules.LessThanCase', null, global);
+goog.exportSymbol('proto.buf.validate.Violation', null, global);
+goog.exportSymbol('proto.buf.validate.Violations', null, global);
 goog.exportSymbol('proto.buf.validate.field', null, global);
 goog.exportSymbol('proto.buf.validate.message', null, global);
 goog.exportSymbol('proto.buf.validate.oneof', null, global);
+goog.exportSymbol('proto.buf.validate.predefined', null, global);
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -72,37 +106,16 @@ goog.exportSymbol('proto.buf.validate.oneof', null, global);
  * @extends {jspb.Message}
  * @constructor
  */
-proto.buf.validate.MessageConstraints = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.buf.validate.MessageConstraints.repeatedFields_, null);
-};
-goog.inherits(proto.buf.validate.MessageConstraints, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  /**
-   * @public
-   * @override
-   */
-  proto.buf.validate.MessageConstraints.displayName = 'proto.buf.validate.MessageConstraints';
-}
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.buf.validate.OneofConstraints = function(opt_data) {
+proto.buf.validate.Rule = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.buf.validate.OneofConstraints, jspb.Message);
+goog.inherits(proto.buf.validate.Rule, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.buf.validate.OneofConstraints.displayName = 'proto.buf.validate.OneofConstraints';
+  proto.buf.validate.Rule.displayName = 'proto.buf.validate.Rule';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -114,16 +127,100 @@ if (goog.DEBUG && !COMPILED) {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.buf.validate.FieldConstraints = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.buf.validate.FieldConstraints.repeatedFields_, proto.buf.validate.FieldConstraints.oneofGroups_);
+proto.buf.validate.MessageRules = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.buf.validate.MessageRules.repeatedFields_, null);
 };
-goog.inherits(proto.buf.validate.FieldConstraints, jspb.Message);
+goog.inherits(proto.buf.validate.MessageRules, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   /**
    * @public
    * @override
    */
-  proto.buf.validate.FieldConstraints.displayName = 'proto.buf.validate.FieldConstraints';
+  proto.buf.validate.MessageRules.displayName = 'proto.buf.validate.MessageRules';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.buf.validate.MessageOneofRule = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.buf.validate.MessageOneofRule.repeatedFields_, null);
+};
+goog.inherits(proto.buf.validate.MessageOneofRule, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.buf.validate.MessageOneofRule.displayName = 'proto.buf.validate.MessageOneofRule';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.buf.validate.OneofRules = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.buf.validate.OneofRules, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.buf.validate.OneofRules.displayName = 'proto.buf.validate.OneofRules';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.buf.validate.FieldRules = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.buf.validate.FieldRules.repeatedFields_, proto.buf.validate.FieldRules.oneofGroups_);
+};
+goog.inherits(proto.buf.validate.FieldRules, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.buf.validate.FieldRules.displayName = 'proto.buf.validate.FieldRules';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.buf.validate.PredefinedRules = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.buf.validate.PredefinedRules.repeatedFields_, null);
+};
+goog.inherits(proto.buf.validate.PredefinedRules, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.buf.validate.PredefinedRules.displayName = 'proto.buf.validate.PredefinedRules';
 }
 /**
  * Generated by JsPbCodeGenerator.
@@ -136,7 +233,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.buf.validate.FloatRules = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.buf.validate.FloatRules.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, 10, proto.buf.validate.FloatRules.repeatedFields_, proto.buf.validate.FloatRules.oneofGroups_);
 };
 goog.inherits(proto.buf.validate.FloatRules, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -146,6 +243,36 @@ if (goog.DEBUG && !COMPILED) {
    */
   proto.buf.validate.FloatRules.displayName = 'proto.buf.validate.FloatRules';
 }
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldInfo>}
+ */
+proto.buf.validate.FloatRules.extensions = {};
+
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldBinaryInfo>}
+ */
+proto.buf.validate.FloatRules.extensionsBinary = {};
+
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -157,7 +284,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.buf.validate.DoubleRules = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.buf.validate.DoubleRules.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, 10, proto.buf.validate.DoubleRules.repeatedFields_, proto.buf.validate.DoubleRules.oneofGroups_);
 };
 goog.inherits(proto.buf.validate.DoubleRules, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -167,6 +294,36 @@ if (goog.DEBUG && !COMPILED) {
    */
   proto.buf.validate.DoubleRules.displayName = 'proto.buf.validate.DoubleRules';
 }
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldInfo>}
+ */
+proto.buf.validate.DoubleRules.extensions = {};
+
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldBinaryInfo>}
+ */
+proto.buf.validate.DoubleRules.extensionsBinary = {};
+
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -178,7 +335,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.buf.validate.Int32Rules = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.buf.validate.Int32Rules.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, 9, proto.buf.validate.Int32Rules.repeatedFields_, proto.buf.validate.Int32Rules.oneofGroups_);
 };
 goog.inherits(proto.buf.validate.Int32Rules, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -188,6 +345,36 @@ if (goog.DEBUG && !COMPILED) {
    */
   proto.buf.validate.Int32Rules.displayName = 'proto.buf.validate.Int32Rules';
 }
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldInfo>}
+ */
+proto.buf.validate.Int32Rules.extensions = {};
+
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldBinaryInfo>}
+ */
+proto.buf.validate.Int32Rules.extensionsBinary = {};
+
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -199,7 +386,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.buf.validate.Int64Rules = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.buf.validate.Int64Rules.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, 10, proto.buf.validate.Int64Rules.repeatedFields_, proto.buf.validate.Int64Rules.oneofGroups_);
 };
 goog.inherits(proto.buf.validate.Int64Rules, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -209,6 +396,36 @@ if (goog.DEBUG && !COMPILED) {
    */
   proto.buf.validate.Int64Rules.displayName = 'proto.buf.validate.Int64Rules';
 }
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldInfo>}
+ */
+proto.buf.validate.Int64Rules.extensions = {};
+
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldBinaryInfo>}
+ */
+proto.buf.validate.Int64Rules.extensionsBinary = {};
+
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -220,7 +437,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.buf.validate.UInt32Rules = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.buf.validate.UInt32Rules.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, 9, proto.buf.validate.UInt32Rules.repeatedFields_, proto.buf.validate.UInt32Rules.oneofGroups_);
 };
 goog.inherits(proto.buf.validate.UInt32Rules, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -230,6 +447,36 @@ if (goog.DEBUG && !COMPILED) {
    */
   proto.buf.validate.UInt32Rules.displayName = 'proto.buf.validate.UInt32Rules';
 }
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldInfo>}
+ */
+proto.buf.validate.UInt32Rules.extensions = {};
+
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldBinaryInfo>}
+ */
+proto.buf.validate.UInt32Rules.extensionsBinary = {};
+
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -241,7 +488,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.buf.validate.UInt64Rules = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.buf.validate.UInt64Rules.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, 9, proto.buf.validate.UInt64Rules.repeatedFields_, proto.buf.validate.UInt64Rules.oneofGroups_);
 };
 goog.inherits(proto.buf.validate.UInt64Rules, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -251,6 +498,36 @@ if (goog.DEBUG && !COMPILED) {
    */
   proto.buf.validate.UInt64Rules.displayName = 'proto.buf.validate.UInt64Rules';
 }
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldInfo>}
+ */
+proto.buf.validate.UInt64Rules.extensions = {};
+
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldBinaryInfo>}
+ */
+proto.buf.validate.UInt64Rules.extensionsBinary = {};
+
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -262,7 +539,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.buf.validate.SInt32Rules = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.buf.validate.SInt32Rules.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, 9, proto.buf.validate.SInt32Rules.repeatedFields_, proto.buf.validate.SInt32Rules.oneofGroups_);
 };
 goog.inherits(proto.buf.validate.SInt32Rules, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -272,6 +549,36 @@ if (goog.DEBUG && !COMPILED) {
    */
   proto.buf.validate.SInt32Rules.displayName = 'proto.buf.validate.SInt32Rules';
 }
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldInfo>}
+ */
+proto.buf.validate.SInt32Rules.extensions = {};
+
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldBinaryInfo>}
+ */
+proto.buf.validate.SInt32Rules.extensionsBinary = {};
+
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -283,7 +590,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.buf.validate.SInt64Rules = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.buf.validate.SInt64Rules.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, 9, proto.buf.validate.SInt64Rules.repeatedFields_, proto.buf.validate.SInt64Rules.oneofGroups_);
 };
 goog.inherits(proto.buf.validate.SInt64Rules, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -293,6 +600,36 @@ if (goog.DEBUG && !COMPILED) {
    */
   proto.buf.validate.SInt64Rules.displayName = 'proto.buf.validate.SInt64Rules';
 }
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldInfo>}
+ */
+proto.buf.validate.SInt64Rules.extensions = {};
+
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldBinaryInfo>}
+ */
+proto.buf.validate.SInt64Rules.extensionsBinary = {};
+
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -304,7 +641,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.buf.validate.Fixed32Rules = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.buf.validate.Fixed32Rules.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, 9, proto.buf.validate.Fixed32Rules.repeatedFields_, proto.buf.validate.Fixed32Rules.oneofGroups_);
 };
 goog.inherits(proto.buf.validate.Fixed32Rules, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -314,6 +651,36 @@ if (goog.DEBUG && !COMPILED) {
    */
   proto.buf.validate.Fixed32Rules.displayName = 'proto.buf.validate.Fixed32Rules';
 }
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldInfo>}
+ */
+proto.buf.validate.Fixed32Rules.extensions = {};
+
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldBinaryInfo>}
+ */
+proto.buf.validate.Fixed32Rules.extensionsBinary = {};
+
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -325,7 +692,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.buf.validate.Fixed64Rules = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.buf.validate.Fixed64Rules.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, 9, proto.buf.validate.Fixed64Rules.repeatedFields_, proto.buf.validate.Fixed64Rules.oneofGroups_);
 };
 goog.inherits(proto.buf.validate.Fixed64Rules, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -335,6 +702,36 @@ if (goog.DEBUG && !COMPILED) {
    */
   proto.buf.validate.Fixed64Rules.displayName = 'proto.buf.validate.Fixed64Rules';
 }
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldInfo>}
+ */
+proto.buf.validate.Fixed64Rules.extensions = {};
+
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldBinaryInfo>}
+ */
+proto.buf.validate.Fixed64Rules.extensionsBinary = {};
+
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -346,7 +743,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.buf.validate.SFixed32Rules = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.buf.validate.SFixed32Rules.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, 9, proto.buf.validate.SFixed32Rules.repeatedFields_, proto.buf.validate.SFixed32Rules.oneofGroups_);
 };
 goog.inherits(proto.buf.validate.SFixed32Rules, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -356,6 +753,36 @@ if (goog.DEBUG && !COMPILED) {
    */
   proto.buf.validate.SFixed32Rules.displayName = 'proto.buf.validate.SFixed32Rules';
 }
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldInfo>}
+ */
+proto.buf.validate.SFixed32Rules.extensions = {};
+
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldBinaryInfo>}
+ */
+proto.buf.validate.SFixed32Rules.extensionsBinary = {};
+
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -367,7 +794,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.buf.validate.SFixed64Rules = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.buf.validate.SFixed64Rules.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, 9, proto.buf.validate.SFixed64Rules.repeatedFields_, proto.buf.validate.SFixed64Rules.oneofGroups_);
 };
 goog.inherits(proto.buf.validate.SFixed64Rules, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -377,6 +804,36 @@ if (goog.DEBUG && !COMPILED) {
    */
   proto.buf.validate.SFixed64Rules.displayName = 'proto.buf.validate.SFixed64Rules';
 }
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldInfo>}
+ */
+proto.buf.validate.SFixed64Rules.extensions = {};
+
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldBinaryInfo>}
+ */
+proto.buf.validate.SFixed64Rules.extensionsBinary = {};
+
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -388,7 +845,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.buf.validate.BoolRules = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, 3, proto.buf.validate.BoolRules.repeatedFields_, null);
 };
 goog.inherits(proto.buf.validate.BoolRules, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -398,6 +855,36 @@ if (goog.DEBUG && !COMPILED) {
    */
   proto.buf.validate.BoolRules.displayName = 'proto.buf.validate.BoolRules';
 }
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldInfo>}
+ */
+proto.buf.validate.BoolRules.extensions = {};
+
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldBinaryInfo>}
+ */
+proto.buf.validate.BoolRules.extensionsBinary = {};
+
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -409,7 +896,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.buf.validate.StringRules = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.buf.validate.StringRules.repeatedFields_, proto.buf.validate.StringRules.oneofGroups_);
+  jspb.Message.initialize(this, opt_data, 0, 35, proto.buf.validate.StringRules.repeatedFields_, proto.buf.validate.StringRules.oneofGroups_);
 };
 goog.inherits(proto.buf.validate.StringRules, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -419,6 +906,36 @@ if (goog.DEBUG && !COMPILED) {
    */
   proto.buf.validate.StringRules.displayName = 'proto.buf.validate.StringRules';
 }
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldInfo>}
+ */
+proto.buf.validate.StringRules.extensions = {};
+
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldBinaryInfo>}
+ */
+proto.buf.validate.StringRules.extensionsBinary = {};
+
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -430,7 +947,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.buf.validate.BytesRules = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.buf.validate.BytesRules.repeatedFields_, proto.buf.validate.BytesRules.oneofGroups_);
+  jspb.Message.initialize(this, opt_data, 0, 15, proto.buf.validate.BytesRules.repeatedFields_, proto.buf.validate.BytesRules.oneofGroups_);
 };
 goog.inherits(proto.buf.validate.BytesRules, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -440,6 +957,36 @@ if (goog.DEBUG && !COMPILED) {
    */
   proto.buf.validate.BytesRules.displayName = 'proto.buf.validate.BytesRules';
 }
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldInfo>}
+ */
+proto.buf.validate.BytesRules.extensions = {};
+
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldBinaryInfo>}
+ */
+proto.buf.validate.BytesRules.extensionsBinary = {};
+
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -451,7 +998,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.buf.validate.EnumRules = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.buf.validate.EnumRules.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, 6, proto.buf.validate.EnumRules.repeatedFields_, null);
 };
 goog.inherits(proto.buf.validate.EnumRules, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -461,6 +1008,36 @@ if (goog.DEBUG && !COMPILED) {
    */
   proto.buf.validate.EnumRules.displayName = 'proto.buf.validate.EnumRules';
 }
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldInfo>}
+ */
+proto.buf.validate.EnumRules.extensions = {};
+
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldBinaryInfo>}
+ */
+proto.buf.validate.EnumRules.extensionsBinary = {};
+
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -472,7 +1049,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.buf.validate.RepeatedRules = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, 5, null, null);
 };
 goog.inherits(proto.buf.validate.RepeatedRules, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -482,6 +1059,36 @@ if (goog.DEBUG && !COMPILED) {
    */
   proto.buf.validate.RepeatedRules.displayName = 'proto.buf.validate.RepeatedRules';
 }
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldInfo>}
+ */
+proto.buf.validate.RepeatedRules.extensions = {};
+
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldBinaryInfo>}
+ */
+proto.buf.validate.RepeatedRules.extensionsBinary = {};
+
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -493,7 +1100,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.buf.validate.MapRules = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, 6, null, null);
 };
 goog.inherits(proto.buf.validate.MapRules, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -503,6 +1110,36 @@ if (goog.DEBUG && !COMPILED) {
    */
   proto.buf.validate.MapRules.displayName = 'proto.buf.validate.MapRules';
 }
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldInfo>}
+ */
+proto.buf.validate.MapRules.extensions = {};
+
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldBinaryInfo>}
+ */
+proto.buf.validate.MapRules.extensionsBinary = {};
+
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -535,7 +1172,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.buf.validate.DurationRules = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.buf.validate.DurationRules.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, 10, proto.buf.validate.DurationRules.repeatedFields_, proto.buf.validate.DurationRules.oneofGroups_);
 };
 goog.inherits(proto.buf.validate.DurationRules, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -545,6 +1182,36 @@ if (goog.DEBUG && !COMPILED) {
    */
   proto.buf.validate.DurationRules.displayName = 'proto.buf.validate.DurationRules';
 }
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldInfo>}
+ */
+proto.buf.validate.DurationRules.extensions = {};
+
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldBinaryInfo>}
+ */
+proto.buf.validate.DurationRules.extensionsBinary = {};
+
 /**
  * Generated by JsPbCodeGenerator.
  * @param {Array=} opt_data Optional initial data array, typically from a
@@ -556,7 +1223,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.buf.validate.TimestampRules = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, 11, proto.buf.validate.TimestampRules.repeatedFields_, proto.buf.validate.TimestampRules.oneofGroups_);
 };
 goog.inherits(proto.buf.validate.TimestampRules, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -568,11 +1235,118 @@ if (goog.DEBUG && !COMPILED) {
 }
 
 /**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldInfo>}
  */
-proto.buf.validate.MessageConstraints.repeatedFields_ = [3];
+proto.buf.validate.TimestampRules.extensions = {};
+
+
+/**
+ * The extensions registered with this message class. This is a map of
+ * extension field number to fieldInfo object.
+ *
+ * For example:
+ *     { 123: {fieldIndex: 123, fieldName: {my_field_name: 0}, ctor: proto.example.MyMessage} }
+ *
+ * fieldName contains the JsCompiler renamed field name property so that it
+ * works in OPTIMIZED mode.
+ *
+ * @type {!Object<number, jspb.ExtensionFieldBinaryInfo>}
+ */
+proto.buf.validate.TimestampRules.extensionsBinary = {};
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.buf.validate.Violations = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.buf.validate.Violations.repeatedFields_, null);
+};
+goog.inherits(proto.buf.validate.Violations, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.buf.validate.Violations.displayName = 'proto.buf.validate.Violations';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.buf.validate.Violation = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.buf.validate.Violation, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.buf.validate.Violation.displayName = 'proto.buf.validate.Violation';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.buf.validate.FieldPath = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.buf.validate.FieldPath.repeatedFields_, null);
+};
+goog.inherits(proto.buf.validate.FieldPath, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.buf.validate.FieldPath.displayName = 'proto.buf.validate.FieldPath';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.buf.validate.FieldPathElement = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.buf.validate.FieldPathElement.oneofGroups_);
+};
+goog.inherits(proto.buf.validate.FieldPathElement, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.buf.validate.FieldPathElement.displayName = 'proto.buf.validate.FieldPathElement';
+}
 
 
 
@@ -589,8 +1363,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.buf.validate.MessageConstraints.prototype.toObject = function(opt_includeInstance) {
-  return proto.buf.validate.MessageConstraints.toObject(opt_includeInstance, this);
+proto.buf.validate.Rule.prototype.toObject = function(opt_includeInstance) {
+  return proto.buf.validate.Rule.toObject(opt_includeInstance, this);
 };
 
 
@@ -599,15 +1373,15 @@ proto.buf.validate.MessageConstraints.prototype.toObject = function(opt_includeI
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.buf.validate.MessageConstraints} msg The msg instance to transform.
+ * @param {!proto.buf.validate.Rule} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.buf.validate.MessageConstraints.toObject = function(includeInstance, msg) {
+proto.buf.validate.Rule.toObject = function(includeInstance, msg) {
   var f, obj = {
-disabled: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
-celList: jspb.Message.toObjectList(msg.getCelList(),
-    buf_validate_expression_pb.Constraint.toObject, includeInstance)
+id: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+message: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+expression: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -621,23 +1395,23 @@ celList: jspb.Message.toObjectList(msg.getCelList(),
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.buf.validate.MessageConstraints}
+ * @return {!proto.buf.validate.Rule}
  */
-proto.buf.validate.MessageConstraints.deserializeBinary = function(bytes) {
+proto.buf.validate.Rule.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.buf.validate.MessageConstraints;
-  return proto.buf.validate.MessageConstraints.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.buf.validate.Rule;
+  return proto.buf.validate.Rule.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.buf.validate.MessageConstraints} msg The message object to deserialize into.
+ * @param {!proto.buf.validate.Rule} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.buf.validate.MessageConstraints}
+ * @return {!proto.buf.validate.Rule}
  */
-proto.buf.validate.MessageConstraints.deserializeBinaryFromReader = function(msg, reader) {
+proto.buf.validate.Rule.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -645,13 +1419,16 @@ proto.buf.validate.MessageConstraints.deserializeBinaryFromReader = function(msg
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setDisabled(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMessage(value);
       break;
     case 3:
-      var value = new buf_validate_expression_pb.Constraint;
-      reader.readMessage(value,buf_validate_expression_pb.Constraint.deserializeBinaryFromReader);
-      msg.addCel(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setExpression(value);
       break;
     default:
       reader.skipField();
@@ -666,9 +1443,9 @@ proto.buf.validate.MessageConstraints.deserializeBinaryFromReader = function(msg
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.buf.validate.MessageConstraints.prototype.serializeBinary = function() {
+proto.buf.validate.Rule.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.buf.validate.MessageConstraints.serializeBinaryToWriter(this, writer);
+  proto.buf.validate.Rule.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -676,53 +1453,59 @@ proto.buf.validate.MessageConstraints.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.buf.validate.MessageConstraints} message
+ * @param {!proto.buf.validate.Rule} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.buf.validate.MessageConstraints.serializeBinaryToWriter = function(message, writer) {
+proto.buf.validate.Rule.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 1));
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
   if (f != null) {
-    writer.writeBool(
+    writer.writeString(
       1,
       f
     );
   }
-  f = message.getCelList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
       3,
-      f,
-      buf_validate_expression_pb.Constraint.serializeBinaryToWriter
+      f
     );
   }
 };
 
 
 /**
- * optional bool disabled = 1;
- * @return {boolean}
+ * optional string id = 1;
+ * @return {string}
  */
-proto.buf.validate.MessageConstraints.prototype.getDisabled = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
+proto.buf.validate.Rule.prototype.getId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {boolean} value
- * @return {!proto.buf.validate.MessageConstraints} returns this
+ * @param {string} value
+ * @return {!proto.buf.validate.Rule} returns this
  */
-proto.buf.validate.MessageConstraints.prototype.setDisabled = function(value) {
+proto.buf.validate.Rule.prototype.setId = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.buf.validate.MessageConstraints} returns this
+ * @return {!proto.buf.validate.Rule} returns this
  */
-proto.buf.validate.MessageConstraints.prototype.clearDisabled = function() {
+proto.buf.validate.Rule.prototype.clearId = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -731,46 +1514,497 @@ proto.buf.validate.MessageConstraints.prototype.clearDisabled = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.buf.validate.MessageConstraints.prototype.hasDisabled = function() {
+proto.buf.validate.Rule.prototype.hasId = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * repeated Constraint cel = 3;
- * @return {!Array<!proto.buf.validate.Constraint>}
+ * optional string message = 2;
+ * @return {string}
  */
-proto.buf.validate.MessageConstraints.prototype.getCelList = function() {
-  return /** @type{!Array<!proto.buf.validate.Constraint>} */ (
-    jspb.Message.getRepeatedWrapperField(this, buf_validate_expression_pb.Constraint, 3));
+proto.buf.validate.Rule.prototype.getMessage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {!Array<!proto.buf.validate.Constraint>} value
- * @return {!proto.buf.validate.MessageConstraints} returns this
+ * @param {string} value
+ * @return {!proto.buf.validate.Rule} returns this
+ */
+proto.buf.validate.Rule.prototype.setMessage = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.buf.validate.Rule} returns this
+ */
+proto.buf.validate.Rule.prototype.clearMessage = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.buf.validate.Rule.prototype.hasMessage = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string expression = 3;
+ * @return {string}
+ */
+proto.buf.validate.Rule.prototype.getExpression = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.buf.validate.Rule} returns this
+ */
+proto.buf.validate.Rule.prototype.setExpression = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.buf.validate.Rule} returns this
+ */
+proto.buf.validate.Rule.prototype.clearExpression = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.buf.validate.Rule.prototype.hasExpression = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.buf.validate.MessageRules.repeatedFields_ = [3,4];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.buf.validate.MessageRules.prototype.toObject = function(opt_includeInstance) {
+  return proto.buf.validate.MessageRules.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.buf.validate.MessageRules} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.buf.validate.MessageRules.toObject = function(includeInstance, msg) {
+  var f, obj = {
+celList: jspb.Message.toObjectList(msg.getCelList(),
+    proto.buf.validate.Rule.toObject, includeInstance),
+oneofList: jspb.Message.toObjectList(msg.getOneofList(),
+    proto.buf.validate.MessageOneofRule.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.buf.validate.MessageRules}
+ */
+proto.buf.validate.MessageRules.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.buf.validate.MessageRules;
+  return proto.buf.validate.MessageRules.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.buf.validate.MessageRules} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.buf.validate.MessageRules}
+ */
+proto.buf.validate.MessageRules.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 3:
+      var value = new proto.buf.validate.Rule;
+      reader.readMessage(value,proto.buf.validate.Rule.deserializeBinaryFromReader);
+      msg.addCel(value);
+      break;
+    case 4:
+      var value = new proto.buf.validate.MessageOneofRule;
+      reader.readMessage(value,proto.buf.validate.MessageOneofRule.deserializeBinaryFromReader);
+      msg.addOneof(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.buf.validate.MessageRules.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.buf.validate.MessageRules.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.buf.validate.MessageRules} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.buf.validate.MessageRules.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getCelList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      3,
+      f,
+      proto.buf.validate.Rule.serializeBinaryToWriter
+    );
+  }
+  f = message.getOneofList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      4,
+      f,
+      proto.buf.validate.MessageOneofRule.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated Rule cel = 3;
+ * @return {!Array<!proto.buf.validate.Rule>}
+ */
+proto.buf.validate.MessageRules.prototype.getCelList = function() {
+  return /** @type{!Array<!proto.buf.validate.Rule>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.buf.validate.Rule, 3));
+};
+
+
+/**
+ * @param {!Array<!proto.buf.validate.Rule>} value
+ * @return {!proto.buf.validate.MessageRules} returns this
 */
-proto.buf.validate.MessageConstraints.prototype.setCelList = function(value) {
+proto.buf.validate.MessageRules.prototype.setCelList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
 
 /**
- * @param {!proto.buf.validate.Constraint=} opt_value
+ * @param {!proto.buf.validate.Rule=} opt_value
  * @param {number=} opt_index
- * @return {!proto.buf.validate.Constraint}
+ * @return {!proto.buf.validate.Rule}
  */
-proto.buf.validate.MessageConstraints.prototype.addCel = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.buf.validate.Constraint, opt_index);
+proto.buf.validate.MessageRules.prototype.addCel = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 3, opt_value, proto.buf.validate.Rule, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.buf.validate.MessageConstraints} returns this
+ * @return {!proto.buf.validate.MessageRules} returns this
  */
-proto.buf.validate.MessageConstraints.prototype.clearCelList = function() {
+proto.buf.validate.MessageRules.prototype.clearCelList = function() {
   return this.setCelList([]);
+};
+
+
+/**
+ * repeated MessageOneofRule oneof = 4;
+ * @return {!Array<!proto.buf.validate.MessageOneofRule>}
+ */
+proto.buf.validate.MessageRules.prototype.getOneofList = function() {
+  return /** @type{!Array<!proto.buf.validate.MessageOneofRule>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.buf.validate.MessageOneofRule, 4));
+};
+
+
+/**
+ * @param {!Array<!proto.buf.validate.MessageOneofRule>} value
+ * @return {!proto.buf.validate.MessageRules} returns this
+*/
+proto.buf.validate.MessageRules.prototype.setOneofList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
+};
+
+
+/**
+ * @param {!proto.buf.validate.MessageOneofRule=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.buf.validate.MessageOneofRule}
+ */
+proto.buf.validate.MessageRules.prototype.addOneof = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 4, opt_value, proto.buf.validate.MessageOneofRule, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.buf.validate.MessageRules} returns this
+ */
+proto.buf.validate.MessageRules.prototype.clearOneofList = function() {
+  return this.setOneofList([]);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.buf.validate.MessageOneofRule.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.buf.validate.MessageOneofRule.prototype.toObject = function(opt_includeInstance) {
+  return proto.buf.validate.MessageOneofRule.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.buf.validate.MessageOneofRule} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.buf.validate.MessageOneofRule.toObject = function(includeInstance, msg) {
+  var f, obj = {
+fieldsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+required: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.buf.validate.MessageOneofRule}
+ */
+proto.buf.validate.MessageOneofRule.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.buf.validate.MessageOneofRule;
+  return proto.buf.validate.MessageOneofRule.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.buf.validate.MessageOneofRule} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.buf.validate.MessageOneofRule}
+ */
+proto.buf.validate.MessageOneofRule.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addFields(value);
+      break;
+    case 2:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setRequired(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.buf.validate.MessageOneofRule.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.buf.validate.MessageOneofRule.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.buf.validate.MessageOneofRule} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.buf.validate.MessageOneofRule.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getFieldsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      1,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeBool(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * repeated string fields = 1;
+ * @return {!Array<string>}
+ */
+proto.buf.validate.MessageOneofRule.prototype.getFieldsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.buf.validate.MessageOneofRule} returns this
+ */
+proto.buf.validate.MessageOneofRule.prototype.setFieldsList = function(value) {
+  return jspb.Message.setField(this, 1, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.buf.validate.MessageOneofRule} returns this
+ */
+proto.buf.validate.MessageOneofRule.prototype.addFields = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.buf.validate.MessageOneofRule} returns this
+ */
+proto.buf.validate.MessageOneofRule.prototype.clearFieldsList = function() {
+  return this.setFieldsList([]);
+};
+
+
+/**
+ * optional bool required = 2;
+ * @return {boolean}
+ */
+proto.buf.validate.MessageOneofRule.prototype.getRequired = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.buf.validate.MessageOneofRule} returns this
+ */
+proto.buf.validate.MessageOneofRule.prototype.setRequired = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.buf.validate.MessageOneofRule} returns this
+ */
+proto.buf.validate.MessageOneofRule.prototype.clearRequired = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.buf.validate.MessageOneofRule.prototype.hasRequired = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -790,8 +2024,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.buf.validate.OneofConstraints.prototype.toObject = function(opt_includeInstance) {
-  return proto.buf.validate.OneofConstraints.toObject(opt_includeInstance, this);
+proto.buf.validate.OneofRules.prototype.toObject = function(opt_includeInstance) {
+  return proto.buf.validate.OneofRules.toObject(opt_includeInstance, this);
 };
 
 
@@ -800,11 +2034,11 @@ proto.buf.validate.OneofConstraints.prototype.toObject = function(opt_includeIns
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.buf.validate.OneofConstraints} msg The msg instance to transform.
+ * @param {!proto.buf.validate.OneofRules} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.buf.validate.OneofConstraints.toObject = function(includeInstance, msg) {
+proto.buf.validate.OneofRules.toObject = function(includeInstance, msg) {
   var f, obj = {
 required: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f
   };
@@ -820,23 +2054,23 @@ required: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.buf.validate.OneofConstraints}
+ * @return {!proto.buf.validate.OneofRules}
  */
-proto.buf.validate.OneofConstraints.deserializeBinary = function(bytes) {
+proto.buf.validate.OneofRules.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.buf.validate.OneofConstraints;
-  return proto.buf.validate.OneofConstraints.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.buf.validate.OneofRules;
+  return proto.buf.validate.OneofRules.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.buf.validate.OneofConstraints} msg The message object to deserialize into.
+ * @param {!proto.buf.validate.OneofRules} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.buf.validate.OneofConstraints}
+ * @return {!proto.buf.validate.OneofRules}
  */
-proto.buf.validate.OneofConstraints.deserializeBinaryFromReader = function(msg, reader) {
+proto.buf.validate.OneofRules.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -860,9 +2094,9 @@ proto.buf.validate.OneofConstraints.deserializeBinaryFromReader = function(msg, 
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.buf.validate.OneofConstraints.prototype.serializeBinary = function() {
+proto.buf.validate.OneofRules.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.buf.validate.OneofConstraints.serializeBinaryToWriter(this, writer);
+  proto.buf.validate.OneofRules.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -870,11 +2104,11 @@ proto.buf.validate.OneofConstraints.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.buf.validate.OneofConstraints} message
+ * @param {!proto.buf.validate.OneofRules} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.buf.validate.OneofConstraints.serializeBinaryToWriter = function(message, writer) {
+proto.buf.validate.OneofRules.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = /** @type {boolean} */ (jspb.Message.getField(message, 1));
   if (f != null) {
@@ -890,25 +2124,25 @@ proto.buf.validate.OneofConstraints.serializeBinaryToWriter = function(message, 
  * optional bool required = 1;
  * @return {boolean}
  */
-proto.buf.validate.OneofConstraints.prototype.getRequired = function() {
+proto.buf.validate.OneofRules.prototype.getRequired = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
 };
 
 
 /**
  * @param {boolean} value
- * @return {!proto.buf.validate.OneofConstraints} returns this
+ * @return {!proto.buf.validate.OneofRules} returns this
  */
-proto.buf.validate.OneofConstraints.prototype.setRequired = function(value) {
+proto.buf.validate.OneofRules.prototype.setRequired = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
 
 /**
  * Clears the field making it undefined.
- * @return {!proto.buf.validate.OneofConstraints} returns this
+ * @return {!proto.buf.validate.OneofRules} returns this
  */
-proto.buf.validate.OneofConstraints.prototype.clearRequired = function() {
+proto.buf.validate.OneofRules.prototype.clearRequired = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -917,7 +2151,7 @@ proto.buf.validate.OneofConstraints.prototype.clearRequired = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.buf.validate.OneofConstraints.prototype.hasRequired = function() {
+proto.buf.validate.OneofRules.prototype.hasRequired = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -928,7 +2162,7 @@ proto.buf.validate.OneofConstraints.prototype.hasRequired = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.buf.validate.FieldConstraints.repeatedFields_ = [23];
+proto.buf.validate.FieldRules.repeatedFields_ = [23];
 
 /**
  * Oneof group definitions for this message. Each group defines the field
@@ -938,12 +2172,12 @@ proto.buf.validate.FieldConstraints.repeatedFields_ = [23];
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.buf.validate.FieldConstraints.oneofGroups_ = [[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,18,19,20,21,22]];
+proto.buf.validate.FieldRules.oneofGroups_ = [[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,18,19,20,21,22]];
 
 /**
  * @enum {number}
  */
-proto.buf.validate.FieldConstraints.TypeCase = {
+proto.buf.validate.FieldRules.TypeCase = {
   TYPE_NOT_SET: 0,
   FLOAT: 1,
   DOUBLE: 2,
@@ -969,10 +2203,10 @@ proto.buf.validate.FieldConstraints.TypeCase = {
 };
 
 /**
- * @return {proto.buf.validate.FieldConstraints.TypeCase}
+ * @return {proto.buf.validate.FieldRules.TypeCase}
  */
-proto.buf.validate.FieldConstraints.prototype.getTypeCase = function() {
-  return /** @type {proto.buf.validate.FieldConstraints.TypeCase} */(jspb.Message.computeOneofCase(this, proto.buf.validate.FieldConstraints.oneofGroups_[0]));
+proto.buf.validate.FieldRules.prototype.getTypeCase = function() {
+  return /** @type {proto.buf.validate.FieldRules.TypeCase} */(jspb.Message.computeOneofCase(this, proto.buf.validate.FieldRules.oneofGroups_[0]));
 };
 
 
@@ -990,8 +2224,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.buf.validate.FieldConstraints.prototype.toObject = function(opt_includeInstance) {
-  return proto.buf.validate.FieldConstraints.toObject(opt_includeInstance, this);
+proto.buf.validate.FieldRules.prototype.toObject = function(opt_includeInstance) {
+  return proto.buf.validate.FieldRules.toObject(opt_includeInstance, this);
 };
 
 
@@ -1000,17 +2234,16 @@ proto.buf.validate.FieldConstraints.prototype.toObject = function(opt_includeIns
  * @param {boolean|undefined} includeInstance Deprecated. Whether to include
  *     the JSPB instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.buf.validate.FieldConstraints} msg The msg instance to transform.
+ * @param {!proto.buf.validate.FieldRules} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.buf.validate.FieldConstraints.toObject = function(includeInstance, msg) {
+proto.buf.validate.FieldRules.toObject = function(includeInstance, msg) {
   var f, obj = {
 celList: jspb.Message.toObjectList(msg.getCelList(),
-    buf_validate_expression_pb.Constraint.toObject, includeInstance),
-skipped: jspb.Message.getBooleanFieldWithDefault(msg, 24, false),
-required: jspb.Message.getBooleanFieldWithDefault(msg, 25, false),
-ignoreEmpty: jspb.Message.getBooleanFieldWithDefault(msg, 26, false),
+    proto.buf.validate.Rule.toObject, includeInstance),
+required: (f = jspb.Message.getBooleanField(msg, 25)) == null ? undefined : f,
+ignore: (f = jspb.Message.getField(msg, 27)) == null ? undefined : f,
 pb_float: (f = msg.getFloat()) && proto.buf.validate.FloatRules.toObject(includeInstance, f),
 pb_double: (f = msg.getDouble()) && proto.buf.validate.DoubleRules.toObject(includeInstance, f),
 int32: (f = msg.getInt32()) && proto.buf.validate.Int32Rules.toObject(includeInstance, f),
@@ -1045,23 +2278,23 @@ timestamp: (f = msg.getTimestamp()) && proto.buf.validate.TimestampRules.toObjec
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.buf.validate.FieldConstraints}
+ * @return {!proto.buf.validate.FieldRules}
  */
-proto.buf.validate.FieldConstraints.deserializeBinary = function(bytes) {
+proto.buf.validate.FieldRules.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.buf.validate.FieldConstraints;
-  return proto.buf.validate.FieldConstraints.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.buf.validate.FieldRules;
+  return proto.buf.validate.FieldRules.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.buf.validate.FieldConstraints} msg The message object to deserialize into.
+ * @param {!proto.buf.validate.FieldRules} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.buf.validate.FieldConstraints}
+ * @return {!proto.buf.validate.FieldRules}
  */
-proto.buf.validate.FieldConstraints.deserializeBinaryFromReader = function(msg, reader) {
+proto.buf.validate.FieldRules.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -1069,21 +2302,17 @@ proto.buf.validate.FieldConstraints.deserializeBinaryFromReader = function(msg, 
     var field = reader.getFieldNumber();
     switch (field) {
     case 23:
-      var value = new buf_validate_expression_pb.Constraint;
-      reader.readMessage(value,buf_validate_expression_pb.Constraint.deserializeBinaryFromReader);
+      var value = new proto.buf.validate.Rule;
+      reader.readMessage(value,proto.buf.validate.Rule.deserializeBinaryFromReader);
       msg.addCel(value);
-      break;
-    case 24:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setSkipped(value);
       break;
     case 25:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setRequired(value);
       break;
-    case 26:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setIgnoreEmpty(value);
+    case 27:
+      var value = /** @type {!proto.buf.validate.Ignore} */ (reader.readEnum());
+      msg.setIgnore(value);
       break;
     case 1:
       var value = new proto.buf.validate.FloatRules;
@@ -1203,9 +2432,9 @@ proto.buf.validate.FieldConstraints.deserializeBinaryFromReader = function(msg, 
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.buf.validate.FieldConstraints.prototype.serializeBinary = function() {
+proto.buf.validate.FieldRules.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.buf.validate.FieldConstraints.serializeBinaryToWriter(this, writer);
+  proto.buf.validate.FieldRules.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -1213,38 +2442,31 @@ proto.buf.validate.FieldConstraints.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.buf.validate.FieldConstraints} message
+ * @param {!proto.buf.validate.FieldRules} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.buf.validate.FieldConstraints.serializeBinaryToWriter = function(message, writer) {
+proto.buf.validate.FieldRules.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getCelList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       23,
       f,
-      buf_validate_expression_pb.Constraint.serializeBinaryToWriter
+      proto.buf.validate.Rule.serializeBinaryToWriter
     );
   }
-  f = message.getSkipped();
-  if (f) {
-    writer.writeBool(
-      24,
-      f
-    );
-  }
-  f = message.getRequired();
-  if (f) {
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 25));
+  if (f != null) {
     writer.writeBool(
       25,
       f
     );
   }
-  f = message.getIgnoreEmpty();
-  if (f) {
-    writer.writeBool(
-      26,
+  f = /** @type {!proto.buf.validate.Ignore} */ (jspb.Message.getField(message, 27));
+  if (f != null) {
+    writer.writeEnum(
+      27,
       f
     );
   }
@@ -1420,58 +2642,40 @@ proto.buf.validate.FieldConstraints.serializeBinaryToWriter = function(message, 
 
 
 /**
- * repeated Constraint cel = 23;
- * @return {!Array<!proto.buf.validate.Constraint>}
+ * repeated Rule cel = 23;
+ * @return {!Array<!proto.buf.validate.Rule>}
  */
-proto.buf.validate.FieldConstraints.prototype.getCelList = function() {
-  return /** @type{!Array<!proto.buf.validate.Constraint>} */ (
-    jspb.Message.getRepeatedWrapperField(this, buf_validate_expression_pb.Constraint, 23));
+proto.buf.validate.FieldRules.prototype.getCelList = function() {
+  return /** @type{!Array<!proto.buf.validate.Rule>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.buf.validate.Rule, 23));
 };
 
 
 /**
- * @param {!Array<!proto.buf.validate.Constraint>} value
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @param {!Array<!proto.buf.validate.Rule>} value
+ * @return {!proto.buf.validate.FieldRules} returns this
 */
-proto.buf.validate.FieldConstraints.prototype.setCelList = function(value) {
+proto.buf.validate.FieldRules.prototype.setCelList = function(value) {
   return jspb.Message.setRepeatedWrapperField(this, 23, value);
 };
 
 
 /**
- * @param {!proto.buf.validate.Constraint=} opt_value
+ * @param {!proto.buf.validate.Rule=} opt_value
  * @param {number=} opt_index
- * @return {!proto.buf.validate.Constraint}
+ * @return {!proto.buf.validate.Rule}
  */
-proto.buf.validate.FieldConstraints.prototype.addCel = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 23, opt_value, proto.buf.validate.Constraint, opt_index);
+proto.buf.validate.FieldRules.prototype.addCel = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 23, opt_value, proto.buf.validate.Rule, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
  */
-proto.buf.validate.FieldConstraints.prototype.clearCelList = function() {
+proto.buf.validate.FieldRules.prototype.clearCelList = function() {
   return this.setCelList([]);
-};
-
-
-/**
- * optional bool skipped = 24;
- * @return {boolean}
- */
-proto.buf.validate.FieldConstraints.prototype.getSkipped = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 24, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.buf.validate.FieldConstraints} returns this
- */
-proto.buf.validate.FieldConstraints.prototype.setSkipped = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 24, value);
 };
 
 
@@ -1479,35 +2683,71 @@ proto.buf.validate.FieldConstraints.prototype.setSkipped = function(value) {
  * optional bool required = 25;
  * @return {boolean}
  */
-proto.buf.validate.FieldConstraints.prototype.getRequired = function() {
+proto.buf.validate.FieldRules.prototype.getRequired = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 25, false));
 };
 
 
 /**
  * @param {boolean} value
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
  */
-proto.buf.validate.FieldConstraints.prototype.setRequired = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 25, value);
+proto.buf.validate.FieldRules.prototype.setRequired = function(value) {
+  return jspb.Message.setField(this, 25, value);
 };
 
 
 /**
- * optional bool ignore_empty = 26;
+ * Clears the field making it undefined.
+ * @return {!proto.buf.validate.FieldRules} returns this
+ */
+proto.buf.validate.FieldRules.prototype.clearRequired = function() {
+  return jspb.Message.setField(this, 25, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
  * @return {boolean}
  */
-proto.buf.validate.FieldConstraints.prototype.getIgnoreEmpty = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 26, false));
+proto.buf.validate.FieldRules.prototype.hasRequired = function() {
+  return jspb.Message.getField(this, 25) != null;
 };
 
 
 /**
- * @param {boolean} value
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * optional Ignore ignore = 27;
+ * @return {!proto.buf.validate.Ignore}
  */
-proto.buf.validate.FieldConstraints.prototype.setIgnoreEmpty = function(value) {
-  return jspb.Message.setProto3BooleanField(this, 26, value);
+proto.buf.validate.FieldRules.prototype.getIgnore = function() {
+  return /** @type {!proto.buf.validate.Ignore} */ (jspb.Message.getFieldWithDefault(this, 27, 0));
+};
+
+
+/**
+ * @param {!proto.buf.validate.Ignore} value
+ * @return {!proto.buf.validate.FieldRules} returns this
+ */
+proto.buf.validate.FieldRules.prototype.setIgnore = function(value) {
+  return jspb.Message.setField(this, 27, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.buf.validate.FieldRules} returns this
+ */
+proto.buf.validate.FieldRules.prototype.clearIgnore = function() {
+  return jspb.Message.setField(this, 27, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.buf.validate.FieldRules.prototype.hasIgnore = function() {
+  return jspb.Message.getField(this, 27) != null;
 };
 
 
@@ -1515,7 +2755,7 @@ proto.buf.validate.FieldConstraints.prototype.setIgnoreEmpty = function(value) {
  * optional FloatRules float = 1;
  * @return {?proto.buf.validate.FloatRules}
  */
-proto.buf.validate.FieldConstraints.prototype.getFloat = function() {
+proto.buf.validate.FieldRules.prototype.getFloat = function() {
   return /** @type{?proto.buf.validate.FloatRules} */ (
     jspb.Message.getWrapperField(this, proto.buf.validate.FloatRules, 1));
 };
@@ -1523,18 +2763,18 @@ proto.buf.validate.FieldConstraints.prototype.getFloat = function() {
 
 /**
  * @param {?proto.buf.validate.FloatRules|undefined} value
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
 */
-proto.buf.validate.FieldConstraints.prototype.setFloat = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 1, proto.buf.validate.FieldConstraints.oneofGroups_[0], value);
+proto.buf.validate.FieldRules.prototype.setFloat = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1, proto.buf.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
  */
-proto.buf.validate.FieldConstraints.prototype.clearFloat = function() {
+proto.buf.validate.FieldRules.prototype.clearFloat = function() {
   return this.setFloat(undefined);
 };
 
@@ -1543,7 +2783,7 @@ proto.buf.validate.FieldConstraints.prototype.clearFloat = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.buf.validate.FieldConstraints.prototype.hasFloat = function() {
+proto.buf.validate.FieldRules.prototype.hasFloat = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
@@ -1552,7 +2792,7 @@ proto.buf.validate.FieldConstraints.prototype.hasFloat = function() {
  * optional DoubleRules double = 2;
  * @return {?proto.buf.validate.DoubleRules}
  */
-proto.buf.validate.FieldConstraints.prototype.getDouble = function() {
+proto.buf.validate.FieldRules.prototype.getDouble = function() {
   return /** @type{?proto.buf.validate.DoubleRules} */ (
     jspb.Message.getWrapperField(this, proto.buf.validate.DoubleRules, 2));
 };
@@ -1560,18 +2800,18 @@ proto.buf.validate.FieldConstraints.prototype.getDouble = function() {
 
 /**
  * @param {?proto.buf.validate.DoubleRules|undefined} value
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
 */
-proto.buf.validate.FieldConstraints.prototype.setDouble = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 2, proto.buf.validate.FieldConstraints.oneofGroups_[0], value);
+proto.buf.validate.FieldRules.prototype.setDouble = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 2, proto.buf.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
  */
-proto.buf.validate.FieldConstraints.prototype.clearDouble = function() {
+proto.buf.validate.FieldRules.prototype.clearDouble = function() {
   return this.setDouble(undefined);
 };
 
@@ -1580,7 +2820,7 @@ proto.buf.validate.FieldConstraints.prototype.clearDouble = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.buf.validate.FieldConstraints.prototype.hasDouble = function() {
+proto.buf.validate.FieldRules.prototype.hasDouble = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -1589,7 +2829,7 @@ proto.buf.validate.FieldConstraints.prototype.hasDouble = function() {
  * optional Int32Rules int32 = 3;
  * @return {?proto.buf.validate.Int32Rules}
  */
-proto.buf.validate.FieldConstraints.prototype.getInt32 = function() {
+proto.buf.validate.FieldRules.prototype.getInt32 = function() {
   return /** @type{?proto.buf.validate.Int32Rules} */ (
     jspb.Message.getWrapperField(this, proto.buf.validate.Int32Rules, 3));
 };
@@ -1597,18 +2837,18 @@ proto.buf.validate.FieldConstraints.prototype.getInt32 = function() {
 
 /**
  * @param {?proto.buf.validate.Int32Rules|undefined} value
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
 */
-proto.buf.validate.FieldConstraints.prototype.setInt32 = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 3, proto.buf.validate.FieldConstraints.oneofGroups_[0], value);
+proto.buf.validate.FieldRules.prototype.setInt32 = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 3, proto.buf.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
  */
-proto.buf.validate.FieldConstraints.prototype.clearInt32 = function() {
+proto.buf.validate.FieldRules.prototype.clearInt32 = function() {
   return this.setInt32(undefined);
 };
 
@@ -1617,7 +2857,7 @@ proto.buf.validate.FieldConstraints.prototype.clearInt32 = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.buf.validate.FieldConstraints.prototype.hasInt32 = function() {
+proto.buf.validate.FieldRules.prototype.hasInt32 = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -1626,7 +2866,7 @@ proto.buf.validate.FieldConstraints.prototype.hasInt32 = function() {
  * optional Int64Rules int64 = 4;
  * @return {?proto.buf.validate.Int64Rules}
  */
-proto.buf.validate.FieldConstraints.prototype.getInt64 = function() {
+proto.buf.validate.FieldRules.prototype.getInt64 = function() {
   return /** @type{?proto.buf.validate.Int64Rules} */ (
     jspb.Message.getWrapperField(this, proto.buf.validate.Int64Rules, 4));
 };
@@ -1634,18 +2874,18 @@ proto.buf.validate.FieldConstraints.prototype.getInt64 = function() {
 
 /**
  * @param {?proto.buf.validate.Int64Rules|undefined} value
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
 */
-proto.buf.validate.FieldConstraints.prototype.setInt64 = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 4, proto.buf.validate.FieldConstraints.oneofGroups_[0], value);
+proto.buf.validate.FieldRules.prototype.setInt64 = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 4, proto.buf.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
  */
-proto.buf.validate.FieldConstraints.prototype.clearInt64 = function() {
+proto.buf.validate.FieldRules.prototype.clearInt64 = function() {
   return this.setInt64(undefined);
 };
 
@@ -1654,7 +2894,7 @@ proto.buf.validate.FieldConstraints.prototype.clearInt64 = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.buf.validate.FieldConstraints.prototype.hasInt64 = function() {
+proto.buf.validate.FieldRules.prototype.hasInt64 = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
@@ -1663,7 +2903,7 @@ proto.buf.validate.FieldConstraints.prototype.hasInt64 = function() {
  * optional UInt32Rules uint32 = 5;
  * @return {?proto.buf.validate.UInt32Rules}
  */
-proto.buf.validate.FieldConstraints.prototype.getUint32 = function() {
+proto.buf.validate.FieldRules.prototype.getUint32 = function() {
   return /** @type{?proto.buf.validate.UInt32Rules} */ (
     jspb.Message.getWrapperField(this, proto.buf.validate.UInt32Rules, 5));
 };
@@ -1671,18 +2911,18 @@ proto.buf.validate.FieldConstraints.prototype.getUint32 = function() {
 
 /**
  * @param {?proto.buf.validate.UInt32Rules|undefined} value
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
 */
-proto.buf.validate.FieldConstraints.prototype.setUint32 = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 5, proto.buf.validate.FieldConstraints.oneofGroups_[0], value);
+proto.buf.validate.FieldRules.prototype.setUint32 = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 5, proto.buf.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
  */
-proto.buf.validate.FieldConstraints.prototype.clearUint32 = function() {
+proto.buf.validate.FieldRules.prototype.clearUint32 = function() {
   return this.setUint32(undefined);
 };
 
@@ -1691,7 +2931,7 @@ proto.buf.validate.FieldConstraints.prototype.clearUint32 = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.buf.validate.FieldConstraints.prototype.hasUint32 = function() {
+proto.buf.validate.FieldRules.prototype.hasUint32 = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
@@ -1700,7 +2940,7 @@ proto.buf.validate.FieldConstraints.prototype.hasUint32 = function() {
  * optional UInt64Rules uint64 = 6;
  * @return {?proto.buf.validate.UInt64Rules}
  */
-proto.buf.validate.FieldConstraints.prototype.getUint64 = function() {
+proto.buf.validate.FieldRules.prototype.getUint64 = function() {
   return /** @type{?proto.buf.validate.UInt64Rules} */ (
     jspb.Message.getWrapperField(this, proto.buf.validate.UInt64Rules, 6));
 };
@@ -1708,18 +2948,18 @@ proto.buf.validate.FieldConstraints.prototype.getUint64 = function() {
 
 /**
  * @param {?proto.buf.validate.UInt64Rules|undefined} value
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
 */
-proto.buf.validate.FieldConstraints.prototype.setUint64 = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 6, proto.buf.validate.FieldConstraints.oneofGroups_[0], value);
+proto.buf.validate.FieldRules.prototype.setUint64 = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 6, proto.buf.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
  */
-proto.buf.validate.FieldConstraints.prototype.clearUint64 = function() {
+proto.buf.validate.FieldRules.prototype.clearUint64 = function() {
   return this.setUint64(undefined);
 };
 
@@ -1728,7 +2968,7 @@ proto.buf.validate.FieldConstraints.prototype.clearUint64 = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.buf.validate.FieldConstraints.prototype.hasUint64 = function() {
+proto.buf.validate.FieldRules.prototype.hasUint64 = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 
@@ -1737,7 +2977,7 @@ proto.buf.validate.FieldConstraints.prototype.hasUint64 = function() {
  * optional SInt32Rules sint32 = 7;
  * @return {?proto.buf.validate.SInt32Rules}
  */
-proto.buf.validate.FieldConstraints.prototype.getSint32 = function() {
+proto.buf.validate.FieldRules.prototype.getSint32 = function() {
   return /** @type{?proto.buf.validate.SInt32Rules} */ (
     jspb.Message.getWrapperField(this, proto.buf.validate.SInt32Rules, 7));
 };
@@ -1745,18 +2985,18 @@ proto.buf.validate.FieldConstraints.prototype.getSint32 = function() {
 
 /**
  * @param {?proto.buf.validate.SInt32Rules|undefined} value
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
 */
-proto.buf.validate.FieldConstraints.prototype.setSint32 = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 7, proto.buf.validate.FieldConstraints.oneofGroups_[0], value);
+proto.buf.validate.FieldRules.prototype.setSint32 = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 7, proto.buf.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
  */
-proto.buf.validate.FieldConstraints.prototype.clearSint32 = function() {
+proto.buf.validate.FieldRules.prototype.clearSint32 = function() {
   return this.setSint32(undefined);
 };
 
@@ -1765,7 +3005,7 @@ proto.buf.validate.FieldConstraints.prototype.clearSint32 = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.buf.validate.FieldConstraints.prototype.hasSint32 = function() {
+proto.buf.validate.FieldRules.prototype.hasSint32 = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 
@@ -1774,7 +3014,7 @@ proto.buf.validate.FieldConstraints.prototype.hasSint32 = function() {
  * optional SInt64Rules sint64 = 8;
  * @return {?proto.buf.validate.SInt64Rules}
  */
-proto.buf.validate.FieldConstraints.prototype.getSint64 = function() {
+proto.buf.validate.FieldRules.prototype.getSint64 = function() {
   return /** @type{?proto.buf.validate.SInt64Rules} */ (
     jspb.Message.getWrapperField(this, proto.buf.validate.SInt64Rules, 8));
 };
@@ -1782,18 +3022,18 @@ proto.buf.validate.FieldConstraints.prototype.getSint64 = function() {
 
 /**
  * @param {?proto.buf.validate.SInt64Rules|undefined} value
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
 */
-proto.buf.validate.FieldConstraints.prototype.setSint64 = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 8, proto.buf.validate.FieldConstraints.oneofGroups_[0], value);
+proto.buf.validate.FieldRules.prototype.setSint64 = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 8, proto.buf.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
  */
-proto.buf.validate.FieldConstraints.prototype.clearSint64 = function() {
+proto.buf.validate.FieldRules.prototype.clearSint64 = function() {
   return this.setSint64(undefined);
 };
 
@@ -1802,7 +3042,7 @@ proto.buf.validate.FieldConstraints.prototype.clearSint64 = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.buf.validate.FieldConstraints.prototype.hasSint64 = function() {
+proto.buf.validate.FieldRules.prototype.hasSint64 = function() {
   return jspb.Message.getField(this, 8) != null;
 };
 
@@ -1811,7 +3051,7 @@ proto.buf.validate.FieldConstraints.prototype.hasSint64 = function() {
  * optional Fixed32Rules fixed32 = 9;
  * @return {?proto.buf.validate.Fixed32Rules}
  */
-proto.buf.validate.FieldConstraints.prototype.getFixed32 = function() {
+proto.buf.validate.FieldRules.prototype.getFixed32 = function() {
   return /** @type{?proto.buf.validate.Fixed32Rules} */ (
     jspb.Message.getWrapperField(this, proto.buf.validate.Fixed32Rules, 9));
 };
@@ -1819,18 +3059,18 @@ proto.buf.validate.FieldConstraints.prototype.getFixed32 = function() {
 
 /**
  * @param {?proto.buf.validate.Fixed32Rules|undefined} value
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
 */
-proto.buf.validate.FieldConstraints.prototype.setFixed32 = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 9, proto.buf.validate.FieldConstraints.oneofGroups_[0], value);
+proto.buf.validate.FieldRules.prototype.setFixed32 = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 9, proto.buf.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
  */
-proto.buf.validate.FieldConstraints.prototype.clearFixed32 = function() {
+proto.buf.validate.FieldRules.prototype.clearFixed32 = function() {
   return this.setFixed32(undefined);
 };
 
@@ -1839,7 +3079,7 @@ proto.buf.validate.FieldConstraints.prototype.clearFixed32 = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.buf.validate.FieldConstraints.prototype.hasFixed32 = function() {
+proto.buf.validate.FieldRules.prototype.hasFixed32 = function() {
   return jspb.Message.getField(this, 9) != null;
 };
 
@@ -1848,7 +3088,7 @@ proto.buf.validate.FieldConstraints.prototype.hasFixed32 = function() {
  * optional Fixed64Rules fixed64 = 10;
  * @return {?proto.buf.validate.Fixed64Rules}
  */
-proto.buf.validate.FieldConstraints.prototype.getFixed64 = function() {
+proto.buf.validate.FieldRules.prototype.getFixed64 = function() {
   return /** @type{?proto.buf.validate.Fixed64Rules} */ (
     jspb.Message.getWrapperField(this, proto.buf.validate.Fixed64Rules, 10));
 };
@@ -1856,18 +3096,18 @@ proto.buf.validate.FieldConstraints.prototype.getFixed64 = function() {
 
 /**
  * @param {?proto.buf.validate.Fixed64Rules|undefined} value
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
 */
-proto.buf.validate.FieldConstraints.prototype.setFixed64 = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 10, proto.buf.validate.FieldConstraints.oneofGroups_[0], value);
+proto.buf.validate.FieldRules.prototype.setFixed64 = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 10, proto.buf.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
  */
-proto.buf.validate.FieldConstraints.prototype.clearFixed64 = function() {
+proto.buf.validate.FieldRules.prototype.clearFixed64 = function() {
   return this.setFixed64(undefined);
 };
 
@@ -1876,7 +3116,7 @@ proto.buf.validate.FieldConstraints.prototype.clearFixed64 = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.buf.validate.FieldConstraints.prototype.hasFixed64 = function() {
+proto.buf.validate.FieldRules.prototype.hasFixed64 = function() {
   return jspb.Message.getField(this, 10) != null;
 };
 
@@ -1885,7 +3125,7 @@ proto.buf.validate.FieldConstraints.prototype.hasFixed64 = function() {
  * optional SFixed32Rules sfixed32 = 11;
  * @return {?proto.buf.validate.SFixed32Rules}
  */
-proto.buf.validate.FieldConstraints.prototype.getSfixed32 = function() {
+proto.buf.validate.FieldRules.prototype.getSfixed32 = function() {
   return /** @type{?proto.buf.validate.SFixed32Rules} */ (
     jspb.Message.getWrapperField(this, proto.buf.validate.SFixed32Rules, 11));
 };
@@ -1893,18 +3133,18 @@ proto.buf.validate.FieldConstraints.prototype.getSfixed32 = function() {
 
 /**
  * @param {?proto.buf.validate.SFixed32Rules|undefined} value
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
 */
-proto.buf.validate.FieldConstraints.prototype.setSfixed32 = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 11, proto.buf.validate.FieldConstraints.oneofGroups_[0], value);
+proto.buf.validate.FieldRules.prototype.setSfixed32 = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 11, proto.buf.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
  */
-proto.buf.validate.FieldConstraints.prototype.clearSfixed32 = function() {
+proto.buf.validate.FieldRules.prototype.clearSfixed32 = function() {
   return this.setSfixed32(undefined);
 };
 
@@ -1913,7 +3153,7 @@ proto.buf.validate.FieldConstraints.prototype.clearSfixed32 = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.buf.validate.FieldConstraints.prototype.hasSfixed32 = function() {
+proto.buf.validate.FieldRules.prototype.hasSfixed32 = function() {
   return jspb.Message.getField(this, 11) != null;
 };
 
@@ -1922,7 +3162,7 @@ proto.buf.validate.FieldConstraints.prototype.hasSfixed32 = function() {
  * optional SFixed64Rules sfixed64 = 12;
  * @return {?proto.buf.validate.SFixed64Rules}
  */
-proto.buf.validate.FieldConstraints.prototype.getSfixed64 = function() {
+proto.buf.validate.FieldRules.prototype.getSfixed64 = function() {
   return /** @type{?proto.buf.validate.SFixed64Rules} */ (
     jspb.Message.getWrapperField(this, proto.buf.validate.SFixed64Rules, 12));
 };
@@ -1930,18 +3170,18 @@ proto.buf.validate.FieldConstraints.prototype.getSfixed64 = function() {
 
 /**
  * @param {?proto.buf.validate.SFixed64Rules|undefined} value
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
 */
-proto.buf.validate.FieldConstraints.prototype.setSfixed64 = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 12, proto.buf.validate.FieldConstraints.oneofGroups_[0], value);
+proto.buf.validate.FieldRules.prototype.setSfixed64 = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 12, proto.buf.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
  */
-proto.buf.validate.FieldConstraints.prototype.clearSfixed64 = function() {
+proto.buf.validate.FieldRules.prototype.clearSfixed64 = function() {
   return this.setSfixed64(undefined);
 };
 
@@ -1950,7 +3190,7 @@ proto.buf.validate.FieldConstraints.prototype.clearSfixed64 = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.buf.validate.FieldConstraints.prototype.hasSfixed64 = function() {
+proto.buf.validate.FieldRules.prototype.hasSfixed64 = function() {
   return jspb.Message.getField(this, 12) != null;
 };
 
@@ -1959,7 +3199,7 @@ proto.buf.validate.FieldConstraints.prototype.hasSfixed64 = function() {
  * optional BoolRules bool = 13;
  * @return {?proto.buf.validate.BoolRules}
  */
-proto.buf.validate.FieldConstraints.prototype.getBool = function() {
+proto.buf.validate.FieldRules.prototype.getBool = function() {
   return /** @type{?proto.buf.validate.BoolRules} */ (
     jspb.Message.getWrapperField(this, proto.buf.validate.BoolRules, 13));
 };
@@ -1967,18 +3207,18 @@ proto.buf.validate.FieldConstraints.prototype.getBool = function() {
 
 /**
  * @param {?proto.buf.validate.BoolRules|undefined} value
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
 */
-proto.buf.validate.FieldConstraints.prototype.setBool = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 13, proto.buf.validate.FieldConstraints.oneofGroups_[0], value);
+proto.buf.validate.FieldRules.prototype.setBool = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 13, proto.buf.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
  */
-proto.buf.validate.FieldConstraints.prototype.clearBool = function() {
+proto.buf.validate.FieldRules.prototype.clearBool = function() {
   return this.setBool(undefined);
 };
 
@@ -1987,7 +3227,7 @@ proto.buf.validate.FieldConstraints.prototype.clearBool = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.buf.validate.FieldConstraints.prototype.hasBool = function() {
+proto.buf.validate.FieldRules.prototype.hasBool = function() {
   return jspb.Message.getField(this, 13) != null;
 };
 
@@ -1996,7 +3236,7 @@ proto.buf.validate.FieldConstraints.prototype.hasBool = function() {
  * optional StringRules string = 14;
  * @return {?proto.buf.validate.StringRules}
  */
-proto.buf.validate.FieldConstraints.prototype.getString = function() {
+proto.buf.validate.FieldRules.prototype.getString = function() {
   return /** @type{?proto.buf.validate.StringRules} */ (
     jspb.Message.getWrapperField(this, proto.buf.validate.StringRules, 14));
 };
@@ -2004,18 +3244,18 @@ proto.buf.validate.FieldConstraints.prototype.getString = function() {
 
 /**
  * @param {?proto.buf.validate.StringRules|undefined} value
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
 */
-proto.buf.validate.FieldConstraints.prototype.setString = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 14, proto.buf.validate.FieldConstraints.oneofGroups_[0], value);
+proto.buf.validate.FieldRules.prototype.setString = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 14, proto.buf.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
  */
-proto.buf.validate.FieldConstraints.prototype.clearString = function() {
+proto.buf.validate.FieldRules.prototype.clearString = function() {
   return this.setString(undefined);
 };
 
@@ -2024,7 +3264,7 @@ proto.buf.validate.FieldConstraints.prototype.clearString = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.buf.validate.FieldConstraints.prototype.hasString = function() {
+proto.buf.validate.FieldRules.prototype.hasString = function() {
   return jspb.Message.getField(this, 14) != null;
 };
 
@@ -2033,7 +3273,7 @@ proto.buf.validate.FieldConstraints.prototype.hasString = function() {
  * optional BytesRules bytes = 15;
  * @return {?proto.buf.validate.BytesRules}
  */
-proto.buf.validate.FieldConstraints.prototype.getBytes = function() {
+proto.buf.validate.FieldRules.prototype.getBytes = function() {
   return /** @type{?proto.buf.validate.BytesRules} */ (
     jspb.Message.getWrapperField(this, proto.buf.validate.BytesRules, 15));
 };
@@ -2041,18 +3281,18 @@ proto.buf.validate.FieldConstraints.prototype.getBytes = function() {
 
 /**
  * @param {?proto.buf.validate.BytesRules|undefined} value
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
 */
-proto.buf.validate.FieldConstraints.prototype.setBytes = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 15, proto.buf.validate.FieldConstraints.oneofGroups_[0], value);
+proto.buf.validate.FieldRules.prototype.setBytes = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 15, proto.buf.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
  */
-proto.buf.validate.FieldConstraints.prototype.clearBytes = function() {
+proto.buf.validate.FieldRules.prototype.clearBytes = function() {
   return this.setBytes(undefined);
 };
 
@@ -2061,7 +3301,7 @@ proto.buf.validate.FieldConstraints.prototype.clearBytes = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.buf.validate.FieldConstraints.prototype.hasBytes = function() {
+proto.buf.validate.FieldRules.prototype.hasBytes = function() {
   return jspb.Message.getField(this, 15) != null;
 };
 
@@ -2070,7 +3310,7 @@ proto.buf.validate.FieldConstraints.prototype.hasBytes = function() {
  * optional EnumRules enum = 16;
  * @return {?proto.buf.validate.EnumRules}
  */
-proto.buf.validate.FieldConstraints.prototype.getEnum = function() {
+proto.buf.validate.FieldRules.prototype.getEnum = function() {
   return /** @type{?proto.buf.validate.EnumRules} */ (
     jspb.Message.getWrapperField(this, proto.buf.validate.EnumRules, 16));
 };
@@ -2078,18 +3318,18 @@ proto.buf.validate.FieldConstraints.prototype.getEnum = function() {
 
 /**
  * @param {?proto.buf.validate.EnumRules|undefined} value
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
 */
-proto.buf.validate.FieldConstraints.prototype.setEnum = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 16, proto.buf.validate.FieldConstraints.oneofGroups_[0], value);
+proto.buf.validate.FieldRules.prototype.setEnum = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 16, proto.buf.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
  */
-proto.buf.validate.FieldConstraints.prototype.clearEnum = function() {
+proto.buf.validate.FieldRules.prototype.clearEnum = function() {
   return this.setEnum(undefined);
 };
 
@@ -2098,7 +3338,7 @@ proto.buf.validate.FieldConstraints.prototype.clearEnum = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.buf.validate.FieldConstraints.prototype.hasEnum = function() {
+proto.buf.validate.FieldRules.prototype.hasEnum = function() {
   return jspb.Message.getField(this, 16) != null;
 };
 
@@ -2107,7 +3347,7 @@ proto.buf.validate.FieldConstraints.prototype.hasEnum = function() {
  * optional RepeatedRules repeated = 18;
  * @return {?proto.buf.validate.RepeatedRules}
  */
-proto.buf.validate.FieldConstraints.prototype.getRepeated = function() {
+proto.buf.validate.FieldRules.prototype.getRepeated = function() {
   return /** @type{?proto.buf.validate.RepeatedRules} */ (
     jspb.Message.getWrapperField(this, proto.buf.validate.RepeatedRules, 18));
 };
@@ -2115,18 +3355,18 @@ proto.buf.validate.FieldConstraints.prototype.getRepeated = function() {
 
 /**
  * @param {?proto.buf.validate.RepeatedRules|undefined} value
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
 */
-proto.buf.validate.FieldConstraints.prototype.setRepeated = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 18, proto.buf.validate.FieldConstraints.oneofGroups_[0], value);
+proto.buf.validate.FieldRules.prototype.setRepeated = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 18, proto.buf.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
  */
-proto.buf.validate.FieldConstraints.prototype.clearRepeated = function() {
+proto.buf.validate.FieldRules.prototype.clearRepeated = function() {
   return this.setRepeated(undefined);
 };
 
@@ -2135,7 +3375,7 @@ proto.buf.validate.FieldConstraints.prototype.clearRepeated = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.buf.validate.FieldConstraints.prototype.hasRepeated = function() {
+proto.buf.validate.FieldRules.prototype.hasRepeated = function() {
   return jspb.Message.getField(this, 18) != null;
 };
 
@@ -2144,7 +3384,7 @@ proto.buf.validate.FieldConstraints.prototype.hasRepeated = function() {
  * optional MapRules map = 19;
  * @return {?proto.buf.validate.MapRules}
  */
-proto.buf.validate.FieldConstraints.prototype.getMap = function() {
+proto.buf.validate.FieldRules.prototype.getMap = function() {
   return /** @type{?proto.buf.validate.MapRules} */ (
     jspb.Message.getWrapperField(this, proto.buf.validate.MapRules, 19));
 };
@@ -2152,18 +3392,18 @@ proto.buf.validate.FieldConstraints.prototype.getMap = function() {
 
 /**
  * @param {?proto.buf.validate.MapRules|undefined} value
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
 */
-proto.buf.validate.FieldConstraints.prototype.setMap = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 19, proto.buf.validate.FieldConstraints.oneofGroups_[0], value);
+proto.buf.validate.FieldRules.prototype.setMap = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 19, proto.buf.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
  */
-proto.buf.validate.FieldConstraints.prototype.clearMap = function() {
+proto.buf.validate.FieldRules.prototype.clearMap = function() {
   return this.setMap(undefined);
 };
 
@@ -2172,7 +3412,7 @@ proto.buf.validate.FieldConstraints.prototype.clearMap = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.buf.validate.FieldConstraints.prototype.hasMap = function() {
+proto.buf.validate.FieldRules.prototype.hasMap = function() {
   return jspb.Message.getField(this, 19) != null;
 };
 
@@ -2181,7 +3421,7 @@ proto.buf.validate.FieldConstraints.prototype.hasMap = function() {
  * optional AnyRules any = 20;
  * @return {?proto.buf.validate.AnyRules}
  */
-proto.buf.validate.FieldConstraints.prototype.getAny = function() {
+proto.buf.validate.FieldRules.prototype.getAny = function() {
   return /** @type{?proto.buf.validate.AnyRules} */ (
     jspb.Message.getWrapperField(this, proto.buf.validate.AnyRules, 20));
 };
@@ -2189,18 +3429,18 @@ proto.buf.validate.FieldConstraints.prototype.getAny = function() {
 
 /**
  * @param {?proto.buf.validate.AnyRules|undefined} value
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
 */
-proto.buf.validate.FieldConstraints.prototype.setAny = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 20, proto.buf.validate.FieldConstraints.oneofGroups_[0], value);
+proto.buf.validate.FieldRules.prototype.setAny = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 20, proto.buf.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
  */
-proto.buf.validate.FieldConstraints.prototype.clearAny = function() {
+proto.buf.validate.FieldRules.prototype.clearAny = function() {
   return this.setAny(undefined);
 };
 
@@ -2209,7 +3449,7 @@ proto.buf.validate.FieldConstraints.prototype.clearAny = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.buf.validate.FieldConstraints.prototype.hasAny = function() {
+proto.buf.validate.FieldRules.prototype.hasAny = function() {
   return jspb.Message.getField(this, 20) != null;
 };
 
@@ -2218,7 +3458,7 @@ proto.buf.validate.FieldConstraints.prototype.hasAny = function() {
  * optional DurationRules duration = 21;
  * @return {?proto.buf.validate.DurationRules}
  */
-proto.buf.validate.FieldConstraints.prototype.getDuration = function() {
+proto.buf.validate.FieldRules.prototype.getDuration = function() {
   return /** @type{?proto.buf.validate.DurationRules} */ (
     jspb.Message.getWrapperField(this, proto.buf.validate.DurationRules, 21));
 };
@@ -2226,18 +3466,18 @@ proto.buf.validate.FieldConstraints.prototype.getDuration = function() {
 
 /**
  * @param {?proto.buf.validate.DurationRules|undefined} value
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
 */
-proto.buf.validate.FieldConstraints.prototype.setDuration = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 21, proto.buf.validate.FieldConstraints.oneofGroups_[0], value);
+proto.buf.validate.FieldRules.prototype.setDuration = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 21, proto.buf.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
  */
-proto.buf.validate.FieldConstraints.prototype.clearDuration = function() {
+proto.buf.validate.FieldRules.prototype.clearDuration = function() {
   return this.setDuration(undefined);
 };
 
@@ -2246,7 +3486,7 @@ proto.buf.validate.FieldConstraints.prototype.clearDuration = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.buf.validate.FieldConstraints.prototype.hasDuration = function() {
+proto.buf.validate.FieldRules.prototype.hasDuration = function() {
   return jspb.Message.getField(this, 21) != null;
 };
 
@@ -2255,7 +3495,7 @@ proto.buf.validate.FieldConstraints.prototype.hasDuration = function() {
  * optional TimestampRules timestamp = 22;
  * @return {?proto.buf.validate.TimestampRules}
  */
-proto.buf.validate.FieldConstraints.prototype.getTimestamp = function() {
+proto.buf.validate.FieldRules.prototype.getTimestamp = function() {
   return /** @type{?proto.buf.validate.TimestampRules} */ (
     jspb.Message.getWrapperField(this, proto.buf.validate.TimestampRules, 22));
 };
@@ -2263,18 +3503,18 @@ proto.buf.validate.FieldConstraints.prototype.getTimestamp = function() {
 
 /**
  * @param {?proto.buf.validate.TimestampRules|undefined} value
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
 */
-proto.buf.validate.FieldConstraints.prototype.setTimestamp = function(value) {
-  return jspb.Message.setOneofWrapperField(this, 22, proto.buf.validate.FieldConstraints.oneofGroups_[0], value);
+proto.buf.validate.FieldRules.prototype.setTimestamp = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 22, proto.buf.validate.FieldRules.oneofGroups_[0], value);
 };
 
 
 /**
  * Clears the message field making it undefined.
- * @return {!proto.buf.validate.FieldConstraints} returns this
+ * @return {!proto.buf.validate.FieldRules} returns this
  */
-proto.buf.validate.FieldConstraints.prototype.clearTimestamp = function() {
+proto.buf.validate.FieldRules.prototype.clearTimestamp = function() {
   return this.setTimestamp(undefined);
 };
 
@@ -2283,7 +3523,7 @@ proto.buf.validate.FieldConstraints.prototype.clearTimestamp = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.buf.validate.FieldConstraints.prototype.hasTimestamp = function() {
+proto.buf.validate.FieldRules.prototype.hasTimestamp = function() {
   return jspb.Message.getField(this, 22) != null;
 };
 
@@ -2294,7 +3534,209 @@ proto.buf.validate.FieldConstraints.prototype.hasTimestamp = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.buf.validate.FloatRules.repeatedFields_ = [6,7];
+proto.buf.validate.PredefinedRules.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.buf.validate.PredefinedRules.prototype.toObject = function(opt_includeInstance) {
+  return proto.buf.validate.PredefinedRules.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.buf.validate.PredefinedRules} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.buf.validate.PredefinedRules.toObject = function(includeInstance, msg) {
+  var f, obj = {
+celList: jspb.Message.toObjectList(msg.getCelList(),
+    proto.buf.validate.Rule.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.buf.validate.PredefinedRules}
+ */
+proto.buf.validate.PredefinedRules.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.buf.validate.PredefinedRules;
+  return proto.buf.validate.PredefinedRules.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.buf.validate.PredefinedRules} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.buf.validate.PredefinedRules}
+ */
+proto.buf.validate.PredefinedRules.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.buf.validate.Rule;
+      reader.readMessage(value,proto.buf.validate.Rule.deserializeBinaryFromReader);
+      msg.addCel(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.buf.validate.PredefinedRules.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.buf.validate.PredefinedRules.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.buf.validate.PredefinedRules} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.buf.validate.PredefinedRules.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getCelList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      proto.buf.validate.Rule.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated Rule cel = 1;
+ * @return {!Array<!proto.buf.validate.Rule>}
+ */
+proto.buf.validate.PredefinedRules.prototype.getCelList = function() {
+  return /** @type{!Array<!proto.buf.validate.Rule>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.buf.validate.Rule, 1));
+};
+
+
+/**
+ * @param {!Array<!proto.buf.validate.Rule>} value
+ * @return {!proto.buf.validate.PredefinedRules} returns this
+*/
+proto.buf.validate.PredefinedRules.prototype.setCelList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.buf.validate.Rule=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.buf.validate.Rule}
+ */
+proto.buf.validate.PredefinedRules.prototype.addCel = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.buf.validate.Rule, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.buf.validate.PredefinedRules} returns this
+ */
+proto.buf.validate.PredefinedRules.prototype.clearCelList = function() {
+  return this.setCelList([]);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.buf.validate.FloatRules.repeatedFields_ = [6,7,9];
+
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.buf.validate.FloatRules.oneofGroups_ = [[2,3],[4,5]];
+
+/**
+ * @enum {number}
+ */
+proto.buf.validate.FloatRules.LessThanCase = {
+  LESS_THAN_NOT_SET: 0,
+  LT: 2,
+  LTE: 3
+};
+
+/**
+ * @return {proto.buf.validate.FloatRules.LessThanCase}
+ */
+proto.buf.validate.FloatRules.prototype.getLessThanCase = function() {
+  return /** @type {proto.buf.validate.FloatRules.LessThanCase} */(jspb.Message.computeOneofCase(this, proto.buf.validate.FloatRules.oneofGroups_[0]));
+};
+
+/**
+ * @enum {number}
+ */
+proto.buf.validate.FloatRules.GreaterThanCase = {
+  GREATER_THAN_NOT_SET: 0,
+  GT: 4,
+  GTE: 5
+};
+
+/**
+ * @return {proto.buf.validate.FloatRules.GreaterThanCase}
+ */
+proto.buf.validate.FloatRules.prototype.getGreaterThanCase = function() {
+  return /** @type {proto.buf.validate.FloatRules.GreaterThanCase} */(jspb.Message.computeOneofCase(this, proto.buf.validate.FloatRules.oneofGroups_[1]));
+};
 
 
 
@@ -2333,9 +3775,14 @@ lte: (f = jspb.Message.getOptionalFloatingPointField(msg, 3)) == null ? undefine
 gt: (f = jspb.Message.getOptionalFloatingPointField(msg, 4)) == null ? undefined : f,
 gte: (f = jspb.Message.getOptionalFloatingPointField(msg, 5)) == null ? undefined : f,
 inList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 6)) == null ? undefined : f,
-notInList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 7)) == null ? undefined : f
+notInList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 7)) == null ? undefined : f,
+finite: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f,
+exampleList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 9)) == null ? undefined : f
   };
 
+  jspb.Message.toObjectExtension(/** @type {!jspb.Message} */ (msg), obj,
+      proto.buf.validate.FloatRules.extensions, proto.buf.validate.FloatRules.prototype.getExtension,
+      includeInstance);
   if (includeInstance) {
     obj.$jspbMessageInstance = msg;
   }
@@ -2402,8 +3849,21 @@ proto.buf.validate.FloatRules.deserializeBinaryFromReader = function(msg, reader
         msg.addNotIn(values[i]);
       }
       break;
+    case 8:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setFinite(value);
+      break;
+    case 9:
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedFloat() : [reader.readFloat()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addExample(values[i]);
+      }
+      break;
     default:
-      reader.skipField();
+      jspb.Message.readBinaryExtension(msg, reader,
+        proto.buf.validate.FloatRules.extensionsBinary,
+        proto.buf.validate.FloatRules.prototype.getExtension,
+        proto.buf.validate.FloatRules.prototype.setExtension);
       break;
     }
   }
@@ -2468,18 +3928,34 @@ proto.buf.validate.FloatRules.serializeBinaryToWriter = function(message, writer
   }
   f = message.getInList();
   if (f.length > 0) {
-    writer.writePackedFloat(
+    writer.writeRepeatedFloat(
       6,
       f
     );
   }
   f = message.getNotInList();
   if (f.length > 0) {
-    writer.writePackedFloat(
+    writer.writeRepeatedFloat(
       7,
       f
     );
   }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeBool(
+      8,
+      f
+    );
+  }
+  f = message.getExampleList();
+  if (f.length > 0) {
+    writer.writeRepeatedFloat(
+      9,
+      f
+    );
+  }
+  jspb.Message.serializeBinaryExtensions(message, writer,
+    proto.buf.validate.FloatRules.extensionsBinary, proto.buf.validate.FloatRules.prototype.getExtension);
 };
 
 
@@ -2533,7 +4009,7 @@ proto.buf.validate.FloatRules.prototype.getLt = function() {
  * @return {!proto.buf.validate.FloatRules} returns this
  */
 proto.buf.validate.FloatRules.prototype.setLt = function(value) {
-  return jspb.Message.setField(this, 2, value);
+  return jspb.Message.setOneofField(this, 2, proto.buf.validate.FloatRules.oneofGroups_[0], value);
 };
 
 
@@ -2542,7 +4018,7 @@ proto.buf.validate.FloatRules.prototype.setLt = function(value) {
  * @return {!proto.buf.validate.FloatRules} returns this
  */
 proto.buf.validate.FloatRules.prototype.clearLt = function() {
-  return jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setOneofField(this, 2, proto.buf.validate.FloatRules.oneofGroups_[0], undefined);
 };
 
 
@@ -2569,7 +4045,7 @@ proto.buf.validate.FloatRules.prototype.getLte = function() {
  * @return {!proto.buf.validate.FloatRules} returns this
  */
 proto.buf.validate.FloatRules.prototype.setLte = function(value) {
-  return jspb.Message.setField(this, 3, value);
+  return jspb.Message.setOneofField(this, 3, proto.buf.validate.FloatRules.oneofGroups_[0], value);
 };
 
 
@@ -2578,7 +4054,7 @@ proto.buf.validate.FloatRules.prototype.setLte = function(value) {
  * @return {!proto.buf.validate.FloatRules} returns this
  */
 proto.buf.validate.FloatRules.prototype.clearLte = function() {
-  return jspb.Message.setField(this, 3, undefined);
+  return jspb.Message.setOneofField(this, 3, proto.buf.validate.FloatRules.oneofGroups_[0], undefined);
 };
 
 
@@ -2605,7 +4081,7 @@ proto.buf.validate.FloatRules.prototype.getGt = function() {
  * @return {!proto.buf.validate.FloatRules} returns this
  */
 proto.buf.validate.FloatRules.prototype.setGt = function(value) {
-  return jspb.Message.setField(this, 4, value);
+  return jspb.Message.setOneofField(this, 4, proto.buf.validate.FloatRules.oneofGroups_[1], value);
 };
 
 
@@ -2614,7 +4090,7 @@ proto.buf.validate.FloatRules.prototype.setGt = function(value) {
  * @return {!proto.buf.validate.FloatRules} returns this
  */
 proto.buf.validate.FloatRules.prototype.clearGt = function() {
-  return jspb.Message.setField(this, 4, undefined);
+  return jspb.Message.setOneofField(this, 4, proto.buf.validate.FloatRules.oneofGroups_[1], undefined);
 };
 
 
@@ -2641,7 +4117,7 @@ proto.buf.validate.FloatRules.prototype.getGte = function() {
  * @return {!proto.buf.validate.FloatRules} returns this
  */
 proto.buf.validate.FloatRules.prototype.setGte = function(value) {
-  return jspb.Message.setField(this, 5, value);
+  return jspb.Message.setOneofField(this, 5, proto.buf.validate.FloatRules.oneofGroups_[1], value);
 };
 
 
@@ -2650,7 +4126,7 @@ proto.buf.validate.FloatRules.prototype.setGte = function(value) {
  * @return {!proto.buf.validate.FloatRules} returns this
  */
 proto.buf.validate.FloatRules.prototype.clearGte = function() {
-  return jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setOneofField(this, 5, proto.buf.validate.FloatRules.oneofGroups_[1], undefined);
 };
 
 
@@ -2737,13 +4213,128 @@ proto.buf.validate.FloatRules.prototype.clearNotInList = function() {
 };
 
 
+/**
+ * optional bool finite = 8;
+ * @return {boolean}
+ */
+proto.buf.validate.FloatRules.prototype.getFinite = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.buf.validate.FloatRules} returns this
+ */
+proto.buf.validate.FloatRules.prototype.setFinite = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.buf.validate.FloatRules} returns this
+ */
+proto.buf.validate.FloatRules.prototype.clearFinite = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.buf.validate.FloatRules.prototype.hasFinite = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * repeated float example = 9;
+ * @return {!Array<number>}
+ */
+proto.buf.validate.FloatRules.prototype.getExampleList = function() {
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedFloatingPointField(this, 9));
+};
+
+
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.buf.validate.FloatRules} returns this
+ */
+proto.buf.validate.FloatRules.prototype.setExampleList = function(value) {
+  return jspb.Message.setField(this, 9, value || []);
+};
+
+
+/**
+ * @param {number} value
+ * @param {number=} opt_index
+ * @return {!proto.buf.validate.FloatRules} returns this
+ */
+proto.buf.validate.FloatRules.prototype.addExample = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 9, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.buf.validate.FloatRules} returns this
+ */
+proto.buf.validate.FloatRules.prototype.clearExampleList = function() {
+  return this.setExampleList([]);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
  * @const
  */
-proto.buf.validate.DoubleRules.repeatedFields_ = [6,7];
+proto.buf.validate.DoubleRules.repeatedFields_ = [6,7,9];
+
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.buf.validate.DoubleRules.oneofGroups_ = [[2,3],[4,5]];
+
+/**
+ * @enum {number}
+ */
+proto.buf.validate.DoubleRules.LessThanCase = {
+  LESS_THAN_NOT_SET: 0,
+  LT: 2,
+  LTE: 3
+};
+
+/**
+ * @return {proto.buf.validate.DoubleRules.LessThanCase}
+ */
+proto.buf.validate.DoubleRules.prototype.getLessThanCase = function() {
+  return /** @type {proto.buf.validate.DoubleRules.LessThanCase} */(jspb.Message.computeOneofCase(this, proto.buf.validate.DoubleRules.oneofGroups_[0]));
+};
+
+/**
+ * @enum {number}
+ */
+proto.buf.validate.DoubleRules.GreaterThanCase = {
+  GREATER_THAN_NOT_SET: 0,
+  GT: 4,
+  GTE: 5
+};
+
+/**
+ * @return {proto.buf.validate.DoubleRules.GreaterThanCase}
+ */
+proto.buf.validate.DoubleRules.prototype.getGreaterThanCase = function() {
+  return /** @type {proto.buf.validate.DoubleRules.GreaterThanCase} */(jspb.Message.computeOneofCase(this, proto.buf.validate.DoubleRules.oneofGroups_[1]));
+};
 
 
 
@@ -2782,9 +4373,14 @@ lte: (f = jspb.Message.getOptionalFloatingPointField(msg, 3)) == null ? undefine
 gt: (f = jspb.Message.getOptionalFloatingPointField(msg, 4)) == null ? undefined : f,
 gte: (f = jspb.Message.getOptionalFloatingPointField(msg, 5)) == null ? undefined : f,
 inList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 6)) == null ? undefined : f,
-notInList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 7)) == null ? undefined : f
+notInList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 7)) == null ? undefined : f,
+finite: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f,
+exampleList: (f = jspb.Message.getRepeatedFloatingPointField(msg, 9)) == null ? undefined : f
   };
 
+  jspb.Message.toObjectExtension(/** @type {!jspb.Message} */ (msg), obj,
+      proto.buf.validate.DoubleRules.extensions, proto.buf.validate.DoubleRules.prototype.getExtension,
+      includeInstance);
   if (includeInstance) {
     obj.$jspbMessageInstance = msg;
   }
@@ -2851,8 +4447,21 @@ proto.buf.validate.DoubleRules.deserializeBinaryFromReader = function(msg, reade
         msg.addNotIn(values[i]);
       }
       break;
+    case 8:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setFinite(value);
+      break;
+    case 9:
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedDouble() : [reader.readDouble()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addExample(values[i]);
+      }
+      break;
     default:
-      reader.skipField();
+      jspb.Message.readBinaryExtension(msg, reader,
+        proto.buf.validate.DoubleRules.extensionsBinary,
+        proto.buf.validate.DoubleRules.prototype.getExtension,
+        proto.buf.validate.DoubleRules.prototype.setExtension);
       break;
     }
   }
@@ -2917,18 +4526,34 @@ proto.buf.validate.DoubleRules.serializeBinaryToWriter = function(message, write
   }
   f = message.getInList();
   if (f.length > 0) {
-    writer.writePackedDouble(
+    writer.writeRepeatedDouble(
       6,
       f
     );
   }
   f = message.getNotInList();
   if (f.length > 0) {
-    writer.writePackedDouble(
+    writer.writeRepeatedDouble(
       7,
       f
     );
   }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeBool(
+      8,
+      f
+    );
+  }
+  f = message.getExampleList();
+  if (f.length > 0) {
+    writer.writeRepeatedDouble(
+      9,
+      f
+    );
+  }
+  jspb.Message.serializeBinaryExtensions(message, writer,
+    proto.buf.validate.DoubleRules.extensionsBinary, proto.buf.validate.DoubleRules.prototype.getExtension);
 };
 
 
@@ -2982,7 +4607,7 @@ proto.buf.validate.DoubleRules.prototype.getLt = function() {
  * @return {!proto.buf.validate.DoubleRules} returns this
  */
 proto.buf.validate.DoubleRules.prototype.setLt = function(value) {
-  return jspb.Message.setField(this, 2, value);
+  return jspb.Message.setOneofField(this, 2, proto.buf.validate.DoubleRules.oneofGroups_[0], value);
 };
 
 
@@ -2991,7 +4616,7 @@ proto.buf.validate.DoubleRules.prototype.setLt = function(value) {
  * @return {!proto.buf.validate.DoubleRules} returns this
  */
 proto.buf.validate.DoubleRules.prototype.clearLt = function() {
-  return jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setOneofField(this, 2, proto.buf.validate.DoubleRules.oneofGroups_[0], undefined);
 };
 
 
@@ -3018,7 +4643,7 @@ proto.buf.validate.DoubleRules.prototype.getLte = function() {
  * @return {!proto.buf.validate.DoubleRules} returns this
  */
 proto.buf.validate.DoubleRules.prototype.setLte = function(value) {
-  return jspb.Message.setField(this, 3, value);
+  return jspb.Message.setOneofField(this, 3, proto.buf.validate.DoubleRules.oneofGroups_[0], value);
 };
 
 
@@ -3027,7 +4652,7 @@ proto.buf.validate.DoubleRules.prototype.setLte = function(value) {
  * @return {!proto.buf.validate.DoubleRules} returns this
  */
 proto.buf.validate.DoubleRules.prototype.clearLte = function() {
-  return jspb.Message.setField(this, 3, undefined);
+  return jspb.Message.setOneofField(this, 3, proto.buf.validate.DoubleRules.oneofGroups_[0], undefined);
 };
 
 
@@ -3054,7 +4679,7 @@ proto.buf.validate.DoubleRules.prototype.getGt = function() {
  * @return {!proto.buf.validate.DoubleRules} returns this
  */
 proto.buf.validate.DoubleRules.prototype.setGt = function(value) {
-  return jspb.Message.setField(this, 4, value);
+  return jspb.Message.setOneofField(this, 4, proto.buf.validate.DoubleRules.oneofGroups_[1], value);
 };
 
 
@@ -3063,7 +4688,7 @@ proto.buf.validate.DoubleRules.prototype.setGt = function(value) {
  * @return {!proto.buf.validate.DoubleRules} returns this
  */
 proto.buf.validate.DoubleRules.prototype.clearGt = function() {
-  return jspb.Message.setField(this, 4, undefined);
+  return jspb.Message.setOneofField(this, 4, proto.buf.validate.DoubleRules.oneofGroups_[1], undefined);
 };
 
 
@@ -3090,7 +4715,7 @@ proto.buf.validate.DoubleRules.prototype.getGte = function() {
  * @return {!proto.buf.validate.DoubleRules} returns this
  */
 proto.buf.validate.DoubleRules.prototype.setGte = function(value) {
-  return jspb.Message.setField(this, 5, value);
+  return jspb.Message.setOneofField(this, 5, proto.buf.validate.DoubleRules.oneofGroups_[1], value);
 };
 
 
@@ -3099,7 +4724,7 @@ proto.buf.validate.DoubleRules.prototype.setGte = function(value) {
  * @return {!proto.buf.validate.DoubleRules} returns this
  */
 proto.buf.validate.DoubleRules.prototype.clearGte = function() {
-  return jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setOneofField(this, 5, proto.buf.validate.DoubleRules.oneofGroups_[1], undefined);
 };
 
 
@@ -3186,13 +4811,128 @@ proto.buf.validate.DoubleRules.prototype.clearNotInList = function() {
 };
 
 
+/**
+ * optional bool finite = 8;
+ * @return {boolean}
+ */
+proto.buf.validate.DoubleRules.prototype.getFinite = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.buf.validate.DoubleRules} returns this
+ */
+proto.buf.validate.DoubleRules.prototype.setFinite = function(value) {
+  return jspb.Message.setField(this, 8, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.buf.validate.DoubleRules} returns this
+ */
+proto.buf.validate.DoubleRules.prototype.clearFinite = function() {
+  return jspb.Message.setField(this, 8, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.buf.validate.DoubleRules.prototype.hasFinite = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * repeated double example = 9;
+ * @return {!Array<number>}
+ */
+proto.buf.validate.DoubleRules.prototype.getExampleList = function() {
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedFloatingPointField(this, 9));
+};
+
+
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.buf.validate.DoubleRules} returns this
+ */
+proto.buf.validate.DoubleRules.prototype.setExampleList = function(value) {
+  return jspb.Message.setField(this, 9, value || []);
+};
+
+
+/**
+ * @param {number} value
+ * @param {number=} opt_index
+ * @return {!proto.buf.validate.DoubleRules} returns this
+ */
+proto.buf.validate.DoubleRules.prototype.addExample = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 9, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.buf.validate.DoubleRules} returns this
+ */
+proto.buf.validate.DoubleRules.prototype.clearExampleList = function() {
+  return this.setExampleList([]);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
  * @const
  */
-proto.buf.validate.Int32Rules.repeatedFields_ = [6,7];
+proto.buf.validate.Int32Rules.repeatedFields_ = [6,7,8];
+
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.buf.validate.Int32Rules.oneofGroups_ = [[2,3],[4,5]];
+
+/**
+ * @enum {number}
+ */
+proto.buf.validate.Int32Rules.LessThanCase = {
+  LESS_THAN_NOT_SET: 0,
+  LT: 2,
+  LTE: 3
+};
+
+/**
+ * @return {proto.buf.validate.Int32Rules.LessThanCase}
+ */
+proto.buf.validate.Int32Rules.prototype.getLessThanCase = function() {
+  return /** @type {proto.buf.validate.Int32Rules.LessThanCase} */(jspb.Message.computeOneofCase(this, proto.buf.validate.Int32Rules.oneofGroups_[0]));
+};
+
+/**
+ * @enum {number}
+ */
+proto.buf.validate.Int32Rules.GreaterThanCase = {
+  GREATER_THAN_NOT_SET: 0,
+  GT: 4,
+  GTE: 5
+};
+
+/**
+ * @return {proto.buf.validate.Int32Rules.GreaterThanCase}
+ */
+proto.buf.validate.Int32Rules.prototype.getGreaterThanCase = function() {
+  return /** @type {proto.buf.validate.Int32Rules.GreaterThanCase} */(jspb.Message.computeOneofCase(this, proto.buf.validate.Int32Rules.oneofGroups_[1]));
+};
 
 
 
@@ -3231,9 +4971,13 @@ lte: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
 gt: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
 gte: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
 inList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
-notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
+notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
+exampleList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f
   };
 
+  jspb.Message.toObjectExtension(/** @type {!jspb.Message} */ (msg), obj,
+      proto.buf.validate.Int32Rules.extensions, proto.buf.validate.Int32Rules.prototype.getExtension,
+      includeInstance);
   if (includeInstance) {
     obj.$jspbMessageInstance = msg;
   }
@@ -3300,8 +5044,17 @@ proto.buf.validate.Int32Rules.deserializeBinaryFromReader = function(msg, reader
         msg.addNotIn(values[i]);
       }
       break;
+    case 8:
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt32() : [reader.readInt32()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addExample(values[i]);
+      }
+      break;
     default:
-      reader.skipField();
+      jspb.Message.readBinaryExtension(msg, reader,
+        proto.buf.validate.Int32Rules.extensionsBinary,
+        proto.buf.validate.Int32Rules.prototype.getExtension,
+        proto.buf.validate.Int32Rules.prototype.setExtension);
       break;
     }
   }
@@ -3366,18 +5119,27 @@ proto.buf.validate.Int32Rules.serializeBinaryToWriter = function(message, writer
   }
   f = message.getInList();
   if (f.length > 0) {
-    writer.writePackedInt32(
+    writer.writeRepeatedInt32(
       6,
       f
     );
   }
   f = message.getNotInList();
   if (f.length > 0) {
-    writer.writePackedInt32(
+    writer.writeRepeatedInt32(
       7,
       f
     );
   }
+  f = message.getExampleList();
+  if (f.length > 0) {
+    writer.writeRepeatedInt32(
+      8,
+      f
+    );
+  }
+  jspb.Message.serializeBinaryExtensions(message, writer,
+    proto.buf.validate.Int32Rules.extensionsBinary, proto.buf.validate.Int32Rules.prototype.getExtension);
 };
 
 
@@ -3431,7 +5193,7 @@ proto.buf.validate.Int32Rules.prototype.getLt = function() {
  * @return {!proto.buf.validate.Int32Rules} returns this
  */
 proto.buf.validate.Int32Rules.prototype.setLt = function(value) {
-  return jspb.Message.setField(this, 2, value);
+  return jspb.Message.setOneofField(this, 2, proto.buf.validate.Int32Rules.oneofGroups_[0], value);
 };
 
 
@@ -3440,7 +5202,7 @@ proto.buf.validate.Int32Rules.prototype.setLt = function(value) {
  * @return {!proto.buf.validate.Int32Rules} returns this
  */
 proto.buf.validate.Int32Rules.prototype.clearLt = function() {
-  return jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setOneofField(this, 2, proto.buf.validate.Int32Rules.oneofGroups_[0], undefined);
 };
 
 
@@ -3467,7 +5229,7 @@ proto.buf.validate.Int32Rules.prototype.getLte = function() {
  * @return {!proto.buf.validate.Int32Rules} returns this
  */
 proto.buf.validate.Int32Rules.prototype.setLte = function(value) {
-  return jspb.Message.setField(this, 3, value);
+  return jspb.Message.setOneofField(this, 3, proto.buf.validate.Int32Rules.oneofGroups_[0], value);
 };
 
 
@@ -3476,7 +5238,7 @@ proto.buf.validate.Int32Rules.prototype.setLte = function(value) {
  * @return {!proto.buf.validate.Int32Rules} returns this
  */
 proto.buf.validate.Int32Rules.prototype.clearLte = function() {
-  return jspb.Message.setField(this, 3, undefined);
+  return jspb.Message.setOneofField(this, 3, proto.buf.validate.Int32Rules.oneofGroups_[0], undefined);
 };
 
 
@@ -3503,7 +5265,7 @@ proto.buf.validate.Int32Rules.prototype.getGt = function() {
  * @return {!proto.buf.validate.Int32Rules} returns this
  */
 proto.buf.validate.Int32Rules.prototype.setGt = function(value) {
-  return jspb.Message.setField(this, 4, value);
+  return jspb.Message.setOneofField(this, 4, proto.buf.validate.Int32Rules.oneofGroups_[1], value);
 };
 
 
@@ -3512,7 +5274,7 @@ proto.buf.validate.Int32Rules.prototype.setGt = function(value) {
  * @return {!proto.buf.validate.Int32Rules} returns this
  */
 proto.buf.validate.Int32Rules.prototype.clearGt = function() {
-  return jspb.Message.setField(this, 4, undefined);
+  return jspb.Message.setOneofField(this, 4, proto.buf.validate.Int32Rules.oneofGroups_[1], undefined);
 };
 
 
@@ -3539,7 +5301,7 @@ proto.buf.validate.Int32Rules.prototype.getGte = function() {
  * @return {!proto.buf.validate.Int32Rules} returns this
  */
 proto.buf.validate.Int32Rules.prototype.setGte = function(value) {
-  return jspb.Message.setField(this, 5, value);
+  return jspb.Message.setOneofField(this, 5, proto.buf.validate.Int32Rules.oneofGroups_[1], value);
 };
 
 
@@ -3548,7 +5310,7 @@ proto.buf.validate.Int32Rules.prototype.setGte = function(value) {
  * @return {!proto.buf.validate.Int32Rules} returns this
  */
 proto.buf.validate.Int32Rules.prototype.clearGte = function() {
-  return jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setOneofField(this, 5, proto.buf.validate.Int32Rules.oneofGroups_[1], undefined);
 };
 
 
@@ -3635,13 +5397,92 @@ proto.buf.validate.Int32Rules.prototype.clearNotInList = function() {
 };
 
 
+/**
+ * repeated int32 example = 8;
+ * @return {!Array<number>}
+ */
+proto.buf.validate.Int32Rules.prototype.getExampleList = function() {
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 8));
+};
+
+
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.buf.validate.Int32Rules} returns this
+ */
+proto.buf.validate.Int32Rules.prototype.setExampleList = function(value) {
+  return jspb.Message.setField(this, 8, value || []);
+};
+
+
+/**
+ * @param {number} value
+ * @param {number=} opt_index
+ * @return {!proto.buf.validate.Int32Rules} returns this
+ */
+proto.buf.validate.Int32Rules.prototype.addExample = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 8, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.buf.validate.Int32Rules} returns this
+ */
+proto.buf.validate.Int32Rules.prototype.clearExampleList = function() {
+  return this.setExampleList([]);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
  * @const
  */
-proto.buf.validate.Int64Rules.repeatedFields_ = [6,7];
+proto.buf.validate.Int64Rules.repeatedFields_ = [6,7,9];
+
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.buf.validate.Int64Rules.oneofGroups_ = [[2,3],[4,5]];
+
+/**
+ * @enum {number}
+ */
+proto.buf.validate.Int64Rules.LessThanCase = {
+  LESS_THAN_NOT_SET: 0,
+  LT: 2,
+  LTE: 3
+};
+
+/**
+ * @return {proto.buf.validate.Int64Rules.LessThanCase}
+ */
+proto.buf.validate.Int64Rules.prototype.getLessThanCase = function() {
+  return /** @type {proto.buf.validate.Int64Rules.LessThanCase} */(jspb.Message.computeOneofCase(this, proto.buf.validate.Int64Rules.oneofGroups_[0]));
+};
+
+/**
+ * @enum {number}
+ */
+proto.buf.validate.Int64Rules.GreaterThanCase = {
+  GREATER_THAN_NOT_SET: 0,
+  GT: 4,
+  GTE: 5
+};
+
+/**
+ * @return {proto.buf.validate.Int64Rules.GreaterThanCase}
+ */
+proto.buf.validate.Int64Rules.prototype.getGreaterThanCase = function() {
+  return /** @type {proto.buf.validate.Int64Rules.GreaterThanCase} */(jspb.Message.computeOneofCase(this, proto.buf.validate.Int64Rules.oneofGroups_[1]));
+};
 
 
 
@@ -3680,9 +5521,13 @@ lte: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
 gt: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
 gte: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
 inList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
-notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
+notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
+exampleList: (f = jspb.Message.getRepeatedField(msg, 9)) == null ? undefined : f
   };
 
+  jspb.Message.toObjectExtension(/** @type {!jspb.Message} */ (msg), obj,
+      proto.buf.validate.Int64Rules.extensions, proto.buf.validate.Int64Rules.prototype.getExtension,
+      includeInstance);
   if (includeInstance) {
     obj.$jspbMessageInstance = msg;
   }
@@ -3749,8 +5594,17 @@ proto.buf.validate.Int64Rules.deserializeBinaryFromReader = function(msg, reader
         msg.addNotIn(values[i]);
       }
       break;
+    case 9:
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addExample(values[i]);
+      }
+      break;
     default:
-      reader.skipField();
+      jspb.Message.readBinaryExtension(msg, reader,
+        proto.buf.validate.Int64Rules.extensionsBinary,
+        proto.buf.validate.Int64Rules.prototype.getExtension,
+        proto.buf.validate.Int64Rules.prototype.setExtension);
       break;
     }
   }
@@ -3815,18 +5669,27 @@ proto.buf.validate.Int64Rules.serializeBinaryToWriter = function(message, writer
   }
   f = message.getInList();
   if (f.length > 0) {
-    writer.writePackedInt64(
+    writer.writeRepeatedInt64(
       6,
       f
     );
   }
   f = message.getNotInList();
   if (f.length > 0) {
-    writer.writePackedInt64(
+    writer.writeRepeatedInt64(
       7,
       f
     );
   }
+  f = message.getExampleList();
+  if (f.length > 0) {
+    writer.writeRepeatedInt64(
+      9,
+      f
+    );
+  }
+  jspb.Message.serializeBinaryExtensions(message, writer,
+    proto.buf.validate.Int64Rules.extensionsBinary, proto.buf.validate.Int64Rules.prototype.getExtension);
 };
 
 
@@ -3880,7 +5743,7 @@ proto.buf.validate.Int64Rules.prototype.getLt = function() {
  * @return {!proto.buf.validate.Int64Rules} returns this
  */
 proto.buf.validate.Int64Rules.prototype.setLt = function(value) {
-  return jspb.Message.setField(this, 2, value);
+  return jspb.Message.setOneofField(this, 2, proto.buf.validate.Int64Rules.oneofGroups_[0], value);
 };
 
 
@@ -3889,7 +5752,7 @@ proto.buf.validate.Int64Rules.prototype.setLt = function(value) {
  * @return {!proto.buf.validate.Int64Rules} returns this
  */
 proto.buf.validate.Int64Rules.prototype.clearLt = function() {
-  return jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setOneofField(this, 2, proto.buf.validate.Int64Rules.oneofGroups_[0], undefined);
 };
 
 
@@ -3916,7 +5779,7 @@ proto.buf.validate.Int64Rules.prototype.getLte = function() {
  * @return {!proto.buf.validate.Int64Rules} returns this
  */
 proto.buf.validate.Int64Rules.prototype.setLte = function(value) {
-  return jspb.Message.setField(this, 3, value);
+  return jspb.Message.setOneofField(this, 3, proto.buf.validate.Int64Rules.oneofGroups_[0], value);
 };
 
 
@@ -3925,7 +5788,7 @@ proto.buf.validate.Int64Rules.prototype.setLte = function(value) {
  * @return {!proto.buf.validate.Int64Rules} returns this
  */
 proto.buf.validate.Int64Rules.prototype.clearLte = function() {
-  return jspb.Message.setField(this, 3, undefined);
+  return jspb.Message.setOneofField(this, 3, proto.buf.validate.Int64Rules.oneofGroups_[0], undefined);
 };
 
 
@@ -3952,7 +5815,7 @@ proto.buf.validate.Int64Rules.prototype.getGt = function() {
  * @return {!proto.buf.validate.Int64Rules} returns this
  */
 proto.buf.validate.Int64Rules.prototype.setGt = function(value) {
-  return jspb.Message.setField(this, 4, value);
+  return jspb.Message.setOneofField(this, 4, proto.buf.validate.Int64Rules.oneofGroups_[1], value);
 };
 
 
@@ -3961,7 +5824,7 @@ proto.buf.validate.Int64Rules.prototype.setGt = function(value) {
  * @return {!proto.buf.validate.Int64Rules} returns this
  */
 proto.buf.validate.Int64Rules.prototype.clearGt = function() {
-  return jspb.Message.setField(this, 4, undefined);
+  return jspb.Message.setOneofField(this, 4, proto.buf.validate.Int64Rules.oneofGroups_[1], undefined);
 };
 
 
@@ -3988,7 +5851,7 @@ proto.buf.validate.Int64Rules.prototype.getGte = function() {
  * @return {!proto.buf.validate.Int64Rules} returns this
  */
 proto.buf.validate.Int64Rules.prototype.setGte = function(value) {
-  return jspb.Message.setField(this, 5, value);
+  return jspb.Message.setOneofField(this, 5, proto.buf.validate.Int64Rules.oneofGroups_[1], value);
 };
 
 
@@ -3997,7 +5860,7 @@ proto.buf.validate.Int64Rules.prototype.setGte = function(value) {
  * @return {!proto.buf.validate.Int64Rules} returns this
  */
 proto.buf.validate.Int64Rules.prototype.clearGte = function() {
-  return jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setOneofField(this, 5, proto.buf.validate.Int64Rules.oneofGroups_[1], undefined);
 };
 
 
@@ -4084,13 +5947,92 @@ proto.buf.validate.Int64Rules.prototype.clearNotInList = function() {
 };
 
 
+/**
+ * repeated int64 example = 9;
+ * @return {!Array<number>}
+ */
+proto.buf.validate.Int64Rules.prototype.getExampleList = function() {
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 9));
+};
+
+
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.buf.validate.Int64Rules} returns this
+ */
+proto.buf.validate.Int64Rules.prototype.setExampleList = function(value) {
+  return jspb.Message.setField(this, 9, value || []);
+};
+
+
+/**
+ * @param {number} value
+ * @param {number=} opt_index
+ * @return {!proto.buf.validate.Int64Rules} returns this
+ */
+proto.buf.validate.Int64Rules.prototype.addExample = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 9, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.buf.validate.Int64Rules} returns this
+ */
+proto.buf.validate.Int64Rules.prototype.clearExampleList = function() {
+  return this.setExampleList([]);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
  * @const
  */
-proto.buf.validate.UInt32Rules.repeatedFields_ = [6,7];
+proto.buf.validate.UInt32Rules.repeatedFields_ = [6,7,8];
+
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.buf.validate.UInt32Rules.oneofGroups_ = [[2,3],[4,5]];
+
+/**
+ * @enum {number}
+ */
+proto.buf.validate.UInt32Rules.LessThanCase = {
+  LESS_THAN_NOT_SET: 0,
+  LT: 2,
+  LTE: 3
+};
+
+/**
+ * @return {proto.buf.validate.UInt32Rules.LessThanCase}
+ */
+proto.buf.validate.UInt32Rules.prototype.getLessThanCase = function() {
+  return /** @type {proto.buf.validate.UInt32Rules.LessThanCase} */(jspb.Message.computeOneofCase(this, proto.buf.validate.UInt32Rules.oneofGroups_[0]));
+};
+
+/**
+ * @enum {number}
+ */
+proto.buf.validate.UInt32Rules.GreaterThanCase = {
+  GREATER_THAN_NOT_SET: 0,
+  GT: 4,
+  GTE: 5
+};
+
+/**
+ * @return {proto.buf.validate.UInt32Rules.GreaterThanCase}
+ */
+proto.buf.validate.UInt32Rules.prototype.getGreaterThanCase = function() {
+  return /** @type {proto.buf.validate.UInt32Rules.GreaterThanCase} */(jspb.Message.computeOneofCase(this, proto.buf.validate.UInt32Rules.oneofGroups_[1]));
+};
 
 
 
@@ -4129,9 +6071,13 @@ lte: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
 gt: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
 gte: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
 inList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
-notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
+notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
+exampleList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f
   };
 
+  jspb.Message.toObjectExtension(/** @type {!jspb.Message} */ (msg), obj,
+      proto.buf.validate.UInt32Rules.extensions, proto.buf.validate.UInt32Rules.prototype.getExtension,
+      includeInstance);
   if (includeInstance) {
     obj.$jspbMessageInstance = msg;
   }
@@ -4198,8 +6144,17 @@ proto.buf.validate.UInt32Rules.deserializeBinaryFromReader = function(msg, reade
         msg.addNotIn(values[i]);
       }
       break;
+    case 8:
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedUint32() : [reader.readUint32()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addExample(values[i]);
+      }
+      break;
     default:
-      reader.skipField();
+      jspb.Message.readBinaryExtension(msg, reader,
+        proto.buf.validate.UInt32Rules.extensionsBinary,
+        proto.buf.validate.UInt32Rules.prototype.getExtension,
+        proto.buf.validate.UInt32Rules.prototype.setExtension);
       break;
     }
   }
@@ -4264,18 +6219,27 @@ proto.buf.validate.UInt32Rules.serializeBinaryToWriter = function(message, write
   }
   f = message.getInList();
   if (f.length > 0) {
-    writer.writePackedUint32(
+    writer.writeRepeatedUint32(
       6,
       f
     );
   }
   f = message.getNotInList();
   if (f.length > 0) {
-    writer.writePackedUint32(
+    writer.writeRepeatedUint32(
       7,
       f
     );
   }
+  f = message.getExampleList();
+  if (f.length > 0) {
+    writer.writeRepeatedUint32(
+      8,
+      f
+    );
+  }
+  jspb.Message.serializeBinaryExtensions(message, writer,
+    proto.buf.validate.UInt32Rules.extensionsBinary, proto.buf.validate.UInt32Rules.prototype.getExtension);
 };
 
 
@@ -4329,7 +6293,7 @@ proto.buf.validate.UInt32Rules.prototype.getLt = function() {
  * @return {!proto.buf.validate.UInt32Rules} returns this
  */
 proto.buf.validate.UInt32Rules.prototype.setLt = function(value) {
-  return jspb.Message.setField(this, 2, value);
+  return jspb.Message.setOneofField(this, 2, proto.buf.validate.UInt32Rules.oneofGroups_[0], value);
 };
 
 
@@ -4338,7 +6302,7 @@ proto.buf.validate.UInt32Rules.prototype.setLt = function(value) {
  * @return {!proto.buf.validate.UInt32Rules} returns this
  */
 proto.buf.validate.UInt32Rules.prototype.clearLt = function() {
-  return jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setOneofField(this, 2, proto.buf.validate.UInt32Rules.oneofGroups_[0], undefined);
 };
 
 
@@ -4365,7 +6329,7 @@ proto.buf.validate.UInt32Rules.prototype.getLte = function() {
  * @return {!proto.buf.validate.UInt32Rules} returns this
  */
 proto.buf.validate.UInt32Rules.prototype.setLte = function(value) {
-  return jspb.Message.setField(this, 3, value);
+  return jspb.Message.setOneofField(this, 3, proto.buf.validate.UInt32Rules.oneofGroups_[0], value);
 };
 
 
@@ -4374,7 +6338,7 @@ proto.buf.validate.UInt32Rules.prototype.setLte = function(value) {
  * @return {!proto.buf.validate.UInt32Rules} returns this
  */
 proto.buf.validate.UInt32Rules.prototype.clearLte = function() {
-  return jspb.Message.setField(this, 3, undefined);
+  return jspb.Message.setOneofField(this, 3, proto.buf.validate.UInt32Rules.oneofGroups_[0], undefined);
 };
 
 
@@ -4401,7 +6365,7 @@ proto.buf.validate.UInt32Rules.prototype.getGt = function() {
  * @return {!proto.buf.validate.UInt32Rules} returns this
  */
 proto.buf.validate.UInt32Rules.prototype.setGt = function(value) {
-  return jspb.Message.setField(this, 4, value);
+  return jspb.Message.setOneofField(this, 4, proto.buf.validate.UInt32Rules.oneofGroups_[1], value);
 };
 
 
@@ -4410,7 +6374,7 @@ proto.buf.validate.UInt32Rules.prototype.setGt = function(value) {
  * @return {!proto.buf.validate.UInt32Rules} returns this
  */
 proto.buf.validate.UInt32Rules.prototype.clearGt = function() {
-  return jspb.Message.setField(this, 4, undefined);
+  return jspb.Message.setOneofField(this, 4, proto.buf.validate.UInt32Rules.oneofGroups_[1], undefined);
 };
 
 
@@ -4437,7 +6401,7 @@ proto.buf.validate.UInt32Rules.prototype.getGte = function() {
  * @return {!proto.buf.validate.UInt32Rules} returns this
  */
 proto.buf.validate.UInt32Rules.prototype.setGte = function(value) {
-  return jspb.Message.setField(this, 5, value);
+  return jspb.Message.setOneofField(this, 5, proto.buf.validate.UInt32Rules.oneofGroups_[1], value);
 };
 
 
@@ -4446,7 +6410,7 @@ proto.buf.validate.UInt32Rules.prototype.setGte = function(value) {
  * @return {!proto.buf.validate.UInt32Rules} returns this
  */
 proto.buf.validate.UInt32Rules.prototype.clearGte = function() {
-  return jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setOneofField(this, 5, proto.buf.validate.UInt32Rules.oneofGroups_[1], undefined);
 };
 
 
@@ -4533,13 +6497,92 @@ proto.buf.validate.UInt32Rules.prototype.clearNotInList = function() {
 };
 
 
+/**
+ * repeated uint32 example = 8;
+ * @return {!Array<number>}
+ */
+proto.buf.validate.UInt32Rules.prototype.getExampleList = function() {
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 8));
+};
+
+
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.buf.validate.UInt32Rules} returns this
+ */
+proto.buf.validate.UInt32Rules.prototype.setExampleList = function(value) {
+  return jspb.Message.setField(this, 8, value || []);
+};
+
+
+/**
+ * @param {number} value
+ * @param {number=} opt_index
+ * @return {!proto.buf.validate.UInt32Rules} returns this
+ */
+proto.buf.validate.UInt32Rules.prototype.addExample = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 8, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.buf.validate.UInt32Rules} returns this
+ */
+proto.buf.validate.UInt32Rules.prototype.clearExampleList = function() {
+  return this.setExampleList([]);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
  * @const
  */
-proto.buf.validate.UInt64Rules.repeatedFields_ = [6,7];
+proto.buf.validate.UInt64Rules.repeatedFields_ = [6,7,8];
+
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.buf.validate.UInt64Rules.oneofGroups_ = [[2,3],[4,5]];
+
+/**
+ * @enum {number}
+ */
+proto.buf.validate.UInt64Rules.LessThanCase = {
+  LESS_THAN_NOT_SET: 0,
+  LT: 2,
+  LTE: 3
+};
+
+/**
+ * @return {proto.buf.validate.UInt64Rules.LessThanCase}
+ */
+proto.buf.validate.UInt64Rules.prototype.getLessThanCase = function() {
+  return /** @type {proto.buf.validate.UInt64Rules.LessThanCase} */(jspb.Message.computeOneofCase(this, proto.buf.validate.UInt64Rules.oneofGroups_[0]));
+};
+
+/**
+ * @enum {number}
+ */
+proto.buf.validate.UInt64Rules.GreaterThanCase = {
+  GREATER_THAN_NOT_SET: 0,
+  GT: 4,
+  GTE: 5
+};
+
+/**
+ * @return {proto.buf.validate.UInt64Rules.GreaterThanCase}
+ */
+proto.buf.validate.UInt64Rules.prototype.getGreaterThanCase = function() {
+  return /** @type {proto.buf.validate.UInt64Rules.GreaterThanCase} */(jspb.Message.computeOneofCase(this, proto.buf.validate.UInt64Rules.oneofGroups_[1]));
+};
 
 
 
@@ -4578,9 +6621,13 @@ lte: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
 gt: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
 gte: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
 inList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
-notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
+notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
+exampleList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f
   };
 
+  jspb.Message.toObjectExtension(/** @type {!jspb.Message} */ (msg), obj,
+      proto.buf.validate.UInt64Rules.extensions, proto.buf.validate.UInt64Rules.prototype.getExtension,
+      includeInstance);
   if (includeInstance) {
     obj.$jspbMessageInstance = msg;
   }
@@ -4647,8 +6694,17 @@ proto.buf.validate.UInt64Rules.deserializeBinaryFromReader = function(msg, reade
         msg.addNotIn(values[i]);
       }
       break;
+    case 8:
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedUint64() : [reader.readUint64()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addExample(values[i]);
+      }
+      break;
     default:
-      reader.skipField();
+      jspb.Message.readBinaryExtension(msg, reader,
+        proto.buf.validate.UInt64Rules.extensionsBinary,
+        proto.buf.validate.UInt64Rules.prototype.getExtension,
+        proto.buf.validate.UInt64Rules.prototype.setExtension);
       break;
     }
   }
@@ -4713,18 +6769,27 @@ proto.buf.validate.UInt64Rules.serializeBinaryToWriter = function(message, write
   }
   f = message.getInList();
   if (f.length > 0) {
-    writer.writePackedUint64(
+    writer.writeRepeatedUint64(
       6,
       f
     );
   }
   f = message.getNotInList();
   if (f.length > 0) {
-    writer.writePackedUint64(
+    writer.writeRepeatedUint64(
       7,
       f
     );
   }
+  f = message.getExampleList();
+  if (f.length > 0) {
+    writer.writeRepeatedUint64(
+      8,
+      f
+    );
+  }
+  jspb.Message.serializeBinaryExtensions(message, writer,
+    proto.buf.validate.UInt64Rules.extensionsBinary, proto.buf.validate.UInt64Rules.prototype.getExtension);
 };
 
 
@@ -4778,7 +6843,7 @@ proto.buf.validate.UInt64Rules.prototype.getLt = function() {
  * @return {!proto.buf.validate.UInt64Rules} returns this
  */
 proto.buf.validate.UInt64Rules.prototype.setLt = function(value) {
-  return jspb.Message.setField(this, 2, value);
+  return jspb.Message.setOneofField(this, 2, proto.buf.validate.UInt64Rules.oneofGroups_[0], value);
 };
 
 
@@ -4787,7 +6852,7 @@ proto.buf.validate.UInt64Rules.prototype.setLt = function(value) {
  * @return {!proto.buf.validate.UInt64Rules} returns this
  */
 proto.buf.validate.UInt64Rules.prototype.clearLt = function() {
-  return jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setOneofField(this, 2, proto.buf.validate.UInt64Rules.oneofGroups_[0], undefined);
 };
 
 
@@ -4814,7 +6879,7 @@ proto.buf.validate.UInt64Rules.prototype.getLte = function() {
  * @return {!proto.buf.validate.UInt64Rules} returns this
  */
 proto.buf.validate.UInt64Rules.prototype.setLte = function(value) {
-  return jspb.Message.setField(this, 3, value);
+  return jspb.Message.setOneofField(this, 3, proto.buf.validate.UInt64Rules.oneofGroups_[0], value);
 };
 
 
@@ -4823,7 +6888,7 @@ proto.buf.validate.UInt64Rules.prototype.setLte = function(value) {
  * @return {!proto.buf.validate.UInt64Rules} returns this
  */
 proto.buf.validate.UInt64Rules.prototype.clearLte = function() {
-  return jspb.Message.setField(this, 3, undefined);
+  return jspb.Message.setOneofField(this, 3, proto.buf.validate.UInt64Rules.oneofGroups_[0], undefined);
 };
 
 
@@ -4850,7 +6915,7 @@ proto.buf.validate.UInt64Rules.prototype.getGt = function() {
  * @return {!proto.buf.validate.UInt64Rules} returns this
  */
 proto.buf.validate.UInt64Rules.prototype.setGt = function(value) {
-  return jspb.Message.setField(this, 4, value);
+  return jspb.Message.setOneofField(this, 4, proto.buf.validate.UInt64Rules.oneofGroups_[1], value);
 };
 
 
@@ -4859,7 +6924,7 @@ proto.buf.validate.UInt64Rules.prototype.setGt = function(value) {
  * @return {!proto.buf.validate.UInt64Rules} returns this
  */
 proto.buf.validate.UInt64Rules.prototype.clearGt = function() {
-  return jspb.Message.setField(this, 4, undefined);
+  return jspb.Message.setOneofField(this, 4, proto.buf.validate.UInt64Rules.oneofGroups_[1], undefined);
 };
 
 
@@ -4886,7 +6951,7 @@ proto.buf.validate.UInt64Rules.prototype.getGte = function() {
  * @return {!proto.buf.validate.UInt64Rules} returns this
  */
 proto.buf.validate.UInt64Rules.prototype.setGte = function(value) {
-  return jspb.Message.setField(this, 5, value);
+  return jspb.Message.setOneofField(this, 5, proto.buf.validate.UInt64Rules.oneofGroups_[1], value);
 };
 
 
@@ -4895,7 +6960,7 @@ proto.buf.validate.UInt64Rules.prototype.setGte = function(value) {
  * @return {!proto.buf.validate.UInt64Rules} returns this
  */
 proto.buf.validate.UInt64Rules.prototype.clearGte = function() {
-  return jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setOneofField(this, 5, proto.buf.validate.UInt64Rules.oneofGroups_[1], undefined);
 };
 
 
@@ -4982,13 +7047,92 @@ proto.buf.validate.UInt64Rules.prototype.clearNotInList = function() {
 };
 
 
+/**
+ * repeated uint64 example = 8;
+ * @return {!Array<number>}
+ */
+proto.buf.validate.UInt64Rules.prototype.getExampleList = function() {
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 8));
+};
+
+
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.buf.validate.UInt64Rules} returns this
+ */
+proto.buf.validate.UInt64Rules.prototype.setExampleList = function(value) {
+  return jspb.Message.setField(this, 8, value || []);
+};
+
+
+/**
+ * @param {number} value
+ * @param {number=} opt_index
+ * @return {!proto.buf.validate.UInt64Rules} returns this
+ */
+proto.buf.validate.UInt64Rules.prototype.addExample = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 8, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.buf.validate.UInt64Rules} returns this
+ */
+proto.buf.validate.UInt64Rules.prototype.clearExampleList = function() {
+  return this.setExampleList([]);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
  * @const
  */
-proto.buf.validate.SInt32Rules.repeatedFields_ = [6,7];
+proto.buf.validate.SInt32Rules.repeatedFields_ = [6,7,8];
+
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.buf.validate.SInt32Rules.oneofGroups_ = [[2,3],[4,5]];
+
+/**
+ * @enum {number}
+ */
+proto.buf.validate.SInt32Rules.LessThanCase = {
+  LESS_THAN_NOT_SET: 0,
+  LT: 2,
+  LTE: 3
+};
+
+/**
+ * @return {proto.buf.validate.SInt32Rules.LessThanCase}
+ */
+proto.buf.validate.SInt32Rules.prototype.getLessThanCase = function() {
+  return /** @type {proto.buf.validate.SInt32Rules.LessThanCase} */(jspb.Message.computeOneofCase(this, proto.buf.validate.SInt32Rules.oneofGroups_[0]));
+};
+
+/**
+ * @enum {number}
+ */
+proto.buf.validate.SInt32Rules.GreaterThanCase = {
+  GREATER_THAN_NOT_SET: 0,
+  GT: 4,
+  GTE: 5
+};
+
+/**
+ * @return {proto.buf.validate.SInt32Rules.GreaterThanCase}
+ */
+proto.buf.validate.SInt32Rules.prototype.getGreaterThanCase = function() {
+  return /** @type {proto.buf.validate.SInt32Rules.GreaterThanCase} */(jspb.Message.computeOneofCase(this, proto.buf.validate.SInt32Rules.oneofGroups_[1]));
+};
 
 
 
@@ -5027,9 +7171,13 @@ lte: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
 gt: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
 gte: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
 inList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
-notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
+notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
+exampleList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f
   };
 
+  jspb.Message.toObjectExtension(/** @type {!jspb.Message} */ (msg), obj,
+      proto.buf.validate.SInt32Rules.extensions, proto.buf.validate.SInt32Rules.prototype.getExtension,
+      includeInstance);
   if (includeInstance) {
     obj.$jspbMessageInstance = msg;
   }
@@ -5096,8 +7244,17 @@ proto.buf.validate.SInt32Rules.deserializeBinaryFromReader = function(msg, reade
         msg.addNotIn(values[i]);
       }
       break;
+    case 8:
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedSint32() : [reader.readSint32()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addExample(values[i]);
+      }
+      break;
     default:
-      reader.skipField();
+      jspb.Message.readBinaryExtension(msg, reader,
+        proto.buf.validate.SInt32Rules.extensionsBinary,
+        proto.buf.validate.SInt32Rules.prototype.getExtension,
+        proto.buf.validate.SInt32Rules.prototype.setExtension);
       break;
     }
   }
@@ -5162,18 +7319,27 @@ proto.buf.validate.SInt32Rules.serializeBinaryToWriter = function(message, write
   }
   f = message.getInList();
   if (f.length > 0) {
-    writer.writePackedSint32(
+    writer.writeRepeatedSint32(
       6,
       f
     );
   }
   f = message.getNotInList();
   if (f.length > 0) {
-    writer.writePackedSint32(
+    writer.writeRepeatedSint32(
       7,
       f
     );
   }
+  f = message.getExampleList();
+  if (f.length > 0) {
+    writer.writeRepeatedSint32(
+      8,
+      f
+    );
+  }
+  jspb.Message.serializeBinaryExtensions(message, writer,
+    proto.buf.validate.SInt32Rules.extensionsBinary, proto.buf.validate.SInt32Rules.prototype.getExtension);
 };
 
 
@@ -5227,7 +7393,7 @@ proto.buf.validate.SInt32Rules.prototype.getLt = function() {
  * @return {!proto.buf.validate.SInt32Rules} returns this
  */
 proto.buf.validate.SInt32Rules.prototype.setLt = function(value) {
-  return jspb.Message.setField(this, 2, value);
+  return jspb.Message.setOneofField(this, 2, proto.buf.validate.SInt32Rules.oneofGroups_[0], value);
 };
 
 
@@ -5236,7 +7402,7 @@ proto.buf.validate.SInt32Rules.prototype.setLt = function(value) {
  * @return {!proto.buf.validate.SInt32Rules} returns this
  */
 proto.buf.validate.SInt32Rules.prototype.clearLt = function() {
-  return jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setOneofField(this, 2, proto.buf.validate.SInt32Rules.oneofGroups_[0], undefined);
 };
 
 
@@ -5263,7 +7429,7 @@ proto.buf.validate.SInt32Rules.prototype.getLte = function() {
  * @return {!proto.buf.validate.SInt32Rules} returns this
  */
 proto.buf.validate.SInt32Rules.prototype.setLte = function(value) {
-  return jspb.Message.setField(this, 3, value);
+  return jspb.Message.setOneofField(this, 3, proto.buf.validate.SInt32Rules.oneofGroups_[0], value);
 };
 
 
@@ -5272,7 +7438,7 @@ proto.buf.validate.SInt32Rules.prototype.setLte = function(value) {
  * @return {!proto.buf.validate.SInt32Rules} returns this
  */
 proto.buf.validate.SInt32Rules.prototype.clearLte = function() {
-  return jspb.Message.setField(this, 3, undefined);
+  return jspb.Message.setOneofField(this, 3, proto.buf.validate.SInt32Rules.oneofGroups_[0], undefined);
 };
 
 
@@ -5299,7 +7465,7 @@ proto.buf.validate.SInt32Rules.prototype.getGt = function() {
  * @return {!proto.buf.validate.SInt32Rules} returns this
  */
 proto.buf.validate.SInt32Rules.prototype.setGt = function(value) {
-  return jspb.Message.setField(this, 4, value);
+  return jspb.Message.setOneofField(this, 4, proto.buf.validate.SInt32Rules.oneofGroups_[1], value);
 };
 
 
@@ -5308,7 +7474,7 @@ proto.buf.validate.SInt32Rules.prototype.setGt = function(value) {
  * @return {!proto.buf.validate.SInt32Rules} returns this
  */
 proto.buf.validate.SInt32Rules.prototype.clearGt = function() {
-  return jspb.Message.setField(this, 4, undefined);
+  return jspb.Message.setOneofField(this, 4, proto.buf.validate.SInt32Rules.oneofGroups_[1], undefined);
 };
 
 
@@ -5335,7 +7501,7 @@ proto.buf.validate.SInt32Rules.prototype.getGte = function() {
  * @return {!proto.buf.validate.SInt32Rules} returns this
  */
 proto.buf.validate.SInt32Rules.prototype.setGte = function(value) {
-  return jspb.Message.setField(this, 5, value);
+  return jspb.Message.setOneofField(this, 5, proto.buf.validate.SInt32Rules.oneofGroups_[1], value);
 };
 
 
@@ -5344,7 +7510,7 @@ proto.buf.validate.SInt32Rules.prototype.setGte = function(value) {
  * @return {!proto.buf.validate.SInt32Rules} returns this
  */
 proto.buf.validate.SInt32Rules.prototype.clearGte = function() {
-  return jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setOneofField(this, 5, proto.buf.validate.SInt32Rules.oneofGroups_[1], undefined);
 };
 
 
@@ -5431,13 +7597,92 @@ proto.buf.validate.SInt32Rules.prototype.clearNotInList = function() {
 };
 
 
+/**
+ * repeated sint32 example = 8;
+ * @return {!Array<number>}
+ */
+proto.buf.validate.SInt32Rules.prototype.getExampleList = function() {
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 8));
+};
+
+
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.buf.validate.SInt32Rules} returns this
+ */
+proto.buf.validate.SInt32Rules.prototype.setExampleList = function(value) {
+  return jspb.Message.setField(this, 8, value || []);
+};
+
+
+/**
+ * @param {number} value
+ * @param {number=} opt_index
+ * @return {!proto.buf.validate.SInt32Rules} returns this
+ */
+proto.buf.validate.SInt32Rules.prototype.addExample = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 8, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.buf.validate.SInt32Rules} returns this
+ */
+proto.buf.validate.SInt32Rules.prototype.clearExampleList = function() {
+  return this.setExampleList([]);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
  * @const
  */
-proto.buf.validate.SInt64Rules.repeatedFields_ = [6,7];
+proto.buf.validate.SInt64Rules.repeatedFields_ = [6,7,8];
+
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.buf.validate.SInt64Rules.oneofGroups_ = [[2,3],[4,5]];
+
+/**
+ * @enum {number}
+ */
+proto.buf.validate.SInt64Rules.LessThanCase = {
+  LESS_THAN_NOT_SET: 0,
+  LT: 2,
+  LTE: 3
+};
+
+/**
+ * @return {proto.buf.validate.SInt64Rules.LessThanCase}
+ */
+proto.buf.validate.SInt64Rules.prototype.getLessThanCase = function() {
+  return /** @type {proto.buf.validate.SInt64Rules.LessThanCase} */(jspb.Message.computeOneofCase(this, proto.buf.validate.SInt64Rules.oneofGroups_[0]));
+};
+
+/**
+ * @enum {number}
+ */
+proto.buf.validate.SInt64Rules.GreaterThanCase = {
+  GREATER_THAN_NOT_SET: 0,
+  GT: 4,
+  GTE: 5
+};
+
+/**
+ * @return {proto.buf.validate.SInt64Rules.GreaterThanCase}
+ */
+proto.buf.validate.SInt64Rules.prototype.getGreaterThanCase = function() {
+  return /** @type {proto.buf.validate.SInt64Rules.GreaterThanCase} */(jspb.Message.computeOneofCase(this, proto.buf.validate.SInt64Rules.oneofGroups_[1]));
+};
 
 
 
@@ -5476,9 +7721,13 @@ lte: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
 gt: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
 gte: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
 inList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
-notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
+notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
+exampleList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f
   };
 
+  jspb.Message.toObjectExtension(/** @type {!jspb.Message} */ (msg), obj,
+      proto.buf.validate.SInt64Rules.extensions, proto.buf.validate.SInt64Rules.prototype.getExtension,
+      includeInstance);
   if (includeInstance) {
     obj.$jspbMessageInstance = msg;
   }
@@ -5545,8 +7794,17 @@ proto.buf.validate.SInt64Rules.deserializeBinaryFromReader = function(msg, reade
         msg.addNotIn(values[i]);
       }
       break;
+    case 8:
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedSint64() : [reader.readSint64()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addExample(values[i]);
+      }
+      break;
     default:
-      reader.skipField();
+      jspb.Message.readBinaryExtension(msg, reader,
+        proto.buf.validate.SInt64Rules.extensionsBinary,
+        proto.buf.validate.SInt64Rules.prototype.getExtension,
+        proto.buf.validate.SInt64Rules.prototype.setExtension);
       break;
     }
   }
@@ -5611,18 +7869,27 @@ proto.buf.validate.SInt64Rules.serializeBinaryToWriter = function(message, write
   }
   f = message.getInList();
   if (f.length > 0) {
-    writer.writePackedSint64(
+    writer.writeRepeatedSint64(
       6,
       f
     );
   }
   f = message.getNotInList();
   if (f.length > 0) {
-    writer.writePackedSint64(
+    writer.writeRepeatedSint64(
       7,
       f
     );
   }
+  f = message.getExampleList();
+  if (f.length > 0) {
+    writer.writeRepeatedSint64(
+      8,
+      f
+    );
+  }
+  jspb.Message.serializeBinaryExtensions(message, writer,
+    proto.buf.validate.SInt64Rules.extensionsBinary, proto.buf.validate.SInt64Rules.prototype.getExtension);
 };
 
 
@@ -5676,7 +7943,7 @@ proto.buf.validate.SInt64Rules.prototype.getLt = function() {
  * @return {!proto.buf.validate.SInt64Rules} returns this
  */
 proto.buf.validate.SInt64Rules.prototype.setLt = function(value) {
-  return jspb.Message.setField(this, 2, value);
+  return jspb.Message.setOneofField(this, 2, proto.buf.validate.SInt64Rules.oneofGroups_[0], value);
 };
 
 
@@ -5685,7 +7952,7 @@ proto.buf.validate.SInt64Rules.prototype.setLt = function(value) {
  * @return {!proto.buf.validate.SInt64Rules} returns this
  */
 proto.buf.validate.SInt64Rules.prototype.clearLt = function() {
-  return jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setOneofField(this, 2, proto.buf.validate.SInt64Rules.oneofGroups_[0], undefined);
 };
 
 
@@ -5712,7 +7979,7 @@ proto.buf.validate.SInt64Rules.prototype.getLte = function() {
  * @return {!proto.buf.validate.SInt64Rules} returns this
  */
 proto.buf.validate.SInt64Rules.prototype.setLte = function(value) {
-  return jspb.Message.setField(this, 3, value);
+  return jspb.Message.setOneofField(this, 3, proto.buf.validate.SInt64Rules.oneofGroups_[0], value);
 };
 
 
@@ -5721,7 +7988,7 @@ proto.buf.validate.SInt64Rules.prototype.setLte = function(value) {
  * @return {!proto.buf.validate.SInt64Rules} returns this
  */
 proto.buf.validate.SInt64Rules.prototype.clearLte = function() {
-  return jspb.Message.setField(this, 3, undefined);
+  return jspb.Message.setOneofField(this, 3, proto.buf.validate.SInt64Rules.oneofGroups_[0], undefined);
 };
 
 
@@ -5748,7 +8015,7 @@ proto.buf.validate.SInt64Rules.prototype.getGt = function() {
  * @return {!proto.buf.validate.SInt64Rules} returns this
  */
 proto.buf.validate.SInt64Rules.prototype.setGt = function(value) {
-  return jspb.Message.setField(this, 4, value);
+  return jspb.Message.setOneofField(this, 4, proto.buf.validate.SInt64Rules.oneofGroups_[1], value);
 };
 
 
@@ -5757,7 +8024,7 @@ proto.buf.validate.SInt64Rules.prototype.setGt = function(value) {
  * @return {!proto.buf.validate.SInt64Rules} returns this
  */
 proto.buf.validate.SInt64Rules.prototype.clearGt = function() {
-  return jspb.Message.setField(this, 4, undefined);
+  return jspb.Message.setOneofField(this, 4, proto.buf.validate.SInt64Rules.oneofGroups_[1], undefined);
 };
 
 
@@ -5784,7 +8051,7 @@ proto.buf.validate.SInt64Rules.prototype.getGte = function() {
  * @return {!proto.buf.validate.SInt64Rules} returns this
  */
 proto.buf.validate.SInt64Rules.prototype.setGte = function(value) {
-  return jspb.Message.setField(this, 5, value);
+  return jspb.Message.setOneofField(this, 5, proto.buf.validate.SInt64Rules.oneofGroups_[1], value);
 };
 
 
@@ -5793,7 +8060,7 @@ proto.buf.validate.SInt64Rules.prototype.setGte = function(value) {
  * @return {!proto.buf.validate.SInt64Rules} returns this
  */
 proto.buf.validate.SInt64Rules.prototype.clearGte = function() {
-  return jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setOneofField(this, 5, proto.buf.validate.SInt64Rules.oneofGroups_[1], undefined);
 };
 
 
@@ -5880,13 +8147,92 @@ proto.buf.validate.SInt64Rules.prototype.clearNotInList = function() {
 };
 
 
+/**
+ * repeated sint64 example = 8;
+ * @return {!Array<number>}
+ */
+proto.buf.validate.SInt64Rules.prototype.getExampleList = function() {
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 8));
+};
+
+
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.buf.validate.SInt64Rules} returns this
+ */
+proto.buf.validate.SInt64Rules.prototype.setExampleList = function(value) {
+  return jspb.Message.setField(this, 8, value || []);
+};
+
+
+/**
+ * @param {number} value
+ * @param {number=} opt_index
+ * @return {!proto.buf.validate.SInt64Rules} returns this
+ */
+proto.buf.validate.SInt64Rules.prototype.addExample = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 8, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.buf.validate.SInt64Rules} returns this
+ */
+proto.buf.validate.SInt64Rules.prototype.clearExampleList = function() {
+  return this.setExampleList([]);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
  * @const
  */
-proto.buf.validate.Fixed32Rules.repeatedFields_ = [6,7];
+proto.buf.validate.Fixed32Rules.repeatedFields_ = [6,7,8];
+
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.buf.validate.Fixed32Rules.oneofGroups_ = [[2,3],[4,5]];
+
+/**
+ * @enum {number}
+ */
+proto.buf.validate.Fixed32Rules.LessThanCase = {
+  LESS_THAN_NOT_SET: 0,
+  LT: 2,
+  LTE: 3
+};
+
+/**
+ * @return {proto.buf.validate.Fixed32Rules.LessThanCase}
+ */
+proto.buf.validate.Fixed32Rules.prototype.getLessThanCase = function() {
+  return /** @type {proto.buf.validate.Fixed32Rules.LessThanCase} */(jspb.Message.computeOneofCase(this, proto.buf.validate.Fixed32Rules.oneofGroups_[0]));
+};
+
+/**
+ * @enum {number}
+ */
+proto.buf.validate.Fixed32Rules.GreaterThanCase = {
+  GREATER_THAN_NOT_SET: 0,
+  GT: 4,
+  GTE: 5
+};
+
+/**
+ * @return {proto.buf.validate.Fixed32Rules.GreaterThanCase}
+ */
+proto.buf.validate.Fixed32Rules.prototype.getGreaterThanCase = function() {
+  return /** @type {proto.buf.validate.Fixed32Rules.GreaterThanCase} */(jspb.Message.computeOneofCase(this, proto.buf.validate.Fixed32Rules.oneofGroups_[1]));
+};
 
 
 
@@ -5925,9 +8271,13 @@ lte: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
 gt: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
 gte: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
 inList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
-notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
+notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
+exampleList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f
   };
 
+  jspb.Message.toObjectExtension(/** @type {!jspb.Message} */ (msg), obj,
+      proto.buf.validate.Fixed32Rules.extensions, proto.buf.validate.Fixed32Rules.prototype.getExtension,
+      includeInstance);
   if (includeInstance) {
     obj.$jspbMessageInstance = msg;
   }
@@ -5994,8 +8344,17 @@ proto.buf.validate.Fixed32Rules.deserializeBinaryFromReader = function(msg, read
         msg.addNotIn(values[i]);
       }
       break;
+    case 8:
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedFixed32() : [reader.readFixed32()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addExample(values[i]);
+      }
+      break;
     default:
-      reader.skipField();
+      jspb.Message.readBinaryExtension(msg, reader,
+        proto.buf.validate.Fixed32Rules.extensionsBinary,
+        proto.buf.validate.Fixed32Rules.prototype.getExtension,
+        proto.buf.validate.Fixed32Rules.prototype.setExtension);
       break;
     }
   }
@@ -6060,18 +8419,27 @@ proto.buf.validate.Fixed32Rules.serializeBinaryToWriter = function(message, writ
   }
   f = message.getInList();
   if (f.length > 0) {
-    writer.writePackedFixed32(
+    writer.writeRepeatedFixed32(
       6,
       f
     );
   }
   f = message.getNotInList();
   if (f.length > 0) {
-    writer.writePackedFixed32(
+    writer.writeRepeatedFixed32(
       7,
       f
     );
   }
+  f = message.getExampleList();
+  if (f.length > 0) {
+    writer.writeRepeatedFixed32(
+      8,
+      f
+    );
+  }
+  jspb.Message.serializeBinaryExtensions(message, writer,
+    proto.buf.validate.Fixed32Rules.extensionsBinary, proto.buf.validate.Fixed32Rules.prototype.getExtension);
 };
 
 
@@ -6125,7 +8493,7 @@ proto.buf.validate.Fixed32Rules.prototype.getLt = function() {
  * @return {!proto.buf.validate.Fixed32Rules} returns this
  */
 proto.buf.validate.Fixed32Rules.prototype.setLt = function(value) {
-  return jspb.Message.setField(this, 2, value);
+  return jspb.Message.setOneofField(this, 2, proto.buf.validate.Fixed32Rules.oneofGroups_[0], value);
 };
 
 
@@ -6134,7 +8502,7 @@ proto.buf.validate.Fixed32Rules.prototype.setLt = function(value) {
  * @return {!proto.buf.validate.Fixed32Rules} returns this
  */
 proto.buf.validate.Fixed32Rules.prototype.clearLt = function() {
-  return jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setOneofField(this, 2, proto.buf.validate.Fixed32Rules.oneofGroups_[0], undefined);
 };
 
 
@@ -6161,7 +8529,7 @@ proto.buf.validate.Fixed32Rules.prototype.getLte = function() {
  * @return {!proto.buf.validate.Fixed32Rules} returns this
  */
 proto.buf.validate.Fixed32Rules.prototype.setLte = function(value) {
-  return jspb.Message.setField(this, 3, value);
+  return jspb.Message.setOneofField(this, 3, proto.buf.validate.Fixed32Rules.oneofGroups_[0], value);
 };
 
 
@@ -6170,7 +8538,7 @@ proto.buf.validate.Fixed32Rules.prototype.setLte = function(value) {
  * @return {!proto.buf.validate.Fixed32Rules} returns this
  */
 proto.buf.validate.Fixed32Rules.prototype.clearLte = function() {
-  return jspb.Message.setField(this, 3, undefined);
+  return jspb.Message.setOneofField(this, 3, proto.buf.validate.Fixed32Rules.oneofGroups_[0], undefined);
 };
 
 
@@ -6197,7 +8565,7 @@ proto.buf.validate.Fixed32Rules.prototype.getGt = function() {
  * @return {!proto.buf.validate.Fixed32Rules} returns this
  */
 proto.buf.validate.Fixed32Rules.prototype.setGt = function(value) {
-  return jspb.Message.setField(this, 4, value);
+  return jspb.Message.setOneofField(this, 4, proto.buf.validate.Fixed32Rules.oneofGroups_[1], value);
 };
 
 
@@ -6206,7 +8574,7 @@ proto.buf.validate.Fixed32Rules.prototype.setGt = function(value) {
  * @return {!proto.buf.validate.Fixed32Rules} returns this
  */
 proto.buf.validate.Fixed32Rules.prototype.clearGt = function() {
-  return jspb.Message.setField(this, 4, undefined);
+  return jspb.Message.setOneofField(this, 4, proto.buf.validate.Fixed32Rules.oneofGroups_[1], undefined);
 };
 
 
@@ -6233,7 +8601,7 @@ proto.buf.validate.Fixed32Rules.prototype.getGte = function() {
  * @return {!proto.buf.validate.Fixed32Rules} returns this
  */
 proto.buf.validate.Fixed32Rules.prototype.setGte = function(value) {
-  return jspb.Message.setField(this, 5, value);
+  return jspb.Message.setOneofField(this, 5, proto.buf.validate.Fixed32Rules.oneofGroups_[1], value);
 };
 
 
@@ -6242,7 +8610,7 @@ proto.buf.validate.Fixed32Rules.prototype.setGte = function(value) {
  * @return {!proto.buf.validate.Fixed32Rules} returns this
  */
 proto.buf.validate.Fixed32Rules.prototype.clearGte = function() {
-  return jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setOneofField(this, 5, proto.buf.validate.Fixed32Rules.oneofGroups_[1], undefined);
 };
 
 
@@ -6329,13 +8697,92 @@ proto.buf.validate.Fixed32Rules.prototype.clearNotInList = function() {
 };
 
 
+/**
+ * repeated fixed32 example = 8;
+ * @return {!Array<number>}
+ */
+proto.buf.validate.Fixed32Rules.prototype.getExampleList = function() {
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 8));
+};
+
+
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.buf.validate.Fixed32Rules} returns this
+ */
+proto.buf.validate.Fixed32Rules.prototype.setExampleList = function(value) {
+  return jspb.Message.setField(this, 8, value || []);
+};
+
+
+/**
+ * @param {number} value
+ * @param {number=} opt_index
+ * @return {!proto.buf.validate.Fixed32Rules} returns this
+ */
+proto.buf.validate.Fixed32Rules.prototype.addExample = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 8, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.buf.validate.Fixed32Rules} returns this
+ */
+proto.buf.validate.Fixed32Rules.prototype.clearExampleList = function() {
+  return this.setExampleList([]);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
  * @const
  */
-proto.buf.validate.Fixed64Rules.repeatedFields_ = [6,7];
+proto.buf.validate.Fixed64Rules.repeatedFields_ = [6,7,8];
+
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.buf.validate.Fixed64Rules.oneofGroups_ = [[2,3],[4,5]];
+
+/**
+ * @enum {number}
+ */
+proto.buf.validate.Fixed64Rules.LessThanCase = {
+  LESS_THAN_NOT_SET: 0,
+  LT: 2,
+  LTE: 3
+};
+
+/**
+ * @return {proto.buf.validate.Fixed64Rules.LessThanCase}
+ */
+proto.buf.validate.Fixed64Rules.prototype.getLessThanCase = function() {
+  return /** @type {proto.buf.validate.Fixed64Rules.LessThanCase} */(jspb.Message.computeOneofCase(this, proto.buf.validate.Fixed64Rules.oneofGroups_[0]));
+};
+
+/**
+ * @enum {number}
+ */
+proto.buf.validate.Fixed64Rules.GreaterThanCase = {
+  GREATER_THAN_NOT_SET: 0,
+  GT: 4,
+  GTE: 5
+};
+
+/**
+ * @return {proto.buf.validate.Fixed64Rules.GreaterThanCase}
+ */
+proto.buf.validate.Fixed64Rules.prototype.getGreaterThanCase = function() {
+  return /** @type {proto.buf.validate.Fixed64Rules.GreaterThanCase} */(jspb.Message.computeOneofCase(this, proto.buf.validate.Fixed64Rules.oneofGroups_[1]));
+};
 
 
 
@@ -6374,9 +8821,13 @@ lte: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
 gt: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
 gte: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
 inList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
-notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
+notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
+exampleList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f
   };
 
+  jspb.Message.toObjectExtension(/** @type {!jspb.Message} */ (msg), obj,
+      proto.buf.validate.Fixed64Rules.extensions, proto.buf.validate.Fixed64Rules.prototype.getExtension,
+      includeInstance);
   if (includeInstance) {
     obj.$jspbMessageInstance = msg;
   }
@@ -6443,8 +8894,17 @@ proto.buf.validate.Fixed64Rules.deserializeBinaryFromReader = function(msg, read
         msg.addNotIn(values[i]);
       }
       break;
+    case 8:
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedFixed64() : [reader.readFixed64()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addExample(values[i]);
+      }
+      break;
     default:
-      reader.skipField();
+      jspb.Message.readBinaryExtension(msg, reader,
+        proto.buf.validate.Fixed64Rules.extensionsBinary,
+        proto.buf.validate.Fixed64Rules.prototype.getExtension,
+        proto.buf.validate.Fixed64Rules.prototype.setExtension);
       break;
     }
   }
@@ -6509,18 +8969,27 @@ proto.buf.validate.Fixed64Rules.serializeBinaryToWriter = function(message, writ
   }
   f = message.getInList();
   if (f.length > 0) {
-    writer.writePackedFixed64(
+    writer.writeRepeatedFixed64(
       6,
       f
     );
   }
   f = message.getNotInList();
   if (f.length > 0) {
-    writer.writePackedFixed64(
+    writer.writeRepeatedFixed64(
       7,
       f
     );
   }
+  f = message.getExampleList();
+  if (f.length > 0) {
+    writer.writeRepeatedFixed64(
+      8,
+      f
+    );
+  }
+  jspb.Message.serializeBinaryExtensions(message, writer,
+    proto.buf.validate.Fixed64Rules.extensionsBinary, proto.buf.validate.Fixed64Rules.prototype.getExtension);
 };
 
 
@@ -6574,7 +9043,7 @@ proto.buf.validate.Fixed64Rules.prototype.getLt = function() {
  * @return {!proto.buf.validate.Fixed64Rules} returns this
  */
 proto.buf.validate.Fixed64Rules.prototype.setLt = function(value) {
-  return jspb.Message.setField(this, 2, value);
+  return jspb.Message.setOneofField(this, 2, proto.buf.validate.Fixed64Rules.oneofGroups_[0], value);
 };
 
 
@@ -6583,7 +9052,7 @@ proto.buf.validate.Fixed64Rules.prototype.setLt = function(value) {
  * @return {!proto.buf.validate.Fixed64Rules} returns this
  */
 proto.buf.validate.Fixed64Rules.prototype.clearLt = function() {
-  return jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setOneofField(this, 2, proto.buf.validate.Fixed64Rules.oneofGroups_[0], undefined);
 };
 
 
@@ -6610,7 +9079,7 @@ proto.buf.validate.Fixed64Rules.prototype.getLte = function() {
  * @return {!proto.buf.validate.Fixed64Rules} returns this
  */
 proto.buf.validate.Fixed64Rules.prototype.setLte = function(value) {
-  return jspb.Message.setField(this, 3, value);
+  return jspb.Message.setOneofField(this, 3, proto.buf.validate.Fixed64Rules.oneofGroups_[0], value);
 };
 
 
@@ -6619,7 +9088,7 @@ proto.buf.validate.Fixed64Rules.prototype.setLte = function(value) {
  * @return {!proto.buf.validate.Fixed64Rules} returns this
  */
 proto.buf.validate.Fixed64Rules.prototype.clearLte = function() {
-  return jspb.Message.setField(this, 3, undefined);
+  return jspb.Message.setOneofField(this, 3, proto.buf.validate.Fixed64Rules.oneofGroups_[0], undefined);
 };
 
 
@@ -6646,7 +9115,7 @@ proto.buf.validate.Fixed64Rules.prototype.getGt = function() {
  * @return {!proto.buf.validate.Fixed64Rules} returns this
  */
 proto.buf.validate.Fixed64Rules.prototype.setGt = function(value) {
-  return jspb.Message.setField(this, 4, value);
+  return jspb.Message.setOneofField(this, 4, proto.buf.validate.Fixed64Rules.oneofGroups_[1], value);
 };
 
 
@@ -6655,7 +9124,7 @@ proto.buf.validate.Fixed64Rules.prototype.setGt = function(value) {
  * @return {!proto.buf.validate.Fixed64Rules} returns this
  */
 proto.buf.validate.Fixed64Rules.prototype.clearGt = function() {
-  return jspb.Message.setField(this, 4, undefined);
+  return jspb.Message.setOneofField(this, 4, proto.buf.validate.Fixed64Rules.oneofGroups_[1], undefined);
 };
 
 
@@ -6682,7 +9151,7 @@ proto.buf.validate.Fixed64Rules.prototype.getGte = function() {
  * @return {!proto.buf.validate.Fixed64Rules} returns this
  */
 proto.buf.validate.Fixed64Rules.prototype.setGte = function(value) {
-  return jspb.Message.setField(this, 5, value);
+  return jspb.Message.setOneofField(this, 5, proto.buf.validate.Fixed64Rules.oneofGroups_[1], value);
 };
 
 
@@ -6691,7 +9160,7 @@ proto.buf.validate.Fixed64Rules.prototype.setGte = function(value) {
  * @return {!proto.buf.validate.Fixed64Rules} returns this
  */
 proto.buf.validate.Fixed64Rules.prototype.clearGte = function() {
-  return jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setOneofField(this, 5, proto.buf.validate.Fixed64Rules.oneofGroups_[1], undefined);
 };
 
 
@@ -6778,13 +9247,92 @@ proto.buf.validate.Fixed64Rules.prototype.clearNotInList = function() {
 };
 
 
+/**
+ * repeated fixed64 example = 8;
+ * @return {!Array<number>}
+ */
+proto.buf.validate.Fixed64Rules.prototype.getExampleList = function() {
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 8));
+};
+
+
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.buf.validate.Fixed64Rules} returns this
+ */
+proto.buf.validate.Fixed64Rules.prototype.setExampleList = function(value) {
+  return jspb.Message.setField(this, 8, value || []);
+};
+
+
+/**
+ * @param {number} value
+ * @param {number=} opt_index
+ * @return {!proto.buf.validate.Fixed64Rules} returns this
+ */
+proto.buf.validate.Fixed64Rules.prototype.addExample = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 8, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.buf.validate.Fixed64Rules} returns this
+ */
+proto.buf.validate.Fixed64Rules.prototype.clearExampleList = function() {
+  return this.setExampleList([]);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
  * @const
  */
-proto.buf.validate.SFixed32Rules.repeatedFields_ = [6,7];
+proto.buf.validate.SFixed32Rules.repeatedFields_ = [6,7,8];
+
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.buf.validate.SFixed32Rules.oneofGroups_ = [[2,3],[4,5]];
+
+/**
+ * @enum {number}
+ */
+proto.buf.validate.SFixed32Rules.LessThanCase = {
+  LESS_THAN_NOT_SET: 0,
+  LT: 2,
+  LTE: 3
+};
+
+/**
+ * @return {proto.buf.validate.SFixed32Rules.LessThanCase}
+ */
+proto.buf.validate.SFixed32Rules.prototype.getLessThanCase = function() {
+  return /** @type {proto.buf.validate.SFixed32Rules.LessThanCase} */(jspb.Message.computeOneofCase(this, proto.buf.validate.SFixed32Rules.oneofGroups_[0]));
+};
+
+/**
+ * @enum {number}
+ */
+proto.buf.validate.SFixed32Rules.GreaterThanCase = {
+  GREATER_THAN_NOT_SET: 0,
+  GT: 4,
+  GTE: 5
+};
+
+/**
+ * @return {proto.buf.validate.SFixed32Rules.GreaterThanCase}
+ */
+proto.buf.validate.SFixed32Rules.prototype.getGreaterThanCase = function() {
+  return /** @type {proto.buf.validate.SFixed32Rules.GreaterThanCase} */(jspb.Message.computeOneofCase(this, proto.buf.validate.SFixed32Rules.oneofGroups_[1]));
+};
 
 
 
@@ -6823,9 +9371,13 @@ lte: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
 gt: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
 gte: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
 inList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
-notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
+notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
+exampleList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f
   };
 
+  jspb.Message.toObjectExtension(/** @type {!jspb.Message} */ (msg), obj,
+      proto.buf.validate.SFixed32Rules.extensions, proto.buf.validate.SFixed32Rules.prototype.getExtension,
+      includeInstance);
   if (includeInstance) {
     obj.$jspbMessageInstance = msg;
   }
@@ -6892,8 +9444,17 @@ proto.buf.validate.SFixed32Rules.deserializeBinaryFromReader = function(msg, rea
         msg.addNotIn(values[i]);
       }
       break;
+    case 8:
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedSfixed32() : [reader.readSfixed32()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addExample(values[i]);
+      }
+      break;
     default:
-      reader.skipField();
+      jspb.Message.readBinaryExtension(msg, reader,
+        proto.buf.validate.SFixed32Rules.extensionsBinary,
+        proto.buf.validate.SFixed32Rules.prototype.getExtension,
+        proto.buf.validate.SFixed32Rules.prototype.setExtension);
       break;
     }
   }
@@ -6958,18 +9519,27 @@ proto.buf.validate.SFixed32Rules.serializeBinaryToWriter = function(message, wri
   }
   f = message.getInList();
   if (f.length > 0) {
-    writer.writePackedSfixed32(
+    writer.writeRepeatedSfixed32(
       6,
       f
     );
   }
   f = message.getNotInList();
   if (f.length > 0) {
-    writer.writePackedSfixed32(
+    writer.writeRepeatedSfixed32(
       7,
       f
     );
   }
+  f = message.getExampleList();
+  if (f.length > 0) {
+    writer.writeRepeatedSfixed32(
+      8,
+      f
+    );
+  }
+  jspb.Message.serializeBinaryExtensions(message, writer,
+    proto.buf.validate.SFixed32Rules.extensionsBinary, proto.buf.validate.SFixed32Rules.prototype.getExtension);
 };
 
 
@@ -7023,7 +9593,7 @@ proto.buf.validate.SFixed32Rules.prototype.getLt = function() {
  * @return {!proto.buf.validate.SFixed32Rules} returns this
  */
 proto.buf.validate.SFixed32Rules.prototype.setLt = function(value) {
-  return jspb.Message.setField(this, 2, value);
+  return jspb.Message.setOneofField(this, 2, proto.buf.validate.SFixed32Rules.oneofGroups_[0], value);
 };
 
 
@@ -7032,7 +9602,7 @@ proto.buf.validate.SFixed32Rules.prototype.setLt = function(value) {
  * @return {!proto.buf.validate.SFixed32Rules} returns this
  */
 proto.buf.validate.SFixed32Rules.prototype.clearLt = function() {
-  return jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setOneofField(this, 2, proto.buf.validate.SFixed32Rules.oneofGroups_[0], undefined);
 };
 
 
@@ -7059,7 +9629,7 @@ proto.buf.validate.SFixed32Rules.prototype.getLte = function() {
  * @return {!proto.buf.validate.SFixed32Rules} returns this
  */
 proto.buf.validate.SFixed32Rules.prototype.setLte = function(value) {
-  return jspb.Message.setField(this, 3, value);
+  return jspb.Message.setOneofField(this, 3, proto.buf.validate.SFixed32Rules.oneofGroups_[0], value);
 };
 
 
@@ -7068,7 +9638,7 @@ proto.buf.validate.SFixed32Rules.prototype.setLte = function(value) {
  * @return {!proto.buf.validate.SFixed32Rules} returns this
  */
 proto.buf.validate.SFixed32Rules.prototype.clearLte = function() {
-  return jspb.Message.setField(this, 3, undefined);
+  return jspb.Message.setOneofField(this, 3, proto.buf.validate.SFixed32Rules.oneofGroups_[0], undefined);
 };
 
 
@@ -7095,7 +9665,7 @@ proto.buf.validate.SFixed32Rules.prototype.getGt = function() {
  * @return {!proto.buf.validate.SFixed32Rules} returns this
  */
 proto.buf.validate.SFixed32Rules.prototype.setGt = function(value) {
-  return jspb.Message.setField(this, 4, value);
+  return jspb.Message.setOneofField(this, 4, proto.buf.validate.SFixed32Rules.oneofGroups_[1], value);
 };
 
 
@@ -7104,7 +9674,7 @@ proto.buf.validate.SFixed32Rules.prototype.setGt = function(value) {
  * @return {!proto.buf.validate.SFixed32Rules} returns this
  */
 proto.buf.validate.SFixed32Rules.prototype.clearGt = function() {
-  return jspb.Message.setField(this, 4, undefined);
+  return jspb.Message.setOneofField(this, 4, proto.buf.validate.SFixed32Rules.oneofGroups_[1], undefined);
 };
 
 
@@ -7131,7 +9701,7 @@ proto.buf.validate.SFixed32Rules.prototype.getGte = function() {
  * @return {!proto.buf.validate.SFixed32Rules} returns this
  */
 proto.buf.validate.SFixed32Rules.prototype.setGte = function(value) {
-  return jspb.Message.setField(this, 5, value);
+  return jspb.Message.setOneofField(this, 5, proto.buf.validate.SFixed32Rules.oneofGroups_[1], value);
 };
 
 
@@ -7140,7 +9710,7 @@ proto.buf.validate.SFixed32Rules.prototype.setGte = function(value) {
  * @return {!proto.buf.validate.SFixed32Rules} returns this
  */
 proto.buf.validate.SFixed32Rules.prototype.clearGte = function() {
-  return jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setOneofField(this, 5, proto.buf.validate.SFixed32Rules.oneofGroups_[1], undefined);
 };
 
 
@@ -7227,13 +9797,92 @@ proto.buf.validate.SFixed32Rules.prototype.clearNotInList = function() {
 };
 
 
+/**
+ * repeated sfixed32 example = 8;
+ * @return {!Array<number>}
+ */
+proto.buf.validate.SFixed32Rules.prototype.getExampleList = function() {
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 8));
+};
+
+
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.buf.validate.SFixed32Rules} returns this
+ */
+proto.buf.validate.SFixed32Rules.prototype.setExampleList = function(value) {
+  return jspb.Message.setField(this, 8, value || []);
+};
+
+
+/**
+ * @param {number} value
+ * @param {number=} opt_index
+ * @return {!proto.buf.validate.SFixed32Rules} returns this
+ */
+proto.buf.validate.SFixed32Rules.prototype.addExample = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 8, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.buf.validate.SFixed32Rules} returns this
+ */
+proto.buf.validate.SFixed32Rules.prototype.clearExampleList = function() {
+  return this.setExampleList([]);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
  * @const
  */
-proto.buf.validate.SFixed64Rules.repeatedFields_ = [6,7];
+proto.buf.validate.SFixed64Rules.repeatedFields_ = [6,7,8];
+
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.buf.validate.SFixed64Rules.oneofGroups_ = [[2,3],[4,5]];
+
+/**
+ * @enum {number}
+ */
+proto.buf.validate.SFixed64Rules.LessThanCase = {
+  LESS_THAN_NOT_SET: 0,
+  LT: 2,
+  LTE: 3
+};
+
+/**
+ * @return {proto.buf.validate.SFixed64Rules.LessThanCase}
+ */
+proto.buf.validate.SFixed64Rules.prototype.getLessThanCase = function() {
+  return /** @type {proto.buf.validate.SFixed64Rules.LessThanCase} */(jspb.Message.computeOneofCase(this, proto.buf.validate.SFixed64Rules.oneofGroups_[0]));
+};
+
+/**
+ * @enum {number}
+ */
+proto.buf.validate.SFixed64Rules.GreaterThanCase = {
+  GREATER_THAN_NOT_SET: 0,
+  GT: 4,
+  GTE: 5
+};
+
+/**
+ * @return {proto.buf.validate.SFixed64Rules.GreaterThanCase}
+ */
+proto.buf.validate.SFixed64Rules.prototype.getGreaterThanCase = function() {
+  return /** @type {proto.buf.validate.SFixed64Rules.GreaterThanCase} */(jspb.Message.computeOneofCase(this, proto.buf.validate.SFixed64Rules.oneofGroups_[1]));
+};
 
 
 
@@ -7272,9 +9921,13 @@ lte: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
 gt: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
 gte: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
 inList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
-notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f
+notInList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
+exampleList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f
   };
 
+  jspb.Message.toObjectExtension(/** @type {!jspb.Message} */ (msg), obj,
+      proto.buf.validate.SFixed64Rules.extensions, proto.buf.validate.SFixed64Rules.prototype.getExtension,
+      includeInstance);
   if (includeInstance) {
     obj.$jspbMessageInstance = msg;
   }
@@ -7341,8 +9994,17 @@ proto.buf.validate.SFixed64Rules.deserializeBinaryFromReader = function(msg, rea
         msg.addNotIn(values[i]);
       }
       break;
+    case 8:
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedSfixed64() : [reader.readSfixed64()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addExample(values[i]);
+      }
+      break;
     default:
-      reader.skipField();
+      jspb.Message.readBinaryExtension(msg, reader,
+        proto.buf.validate.SFixed64Rules.extensionsBinary,
+        proto.buf.validate.SFixed64Rules.prototype.getExtension,
+        proto.buf.validate.SFixed64Rules.prototype.setExtension);
       break;
     }
   }
@@ -7407,18 +10069,27 @@ proto.buf.validate.SFixed64Rules.serializeBinaryToWriter = function(message, wri
   }
   f = message.getInList();
   if (f.length > 0) {
-    writer.writePackedSfixed64(
+    writer.writeRepeatedSfixed64(
       6,
       f
     );
   }
   f = message.getNotInList();
   if (f.length > 0) {
-    writer.writePackedSfixed64(
+    writer.writeRepeatedSfixed64(
       7,
       f
     );
   }
+  f = message.getExampleList();
+  if (f.length > 0) {
+    writer.writeRepeatedSfixed64(
+      8,
+      f
+    );
+  }
+  jspb.Message.serializeBinaryExtensions(message, writer,
+    proto.buf.validate.SFixed64Rules.extensionsBinary, proto.buf.validate.SFixed64Rules.prototype.getExtension);
 };
 
 
@@ -7472,7 +10143,7 @@ proto.buf.validate.SFixed64Rules.prototype.getLt = function() {
  * @return {!proto.buf.validate.SFixed64Rules} returns this
  */
 proto.buf.validate.SFixed64Rules.prototype.setLt = function(value) {
-  return jspb.Message.setField(this, 2, value);
+  return jspb.Message.setOneofField(this, 2, proto.buf.validate.SFixed64Rules.oneofGroups_[0], value);
 };
 
 
@@ -7481,7 +10152,7 @@ proto.buf.validate.SFixed64Rules.prototype.setLt = function(value) {
  * @return {!proto.buf.validate.SFixed64Rules} returns this
  */
 proto.buf.validate.SFixed64Rules.prototype.clearLt = function() {
-  return jspb.Message.setField(this, 2, undefined);
+  return jspb.Message.setOneofField(this, 2, proto.buf.validate.SFixed64Rules.oneofGroups_[0], undefined);
 };
 
 
@@ -7508,7 +10179,7 @@ proto.buf.validate.SFixed64Rules.prototype.getLte = function() {
  * @return {!proto.buf.validate.SFixed64Rules} returns this
  */
 proto.buf.validate.SFixed64Rules.prototype.setLte = function(value) {
-  return jspb.Message.setField(this, 3, value);
+  return jspb.Message.setOneofField(this, 3, proto.buf.validate.SFixed64Rules.oneofGroups_[0], value);
 };
 
 
@@ -7517,7 +10188,7 @@ proto.buf.validate.SFixed64Rules.prototype.setLte = function(value) {
  * @return {!proto.buf.validate.SFixed64Rules} returns this
  */
 proto.buf.validate.SFixed64Rules.prototype.clearLte = function() {
-  return jspb.Message.setField(this, 3, undefined);
+  return jspb.Message.setOneofField(this, 3, proto.buf.validate.SFixed64Rules.oneofGroups_[0], undefined);
 };
 
 
@@ -7544,7 +10215,7 @@ proto.buf.validate.SFixed64Rules.prototype.getGt = function() {
  * @return {!proto.buf.validate.SFixed64Rules} returns this
  */
 proto.buf.validate.SFixed64Rules.prototype.setGt = function(value) {
-  return jspb.Message.setField(this, 4, value);
+  return jspb.Message.setOneofField(this, 4, proto.buf.validate.SFixed64Rules.oneofGroups_[1], value);
 };
 
 
@@ -7553,7 +10224,7 @@ proto.buf.validate.SFixed64Rules.prototype.setGt = function(value) {
  * @return {!proto.buf.validate.SFixed64Rules} returns this
  */
 proto.buf.validate.SFixed64Rules.prototype.clearGt = function() {
-  return jspb.Message.setField(this, 4, undefined);
+  return jspb.Message.setOneofField(this, 4, proto.buf.validate.SFixed64Rules.oneofGroups_[1], undefined);
 };
 
 
@@ -7580,7 +10251,7 @@ proto.buf.validate.SFixed64Rules.prototype.getGte = function() {
  * @return {!proto.buf.validate.SFixed64Rules} returns this
  */
 proto.buf.validate.SFixed64Rules.prototype.setGte = function(value) {
-  return jspb.Message.setField(this, 5, value);
+  return jspb.Message.setOneofField(this, 5, proto.buf.validate.SFixed64Rules.oneofGroups_[1], value);
 };
 
 
@@ -7589,7 +10260,7 @@ proto.buf.validate.SFixed64Rules.prototype.setGte = function(value) {
  * @return {!proto.buf.validate.SFixed64Rules} returns this
  */
 proto.buf.validate.SFixed64Rules.prototype.clearGte = function() {
-  return jspb.Message.setField(this, 5, undefined);
+  return jspb.Message.setOneofField(this, 5, proto.buf.validate.SFixed64Rules.oneofGroups_[1], undefined);
 };
 
 
@@ -7676,6 +10347,50 @@ proto.buf.validate.SFixed64Rules.prototype.clearNotInList = function() {
 };
 
 
+/**
+ * repeated sfixed64 example = 8;
+ * @return {!Array<number>}
+ */
+proto.buf.validate.SFixed64Rules.prototype.getExampleList = function() {
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 8));
+};
+
+
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.buf.validate.SFixed64Rules} returns this
+ */
+proto.buf.validate.SFixed64Rules.prototype.setExampleList = function(value) {
+  return jspb.Message.setField(this, 8, value || []);
+};
+
+
+/**
+ * @param {number} value
+ * @param {number=} opt_index
+ * @return {!proto.buf.validate.SFixed64Rules} returns this
+ */
+proto.buf.validate.SFixed64Rules.prototype.addExample = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 8, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.buf.validate.SFixed64Rules} returns this
+ */
+proto.buf.validate.SFixed64Rules.prototype.clearExampleList = function() {
+  return this.setExampleList([]);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.buf.validate.BoolRules.repeatedFields_ = [2];
 
 
 
@@ -7708,9 +10423,13 @@ proto.buf.validate.BoolRules.prototype.toObject = function(opt_includeInstance) 
  */
 proto.buf.validate.BoolRules.toObject = function(includeInstance, msg) {
   var f, obj = {
-pb_const: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f
+pb_const: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+exampleList: (f = jspb.Message.getRepeatedBooleanField(msg, 2)) == null ? undefined : f
   };
 
+  jspb.Message.toObjectExtension(/** @type {!jspb.Message} */ (msg), obj,
+      proto.buf.validate.BoolRules.extensions, proto.buf.validate.BoolRules.prototype.getExtension,
+      includeInstance);
   if (includeInstance) {
     obj.$jspbMessageInstance = msg;
   }
@@ -7749,8 +10468,17 @@ proto.buf.validate.BoolRules.deserializeBinaryFromReader = function(msg, reader)
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setConst(value);
       break;
+    case 2:
+      var values = /** @type {!Array<boolean>} */ (reader.isDelimited() ? reader.readPackedBool() : [reader.readBool()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addExample(values[i]);
+      }
+      break;
     default:
-      reader.skipField();
+      jspb.Message.readBinaryExtension(msg, reader,
+        proto.buf.validate.BoolRules.extensionsBinary,
+        proto.buf.validate.BoolRules.prototype.getExtension,
+        proto.buf.validate.BoolRules.prototype.setExtension);
       break;
     }
   }
@@ -7785,6 +10513,15 @@ proto.buf.validate.BoolRules.serializeBinaryToWriter = function(message, writer)
       f
     );
   }
+  f = message.getExampleList();
+  if (f.length > 0) {
+    writer.writeRepeatedBool(
+      2,
+      f
+    );
+  }
+  jspb.Message.serializeBinaryExtensions(message, writer,
+    proto.buf.validate.BoolRules.extensionsBinary, proto.buf.validate.BoolRules.prototype.getExtension);
 };
 
 
@@ -7824,13 +10561,50 @@ proto.buf.validate.BoolRules.prototype.hasConst = function() {
 };
 
 
+/**
+ * repeated bool example = 2;
+ * @return {!Array<boolean>}
+ */
+proto.buf.validate.BoolRules.prototype.getExampleList = function() {
+  return /** @type {!Array<boolean>} */ (jspb.Message.getRepeatedBooleanField(this, 2));
+};
+
+
+/**
+ * @param {!Array<boolean>} value
+ * @return {!proto.buf.validate.BoolRules} returns this
+ */
+proto.buf.validate.BoolRules.prototype.setExampleList = function(value) {
+  return jspb.Message.setField(this, 2, value || []);
+};
+
+
+/**
+ * @param {boolean} value
+ * @param {number=} opt_index
+ * @return {!proto.buf.validate.BoolRules} returns this
+ */
+proto.buf.validate.BoolRules.prototype.addExample = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.buf.validate.BoolRules} returns this
+ */
+proto.buf.validate.BoolRules.prototype.clearExampleList = function() {
+  return this.setExampleList([]);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
  * @const
  */
-proto.buf.validate.StringRules.repeatedFields_ = [10,11];
+proto.buf.validate.StringRules.repeatedFields_ = [10,11,34];
 
 /**
  * Oneof group definitions for this message. Each group defines the field
@@ -7840,7 +10614,7 @@ proto.buf.validate.StringRules.repeatedFields_ = [10,11];
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.buf.validate.StringRules.oneofGroups_ = [[12,13,14,15,16,17,18,21,22,24]];
+proto.buf.validate.StringRules.oneofGroups_ = [[12,13,14,15,16,17,18,21,22,33,26,27,28,29,30,31,32,24]];
 
 /**
  * @enum {number}
@@ -7856,6 +10630,14 @@ proto.buf.validate.StringRules.WellKnownCase = {
   URI_REF: 18,
   ADDRESS: 21,
   UUID: 22,
+  TUUID: 33,
+  IP_WITH_PREFIXLEN: 26,
+  IPV4_WITH_PREFIXLEN: 27,
+  IPV6_WITH_PREFIXLEN: 28,
+  IP_PREFIX: 29,
+  IPV4_PREFIX: 30,
+  IPV6_PREFIX: 31,
+  HOST_AND_PORT: 32,
   WELL_KNOWN_REGEX: 24
 };
 
@@ -7920,10 +10702,22 @@ uri: (f = jspb.Message.getBooleanField(msg, 17)) == null ? undefined : f,
 uriRef: (f = jspb.Message.getBooleanField(msg, 18)) == null ? undefined : f,
 address: (f = jspb.Message.getBooleanField(msg, 21)) == null ? undefined : f,
 uuid: (f = jspb.Message.getBooleanField(msg, 22)) == null ? undefined : f,
+tuuid: (f = jspb.Message.getBooleanField(msg, 33)) == null ? undefined : f,
+ipWithPrefixlen: (f = jspb.Message.getBooleanField(msg, 26)) == null ? undefined : f,
+ipv4WithPrefixlen: (f = jspb.Message.getBooleanField(msg, 27)) == null ? undefined : f,
+ipv6WithPrefixlen: (f = jspb.Message.getBooleanField(msg, 28)) == null ? undefined : f,
+ipPrefix: (f = jspb.Message.getBooleanField(msg, 29)) == null ? undefined : f,
+ipv4Prefix: (f = jspb.Message.getBooleanField(msg, 30)) == null ? undefined : f,
+ipv6Prefix: (f = jspb.Message.getBooleanField(msg, 31)) == null ? undefined : f,
+hostAndPort: (f = jspb.Message.getBooleanField(msg, 32)) == null ? undefined : f,
 wellKnownRegex: (f = jspb.Message.getField(msg, 24)) == null ? undefined : f,
-strict: (f = jspb.Message.getBooleanField(msg, 25)) == null ? undefined : f
+strict: (f = jspb.Message.getBooleanField(msg, 25)) == null ? undefined : f,
+exampleList: (f = jspb.Message.getRepeatedField(msg, 34)) == null ? undefined : f
   };
 
+  jspb.Message.toObjectExtension(/** @type {!jspb.Message} */ (msg), obj,
+      proto.buf.validate.StringRules.extensions, proto.buf.validate.StringRules.prototype.getExtension,
+      includeInstance);
   if (includeInstance) {
     obj.$jspbMessageInstance = msg;
   }
@@ -8050,6 +10844,38 @@ proto.buf.validate.StringRules.deserializeBinaryFromReader = function(msg, reade
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setUuid(value);
       break;
+    case 33:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setTuuid(value);
+      break;
+    case 26:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIpWithPrefixlen(value);
+      break;
+    case 27:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIpv4WithPrefixlen(value);
+      break;
+    case 28:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIpv6WithPrefixlen(value);
+      break;
+    case 29:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIpPrefix(value);
+      break;
+    case 30:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIpv4Prefix(value);
+      break;
+    case 31:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIpv6Prefix(value);
+      break;
+    case 32:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setHostAndPort(value);
+      break;
     case 24:
       var value = /** @type {!proto.buf.validate.KnownRegex} */ (reader.readEnum());
       msg.setWellKnownRegex(value);
@@ -8058,8 +10884,15 @@ proto.buf.validate.StringRules.deserializeBinaryFromReader = function(msg, reade
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setStrict(value);
       break;
+    case 34:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addExample(value);
+      break;
     default:
-      reader.skipField();
+      jspb.Message.readBinaryExtension(msg, reader,
+        proto.buf.validate.StringRules.extensionsBinary,
+        proto.buf.validate.StringRules.prototype.getExtension,
+        proto.buf.validate.StringRules.prototype.setExtension);
       break;
     }
   }
@@ -8248,6 +11081,62 @@ proto.buf.validate.StringRules.serializeBinaryToWriter = function(message, write
       f
     );
   }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 33));
+  if (f != null) {
+    writer.writeBool(
+      33,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 26));
+  if (f != null) {
+    writer.writeBool(
+      26,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 27));
+  if (f != null) {
+    writer.writeBool(
+      27,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 28));
+  if (f != null) {
+    writer.writeBool(
+      28,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 29));
+  if (f != null) {
+    writer.writeBool(
+      29,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 30));
+  if (f != null) {
+    writer.writeBool(
+      30,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 31));
+  if (f != null) {
+    writer.writeBool(
+      31,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 32));
+  if (f != null) {
+    writer.writeBool(
+      32,
+      f
+    );
+  }
   f = /** @type {!proto.buf.validate.KnownRegex} */ (jspb.Message.getField(message, 24));
   if (f != null) {
     writer.writeEnum(
@@ -8262,6 +11151,15 @@ proto.buf.validate.StringRules.serializeBinaryToWriter = function(message, write
       f
     );
   }
+  f = message.getExampleList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      34,
+      f
+    );
+  }
+  jspb.Message.serializeBinaryExtensions(message, writer,
+    proto.buf.validate.StringRules.extensionsBinary, proto.buf.validate.StringRules.prototype.getExtension);
 };
 
 
@@ -9096,6 +11994,294 @@ proto.buf.validate.StringRules.prototype.hasUuid = function() {
 
 
 /**
+ * optional bool tuuid = 33;
+ * @return {boolean}
+ */
+proto.buf.validate.StringRules.prototype.getTuuid = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 33, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.buf.validate.StringRules} returns this
+ */
+proto.buf.validate.StringRules.prototype.setTuuid = function(value) {
+  return jspb.Message.setOneofField(this, 33, proto.buf.validate.StringRules.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.buf.validate.StringRules} returns this
+ */
+proto.buf.validate.StringRules.prototype.clearTuuid = function() {
+  return jspb.Message.setOneofField(this, 33, proto.buf.validate.StringRules.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.buf.validate.StringRules.prototype.hasTuuid = function() {
+  return jspb.Message.getField(this, 33) != null;
+};
+
+
+/**
+ * optional bool ip_with_prefixlen = 26;
+ * @return {boolean}
+ */
+proto.buf.validate.StringRules.prototype.getIpWithPrefixlen = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 26, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.buf.validate.StringRules} returns this
+ */
+proto.buf.validate.StringRules.prototype.setIpWithPrefixlen = function(value) {
+  return jspb.Message.setOneofField(this, 26, proto.buf.validate.StringRules.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.buf.validate.StringRules} returns this
+ */
+proto.buf.validate.StringRules.prototype.clearIpWithPrefixlen = function() {
+  return jspb.Message.setOneofField(this, 26, proto.buf.validate.StringRules.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.buf.validate.StringRules.prototype.hasIpWithPrefixlen = function() {
+  return jspb.Message.getField(this, 26) != null;
+};
+
+
+/**
+ * optional bool ipv4_with_prefixlen = 27;
+ * @return {boolean}
+ */
+proto.buf.validate.StringRules.prototype.getIpv4WithPrefixlen = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 27, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.buf.validate.StringRules} returns this
+ */
+proto.buf.validate.StringRules.prototype.setIpv4WithPrefixlen = function(value) {
+  return jspb.Message.setOneofField(this, 27, proto.buf.validate.StringRules.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.buf.validate.StringRules} returns this
+ */
+proto.buf.validate.StringRules.prototype.clearIpv4WithPrefixlen = function() {
+  return jspb.Message.setOneofField(this, 27, proto.buf.validate.StringRules.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.buf.validate.StringRules.prototype.hasIpv4WithPrefixlen = function() {
+  return jspb.Message.getField(this, 27) != null;
+};
+
+
+/**
+ * optional bool ipv6_with_prefixlen = 28;
+ * @return {boolean}
+ */
+proto.buf.validate.StringRules.prototype.getIpv6WithPrefixlen = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 28, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.buf.validate.StringRules} returns this
+ */
+proto.buf.validate.StringRules.prototype.setIpv6WithPrefixlen = function(value) {
+  return jspb.Message.setOneofField(this, 28, proto.buf.validate.StringRules.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.buf.validate.StringRules} returns this
+ */
+proto.buf.validate.StringRules.prototype.clearIpv6WithPrefixlen = function() {
+  return jspb.Message.setOneofField(this, 28, proto.buf.validate.StringRules.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.buf.validate.StringRules.prototype.hasIpv6WithPrefixlen = function() {
+  return jspb.Message.getField(this, 28) != null;
+};
+
+
+/**
+ * optional bool ip_prefix = 29;
+ * @return {boolean}
+ */
+proto.buf.validate.StringRules.prototype.getIpPrefix = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 29, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.buf.validate.StringRules} returns this
+ */
+proto.buf.validate.StringRules.prototype.setIpPrefix = function(value) {
+  return jspb.Message.setOneofField(this, 29, proto.buf.validate.StringRules.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.buf.validate.StringRules} returns this
+ */
+proto.buf.validate.StringRules.prototype.clearIpPrefix = function() {
+  return jspb.Message.setOneofField(this, 29, proto.buf.validate.StringRules.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.buf.validate.StringRules.prototype.hasIpPrefix = function() {
+  return jspb.Message.getField(this, 29) != null;
+};
+
+
+/**
+ * optional bool ipv4_prefix = 30;
+ * @return {boolean}
+ */
+proto.buf.validate.StringRules.prototype.getIpv4Prefix = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 30, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.buf.validate.StringRules} returns this
+ */
+proto.buf.validate.StringRules.prototype.setIpv4Prefix = function(value) {
+  return jspb.Message.setOneofField(this, 30, proto.buf.validate.StringRules.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.buf.validate.StringRules} returns this
+ */
+proto.buf.validate.StringRules.prototype.clearIpv4Prefix = function() {
+  return jspb.Message.setOneofField(this, 30, proto.buf.validate.StringRules.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.buf.validate.StringRules.prototype.hasIpv4Prefix = function() {
+  return jspb.Message.getField(this, 30) != null;
+};
+
+
+/**
+ * optional bool ipv6_prefix = 31;
+ * @return {boolean}
+ */
+proto.buf.validate.StringRules.prototype.getIpv6Prefix = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 31, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.buf.validate.StringRules} returns this
+ */
+proto.buf.validate.StringRules.prototype.setIpv6Prefix = function(value) {
+  return jspb.Message.setOneofField(this, 31, proto.buf.validate.StringRules.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.buf.validate.StringRules} returns this
+ */
+proto.buf.validate.StringRules.prototype.clearIpv6Prefix = function() {
+  return jspb.Message.setOneofField(this, 31, proto.buf.validate.StringRules.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.buf.validate.StringRules.prototype.hasIpv6Prefix = function() {
+  return jspb.Message.getField(this, 31) != null;
+};
+
+
+/**
+ * optional bool host_and_port = 32;
+ * @return {boolean}
+ */
+proto.buf.validate.StringRules.prototype.getHostAndPort = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 32, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.buf.validate.StringRules} returns this
+ */
+proto.buf.validate.StringRules.prototype.setHostAndPort = function(value) {
+  return jspb.Message.setOneofField(this, 32, proto.buf.validate.StringRules.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.buf.validate.StringRules} returns this
+ */
+proto.buf.validate.StringRules.prototype.clearHostAndPort = function() {
+  return jspb.Message.setOneofField(this, 32, proto.buf.validate.StringRules.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.buf.validate.StringRules.prototype.hasHostAndPort = function() {
+  return jspb.Message.getField(this, 32) != null;
+};
+
+
+/**
  * optional KnownRegex well_known_regex = 24;
  * @return {!proto.buf.validate.KnownRegex}
  */
@@ -9167,13 +12353,50 @@ proto.buf.validate.StringRules.prototype.hasStrict = function() {
 };
 
 
+/**
+ * repeated string example = 34;
+ * @return {!Array<string>}
+ */
+proto.buf.validate.StringRules.prototype.getExampleList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 34));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.buf.validate.StringRules} returns this
+ */
+proto.buf.validate.StringRules.prototype.setExampleList = function(value) {
+  return jspb.Message.setField(this, 34, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.buf.validate.StringRules} returns this
+ */
+proto.buf.validate.StringRules.prototype.addExample = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 34, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.buf.validate.StringRules} returns this
+ */
+proto.buf.validate.StringRules.prototype.clearExampleList = function() {
+  return this.setExampleList([]);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
  * @const
  */
-proto.buf.validate.BytesRules.repeatedFields_ = [8,9];
+proto.buf.validate.BytesRules.repeatedFields_ = [8,9,14];
 
 /**
  * Oneof group definitions for this message. Each group defines the field
@@ -9245,9 +12468,13 @@ inList: msg.getInList_asB64(),
 notInList: msg.getNotInList_asB64(),
 ip: (f = jspb.Message.getBooleanField(msg, 10)) == null ? undefined : f,
 ipv4: (f = jspb.Message.getBooleanField(msg, 11)) == null ? undefined : f,
-ipv6: (f = jspb.Message.getBooleanField(msg, 12)) == null ? undefined : f
+ipv6: (f = jspb.Message.getBooleanField(msg, 12)) == null ? undefined : f,
+exampleList: msg.getExampleList_asB64()
   };
 
+  jspb.Message.toObjectExtension(/** @type {!jspb.Message} */ (msg), obj,
+      proto.buf.validate.BytesRules.extensions, proto.buf.validate.BytesRules.prototype.getExtension,
+      includeInstance);
   if (includeInstance) {
     obj.$jspbMessageInstance = msg;
   }
@@ -9334,8 +12561,15 @@ proto.buf.validate.BytesRules.deserializeBinaryFromReader = function(msg, reader
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIpv6(value);
       break;
+    case 14:
+      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+      msg.addExample(value);
+      break;
     default:
-      reader.skipField();
+      jspb.Message.readBinaryExtension(msg, reader,
+        proto.buf.validate.BytesRules.extensionsBinary,
+        proto.buf.validate.BytesRules.prototype.getExtension,
+        proto.buf.validate.BytesRules.prototype.setExtension);
       break;
     }
   }
@@ -9454,6 +12688,15 @@ proto.buf.validate.BytesRules.serializeBinaryToWriter = function(message, writer
       f
     );
   }
+  f = message.getExampleList_asU8();
+  if (f.length > 0) {
+    writer.writeRepeatedBytes(
+      14,
+      f
+    );
+  }
+  jspb.Message.serializeBinaryExtensions(message, writer,
+    proto.buf.validate.BytesRules.extensionsBinary, proto.buf.validate.BytesRules.prototype.getExtension);
 };
 
 
@@ -10071,13 +13314,74 @@ proto.buf.validate.BytesRules.prototype.hasIpv6 = function() {
 };
 
 
+/**
+ * repeated bytes example = 14;
+ * @return {!(Array<!Uint8Array>|Array<string>)}
+ */
+proto.buf.validate.BytesRules.prototype.getExampleList = function() {
+  return /** @type {!(Array<!Uint8Array>|Array<string>)} */ (jspb.Message.getRepeatedField(this, 14));
+};
+
+
+/**
+ * repeated bytes example = 14;
+ * This is a type-conversion wrapper around `getExampleList()`
+ * @return {!Array<string>}
+ */
+proto.buf.validate.BytesRules.prototype.getExampleList_asB64 = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.bytesListAsB64(
+      this.getExampleList()));
+};
+
+
+/**
+ * repeated bytes example = 14;
+ * Note that Uint8Array is not supported on all browsers.
+ * @see http://caniuse.com/Uint8Array
+ * This is a type-conversion wrapper around `getExampleList()`
+ * @return {!Array<!Uint8Array>}
+ */
+proto.buf.validate.BytesRules.prototype.getExampleList_asU8 = function() {
+  return /** @type {!Array<!Uint8Array>} */ (jspb.Message.bytesListAsU8(
+      this.getExampleList()));
+};
+
+
+/**
+ * @param {!(Array<!Uint8Array>|Array<string>)} value
+ * @return {!proto.buf.validate.BytesRules} returns this
+ */
+proto.buf.validate.BytesRules.prototype.setExampleList = function(value) {
+  return jspb.Message.setField(this, 14, value || []);
+};
+
+
+/**
+ * @param {!(string|Uint8Array)} value
+ * @param {number=} opt_index
+ * @return {!proto.buf.validate.BytesRules} returns this
+ */
+proto.buf.validate.BytesRules.prototype.addExample = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 14, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.buf.validate.BytesRules} returns this
+ */
+proto.buf.validate.BytesRules.prototype.clearExampleList = function() {
+  return this.setExampleList([]);
+};
+
+
 
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
  * @const
  */
-proto.buf.validate.EnumRules.repeatedFields_ = [3,4];
+proto.buf.validate.EnumRules.repeatedFields_ = [3,4,5];
 
 
 
@@ -10113,9 +13417,13 @@ proto.buf.validate.EnumRules.toObject = function(includeInstance, msg) {
 pb_const: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
 definedOnly: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
 inList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-notInList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
+notInList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f,
+exampleList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f
   };
 
+  jspb.Message.toObjectExtension(/** @type {!jspb.Message} */ (msg), obj,
+      proto.buf.validate.EnumRules.extensions, proto.buf.validate.EnumRules.prototype.getExtension,
+      includeInstance);
   if (includeInstance) {
     obj.$jspbMessageInstance = msg;
   }
@@ -10170,8 +13478,17 @@ proto.buf.validate.EnumRules.deserializeBinaryFromReader = function(msg, reader)
         msg.addNotIn(values[i]);
       }
       break;
+    case 5:
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt32() : [reader.readInt32()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addExample(values[i]);
+      }
+      break;
     default:
-      reader.skipField();
+      jspb.Message.readBinaryExtension(msg, reader,
+        proto.buf.validate.EnumRules.extensionsBinary,
+        proto.buf.validate.EnumRules.prototype.getExtension,
+        proto.buf.validate.EnumRules.prototype.setExtension);
       break;
     }
   }
@@ -10215,18 +13532,27 @@ proto.buf.validate.EnumRules.serializeBinaryToWriter = function(message, writer)
   }
   f = message.getInList();
   if (f.length > 0) {
-    writer.writePackedInt32(
+    writer.writeRepeatedInt32(
       3,
       f
     );
   }
   f = message.getNotInList();
   if (f.length > 0) {
-    writer.writePackedInt32(
+    writer.writeRepeatedInt32(
       4,
       f
     );
   }
+  f = message.getExampleList();
+  if (f.length > 0) {
+    writer.writeRepeatedInt32(
+      5,
+      f
+    );
+  }
+  jspb.Message.serializeBinaryExtensions(message, writer,
+    proto.buf.validate.EnumRules.extensionsBinary, proto.buf.validate.EnumRules.prototype.getExtension);
 };
 
 
@@ -10376,6 +13702,43 @@ proto.buf.validate.EnumRules.prototype.clearNotInList = function() {
 };
 
 
+/**
+ * repeated int32 example = 5;
+ * @return {!Array<number>}
+ */
+proto.buf.validate.EnumRules.prototype.getExampleList = function() {
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 5));
+};
+
+
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.buf.validate.EnumRules} returns this
+ */
+proto.buf.validate.EnumRules.prototype.setExampleList = function(value) {
+  return jspb.Message.setField(this, 5, value || []);
+};
+
+
+/**
+ * @param {number} value
+ * @param {number=} opt_index
+ * @return {!proto.buf.validate.EnumRules} returns this
+ */
+proto.buf.validate.EnumRules.prototype.addExample = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 5, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.buf.validate.EnumRules} returns this
+ */
+proto.buf.validate.EnumRules.prototype.clearExampleList = function() {
+  return this.setExampleList([]);
+};
+
+
 
 
 
@@ -10411,9 +13774,12 @@ proto.buf.validate.RepeatedRules.toObject = function(includeInstance, msg) {
 minItems: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
 maxItems: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
 unique: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
-items: (f = msg.getItems()) && proto.buf.validate.FieldConstraints.toObject(includeInstance, f)
+items: (f = msg.getItems()) && proto.buf.validate.FieldRules.toObject(includeInstance, f)
   };
 
+  jspb.Message.toObjectExtension(/** @type {!jspb.Message} */ (msg), obj,
+      proto.buf.validate.RepeatedRules.extensions, proto.buf.validate.RepeatedRules.prototype.getExtension,
+      includeInstance);
   if (includeInstance) {
     obj.$jspbMessageInstance = msg;
   }
@@ -10461,12 +13827,15 @@ proto.buf.validate.RepeatedRules.deserializeBinaryFromReader = function(msg, rea
       msg.setUnique(value);
       break;
     case 4:
-      var value = new proto.buf.validate.FieldConstraints;
-      reader.readMessage(value,proto.buf.validate.FieldConstraints.deserializeBinaryFromReader);
+      var value = new proto.buf.validate.FieldRules;
+      reader.readMessage(value,proto.buf.validate.FieldRules.deserializeBinaryFromReader);
       msg.setItems(value);
       break;
     default:
-      reader.skipField();
+      jspb.Message.readBinaryExtension(msg, reader,
+        proto.buf.validate.RepeatedRules.extensionsBinary,
+        proto.buf.validate.RepeatedRules.prototype.getExtension,
+        proto.buf.validate.RepeatedRules.prototype.setExtension);
       break;
     }
   }
@@ -10520,9 +13889,11 @@ proto.buf.validate.RepeatedRules.serializeBinaryToWriter = function(message, wri
     writer.writeMessage(
       4,
       f,
-      proto.buf.validate.FieldConstraints.serializeBinaryToWriter
+      proto.buf.validate.FieldRules.serializeBinaryToWriter
     );
   }
+  jspb.Message.serializeBinaryExtensions(message, writer,
+    proto.buf.validate.RepeatedRules.extensionsBinary, proto.buf.validate.RepeatedRules.prototype.getExtension);
 };
 
 
@@ -10635,17 +14006,17 @@ proto.buf.validate.RepeatedRules.prototype.hasUnique = function() {
 
 
 /**
- * optional FieldConstraints items = 4;
- * @return {?proto.buf.validate.FieldConstraints}
+ * optional FieldRules items = 4;
+ * @return {?proto.buf.validate.FieldRules}
  */
 proto.buf.validate.RepeatedRules.prototype.getItems = function() {
-  return /** @type{?proto.buf.validate.FieldConstraints} */ (
-    jspb.Message.getWrapperField(this, proto.buf.validate.FieldConstraints, 4));
+  return /** @type{?proto.buf.validate.FieldRules} */ (
+    jspb.Message.getWrapperField(this, proto.buf.validate.FieldRules, 4));
 };
 
 
 /**
- * @param {?proto.buf.validate.FieldConstraints|undefined} value
+ * @param {?proto.buf.validate.FieldRules|undefined} value
  * @return {!proto.buf.validate.RepeatedRules} returns this
 */
 proto.buf.validate.RepeatedRules.prototype.setItems = function(value) {
@@ -10705,10 +14076,13 @@ proto.buf.validate.MapRules.toObject = function(includeInstance, msg) {
   var f, obj = {
 minPairs: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
 maxPairs: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-keys: (f = msg.getKeys()) && proto.buf.validate.FieldConstraints.toObject(includeInstance, f),
-values: (f = msg.getValues()) && proto.buf.validate.FieldConstraints.toObject(includeInstance, f)
+keys: (f = msg.getKeys()) && proto.buf.validate.FieldRules.toObject(includeInstance, f),
+values: (f = msg.getValues()) && proto.buf.validate.FieldRules.toObject(includeInstance, f)
   };
 
+  jspb.Message.toObjectExtension(/** @type {!jspb.Message} */ (msg), obj,
+      proto.buf.validate.MapRules.extensions, proto.buf.validate.MapRules.prototype.getExtension,
+      includeInstance);
   if (includeInstance) {
     obj.$jspbMessageInstance = msg;
   }
@@ -10752,17 +14126,20 @@ proto.buf.validate.MapRules.deserializeBinaryFromReader = function(msg, reader) 
       msg.setMaxPairs(value);
       break;
     case 4:
-      var value = new proto.buf.validate.FieldConstraints;
-      reader.readMessage(value,proto.buf.validate.FieldConstraints.deserializeBinaryFromReader);
+      var value = new proto.buf.validate.FieldRules;
+      reader.readMessage(value,proto.buf.validate.FieldRules.deserializeBinaryFromReader);
       msg.setKeys(value);
       break;
     case 5:
-      var value = new proto.buf.validate.FieldConstraints;
-      reader.readMessage(value,proto.buf.validate.FieldConstraints.deserializeBinaryFromReader);
+      var value = new proto.buf.validate.FieldRules;
+      reader.readMessage(value,proto.buf.validate.FieldRules.deserializeBinaryFromReader);
       msg.setValues(value);
       break;
     default:
-      reader.skipField();
+      jspb.Message.readBinaryExtension(msg, reader,
+        proto.buf.validate.MapRules.extensionsBinary,
+        proto.buf.validate.MapRules.prototype.getExtension,
+        proto.buf.validate.MapRules.prototype.setExtension);
       break;
     }
   }
@@ -10809,7 +14186,7 @@ proto.buf.validate.MapRules.serializeBinaryToWriter = function(message, writer) 
     writer.writeMessage(
       4,
       f,
-      proto.buf.validate.FieldConstraints.serializeBinaryToWriter
+      proto.buf.validate.FieldRules.serializeBinaryToWriter
     );
   }
   f = message.getValues();
@@ -10817,9 +14194,11 @@ proto.buf.validate.MapRules.serializeBinaryToWriter = function(message, writer) 
     writer.writeMessage(
       5,
       f,
-      proto.buf.validate.FieldConstraints.serializeBinaryToWriter
+      proto.buf.validate.FieldRules.serializeBinaryToWriter
     );
   }
+  jspb.Message.serializeBinaryExtensions(message, writer,
+    proto.buf.validate.MapRules.extensionsBinary, proto.buf.validate.MapRules.prototype.getExtension);
 };
 
 
@@ -10896,17 +14275,17 @@ proto.buf.validate.MapRules.prototype.hasMaxPairs = function() {
 
 
 /**
- * optional FieldConstraints keys = 4;
- * @return {?proto.buf.validate.FieldConstraints}
+ * optional FieldRules keys = 4;
+ * @return {?proto.buf.validate.FieldRules}
  */
 proto.buf.validate.MapRules.prototype.getKeys = function() {
-  return /** @type{?proto.buf.validate.FieldConstraints} */ (
-    jspb.Message.getWrapperField(this, proto.buf.validate.FieldConstraints, 4));
+  return /** @type{?proto.buf.validate.FieldRules} */ (
+    jspb.Message.getWrapperField(this, proto.buf.validate.FieldRules, 4));
 };
 
 
 /**
- * @param {?proto.buf.validate.FieldConstraints|undefined} value
+ * @param {?proto.buf.validate.FieldRules|undefined} value
  * @return {!proto.buf.validate.MapRules} returns this
 */
 proto.buf.validate.MapRules.prototype.setKeys = function(value) {
@@ -10933,17 +14312,17 @@ proto.buf.validate.MapRules.prototype.hasKeys = function() {
 
 
 /**
- * optional FieldConstraints values = 5;
- * @return {?proto.buf.validate.FieldConstraints}
+ * optional FieldRules values = 5;
+ * @return {?proto.buf.validate.FieldRules}
  */
 proto.buf.validate.MapRules.prototype.getValues = function() {
-  return /** @type{?proto.buf.validate.FieldConstraints} */ (
-    jspb.Message.getWrapperField(this, proto.buf.validate.FieldConstraints, 5));
+  return /** @type{?proto.buf.validate.FieldRules} */ (
+    jspb.Message.getWrapperField(this, proto.buf.validate.FieldRules, 5));
 };
 
 
 /**
- * @param {?proto.buf.validate.FieldConstraints|undefined} value
+ * @param {?proto.buf.validate.FieldRules|undefined} value
  * @return {!proto.buf.validate.MapRules} returns this
 */
 proto.buf.validate.MapRules.prototype.setValues = function(value) {
@@ -11180,7 +14559,49 @@ proto.buf.validate.AnyRules.prototype.clearNotInList = function() {
  * @private {!Array<number>}
  * @const
  */
-proto.buf.validate.DurationRules.repeatedFields_ = [7,8];
+proto.buf.validate.DurationRules.repeatedFields_ = [7,8,9];
+
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.buf.validate.DurationRules.oneofGroups_ = [[3,4],[5,6]];
+
+/**
+ * @enum {number}
+ */
+proto.buf.validate.DurationRules.LessThanCase = {
+  LESS_THAN_NOT_SET: 0,
+  LT: 3,
+  LTE: 4
+};
+
+/**
+ * @return {proto.buf.validate.DurationRules.LessThanCase}
+ */
+proto.buf.validate.DurationRules.prototype.getLessThanCase = function() {
+  return /** @type {proto.buf.validate.DurationRules.LessThanCase} */(jspb.Message.computeOneofCase(this, proto.buf.validate.DurationRules.oneofGroups_[0]));
+};
+
+/**
+ * @enum {number}
+ */
+proto.buf.validate.DurationRules.GreaterThanCase = {
+  GREATER_THAN_NOT_SET: 0,
+  GT: 5,
+  GTE: 6
+};
+
+/**
+ * @return {proto.buf.validate.DurationRules.GreaterThanCase}
+ */
+proto.buf.validate.DurationRules.prototype.getGreaterThanCase = function() {
+  return /** @type {proto.buf.validate.DurationRules.GreaterThanCase} */(jspb.Message.computeOneofCase(this, proto.buf.validate.DurationRules.oneofGroups_[1]));
+};
 
 
 
@@ -11221,9 +14642,14 @@ gte: (f = msg.getGte()) && google_protobuf_duration_pb.Duration.toObject(include
 inList: jspb.Message.toObjectList(msg.getInList(),
     google_protobuf_duration_pb.Duration.toObject, includeInstance),
 notInList: jspb.Message.toObjectList(msg.getNotInList(),
+    google_protobuf_duration_pb.Duration.toObject, includeInstance),
+exampleList: jspb.Message.toObjectList(msg.getExampleList(),
     google_protobuf_duration_pb.Duration.toObject, includeInstance)
   };
 
+  jspb.Message.toObjectExtension(/** @type {!jspb.Message} */ (msg), obj,
+      proto.buf.validate.DurationRules.extensions, proto.buf.validate.DurationRules.prototype.getExtension,
+      includeInstance);
   if (includeInstance) {
     obj.$jspbMessageInstance = msg;
   }
@@ -11293,8 +14719,16 @@ proto.buf.validate.DurationRules.deserializeBinaryFromReader = function(msg, rea
       reader.readMessage(value,google_protobuf_duration_pb.Duration.deserializeBinaryFromReader);
       msg.addNotIn(value);
       break;
+    case 9:
+      var value = new google_protobuf_duration_pb.Duration;
+      reader.readMessage(value,google_protobuf_duration_pb.Duration.deserializeBinaryFromReader);
+      msg.addExample(value);
+      break;
     default:
-      reader.skipField();
+      jspb.Message.readBinaryExtension(msg, reader,
+        proto.buf.validate.DurationRules.extensionsBinary,
+        proto.buf.validate.DurationRules.prototype.getExtension,
+        proto.buf.validate.DurationRules.prototype.setExtension);
       break;
     }
   }
@@ -11378,6 +14812,16 @@ proto.buf.validate.DurationRules.serializeBinaryToWriter = function(message, wri
       google_protobuf_duration_pb.Duration.serializeBinaryToWriter
     );
   }
+  f = message.getExampleList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      9,
+      f,
+      google_protobuf_duration_pb.Duration.serializeBinaryToWriter
+    );
+  }
+  jspb.Message.serializeBinaryExtensions(message, writer,
+    proto.buf.validate.DurationRules.extensionsBinary, proto.buf.validate.DurationRules.prototype.getExtension);
 };
 
 
@@ -11433,7 +14877,7 @@ proto.buf.validate.DurationRules.prototype.getLt = function() {
  * @return {!proto.buf.validate.DurationRules} returns this
 */
 proto.buf.validate.DurationRules.prototype.setLt = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setOneofWrapperField(this, 3, proto.buf.validate.DurationRules.oneofGroups_[0], value);
 };
 
 
@@ -11470,7 +14914,7 @@ proto.buf.validate.DurationRules.prototype.getLte = function() {
  * @return {!proto.buf.validate.DurationRules} returns this
 */
 proto.buf.validate.DurationRules.prototype.setLte = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setOneofWrapperField(this, 4, proto.buf.validate.DurationRules.oneofGroups_[0], value);
 };
 
 
@@ -11507,7 +14951,7 @@ proto.buf.validate.DurationRules.prototype.getGt = function() {
  * @return {!proto.buf.validate.DurationRules} returns this
 */
 proto.buf.validate.DurationRules.prototype.setGt = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setOneofWrapperField(this, 5, proto.buf.validate.DurationRules.oneofGroups_[1], value);
 };
 
 
@@ -11544,7 +14988,7 @@ proto.buf.validate.DurationRules.prototype.getGte = function() {
  * @return {!proto.buf.validate.DurationRules} returns this
 */
 proto.buf.validate.DurationRules.prototype.setGte = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setOneofWrapperField(this, 6, proto.buf.validate.DurationRules.oneofGroups_[1], value);
 };
 
 
@@ -11642,6 +15086,95 @@ proto.buf.validate.DurationRules.prototype.clearNotInList = function() {
 };
 
 
+/**
+ * repeated google.protobuf.Duration example = 9;
+ * @return {!Array<!proto.google.protobuf.Duration>}
+ */
+proto.buf.validate.DurationRules.prototype.getExampleList = function() {
+  return /** @type{!Array<!proto.google.protobuf.Duration>} */ (
+    jspb.Message.getRepeatedWrapperField(this, google_protobuf_duration_pb.Duration, 9));
+};
+
+
+/**
+ * @param {!Array<!proto.google.protobuf.Duration>} value
+ * @return {!proto.buf.validate.DurationRules} returns this
+*/
+proto.buf.validate.DurationRules.prototype.setExampleList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 9, value);
+};
+
+
+/**
+ * @param {!proto.google.protobuf.Duration=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.google.protobuf.Duration}
+ */
+proto.buf.validate.DurationRules.prototype.addExample = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.google.protobuf.Duration, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.buf.validate.DurationRules} returns this
+ */
+proto.buf.validate.DurationRules.prototype.clearExampleList = function() {
+  return this.setExampleList([]);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.buf.validate.TimestampRules.repeatedFields_ = [10];
+
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.buf.validate.TimestampRules.oneofGroups_ = [[3,4,7],[5,6,8]];
+
+/**
+ * @enum {number}
+ */
+proto.buf.validate.TimestampRules.LessThanCase = {
+  LESS_THAN_NOT_SET: 0,
+  LT: 3,
+  LTE: 4,
+  LT_NOW: 7
+};
+
+/**
+ * @return {proto.buf.validate.TimestampRules.LessThanCase}
+ */
+proto.buf.validate.TimestampRules.prototype.getLessThanCase = function() {
+  return /** @type {proto.buf.validate.TimestampRules.LessThanCase} */(jspb.Message.computeOneofCase(this, proto.buf.validate.TimestampRules.oneofGroups_[0]));
+};
+
+/**
+ * @enum {number}
+ */
+proto.buf.validate.TimestampRules.GreaterThanCase = {
+  GREATER_THAN_NOT_SET: 0,
+  GT: 5,
+  GTE: 6,
+  GT_NOW: 8
+};
+
+/**
+ * @return {proto.buf.validate.TimestampRules.GreaterThanCase}
+ */
+proto.buf.validate.TimestampRules.prototype.getGreaterThanCase = function() {
+  return /** @type {proto.buf.validate.TimestampRules.GreaterThanCase} */(jspb.Message.computeOneofCase(this, proto.buf.validate.TimestampRules.oneofGroups_[1]));
+};
 
 
 
@@ -11677,13 +15210,18 @@ proto.buf.validate.TimestampRules.toObject = function(includeInstance, msg) {
 pb_const: (f = msg.getConst()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 lt: (f = msg.getLt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 lte: (f = msg.getLte()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
+ltNow: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f,
 gt: (f = msg.getGt()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
 gte: (f = msg.getGte()) && google_protobuf_timestamp_pb.Timestamp.toObject(includeInstance, f),
-ltNow: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f,
 gtNow: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f,
-within: (f = msg.getWithin()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f)
+within: (f = msg.getWithin()) && google_protobuf_duration_pb.Duration.toObject(includeInstance, f),
+exampleList: jspb.Message.toObjectList(msg.getExampleList(),
+    google_protobuf_timestamp_pb.Timestamp.toObject, includeInstance)
   };
 
+  jspb.Message.toObjectExtension(/** @type {!jspb.Message} */ (msg), obj,
+      proto.buf.validate.TimestampRules.extensions, proto.buf.validate.TimestampRules.prototype.getExtension,
+      includeInstance);
   if (includeInstance) {
     obj.$jspbMessageInstance = msg;
   }
@@ -11733,6 +15271,10 @@ proto.buf.validate.TimestampRules.deserializeBinaryFromReader = function(msg, re
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setLte(value);
       break;
+    case 7:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setLtNow(value);
+      break;
     case 5:
       var value = new google_protobuf_timestamp_pb.Timestamp;
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
@@ -11743,10 +15285,6 @@ proto.buf.validate.TimestampRules.deserializeBinaryFromReader = function(msg, re
       reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
       msg.setGte(value);
       break;
-    case 7:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setLtNow(value);
-      break;
     case 8:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setGtNow(value);
@@ -11756,8 +15294,16 @@ proto.buf.validate.TimestampRules.deserializeBinaryFromReader = function(msg, re
       reader.readMessage(value,google_protobuf_duration_pb.Duration.deserializeBinaryFromReader);
       msg.setWithin(value);
       break;
+    case 10:
+      var value = new google_protobuf_timestamp_pb.Timestamp;
+      reader.readMessage(value,google_protobuf_timestamp_pb.Timestamp.deserializeBinaryFromReader);
+      msg.addExample(value);
+      break;
     default:
-      reader.skipField();
+      jspb.Message.readBinaryExtension(msg, reader,
+        proto.buf.validate.TimestampRules.extensionsBinary,
+        proto.buf.validate.TimestampRules.prototype.getExtension,
+        proto.buf.validate.TimestampRules.prototype.setExtension);
       break;
     }
   }
@@ -11809,6 +15355,13 @@ proto.buf.validate.TimestampRules.serializeBinaryToWriter = function(message, wr
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
     );
   }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeBool(
+      7,
+      f
+    );
+  }
   f = message.getGt();
   if (f != null) {
     writer.writeMessage(
@@ -11823,13 +15376,6 @@ proto.buf.validate.TimestampRules.serializeBinaryToWriter = function(message, wr
       6,
       f,
       google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
-    );
-  }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 7));
-  if (f != null) {
-    writer.writeBool(
-      7,
-      f
     );
   }
   f = /** @type {boolean} */ (jspb.Message.getField(message, 8));
@@ -11847,6 +15393,16 @@ proto.buf.validate.TimestampRules.serializeBinaryToWriter = function(message, wr
       google_protobuf_duration_pb.Duration.serializeBinaryToWriter
     );
   }
+  f = message.getExampleList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      10,
+      f,
+      google_protobuf_timestamp_pb.Timestamp.serializeBinaryToWriter
+    );
+  }
+  jspb.Message.serializeBinaryExtensions(message, writer,
+    proto.buf.validate.TimestampRules.extensionsBinary, proto.buf.validate.TimestampRules.prototype.getExtension);
 };
 
 
@@ -11902,7 +15458,7 @@ proto.buf.validate.TimestampRules.prototype.getLt = function() {
  * @return {!proto.buf.validate.TimestampRules} returns this
 */
 proto.buf.validate.TimestampRules.prototype.setLt = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setOneofWrapperField(this, 3, proto.buf.validate.TimestampRules.oneofGroups_[0], value);
 };
 
 
@@ -11939,7 +15495,7 @@ proto.buf.validate.TimestampRules.prototype.getLte = function() {
  * @return {!proto.buf.validate.TimestampRules} returns this
 */
 proto.buf.validate.TimestampRules.prototype.setLte = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setOneofWrapperField(this, 4, proto.buf.validate.TimestampRules.oneofGroups_[0], value);
 };
 
 
@@ -11962,6 +15518,42 @@ proto.buf.validate.TimestampRules.prototype.hasLte = function() {
 
 
 /**
+ * optional bool lt_now = 7;
+ * @return {boolean}
+ */
+proto.buf.validate.TimestampRules.prototype.getLtNow = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.buf.validate.TimestampRules} returns this
+ */
+proto.buf.validate.TimestampRules.prototype.setLtNow = function(value) {
+  return jspb.Message.setOneofField(this, 7, proto.buf.validate.TimestampRules.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.buf.validate.TimestampRules} returns this
+ */
+proto.buf.validate.TimestampRules.prototype.clearLtNow = function() {
+  return jspb.Message.setOneofField(this, 7, proto.buf.validate.TimestampRules.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.buf.validate.TimestampRules.prototype.hasLtNow = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
  * optional google.protobuf.Timestamp gt = 5;
  * @return {?proto.google.protobuf.Timestamp}
  */
@@ -11976,7 +15568,7 @@ proto.buf.validate.TimestampRules.prototype.getGt = function() {
  * @return {!proto.buf.validate.TimestampRules} returns this
 */
 proto.buf.validate.TimestampRules.prototype.setGt = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setOneofWrapperField(this, 5, proto.buf.validate.TimestampRules.oneofGroups_[1], value);
 };
 
 
@@ -12013,7 +15605,7 @@ proto.buf.validate.TimestampRules.prototype.getGte = function() {
  * @return {!proto.buf.validate.TimestampRules} returns this
 */
 proto.buf.validate.TimestampRules.prototype.setGte = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setOneofWrapperField(this, 6, proto.buf.validate.TimestampRules.oneofGroups_[1], value);
 };
 
 
@@ -12036,42 +15628,6 @@ proto.buf.validate.TimestampRules.prototype.hasGte = function() {
 
 
 /**
- * optional bool lt_now = 7;
- * @return {boolean}
- */
-proto.buf.validate.TimestampRules.prototype.getLtNow = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.buf.validate.TimestampRules} returns this
- */
-proto.buf.validate.TimestampRules.prototype.setLtNow = function(value) {
-  return jspb.Message.setField(this, 7, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.buf.validate.TimestampRules} returns this
- */
-proto.buf.validate.TimestampRules.prototype.clearLtNow = function() {
-  return jspb.Message.setField(this, 7, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.buf.validate.TimestampRules.prototype.hasLtNow = function() {
-  return jspb.Message.getField(this, 7) != null;
-};
-
-
-/**
  * optional bool gt_now = 8;
  * @return {boolean}
  */
@@ -12085,7 +15641,7 @@ proto.buf.validate.TimestampRules.prototype.getGtNow = function() {
  * @return {!proto.buf.validate.TimestampRules} returns this
  */
 proto.buf.validate.TimestampRules.prototype.setGtNow = function(value) {
-  return jspb.Message.setField(this, 8, value);
+  return jspb.Message.setOneofField(this, 8, proto.buf.validate.TimestampRules.oneofGroups_[1], value);
 };
 
 
@@ -12094,7 +15650,7 @@ proto.buf.validate.TimestampRules.prototype.setGtNow = function(value) {
  * @return {!proto.buf.validate.TimestampRules} returns this
  */
 proto.buf.validate.TimestampRules.prototype.clearGtNow = function() {
-  return jspb.Message.setField(this, 8, undefined);
+  return jspb.Message.setOneofField(this, 8, proto.buf.validate.TimestampRules.oneofGroups_[1], undefined);
 };
 
 
@@ -12145,6 +15701,1328 @@ proto.buf.validate.TimestampRules.prototype.hasWithin = function() {
 
 
 /**
+ * repeated google.protobuf.Timestamp example = 10;
+ * @return {!Array<!proto.google.protobuf.Timestamp>}
+ */
+proto.buf.validate.TimestampRules.prototype.getExampleList = function() {
+  return /** @type{!Array<!proto.google.protobuf.Timestamp>} */ (
+    jspb.Message.getRepeatedWrapperField(this, google_protobuf_timestamp_pb.Timestamp, 10));
+};
+
+
+/**
+ * @param {!Array<!proto.google.protobuf.Timestamp>} value
+ * @return {!proto.buf.validate.TimestampRules} returns this
+*/
+proto.buf.validate.TimestampRules.prototype.setExampleList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 10, value);
+};
+
+
+/**
+ * @param {!proto.google.protobuf.Timestamp=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.google.protobuf.Timestamp}
+ */
+proto.buf.validate.TimestampRules.prototype.addExample = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 10, opt_value, proto.google.protobuf.Timestamp, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.buf.validate.TimestampRules} returns this
+ */
+proto.buf.validate.TimestampRules.prototype.clearExampleList = function() {
+  return this.setExampleList([]);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.buf.validate.Violations.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.buf.validate.Violations.prototype.toObject = function(opt_includeInstance) {
+  return proto.buf.validate.Violations.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.buf.validate.Violations} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.buf.validate.Violations.toObject = function(includeInstance, msg) {
+  var f, obj = {
+violationsList: jspb.Message.toObjectList(msg.getViolationsList(),
+    proto.buf.validate.Violation.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.buf.validate.Violations}
+ */
+proto.buf.validate.Violations.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.buf.validate.Violations;
+  return proto.buf.validate.Violations.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.buf.validate.Violations} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.buf.validate.Violations}
+ */
+proto.buf.validate.Violations.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.buf.validate.Violation;
+      reader.readMessage(value,proto.buf.validate.Violation.deserializeBinaryFromReader);
+      msg.addViolations(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.buf.validate.Violations.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.buf.validate.Violations.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.buf.validate.Violations} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.buf.validate.Violations.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getViolationsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      proto.buf.validate.Violation.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated Violation violations = 1;
+ * @return {!Array<!proto.buf.validate.Violation>}
+ */
+proto.buf.validate.Violations.prototype.getViolationsList = function() {
+  return /** @type{!Array<!proto.buf.validate.Violation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.buf.validate.Violation, 1));
+};
+
+
+/**
+ * @param {!Array<!proto.buf.validate.Violation>} value
+ * @return {!proto.buf.validate.Violations} returns this
+*/
+proto.buf.validate.Violations.prototype.setViolationsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.buf.validate.Violation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.buf.validate.Violation}
+ */
+proto.buf.validate.Violations.prototype.addViolations = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.buf.validate.Violation, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.buf.validate.Violations} returns this
+ */
+proto.buf.validate.Violations.prototype.clearViolationsList = function() {
+  return this.setViolationsList([]);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.buf.validate.Violation.prototype.toObject = function(opt_includeInstance) {
+  return proto.buf.validate.Violation.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.buf.validate.Violation} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.buf.validate.Violation.toObject = function(includeInstance, msg) {
+  var f, obj = {
+field: (f = msg.getField()) && proto.buf.validate.FieldPath.toObject(includeInstance, f),
+rule: (f = msg.getRule()) && proto.buf.validate.FieldPath.toObject(includeInstance, f),
+ruleId: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+message: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+forKey: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.buf.validate.Violation}
+ */
+proto.buf.validate.Violation.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.buf.validate.Violation;
+  return proto.buf.validate.Violation.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.buf.validate.Violation} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.buf.validate.Violation}
+ */
+proto.buf.validate.Violation.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 5:
+      var value = new proto.buf.validate.FieldPath;
+      reader.readMessage(value,proto.buf.validate.FieldPath.deserializeBinaryFromReader);
+      msg.setField(value);
+      break;
+    case 6:
+      var value = new proto.buf.validate.FieldPath;
+      reader.readMessage(value,proto.buf.validate.FieldPath.deserializeBinaryFromReader);
+      msg.setRule(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRuleId(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMessage(value);
+      break;
+    case 4:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setForKey(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.buf.validate.Violation.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.buf.validate.Violation.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.buf.validate.Violation} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.buf.validate.Violation.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getField();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      proto.buf.validate.FieldPath.serializeBinaryToWriter
+    );
+  }
+  f = message.getRule();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      proto.buf.validate.FieldPath.serializeBinaryToWriter
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeBool(
+      4,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional FieldPath field = 5;
+ * @return {?proto.buf.validate.FieldPath}
+ */
+proto.buf.validate.Violation.prototype.getField = function() {
+  return /** @type{?proto.buf.validate.FieldPath} */ (
+    jspb.Message.getWrapperField(this, proto.buf.validate.FieldPath, 5));
+};
+
+
+/**
+ * @param {?proto.buf.validate.FieldPath|undefined} value
+ * @return {!proto.buf.validate.Violation} returns this
+*/
+proto.buf.validate.Violation.prototype.setField = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.buf.validate.Violation} returns this
+ */
+proto.buf.validate.Violation.prototype.clearField = function() {
+  return this.setField(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.buf.validate.Violation.prototype.hasField = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional FieldPath rule = 6;
+ * @return {?proto.buf.validate.FieldPath}
+ */
+proto.buf.validate.Violation.prototype.getRule = function() {
+  return /** @type{?proto.buf.validate.FieldPath} */ (
+    jspb.Message.getWrapperField(this, proto.buf.validate.FieldPath, 6));
+};
+
+
+/**
+ * @param {?proto.buf.validate.FieldPath|undefined} value
+ * @return {!proto.buf.validate.Violation} returns this
+*/
+proto.buf.validate.Violation.prototype.setRule = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.buf.validate.Violation} returns this
+ */
+proto.buf.validate.Violation.prototype.clearRule = function() {
+  return this.setRule(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.buf.validate.Violation.prototype.hasRule = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional string rule_id = 2;
+ * @return {string}
+ */
+proto.buf.validate.Violation.prototype.getRuleId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.buf.validate.Violation} returns this
+ */
+proto.buf.validate.Violation.prototype.setRuleId = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.buf.validate.Violation} returns this
+ */
+proto.buf.validate.Violation.prototype.clearRuleId = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.buf.validate.Violation.prototype.hasRuleId = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string message = 3;
+ * @return {string}
+ */
+proto.buf.validate.Violation.prototype.getMessage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.buf.validate.Violation} returns this
+ */
+proto.buf.validate.Violation.prototype.setMessage = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.buf.validate.Violation} returns this
+ */
+proto.buf.validate.Violation.prototype.clearMessage = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.buf.validate.Violation.prototype.hasMessage = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional bool for_key = 4;
+ * @return {boolean}
+ */
+proto.buf.validate.Violation.prototype.getForKey = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.buf.validate.Violation} returns this
+ */
+proto.buf.validate.Violation.prototype.setForKey = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.buf.validate.Violation} returns this
+ */
+proto.buf.validate.Violation.prototype.clearForKey = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.buf.validate.Violation.prototype.hasForKey = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.buf.validate.FieldPath.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.buf.validate.FieldPath.prototype.toObject = function(opt_includeInstance) {
+  return proto.buf.validate.FieldPath.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.buf.validate.FieldPath} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.buf.validate.FieldPath.toObject = function(includeInstance, msg) {
+  var f, obj = {
+elementsList: jspb.Message.toObjectList(msg.getElementsList(),
+    proto.buf.validate.FieldPathElement.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.buf.validate.FieldPath}
+ */
+proto.buf.validate.FieldPath.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.buf.validate.FieldPath;
+  return proto.buf.validate.FieldPath.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.buf.validate.FieldPath} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.buf.validate.FieldPath}
+ */
+proto.buf.validate.FieldPath.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.buf.validate.FieldPathElement;
+      reader.readMessage(value,proto.buf.validate.FieldPathElement.deserializeBinaryFromReader);
+      msg.addElements(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.buf.validate.FieldPath.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.buf.validate.FieldPath.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.buf.validate.FieldPath} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.buf.validate.FieldPath.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getElementsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      proto.buf.validate.FieldPathElement.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated FieldPathElement elements = 1;
+ * @return {!Array<!proto.buf.validate.FieldPathElement>}
+ */
+proto.buf.validate.FieldPath.prototype.getElementsList = function() {
+  return /** @type{!Array<!proto.buf.validate.FieldPathElement>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.buf.validate.FieldPathElement, 1));
+};
+
+
+/**
+ * @param {!Array<!proto.buf.validate.FieldPathElement>} value
+ * @return {!proto.buf.validate.FieldPath} returns this
+*/
+proto.buf.validate.FieldPath.prototype.setElementsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.buf.validate.FieldPathElement=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.buf.validate.FieldPathElement}
+ */
+proto.buf.validate.FieldPath.prototype.addElements = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.buf.validate.FieldPathElement, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.buf.validate.FieldPath} returns this
+ */
+proto.buf.validate.FieldPath.prototype.clearElementsList = function() {
+  return this.setElementsList([]);
+};
+
+
+
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.buf.validate.FieldPathElement.oneofGroups_ = [[6,7,8,9,10]];
+
+/**
+ * @enum {number}
+ */
+proto.buf.validate.FieldPathElement.SubscriptCase = {
+  SUBSCRIPT_NOT_SET: 0,
+  INDEX: 6,
+  BOOL_KEY: 7,
+  INT_KEY: 8,
+  UINT_KEY: 9,
+  STRING_KEY: 10
+};
+
+/**
+ * @return {proto.buf.validate.FieldPathElement.SubscriptCase}
+ */
+proto.buf.validate.FieldPathElement.prototype.getSubscriptCase = function() {
+  return /** @type {proto.buf.validate.FieldPathElement.SubscriptCase} */(jspb.Message.computeOneofCase(this, proto.buf.validate.FieldPathElement.oneofGroups_[0]));
+};
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.buf.validate.FieldPathElement.prototype.toObject = function(opt_includeInstance) {
+  return proto.buf.validate.FieldPathElement.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.buf.validate.FieldPathElement} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.buf.validate.FieldPathElement.toObject = function(includeInstance, msg) {
+  var f, obj = {
+fieldNumber: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+fieldName: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+fieldType: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+keyType: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+valueType: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+index: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+boolKey: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f,
+intKey: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+uintKey: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+stringKey: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.buf.validate.FieldPathElement}
+ */
+proto.buf.validate.FieldPathElement.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.buf.validate.FieldPathElement;
+  return proto.buf.validate.FieldPathElement.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.buf.validate.FieldPathElement} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.buf.validate.FieldPathElement}
+ */
+proto.buf.validate.FieldPathElement.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setFieldNumber(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFieldName(value);
+      break;
+    case 3:
+      var value = /** @type {!proto.google.protobuf.FieldDescriptorProto.Type} */ (reader.readEnum());
+      msg.setFieldType(value);
+      break;
+    case 4:
+      var value = /** @type {!proto.google.protobuf.FieldDescriptorProto.Type} */ (reader.readEnum());
+      msg.setKeyType(value);
+      break;
+    case 5:
+      var value = /** @type {!proto.google.protobuf.FieldDescriptorProto.Type} */ (reader.readEnum());
+      msg.setValueType(value);
+      break;
+    case 6:
+      var value = /** @type {number} */ (reader.readUint64());
+      msg.setIndex(value);
+      break;
+    case 7:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setBoolKey(value);
+      break;
+    case 8:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setIntKey(value);
+      break;
+    case 9:
+      var value = /** @type {number} */ (reader.readUint64());
+      msg.setUintKey(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStringKey(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.buf.validate.FieldPathElement.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.buf.validate.FieldPathElement.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.buf.validate.FieldPathElement} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.buf.validate.FieldPathElement.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = /** @type {number} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
+    writer.writeInt32(
+      1,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = /** @type {!proto.google.protobuf.FieldDescriptorProto.Type} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
+    writer.writeEnum(
+      3,
+      f
+    );
+  }
+  f = /** @type {!proto.google.protobuf.FieldDescriptorProto.Type} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeEnum(
+      4,
+      f
+    );
+  }
+  f = /** @type {!proto.google.protobuf.FieldDescriptorProto.Type} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeEnum(
+      5,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeUint64(
+      6,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeBool(
+      7,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 8));
+  if (f != null) {
+    writer.writeInt64(
+      8,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 9));
+  if (f != null) {
+    writer.writeUint64(
+      9,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 10));
+  if (f != null) {
+    writer.writeString(
+      10,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional int32 field_number = 1;
+ * @return {number}
+ */
+proto.buf.validate.FieldPathElement.prototype.getFieldNumber = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.buf.validate.FieldPathElement} returns this
+ */
+proto.buf.validate.FieldPathElement.prototype.setFieldNumber = function(value) {
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.buf.validate.FieldPathElement} returns this
+ */
+proto.buf.validate.FieldPathElement.prototype.clearFieldNumber = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.buf.validate.FieldPathElement.prototype.hasFieldNumber = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string field_name = 2;
+ * @return {string}
+ */
+proto.buf.validate.FieldPathElement.prototype.getFieldName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.buf.validate.FieldPathElement} returns this
+ */
+proto.buf.validate.FieldPathElement.prototype.setFieldName = function(value) {
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.buf.validate.FieldPathElement} returns this
+ */
+proto.buf.validate.FieldPathElement.prototype.clearFieldName = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.buf.validate.FieldPathElement.prototype.hasFieldName = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional google.protobuf.FieldDescriptorProto.Type field_type = 3;
+ * @return {!proto.google.protobuf.FieldDescriptorProto.Type}
+ */
+proto.buf.validate.FieldPathElement.prototype.getFieldType = function() {
+  return /** @type {!proto.google.protobuf.FieldDescriptorProto.Type} */ (jspb.Message.getFieldWithDefault(this, 3, 1));
+};
+
+
+/**
+ * @param {!proto.google.protobuf.FieldDescriptorProto.Type} value
+ * @return {!proto.buf.validate.FieldPathElement} returns this
+ */
+proto.buf.validate.FieldPathElement.prototype.setFieldType = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.buf.validate.FieldPathElement} returns this
+ */
+proto.buf.validate.FieldPathElement.prototype.clearFieldType = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.buf.validate.FieldPathElement.prototype.hasFieldType = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional google.protobuf.FieldDescriptorProto.Type key_type = 4;
+ * @return {!proto.google.protobuf.FieldDescriptorProto.Type}
+ */
+proto.buf.validate.FieldPathElement.prototype.getKeyType = function() {
+  return /** @type {!proto.google.protobuf.FieldDescriptorProto.Type} */ (jspb.Message.getFieldWithDefault(this, 4, 1));
+};
+
+
+/**
+ * @param {!proto.google.protobuf.FieldDescriptorProto.Type} value
+ * @return {!proto.buf.validate.FieldPathElement} returns this
+ */
+proto.buf.validate.FieldPathElement.prototype.setKeyType = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.buf.validate.FieldPathElement} returns this
+ */
+proto.buf.validate.FieldPathElement.prototype.clearKeyType = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.buf.validate.FieldPathElement.prototype.hasKeyType = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional google.protobuf.FieldDescriptorProto.Type value_type = 5;
+ * @return {!proto.google.protobuf.FieldDescriptorProto.Type}
+ */
+proto.buf.validate.FieldPathElement.prototype.getValueType = function() {
+  return /** @type {!proto.google.protobuf.FieldDescriptorProto.Type} */ (jspb.Message.getFieldWithDefault(this, 5, 1));
+};
+
+
+/**
+ * @param {!proto.google.protobuf.FieldDescriptorProto.Type} value
+ * @return {!proto.buf.validate.FieldPathElement} returns this
+ */
+proto.buf.validate.FieldPathElement.prototype.setValueType = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.buf.validate.FieldPathElement} returns this
+ */
+proto.buf.validate.FieldPathElement.prototype.clearValueType = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.buf.validate.FieldPathElement.prototype.hasValueType = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional uint64 index = 6;
+ * @return {number}
+ */
+proto.buf.validate.FieldPathElement.prototype.getIndex = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.buf.validate.FieldPathElement} returns this
+ */
+proto.buf.validate.FieldPathElement.prototype.setIndex = function(value) {
+  return jspb.Message.setOneofField(this, 6, proto.buf.validate.FieldPathElement.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.buf.validate.FieldPathElement} returns this
+ */
+proto.buf.validate.FieldPathElement.prototype.clearIndex = function() {
+  return jspb.Message.setOneofField(this, 6, proto.buf.validate.FieldPathElement.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.buf.validate.FieldPathElement.prototype.hasIndex = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional bool bool_key = 7;
+ * @return {boolean}
+ */
+proto.buf.validate.FieldPathElement.prototype.getBoolKey = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.buf.validate.FieldPathElement} returns this
+ */
+proto.buf.validate.FieldPathElement.prototype.setBoolKey = function(value) {
+  return jspb.Message.setOneofField(this, 7, proto.buf.validate.FieldPathElement.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.buf.validate.FieldPathElement} returns this
+ */
+proto.buf.validate.FieldPathElement.prototype.clearBoolKey = function() {
+  return jspb.Message.setOneofField(this, 7, proto.buf.validate.FieldPathElement.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.buf.validate.FieldPathElement.prototype.hasBoolKey = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional int64 int_key = 8;
+ * @return {number}
+ */
+proto.buf.validate.FieldPathElement.prototype.getIntKey = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.buf.validate.FieldPathElement} returns this
+ */
+proto.buf.validate.FieldPathElement.prototype.setIntKey = function(value) {
+  return jspb.Message.setOneofField(this, 8, proto.buf.validate.FieldPathElement.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.buf.validate.FieldPathElement} returns this
+ */
+proto.buf.validate.FieldPathElement.prototype.clearIntKey = function() {
+  return jspb.Message.setOneofField(this, 8, proto.buf.validate.FieldPathElement.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.buf.validate.FieldPathElement.prototype.hasIntKey = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional uint64 uint_key = 9;
+ * @return {number}
+ */
+proto.buf.validate.FieldPathElement.prototype.getUintKey = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.buf.validate.FieldPathElement} returns this
+ */
+proto.buf.validate.FieldPathElement.prototype.setUintKey = function(value) {
+  return jspb.Message.setOneofField(this, 9, proto.buf.validate.FieldPathElement.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.buf.validate.FieldPathElement} returns this
+ */
+proto.buf.validate.FieldPathElement.prototype.clearUintKey = function() {
+  return jspb.Message.setOneofField(this, 9, proto.buf.validate.FieldPathElement.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.buf.validate.FieldPathElement.prototype.hasUintKey = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional string string_key = 10;
+ * @return {string}
+ */
+proto.buf.validate.FieldPathElement.prototype.getStringKey = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.buf.validate.FieldPathElement} returns this
+ */
+proto.buf.validate.FieldPathElement.prototype.setStringKey = function(value) {
+  return jspb.Message.setOneofField(this, 10, proto.buf.validate.FieldPathElement.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.buf.validate.FieldPathElement} returns this
+ */
+proto.buf.validate.FieldPathElement.prototype.clearStringKey = function() {
+  return jspb.Message.setOneofField(this, 10, proto.buf.validate.FieldPathElement.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.buf.validate.FieldPathElement.prototype.hasStringKey = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * @enum {number}
+ */
+proto.buf.validate.Ignore = {
+  IGNORE_UNSPECIFIED: 0,
+  IGNORE_IF_ZERO_VALUE: 1,
+  IGNORE_ALWAYS: 3
+};
+
+/**
  * @enum {number}
  */
 proto.buf.validate.KnownRegex = {
@@ -12157,75 +17035,100 @@ proto.buf.validate.KnownRegex = {
 /**
  * A tuple of {field number, class constructor} for the extension
  * field named `message`.
- * @type {!jspb.ExtensionFieldInfo<!proto.buf.validate.MessageConstraints>}
+ * @type {!jspb.ExtensionFieldInfo<!proto.buf.validate.MessageRules>}
  */
 proto.buf.validate.message = new jspb.ExtensionFieldInfo(
-    51071,
+    1159,
     {message: 0},
-    proto.buf.validate.MessageConstraints,
+    proto.buf.validate.MessageRules,
      /** @type {?function((boolean|undefined),!jspb.Message=): !Object} */ (
-         proto.buf.validate.MessageConstraints.toObject),
+         proto.buf.validate.MessageRules.toObject),
     0);
 
-google_protobuf_descriptor_pb.MessageOptions.extensionsBinary[51071] = new jspb.ExtensionFieldBinaryInfo(
+google_protobuf_descriptor_pb.MessageOptions.extensionsBinary[1159] = new jspb.ExtensionFieldBinaryInfo(
     proto.buf.validate.message,
     jspb.BinaryReader.prototype.readMessage,
     jspb.BinaryWriter.prototype.writeMessage,
-    proto.buf.validate.MessageConstraints.serializeBinaryToWriter,
-    proto.buf.validate.MessageConstraints.deserializeBinaryFromReader,
+    proto.buf.validate.MessageRules.serializeBinaryToWriter,
+    proto.buf.validate.MessageRules.deserializeBinaryFromReader,
     false);
 // This registers the extension field with the extended class, so that
 // toObject() will function correctly.
-google_protobuf_descriptor_pb.MessageOptions.extensions[51071] = proto.buf.validate.message;
+google_protobuf_descriptor_pb.MessageOptions.extensions[1159] = proto.buf.validate.message;
 
 
 /**
  * A tuple of {field number, class constructor} for the extension
  * field named `oneof`.
- * @type {!jspb.ExtensionFieldInfo<!proto.buf.validate.OneofConstraints>}
+ * @type {!jspb.ExtensionFieldInfo<!proto.buf.validate.OneofRules>}
  */
 proto.buf.validate.oneof = new jspb.ExtensionFieldInfo(
-    51071,
+    1159,
     {oneof: 0},
-    proto.buf.validate.OneofConstraints,
+    proto.buf.validate.OneofRules,
      /** @type {?function((boolean|undefined),!jspb.Message=): !Object} */ (
-         proto.buf.validate.OneofConstraints.toObject),
+         proto.buf.validate.OneofRules.toObject),
     0);
 
-google_protobuf_descriptor_pb.OneofOptions.extensionsBinary[51071] = new jspb.ExtensionFieldBinaryInfo(
+google_protobuf_descriptor_pb.OneofOptions.extensionsBinary[1159] = new jspb.ExtensionFieldBinaryInfo(
     proto.buf.validate.oneof,
     jspb.BinaryReader.prototype.readMessage,
     jspb.BinaryWriter.prototype.writeMessage,
-    proto.buf.validate.OneofConstraints.serializeBinaryToWriter,
-    proto.buf.validate.OneofConstraints.deserializeBinaryFromReader,
+    proto.buf.validate.OneofRules.serializeBinaryToWriter,
+    proto.buf.validate.OneofRules.deserializeBinaryFromReader,
     false);
 // This registers the extension field with the extended class, so that
 // toObject() will function correctly.
-google_protobuf_descriptor_pb.OneofOptions.extensions[51071] = proto.buf.validate.oneof;
+google_protobuf_descriptor_pb.OneofOptions.extensions[1159] = proto.buf.validate.oneof;
 
 
 /**
  * A tuple of {field number, class constructor} for the extension
  * field named `field`.
- * @type {!jspb.ExtensionFieldInfo<!proto.buf.validate.FieldConstraints>}
+ * @type {!jspb.ExtensionFieldInfo<!proto.buf.validate.FieldRules>}
  */
 proto.buf.validate.field = new jspb.ExtensionFieldInfo(
-    51071,
+    1159,
     {field: 0},
-    proto.buf.validate.FieldConstraints,
+    proto.buf.validate.FieldRules,
      /** @type {?function((boolean|undefined),!jspb.Message=): !Object} */ (
-         proto.buf.validate.FieldConstraints.toObject),
+         proto.buf.validate.FieldRules.toObject),
     0);
 
-google_protobuf_descriptor_pb.FieldOptions.extensionsBinary[51071] = new jspb.ExtensionFieldBinaryInfo(
+google_protobuf_descriptor_pb.FieldOptions.extensionsBinary[1159] = new jspb.ExtensionFieldBinaryInfo(
     proto.buf.validate.field,
     jspb.BinaryReader.prototype.readMessage,
     jspb.BinaryWriter.prototype.writeMessage,
-    proto.buf.validate.FieldConstraints.serializeBinaryToWriter,
-    proto.buf.validate.FieldConstraints.deserializeBinaryFromReader,
+    proto.buf.validate.FieldRules.serializeBinaryToWriter,
+    proto.buf.validate.FieldRules.deserializeBinaryFromReader,
     false);
 // This registers the extension field with the extended class, so that
 // toObject() will function correctly.
-google_protobuf_descriptor_pb.FieldOptions.extensions[51071] = proto.buf.validate.field;
+google_protobuf_descriptor_pb.FieldOptions.extensions[1159] = proto.buf.validate.field;
+
+
+/**
+ * A tuple of {field number, class constructor} for the extension
+ * field named `predefined`.
+ * @type {!jspb.ExtensionFieldInfo<!proto.buf.validate.PredefinedRules>}
+ */
+proto.buf.validate.predefined = new jspb.ExtensionFieldInfo(
+    1160,
+    {predefined: 0},
+    proto.buf.validate.PredefinedRules,
+     /** @type {?function((boolean|undefined),!jspb.Message=): !Object} */ (
+         proto.buf.validate.PredefinedRules.toObject),
+    0);
+
+google_protobuf_descriptor_pb.FieldOptions.extensionsBinary[1160] = new jspb.ExtensionFieldBinaryInfo(
+    proto.buf.validate.predefined,
+    jspb.BinaryReader.prototype.readMessage,
+    jspb.BinaryWriter.prototype.writeMessage,
+    proto.buf.validate.PredefinedRules.serializeBinaryToWriter,
+    proto.buf.validate.PredefinedRules.deserializeBinaryFromReader,
+    false);
+// This registers the extension field with the extended class, so that
+// toObject() will function correctly.
+google_protobuf_descriptor_pb.FieldOptions.extensions[1160] = proto.buf.validate.predefined;
 
 goog.object.extend(exports, proto.buf.validate);

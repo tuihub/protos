@@ -2,76 +2,137 @@
 // file: buf/validate/validate.proto
 
 import * as jspb from "google-protobuf";
-import * as buf_validate_expression_pb from "../../buf/validate/expression_pb";
-import * as buf_validate_priv_private_pb from "../../buf/validate/priv/private_pb";
 import * as google_protobuf_descriptor_pb from "google-protobuf/google/protobuf/descriptor_pb";
 import * as google_protobuf_duration_pb from "google-protobuf/google/protobuf/duration_pb";
 import * as google_protobuf_timestamp_pb from "google-protobuf/google/protobuf/timestamp_pb";
 
-export class MessageConstraints extends jspb.Message {
-  hasDisabled(): boolean;
-  clearDisabled(): void;
-  getDisabled(): boolean;
-  setDisabled(value: boolean): void;
+export class Rule extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): string | undefined;
+  setId(value: string): void;
 
-  clearCelList(): void;
-  getCelList(): Array<buf_validate_expression_pb.Constraint>;
-  setCelList(value: Array<buf_validate_expression_pb.Constraint>): void;
-  addCel(value?: buf_validate_expression_pb.Constraint, index?: number): buf_validate_expression_pb.Constraint;
+  hasMessage(): boolean;
+  clearMessage(): void;
+  getMessage(): string | undefined;
+  setMessage(value: string): void;
+
+  hasExpression(): boolean;
+  clearExpression(): void;
+  getExpression(): string | undefined;
+  setExpression(value: string): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): MessageConstraints.AsObject;
-  static toObject(includeInstance: boolean, msg: MessageConstraints): MessageConstraints.AsObject;
+  toObject(includeInstance?: boolean): Rule.AsObject;
+  static toObject(includeInstance: boolean, msg: Rule): Rule.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: MessageConstraints, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): MessageConstraints;
-  static deserializeBinaryFromReader(message: MessageConstraints, reader: jspb.BinaryReader): MessageConstraints;
+  static serializeBinaryToWriter(message: Rule, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Rule;
+  static deserializeBinaryFromReader(message: Rule, reader: jspb.BinaryReader): Rule;
 }
 
-export namespace MessageConstraints {
+export namespace Rule {
   export type AsObject = {
-    disabled: boolean,
-    celList: Array<buf_validate_expression_pb.Constraint.AsObject>,
+    id?: string,
+    message?: string,
+    expression?: string,
   }
 }
 
-export class OneofConstraints extends jspb.Message {
+export class MessageRules extends jspb.Message {
+  clearCelList(): void;
+  getCelList(): Array<Rule>;
+  setCelList(value: Array<Rule>): void;
+  addCel(value?: Rule, index?: number): Rule;
+
+  clearOneofList(): void;
+  getOneofList(): Array<MessageOneofRule>;
+  setOneofList(value: Array<MessageOneofRule>): void;
+  addOneof(value?: MessageOneofRule, index?: number): MessageOneofRule;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): MessageRules.AsObject;
+  static toObject(includeInstance: boolean, msg: MessageRules): MessageRules.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: MessageRules, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MessageRules;
+  static deserializeBinaryFromReader(message: MessageRules, reader: jspb.BinaryReader): MessageRules;
+}
+
+export namespace MessageRules {
+  export type AsObject = {
+    celList: Array<Rule.AsObject>,
+    oneofList: Array<MessageOneofRule.AsObject>,
+  }
+}
+
+export class MessageOneofRule extends jspb.Message {
+  clearFieldsList(): void;
+  getFieldsList(): Array<string>;
+  setFieldsList(value: Array<string>): void;
+  addFields(value: string, index?: number): string;
+
   hasRequired(): boolean;
   clearRequired(): void;
-  getRequired(): boolean;
+  getRequired(): boolean | undefined;
   setRequired(value: boolean): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): OneofConstraints.AsObject;
-  static toObject(includeInstance: boolean, msg: OneofConstraints): OneofConstraints.AsObject;
+  toObject(includeInstance?: boolean): MessageOneofRule.AsObject;
+  static toObject(includeInstance: boolean, msg: MessageOneofRule): MessageOneofRule.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: OneofConstraints, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): OneofConstraints;
-  static deserializeBinaryFromReader(message: OneofConstraints, reader: jspb.BinaryReader): OneofConstraints;
+  static serializeBinaryToWriter(message: MessageOneofRule, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): MessageOneofRule;
+  static deserializeBinaryFromReader(message: MessageOneofRule, reader: jspb.BinaryReader): MessageOneofRule;
 }
 
-export namespace OneofConstraints {
+export namespace MessageOneofRule {
   export type AsObject = {
-    required: boolean,
+    fieldsList: Array<string>,
+    required?: boolean,
   }
 }
 
-export class FieldConstraints extends jspb.Message {
-  clearCelList(): void;
-  getCelList(): Array<buf_validate_expression_pb.Constraint>;
-  setCelList(value: Array<buf_validate_expression_pb.Constraint>): void;
-  addCel(value?: buf_validate_expression_pb.Constraint, index?: number): buf_validate_expression_pb.Constraint;
-
-  getSkipped(): boolean;
-  setSkipped(value: boolean): void;
-
-  getRequired(): boolean;
+export class OneofRules extends jspb.Message {
+  hasRequired(): boolean;
+  clearRequired(): void;
+  getRequired(): boolean | undefined;
   setRequired(value: boolean): void;
 
-  getIgnoreEmpty(): boolean;
-  setIgnoreEmpty(value: boolean): void;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OneofRules.AsObject;
+  static toObject(includeInstance: boolean, msg: OneofRules): OneofRules.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OneofRules, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OneofRules;
+  static deserializeBinaryFromReader(message: OneofRules, reader: jspb.BinaryReader): OneofRules;
+}
+
+export namespace OneofRules {
+  export type AsObject = {
+    required?: boolean,
+  }
+}
+
+export class FieldRules extends jspb.Message {
+  clearCelList(): void;
+  getCelList(): Array<Rule>;
+  setCelList(value: Array<Rule>): void;
+  addCel(value?: Rule, index?: number): Rule;
+
+  hasRequired(): boolean;
+  clearRequired(): void;
+  getRequired(): boolean | undefined;
+  setRequired(value: boolean): void;
+
+  hasIgnore(): boolean;
+  clearIgnore(): void;
+  getIgnore(): IgnoreMap[keyof IgnoreMap] | undefined;
+  setIgnore(value: IgnoreMap[keyof IgnoreMap]): void;
 
   hasFloat(): boolean;
   clearFloat(): void;
@@ -178,23 +239,22 @@ export class FieldConstraints extends jspb.Message {
   getTimestamp(): TimestampRules | undefined;
   setTimestamp(value?: TimestampRules): void;
 
-  getTypeCase(): FieldConstraints.TypeCase;
+  getTypeCase(): FieldRules.TypeCase;
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FieldConstraints.AsObject;
-  static toObject(includeInstance: boolean, msg: FieldConstraints): FieldConstraints.AsObject;
+  toObject(includeInstance?: boolean): FieldRules.AsObject;
+  static toObject(includeInstance: boolean, msg: FieldRules): FieldRules.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: FieldConstraints, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FieldConstraints;
-  static deserializeBinaryFromReader(message: FieldConstraints, reader: jspb.BinaryReader): FieldConstraints;
+  static serializeBinaryToWriter(message: FieldRules, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FieldRules;
+  static deserializeBinaryFromReader(message: FieldRules, reader: jspb.BinaryReader): FieldRules;
 }
 
-export namespace FieldConstraints {
+export namespace FieldRules {
   export type AsObject = {
-    celList: Array<buf_validate_expression_pb.Constraint.AsObject>,
-    skipped: boolean,
-    required: boolean,
-    ignoreEmpty: boolean,
+    celList: Array<Rule.AsObject>,
+    required?: boolean,
+    ignore?: IgnoreMap[keyof IgnoreMap],
     pb_float?: FloatRules.AsObject,
     pb_double?: DoubleRules.AsObject,
     int32?: Int32Rules.AsObject,
@@ -244,30 +304,52 @@ export namespace FieldConstraints {
   }
 }
 
+export class PredefinedRules extends jspb.Message {
+  clearCelList(): void;
+  getCelList(): Array<Rule>;
+  setCelList(value: Array<Rule>): void;
+  addCel(value?: Rule, index?: number): Rule;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PredefinedRules.AsObject;
+  static toObject(includeInstance: boolean, msg: PredefinedRules): PredefinedRules.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PredefinedRules, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PredefinedRules;
+  static deserializeBinaryFromReader(message: PredefinedRules, reader: jspb.BinaryReader): PredefinedRules;
+}
+
+export namespace PredefinedRules {
+  export type AsObject = {
+    celList: Array<Rule.AsObject>,
+  }
+}
+
 export class FloatRules extends jspb.Message {
   hasConst(): boolean;
   clearConst(): void;
-  getConst(): number;
+  getConst(): number | undefined;
   setConst(value: number): void;
 
   hasLt(): boolean;
   clearLt(): void;
-  getLt(): number;
+  getLt(): number | undefined;
   setLt(value: number): void;
 
   hasLte(): boolean;
   clearLte(): void;
-  getLte(): number;
+  getLte(): number | undefined;
   setLte(value: number): void;
 
   hasGt(): boolean;
   clearGt(): void;
-  getGt(): number;
+  getGt(): number | undefined;
   setGt(value: number): void;
 
   hasGte(): boolean;
   clearGte(): void;
-  getGte(): number;
+  getGte(): number | undefined;
   setGte(value: number): void;
 
   clearInList(): void;
@@ -280,6 +362,18 @@ export class FloatRules extends jspb.Message {
   setNotInList(value: Array<number>): void;
   addNotIn(value: number, index?: number): number;
 
+  hasFinite(): boolean;
+  clearFinite(): void;
+  getFinite(): boolean | undefined;
+  setFinite(value: boolean): void;
+
+  clearExampleList(): void;
+  getExampleList(): Array<number>;
+  setExampleList(value: Array<number>): void;
+  addExample(value: number, index?: number): number;
+
+  getLessThanCase(): FloatRules.LessThanCase;
+  getGreaterThanCase(): FloatRules.GreaterThanCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FloatRules.AsObject;
   static toObject(includeInstance: boolean, msg: FloatRules): FloatRules.AsObject;
@@ -292,40 +386,54 @@ export class FloatRules extends jspb.Message {
 
 export namespace FloatRules {
   export type AsObject = {
-    pb_const: number,
-    lt: number,
-    lte: number,
-    gt: number,
-    gte: number,
+    pb_const?: number,
+    lt?: number,
+    lte?: number,
+    gt?: number,
+    gte?: number,
     inList: Array<number>,
     notInList: Array<number>,
+    finite?: boolean,
+    exampleList: Array<number>,
+  }
+
+  export enum LessThanCase {
+    LESS_THAN_NOT_SET = 0,
+    LT = 2,
+    LTE = 3,
+  }
+
+  export enum GreaterThanCase {
+    GREATER_THAN_NOT_SET = 0,
+    GT = 4,
+    GTE = 5,
   }
 }
 
 export class DoubleRules extends jspb.Message {
   hasConst(): boolean;
   clearConst(): void;
-  getConst(): number;
+  getConst(): number | undefined;
   setConst(value: number): void;
 
   hasLt(): boolean;
   clearLt(): void;
-  getLt(): number;
+  getLt(): number | undefined;
   setLt(value: number): void;
 
   hasLte(): boolean;
   clearLte(): void;
-  getLte(): number;
+  getLte(): number | undefined;
   setLte(value: number): void;
 
   hasGt(): boolean;
   clearGt(): void;
-  getGt(): number;
+  getGt(): number | undefined;
   setGt(value: number): void;
 
   hasGte(): boolean;
   clearGte(): void;
-  getGte(): number;
+  getGte(): number | undefined;
   setGte(value: number): void;
 
   clearInList(): void;
@@ -338,6 +446,18 @@ export class DoubleRules extends jspb.Message {
   setNotInList(value: Array<number>): void;
   addNotIn(value: number, index?: number): number;
 
+  hasFinite(): boolean;
+  clearFinite(): void;
+  getFinite(): boolean | undefined;
+  setFinite(value: boolean): void;
+
+  clearExampleList(): void;
+  getExampleList(): Array<number>;
+  setExampleList(value: Array<number>): void;
+  addExample(value: number, index?: number): number;
+
+  getLessThanCase(): DoubleRules.LessThanCase;
+  getGreaterThanCase(): DoubleRules.GreaterThanCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DoubleRules.AsObject;
   static toObject(includeInstance: boolean, msg: DoubleRules): DoubleRules.AsObject;
@@ -350,40 +470,54 @@ export class DoubleRules extends jspb.Message {
 
 export namespace DoubleRules {
   export type AsObject = {
-    pb_const: number,
-    lt: number,
-    lte: number,
-    gt: number,
-    gte: number,
+    pb_const?: number,
+    lt?: number,
+    lte?: number,
+    gt?: number,
+    gte?: number,
     inList: Array<number>,
     notInList: Array<number>,
+    finite?: boolean,
+    exampleList: Array<number>,
+  }
+
+  export enum LessThanCase {
+    LESS_THAN_NOT_SET = 0,
+    LT = 2,
+    LTE = 3,
+  }
+
+  export enum GreaterThanCase {
+    GREATER_THAN_NOT_SET = 0,
+    GT = 4,
+    GTE = 5,
   }
 }
 
 export class Int32Rules extends jspb.Message {
   hasConst(): boolean;
   clearConst(): void;
-  getConst(): number;
+  getConst(): number | undefined;
   setConst(value: number): void;
 
   hasLt(): boolean;
   clearLt(): void;
-  getLt(): number;
+  getLt(): number | undefined;
   setLt(value: number): void;
 
   hasLte(): boolean;
   clearLte(): void;
-  getLte(): number;
+  getLte(): number | undefined;
   setLte(value: number): void;
 
   hasGt(): boolean;
   clearGt(): void;
-  getGt(): number;
+  getGt(): number | undefined;
   setGt(value: number): void;
 
   hasGte(): boolean;
   clearGte(): void;
-  getGte(): number;
+  getGte(): number | undefined;
   setGte(value: number): void;
 
   clearInList(): void;
@@ -396,6 +530,13 @@ export class Int32Rules extends jspb.Message {
   setNotInList(value: Array<number>): void;
   addNotIn(value: number, index?: number): number;
 
+  clearExampleList(): void;
+  getExampleList(): Array<number>;
+  setExampleList(value: Array<number>): void;
+  addExample(value: number, index?: number): number;
+
+  getLessThanCase(): Int32Rules.LessThanCase;
+  getGreaterThanCase(): Int32Rules.GreaterThanCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Int32Rules.AsObject;
   static toObject(includeInstance: boolean, msg: Int32Rules): Int32Rules.AsObject;
@@ -408,40 +549,53 @@ export class Int32Rules extends jspb.Message {
 
 export namespace Int32Rules {
   export type AsObject = {
-    pb_const: number,
-    lt: number,
-    lte: number,
-    gt: number,
-    gte: number,
+    pb_const?: number,
+    lt?: number,
+    lte?: number,
+    gt?: number,
+    gte?: number,
     inList: Array<number>,
     notInList: Array<number>,
+    exampleList: Array<number>,
+  }
+
+  export enum LessThanCase {
+    LESS_THAN_NOT_SET = 0,
+    LT = 2,
+    LTE = 3,
+  }
+
+  export enum GreaterThanCase {
+    GREATER_THAN_NOT_SET = 0,
+    GT = 4,
+    GTE = 5,
   }
 }
 
 export class Int64Rules extends jspb.Message {
   hasConst(): boolean;
   clearConst(): void;
-  getConst(): number;
+  getConst(): number | undefined;
   setConst(value: number): void;
 
   hasLt(): boolean;
   clearLt(): void;
-  getLt(): number;
+  getLt(): number | undefined;
   setLt(value: number): void;
 
   hasLte(): boolean;
   clearLte(): void;
-  getLte(): number;
+  getLte(): number | undefined;
   setLte(value: number): void;
 
   hasGt(): boolean;
   clearGt(): void;
-  getGt(): number;
+  getGt(): number | undefined;
   setGt(value: number): void;
 
   hasGte(): boolean;
   clearGte(): void;
-  getGte(): number;
+  getGte(): number | undefined;
   setGte(value: number): void;
 
   clearInList(): void;
@@ -454,6 +608,13 @@ export class Int64Rules extends jspb.Message {
   setNotInList(value: Array<number>): void;
   addNotIn(value: number, index?: number): number;
 
+  clearExampleList(): void;
+  getExampleList(): Array<number>;
+  setExampleList(value: Array<number>): void;
+  addExample(value: number, index?: number): number;
+
+  getLessThanCase(): Int64Rules.LessThanCase;
+  getGreaterThanCase(): Int64Rules.GreaterThanCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Int64Rules.AsObject;
   static toObject(includeInstance: boolean, msg: Int64Rules): Int64Rules.AsObject;
@@ -466,40 +627,53 @@ export class Int64Rules extends jspb.Message {
 
 export namespace Int64Rules {
   export type AsObject = {
-    pb_const: number,
-    lt: number,
-    lte: number,
-    gt: number,
-    gte: number,
+    pb_const?: number,
+    lt?: number,
+    lte?: number,
+    gt?: number,
+    gte?: number,
     inList: Array<number>,
     notInList: Array<number>,
+    exampleList: Array<number>,
+  }
+
+  export enum LessThanCase {
+    LESS_THAN_NOT_SET = 0,
+    LT = 2,
+    LTE = 3,
+  }
+
+  export enum GreaterThanCase {
+    GREATER_THAN_NOT_SET = 0,
+    GT = 4,
+    GTE = 5,
   }
 }
 
 export class UInt32Rules extends jspb.Message {
   hasConst(): boolean;
   clearConst(): void;
-  getConst(): number;
+  getConst(): number | undefined;
   setConst(value: number): void;
 
   hasLt(): boolean;
   clearLt(): void;
-  getLt(): number;
+  getLt(): number | undefined;
   setLt(value: number): void;
 
   hasLte(): boolean;
   clearLte(): void;
-  getLte(): number;
+  getLte(): number | undefined;
   setLte(value: number): void;
 
   hasGt(): boolean;
   clearGt(): void;
-  getGt(): number;
+  getGt(): number | undefined;
   setGt(value: number): void;
 
   hasGte(): boolean;
   clearGte(): void;
-  getGte(): number;
+  getGte(): number | undefined;
   setGte(value: number): void;
 
   clearInList(): void;
@@ -512,6 +686,13 @@ export class UInt32Rules extends jspb.Message {
   setNotInList(value: Array<number>): void;
   addNotIn(value: number, index?: number): number;
 
+  clearExampleList(): void;
+  getExampleList(): Array<number>;
+  setExampleList(value: Array<number>): void;
+  addExample(value: number, index?: number): number;
+
+  getLessThanCase(): UInt32Rules.LessThanCase;
+  getGreaterThanCase(): UInt32Rules.GreaterThanCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UInt32Rules.AsObject;
   static toObject(includeInstance: boolean, msg: UInt32Rules): UInt32Rules.AsObject;
@@ -524,40 +705,53 @@ export class UInt32Rules extends jspb.Message {
 
 export namespace UInt32Rules {
   export type AsObject = {
-    pb_const: number,
-    lt: number,
-    lte: number,
-    gt: number,
-    gte: number,
+    pb_const?: number,
+    lt?: number,
+    lte?: number,
+    gt?: number,
+    gte?: number,
     inList: Array<number>,
     notInList: Array<number>,
+    exampleList: Array<number>,
+  }
+
+  export enum LessThanCase {
+    LESS_THAN_NOT_SET = 0,
+    LT = 2,
+    LTE = 3,
+  }
+
+  export enum GreaterThanCase {
+    GREATER_THAN_NOT_SET = 0,
+    GT = 4,
+    GTE = 5,
   }
 }
 
 export class UInt64Rules extends jspb.Message {
   hasConst(): boolean;
   clearConst(): void;
-  getConst(): number;
+  getConst(): number | undefined;
   setConst(value: number): void;
 
   hasLt(): boolean;
   clearLt(): void;
-  getLt(): number;
+  getLt(): number | undefined;
   setLt(value: number): void;
 
   hasLte(): boolean;
   clearLte(): void;
-  getLte(): number;
+  getLte(): number | undefined;
   setLte(value: number): void;
 
   hasGt(): boolean;
   clearGt(): void;
-  getGt(): number;
+  getGt(): number | undefined;
   setGt(value: number): void;
 
   hasGte(): boolean;
   clearGte(): void;
-  getGte(): number;
+  getGte(): number | undefined;
   setGte(value: number): void;
 
   clearInList(): void;
@@ -570,6 +764,13 @@ export class UInt64Rules extends jspb.Message {
   setNotInList(value: Array<number>): void;
   addNotIn(value: number, index?: number): number;
 
+  clearExampleList(): void;
+  getExampleList(): Array<number>;
+  setExampleList(value: Array<number>): void;
+  addExample(value: number, index?: number): number;
+
+  getLessThanCase(): UInt64Rules.LessThanCase;
+  getGreaterThanCase(): UInt64Rules.GreaterThanCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UInt64Rules.AsObject;
   static toObject(includeInstance: boolean, msg: UInt64Rules): UInt64Rules.AsObject;
@@ -582,40 +783,53 @@ export class UInt64Rules extends jspb.Message {
 
 export namespace UInt64Rules {
   export type AsObject = {
-    pb_const: number,
-    lt: number,
-    lte: number,
-    gt: number,
-    gte: number,
+    pb_const?: number,
+    lt?: number,
+    lte?: number,
+    gt?: number,
+    gte?: number,
     inList: Array<number>,
     notInList: Array<number>,
+    exampleList: Array<number>,
+  }
+
+  export enum LessThanCase {
+    LESS_THAN_NOT_SET = 0,
+    LT = 2,
+    LTE = 3,
+  }
+
+  export enum GreaterThanCase {
+    GREATER_THAN_NOT_SET = 0,
+    GT = 4,
+    GTE = 5,
   }
 }
 
 export class SInt32Rules extends jspb.Message {
   hasConst(): boolean;
   clearConst(): void;
-  getConst(): number;
+  getConst(): number | undefined;
   setConst(value: number): void;
 
   hasLt(): boolean;
   clearLt(): void;
-  getLt(): number;
+  getLt(): number | undefined;
   setLt(value: number): void;
 
   hasLte(): boolean;
   clearLte(): void;
-  getLte(): number;
+  getLte(): number | undefined;
   setLte(value: number): void;
 
   hasGt(): boolean;
   clearGt(): void;
-  getGt(): number;
+  getGt(): number | undefined;
   setGt(value: number): void;
 
   hasGte(): boolean;
   clearGte(): void;
-  getGte(): number;
+  getGte(): number | undefined;
   setGte(value: number): void;
 
   clearInList(): void;
@@ -628,6 +842,13 @@ export class SInt32Rules extends jspb.Message {
   setNotInList(value: Array<number>): void;
   addNotIn(value: number, index?: number): number;
 
+  clearExampleList(): void;
+  getExampleList(): Array<number>;
+  setExampleList(value: Array<number>): void;
+  addExample(value: number, index?: number): number;
+
+  getLessThanCase(): SInt32Rules.LessThanCase;
+  getGreaterThanCase(): SInt32Rules.GreaterThanCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SInt32Rules.AsObject;
   static toObject(includeInstance: boolean, msg: SInt32Rules): SInt32Rules.AsObject;
@@ -640,40 +861,53 @@ export class SInt32Rules extends jspb.Message {
 
 export namespace SInt32Rules {
   export type AsObject = {
-    pb_const: number,
-    lt: number,
-    lte: number,
-    gt: number,
-    gte: number,
+    pb_const?: number,
+    lt?: number,
+    lte?: number,
+    gt?: number,
+    gte?: number,
     inList: Array<number>,
     notInList: Array<number>,
+    exampleList: Array<number>,
+  }
+
+  export enum LessThanCase {
+    LESS_THAN_NOT_SET = 0,
+    LT = 2,
+    LTE = 3,
+  }
+
+  export enum GreaterThanCase {
+    GREATER_THAN_NOT_SET = 0,
+    GT = 4,
+    GTE = 5,
   }
 }
 
 export class SInt64Rules extends jspb.Message {
   hasConst(): boolean;
   clearConst(): void;
-  getConst(): number;
+  getConst(): number | undefined;
   setConst(value: number): void;
 
   hasLt(): boolean;
   clearLt(): void;
-  getLt(): number;
+  getLt(): number | undefined;
   setLt(value: number): void;
 
   hasLte(): boolean;
   clearLte(): void;
-  getLte(): number;
+  getLte(): number | undefined;
   setLte(value: number): void;
 
   hasGt(): boolean;
   clearGt(): void;
-  getGt(): number;
+  getGt(): number | undefined;
   setGt(value: number): void;
 
   hasGte(): boolean;
   clearGte(): void;
-  getGte(): number;
+  getGte(): number | undefined;
   setGte(value: number): void;
 
   clearInList(): void;
@@ -686,6 +920,13 @@ export class SInt64Rules extends jspb.Message {
   setNotInList(value: Array<number>): void;
   addNotIn(value: number, index?: number): number;
 
+  clearExampleList(): void;
+  getExampleList(): Array<number>;
+  setExampleList(value: Array<number>): void;
+  addExample(value: number, index?: number): number;
+
+  getLessThanCase(): SInt64Rules.LessThanCase;
+  getGreaterThanCase(): SInt64Rules.GreaterThanCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SInt64Rules.AsObject;
   static toObject(includeInstance: boolean, msg: SInt64Rules): SInt64Rules.AsObject;
@@ -698,40 +939,53 @@ export class SInt64Rules extends jspb.Message {
 
 export namespace SInt64Rules {
   export type AsObject = {
-    pb_const: number,
-    lt: number,
-    lte: number,
-    gt: number,
-    gte: number,
+    pb_const?: number,
+    lt?: number,
+    lte?: number,
+    gt?: number,
+    gte?: number,
     inList: Array<number>,
     notInList: Array<number>,
+    exampleList: Array<number>,
+  }
+
+  export enum LessThanCase {
+    LESS_THAN_NOT_SET = 0,
+    LT = 2,
+    LTE = 3,
+  }
+
+  export enum GreaterThanCase {
+    GREATER_THAN_NOT_SET = 0,
+    GT = 4,
+    GTE = 5,
   }
 }
 
 export class Fixed32Rules extends jspb.Message {
   hasConst(): boolean;
   clearConst(): void;
-  getConst(): number;
+  getConst(): number | undefined;
   setConst(value: number): void;
 
   hasLt(): boolean;
   clearLt(): void;
-  getLt(): number;
+  getLt(): number | undefined;
   setLt(value: number): void;
 
   hasLte(): boolean;
   clearLte(): void;
-  getLte(): number;
+  getLte(): number | undefined;
   setLte(value: number): void;
 
   hasGt(): boolean;
   clearGt(): void;
-  getGt(): number;
+  getGt(): number | undefined;
   setGt(value: number): void;
 
   hasGte(): boolean;
   clearGte(): void;
-  getGte(): number;
+  getGte(): number | undefined;
   setGte(value: number): void;
 
   clearInList(): void;
@@ -744,6 +998,13 @@ export class Fixed32Rules extends jspb.Message {
   setNotInList(value: Array<number>): void;
   addNotIn(value: number, index?: number): number;
 
+  clearExampleList(): void;
+  getExampleList(): Array<number>;
+  setExampleList(value: Array<number>): void;
+  addExample(value: number, index?: number): number;
+
+  getLessThanCase(): Fixed32Rules.LessThanCase;
+  getGreaterThanCase(): Fixed32Rules.GreaterThanCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Fixed32Rules.AsObject;
   static toObject(includeInstance: boolean, msg: Fixed32Rules): Fixed32Rules.AsObject;
@@ -756,40 +1017,53 @@ export class Fixed32Rules extends jspb.Message {
 
 export namespace Fixed32Rules {
   export type AsObject = {
-    pb_const: number,
-    lt: number,
-    lte: number,
-    gt: number,
-    gte: number,
+    pb_const?: number,
+    lt?: number,
+    lte?: number,
+    gt?: number,
+    gte?: number,
     inList: Array<number>,
     notInList: Array<number>,
+    exampleList: Array<number>,
+  }
+
+  export enum LessThanCase {
+    LESS_THAN_NOT_SET = 0,
+    LT = 2,
+    LTE = 3,
+  }
+
+  export enum GreaterThanCase {
+    GREATER_THAN_NOT_SET = 0,
+    GT = 4,
+    GTE = 5,
   }
 }
 
 export class Fixed64Rules extends jspb.Message {
   hasConst(): boolean;
   clearConst(): void;
-  getConst(): number;
+  getConst(): number | undefined;
   setConst(value: number): void;
 
   hasLt(): boolean;
   clearLt(): void;
-  getLt(): number;
+  getLt(): number | undefined;
   setLt(value: number): void;
 
   hasLte(): boolean;
   clearLte(): void;
-  getLte(): number;
+  getLte(): number | undefined;
   setLte(value: number): void;
 
   hasGt(): boolean;
   clearGt(): void;
-  getGt(): number;
+  getGt(): number | undefined;
   setGt(value: number): void;
 
   hasGte(): boolean;
   clearGte(): void;
-  getGte(): number;
+  getGte(): number | undefined;
   setGte(value: number): void;
 
   clearInList(): void;
@@ -802,6 +1076,13 @@ export class Fixed64Rules extends jspb.Message {
   setNotInList(value: Array<number>): void;
   addNotIn(value: number, index?: number): number;
 
+  clearExampleList(): void;
+  getExampleList(): Array<number>;
+  setExampleList(value: Array<number>): void;
+  addExample(value: number, index?: number): number;
+
+  getLessThanCase(): Fixed64Rules.LessThanCase;
+  getGreaterThanCase(): Fixed64Rules.GreaterThanCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Fixed64Rules.AsObject;
   static toObject(includeInstance: boolean, msg: Fixed64Rules): Fixed64Rules.AsObject;
@@ -814,40 +1095,53 @@ export class Fixed64Rules extends jspb.Message {
 
 export namespace Fixed64Rules {
   export type AsObject = {
-    pb_const: number,
-    lt: number,
-    lte: number,
-    gt: number,
-    gte: number,
+    pb_const?: number,
+    lt?: number,
+    lte?: number,
+    gt?: number,
+    gte?: number,
     inList: Array<number>,
     notInList: Array<number>,
+    exampleList: Array<number>,
+  }
+
+  export enum LessThanCase {
+    LESS_THAN_NOT_SET = 0,
+    LT = 2,
+    LTE = 3,
+  }
+
+  export enum GreaterThanCase {
+    GREATER_THAN_NOT_SET = 0,
+    GT = 4,
+    GTE = 5,
   }
 }
 
 export class SFixed32Rules extends jspb.Message {
   hasConst(): boolean;
   clearConst(): void;
-  getConst(): number;
+  getConst(): number | undefined;
   setConst(value: number): void;
 
   hasLt(): boolean;
   clearLt(): void;
-  getLt(): number;
+  getLt(): number | undefined;
   setLt(value: number): void;
 
   hasLte(): boolean;
   clearLte(): void;
-  getLte(): number;
+  getLte(): number | undefined;
   setLte(value: number): void;
 
   hasGt(): boolean;
   clearGt(): void;
-  getGt(): number;
+  getGt(): number | undefined;
   setGt(value: number): void;
 
   hasGte(): boolean;
   clearGte(): void;
-  getGte(): number;
+  getGte(): number | undefined;
   setGte(value: number): void;
 
   clearInList(): void;
@@ -860,6 +1154,13 @@ export class SFixed32Rules extends jspb.Message {
   setNotInList(value: Array<number>): void;
   addNotIn(value: number, index?: number): number;
 
+  clearExampleList(): void;
+  getExampleList(): Array<number>;
+  setExampleList(value: Array<number>): void;
+  addExample(value: number, index?: number): number;
+
+  getLessThanCase(): SFixed32Rules.LessThanCase;
+  getGreaterThanCase(): SFixed32Rules.GreaterThanCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SFixed32Rules.AsObject;
   static toObject(includeInstance: boolean, msg: SFixed32Rules): SFixed32Rules.AsObject;
@@ -872,40 +1173,53 @@ export class SFixed32Rules extends jspb.Message {
 
 export namespace SFixed32Rules {
   export type AsObject = {
-    pb_const: number,
-    lt: number,
-    lte: number,
-    gt: number,
-    gte: number,
+    pb_const?: number,
+    lt?: number,
+    lte?: number,
+    gt?: number,
+    gte?: number,
     inList: Array<number>,
     notInList: Array<number>,
+    exampleList: Array<number>,
+  }
+
+  export enum LessThanCase {
+    LESS_THAN_NOT_SET = 0,
+    LT = 2,
+    LTE = 3,
+  }
+
+  export enum GreaterThanCase {
+    GREATER_THAN_NOT_SET = 0,
+    GT = 4,
+    GTE = 5,
   }
 }
 
 export class SFixed64Rules extends jspb.Message {
   hasConst(): boolean;
   clearConst(): void;
-  getConst(): number;
+  getConst(): number | undefined;
   setConst(value: number): void;
 
   hasLt(): boolean;
   clearLt(): void;
-  getLt(): number;
+  getLt(): number | undefined;
   setLt(value: number): void;
 
   hasLte(): boolean;
   clearLte(): void;
-  getLte(): number;
+  getLte(): number | undefined;
   setLte(value: number): void;
 
   hasGt(): boolean;
   clearGt(): void;
-  getGt(): number;
+  getGt(): number | undefined;
   setGt(value: number): void;
 
   hasGte(): boolean;
   clearGte(): void;
-  getGte(): number;
+  getGte(): number | undefined;
   setGte(value: number): void;
 
   clearInList(): void;
@@ -918,6 +1232,13 @@ export class SFixed64Rules extends jspb.Message {
   setNotInList(value: Array<number>): void;
   addNotIn(value: number, index?: number): number;
 
+  clearExampleList(): void;
+  getExampleList(): Array<number>;
+  setExampleList(value: Array<number>): void;
+  addExample(value: number, index?: number): number;
+
+  getLessThanCase(): SFixed64Rules.LessThanCase;
+  getGreaterThanCase(): SFixed64Rules.GreaterThanCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SFixed64Rules.AsObject;
   static toObject(includeInstance: boolean, msg: SFixed64Rules): SFixed64Rules.AsObject;
@@ -930,21 +1251,39 @@ export class SFixed64Rules extends jspb.Message {
 
 export namespace SFixed64Rules {
   export type AsObject = {
-    pb_const: number,
-    lt: number,
-    lte: number,
-    gt: number,
-    gte: number,
+    pb_const?: number,
+    lt?: number,
+    lte?: number,
+    gt?: number,
+    gte?: number,
     inList: Array<number>,
     notInList: Array<number>,
+    exampleList: Array<number>,
+  }
+
+  export enum LessThanCase {
+    LESS_THAN_NOT_SET = 0,
+    LT = 2,
+    LTE = 3,
+  }
+
+  export enum GreaterThanCase {
+    GREATER_THAN_NOT_SET = 0,
+    GT = 4,
+    GTE = 5,
   }
 }
 
 export class BoolRules extends jspb.Message {
   hasConst(): boolean;
   clearConst(): void;
-  getConst(): boolean;
+  getConst(): boolean | undefined;
   setConst(value: boolean): void;
+
+  clearExampleList(): void;
+  getExampleList(): Array<boolean>;
+  setExampleList(value: Array<boolean>): void;
+  addExample(value: boolean, index?: number): boolean;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): BoolRules.AsObject;
@@ -958,69 +1297,70 @@ export class BoolRules extends jspb.Message {
 
 export namespace BoolRules {
   export type AsObject = {
-    pb_const: boolean,
+    pb_const?: boolean,
+    exampleList: Array<boolean>,
   }
 }
 
 export class StringRules extends jspb.Message {
   hasConst(): boolean;
   clearConst(): void;
-  getConst(): string;
+  getConst(): string | undefined;
   setConst(value: string): void;
 
   hasLen(): boolean;
   clearLen(): void;
-  getLen(): number;
+  getLen(): number | undefined;
   setLen(value: number): void;
 
   hasMinLen(): boolean;
   clearMinLen(): void;
-  getMinLen(): number;
+  getMinLen(): number | undefined;
   setMinLen(value: number): void;
 
   hasMaxLen(): boolean;
   clearMaxLen(): void;
-  getMaxLen(): number;
+  getMaxLen(): number | undefined;
   setMaxLen(value: number): void;
 
   hasLenBytes(): boolean;
   clearLenBytes(): void;
-  getLenBytes(): number;
+  getLenBytes(): number | undefined;
   setLenBytes(value: number): void;
 
   hasMinBytes(): boolean;
   clearMinBytes(): void;
-  getMinBytes(): number;
+  getMinBytes(): number | undefined;
   setMinBytes(value: number): void;
 
   hasMaxBytes(): boolean;
   clearMaxBytes(): void;
-  getMaxBytes(): number;
+  getMaxBytes(): number | undefined;
   setMaxBytes(value: number): void;
 
   hasPattern(): boolean;
   clearPattern(): void;
-  getPattern(): string;
+  getPattern(): string | undefined;
   setPattern(value: string): void;
 
   hasPrefix(): boolean;
   clearPrefix(): void;
-  getPrefix(): string;
+  getPrefix(): string | undefined;
   setPrefix(value: string): void;
 
   hasSuffix(): boolean;
   clearSuffix(): void;
-  getSuffix(): string;
+  getSuffix(): string | undefined;
   setSuffix(value: string): void;
 
   hasContains(): boolean;
   clearContains(): void;
-  getContains(): string;
+  getContains(): string | undefined;
   setContains(value: string): void;
 
   hasNotContains(): boolean;
   clearNotContains(): void;
-  getNotContains(): string;
+  getNotContains(): string | undefined;
   setNotContains(value: string): void;
 
   clearInList(): void;
@@ -1035,58 +1375,103 @@ export class StringRules extends jspb.Message {
 
   hasEmail(): boolean;
   clearEmail(): void;
-  getEmail(): boolean;
+  getEmail(): boolean | undefined;
   setEmail(value: boolean): void;
 
   hasHostname(): boolean;
   clearHostname(): void;
-  getHostname(): boolean;
+  getHostname(): boolean | undefined;
   setHostname(value: boolean): void;
 
   hasIp(): boolean;
   clearIp(): void;
-  getIp(): boolean;
+  getIp(): boolean | undefined;
   setIp(value: boolean): void;
 
   hasIpv4(): boolean;
   clearIpv4(): void;
-  getIpv4(): boolean;
+  getIpv4(): boolean | undefined;
   setIpv4(value: boolean): void;
 
   hasIpv6(): boolean;
   clearIpv6(): void;
-  getIpv6(): boolean;
+  getIpv6(): boolean | undefined;
   setIpv6(value: boolean): void;
 
   hasUri(): boolean;
   clearUri(): void;
-  getUri(): boolean;
+  getUri(): boolean | undefined;
   setUri(value: boolean): void;
 
   hasUriRef(): boolean;
   clearUriRef(): void;
-  getUriRef(): boolean;
+  getUriRef(): boolean | undefined;
   setUriRef(value: boolean): void;
 
   hasAddress(): boolean;
   clearAddress(): void;
-  getAddress(): boolean;
+  getAddress(): boolean | undefined;
   setAddress(value: boolean): void;
 
   hasUuid(): boolean;
   clearUuid(): void;
-  getUuid(): boolean;
+  getUuid(): boolean | undefined;
   setUuid(value: boolean): void;
+
+  hasTuuid(): boolean;
+  clearTuuid(): void;
+  getTuuid(): boolean | undefined;
+  setTuuid(value: boolean): void;
+
+  hasIpWithPrefixlen(): boolean;
+  clearIpWithPrefixlen(): void;
+  getIpWithPrefixlen(): boolean | undefined;
+  setIpWithPrefixlen(value: boolean): void;
+
+  hasIpv4WithPrefixlen(): boolean;
+  clearIpv4WithPrefixlen(): void;
+  getIpv4WithPrefixlen(): boolean | undefined;
+  setIpv4WithPrefixlen(value: boolean): void;
+
+  hasIpv6WithPrefixlen(): boolean;
+  clearIpv6WithPrefixlen(): void;
+  getIpv6WithPrefixlen(): boolean | undefined;
+  setIpv6WithPrefixlen(value: boolean): void;
+
+  hasIpPrefix(): boolean;
+  clearIpPrefix(): void;
+  getIpPrefix(): boolean | undefined;
+  setIpPrefix(value: boolean): void;
+
+  hasIpv4Prefix(): boolean;
+  clearIpv4Prefix(): void;
+  getIpv4Prefix(): boolean | undefined;
+  setIpv4Prefix(value: boolean): void;
+
+  hasIpv6Prefix(): boolean;
+  clearIpv6Prefix(): void;
+  getIpv6Prefix(): boolean | undefined;
+  setIpv6Prefix(value: boolean): void;
+
+  hasHostAndPort(): boolean;
+  clearHostAndPort(): void;
+  getHostAndPort(): boolean | undefined;
+  setHostAndPort(value: boolean): void;
 
   hasWellKnownRegex(): boolean;
   clearWellKnownRegex(): void;
-  getWellKnownRegex(): KnownRegexMap[keyof KnownRegexMap];
+  getWellKnownRegex(): KnownRegexMap[keyof KnownRegexMap] | undefined;
   setWellKnownRegex(value: KnownRegexMap[keyof KnownRegexMap]): void;
 
   hasStrict(): boolean;
   clearStrict(): void;
-  getStrict(): boolean;
+  getStrict(): boolean | undefined;
   setStrict(value: boolean): void;
+
+  clearExampleList(): void;
+  getExampleList(): Array<string>;
+  setExampleList(value: Array<string>): void;
+  addExample(value: string, index?: number): string;
 
   getWellKnownCase(): StringRules.WellKnownCase;
   serializeBinary(): Uint8Array;
@@ -1101,31 +1486,40 @@ export class StringRules extends jspb.Message {
 
 export namespace StringRules {
   export type AsObject = {
-    pb_const: string,
-    len: number,
-    minLen: number,
-    maxLen: number,
-    lenBytes: number,
-    minBytes: number,
-    maxBytes: number,
-    pattern: string,
-    prefix: string,
-    suffix: string,
-    contains: string,
-    notContains: string,
+    pb_const?: string,
+    len?: number,
+    minLen?: number,
+    maxLen?: number,
+    lenBytes?: number,
+    minBytes?: number,
+    maxBytes?: number,
+    pattern?: string,
+    prefix?: string,
+    suffix?: string,
+    contains?: string,
+    notContains?: string,
     inList: Array<string>,
     notInList: Array<string>,
-    email: boolean,
-    hostname: boolean,
-    ip: boolean,
-    ipv4: boolean,
-    ipv6: boolean,
-    uri: boolean,
-    uriRef: boolean,
-    address: boolean,
-    uuid: boolean,
-    wellKnownRegex: KnownRegexMap[keyof KnownRegexMap],
-    strict: boolean,
+    email?: boolean,
+    hostname?: boolean,
+    ip?: boolean,
+    ipv4?: boolean,
+    ipv6?: boolean,
+    uri?: boolean,
+    uriRef?: boolean,
+    address?: boolean,
+    uuid?: boolean,
+    tuuid?: boolean,
+    ipWithPrefixlen?: boolean,
+    ipv4WithPrefixlen?: boolean,
+    ipv6WithPrefixlen?: boolean,
+    ipPrefix?: boolean,
+    ipv4Prefix?: boolean,
+    ipv6Prefix?: boolean,
+    hostAndPort?: boolean,
+    wellKnownRegex?: KnownRegexMap[keyof KnownRegexMap],
+    strict?: boolean,
+    exampleList: Array<string>,
   }
 
   export enum WellKnownCase {
@@ -1139,6 +1533,14 @@ export namespace StringRules {
     URI_REF = 18,
     ADDRESS = 21,
     UUID = 22,
+    TUUID = 33,
+    IP_WITH_PREFIXLEN = 26,
+    IPV4_WITH_PREFIXLEN = 27,
+    IPV6_WITH_PREFIXLEN = 28,
+    IP_PREFIX = 29,
+    IPV4_PREFIX = 30,
+    IPV6_PREFIX = 31,
+    HOST_AND_PORT = 32,
     WELL_KNOWN_REGEX = 24,
   }
 }
@@ -1153,22 +1555,22 @@ export class BytesRules extends jspb.Message {
 
   hasLen(): boolean;
   clearLen(): void;
-  getLen(): number;
+  getLen(): number | undefined;
   setLen(value: number): void;
 
   hasMinLen(): boolean;
   clearMinLen(): void;
-  getMinLen(): number;
+  getMinLen(): number | undefined;
   setMinLen(value: number): void;
 
   hasMaxLen(): boolean;
   clearMaxLen(): void;
-  getMaxLen(): number;
+  getMaxLen(): number | undefined;
   setMaxLen(value: number): void;
 
   hasPattern(): boolean;
   clearPattern(): void;
-  getPattern(): string;
+  getPattern(): string | undefined;
   setPattern(value: string): void;
 
   hasPrefix(): boolean;
@@ -1208,18 +1610,25 @@ export class BytesRules extends jspb.Message {
 
   hasIp(): boolean;
   clearIp(): void;
-  getIp(): boolean;
+  getIp(): boolean | undefined;
   setIp(value: boolean): void;
 
   hasIpv4(): boolean;
   clearIpv4(): void;
-  getIpv4(): boolean;
+  getIpv4(): boolean | undefined;
   setIpv4(value: boolean): void;
 
   hasIpv6(): boolean;
   clearIpv6(): void;
-  getIpv6(): boolean;
+  getIpv6(): boolean | undefined;
   setIpv6(value: boolean): void;
+
+  clearExampleList(): void;
+  getExampleList(): Array<Uint8Array | string>;
+  getExampleList_asU8(): Array<Uint8Array>;
+  getExampleList_asB64(): Array<string>;
+  setExampleList(value: Array<Uint8Array | string>): void;
+  addExample(value: Uint8Array | string, index?: number): Uint8Array | string;
 
   getWellKnownCase(): BytesRules.WellKnownCase;
   serializeBinary(): Uint8Array;
@@ -1235,18 +1644,19 @@ export class BytesRules extends jspb.Message {
 export namespace BytesRules {
   export type AsObject = {
     const: Uint8Array | string,
-    len: number,
-    minLen: number,
-    maxLen: number,
-    pattern: string,
+    len?: number,
+    minLen?: number,
+    maxLen?: number,
+    pattern?: string,
     prefix: Uint8Array | string,
     suffix: Uint8Array | string,
     contains: Uint8Array | string,
     inList: Array<Uint8Array | string>,
     notInList: Array<Uint8Array | string>,
-    ip: boolean,
-    ipv4: boolean,
-    ipv6: boolean,
+    ip?: boolean,
+    ipv4?: boolean,
+    ipv6?: boolean,
+    exampleList: Array<Uint8Array | string>,
   }
 
   export enum WellKnownCase {
@@ -1260,12 +1670,12 @@ export namespace BytesRules {
 export class EnumRules extends jspb.Message {
   hasConst(): boolean;
   clearConst(): void;
-  getConst(): number;
+  getConst(): number | undefined;
   setConst(value: number): void;
 
   hasDefinedOnly(): boolean;
   clearDefinedOnly(): void;
-  getDefinedOnly(): boolean;
+  getDefinedOnly(): boolean | undefined;
   setDefinedOnly(value: boolean): void;
 
   clearInList(): void;
@@ -1277,6 +1687,11 @@ export class EnumRules extends jspb.Message {
   getNotInList(): Array<number>;
   setNotInList(value: Array<number>): void;
   addNotIn(value: number, index?: number): number;
+
+  clearExampleList(): void;
+  getExampleList(): Array<number>;
+  setExampleList(value: Array<number>): void;
+  addExample(value: number, index?: number): number;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): EnumRules.AsObject;
@@ -1290,33 +1705,34 @@ export class EnumRules extends jspb.Message {
 
 export namespace EnumRules {
   export type AsObject = {
-    pb_const: number,
-    definedOnly: boolean,
+    pb_const?: number,
+    definedOnly?: boolean,
     inList: Array<number>,
     notInList: Array<number>,
+    exampleList: Array<number>,
   }
 }
 
 export class RepeatedRules extends jspb.Message {
   hasMinItems(): boolean;
   clearMinItems(): void;
-  getMinItems(): number;
+  getMinItems(): number | undefined;
   setMinItems(value: number): void;
 
   hasMaxItems(): boolean;
   clearMaxItems(): void;
-  getMaxItems(): number;
+  getMaxItems(): number | undefined;
   setMaxItems(value: number): void;
 
   hasUnique(): boolean;
   clearUnique(): void;
-  getUnique(): boolean;
+  getUnique(): boolean | undefined;
   setUnique(value: boolean): void;
 
   hasItems(): boolean;
   clearItems(): void;
-  getItems(): FieldConstraints | undefined;
-  setItems(value?: FieldConstraints): void;
+  getItems(): FieldRules | undefined;
+  setItems(value?: FieldRules): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): RepeatedRules.AsObject;
@@ -1330,33 +1746,33 @@ export class RepeatedRules extends jspb.Message {
 
 export namespace RepeatedRules {
   export type AsObject = {
-    minItems: number,
-    maxItems: number,
-    unique: boolean,
-    items?: FieldConstraints.AsObject,
+    minItems?: number,
+    maxItems?: number,
+    unique?: boolean,
+    items?: FieldRules.AsObject,
   }
 }
 
 export class MapRules extends jspb.Message {
   hasMinPairs(): boolean;
   clearMinPairs(): void;
-  getMinPairs(): number;
+  getMinPairs(): number | undefined;
   setMinPairs(value: number): void;
 
   hasMaxPairs(): boolean;
   clearMaxPairs(): void;
-  getMaxPairs(): number;
+  getMaxPairs(): number | undefined;
   setMaxPairs(value: number): void;
 
   hasKeys(): boolean;
   clearKeys(): void;
-  getKeys(): FieldConstraints | undefined;
-  setKeys(value?: FieldConstraints): void;
+  getKeys(): FieldRules | undefined;
+  setKeys(value?: FieldRules): void;
 
   hasValues(): boolean;
   clearValues(): void;
-  getValues(): FieldConstraints | undefined;
-  setValues(value?: FieldConstraints): void;
+  getValues(): FieldRules | undefined;
+  setValues(value?: FieldRules): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): MapRules.AsObject;
@@ -1370,10 +1786,10 @@ export class MapRules extends jspb.Message {
 
 export namespace MapRules {
   export type AsObject = {
-    minPairs: number,
-    maxPairs: number,
-    keys?: FieldConstraints.AsObject,
-    values?: FieldConstraints.AsObject,
+    minPairs?: number,
+    maxPairs?: number,
+    keys?: FieldRules.AsObject,
+    values?: FieldRules.AsObject,
   }
 }
 
@@ -1441,6 +1857,13 @@ export class DurationRules extends jspb.Message {
   setNotInList(value: Array<google_protobuf_duration_pb.Duration>): void;
   addNotIn(value?: google_protobuf_duration_pb.Duration, index?: number): google_protobuf_duration_pb.Duration;
 
+  clearExampleList(): void;
+  getExampleList(): Array<google_protobuf_duration_pb.Duration>;
+  setExampleList(value: Array<google_protobuf_duration_pb.Duration>): void;
+  addExample(value?: google_protobuf_duration_pb.Duration, index?: number): google_protobuf_duration_pb.Duration;
+
+  getLessThanCase(): DurationRules.LessThanCase;
+  getGreaterThanCase(): DurationRules.GreaterThanCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DurationRules.AsObject;
   static toObject(includeInstance: boolean, msg: DurationRules): DurationRules.AsObject;
@@ -1460,6 +1883,19 @@ export namespace DurationRules {
     gte?: google_protobuf_duration_pb.Duration.AsObject,
     inList: Array<google_protobuf_duration_pb.Duration.AsObject>,
     notInList: Array<google_protobuf_duration_pb.Duration.AsObject>,
+    exampleList: Array<google_protobuf_duration_pb.Duration.AsObject>,
+  }
+
+  export enum LessThanCase {
+    LESS_THAN_NOT_SET = 0,
+    LT = 3,
+    LTE = 4,
+  }
+
+  export enum GreaterThanCase {
+    GREATER_THAN_NOT_SET = 0,
+    GT = 5,
+    GTE = 6,
   }
 }
 
@@ -1479,6 +1915,11 @@ export class TimestampRules extends jspb.Message {
   getLte(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setLte(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
+  hasLtNow(): boolean;
+  clearLtNow(): void;
+  getLtNow(): boolean | undefined;
+  setLtNow(value: boolean): void;
+
   hasGt(): boolean;
   clearGt(): void;
   getGt(): google_protobuf_timestamp_pb.Timestamp | undefined;
@@ -1489,14 +1930,9 @@ export class TimestampRules extends jspb.Message {
   getGte(): google_protobuf_timestamp_pb.Timestamp | undefined;
   setGte(value?: google_protobuf_timestamp_pb.Timestamp): void;
 
-  hasLtNow(): boolean;
-  clearLtNow(): void;
-  getLtNow(): boolean;
-  setLtNow(value: boolean): void;
-
   hasGtNow(): boolean;
   clearGtNow(): void;
-  getGtNow(): boolean;
+  getGtNow(): boolean | undefined;
   setGtNow(value: boolean): void;
 
   hasWithin(): boolean;
@@ -1504,6 +1940,13 @@ export class TimestampRules extends jspb.Message {
   getWithin(): google_protobuf_duration_pb.Duration | undefined;
   setWithin(value?: google_protobuf_duration_pb.Duration): void;
 
+  clearExampleList(): void;
+  getExampleList(): Array<google_protobuf_timestamp_pb.Timestamp>;
+  setExampleList(value: Array<google_protobuf_timestamp_pb.Timestamp>): void;
+  addExample(value?: google_protobuf_timestamp_pb.Timestamp, index?: number): google_protobuf_timestamp_pb.Timestamp;
+
+  getLessThanCase(): TimestampRules.LessThanCase;
+  getGreaterThanCase(): TimestampRules.GreaterThanCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TimestampRules.AsObject;
   static toObject(includeInstance: boolean, msg: TimestampRules): TimestampRules.AsObject;
@@ -1519,19 +1962,220 @@ export namespace TimestampRules {
     pb_const?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     lt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     lte?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    ltNow?: boolean,
     gt?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     gte?: google_protobuf_timestamp_pb.Timestamp.AsObject,
-    ltNow: boolean,
-    gtNow: boolean,
+    gtNow?: boolean,
     within?: google_protobuf_duration_pb.Duration.AsObject,
+    exampleList: Array<google_protobuf_timestamp_pb.Timestamp.AsObject>,
+  }
+
+  export enum LessThanCase {
+    LESS_THAN_NOT_SET = 0,
+    LT = 3,
+    LTE = 4,
+    LT_NOW = 7,
+  }
+
+  export enum GreaterThanCase {
+    GREATER_THAN_NOT_SET = 0,
+    GT = 5,
+    GTE = 6,
+    GT_NOW = 8,
   }
 }
 
-  export const message: jspb.ExtensionFieldInfo<MessageConstraints>;
+export class Violations extends jspb.Message {
+  clearViolationsList(): void;
+  getViolationsList(): Array<Violation>;
+  setViolationsList(value: Array<Violation>): void;
+  addViolations(value?: Violation, index?: number): Violation;
 
-  export const oneof: jspb.ExtensionFieldInfo<OneofConstraints>;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Violations.AsObject;
+  static toObject(includeInstance: boolean, msg: Violations): Violations.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Violations, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Violations;
+  static deserializeBinaryFromReader(message: Violations, reader: jspb.BinaryReader): Violations;
+}
 
-  export const field: jspb.ExtensionFieldInfo<FieldConstraints>;
+export namespace Violations {
+  export type AsObject = {
+    violationsList: Array<Violation.AsObject>,
+  }
+}
+
+export class Violation extends jspb.Message {
+  hasField(): boolean;
+  clearField(): void;
+  getField(): FieldPath | undefined;
+  setField(value?: FieldPath): void;
+
+  hasRule(): boolean;
+  clearRule(): void;
+  getRule(): FieldPath | undefined;
+  setRule(value?: FieldPath): void;
+
+  hasRuleId(): boolean;
+  clearRuleId(): void;
+  getRuleId(): string | undefined;
+  setRuleId(value: string): void;
+
+  hasMessage(): boolean;
+  clearMessage(): void;
+  getMessage(): string | undefined;
+  setMessage(value: string): void;
+
+  hasForKey(): boolean;
+  clearForKey(): void;
+  getForKey(): boolean | undefined;
+  setForKey(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Violation.AsObject;
+  static toObject(includeInstance: boolean, msg: Violation): Violation.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Violation, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Violation;
+  static deserializeBinaryFromReader(message: Violation, reader: jspb.BinaryReader): Violation;
+}
+
+export namespace Violation {
+  export type AsObject = {
+    field?: FieldPath.AsObject,
+    rule?: FieldPath.AsObject,
+    ruleId?: string,
+    message?: string,
+    forKey?: boolean,
+  }
+}
+
+export class FieldPath extends jspb.Message {
+  clearElementsList(): void;
+  getElementsList(): Array<FieldPathElement>;
+  setElementsList(value: Array<FieldPathElement>): void;
+  addElements(value?: FieldPathElement, index?: number): FieldPathElement;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FieldPath.AsObject;
+  static toObject(includeInstance: boolean, msg: FieldPath): FieldPath.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: FieldPath, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FieldPath;
+  static deserializeBinaryFromReader(message: FieldPath, reader: jspb.BinaryReader): FieldPath;
+}
+
+export namespace FieldPath {
+  export type AsObject = {
+    elementsList: Array<FieldPathElement.AsObject>,
+  }
+}
+
+export class FieldPathElement extends jspb.Message {
+  hasFieldNumber(): boolean;
+  clearFieldNumber(): void;
+  getFieldNumber(): number | undefined;
+  setFieldNumber(value: number): void;
+
+  hasFieldName(): boolean;
+  clearFieldName(): void;
+  getFieldName(): string | undefined;
+  setFieldName(value: string): void;
+
+  hasFieldType(): boolean;
+  clearFieldType(): void;
+  getFieldType(): google_protobuf_descriptor_pb.FieldDescriptorProto.TypeMap[keyof google_protobuf_descriptor_pb.FieldDescriptorProto.TypeMap] | undefined;
+  setFieldType(value: google_protobuf_descriptor_pb.FieldDescriptorProto.TypeMap[keyof google_protobuf_descriptor_pb.FieldDescriptorProto.TypeMap]): void;
+
+  hasKeyType(): boolean;
+  clearKeyType(): void;
+  getKeyType(): google_protobuf_descriptor_pb.FieldDescriptorProto.TypeMap[keyof google_protobuf_descriptor_pb.FieldDescriptorProto.TypeMap] | undefined;
+  setKeyType(value: google_protobuf_descriptor_pb.FieldDescriptorProto.TypeMap[keyof google_protobuf_descriptor_pb.FieldDescriptorProto.TypeMap]): void;
+
+  hasValueType(): boolean;
+  clearValueType(): void;
+  getValueType(): google_protobuf_descriptor_pb.FieldDescriptorProto.TypeMap[keyof google_protobuf_descriptor_pb.FieldDescriptorProto.TypeMap] | undefined;
+  setValueType(value: google_protobuf_descriptor_pb.FieldDescriptorProto.TypeMap[keyof google_protobuf_descriptor_pb.FieldDescriptorProto.TypeMap]): void;
+
+  hasIndex(): boolean;
+  clearIndex(): void;
+  getIndex(): number | undefined;
+  setIndex(value: number): void;
+
+  hasBoolKey(): boolean;
+  clearBoolKey(): void;
+  getBoolKey(): boolean | undefined;
+  setBoolKey(value: boolean): void;
+
+  hasIntKey(): boolean;
+  clearIntKey(): void;
+  getIntKey(): number | undefined;
+  setIntKey(value: number): void;
+
+  hasUintKey(): boolean;
+  clearUintKey(): void;
+  getUintKey(): number | undefined;
+  setUintKey(value: number): void;
+
+  hasStringKey(): boolean;
+  clearStringKey(): void;
+  getStringKey(): string | undefined;
+  setStringKey(value: string): void;
+
+  getSubscriptCase(): FieldPathElement.SubscriptCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FieldPathElement.AsObject;
+  static toObject(includeInstance: boolean, msg: FieldPathElement): FieldPathElement.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: FieldPathElement, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FieldPathElement;
+  static deserializeBinaryFromReader(message: FieldPathElement, reader: jspb.BinaryReader): FieldPathElement;
+}
+
+export namespace FieldPathElement {
+  export type AsObject = {
+    fieldNumber?: number,
+    fieldName?: string,
+    fieldType?: google_protobuf_descriptor_pb.FieldDescriptorProto.TypeMap[keyof google_protobuf_descriptor_pb.FieldDescriptorProto.TypeMap],
+    keyType?: google_protobuf_descriptor_pb.FieldDescriptorProto.TypeMap[keyof google_protobuf_descriptor_pb.FieldDescriptorProto.TypeMap],
+    valueType?: google_protobuf_descriptor_pb.FieldDescriptorProto.TypeMap[keyof google_protobuf_descriptor_pb.FieldDescriptorProto.TypeMap],
+    index?: number,
+    boolKey?: boolean,
+    intKey?: number,
+    uintKey?: number,
+    stringKey?: string,
+  }
+
+  export enum SubscriptCase {
+    SUBSCRIPT_NOT_SET = 0,
+    INDEX = 6,
+    BOOL_KEY = 7,
+    INT_KEY = 8,
+    UINT_KEY = 9,
+    STRING_KEY = 10,
+  }
+}
+
+  export const message: jspb.ExtensionFieldInfo<MessageRules>;
+
+  export const oneof: jspb.ExtensionFieldInfo<OneofRules>;
+
+  export const field: jspb.ExtensionFieldInfo<FieldRules>;
+
+  export const predefined: jspb.ExtensionFieldInfo<PredefinedRules>;
+
+export interface IgnoreMap {
+  IGNORE_UNSPECIFIED: 0;
+  IGNORE_IF_ZERO_VALUE: 1;
+  IGNORE_ALWAYS: 3;
+}
+
+export const Ignore: IgnoreMap;
 
 export interface KnownRegexMap {
   KNOWN_REGEX_UNSPECIFIED: 0;
