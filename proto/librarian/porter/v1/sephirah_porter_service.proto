@@ -1,12 +1,12 @@
 syntax = "proto3";
 
-package librarian.sephirah.v1.porter;
+package librarian.porter.v1;
 
 import "librarian/v1/common.proto";
 import "librarian/v1/wellknown.proto";
 
-option csharp_namespace = "TuiHub.Protos.Librarian.Sephirah.V1.Porter";
-option go_package = "github.com/tuihub/protos/pkg/librarian/sephirah/v1/porter;v1";
+option csharp_namespace = "TuiHub.Protos.Librarian.Porter.V1";
+option go_package = "github.com/tuihub/protos/pkg/librarian/porter/v1;v1";
 
 service LibrarianSephirahPorterService {
   // `Tiphereth` Use valid refresh_token and get two new token, a refresh_token can only be used once

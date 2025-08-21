@@ -1,11 +1,11 @@
 syntax = "proto3";
 
-package librarian.sephirah.v1;
+package librarian.v1;
 
 import "errors/errors.proto";
 
-option csharp_namespace = "TuiHub.Protos.Librarian.Sephirah.V1";
-option go_package = "github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1";
+option csharp_namespace = "TuiHub.Protos.Librarian.V1";
+option go_package = "github.com/tuihub/protos/pkg/librarian/v1;v1";
 
 enum ErrorReason {
   option (errors.default_code) = 500;

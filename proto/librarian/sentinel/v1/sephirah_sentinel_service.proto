@@ -1,14 +1,14 @@
 syntax = "proto3";
 
-package librarian.sephirah.v1.sentinel;
+package librarian.sentinel.v1;
 
 import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";
 
-option csharp_namespace = "TuiHub.Protos.Librarian.Sephirah.V1.Sentinel";
-option go_package = "github.com/tuihub/protos/pkg/librarian/sephirah/v1/sentinel;v1";
+option csharp_namespace = "TuiHub.Protos.Librarian.Sentinel.V1";
+option go_package = "github.com/tuihub/protos/pkg/librarian/sentinel/v1;v1";
 
-service LibrarianSentinelService {
+service LibrarianSephirahSentinelService {
   // `Tiphereth` Use valid refresh_token and get two new token, a refresh_token can only be used once
   rpc RefreshToken(RefreshTokenRequest) returns (RefreshTokenResponse);
 
