@@ -40,7 +40,8 @@ message GetAppInfoResponse {
 }
 
 message ParseRawAppInfoRequest {
-  string raw_data_json = 3;
+  librarian.v1.FeatureRequest config = 1;
+  string raw_data_json = 2;
 }
 
 message ParseRawAppInfoResponse {
