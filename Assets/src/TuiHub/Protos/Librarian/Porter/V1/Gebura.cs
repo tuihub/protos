@@ -39,36 +39,37 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
             "LnYxLkFwcEluZm9SCGFwcEluZm9zIkkKEUdldEFwcEluZm9SZXF1ZXN0EjQK",
             "BmNvbmZpZxgBIAEoCzIcLmxpYnJhcmlhbi52MS5GZWF0dXJlUmVxdWVzdFIG",
             "Y29uZmlnIk0KEkdldEFwcEluZm9SZXNwb25zZRI3CghhcHBfaW5mbxgBIAEo",
-            "CzIcLmxpYnJhcmlhbi5wb3J0ZXIudjEuQXBwSW5mb1IHYXBwSW5mbyI8ChZQ",
-            "YXJzZVJhd0FwcEluZm9SZXF1ZXN0EiIKDXJhd19kYXRhX2pzb24YAyABKAlS",
-            "C3Jhd0RhdGFKc29uIlIKF1BhcnNlUmF3QXBwSW5mb1Jlc3BvbnNlEjcKCGFw",
-            "cF9pbmZvGAEgASgLMhwubGlicmFyaWFuLnBvcnRlci52MS5BcHBJbmZvUgdh",
-            "cHBJbmZvIqAECgdBcHBJbmZvEhYKBnNvdXJjZRgBIAEoCVIGc291cmNlEiIK",
-            "DXNvdXJjZV9hcHBfaWQYAiABKAlSC3NvdXJjZUFwcElkEiIKCnNvdXJjZV91",
-            "cmwYAyABKAlIAFIJc291cmNlVXJsiAEBEiIKDXJhd19kYXRhX2pzb24YBCAB",
-            "KAlSC3Jhd0RhdGFKc29uEkIKB2RldGFpbHMYBSABKAsyIy5saWJyYXJpYW4u",
-            "cG9ydGVyLnYxLkFwcEluZm9EZXRhaWxzSAFSB2RldGFpbHOIAQESEgoEbmFt",
-            "ZRgGIAEoCVIEbmFtZRIwCgR0eXBlGAcgASgOMhwubGlicmFyaWFuLnBvcnRl",
-            "ci52MS5BcHBUeXBlUgR0eXBlEisKEXNob3J0X2Rlc2NyaXB0aW9uGAggASgJ",
-            "UhBzaG9ydERlc2NyaXB0aW9uEiQKDmljb25faW1hZ2VfdXJsGAkgASgJUgxp",
-            "Y29uSW1hZ2VVcmwSMAoUYmFja2dyb3VuZF9pbWFnZV91cmwYCiABKAlSEmJh",
-            "Y2tncm91bmRJbWFnZVVybBImCg9jb3Zlcl9pbWFnZV91cmwYCyABKAlSDWNv",
-            "dmVySW1hZ2VVcmwSEgoEdGFncxgMIAMoCVIEdGFncxIrChFuYW1lX2FsdGVy",
-            "bmF0aXZlcxgNIAMoCVIQbmFtZUFsdGVybmF0aXZlc0INCgtfc291cmNlX3Vy",
-            "bEIKCghfZGV0YWlscyLKAQoOQXBwSW5mb0RldGFpbHMSIAoLZGVzY3JpcHRp",
-            "b24YASABKAlSC2Rlc2NyaXB0aW9uEiEKDHJlbGVhc2VfZGF0ZRgCIAEoCVIL",
-            "cmVsZWFzZURhdGUSHAoJZGV2ZWxvcGVyGAMgASgJUglkZXZlbG9wZXISHAoJ",
-            "cHVibGlzaGVyGAQgASgJUglwdWJsaXNoZXISGAoHdmVyc2lvbhgFIAEoCVIH",
-            "dmVyc2lvbhIdCgppbWFnZV91cmxzGAYgAygJUglpbWFnZVVybHMq1AEKE1dl",
-            "bGxLbm93bkRldGVjdERhdGESKwoiV0VMTF9LTk9XTl9ERVRFQ1RfREFUQV9V",
-            "TlNQRUNJRklFRBAAGgPCPgASKAobV0VMTF9LTk9XTl9ERVRFQ1RfREFUQV9O",
-            "QU1FEAEaB8I+BG5hbWUSMgogV0VMTF9LTk9XTl9ERVRFQ1RfREFUQV9ERVZF",
-            "TE9QRVIQAhoMwj4JZGV2ZWxvcGVyEjIKIFdFTExfS05PV05fREVURUNUX0RB",
-            "VEFfUFVCTElTSEVSEAMaDMI+CXB1Ymxpc2hlcio2CgdBcHBUeXBlEhgKFEFQ",
-            "UF9UWVBFX1VOU1BFQ0lGSUVEEAASEQoNQVBQX1RZUEVfR0FNRRABQllaM2dp",
-            "dGh1Yi5jb20vdHVpaHViL3Byb3Rvcy9wa2cvbGlicmFyaWFuL3BvcnRlci92",
-            "MTt2MaoCIVR1aUh1Yi5Qcm90b3MuTGlicmFyaWFuLlBvcnRlci5WMWIGcHJv",
-            "dG8z"));
+            "CzIcLmxpYnJhcmlhbi5wb3J0ZXIudjEuQXBwSW5mb1IHYXBwSW5mbyJyChZQ",
+            "YXJzZVJhd0FwcEluZm9SZXF1ZXN0EjQKBmNvbmZpZxgBIAEoCzIcLmxpYnJh",
+            "cmlhbi52MS5GZWF0dXJlUmVxdWVzdFIGY29uZmlnEiIKDXJhd19kYXRhX2pz",
+            "b24YAiABKAlSC3Jhd0RhdGFKc29uIlIKF1BhcnNlUmF3QXBwSW5mb1Jlc3Bv",
+            "bnNlEjcKCGFwcF9pbmZvGAEgASgLMhwubGlicmFyaWFuLnBvcnRlci52MS5B",
+            "cHBJbmZvUgdhcHBJbmZvIqAECgdBcHBJbmZvEhYKBnNvdXJjZRgBIAEoCVIG",
+            "c291cmNlEiIKDXNvdXJjZV9hcHBfaWQYAiABKAlSC3NvdXJjZUFwcElkEiIK",
+            "CnNvdXJjZV91cmwYAyABKAlIAFIJc291cmNlVXJsiAEBEiIKDXJhd19kYXRh",
+            "X2pzb24YBCABKAlSC3Jhd0RhdGFKc29uEkIKB2RldGFpbHMYBSABKAsyIy5s",
+            "aWJyYXJpYW4ucG9ydGVyLnYxLkFwcEluZm9EZXRhaWxzSAFSB2RldGFpbHOI",
+            "AQESEgoEbmFtZRgGIAEoCVIEbmFtZRIwCgR0eXBlGAcgASgOMhwubGlicmFy",
+            "aWFuLnBvcnRlci52MS5BcHBUeXBlUgR0eXBlEisKEXNob3J0X2Rlc2NyaXB0",
+            "aW9uGAggASgJUhBzaG9ydERlc2NyaXB0aW9uEiQKDmljb25faW1hZ2VfdXJs",
+            "GAkgASgJUgxpY29uSW1hZ2VVcmwSMAoUYmFja2dyb3VuZF9pbWFnZV91cmwY",
+            "CiABKAlSEmJhY2tncm91bmRJbWFnZVVybBImCg9jb3Zlcl9pbWFnZV91cmwY",
+            "CyABKAlSDWNvdmVySW1hZ2VVcmwSEgoEdGFncxgMIAMoCVIEdGFncxIrChFu",
+            "YW1lX2FsdGVybmF0aXZlcxgNIAMoCVIQbmFtZUFsdGVybmF0aXZlc0INCgtf",
+            "c291cmNlX3VybEIKCghfZGV0YWlscyLKAQoOQXBwSW5mb0RldGFpbHMSIAoL",
+            "ZGVzY3JpcHRpb24YASABKAlSC2Rlc2NyaXB0aW9uEiEKDHJlbGVhc2VfZGF0",
+            "ZRgCIAEoCVILcmVsZWFzZURhdGUSHAoJZGV2ZWxvcGVyGAMgASgJUglkZXZl",
+            "bG9wZXISHAoJcHVibGlzaGVyGAQgASgJUglwdWJsaXNoZXISGAoHdmVyc2lv",
+            "bhgFIAEoCVIHdmVyc2lvbhIdCgppbWFnZV91cmxzGAYgAygJUglpbWFnZVVy",
+            "bHMq1AEKE1dlbGxLbm93bkRldGVjdERhdGESKwoiV0VMTF9LTk9XTl9ERVRF",
+            "Q1RfREFUQV9VTlNQRUNJRklFRBAAGgPCPgASKAobV0VMTF9LTk9XTl9ERVRF",
+            "Q1RfREFUQV9OQU1FEAEaB8I+BG5hbWUSMgogV0VMTF9LTk9XTl9ERVRFQ1Rf",
+            "REFUQV9ERVZFTE9QRVIQAhoMwj4JZGV2ZWxvcGVyEjIKIFdFTExfS05PV05f",
+            "REVURUNUX0RBVEFfUFVCTElTSEVSEAMaDMI+CXB1Ymxpc2hlcio2CgdBcHBU",
+            "eXBlEhgKFEFQUF9UWVBFX1VOU1BFQ0lGSUVEEAASEQoNQVBQX1RZUEVfR0FN",
+            "RRABQllaM2dpdGh1Yi5jb20vdHVpaHViL3Byb3Rvcy9wa2cvbGlicmFyaWFu",
+            "L3BvcnRlci92MTt2MaoCIVR1aUh1Yi5Qcm90b3MuTGlicmFyaWFuLlBvcnRl",
+            "ci5WMWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::TuiHub.Protos.Librarian.V1.WellknownReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::TuiHub.Protos.Librarian.Porter.V1.WellKnownDetectData), typeof(global::TuiHub.Protos.Librarian.Porter.V1.AppType), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -78,7 +79,7 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Porter.V1.SearchAppInfoResponse), global::TuiHub.Protos.Librarian.Porter.V1.SearchAppInfoResponse.Parser, new[]{ "AppInfos" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Porter.V1.GetAppInfoRequest), global::TuiHub.Protos.Librarian.Porter.V1.GetAppInfoRequest.Parser, new[]{ "Config" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Porter.V1.GetAppInfoResponse), global::TuiHub.Protos.Librarian.Porter.V1.GetAppInfoResponse.Parser, new[]{ "AppInfo" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Porter.V1.ParseRawAppInfoRequest), global::TuiHub.Protos.Librarian.Porter.V1.ParseRawAppInfoRequest.Parser, new[]{ "RawDataJson" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Porter.V1.ParseRawAppInfoRequest), global::TuiHub.Protos.Librarian.Porter.V1.ParseRawAppInfoRequest.Parser, new[]{ "Config", "RawDataJson" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Porter.V1.ParseRawAppInfoResponse), global::TuiHub.Protos.Librarian.Porter.V1.ParseRawAppInfoResponse.Parser, new[]{ "AppInfo" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Porter.V1.AppInfo), global::TuiHub.Protos.Librarian.Porter.V1.AppInfo.Parser, new[]{ "Source", "SourceAppId", "SourceUrl", "RawDataJson", "Details", "Name", "Type", "ShortDescription", "IconImageUrl", "BackgroundImageUrl", "CoverImageUrl", "Tags", "NameAlternatives" }, new[]{ "SourceUrl", "Details" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Porter.V1.AppInfoDetails), global::TuiHub.Protos.Librarian.Porter.V1.AppInfoDetails.Parser, new[]{ "Description", "ReleaseDate", "Developer", "Publisher", "Version", "ImageUrls" }, null, null, null, null)
@@ -1334,6 +1335,7 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public ParseRawAppInfoRequest(ParseRawAppInfoRequest other) : this() {
+      config_ = other.config_ != null ? other.config_.Clone() : null;
       rawDataJson_ = other.rawDataJson_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
@@ -1344,8 +1346,20 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
       return new ParseRawAppInfoRequest(this);
     }
 
+    /// <summary>Field number for the "config" field.</summary>
+    public const int ConfigFieldNumber = 1;
+    private global::TuiHub.Protos.Librarian.V1.FeatureRequest config_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::TuiHub.Protos.Librarian.V1.FeatureRequest Config {
+      get { return config_; }
+      set {
+        config_ = value;
+      }
+    }
+
     /// <summary>Field number for the "raw_data_json" field.</summary>
-    public const int RawDataJsonFieldNumber = 3;
+    public const int RawDataJsonFieldNumber = 2;
     private string rawDataJson_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1371,6 +1385,7 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (!object.Equals(Config, other.Config)) return false;
       if (RawDataJson != other.RawDataJson) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -1379,6 +1394,7 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (config_ != null) hash ^= Config.GetHashCode();
       if (RawDataJson.Length != 0) hash ^= RawDataJson.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -1398,8 +1414,12 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (config_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Config);
+      }
       if (RawDataJson.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(18);
         output.WriteString(RawDataJson);
       }
       if (_unknownFields != null) {
@@ -1412,8 +1432,12 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (config_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Config);
+      }
       if (RawDataJson.Length != 0) {
-        output.WriteRawTag(26);
+        output.WriteRawTag(18);
         output.WriteString(RawDataJson);
       }
       if (_unknownFields != null) {
@@ -1426,6 +1450,9 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (config_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Config);
+      }
       if (RawDataJson.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(RawDataJson);
       }
@@ -1440,6 +1467,12 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
     public void MergeFrom(ParseRawAppInfoRequest other) {
       if (other == null) {
         return;
+      }
+      if (other.config_ != null) {
+        if (config_ == null) {
+          Config = new global::TuiHub.Protos.Librarian.V1.FeatureRequest();
+        }
+        Config.MergeFrom(other.Config);
       }
       if (other.RawDataJson.Length != 0) {
         RawDataJson = other.RawDataJson;
@@ -1459,7 +1492,14 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 26: {
+          case 10: {
+            if (config_ == null) {
+              Config = new global::TuiHub.Protos.Librarian.V1.FeatureRequest();
+            }
+            input.ReadMessage(Config);
+            break;
+          }
+          case 18: {
             RawDataJson = input.ReadString();
             break;
           }
@@ -1478,7 +1518,14 @@ namespace TuiHub.Protos.Librarian.Porter.V1 {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
-          case 26: {
+          case 10: {
+            if (config_ == null) {
+              Config = new global::TuiHub.Protos.Librarian.V1.FeatureRequest();
+            }
+            input.ReadMessage(Config);
+            break;
+          }
+          case 18: {
             RawDataJson = input.ReadString();
             break;
           }

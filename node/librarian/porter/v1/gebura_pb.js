@@ -1226,7 +1226,8 @@ proto.librarian.porter.v1.ParseRawAppInfoRequest.prototype.toObject = function(o
  */
 proto.librarian.porter.v1.ParseRawAppInfoRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-rawDataJson: jspb.Message.getFieldWithDefault(msg, 3, "")
+config: (f = msg.getConfig()) && librarian_v1_wellknown_pb.FeatureRequest.toObject(includeInstance, f),
+rawDataJson: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1263,7 +1264,12 @@ proto.librarian.porter.v1.ParseRawAppInfoRequest.deserializeBinaryFromReader = f
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 3:
+    case 1:
+      var value = new librarian_v1_wellknown_pb.FeatureRequest;
+      reader.readMessage(value,librarian_v1_wellknown_pb.FeatureRequest.deserializeBinaryFromReader);
+      msg.setConfig(value);
+      break;
+    case 2:
       var value = /** @type {string} */ (reader.readString());
       msg.setRawDataJson(value);
       break;
@@ -1296,10 +1302,18 @@ proto.librarian.porter.v1.ParseRawAppInfoRequest.prototype.serializeBinary = fun
  */
 proto.librarian.porter.v1.ParseRawAppInfoRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getConfig();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      librarian_v1_wellknown_pb.FeatureRequest.serializeBinaryToWriter
+    );
+  }
   f = message.getRawDataJson();
   if (f.length > 0) {
     writer.writeString(
-      3,
+      2,
       f
     );
   }
@@ -1307,11 +1321,48 @@ proto.librarian.porter.v1.ParseRawAppInfoRequest.serializeBinaryToWriter = funct
 
 
 /**
- * optional string raw_data_json = 3;
+ * optional librarian.v1.FeatureRequest config = 1;
+ * @return {?proto.librarian.v1.FeatureRequest}
+ */
+proto.librarian.porter.v1.ParseRawAppInfoRequest.prototype.getConfig = function() {
+  return /** @type{?proto.librarian.v1.FeatureRequest} */ (
+    jspb.Message.getWrapperField(this, librarian_v1_wellknown_pb.FeatureRequest, 1));
+};
+
+
+/**
+ * @param {?proto.librarian.v1.FeatureRequest|undefined} value
+ * @return {!proto.librarian.porter.v1.ParseRawAppInfoRequest} returns this
+*/
+proto.librarian.porter.v1.ParseRawAppInfoRequest.prototype.setConfig = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.librarian.porter.v1.ParseRawAppInfoRequest} returns this
+ */
+proto.librarian.porter.v1.ParseRawAppInfoRequest.prototype.clearConfig = function() {
+  return this.setConfig(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.porter.v1.ParseRawAppInfoRequest.prototype.hasConfig = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string raw_data_json = 2;
  * @return {string}
  */
 proto.librarian.porter.v1.ParseRawAppInfoRequest.prototype.getRawDataJson = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -1320,7 +1371,7 @@ proto.librarian.porter.v1.ParseRawAppInfoRequest.prototype.getRawDataJson = func
  * @return {!proto.librarian.porter.v1.ParseRawAppInfoRequest} returns this
  */
 proto.librarian.porter.v1.ParseRawAppInfoRequest.prototype.setRawDataJson = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 

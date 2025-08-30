@@ -395,7 +395,8 @@ func (x *GetAppInfoResponse) GetAppInfo() *AppInfo {
 
 type ParseRawAppInfoRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	RawDataJson   string                 `protobuf:"bytes,3,opt,name=raw_data_json,json=rawDataJson,proto3" json:"raw_data_json,omitempty"`
+	Config        *v1.FeatureRequest     `protobuf:"bytes,1,opt,name=config,proto3" json:"config,omitempty"`
+	RawDataJson   string                 `protobuf:"bytes,2,opt,name=raw_data_json,json=rawDataJson,proto3" json:"raw_data_json,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -428,6 +429,13 @@ func (x *ParseRawAppInfoRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use ParseRawAppInfoRequest.ProtoReflect.Descriptor instead.
 func (*ParseRawAppInfoRequest) Descriptor() ([]byte, []int) {
 	return file_librarian_porter_v1_gebura_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *ParseRawAppInfoRequest) GetConfig() *v1.FeatureRequest {
+	if x != nil {
+		return x.Config
+	}
+	return nil
 }
 
 func (x *ParseRawAppInfoRequest) GetRawDataJson() string {
@@ -731,9 +739,10 @@ const file_librarian_porter_v1_gebura_proto_rawDesc = "" +
 	"\x11GetAppInfoRequest\x124\n" +
 	"\x06config\x18\x01 \x01(\v2\x1c.librarian.v1.FeatureRequestR\x06config\"M\n" +
 	"\x12GetAppInfoResponse\x127\n" +
-	"\bapp_info\x18\x01 \x01(\v2\x1c.librarian.porter.v1.AppInfoR\aappInfo\"<\n" +
-	"\x16ParseRawAppInfoRequest\x12\"\n" +
-	"\rraw_data_json\x18\x03 \x01(\tR\vrawDataJson\"R\n" +
+	"\bapp_info\x18\x01 \x01(\v2\x1c.librarian.porter.v1.AppInfoR\aappInfo\"r\n" +
+	"\x16ParseRawAppInfoRequest\x124\n" +
+	"\x06config\x18\x01 \x01(\v2\x1c.librarian.v1.FeatureRequestR\x06config\x12\"\n" +
+	"\rraw_data_json\x18\x02 \x01(\tR\vrawDataJson\"R\n" +
 	"\x17ParseRawAppInfoResponse\x127\n" +
 	"\bapp_info\x18\x01 \x01(\v2\x1c.librarian.porter.v1.AppInfoR\aappInfo\"\xa0\x04\n" +
 	"\aAppInfo\x12\x16\n" +
@@ -811,14 +820,15 @@ var file_librarian_porter_v1_gebura_proto_depIdxs = []int32{
 	10, // 4: librarian.porter.v1.SearchAppInfoResponse.app_infos:type_name -> librarian.porter.v1.AppInfo
 	14, // 5: librarian.porter.v1.GetAppInfoRequest.config:type_name -> librarian.v1.FeatureRequest
 	10, // 6: librarian.porter.v1.GetAppInfoResponse.app_info:type_name -> librarian.porter.v1.AppInfo
-	10, // 7: librarian.porter.v1.ParseRawAppInfoResponse.app_info:type_name -> librarian.porter.v1.AppInfo
-	11, // 8: librarian.porter.v1.AppInfo.details:type_name -> librarian.porter.v1.AppInfoDetails
-	1,  // 9: librarian.porter.v1.AppInfo.type:type_name -> librarian.porter.v1.AppType
-	10, // [10:10] is the sub-list for method output_type
-	10, // [10:10] is the sub-list for method input_type
-	10, // [10:10] is the sub-list for extension type_name
-	10, // [10:10] is the sub-list for extension extendee
-	0,  // [0:10] is the sub-list for field type_name
+	14, // 7: librarian.porter.v1.ParseRawAppInfoRequest.config:type_name -> librarian.v1.FeatureRequest
+	10, // 8: librarian.porter.v1.ParseRawAppInfoResponse.app_info:type_name -> librarian.porter.v1.AppInfo
+	11, // 9: librarian.porter.v1.AppInfo.details:type_name -> librarian.porter.v1.AppInfoDetails
+	1,  // 10: librarian.porter.v1.AppInfo.type:type_name -> librarian.porter.v1.AppType
+	11, // [11:11] is the sub-list for method output_type
+	11, // [11:11] is the sub-list for method input_type
+	11, // [11:11] is the sub-list for extension type_name
+	11, // [11:11] is the sub-list for extension extendee
+	0,  // [0:11] is the sub-list for field type_name
 }
 
 func init() { file_librarian_porter_v1_gebura_proto_init() }

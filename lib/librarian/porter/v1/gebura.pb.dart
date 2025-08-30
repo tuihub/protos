@@ -392,9 +392,11 @@ class GetAppInfoResponse extends $pb.GeneratedMessage {
 
 class ParseRawAppInfoRequest extends $pb.GeneratedMessage {
   factory ParseRawAppInfoRequest({
+    $0.FeatureRequest? config,
     $core.String? rawDataJson,
   }) {
     final result = create();
+    if (config != null) result.config = config;
     if (rawDataJson != null) result.rawDataJson = rawDataJson;
     return result;
   }
@@ -413,7 +415,9 @@ class ParseRawAppInfoRequest extends $pb.GeneratedMessage {
       package:
           const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'),
       createEmptyInstance: create)
-    ..aOS(3, _omitFieldNames ? '' : 'rawDataJson')
+    ..aOM<$0.FeatureRequest>(1, _omitFieldNames ? '' : 'config',
+        subBuilder: $0.FeatureRequest.create)
+    ..aOS(2, _omitFieldNames ? '' : 'rawDataJson')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -439,14 +443,25 @@ class ParseRawAppInfoRequest extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<ParseRawAppInfoRequest>(create);
   static ParseRawAppInfoRequest? _defaultInstance;
 
-  @$pb.TagNumber(3)
-  $core.String get rawDataJson => $_getSZ(0);
-  @$pb.TagNumber(3)
-  set rawDataJson($core.String value) => $_setString(0, value);
-  @$pb.TagNumber(3)
-  $core.bool hasRawDataJson() => $_has(0);
-  @$pb.TagNumber(3)
-  void clearRawDataJson() => $_clearField(3);
+  @$pb.TagNumber(1)
+  $0.FeatureRequest get config => $_getN(0);
+  @$pb.TagNumber(1)
+  set config($0.FeatureRequest value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasConfig() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearConfig() => $_clearField(1);
+  @$pb.TagNumber(1)
+  $0.FeatureRequest ensureConfig() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.String get rawDataJson => $_getSZ(1);
+  @$pb.TagNumber(2)
+  set rawDataJson($core.String value) => $_setString(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasRawDataJson() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearRawDataJson() => $_clearField(2);
 }
 
 class ParseRawAppInfoResponse extends $pb.GeneratedMessage {

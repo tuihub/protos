@@ -140,6 +140,11 @@ export namespace GetAppInfoResponse {
 }
 
 export class ParseRawAppInfoRequest extends jspb.Message {
+  hasConfig(): boolean;
+  clearConfig(): void;
+  getConfig(): librarian_v1_wellknown_pb.FeatureRequest | undefined;
+  setConfig(value?: librarian_v1_wellknown_pb.FeatureRequest): void;
+
   getRawDataJson(): string;
   setRawDataJson(value: string): void;
 
@@ -155,6 +160,7 @@ export class ParseRawAppInfoRequest extends jspb.Message {
 
 export namespace ParseRawAppInfoRequest {
   export type AsObject = {
+    config?: librarian_v1_wellknown_pb.FeatureRequest.AsObject,
     rawDataJson: string,
   }
 }

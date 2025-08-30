@@ -196,15 +196,23 @@ final $typed_data.Uint8List getAppInfoResponseDescriptor = $convert.base64Decode
 const ParseRawAppInfoRequest$json = {
   '1': 'ParseRawAppInfoRequest',
   '2': [
-    {'1': 'raw_data_json', '3': 3, '4': 1, '5': 9, '10': 'rawDataJson'},
+    {
+      '1': 'config',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.FeatureRequest',
+      '10': 'config'
+    },
+    {'1': 'raw_data_json', '3': 2, '4': 1, '5': 9, '10': 'rawDataJson'},
   ],
 };
 
 /// Descriptor for `ParseRawAppInfoRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List parseRawAppInfoRequestDescriptor =
-    $convert.base64Decode(
-        'ChZQYXJzZVJhd0FwcEluZm9SZXF1ZXN0EiIKDXJhd19kYXRhX2pzb24YAyABKAlSC3Jhd0RhdG'
-        'FKc29u');
+final $typed_data.Uint8List parseRawAppInfoRequestDescriptor = $convert.base64Decode(
+    'ChZQYXJzZVJhd0FwcEluZm9SZXF1ZXN0EjQKBmNvbmZpZxgBIAEoCzIcLmxpYnJhcmlhbi52MS'
+    '5GZWF0dXJlUmVxdWVzdFIGY29uZmlnEiIKDXJhd19kYXRhX2pzb24YAiABKAlSC3Jhd0RhdGFK'
+    'c29u');
 
 @$core.Deprecated('Use parseRawAppInfoResponseDescriptor instead')
 const ParseRawAppInfoResponse$json = {

@@ -3631,10 +3631,16 @@ impl serde::Serialize for ParseRawAppInfoRequest {
     {
         use serde::ser::SerializeStruct;
         let mut len = 0;
+        if self.config.is_some() {
+            len += 1;
+        }
         if !self.raw_data_json.is_empty() {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.porter.v1.ParseRawAppInfoRequest", len)?;
+        if let Some(v) = self.config.as_ref() {
+            struct_ser.serialize_field("config", v)?;
+        }
         if !self.raw_data_json.is_empty() {
             struct_ser.serialize_field("rawDataJson", &self.raw_data_json)?;
         }
@@ -3648,12 +3654,14 @@ impl<'de> serde::Deserialize<'de> for ParseRawAppInfoRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "config",
             "raw_data_json",
             "rawDataJson",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
+            Config,
             RawDataJson,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
@@ -3676,6 +3684,7 @@ impl<'de> serde::Deserialize<'de> for ParseRawAppInfoRequest {
                         E: serde::de::Error,
                     {
                         match value {
+                            "config" => Ok(GeneratedField::Config),
                             "rawDataJson" | "raw_data_json" => Ok(GeneratedField::RawDataJson),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
@@ -3696,9 +3705,16 @@ impl<'de> serde::Deserialize<'de> for ParseRawAppInfoRequest {
                 where
                     V: serde::de::MapAccess<'de>,
             {
+                let mut config__ = None;
                 let mut raw_data_json__ = None;
                 while let Some(k) = map_.next_key()? {
                     match k {
+                        GeneratedField::Config => {
+                            if config__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("config"));
+                            }
+                            config__ = map_.next_value()?;
+                        }
                         GeneratedField::RawDataJson => {
                             if raw_data_json__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("rawDataJson"));
@@ -3708,6 +3724,7 @@ impl<'de> serde::Deserialize<'de> for ParseRawAppInfoRequest {
                     }
                 }
                 Ok(ParseRawAppInfoRequest {
+                    config: config__,
                     raw_data_json: raw_data_json__.unwrap_or_default(),
                 })
             }
