@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.6.0](https://github.com/tuihub/protos/compare/v0.5.10...v0.6.0) (2025-08-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* refactor proto structure
+
+### Features
+
+* add config in ParseRawAppInfoRequest ([43e4657](https://github.com/tuihub/protos/commit/43e4657720b24e966e30fe0369b92701e09846af))
+* add connect rpc ([72cc05e](https://github.com/tuihub/protos/commit/72cc05e5c35209e7dadadc62c9e17b79f97c046b))
+* refactor proto structure ([86126f8](https://github.com/tuihub/protos/commit/86126f80dfa8912d676ae492619baee1224fe118))
+
+
+### Bug Fixes
+
+* **buf:** add rust dep ([8b5cce8](https://github.com/tuihub/protos/commit/8b5cce89701009a798a63fb48993ed8e835321b6))
+* **buf:** enable managed mode ([cec22ce](https://github.com/tuihub/protos/commit/cec22ce70b7a8d53988a95f609303140610e1ee4))
+* **buf:** fix ([a5e98b2](https://github.com/tuihub/protos/commit/a5e98b2ead7618151d65e54acd94b0269506470a))
+* **buf:** revert enable managed mode ([880096e](https://github.com/tuihub/protos/commit/880096edad46d04880cc9666f950a2b5461c5af7))
+
 ## [0.5.10](https://github.com/tuihub/protos/compare/v0.5.9...v0.5.10) (2025-08-17)
 
 
