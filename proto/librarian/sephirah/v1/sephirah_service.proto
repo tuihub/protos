@@ -136,6 +136,8 @@ service LibrarianSephirahService {
   rpc UpdateApp(UpdateAppRequest) returns (UpdateAppResponse);
   // `Gebura` `Normal`
   rpc ListApps(ListAppsRequest) returns (ListAppsResponse);
+  // `Gebura` `Normal`
+  rpc DeleteApp(DeleteAppRequest) returns (DeleteAppResponse);
 
   // `Gebura` `Normal`
   rpc BatchCreateAppRunTime(BatchCreateAppRunTimeRequest) returns (BatchCreateAppRunTimeResponse);

@@ -126,6 +126,12 @@ message ListAppsResponse {
   repeated App apps = 2;
 }
 
+message DeleteAppRequest {
+  librarian.v1.InternalID id = 1;
+}
+
+message DeleteAppResponse {}
+
 message BatchCreateAppRunTimeRequest {
   repeated AppRunTime app_run_times = 1;
 }
