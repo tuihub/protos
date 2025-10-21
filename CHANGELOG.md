@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.6.1](https://github.com/tuihub/protos/compare/v0.6.0...v0.6.1) (2025-10-21)
+
+
+### Features
+
+* **gebura:** add DeleteApp ([20912f0](https://github.com/tuihub/protos/commit/20912f07142973594a47d482360499e001c9899e))
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#183](https://github.com/tuihub/protos/issues/183)) ([6c7efad](https://github.com/tuihub/protos/commit/6c7efadce45173e8602219fd08203829e7804ab3))
+* **deps:** update all non-major dependencies ([#189](https://github.com/tuihub/protos/issues/189)) ([52673b9](https://github.com/tuihub/protos/commit/52673b9cd192c2e1e1ec7fe119021a27e591e019))
+
 ## [0.6.0](https://github.com/tuihub/protos/compare/v0.5.10...v0.6.0) (2025-08-30)
 
 
