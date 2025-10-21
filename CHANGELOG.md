@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.2](https://github.com/tuihub/protos/compare/v0.6.1...v0.6.2) (2025-10-21)
+
+
+### Features
+
+* use simple connect go ([54a2b85](https://github.com/tuihub/protos/commit/54a2b85369268ce07ad6ebec8abf7e9398d5bba7))
+
 ## [0.6.1](https://github.com/tuihub/protos/compare/v0.6.0...v0.6.1) (2025-10-21)
 
 
