@@ -9,7 +9,7 @@ install-plugins:
 	go install github.com/sudorandom/protoc-gen-connect-openapi@latest
 	npm install
 	cargo install --locked protoc-gen-prost-crate
-	dart pub global activate protoc_plugin
+	dart pub global activate protoc_plugin 22.5.0
 
 generate: clean buf go rust dart
 
