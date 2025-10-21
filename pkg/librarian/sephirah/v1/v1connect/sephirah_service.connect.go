@@ -297,7 +297,7 @@ const (
 // service.
 type LibrarianSephirahServiceClient interface {
 	// Allow anonymous call, use accessToken to get complete information
-	GetServerInformation(context.Context, *connect.Request[v1.GetServerInformationRequest]) (*connect.Response[v1.GetServerInformationResponse], error)
+	GetServerInformation(context.Context, *v1.GetServerInformationRequest) (*v1.GetServerInformationResponse, error)
 	// `Normal` Client can use this to subscribe to server events.
 	//
 	// Server should send `SERVER_EVENT_LISTENER_CONNECTED` event immediately if the connection is valid.
@@ -305,186 +305,186 @@ type LibrarianSephirahServiceClient interface {
 	//
 	// Server can close the stream at any time, client should reconnect if needed **with backoff**.
 	// Only used to improve real-time experience, no guarantee of delivery.
-	ListenServerEvent(context.Context, *connect.Request[v1.ListenServerEventRequest]) (*connect.ServerStreamForClient[v1.ListenServerEventResponse], error)
+	ListenServerEvent(context.Context, *v1.ListenServerEventRequest) (*connect.ServerStreamForClient[v1.ListenServerEventResponse], error)
 	// `Tiphereth` `Normal` Login via password and get two token
-	GetToken(context.Context, *connect.Request[v1.GetTokenRequest]) (*connect.Response[v1.GetTokenResponse], error)
+	GetToken(context.Context, *v1.GetTokenRequest) (*v1.GetTokenResponse, error)
 	// `Tiphereth` `Normal` Use valid refresh_token and get two new token, a refresh_token can only be used once
-	RefreshToken(context.Context, *connect.Request[v1.RefreshTokenRequest]) (*connect.Response[v1.RefreshTokenResponse], error)
+	RefreshToken(context.Context, *v1.RefreshTokenRequest) (*v1.RefreshTokenResponse, error)
 	// `Tiphereth`
-	GetUser(context.Context, *connect.Request[v1.GetUserRequest]) (*connect.Response[v1.GetUserResponse], error)
+	GetUser(context.Context, *v1.GetUserRequest) (*v1.GetUserResponse, error)
 	// `Tiphereth` Self register as a new normal user
-	RegisterUser(context.Context, *connect.Request[v1.RegisterUserRequest]) (*connect.Response[v1.RegisterUserResponse], error)
+	RegisterUser(context.Context, *v1.RegisterUserRequest) (*v1.RegisterUserResponse, error)
 	// `Tiphereth` `Normal` Update self user info
-	UpdateUser(context.Context, *connect.Request[v1.UpdateUserRequest]) (*connect.Response[v1.UpdateUserResponse], error)
+	UpdateUser(context.Context, *v1.UpdateUserRequest) (*v1.UpdateUserResponse, error)
 	// `Tiphereth` `Normal` Client should register device after the first login
 	// and store the device_id locally.
 	// The server could add extra limits to non-registered device
-	RegisterDevice(context.Context, *connect.Request[v1.RegisterDeviceRequest]) (*connect.Response[v1.RegisterDeviceResponse], error)
+	RegisterDevice(context.Context, *v1.RegisterDeviceRequest) (*v1.RegisterDeviceResponse, error)
 	// `Tiphereth` `Normal`
-	ListUserSessions(context.Context, *connect.Request[v1.ListUserSessionsRequest]) (*connect.Response[v1.ListUserSessionsResponse], error)
+	ListUserSessions(context.Context, *v1.ListUserSessionsRequest) (*v1.ListUserSessionsResponse, error)
 	// `Tiphereth` `Normal` delete session will revoke refresh_token immediately.
 	// NOTE: This can also be used to log out at server side.
 	// NOTE2: Delete session will not affect device registration.
-	DeleteUserSession(context.Context, *connect.Request[v1.DeleteUserSessionRequest]) (*connect.Response[v1.DeleteUserSessionResponse], error)
+	DeleteUserSession(context.Context, *v1.DeleteUserSessionRequest) (*v1.DeleteUserSessionResponse, error)
 	// `Tiphereth` `Normal` Bind third-party account to current user.
-	LinkAccount(context.Context, *connect.Request[v1.LinkAccountRequest]) (*connect.Response[v1.LinkAccountResponse], error)
+	LinkAccount(context.Context, *v1.LinkAccountRequest) (*v1.LinkAccountResponse, error)
 	// `Tiphereth` `Normal` Unbind third-party account from current user.
-	UnLinkAccount(context.Context, *connect.Request[v1.UnLinkAccountRequest]) (*connect.Response[v1.UnLinkAccountResponse], error)
+	UnLinkAccount(context.Context, *v1.UnLinkAccountRequest) (*v1.UnLinkAccountResponse, error)
 	// `Tiphereth` `Normal` List third-party account binded to current user.
-	ListLinkAccounts(context.Context, *connect.Request[v1.ListLinkAccountsRequest]) (*connect.Response[v1.ListLinkAccountsResponse], error)
+	ListLinkAccounts(context.Context, *v1.ListLinkAccountsRequest) (*v1.ListLinkAccountsResponse, error)
 	// `Tiphereth` `Normal`
-	ListPorterDigests(context.Context, *connect.Request[v1.ListPorterDigestsRequest]) (*connect.Response[v1.ListPorterDigestsResponse], error)
+	ListPorterDigests(context.Context, *v1.ListPorterDigestsRequest) (*v1.ListPorterDigestsResponse, error)
 	// `Tiphereth` `Normal`
-	CreatePorterContext(context.Context, *connect.Request[v1.CreatePorterContextRequest]) (*connect.Response[v1.CreatePorterContextResponse], error)
+	CreatePorterContext(context.Context, *v1.CreatePorterContextRequest) (*v1.CreatePorterContextResponse, error)
 	// `Tiphereth` `Normal`
-	ListPorterContexts(context.Context, *connect.Request[v1.ListPorterContextsRequest]) (*connect.Response[v1.ListPorterContextsResponse], error)
+	ListPorterContexts(context.Context, *v1.ListPorterContextsRequest) (*v1.ListPorterContextsResponse, error)
 	// `Tiphereth` `Normal` Set porter context.
-	UpdatePorterContext(context.Context, *connect.Request[v1.UpdatePorterContextRequest]) (*connect.Response[v1.UpdatePorterContextResponse], error)
+	UpdatePorterContext(context.Context, *v1.UpdatePorterContextRequest) (*v1.UpdatePorterContextResponse, error)
 	// `Binah` `Normal`
-	GetStorageCapacityUsage(context.Context, *connect.Request[v1.GetStorageCapacityUsageRequest]) (*connect.Response[v1.GetStorageCapacityUsageResponse], error)
+	GetStorageCapacityUsage(context.Context, *v1.GetStorageCapacityUsageRequest) (*v1.GetStorageCapacityUsageResponse, error)
 	// `Binah` `upload_token`
-	UploadFile(context.Context) *connect.BidiStreamForClient[v1.UploadFileRequest, v1.UploadFileResponse]
+	UploadFile(context.Context) (*connect.BidiStreamForClientSimple[v1.UploadFileRequest, v1.UploadFileResponse], error)
 	// `Binah` `download_token`
-	DownloadFile(context.Context) *connect.BidiStreamForClient[v1.DownloadFileRequest, v1.DownloadFileResponse]
+	DownloadFile(context.Context) (*connect.BidiStreamForClientSimple[v1.DownloadFileRequest, v1.DownloadFileResponse], error)
 	// `Binah` `upload_token`
 	// Maximum 256M
 	// Server must send response at least once a minute to keepalive.
 	// Client should ignore in_process response and wait for success or error response.
-	SimpleUploadFile(context.Context) *connect.BidiStreamForClient[v1.SimpleUploadFileRequest, v1.SimpleUploadFileResponse]
+	SimpleUploadFile(context.Context) (*connect.BidiStreamForClientSimple[v1.SimpleUploadFileRequest, v1.SimpleUploadFileResponse], error)
 	// `Binah` `download_token`
 	// Server will not check the receiving state
-	SimpleDownloadFile(context.Context, *connect.Request[v1.SimpleDownloadFileRequest]) (*connect.ServerStreamForClient[v1.SimpleDownloadFileResponse], error)
+	SimpleDownloadFile(context.Context, *v1.SimpleDownloadFileRequest) (*connect.ServerStreamForClient[v1.SimpleDownloadFileResponse], error)
 	// `Binah` `upload_token`
 	// Upload file through http url
-	PresignedUploadFile(context.Context, *connect.Request[v1.PresignedUploadFileRequest]) (*connect.Response[v1.PresignedUploadFileResponse], error)
+	PresignedUploadFile(context.Context, *v1.PresignedUploadFileRequest) (*v1.PresignedUploadFileResponse, error)
 	// `Binah` `upload_token`
 	// Report file transfer status. Mainly used to trigger server post-process immediately
-	PresignedUploadFileStatus(context.Context, *connect.Request[v1.PresignedUploadFileStatusRequest]) (*connect.Response[v1.PresignedUploadFileStatusResponse], error)
+	PresignedUploadFileStatus(context.Context, *v1.PresignedUploadFileStatusRequest) (*v1.PresignedUploadFileStatusResponse, error)
 	// `Binah` `download_token`
 	// Download file through http url
-	PresignedDownloadFile(context.Context, *connect.Request[v1.PresignedDownloadFileRequest]) (*connect.Response[v1.PresignedDownloadFileResponse], error)
+	PresignedDownloadFile(context.Context, *v1.PresignedDownloadFileRequest) (*v1.PresignedDownloadFileResponse, error)
 	// `Chesed` `Normal`
-	UploadImage(context.Context, *connect.Request[v1.UploadImageRequest]) (*connect.Response[v1.UploadImageResponse], error)
+	UploadImage(context.Context, *v1.UploadImageRequest) (*v1.UploadImageResponse, error)
 	// `Chesed` `Normal`
-	UpdateImage(context.Context, *connect.Request[v1.UpdateImageRequest]) (*connect.Response[v1.UpdateImageResponse], error)
+	UpdateImage(context.Context, *v1.UpdateImageRequest) (*v1.UpdateImageResponse, error)
 	// `Chesed` `Normal`
-	ListImages(context.Context, *connect.Request[v1.ListImagesRequest]) (*connect.Response[v1.ListImagesResponse], error)
+	ListImages(context.Context, *v1.ListImagesRequest) (*v1.ListImagesResponse, error)
 	// `Chesed` `Normal`
-	SearchImages(context.Context, *connect.Request[v1.SearchImagesRequest]) (*connect.Response[v1.SearchImagesResponse], error)
+	SearchImages(context.Context, *v1.SearchImagesRequest) (*v1.SearchImagesResponse, error)
 	// `Chesed` `Normal`
-	GetImage(context.Context, *connect.Request[v1.GetImageRequest]) (*connect.Response[v1.GetImageResponse], error)
+	GetImage(context.Context, *v1.GetImageRequest) (*v1.GetImageResponse, error)
 	// `Chesed` `Normal`
-	DownloadImage(context.Context, *connect.Request[v1.DownloadImageRequest]) (*connect.Response[v1.DownloadImageResponse], error)
+	DownloadImage(context.Context, *v1.DownloadImageRequest) (*v1.DownloadImageResponse, error)
 	// `Gebura` `Normal`
-	SearchStoreApps(context.Context, *connect.Request[v1.SearchStoreAppsRequest]) (*connect.Response[v1.SearchStoreAppsResponse], error)
+	SearchStoreApps(context.Context, *v1.SearchStoreAppsRequest) (*v1.SearchStoreAppsResponse, error)
 	// `Gebura` `Normal`
-	GetStoreAppSummary(context.Context, *connect.Request[v1.GetStoreAppSummaryRequest]) (*connect.Response[v1.GetStoreAppSummaryResponse], error)
+	GetStoreAppSummary(context.Context, *v1.GetStoreAppSummaryRequest) (*v1.GetStoreAppSummaryResponse, error)
 	// `Gebura` `Normal`
-	AcquireStoreApp(context.Context, *connect.Request[v1.AcquireStoreAppRequest]) (*connect.Response[v1.AcquireStoreAppResponse], error)
+	AcquireStoreApp(context.Context, *v1.AcquireStoreAppRequest) (*v1.AcquireStoreAppResponse, error)
 	// `Gebura` `Normal`
-	ListStoreAppBinaries(context.Context, *connect.Request[v1.ListStoreAppBinariesRequest]) (*connect.Response[v1.ListStoreAppBinariesResponse], error)
+	ListStoreAppBinaries(context.Context, *v1.ListStoreAppBinariesRequest) (*v1.ListStoreAppBinariesResponse, error)
 	// `Gebura` `Normal`
-	ListStoreAppBinaryFiles(context.Context, *connect.Request[v1.ListStoreAppBinaryFilesRequest]) (*connect.Response[v1.ListStoreAppBinaryFilesResponse], error)
+	ListStoreAppBinaryFiles(context.Context, *v1.ListStoreAppBinaryFilesRequest) (*v1.ListStoreAppBinaryFilesResponse, error)
 	// `Gebura` `Normal`
-	DownloadStoreAppBinary(context.Context, *connect.Request[v1.DownloadStoreAppBinaryRequest]) (*connect.Response[v1.DownloadStoreAppBinaryResponse], error)
+	DownloadStoreAppBinary(context.Context, *v1.DownloadStoreAppBinaryRequest) (*v1.DownloadStoreAppBinaryResponse, error)
 	// `Gebura` `Normal`
-	ListStoreAppSaveFiles(context.Context, *connect.Request[v1.ListStoreAppSaveFilesRequest]) (*connect.Response[v1.ListStoreAppSaveFilesResponse], error)
+	ListStoreAppSaveFiles(context.Context, *v1.ListStoreAppSaveFilesRequest) (*v1.ListStoreAppSaveFilesResponse, error)
 	// `Gebura` `Normal`
-	DownloadStoreAppSaveFile(context.Context, *connect.Request[v1.DownloadStoreAppSaveFileRequest]) (*connect.Response[v1.DownloadStoreAppSaveFileResponse], error)
+	DownloadStoreAppSaveFile(context.Context, *v1.DownloadStoreAppSaveFileRequest) (*v1.DownloadStoreAppSaveFileResponse, error)
 	// `Gebura` `Normal` Search app infos
-	SearchAppInfos(context.Context, *connect.Request[v1.SearchAppInfosRequest]) (*connect.Response[v1.SearchAppInfosResponse], error)
+	SearchAppInfos(context.Context, *v1.SearchAppInfosRequest) (*v1.SearchAppInfosResponse, error)
 	// `Gebura` `Normal`
-	CreateApp(context.Context, *connect.Request[v1.CreateAppRequest]) (*connect.Response[v1.CreateAppResponse], error)
+	CreateApp(context.Context, *v1.CreateAppRequest) (*v1.CreateAppResponse, error)
 	// `Gebura` `Normal`
-	UpdateApp(context.Context, *connect.Request[v1.UpdateAppRequest]) (*connect.Response[v1.UpdateAppResponse], error)
+	UpdateApp(context.Context, *v1.UpdateAppRequest) (*v1.UpdateAppResponse, error)
 	// `Gebura` `Normal`
-	ListApps(context.Context, *connect.Request[v1.ListAppsRequest]) (*connect.Response[v1.ListAppsResponse], error)
+	ListApps(context.Context, *v1.ListAppsRequest) (*v1.ListAppsResponse, error)
 	// `Gebura` `Normal`
-	DeleteApp(context.Context, *connect.Request[v1.DeleteAppRequest]) (*connect.Response[v1.DeleteAppResponse], error)
+	DeleteApp(context.Context, *v1.DeleteAppRequest) (*v1.DeleteAppResponse, error)
 	// `Gebura` `Normal`
-	BatchCreateAppRunTime(context.Context, *connect.Request[v1.BatchCreateAppRunTimeRequest]) (*connect.Response[v1.BatchCreateAppRunTimeResponse], error)
+	BatchCreateAppRunTime(context.Context, *v1.BatchCreateAppRunTimeRequest) (*v1.BatchCreateAppRunTimeResponse, error)
 	// `Gebura` `Normal`
-	SumAppRunTime(context.Context, *connect.Request[v1.SumAppRunTimeRequest]) (*connect.Response[v1.SumAppRunTimeResponse], error)
+	SumAppRunTime(context.Context, *v1.SumAppRunTimeRequest) (*v1.SumAppRunTimeResponse, error)
 	// `Gebura` `Normal`
-	ListAppRunTimes(context.Context, *connect.Request[v1.ListAppRunTimesRequest]) (*connect.Response[v1.ListAppRunTimesResponse], error)
+	ListAppRunTimes(context.Context, *v1.ListAppRunTimesRequest) (*v1.ListAppRunTimesResponse, error)
 	// `Gebura` `Normal`
-	DeleteAppRunTime(context.Context, *connect.Request[v1.DeleteAppRunTimeRequest]) (*connect.Response[v1.DeleteAppRunTimeResponse], error)
+	DeleteAppRunTime(context.Context, *v1.DeleteAppRunTimeRequest) (*v1.DeleteAppRunTimeResponse, error)
 	// `Gebura` `Normal`
-	UploadAppSaveFile(context.Context, *connect.Request[v1.UploadAppSaveFileRequest]) (*connect.Response[v1.UploadAppSaveFileResponse], error)
+	UploadAppSaveFile(context.Context, *v1.UploadAppSaveFileRequest) (*v1.UploadAppSaveFileResponse, error)
 	// `Gebura` `Normal`
-	DownloadAppSaveFile(context.Context, *connect.Request[v1.DownloadAppSaveFileRequest]) (*connect.Response[v1.DownloadAppSaveFileResponse], error)
+	DownloadAppSaveFile(context.Context, *v1.DownloadAppSaveFileRequest) (*v1.DownloadAppSaveFileResponse, error)
 	// `Gebura` `Normal`
-	ListAppSaveFiles(context.Context, *connect.Request[v1.ListAppSaveFilesRequest]) (*connect.Response[v1.ListAppSaveFilesResponse], error)
+	ListAppSaveFiles(context.Context, *v1.ListAppSaveFilesRequest) (*v1.ListAppSaveFilesResponse, error)
 	// `Gebura` `Normal`
-	DeleteAppSaveFile(context.Context, *connect.Request[v1.DeleteAppSaveFileRequest]) (*connect.Response[v1.DeleteAppSaveFileResponse], error)
+	DeleteAppSaveFile(context.Context, *v1.DeleteAppSaveFileRequest) (*v1.DeleteAppSaveFileResponse, error)
 	// `Gebura` `Normal`
-	PinAppSaveFile(context.Context, *connect.Request[v1.PinAppSaveFileRequest]) (*connect.Response[v1.PinAppSaveFileResponse], error)
+	PinAppSaveFile(context.Context, *v1.PinAppSaveFileRequest) (*v1.PinAppSaveFileResponse, error)
 	// `Gebura` `Normal`
-	UnpinAppSaveFile(context.Context, *connect.Request[v1.UnpinAppSaveFileRequest]) (*connect.Response[v1.UnpinAppSaveFileResponse], error)
+	UnpinAppSaveFile(context.Context, *v1.UnpinAppSaveFileRequest) (*v1.UnpinAppSaveFileResponse, error)
 	// `Gebura` `Normal`
-	GetAppSaveFileCapacity(context.Context, *connect.Request[v1.GetAppSaveFileCapacityRequest]) (*connect.Response[v1.GetAppSaveFileCapacityResponse], error)
+	GetAppSaveFileCapacity(context.Context, *v1.GetAppSaveFileCapacityRequest) (*v1.GetAppSaveFileCapacityResponse, error)
 	// `Gebura` `Normal`
-	SetAppSaveFileCapacity(context.Context, *connect.Request[v1.SetAppSaveFileCapacityRequest]) (*connect.Response[v1.SetAppSaveFileCapacityResponse], error)
+	SetAppSaveFileCapacity(context.Context, *v1.SetAppSaveFileCapacityRequest) (*v1.SetAppSaveFileCapacityResponse, error)
 	// `Gebura` `Normal`
-	ListAppCategories(context.Context, *connect.Request[v1.ListAppCategoriesRequest]) (*connect.Response[v1.ListAppCategoriesResponse], error)
+	ListAppCategories(context.Context, *v1.ListAppCategoriesRequest) (*v1.ListAppCategoriesResponse, error)
 	// `Gebura` `Normal`
-	CreateAppCategory(context.Context, *connect.Request[v1.CreateAppCategoryRequest]) (*connect.Response[v1.CreateAppCategoryResponse], error)
+	CreateAppCategory(context.Context, *v1.CreateAppCategoryRequest) (*v1.CreateAppCategoryResponse, error)
 	// `Gebura` `Normal`
-	UpdateAppCategory(context.Context, *connect.Request[v1.UpdateAppCategoryRequest]) (*connect.Response[v1.UpdateAppCategoryResponse], error)
+	UpdateAppCategory(context.Context, *v1.UpdateAppCategoryRequest) (*v1.UpdateAppCategoryResponse, error)
 	// `Gebura` `Normal`
-	DeleteAppCategory(context.Context, *connect.Request[v1.DeleteAppCategoryRequest]) (*connect.Response[v1.DeleteAppCategoryResponse], error)
+	DeleteAppCategory(context.Context, *v1.DeleteAppCategoryRequest) (*v1.DeleteAppCategoryResponse, error)
 	// `Netzach` `Normal`
-	CreateNotifyTarget(context.Context, *connect.Request[v1.CreateNotifyTargetRequest]) (*connect.Response[v1.CreateNotifyTargetResponse], error)
+	CreateNotifyTarget(context.Context, *v1.CreateNotifyTargetRequest) (*v1.CreateNotifyTargetResponse, error)
 	// `Netzach` `Normal`
-	UpdateNotifyTarget(context.Context, *connect.Request[v1.UpdateNotifyTargetRequest]) (*connect.Response[v1.UpdateNotifyTargetResponse], error)
+	UpdateNotifyTarget(context.Context, *v1.UpdateNotifyTargetRequest) (*v1.UpdateNotifyTargetResponse, error)
 	// `Netzach` `Normal`
-	ListNotifyTargets(context.Context, *connect.Request[v1.ListNotifyTargetsRequest]) (*connect.Response[v1.ListNotifyTargetsResponse], error)
+	ListNotifyTargets(context.Context, *v1.ListNotifyTargetsRequest) (*v1.ListNotifyTargetsResponse, error)
 	// `Netzach` `Normal`
-	CreateNotifyFlow(context.Context, *connect.Request[v1.CreateNotifyFlowRequest]) (*connect.Response[v1.CreateNotifyFlowResponse], error)
+	CreateNotifyFlow(context.Context, *v1.CreateNotifyFlowRequest) (*v1.CreateNotifyFlowResponse, error)
 	// `Netzach` `Normal`
-	UpdateNotifyFlow(context.Context, *connect.Request[v1.UpdateNotifyFlowRequest]) (*connect.Response[v1.UpdateNotifyFlowResponse], error)
+	UpdateNotifyFlow(context.Context, *v1.UpdateNotifyFlowRequest) (*v1.UpdateNotifyFlowResponse, error)
 	// `Netzach` `Normal`
-	ListNotifyFlows(context.Context, *connect.Request[v1.ListNotifyFlowsRequest]) (*connect.Response[v1.ListNotifyFlowsResponse], error)
+	ListNotifyFlows(context.Context, *v1.ListNotifyFlowsRequest) (*v1.ListNotifyFlowsResponse, error)
 	// `Netzach` `Normal`
-	ListSystemNotifications(context.Context, *connect.Request[v1.ListSystemNotificationsRequest]) (*connect.Response[v1.ListSystemNotificationsResponse], error)
+	ListSystemNotifications(context.Context, *v1.ListSystemNotificationsRequest) (*v1.ListSystemNotificationsResponse, error)
 	// `Netzach` `Normal`
-	UpdateSystemNotification(context.Context, *connect.Request[v1.UpdateSystemNotificationRequest]) (*connect.Response[v1.UpdateSystemNotificationResponse], error)
+	UpdateSystemNotification(context.Context, *v1.UpdateSystemNotificationRequest) (*v1.UpdateSystemNotificationResponse, error)
 	// `Yesod` `Normal`
-	CreateFeedConfig(context.Context, *connect.Request[v1.CreateFeedConfigRequest]) (*connect.Response[v1.CreateFeedConfigResponse], error)
+	CreateFeedConfig(context.Context, *v1.CreateFeedConfigRequest) (*v1.CreateFeedConfigResponse, error)
 	// `Yesod` `Normal`
-	UpdateFeedConfig(context.Context, *connect.Request[v1.UpdateFeedConfigRequest]) (*connect.Response[v1.UpdateFeedConfigResponse], error)
+	UpdateFeedConfig(context.Context, *v1.UpdateFeedConfigRequest) (*v1.UpdateFeedConfigResponse, error)
 	// `Yesod` `Normal`
-	ListFeedConfigs(context.Context, *connect.Request[v1.ListFeedConfigsRequest]) (*connect.Response[v1.ListFeedConfigsResponse], error)
+	ListFeedConfigs(context.Context, *v1.ListFeedConfigsRequest) (*v1.ListFeedConfigsResponse, error)
 	// `Yesod` `Normal`
-	CreateFeedActionSet(context.Context, *connect.Request[v1.CreateFeedActionSetRequest]) (*connect.Response[v1.CreateFeedActionSetResponse], error)
+	CreateFeedActionSet(context.Context, *v1.CreateFeedActionSetRequest) (*v1.CreateFeedActionSetResponse, error)
 	// `Yesod` `Normal`
-	UpdateFeedActionSet(context.Context, *connect.Request[v1.UpdateFeedActionSetRequest]) (*connect.Response[v1.UpdateFeedActionSetResponse], error)
+	UpdateFeedActionSet(context.Context, *v1.UpdateFeedActionSetRequest) (*v1.UpdateFeedActionSetResponse, error)
 	// `Yesod` `Normal`
-	ListFeedActionSets(context.Context, *connect.Request[v1.ListFeedActionSetsRequest]) (*connect.Response[v1.ListFeedActionSetsResponse], error)
+	ListFeedActionSets(context.Context, *v1.ListFeedActionSetsRequest) (*v1.ListFeedActionSetsResponse, error)
 	// `Yesod` `Normal`
-	ListFeedCategories(context.Context, *connect.Request[v1.ListFeedCategoriesRequest]) (*connect.Response[v1.ListFeedCategoriesResponse], error)
+	ListFeedCategories(context.Context, *v1.ListFeedCategoriesRequest) (*v1.ListFeedCategoriesResponse, error)
 	// `Yesod` `Normal`
-	ListFeedPlatforms(context.Context, *connect.Request[v1.ListFeedPlatformsRequest]) (*connect.Response[v1.ListFeedPlatformsResponse], error)
+	ListFeedPlatforms(context.Context, *v1.ListFeedPlatformsRequest) (*v1.ListFeedPlatformsResponse, error)
 	// `Yesod` `Normal`
-	ListFeedItems(context.Context, *connect.Request[v1.ListFeedItemsRequest]) (*connect.Response[v1.ListFeedItemsResponse], error)
+	ListFeedItems(context.Context, *v1.ListFeedItemsRequest) (*v1.ListFeedItemsResponse, error)
 	// `Yesod` `Normal`
-	GetFeedItem(context.Context, *connect.Request[v1.GetFeedItemRequest]) (*connect.Response[v1.GetFeedItemResponse], error)
+	GetFeedItem(context.Context, *v1.GetFeedItemRequest) (*v1.GetFeedItemResponse, error)
 	// `Yesod` `Normal`
-	GetBatchFeedItems(context.Context, *connect.Request[v1.GetBatchFeedItemsRequest]) (*connect.Response[v1.GetBatchFeedItemsResponse], error)
+	GetBatchFeedItems(context.Context, *v1.GetBatchFeedItemsRequest) (*v1.GetBatchFeedItemsResponse, error)
 	// `Yesod` `Normal`
-	ReadFeedItem(context.Context, *connect.Request[v1.ReadFeedItemRequest]) (*connect.Response[v1.ReadFeedItemResponse], error)
+	ReadFeedItem(context.Context, *v1.ReadFeedItemRequest) (*v1.ReadFeedItemResponse, error)
 	// `Yesod` `Normal`
-	CreateFeedItemCollection(context.Context, *connect.Request[v1.CreateFeedItemCollectionRequest]) (*connect.Response[v1.CreateFeedItemCollectionResponse], error)
+	CreateFeedItemCollection(context.Context, *v1.CreateFeedItemCollectionRequest) (*v1.CreateFeedItemCollectionResponse, error)
 	// `Yesod` `Normal`
-	UpdateFeedItemCollection(context.Context, *connect.Request[v1.UpdateFeedItemCollectionRequest]) (*connect.Response[v1.UpdateFeedItemCollectionResponse], error)
+	UpdateFeedItemCollection(context.Context, *v1.UpdateFeedItemCollectionRequest) (*v1.UpdateFeedItemCollectionResponse, error)
 	// `Yesod` `Normal`
-	ListFeedItemCollections(context.Context, *connect.Request[v1.ListFeedItemCollectionsRequest]) (*connect.Response[v1.ListFeedItemCollectionsResponse], error)
+	ListFeedItemCollections(context.Context, *v1.ListFeedItemCollectionsRequest) (*v1.ListFeedItemCollectionsResponse, error)
 	// `Yesod` `Normal`
-	AddFeedItemToCollection(context.Context, *connect.Request[v1.AddFeedItemToCollectionRequest]) (*connect.Response[v1.AddFeedItemToCollectionResponse], error)
+	AddFeedItemToCollection(context.Context, *v1.AddFeedItemToCollectionRequest) (*v1.AddFeedItemToCollectionResponse, error)
 	// `Yesod` `Normal`
-	RemoveFeedItemFromCollection(context.Context, *connect.Request[v1.RemoveFeedItemFromCollectionRequest]) (*connect.Response[v1.RemoveFeedItemFromCollectionResponse], error)
+	RemoveFeedItemFromCollection(context.Context, *v1.RemoveFeedItemFromCollectionRequest) (*v1.RemoveFeedItemFromCollectionResponse, error)
 	// `Yesod` `Normal`
-	ListFeedItemsInCollection(context.Context, *connect.Request[v1.ListFeedItemsInCollectionRequest]) (*connect.Response[v1.ListFeedItemsInCollectionResponse], error)
+	ListFeedItemsInCollection(context.Context, *v1.ListFeedItemsInCollectionRequest) (*v1.ListFeedItemsInCollectionResponse, error)
 }
 
 // NewLibrarianSephirahServiceClient constructs a client for the
@@ -1109,455 +1109,779 @@ type librarianSephirahServiceClient struct {
 }
 
 // GetServerInformation calls librarian.sephirah.v1.LibrarianSephirahService.GetServerInformation.
-func (c *librarianSephirahServiceClient) GetServerInformation(ctx context.Context, req *connect.Request[v1.GetServerInformationRequest]) (*connect.Response[v1.GetServerInformationResponse], error) {
-	return c.getServerInformation.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) GetServerInformation(ctx context.Context, req *v1.GetServerInformationRequest) (*v1.GetServerInformationResponse, error) {
+	response, err := c.getServerInformation.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // ListenServerEvent calls librarian.sephirah.v1.LibrarianSephirahService.ListenServerEvent.
-func (c *librarianSephirahServiceClient) ListenServerEvent(ctx context.Context, req *connect.Request[v1.ListenServerEventRequest]) (*connect.ServerStreamForClient[v1.ListenServerEventResponse], error) {
-	return c.listenServerEvent.CallServerStream(ctx, req)
+func (c *librarianSephirahServiceClient) ListenServerEvent(ctx context.Context, req *v1.ListenServerEventRequest) (*connect.ServerStreamForClient[v1.ListenServerEventResponse], error) {
+	return c.listenServerEvent.CallServerStream(ctx, connect.NewRequest(req))
 }
 
 // GetToken calls librarian.sephirah.v1.LibrarianSephirahService.GetToken.
-func (c *librarianSephirahServiceClient) GetToken(ctx context.Context, req *connect.Request[v1.GetTokenRequest]) (*connect.Response[v1.GetTokenResponse], error) {
-	return c.getToken.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) GetToken(ctx context.Context, req *v1.GetTokenRequest) (*v1.GetTokenResponse, error) {
+	response, err := c.getToken.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // RefreshToken calls librarian.sephirah.v1.LibrarianSephirahService.RefreshToken.
-func (c *librarianSephirahServiceClient) RefreshToken(ctx context.Context, req *connect.Request[v1.RefreshTokenRequest]) (*connect.Response[v1.RefreshTokenResponse], error) {
-	return c.refreshToken.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) RefreshToken(ctx context.Context, req *v1.RefreshTokenRequest) (*v1.RefreshTokenResponse, error) {
+	response, err := c.refreshToken.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // GetUser calls librarian.sephirah.v1.LibrarianSephirahService.GetUser.
-func (c *librarianSephirahServiceClient) GetUser(ctx context.Context, req *connect.Request[v1.GetUserRequest]) (*connect.Response[v1.GetUserResponse], error) {
-	return c.getUser.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) GetUser(ctx context.Context, req *v1.GetUserRequest) (*v1.GetUserResponse, error) {
+	response, err := c.getUser.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // RegisterUser calls librarian.sephirah.v1.LibrarianSephirahService.RegisterUser.
-func (c *librarianSephirahServiceClient) RegisterUser(ctx context.Context, req *connect.Request[v1.RegisterUserRequest]) (*connect.Response[v1.RegisterUserResponse], error) {
-	return c.registerUser.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) RegisterUser(ctx context.Context, req *v1.RegisterUserRequest) (*v1.RegisterUserResponse, error) {
+	response, err := c.registerUser.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // UpdateUser calls librarian.sephirah.v1.LibrarianSephirahService.UpdateUser.
-func (c *librarianSephirahServiceClient) UpdateUser(ctx context.Context, req *connect.Request[v1.UpdateUserRequest]) (*connect.Response[v1.UpdateUserResponse], error) {
-	return c.updateUser.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) UpdateUser(ctx context.Context, req *v1.UpdateUserRequest) (*v1.UpdateUserResponse, error) {
+	response, err := c.updateUser.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // RegisterDevice calls librarian.sephirah.v1.LibrarianSephirahService.RegisterDevice.
-func (c *librarianSephirahServiceClient) RegisterDevice(ctx context.Context, req *connect.Request[v1.RegisterDeviceRequest]) (*connect.Response[v1.RegisterDeviceResponse], error) {
-	return c.registerDevice.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) RegisterDevice(ctx context.Context, req *v1.RegisterDeviceRequest) (*v1.RegisterDeviceResponse, error) {
+	response, err := c.registerDevice.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // ListUserSessions calls librarian.sephirah.v1.LibrarianSephirahService.ListUserSessions.
-func (c *librarianSephirahServiceClient) ListUserSessions(ctx context.Context, req *connect.Request[v1.ListUserSessionsRequest]) (*connect.Response[v1.ListUserSessionsResponse], error) {
-	return c.listUserSessions.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) ListUserSessions(ctx context.Context, req *v1.ListUserSessionsRequest) (*v1.ListUserSessionsResponse, error) {
+	response, err := c.listUserSessions.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // DeleteUserSession calls librarian.sephirah.v1.LibrarianSephirahService.DeleteUserSession.
-func (c *librarianSephirahServiceClient) DeleteUserSession(ctx context.Context, req *connect.Request[v1.DeleteUserSessionRequest]) (*connect.Response[v1.DeleteUserSessionResponse], error) {
-	return c.deleteUserSession.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) DeleteUserSession(ctx context.Context, req *v1.DeleteUserSessionRequest) (*v1.DeleteUserSessionResponse, error) {
+	response, err := c.deleteUserSession.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // LinkAccount calls librarian.sephirah.v1.LibrarianSephirahService.LinkAccount.
-func (c *librarianSephirahServiceClient) LinkAccount(ctx context.Context, req *connect.Request[v1.LinkAccountRequest]) (*connect.Response[v1.LinkAccountResponse], error) {
-	return c.linkAccount.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) LinkAccount(ctx context.Context, req *v1.LinkAccountRequest) (*v1.LinkAccountResponse, error) {
+	response, err := c.linkAccount.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // UnLinkAccount calls librarian.sephirah.v1.LibrarianSephirahService.UnLinkAccount.
-func (c *librarianSephirahServiceClient) UnLinkAccount(ctx context.Context, req *connect.Request[v1.UnLinkAccountRequest]) (*connect.Response[v1.UnLinkAccountResponse], error) {
-	return c.unLinkAccount.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) UnLinkAccount(ctx context.Context, req *v1.UnLinkAccountRequest) (*v1.UnLinkAccountResponse, error) {
+	response, err := c.unLinkAccount.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // ListLinkAccounts calls librarian.sephirah.v1.LibrarianSephirahService.ListLinkAccounts.
-func (c *librarianSephirahServiceClient) ListLinkAccounts(ctx context.Context, req *connect.Request[v1.ListLinkAccountsRequest]) (*connect.Response[v1.ListLinkAccountsResponse], error) {
-	return c.listLinkAccounts.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) ListLinkAccounts(ctx context.Context, req *v1.ListLinkAccountsRequest) (*v1.ListLinkAccountsResponse, error) {
+	response, err := c.listLinkAccounts.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // ListPorterDigests calls librarian.sephirah.v1.LibrarianSephirahService.ListPorterDigests.
-func (c *librarianSephirahServiceClient) ListPorterDigests(ctx context.Context, req *connect.Request[v1.ListPorterDigestsRequest]) (*connect.Response[v1.ListPorterDigestsResponse], error) {
-	return c.listPorterDigests.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) ListPorterDigests(ctx context.Context, req *v1.ListPorterDigestsRequest) (*v1.ListPorterDigestsResponse, error) {
+	response, err := c.listPorterDigests.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // CreatePorterContext calls librarian.sephirah.v1.LibrarianSephirahService.CreatePorterContext.
-func (c *librarianSephirahServiceClient) CreatePorterContext(ctx context.Context, req *connect.Request[v1.CreatePorterContextRequest]) (*connect.Response[v1.CreatePorterContextResponse], error) {
-	return c.createPorterContext.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) CreatePorterContext(ctx context.Context, req *v1.CreatePorterContextRequest) (*v1.CreatePorterContextResponse, error) {
+	response, err := c.createPorterContext.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // ListPorterContexts calls librarian.sephirah.v1.LibrarianSephirahService.ListPorterContexts.
-func (c *librarianSephirahServiceClient) ListPorterContexts(ctx context.Context, req *connect.Request[v1.ListPorterContextsRequest]) (*connect.Response[v1.ListPorterContextsResponse], error) {
-	return c.listPorterContexts.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) ListPorterContexts(ctx context.Context, req *v1.ListPorterContextsRequest) (*v1.ListPorterContextsResponse, error) {
+	response, err := c.listPorterContexts.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // UpdatePorterContext calls librarian.sephirah.v1.LibrarianSephirahService.UpdatePorterContext.
-func (c *librarianSephirahServiceClient) UpdatePorterContext(ctx context.Context, req *connect.Request[v1.UpdatePorterContextRequest]) (*connect.Response[v1.UpdatePorterContextResponse], error) {
-	return c.updatePorterContext.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) UpdatePorterContext(ctx context.Context, req *v1.UpdatePorterContextRequest) (*v1.UpdatePorterContextResponse, error) {
+	response, err := c.updatePorterContext.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // GetStorageCapacityUsage calls
 // librarian.sephirah.v1.LibrarianSephirahService.GetStorageCapacityUsage.
-func (c *librarianSephirahServiceClient) GetStorageCapacityUsage(ctx context.Context, req *connect.Request[v1.GetStorageCapacityUsageRequest]) (*connect.Response[v1.GetStorageCapacityUsageResponse], error) {
-	return c.getStorageCapacityUsage.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) GetStorageCapacityUsage(ctx context.Context, req *v1.GetStorageCapacityUsageRequest) (*v1.GetStorageCapacityUsageResponse, error) {
+	response, err := c.getStorageCapacityUsage.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // UploadFile calls librarian.sephirah.v1.LibrarianSephirahService.UploadFile.
-func (c *librarianSephirahServiceClient) UploadFile(ctx context.Context) *connect.BidiStreamForClient[v1.UploadFileRequest, v1.UploadFileResponse] {
-	return c.uploadFile.CallBidiStream(ctx)
+func (c *librarianSephirahServiceClient) UploadFile(ctx context.Context) (*connect.BidiStreamForClientSimple[v1.UploadFileRequest, v1.UploadFileResponse], error) {
+	return c.uploadFile.CallBidiStreamSimple(ctx)
 }
 
 // DownloadFile calls librarian.sephirah.v1.LibrarianSephirahService.DownloadFile.
-func (c *librarianSephirahServiceClient) DownloadFile(ctx context.Context) *connect.BidiStreamForClient[v1.DownloadFileRequest, v1.DownloadFileResponse] {
-	return c.downloadFile.CallBidiStream(ctx)
+func (c *librarianSephirahServiceClient) DownloadFile(ctx context.Context) (*connect.BidiStreamForClientSimple[v1.DownloadFileRequest, v1.DownloadFileResponse], error) {
+	return c.downloadFile.CallBidiStreamSimple(ctx)
 }
 
 // SimpleUploadFile calls librarian.sephirah.v1.LibrarianSephirahService.SimpleUploadFile.
-func (c *librarianSephirahServiceClient) SimpleUploadFile(ctx context.Context) *connect.BidiStreamForClient[v1.SimpleUploadFileRequest, v1.SimpleUploadFileResponse] {
-	return c.simpleUploadFile.CallBidiStream(ctx)
+func (c *librarianSephirahServiceClient) SimpleUploadFile(ctx context.Context) (*connect.BidiStreamForClientSimple[v1.SimpleUploadFileRequest, v1.SimpleUploadFileResponse], error) {
+	return c.simpleUploadFile.CallBidiStreamSimple(ctx)
 }
 
 // SimpleDownloadFile calls librarian.sephirah.v1.LibrarianSephirahService.SimpleDownloadFile.
-func (c *librarianSephirahServiceClient) SimpleDownloadFile(ctx context.Context, req *connect.Request[v1.SimpleDownloadFileRequest]) (*connect.ServerStreamForClient[v1.SimpleDownloadFileResponse], error) {
-	return c.simpleDownloadFile.CallServerStream(ctx, req)
+func (c *librarianSephirahServiceClient) SimpleDownloadFile(ctx context.Context, req *v1.SimpleDownloadFileRequest) (*connect.ServerStreamForClient[v1.SimpleDownloadFileResponse], error) {
+	return c.simpleDownloadFile.CallServerStream(ctx, connect.NewRequest(req))
 }
 
 // PresignedUploadFile calls librarian.sephirah.v1.LibrarianSephirahService.PresignedUploadFile.
-func (c *librarianSephirahServiceClient) PresignedUploadFile(ctx context.Context, req *connect.Request[v1.PresignedUploadFileRequest]) (*connect.Response[v1.PresignedUploadFileResponse], error) {
-	return c.presignedUploadFile.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) PresignedUploadFile(ctx context.Context, req *v1.PresignedUploadFileRequest) (*v1.PresignedUploadFileResponse, error) {
+	response, err := c.presignedUploadFile.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // PresignedUploadFileStatus calls
 // librarian.sephirah.v1.LibrarianSephirahService.PresignedUploadFileStatus.
-func (c *librarianSephirahServiceClient) PresignedUploadFileStatus(ctx context.Context, req *connect.Request[v1.PresignedUploadFileStatusRequest]) (*connect.Response[v1.PresignedUploadFileStatusResponse], error) {
-	return c.presignedUploadFileStatus.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) PresignedUploadFileStatus(ctx context.Context, req *v1.PresignedUploadFileStatusRequest) (*v1.PresignedUploadFileStatusResponse, error) {
+	response, err := c.presignedUploadFileStatus.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // PresignedDownloadFile calls librarian.sephirah.v1.LibrarianSephirahService.PresignedDownloadFile.
-func (c *librarianSephirahServiceClient) PresignedDownloadFile(ctx context.Context, req *connect.Request[v1.PresignedDownloadFileRequest]) (*connect.Response[v1.PresignedDownloadFileResponse], error) {
-	return c.presignedDownloadFile.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) PresignedDownloadFile(ctx context.Context, req *v1.PresignedDownloadFileRequest) (*v1.PresignedDownloadFileResponse, error) {
+	response, err := c.presignedDownloadFile.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // UploadImage calls librarian.sephirah.v1.LibrarianSephirahService.UploadImage.
-func (c *librarianSephirahServiceClient) UploadImage(ctx context.Context, req *connect.Request[v1.UploadImageRequest]) (*connect.Response[v1.UploadImageResponse], error) {
-	return c.uploadImage.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) UploadImage(ctx context.Context, req *v1.UploadImageRequest) (*v1.UploadImageResponse, error) {
+	response, err := c.uploadImage.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // UpdateImage calls librarian.sephirah.v1.LibrarianSephirahService.UpdateImage.
-func (c *librarianSephirahServiceClient) UpdateImage(ctx context.Context, req *connect.Request[v1.UpdateImageRequest]) (*connect.Response[v1.UpdateImageResponse], error) {
-	return c.updateImage.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) UpdateImage(ctx context.Context, req *v1.UpdateImageRequest) (*v1.UpdateImageResponse, error) {
+	response, err := c.updateImage.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // ListImages calls librarian.sephirah.v1.LibrarianSephirahService.ListImages.
-func (c *librarianSephirahServiceClient) ListImages(ctx context.Context, req *connect.Request[v1.ListImagesRequest]) (*connect.Response[v1.ListImagesResponse], error) {
-	return c.listImages.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) ListImages(ctx context.Context, req *v1.ListImagesRequest) (*v1.ListImagesResponse, error) {
+	response, err := c.listImages.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // SearchImages calls librarian.sephirah.v1.LibrarianSephirahService.SearchImages.
-func (c *librarianSephirahServiceClient) SearchImages(ctx context.Context, req *connect.Request[v1.SearchImagesRequest]) (*connect.Response[v1.SearchImagesResponse], error) {
-	return c.searchImages.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) SearchImages(ctx context.Context, req *v1.SearchImagesRequest) (*v1.SearchImagesResponse, error) {
+	response, err := c.searchImages.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // GetImage calls librarian.sephirah.v1.LibrarianSephirahService.GetImage.
-func (c *librarianSephirahServiceClient) GetImage(ctx context.Context, req *connect.Request[v1.GetImageRequest]) (*connect.Response[v1.GetImageResponse], error) {
-	return c.getImage.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) GetImage(ctx context.Context, req *v1.GetImageRequest) (*v1.GetImageResponse, error) {
+	response, err := c.getImage.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // DownloadImage calls librarian.sephirah.v1.LibrarianSephirahService.DownloadImage.
-func (c *librarianSephirahServiceClient) DownloadImage(ctx context.Context, req *connect.Request[v1.DownloadImageRequest]) (*connect.Response[v1.DownloadImageResponse], error) {
-	return c.downloadImage.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) DownloadImage(ctx context.Context, req *v1.DownloadImageRequest) (*v1.DownloadImageResponse, error) {
+	response, err := c.downloadImage.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // SearchStoreApps calls librarian.sephirah.v1.LibrarianSephirahService.SearchStoreApps.
-func (c *librarianSephirahServiceClient) SearchStoreApps(ctx context.Context, req *connect.Request[v1.SearchStoreAppsRequest]) (*connect.Response[v1.SearchStoreAppsResponse], error) {
-	return c.searchStoreApps.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) SearchStoreApps(ctx context.Context, req *v1.SearchStoreAppsRequest) (*v1.SearchStoreAppsResponse, error) {
+	response, err := c.searchStoreApps.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // GetStoreAppSummary calls librarian.sephirah.v1.LibrarianSephirahService.GetStoreAppSummary.
-func (c *librarianSephirahServiceClient) GetStoreAppSummary(ctx context.Context, req *connect.Request[v1.GetStoreAppSummaryRequest]) (*connect.Response[v1.GetStoreAppSummaryResponse], error) {
-	return c.getStoreAppSummary.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) GetStoreAppSummary(ctx context.Context, req *v1.GetStoreAppSummaryRequest) (*v1.GetStoreAppSummaryResponse, error) {
+	response, err := c.getStoreAppSummary.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // AcquireStoreApp calls librarian.sephirah.v1.LibrarianSephirahService.AcquireStoreApp.
-func (c *librarianSephirahServiceClient) AcquireStoreApp(ctx context.Context, req *connect.Request[v1.AcquireStoreAppRequest]) (*connect.Response[v1.AcquireStoreAppResponse], error) {
-	return c.acquireStoreApp.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) AcquireStoreApp(ctx context.Context, req *v1.AcquireStoreAppRequest) (*v1.AcquireStoreAppResponse, error) {
+	response, err := c.acquireStoreApp.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // ListStoreAppBinaries calls librarian.sephirah.v1.LibrarianSephirahService.ListStoreAppBinaries.
-func (c *librarianSephirahServiceClient) ListStoreAppBinaries(ctx context.Context, req *connect.Request[v1.ListStoreAppBinariesRequest]) (*connect.Response[v1.ListStoreAppBinariesResponse], error) {
-	return c.listStoreAppBinaries.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) ListStoreAppBinaries(ctx context.Context, req *v1.ListStoreAppBinariesRequest) (*v1.ListStoreAppBinariesResponse, error) {
+	response, err := c.listStoreAppBinaries.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // ListStoreAppBinaryFiles calls
 // librarian.sephirah.v1.LibrarianSephirahService.ListStoreAppBinaryFiles.
-func (c *librarianSephirahServiceClient) ListStoreAppBinaryFiles(ctx context.Context, req *connect.Request[v1.ListStoreAppBinaryFilesRequest]) (*connect.Response[v1.ListStoreAppBinaryFilesResponse], error) {
-	return c.listStoreAppBinaryFiles.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) ListStoreAppBinaryFiles(ctx context.Context, req *v1.ListStoreAppBinaryFilesRequest) (*v1.ListStoreAppBinaryFilesResponse, error) {
+	response, err := c.listStoreAppBinaryFiles.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // DownloadStoreAppBinary calls
 // librarian.sephirah.v1.LibrarianSephirahService.DownloadStoreAppBinary.
-func (c *librarianSephirahServiceClient) DownloadStoreAppBinary(ctx context.Context, req *connect.Request[v1.DownloadStoreAppBinaryRequest]) (*connect.Response[v1.DownloadStoreAppBinaryResponse], error) {
-	return c.downloadStoreAppBinary.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) DownloadStoreAppBinary(ctx context.Context, req *v1.DownloadStoreAppBinaryRequest) (*v1.DownloadStoreAppBinaryResponse, error) {
+	response, err := c.downloadStoreAppBinary.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // ListStoreAppSaveFiles calls librarian.sephirah.v1.LibrarianSephirahService.ListStoreAppSaveFiles.
-func (c *librarianSephirahServiceClient) ListStoreAppSaveFiles(ctx context.Context, req *connect.Request[v1.ListStoreAppSaveFilesRequest]) (*connect.Response[v1.ListStoreAppSaveFilesResponse], error) {
-	return c.listStoreAppSaveFiles.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) ListStoreAppSaveFiles(ctx context.Context, req *v1.ListStoreAppSaveFilesRequest) (*v1.ListStoreAppSaveFilesResponse, error) {
+	response, err := c.listStoreAppSaveFiles.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // DownloadStoreAppSaveFile calls
 // librarian.sephirah.v1.LibrarianSephirahService.DownloadStoreAppSaveFile.
-func (c *librarianSephirahServiceClient) DownloadStoreAppSaveFile(ctx context.Context, req *connect.Request[v1.DownloadStoreAppSaveFileRequest]) (*connect.Response[v1.DownloadStoreAppSaveFileResponse], error) {
-	return c.downloadStoreAppSaveFile.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) DownloadStoreAppSaveFile(ctx context.Context, req *v1.DownloadStoreAppSaveFileRequest) (*v1.DownloadStoreAppSaveFileResponse, error) {
+	response, err := c.downloadStoreAppSaveFile.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // SearchAppInfos calls librarian.sephirah.v1.LibrarianSephirahService.SearchAppInfos.
-func (c *librarianSephirahServiceClient) SearchAppInfos(ctx context.Context, req *connect.Request[v1.SearchAppInfosRequest]) (*connect.Response[v1.SearchAppInfosResponse], error) {
-	return c.searchAppInfos.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) SearchAppInfos(ctx context.Context, req *v1.SearchAppInfosRequest) (*v1.SearchAppInfosResponse, error) {
+	response, err := c.searchAppInfos.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // CreateApp calls librarian.sephirah.v1.LibrarianSephirahService.CreateApp.
-func (c *librarianSephirahServiceClient) CreateApp(ctx context.Context, req *connect.Request[v1.CreateAppRequest]) (*connect.Response[v1.CreateAppResponse], error) {
-	return c.createApp.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) CreateApp(ctx context.Context, req *v1.CreateAppRequest) (*v1.CreateAppResponse, error) {
+	response, err := c.createApp.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // UpdateApp calls librarian.sephirah.v1.LibrarianSephirahService.UpdateApp.
-func (c *librarianSephirahServiceClient) UpdateApp(ctx context.Context, req *connect.Request[v1.UpdateAppRequest]) (*connect.Response[v1.UpdateAppResponse], error) {
-	return c.updateApp.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) UpdateApp(ctx context.Context, req *v1.UpdateAppRequest) (*v1.UpdateAppResponse, error) {
+	response, err := c.updateApp.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // ListApps calls librarian.sephirah.v1.LibrarianSephirahService.ListApps.
-func (c *librarianSephirahServiceClient) ListApps(ctx context.Context, req *connect.Request[v1.ListAppsRequest]) (*connect.Response[v1.ListAppsResponse], error) {
-	return c.listApps.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) ListApps(ctx context.Context, req *v1.ListAppsRequest) (*v1.ListAppsResponse, error) {
+	response, err := c.listApps.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // DeleteApp calls librarian.sephirah.v1.LibrarianSephirahService.DeleteApp.
-func (c *librarianSephirahServiceClient) DeleteApp(ctx context.Context, req *connect.Request[v1.DeleteAppRequest]) (*connect.Response[v1.DeleteAppResponse], error) {
-	return c.deleteApp.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) DeleteApp(ctx context.Context, req *v1.DeleteAppRequest) (*v1.DeleteAppResponse, error) {
+	response, err := c.deleteApp.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // BatchCreateAppRunTime calls librarian.sephirah.v1.LibrarianSephirahService.BatchCreateAppRunTime.
-func (c *librarianSephirahServiceClient) BatchCreateAppRunTime(ctx context.Context, req *connect.Request[v1.BatchCreateAppRunTimeRequest]) (*connect.Response[v1.BatchCreateAppRunTimeResponse], error) {
-	return c.batchCreateAppRunTime.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) BatchCreateAppRunTime(ctx context.Context, req *v1.BatchCreateAppRunTimeRequest) (*v1.BatchCreateAppRunTimeResponse, error) {
+	response, err := c.batchCreateAppRunTime.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // SumAppRunTime calls librarian.sephirah.v1.LibrarianSephirahService.SumAppRunTime.
-func (c *librarianSephirahServiceClient) SumAppRunTime(ctx context.Context, req *connect.Request[v1.SumAppRunTimeRequest]) (*connect.Response[v1.SumAppRunTimeResponse], error) {
-	return c.sumAppRunTime.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) SumAppRunTime(ctx context.Context, req *v1.SumAppRunTimeRequest) (*v1.SumAppRunTimeResponse, error) {
+	response, err := c.sumAppRunTime.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // ListAppRunTimes calls librarian.sephirah.v1.LibrarianSephirahService.ListAppRunTimes.
-func (c *librarianSephirahServiceClient) ListAppRunTimes(ctx context.Context, req *connect.Request[v1.ListAppRunTimesRequest]) (*connect.Response[v1.ListAppRunTimesResponse], error) {
-	return c.listAppRunTimes.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) ListAppRunTimes(ctx context.Context, req *v1.ListAppRunTimesRequest) (*v1.ListAppRunTimesResponse, error) {
+	response, err := c.listAppRunTimes.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // DeleteAppRunTime calls librarian.sephirah.v1.LibrarianSephirahService.DeleteAppRunTime.
-func (c *librarianSephirahServiceClient) DeleteAppRunTime(ctx context.Context, req *connect.Request[v1.DeleteAppRunTimeRequest]) (*connect.Response[v1.DeleteAppRunTimeResponse], error) {
-	return c.deleteAppRunTime.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) DeleteAppRunTime(ctx context.Context, req *v1.DeleteAppRunTimeRequest) (*v1.DeleteAppRunTimeResponse, error) {
+	response, err := c.deleteAppRunTime.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // UploadAppSaveFile calls librarian.sephirah.v1.LibrarianSephirahService.UploadAppSaveFile.
-func (c *librarianSephirahServiceClient) UploadAppSaveFile(ctx context.Context, req *connect.Request[v1.UploadAppSaveFileRequest]) (*connect.Response[v1.UploadAppSaveFileResponse], error) {
-	return c.uploadAppSaveFile.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) UploadAppSaveFile(ctx context.Context, req *v1.UploadAppSaveFileRequest) (*v1.UploadAppSaveFileResponse, error) {
+	response, err := c.uploadAppSaveFile.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // DownloadAppSaveFile calls librarian.sephirah.v1.LibrarianSephirahService.DownloadAppSaveFile.
-func (c *librarianSephirahServiceClient) DownloadAppSaveFile(ctx context.Context, req *connect.Request[v1.DownloadAppSaveFileRequest]) (*connect.Response[v1.DownloadAppSaveFileResponse], error) {
-	return c.downloadAppSaveFile.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) DownloadAppSaveFile(ctx context.Context, req *v1.DownloadAppSaveFileRequest) (*v1.DownloadAppSaveFileResponse, error) {
+	response, err := c.downloadAppSaveFile.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // ListAppSaveFiles calls librarian.sephirah.v1.LibrarianSephirahService.ListAppSaveFiles.
-func (c *librarianSephirahServiceClient) ListAppSaveFiles(ctx context.Context, req *connect.Request[v1.ListAppSaveFilesRequest]) (*connect.Response[v1.ListAppSaveFilesResponse], error) {
-	return c.listAppSaveFiles.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) ListAppSaveFiles(ctx context.Context, req *v1.ListAppSaveFilesRequest) (*v1.ListAppSaveFilesResponse, error) {
+	response, err := c.listAppSaveFiles.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // DeleteAppSaveFile calls librarian.sephirah.v1.LibrarianSephirahService.DeleteAppSaveFile.
-func (c *librarianSephirahServiceClient) DeleteAppSaveFile(ctx context.Context, req *connect.Request[v1.DeleteAppSaveFileRequest]) (*connect.Response[v1.DeleteAppSaveFileResponse], error) {
-	return c.deleteAppSaveFile.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) DeleteAppSaveFile(ctx context.Context, req *v1.DeleteAppSaveFileRequest) (*v1.DeleteAppSaveFileResponse, error) {
+	response, err := c.deleteAppSaveFile.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // PinAppSaveFile calls librarian.sephirah.v1.LibrarianSephirahService.PinAppSaveFile.
-func (c *librarianSephirahServiceClient) PinAppSaveFile(ctx context.Context, req *connect.Request[v1.PinAppSaveFileRequest]) (*connect.Response[v1.PinAppSaveFileResponse], error) {
-	return c.pinAppSaveFile.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) PinAppSaveFile(ctx context.Context, req *v1.PinAppSaveFileRequest) (*v1.PinAppSaveFileResponse, error) {
+	response, err := c.pinAppSaveFile.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // UnpinAppSaveFile calls librarian.sephirah.v1.LibrarianSephirahService.UnpinAppSaveFile.
-func (c *librarianSephirahServiceClient) UnpinAppSaveFile(ctx context.Context, req *connect.Request[v1.UnpinAppSaveFileRequest]) (*connect.Response[v1.UnpinAppSaveFileResponse], error) {
-	return c.unpinAppSaveFile.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) UnpinAppSaveFile(ctx context.Context, req *v1.UnpinAppSaveFileRequest) (*v1.UnpinAppSaveFileResponse, error) {
+	response, err := c.unpinAppSaveFile.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // GetAppSaveFileCapacity calls
 // librarian.sephirah.v1.LibrarianSephirahService.GetAppSaveFileCapacity.
-func (c *librarianSephirahServiceClient) GetAppSaveFileCapacity(ctx context.Context, req *connect.Request[v1.GetAppSaveFileCapacityRequest]) (*connect.Response[v1.GetAppSaveFileCapacityResponse], error) {
-	return c.getAppSaveFileCapacity.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) GetAppSaveFileCapacity(ctx context.Context, req *v1.GetAppSaveFileCapacityRequest) (*v1.GetAppSaveFileCapacityResponse, error) {
+	response, err := c.getAppSaveFileCapacity.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // SetAppSaveFileCapacity calls
 // librarian.sephirah.v1.LibrarianSephirahService.SetAppSaveFileCapacity.
-func (c *librarianSephirahServiceClient) SetAppSaveFileCapacity(ctx context.Context, req *connect.Request[v1.SetAppSaveFileCapacityRequest]) (*connect.Response[v1.SetAppSaveFileCapacityResponse], error) {
-	return c.setAppSaveFileCapacity.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) SetAppSaveFileCapacity(ctx context.Context, req *v1.SetAppSaveFileCapacityRequest) (*v1.SetAppSaveFileCapacityResponse, error) {
+	response, err := c.setAppSaveFileCapacity.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // ListAppCategories calls librarian.sephirah.v1.LibrarianSephirahService.ListAppCategories.
-func (c *librarianSephirahServiceClient) ListAppCategories(ctx context.Context, req *connect.Request[v1.ListAppCategoriesRequest]) (*connect.Response[v1.ListAppCategoriesResponse], error) {
-	return c.listAppCategories.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) ListAppCategories(ctx context.Context, req *v1.ListAppCategoriesRequest) (*v1.ListAppCategoriesResponse, error) {
+	response, err := c.listAppCategories.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // CreateAppCategory calls librarian.sephirah.v1.LibrarianSephirahService.CreateAppCategory.
-func (c *librarianSephirahServiceClient) CreateAppCategory(ctx context.Context, req *connect.Request[v1.CreateAppCategoryRequest]) (*connect.Response[v1.CreateAppCategoryResponse], error) {
-	return c.createAppCategory.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) CreateAppCategory(ctx context.Context, req *v1.CreateAppCategoryRequest) (*v1.CreateAppCategoryResponse, error) {
+	response, err := c.createAppCategory.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // UpdateAppCategory calls librarian.sephirah.v1.LibrarianSephirahService.UpdateAppCategory.
-func (c *librarianSephirahServiceClient) UpdateAppCategory(ctx context.Context, req *connect.Request[v1.UpdateAppCategoryRequest]) (*connect.Response[v1.UpdateAppCategoryResponse], error) {
-	return c.updateAppCategory.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) UpdateAppCategory(ctx context.Context, req *v1.UpdateAppCategoryRequest) (*v1.UpdateAppCategoryResponse, error) {
+	response, err := c.updateAppCategory.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // DeleteAppCategory calls librarian.sephirah.v1.LibrarianSephirahService.DeleteAppCategory.
-func (c *librarianSephirahServiceClient) DeleteAppCategory(ctx context.Context, req *connect.Request[v1.DeleteAppCategoryRequest]) (*connect.Response[v1.DeleteAppCategoryResponse], error) {
-	return c.deleteAppCategory.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) DeleteAppCategory(ctx context.Context, req *v1.DeleteAppCategoryRequest) (*v1.DeleteAppCategoryResponse, error) {
+	response, err := c.deleteAppCategory.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // CreateNotifyTarget calls librarian.sephirah.v1.LibrarianSephirahService.CreateNotifyTarget.
-func (c *librarianSephirahServiceClient) CreateNotifyTarget(ctx context.Context, req *connect.Request[v1.CreateNotifyTargetRequest]) (*connect.Response[v1.CreateNotifyTargetResponse], error) {
-	return c.createNotifyTarget.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) CreateNotifyTarget(ctx context.Context, req *v1.CreateNotifyTargetRequest) (*v1.CreateNotifyTargetResponse, error) {
+	response, err := c.createNotifyTarget.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // UpdateNotifyTarget calls librarian.sephirah.v1.LibrarianSephirahService.UpdateNotifyTarget.
-func (c *librarianSephirahServiceClient) UpdateNotifyTarget(ctx context.Context, req *connect.Request[v1.UpdateNotifyTargetRequest]) (*connect.Response[v1.UpdateNotifyTargetResponse], error) {
-	return c.updateNotifyTarget.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) UpdateNotifyTarget(ctx context.Context, req *v1.UpdateNotifyTargetRequest) (*v1.UpdateNotifyTargetResponse, error) {
+	response, err := c.updateNotifyTarget.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // ListNotifyTargets calls librarian.sephirah.v1.LibrarianSephirahService.ListNotifyTargets.
-func (c *librarianSephirahServiceClient) ListNotifyTargets(ctx context.Context, req *connect.Request[v1.ListNotifyTargetsRequest]) (*connect.Response[v1.ListNotifyTargetsResponse], error) {
-	return c.listNotifyTargets.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) ListNotifyTargets(ctx context.Context, req *v1.ListNotifyTargetsRequest) (*v1.ListNotifyTargetsResponse, error) {
+	response, err := c.listNotifyTargets.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // CreateNotifyFlow calls librarian.sephirah.v1.LibrarianSephirahService.CreateNotifyFlow.
-func (c *librarianSephirahServiceClient) CreateNotifyFlow(ctx context.Context, req *connect.Request[v1.CreateNotifyFlowRequest]) (*connect.Response[v1.CreateNotifyFlowResponse], error) {
-	return c.createNotifyFlow.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) CreateNotifyFlow(ctx context.Context, req *v1.CreateNotifyFlowRequest) (*v1.CreateNotifyFlowResponse, error) {
+	response, err := c.createNotifyFlow.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // UpdateNotifyFlow calls librarian.sephirah.v1.LibrarianSephirahService.UpdateNotifyFlow.
-func (c *librarianSephirahServiceClient) UpdateNotifyFlow(ctx context.Context, req *connect.Request[v1.UpdateNotifyFlowRequest]) (*connect.Response[v1.UpdateNotifyFlowResponse], error) {
-	return c.updateNotifyFlow.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) UpdateNotifyFlow(ctx context.Context, req *v1.UpdateNotifyFlowRequest) (*v1.UpdateNotifyFlowResponse, error) {
+	response, err := c.updateNotifyFlow.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // ListNotifyFlows calls librarian.sephirah.v1.LibrarianSephirahService.ListNotifyFlows.
-func (c *librarianSephirahServiceClient) ListNotifyFlows(ctx context.Context, req *connect.Request[v1.ListNotifyFlowsRequest]) (*connect.Response[v1.ListNotifyFlowsResponse], error) {
-	return c.listNotifyFlows.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) ListNotifyFlows(ctx context.Context, req *v1.ListNotifyFlowsRequest) (*v1.ListNotifyFlowsResponse, error) {
+	response, err := c.listNotifyFlows.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // ListSystemNotifications calls
 // librarian.sephirah.v1.LibrarianSephirahService.ListSystemNotifications.
-func (c *librarianSephirahServiceClient) ListSystemNotifications(ctx context.Context, req *connect.Request[v1.ListSystemNotificationsRequest]) (*connect.Response[v1.ListSystemNotificationsResponse], error) {
-	return c.listSystemNotifications.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) ListSystemNotifications(ctx context.Context, req *v1.ListSystemNotificationsRequest) (*v1.ListSystemNotificationsResponse, error) {
+	response, err := c.listSystemNotifications.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // UpdateSystemNotification calls
 // librarian.sephirah.v1.LibrarianSephirahService.UpdateSystemNotification.
-func (c *librarianSephirahServiceClient) UpdateSystemNotification(ctx context.Context, req *connect.Request[v1.UpdateSystemNotificationRequest]) (*connect.Response[v1.UpdateSystemNotificationResponse], error) {
-	return c.updateSystemNotification.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) UpdateSystemNotification(ctx context.Context, req *v1.UpdateSystemNotificationRequest) (*v1.UpdateSystemNotificationResponse, error) {
+	response, err := c.updateSystemNotification.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // CreateFeedConfig calls librarian.sephirah.v1.LibrarianSephirahService.CreateFeedConfig.
-func (c *librarianSephirahServiceClient) CreateFeedConfig(ctx context.Context, req *connect.Request[v1.CreateFeedConfigRequest]) (*connect.Response[v1.CreateFeedConfigResponse], error) {
-	return c.createFeedConfig.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) CreateFeedConfig(ctx context.Context, req *v1.CreateFeedConfigRequest) (*v1.CreateFeedConfigResponse, error) {
+	response, err := c.createFeedConfig.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // UpdateFeedConfig calls librarian.sephirah.v1.LibrarianSephirahService.UpdateFeedConfig.
-func (c *librarianSephirahServiceClient) UpdateFeedConfig(ctx context.Context, req *connect.Request[v1.UpdateFeedConfigRequest]) (*connect.Response[v1.UpdateFeedConfigResponse], error) {
-	return c.updateFeedConfig.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) UpdateFeedConfig(ctx context.Context, req *v1.UpdateFeedConfigRequest) (*v1.UpdateFeedConfigResponse, error) {
+	response, err := c.updateFeedConfig.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // ListFeedConfigs calls librarian.sephirah.v1.LibrarianSephirahService.ListFeedConfigs.
-func (c *librarianSephirahServiceClient) ListFeedConfigs(ctx context.Context, req *connect.Request[v1.ListFeedConfigsRequest]) (*connect.Response[v1.ListFeedConfigsResponse], error) {
-	return c.listFeedConfigs.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) ListFeedConfigs(ctx context.Context, req *v1.ListFeedConfigsRequest) (*v1.ListFeedConfigsResponse, error) {
+	response, err := c.listFeedConfigs.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // CreateFeedActionSet calls librarian.sephirah.v1.LibrarianSephirahService.CreateFeedActionSet.
-func (c *librarianSephirahServiceClient) CreateFeedActionSet(ctx context.Context, req *connect.Request[v1.CreateFeedActionSetRequest]) (*connect.Response[v1.CreateFeedActionSetResponse], error) {
-	return c.createFeedActionSet.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) CreateFeedActionSet(ctx context.Context, req *v1.CreateFeedActionSetRequest) (*v1.CreateFeedActionSetResponse, error) {
+	response, err := c.createFeedActionSet.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // UpdateFeedActionSet calls librarian.sephirah.v1.LibrarianSephirahService.UpdateFeedActionSet.
-func (c *librarianSephirahServiceClient) UpdateFeedActionSet(ctx context.Context, req *connect.Request[v1.UpdateFeedActionSetRequest]) (*connect.Response[v1.UpdateFeedActionSetResponse], error) {
-	return c.updateFeedActionSet.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) UpdateFeedActionSet(ctx context.Context, req *v1.UpdateFeedActionSetRequest) (*v1.UpdateFeedActionSetResponse, error) {
+	response, err := c.updateFeedActionSet.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // ListFeedActionSets calls librarian.sephirah.v1.LibrarianSephirahService.ListFeedActionSets.
-func (c *librarianSephirahServiceClient) ListFeedActionSets(ctx context.Context, req *connect.Request[v1.ListFeedActionSetsRequest]) (*connect.Response[v1.ListFeedActionSetsResponse], error) {
-	return c.listFeedActionSets.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) ListFeedActionSets(ctx context.Context, req *v1.ListFeedActionSetsRequest) (*v1.ListFeedActionSetsResponse, error) {
+	response, err := c.listFeedActionSets.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // ListFeedCategories calls librarian.sephirah.v1.LibrarianSephirahService.ListFeedCategories.
-func (c *librarianSephirahServiceClient) ListFeedCategories(ctx context.Context, req *connect.Request[v1.ListFeedCategoriesRequest]) (*connect.Response[v1.ListFeedCategoriesResponse], error) {
-	return c.listFeedCategories.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) ListFeedCategories(ctx context.Context, req *v1.ListFeedCategoriesRequest) (*v1.ListFeedCategoriesResponse, error) {
+	response, err := c.listFeedCategories.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // ListFeedPlatforms calls librarian.sephirah.v1.LibrarianSephirahService.ListFeedPlatforms.
-func (c *librarianSephirahServiceClient) ListFeedPlatforms(ctx context.Context, req *connect.Request[v1.ListFeedPlatformsRequest]) (*connect.Response[v1.ListFeedPlatformsResponse], error) {
-	return c.listFeedPlatforms.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) ListFeedPlatforms(ctx context.Context, req *v1.ListFeedPlatformsRequest) (*v1.ListFeedPlatformsResponse, error) {
+	response, err := c.listFeedPlatforms.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // ListFeedItems calls librarian.sephirah.v1.LibrarianSephirahService.ListFeedItems.
-func (c *librarianSephirahServiceClient) ListFeedItems(ctx context.Context, req *connect.Request[v1.ListFeedItemsRequest]) (*connect.Response[v1.ListFeedItemsResponse], error) {
-	return c.listFeedItems.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) ListFeedItems(ctx context.Context, req *v1.ListFeedItemsRequest) (*v1.ListFeedItemsResponse, error) {
+	response, err := c.listFeedItems.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // GetFeedItem calls librarian.sephirah.v1.LibrarianSephirahService.GetFeedItem.
-func (c *librarianSephirahServiceClient) GetFeedItem(ctx context.Context, req *connect.Request[v1.GetFeedItemRequest]) (*connect.Response[v1.GetFeedItemResponse], error) {
-	return c.getFeedItem.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) GetFeedItem(ctx context.Context, req *v1.GetFeedItemRequest) (*v1.GetFeedItemResponse, error) {
+	response, err := c.getFeedItem.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // GetBatchFeedItems calls librarian.sephirah.v1.LibrarianSephirahService.GetBatchFeedItems.
-func (c *librarianSephirahServiceClient) GetBatchFeedItems(ctx context.Context, req *connect.Request[v1.GetBatchFeedItemsRequest]) (*connect.Response[v1.GetBatchFeedItemsResponse], error) {
-	return c.getBatchFeedItems.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) GetBatchFeedItems(ctx context.Context, req *v1.GetBatchFeedItemsRequest) (*v1.GetBatchFeedItemsResponse, error) {
+	response, err := c.getBatchFeedItems.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // ReadFeedItem calls librarian.sephirah.v1.LibrarianSephirahService.ReadFeedItem.
-func (c *librarianSephirahServiceClient) ReadFeedItem(ctx context.Context, req *connect.Request[v1.ReadFeedItemRequest]) (*connect.Response[v1.ReadFeedItemResponse], error) {
-	return c.readFeedItem.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) ReadFeedItem(ctx context.Context, req *v1.ReadFeedItemRequest) (*v1.ReadFeedItemResponse, error) {
+	response, err := c.readFeedItem.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // CreateFeedItemCollection calls
 // librarian.sephirah.v1.LibrarianSephirahService.CreateFeedItemCollection.
-func (c *librarianSephirahServiceClient) CreateFeedItemCollection(ctx context.Context, req *connect.Request[v1.CreateFeedItemCollectionRequest]) (*connect.Response[v1.CreateFeedItemCollectionResponse], error) {
-	return c.createFeedItemCollection.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) CreateFeedItemCollection(ctx context.Context, req *v1.CreateFeedItemCollectionRequest) (*v1.CreateFeedItemCollectionResponse, error) {
+	response, err := c.createFeedItemCollection.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // UpdateFeedItemCollection calls
 // librarian.sephirah.v1.LibrarianSephirahService.UpdateFeedItemCollection.
-func (c *librarianSephirahServiceClient) UpdateFeedItemCollection(ctx context.Context, req *connect.Request[v1.UpdateFeedItemCollectionRequest]) (*connect.Response[v1.UpdateFeedItemCollectionResponse], error) {
-	return c.updateFeedItemCollection.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) UpdateFeedItemCollection(ctx context.Context, req *v1.UpdateFeedItemCollectionRequest) (*v1.UpdateFeedItemCollectionResponse, error) {
+	response, err := c.updateFeedItemCollection.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // ListFeedItemCollections calls
 // librarian.sephirah.v1.LibrarianSephirahService.ListFeedItemCollections.
-func (c *librarianSephirahServiceClient) ListFeedItemCollections(ctx context.Context, req *connect.Request[v1.ListFeedItemCollectionsRequest]) (*connect.Response[v1.ListFeedItemCollectionsResponse], error) {
-	return c.listFeedItemCollections.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) ListFeedItemCollections(ctx context.Context, req *v1.ListFeedItemCollectionsRequest) (*v1.ListFeedItemCollectionsResponse, error) {
+	response, err := c.listFeedItemCollections.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // AddFeedItemToCollection calls
 // librarian.sephirah.v1.LibrarianSephirahService.AddFeedItemToCollection.
-func (c *librarianSephirahServiceClient) AddFeedItemToCollection(ctx context.Context, req *connect.Request[v1.AddFeedItemToCollectionRequest]) (*connect.Response[v1.AddFeedItemToCollectionResponse], error) {
-	return c.addFeedItemToCollection.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) AddFeedItemToCollection(ctx context.Context, req *v1.AddFeedItemToCollectionRequest) (*v1.AddFeedItemToCollectionResponse, error) {
+	response, err := c.addFeedItemToCollection.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // RemoveFeedItemFromCollection calls
 // librarian.sephirah.v1.LibrarianSephirahService.RemoveFeedItemFromCollection.
-func (c *librarianSephirahServiceClient) RemoveFeedItemFromCollection(ctx context.Context, req *connect.Request[v1.RemoveFeedItemFromCollectionRequest]) (*connect.Response[v1.RemoveFeedItemFromCollectionResponse], error) {
-	return c.removeFeedItemFromCollection.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) RemoveFeedItemFromCollection(ctx context.Context, req *v1.RemoveFeedItemFromCollectionRequest) (*v1.RemoveFeedItemFromCollectionResponse, error) {
+	response, err := c.removeFeedItemFromCollection.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // ListFeedItemsInCollection calls
 // librarian.sephirah.v1.LibrarianSephirahService.ListFeedItemsInCollection.
-func (c *librarianSephirahServiceClient) ListFeedItemsInCollection(ctx context.Context, req *connect.Request[v1.ListFeedItemsInCollectionRequest]) (*connect.Response[v1.ListFeedItemsInCollectionResponse], error) {
-	return c.listFeedItemsInCollection.CallUnary(ctx, req)
+func (c *librarianSephirahServiceClient) ListFeedItemsInCollection(ctx context.Context, req *v1.ListFeedItemsInCollectionRequest) (*v1.ListFeedItemsInCollectionResponse, error) {
+	response, err := c.listFeedItemsInCollection.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // LibrarianSephirahServiceHandler is an implementation of the
 // librarian.sephirah.v1.LibrarianSephirahService service.
 type LibrarianSephirahServiceHandler interface {
 	// Allow anonymous call, use accessToken to get complete information
-	GetServerInformation(context.Context, *connect.Request[v1.GetServerInformationRequest]) (*connect.Response[v1.GetServerInformationResponse], error)
+	GetServerInformation(context.Context, *v1.GetServerInformationRequest) (*v1.GetServerInformationResponse, error)
 	// `Normal` Client can use this to subscribe to server events.
 	//
 	// Server should send `SERVER_EVENT_LISTENER_CONNECTED` event immediately if the connection is valid.
@@ -1565,43 +1889,43 @@ type LibrarianSephirahServiceHandler interface {
 	//
 	// Server can close the stream at any time, client should reconnect if needed **with backoff**.
 	// Only used to improve real-time experience, no guarantee of delivery.
-	ListenServerEvent(context.Context, *connect.Request[v1.ListenServerEventRequest], *connect.ServerStream[v1.ListenServerEventResponse]) error
+	ListenServerEvent(context.Context, *v1.ListenServerEventRequest, *connect.ServerStream[v1.ListenServerEventResponse]) error
 	// `Tiphereth` `Normal` Login via password and get two token
-	GetToken(context.Context, *connect.Request[v1.GetTokenRequest]) (*connect.Response[v1.GetTokenResponse], error)
+	GetToken(context.Context, *v1.GetTokenRequest) (*v1.GetTokenResponse, error)
 	// `Tiphereth` `Normal` Use valid refresh_token and get two new token, a refresh_token can only be used once
-	RefreshToken(context.Context, *connect.Request[v1.RefreshTokenRequest]) (*connect.Response[v1.RefreshTokenResponse], error)
+	RefreshToken(context.Context, *v1.RefreshTokenRequest) (*v1.RefreshTokenResponse, error)
 	// `Tiphereth`
-	GetUser(context.Context, *connect.Request[v1.GetUserRequest]) (*connect.Response[v1.GetUserResponse], error)
+	GetUser(context.Context, *v1.GetUserRequest) (*v1.GetUserResponse, error)
 	// `Tiphereth` Self register as a new normal user
-	RegisterUser(context.Context, *connect.Request[v1.RegisterUserRequest]) (*connect.Response[v1.RegisterUserResponse], error)
+	RegisterUser(context.Context, *v1.RegisterUserRequest) (*v1.RegisterUserResponse, error)
 	// `Tiphereth` `Normal` Update self user info
-	UpdateUser(context.Context, *connect.Request[v1.UpdateUserRequest]) (*connect.Response[v1.UpdateUserResponse], error)
+	UpdateUser(context.Context, *v1.UpdateUserRequest) (*v1.UpdateUserResponse, error)
 	// `Tiphereth` `Normal` Client should register device after the first login
 	// and store the device_id locally.
 	// The server could add extra limits to non-registered device
-	RegisterDevice(context.Context, *connect.Request[v1.RegisterDeviceRequest]) (*connect.Response[v1.RegisterDeviceResponse], error)
+	RegisterDevice(context.Context, *v1.RegisterDeviceRequest) (*v1.RegisterDeviceResponse, error)
 	// `Tiphereth` `Normal`
-	ListUserSessions(context.Context, *connect.Request[v1.ListUserSessionsRequest]) (*connect.Response[v1.ListUserSessionsResponse], error)
+	ListUserSessions(context.Context, *v1.ListUserSessionsRequest) (*v1.ListUserSessionsResponse, error)
 	// `Tiphereth` `Normal` delete session will revoke refresh_token immediately.
 	// NOTE: This can also be used to log out at server side.
 	// NOTE2: Delete session will not affect device registration.
-	DeleteUserSession(context.Context, *connect.Request[v1.DeleteUserSessionRequest]) (*connect.Response[v1.DeleteUserSessionResponse], error)
+	DeleteUserSession(context.Context, *v1.DeleteUserSessionRequest) (*v1.DeleteUserSessionResponse, error)
 	// `Tiphereth` `Normal` Bind third-party account to current user.
-	LinkAccount(context.Context, *connect.Request[v1.LinkAccountRequest]) (*connect.Response[v1.LinkAccountResponse], error)
+	LinkAccount(context.Context, *v1.LinkAccountRequest) (*v1.LinkAccountResponse, error)
 	// `Tiphereth` `Normal` Unbind third-party account from current user.
-	UnLinkAccount(context.Context, *connect.Request[v1.UnLinkAccountRequest]) (*connect.Response[v1.UnLinkAccountResponse], error)
+	UnLinkAccount(context.Context, *v1.UnLinkAccountRequest) (*v1.UnLinkAccountResponse, error)
 	// `Tiphereth` `Normal` List third-party account binded to current user.
-	ListLinkAccounts(context.Context, *connect.Request[v1.ListLinkAccountsRequest]) (*connect.Response[v1.ListLinkAccountsResponse], error)
+	ListLinkAccounts(context.Context, *v1.ListLinkAccountsRequest) (*v1.ListLinkAccountsResponse, error)
 	// `Tiphereth` `Normal`
-	ListPorterDigests(context.Context, *connect.Request[v1.ListPorterDigestsRequest]) (*connect.Response[v1.ListPorterDigestsResponse], error)
+	ListPorterDigests(context.Context, *v1.ListPorterDigestsRequest) (*v1.ListPorterDigestsResponse, error)
 	// `Tiphereth` `Normal`
-	CreatePorterContext(context.Context, *connect.Request[v1.CreatePorterContextRequest]) (*connect.Response[v1.CreatePorterContextResponse], error)
+	CreatePorterContext(context.Context, *v1.CreatePorterContextRequest) (*v1.CreatePorterContextResponse, error)
 	// `Tiphereth` `Normal`
-	ListPorterContexts(context.Context, *connect.Request[v1.ListPorterContextsRequest]) (*connect.Response[v1.ListPorterContextsResponse], error)
+	ListPorterContexts(context.Context, *v1.ListPorterContextsRequest) (*v1.ListPorterContextsResponse, error)
 	// `Tiphereth` `Normal` Set porter context.
-	UpdatePorterContext(context.Context, *connect.Request[v1.UpdatePorterContextRequest]) (*connect.Response[v1.UpdatePorterContextResponse], error)
+	UpdatePorterContext(context.Context, *v1.UpdatePorterContextRequest) (*v1.UpdatePorterContextResponse, error)
 	// `Binah` `Normal`
-	GetStorageCapacityUsage(context.Context, *connect.Request[v1.GetStorageCapacityUsageRequest]) (*connect.Response[v1.GetStorageCapacityUsageResponse], error)
+	GetStorageCapacityUsage(context.Context, *v1.GetStorageCapacityUsageRequest) (*v1.GetStorageCapacityUsageResponse, error)
 	// `Binah` `upload_token`
 	UploadFile(context.Context, *connect.BidiStream[v1.UploadFileRequest, v1.UploadFileResponse]) error
 	// `Binah` `download_token`
@@ -1613,138 +1937,138 @@ type LibrarianSephirahServiceHandler interface {
 	SimpleUploadFile(context.Context, *connect.BidiStream[v1.SimpleUploadFileRequest, v1.SimpleUploadFileResponse]) error
 	// `Binah` `download_token`
 	// Server will not check the receiving state
-	SimpleDownloadFile(context.Context, *connect.Request[v1.SimpleDownloadFileRequest], *connect.ServerStream[v1.SimpleDownloadFileResponse]) error
+	SimpleDownloadFile(context.Context, *v1.SimpleDownloadFileRequest, *connect.ServerStream[v1.SimpleDownloadFileResponse]) error
 	// `Binah` `upload_token`
 	// Upload file through http url
-	PresignedUploadFile(context.Context, *connect.Request[v1.PresignedUploadFileRequest]) (*connect.Response[v1.PresignedUploadFileResponse], error)
+	PresignedUploadFile(context.Context, *v1.PresignedUploadFileRequest) (*v1.PresignedUploadFileResponse, error)
 	// `Binah` `upload_token`
 	// Report file transfer status. Mainly used to trigger server post-process immediately
-	PresignedUploadFileStatus(context.Context, *connect.Request[v1.PresignedUploadFileStatusRequest]) (*connect.Response[v1.PresignedUploadFileStatusResponse], error)
+	PresignedUploadFileStatus(context.Context, *v1.PresignedUploadFileStatusRequest) (*v1.PresignedUploadFileStatusResponse, error)
 	// `Binah` `download_token`
 	// Download file through http url
-	PresignedDownloadFile(context.Context, *connect.Request[v1.PresignedDownloadFileRequest]) (*connect.Response[v1.PresignedDownloadFileResponse], error)
+	PresignedDownloadFile(context.Context, *v1.PresignedDownloadFileRequest) (*v1.PresignedDownloadFileResponse, error)
 	// `Chesed` `Normal`
-	UploadImage(context.Context, *connect.Request[v1.UploadImageRequest]) (*connect.Response[v1.UploadImageResponse], error)
+	UploadImage(context.Context, *v1.UploadImageRequest) (*v1.UploadImageResponse, error)
 	// `Chesed` `Normal`
-	UpdateImage(context.Context, *connect.Request[v1.UpdateImageRequest]) (*connect.Response[v1.UpdateImageResponse], error)
+	UpdateImage(context.Context, *v1.UpdateImageRequest) (*v1.UpdateImageResponse, error)
 	// `Chesed` `Normal`
-	ListImages(context.Context, *connect.Request[v1.ListImagesRequest]) (*connect.Response[v1.ListImagesResponse], error)
+	ListImages(context.Context, *v1.ListImagesRequest) (*v1.ListImagesResponse, error)
 	// `Chesed` `Normal`
-	SearchImages(context.Context, *connect.Request[v1.SearchImagesRequest]) (*connect.Response[v1.SearchImagesResponse], error)
+	SearchImages(context.Context, *v1.SearchImagesRequest) (*v1.SearchImagesResponse, error)
 	// `Chesed` `Normal`
-	GetImage(context.Context, *connect.Request[v1.GetImageRequest]) (*connect.Response[v1.GetImageResponse], error)
+	GetImage(context.Context, *v1.GetImageRequest) (*v1.GetImageResponse, error)
 	// `Chesed` `Normal`
-	DownloadImage(context.Context, *connect.Request[v1.DownloadImageRequest]) (*connect.Response[v1.DownloadImageResponse], error)
+	DownloadImage(context.Context, *v1.DownloadImageRequest) (*v1.DownloadImageResponse, error)
 	// `Gebura` `Normal`
-	SearchStoreApps(context.Context, *connect.Request[v1.SearchStoreAppsRequest]) (*connect.Response[v1.SearchStoreAppsResponse], error)
+	SearchStoreApps(context.Context, *v1.SearchStoreAppsRequest) (*v1.SearchStoreAppsResponse, error)
 	// `Gebura` `Normal`
-	GetStoreAppSummary(context.Context, *connect.Request[v1.GetStoreAppSummaryRequest]) (*connect.Response[v1.GetStoreAppSummaryResponse], error)
+	GetStoreAppSummary(context.Context, *v1.GetStoreAppSummaryRequest) (*v1.GetStoreAppSummaryResponse, error)
 	// `Gebura` `Normal`
-	AcquireStoreApp(context.Context, *connect.Request[v1.AcquireStoreAppRequest]) (*connect.Response[v1.AcquireStoreAppResponse], error)
+	AcquireStoreApp(context.Context, *v1.AcquireStoreAppRequest) (*v1.AcquireStoreAppResponse, error)
 	// `Gebura` `Normal`
-	ListStoreAppBinaries(context.Context, *connect.Request[v1.ListStoreAppBinariesRequest]) (*connect.Response[v1.ListStoreAppBinariesResponse], error)
+	ListStoreAppBinaries(context.Context, *v1.ListStoreAppBinariesRequest) (*v1.ListStoreAppBinariesResponse, error)
 	// `Gebura` `Normal`
-	ListStoreAppBinaryFiles(context.Context, *connect.Request[v1.ListStoreAppBinaryFilesRequest]) (*connect.Response[v1.ListStoreAppBinaryFilesResponse], error)
+	ListStoreAppBinaryFiles(context.Context, *v1.ListStoreAppBinaryFilesRequest) (*v1.ListStoreAppBinaryFilesResponse, error)
 	// `Gebura` `Normal`
-	DownloadStoreAppBinary(context.Context, *connect.Request[v1.DownloadStoreAppBinaryRequest]) (*connect.Response[v1.DownloadStoreAppBinaryResponse], error)
+	DownloadStoreAppBinary(context.Context, *v1.DownloadStoreAppBinaryRequest) (*v1.DownloadStoreAppBinaryResponse, error)
 	// `Gebura` `Normal`
-	ListStoreAppSaveFiles(context.Context, *connect.Request[v1.ListStoreAppSaveFilesRequest]) (*connect.Response[v1.ListStoreAppSaveFilesResponse], error)
+	ListStoreAppSaveFiles(context.Context, *v1.ListStoreAppSaveFilesRequest) (*v1.ListStoreAppSaveFilesResponse, error)
 	// `Gebura` `Normal`
-	DownloadStoreAppSaveFile(context.Context, *connect.Request[v1.DownloadStoreAppSaveFileRequest]) (*connect.Response[v1.DownloadStoreAppSaveFileResponse], error)
+	DownloadStoreAppSaveFile(context.Context, *v1.DownloadStoreAppSaveFileRequest) (*v1.DownloadStoreAppSaveFileResponse, error)
 	// `Gebura` `Normal` Search app infos
-	SearchAppInfos(context.Context, *connect.Request[v1.SearchAppInfosRequest]) (*connect.Response[v1.SearchAppInfosResponse], error)
+	SearchAppInfos(context.Context, *v1.SearchAppInfosRequest) (*v1.SearchAppInfosResponse, error)
 	// `Gebura` `Normal`
-	CreateApp(context.Context, *connect.Request[v1.CreateAppRequest]) (*connect.Response[v1.CreateAppResponse], error)
+	CreateApp(context.Context, *v1.CreateAppRequest) (*v1.CreateAppResponse, error)
 	// `Gebura` `Normal`
-	UpdateApp(context.Context, *connect.Request[v1.UpdateAppRequest]) (*connect.Response[v1.UpdateAppResponse], error)
+	UpdateApp(context.Context, *v1.UpdateAppRequest) (*v1.UpdateAppResponse, error)
 	// `Gebura` `Normal`
-	ListApps(context.Context, *connect.Request[v1.ListAppsRequest]) (*connect.Response[v1.ListAppsResponse], error)
+	ListApps(context.Context, *v1.ListAppsRequest) (*v1.ListAppsResponse, error)
 	// `Gebura` `Normal`
-	DeleteApp(context.Context, *connect.Request[v1.DeleteAppRequest]) (*connect.Response[v1.DeleteAppResponse], error)
+	DeleteApp(context.Context, *v1.DeleteAppRequest) (*v1.DeleteAppResponse, error)
 	// `Gebura` `Normal`
-	BatchCreateAppRunTime(context.Context, *connect.Request[v1.BatchCreateAppRunTimeRequest]) (*connect.Response[v1.BatchCreateAppRunTimeResponse], error)
+	BatchCreateAppRunTime(context.Context, *v1.BatchCreateAppRunTimeRequest) (*v1.BatchCreateAppRunTimeResponse, error)
 	// `Gebura` `Normal`
-	SumAppRunTime(context.Context, *connect.Request[v1.SumAppRunTimeRequest]) (*connect.Response[v1.SumAppRunTimeResponse], error)
+	SumAppRunTime(context.Context, *v1.SumAppRunTimeRequest) (*v1.SumAppRunTimeResponse, error)
 	// `Gebura` `Normal`
-	ListAppRunTimes(context.Context, *connect.Request[v1.ListAppRunTimesRequest]) (*connect.Response[v1.ListAppRunTimesResponse], error)
+	ListAppRunTimes(context.Context, *v1.ListAppRunTimesRequest) (*v1.ListAppRunTimesResponse, error)
 	// `Gebura` `Normal`
-	DeleteAppRunTime(context.Context, *connect.Request[v1.DeleteAppRunTimeRequest]) (*connect.Response[v1.DeleteAppRunTimeResponse], error)
+	DeleteAppRunTime(context.Context, *v1.DeleteAppRunTimeRequest) (*v1.DeleteAppRunTimeResponse, error)
 	// `Gebura` `Normal`
-	UploadAppSaveFile(context.Context, *connect.Request[v1.UploadAppSaveFileRequest]) (*connect.Response[v1.UploadAppSaveFileResponse], error)
+	UploadAppSaveFile(context.Context, *v1.UploadAppSaveFileRequest) (*v1.UploadAppSaveFileResponse, error)
 	// `Gebura` `Normal`
-	DownloadAppSaveFile(context.Context, *connect.Request[v1.DownloadAppSaveFileRequest]) (*connect.Response[v1.DownloadAppSaveFileResponse], error)
+	DownloadAppSaveFile(context.Context, *v1.DownloadAppSaveFileRequest) (*v1.DownloadAppSaveFileResponse, error)
 	// `Gebura` `Normal`
-	ListAppSaveFiles(context.Context, *connect.Request[v1.ListAppSaveFilesRequest]) (*connect.Response[v1.ListAppSaveFilesResponse], error)
+	ListAppSaveFiles(context.Context, *v1.ListAppSaveFilesRequest) (*v1.ListAppSaveFilesResponse, error)
 	// `Gebura` `Normal`
-	DeleteAppSaveFile(context.Context, *connect.Request[v1.DeleteAppSaveFileRequest]) (*connect.Response[v1.DeleteAppSaveFileResponse], error)
+	DeleteAppSaveFile(context.Context, *v1.DeleteAppSaveFileRequest) (*v1.DeleteAppSaveFileResponse, error)
 	// `Gebura` `Normal`
-	PinAppSaveFile(context.Context, *connect.Request[v1.PinAppSaveFileRequest]) (*connect.Response[v1.PinAppSaveFileResponse], error)
+	PinAppSaveFile(context.Context, *v1.PinAppSaveFileRequest) (*v1.PinAppSaveFileResponse, error)
 	// `Gebura` `Normal`
-	UnpinAppSaveFile(context.Context, *connect.Request[v1.UnpinAppSaveFileRequest]) (*connect.Response[v1.UnpinAppSaveFileResponse], error)
+	UnpinAppSaveFile(context.Context, *v1.UnpinAppSaveFileRequest) (*v1.UnpinAppSaveFileResponse, error)
 	// `Gebura` `Normal`
-	GetAppSaveFileCapacity(context.Context, *connect.Request[v1.GetAppSaveFileCapacityRequest]) (*connect.Response[v1.GetAppSaveFileCapacityResponse], error)
+	GetAppSaveFileCapacity(context.Context, *v1.GetAppSaveFileCapacityRequest) (*v1.GetAppSaveFileCapacityResponse, error)
 	// `Gebura` `Normal`
-	SetAppSaveFileCapacity(context.Context, *connect.Request[v1.SetAppSaveFileCapacityRequest]) (*connect.Response[v1.SetAppSaveFileCapacityResponse], error)
+	SetAppSaveFileCapacity(context.Context, *v1.SetAppSaveFileCapacityRequest) (*v1.SetAppSaveFileCapacityResponse, error)
 	// `Gebura` `Normal`
-	ListAppCategories(context.Context, *connect.Request[v1.ListAppCategoriesRequest]) (*connect.Response[v1.ListAppCategoriesResponse], error)
+	ListAppCategories(context.Context, *v1.ListAppCategoriesRequest) (*v1.ListAppCategoriesResponse, error)
 	// `Gebura` `Normal`
-	CreateAppCategory(context.Context, *connect.Request[v1.CreateAppCategoryRequest]) (*connect.Response[v1.CreateAppCategoryResponse], error)
+	CreateAppCategory(context.Context, *v1.CreateAppCategoryRequest) (*v1.CreateAppCategoryResponse, error)
 	// `Gebura` `Normal`
-	UpdateAppCategory(context.Context, *connect.Request[v1.UpdateAppCategoryRequest]) (*connect.Response[v1.UpdateAppCategoryResponse], error)
+	UpdateAppCategory(context.Context, *v1.UpdateAppCategoryRequest) (*v1.UpdateAppCategoryResponse, error)
 	// `Gebura` `Normal`
-	DeleteAppCategory(context.Context, *connect.Request[v1.DeleteAppCategoryRequest]) (*connect.Response[v1.DeleteAppCategoryResponse], error)
+	DeleteAppCategory(context.Context, *v1.DeleteAppCategoryRequest) (*v1.DeleteAppCategoryResponse, error)
 	// `Netzach` `Normal`
-	CreateNotifyTarget(context.Context, *connect.Request[v1.CreateNotifyTargetRequest]) (*connect.Response[v1.CreateNotifyTargetResponse], error)
+	CreateNotifyTarget(context.Context, *v1.CreateNotifyTargetRequest) (*v1.CreateNotifyTargetResponse, error)
 	// `Netzach` `Normal`
-	UpdateNotifyTarget(context.Context, *connect.Request[v1.UpdateNotifyTargetRequest]) (*connect.Response[v1.UpdateNotifyTargetResponse], error)
+	UpdateNotifyTarget(context.Context, *v1.UpdateNotifyTargetRequest) (*v1.UpdateNotifyTargetResponse, error)
 	// `Netzach` `Normal`
-	ListNotifyTargets(context.Context, *connect.Request[v1.ListNotifyTargetsRequest]) (*connect.Response[v1.ListNotifyTargetsResponse], error)
+	ListNotifyTargets(context.Context, *v1.ListNotifyTargetsRequest) (*v1.ListNotifyTargetsResponse, error)
 	// `Netzach` `Normal`
-	CreateNotifyFlow(context.Context, *connect.Request[v1.CreateNotifyFlowRequest]) (*connect.Response[v1.CreateNotifyFlowResponse], error)
+	CreateNotifyFlow(context.Context, *v1.CreateNotifyFlowRequest) (*v1.CreateNotifyFlowResponse, error)
 	// `Netzach` `Normal`
-	UpdateNotifyFlow(context.Context, *connect.Request[v1.UpdateNotifyFlowRequest]) (*connect.Response[v1.UpdateNotifyFlowResponse], error)
+	UpdateNotifyFlow(context.Context, *v1.UpdateNotifyFlowRequest) (*v1.UpdateNotifyFlowResponse, error)
 	// `Netzach` `Normal`
-	ListNotifyFlows(context.Context, *connect.Request[v1.ListNotifyFlowsRequest]) (*connect.Response[v1.ListNotifyFlowsResponse], error)
+	ListNotifyFlows(context.Context, *v1.ListNotifyFlowsRequest) (*v1.ListNotifyFlowsResponse, error)
 	// `Netzach` `Normal`
-	ListSystemNotifications(context.Context, *connect.Request[v1.ListSystemNotificationsRequest]) (*connect.Response[v1.ListSystemNotificationsResponse], error)
+	ListSystemNotifications(context.Context, *v1.ListSystemNotificationsRequest) (*v1.ListSystemNotificationsResponse, error)
 	// `Netzach` `Normal`
-	UpdateSystemNotification(context.Context, *connect.Request[v1.UpdateSystemNotificationRequest]) (*connect.Response[v1.UpdateSystemNotificationResponse], error)
+	UpdateSystemNotification(context.Context, *v1.UpdateSystemNotificationRequest) (*v1.UpdateSystemNotificationResponse, error)
 	// `Yesod` `Normal`
-	CreateFeedConfig(context.Context, *connect.Request[v1.CreateFeedConfigRequest]) (*connect.Response[v1.CreateFeedConfigResponse], error)
+	CreateFeedConfig(context.Context, *v1.CreateFeedConfigRequest) (*v1.CreateFeedConfigResponse, error)
 	// `Yesod` `Normal`
-	UpdateFeedConfig(context.Context, *connect.Request[v1.UpdateFeedConfigRequest]) (*connect.Response[v1.UpdateFeedConfigResponse], error)
+	UpdateFeedConfig(context.Context, *v1.UpdateFeedConfigRequest) (*v1.UpdateFeedConfigResponse, error)
 	// `Yesod` `Normal`
-	ListFeedConfigs(context.Context, *connect.Request[v1.ListFeedConfigsRequest]) (*connect.Response[v1.ListFeedConfigsResponse], error)
+	ListFeedConfigs(context.Context, *v1.ListFeedConfigsRequest) (*v1.ListFeedConfigsResponse, error)
 	// `Yesod` `Normal`
-	CreateFeedActionSet(context.Context, *connect.Request[v1.CreateFeedActionSetRequest]) (*connect.Response[v1.CreateFeedActionSetResponse], error)
+	CreateFeedActionSet(context.Context, *v1.CreateFeedActionSetRequest) (*v1.CreateFeedActionSetResponse, error)
 	// `Yesod` `Normal`
-	UpdateFeedActionSet(context.Context, *connect.Request[v1.UpdateFeedActionSetRequest]) (*connect.Response[v1.UpdateFeedActionSetResponse], error)
+	UpdateFeedActionSet(context.Context, *v1.UpdateFeedActionSetRequest) (*v1.UpdateFeedActionSetResponse, error)
 	// `Yesod` `Normal`
-	ListFeedActionSets(context.Context, *connect.Request[v1.ListFeedActionSetsRequest]) (*connect.Response[v1.ListFeedActionSetsResponse], error)
+	ListFeedActionSets(context.Context, *v1.ListFeedActionSetsRequest) (*v1.ListFeedActionSetsResponse, error)
 	// `Yesod` `Normal`
-	ListFeedCategories(context.Context, *connect.Request[v1.ListFeedCategoriesRequest]) (*connect.Response[v1.ListFeedCategoriesResponse], error)
+	ListFeedCategories(context.Context, *v1.ListFeedCategoriesRequest) (*v1.ListFeedCategoriesResponse, error)
 	// `Yesod` `Normal`
-	ListFeedPlatforms(context.Context, *connect.Request[v1.ListFeedPlatformsRequest]) (*connect.Response[v1.ListFeedPlatformsResponse], error)
+	ListFeedPlatforms(context.Context, *v1.ListFeedPlatformsRequest) (*v1.ListFeedPlatformsResponse, error)
 	// `Yesod` `Normal`
-	ListFeedItems(context.Context, *connect.Request[v1.ListFeedItemsRequest]) (*connect.Response[v1.ListFeedItemsResponse], error)
+	ListFeedItems(context.Context, *v1.ListFeedItemsRequest) (*v1.ListFeedItemsResponse, error)
 	// `Yesod` `Normal`
-	GetFeedItem(context.Context, *connect.Request[v1.GetFeedItemRequest]) (*connect.Response[v1.GetFeedItemResponse], error)
+	GetFeedItem(context.Context, *v1.GetFeedItemRequest) (*v1.GetFeedItemResponse, error)
 	// `Yesod` `Normal`
-	GetBatchFeedItems(context.Context, *connect.Request[v1.GetBatchFeedItemsRequest]) (*connect.Response[v1.GetBatchFeedItemsResponse], error)
+	GetBatchFeedItems(context.Context, *v1.GetBatchFeedItemsRequest) (*v1.GetBatchFeedItemsResponse, error)
 	// `Yesod` `Normal`
-	ReadFeedItem(context.Context, *connect.Request[v1.ReadFeedItemRequest]) (*connect.Response[v1.ReadFeedItemResponse], error)
+	ReadFeedItem(context.Context, *v1.ReadFeedItemRequest) (*v1.ReadFeedItemResponse, error)
 	// `Yesod` `Normal`
-	CreateFeedItemCollection(context.Context, *connect.Request[v1.CreateFeedItemCollectionRequest]) (*connect.Response[v1.CreateFeedItemCollectionResponse], error)
+	CreateFeedItemCollection(context.Context, *v1.CreateFeedItemCollectionRequest) (*v1.CreateFeedItemCollectionResponse, error)
 	// `Yesod` `Normal`
-	UpdateFeedItemCollection(context.Context, *connect.Request[v1.UpdateFeedItemCollectionRequest]) (*connect.Response[v1.UpdateFeedItemCollectionResponse], error)
+	UpdateFeedItemCollection(context.Context, *v1.UpdateFeedItemCollectionRequest) (*v1.UpdateFeedItemCollectionResponse, error)
 	// `Yesod` `Normal`
-	ListFeedItemCollections(context.Context, *connect.Request[v1.ListFeedItemCollectionsRequest]) (*connect.Response[v1.ListFeedItemCollectionsResponse], error)
+	ListFeedItemCollections(context.Context, *v1.ListFeedItemCollectionsRequest) (*v1.ListFeedItemCollectionsResponse, error)
 	// `Yesod` `Normal`
-	AddFeedItemToCollection(context.Context, *connect.Request[v1.AddFeedItemToCollectionRequest]) (*connect.Response[v1.AddFeedItemToCollectionResponse], error)
+	AddFeedItemToCollection(context.Context, *v1.AddFeedItemToCollectionRequest) (*v1.AddFeedItemToCollectionResponse, error)
 	// `Yesod` `Normal`
-	RemoveFeedItemFromCollection(context.Context, *connect.Request[v1.RemoveFeedItemFromCollectionRequest]) (*connect.Response[v1.RemoveFeedItemFromCollectionResponse], error)
+	RemoveFeedItemFromCollection(context.Context, *v1.RemoveFeedItemFromCollectionRequest) (*v1.RemoveFeedItemFromCollectionResponse, error)
 	// `Yesod` `Normal`
-	ListFeedItemsInCollection(context.Context, *connect.Request[v1.ListFeedItemsInCollectionRequest]) (*connect.Response[v1.ListFeedItemsInCollectionResponse], error)
+	ListFeedItemsInCollection(context.Context, *v1.ListFeedItemsInCollectionRequest) (*v1.ListFeedItemsInCollectionResponse, error)
 }
 
 // NewLibrarianSephirahServiceHandler builds an HTTP handler from the service implementation. It
@@ -1754,109 +2078,109 @@ type LibrarianSephirahServiceHandler interface {
 // and JSON codecs. They also support gzip compression.
 func NewLibrarianSephirahServiceHandler(svc LibrarianSephirahServiceHandler, opts ...connect.HandlerOption) (string, http.Handler) {
 	librarianSephirahServiceMethods := v1.File_librarian_sephirah_v1_sephirah_service_proto.Services().ByName("LibrarianSephirahService").Methods()
-	librarianSephirahServiceGetServerInformationHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceGetServerInformationHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceGetServerInformationProcedure,
 		svc.GetServerInformation,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("GetServerInformation")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceListenServerEventHandler := connect.NewServerStreamHandler(
+	librarianSephirahServiceListenServerEventHandler := connect.NewServerStreamHandlerSimple(
 		LibrarianSephirahServiceListenServerEventProcedure,
 		svc.ListenServerEvent,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("ListenServerEvent")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceGetTokenHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceGetTokenHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceGetTokenProcedure,
 		svc.GetToken,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("GetToken")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceRefreshTokenHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceRefreshTokenHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceRefreshTokenProcedure,
 		svc.RefreshToken,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("RefreshToken")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceGetUserHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceGetUserHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceGetUserProcedure,
 		svc.GetUser,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("GetUser")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceRegisterUserHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceRegisterUserHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceRegisterUserProcedure,
 		svc.RegisterUser,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("RegisterUser")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceUpdateUserHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceUpdateUserHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceUpdateUserProcedure,
 		svc.UpdateUser,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("UpdateUser")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceRegisterDeviceHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceRegisterDeviceHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceRegisterDeviceProcedure,
 		svc.RegisterDevice,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("RegisterDevice")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceListUserSessionsHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceListUserSessionsHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceListUserSessionsProcedure,
 		svc.ListUserSessions,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("ListUserSessions")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceDeleteUserSessionHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceDeleteUserSessionHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceDeleteUserSessionProcedure,
 		svc.DeleteUserSession,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("DeleteUserSession")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceLinkAccountHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceLinkAccountHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceLinkAccountProcedure,
 		svc.LinkAccount,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("LinkAccount")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceUnLinkAccountHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceUnLinkAccountHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceUnLinkAccountProcedure,
 		svc.UnLinkAccount,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("UnLinkAccount")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceListLinkAccountsHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceListLinkAccountsHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceListLinkAccountsProcedure,
 		svc.ListLinkAccounts,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("ListLinkAccounts")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceListPorterDigestsHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceListPorterDigestsHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceListPorterDigestsProcedure,
 		svc.ListPorterDigests,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("ListPorterDigests")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceCreatePorterContextHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceCreatePorterContextHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceCreatePorterContextProcedure,
 		svc.CreatePorterContext,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("CreatePorterContext")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceListPorterContextsHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceListPorterContextsHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceListPorterContextsProcedure,
 		svc.ListPorterContexts,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("ListPorterContexts")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceUpdatePorterContextHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceUpdatePorterContextHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceUpdatePorterContextProcedure,
 		svc.UpdatePorterContext,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("UpdatePorterContext")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceGetStorageCapacityUsageHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceGetStorageCapacityUsageHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceGetStorageCapacityUsageProcedure,
 		svc.GetStorageCapacityUsage,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("GetStorageCapacityUsage")),
@@ -1880,391 +2204,391 @@ func NewLibrarianSephirahServiceHandler(svc LibrarianSephirahServiceHandler, opt
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("SimpleUploadFile")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceSimpleDownloadFileHandler := connect.NewServerStreamHandler(
+	librarianSephirahServiceSimpleDownloadFileHandler := connect.NewServerStreamHandlerSimple(
 		LibrarianSephirahServiceSimpleDownloadFileProcedure,
 		svc.SimpleDownloadFile,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("SimpleDownloadFile")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServicePresignedUploadFileHandler := connect.NewUnaryHandler(
+	librarianSephirahServicePresignedUploadFileHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServicePresignedUploadFileProcedure,
 		svc.PresignedUploadFile,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("PresignedUploadFile")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServicePresignedUploadFileStatusHandler := connect.NewUnaryHandler(
+	librarianSephirahServicePresignedUploadFileStatusHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServicePresignedUploadFileStatusProcedure,
 		svc.PresignedUploadFileStatus,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("PresignedUploadFileStatus")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServicePresignedDownloadFileHandler := connect.NewUnaryHandler(
+	librarianSephirahServicePresignedDownloadFileHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServicePresignedDownloadFileProcedure,
 		svc.PresignedDownloadFile,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("PresignedDownloadFile")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceUploadImageHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceUploadImageHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceUploadImageProcedure,
 		svc.UploadImage,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("UploadImage")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceUpdateImageHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceUpdateImageHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceUpdateImageProcedure,
 		svc.UpdateImage,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("UpdateImage")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceListImagesHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceListImagesHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceListImagesProcedure,
 		svc.ListImages,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("ListImages")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceSearchImagesHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceSearchImagesHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceSearchImagesProcedure,
 		svc.SearchImages,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("SearchImages")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceGetImageHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceGetImageHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceGetImageProcedure,
 		svc.GetImage,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("GetImage")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceDownloadImageHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceDownloadImageHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceDownloadImageProcedure,
 		svc.DownloadImage,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("DownloadImage")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceSearchStoreAppsHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceSearchStoreAppsHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceSearchStoreAppsProcedure,
 		svc.SearchStoreApps,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("SearchStoreApps")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceGetStoreAppSummaryHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceGetStoreAppSummaryHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceGetStoreAppSummaryProcedure,
 		svc.GetStoreAppSummary,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("GetStoreAppSummary")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceAcquireStoreAppHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceAcquireStoreAppHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceAcquireStoreAppProcedure,
 		svc.AcquireStoreApp,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("AcquireStoreApp")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceListStoreAppBinariesHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceListStoreAppBinariesHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceListStoreAppBinariesProcedure,
 		svc.ListStoreAppBinaries,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("ListStoreAppBinaries")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceListStoreAppBinaryFilesHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceListStoreAppBinaryFilesHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceListStoreAppBinaryFilesProcedure,
 		svc.ListStoreAppBinaryFiles,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("ListStoreAppBinaryFiles")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceDownloadStoreAppBinaryHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceDownloadStoreAppBinaryHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceDownloadStoreAppBinaryProcedure,
 		svc.DownloadStoreAppBinary,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("DownloadStoreAppBinary")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceListStoreAppSaveFilesHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceListStoreAppSaveFilesHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceListStoreAppSaveFilesProcedure,
 		svc.ListStoreAppSaveFiles,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("ListStoreAppSaveFiles")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceDownloadStoreAppSaveFileHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceDownloadStoreAppSaveFileHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceDownloadStoreAppSaveFileProcedure,
 		svc.DownloadStoreAppSaveFile,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("DownloadStoreAppSaveFile")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceSearchAppInfosHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceSearchAppInfosHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceSearchAppInfosProcedure,
 		svc.SearchAppInfos,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("SearchAppInfos")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceCreateAppHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceCreateAppHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceCreateAppProcedure,
 		svc.CreateApp,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("CreateApp")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceUpdateAppHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceUpdateAppHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceUpdateAppProcedure,
 		svc.UpdateApp,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("UpdateApp")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceListAppsHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceListAppsHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceListAppsProcedure,
 		svc.ListApps,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("ListApps")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceDeleteAppHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceDeleteAppHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceDeleteAppProcedure,
 		svc.DeleteApp,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("DeleteApp")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceBatchCreateAppRunTimeHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceBatchCreateAppRunTimeHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceBatchCreateAppRunTimeProcedure,
 		svc.BatchCreateAppRunTime,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("BatchCreateAppRunTime")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceSumAppRunTimeHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceSumAppRunTimeHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceSumAppRunTimeProcedure,
 		svc.SumAppRunTime,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("SumAppRunTime")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceListAppRunTimesHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceListAppRunTimesHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceListAppRunTimesProcedure,
 		svc.ListAppRunTimes,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("ListAppRunTimes")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceDeleteAppRunTimeHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceDeleteAppRunTimeHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceDeleteAppRunTimeProcedure,
 		svc.DeleteAppRunTime,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("DeleteAppRunTime")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceUploadAppSaveFileHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceUploadAppSaveFileHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceUploadAppSaveFileProcedure,
 		svc.UploadAppSaveFile,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("UploadAppSaveFile")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceDownloadAppSaveFileHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceDownloadAppSaveFileHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceDownloadAppSaveFileProcedure,
 		svc.DownloadAppSaveFile,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("DownloadAppSaveFile")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceListAppSaveFilesHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceListAppSaveFilesHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceListAppSaveFilesProcedure,
 		svc.ListAppSaveFiles,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("ListAppSaveFiles")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceDeleteAppSaveFileHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceDeleteAppSaveFileHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceDeleteAppSaveFileProcedure,
 		svc.DeleteAppSaveFile,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("DeleteAppSaveFile")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServicePinAppSaveFileHandler := connect.NewUnaryHandler(
+	librarianSephirahServicePinAppSaveFileHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServicePinAppSaveFileProcedure,
 		svc.PinAppSaveFile,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("PinAppSaveFile")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceUnpinAppSaveFileHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceUnpinAppSaveFileHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceUnpinAppSaveFileProcedure,
 		svc.UnpinAppSaveFile,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("UnpinAppSaveFile")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceGetAppSaveFileCapacityHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceGetAppSaveFileCapacityHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceGetAppSaveFileCapacityProcedure,
 		svc.GetAppSaveFileCapacity,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("GetAppSaveFileCapacity")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceSetAppSaveFileCapacityHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceSetAppSaveFileCapacityHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceSetAppSaveFileCapacityProcedure,
 		svc.SetAppSaveFileCapacity,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("SetAppSaveFileCapacity")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceListAppCategoriesHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceListAppCategoriesHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceListAppCategoriesProcedure,
 		svc.ListAppCategories,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("ListAppCategories")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceCreateAppCategoryHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceCreateAppCategoryHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceCreateAppCategoryProcedure,
 		svc.CreateAppCategory,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("CreateAppCategory")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceUpdateAppCategoryHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceUpdateAppCategoryHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceUpdateAppCategoryProcedure,
 		svc.UpdateAppCategory,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("UpdateAppCategory")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceDeleteAppCategoryHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceDeleteAppCategoryHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceDeleteAppCategoryProcedure,
 		svc.DeleteAppCategory,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("DeleteAppCategory")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceCreateNotifyTargetHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceCreateNotifyTargetHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceCreateNotifyTargetProcedure,
 		svc.CreateNotifyTarget,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("CreateNotifyTarget")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceUpdateNotifyTargetHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceUpdateNotifyTargetHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceUpdateNotifyTargetProcedure,
 		svc.UpdateNotifyTarget,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("UpdateNotifyTarget")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceListNotifyTargetsHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceListNotifyTargetsHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceListNotifyTargetsProcedure,
 		svc.ListNotifyTargets,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("ListNotifyTargets")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceCreateNotifyFlowHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceCreateNotifyFlowHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceCreateNotifyFlowProcedure,
 		svc.CreateNotifyFlow,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("CreateNotifyFlow")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceUpdateNotifyFlowHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceUpdateNotifyFlowHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceUpdateNotifyFlowProcedure,
 		svc.UpdateNotifyFlow,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("UpdateNotifyFlow")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceListNotifyFlowsHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceListNotifyFlowsHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceListNotifyFlowsProcedure,
 		svc.ListNotifyFlows,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("ListNotifyFlows")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceListSystemNotificationsHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceListSystemNotificationsHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceListSystemNotificationsProcedure,
 		svc.ListSystemNotifications,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("ListSystemNotifications")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceUpdateSystemNotificationHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceUpdateSystemNotificationHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceUpdateSystemNotificationProcedure,
 		svc.UpdateSystemNotification,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("UpdateSystemNotification")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceCreateFeedConfigHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceCreateFeedConfigHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceCreateFeedConfigProcedure,
 		svc.CreateFeedConfig,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("CreateFeedConfig")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceUpdateFeedConfigHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceUpdateFeedConfigHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceUpdateFeedConfigProcedure,
 		svc.UpdateFeedConfig,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("UpdateFeedConfig")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceListFeedConfigsHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceListFeedConfigsHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceListFeedConfigsProcedure,
 		svc.ListFeedConfigs,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("ListFeedConfigs")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceCreateFeedActionSetHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceCreateFeedActionSetHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceCreateFeedActionSetProcedure,
 		svc.CreateFeedActionSet,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("CreateFeedActionSet")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceUpdateFeedActionSetHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceUpdateFeedActionSetHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceUpdateFeedActionSetProcedure,
 		svc.UpdateFeedActionSet,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("UpdateFeedActionSet")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceListFeedActionSetsHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceListFeedActionSetsHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceListFeedActionSetsProcedure,
 		svc.ListFeedActionSets,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("ListFeedActionSets")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceListFeedCategoriesHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceListFeedCategoriesHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceListFeedCategoriesProcedure,
 		svc.ListFeedCategories,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("ListFeedCategories")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceListFeedPlatformsHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceListFeedPlatformsHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceListFeedPlatformsProcedure,
 		svc.ListFeedPlatforms,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("ListFeedPlatforms")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceListFeedItemsHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceListFeedItemsHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceListFeedItemsProcedure,
 		svc.ListFeedItems,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("ListFeedItems")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceGetFeedItemHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceGetFeedItemHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceGetFeedItemProcedure,
 		svc.GetFeedItem,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("GetFeedItem")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceGetBatchFeedItemsHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceGetBatchFeedItemsHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceGetBatchFeedItemsProcedure,
 		svc.GetBatchFeedItems,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("GetBatchFeedItems")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceReadFeedItemHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceReadFeedItemHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceReadFeedItemProcedure,
 		svc.ReadFeedItem,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("ReadFeedItem")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceCreateFeedItemCollectionHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceCreateFeedItemCollectionHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceCreateFeedItemCollectionProcedure,
 		svc.CreateFeedItemCollection,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("CreateFeedItemCollection")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceUpdateFeedItemCollectionHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceUpdateFeedItemCollectionHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceUpdateFeedItemCollectionProcedure,
 		svc.UpdateFeedItemCollection,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("UpdateFeedItemCollection")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceListFeedItemCollectionsHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceListFeedItemCollectionsHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceListFeedItemCollectionsProcedure,
 		svc.ListFeedItemCollections,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("ListFeedItemCollections")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceAddFeedItemToCollectionHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceAddFeedItemToCollectionHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceAddFeedItemToCollectionProcedure,
 		svc.AddFeedItemToCollection,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("AddFeedItemToCollection")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceRemoveFeedItemFromCollectionHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceRemoveFeedItemFromCollectionHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceRemoveFeedItemFromCollectionProcedure,
 		svc.RemoveFeedItemFromCollection,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("RemoveFeedItemFromCollection")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceListFeedItemsInCollectionHandler := connect.NewUnaryHandler(
+	librarianSephirahServiceListFeedItemsInCollectionHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceListFeedItemsInCollectionProcedure,
 		svc.ListFeedItemsInCollection,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("ListFeedItemsInCollection")),
@@ -2453,75 +2777,75 @@ func NewLibrarianSephirahServiceHandler(svc LibrarianSephirahServiceHandler, opt
 // UnimplementedLibrarianSephirahServiceHandler returns CodeUnimplemented from all methods.
 type UnimplementedLibrarianSephirahServiceHandler struct{}
 
-func (UnimplementedLibrarianSephirahServiceHandler) GetServerInformation(context.Context, *connect.Request[v1.GetServerInformationRequest]) (*connect.Response[v1.GetServerInformationResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) GetServerInformation(context.Context, *v1.GetServerInformationRequest) (*v1.GetServerInformationResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.GetServerInformation is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) ListenServerEvent(context.Context, *connect.Request[v1.ListenServerEventRequest], *connect.ServerStream[v1.ListenServerEventResponse]) error {
+func (UnimplementedLibrarianSephirahServiceHandler) ListenServerEvent(context.Context, *v1.ListenServerEventRequest, *connect.ServerStream[v1.ListenServerEventResponse]) error {
 	return connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.ListenServerEvent is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) GetToken(context.Context, *connect.Request[v1.GetTokenRequest]) (*connect.Response[v1.GetTokenResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) GetToken(context.Context, *v1.GetTokenRequest) (*v1.GetTokenResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.GetToken is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) RefreshToken(context.Context, *connect.Request[v1.RefreshTokenRequest]) (*connect.Response[v1.RefreshTokenResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) RefreshToken(context.Context, *v1.RefreshTokenRequest) (*v1.RefreshTokenResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.RefreshToken is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) GetUser(context.Context, *connect.Request[v1.GetUserRequest]) (*connect.Response[v1.GetUserResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) GetUser(context.Context, *v1.GetUserRequest) (*v1.GetUserResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.GetUser is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) RegisterUser(context.Context, *connect.Request[v1.RegisterUserRequest]) (*connect.Response[v1.RegisterUserResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) RegisterUser(context.Context, *v1.RegisterUserRequest) (*v1.RegisterUserResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.RegisterUser is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) UpdateUser(context.Context, *connect.Request[v1.UpdateUserRequest]) (*connect.Response[v1.UpdateUserResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) UpdateUser(context.Context, *v1.UpdateUserRequest) (*v1.UpdateUserResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.UpdateUser is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) RegisterDevice(context.Context, *connect.Request[v1.RegisterDeviceRequest]) (*connect.Response[v1.RegisterDeviceResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) RegisterDevice(context.Context, *v1.RegisterDeviceRequest) (*v1.RegisterDeviceResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.RegisterDevice is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) ListUserSessions(context.Context, *connect.Request[v1.ListUserSessionsRequest]) (*connect.Response[v1.ListUserSessionsResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) ListUserSessions(context.Context, *v1.ListUserSessionsRequest) (*v1.ListUserSessionsResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.ListUserSessions is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) DeleteUserSession(context.Context, *connect.Request[v1.DeleteUserSessionRequest]) (*connect.Response[v1.DeleteUserSessionResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) DeleteUserSession(context.Context, *v1.DeleteUserSessionRequest) (*v1.DeleteUserSessionResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.DeleteUserSession is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) LinkAccount(context.Context, *connect.Request[v1.LinkAccountRequest]) (*connect.Response[v1.LinkAccountResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) LinkAccount(context.Context, *v1.LinkAccountRequest) (*v1.LinkAccountResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.LinkAccount is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) UnLinkAccount(context.Context, *connect.Request[v1.UnLinkAccountRequest]) (*connect.Response[v1.UnLinkAccountResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) UnLinkAccount(context.Context, *v1.UnLinkAccountRequest) (*v1.UnLinkAccountResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.UnLinkAccount is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) ListLinkAccounts(context.Context, *connect.Request[v1.ListLinkAccountsRequest]) (*connect.Response[v1.ListLinkAccountsResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) ListLinkAccounts(context.Context, *v1.ListLinkAccountsRequest) (*v1.ListLinkAccountsResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.ListLinkAccounts is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) ListPorterDigests(context.Context, *connect.Request[v1.ListPorterDigestsRequest]) (*connect.Response[v1.ListPorterDigestsResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) ListPorterDigests(context.Context, *v1.ListPorterDigestsRequest) (*v1.ListPorterDigestsResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.ListPorterDigests is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) CreatePorterContext(context.Context, *connect.Request[v1.CreatePorterContextRequest]) (*connect.Response[v1.CreatePorterContextResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) CreatePorterContext(context.Context, *v1.CreatePorterContextRequest) (*v1.CreatePorterContextResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.CreatePorterContext is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) ListPorterContexts(context.Context, *connect.Request[v1.ListPorterContextsRequest]) (*connect.Response[v1.ListPorterContextsResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) ListPorterContexts(context.Context, *v1.ListPorterContextsRequest) (*v1.ListPorterContextsResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.ListPorterContexts is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) UpdatePorterContext(context.Context, *connect.Request[v1.UpdatePorterContextRequest]) (*connect.Response[v1.UpdatePorterContextResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) UpdatePorterContext(context.Context, *v1.UpdatePorterContextRequest) (*v1.UpdatePorterContextResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.UpdatePorterContext is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) GetStorageCapacityUsage(context.Context, *connect.Request[v1.GetStorageCapacityUsageRequest]) (*connect.Response[v1.GetStorageCapacityUsageResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) GetStorageCapacityUsage(context.Context, *v1.GetStorageCapacityUsageRequest) (*v1.GetStorageCapacityUsageResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.GetStorageCapacityUsage is not implemented"))
 }
 
@@ -2537,262 +2861,262 @@ func (UnimplementedLibrarianSephirahServiceHandler) SimpleUploadFile(context.Con
 	return connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.SimpleUploadFile is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) SimpleDownloadFile(context.Context, *connect.Request[v1.SimpleDownloadFileRequest], *connect.ServerStream[v1.SimpleDownloadFileResponse]) error {
+func (UnimplementedLibrarianSephirahServiceHandler) SimpleDownloadFile(context.Context, *v1.SimpleDownloadFileRequest, *connect.ServerStream[v1.SimpleDownloadFileResponse]) error {
 	return connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.SimpleDownloadFile is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) PresignedUploadFile(context.Context, *connect.Request[v1.PresignedUploadFileRequest]) (*connect.Response[v1.PresignedUploadFileResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) PresignedUploadFile(context.Context, *v1.PresignedUploadFileRequest) (*v1.PresignedUploadFileResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.PresignedUploadFile is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) PresignedUploadFileStatus(context.Context, *connect.Request[v1.PresignedUploadFileStatusRequest]) (*connect.Response[v1.PresignedUploadFileStatusResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) PresignedUploadFileStatus(context.Context, *v1.PresignedUploadFileStatusRequest) (*v1.PresignedUploadFileStatusResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.PresignedUploadFileStatus is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) PresignedDownloadFile(context.Context, *connect.Request[v1.PresignedDownloadFileRequest]) (*connect.Response[v1.PresignedDownloadFileResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) PresignedDownloadFile(context.Context, *v1.PresignedDownloadFileRequest) (*v1.PresignedDownloadFileResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.PresignedDownloadFile is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) UploadImage(context.Context, *connect.Request[v1.UploadImageRequest]) (*connect.Response[v1.UploadImageResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) UploadImage(context.Context, *v1.UploadImageRequest) (*v1.UploadImageResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.UploadImage is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) UpdateImage(context.Context, *connect.Request[v1.UpdateImageRequest]) (*connect.Response[v1.UpdateImageResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) UpdateImage(context.Context, *v1.UpdateImageRequest) (*v1.UpdateImageResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.UpdateImage is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) ListImages(context.Context, *connect.Request[v1.ListImagesRequest]) (*connect.Response[v1.ListImagesResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) ListImages(context.Context, *v1.ListImagesRequest) (*v1.ListImagesResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.ListImages is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) SearchImages(context.Context, *connect.Request[v1.SearchImagesRequest]) (*connect.Response[v1.SearchImagesResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) SearchImages(context.Context, *v1.SearchImagesRequest) (*v1.SearchImagesResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.SearchImages is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) GetImage(context.Context, *connect.Request[v1.GetImageRequest]) (*connect.Response[v1.GetImageResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) GetImage(context.Context, *v1.GetImageRequest) (*v1.GetImageResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.GetImage is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) DownloadImage(context.Context, *connect.Request[v1.DownloadImageRequest]) (*connect.Response[v1.DownloadImageResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) DownloadImage(context.Context, *v1.DownloadImageRequest) (*v1.DownloadImageResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.DownloadImage is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) SearchStoreApps(context.Context, *connect.Request[v1.SearchStoreAppsRequest]) (*connect.Response[v1.SearchStoreAppsResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) SearchStoreApps(context.Context, *v1.SearchStoreAppsRequest) (*v1.SearchStoreAppsResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.SearchStoreApps is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) GetStoreAppSummary(context.Context, *connect.Request[v1.GetStoreAppSummaryRequest]) (*connect.Response[v1.GetStoreAppSummaryResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) GetStoreAppSummary(context.Context, *v1.GetStoreAppSummaryRequest) (*v1.GetStoreAppSummaryResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.GetStoreAppSummary is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) AcquireStoreApp(context.Context, *connect.Request[v1.AcquireStoreAppRequest]) (*connect.Response[v1.AcquireStoreAppResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) AcquireStoreApp(context.Context, *v1.AcquireStoreAppRequest) (*v1.AcquireStoreAppResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.AcquireStoreApp is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) ListStoreAppBinaries(context.Context, *connect.Request[v1.ListStoreAppBinariesRequest]) (*connect.Response[v1.ListStoreAppBinariesResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) ListStoreAppBinaries(context.Context, *v1.ListStoreAppBinariesRequest) (*v1.ListStoreAppBinariesResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.ListStoreAppBinaries is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) ListStoreAppBinaryFiles(context.Context, *connect.Request[v1.ListStoreAppBinaryFilesRequest]) (*connect.Response[v1.ListStoreAppBinaryFilesResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) ListStoreAppBinaryFiles(context.Context, *v1.ListStoreAppBinaryFilesRequest) (*v1.ListStoreAppBinaryFilesResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.ListStoreAppBinaryFiles is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) DownloadStoreAppBinary(context.Context, *connect.Request[v1.DownloadStoreAppBinaryRequest]) (*connect.Response[v1.DownloadStoreAppBinaryResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) DownloadStoreAppBinary(context.Context, *v1.DownloadStoreAppBinaryRequest) (*v1.DownloadStoreAppBinaryResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.DownloadStoreAppBinary is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) ListStoreAppSaveFiles(context.Context, *connect.Request[v1.ListStoreAppSaveFilesRequest]) (*connect.Response[v1.ListStoreAppSaveFilesResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) ListStoreAppSaveFiles(context.Context, *v1.ListStoreAppSaveFilesRequest) (*v1.ListStoreAppSaveFilesResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.ListStoreAppSaveFiles is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) DownloadStoreAppSaveFile(context.Context, *connect.Request[v1.DownloadStoreAppSaveFileRequest]) (*connect.Response[v1.DownloadStoreAppSaveFileResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) DownloadStoreAppSaveFile(context.Context, *v1.DownloadStoreAppSaveFileRequest) (*v1.DownloadStoreAppSaveFileResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.DownloadStoreAppSaveFile is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) SearchAppInfos(context.Context, *connect.Request[v1.SearchAppInfosRequest]) (*connect.Response[v1.SearchAppInfosResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) SearchAppInfos(context.Context, *v1.SearchAppInfosRequest) (*v1.SearchAppInfosResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.SearchAppInfos is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) CreateApp(context.Context, *connect.Request[v1.CreateAppRequest]) (*connect.Response[v1.CreateAppResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) CreateApp(context.Context, *v1.CreateAppRequest) (*v1.CreateAppResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.CreateApp is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) UpdateApp(context.Context, *connect.Request[v1.UpdateAppRequest]) (*connect.Response[v1.UpdateAppResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) UpdateApp(context.Context, *v1.UpdateAppRequest) (*v1.UpdateAppResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.UpdateApp is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) ListApps(context.Context, *connect.Request[v1.ListAppsRequest]) (*connect.Response[v1.ListAppsResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) ListApps(context.Context, *v1.ListAppsRequest) (*v1.ListAppsResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.ListApps is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) DeleteApp(context.Context, *connect.Request[v1.DeleteAppRequest]) (*connect.Response[v1.DeleteAppResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) DeleteApp(context.Context, *v1.DeleteAppRequest) (*v1.DeleteAppResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.DeleteApp is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) BatchCreateAppRunTime(context.Context, *connect.Request[v1.BatchCreateAppRunTimeRequest]) (*connect.Response[v1.BatchCreateAppRunTimeResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) BatchCreateAppRunTime(context.Context, *v1.BatchCreateAppRunTimeRequest) (*v1.BatchCreateAppRunTimeResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.BatchCreateAppRunTime is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) SumAppRunTime(context.Context, *connect.Request[v1.SumAppRunTimeRequest]) (*connect.Response[v1.SumAppRunTimeResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) SumAppRunTime(context.Context, *v1.SumAppRunTimeRequest) (*v1.SumAppRunTimeResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.SumAppRunTime is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) ListAppRunTimes(context.Context, *connect.Request[v1.ListAppRunTimesRequest]) (*connect.Response[v1.ListAppRunTimesResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) ListAppRunTimes(context.Context, *v1.ListAppRunTimesRequest) (*v1.ListAppRunTimesResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.ListAppRunTimes is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) DeleteAppRunTime(context.Context, *connect.Request[v1.DeleteAppRunTimeRequest]) (*connect.Response[v1.DeleteAppRunTimeResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) DeleteAppRunTime(context.Context, *v1.DeleteAppRunTimeRequest) (*v1.DeleteAppRunTimeResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.DeleteAppRunTime is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) UploadAppSaveFile(context.Context, *connect.Request[v1.UploadAppSaveFileRequest]) (*connect.Response[v1.UploadAppSaveFileResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) UploadAppSaveFile(context.Context, *v1.UploadAppSaveFileRequest) (*v1.UploadAppSaveFileResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.UploadAppSaveFile is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) DownloadAppSaveFile(context.Context, *connect.Request[v1.DownloadAppSaveFileRequest]) (*connect.Response[v1.DownloadAppSaveFileResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) DownloadAppSaveFile(context.Context, *v1.DownloadAppSaveFileRequest) (*v1.DownloadAppSaveFileResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.DownloadAppSaveFile is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) ListAppSaveFiles(context.Context, *connect.Request[v1.ListAppSaveFilesRequest]) (*connect.Response[v1.ListAppSaveFilesResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) ListAppSaveFiles(context.Context, *v1.ListAppSaveFilesRequest) (*v1.ListAppSaveFilesResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.ListAppSaveFiles is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) DeleteAppSaveFile(context.Context, *connect.Request[v1.DeleteAppSaveFileRequest]) (*connect.Response[v1.DeleteAppSaveFileResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) DeleteAppSaveFile(context.Context, *v1.DeleteAppSaveFileRequest) (*v1.DeleteAppSaveFileResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.DeleteAppSaveFile is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) PinAppSaveFile(context.Context, *connect.Request[v1.PinAppSaveFileRequest]) (*connect.Response[v1.PinAppSaveFileResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) PinAppSaveFile(context.Context, *v1.PinAppSaveFileRequest) (*v1.PinAppSaveFileResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.PinAppSaveFile is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) UnpinAppSaveFile(context.Context, *connect.Request[v1.UnpinAppSaveFileRequest]) (*connect.Response[v1.UnpinAppSaveFileResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) UnpinAppSaveFile(context.Context, *v1.UnpinAppSaveFileRequest) (*v1.UnpinAppSaveFileResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.UnpinAppSaveFile is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) GetAppSaveFileCapacity(context.Context, *connect.Request[v1.GetAppSaveFileCapacityRequest]) (*connect.Response[v1.GetAppSaveFileCapacityResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) GetAppSaveFileCapacity(context.Context, *v1.GetAppSaveFileCapacityRequest) (*v1.GetAppSaveFileCapacityResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.GetAppSaveFileCapacity is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) SetAppSaveFileCapacity(context.Context, *connect.Request[v1.SetAppSaveFileCapacityRequest]) (*connect.Response[v1.SetAppSaveFileCapacityResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) SetAppSaveFileCapacity(context.Context, *v1.SetAppSaveFileCapacityRequest) (*v1.SetAppSaveFileCapacityResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.SetAppSaveFileCapacity is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) ListAppCategories(context.Context, *connect.Request[v1.ListAppCategoriesRequest]) (*connect.Response[v1.ListAppCategoriesResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) ListAppCategories(context.Context, *v1.ListAppCategoriesRequest) (*v1.ListAppCategoriesResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.ListAppCategories is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) CreateAppCategory(context.Context, *connect.Request[v1.CreateAppCategoryRequest]) (*connect.Response[v1.CreateAppCategoryResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) CreateAppCategory(context.Context, *v1.CreateAppCategoryRequest) (*v1.CreateAppCategoryResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.CreateAppCategory is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) UpdateAppCategory(context.Context, *connect.Request[v1.UpdateAppCategoryRequest]) (*connect.Response[v1.UpdateAppCategoryResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) UpdateAppCategory(context.Context, *v1.UpdateAppCategoryRequest) (*v1.UpdateAppCategoryResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.UpdateAppCategory is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) DeleteAppCategory(context.Context, *connect.Request[v1.DeleteAppCategoryRequest]) (*connect.Response[v1.DeleteAppCategoryResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) DeleteAppCategory(context.Context, *v1.DeleteAppCategoryRequest) (*v1.DeleteAppCategoryResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.DeleteAppCategory is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) CreateNotifyTarget(context.Context, *connect.Request[v1.CreateNotifyTargetRequest]) (*connect.Response[v1.CreateNotifyTargetResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) CreateNotifyTarget(context.Context, *v1.CreateNotifyTargetRequest) (*v1.CreateNotifyTargetResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.CreateNotifyTarget is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) UpdateNotifyTarget(context.Context, *connect.Request[v1.UpdateNotifyTargetRequest]) (*connect.Response[v1.UpdateNotifyTargetResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) UpdateNotifyTarget(context.Context, *v1.UpdateNotifyTargetRequest) (*v1.UpdateNotifyTargetResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.UpdateNotifyTarget is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) ListNotifyTargets(context.Context, *connect.Request[v1.ListNotifyTargetsRequest]) (*connect.Response[v1.ListNotifyTargetsResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) ListNotifyTargets(context.Context, *v1.ListNotifyTargetsRequest) (*v1.ListNotifyTargetsResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.ListNotifyTargets is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) CreateNotifyFlow(context.Context, *connect.Request[v1.CreateNotifyFlowRequest]) (*connect.Response[v1.CreateNotifyFlowResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) CreateNotifyFlow(context.Context, *v1.CreateNotifyFlowRequest) (*v1.CreateNotifyFlowResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.CreateNotifyFlow is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) UpdateNotifyFlow(context.Context, *connect.Request[v1.UpdateNotifyFlowRequest]) (*connect.Response[v1.UpdateNotifyFlowResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) UpdateNotifyFlow(context.Context, *v1.UpdateNotifyFlowRequest) (*v1.UpdateNotifyFlowResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.UpdateNotifyFlow is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) ListNotifyFlows(context.Context, *connect.Request[v1.ListNotifyFlowsRequest]) (*connect.Response[v1.ListNotifyFlowsResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) ListNotifyFlows(context.Context, *v1.ListNotifyFlowsRequest) (*v1.ListNotifyFlowsResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.ListNotifyFlows is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) ListSystemNotifications(context.Context, *connect.Request[v1.ListSystemNotificationsRequest]) (*connect.Response[v1.ListSystemNotificationsResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) ListSystemNotifications(context.Context, *v1.ListSystemNotificationsRequest) (*v1.ListSystemNotificationsResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.ListSystemNotifications is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) UpdateSystemNotification(context.Context, *connect.Request[v1.UpdateSystemNotificationRequest]) (*connect.Response[v1.UpdateSystemNotificationResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) UpdateSystemNotification(context.Context, *v1.UpdateSystemNotificationRequest) (*v1.UpdateSystemNotificationResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.UpdateSystemNotification is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) CreateFeedConfig(context.Context, *connect.Request[v1.CreateFeedConfigRequest]) (*connect.Response[v1.CreateFeedConfigResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) CreateFeedConfig(context.Context, *v1.CreateFeedConfigRequest) (*v1.CreateFeedConfigResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.CreateFeedConfig is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) UpdateFeedConfig(context.Context, *connect.Request[v1.UpdateFeedConfigRequest]) (*connect.Response[v1.UpdateFeedConfigResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) UpdateFeedConfig(context.Context, *v1.UpdateFeedConfigRequest) (*v1.UpdateFeedConfigResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.UpdateFeedConfig is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) ListFeedConfigs(context.Context, *connect.Request[v1.ListFeedConfigsRequest]) (*connect.Response[v1.ListFeedConfigsResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) ListFeedConfigs(context.Context, *v1.ListFeedConfigsRequest) (*v1.ListFeedConfigsResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.ListFeedConfigs is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) CreateFeedActionSet(context.Context, *connect.Request[v1.CreateFeedActionSetRequest]) (*connect.Response[v1.CreateFeedActionSetResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) CreateFeedActionSet(context.Context, *v1.CreateFeedActionSetRequest) (*v1.CreateFeedActionSetResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.CreateFeedActionSet is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) UpdateFeedActionSet(context.Context, *connect.Request[v1.UpdateFeedActionSetRequest]) (*connect.Response[v1.UpdateFeedActionSetResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) UpdateFeedActionSet(context.Context, *v1.UpdateFeedActionSetRequest) (*v1.UpdateFeedActionSetResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.UpdateFeedActionSet is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) ListFeedActionSets(context.Context, *connect.Request[v1.ListFeedActionSetsRequest]) (*connect.Response[v1.ListFeedActionSetsResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) ListFeedActionSets(context.Context, *v1.ListFeedActionSetsRequest) (*v1.ListFeedActionSetsResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.ListFeedActionSets is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) ListFeedCategories(context.Context, *connect.Request[v1.ListFeedCategoriesRequest]) (*connect.Response[v1.ListFeedCategoriesResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) ListFeedCategories(context.Context, *v1.ListFeedCategoriesRequest) (*v1.ListFeedCategoriesResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.ListFeedCategories is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) ListFeedPlatforms(context.Context, *connect.Request[v1.ListFeedPlatformsRequest]) (*connect.Response[v1.ListFeedPlatformsResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) ListFeedPlatforms(context.Context, *v1.ListFeedPlatformsRequest) (*v1.ListFeedPlatformsResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.ListFeedPlatforms is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) ListFeedItems(context.Context, *connect.Request[v1.ListFeedItemsRequest]) (*connect.Response[v1.ListFeedItemsResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) ListFeedItems(context.Context, *v1.ListFeedItemsRequest) (*v1.ListFeedItemsResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.ListFeedItems is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) GetFeedItem(context.Context, *connect.Request[v1.GetFeedItemRequest]) (*connect.Response[v1.GetFeedItemResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) GetFeedItem(context.Context, *v1.GetFeedItemRequest) (*v1.GetFeedItemResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.GetFeedItem is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) GetBatchFeedItems(context.Context, *connect.Request[v1.GetBatchFeedItemsRequest]) (*connect.Response[v1.GetBatchFeedItemsResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) GetBatchFeedItems(context.Context, *v1.GetBatchFeedItemsRequest) (*v1.GetBatchFeedItemsResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.GetBatchFeedItems is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) ReadFeedItem(context.Context, *connect.Request[v1.ReadFeedItemRequest]) (*connect.Response[v1.ReadFeedItemResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) ReadFeedItem(context.Context, *v1.ReadFeedItemRequest) (*v1.ReadFeedItemResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.ReadFeedItem is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) CreateFeedItemCollection(context.Context, *connect.Request[v1.CreateFeedItemCollectionRequest]) (*connect.Response[v1.CreateFeedItemCollectionResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) CreateFeedItemCollection(context.Context, *v1.CreateFeedItemCollectionRequest) (*v1.CreateFeedItemCollectionResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.CreateFeedItemCollection is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) UpdateFeedItemCollection(context.Context, *connect.Request[v1.UpdateFeedItemCollectionRequest]) (*connect.Response[v1.UpdateFeedItemCollectionResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) UpdateFeedItemCollection(context.Context, *v1.UpdateFeedItemCollectionRequest) (*v1.UpdateFeedItemCollectionResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.UpdateFeedItemCollection is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) ListFeedItemCollections(context.Context, *connect.Request[v1.ListFeedItemCollectionsRequest]) (*connect.Response[v1.ListFeedItemCollectionsResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) ListFeedItemCollections(context.Context, *v1.ListFeedItemCollectionsRequest) (*v1.ListFeedItemCollectionsResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.ListFeedItemCollections is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) AddFeedItemToCollection(context.Context, *connect.Request[v1.AddFeedItemToCollectionRequest]) (*connect.Response[v1.AddFeedItemToCollectionResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) AddFeedItemToCollection(context.Context, *v1.AddFeedItemToCollectionRequest) (*v1.AddFeedItemToCollectionResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.AddFeedItemToCollection is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) RemoveFeedItemFromCollection(context.Context, *connect.Request[v1.RemoveFeedItemFromCollectionRequest]) (*connect.Response[v1.RemoveFeedItemFromCollectionResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) RemoveFeedItemFromCollection(context.Context, *v1.RemoveFeedItemFromCollectionRequest) (*v1.RemoveFeedItemFromCollectionResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.RemoveFeedItemFromCollection is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) ListFeedItemsInCollection(context.Context, *connect.Request[v1.ListFeedItemsInCollectionRequest]) (*connect.Response[v1.ListFeedItemsInCollectionResponse], error) {
+func (UnimplementedLibrarianSephirahServiceHandler) ListFeedItemsInCollection(context.Context, *v1.ListFeedItemsInCollectionRequest) (*v1.ListFeedItemsInCollectionResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.ListFeedItemsInCollection is not implemented"))
 }

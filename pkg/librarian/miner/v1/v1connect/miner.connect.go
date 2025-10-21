@@ -43,8 +43,8 @@ const (
 
 // LibrarianMinerServiceClient is a client for the librarian.miner.v1.LibrarianMinerService service.
 type LibrarianMinerServiceClient interface {
-	RecognizeImageBinary(context.Context) *connect.ClientStreamForClient[v1.RecognizeImageBinaryRequest, v1.RecognizeImageBinaryResponse]
-	RecognizeImageURL(context.Context, *connect.Request[v1.RecognizeImageURLRequest]) (*connect.Response[v1.RecognizeImageURLResponse], error)
+	RecognizeImageBinary(context.Context) (*connect.ClientStreamForClientSimple[v1.RecognizeImageBinaryRequest, v1.RecognizeImageBinaryResponse], error)
+	RecognizeImageURL(context.Context, *v1.RecognizeImageURLRequest) (*v1.RecognizeImageURLResponse, error)
 }
 
 // NewLibrarianMinerServiceClient constructs a client for the
@@ -80,20 +80,24 @@ type librarianMinerServiceClient struct {
 }
 
 // RecognizeImageBinary calls librarian.miner.v1.LibrarianMinerService.RecognizeImageBinary.
-func (c *librarianMinerServiceClient) RecognizeImageBinary(ctx context.Context) *connect.ClientStreamForClient[v1.RecognizeImageBinaryRequest, v1.RecognizeImageBinaryResponse] {
-	return c.recognizeImageBinary.CallClientStream(ctx)
+func (c *librarianMinerServiceClient) RecognizeImageBinary(ctx context.Context) (*connect.ClientStreamForClientSimple[v1.RecognizeImageBinaryRequest, v1.RecognizeImageBinaryResponse], error) {
+	return c.recognizeImageBinary.CallClientStreamSimple(ctx)
 }
 
 // RecognizeImageURL calls librarian.miner.v1.LibrarianMinerService.RecognizeImageURL.
-func (c *librarianMinerServiceClient) RecognizeImageURL(ctx context.Context, req *connect.Request[v1.RecognizeImageURLRequest]) (*connect.Response[v1.RecognizeImageURLResponse], error) {
-	return c.recognizeImageURL.CallUnary(ctx, req)
+func (c *librarianMinerServiceClient) RecognizeImageURL(ctx context.Context, req *v1.RecognizeImageURLRequest) (*v1.RecognizeImageURLResponse, error) {
+	response, err := c.recognizeImageURL.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // LibrarianMinerServiceHandler is an implementation of the librarian.miner.v1.LibrarianMinerService
 // service.
 type LibrarianMinerServiceHandler interface {
-	RecognizeImageBinary(context.Context, *connect.ClientStream[v1.RecognizeImageBinaryRequest]) (*connect.Response[v1.RecognizeImageBinaryResponse], error)
-	RecognizeImageURL(context.Context, *connect.Request[v1.RecognizeImageURLRequest]) (*connect.Response[v1.RecognizeImageURLResponse], error)
+	RecognizeImageBinary(context.Context, *connect.ClientStream[v1.RecognizeImageBinaryRequest]) (*v1.RecognizeImageBinaryResponse, error)
+	RecognizeImageURL(context.Context, *v1.RecognizeImageURLRequest) (*v1.RecognizeImageURLResponse, error)
 }
 
 // NewLibrarianMinerServiceHandler builds an HTTP handler from the service implementation. It
@@ -103,13 +107,13 @@ type LibrarianMinerServiceHandler interface {
 // and JSON codecs. They also support gzip compression.
 func NewLibrarianMinerServiceHandler(svc LibrarianMinerServiceHandler, opts ...connect.HandlerOption) (string, http.Handler) {
 	librarianMinerServiceMethods := v1.File_librarian_miner_v1_miner_proto.Services().ByName("LibrarianMinerService").Methods()
-	librarianMinerServiceRecognizeImageBinaryHandler := connect.NewClientStreamHandler(
+	librarianMinerServiceRecognizeImageBinaryHandler := connect.NewClientStreamHandlerSimple(
 		LibrarianMinerServiceRecognizeImageBinaryProcedure,
 		svc.RecognizeImageBinary,
 		connect.WithSchema(librarianMinerServiceMethods.ByName("RecognizeImageBinary")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianMinerServiceRecognizeImageURLHandler := connect.NewUnaryHandler(
+	librarianMinerServiceRecognizeImageURLHandler := connect.NewUnaryHandlerSimple(
 		LibrarianMinerServiceRecognizeImageURLProcedure,
 		svc.RecognizeImageURL,
 		connect.WithSchema(librarianMinerServiceMethods.ByName("RecognizeImageURL")),
@@ -130,10 +134,10 @@ func NewLibrarianMinerServiceHandler(svc LibrarianMinerServiceHandler, opts ...c
 // UnimplementedLibrarianMinerServiceHandler returns CodeUnimplemented from all methods.
 type UnimplementedLibrarianMinerServiceHandler struct{}
 
-func (UnimplementedLibrarianMinerServiceHandler) RecognizeImageBinary(context.Context, *connect.ClientStream[v1.RecognizeImageBinaryRequest]) (*connect.Response[v1.RecognizeImageBinaryResponse], error) {
+func (UnimplementedLibrarianMinerServiceHandler) RecognizeImageBinary(context.Context, *connect.ClientStream[v1.RecognizeImageBinaryRequest]) (*v1.RecognizeImageBinaryResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.miner.v1.LibrarianMinerService.RecognizeImageBinary is not implemented"))
 }
 
-func (UnimplementedLibrarianMinerServiceHandler) RecognizeImageURL(context.Context, *connect.Request[v1.RecognizeImageURLRequest]) (*connect.Response[v1.RecognizeImageURLResponse], error) {
+func (UnimplementedLibrarianMinerServiceHandler) RecognizeImageURL(context.Context, *v1.RecognizeImageURLRequest) (*v1.RecognizeImageURLResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.miner.v1.LibrarianMinerService.RecognizeImageURL is not implemented"))
 }

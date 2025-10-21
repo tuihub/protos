@@ -86,37 +86,37 @@ const (
 // LibrarianPorterServiceClient is a client for the librarian.porter.v1.LibrarianPorterService
 // service.
 type LibrarianPorterServiceClient interface {
-	GetPorterInformation(context.Context, *connect.Request[v1.GetPorterInformationRequest]) (*connect.Response[v1.GetPorterInformationResponse], error)
+	GetPorterInformation(context.Context, *v1.GetPorterInformationRequest) (*v1.GetPorterInformationResponse, error)
 	// Used to enable porter and heartbeat.
-	EnablePorter(context.Context, *connect.Request[v1.EnablePorterRequest]) (*connect.Response[v1.EnablePorterResponse], error)
-	EnableContext(context.Context, *connect.Request[v1.EnableContextRequest]) (*connect.Response[v1.EnableContextResponse], error)
-	DisableContext(context.Context, *connect.Request[v1.DisableContextRequest]) (*connect.Response[v1.DisableContextResponse], error)
+	EnablePorter(context.Context, *v1.EnablePorterRequest) (*v1.EnablePorterResponse, error)
+	EnableContext(context.Context, *v1.EnableContextRequest) (*v1.EnableContextResponse, error)
+	DisableContext(context.Context, *v1.DisableContextRequest) (*v1.DisableContextResponse, error)
 	// `Tiphereth`
-	GetAccount(context.Context, *connect.Request[v1.GetAccountRequest]) (*connect.Response[v1.GetAccountResponse], error)
+	GetAccount(context.Context, *v1.GetAccountRequest) (*v1.GetAccountResponse, error)
 	// `Gebura`
-	DetectAppInfo(context.Context, *connect.Request[v1.DetectAppInfoRequest]) (*connect.Response[v1.DetectAppInfoResponse], error)
+	DetectAppInfo(context.Context, *v1.DetectAppInfoRequest) (*v1.DetectAppInfoResponse, error)
 	// `Gebura`
-	SearchAppInfo(context.Context, *connect.Request[v1.SearchAppInfoRequest]) (*connect.Response[v1.SearchAppInfoResponse], error)
+	SearchAppInfo(context.Context, *v1.SearchAppInfoRequest) (*v1.SearchAppInfoResponse, error)
 	// `Gebura` Get app info from source.
-	GetAppInfo(context.Context, *connect.Request[v1.GetAppInfoRequest]) (*connect.Response[v1.GetAppInfoResponse], error)
+	GetAppInfo(context.Context, *v1.GetAppInfoRequest) (*v1.GetAppInfoResponse, error)
 	// `Gebura` Parse app info from json.
-	ParseRawAppInfo(context.Context, *connect.Request[v1.ParseRawAppInfoRequest]) (*connect.Response[v1.ParseRawAppInfoResponse], error)
+	ParseRawAppInfo(context.Context, *v1.ParseRawAppInfoRequest) (*v1.ParseRawAppInfoResponse, error)
 	// `Yesod`
-	PullFeed(context.Context, *connect.Request[v1.PullFeedRequest]) (*connect.Response[v1.PullFeedResponse], error)
+	PullFeed(context.Context, *v1.PullFeedRequest) (*v1.PullFeedResponse, error)
 	// `Yesod`
-	ExecFeedItemAction(context.Context, *connect.Request[v1.ExecFeedItemActionRequest]) (*connect.Response[v1.ExecFeedItemActionResponse], error)
+	ExecFeedItemAction(context.Context, *v1.ExecFeedItemActionRequest) (*v1.ExecFeedItemActionResponse, error)
 	// `Yesod` Enabled Setter can add items to feed through `LibrarianSephirahService.PUpsertFeed`
 	// without extra permissions.
-	EnableFeedSetter(context.Context, *connect.Request[v1.EnableFeedSetterRequest]) (*connect.Response[v1.EnableFeedSetterResponse], error)
+	EnableFeedSetter(context.Context, *v1.EnableFeedSetterRequest) (*v1.EnableFeedSetterResponse, error)
 	// `Yesod`
-	DisableFeedSetter(context.Context, *connect.Request[v1.DisableFeedSetterRequest]) (*connect.Response[v1.DisableFeedSetterResponse], error)
+	DisableFeedSetter(context.Context, *v1.DisableFeedSetterRequest) (*v1.DisableFeedSetterResponse, error)
 	// `Yesod` Enabled Getter can get items from feed through `LibrarianSephirahService.PGetFeed`
 	// without extra permissions.
-	EnableFeedGetter(context.Context, *connect.Request[v1.EnableFeedGetterRequest]) (*connect.Response[v1.EnableFeedGetterResponse], error)
+	EnableFeedGetter(context.Context, *v1.EnableFeedGetterRequest) (*v1.EnableFeedGetterResponse, error)
 	// `Yesod`
-	DisableFeedGetter(context.Context, *connect.Request[v1.DisableFeedGetterRequest]) (*connect.Response[v1.DisableFeedGetterResponse], error)
+	DisableFeedGetter(context.Context, *v1.DisableFeedGetterRequest) (*v1.DisableFeedGetterResponse, error)
 	// `Netzach`
-	PushFeedItems(context.Context, *connect.Request[v1.PushFeedItemsRequest]) (*connect.Response[v1.PushFeedItemsResponse], error)
+	PushFeedItems(context.Context, *v1.PushFeedItemsRequest) (*v1.PushFeedItemsResponse, error)
 }
 
 // NewLibrarianPorterServiceClient constructs a client for the
@@ -250,119 +250,183 @@ type librarianPorterServiceClient struct {
 }
 
 // GetPorterInformation calls librarian.porter.v1.LibrarianPorterService.GetPorterInformation.
-func (c *librarianPorterServiceClient) GetPorterInformation(ctx context.Context, req *connect.Request[v1.GetPorterInformationRequest]) (*connect.Response[v1.GetPorterInformationResponse], error) {
-	return c.getPorterInformation.CallUnary(ctx, req)
+func (c *librarianPorterServiceClient) GetPorterInformation(ctx context.Context, req *v1.GetPorterInformationRequest) (*v1.GetPorterInformationResponse, error) {
+	response, err := c.getPorterInformation.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // EnablePorter calls librarian.porter.v1.LibrarianPorterService.EnablePorter.
-func (c *librarianPorterServiceClient) EnablePorter(ctx context.Context, req *connect.Request[v1.EnablePorterRequest]) (*connect.Response[v1.EnablePorterResponse], error) {
-	return c.enablePorter.CallUnary(ctx, req)
+func (c *librarianPorterServiceClient) EnablePorter(ctx context.Context, req *v1.EnablePorterRequest) (*v1.EnablePorterResponse, error) {
+	response, err := c.enablePorter.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // EnableContext calls librarian.porter.v1.LibrarianPorterService.EnableContext.
-func (c *librarianPorterServiceClient) EnableContext(ctx context.Context, req *connect.Request[v1.EnableContextRequest]) (*connect.Response[v1.EnableContextResponse], error) {
-	return c.enableContext.CallUnary(ctx, req)
+func (c *librarianPorterServiceClient) EnableContext(ctx context.Context, req *v1.EnableContextRequest) (*v1.EnableContextResponse, error) {
+	response, err := c.enableContext.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // DisableContext calls librarian.porter.v1.LibrarianPorterService.DisableContext.
-func (c *librarianPorterServiceClient) DisableContext(ctx context.Context, req *connect.Request[v1.DisableContextRequest]) (*connect.Response[v1.DisableContextResponse], error) {
-	return c.disableContext.CallUnary(ctx, req)
+func (c *librarianPorterServiceClient) DisableContext(ctx context.Context, req *v1.DisableContextRequest) (*v1.DisableContextResponse, error) {
+	response, err := c.disableContext.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // GetAccount calls librarian.porter.v1.LibrarianPorterService.GetAccount.
-func (c *librarianPorterServiceClient) GetAccount(ctx context.Context, req *connect.Request[v1.GetAccountRequest]) (*connect.Response[v1.GetAccountResponse], error) {
-	return c.getAccount.CallUnary(ctx, req)
+func (c *librarianPorterServiceClient) GetAccount(ctx context.Context, req *v1.GetAccountRequest) (*v1.GetAccountResponse, error) {
+	response, err := c.getAccount.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // DetectAppInfo calls librarian.porter.v1.LibrarianPorterService.DetectAppInfo.
-func (c *librarianPorterServiceClient) DetectAppInfo(ctx context.Context, req *connect.Request[v1.DetectAppInfoRequest]) (*connect.Response[v1.DetectAppInfoResponse], error) {
-	return c.detectAppInfo.CallUnary(ctx, req)
+func (c *librarianPorterServiceClient) DetectAppInfo(ctx context.Context, req *v1.DetectAppInfoRequest) (*v1.DetectAppInfoResponse, error) {
+	response, err := c.detectAppInfo.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // SearchAppInfo calls librarian.porter.v1.LibrarianPorterService.SearchAppInfo.
-func (c *librarianPorterServiceClient) SearchAppInfo(ctx context.Context, req *connect.Request[v1.SearchAppInfoRequest]) (*connect.Response[v1.SearchAppInfoResponse], error) {
-	return c.searchAppInfo.CallUnary(ctx, req)
+func (c *librarianPorterServiceClient) SearchAppInfo(ctx context.Context, req *v1.SearchAppInfoRequest) (*v1.SearchAppInfoResponse, error) {
+	response, err := c.searchAppInfo.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // GetAppInfo calls librarian.porter.v1.LibrarianPorterService.GetAppInfo.
-func (c *librarianPorterServiceClient) GetAppInfo(ctx context.Context, req *connect.Request[v1.GetAppInfoRequest]) (*connect.Response[v1.GetAppInfoResponse], error) {
-	return c.getAppInfo.CallUnary(ctx, req)
+func (c *librarianPorterServiceClient) GetAppInfo(ctx context.Context, req *v1.GetAppInfoRequest) (*v1.GetAppInfoResponse, error) {
+	response, err := c.getAppInfo.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // ParseRawAppInfo calls librarian.porter.v1.LibrarianPorterService.ParseRawAppInfo.
-func (c *librarianPorterServiceClient) ParseRawAppInfo(ctx context.Context, req *connect.Request[v1.ParseRawAppInfoRequest]) (*connect.Response[v1.ParseRawAppInfoResponse], error) {
-	return c.parseRawAppInfo.CallUnary(ctx, req)
+func (c *librarianPorterServiceClient) ParseRawAppInfo(ctx context.Context, req *v1.ParseRawAppInfoRequest) (*v1.ParseRawAppInfoResponse, error) {
+	response, err := c.parseRawAppInfo.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // PullFeed calls librarian.porter.v1.LibrarianPorterService.PullFeed.
-func (c *librarianPorterServiceClient) PullFeed(ctx context.Context, req *connect.Request[v1.PullFeedRequest]) (*connect.Response[v1.PullFeedResponse], error) {
-	return c.pullFeed.CallUnary(ctx, req)
+func (c *librarianPorterServiceClient) PullFeed(ctx context.Context, req *v1.PullFeedRequest) (*v1.PullFeedResponse, error) {
+	response, err := c.pullFeed.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // ExecFeedItemAction calls librarian.porter.v1.LibrarianPorterService.ExecFeedItemAction.
-func (c *librarianPorterServiceClient) ExecFeedItemAction(ctx context.Context, req *connect.Request[v1.ExecFeedItemActionRequest]) (*connect.Response[v1.ExecFeedItemActionResponse], error) {
-	return c.execFeedItemAction.CallUnary(ctx, req)
+func (c *librarianPorterServiceClient) ExecFeedItemAction(ctx context.Context, req *v1.ExecFeedItemActionRequest) (*v1.ExecFeedItemActionResponse, error) {
+	response, err := c.execFeedItemAction.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // EnableFeedSetter calls librarian.porter.v1.LibrarianPorterService.EnableFeedSetter.
-func (c *librarianPorterServiceClient) EnableFeedSetter(ctx context.Context, req *connect.Request[v1.EnableFeedSetterRequest]) (*connect.Response[v1.EnableFeedSetterResponse], error) {
-	return c.enableFeedSetter.CallUnary(ctx, req)
+func (c *librarianPorterServiceClient) EnableFeedSetter(ctx context.Context, req *v1.EnableFeedSetterRequest) (*v1.EnableFeedSetterResponse, error) {
+	response, err := c.enableFeedSetter.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // DisableFeedSetter calls librarian.porter.v1.LibrarianPorterService.DisableFeedSetter.
-func (c *librarianPorterServiceClient) DisableFeedSetter(ctx context.Context, req *connect.Request[v1.DisableFeedSetterRequest]) (*connect.Response[v1.DisableFeedSetterResponse], error) {
-	return c.disableFeedSetter.CallUnary(ctx, req)
+func (c *librarianPorterServiceClient) DisableFeedSetter(ctx context.Context, req *v1.DisableFeedSetterRequest) (*v1.DisableFeedSetterResponse, error) {
+	response, err := c.disableFeedSetter.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // EnableFeedGetter calls librarian.porter.v1.LibrarianPorterService.EnableFeedGetter.
-func (c *librarianPorterServiceClient) EnableFeedGetter(ctx context.Context, req *connect.Request[v1.EnableFeedGetterRequest]) (*connect.Response[v1.EnableFeedGetterResponse], error) {
-	return c.enableFeedGetter.CallUnary(ctx, req)
+func (c *librarianPorterServiceClient) EnableFeedGetter(ctx context.Context, req *v1.EnableFeedGetterRequest) (*v1.EnableFeedGetterResponse, error) {
+	response, err := c.enableFeedGetter.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // DisableFeedGetter calls librarian.porter.v1.LibrarianPorterService.DisableFeedGetter.
-func (c *librarianPorterServiceClient) DisableFeedGetter(ctx context.Context, req *connect.Request[v1.DisableFeedGetterRequest]) (*connect.Response[v1.DisableFeedGetterResponse], error) {
-	return c.disableFeedGetter.CallUnary(ctx, req)
+func (c *librarianPorterServiceClient) DisableFeedGetter(ctx context.Context, req *v1.DisableFeedGetterRequest) (*v1.DisableFeedGetterResponse, error) {
+	response, err := c.disableFeedGetter.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // PushFeedItems calls librarian.porter.v1.LibrarianPorterService.PushFeedItems.
-func (c *librarianPorterServiceClient) PushFeedItems(ctx context.Context, req *connect.Request[v1.PushFeedItemsRequest]) (*connect.Response[v1.PushFeedItemsResponse], error) {
-	return c.pushFeedItems.CallUnary(ctx, req)
+func (c *librarianPorterServiceClient) PushFeedItems(ctx context.Context, req *v1.PushFeedItemsRequest) (*v1.PushFeedItemsResponse, error) {
+	response, err := c.pushFeedItems.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // LibrarianPorterServiceHandler is an implementation of the
 // librarian.porter.v1.LibrarianPorterService service.
 type LibrarianPorterServiceHandler interface {
-	GetPorterInformation(context.Context, *connect.Request[v1.GetPorterInformationRequest]) (*connect.Response[v1.GetPorterInformationResponse], error)
+	GetPorterInformation(context.Context, *v1.GetPorterInformationRequest) (*v1.GetPorterInformationResponse, error)
 	// Used to enable porter and heartbeat.
-	EnablePorter(context.Context, *connect.Request[v1.EnablePorterRequest]) (*connect.Response[v1.EnablePorterResponse], error)
-	EnableContext(context.Context, *connect.Request[v1.EnableContextRequest]) (*connect.Response[v1.EnableContextResponse], error)
-	DisableContext(context.Context, *connect.Request[v1.DisableContextRequest]) (*connect.Response[v1.DisableContextResponse], error)
+	EnablePorter(context.Context, *v1.EnablePorterRequest) (*v1.EnablePorterResponse, error)
+	EnableContext(context.Context, *v1.EnableContextRequest) (*v1.EnableContextResponse, error)
+	DisableContext(context.Context, *v1.DisableContextRequest) (*v1.DisableContextResponse, error)
 	// `Tiphereth`
-	GetAccount(context.Context, *connect.Request[v1.GetAccountRequest]) (*connect.Response[v1.GetAccountResponse], error)
+	GetAccount(context.Context, *v1.GetAccountRequest) (*v1.GetAccountResponse, error)
 	// `Gebura`
-	DetectAppInfo(context.Context, *connect.Request[v1.DetectAppInfoRequest]) (*connect.Response[v1.DetectAppInfoResponse], error)
+	DetectAppInfo(context.Context, *v1.DetectAppInfoRequest) (*v1.DetectAppInfoResponse, error)
 	// `Gebura`
-	SearchAppInfo(context.Context, *connect.Request[v1.SearchAppInfoRequest]) (*connect.Response[v1.SearchAppInfoResponse], error)
+	SearchAppInfo(context.Context, *v1.SearchAppInfoRequest) (*v1.SearchAppInfoResponse, error)
 	// `Gebura` Get app info from source.
-	GetAppInfo(context.Context, *connect.Request[v1.GetAppInfoRequest]) (*connect.Response[v1.GetAppInfoResponse], error)
+	GetAppInfo(context.Context, *v1.GetAppInfoRequest) (*v1.GetAppInfoResponse, error)
 	// `Gebura` Parse app info from json.
-	ParseRawAppInfo(context.Context, *connect.Request[v1.ParseRawAppInfoRequest]) (*connect.Response[v1.ParseRawAppInfoResponse], error)
+	ParseRawAppInfo(context.Context, *v1.ParseRawAppInfoRequest) (*v1.ParseRawAppInfoResponse, error)
 	// `Yesod`
-	PullFeed(context.Context, *connect.Request[v1.PullFeedRequest]) (*connect.Response[v1.PullFeedResponse], error)
+	PullFeed(context.Context, *v1.PullFeedRequest) (*v1.PullFeedResponse, error)
 	// `Yesod`
-	ExecFeedItemAction(context.Context, *connect.Request[v1.ExecFeedItemActionRequest]) (*connect.Response[v1.ExecFeedItemActionResponse], error)
+	ExecFeedItemAction(context.Context, *v1.ExecFeedItemActionRequest) (*v1.ExecFeedItemActionResponse, error)
 	// `Yesod` Enabled Setter can add items to feed through `LibrarianSephirahService.PUpsertFeed`
 	// without extra permissions.
-	EnableFeedSetter(context.Context, *connect.Request[v1.EnableFeedSetterRequest]) (*connect.Response[v1.EnableFeedSetterResponse], error)
+	EnableFeedSetter(context.Context, *v1.EnableFeedSetterRequest) (*v1.EnableFeedSetterResponse, error)
 	// `Yesod`
-	DisableFeedSetter(context.Context, *connect.Request[v1.DisableFeedSetterRequest]) (*connect.Response[v1.DisableFeedSetterResponse], error)
+	DisableFeedSetter(context.Context, *v1.DisableFeedSetterRequest) (*v1.DisableFeedSetterResponse, error)
 	// `Yesod` Enabled Getter can get items from feed through `LibrarianSephirahService.PGetFeed`
 	// without extra permissions.
-	EnableFeedGetter(context.Context, *connect.Request[v1.EnableFeedGetterRequest]) (*connect.Response[v1.EnableFeedGetterResponse], error)
+	EnableFeedGetter(context.Context, *v1.EnableFeedGetterRequest) (*v1.EnableFeedGetterResponse, error)
 	// `Yesod`
-	DisableFeedGetter(context.Context, *connect.Request[v1.DisableFeedGetterRequest]) (*connect.Response[v1.DisableFeedGetterResponse], error)
+	DisableFeedGetter(context.Context, *v1.DisableFeedGetterRequest) (*v1.DisableFeedGetterResponse, error)
 	// `Netzach`
-	PushFeedItems(context.Context, *connect.Request[v1.PushFeedItemsRequest]) (*connect.Response[v1.PushFeedItemsResponse], error)
+	PushFeedItems(context.Context, *v1.PushFeedItemsRequest) (*v1.PushFeedItemsResponse, error)
 }
 
 // NewLibrarianPorterServiceHandler builds an HTTP handler from the service implementation. It
@@ -372,97 +436,97 @@ type LibrarianPorterServiceHandler interface {
 // and JSON codecs. They also support gzip compression.
 func NewLibrarianPorterServiceHandler(svc LibrarianPorterServiceHandler, opts ...connect.HandlerOption) (string, http.Handler) {
 	librarianPorterServiceMethods := v1.File_librarian_porter_v1_porter_service_proto.Services().ByName("LibrarianPorterService").Methods()
-	librarianPorterServiceGetPorterInformationHandler := connect.NewUnaryHandler(
+	librarianPorterServiceGetPorterInformationHandler := connect.NewUnaryHandlerSimple(
 		LibrarianPorterServiceGetPorterInformationProcedure,
 		svc.GetPorterInformation,
 		connect.WithSchema(librarianPorterServiceMethods.ByName("GetPorterInformation")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianPorterServiceEnablePorterHandler := connect.NewUnaryHandler(
+	librarianPorterServiceEnablePorterHandler := connect.NewUnaryHandlerSimple(
 		LibrarianPorterServiceEnablePorterProcedure,
 		svc.EnablePorter,
 		connect.WithSchema(librarianPorterServiceMethods.ByName("EnablePorter")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianPorterServiceEnableContextHandler := connect.NewUnaryHandler(
+	librarianPorterServiceEnableContextHandler := connect.NewUnaryHandlerSimple(
 		LibrarianPorterServiceEnableContextProcedure,
 		svc.EnableContext,
 		connect.WithSchema(librarianPorterServiceMethods.ByName("EnableContext")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianPorterServiceDisableContextHandler := connect.NewUnaryHandler(
+	librarianPorterServiceDisableContextHandler := connect.NewUnaryHandlerSimple(
 		LibrarianPorterServiceDisableContextProcedure,
 		svc.DisableContext,
 		connect.WithSchema(librarianPorterServiceMethods.ByName("DisableContext")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianPorterServiceGetAccountHandler := connect.NewUnaryHandler(
+	librarianPorterServiceGetAccountHandler := connect.NewUnaryHandlerSimple(
 		LibrarianPorterServiceGetAccountProcedure,
 		svc.GetAccount,
 		connect.WithSchema(librarianPorterServiceMethods.ByName("GetAccount")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianPorterServiceDetectAppInfoHandler := connect.NewUnaryHandler(
+	librarianPorterServiceDetectAppInfoHandler := connect.NewUnaryHandlerSimple(
 		LibrarianPorterServiceDetectAppInfoProcedure,
 		svc.DetectAppInfo,
 		connect.WithSchema(librarianPorterServiceMethods.ByName("DetectAppInfo")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianPorterServiceSearchAppInfoHandler := connect.NewUnaryHandler(
+	librarianPorterServiceSearchAppInfoHandler := connect.NewUnaryHandlerSimple(
 		LibrarianPorterServiceSearchAppInfoProcedure,
 		svc.SearchAppInfo,
 		connect.WithSchema(librarianPorterServiceMethods.ByName("SearchAppInfo")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianPorterServiceGetAppInfoHandler := connect.NewUnaryHandler(
+	librarianPorterServiceGetAppInfoHandler := connect.NewUnaryHandlerSimple(
 		LibrarianPorterServiceGetAppInfoProcedure,
 		svc.GetAppInfo,
 		connect.WithSchema(librarianPorterServiceMethods.ByName("GetAppInfo")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianPorterServiceParseRawAppInfoHandler := connect.NewUnaryHandler(
+	librarianPorterServiceParseRawAppInfoHandler := connect.NewUnaryHandlerSimple(
 		LibrarianPorterServiceParseRawAppInfoProcedure,
 		svc.ParseRawAppInfo,
 		connect.WithSchema(librarianPorterServiceMethods.ByName("ParseRawAppInfo")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianPorterServicePullFeedHandler := connect.NewUnaryHandler(
+	librarianPorterServicePullFeedHandler := connect.NewUnaryHandlerSimple(
 		LibrarianPorterServicePullFeedProcedure,
 		svc.PullFeed,
 		connect.WithSchema(librarianPorterServiceMethods.ByName("PullFeed")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianPorterServiceExecFeedItemActionHandler := connect.NewUnaryHandler(
+	librarianPorterServiceExecFeedItemActionHandler := connect.NewUnaryHandlerSimple(
 		LibrarianPorterServiceExecFeedItemActionProcedure,
 		svc.ExecFeedItemAction,
 		connect.WithSchema(librarianPorterServiceMethods.ByName("ExecFeedItemAction")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianPorterServiceEnableFeedSetterHandler := connect.NewUnaryHandler(
+	librarianPorterServiceEnableFeedSetterHandler := connect.NewUnaryHandlerSimple(
 		LibrarianPorterServiceEnableFeedSetterProcedure,
 		svc.EnableFeedSetter,
 		connect.WithSchema(librarianPorterServiceMethods.ByName("EnableFeedSetter")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianPorterServiceDisableFeedSetterHandler := connect.NewUnaryHandler(
+	librarianPorterServiceDisableFeedSetterHandler := connect.NewUnaryHandlerSimple(
 		LibrarianPorterServiceDisableFeedSetterProcedure,
 		svc.DisableFeedSetter,
 		connect.WithSchema(librarianPorterServiceMethods.ByName("DisableFeedSetter")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianPorterServiceEnableFeedGetterHandler := connect.NewUnaryHandler(
+	librarianPorterServiceEnableFeedGetterHandler := connect.NewUnaryHandlerSimple(
 		LibrarianPorterServiceEnableFeedGetterProcedure,
 		svc.EnableFeedGetter,
 		connect.WithSchema(librarianPorterServiceMethods.ByName("EnableFeedGetter")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianPorterServiceDisableFeedGetterHandler := connect.NewUnaryHandler(
+	librarianPorterServiceDisableFeedGetterHandler := connect.NewUnaryHandlerSimple(
 		LibrarianPorterServiceDisableFeedGetterProcedure,
 		svc.DisableFeedGetter,
 		connect.WithSchema(librarianPorterServiceMethods.ByName("DisableFeedGetter")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianPorterServicePushFeedItemsHandler := connect.NewUnaryHandler(
+	librarianPorterServicePushFeedItemsHandler := connect.NewUnaryHandlerSimple(
 		LibrarianPorterServicePushFeedItemsProcedure,
 		svc.PushFeedItems,
 		connect.WithSchema(librarianPorterServiceMethods.ByName("PushFeedItems")),
@@ -511,66 +575,66 @@ func NewLibrarianPorterServiceHandler(svc LibrarianPorterServiceHandler, opts ..
 // UnimplementedLibrarianPorterServiceHandler returns CodeUnimplemented from all methods.
 type UnimplementedLibrarianPorterServiceHandler struct{}
 
-func (UnimplementedLibrarianPorterServiceHandler) GetPorterInformation(context.Context, *connect.Request[v1.GetPorterInformationRequest]) (*connect.Response[v1.GetPorterInformationResponse], error) {
+func (UnimplementedLibrarianPorterServiceHandler) GetPorterInformation(context.Context, *v1.GetPorterInformationRequest) (*v1.GetPorterInformationResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.porter.v1.LibrarianPorterService.GetPorterInformation is not implemented"))
 }
 
-func (UnimplementedLibrarianPorterServiceHandler) EnablePorter(context.Context, *connect.Request[v1.EnablePorterRequest]) (*connect.Response[v1.EnablePorterResponse], error) {
+func (UnimplementedLibrarianPorterServiceHandler) EnablePorter(context.Context, *v1.EnablePorterRequest) (*v1.EnablePorterResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.porter.v1.LibrarianPorterService.EnablePorter is not implemented"))
 }
 
-func (UnimplementedLibrarianPorterServiceHandler) EnableContext(context.Context, *connect.Request[v1.EnableContextRequest]) (*connect.Response[v1.EnableContextResponse], error) {
+func (UnimplementedLibrarianPorterServiceHandler) EnableContext(context.Context, *v1.EnableContextRequest) (*v1.EnableContextResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.porter.v1.LibrarianPorterService.EnableContext is not implemented"))
 }
 
-func (UnimplementedLibrarianPorterServiceHandler) DisableContext(context.Context, *connect.Request[v1.DisableContextRequest]) (*connect.Response[v1.DisableContextResponse], error) {
+func (UnimplementedLibrarianPorterServiceHandler) DisableContext(context.Context, *v1.DisableContextRequest) (*v1.DisableContextResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.porter.v1.LibrarianPorterService.DisableContext is not implemented"))
 }
 
-func (UnimplementedLibrarianPorterServiceHandler) GetAccount(context.Context, *connect.Request[v1.GetAccountRequest]) (*connect.Response[v1.GetAccountResponse], error) {
+func (UnimplementedLibrarianPorterServiceHandler) GetAccount(context.Context, *v1.GetAccountRequest) (*v1.GetAccountResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.porter.v1.LibrarianPorterService.GetAccount is not implemented"))
 }
 
-func (UnimplementedLibrarianPorterServiceHandler) DetectAppInfo(context.Context, *connect.Request[v1.DetectAppInfoRequest]) (*connect.Response[v1.DetectAppInfoResponse], error) {
+func (UnimplementedLibrarianPorterServiceHandler) DetectAppInfo(context.Context, *v1.DetectAppInfoRequest) (*v1.DetectAppInfoResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.porter.v1.LibrarianPorterService.DetectAppInfo is not implemented"))
 }
 
-func (UnimplementedLibrarianPorterServiceHandler) SearchAppInfo(context.Context, *connect.Request[v1.SearchAppInfoRequest]) (*connect.Response[v1.SearchAppInfoResponse], error) {
+func (UnimplementedLibrarianPorterServiceHandler) SearchAppInfo(context.Context, *v1.SearchAppInfoRequest) (*v1.SearchAppInfoResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.porter.v1.LibrarianPorterService.SearchAppInfo is not implemented"))
 }
 
-func (UnimplementedLibrarianPorterServiceHandler) GetAppInfo(context.Context, *connect.Request[v1.GetAppInfoRequest]) (*connect.Response[v1.GetAppInfoResponse], error) {
+func (UnimplementedLibrarianPorterServiceHandler) GetAppInfo(context.Context, *v1.GetAppInfoRequest) (*v1.GetAppInfoResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.porter.v1.LibrarianPorterService.GetAppInfo is not implemented"))
 }
 
-func (UnimplementedLibrarianPorterServiceHandler) ParseRawAppInfo(context.Context, *connect.Request[v1.ParseRawAppInfoRequest]) (*connect.Response[v1.ParseRawAppInfoResponse], error) {
+func (UnimplementedLibrarianPorterServiceHandler) ParseRawAppInfo(context.Context, *v1.ParseRawAppInfoRequest) (*v1.ParseRawAppInfoResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.porter.v1.LibrarianPorterService.ParseRawAppInfo is not implemented"))
 }
 
-func (UnimplementedLibrarianPorterServiceHandler) PullFeed(context.Context, *connect.Request[v1.PullFeedRequest]) (*connect.Response[v1.PullFeedResponse], error) {
+func (UnimplementedLibrarianPorterServiceHandler) PullFeed(context.Context, *v1.PullFeedRequest) (*v1.PullFeedResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.porter.v1.LibrarianPorterService.PullFeed is not implemented"))
 }
 
-func (UnimplementedLibrarianPorterServiceHandler) ExecFeedItemAction(context.Context, *connect.Request[v1.ExecFeedItemActionRequest]) (*connect.Response[v1.ExecFeedItemActionResponse], error) {
+func (UnimplementedLibrarianPorterServiceHandler) ExecFeedItemAction(context.Context, *v1.ExecFeedItemActionRequest) (*v1.ExecFeedItemActionResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.porter.v1.LibrarianPorterService.ExecFeedItemAction is not implemented"))
 }
 
-func (UnimplementedLibrarianPorterServiceHandler) EnableFeedSetter(context.Context, *connect.Request[v1.EnableFeedSetterRequest]) (*connect.Response[v1.EnableFeedSetterResponse], error) {
+func (UnimplementedLibrarianPorterServiceHandler) EnableFeedSetter(context.Context, *v1.EnableFeedSetterRequest) (*v1.EnableFeedSetterResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.porter.v1.LibrarianPorterService.EnableFeedSetter is not implemented"))
 }
 
-func (UnimplementedLibrarianPorterServiceHandler) DisableFeedSetter(context.Context, *connect.Request[v1.DisableFeedSetterRequest]) (*connect.Response[v1.DisableFeedSetterResponse], error) {
+func (UnimplementedLibrarianPorterServiceHandler) DisableFeedSetter(context.Context, *v1.DisableFeedSetterRequest) (*v1.DisableFeedSetterResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.porter.v1.LibrarianPorterService.DisableFeedSetter is not implemented"))
 }
 
-func (UnimplementedLibrarianPorterServiceHandler) EnableFeedGetter(context.Context, *connect.Request[v1.EnableFeedGetterRequest]) (*connect.Response[v1.EnableFeedGetterResponse], error) {
+func (UnimplementedLibrarianPorterServiceHandler) EnableFeedGetter(context.Context, *v1.EnableFeedGetterRequest) (*v1.EnableFeedGetterResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.porter.v1.LibrarianPorterService.EnableFeedGetter is not implemented"))
 }
 
-func (UnimplementedLibrarianPorterServiceHandler) DisableFeedGetter(context.Context, *connect.Request[v1.DisableFeedGetterRequest]) (*connect.Response[v1.DisableFeedGetterResponse], error) {
+func (UnimplementedLibrarianPorterServiceHandler) DisableFeedGetter(context.Context, *v1.DisableFeedGetterRequest) (*v1.DisableFeedGetterResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.porter.v1.LibrarianPorterService.DisableFeedGetter is not implemented"))
 }
 
-func (UnimplementedLibrarianPorterServiceHandler) PushFeedItems(context.Context, *connect.Request[v1.PushFeedItemsRequest]) (*connect.Response[v1.PushFeedItemsResponse], error) {
+func (UnimplementedLibrarianPorterServiceHandler) PushFeedItems(context.Context, *v1.PushFeedItemsRequest) (*v1.PushFeedItemsResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.porter.v1.LibrarianPorterService.PushFeedItems is not implemented"))
 }

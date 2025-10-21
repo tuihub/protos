@@ -52,14 +52,14 @@ const (
 // librarian.sentinel.v1.LibrarianSephirahSentinelService service.
 type LibrarianSephirahSentinelServiceClient interface {
 	// `Tiphereth` Use valid refresh_token and get two new token, a refresh_token can only be used once
-	RefreshToken(context.Context, *connect.Request[v1.RefreshTokenRequest]) (*connect.Response[v1.RefreshTokenResponse], error)
+	RefreshToken(context.Context, *v1.RefreshTokenRequest) (*v1.RefreshTokenResponse, error)
 	// `Tiphereth`
-	Heartbeat(context.Context, *connect.Request[v1.HeartbeatRequest]) (*connect.Response[v1.HeartbeatResponse], error)
+	Heartbeat(context.Context, *v1.HeartbeatRequest) (*v1.HeartbeatResponse, error)
 	// `Gebura`
-	ReportSentinelInformation(context.Context, *connect.Request[v1.ReportSentinelInformationRequest]) (*connect.Response[v1.ReportSentinelInformationResponse], error)
+	ReportSentinelInformation(context.Context, *v1.ReportSentinelInformationRequest) (*v1.ReportSentinelInformationResponse, error)
 	// `Gebura`
 	// Full update, changes are handled by librarian
-	ReportAppBinaries(context.Context, *connect.Request[v1.ReportAppBinariesRequest]) (*connect.Response[v1.ReportAppBinariesResponse], error)
+	ReportAppBinaries(context.Context, *v1.ReportAppBinariesRequest) (*v1.ReportAppBinariesResponse, error)
 }
 
 // NewLibrarianSephirahSentinelServiceClient constructs a client for the
@@ -110,38 +110,54 @@ type librarianSephirahSentinelServiceClient struct {
 }
 
 // RefreshToken calls librarian.sentinel.v1.LibrarianSephirahSentinelService.RefreshToken.
-func (c *librarianSephirahSentinelServiceClient) RefreshToken(ctx context.Context, req *connect.Request[v1.RefreshTokenRequest]) (*connect.Response[v1.RefreshTokenResponse], error) {
-	return c.refreshToken.CallUnary(ctx, req)
+func (c *librarianSephirahSentinelServiceClient) RefreshToken(ctx context.Context, req *v1.RefreshTokenRequest) (*v1.RefreshTokenResponse, error) {
+	response, err := c.refreshToken.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // Heartbeat calls librarian.sentinel.v1.LibrarianSephirahSentinelService.Heartbeat.
-func (c *librarianSephirahSentinelServiceClient) Heartbeat(ctx context.Context, req *connect.Request[v1.HeartbeatRequest]) (*connect.Response[v1.HeartbeatResponse], error) {
-	return c.heartbeat.CallUnary(ctx, req)
+func (c *librarianSephirahSentinelServiceClient) Heartbeat(ctx context.Context, req *v1.HeartbeatRequest) (*v1.HeartbeatResponse, error) {
+	response, err := c.heartbeat.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // ReportSentinelInformation calls
 // librarian.sentinel.v1.LibrarianSephirahSentinelService.ReportSentinelInformation.
-func (c *librarianSephirahSentinelServiceClient) ReportSentinelInformation(ctx context.Context, req *connect.Request[v1.ReportSentinelInformationRequest]) (*connect.Response[v1.ReportSentinelInformationResponse], error) {
-	return c.reportSentinelInformation.CallUnary(ctx, req)
+func (c *librarianSephirahSentinelServiceClient) ReportSentinelInformation(ctx context.Context, req *v1.ReportSentinelInformationRequest) (*v1.ReportSentinelInformationResponse, error) {
+	response, err := c.reportSentinelInformation.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // ReportAppBinaries calls librarian.sentinel.v1.LibrarianSephirahSentinelService.ReportAppBinaries.
-func (c *librarianSephirahSentinelServiceClient) ReportAppBinaries(ctx context.Context, req *connect.Request[v1.ReportAppBinariesRequest]) (*connect.Response[v1.ReportAppBinariesResponse], error) {
-	return c.reportAppBinaries.CallUnary(ctx, req)
+func (c *librarianSephirahSentinelServiceClient) ReportAppBinaries(ctx context.Context, req *v1.ReportAppBinariesRequest) (*v1.ReportAppBinariesResponse, error) {
+	response, err := c.reportAppBinaries.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // LibrarianSephirahSentinelServiceHandler is an implementation of the
 // librarian.sentinel.v1.LibrarianSephirahSentinelService service.
 type LibrarianSephirahSentinelServiceHandler interface {
 	// `Tiphereth` Use valid refresh_token and get two new token, a refresh_token can only be used once
-	RefreshToken(context.Context, *connect.Request[v1.RefreshTokenRequest]) (*connect.Response[v1.RefreshTokenResponse], error)
+	RefreshToken(context.Context, *v1.RefreshTokenRequest) (*v1.RefreshTokenResponse, error)
 	// `Tiphereth`
-	Heartbeat(context.Context, *connect.Request[v1.HeartbeatRequest]) (*connect.Response[v1.HeartbeatResponse], error)
+	Heartbeat(context.Context, *v1.HeartbeatRequest) (*v1.HeartbeatResponse, error)
 	// `Gebura`
-	ReportSentinelInformation(context.Context, *connect.Request[v1.ReportSentinelInformationRequest]) (*connect.Response[v1.ReportSentinelInformationResponse], error)
+	ReportSentinelInformation(context.Context, *v1.ReportSentinelInformationRequest) (*v1.ReportSentinelInformationResponse, error)
 	// `Gebura`
 	// Full update, changes are handled by librarian
-	ReportAppBinaries(context.Context, *connect.Request[v1.ReportAppBinariesRequest]) (*connect.Response[v1.ReportAppBinariesResponse], error)
+	ReportAppBinaries(context.Context, *v1.ReportAppBinariesRequest) (*v1.ReportAppBinariesResponse, error)
 }
 
 // NewLibrarianSephirahSentinelServiceHandler builds an HTTP handler from the service
@@ -151,25 +167,25 @@ type LibrarianSephirahSentinelServiceHandler interface {
 // and JSON codecs. They also support gzip compression.
 func NewLibrarianSephirahSentinelServiceHandler(svc LibrarianSephirahSentinelServiceHandler, opts ...connect.HandlerOption) (string, http.Handler) {
 	librarianSephirahSentinelServiceMethods := v1.File_librarian_sentinel_v1_sephirah_sentinel_service_proto.Services().ByName("LibrarianSephirahSentinelService").Methods()
-	librarianSephirahSentinelServiceRefreshTokenHandler := connect.NewUnaryHandler(
+	librarianSephirahSentinelServiceRefreshTokenHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahSentinelServiceRefreshTokenProcedure,
 		svc.RefreshToken,
 		connect.WithSchema(librarianSephirahSentinelServiceMethods.ByName("RefreshToken")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahSentinelServiceHeartbeatHandler := connect.NewUnaryHandler(
+	librarianSephirahSentinelServiceHeartbeatHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahSentinelServiceHeartbeatProcedure,
 		svc.Heartbeat,
 		connect.WithSchema(librarianSephirahSentinelServiceMethods.ByName("Heartbeat")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahSentinelServiceReportSentinelInformationHandler := connect.NewUnaryHandler(
+	librarianSephirahSentinelServiceReportSentinelInformationHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahSentinelServiceReportSentinelInformationProcedure,
 		svc.ReportSentinelInformation,
 		connect.WithSchema(librarianSephirahSentinelServiceMethods.ByName("ReportSentinelInformation")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahSentinelServiceReportAppBinariesHandler := connect.NewUnaryHandler(
+	librarianSephirahSentinelServiceReportAppBinariesHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahSentinelServiceReportAppBinariesProcedure,
 		svc.ReportAppBinaries,
 		connect.WithSchema(librarianSephirahSentinelServiceMethods.ByName("ReportAppBinaries")),
@@ -194,18 +210,18 @@ func NewLibrarianSephirahSentinelServiceHandler(svc LibrarianSephirahSentinelSer
 // UnimplementedLibrarianSephirahSentinelServiceHandler returns CodeUnimplemented from all methods.
 type UnimplementedLibrarianSephirahSentinelServiceHandler struct{}
 
-func (UnimplementedLibrarianSephirahSentinelServiceHandler) RefreshToken(context.Context, *connect.Request[v1.RefreshTokenRequest]) (*connect.Response[v1.RefreshTokenResponse], error) {
+func (UnimplementedLibrarianSephirahSentinelServiceHandler) RefreshToken(context.Context, *v1.RefreshTokenRequest) (*v1.RefreshTokenResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sentinel.v1.LibrarianSephirahSentinelService.RefreshToken is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahSentinelServiceHandler) Heartbeat(context.Context, *connect.Request[v1.HeartbeatRequest]) (*connect.Response[v1.HeartbeatResponse], error) {
+func (UnimplementedLibrarianSephirahSentinelServiceHandler) Heartbeat(context.Context, *v1.HeartbeatRequest) (*v1.HeartbeatResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sentinel.v1.LibrarianSephirahSentinelService.Heartbeat is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahSentinelServiceHandler) ReportSentinelInformation(context.Context, *connect.Request[v1.ReportSentinelInformationRequest]) (*connect.Response[v1.ReportSentinelInformationResponse], error) {
+func (UnimplementedLibrarianSephirahSentinelServiceHandler) ReportSentinelInformation(context.Context, *v1.ReportSentinelInformationRequest) (*v1.ReportSentinelInformationResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sentinel.v1.LibrarianSephirahSentinelService.ReportSentinelInformation is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahSentinelServiceHandler) ReportAppBinaries(context.Context, *connect.Request[v1.ReportAppBinariesRequest]) (*connect.Response[v1.ReportAppBinariesResponse], error) {
+func (UnimplementedLibrarianSephirahSentinelServiceHandler) ReportAppBinaries(context.Context, *v1.ReportAppBinariesRequest) (*v1.ReportAppBinariesResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sentinel.v1.LibrarianSephirahSentinelService.ReportAppBinaries is not implemented"))
 }

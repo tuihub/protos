@@ -55,16 +55,16 @@ const (
 // librarian.porter.v1.LibrarianSephirahPorterService service.
 type LibrarianSephirahPorterServiceClient interface {
 	// `Tiphereth` Use valid refresh_token and get two new token, a refresh_token can only be used once
-	RefreshToken(context.Context, *connect.Request[v1.RefreshTokenRequest]) (*connect.Response[v1.RefreshTokenResponse], error)
+	RefreshToken(context.Context, *v1.RefreshTokenRequest) (*v1.RefreshTokenResponse, error)
 	// `Tiphereth` `Porter` Obtain access_token of a specific user after user authorization.
 	// This token can be used to perform actions on behalf of the user.
-	AcquireUserToken(context.Context, *connect.Request[v1.AcquireUserTokenRequest]) (*connect.Response[v1.AcquireUserTokenResponse], error)
+	AcquireUserToken(context.Context, *v1.AcquireUserTokenRequest) (*v1.AcquireUserTokenResponse, error)
 	// `Netzach` `Porter`
-	GetNotifyTargetItems(context.Context, *connect.Request[v1.GetNotifyTargetItemsRequest]) (*connect.Response[v1.GetNotifyTargetItemsResponse], error)
+	GetNotifyTargetItems(context.Context, *v1.GetNotifyTargetItemsRequest) (*v1.GetNotifyTargetItemsResponse, error)
 	// `Yesod` `Porter`
-	UpsertFeed(context.Context, *connect.Request[v1.UpsertFeedRequest]) (*connect.Response[v1.UpsertFeedResponse], error)
+	UpsertFeed(context.Context, *v1.UpsertFeedRequest) (*v1.UpsertFeedResponse, error)
 	// `Yesod` `Porter`
-	GetFeed(context.Context, *connect.Request[v1.GetFeedRequest]) (*connect.Response[v1.GetFeedResponse], error)
+	GetFeed(context.Context, *v1.GetFeedRequest) (*v1.GetFeedResponse, error)
 }
 
 // NewLibrarianSephirahPorterServiceClient constructs a client for the
@@ -122,45 +122,65 @@ type librarianSephirahPorterServiceClient struct {
 }
 
 // RefreshToken calls librarian.porter.v1.LibrarianSephirahPorterService.RefreshToken.
-func (c *librarianSephirahPorterServiceClient) RefreshToken(ctx context.Context, req *connect.Request[v1.RefreshTokenRequest]) (*connect.Response[v1.RefreshTokenResponse], error) {
-	return c.refreshToken.CallUnary(ctx, req)
+func (c *librarianSephirahPorterServiceClient) RefreshToken(ctx context.Context, req *v1.RefreshTokenRequest) (*v1.RefreshTokenResponse, error) {
+	response, err := c.refreshToken.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // AcquireUserToken calls librarian.porter.v1.LibrarianSephirahPorterService.AcquireUserToken.
-func (c *librarianSephirahPorterServiceClient) AcquireUserToken(ctx context.Context, req *connect.Request[v1.AcquireUserTokenRequest]) (*connect.Response[v1.AcquireUserTokenResponse], error) {
-	return c.acquireUserToken.CallUnary(ctx, req)
+func (c *librarianSephirahPorterServiceClient) AcquireUserToken(ctx context.Context, req *v1.AcquireUserTokenRequest) (*v1.AcquireUserTokenResponse, error) {
+	response, err := c.acquireUserToken.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // GetNotifyTargetItems calls
 // librarian.porter.v1.LibrarianSephirahPorterService.GetNotifyTargetItems.
-func (c *librarianSephirahPorterServiceClient) GetNotifyTargetItems(ctx context.Context, req *connect.Request[v1.GetNotifyTargetItemsRequest]) (*connect.Response[v1.GetNotifyTargetItemsResponse], error) {
-	return c.getNotifyTargetItems.CallUnary(ctx, req)
+func (c *librarianSephirahPorterServiceClient) GetNotifyTargetItems(ctx context.Context, req *v1.GetNotifyTargetItemsRequest) (*v1.GetNotifyTargetItemsResponse, error) {
+	response, err := c.getNotifyTargetItems.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // UpsertFeed calls librarian.porter.v1.LibrarianSephirahPorterService.UpsertFeed.
-func (c *librarianSephirahPorterServiceClient) UpsertFeed(ctx context.Context, req *connect.Request[v1.UpsertFeedRequest]) (*connect.Response[v1.UpsertFeedResponse], error) {
-	return c.upsertFeed.CallUnary(ctx, req)
+func (c *librarianSephirahPorterServiceClient) UpsertFeed(ctx context.Context, req *v1.UpsertFeedRequest) (*v1.UpsertFeedResponse, error) {
+	response, err := c.upsertFeed.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // GetFeed calls librarian.porter.v1.LibrarianSephirahPorterService.GetFeed.
-func (c *librarianSephirahPorterServiceClient) GetFeed(ctx context.Context, req *connect.Request[v1.GetFeedRequest]) (*connect.Response[v1.GetFeedResponse], error) {
-	return c.getFeed.CallUnary(ctx, req)
+func (c *librarianSephirahPorterServiceClient) GetFeed(ctx context.Context, req *v1.GetFeedRequest) (*v1.GetFeedResponse, error) {
+	response, err := c.getFeed.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
 }
 
 // LibrarianSephirahPorterServiceHandler is an implementation of the
 // librarian.porter.v1.LibrarianSephirahPorterService service.
 type LibrarianSephirahPorterServiceHandler interface {
 	// `Tiphereth` Use valid refresh_token and get two new token, a refresh_token can only be used once
-	RefreshToken(context.Context, *connect.Request[v1.RefreshTokenRequest]) (*connect.Response[v1.RefreshTokenResponse], error)
+	RefreshToken(context.Context, *v1.RefreshTokenRequest) (*v1.RefreshTokenResponse, error)
 	// `Tiphereth` `Porter` Obtain access_token of a specific user after user authorization.
 	// This token can be used to perform actions on behalf of the user.
-	AcquireUserToken(context.Context, *connect.Request[v1.AcquireUserTokenRequest]) (*connect.Response[v1.AcquireUserTokenResponse], error)
+	AcquireUserToken(context.Context, *v1.AcquireUserTokenRequest) (*v1.AcquireUserTokenResponse, error)
 	// `Netzach` `Porter`
-	GetNotifyTargetItems(context.Context, *connect.Request[v1.GetNotifyTargetItemsRequest]) (*connect.Response[v1.GetNotifyTargetItemsResponse], error)
+	GetNotifyTargetItems(context.Context, *v1.GetNotifyTargetItemsRequest) (*v1.GetNotifyTargetItemsResponse, error)
 	// `Yesod` `Porter`
-	UpsertFeed(context.Context, *connect.Request[v1.UpsertFeedRequest]) (*connect.Response[v1.UpsertFeedResponse], error)
+	UpsertFeed(context.Context, *v1.UpsertFeedRequest) (*v1.UpsertFeedResponse, error)
 	// `Yesod` `Porter`
-	GetFeed(context.Context, *connect.Request[v1.GetFeedRequest]) (*connect.Response[v1.GetFeedResponse], error)
+	GetFeed(context.Context, *v1.GetFeedRequest) (*v1.GetFeedResponse, error)
 }
 
 // NewLibrarianSephirahPorterServiceHandler builds an HTTP handler from the service implementation.
@@ -170,31 +190,31 @@ type LibrarianSephirahPorterServiceHandler interface {
 // and JSON codecs. They also support gzip compression.
 func NewLibrarianSephirahPorterServiceHandler(svc LibrarianSephirahPorterServiceHandler, opts ...connect.HandlerOption) (string, http.Handler) {
 	librarianSephirahPorterServiceMethods := v1.File_librarian_porter_v1_sephirah_porter_service_proto.Services().ByName("LibrarianSephirahPorterService").Methods()
-	librarianSephirahPorterServiceRefreshTokenHandler := connect.NewUnaryHandler(
+	librarianSephirahPorterServiceRefreshTokenHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahPorterServiceRefreshTokenProcedure,
 		svc.RefreshToken,
 		connect.WithSchema(librarianSephirahPorterServiceMethods.ByName("RefreshToken")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahPorterServiceAcquireUserTokenHandler := connect.NewUnaryHandler(
+	librarianSephirahPorterServiceAcquireUserTokenHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahPorterServiceAcquireUserTokenProcedure,
 		svc.AcquireUserToken,
 		connect.WithSchema(librarianSephirahPorterServiceMethods.ByName("AcquireUserToken")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahPorterServiceGetNotifyTargetItemsHandler := connect.NewUnaryHandler(
+	librarianSephirahPorterServiceGetNotifyTargetItemsHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahPorterServiceGetNotifyTargetItemsProcedure,
 		svc.GetNotifyTargetItems,
 		connect.WithSchema(librarianSephirahPorterServiceMethods.ByName("GetNotifyTargetItems")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahPorterServiceUpsertFeedHandler := connect.NewUnaryHandler(
+	librarianSephirahPorterServiceUpsertFeedHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahPorterServiceUpsertFeedProcedure,
 		svc.UpsertFeed,
 		connect.WithSchema(librarianSephirahPorterServiceMethods.ByName("UpsertFeed")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahPorterServiceGetFeedHandler := connect.NewUnaryHandler(
+	librarianSephirahPorterServiceGetFeedHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahPorterServiceGetFeedProcedure,
 		svc.GetFeed,
 		connect.WithSchema(librarianSephirahPorterServiceMethods.ByName("GetFeed")),
@@ -221,22 +241,22 @@ func NewLibrarianSephirahPorterServiceHandler(svc LibrarianSephirahPorterService
 // UnimplementedLibrarianSephirahPorterServiceHandler returns CodeUnimplemented from all methods.
 type UnimplementedLibrarianSephirahPorterServiceHandler struct{}
 
-func (UnimplementedLibrarianSephirahPorterServiceHandler) RefreshToken(context.Context, *connect.Request[v1.RefreshTokenRequest]) (*connect.Response[v1.RefreshTokenResponse], error) {
+func (UnimplementedLibrarianSephirahPorterServiceHandler) RefreshToken(context.Context, *v1.RefreshTokenRequest) (*v1.RefreshTokenResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.porter.v1.LibrarianSephirahPorterService.RefreshToken is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahPorterServiceHandler) AcquireUserToken(context.Context, *connect.Request[v1.AcquireUserTokenRequest]) (*connect.Response[v1.AcquireUserTokenResponse], error) {
+func (UnimplementedLibrarianSephirahPorterServiceHandler) AcquireUserToken(context.Context, *v1.AcquireUserTokenRequest) (*v1.AcquireUserTokenResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.porter.v1.LibrarianSephirahPorterService.AcquireUserToken is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahPorterServiceHandler) GetNotifyTargetItems(context.Context, *connect.Request[v1.GetNotifyTargetItemsRequest]) (*connect.Response[v1.GetNotifyTargetItemsResponse], error) {
+func (UnimplementedLibrarianSephirahPorterServiceHandler) GetNotifyTargetItems(context.Context, *v1.GetNotifyTargetItemsRequest) (*v1.GetNotifyTargetItemsResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.porter.v1.LibrarianSephirahPorterService.GetNotifyTargetItems is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahPorterServiceHandler) UpsertFeed(context.Context, *connect.Request[v1.UpsertFeedRequest]) (*connect.Response[v1.UpsertFeedResponse], error) {
+func (UnimplementedLibrarianSephirahPorterServiceHandler) UpsertFeed(context.Context, *v1.UpsertFeedRequest) (*v1.UpsertFeedResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.porter.v1.LibrarianSephirahPorterService.UpsertFeed is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahPorterServiceHandler) GetFeed(context.Context, *connect.Request[v1.GetFeedRequest]) (*connect.Response[v1.GetFeedResponse], error) {
+func (UnimplementedLibrarianSephirahPorterServiceHandler) GetFeed(context.Context, *v1.GetFeedRequest) (*v1.GetFeedResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.porter.v1.LibrarianSephirahPorterService.GetFeed is not implemented"))
 }
