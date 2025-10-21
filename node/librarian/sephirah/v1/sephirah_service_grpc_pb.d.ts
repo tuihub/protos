@@ -56,6 +56,7 @@ interface ILibrarianSephirahServiceService extends grpc.ServiceDefinition<grpc.U
   createApp: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.CreateAppRequest, librarian_sephirah_v1_gebura_pb.CreateAppResponse>;
   updateApp: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.UpdateAppRequest, librarian_sephirah_v1_gebura_pb.UpdateAppResponse>;
   listApps: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.ListAppsRequest, librarian_sephirah_v1_gebura_pb.ListAppsResponse>;
+  deleteApp: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.DeleteAppRequest, librarian_sephirah_v1_gebura_pb.DeleteAppResponse>;
   batchCreateAppRunTime: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.BatchCreateAppRunTimeRequest, librarian_sephirah_v1_gebura_pb.BatchCreateAppRunTimeResponse>;
   sumAppRunTime: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.SumAppRunTimeRequest, librarian_sephirah_v1_gebura_pb.SumAppRunTimeResponse>;
   listAppRunTimes: grpc.MethodDefinition<librarian_sephirah_v1_gebura_pb.ListAppRunTimesRequest, librarian_sephirah_v1_gebura_pb.ListAppRunTimesResponse>;
@@ -146,6 +147,7 @@ export interface ILibrarianSephirahServiceServer extends grpc.UntypedServiceImpl
   createApp: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.CreateAppRequest, librarian_sephirah_v1_gebura_pb.CreateAppResponse>;
   updateApp: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.UpdateAppRequest, librarian_sephirah_v1_gebura_pb.UpdateAppResponse>;
   listApps: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.ListAppsRequest, librarian_sephirah_v1_gebura_pb.ListAppsResponse>;
+  deleteApp: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.DeleteAppRequest, librarian_sephirah_v1_gebura_pb.DeleteAppResponse>;
   batchCreateAppRunTime: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.BatchCreateAppRunTimeRequest, librarian_sephirah_v1_gebura_pb.BatchCreateAppRunTimeResponse>;
   sumAppRunTime: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.SumAppRunTimeRequest, librarian_sephirah_v1_gebura_pb.SumAppRunTimeResponse>;
   listAppRunTimes: grpc.handleUnaryCall<librarian_sephirah_v1_gebura_pb.ListAppRunTimesRequest, librarian_sephirah_v1_gebura_pb.ListAppRunTimesResponse>;
@@ -316,6 +318,9 @@ export class LibrarianSephirahServiceClient extends grpc.Client {
   listApps(argument: librarian_sephirah_v1_gebura_pb.ListAppsRequest, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.ListAppsResponse>): grpc.ClientUnaryCall;
   listApps(argument: librarian_sephirah_v1_gebura_pb.ListAppsRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.ListAppsResponse>): grpc.ClientUnaryCall;
   listApps(argument: librarian_sephirah_v1_gebura_pb.ListAppsRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.ListAppsResponse>): grpc.ClientUnaryCall;
+  deleteApp(argument: librarian_sephirah_v1_gebura_pb.DeleteAppRequest, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.DeleteAppResponse>): grpc.ClientUnaryCall;
+  deleteApp(argument: librarian_sephirah_v1_gebura_pb.DeleteAppRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.DeleteAppResponse>): grpc.ClientUnaryCall;
+  deleteApp(argument: librarian_sephirah_v1_gebura_pb.DeleteAppRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.DeleteAppResponse>): grpc.ClientUnaryCall;
   batchCreateAppRunTime(argument: librarian_sephirah_v1_gebura_pb.BatchCreateAppRunTimeRequest, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.BatchCreateAppRunTimeResponse>): grpc.ClientUnaryCall;
   batchCreateAppRunTime(argument: librarian_sephirah_v1_gebura_pb.BatchCreateAppRunTimeRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.BatchCreateAppRunTimeResponse>): grpc.ClientUnaryCall;
   batchCreateAppRunTime(argument: librarian_sephirah_v1_gebura_pb.BatchCreateAppRunTimeRequest, metadata: grpc.Metadata | null, options: grpc.CallOptions | null, callback: grpc.requestCallback<librarian_sephirah_v1_gebura_pb.BatchCreateAppRunTimeResponse>): grpc.ClientUnaryCall;

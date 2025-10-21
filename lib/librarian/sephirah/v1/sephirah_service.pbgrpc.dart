@@ -422,6 +422,14 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
   }
 
   /// `Gebura` `Normal`
+  $grpc.ResponseFuture<$4.DeleteAppResponse> deleteApp(
+    $4.DeleteAppRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$deleteApp, request, options: options);
+  }
+
+  /// `Gebura` `Normal`
   $grpc.ResponseFuture<$4.BatchCreateAppRunTimeResponse> batchCreateAppRunTime(
     $4.BatchCreateAppRunTimeRequest request, {
     $grpc.CallOptions? options,
@@ -998,6 +1006,11 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
           '/librarian.sephirah.v1.LibrarianSephirahService/ListApps',
           ($4.ListAppsRequest value) => value.writeToBuffer(),
           $4.ListAppsResponse.fromBuffer);
+  static final _$deleteApp =
+      $grpc.ClientMethod<$4.DeleteAppRequest, $4.DeleteAppResponse>(
+          '/librarian.sephirah.v1.LibrarianSephirahService/DeleteApp',
+          ($4.DeleteAppRequest value) => value.writeToBuffer(),
+          $4.DeleteAppResponse.fromBuffer);
   static final _$batchCreateAppRunTime = $grpc.ClientMethod<
           $4.BatchCreateAppRunTimeRequest, $4.BatchCreateAppRunTimeResponse>(
       '/librarian.sephirah.v1.LibrarianSephirahService/BatchCreateAppRunTime',
@@ -1592,6 +1605,13 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $4.ListAppsRequest.fromBuffer(value),
         ($4.ListAppsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$4.DeleteAppRequest, $4.DeleteAppResponse>(
+        'DeleteApp',
+        deleteApp_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $4.DeleteAppRequest.fromBuffer(value),
+        ($4.DeleteAppResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$4.BatchCreateAppRunTimeRequest,
             $4.BatchCreateAppRunTimeResponse>(
         'BatchCreateAppRunTime',
@@ -2331,6 +2351,14 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
 
   $async.Future<$4.ListAppsResponse> listApps(
       $grpc.ServiceCall call, $4.ListAppsRequest request);
+
+  $async.Future<$4.DeleteAppResponse> deleteApp_Pre($grpc.ServiceCall $call,
+      $async.Future<$4.DeleteAppRequest> $request) async {
+    return deleteApp($call, await $request);
+  }
+
+  $async.Future<$4.DeleteAppResponse> deleteApp(
+      $grpc.ServiceCall call, $4.DeleteAppRequest request);
 
   $async.Future<$4.BatchCreateAppRunTimeResponse> batchCreateAppRunTime_Pre(
       $grpc.ServiceCall $call,

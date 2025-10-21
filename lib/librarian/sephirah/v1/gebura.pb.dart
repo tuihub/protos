@@ -1697,6 +1697,107 @@ class ListAppsResponse extends $pb.GeneratedMessage {
   $pb.PbList<App> get apps => $_getList(1);
 }
 
+class DeleteAppRequest extends $pb.GeneratedMessage {
+  factory DeleteAppRequest({
+    $0.InternalID? id,
+  }) {
+    final result = create();
+    if (id != null) result.id = id;
+    return result;
+  }
+
+  DeleteAppRequest._();
+
+  factory DeleteAppRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DeleteAppRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DeleteAppRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'librarian.sephirah.v1'),
+      createEmptyInstance: create)
+    ..aOM<$0.InternalID>(1, _omitFieldNames ? '' : 'id',
+        subBuilder: $0.InternalID.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteAppRequest clone() => DeleteAppRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteAppRequest copyWith(void Function(DeleteAppRequest) updates) =>
+      super.copyWith((message) => updates(message as DeleteAppRequest))
+          as DeleteAppRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteAppRequest create() => DeleteAppRequest._();
+  @$core.override
+  DeleteAppRequest createEmptyInstance() => create();
+  static $pb.PbList<DeleteAppRequest> createRepeated() =>
+      $pb.PbList<DeleteAppRequest>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteAppRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DeleteAppRequest>(create);
+  static DeleteAppRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.InternalID get id => $_getN(0);
+  @$pb.TagNumber(1)
+  set id($0.InternalID value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => $_clearField(1);
+  @$pb.TagNumber(1)
+  $0.InternalID ensureId() => $_ensure(0);
+}
+
+class DeleteAppResponse extends $pb.GeneratedMessage {
+  factory DeleteAppResponse() => create();
+
+  DeleteAppResponse._();
+
+  factory DeleteAppResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory DeleteAppResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'DeleteAppResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'librarian.sephirah.v1'),
+      createEmptyInstance: create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteAppResponse clone() => DeleteAppResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  DeleteAppResponse copyWith(void Function(DeleteAppResponse) updates) =>
+      super.copyWith((message) => updates(message as DeleteAppResponse))
+          as DeleteAppResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static DeleteAppResponse create() => DeleteAppResponse._();
+  @$core.override
+  DeleteAppResponse createEmptyInstance() => create();
+  static $pb.PbList<DeleteAppResponse> createRepeated() =>
+      $pb.PbList<DeleteAppResponse>();
+  @$core.pragma('dart2js:noInline')
+  static DeleteAppResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<DeleteAppResponse>(create);
+  static DeleteAppResponse? _defaultInstance;
+}
+
 class BatchCreateAppRunTimeRequest extends $pb.GeneratedMessage {
   factory BatchCreateAppRunTimeRequest({
     $core.Iterable<AppRunTime>? appRunTimes,

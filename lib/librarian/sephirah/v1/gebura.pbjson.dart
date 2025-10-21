@@ -651,6 +651,35 @@ final $typed_data.Uint8List listAppsResponseDescriptor = $convert.base64Decode(
     'dSZXNwb25zZVIGcGFnaW5nEi4KBGFwcHMYAiADKAsyGi5saWJyYXJpYW4uc2VwaGlyYWgudjEu'
     'QXBwUgRhcHBz');
 
+@$core.Deprecated('Use deleteAppRequestDescriptor instead')
+const DeleteAppRequest$json = {
+  '1': 'DeleteAppRequest',
+  '2': [
+    {
+      '1': 'id',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'id'
+    },
+  ],
+};
+
+/// Descriptor for `DeleteAppRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteAppRequestDescriptor = $convert.base64Decode(
+    'ChBEZWxldGVBcHBSZXF1ZXN0EigKAmlkGAEgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSU'
+    'RSAmlk');
+
+@$core.Deprecated('Use deleteAppResponseDescriptor instead')
+const DeleteAppResponse$json = {
+  '1': 'DeleteAppResponse',
+};
+
+/// Descriptor for `DeleteAppResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List deleteAppResponseDescriptor =
+    $convert.base64Decode('ChFEZWxldGVBcHBSZXNwb25zZQ==');
+
 @$core.Deprecated('Use batchCreateAppRunTimeRequestDescriptor instead')
 const BatchCreateAppRunTimeRequest$json = {
   '1': 'BatchCreateAppRunTimeRequest',

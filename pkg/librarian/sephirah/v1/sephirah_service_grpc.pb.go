@@ -62,6 +62,7 @@ const (
 	LibrarianSephirahService_CreateApp_FullMethodName                    = "/librarian.sephirah.v1.LibrarianSephirahService/CreateApp"
 	LibrarianSephirahService_UpdateApp_FullMethodName                    = "/librarian.sephirah.v1.LibrarianSephirahService/UpdateApp"
 	LibrarianSephirahService_ListApps_FullMethodName                     = "/librarian.sephirah.v1.LibrarianSephirahService/ListApps"
+	LibrarianSephirahService_DeleteApp_FullMethodName                    = "/librarian.sephirah.v1.LibrarianSephirahService/DeleteApp"
 	LibrarianSephirahService_BatchCreateAppRunTime_FullMethodName        = "/librarian.sephirah.v1.LibrarianSephirahService/BatchCreateAppRunTime"
 	LibrarianSephirahService_SumAppRunTime_FullMethodName                = "/librarian.sephirah.v1.LibrarianSephirahService/SumAppRunTime"
 	LibrarianSephirahService_ListAppRunTimes_FullMethodName              = "/librarian.sephirah.v1.LibrarianSephirahService/ListAppRunTimes"
@@ -220,6 +221,8 @@ type LibrarianSephirahServiceClient interface {
 	UpdateApp(ctx context.Context, in *UpdateAppRequest, opts ...grpc.CallOption) (*UpdateAppResponse, error)
 	// `Gebura` `Normal`
 	ListApps(ctx context.Context, in *ListAppsRequest, opts ...grpc.CallOption) (*ListAppsResponse, error)
+	// `Gebura` `Normal`
+	DeleteApp(ctx context.Context, in *DeleteAppRequest, opts ...grpc.CallOption) (*DeleteAppResponse, error)
 	// `Gebura` `Normal`
 	BatchCreateAppRunTime(ctx context.Context, in *BatchCreateAppRunTimeRequest, opts ...grpc.CallOption) (*BatchCreateAppRunTimeResponse, error)
 	// `Gebura` `Normal`
@@ -771,6 +774,16 @@ func (c *librarianSephirahServiceClient) ListApps(ctx context.Context, in *ListA
 	return out, nil
 }
 
+func (c *librarianSephirahServiceClient) DeleteApp(ctx context.Context, in *DeleteAppRequest, opts ...grpc.CallOption) (*DeleteAppResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DeleteAppResponse)
+	err := c.cc.Invoke(ctx, LibrarianSephirahService_DeleteApp_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *librarianSephirahServiceClient) BatchCreateAppRunTime(ctx context.Context, in *BatchCreateAppRunTimeRequest, opts ...grpc.CallOption) (*BatchCreateAppRunTimeResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(BatchCreateAppRunTimeResponse)
@@ -1306,6 +1319,8 @@ type LibrarianSephirahServiceServer interface {
 	// `Gebura` `Normal`
 	ListApps(context.Context, *ListAppsRequest) (*ListAppsResponse, error)
 	// `Gebura` `Normal`
+	DeleteApp(context.Context, *DeleteAppRequest) (*DeleteAppResponse, error)
+	// `Gebura` `Normal`
 	BatchCreateAppRunTime(context.Context, *BatchCreateAppRunTimeRequest) (*BatchCreateAppRunTimeResponse, error)
 	// `Gebura` `Normal`
 	SumAppRunTime(context.Context, *SumAppRunTimeRequest) (*SumAppRunTimeResponse, error)
@@ -1527,6 +1542,9 @@ func (UnimplementedLibrarianSephirahServiceServer) UpdateApp(context.Context, *U
 }
 func (UnimplementedLibrarianSephirahServiceServer) ListApps(context.Context, *ListAppsRequest) (*ListAppsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListApps not implemented")
+}
+func (UnimplementedLibrarianSephirahServiceServer) DeleteApp(context.Context, *DeleteAppRequest) (*DeleteAppResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteApp not implemented")
 }
 func (UnimplementedLibrarianSephirahServiceServer) BatchCreateAppRunTime(context.Context, *BatchCreateAppRunTimeRequest) (*BatchCreateAppRunTimeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method BatchCreateAppRunTime not implemented")
@@ -2399,6 +2417,24 @@ func _LibrarianSephirahService_ListApps_Handler(srv interface{}, ctx context.Con
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(LibrarianSephirahServiceServer).ListApps(ctx, req.(*ListAppsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LibrarianSephirahService_DeleteApp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DeleteAppRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LibrarianSephirahServiceServer).DeleteApp(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: LibrarianSephirahService_DeleteApp_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LibrarianSephirahServiceServer).DeleteApp(ctx, req.(*DeleteAppRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -3317,6 +3353,10 @@ var LibrarianSephirahService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListApps",
 			Handler:    _LibrarianSephirahService_ListApps_Handler,
+		},
+		{
+			MethodName: "DeleteApp",
+			Handler:    _LibrarianSephirahService_DeleteApp_Handler,
 		},
 		{
 			MethodName: "BatchCreateAppRunTime",

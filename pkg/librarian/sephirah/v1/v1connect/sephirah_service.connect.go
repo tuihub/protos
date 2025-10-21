@@ -162,6 +162,9 @@ const (
 	// LibrarianSephirahServiceListAppsProcedure is the fully-qualified name of the
 	// LibrarianSephirahService's ListApps RPC.
 	LibrarianSephirahServiceListAppsProcedure = "/librarian.sephirah.v1.LibrarianSephirahService/ListApps"
+	// LibrarianSephirahServiceDeleteAppProcedure is the fully-qualified name of the
+	// LibrarianSephirahService's DeleteApp RPC.
+	LibrarianSephirahServiceDeleteAppProcedure = "/librarian.sephirah.v1.LibrarianSephirahService/DeleteApp"
 	// LibrarianSephirahServiceBatchCreateAppRunTimeProcedure is the fully-qualified name of the
 	// LibrarianSephirahService's BatchCreateAppRunTime RPC.
 	LibrarianSephirahServiceBatchCreateAppRunTimeProcedure = "/librarian.sephirah.v1.LibrarianSephirahService/BatchCreateAppRunTime"
@@ -396,6 +399,8 @@ type LibrarianSephirahServiceClient interface {
 	UpdateApp(context.Context, *connect.Request[v1.UpdateAppRequest]) (*connect.Response[v1.UpdateAppResponse], error)
 	// `Gebura` `Normal`
 	ListApps(context.Context, *connect.Request[v1.ListAppsRequest]) (*connect.Response[v1.ListAppsResponse], error)
+	// `Gebura` `Normal`
+	DeleteApp(context.Context, *connect.Request[v1.DeleteAppRequest]) (*connect.Response[v1.DeleteAppResponse], error)
 	// `Gebura` `Normal`
 	BatchCreateAppRunTime(context.Context, *connect.Request[v1.BatchCreateAppRunTimeRequest]) (*connect.Response[v1.BatchCreateAppRunTimeResponse], error)
 	// `Gebura` `Normal`
@@ -752,6 +757,12 @@ func NewLibrarianSephirahServiceClient(httpClient connect.HTTPClient, baseURL st
 			connect.WithSchema(librarianSephirahServiceMethods.ByName("ListApps")),
 			connect.WithClientOptions(opts...),
 		),
+		deleteApp: connect.NewClient[v1.DeleteAppRequest, v1.DeleteAppResponse](
+			httpClient,
+			baseURL+LibrarianSephirahServiceDeleteAppProcedure,
+			connect.WithSchema(librarianSephirahServiceMethods.ByName("DeleteApp")),
+			connect.WithClientOptions(opts...),
+		),
 		batchCreateAppRunTime: connect.NewClient[v1.BatchCreateAppRunTimeRequest, v1.BatchCreateAppRunTimeResponse](
 			httpClient,
 			baseURL+LibrarianSephirahServiceBatchCreateAppRunTimeProcedure,
@@ -1052,6 +1063,7 @@ type librarianSephirahServiceClient struct {
 	createApp                    *connect.Client[v1.CreateAppRequest, v1.CreateAppResponse]
 	updateApp                    *connect.Client[v1.UpdateAppRequest, v1.UpdateAppResponse]
 	listApps                     *connect.Client[v1.ListAppsRequest, v1.ListAppsResponse]
+	deleteApp                    *connect.Client[v1.DeleteAppRequest, v1.DeleteAppResponse]
 	batchCreateAppRunTime        *connect.Client[v1.BatchCreateAppRunTimeRequest, v1.BatchCreateAppRunTimeResponse]
 	sumAppRunTime                *connect.Client[v1.SumAppRunTimeRequest, v1.SumAppRunTimeResponse]
 	listAppRunTimes              *connect.Client[v1.ListAppRunTimesRequest, v1.ListAppRunTimesResponse]
@@ -1314,6 +1326,11 @@ func (c *librarianSephirahServiceClient) UpdateApp(ctx context.Context, req *con
 // ListApps calls librarian.sephirah.v1.LibrarianSephirahService.ListApps.
 func (c *librarianSephirahServiceClient) ListApps(ctx context.Context, req *connect.Request[v1.ListAppsRequest]) (*connect.Response[v1.ListAppsResponse], error) {
 	return c.listApps.CallUnary(ctx, req)
+}
+
+// DeleteApp calls librarian.sephirah.v1.LibrarianSephirahService.DeleteApp.
+func (c *librarianSephirahServiceClient) DeleteApp(ctx context.Context, req *connect.Request[v1.DeleteAppRequest]) (*connect.Response[v1.DeleteAppResponse], error) {
+	return c.deleteApp.CallUnary(ctx, req)
 }
 
 // BatchCreateAppRunTime calls librarian.sephirah.v1.LibrarianSephirahService.BatchCreateAppRunTime.
@@ -1642,6 +1659,8 @@ type LibrarianSephirahServiceHandler interface {
 	UpdateApp(context.Context, *connect.Request[v1.UpdateAppRequest]) (*connect.Response[v1.UpdateAppResponse], error)
 	// `Gebura` `Normal`
 	ListApps(context.Context, *connect.Request[v1.ListAppsRequest]) (*connect.Response[v1.ListAppsResponse], error)
+	// `Gebura` `Normal`
+	DeleteApp(context.Context, *connect.Request[v1.DeleteAppRequest]) (*connect.Response[v1.DeleteAppResponse], error)
 	// `Gebura` `Normal`
 	BatchCreateAppRunTime(context.Context, *connect.Request[v1.BatchCreateAppRunTimeRequest]) (*connect.Response[v1.BatchCreateAppRunTimeResponse], error)
 	// `Gebura` `Normal`
@@ -1993,6 +2012,12 @@ func NewLibrarianSephirahServiceHandler(svc LibrarianSephirahServiceHandler, opt
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("ListApps")),
 		connect.WithHandlerOptions(opts...),
 	)
+	librarianSephirahServiceDeleteAppHandler := connect.NewUnaryHandler(
+		LibrarianSephirahServiceDeleteAppProcedure,
+		svc.DeleteApp,
+		connect.WithSchema(librarianSephirahServiceMethods.ByName("DeleteApp")),
+		connect.WithHandlerOptions(opts...),
+	)
 	librarianSephirahServiceBatchCreateAppRunTimeHandler := connect.NewUnaryHandler(
 		LibrarianSephirahServiceBatchCreateAppRunTimeProcedure,
 		svc.BatchCreateAppRunTime,
@@ -2333,6 +2358,8 @@ func NewLibrarianSephirahServiceHandler(svc LibrarianSephirahServiceHandler, opt
 			librarianSephirahServiceUpdateAppHandler.ServeHTTP(w, r)
 		case LibrarianSephirahServiceListAppsProcedure:
 			librarianSephirahServiceListAppsHandler.ServeHTTP(w, r)
+		case LibrarianSephirahServiceDeleteAppProcedure:
+			librarianSephirahServiceDeleteAppHandler.ServeHTTP(w, r)
 		case LibrarianSephirahServiceBatchCreateAppRunTimeProcedure:
 			librarianSephirahServiceBatchCreateAppRunTimeHandler.ServeHTTP(w, r)
 		case LibrarianSephirahServiceSumAppRunTimeProcedure:
@@ -2596,6 +2623,10 @@ func (UnimplementedLibrarianSephirahServiceHandler) UpdateApp(context.Context, *
 
 func (UnimplementedLibrarianSephirahServiceHandler) ListApps(context.Context, *connect.Request[v1.ListAppsRequest]) (*connect.Response[v1.ListAppsResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.ListApps is not implemented"))
+}
+
+func (UnimplementedLibrarianSephirahServiceHandler) DeleteApp(context.Context, *connect.Request[v1.DeleteAppRequest]) (*connect.Response[v1.DeleteAppResponse], error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.DeleteApp is not implemented"))
 }
 
 func (UnimplementedLibrarianSephirahServiceHandler) BatchCreateAppRunTime(context.Context, *connect.Request[v1.BatchCreateAppRunTimeRequest]) (*connect.Response[v1.BatchCreateAppRunTimeResponse], error) {

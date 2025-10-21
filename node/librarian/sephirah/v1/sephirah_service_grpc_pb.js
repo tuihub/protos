@@ -276,6 +276,28 @@ function deserialize_librarian_sephirah_v1_DeleteAppCategoryResponse(buffer_arg)
   return librarian_sephirah_v1_gebura_pb.DeleteAppCategoryResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_sephirah_v1_DeleteAppRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.DeleteAppRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.DeleteAppRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_DeleteAppRequest(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.DeleteAppRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_DeleteAppResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_gebura_pb.DeleteAppResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.DeleteAppResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_DeleteAppResponse(buffer_arg) {
+  return librarian_sephirah_v1_gebura_pb.DeleteAppResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_DeleteAppRunTimeRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_gebura_pb.DeleteAppRunTimeRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.DeleteAppRunTimeRequest');
@@ -2423,6 +2445,18 @@ listApps: {
     requestDeserialize: deserialize_librarian_sephirah_v1_ListAppsRequest,
     responseSerialize: serialize_librarian_sephirah_v1_ListAppsResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_ListAppsResponse,
+  },
+  // `Gebura` `Normal`
+deleteApp: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/DeleteApp',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_gebura_pb.DeleteAppRequest,
+    responseType: librarian_sephirah_v1_gebura_pb.DeleteAppResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_DeleteAppRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_DeleteAppRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_DeleteAppResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_DeleteAppResponse,
   },
   // `Gebura` `Normal`
 batchCreateAppRunTime: {

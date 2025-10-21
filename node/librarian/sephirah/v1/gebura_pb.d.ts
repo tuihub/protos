@@ -628,6 +628,44 @@ export namespace ListAppsResponse {
   }
 }
 
+export class DeleteAppRequest extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
+  getId(): librarian_v1_wellknown_pb.InternalID | undefined;
+  setId(value?: librarian_v1_wellknown_pb.InternalID): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteAppRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteAppRequest): DeleteAppRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteAppRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteAppRequest;
+  static deserializeBinaryFromReader(message: DeleteAppRequest, reader: jspb.BinaryReader): DeleteAppRequest;
+}
+
+export namespace DeleteAppRequest {
+  export type AsObject = {
+    id?: librarian_v1_wellknown_pb.InternalID.AsObject,
+  }
+}
+
+export class DeleteAppResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DeleteAppResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DeleteAppResponse): DeleteAppResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DeleteAppResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DeleteAppResponse;
+  static deserializeBinaryFromReader(message: DeleteAppResponse, reader: jspb.BinaryReader): DeleteAppResponse;
+}
+
+export namespace DeleteAppResponse {
+  export type AsObject = {
+  }
+}
+
 export class BatchCreateAppRunTimeRequest extends jspb.Message {
   clearAppRunTimesList(): void;
   getAppRunTimesList(): Array<AppRunTime>;
