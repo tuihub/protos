@@ -25,7 +25,9 @@ plugins:
     opt: paths=source_relative
   - local: protoc-gen-connect-go
     out: pkg
-    opt: paths=source_relative
+    opt:
+      - paths=source_relative
+      - simple
 
   #JS
   - remote: buf.build/protocolbuffers/js:v3.21.4
