@@ -31,14 +31,23 @@ func RunTestSuite(ctx context.Context, host string, port int, verbose int) error
 	// Run testCases
 	testCaseErr := make([]error, len(testCases))
 	for i, tc := range testCases {
-		if tc.RequireLevel == must {
-			if err := tc.Runner(ctx, g); err != nil {
-				testCaseErr[i] = err
+		if verbose > 1 {
+			fmt.Printf("Running test case: %s\n", tc.ID)
+		}
+		if err := tc.Runner(ctx, g); err != nil {
+			testCaseErr[i] = err
+			if verbose > 1 {
+				fmt.Printf("  FAILED: %v\n", err)
+			} else {
+				fmt.Printf("  FAILED\n")
+			}
+		} else {
+			if verbose > 1 {
+				fmt.Printf("  PASSED\n")
 			}
 		}
 	}
-	// Generate report
-	if verbose == 0 { // Print pass count group by level
+	if verbose == 0 {
 		passCount := make(map[testCaseRequireLevel]int)
 		totalCount := make(map[testCaseRequireLevel]int)
 		for i, err := range testCaseErr {
@@ -81,6 +90,10 @@ type globals struct {
 	SephirahServerHost string
 	SephirahServerPort int
 	SephirahClient     pb.LibrarianSephirahServiceClient
+	// Auth Test State
+	AccessToken     string
+	RefreshToken    string
+	OldRefreshToken string
 }
 
 type testCase struct {

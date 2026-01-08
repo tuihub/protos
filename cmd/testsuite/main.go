@@ -1,4 +1,4 @@
-package testsuite
+package main
 
 import (
 	"context"
@@ -17,19 +17,25 @@ import (
 // -vv: Very verbose
 // -vvv: Extremely verbose
 func main() {
-	// Set args
+	serverHost := flag.String("server-host", "127.0.0.1", "Server host")
+	serverPort := flag.Int("server-port", 10000, "Server port")
+	verboseFlag := flag.Bool("v", false, "Verbose")
+	veryVerboseFlag := flag.Bool("vv", false, "Very verbose")
+	extremelyVerboseFlag := flag.Bool("vvv", false, "Extremely verbose")
+
 	flag.Parse()
-	sephirahServerHost := flag.Lookup("server-host").Value.(flag.Getter).Get().(string)
-	sephirahServerPort := flag.Lookup("server-port").Value.(flag.Getter).Get().(int)
-	// Set verbose level
+
+	sephirahServerHost := *serverHost
+	sephirahServerPort := *serverPort
+
 	verbose := 0
-	if flag.Lookup("v").Value.(flag.Getter).Get().(bool) {
+	if *verboseFlag {
 		verbose++
 	}
-	if flag.Lookup("vv").Value.(flag.Getter).Get().(bool) {
+	if *veryVerboseFlag {
 		verbose++
 	}
-	if flag.Lookup("vvv").Value.(flag.Getter).Get().(bool) {
+	if *extremelyVerboseFlag {
 		verbose++
 	}
 	fmt.Printf("Running TestSuite on %s:%d, Verbose Level: %d\n", sephirahServerHost, sephirahServerPort, verbose)
