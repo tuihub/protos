@@ -38,8 +38,6 @@ func RunTestSuite(ctx context.Context, host string, port int, verbose int) error
 			testCaseErr[i] = err
 			if verbose > 1 {
 				fmt.Printf("  FAILED: %v\n", err)
-			} else {
-				fmt.Printf("  FAILED\n")
 			}
 		} else {
 			if verbose > 1 {

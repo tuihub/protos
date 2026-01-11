@@ -1,7 +1,7 @@
 ---
 id: FS-0001-AUTH
 title: User token validation behavior specification
-version: 1.0.0
+version: 0.0.1
 status: draft
 created: 2026-01-08
 last_updated: 2026-01-08
@@ -17,13 +17,13 @@ Both tokens MUST be returned in the response from `GetToken` and `RefreshToken` 
 
 ## FS-0001-AUTH-GRPC_AUTHENTICATION
 
-The system MUST support gRPC bearer-token authentication. For authenticated gRPC requests, the request metadata MUST include an `authorization` field with the value `Bearer <token>`, where `<token>` is the access_token.
-
-When calling the `RefreshToken` RPC, the refresh_token MUST be passed via the gRPC metadata `authorization` field with the value `Bearer <refresh_token>`, where `<refresh_token>` is the valid refresh_token.
+The system MUST support gRPC bearer-token authentication. For authenticated gRPC requests, the request metadata MUST include an `authorization` field with the value `Bearer <token>`, where `<token>` is normally the access_token except for some specific methods.
 
 ## FS-0001-AUTH-TOKEN_REFRESH
 
 The system MUST support token refresh functionality. The refresh operation MUST require a valid refresh_token.
+
+When calling the `RefreshToken` RPC, the refresh_token MUST be passed via the gRPC bearer-token authentication.
 
 A refresh_token MUST be single-use only. Once used to refresh tokens, the previous refresh_token MUST be invalidated and a new refresh_token MUST be issued.
 
