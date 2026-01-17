@@ -30,8 +30,7 @@ func init() {
 		g.AccessToken = resp.AccessToken
 		g.RefreshToken = resp.RefreshToken
 
-		ctx = withBearerToken(ctx, g.RefreshToken)
-		refreshResp, err := g.SephirahClient.RefreshToken(ctx, &pb.RefreshTokenRequest{})
+		refreshResp, err := g.SephirahClient.RefreshToken(withBearerToken(ctx, g.RefreshToken), &pb.RefreshTokenRequest{})
 		if err != nil {
 			return fmt.Errorf("RefreshToken failed: %w", err)
 		}
@@ -47,8 +46,7 @@ func init() {
 	}, withDependOnIDs("FS-0000-INIT-SEPHIRAH_CLIENT"))
 
 	registerTestCase("FS-0001-AUTH-GRPC_AUTHENTICATION", must, func(ctx context.Context, g *globals) error {
-		ctx = withBearerToken(ctx, g.AccessToken)
-		resp, err := g.SephirahClient.GetUser(ctx, &pb.GetUserRequest{})
+		resp, err := g.SephirahClient.GetUser(withBearerToken(ctx, g.AccessToken), &pb.GetUserRequest{})
 		if err != nil {
 			return fmt.Errorf("GetUser with access_token failed: %w", err)
 		}
@@ -56,8 +54,7 @@ func init() {
 			return fmt.Errorf("GetUser response user is nil")
 		}
 
-		ctx = withBearerToken(ctx, g.RefreshToken)
-		_, err = g.SephirahClient.RefreshToken(ctx, &pb.RefreshTokenRequest{})
+		_, err = g.SephirahClient.RefreshToken(withBearerToken(ctx, g.RefreshToken), &pb.RefreshTokenRequest{})
 		if err != nil {
 			return fmt.Errorf("RefreshToken with refresh_token failed: %w", err)
 		}
@@ -68,8 +65,7 @@ func init() {
 		oldAccessToken := g.AccessToken
 		oldRefreshToken := g.RefreshToken
 
-		ctx = withBearerToken(ctx, oldRefreshToken)
-		resp, err := g.SephirahClient.RefreshToken(ctx, &pb.RefreshTokenRequest{})
+		resp, err := g.SephirahClient.RefreshToken(withBearerToken(ctx, oldRefreshToken), &pb.RefreshTokenRequest{})
 		if err != nil {
 			return fmt.Errorf("RefreshToken failed: %w", err)
 		}
@@ -89,8 +85,7 @@ func init() {
 		g.RefreshToken = resp.RefreshToken
 		g.OldRefreshToken = oldRefreshToken
 
-		ctx = withBearerToken(ctx, g.OldRefreshToken)
-		_, err = g.SephirahClient.RefreshToken(ctx, &pb.RefreshTokenRequest{})
+		_, err = g.SephirahClient.RefreshToken(withBearerToken(ctx, g.OldRefreshToken), &pb.RefreshTokenRequest{})
 		if err == nil {
 			return fmt.Errorf("RefreshToken with used refresh_token should fail")
 		}
@@ -148,8 +143,7 @@ func init() {
 	}, withDependOnIDs("FS-0001-AUTH-TOKEN_STRUCTURE"))
 
 	registerTestCase("FS-0001-AUTH-TOKEN_REVOCATION", may, func(ctx context.Context, g *globals) error {
-		ctx = withBearerToken(ctx, g.AccessToken)
-		sessionsResp, err := g.SephirahClient.ListUserSessions(ctx, &pb.ListUserSessionsRequest{})
+		sessionsResp, err := g.SephirahClient.ListUserSessions(withBearerToken(ctx, g.AccessToken), &pb.ListUserSessionsRequest{})
 		if err != nil {
 			return fmt.Errorf("ListUserSessions failed: %w", err)
 		}
@@ -165,8 +159,7 @@ func init() {
 			return fmt.Errorf("DeleteUserSession failed: %w", err)
 		}
 
-		ctx = withBearerToken(ctx, g.AccessToken)
-		_, err = g.SephirahClient.GetUser(ctx, &pb.GetUserRequest{})
+		_, err = g.SephirahClient.GetUser(withBearerToken(ctx, g.AccessToken), &pb.GetUserRequest{})
 		if err == nil {
 			return fmt.Errorf("GetUser should fail after session deletion")
 		}

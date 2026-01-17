@@ -30,13 +30,13 @@ func main() {
 
 	verbose := 0
 	if *verboseFlag {
-		verbose++
+		verbose = 1
 	}
 	if *veryVerboseFlag {
-		verbose++
+		verbose = 2
 	}
 	if *extremelyVerboseFlag {
-		verbose++
+		verbose = 3
 	}
 	fmt.Printf("Running TestSuite on %s:%d, Verbose Level: %d\n", sephirahServerHost, sephirahServerPort, verbose)
 	err := featuresets.RunTestSuite(context.Background(), sephirahServerHost, sephirahServerPort, verbose)
