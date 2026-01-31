@@ -4,39 +4,35 @@ title: User token validation behavior specification
 version: 0.0.1
 status: draft
 created: 2026-01-08
-last_updated: 2026-01-08
+last_updated: 2026-01-31
 ---
+
+## FS-0001-AUTH-ADMIN_ACCOUNT
+
+The system MUST provide a pre-configured administrator account with `username="admin"` and `password="admin"`.
 
 ## FS-0001-AUTH-TOKEN_STRUCTURE
 
-The user token system MUST consist of two token types:
-- **access_token**: Used for authentication in gRPC requests
-- **refresh_token**: Used to obtain new access tokens
-
-Both tokens MUST be returned in the response from `GetToken` and `RefreshToken` RPC calls.
+`GetTokenResponse` and `RefreshTokenResponse` MUST contain both `access_token` and `refresh_token` fields with non-empty values.
 
 ## FS-0001-AUTH-GRPC_AUTHENTICATION
 
-The system MUST support gRPC bearer-token authentication. For authenticated gRPC requests, the request metadata MUST include an `authorization` field with the value `Bearer <token>`, where `<token>` is normally the access_token except for some specific methods.
+Authenticated gRPC requests MUST include `authorization` metadata field with value `Bearer <access_token>`. The `RefreshToken` RPC MUST accept `authorization` metadata field with value `Bearer <refresh_token>`.
 
 ## FS-0001-AUTH-TOKEN_REFRESH
 
-The system MUST support token refresh functionality. The refresh operation MUST require a valid refresh_token.
-
-When calling the `RefreshToken` RPC, the refresh_token MUST be passed via the gRPC bearer-token authentication.
-
-A refresh_token MUST be single-use only. Once used to refresh tokens, the previous refresh_token MUST be invalidated and a new refresh_token MUST be issued.
+`RefreshTokenRequest` with valid `refresh_token` in `authorization` metadata MUST return new `access_token` and `refresh_token` in `RefreshTokenResponse`. The previous `refresh_token` MUST be invalidated after successful refresh. Reusing an invalidated `refresh_token` MUST fail.
 
 ## FS-0001-AUTH-TOKEN_EXPIRATION
 
-The access_token SHOULD have an expiration time not exceeding 1 hour.
+`access_token` expiration time SHOULD NOT exceed 1 hour.
 
-The refresh_token SHOULD have an expiration time not exceeding 7 days.
+`refresh_token` expiration time SHOULD NOT exceed 7 days.
 
 ## FS-0001-AUTH-TOKEN_FORMAT
 
-The tokens MAY use JWT (JSON Web Token) format. If JWT format is used, the token payload SHOULD contain user identification and expiration time information.
+`access_token` and `refresh_token` MAY use JWT format. JWT payload SHOULD include `exp` claim for expiration time.
 
 ## FS-0001-AUTH-TOKEN_REVOCATION
 
-The system MAY support active token revocation. When a token is revoked, the revocation MUST take effect within 1 minute.
+`DeleteUserSession` RPC MAY be supported for token revocation. Revoked tokens MUST be rejected within 1 minute.

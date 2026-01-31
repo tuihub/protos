@@ -13,23 +13,52 @@ import (
 )
 
 func init() {
-	registerTestCase("FS-0001-AUTH-TOKEN_STRUCTURE", must, func(ctx context.Context, g *globals) error {
+	registerTestCase("FS-0001-AUTH-ADMIN_ACCOUNT", must, func(ctx context.Context, g *globals) error {
+		// Verify admin account exists with username "admin" and password "admin"
 		resp, err := g.SephirahClient.GetToken(ctx, &pb.GetTokenRequest{
 			Username: "admin",
 			Password: "admin",
 		})
 		if err != nil {
-			return fmt.Errorf("GetToken failed: %w", err)
+			return fmt.Errorf("admin account login failed (username: admin, password: admin): %w", err)
 		}
 		if resp.AccessToken == "" {
-			return fmt.Errorf("access_token is empty")
+			return fmt.Errorf("admin login returned empty access_token")
 		}
 		if resp.RefreshToken == "" {
-			return fmt.Errorf("refresh_token is empty")
+			return fmt.Errorf("admin login returned empty refresh_token")
 		}
+
+		// Verify the account is actually an admin
+		userResp, err := g.SephirahClient.GetUser(withBearerToken(ctx, resp.AccessToken), &pb.GetUserRequest{})
+		if err != nil {
+			return fmt.Errorf("failed to get admin user info: %w", err)
+		}
+		if userResp.User == nil {
+			return fmt.Errorf("GetUser returned nil user for admin")
+		}
+		if userResp.User.Type != pb.UserType_USER_TYPE_ADMIN {
+			return fmt.Errorf("admin account type is %v, expected USER_TYPE_ADMIN", userResp.User.Type)
+		}
+
+		// Store admin tokens for subsequent tests
 		g.AccessToken = resp.AccessToken
 		g.RefreshToken = resp.RefreshToken
+		g.AdminUserID = userResp.User.Id
 
+		return nil
+	}, withDependOnIDs("FS-0000-INIT-SEPHIRAH_CLIENT"))
+
+	registerTestCase("FS-0001-AUTH-TOKEN_STRUCTURE", must, func(ctx context.Context, g *globals) error {
+		// Verify both access_token and refresh_token are present
+		if g.AccessToken == "" {
+			return fmt.Errorf("access_token is empty")
+		}
+		if g.RefreshToken == "" {
+			return fmt.Errorf("refresh_token is empty")
+		}
+
+		// Test token refresh to verify both token types are returned
 		refreshResp, err := g.SephirahClient.RefreshToken(withBearerToken(ctx, g.RefreshToken), &pb.RefreshTokenRequest{})
 		if err != nil {
 			return fmt.Errorf("RefreshToken failed: %w", err)
@@ -40,10 +69,12 @@ func init() {
 		if refreshResp.RefreshToken == "" {
 			return fmt.Errorf("refresh response refresh_token is empty")
 		}
+
+		// Update tokens for subsequent tests
 		g.AccessToken = refreshResp.AccessToken
 		g.RefreshToken = refreshResp.RefreshToken
 		return nil
-	}, withDependOnIDs("FS-0000-INIT-SEPHIRAH_CLIENT"))
+	}, withDependOnIDs("FS-0001-AUTH-ADMIN_ACCOUNT"))
 
 	registerTestCase("FS-0001-AUTH-GRPC_AUTHENTICATION", must, func(ctx context.Context, g *globals) error {
 		resp, err := g.SephirahClient.GetUser(withBearerToken(ctx, g.AccessToken), &pb.GetUserRequest{})

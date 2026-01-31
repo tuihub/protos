@@ -10,6 +10,7 @@ import (
 	"github.com/go-kratos/kratos/v2/middleware/recovery"
 	"github.com/go-kratos/kratos/v2/transport/grpc"
 	pb "github.com/tuihub/protos/pkg/librarian/sephirah/v1"
+	v1 "github.com/tuihub/protos/pkg/librarian/v1"
 )
 
 func RunTestSuite(ctx context.Context, host string, port int, verbose int) error {
@@ -92,6 +93,12 @@ type globals struct {
 	AccessToken     string
 	RefreshToken    string
 	OldRefreshToken string
+	// User Test State
+	AdminUserID       *v1.InternalID
+	NormalUsername    string
+	NormalPassword    string
+	NormalUserID      *v1.InternalID
+	NormalAccessToken string
 }
 
 type testCase struct {
