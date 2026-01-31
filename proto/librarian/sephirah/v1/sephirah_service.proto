@@ -50,11 +50,13 @@ service LibrarianSephirahService {
   // The server could add extra limits to non-registered device
   rpc RegisterDevice(RegisterDeviceRequest) returns (RegisterDeviceResponse);
   // `Tiphereth` `Normal`
+  rpc GetDevice(GetDeviceRequest) returns (GetDeviceResponse);
+  // `Tiphereth` `Normal`
   rpc ListUserSessions(ListUserSessionsRequest) returns (ListUserSessionsResponse);
-  // `Tiphereth` `Normal` delete session will revoke refresh_token immediately.
+  // `Tiphereth` `Normal` revoke session will revoke refresh_token immediately.
   // NOTE: This can also be used to log out at server side.
-  // NOTE2: Delete session will not affect device registration.
-  rpc DeleteUserSession(DeleteUserSessionRequest) returns (DeleteUserSessionResponse);
+  // NOTE2: Revoke session will not affect device registration.
+  rpc RevokeUserSession(RevokeUserSessionRequest) returns (RevokeUserSessionResponse);
 
   // `Tiphereth` `Normal` Bind third-party account to current user.
   rpc LinkAccount(LinkAccountRequest) returns (LinkAccountResponse);
