@@ -101,6 +101,30 @@ type globals struct {
 	NormalPassword    string
 	NormalUserID      *v1.InternalID
 	NormalAccessToken string
+	// Session Test State
+	SessionState *SessionTestState
+}
+
+type SessionTestState struct {
+	// Session tracking
+	InitialSessionID    *v1.InternalID
+	InitialRefreshToken string
+	InitialAccessToken  string
+	SecondSessionID     *v1.InternalID
+	SecondRefreshToken  string
+	SecondAccessToken   string
+	OldRefreshToken     string
+	// Device tracking
+	Device1ID           *v1.InternalID
+	Device1LocalID      string
+	Device1SessionID    *v1.InternalID
+	Device1RefreshToken string
+	Device1AccessToken  string
+	Device2ID           *v1.InternalID
+	Device2LocalID      string
+	// Multi-user tracking
+	NormalUserDevice1RefreshToken string
+	NormalUserDevice1AccessToken  string
 }
 
 type testCase struct {

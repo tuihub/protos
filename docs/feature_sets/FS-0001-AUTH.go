@@ -183,7 +183,7 @@ func init() {
 		}
 		sessionID := sessionsResp.Sessions[0].Id
 
-		_, err = g.SephirahClient.DeleteUserSession(ctx, &pb.DeleteUserSessionRequest{
+		_, err = g.SephirahClient.RevokeUserSession(withBearerToken(ctx, g.AccessToken), &pb.RevokeUserSessionRequest{
 			SessionId: sessionID,
 		})
 		if err != nil {
