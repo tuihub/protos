@@ -3,9 +3,11 @@ package featuresets
 import (
 	"context"
 	"fmt"
+	"io"
 	"regexp"
 	"sort"
 	"strconv"
+	"strings"
 
 	"github.com/go-kratos/kratos/v2/middleware/recovery"
 	"github.com/go-kratos/kratos/v2/transport/grpc"
@@ -214,4 +216,208 @@ func sortTestCases() error {
 
 	testCases = sorted
 	return nil
+}
+
+// PrintMermaidTree generates a Mermaid diagram showing the dependency tree of test cases
+func PrintMermaidTree(w io.Writer) error {
+	// Ensure test cases are sorted and validated
+	if err := sortTestCases(); err != nil {
+		return fmt.Errorf("cannot generate tree: %w", err)
+	}
+
+	// Build dependency graph
+	graph, err := buildDependencyGraph()
+	if err != nil {
+		return err
+	}
+
+	// Generate Mermaid output
+	if err := graph.toMermaid(w); err != nil {
+		return err
+	}
+
+	// Print statistics
+	graph.printStatistics(w)
+
+	return nil
+}
+
+// dependencyGraph represents the test case dependency structure
+type dependencyGraph struct {
+	nodes      map[string]*graphNode
+	roots      []string
+	levelCount map[testCaseRequireLevel]int
+	maxDepth   int
+	leafCount  int
+}
+
+// graphNode represents a single test case node in the dependency graph
+type graphNode struct {
+	testCase testCase
+	children []string
+	depth    int
+}
+
+// buildDependencyGraph constructs the dependency graph from testCases
+func buildDependencyGraph() (*dependencyGraph, error) {
+	graph := &dependencyGraph{
+		nodes:      make(map[string]*graphNode),
+		roots:      make([]string, 0),
+		levelCount: make(map[testCaseRequireLevel]int),
+	}
+
+	// Create nodes for all test cases
+	for _, tc := range testCases {
+		graph.nodes[tc.ID] = &graphNode{
+			testCase: tc,
+			children: make([]string, 0),
+		}
+		graph.levelCount[tc.RequireLevel]++
+	}
+
+	// Build parent-child relationships
+	for _, tc := range testCases {
+		if len(tc.DependOnIDs) == 0 {
+			// This is a root node
+			graph.roots = append(graph.roots, tc.ID)
+		} else {
+			// Add this node as a child to all its dependencies
+			for _, depID := range tc.DependOnIDs {
+				if parentNode, exists := graph.nodes[depID]; exists {
+					parentNode.children = append(parentNode.children, tc.ID)
+				}
+			}
+		}
+	}
+
+	// Calculate depths
+	graph.calculateDepths()
+
+	// Count leaf nodes (nodes with no children)
+	for _, node := range graph.nodes {
+		if len(node.children) == 0 {
+			graph.leafCount++
+		}
+	}
+
+	return graph, nil
+}
+
+// calculateDepths computes the depth of each node from root nodes
+func (g *dependencyGraph) calculateDepths() {
+	// BFS from all root nodes
+	queue := make([]string, len(g.roots))
+	copy(queue, g.roots)
+
+	// Initialize root depths
+	for _, rootID := range g.roots {
+		g.nodes[rootID].depth = 0
+	}
+
+	// Process queue
+	for len(queue) > 0 {
+		currentID := queue[0]
+		queue = queue[1:]
+		currentNode := g.nodes[currentID]
+
+		// Update max depth
+		if currentNode.depth > g.maxDepth {
+			g.maxDepth = currentNode.depth
+		}
+
+		// Process children
+		for _, childID := range currentNode.children {
+			childNode := g.nodes[childID]
+			// Set child depth to max of all parent depths + 1
+			newDepth := currentNode.depth + 1
+			if newDepth > childNode.depth {
+				childNode.depth = newDepth
+			}
+			queue = append(queue, childID)
+		}
+	}
+}
+
+// toMermaid generates Mermaid diagram syntax
+func (g *dependencyGraph) toMermaid(w io.Writer) error {
+	fmt.Fprintln(w, "```mermaid")
+	fmt.Fprintln(w, "graph TD")
+
+	// Define all nodes
+	for _, tc := range testCases {
+		nodeID := sanitizeNodeID(tc.ID)
+		label := fmt.Sprintf("%s<br/>%s", tc.ID, tc.RequireLevel)
+		fmt.Fprintf(w, "    %s[\"%s\"]\n", nodeID, label)
+	}
+
+	// Add edges
+	fmt.Fprintln(w)
+	for _, tc := range testCases {
+		nodeID := sanitizeNodeID(tc.ID)
+		node := g.nodes[tc.ID]
+		for _, childID := range node.children {
+			childNodeID := sanitizeNodeID(childID)
+			fmt.Fprintf(w, "    %s --> %s\n", nodeID, childNodeID)
+		}
+	}
+
+	// Add styling
+	fmt.Fprintln(w)
+	for _, tc := range testCases {
+		nodeID := sanitizeNodeID(tc.ID)
+		fillColor, textColor := getColorByLevel(tc.RequireLevel)
+		fmt.Fprintf(w, "    style %s fill:%s,stroke:#333,stroke-width:2px,color:%s\n",
+			nodeID, fillColor, textColor)
+	}
+
+	fmt.Fprintln(w, "```")
+	return nil
+}
+
+// printStatistics outputs statistics about the dependency tree
+func (g *dependencyGraph) printStatistics(w io.Writer) {
+	total := len(testCases)
+
+	fmt.Fprintln(w)
+	fmt.Fprintln(w, "## Dependency Tree Statistics")
+	fmt.Fprintln(w)
+	fmt.Fprintf(w, "- **Total test cases**: %d\n", total)
+
+	// Print counts by requirement level
+	if count := g.levelCount[must]; count > 0 {
+		percentage := float64(count) / float64(total) * 100
+		fmt.Fprintf(w, "- **MUST**: %d cases (%.1f%%)\n", count, percentage)
+	}
+	if count := g.levelCount[should]; count > 0 {
+		percentage := float64(count) / float64(total) * 100
+		fmt.Fprintf(w, "- **SHOULD**: %d cases (%.1f%%)\n", count, percentage)
+	}
+	if count := g.levelCount[may]; count > 0 {
+		percentage := float64(count) / float64(total) * 100
+		fmt.Fprintf(w, "- **MAY**: %d cases (%.1f%%)\n", count, percentage)
+	}
+
+	fmt.Fprintf(w, "- **Maximum depth**: %d levels\n", g.maxDepth+1)
+	fmt.Fprintf(w, "- **Root nodes**: %d\n", len(g.roots))
+	fmt.Fprintf(w, "- **Leaf nodes**: %d\n", g.leafCount)
+}
+
+// sanitizeNodeID converts a test case ID to a valid Mermaid node identifier
+func sanitizeNodeID(id string) string {
+	// Replace hyphens with underscores for Mermaid compatibility
+	return strings.ReplaceAll(id, "-", "_")
+}
+
+// getColorByLevel returns fill and text colors for a requirement level
+func getColorByLevel(level testCaseRequireLevel) (fillColor, textColor string) {
+	switch level {
+	case must:
+		return "#4CAF50", "#fff" // Green with white text
+	case should:
+		return "#2196F3", "#fff" // Blue with white text
+	case may:
+		return "#FFC107", "#000" // Amber with black text
+	default:
+		return "#9E9E9E", "#fff" // Gray with white text
+	}
 }

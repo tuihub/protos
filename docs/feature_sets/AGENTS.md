@@ -114,27 +114,47 @@ func init() {
 
 ## Running Tests
 
+### Available Commands
+
+The testsuite provides two main commands:
+
+```bash
+# From the repository root
+
+# Run the test suite (default command)
+go run ./cmd/testsuite run --server-host=localhost --server-port=8080
+
+# Generate dependency tree visualization
+go run ./cmd/testsuite tree
+
+# Show help
+go run ./cmd/testsuite help
+```
+
 ### Local Testing
 
 ```bash
 # From the repository root
-cd docs/feature_sets
 
-# Run the test suite against a server
-go run . --host=localhost --port=8080
+# Run the test suite against a server (explicit)
+go run ./cmd/testsuite run --server-host=localhost --server-port=8080
 
-# Or use the test command
-go test -v
+# Run with default parameters (127.0.0.1:10000)
+go run ./cmd/testsuite run
+
+# Backward compatible - omitting 'run' defaults to run command
+go run ./cmd/testsuite --server-host=localhost --server-port=8080
 
 # Run with verbose output
-go run . --host=localhost --port=8080 --verbose=2
+go run ./cmd/testsuite run --server-host=localhost --server-port=8080 -vv
 ```
 
 ### Verbose Levels
 
 - `0` (default): Summary only (pass/fail counts by requirement level)
-- `1`: Show test results
-- `2`: Show detailed test execution
+- `1` (`-v`): Show test results
+- `2` (`-vv`): Show detailed test execution
+- `3` (`-vvv`): Extremely verbose output
 
 ### Test Output
 
@@ -148,6 +168,41 @@ Running test case: FS-0001-AUTH-GRPC_AUTHENTICATION
 MUST Cases    5/5
 SHOULD Cases  3/4
 MAY Cases     2/3
+```
+
+### Visualizing Dependencies
+
+Generate a Mermaid diagram showing test case dependencies:
+
+```bash
+# From the repository root
+
+# Output to terminal
+go run ./cmd/testsuite tree
+
+# Save to file
+go run ./cmd/testsuite tree > dependency-tree.md
+```
+
+The tree command generates:
+- **Mermaid diagram**: Visual representation of test dependencies
+- **Statistics**: Test counts by requirement level, max depth, root/leaf nodes
+- **Color coding**: 
+  - 🟢 Green = MUST requirements
+  - 🔵 Blue = SHOULD requirements
+  - 🟡 Yellow = MAY requirements
+
+**Example tree output:**
+
+```mermaid
+graph TD
+    FS_0000_INIT_SEPHIRAH_CLIENT["FS-0000-INIT-SEPHIRAH_CLIENT<br/>MUST"]
+    FS_0001_AUTH_ADMIN_ACCOUNT["FS-0001-AUTH-ADMIN_ACCOUNT<br/>MUST"]
+    
+    FS_0000_INIT_SEPHIRAH_CLIENT --> FS_0001_AUTH_ADMIN_ACCOUNT
+    
+    style FS_0000_INIT_SEPHIRAH_CLIENT fill:#4CAF50,stroke:#333,stroke-width:2px,color:#fff
+    style FS_0001_AUTH_ADMIN_ACCOUNT fill:#4CAF50,stroke:#333,stroke-width:2px,color:#fff
 ```
 
 ## Development Workflow
@@ -177,11 +232,16 @@ MAY Cases     2/3
 
 6. **Test locally**:
    ```bash
-   cd docs/feature_sets
-   go run . --host=your-test-server --port=port
+   cd /path/to/protos
+   go run ./cmd/testsuite run --server-host=your-test-server --server-port=port
    ```
 
-7. **Commit both files together**
+7. **Visualize dependencies** (optional):
+   ```bash
+   go run ./cmd/testsuite tree
+   ```
+
+8. **Commit both files together**
 
 ### Modifying Existing Feature Sets
 
@@ -197,6 +257,7 @@ MAY Cases     2/3
 - **Clear test names**: Test case IDs should be self-descriptive
 - **Meaningful errors**: Return descriptive error messages from test functions
 - **Use dependencies**: Leverage `withDependOnIDs()` to establish test order
+- **Visualize complex dependencies**: Use `testsuite tree` to understand test relationships
 - **Test isolation**: Each test should clean up after itself when possible
 - **Update docs**: Keep markdown specs synchronized with test implementation
 
