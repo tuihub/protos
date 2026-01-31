@@ -9,11 +9,30 @@ import (
 	"time"
 
 	pb "github.com/tuihub/protos/pkg/librarian/sephirah/v1"
+	v1 "github.com/tuihub/protos/pkg/librarian/v1"
 	"google.golang.org/grpc/metadata"
 )
 
+// AuthState holds state for FS-0001-AUTH test cases
+type AuthState struct {
+	AccessToken  string
+	RefreshToken string
+	AdminUserID  *v1.InternalID
+}
+
+func getAuthState(g *globals) *AuthState {
+	if state, ok := g.State["fs0001_auth"]; ok {
+		return state.(*AuthState)
+	}
+	state := &AuthState{}
+	g.State["fs0001_auth"] = state
+	return state
+}
+
 func init() {
 	registerTestCase("FS-0001-AUTH-ADMIN_ACCOUNT", must, func(ctx context.Context, g *globals) error {
+		state := getAuthState(g)
+
 		// Verify admin account exists with username "admin" and password "admin"
 		resp, err := g.SephirahClient.GetToken(ctx, &pb.GetTokenRequest{
 			Username: "admin",
@@ -41,43 +60,35 @@ func init() {
 			return fmt.Errorf("admin account type is %v, expected USER_TYPE_ADMIN", userResp.User.Type)
 		}
 
-		// Store admin tokens for subsequent tests
-		g.AccessToken = resp.AccessToken
-		g.RefreshToken = resp.RefreshToken
-		g.AdminUserID = userResp.User.Id
+		// Store admin tokens and ID for subsequent tests
+		state.AccessToken = resp.AccessToken
+		state.RefreshToken = resp.RefreshToken
+		state.AdminUserID = userResp.User.Id
 
 		return nil
 	}, withDependOnIDs("FS-0000-INIT-SEPHIRAH_CLIENT"))
 
 	registerTestCase("FS-0001-AUTH-TOKEN_STRUCTURE", must, func(ctx context.Context, g *globals) error {
-		// Verify both access_token and refresh_token are present
-		if g.AccessToken == "" {
+		state := getAuthState(g)
+
+		// Verify both access_token and refresh_token are present from ADMIN_ACCOUNT
+		if state.AccessToken == "" {
 			return fmt.Errorf("access_token is empty")
 		}
-		if g.RefreshToken == "" {
+		if state.RefreshToken == "" {
 			return fmt.Errorf("refresh_token is empty")
 		}
 
-		// Test token refresh to verify both token types are returned
-		refreshResp, err := g.SephirahClient.RefreshToken(withBearerToken(ctx, g.RefreshToken), &pb.RefreshTokenRequest{})
-		if err != nil {
-			return fmt.Errorf("RefreshToken failed: %w", err)
-		}
-		if refreshResp.AccessToken == "" {
-			return fmt.Errorf("refresh response access_token is empty")
-		}
-		if refreshResp.RefreshToken == "" {
-			return fmt.Errorf("refresh response refresh_token is empty")
-		}
-
-		// Update tokens for subsequent tests
-		g.AccessToken = refreshResp.AccessToken
-		g.RefreshToken = refreshResp.RefreshToken
+		// This test only validates structure, does not perform refresh
+		// (to avoid state pollution - refresh is tested in TOKEN_REFRESH)
 		return nil
 	}, withDependOnIDs("FS-0001-AUTH-ADMIN_ACCOUNT"))
 
 	registerTestCase("FS-0001-AUTH-GRPC_AUTHENTICATION", must, func(ctx context.Context, g *globals) error {
-		resp, err := g.SephirahClient.GetUser(withBearerToken(ctx, g.AccessToken), &pb.GetUserRequest{})
+		state := getAuthState(g)
+
+		// Test access_token authentication
+		resp, err := g.SephirahClient.GetUser(withBearerToken(ctx, state.AccessToken), &pb.GetUserRequest{})
 		if err != nil {
 			return fmt.Errorf("GetUser with access_token failed: %w", err)
 		}
@@ -85,7 +96,8 @@ func init() {
 			return fmt.Errorf("GetUser response user is nil")
 		}
 
-		_, err = g.SephirahClient.RefreshToken(withBearerToken(ctx, g.RefreshToken), &pb.RefreshTokenRequest{})
+		// Test refresh_token authentication
+		_, err = g.SephirahClient.RefreshToken(withBearerToken(ctx, state.RefreshToken), &pb.RefreshTokenRequest{})
 		if err != nil {
 			return fmt.Errorf("RefreshToken with refresh_token failed: %w", err)
 		}
@@ -93,41 +105,58 @@ func init() {
 	}, withDependOnIDs("FS-0001-AUTH-TOKEN_STRUCTURE"))
 
 	registerTestCase("FS-0001-AUTH-TOKEN_REFRESH", must, func(ctx context.Context, g *globals) error {
-		oldAccessToken := g.AccessToken
-		oldRefreshToken := g.RefreshToken
+		// Self-contained: get a fresh token pair to avoid polluting other tests
+		loginResp, err := g.SephirahClient.GetToken(ctx, &pb.GetTokenRequest{
+			Username: "admin",
+			Password: "admin",
+		})
+		if err != nil {
+			return fmt.Errorf("GetToken failed: %w", err)
+		}
 
-		resp, err := g.SephirahClient.RefreshToken(withBearerToken(ctx, oldRefreshToken), &pb.RefreshTokenRequest{})
+		oldAccessToken := loginResp.AccessToken
+		oldRefreshToken := loginResp.RefreshToken
+
+		// Perform refresh
+		refreshResp, err := g.SephirahClient.RefreshToken(withBearerToken(ctx, oldRefreshToken), &pb.RefreshTokenRequest{})
 		if err != nil {
 			return fmt.Errorf("RefreshToken failed: %w", err)
 		}
-		if resp.AccessToken == "" {
+
+		// Verify new tokens are returned
+		if refreshResp.AccessToken == "" {
 			return fmt.Errorf("new access_token is empty")
 		}
-		if resp.RefreshToken == "" {
+		if refreshResp.RefreshToken == "" {
 			return fmt.Errorf("new refresh_token is empty")
 		}
-		if resp.AccessToken == oldAccessToken {
+
+		// Verify tokens are different
+		if refreshResp.AccessToken == oldAccessToken {
 			return fmt.Errorf("new access_token is same as old one")
 		}
-		if resp.RefreshToken == oldRefreshToken {
+		if refreshResp.RefreshToken == oldRefreshToken {
 			return fmt.Errorf("new refresh_token is same as old one")
 		}
-		g.AccessToken = resp.AccessToken
-		g.RefreshToken = resp.RefreshToken
-		g.OldRefreshToken = oldRefreshToken
 
-		_, err = g.SephirahClient.RefreshToken(withBearerToken(ctx, g.OldRefreshToken), &pb.RefreshTokenRequest{})
+		// Verify old refresh_token is invalidated
+		_, err = g.SephirahClient.RefreshToken(withBearerToken(ctx, oldRefreshToken), &pb.RefreshTokenRequest{})
 		if err == nil {
 			return fmt.Errorf("RefreshToken with used refresh_token should fail")
 		}
+
 		return nil
 	}, withDependOnIDs("FS-0001-AUTH-TOKEN_STRUCTURE"))
 
 	registerTestCase("FS-0001-AUTH-TOKEN_EXPIRATION", should, func(ctx context.Context, g *globals) error {
-		if !isValidJWT(g.AccessToken) || !isValidJWT(g.RefreshToken) {
+		state := getAuthState(g)
+
+		if !isValidJWT(state.AccessToken) || !isValidJWT(state.RefreshToken) {
 			return fmt.Errorf("tokens are not in JWT format, cannot verify expiration")
 		}
-		exp, err := extractExpirationFromToken(g.AccessToken)
+
+		// Check access_token expiration
+		exp, err := extractExpirationFromToken(state.AccessToken)
 		if err != nil {
 			return fmt.Errorf("failed to extract expiration from access_token: %w", err)
 		}
@@ -136,7 +165,8 @@ func init() {
 			return fmt.Errorf("access_token expiration %v exceeds 1 hour", exp)
 		}
 
-		exp, err = extractExpirationFromToken(g.RefreshToken)
+		// Check refresh_token expiration
+		exp, err = extractExpirationFromToken(state.RefreshToken)
 		if err != nil {
 			return fmt.Errorf("failed to extract expiration from refresh_token: %w", err)
 		}
@@ -148,14 +178,16 @@ func init() {
 	}, withDependOnIDs("FS-0001-AUTH-TOKEN_STRUCTURE"))
 
 	registerTestCase("FS-0001-AUTH-TOKEN_FORMAT", may, func(ctx context.Context, g *globals) error {
-		if !isValidJWT(g.AccessToken) {
+		state := getAuthState(g)
+
+		if !isValidJWT(state.AccessToken) {
 			return fmt.Errorf("access_token is not a valid JWT")
 		}
-		if !isValidJWT(g.RefreshToken) {
+		if !isValidJWT(state.RefreshToken) {
 			return fmt.Errorf("refresh_token is not a valid JWT")
 		}
 
-		payload, err := extractPayloadFromToken(g.AccessToken)
+		payload, err := extractPayloadFromToken(state.AccessToken)
 		if err != nil {
 			return fmt.Errorf("failed to extract payload from access_token: %w", err)
 		}
@@ -163,7 +195,7 @@ func init() {
 			return fmt.Errorf("access_token does not have expiration claim")
 		}
 
-		payload, err = extractPayloadFromToken(g.RefreshToken)
+		payload, err = extractPayloadFromToken(state.RefreshToken)
 		if err != nil {
 			return fmt.Errorf("failed to extract payload from refresh_token: %w", err)
 		}

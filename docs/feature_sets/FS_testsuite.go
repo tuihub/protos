@@ -12,7 +12,6 @@ import (
 	"github.com/go-kratos/kratos/v2/middleware/recovery"
 	"github.com/go-kratos/kratos/v2/transport/grpc"
 	pb "github.com/tuihub/protos/pkg/librarian/sephirah/v1"
-	v1 "github.com/tuihub/protos/pkg/librarian/v1"
 )
 
 func RunTestSuite(ctx context.Context, host string, port int, verbose int) error {
@@ -20,6 +19,7 @@ func RunTestSuite(ctx context.Context, host string, port int, verbose int) error
 	g := &globals{
 		SephirahServerHost: host,
 		SephirahServerPort: port,
+		State:              make(map[string]any),
 	}
 	// Check test case name pattern
 	for _, tc := range testCases {
@@ -91,40 +91,8 @@ type globals struct {
 	SephirahServerHost string
 	SephirahServerPort int
 	SephirahClient     pb.LibrarianSephirahServiceClient
-	// Auth Test State
-	AccessToken     string
-	RefreshToken    string
-	OldRefreshToken string
-	// User Test State
-	AdminUserID       *v1.InternalID
-	NormalUsername    string
-	NormalPassword    string
-	NormalUserID      *v1.InternalID
-	NormalAccessToken string
-	// Session Test State
-	SessionState *SessionTestState
-}
-
-type SessionTestState struct {
-	// Session tracking
-	InitialSessionID    *v1.InternalID
-	InitialRefreshToken string
-	InitialAccessToken  string
-	SecondSessionID     *v1.InternalID
-	SecondRefreshToken  string
-	SecondAccessToken   string
-	OldRefreshToken     string
-	// Device tracking
-	Device1ID           *v1.InternalID
-	Device1LocalID      string
-	Device1SessionID    *v1.InternalID
-	Device1RefreshToken string
-	Device1AccessToken  string
-	Device2ID           *v1.InternalID
-	Device2LocalID      string
-	// Multi-user tracking
-	NormalUserDevice1RefreshToken string
-	NormalUserDevice1AccessToken  string
+	// Generic state container for feature-specific data
+	State map[string]any
 }
 
 type testCase struct {
@@ -174,10 +142,12 @@ func sortTestCases() error {
 	adjList := make([][]int, len(testCases))
 	for i, tc := range testCases {
 		for _, depID := range tc.DependOnIDs {
-			if depIndex, exists := idToIndex[depID]; exists {
-				adjList[depIndex] = append(adjList[depIndex], i)
-				inDegree[i]++
+			depIndex, exists := idToIndex[depID]
+			if !exists {
+				return fmt.Errorf("test case %s has unknown dependency: %s", tc.ID, depID)
 			}
+			adjList[depIndex] = append(adjList[depIndex], i)
+			inDegree[i]++
 		}
 	}
 

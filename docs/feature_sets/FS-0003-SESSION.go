@@ -9,9 +9,42 @@ import (
 	v1 "github.com/tuihub/protos/pkg/librarian/v1"
 )
 
+// SessionState holds state for FS-0003-SESSION test cases
+type SessionState struct {
+	// Session tracking
+	InitialSessionID    *v1.InternalID
+	InitialRefreshToken string
+	InitialAccessToken  string
+	SecondSessionID     *v1.InternalID
+	SecondRefreshToken  string
+	SecondAccessToken   string
+	// Device tracking
+	Device1ID           *v1.InternalID
+	Device1LocalID      string
+	Device1SessionID    *v1.InternalID
+	Device1RefreshToken string
+	Device1AccessToken  string
+	Device2ID           *v1.InternalID
+	Device2LocalID      string
+	// Multi-user tracking
+	NormalUserDevice1RefreshToken string
+	NormalUserDevice1AccessToken  string
+}
+
+func getSessionState(g *globals) *SessionState {
+	if state, ok := g.State["fs0003_session"]; ok {
+		return state.(*SessionState)
+	}
+	state := &SessionState{}
+	g.State["fs0003_session"] = state
+	return state
+}
+
 func init() {
 	// FS-0003-SESSION-AUTO_CREATION
 	registerTestCase("FS-0003-SESSION-AUTO_CREATION", must, func(ctx context.Context, g *globals) error {
+		state := getSessionState(g)
+
 		// Login to create a session
 		resp, err := g.SephirahClient.GetToken(ctx, &pb.GetTokenRequest{
 			Username: "admin",
@@ -51,18 +84,17 @@ func init() {
 		}
 
 		// Store session info for later tests
-		if g.SessionState == nil {
-			g.SessionState = &SessionTestState{}
-		}
-		g.SessionState.InitialSessionID = mostRecentSession.Id
-		g.SessionState.InitialRefreshToken = resp.RefreshToken
-		g.SessionState.InitialAccessToken = resp.AccessToken
+		state.InitialSessionID = mostRecentSession.Id
+		state.InitialRefreshToken = resp.RefreshToken
+		state.InitialAccessToken = resp.AccessToken
 
 		return nil
 	}, withDependOnIDs("FS-0001-AUTH-ADMIN_ACCOUNT"))
 
 	// FS-0003-SESSION-LOGIN_NEW_ID
 	registerTestCase("FS-0003-SESSION-LOGIN_NEW_ID", must, func(ctx context.Context, g *globals) error {
+		state := getSessionState(g)
+
 		// Login again to create a new session
 		resp, err := g.SephirahClient.GetToken(ctx, &pb.GetTokenRequest{
 			Username: "admin",
@@ -100,97 +132,27 @@ func init() {
 		}
 
 		// Verify it's a different session ID
-		if newSessionID.Id == g.SessionState.InitialSessionID.Id {
+		if newSessionID.Id == state.InitialSessionID.Id {
 			return fmt.Errorf("expected new session_id after login, got same session_id: %d", newSessionID.Id)
 		}
 
 		// Store for next test
-		g.SessionState.SecondSessionID = newSessionID
-		g.SessionState.SecondRefreshToken = resp.RefreshToken
-		g.SessionState.SecondAccessToken = resp.AccessToken
+		state.SecondSessionID = newSessionID
+		state.SecondRefreshToken = resp.RefreshToken
+		state.SecondAccessToken = resp.AccessToken
 
 		return nil
 	}, withDependOnIDs("FS-0003-SESSION-AUTO_CREATION"))
 
-	// FS-0003-SESSION-REFRESH_REUSE_ID
-	registerTestCase("FS-0003-SESSION-REFRESH_REUSE_ID", must, func(ctx context.Context, g *globals) error {
-		// Get the session ID before refresh
-		listResp, err := g.SephirahClient.ListUserSessions(
-			withBearerToken(ctx, g.SessionState.SecondAccessToken),
-			&pb.ListUserSessionsRequest{
-				Paging: &v1.PagingRequest{
-					PageSize: 100,
-				},
-			},
-		)
-		if err != nil {
-			return fmt.Errorf("ListUserSessions failed: %w", err)
-		}
-
-		var sessionBeforeRefresh *pb.UserSession
-		for _, session := range listResp.Sessions {
-			if session.Id.Id == g.SessionState.SecondSessionID.Id {
-				sessionBeforeRefresh = session
-				break
-			}
-		}
-
-		if sessionBeforeRefresh == nil {
-			return fmt.Errorf("cannot find session %d before refresh", g.SessionState.SecondSessionID.Id)
-		}
-
-		// Refresh token
-		refreshResp, err := g.SephirahClient.RefreshToken(
-			withBearerToken(ctx, g.SessionState.SecondRefreshToken),
-			&pb.RefreshTokenRequest{},
-		)
-		if err != nil {
-			return fmt.Errorf("RefreshToken failed: %w", err)
-		}
-
-		// List sessions again to check if session ID is reused
-		listResp2, err := g.SephirahClient.ListUserSessions(
-			withBearerToken(ctx, refreshResp.AccessToken),
-			&pb.ListUserSessionsRequest{
-				Paging: &v1.PagingRequest{
-					PageSize: 100,
-				},
-			},
-		)
-		if err != nil {
-			return fmt.Errorf("ListUserSessions failed after refresh: %w", err)
-		}
-
-		// Find the session with same ID
-		var sessionFound bool
-		for _, session := range listResp2.Sessions {
-			if session.Id.Id == g.SessionState.SecondSessionID.Id {
-				sessionFound = true
-				// Verify it's the same session (create_time should match)
-				if !session.CreateTime.AsTime().Equal(sessionBeforeRefresh.CreateTime.AsTime()) {
-					return fmt.Errorf("session create_time changed after refresh, expected session_id reuse")
-				}
-				break
-			}
-		}
-
-		if !sessionFound {
-			return fmt.Errorf("session_id %d not found after refresh, expected session_id reuse", g.SessionState.SecondSessionID.Id)
-		}
-
-		// Store refreshed tokens
-		g.SessionState.OldRefreshToken = g.SessionState.SecondRefreshToken
-		g.SessionState.SecondRefreshToken = refreshResp.RefreshToken
-		g.SessionState.SecondAccessToken = refreshResp.AccessToken
-
-		return nil
-	}, withDependOnIDs("FS-0003-SESSION-LOGIN_NEW_ID"))
-
-	// FS-0003-SESSION-ONE_VALID_TOKEN
+	// FS-0003-SESSION-ONE_VALID_TOKEN (merged REFRESH_REUSE_ID)
+	// Tests: refresh reuses session_id, session persists (create_time unchanged),
+	// session count doesn't increase, and old refresh_token is invalidated
 	registerTestCase("FS-0003-SESSION-ONE_VALID_TOKEN", must, func(ctx context.Context, g *globals) error {
-		// Get session list before refresh to track session state
+		state := getSessionState(g)
+
+		// Get the session before refresh
 		listBefore, err := g.SephirahClient.ListUserSessions(
-			withBearerToken(ctx, g.SessionState.SecondAccessToken),
+			withBearerToken(ctx, state.SecondAccessToken),
 			&pb.ListUserSessionsRequest{
 				Paging: &v1.PagingRequest{
 					PageSize: 100,
@@ -204,7 +166,7 @@ func init() {
 		// Find current session
 		var currentSession *pb.UserSession
 		for _, session := range listBefore.Sessions {
-			if session.Id.Id == g.SessionState.SecondSessionID.Id {
+			if session.Id.Id == state.SecondSessionID.Id {
 				currentSession = session
 				break
 			}
@@ -214,13 +176,11 @@ func init() {
 		}
 
 		sessionCountBefore := len(listBefore.Sessions)
-
-		// Store old refresh token
-		oldRefreshToken := g.SessionState.SecondRefreshToken
+		oldRefreshToken := state.SecondRefreshToken
 
 		// Refresh token
 		refreshResp, err := g.SephirahClient.RefreshToken(
-			withBearerToken(ctx, g.SessionState.SecondRefreshToken),
+			withBearerToken(ctx, state.SecondRefreshToken),
 			&pb.RefreshTokenRequest{},
 		)
 		if err != nil {
@@ -246,22 +206,22 @@ func init() {
 				sessionCountBefore, len(listAfter.Sessions))
 		}
 
-		// Verify the same session still exists with same create_time
+		// Verify the same session still exists with same create_time (session_id reused)
 		var sessionAfter *pb.UserSession
 		for _, session := range listAfter.Sessions {
-			if session.Id.Id == g.SessionState.SecondSessionID.Id {
+			if session.Id.Id == state.SecondSessionID.Id {
 				sessionAfter = session
 				break
 			}
 		}
 		if sessionAfter == nil {
-			return fmt.Errorf("session disappeared after refresh")
+			return fmt.Errorf("session disappeared after refresh (session_id not reused)")
 		}
 		if !sessionAfter.CreateTime.AsTime().Equal(currentSession.CreateTime.AsTime()) {
 			return fmt.Errorf("session create_time changed after refresh (new session was created instead of reusing)")
 		}
 
-		// Verify old refresh_token is invalidated (this validates the core requirement)
+		// Verify old refresh_token is invalidated
 		_, err = g.SephirahClient.RefreshToken(
 			withBearerToken(ctx, oldRefreshToken),
 			&pb.RefreshTokenRequest{},
@@ -271,22 +231,24 @@ func init() {
 		}
 
 		// Update tokens for subsequent tests
-		g.SessionState.SecondRefreshToken = refreshResp.RefreshToken
-		g.SessionState.SecondAccessToken = refreshResp.AccessToken
+		state.SecondRefreshToken = refreshResp.RefreshToken
+		state.SecondAccessToken = refreshResp.AccessToken
 
 		return nil
-	}, withDependOnIDs("FS-0003-SESSION-REFRESH_REUSE_ID"))
+	}, withDependOnIDs("FS-0003-SESSION-LOGIN_NEW_ID"))
 
 	// FS-0003-SESSION-REVOKE_INVALIDATE
 	registerTestCase("FS-0003-SESSION-REVOKE_INVALIDATE", must, func(ctx context.Context, g *globals) error {
+		state := getSessionState(g)
+
 		// Store the current refresh token
-		tokenBeforeRevoke := g.SessionState.SecondRefreshToken
+		tokenBeforeRevoke := state.SecondRefreshToken
 
 		// Revoke the session
 		_, err := g.SephirahClient.RevokeUserSession(
-			withBearerToken(ctx, g.SessionState.SecondAccessToken),
+			withBearerToken(ctx, state.SecondAccessToken),
 			&pb.RevokeUserSessionRequest{
-				SessionId: g.SessionState.SecondSessionID,
+				SessionId: state.SecondSessionID,
 			},
 		)
 		if err != nil {
@@ -303,13 +265,16 @@ func init() {
 		}
 
 		return nil
-	}, withDependOnIDs("FS-0003-SESSION-EXPIRED_TOKEN_REJECT"))
+	}, withDependOnIDs("FS-0003-SESSION-ONE_VALID_TOKEN"))
 
 	// FS-0003-SESSION-DEVICE_REGISTRATION
 	registerTestCase("FS-0003-SESSION-DEVICE_REGISTRATION", must, func(ctx context.Context, g *globals) error {
+		state := getSessionState(g)
+		authState := getAuthState(g)
+
 		// Register a device
 		resp, err := g.SephirahClient.RegisterDevice(
-			withBearerToken(ctx, g.AccessToken),
+			withBearerToken(ctx, authState.AccessToken),
 			&pb.RegisterDeviceRequest{
 				DeviceInfo: &pb.Device{
 					DeviceName:    "Test Device 1",
@@ -330,20 +295,20 @@ func init() {
 		}
 
 		// Store device ID for later tests
-		if g.SessionState == nil {
-			g.SessionState = &SessionTestState{}
-		}
-		g.SessionState.Device1ID = resp.DeviceId
-		g.SessionState.Device1LocalID = "test-device-local-id-1"
+		state.Device1ID = resp.DeviceId
+		state.Device1LocalID = "test-device-local-id-1"
 
 		return nil
 	}, withDependOnIDs("FS-0001-AUTH-ADMIN_ACCOUNT"))
 
 	// FS-0003-SESSION-DEVICE_IDEMPOTENCY
 	registerTestCase("FS-0003-SESSION-DEVICE_IDEMPOTENCY", must, func(ctx context.Context, g *globals) error {
+		state := getSessionState(g)
+		authState := getAuthState(g)
+
 		// Register device with same client_local_id (should return same device_id)
 		resp1, err := g.SephirahClient.RegisterDevice(
-			withBearerToken(ctx, g.AccessToken),
+			withBearerToken(ctx, authState.AccessToken),
 			&pb.RegisterDeviceRequest{
 				DeviceInfo: &pb.Device{
 					DeviceName:    "Test Device 1 - Registered Again",
@@ -352,21 +317,21 @@ func init() {
 					ClientName:    "testsuite",
 					ClientVersion: "0.0.1",
 				},
-				ClientLocalId: strPtr(g.SessionState.Device1LocalID),
+				ClientLocalId: strPtr(state.Device1LocalID),
 			},
 		)
 		if err != nil {
 			return fmt.Errorf("RegisterDevice with same client_local_id failed: %w", err)
 		}
 
-		if resp1.DeviceId.Id != g.SessionState.Device1ID.Id {
+		if resp1.DeviceId.Id != state.Device1ID.Id {
 			return fmt.Errorf("expected same device_id for same client_local_id, got %d, expected %d",
-				resp1.DeviceId.Id, g.SessionState.Device1ID.Id)
+				resp1.DeviceId.Id, state.Device1ID.Id)
 		}
 
 		// Register device with different client_local_id (should return different device_id)
 		resp2, err := g.SephirahClient.RegisterDevice(
-			withBearerToken(ctx, g.AccessToken),
+			withBearerToken(ctx, authState.AccessToken),
 			&pb.RegisterDeviceRequest{
 				DeviceInfo: &pb.Device{
 					DeviceName:    "Test Device 2",
@@ -382,17 +347,17 @@ func init() {
 			return fmt.Errorf("RegisterDevice with different client_local_id failed: %w", err)
 		}
 
-		if resp2.DeviceId.Id == g.SessionState.Device1ID.Id {
+		if resp2.DeviceId.Id == state.Device1ID.Id {
 			return fmt.Errorf("expected different device_id for different client_local_id, got same: %d", resp2.DeviceId.Id)
 		}
 
 		// Store second device
-		g.SessionState.Device2ID = resp2.DeviceId
-		g.SessionState.Device2LocalID = "test-device-local-id-2"
+		state.Device2ID = resp2.DeviceId
+		state.Device2LocalID = "test-device-local-id-2"
 
 		// Register device without client_local_id (should return new device_id)
 		resp3, err := g.SephirahClient.RegisterDevice(
-			withBearerToken(ctx, g.AccessToken),
+			withBearerToken(ctx, authState.AccessToken),
 			&pb.RegisterDeviceRequest{
 				DeviceInfo: &pb.Device{
 					DeviceName:    "Test Device 3",
@@ -407,7 +372,7 @@ func init() {
 			return fmt.Errorf("RegisterDevice without client_local_id failed: %w", err)
 		}
 
-		if resp3.DeviceId.Id == g.SessionState.Device1ID.Id || resp3.DeviceId.Id == g.SessionState.Device2ID.Id {
+		if resp3.DeviceId.Id == state.Device1ID.Id || resp3.DeviceId.Id == state.Device2ID.Id {
 			return fmt.Errorf("expected new device_id without client_local_id, got duplicate: %d", resp3.DeviceId.Id)
 		}
 
@@ -416,11 +381,13 @@ func init() {
 
 	// FS-0003-SESSION-DEVICE_BINDING_LOGIN
 	registerTestCase("FS-0003-SESSION-DEVICE_BINDING_LOGIN", must, func(ctx context.Context, g *globals) error {
+		state := getSessionState(g)
+
 		// Login with device_id
 		resp, err := g.SephirahClient.GetToken(ctx, &pb.GetTokenRequest{
 			Username: "admin",
 			Password: "admin",
-			DeviceId: g.SessionState.Device1ID,
+			DeviceId: state.Device1ID,
 		})
 		if err != nil {
 			return fmt.Errorf("GetToken with device_id failed: %w", err)
@@ -457,21 +424,23 @@ func init() {
 			return fmt.Errorf("session is not bound to any device")
 		}
 
-		if mostRecentSession.DeviceId.Id != g.SessionState.Device1ID.Id {
+		if mostRecentSession.DeviceId.Id != state.Device1ID.Id {
 			return fmt.Errorf("session bound to wrong device, expected %d, got %d",
-				g.SessionState.Device1ID.Id, mostRecentSession.DeviceId.Id)
+				state.Device1ID.Id, mostRecentSession.DeviceId.Id)
 		}
 
 		// Store for later tests
-		g.SessionState.Device1SessionID = mostRecentSession.Id
-		g.SessionState.Device1RefreshToken = resp.RefreshToken
-		g.SessionState.Device1AccessToken = resp.AccessToken
+		state.Device1SessionID = mostRecentSession.Id
+		state.Device1RefreshToken = resp.RefreshToken
+		state.Device1AccessToken = resp.AccessToken
 
 		return nil
 	}, withDependOnIDs("FS-0003-SESSION-DEVICE_IDEMPOTENCY"))
 
 	// FS-0003-SESSION-DEVICE_BINDING_REFRESH
 	registerTestCase("FS-0003-SESSION-DEVICE_BINDING_REFRESH", must, func(ctx context.Context, g *globals) error {
+		state := getSessionState(g)
+
 		// Create a session without device (login without device_id)
 		resp, err := g.SephirahClient.GetToken(ctx, &pb.GetTokenRequest{
 			Username: "admin",
@@ -511,7 +480,7 @@ func init() {
 		refreshResp, err := g.SephirahClient.RefreshToken(
 			withBearerToken(ctx, resp.RefreshToken),
 			&pb.RefreshTokenRequest{
-				DeviceId: g.SessionState.Device2ID,
+				DeviceId: state.Device2ID,
 			},
 		)
 		if err != nil {
@@ -547,9 +516,9 @@ func init() {
 			return fmt.Errorf("session not bound to device after RefreshToken with device_id")
 		}
 
-		if boundSession.DeviceId.Id != g.SessionState.Device2ID.Id {
+		if boundSession.DeviceId.Id != state.Device2ID.Id {
 			return fmt.Errorf("session bound to wrong device, expected %d, got %d",
-				g.SessionState.Device2ID.Id, boundSession.DeviceId.Id)
+				state.Device2ID.Id, boundSession.DeviceId.Id)
 		}
 
 		return nil
@@ -557,37 +526,39 @@ func init() {
 
 	// FS-0003-SESSION-DEVICE_MULTI_USER
 	registerTestCase("FS-0003-SESSION-DEVICE_MULTI_USER", must, func(ctx context.Context, g *globals) error {
+		state := getSessionState(g)
+		userState := getUserState(g)
+
 		// First ensure we have a normal user
-		if g.NormalUsername == "" {
+		if userState.NormalUsername == "" {
 			return fmt.Errorf("normal user not registered, dependency test might have failed")
 		}
 
 		// Check if admin's device1 token is still valid, re-login if needed
-		// This handles potential token pollution from earlier tests
-		_, err := g.SephirahClient.GetUser(withBearerToken(ctx, g.SessionState.Device1AccessToken), &pb.GetUserRequest{})
+		_, err := g.SephirahClient.GetUser(withBearerToken(ctx, state.Device1AccessToken), &pb.GetUserRequest{})
 		if err != nil {
 			// Token invalid, re-login with device1
 			loginResp, loginErr := g.SephirahClient.GetToken(ctx, &pb.GetTokenRequest{
 				Username: "admin",
 				Password: "admin",
-				DeviceId: g.SessionState.Device1ID,
+				DeviceId: state.Device1ID,
 			})
 			if loginErr != nil {
 				return fmt.Errorf("failed to re-login admin with device1: %w", loginErr)
 			}
-			g.SessionState.Device1AccessToken = loginResp.AccessToken
-			g.SessionState.Device1RefreshToken = loginResp.RefreshToken
+			state.Device1AccessToken = loginResp.AccessToken
+			state.Device1RefreshToken = loginResp.RefreshToken
 		}
 
 		// Admin user login with device1 (already has a session from earlier test)
 		adminSessionCountBefore := 0
 		listResp, err := g.SephirahClient.ListUserSessions(
-			withBearerToken(ctx, g.SessionState.Device1AccessToken),
+			withBearerToken(ctx, state.Device1AccessToken),
 			&pb.ListUserSessionsRequest{
 				Paging: &v1.PagingRequest{
 					PageSize: 100,
 				},
-				DeviceIdFilter: []*v1.InternalID{g.SessionState.Device1ID},
+				DeviceIdFilter: []*v1.InternalID{state.Device1ID},
 			},
 		)
 		if err != nil {
@@ -597,9 +568,9 @@ func init() {
 
 		// Normal user login with device1
 		normalResp, err := g.SephirahClient.GetToken(ctx, &pb.GetTokenRequest{
-			Username: g.NormalUsername,
-			Password: g.NormalPassword,
-			DeviceId: g.SessionState.Device1ID,
+			Username: userState.NormalUsername,
+			Password: userState.NormalPassword,
+			DeviceId: state.Device1ID,
 		})
 		if err != nil {
 			return fmt.Errorf("GetToken for normal user with device1 failed: %w", err)
@@ -612,7 +583,7 @@ func init() {
 				Paging: &v1.PagingRequest{
 					PageSize: 100,
 				},
-				DeviceIdFilter: []*v1.InternalID{g.SessionState.Device1ID},
+				DeviceIdFilter: []*v1.InternalID{state.Device1ID},
 			},
 		)
 		if err != nil {
@@ -625,12 +596,12 @@ func init() {
 
 		// Verify admin user still has their session on device1
 		adminListResp, err := g.SephirahClient.ListUserSessions(
-			withBearerToken(ctx, g.SessionState.Device1AccessToken),
+			withBearerToken(ctx, state.Device1AccessToken),
 			&pb.ListUserSessionsRequest{
 				Paging: &v1.PagingRequest{
 					PageSize: 100,
 				},
-				DeviceIdFilter: []*v1.InternalID{g.SessionState.Device1ID},
+				DeviceIdFilter: []*v1.InternalID{state.Device1ID},
 			},
 		)
 		if err != nil {
@@ -642,39 +613,40 @@ func init() {
 		}
 
 		// Store normal user session info
-		g.SessionState.NormalUserDevice1RefreshToken = normalResp.RefreshToken
-		g.SessionState.NormalUserDevice1AccessToken = normalResp.AccessToken
+		state.NormalUserDevice1RefreshToken = normalResp.RefreshToken
+		state.NormalUserDevice1AccessToken = normalResp.AccessToken
 
 		return nil
 	}, withDependOnIDs("FS-0003-SESSION-DEVICE_BINDING_REFRESH", "FS-0002-USER-REGISTRATION_AVAILABILITY"))
 
 	// FS-0003-SESSION-DEVICE_SINGLE_SESSION
 	registerTestCase("FS-0003-SESSION-DEVICE_SINGLE_SESSION", must, func(ctx context.Context, g *globals) error {
+		state := getSessionState(g)
+
 		// Check if admin's device1 token is still valid, re-login if needed
-		// This handles potential token pollution from earlier tests
-		_, err := g.SephirahClient.GetUser(withBearerToken(ctx, g.SessionState.Device1AccessToken), &pb.GetUserRequest{})
+		_, err := g.SephirahClient.GetUser(withBearerToken(ctx, state.Device1AccessToken), &pb.GetUserRequest{})
 		if err != nil {
 			// Token invalid, re-login with device1
 			loginResp, loginErr := g.SephirahClient.GetToken(ctx, &pb.GetTokenRequest{
 				Username: "admin",
 				Password: "admin",
-				DeviceId: g.SessionState.Device1ID,
+				DeviceId: state.Device1ID,
 			})
 			if loginErr != nil {
 				return fmt.Errorf("failed to re-login admin with device1: %w", loginErr)
 			}
-			g.SessionState.Device1AccessToken = loginResp.AccessToken
-			g.SessionState.Device1RefreshToken = loginResp.RefreshToken
+			state.Device1AccessToken = loginResp.AccessToken
+			state.Device1RefreshToken = loginResp.RefreshToken
 		}
 
 		// Get current session count for admin on device1
 		listResp1, err := g.SephirahClient.ListUserSessions(
-			withBearerToken(ctx, g.SessionState.Device1AccessToken),
+			withBearerToken(ctx, state.Device1AccessToken),
 			&pb.ListUserSessionsRequest{
 				Paging: &v1.PagingRequest{
 					PageSize: 100,
 				},
-				DeviceIdFilter: []*v1.InternalID{g.SessionState.Device1ID},
+				DeviceIdFilter: []*v1.InternalID{state.Device1ID},
 			},
 		)
 		if err != nil {
@@ -690,7 +662,7 @@ func init() {
 		resp, err := g.SephirahClient.GetToken(ctx, &pb.GetTokenRequest{
 			Username: "admin",
 			Password: "admin",
-			DeviceId: g.SessionState.Device1ID,
+			DeviceId: state.Device1ID,
 		})
 		if err != nil {
 			return fmt.Errorf("GetToken for admin with device1 failed: %w", err)
@@ -703,7 +675,7 @@ func init() {
 				Paging: &v1.PagingRequest{
 					PageSize: 100,
 				},
-				DeviceIdFilter: []*v1.InternalID{g.SessionState.Device1ID},
+				DeviceIdFilter: []*v1.InternalID{state.Device1ID},
 			},
 		)
 		if err != nil {
@@ -725,7 +697,7 @@ func init() {
 
 		// Verify old refresh token is invalidated
 		_, err = g.SephirahClient.RefreshToken(
-			withBearerToken(ctx, g.SessionState.Device1RefreshToken),
+			withBearerToken(ctx, state.Device1RefreshToken),
 			&pb.RefreshTokenRequest{},
 		)
 		if err == nil {
@@ -737,9 +709,12 @@ func init() {
 
 	// FS-0003-SESSION-LIST_FILTER
 	registerTestCase("FS-0003-SESSION-LIST_FILTER", must, func(ctx context.Context, g *globals) error {
+		state := getSessionState(g)
+		authState := getAuthState(g)
+
 		// List all sessions without filter
 		allResp, err := g.SephirahClient.ListUserSessions(
-			withBearerToken(ctx, g.AccessToken),
+			withBearerToken(ctx, authState.AccessToken),
 			&pb.ListUserSessionsRequest{
 				Paging: &v1.PagingRequest{
 					PageSize: 100,
@@ -756,12 +731,12 @@ func init() {
 
 		// List sessions with device1 filter
 		device1Resp, err := g.SephirahClient.ListUserSessions(
-			withBearerToken(ctx, g.AccessToken),
+			withBearerToken(ctx, authState.AccessToken),
 			&pb.ListUserSessionsRequest{
 				Paging: &v1.PagingRequest{
 					PageSize: 100,
 				},
-				DeviceIdFilter: []*v1.InternalID{g.SessionState.Device1ID},
+				DeviceIdFilter: []*v1.InternalID{state.Device1ID},
 			},
 		)
 		if err != nil {
@@ -769,7 +744,6 @@ func init() {
 		}
 
 		// Check if device binding is implemented
-		// If any session has null device_id, device binding is not yet implemented
 		deviceBindingImplemented := true
 		for _, session := range allResp.Sessions {
 			if session.DeviceId == nil || session.DeviceId.Id == 0 {
@@ -780,7 +754,6 @@ func init() {
 
 		if !deviceBindingImplemented {
 			// Device binding not implemented, only verify filter doesn't error
-			// This is a graceful degradation - the server accepted the filter but can't validate results
 			return nil
 		}
 
@@ -790,9 +763,9 @@ func init() {
 			if session.DeviceId == nil {
 				return fmt.Errorf("filtered session has no device_id")
 			}
-			if session.DeviceId.Id != g.SessionState.Device1ID.Id {
+			if session.DeviceId.Id != state.Device1ID.Id {
 				return fmt.Errorf("filtered session has wrong device_id, expected %d, got %d",
-					g.SessionState.Device1ID.Id, session.DeviceId.Id)
+					state.Device1ID.Id, session.DeviceId.Id)
 			}
 		}
 
@@ -807,9 +780,11 @@ func init() {
 
 	// FS-0003-SESSION-EXPIRE_EXCLUSION
 	registerTestCase("FS-0003-SESSION-EXPIRE_EXCLUSION", should, func(ctx context.Context, g *globals) error {
+		authState := getAuthState(g)
+
 		// List sessions excluding expired
 		excludeResp, err := g.SephirahClient.ListUserSessions(
-			withBearerToken(ctx, g.AccessToken),
+			withBearerToken(ctx, authState.AccessToken),
 			&pb.ListUserSessionsRequest{
 				Paging: &v1.PagingRequest{
 					PageSize: 100,
@@ -831,7 +806,7 @@ func init() {
 
 		// List sessions including expired
 		includeResp, err := g.SephirahClient.ListUserSessions(
-			withBearerToken(ctx, g.AccessToken),
+			withBearerToken(ctx, authState.AccessToken),
 			&pb.ListUserSessionsRequest{
 				Paging: &v1.PagingRequest{
 					PageSize: 100,
@@ -854,9 +829,11 @@ func init() {
 
 	// FS-0003-SESSION-EXPIRED_TOKEN_REJECT
 	registerTestCase("FS-0003-SESSION-EXPIRED_TOKEN_REJECT", should, func(ctx context.Context, g *globals) error {
+		authState := getAuthState(g)
+
 		// List sessions including expired to find an expired session
 		listResp, err := g.SephirahClient.ListUserSessions(
-			withBearerToken(ctx, g.AccessToken),
+			withBearerToken(ctx, authState.AccessToken),
 			&pb.ListUserSessionsRequest{
 				Paging: &v1.PagingRequest{
 					PageSize: 100,
@@ -880,16 +857,11 @@ func init() {
 
 		if !expiredSessionFound {
 			// If no expired session found, this test is inconclusive but not a failure
-			// In a real scenario, we could wait for a session to expire, but that's not practical
 			return nil
 		}
 
 		// Note: We cannot directly test expired token rejection because we don't have
-		// the refresh_token for expired sessions. This would require creating a session
-		// with very short expiration time and waiting for it to expire.
-		// This is a limitation of the test suite and would need to be addressed
-		// by the implementation providing a way to set short expiration times for testing.
-
+		// the refresh_token for expired sessions.
 		return nil
 	}, withDependOnIDs("FS-0003-SESSION-EXPIRE_EXCLUSION"))
 }

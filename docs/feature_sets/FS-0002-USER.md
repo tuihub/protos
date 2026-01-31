@@ -9,15 +9,11 @@ last_updated: 2026-01-31
 
 ## FS-0002-USER-REGISTRATION_AVAILABILITY
 
-`RegisterUser` RPC SHOULD be available for anonymous user registration. When enabled, `RegisterUserResponse.captcha` MUST be empty to allow automated testing.
+`RegisterUser` RPC SHOULD be available for anonymous user registration. When enabled, `RegisterUserResponse.captcha` MUST be unset to allow automated testing.
 
 ## FS-0002-USER-REGISTRATION_USER_TYPE
 
-`RegisterUser` RPC MUST create accounts with `User.type=USER_TYPE_NORMAL`. Self-registration with `User.type=USER_TYPE_ADMIN` MUST be rejected.
-
-## FS-0002-USER-IMMEDIATE_LOGIN
-
-`GetTokenRequest` with credentials from successful `RegisterUser` response MUST succeed without additional activation steps.
+`RegisterUser` RPC MUST create accounts with `User.type=USER_TYPE_NORMAL`. Self-registration with `User.type=USER_TYPE_ADMIN` MUST be rejected. `GetTokenRequest` with credentials from successful `RegisterUser` MUST succeed without additional activation steps (immediate login).
 
 ## FS-0002-USER-GET_USER_INFO
 

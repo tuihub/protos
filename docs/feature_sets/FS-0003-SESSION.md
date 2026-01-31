@@ -15,13 +15,9 @@ When a valid `refresh_token` is issued via `GetToken` or `RefreshToken`, the sys
 
 When a user authenticates via `GetToken`, the system MUST generate a new `session_id` for the session.
 
-## FS-0003-SESSION-REFRESH_REUSE_ID
-
-When a user refreshes tokens via `RefreshToken`, the system MUST reuse the existing `session_id` from the previous session. The system MUST NOT create a new session during token refresh.
-
 ## FS-0003-SESSION-ONE_VALID_TOKEN
 
-Each `session_id` MUST have only one valid `refresh_token` at any given time. After a successful token refresh, the previous `refresh_token` MUST be invalidated and the session MUST persist (same `session_id`, `create_time` unchanged). The system MUST NOT create a new session during token refresh, ensuring session persistence across token rotations.
+Each `session_id` MUST have only one valid `refresh_token` at any given time. When a user refreshes tokens via `RefreshToken`, the system MUST reuse the existing `session_id` from the previous session. After a successful token refresh, the previous `refresh_token` MUST be invalidated and the session MUST persist (same `session_id`, `create_time` unchanged). The system MUST NOT create a new session during token refresh, ensuring session persistence across token rotations. Reusing an invalidated `refresh_token` MUST fail.
 
 ## FS-0003-SESSION-REVOKE_INVALIDATE
 
@@ -61,4 +57,4 @@ For a given device and user combination, only one active session MUST exist at a
 
 ## FS-0003-SESSION-EXPIRED_TOKEN_REJECT
 
-When a session's `expire_time` has passed, attempts to use its `refresh_token` MUST fail. The system MUST reject expired tokens.
+When a session's `expire_time` has passed, attempts to use its `refresh_token` SHOULD fail. The system SHOULD reject expired tokens. Note: This requirement is downgraded to SHOULD as testing requires controllable expiration times or test-specific capabilities.
