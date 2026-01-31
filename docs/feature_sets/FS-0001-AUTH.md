@@ -32,7 +32,3 @@ Authenticated gRPC requests MUST include `authorization` metadata field with val
 ## FS-0001-AUTH-TOKEN_FORMAT
 
 `access_token` and `refresh_token` MAY use JWT format. JWT payload SHOULD include `exp` claim for expiration time.
-
-## FS-0001-AUTH-TOKEN_REVOCATION
-
-`DeleteUserSession` RPC MAY be supported for token revocation. Revoked tokens MUST be rejected within 1 minute.

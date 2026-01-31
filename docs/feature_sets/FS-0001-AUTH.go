@@ -172,31 +172,6 @@ func init() {
 		}
 		return nil
 	}, withDependOnIDs("FS-0001-AUTH-TOKEN_STRUCTURE"))
-
-	registerTestCase("FS-0001-AUTH-TOKEN_REVOCATION", may, func(ctx context.Context, g *globals) error {
-		sessionsResp, err := g.SephirahClient.ListUserSessions(withBearerToken(ctx, g.AccessToken), &pb.ListUserSessionsRequest{})
-		if err != nil {
-			return fmt.Errorf("ListUserSessions failed: %w", err)
-		}
-		if len(sessionsResp.Sessions) == 0 {
-			return fmt.Errorf("no sessions found")
-		}
-		sessionID := sessionsResp.Sessions[0].Id
-
-		_, err = g.SephirahClient.RevokeUserSession(withBearerToken(ctx, g.AccessToken), &pb.RevokeUserSessionRequest{
-			SessionId: sessionID,
-		})
-		if err != nil {
-			return fmt.Errorf("DeleteUserSession failed: %w", err)
-		}
-
-		_, err = g.SephirahClient.GetUser(withBearerToken(ctx, g.AccessToken), &pb.GetUserRequest{})
-		if err == nil {
-			return fmt.Errorf("GetUser should fail after session deletion")
-		}
-
-		return nil
-	}, withDependOnIDs("FS-0001-AUTH-GRPC_AUTHENTICATION"))
 }
 
 func withBearerToken(ctx context.Context, token string) context.Context {

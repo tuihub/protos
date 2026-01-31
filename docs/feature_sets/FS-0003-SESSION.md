@@ -21,7 +21,7 @@ When a user refreshes tokens via `RefreshToken`, the system MUST reuse the exist
 
 ## FS-0003-SESSION-ONE_VALID_TOKEN
 
-Each `session_id` MUST have only one valid `refresh_token` at any given time. After a successful token refresh, the previous `refresh_token` MUST be invalidated.
+Each `session_id` MUST have only one valid `refresh_token` at any given time. After a successful token refresh, the previous `refresh_token` MUST be invalidated and the session MUST persist (same `session_id`, `create_time` unchanged). The system MUST NOT create a new session during token refresh, ensuring session persistence across token rotations.
 
 ## FS-0003-SESSION-REVOKE_INVALIDATE
 
