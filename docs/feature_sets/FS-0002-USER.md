@@ -4,12 +4,16 @@ title: User Management
 version: 0.0.1
 status: draft
 created: 2026-01-31
-last_updated: 2026-01-31
+last_updated: 2026-02-03
 ---
 
 ## FS-0002-USER-REGISTRATION_AVAILABILITY
 
 `RegisterUser` RPC SHOULD be available for anonymous user registration. When enabled, `RegisterUserResponse.captcha` MUST be unset to allow automated testing.
+
+## FS-0002-USER-ADMIN_ACCOUNT_TYPE
+
+The pre-configured administrator account MUST have `User.type=USER_TYPE_ADMIN`. This can be verified through `GetUser` RPC with admin credentials.
 
 ## FS-0002-USER-REGISTRATION_USER_TYPE
 

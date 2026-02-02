@@ -9,8 +9,6 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/go-kratos/kratos/v2/middleware/recovery"
-	"github.com/go-kratos/kratos/v2/transport/grpc"
 	pb "github.com/tuihub/protos/pkg/librarian/sephirah/v1"
 )
 
@@ -68,29 +66,12 @@ var (
 	testCases []testCase
 )
 
-func init() {
-	registerTestCase("FS-0000-INIT-SEPHIRAH_CLIENT", must, func(ctx context.Context, g *globals) error {
-		conn, err := grpc.DialInsecure(
-			context.Background(),
-			grpc.WithEndpoint(fmt.Sprintf("%s:%d", g.SephirahServerHost, g.SephirahServerPort)),
-			grpc.WithMiddleware(
-				recovery.Recovery(),
-			),
-		)
-		if err != nil {
-			return err
-		}
-		cli := pb.NewLibrarianSephirahServiceClient(conn)
-		g.SephirahClient = cli
-		return nil
-	})
-}
-
 type globals struct {
 	// Test Command
-	SephirahServerHost string
-	SephirahServerPort int
-	SephirahClient     pb.LibrarianSephirahServiceClient
+	SephirahServerHost        string
+	SephirahServerPort        int
+	SephirahClient            pb.LibrarianSephirahServiceClient
+	SephirahServerInformation *pb.ServerInformation
 	// Generic state container for feature-specific data
 	State map[string]any
 }

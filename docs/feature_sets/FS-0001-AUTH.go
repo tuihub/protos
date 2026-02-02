@@ -9,7 +9,6 @@ import (
 	"time"
 
 	pb "github.com/tuihub/protos/pkg/librarian/sephirah/v1"
-	v1 "github.com/tuihub/protos/pkg/librarian/v1"
 	"google.golang.org/grpc/metadata"
 )
 
@@ -17,7 +16,6 @@ import (
 type AuthState struct {
 	AccessToken  string
 	RefreshToken string
-	AdminUserID  *v1.InternalID
 }
 
 func getAuthState(g *globals) *AuthState {
@@ -48,22 +46,15 @@ func init() {
 			return fmt.Errorf("admin login returned empty refresh_token")
 		}
 
-		// Verify the account is actually an admin
-		userResp, err := g.SephirahClient.GetUser(withBearerToken(ctx, resp.AccessToken), &pb.GetUserRequest{})
+		// Verify the access_token is valid
+		_, err = g.SephirahClient.GetServerInformation(withBearerToken(ctx, resp.AccessToken), &pb.GetServerInformationRequest{})
 		if err != nil {
-			return fmt.Errorf("failed to get admin user info: %w", err)
-		}
-		if userResp.User == nil {
-			return fmt.Errorf("GetUser returned nil user for admin")
-		}
-		if userResp.User.Type != pb.UserType_USER_TYPE_ADMIN {
-			return fmt.Errorf("admin account type is %v, expected USER_TYPE_ADMIN", userResp.User.Type)
+			return fmt.Errorf("failed to verify access_token with GetServerInformation: %w", err)
 		}
 
-		// Store admin tokens and ID for subsequent tests
+		// Store admin tokens for subsequent tests
 		state.AccessToken = resp.AccessToken
 		state.RefreshToken = resp.RefreshToken
-		state.AdminUserID = userResp.User.Id
 
 		return nil
 	}, withDependOnIDs("FS-0000-INIT-SEPHIRAH_CLIENT"))
@@ -87,13 +78,13 @@ func init() {
 	registerTestCase("FS-0001-AUTH-GRPC_AUTHENTICATION", must, func(ctx context.Context, g *globals) error {
 		state := getAuthState(g)
 
-		// Test access_token authentication
-		resp, err := g.SephirahClient.GetUser(withBearerToken(ctx, state.AccessToken), &pb.GetUserRequest{})
+		// Test access_token authentication with GetServerInformation
+		resp, err := g.SephirahClient.GetServerInformation(withBearerToken(ctx, state.AccessToken), &pb.GetServerInformationRequest{})
 		if err != nil {
-			return fmt.Errorf("GetUser with access_token failed: %w", err)
+			return fmt.Errorf("GetServerInformation with access_token failed: %w", err)
 		}
-		if resp.User == nil {
-			return fmt.Errorf("GetUser response user is nil")
+		if resp.ServerInformation == nil {
+			return fmt.Errorf("GetServerInformation response server_information is nil")
 		}
 
 		// Test refresh_token authentication

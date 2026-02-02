@@ -9,9 +9,9 @@ option csharp_namespace = "TuiHub.Protos.Librarian.Sephirah.V1";
 option go_package = "github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1";
 
 message ServerInformation {
-  // For manual inspection only, the client may display but should not parse the response.
+  // For manual inspection only, the client may display but should not parse the response texts.
   ServerBinarySummary server_binary_summary = 1;
-  // For manual inspection only, the client may display but should not parse the response.
+  // For manual inspection only, the client may display but should not parse the response texts.
   ServerProtocolSummary protocol_summary = 2;
   // The time that server received the request,
   // note that there is a transmission delay between server and client.
@@ -48,7 +48,8 @@ message ServerProtocolSummary {
 message ServerInstanceSummary {
   string name = 1;
   string description = 2;
-  string website_url = 3;
-  string logo_url = 4;
-  string background_url = 5;
+  optional string website_url = 3;
+  optional string logo_image_url = 4;
+  optional string background_image_url = 5;
+  bool is_registerable = 6;
 }

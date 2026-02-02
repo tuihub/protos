@@ -535,7 +535,7 @@ func init() {
 		}
 
 		// Check if admin's device1 token is still valid, re-login if needed
-		_, err := g.SephirahClient.GetUser(withBearerToken(ctx, state.Device1AccessToken), &pb.GetUserRequest{})
+		_, err := g.SephirahClient.GetServerInformation(withBearerToken(ctx, state.Device1AccessToken), &pb.GetServerInformationRequest{})
 		if err != nil {
 			// Token invalid, re-login with device1
 			loginResp, loginErr := g.SephirahClient.GetToken(ctx, &pb.GetTokenRequest{
@@ -624,7 +624,7 @@ func init() {
 		state := getSessionState(g)
 
 		// Check if admin's device1 token is still valid, re-login if needed
-		_, err := g.SephirahClient.GetUser(withBearerToken(ctx, state.Device1AccessToken), &pb.GetUserRequest{})
+		_, err := g.SephirahClient.GetServerInformation(withBearerToken(ctx, state.Device1AccessToken), &pb.GetServerInformationRequest{})
 		if err != nil {
 			// Token invalid, re-login with device1
 			loginResp, loginErr := g.SephirahClient.GetToken(ctx, &pb.GetTokenRequest{

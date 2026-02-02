@@ -4,12 +4,12 @@ title: User token validation behavior specification
 version: 0.0.1
 status: draft
 created: 2026-01-08
-last_updated: 2026-01-31
+last_updated: 2026-02-03
 ---
 
 ## FS-0001-AUTH-ADMIN_ACCOUNT
 
-The system MUST provide a pre-configured administrator account with `username="admin"` and `password="admin"`.
+The system MUST provide a pre-configured administrator account with `username="admin"` and `password="admin"`. The account MUST be able to obtain valid access tokens through `GetToken` RPC.
 
 ## FS-0001-AUTH-TOKEN_STRUCTURE
 

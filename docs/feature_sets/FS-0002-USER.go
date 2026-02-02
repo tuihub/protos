@@ -16,6 +16,7 @@ type UserState struct {
 	NormalPassword    string
 	NormalUserID      *v1.InternalID
 	NormalAccessToken string
+	AdminUserID       *v1.InternalID
 }
 
 func getUserState(g *globals) *UserState {
@@ -57,6 +58,29 @@ func init() {
 
 		return nil
 	}, withDependOnIDs("FS-0000-INIT-SEPHIRAH_CLIENT"))
+
+	// FS-0002-USER-ADMIN_ACCOUNT_TYPE
+	registerTestCase("FS-0002-USER-ADMIN_ACCOUNT_TYPE", must, func(ctx context.Context, g *globals) error {
+		state := getUserState(g)
+		authState := getAuthState(g)
+
+		// Verify admin account has USER_TYPE_ADMIN
+		adminResp, err := g.SephirahClient.GetUser(withBearerToken(ctx, authState.AccessToken), &pb.GetUserRequest{})
+		if err != nil {
+			return fmt.Errorf("GetUser for admin failed: %w", err)
+		}
+		if adminResp.User == nil {
+			return fmt.Errorf("GetUser returned nil user for admin")
+		}
+		if adminResp.User.Type != pb.UserType_USER_TYPE_ADMIN {
+			return fmt.Errorf("admin account type is %v, expected USER_TYPE_ADMIN", adminResp.User.Type)
+		}
+
+		// Store admin user ID for other tests
+		state.AdminUserID = adminResp.User.Id
+
+		return nil
+	}, withDependOnIDs("FS-0001-AUTH-ADMIN_ACCOUNT"))
 
 	// FS-0002-USER-REGISTRATION_USER_TYPE (merged IMMEDIATE_LOGIN verification)
 	registerTestCase("FS-0002-USER-REGISTRATION_USER_TYPE", must, func(ctx context.Context, g *globals) error {
@@ -124,7 +148,7 @@ func init() {
 
 		// Test 3: Normal user can get another user's info
 		otherUserResp, err := g.SephirahClient.GetUser(withBearerToken(ctx, state.NormalAccessToken), &pb.GetUserRequest{
-			Id: authState.AdminUserID,
+			Id: state.AdminUserID,
 		})
 		if err != nil {
 			return fmt.Errorf("GetUser for other user failed: %w", err)
@@ -134,7 +158,7 @@ func init() {
 		}
 
 		return nil
-	}, withDependOnIDs("FS-0002-USER-REGISTRATION_USER_TYPE"))
+	}, withDependOnIDs("FS-0002-USER-REGISTRATION_USER_TYPE", "FS-0002-USER-ADMIN_ACCOUNT_TYPE"))
 
 	// FS-0002-USER-PASSWORD_PRIVACY
 	registerTestCase("FS-0002-USER-PASSWORD_PRIVACY", must, func(ctx context.Context, g *globals) error {
@@ -196,7 +220,7 @@ func init() {
 		// Test 2: Normal user cannot update other user's info
 		_, err = g.SephirahClient.UpdateUser(withBearerToken(ctx, state.NormalAccessToken), &pb.UpdateUserRequest{
 			User: &pb.User{
-				Id:       authState.AdminUserID,
+				Id:       state.AdminUserID,
 				Username: "admin_hacked",
 				Type:     pb.UserType_USER_TYPE_ADMIN,
 				Status:   pb.UserStatus_USER_STATUS_ACTIVE,
