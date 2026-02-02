@@ -219,11 +219,14 @@ func PrintMermaidTree(w io.Writer) error {
 
 // dependencyGraph represents the test case dependency structure
 type dependencyGraph struct {
-	nodes      map[string]*graphNode
-	roots      []string
-	levelCount map[testCaseRequireLevel]int
-	maxDepth   int
-	leafCount  int
+	nodes        map[string]*graphNode
+	roots        []string
+	levelCount   map[testCaseRequireLevel]int
+	scopeCount   map[string]int
+	maxDepth     int
+	leafCount    int
+	sameFSEdges  int
+	crossFSEdges int
 }
 
 // graphNode represents a single test case node in the dependency graph
@@ -233,12 +236,33 @@ type graphNode struct {
 	depth    int
 }
 
+// extractFSScope extracts the Feature Set scope from a test case ID
+// For example: "FS-0001-AUTH-TOKEN_STRUCTURE" -> "FS-0001-AUTH"
+func extractFSScope(id string) string {
+	parts := strings.Split(id, "-")
+	if len(parts) >= 3 {
+		return strings.Join(parts[:3], "-")
+	}
+	return id
+}
+
+// groupTestCasesByScope groups test cases by their Feature Set scope
+func groupTestCasesByScope() map[string][]testCase {
+	scopeMap := make(map[string][]testCase)
+	for _, tc := range testCases {
+		scope := extractFSScope(tc.ID)
+		scopeMap[scope] = append(scopeMap[scope], tc)
+	}
+	return scopeMap
+}
+
 // buildDependencyGraph constructs the dependency graph from testCases
 func buildDependencyGraph() (*dependencyGraph, error) {
 	graph := &dependencyGraph{
 		nodes:      make(map[string]*graphNode),
 		roots:      make([]string, 0),
 		levelCount: make(map[testCaseRequireLevel]int),
+		scopeCount: make(map[string]int),
 	}
 
 	// Create nodes for all test cases
@@ -248,6 +272,10 @@ func buildDependencyGraph() (*dependencyGraph, error) {
 			children: make([]string, 0),
 		}
 		graph.levelCount[tc.RequireLevel]++
+
+		// Count by scope
+		scope := extractFSScope(tc.ID)
+		graph.scopeCount[scope]++
 	}
 
 	// Build parent-child relationships
@@ -260,6 +288,13 @@ func buildDependencyGraph() (*dependencyGraph, error) {
 			for _, depID := range tc.DependOnIDs {
 				if parentNode, exists := graph.nodes[depID]; exists {
 					parentNode.children = append(parentNode.children, tc.ID)
+
+					// Count edge types
+					if extractFSScope(tc.ID) == extractFSScope(depID) {
+						graph.sameFSEdges++
+					} else {
+						graph.crossFSEdges++
+					}
 				}
 			}
 		}
@@ -318,26 +353,70 @@ func (g *dependencyGraph) toMermaid(w io.Writer) error {
 	fmt.Fprintln(w, "```mermaid")
 	fmt.Fprintln(w, "graph TD")
 
-	// Define all nodes
-	for _, tc := range testCases {
-		nodeID := sanitizeNodeID(tc.ID)
-		label := fmt.Sprintf("%s<br/>%s", tc.ID, tc.RequireLevel)
-		fmt.Fprintf(w, "    %s[\"%s\"]\n", nodeID, label)
+	// Group test cases by scope
+	scopeMap := groupTestCasesByScope()
+
+	// Get sorted scope list for consistent ordering
+	scopes := make([]string, 0, len(scopeMap))
+	for scope := range scopeMap {
+		scopes = append(scopes, scope)
+	}
+	sort.Strings(scopes)
+
+	// Generate subgraph for each Feature Set scope
+	for _, scope := range scopes {
+		scopeTestCases := scopeMap[scope]
+		fmt.Fprintln(w)
+
+		// Create subgraph with sanitized ID and readable title
+		subgraphID := sanitizeNodeID(scope)
+		fmt.Fprintf(w, "    subgraph %s[\"%s\"]\n", subgraphID, scope)
+
+		// Define nodes within this subgraph
+		for _, tc := range scopeTestCases {
+			nodeID := sanitizeNodeID(tc.ID)
+			label := fmt.Sprintf("%s<br/>%s", tc.ID, tc.RequireLevel)
+			fmt.Fprintf(w, "        %s[\"%s\"]\n", nodeID, label)
+		}
+
+		fmt.Fprintln(w, "    end")
 	}
 
-	// Add edges
+	// Add edges (outside subgraphs)
 	fmt.Fprintln(w)
+	fmt.Fprintln(w, "    %% Dependencies")
+
+	// Separate same-FS and cross-FS edges for clarity
+	fmt.Fprintln(w, "    %% Same Feature Set dependencies (solid arrows)")
 	for _, tc := range testCases {
 		nodeID := sanitizeNodeID(tc.ID)
 		node := g.nodes[tc.ID]
 		for _, childID := range node.children {
-			childNodeID := sanitizeNodeID(childID)
-			fmt.Fprintf(w, "    %s --> %s\n", nodeID, childNodeID)
+			// Same-FS dependency: solid arrow
+			if extractFSScope(tc.ID) == extractFSScope(childID) {
+				childNodeID := sanitizeNodeID(childID)
+				fmt.Fprintf(w, "    %s --> %s\n", nodeID, childNodeID)
+			}
+		}
+	}
+
+	fmt.Fprintln(w)
+	fmt.Fprintln(w, "    %% Cross Feature Set dependencies (dashed arrows)")
+	for _, tc := range testCases {
+		nodeID := sanitizeNodeID(tc.ID)
+		node := g.nodes[tc.ID]
+		for _, childID := range node.children {
+			// Cross-FS dependency: dashed arrow
+			if extractFSScope(tc.ID) != extractFSScope(childID) {
+				childNodeID := sanitizeNodeID(childID)
+				fmt.Fprintf(w, "    %s -.-> %s\n", nodeID, childNodeID)
+			}
 		}
 	}
 
 	// Add styling
 	fmt.Fprintln(w)
+	fmt.Fprintln(w, "    %% Styling by requirement level")
 	for _, tc := range testCases {
 		nodeID := sanitizeNodeID(tc.ID)
 		fillColor, textColor := getColorByLevel(tc.RequireLevel)
@@ -375,6 +454,35 @@ func (g *dependencyGraph) printStatistics(w io.Writer) {
 	fmt.Fprintf(w, "- **Maximum depth**: %d levels\n", g.maxDepth+1)
 	fmt.Fprintf(w, "- **Root nodes**: %d\n", len(g.roots))
 	fmt.Fprintf(w, "- **Leaf nodes**: %d\n", g.leafCount)
+
+	// Print per-Feature-Set breakdown
+	fmt.Fprintln(w)
+	fmt.Fprintln(w, "### Test Cases by Feature Set")
+	fmt.Fprintln(w)
+
+	// Get sorted scope list
+	scopes := make([]string, 0, len(g.scopeCount))
+	for scope := range g.scopeCount {
+		scopes = append(scopes, scope)
+	}
+	sort.Strings(scopes)
+
+	for _, scope := range scopes {
+		count := g.scopeCount[scope]
+		fmt.Fprintf(w, "- **%s**: %d cases\n", scope, count)
+	}
+
+	// Print dependency statistics
+	fmt.Fprintln(w)
+	fmt.Fprintln(w, "### Dependencies")
+	fmt.Fprintln(w)
+	fmt.Fprintf(w, "- **Same-FS dependencies**: %d\n", g.sameFSEdges)
+	fmt.Fprintf(w, "- **Cross-FS dependencies**: %d\n", g.crossFSEdges)
+	totalEdges := g.sameFSEdges + g.crossFSEdges
+	if totalEdges > 0 {
+		crossPercentage := float64(g.crossFSEdges) / float64(totalEdges) * 100
+		fmt.Fprintf(w, "- **Total dependencies**: %d (%.1f%% cross-FS)\n", totalEdges, crossPercentage)
+	}
 }
 
 // sanitizeNodeID converts a test case ID to a valid Mermaid node identifier

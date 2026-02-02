@@ -185,8 +185,12 @@ go run ./cmd/testsuite tree > dependency-tree.md
 ```
 
 The tree command generates:
-- **Mermaid diagram**: Visual representation of test dependencies
-- **Statistics**: Test counts by requirement level, max depth, root/leaf nodes
+- **Mermaid diagram**: Visual representation of test dependencies organized by Feature Set scope
+- **Subgraphs**: Each Feature Set (FS-XXXX-SCOPE) is displayed in its own subgraph
+- **Edge styles**: 
+  - Solid arrows (`-->`) for dependencies within the same Feature Set
+  - Dashed arrows (`-.->`) for dependencies across different Feature Sets
+- **Statistics**: Test counts by requirement level, per-FS breakdown, max depth, root/leaf nodes
 - **Color coding**: 
   - 🟢 Green = MUST requirements
   - 🔵 Blue = SHOULD requirements
@@ -196,14 +200,47 @@ The tree command generates:
 
 ```mermaid
 graph TD
-    FS_0000_INIT_SEPHIRAH_CLIENT["FS-0000-INIT-SEPHIRAH_CLIENT<br/>MUST"]
-    FS_0001_AUTH_ADMIN_ACCOUNT["FS-0001-AUTH-ADMIN_ACCOUNT<br/>MUST"]
+
+    subgraph FS_0000_INIT["FS-0000-INIT"]
+        FS_0000_INIT_SEPHIRAH_CLIENT["FS-0000-INIT-SEPHIRAH_CLIENT<br/>MUST"]
+    end
+
+    subgraph FS_0001_AUTH["FS-0001-AUTH"]
+        FS_0001_AUTH_ADMIN_ACCOUNT["FS-0001-AUTH-ADMIN_ACCOUNT<br/>MUST"]
+        FS_0001_AUTH_TOKEN_STRUCTURE["FS-0001-AUTH-TOKEN_STRUCTURE<br/>MUST"]
+    end
+
+    %% Dependencies
+    %% Same Feature Set dependencies (solid arrows)
+    FS_0001_AUTH_ADMIN_ACCOUNT --> FS_0001_AUTH_TOKEN_STRUCTURE
+
+    %% Cross Feature Set dependencies (dashed arrows)
+    FS_0000_INIT_SEPHIRAH_CLIENT -.-> FS_0001_AUTH_ADMIN_ACCOUNT
     
-    FS_0000_INIT_SEPHIRAH_CLIENT --> FS_0001_AUTH_ADMIN_ACCOUNT
-    
+    %% Styling by requirement level
     style FS_0000_INIT_SEPHIRAH_CLIENT fill:#4CAF50,stroke:#333,stroke-width:2px,color:#fff
     style FS_0001_AUTH_ADMIN_ACCOUNT fill:#4CAF50,stroke:#333,stroke-width:2px,color:#fff
+    style FS_0001_AUTH_TOKEN_STRUCTURE fill:#4CAF50,stroke:#333,stroke-width:2px,color:#fff
 ```
+
+## Dependency Tree Statistics
+
+- **Total test cases**: 3
+- **MUST**: 3 cases (100.0%)
+- **Maximum depth**: 3 levels
+- **Root nodes**: 1
+- **Leaf nodes**: 1
+
+### Test Cases by Feature Set
+
+- **FS-0000-INIT**: 1 cases
+- **FS-0001-AUTH**: 2 cases
+
+### Dependencies
+
+- **Same-FS dependencies**: 1
+- **Cross-FS dependencies**: 1
+- **Total dependencies**: 2 (50.0% cross-FS)
 
 ## Development Workflow
 
@@ -242,6 +279,8 @@ graph TD
    ```
 
 8. **Commit both files together**
+
+Note: The dependency tree visualization is automatically generated as `docs/dependency-tree.md` when running `make generate`. This file is used for documentation website deployment alongside `docs/protos.md` and `docs/openapi.json`.
 
 ### Modifying Existing Feature Sets
 
