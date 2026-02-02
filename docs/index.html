@@ -31,6 +31,68 @@
           });
         },
         function (hook, vm) {
+          function escapeHtml(s) {
+            return String(s)
+              .replace(/&/g, '&amp;')
+              .replace(/</g, '&lt;')
+              .replace(/>/g, '&gt;')
+              .replace(/"/g, '&quot;')
+              .replace(/'/g, '&#39;');
+          }
+
+          function fmtValue(v) {
+            if (v == null) return '';
+            if (v instanceof Date && !isNaN(v.getTime())) return v.toISOString().slice(0, 10);
+            if (typeof v === 'object') return escapeHtml(JSON.stringify(v));
+            return escapeHtml(v);
+          }
+
+          function renderFsMeta(frontmatter) {
+            var fields = [
+              ['id', 'ID'],
+              ['title', 'Title'],
+              ['version', 'Version'],
+              ['status', 'Status'],
+              ['created', 'Created'],
+              ['last_updated', 'Last Updated'],
+            ];
+
+            var active = fields.filter(function (kv) {
+              var v = frontmatter[kv[0]];
+              return v != null && String(v).length > 0;
+            });
+
+            if (active.length === 0) return '';
+
+            var headerRow = active
+              .map(function (kv) { return '<th>' + kv[1] + '</th>'; })
+              .join('');
+
+            var valueRow = active
+              .map(function (kv) { return '<td>' + fmtValue(frontmatter[kv[0]]) + '</td>'; })
+              .join('');
+
+            // Render as a regular table so it inherits Docsify table styles.
+            return (
+              '<table>' +
+                '<thead><tr>' + headerRow + '</tr></thead>' +
+                '<tbody><tr>' + valueRow + '</tr></tbody>' +
+              '</table>'
+            );
+          }
+
+          hook.afterEach(function (html, next) {
+            var fm = vm.frontmatter || {};
+            var file = (vm.route && vm.route.file) ? String(vm.route.file) : '';
+            var id = (fm && fm.id != null) ? String(fm.id) : '';
+
+            var isFs = (/^FS-\d{4}-/.test(id)) || (/^feature_sets\/FS-\d{4}-/.test(file));
+            if (!isFs) return next(html);
+
+            next(renderFsMeta(fm) + html);
+          });
+        },
+        function (hook, vm) {
           hook.ready(function () {
             mermaid.initialize({ startOnLoad: false });
           });
@@ -55,6 +117,7 @@
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/front-matter.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/mermaid@9.4.0/dist/mermaid.min.js"></script>
