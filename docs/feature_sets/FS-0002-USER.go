@@ -34,7 +34,6 @@ func init() {
 		state := getUserState(g)
 
 		// Generate random username and password
-		rand.Seed(time.Now().UnixNano())
 		state.NormalUsername = fmt.Sprintf("testuser_%d", rand.Int63())
 		state.NormalPassword = fmt.Sprintf("testpass_%d", rand.Int63())
 

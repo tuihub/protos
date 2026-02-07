@@ -231,15 +231,7 @@ func TestSortTestCasesWithMissingDependency(t *testing.T) {
 	}
 
 	err := sortTestCases()
-	if err != nil {
-		t.Fatalf("sortTestCases() error = %v", err)
-	}
-
-	if testCases[0].ID != "FS-0001-TEST-A" {
-		t.Errorf("TestCases[0].ID = %v, want FS-0001-TEST-A (missing dependency ignored)", testCases[0].ID)
-	}
-
-	if testCases[1].ID != "FS-0002-TEST-B" {
-		t.Errorf("TestCases[1].ID = %v, want FS-0002-TEST-B", testCases[1].ID)
+	if err == nil {
+		t.Fatalf("expected sortTestCases() to return an error due to missing dependency, but got nil")
 	}
 }

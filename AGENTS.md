@@ -237,6 +237,14 @@ Review changes carefully. If intentional, document in CHANGELOG.md. Breaking cha
 - **Documentation**: Auto-generated and deployed to GitHub Pages
 - **Releases**: Managed by release-please bot
 
+## Context-Aware Documentation
+
+When working on specific domains, read the relevant detailed documentation:
+
+| Task Domain | Documentation to Read | Trigger keywords |
+|---|---|---|
+| Feature Sets (FS-*, behavior specs, test suite) | [docs/feature_sets/AGENTS.md](docs/feature_sets/AGENTS.md) | `FS-`, `feature set`, `feature_sets`, `testsuite`, `behavior spec`, `RFC 2119`, `MUST/SHOULD/MAY requirements` |
+
 ## Additional Notes
 
 - This is a polyglot repository supporting 5+ languages

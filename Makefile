@@ -11,7 +11,7 @@ install-plugins:
 	cargo install --locked protoc-gen-prost-crate
 	dart pub global activate protoc_plugin 22.5.0
 
-generate: clean buf go rust dart dependency-tree
+generate: clean buf go rust dart testsuite-tree
 
 check: buf-lint go rust dart
 
