@@ -4,7 +4,6 @@ import (
 	"context"
 	"fmt"
 	"math/rand"
-	"time"
 
 	pb "github.com/tuihub/protos/pkg/librarian/sephirah/v1"
 	v1 "github.com/tuihub/protos/pkg/librarian/v1"
