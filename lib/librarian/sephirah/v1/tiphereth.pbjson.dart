@@ -342,14 +342,76 @@ final $typed_data.Uint8List registerDeviceResponseDescriptor =
         'ChZSZWdpc3RlckRldmljZVJlc3BvbnNlEjUKCWRldmljZV9pZBgBIAEoCzIYLmxpYnJhcmlhbi'
         '52MS5JbnRlcm5hbElEUghkZXZpY2VJZA==');
 
+@$core.Deprecated('Use getDeviceRequestDescriptor instead')
+const GetDeviceRequest$json = {
+  '1': 'GetDeviceRequest',
+  '2': [
+    {
+      '1': 'device_id',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'deviceId'
+    },
+  ],
+};
+
+/// Descriptor for `GetDeviceRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getDeviceRequestDescriptor = $convert.base64Decode(
+    'ChBHZXREZXZpY2VSZXF1ZXN0EjUKCWRldmljZV9pZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5Jbn'
+    'Rlcm5hbElEUghkZXZpY2VJZA==');
+
+@$core.Deprecated('Use getDeviceResponseDescriptor instead')
+const GetDeviceResponse$json = {
+  '1': 'GetDeviceResponse',
+  '2': [
+    {
+      '1': 'device_info',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.sephirah.v1.Device',
+      '10': 'deviceInfo'
+    },
+  ],
+};
+
+/// Descriptor for `GetDeviceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getDeviceResponseDescriptor = $convert.base64Decode(
+    'ChFHZXREZXZpY2VSZXNwb25zZRI+CgtkZXZpY2VfaW5mbxgBIAEoCzIdLmxpYnJhcmlhbi5zZX'
+    'BoaXJhaC52MS5EZXZpY2VSCmRldmljZUluZm8=');
+
 @$core.Deprecated('Use listUserSessionsRequestDescriptor instead')
 const ListUserSessionsRequest$json = {
   '1': 'ListUserSessionsRequest',
+  '2': [
+    {
+      '1': 'paging',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.librarian.v1.PagingRequest',
+      '10': 'paging'
+    },
+    {'1': 'include_expired', '3': 2, '4': 1, '5': 8, '10': 'includeExpired'},
+    {
+      '1': 'device_id_filter',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.librarian.v1.InternalID',
+      '10': 'deviceIdFilter'
+    },
+  ],
 };
 
 /// Descriptor for `ListUserSessionsRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List listUserSessionsRequestDescriptor =
-    $convert.base64Decode('ChdMaXN0VXNlclNlc3Npb25zUmVxdWVzdA==');
+final $typed_data.Uint8List listUserSessionsRequestDescriptor = $convert.base64Decode(
+    'ChdMaXN0VXNlclNlc3Npb25zUmVxdWVzdBIzCgZwYWdpbmcYASABKAsyGy5saWJyYXJpYW4udj'
+    'EuUGFnaW5nUmVxdWVzdFIGcGFnaW5nEicKD2luY2x1ZGVfZXhwaXJlZBgCIAEoCFIOaW5jbHVk'
+    'ZUV4cGlyZWQSQgoQZGV2aWNlX2lkX2ZpbHRlchgDIAMoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm'
+    '5hbElEUg5kZXZpY2VJZEZpbHRlcg==');
 
 @$core.Deprecated('Use listUserSessionsResponseDescriptor instead')
 const ListUserSessionsResponse$json = {
@@ -372,9 +434,9 @@ final $typed_data.Uint8List listUserSessionsResponseDescriptor =
         'ChhMaXN0VXNlclNlc3Npb25zUmVzcG9uc2USPgoIc2Vzc2lvbnMYASADKAsyIi5saWJyYXJpYW'
         '4uc2VwaGlyYWgudjEuVXNlclNlc3Npb25SCHNlc3Npb25z');
 
-@$core.Deprecated('Use deleteUserSessionRequestDescriptor instead')
-const DeleteUserSessionRequest$json = {
-  '1': 'DeleteUserSessionRequest',
+@$core.Deprecated('Use revokeUserSessionRequestDescriptor instead')
+const RevokeUserSessionRequest$json = {
+  '1': 'RevokeUserSessionRequest',
   '2': [
     {
       '1': 'session_id',
@@ -387,20 +449,20 @@ const DeleteUserSessionRequest$json = {
   ],
 };
 
-/// Descriptor for `DeleteUserSessionRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List deleteUserSessionRequestDescriptor =
+/// Descriptor for `RevokeUserSessionRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List revokeUserSessionRequestDescriptor =
     $convert.base64Decode(
-        'ChhEZWxldGVVc2VyU2Vzc2lvblJlcXVlc3QSNwoKc2Vzc2lvbl9pZBgBIAEoCzIYLmxpYnJhcm'
+        'ChhSZXZva2VVc2VyU2Vzc2lvblJlcXVlc3QSNwoKc2Vzc2lvbl9pZBgBIAEoCzIYLmxpYnJhcm'
         'lhbi52MS5JbnRlcm5hbElEUglzZXNzaW9uSWQ=');
 
-@$core.Deprecated('Use deleteUserSessionResponseDescriptor instead')
-const DeleteUserSessionResponse$json = {
-  '1': 'DeleteUserSessionResponse',
+@$core.Deprecated('Use revokeUserSessionResponseDescriptor instead')
+const RevokeUserSessionResponse$json = {
+  '1': 'RevokeUserSessionResponse',
 };
 
-/// Descriptor for `DeleteUserSessionResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List deleteUserSessionResponseDescriptor =
-    $convert.base64Decode('ChlEZWxldGVVc2VyU2Vzc2lvblJlc3BvbnNl');
+/// Descriptor for `RevokeUserSessionResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List revokeUserSessionResponseDescriptor =
+    $convert.base64Decode('ChlSZXZva2VVc2VyU2Vzc2lvblJlc3BvbnNl');
 
 @$core.Deprecated('Use updateUserRequestDescriptor instead')
 const UpdateUserRequest$json = {
@@ -920,12 +982,14 @@ const UserSession$json = {
       '10': 'userId'
     },
     {
-      '1': 'device_info',
+      '1': 'device_id',
       '3': 3,
       '4': 1,
       '5': 11,
-      '6': '.librarian.sephirah.v1.Device',
-      '10': 'deviceInfo'
+      '6': '.librarian.v1.InternalID',
+      '9': 0,
+      '10': 'deviceId',
+      '17': true
     },
     {
       '1': 'create_time',
@@ -944,16 +1008,19 @@ const UserSession$json = {
       '10': 'expireTime'
     },
   ],
+  '8': [
+    {'1': '_device_id'},
+  ],
 };
 
 /// Descriptor for `UserSession`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List userSessionDescriptor = $convert.base64Decode(
     'CgtVc2VyU2Vzc2lvbhIoCgJpZBgBIAEoCzIYLmxpYnJhcmlhbi52MS5JbnRlcm5hbElEUgJpZB'
-    'IxCgd1c2VyX2lkGAIgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSBnVzZXJJZBI+Cgtk'
-    'ZXZpY2VfaW5mbxgDIAEoCzIdLmxpYnJhcmlhbi5zZXBoaXJhaC52MS5EZXZpY2VSCmRldmljZU'
-    'luZm8SOwoLY3JlYXRlX3RpbWUYBCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUgpj'
-    'cmVhdGVUaW1lEjsKC2V4cGlyZV90aW1lGAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdG'
-    'FtcFIKZXhwaXJlVGltZQ==');
+    'IxCgd1c2VyX2lkGAIgASgLMhgubGlicmFyaWFuLnYxLkludGVybmFsSURSBnVzZXJJZBI6Cglk'
+    'ZXZpY2VfaWQYAyABKAsyGC5saWJyYXJpYW4udjEuSW50ZXJuYWxJREgAUghkZXZpY2VJZIgBAR'
+    'I7CgtjcmVhdGVfdGltZRgEIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBSCmNyZWF0'
+    'ZVRpbWUSOwoLZXhwaXJlX3RpbWUYBSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wUg'
+    'pleHBpcmVUaW1lQgwKCl9kZXZpY2VfaWQ=');
 
 @$core.Deprecated('Use deviceDescriptor instead')
 const Device$json = {

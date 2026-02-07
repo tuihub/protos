@@ -13,13 +13,7 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global =
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var global = globalThis;
 
 var librarian_v1_wellknown_pb = require('../../../librarian/v1/wellknown_pb.js');
 goog.object.extend(proto, librarian_v1_wellknown_pb);
@@ -291,7 +285,7 @@ contextId: (f = msg.getContextId()) && librarian_v1_wellknown_pb.InternalID.toOb
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.porter.v1.DetectAppInfoRequest}
  */
 proto.librarian.porter.v1.DetectAppInfoRequest.deserializeBinary = function(bytes) {
@@ -318,7 +312,7 @@ proto.librarian.porter.v1.DetectAppInfoRequest.deserializeBinaryFromReader = fun
     case 1:
       var value = msg.getDataMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readStringRequireUtf8, jspb.BinaryReader.prototype.readStringRequireUtf8, null, "", "");
          });
       break;
     case 2:
@@ -357,7 +351,12 @@ proto.librarian.porter.v1.DetectAppInfoRequest.serializeBinaryToWriter = functio
   var f = undefined;
   f = message.getDataMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(1, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+jspb.internal.public_for_gencode.serializeMapToBinary(
+    message.getDataMap(true),
+    1,
+    writer,
+    jspb.BinaryWriter.prototype.writeString,
+    jspb.BinaryWriter.prototype.writeString);
   }
   f = message.getContextId();
   if (f != null) {
@@ -475,7 +474,7 @@ appInfo: (f = msg.getAppInfo()) && proto.librarian.porter.v1.AppInfo.toObject(in
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.porter.v1.DetectAppInfoResponse}
  */
 proto.librarian.porter.v1.DetectAppInfoResponse.deserializeBinary = function(bytes) {
@@ -626,7 +625,7 @@ config: (f = msg.getConfig()) && librarian_v1_wellknown_pb.FeatureRequest.toObje
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.porter.v1.SearchAppInfoRequest}
  */
 proto.librarian.porter.v1.SearchAppInfoRequest.deserializeBinary = function(bytes) {
@@ -785,7 +784,7 @@ appInfosList: jspb.Message.toObjectList(msg.getAppInfosList(),
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.porter.v1.SearchAppInfoResponse}
  */
 proto.librarian.porter.v1.SearchAppInfoResponse.deserializeBinary = function(bytes) {
@@ -937,7 +936,7 @@ config: (f = msg.getConfig()) && librarian_v1_wellknown_pb.FeatureRequest.toObje
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.porter.v1.GetAppInfoRequest}
  */
 proto.librarian.porter.v1.GetAppInfoRequest.deserializeBinary = function(bytes) {
@@ -1088,7 +1087,7 @@ appInfo: (f = msg.getAppInfo()) && proto.librarian.porter.v1.AppInfo.toObject(in
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.porter.v1.GetAppInfoResponse}
  */
 proto.librarian.porter.v1.GetAppInfoResponse.deserializeBinary = function(bytes) {
@@ -1240,7 +1239,7 @@ rawDataJson: jspb.Message.getFieldWithDefault(msg, 2, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.porter.v1.ParseRawAppInfoRequest}
  */
 proto.librarian.porter.v1.ParseRawAppInfoRequest.deserializeBinary = function(bytes) {
@@ -1270,7 +1269,7 @@ proto.librarian.porter.v1.ParseRawAppInfoRequest.deserializeBinaryFromReader = f
       msg.setConfig(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setRawDataJson(value);
       break;
     default:
@@ -1420,7 +1419,7 @@ appInfo: (f = msg.getAppInfo()) && proto.librarian.porter.v1.AppInfo.toObject(in
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.porter.v1.ParseRawAppInfoResponse}
  */
 proto.librarian.porter.v1.ParseRawAppInfoResponse.deserializeBinary = function(bytes) {
@@ -1590,7 +1589,7 @@ nameAlternativesList: (f = jspb.Message.getRepeatedField(msg, 13)) == null ? und
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.porter.v1.AppInfo}
  */
 proto.librarian.porter.v1.AppInfo.deserializeBinary = function(bytes) {
@@ -1615,19 +1614,19 @@ proto.librarian.porter.v1.AppInfo.deserializeBinaryFromReader = function(msg, re
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setSource(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setSourceAppId(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setSourceUrl(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setRawDataJson(value);
       break;
     case 5:
@@ -1636,7 +1635,7 @@ proto.librarian.porter.v1.AppInfo.deserializeBinaryFromReader = function(msg, re
       msg.setDetails(value);
       break;
     case 6:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setName(value);
       break;
     case 7:
@@ -1644,27 +1643,27 @@ proto.librarian.porter.v1.AppInfo.deserializeBinaryFromReader = function(msg, re
       msg.setType(value);
       break;
     case 8:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setShortDescription(value);
       break;
     case 9:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setIconImageUrl(value);
       break;
     case 10:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setBackgroundImageUrl(value);
       break;
     case 11:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setCoverImageUrl(value);
       break;
     case 12:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.addTags(value);
       break;
     case 13:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.addNameAlternatives(value);
       break;
     default:
@@ -2157,7 +2156,7 @@ imageUrlsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined :
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.porter.v1.AppInfoDetails}
  */
 proto.librarian.porter.v1.AppInfoDetails.deserializeBinary = function(bytes) {
@@ -2182,27 +2181,27 @@ proto.librarian.porter.v1.AppInfoDetails.deserializeBinaryFromReader = function(
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setDescription(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setReleaseDate(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setDeveloper(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setPublisher(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setVersion(value);
       break;
     case 6:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.addImageUrls(value);
       break;
     default:

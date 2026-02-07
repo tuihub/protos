@@ -13,13 +13,7 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global =
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var global = globalThis;
 
 var google_protobuf_duration_pb = require('google-protobuf/google/protobuf/duration_pb.js');
 goog.object.extend(proto, google_protobuf_duration_pb);
@@ -978,7 +972,7 @@ config: (f = msg.getConfig()) && proto.librarian.sephirah.v1.FeedConfig.toObject
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.CreateFeedConfigRequest}
  */
 proto.librarian.sephirah.v1.CreateFeedConfigRequest.deserializeBinary = function(bytes) {
@@ -1129,7 +1123,7 @@ id: (f = msg.getId()) && librarian_v1_wellknown_pb.InternalID.toObject(includeIn
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.CreateFeedConfigResponse}
  */
 proto.librarian.sephirah.v1.CreateFeedConfigResponse.deserializeBinary = function(bytes) {
@@ -1280,7 +1274,7 @@ config: (f = msg.getConfig()) && proto.librarian.sephirah.v1.FeedConfig.toObject
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.UpdateFeedConfigRequest}
  */
 proto.librarian.sephirah.v1.UpdateFeedConfigRequest.deserializeBinary = function(bytes) {
@@ -1431,7 +1425,7 @@ proto.librarian.sephirah.v1.UpdateFeedConfigResponse.toObject = function(include
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.UpdateFeedConfigResponse}
  */
 proto.librarian.sephirah.v1.UpdateFeedConfigResponse.deserializeBinary = function(bytes) {
@@ -1543,7 +1537,7 @@ categoryFilterList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefi
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.ListFeedConfigsRequest}
  */
 proto.librarian.sephirah.v1.ListFeedConfigsRequest.deserializeBinary = function(bytes) {
@@ -1578,13 +1572,10 @@ proto.librarian.sephirah.v1.ListFeedConfigsRequest.deserializeBinaryFromReader =
       msg.addIdFilter(value);
       break;
     case 5:
-      var values = /** @type {!Array<!proto.librarian.sephirah.v1.FeedConfigStatus>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addStatusFilter(values[i]);
-      }
+      reader.readPackableEnumInto(msg.getStatusFilterList());
       break;
     case 6:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.addCategoryFilter(value);
       break;
     default:
@@ -1852,7 +1843,7 @@ feedsWithConfigList: jspb.Message.toObjectList(msg.getFeedsWithConfigList(),
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.ListFeedConfigsResponse}
  */
 proto.librarian.sephirah.v1.ListFeedConfigsResponse.deserializeBinary = function(bytes) {
@@ -1980,7 +1971,7 @@ config: (f = msg.getConfig()) && proto.librarian.sephirah.v1.FeedConfig.toObject
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.ListFeedConfigsResponse.FeedWithConfig}
  */
 proto.librarian.sephirah.v1.ListFeedConfigsResponse.FeedWithConfig.deserializeBinary = function(bytes) {
@@ -2256,7 +2247,7 @@ actionSet: (f = msg.getActionSet()) && proto.librarian.sephirah.v1.FeedActionSet
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.CreateFeedActionSetRequest}
  */
 proto.librarian.sephirah.v1.CreateFeedActionSetRequest.deserializeBinary = function(bytes) {
@@ -2407,7 +2398,7 @@ id: (f = msg.getId()) && librarian_v1_wellknown_pb.InternalID.toObject(includeIn
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.CreateFeedActionSetResponse}
  */
 proto.librarian.sephirah.v1.CreateFeedActionSetResponse.deserializeBinary = function(bytes) {
@@ -2558,7 +2549,7 @@ actionSet: (f = msg.getActionSet()) && proto.librarian.sephirah.v1.FeedActionSet
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.UpdateFeedActionSetRequest}
  */
 proto.librarian.sephirah.v1.UpdateFeedActionSetRequest.deserializeBinary = function(bytes) {
@@ -2709,7 +2700,7 @@ proto.librarian.sephirah.v1.UpdateFeedActionSetResponse.toObject = function(incl
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.UpdateFeedActionSetResponse}
  */
 proto.librarian.sephirah.v1.UpdateFeedActionSetResponse.deserializeBinary = function(bytes) {
@@ -2810,7 +2801,7 @@ paging: (f = msg.getPaging()) && librarian_v1_wellknown_pb.PagingRequest.toObjec
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.ListFeedActionSetsRequest}
  */
 proto.librarian.sephirah.v1.ListFeedActionSetsRequest.deserializeBinary = function(bytes) {
@@ -2970,7 +2961,7 @@ actionSetsList: jspb.Message.toObjectList(msg.getActionSetsList(),
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.ListFeedActionSetsResponse}
  */
 proto.librarian.sephirah.v1.ListFeedActionSetsResponse.deserializeBinary = function(bytes) {
@@ -3172,7 +3163,7 @@ proto.librarian.sephirah.v1.ListFeedCategoriesRequest.toObject = function(includ
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.ListFeedCategoriesRequest}
  */
 proto.librarian.sephirah.v1.ListFeedCategoriesRequest.deserializeBinary = function(bytes) {
@@ -3280,7 +3271,7 @@ categoriesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined 
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.ListFeedCategoriesResponse}
  */
 proto.librarian.sephirah.v1.ListFeedCategoriesResponse.deserializeBinary = function(bytes) {
@@ -3305,7 +3296,7 @@ proto.librarian.sephirah.v1.ListFeedCategoriesResponse.deserializeBinaryFromRead
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.addCategories(value);
       break;
     default:
@@ -3429,7 +3420,7 @@ proto.librarian.sephirah.v1.ListFeedPlatformsRequest.toObject = function(include
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.ListFeedPlatformsRequest}
  */
 proto.librarian.sephirah.v1.ListFeedPlatformsRequest.deserializeBinary = function(bytes) {
@@ -3537,7 +3528,7 @@ platformsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined :
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.ListFeedPlatformsResponse}
  */
 proto.librarian.sephirah.v1.ListFeedPlatformsResponse.deserializeBinary = function(bytes) {
@@ -3562,7 +3553,7 @@ proto.librarian.sephirah.v1.ListFeedPlatformsResponse.deserializeBinaryFromReade
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.addPlatforms(value);
       break;
     default:
@@ -3699,7 +3690,7 @@ publishTimeRange: (f = msg.getPublishTimeRange()) && librarian_v1_wellknown_pb.T
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.ListFeedItemsRequest}
  */
 proto.librarian.sephirah.v1.ListFeedItemsRequest.deserializeBinary = function(bytes) {
@@ -3734,15 +3725,15 @@ proto.librarian.sephirah.v1.ListFeedItemsRequest.deserializeBinaryFromReader = f
       msg.addFeedIdFilter(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.addAuthorFilter(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.addPublishPlatformFilter(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.addCategoryFilter(value);
       break;
     case 6:
@@ -4104,7 +4095,7 @@ itemsList: jspb.Message.toObjectList(msg.getItemsList(),
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.ListFeedItemsResponse}
  */
 proto.librarian.sephirah.v1.ListFeedItemsResponse.deserializeBinary = function(bytes) {
@@ -4306,7 +4297,7 @@ id: (f = msg.getId()) && librarian_v1_wellknown_pb.InternalID.toObject(includeIn
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.GetFeedItemRequest}
  */
 proto.librarian.sephirah.v1.GetFeedItemRequest.deserializeBinary = function(bytes) {
@@ -4457,7 +4448,7 @@ item: (f = msg.getItem()) && librarian_v1_common_pb.FeedItem.toObject(includeIns
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.GetFeedItemResponse}
  */
 proto.librarian.sephirah.v1.GetFeedItemResponse.deserializeBinary = function(bytes) {
@@ -4616,7 +4607,7 @@ idsList: jspb.Message.toObjectList(msg.getIdsList(),
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.GetBatchFeedItemsRequest}
  */
 proto.librarian.sephirah.v1.GetBatchFeedItemsRequest.deserializeBinary = function(bytes) {
@@ -4776,7 +4767,7 @@ itemsList: jspb.Message.toObjectList(msg.getItemsList(),
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.GetBatchFeedItemsResponse}
  */
 proto.librarian.sephirah.v1.GetBatchFeedItemsResponse.deserializeBinary = function(bytes) {
@@ -4928,7 +4919,7 @@ id: (f = msg.getId()) && librarian_v1_wellknown_pb.InternalID.toObject(includeIn
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.ReadFeedItemRequest}
  */
 proto.librarian.sephirah.v1.ReadFeedItemRequest.deserializeBinary = function(bytes) {
@@ -5079,7 +5070,7 @@ proto.librarian.sephirah.v1.ReadFeedItemResponse.toObject = function(includeInst
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.ReadFeedItemResponse}
  */
 proto.librarian.sephirah.v1.ReadFeedItemResponse.deserializeBinary = function(bytes) {
@@ -5180,7 +5171,7 @@ collection: (f = msg.getCollection()) && proto.librarian.sephirah.v1.FeedItemCol
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.CreateFeedItemCollectionRequest}
  */
 proto.librarian.sephirah.v1.CreateFeedItemCollectionRequest.deserializeBinary = function(bytes) {
@@ -5331,7 +5322,7 @@ proto.librarian.sephirah.v1.CreateFeedItemCollectionResponse.toObject = function
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.CreateFeedItemCollectionResponse}
  */
 proto.librarian.sephirah.v1.CreateFeedItemCollectionResponse.deserializeBinary = function(bytes) {
@@ -5432,7 +5423,7 @@ collection: (f = msg.getCollection()) && proto.librarian.sephirah.v1.FeedItemCol
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.UpdateFeedItemCollectionRequest}
  */
 proto.librarian.sephirah.v1.UpdateFeedItemCollectionRequest.deserializeBinary = function(bytes) {
@@ -5583,7 +5574,7 @@ proto.librarian.sephirah.v1.UpdateFeedItemCollectionResponse.toObject = function
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.UpdateFeedItemCollectionResponse}
  */
 proto.librarian.sephirah.v1.UpdateFeedItemCollectionResponse.deserializeBinary = function(bytes) {
@@ -5694,7 +5685,7 @@ categoryFilterList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefi
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.ListFeedItemCollectionsRequest}
  */
 proto.librarian.sephirah.v1.ListFeedItemCollectionsRequest.deserializeBinary = function(bytes) {
@@ -5729,7 +5720,7 @@ proto.librarian.sephirah.v1.ListFeedItemCollectionsRequest.deserializeBinaryFrom
       msg.addIdFilter(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.addCategoryFilter(value);
       break;
     default:
@@ -5953,7 +5944,7 @@ collectionsList: jspb.Message.toObjectList(msg.getCollectionsList(),
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.ListFeedItemCollectionsResponse}
  */
 proto.librarian.sephirah.v1.ListFeedItemCollectionsResponse.deserializeBinary = function(bytes) {
@@ -6156,7 +6147,7 @@ collectionId: (f = msg.getCollectionId()) && librarian_v1_wellknown_pb.InternalI
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.AddFeedItemToCollectionRequest}
  */
 proto.librarian.sephirah.v1.AddFeedItemToCollectionRequest.deserializeBinary = function(bytes) {
@@ -6357,7 +6348,7 @@ proto.librarian.sephirah.v1.AddFeedItemToCollectionResponse.toObject = function(
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.AddFeedItemToCollectionResponse}
  */
 proto.librarian.sephirah.v1.AddFeedItemToCollectionResponse.deserializeBinary = function(bytes) {
@@ -6459,7 +6450,7 @@ collectionId: (f = msg.getCollectionId()) && librarian_v1_wellknown_pb.InternalI
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.RemoveFeedItemFromCollectionRequest}
  */
 proto.librarian.sephirah.v1.RemoveFeedItemFromCollectionRequest.deserializeBinary = function(bytes) {
@@ -6660,7 +6651,7 @@ proto.librarian.sephirah.v1.RemoveFeedItemFromCollectionResponse.toObject = func
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.RemoveFeedItemFromCollectionResponse}
  */
 proto.librarian.sephirah.v1.RemoveFeedItemFromCollectionResponse.deserializeBinary = function(bytes) {
@@ -6774,7 +6765,7 @@ publishTimeRange: (f = msg.getPublishTimeRange()) && librarian_v1_wellknown_pb.T
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.ListFeedItemsInCollectionRequest}
  */
 proto.librarian.sephirah.v1.ListFeedItemsInCollectionRequest.deserializeBinary = function(bytes) {
@@ -6809,15 +6800,15 @@ proto.librarian.sephirah.v1.ListFeedItemsInCollectionRequest.deserializeBinaryFr
       msg.addCollectionIdFilter(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.addAuthorFilter(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.addPublishPlatformFilter(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.addCategoryFilter(value);
       break;
     case 6:
@@ -7179,7 +7170,7 @@ itemsList: jspb.Message.toObjectList(msg.getItemsList(),
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.ListFeedItemsInCollectionResponse}
  */
 proto.librarian.sephirah.v1.ListFeedItemsInCollectionResponse.deserializeBinary = function(bytes) {
@@ -7400,7 +7391,7 @@ latestPullMessage: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.FeedConfig}
  */
 proto.librarian.sephirah.v1.FeedConfig.deserializeBinary = function(bytes) {
@@ -7430,11 +7421,11 @@ proto.librarian.sephirah.v1.FeedConfig.deserializeBinaryFromReader = function(ms
       msg.setId(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setName(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setDescription(value);
       break;
     case 4:
@@ -7457,7 +7448,7 @@ proto.librarian.sephirah.v1.FeedConfig.deserializeBinaryFromReader = function(ms
       msg.setPullInterval(value);
       break;
     case 8:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setCategory(value);
       break;
     case 9:
@@ -7474,7 +7465,7 @@ proto.librarian.sephirah.v1.FeedConfig.deserializeBinaryFromReader = function(ms
       msg.setLatestPullStatus(value);
       break;
     case 12:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setLatestPullMessage(value);
       break;
     default:
@@ -8002,7 +7993,7 @@ actionsList: jspb.Message.toObjectList(msg.getActionsList(),
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.FeedActionSet}
  */
 proto.librarian.sephirah.v1.FeedActionSet.deserializeBinary = function(bytes) {
@@ -8032,11 +8023,11 @@ proto.librarian.sephirah.v1.FeedActionSet.deserializeBinaryFromReader = function
       msg.setId(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setName(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setDescription(value);
       break;
     case 4:
@@ -8280,7 +8271,7 @@ readCount: jspb.Message.getFieldWithDefault(msg, 12, 0)
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.FeedItemDigest}
  */
 proto.librarian.sephirah.v1.FeedItemDigest.deserializeBinary = function(bytes) {
@@ -8315,11 +8306,11 @@ proto.librarian.sephirah.v1.FeedItemDigest.deserializeBinaryFromReader = functio
       msg.setItemId(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setAvatarUrl(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setAuthors(value);
       break;
     case 5:
@@ -8328,27 +8319,27 @@ proto.librarian.sephirah.v1.FeedItemDigest.deserializeBinaryFromReader = functio
       msg.setPublishedParsedTime(value);
       break;
     case 6:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setTitle(value);
       break;
     case 7:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setShortDescription(value);
       break;
     case 8:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.addImageUrls(value);
       break;
     case 9:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setPublishPlatform(value);
       break;
     case 10:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setFeedConfigName(value);
       break;
     case 11:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setFeedAvatarUrl(value);
       break;
     case 12:
@@ -8814,7 +8805,7 @@ category: jspb.Message.getFieldWithDefault(msg, 4, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.FeedItemCollection}
  */
 proto.librarian.sephirah.v1.FeedItemCollection.deserializeBinary = function(bytes) {
@@ -8844,15 +8835,15 @@ proto.librarian.sephirah.v1.FeedItemCollection.deserializeBinaryFromReader = fun
       msg.setId(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setName(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setDescription(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setCategory(value);
       break;
     default:

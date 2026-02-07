@@ -15,8 +15,7 @@
 ///    int32 bar = 1;
 /// }
 /// ```
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct Rule {
     /// `id` is a string that serves as a machine-readable name for this Rule.
     /// It should be unique within its scope, which could be either a message or a field.
@@ -37,7 +36,6 @@ pub struct Rule {
 }
 /// MessageRules represents validation rules that are applied to the entire message.
 /// It includes disabling options and a list of Rule messages representing Common Expression Language (CEL) validation rules.
-#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct MessageRules {
     /// `cel` is a repeated field of type Rule. Each Rule specifies a validation rule to be applied to this message.
@@ -95,8 +93,7 @@ pub struct MessageRules {
     #[prost(message, repeated, tag="4")]
     pub oneof: ::prost::alloc::vec::Vec<MessageOneofRule>,
 }
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct MessageOneofRule {
     /// A list of field names to include in the oneof. All field names must be
     /// defined in the message. At least one field must be specified, and
@@ -109,8 +106,7 @@ pub struct MessageOneofRule {
 }
 /// The `OneofRules` message type enables you to manage rules for
 /// oneof fields in your protobuf messages.
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, Copy, PartialEq, ::prost::Message)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct OneofRules {
     /// If `required` is true, exactly one field of the oneof must be set. A
     /// validation error is returned if no fields in the oneof are set. Further rules
@@ -133,7 +129,6 @@ pub struct OneofRules {
 }
 /// FieldRules encapsulates the rules for each type of field. Depending on
 /// the field, the correct set should be used to ensure proper validations.
-#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct FieldRules {
     /// `cel` is a repeated field used to represent a textual expression
@@ -223,8 +218,7 @@ pub struct FieldRules {
 }
 /// Nested message and enum types in `FieldRules`.
 pub mod field_rules {
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Oneof)]
+    #[derive(Clone, PartialEq, ::prost::Oneof)]
     pub enum Type {
         /// Scalar Field Types
         #[prost(message, tag="1")]
@@ -275,7 +269,6 @@ pub mod field_rules {
 }
 /// PredefinedRules are custom rules that can be re-used with
 /// multiple fields.
-#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct PredefinedRules {
     /// `cel` is a repeated field used to represent a textual expression
@@ -297,7 +290,6 @@ pub struct PredefinedRules {
 }
 /// FloatRules describes the rules applied to `float` values. These
 /// rules may also be applied to the `google.protobuf.FloatValue` Well-Known-Type.
-#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct FloatRules {
     /// `const` requires the field value to exactly match the specified value. If
@@ -360,8 +352,7 @@ pub struct FloatRules {
 }
 /// Nested message and enum types in `FloatRules`.
 pub mod float_rules {
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, Copy, PartialEq, ::prost::Oneof)]
+    #[derive(Clone, Copy, PartialEq, ::prost::Oneof)]
     pub enum LessThan {
         /// `lt` requires the field value to be less than the specified value (field <
         /// value). If the field value is equal to or greater than the specified value,
@@ -388,8 +379,7 @@ pub mod float_rules {
         #[prost(float, tag="3")]
         Lte(f32),
     }
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, Copy, PartialEq, ::prost::Oneof)]
+    #[derive(Clone, Copy, PartialEq, ::prost::Oneof)]
     pub enum GreaterThan {
         /// `gt` requires the field value to be greater than the specified value
         /// (exclusive). If the value of `gt` is larger than a specified `lt` or
@@ -435,7 +425,6 @@ pub mod float_rules {
 }
 /// DoubleRules describes the rules applied to `double` values. These
 /// rules may also be applied to the `google.protobuf.DoubleValue` Well-Known-Type.
-#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DoubleRules {
     /// `const` requires the field value to exactly match the specified value. If
@@ -498,8 +487,7 @@ pub struct DoubleRules {
 }
 /// Nested message and enum types in `DoubleRules`.
 pub mod double_rules {
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, Copy, PartialEq, ::prost::Oneof)]
+    #[derive(Clone, Copy, PartialEq, ::prost::Oneof)]
     pub enum LessThan {
         /// `lt` requires the field value to be less than the specified value (field <
         /// value). If the field value is equal to or greater than the specified
@@ -526,8 +514,7 @@ pub mod double_rules {
         #[prost(double, tag="3")]
         Lte(f64),
     }
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, Copy, PartialEq, ::prost::Oneof)]
+    #[derive(Clone, Copy, PartialEq, ::prost::Oneof)]
     pub enum GreaterThan {
         /// `gt` requires the field value to be greater than the specified value
         /// (exclusive). If the value of `gt` is larger than a specified `lt` or `lte`,
@@ -573,8 +560,7 @@ pub mod double_rules {
 }
 /// Int32Rules describes the rules applied to `int32` values. These
 /// rules may also be applied to the `google.protobuf.Int32Value` Well-Known-Type.
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct Int32Rules {
     /// `const` requires the field value to exactly match the specified value. If
     /// the field value doesn't match, an error message is generated.
@@ -632,8 +618,7 @@ pub struct Int32Rules {
 }
 /// Nested message and enum types in `Int32Rules`.
 pub mod int32_rules {
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, Copy, PartialEq, ::prost::Oneof)]
+    #[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Oneof)]
     pub enum LessThan {
         /// `lt` requires the field value to be less than the specified value (field
         /// < value). If the field value is equal to or greater than the specified
@@ -660,8 +645,7 @@ pub mod int32_rules {
         #[prost(int32, tag="3")]
         Lte(i32),
     }
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, Copy, PartialEq, ::prost::Oneof)]
+    #[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Oneof)]
     pub enum GreaterThan {
         /// `gt` requires the field value to be greater than the specified value
         /// (exclusive). If the value of `gt` is larger than a specified `lt` or
@@ -707,8 +691,7 @@ pub mod int32_rules {
 }
 /// Int64Rules describes the rules applied to `int64` values. These
 /// rules may also be applied to the `google.protobuf.Int64Value` Well-Known-Type.
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct Int64Rules {
     /// `const` requires the field value to exactly match the specified value. If
     /// the field value doesn't match, an error message is generated.
@@ -766,8 +749,7 @@ pub struct Int64Rules {
 }
 /// Nested message and enum types in `Int64Rules`.
 pub mod int64_rules {
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, Copy, PartialEq, ::prost::Oneof)]
+    #[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Oneof)]
     pub enum LessThan {
         /// `lt` requires the field value to be less than the specified value (field <
         /// value). If the field value is equal to or greater than the specified value,
@@ -794,8 +776,7 @@ pub mod int64_rules {
         #[prost(int64, tag="3")]
         Lte(i64),
     }
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, Copy, PartialEq, ::prost::Oneof)]
+    #[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Oneof)]
     pub enum GreaterThan {
         /// `gt` requires the field value to be greater than the specified value
         /// (exclusive). If the value of `gt` is larger than a specified `lt` or
@@ -841,8 +822,7 @@ pub mod int64_rules {
 }
 /// UInt32Rules describes the rules applied to `uint32` values. These
 /// rules may also be applied to the `google.protobuf.UInt32Value` Well-Known-Type.
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct UInt32Rules {
     /// `const` requires the field value to exactly match the specified value. If
     /// the field value doesn't match, an error message is generated.
@@ -900,8 +880,7 @@ pub struct UInt32Rules {
 }
 /// Nested message and enum types in `UInt32Rules`.
 pub mod u_int32_rules {
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, Copy, PartialEq, ::prost::Oneof)]
+    #[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Oneof)]
     pub enum LessThan {
         /// `lt` requires the field value to be less than the specified value (field <
         /// value). If the field value is equal to or greater than the specified value,
@@ -928,8 +907,7 @@ pub mod u_int32_rules {
         #[prost(uint32, tag="3")]
         Lte(u32),
     }
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, Copy, PartialEq, ::prost::Oneof)]
+    #[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Oneof)]
     pub enum GreaterThan {
         /// `gt` requires the field value to be greater than the specified value
         /// (exclusive). If the value of `gt` is larger than a specified `lt` or
@@ -975,8 +953,7 @@ pub mod u_int32_rules {
 }
 /// UInt64Rules describes the rules applied to `uint64` values. These
 /// rules may also be applied to the `google.protobuf.UInt64Value` Well-Known-Type.
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct UInt64Rules {
     /// `const` requires the field value to exactly match the specified value. If
     /// the field value doesn't match, an error message is generated.
@@ -1034,8 +1011,7 @@ pub struct UInt64Rules {
 }
 /// Nested message and enum types in `UInt64Rules`.
 pub mod u_int64_rules {
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, Copy, PartialEq, ::prost::Oneof)]
+    #[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Oneof)]
     pub enum LessThan {
         /// `lt` requires the field value to be less than the specified value (field <
         /// value). If the field value is equal to or greater than the specified value,
@@ -1062,8 +1038,7 @@ pub mod u_int64_rules {
         #[prost(uint64, tag="3")]
         Lte(u64),
     }
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, Copy, PartialEq, ::prost::Oneof)]
+    #[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Oneof)]
     pub enum GreaterThan {
         /// `gt` requires the field value to be greater than the specified value
         /// (exclusive). If the value of `gt` is larger than a specified `lt` or
@@ -1108,8 +1083,7 @@ pub mod u_int64_rules {
     }
 }
 /// SInt32Rules describes the rules applied to `sint32` values.
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct SInt32Rules {
     /// `const` requires the field value to exactly match the specified value. If
     /// the field value doesn't match, an error message is generated.
@@ -1167,8 +1141,7 @@ pub struct SInt32Rules {
 }
 /// Nested message and enum types in `SInt32Rules`.
 pub mod s_int32_rules {
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, Copy, PartialEq, ::prost::Oneof)]
+    #[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Oneof)]
     pub enum LessThan {
         /// `lt` requires the field value to be less than the specified value (field
         /// < value). If the field value is equal to or greater than the specified
@@ -1195,8 +1168,7 @@ pub mod s_int32_rules {
         #[prost(sint32, tag="3")]
         Lte(i32),
     }
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, Copy, PartialEq, ::prost::Oneof)]
+    #[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Oneof)]
     pub enum GreaterThan {
         /// `gt` requires the field value to be greater than the specified value
         /// (exclusive). If the value of `gt` is larger than a specified `lt` or
@@ -1241,8 +1213,7 @@ pub mod s_int32_rules {
     }
 }
 /// SInt64Rules describes the rules applied to `sint64` values.
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct SInt64Rules {
     /// `const` requires the field value to exactly match the specified value. If
     /// the field value doesn't match, an error message is generated.
@@ -1300,8 +1271,7 @@ pub struct SInt64Rules {
 }
 /// Nested message and enum types in `SInt64Rules`.
 pub mod s_int64_rules {
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, Copy, PartialEq, ::prost::Oneof)]
+    #[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Oneof)]
     pub enum LessThan {
         /// `lt` requires the field value to be less than the specified value (field
         /// < value). If the field value is equal to or greater than the specified
@@ -1328,8 +1298,7 @@ pub mod s_int64_rules {
         #[prost(sint64, tag="3")]
         Lte(i64),
     }
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, Copy, PartialEq, ::prost::Oneof)]
+    #[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Oneof)]
     pub enum GreaterThan {
         /// `gt` requires the field value to be greater than the specified value
         /// (exclusive). If the value of `gt` is larger than a specified `lt` or
@@ -1374,8 +1343,7 @@ pub mod s_int64_rules {
     }
 }
 /// Fixed32Rules describes the rules applied to `fixed32` values.
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct Fixed32Rules {
     /// `const` requires the field value to exactly match the specified value.
     /// If the field value doesn't match, an error message is generated.
@@ -1433,8 +1401,7 @@ pub struct Fixed32Rules {
 }
 /// Nested message and enum types in `Fixed32Rules`.
 pub mod fixed32_rules {
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, Copy, PartialEq, ::prost::Oneof)]
+    #[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Oneof)]
     pub enum LessThan {
         /// `lt` requires the field value to be less than the specified value (field <
         /// value). If the field value is equal to or greater than the specified value,
@@ -1461,8 +1428,7 @@ pub mod fixed32_rules {
         #[prost(fixed32, tag="3")]
         Lte(u32),
     }
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, Copy, PartialEq, ::prost::Oneof)]
+    #[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Oneof)]
     pub enum GreaterThan {
         /// `gt` requires the field value to be greater than the specified value
         /// (exclusive). If the value of `gt` is larger than a specified `lt` or
@@ -1507,8 +1473,7 @@ pub mod fixed32_rules {
     }
 }
 /// Fixed64Rules describes the rules applied to `fixed64` values.
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct Fixed64Rules {
     /// `const` requires the field value to exactly match the specified value. If
     /// the field value doesn't match, an error message is generated.
@@ -1566,8 +1531,7 @@ pub struct Fixed64Rules {
 }
 /// Nested message and enum types in `Fixed64Rules`.
 pub mod fixed64_rules {
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, Copy, PartialEq, ::prost::Oneof)]
+    #[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Oneof)]
     pub enum LessThan {
         /// `lt` requires the field value to be less than the specified value (field <
         /// value). If the field value is equal to or greater than the specified value,
@@ -1594,8 +1558,7 @@ pub mod fixed64_rules {
         #[prost(fixed64, tag="3")]
         Lte(u64),
     }
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, Copy, PartialEq, ::prost::Oneof)]
+    #[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Oneof)]
     pub enum GreaterThan {
         /// `gt` requires the field value to be greater than the specified value
         /// (exclusive). If the value of `gt` is larger than a specified `lt` or
@@ -1640,8 +1603,7 @@ pub mod fixed64_rules {
     }
 }
 /// SFixed32Rules describes the rules applied to `fixed32` values.
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct SFixed32Rules {
     /// `const` requires the field value to exactly match the specified value. If
     /// the field value doesn't match, an error message is generated.
@@ -1699,8 +1661,7 @@ pub struct SFixed32Rules {
 }
 /// Nested message and enum types in `SFixed32Rules`.
 pub mod s_fixed32_rules {
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, Copy, PartialEq, ::prost::Oneof)]
+    #[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Oneof)]
     pub enum LessThan {
         /// `lt` requires the field value to be less than the specified value (field <
         /// value). If the field value is equal to or greater than the specified value,
@@ -1727,8 +1688,7 @@ pub mod s_fixed32_rules {
         #[prost(sfixed32, tag="3")]
         Lte(i32),
     }
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, Copy, PartialEq, ::prost::Oneof)]
+    #[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Oneof)]
     pub enum GreaterThan {
         /// `gt` requires the field value to be greater than the specified value
         /// (exclusive). If the value of `gt` is larger than a specified `lt` or
@@ -1773,8 +1733,7 @@ pub mod s_fixed32_rules {
     }
 }
 /// SFixed64Rules describes the rules applied to `fixed64` values.
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct SFixed64Rules {
     /// `const` requires the field value to exactly match the specified value. If
     /// the field value doesn't match, an error message is generated.
@@ -1832,8 +1791,7 @@ pub struct SFixed64Rules {
 }
 /// Nested message and enum types in `SFixed64Rules`.
 pub mod s_fixed64_rules {
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, Copy, PartialEq, ::prost::Oneof)]
+    #[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Oneof)]
     pub enum LessThan {
         /// `lt` requires the field value to be less than the specified value (field <
         /// value). If the field value is equal to or greater than the specified value,
@@ -1860,8 +1818,7 @@ pub mod s_fixed64_rules {
         #[prost(sfixed64, tag="3")]
         Lte(i64),
     }
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, Copy, PartialEq, ::prost::Oneof)]
+    #[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Oneof)]
     pub enum GreaterThan {
         /// `gt` requires the field value to be greater than the specified value
         /// (exclusive). If the value of `gt` is larger than a specified `lt` or
@@ -1907,8 +1864,7 @@ pub mod s_fixed64_rules {
 }
 /// BoolRules describes the rules applied to `bool` values. These rules
 /// may also be applied to the `google.protobuf.BoolValue` Well-Known-Type.
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct BoolRules {
     /// `const` requires the field value to exactly match the specified boolean value.
     /// If the field value doesn't match, an error message is generated.
@@ -1938,8 +1894,7 @@ pub struct BoolRules {
 }
 /// StringRules describes the rules applied to `string` values These
 /// rules may also be applied to the `google.protobuf.StringValue` Well-Known-Type.
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct StringRules {
     /// `const` requires the field value to exactly match the specified value. If
     /// the field value doesn't match, an error message is generated.
@@ -2150,8 +2105,7 @@ pub struct StringRules {
 pub mod string_rules {
     /// `WellKnown` rules provide advanced rules against common string
     /// patterns.
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, Copy, PartialEq, ::prost::Oneof)]
+    #[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Oneof)]
     pub enum WellKnown {
         /// `email` specifies that the field value must be a valid email address, for
         /// example "foo@example.com".
@@ -2440,8 +2394,7 @@ pub mod string_rules {
 }
 /// BytesRules describe the rules applied to `bytes` values. These rules
 /// may also be applied to the `google.protobuf.BytesValue` Well-Known-Type.
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct BytesRules {
     /// `const` requires the field value to exactly match the specified bytes
     /// value. If the field value doesn't match, an error message is generated.
@@ -2587,8 +2540,7 @@ pub struct BytesRules {
 pub mod bytes_rules {
     /// WellKnown rules provide advanced rules against common byte
     /// patterns
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, Copy, PartialEq, ::prost::Oneof)]
+    #[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Oneof)]
     pub enum WellKnown {
         /// `ip` ensures that the field `value` is a valid IP address (v4 or v6) in byte format.
         /// If the field value doesn't meet this rule, an error message is generated.
@@ -2625,8 +2577,7 @@ pub mod bytes_rules {
     }
 }
 /// EnumRules describe the rules applied to `enum` values.
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct EnumRules {
     /// `const` requires the field value to exactly match the specified enum value.
     /// If the field value doesn't match, an error message is generated.
@@ -2718,7 +2669,6 @@ pub struct EnumRules {
     pub example: ::prost::alloc::vec::Vec<i32>,
 }
 /// RepeatedRules describe the rules applied to `repeated` values.
-#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct RepeatedRules {
     /// `min_items` requires that this field must contain at least the specified
@@ -2781,7 +2731,6 @@ pub struct RepeatedRules {
     pub items: ::core::option::Option<::prost::alloc::boxed::Box<FieldRules>>,
 }
 /// MapRules describe the rules applied to `map` values.
-#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct MapRules {
     /// Specifies the minimum number of key-value pairs allowed. If the field has
@@ -2843,8 +2792,7 @@ pub struct MapRules {
     pub values: ::core::option::Option<::prost::alloc::boxed::Box<FieldRules>>,
 }
 /// AnyRules describe rules applied exclusively to the `google.protobuf.Any` well-known type.
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct AnyRules {
     /// `in` requires the field's `type_url` to be equal to one of the
     /// specified values. If it doesn't match any of the specified values, an error
@@ -2874,7 +2822,6 @@ pub struct AnyRules {
     pub not_in: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
 }
 /// DurationRules describe the rules applied exclusively to the `google.protobuf.Duration` well-known type.
-#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DurationRules {
     /// `const` dictates that the field must match the specified value of the `google.protobuf.Duration` type exactly.
@@ -2935,8 +2882,7 @@ pub struct DurationRules {
 }
 /// Nested message and enum types in `DurationRules`.
 pub mod duration_rules {
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, Copy, PartialEq, ::prost::Oneof)]
+    #[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Oneof)]
     pub enum LessThan {
         /// `lt` stipulates that the field must be less than the specified value of the `google.protobuf.Duration` type,
         /// exclusive. If the field's value is greater than or equal to the specified
@@ -2963,8 +2909,7 @@ pub mod duration_rules {
         #[prost(message, tag="4")]
         Lte(::pbjson_types::Duration),
     }
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, Copy, PartialEq, ::prost::Oneof)]
+    #[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Oneof)]
     pub enum GreaterThan {
         /// `gt` requires the duration field value to be greater than the specified
         /// value (exclusive). If the value of `gt` is larger than a specified `lt`
@@ -3009,7 +2954,6 @@ pub mod duration_rules {
     }
 }
 /// TimestampRules describe the rules applied exclusively to the `google.protobuf.Timestamp` well-known type.
-#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct TimestampRules {
     /// `const` dictates that this field, of the `google.protobuf.Timestamp` type, must exactly match the specified value. If the field value doesn't correspond to the specified timestamp, an error message will be generated.
@@ -3053,8 +2997,7 @@ pub struct TimestampRules {
 }
 /// Nested message and enum types in `TimestampRules`.
 pub mod timestamp_rules {
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, Copy, PartialEq, ::prost::Oneof)]
+    #[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Oneof)]
     pub enum LessThan {
         /// requires the duration field value to be less than the specified value (field < value). If the field value doesn't meet the required conditions, an error message is generated.
         ///
@@ -3087,8 +3030,7 @@ pub mod timestamp_rules {
         #[prost(bool, tag="7")]
         LtNow(bool),
     }
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, Copy, PartialEq, ::prost::Oneof)]
+    #[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Oneof)]
     pub enum GreaterThan {
         /// `gt` requires the timestamp field value to be greater than the specified
         /// value (exclusive). If the value of `gt` is larger than a specified `lt`
@@ -3145,7 +3087,6 @@ pub mod timestamp_rules {
 /// `Violations` is a collection of `Violation` messages. This message type is returned by
 /// Protovalidate when a proto message fails to meet the requirements set by the `Rule` validation rules.
 /// Each individual violation is represented by a `Violation` message.
-#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Violations {
     /// `violations` is a repeated field that contains all the `Violation` messages corresponding to the violations detected.
@@ -3195,7 +3136,6 @@ pub struct Violations {
 ///    }
 /// }
 /// ```
-#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct Violation {
     /// `field` is a machine-readable path to the field that failed validation.
@@ -3265,7 +3205,6 @@ pub struct Violation {
 ///
 /// This message provides enough information to render a dotted field path even without protobuf descriptors.
 /// It also provides enough information to resolve a nested field through unknown wire data.
-#[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct FieldPath {
     /// `elements` contains each element of the path, starting from the root and recursing downward.
@@ -3277,8 +3216,7 @@ pub struct FieldPath {
 /// If the selected field is a map or repeated field, the `subscript` value selects a specific element from it.
 /// A path that refers to a value nested under a map key or repeated field index will have a `subscript` value.
 /// The `field_type` field allows unambiguous resolution of a field even if descriptors are not available.
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct FieldPathElement {
     /// `field_number` is the field number this path element refers to.
     #[prost(int32, optional, tag="1")]
@@ -3315,8 +3253,7 @@ pub struct FieldPathElement {
 /// Nested message and enum types in `FieldPathElement`.
 pub mod field_path_element {
     /// `subscript` contains a repeated index or map key, if this path element nests into a repeated or map field.
-    #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Oneof)]
+    #[derive(Clone, PartialEq, Eq, Hash, ::prost::Oneof)]
     pub enum Subscript {
         /// `index` specifies a 0-based index into a repeated field.
         #[prost(uint64, tag="6")]
@@ -3429,9 +3366,9 @@ impl Ignore {
     /// (if the ProtoBuf definition does not change) and safe for programmatic use.
     pub fn as_str_name(&self) -> &'static str {
         match self {
-            Ignore::Unspecified => "IGNORE_UNSPECIFIED",
-            Ignore::IfZeroValue => "IGNORE_IF_ZERO_VALUE",
-            Ignore::Always => "IGNORE_ALWAYS",
+            Self::Unspecified => "IGNORE_UNSPECIFIED",
+            Self::IfZeroValue => "IGNORE_IF_ZERO_VALUE",
+            Self::Always => "IGNORE_ALWAYS",
         }
     }
     /// Creates an enum from field names used in the ProtoBuf definition.
@@ -3461,9 +3398,9 @@ impl KnownRegex {
     /// (if the ProtoBuf definition does not change) and safe for programmatic use.
     pub fn as_str_name(&self) -> &'static str {
         match self {
-            KnownRegex::Unspecified => "KNOWN_REGEX_UNSPECIFIED",
-            KnownRegex::HttpHeaderName => "KNOWN_REGEX_HTTP_HEADER_NAME",
-            KnownRegex::HttpHeaderValue => "KNOWN_REGEX_HTTP_HEADER_VALUE",
+            Self::Unspecified => "KNOWN_REGEX_UNSPECIFIED",
+            Self::HttpHeaderName => "KNOWN_REGEX_HTTP_HEADER_NAME",
+            Self::HttpHeaderValue => "KNOWN_REGEX_HTTP_HEADER_VALUE",
         }
     }
     /// Creates an enum from field names used in the ProtoBuf definition.

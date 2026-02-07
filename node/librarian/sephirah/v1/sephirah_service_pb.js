@@ -13,13 +13,7 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global =
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var global = globalThis;
 
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
@@ -171,7 +165,7 @@ withStatusReport: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.GetServerInformationRequest}
  */
 proto.librarian.sephirah.v1.GetServerInformationRequest.deserializeBinary = function(bytes) {
@@ -319,7 +313,7 @@ serverInformation: (f = msg.getServerInformation()) && librarian_sephirah_v1_bas
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.GetServerInformationResponse}
  */
 proto.librarian.sephirah.v1.GetServerInformationResponse.deserializeBinary = function(bytes) {
@@ -470,7 +464,7 @@ proto.librarian.sephirah.v1.ListenServerEventRequest.toObject = function(include
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.ListenServerEventRequest}
  */
 proto.librarian.sephirah.v1.ListenServerEventRequest.deserializeBinary = function(bytes) {
@@ -573,7 +567,7 @@ payload: jspb.Message.getFieldWithDefault(msg, 3, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.ListenServerEventResponse}
  */
 proto.librarian.sephirah.v1.ListenServerEventResponse.deserializeBinary = function(bytes) {
@@ -607,7 +601,7 @@ proto.librarian.sephirah.v1.ListenServerEventResponse.deserializeBinaryFromReade
       msg.setOccurTime(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setPayload(value);
       break;
     default:

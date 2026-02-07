@@ -13,13 +13,7 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global =
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var global = globalThis;
 
 var librarian_v1_wellknown_pb = require('../../../librarian/v1/wellknown_pb.js');
 goog.object.extend(proto, librarian_v1_wellknown_pb);
@@ -334,7 +328,7 @@ description: jspb.Message.getFieldWithDefault(msg, 3, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.UploadImageRequest}
  */
 proto.librarian.sephirah.v1.UploadImageRequest.deserializeBinary = function(bytes) {
@@ -364,11 +358,11 @@ proto.librarian.sephirah.v1.UploadImageRequest.deserializeBinaryFromReader = fun
       msg.setFileMetadata(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setName(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setDescription(value);
       break;
     default:
@@ -543,7 +537,7 @@ uploadToken: jspb.Message.getFieldWithDefault(msg, 1, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.UploadImageResponse}
  */
 proto.librarian.sephirah.v1.UploadImageResponse.deserializeBinary = function(bytes) {
@@ -568,7 +562,7 @@ proto.librarian.sephirah.v1.UploadImageResponse.deserializeBinaryFromReader = fu
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setUploadToken(value);
       break;
     default:
@@ -675,7 +669,7 @@ description: jspb.Message.getFieldWithDefault(msg, 3, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.UpdateImageRequest}
  */
 proto.librarian.sephirah.v1.UpdateImageRequest.deserializeBinary = function(bytes) {
@@ -705,11 +699,11 @@ proto.librarian.sephirah.v1.UpdateImageRequest.deserializeBinaryFromReader = fun
       msg.setId(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setName(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setDescription(value);
       break;
     default:
@@ -884,7 +878,7 @@ proto.librarian.sephirah.v1.UpdateImageResponse.toObject = function(includeInsta
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.UpdateImageResponse}
  */
 proto.librarian.sephirah.v1.UpdateImageResponse.deserializeBinary = function(bytes) {
@@ -986,7 +980,7 @@ timeRange: (f = msg.getTimeRange()) && librarian_v1_wellknown_pb.TimeRange.toObj
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.ListImagesRequest}
  */
 proto.librarian.sephirah.v1.ListImagesRequest.deserializeBinary = function(bytes) {
@@ -1196,7 +1190,7 @@ idsList: jspb.Message.toObjectList(msg.getIdsList(),
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.ListImagesResponse}
  */
 proto.librarian.sephirah.v1.ListImagesResponse.deserializeBinary = function(bytes) {
@@ -1399,7 +1393,7 @@ keywords: jspb.Message.getFieldWithDefault(msg, 2, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.SearchImagesRequest}
  */
 proto.librarian.sephirah.v1.SearchImagesRequest.deserializeBinary = function(bytes) {
@@ -1429,7 +1423,7 @@ proto.librarian.sephirah.v1.SearchImagesRequest.deserializeBinaryFromReader = fu
       msg.setPaging(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setKeywords(value);
       break;
     default:
@@ -1588,7 +1582,7 @@ idsList: jspb.Message.toObjectList(msg.getIdsList(),
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.SearchImagesResponse}
  */
 proto.librarian.sephirah.v1.SearchImagesResponse.deserializeBinary = function(bytes) {
@@ -1790,7 +1784,7 @@ id: (f = msg.getId()) && librarian_v1_wellknown_pb.InternalID.toObject(includeIn
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.GetImageRequest}
  */
 proto.librarian.sephirah.v1.GetImageRequest.deserializeBinary = function(bytes) {
@@ -1943,7 +1937,7 @@ description: jspb.Message.getFieldWithDefault(msg, 3, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.GetImageResponse}
  */
 proto.librarian.sephirah.v1.GetImageResponse.deserializeBinary = function(bytes) {
@@ -1973,11 +1967,11 @@ proto.librarian.sephirah.v1.GetImageResponse.deserializeBinaryFromReader = funct
       msg.setFileMetadata(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setName(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setDescription(value);
       break;
     default:
@@ -2152,7 +2146,7 @@ id: (f = msg.getId()) && librarian_v1_wellknown_pb.InternalID.toObject(includeIn
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.DownloadImageRequest}
  */
 proto.librarian.sephirah.v1.DownloadImageRequest.deserializeBinary = function(bytes) {
@@ -2303,7 +2297,7 @@ downloadToken: jspb.Message.getFieldWithDefault(msg, 1, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.DownloadImageResponse}
  */
 proto.librarian.sephirah.v1.DownloadImageResponse.deserializeBinary = function(bytes) {
@@ -2328,7 +2322,7 @@ proto.librarian.sephirah.v1.DownloadImageResponse.deserializeBinaryFromReader = 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setDownloadToken(value);
       break;
     default:

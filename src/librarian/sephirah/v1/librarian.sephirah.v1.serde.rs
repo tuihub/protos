@@ -4322,169 +4322,6 @@ impl<'de> serde::Deserialize<'de> for DeletePorterContextResponse {
         deserializer.deserialize_struct("librarian.sephirah.v1.DeletePorterContextResponse", FIELDS, GeneratedVisitor)
     }
 }
-impl serde::Serialize for DeleteUserSessionRequest {
-    #[allow(deprecated)]
-    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
-    where
-        S: serde::Serializer,
-    {
-        use serde::ser::SerializeStruct;
-        let mut len = 0;
-        if self.session_id.is_some() {
-            len += 1;
-        }
-        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.DeleteUserSessionRequest", len)?;
-        if let Some(v) = self.session_id.as_ref() {
-            struct_ser.serialize_field("sessionId", v)?;
-        }
-        struct_ser.end()
-    }
-}
-impl<'de> serde::Deserialize<'de> for DeleteUserSessionRequest {
-    #[allow(deprecated)]
-    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        const FIELDS: &[&str] = &[
-            "session_id",
-            "sessionId",
-        ];
-
-        #[allow(clippy::enum_variant_names)]
-        enum GeneratedField {
-            SessionId,
-        }
-        impl<'de> serde::Deserialize<'de> for GeneratedField {
-            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
-            where
-                D: serde::Deserializer<'de>,
-            {
-                struct GeneratedVisitor;
-
-                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-                    type Value = GeneratedField;
-
-                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                        write!(formatter, "expected one of: {:?}", &FIELDS)
-                    }
-
-                    #[allow(unused_variables)]
-                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
-                    where
-                        E: serde::de::Error,
-                    {
-                        match value {
-                            "sessionId" | "session_id" => Ok(GeneratedField::SessionId),
-                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
-                        }
-                    }
-                }
-                deserializer.deserialize_identifier(GeneratedVisitor)
-            }
-        }
-        struct GeneratedVisitor;
-        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = DeleteUserSessionRequest;
-
-            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.DeleteUserSessionRequest")
-            }
-
-            fn visit_map<V>(self, mut map_: V) -> std::result::Result<DeleteUserSessionRequest, V::Error>
-                where
-                    V: serde::de::MapAccess<'de>,
-            {
-                let mut session_id__ = None;
-                while let Some(k) = map_.next_key()? {
-                    match k {
-                        GeneratedField::SessionId => {
-                            if session_id__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("sessionId"));
-                            }
-                            session_id__ = map_.next_value()?;
-                        }
-                    }
-                }
-                Ok(DeleteUserSessionRequest {
-                    session_id: session_id__,
-                })
-            }
-        }
-        deserializer.deserialize_struct("librarian.sephirah.v1.DeleteUserSessionRequest", FIELDS, GeneratedVisitor)
-    }
-}
-impl serde::Serialize for DeleteUserSessionResponse {
-    #[allow(deprecated)]
-    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
-    where
-        S: serde::Serializer,
-    {
-        use serde::ser::SerializeStruct;
-        let len = 0;
-        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.DeleteUserSessionResponse", len)?;
-        struct_ser.end()
-    }
-}
-impl<'de> serde::Deserialize<'de> for DeleteUserSessionResponse {
-    #[allow(deprecated)]
-    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
-    where
-        D: serde::Deserializer<'de>,
-    {
-        const FIELDS: &[&str] = &[
-        ];
-
-        #[allow(clippy::enum_variant_names)]
-        enum GeneratedField {
-        }
-        impl<'de> serde::Deserialize<'de> for GeneratedField {
-            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
-            where
-                D: serde::Deserializer<'de>,
-            {
-                struct GeneratedVisitor;
-
-                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-                    type Value = GeneratedField;
-
-                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                        write!(formatter, "expected one of: {:?}", &FIELDS)
-                    }
-
-                    #[allow(unused_variables)]
-                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
-                    where
-                        E: serde::de::Error,
-                    {
-                            Err(serde::de::Error::unknown_field(value, FIELDS))
-                    }
-                }
-                deserializer.deserialize_identifier(GeneratedVisitor)
-            }
-        }
-        struct GeneratedVisitor;
-        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
-            type Value = DeleteUserSessionResponse;
-
-            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-                formatter.write_str("struct librarian.sephirah.v1.DeleteUserSessionResponse")
-            }
-
-            fn visit_map<V>(self, mut map_: V) -> std::result::Result<DeleteUserSessionResponse, V::Error>
-                where
-                    V: serde::de::MapAccess<'de>,
-            {
-                while map_.next_key::<GeneratedField>()?.is_some() {
-                    let _ = map_.next_value::<serde::de::IgnoredAny>()?;
-                }
-                Ok(DeleteUserSessionResponse {
-                })
-            }
-        }
-        deserializer.deserialize_struct("librarian.sephirah.v1.DeleteUserSessionResponse", FIELDS, GeneratedVisitor)
-    }
-}
 impl serde::Serialize for Device {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
@@ -7328,6 +7165,190 @@ impl<'de> serde::Deserialize<'de> for GetBatchFeedItemsResponse {
             }
         }
         deserializer.deserialize_struct("librarian.sephirah.v1.GetBatchFeedItemsResponse", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for GetDeviceRequest {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.device_id.is_some() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.GetDeviceRequest", len)?;
+        if let Some(v) = self.device_id.as_ref() {
+            struct_ser.serialize_field("deviceId", v)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for GetDeviceRequest {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "device_id",
+            "deviceId",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            DeviceId,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "deviceId" | "device_id" => Ok(GeneratedField::DeviceId),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = GetDeviceRequest;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.GetDeviceRequest")
+            }
+
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<GetDeviceRequest, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut device_id__ = None;
+                while let Some(k) = map_.next_key()? {
+                    match k {
+                        GeneratedField::DeviceId => {
+                            if device_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("deviceId"));
+                            }
+                            device_id__ = map_.next_value()?;
+                        }
+                    }
+                }
+                Ok(GetDeviceRequest {
+                    device_id: device_id__,
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.GetDeviceRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for GetDeviceResponse {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.device_info.is_some() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.GetDeviceResponse", len)?;
+        if let Some(v) = self.device_info.as_ref() {
+            struct_ser.serialize_field("deviceInfo", v)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for GetDeviceResponse {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "device_info",
+            "deviceInfo",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            DeviceInfo,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "deviceInfo" | "device_info" => Ok(GeneratedField::DeviceInfo),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = GetDeviceResponse;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.GetDeviceResponse")
+            }
+
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<GetDeviceResponse, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut device_info__ = None;
+                while let Some(k) = map_.next_key()? {
+                    match k {
+                        GeneratedField::DeviceInfo => {
+                            if device_info__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("deviceInfo"));
+                            }
+                            device_info__ = map_.next_value()?;
+                        }
+                    }
+                }
+                Ok(GetDeviceResponse {
+                    device_info: device_info__,
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.GetDeviceResponse", FIELDS, GeneratedVisitor)
     }
 }
 impl serde::Serialize for GetFeedItemRequest {
@@ -13770,8 +13791,26 @@ impl serde::Serialize for ListUserSessionsRequest {
         S: serde::Serializer,
     {
         use serde::ser::SerializeStruct;
-        let len = 0;
-        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListUserSessionsRequest", len)?;
+        let mut len = 0;
+        if self.paging.is_some() {
+            len += 1;
+        }
+        if self.include_expired {
+            len += 1;
+        }
+        if !self.device_id_filter.is_empty() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ListUserSessionsRequest", len)?;
+        if let Some(v) = self.paging.as_ref() {
+            struct_ser.serialize_field("paging", v)?;
+        }
+        if self.include_expired {
+            struct_ser.serialize_field("includeExpired", &self.include_expired)?;
+        }
+        if !self.device_id_filter.is_empty() {
+            struct_ser.serialize_field("deviceIdFilter", &self.device_id_filter)?;
+        }
         struct_ser.end()
     }
 }
@@ -13782,10 +13821,18 @@ impl<'de> serde::Deserialize<'de> for ListUserSessionsRequest {
         D: serde::Deserializer<'de>,
     {
         const FIELDS: &[&str] = &[
+            "paging",
+            "include_expired",
+            "includeExpired",
+            "device_id_filter",
+            "deviceIdFilter",
         ];
 
         #[allow(clippy::enum_variant_names)]
         enum GeneratedField {
+            Paging,
+            IncludeExpired,
+            DeviceIdFilter,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -13806,7 +13853,12 @@ impl<'de> serde::Deserialize<'de> for ListUserSessionsRequest {
                     where
                         E: serde::de::Error,
                     {
-                            Err(serde::de::Error::unknown_field(value, FIELDS))
+                        match value {
+                            "paging" => Ok(GeneratedField::Paging),
+                            "includeExpired" | "include_expired" => Ok(GeneratedField::IncludeExpired),
+                            "deviceIdFilter" | "device_id_filter" => Ok(GeneratedField::DeviceIdFilter),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
                     }
                 }
                 deserializer.deserialize_identifier(GeneratedVisitor)
@@ -13824,10 +13876,35 @@ impl<'de> serde::Deserialize<'de> for ListUserSessionsRequest {
                 where
                     V: serde::de::MapAccess<'de>,
             {
-                while map_.next_key::<GeneratedField>()?.is_some() {
-                    let _ = map_.next_value::<serde::de::IgnoredAny>()?;
+                let mut paging__ = None;
+                let mut include_expired__ = None;
+                let mut device_id_filter__ = None;
+                while let Some(k) = map_.next_key()? {
+                    match k {
+                        GeneratedField::Paging => {
+                            if paging__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("paging"));
+                            }
+                            paging__ = map_.next_value()?;
+                        }
+                        GeneratedField::IncludeExpired => {
+                            if include_expired__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("includeExpired"));
+                            }
+                            include_expired__ = Some(map_.next_value()?);
+                        }
+                        GeneratedField::DeviceIdFilter => {
+                            if device_id_filter__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("deviceIdFilter"));
+                            }
+                            device_id_filter__ = Some(map_.next_value()?);
+                        }
+                    }
                 }
                 Ok(ListUserSessionsRequest {
+                    paging: paging__,
+                    include_expired: include_expired__.unwrap_or_default(),
+                    device_id_filter: device_id_filter__.unwrap_or_default(),
                 })
             }
         }
@@ -17667,6 +17744,169 @@ impl<'de> serde::Deserialize<'de> for RemoveFeedItemFromCollectionResponse {
         deserializer.deserialize_struct("librarian.sephirah.v1.RemoveFeedItemFromCollectionResponse", FIELDS, GeneratedVisitor)
     }
 }
+impl serde::Serialize for RevokeUserSessionRequest {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let mut len = 0;
+        if self.session_id.is_some() {
+            len += 1;
+        }
+        let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.RevokeUserSessionRequest", len)?;
+        if let Some(v) = self.session_id.as_ref() {
+            struct_ser.serialize_field("sessionId", v)?;
+        }
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for RevokeUserSessionRequest {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+            "session_id",
+            "sessionId",
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+            SessionId,
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                        match value {
+                            "sessionId" | "session_id" => Ok(GeneratedField::SessionId),
+                            _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
+                        }
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = RevokeUserSessionRequest;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.RevokeUserSessionRequest")
+            }
+
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<RevokeUserSessionRequest, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                let mut session_id__ = None;
+                while let Some(k) = map_.next_key()? {
+                    match k {
+                        GeneratedField::SessionId => {
+                            if session_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("sessionId"));
+                            }
+                            session_id__ = map_.next_value()?;
+                        }
+                    }
+                }
+                Ok(RevokeUserSessionRequest {
+                    session_id: session_id__,
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.RevokeUserSessionRequest", FIELDS, GeneratedVisitor)
+    }
+}
+impl serde::Serialize for RevokeUserSessionResponse {
+    #[allow(deprecated)]
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        use serde::ser::SerializeStruct;
+        let len = 0;
+        let struct_ser = serializer.serialize_struct("librarian.sephirah.v1.RevokeUserSessionResponse", len)?;
+        struct_ser.end()
+    }
+}
+impl<'de> serde::Deserialize<'de> for RevokeUserSessionResponse {
+    #[allow(deprecated)]
+    fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
+    where
+        D: serde::Deserializer<'de>,
+    {
+        const FIELDS: &[&str] = &[
+        ];
+
+        #[allow(clippy::enum_variant_names)]
+        enum GeneratedField {
+        }
+        impl<'de> serde::Deserialize<'de> for GeneratedField {
+            fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
+            where
+                D: serde::Deserializer<'de>,
+            {
+                struct GeneratedVisitor;
+
+                impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+                    type Value = GeneratedField;
+
+                    fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                        write!(formatter, "expected one of: {:?}", &FIELDS)
+                    }
+
+                    #[allow(unused_variables)]
+                    fn visit_str<E>(self, value: &str) -> std::result::Result<GeneratedField, E>
+                    where
+                        E: serde::de::Error,
+                    {
+                            Err(serde::de::Error::unknown_field(value, FIELDS))
+                    }
+                }
+                deserializer.deserialize_identifier(GeneratedVisitor)
+            }
+        }
+        struct GeneratedVisitor;
+        impl<'de> serde::de::Visitor<'de> for GeneratedVisitor {
+            type Value = RevokeUserSessionResponse;
+
+            fn expecting(&self, formatter: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+                formatter.write_str("struct librarian.sephirah.v1.RevokeUserSessionResponse")
+            }
+
+            fn visit_map<V>(self, mut map_: V) -> std::result::Result<RevokeUserSessionResponse, V::Error>
+                where
+                    V: serde::de::MapAccess<'de>,
+            {
+                while map_.next_key::<GeneratedField>()?.is_some() {
+                    let _ = map_.next_value::<serde::de::IgnoredAny>()?;
+                }
+                Ok(RevokeUserSessionResponse {
+                })
+            }
+        }
+        deserializer.deserialize_struct("librarian.sephirah.v1.RevokeUserSessionResponse", FIELDS, GeneratedVisitor)
+    }
+}
 impl serde::Serialize for SearchAppInfosRequest {
     #[allow(deprecated)]
     fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
@@ -18735,13 +18975,16 @@ impl serde::Serialize for ServerInstanceSummary {
         if !self.description.is_empty() {
             len += 1;
         }
-        if !self.website_url.is_empty() {
+        if self.website_url.is_some() {
             len += 1;
         }
-        if !self.logo_url.is_empty() {
+        if self.logo_image_url.is_some() {
             len += 1;
         }
-        if !self.background_url.is_empty() {
+        if self.background_image_url.is_some() {
+            len += 1;
+        }
+        if self.is_registerable {
             len += 1;
         }
         let mut struct_ser = serializer.serialize_struct("librarian.sephirah.v1.ServerInstanceSummary", len)?;
@@ -18751,14 +18994,17 @@ impl serde::Serialize for ServerInstanceSummary {
         if !self.description.is_empty() {
             struct_ser.serialize_field("description", &self.description)?;
         }
-        if !self.website_url.is_empty() {
-            struct_ser.serialize_field("websiteUrl", &self.website_url)?;
+        if let Some(v) = self.website_url.as_ref() {
+            struct_ser.serialize_field("websiteUrl", v)?;
         }
-        if !self.logo_url.is_empty() {
-            struct_ser.serialize_field("logoUrl", &self.logo_url)?;
+        if let Some(v) = self.logo_image_url.as_ref() {
+            struct_ser.serialize_field("logoImageUrl", v)?;
         }
-        if !self.background_url.is_empty() {
-            struct_ser.serialize_field("backgroundUrl", &self.background_url)?;
+        if let Some(v) = self.background_image_url.as_ref() {
+            struct_ser.serialize_field("backgroundImageUrl", v)?;
+        }
+        if self.is_registerable {
+            struct_ser.serialize_field("isRegisterable", &self.is_registerable)?;
         }
         struct_ser.end()
     }
@@ -18774,10 +19020,12 @@ impl<'de> serde::Deserialize<'de> for ServerInstanceSummary {
             "description",
             "website_url",
             "websiteUrl",
-            "logo_url",
-            "logoUrl",
-            "background_url",
-            "backgroundUrl",
+            "logo_image_url",
+            "logoImageUrl",
+            "background_image_url",
+            "backgroundImageUrl",
+            "is_registerable",
+            "isRegisterable",
         ];
 
         #[allow(clippy::enum_variant_names)]
@@ -18785,8 +19033,9 @@ impl<'de> serde::Deserialize<'de> for ServerInstanceSummary {
             Name,
             Description,
             WebsiteUrl,
-            LogoUrl,
-            BackgroundUrl,
+            LogoImageUrl,
+            BackgroundImageUrl,
+            IsRegisterable,
         }
         impl<'de> serde::Deserialize<'de> for GeneratedField {
             fn deserialize<D>(deserializer: D) -> std::result::Result<GeneratedField, D::Error>
@@ -18811,8 +19060,9 @@ impl<'de> serde::Deserialize<'de> for ServerInstanceSummary {
                             "name" => Ok(GeneratedField::Name),
                             "description" => Ok(GeneratedField::Description),
                             "websiteUrl" | "website_url" => Ok(GeneratedField::WebsiteUrl),
-                            "logoUrl" | "logo_url" => Ok(GeneratedField::LogoUrl),
-                            "backgroundUrl" | "background_url" => Ok(GeneratedField::BackgroundUrl),
+                            "logoImageUrl" | "logo_image_url" => Ok(GeneratedField::LogoImageUrl),
+                            "backgroundImageUrl" | "background_image_url" => Ok(GeneratedField::BackgroundImageUrl),
+                            "isRegisterable" | "is_registerable" => Ok(GeneratedField::IsRegisterable),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
                         }
                     }
@@ -18835,8 +19085,9 @@ impl<'de> serde::Deserialize<'de> for ServerInstanceSummary {
                 let mut name__ = None;
                 let mut description__ = None;
                 let mut website_url__ = None;
-                let mut logo_url__ = None;
-                let mut background_url__ = None;
+                let mut logo_image_url__ = None;
+                let mut background_image_url__ = None;
+                let mut is_registerable__ = None;
                 while let Some(k) = map_.next_key()? {
                     match k {
                         GeneratedField::Name => {
@@ -18855,28 +19106,35 @@ impl<'de> serde::Deserialize<'de> for ServerInstanceSummary {
                             if website_url__.is_some() {
                                 return Err(serde::de::Error::duplicate_field("websiteUrl"));
                             }
-                            website_url__ = Some(map_.next_value()?);
+                            website_url__ = map_.next_value()?;
                         }
-                        GeneratedField::LogoUrl => {
-                            if logo_url__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("logoUrl"));
+                        GeneratedField::LogoImageUrl => {
+                            if logo_image_url__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("logoImageUrl"));
                             }
-                            logo_url__ = Some(map_.next_value()?);
+                            logo_image_url__ = map_.next_value()?;
                         }
-                        GeneratedField::BackgroundUrl => {
-                            if background_url__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("backgroundUrl"));
+                        GeneratedField::BackgroundImageUrl => {
+                            if background_image_url__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("backgroundImageUrl"));
                             }
-                            background_url__ = Some(map_.next_value()?);
+                            background_image_url__ = map_.next_value()?;
+                        }
+                        GeneratedField::IsRegisterable => {
+                            if is_registerable__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("isRegisterable"));
+                            }
+                            is_registerable__ = Some(map_.next_value()?);
                         }
                     }
                 }
                 Ok(ServerInstanceSummary {
                     name: name__.unwrap_or_default(),
                     description: description__.unwrap_or_default(),
-                    website_url: website_url__.unwrap_or_default(),
-                    logo_url: logo_url__.unwrap_or_default(),
-                    background_url: background_url__.unwrap_or_default(),
+                    website_url: website_url__,
+                    logo_image_url: logo_image_url__,
+                    background_image_url: background_image_url__,
+                    is_registerable: is_registerable__.unwrap_or_default(),
                 })
             }
         }
@@ -24892,7 +25150,7 @@ impl serde::Serialize for UserSession {
         if self.user_id.is_some() {
             len += 1;
         }
-        if self.device_info.is_some() {
+        if self.device_id.is_some() {
             len += 1;
         }
         if self.create_time.is_some() {
@@ -24908,8 +25166,8 @@ impl serde::Serialize for UserSession {
         if let Some(v) = self.user_id.as_ref() {
             struct_ser.serialize_field("userId", v)?;
         }
-        if let Some(v) = self.device_info.as_ref() {
-            struct_ser.serialize_field("deviceInfo", v)?;
+        if let Some(v) = self.device_id.as_ref() {
+            struct_ser.serialize_field("deviceId", v)?;
         }
         if let Some(v) = self.create_time.as_ref() {
             struct_ser.serialize_field("createTime", v)?;
@@ -24930,8 +25188,8 @@ impl<'de> serde::Deserialize<'de> for UserSession {
             "id",
             "user_id",
             "userId",
-            "device_info",
-            "deviceInfo",
+            "device_id",
+            "deviceId",
             "create_time",
             "createTime",
             "expire_time",
@@ -24942,7 +25200,7 @@ impl<'de> serde::Deserialize<'de> for UserSession {
         enum GeneratedField {
             Id,
             UserId,
-            DeviceInfo,
+            DeviceId,
             CreateTime,
             ExpireTime,
         }
@@ -24968,7 +25226,7 @@ impl<'de> serde::Deserialize<'de> for UserSession {
                         match value {
                             "id" => Ok(GeneratedField::Id),
                             "userId" | "user_id" => Ok(GeneratedField::UserId),
-                            "deviceInfo" | "device_info" => Ok(GeneratedField::DeviceInfo),
+                            "deviceId" | "device_id" => Ok(GeneratedField::DeviceId),
                             "createTime" | "create_time" => Ok(GeneratedField::CreateTime),
                             "expireTime" | "expire_time" => Ok(GeneratedField::ExpireTime),
                             _ => Err(serde::de::Error::unknown_field(value, FIELDS)),
@@ -24992,7 +25250,7 @@ impl<'de> serde::Deserialize<'de> for UserSession {
             {
                 let mut id__ = None;
                 let mut user_id__ = None;
-                let mut device_info__ = None;
+                let mut device_id__ = None;
                 let mut create_time__ = None;
                 let mut expire_time__ = None;
                 while let Some(k) = map_.next_key()? {
@@ -25009,11 +25267,11 @@ impl<'de> serde::Deserialize<'de> for UserSession {
                             }
                             user_id__ = map_.next_value()?;
                         }
-                        GeneratedField::DeviceInfo => {
-                            if device_info__.is_some() {
-                                return Err(serde::de::Error::duplicate_field("deviceInfo"));
+                        GeneratedField::DeviceId => {
+                            if device_id__.is_some() {
+                                return Err(serde::de::Error::duplicate_field("deviceId"));
                             }
-                            device_info__ = map_.next_value()?;
+                            device_id__ = map_.next_value()?;
                         }
                         GeneratedField::CreateTime => {
                             if create_time__.is_some() {
@@ -25032,7 +25290,7 @@ impl<'de> serde::Deserialize<'de> for UserSession {
                 Ok(UserSession {
                     id: id__,
                     user_id: user_id__,
-                    device_info: device_info__,
+                    device_id: device_id__,
                     create_time: create_time__,
                     expire_time: expire_time__,
                 })

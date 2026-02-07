@@ -95,8 +95,7 @@ class GetTokenRequest extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearPassword() => $_clearField(2);
 
-  /// Always ignore this if client don't impl device info feature.
-  /// Otherwise, re-login after registered device with this and every time after
+  /// Ignore this if client don't impl device info feature.
   @$pb.TagNumber(3)
   $0.InternalID get deviceId => $_getN(2);
   @$pb.TagNumber(3)
@@ -226,7 +225,7 @@ class RefreshTokenRequest extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<RefreshTokenRequest>(create);
   static RefreshTokenRequest? _defaultInstance;
 
-  /// Always ignore this if client don't impl device info feature.
+  /// Ignore this if client don't impl device info feature.
   /// Be used to add device info after registered device.
   /// Only first device_id will be used.
   @$pb.TagNumber(3)
@@ -770,8 +769,138 @@ class RegisterDeviceResponse extends $pb.GeneratedMessage {
   $0.InternalID ensureDeviceId() => $_ensure(0);
 }
 
+class GetDeviceRequest extends $pb.GeneratedMessage {
+  factory GetDeviceRequest({
+    $0.InternalID? deviceId,
+  }) {
+    final result = create();
+    if (deviceId != null) result.deviceId = deviceId;
+    return result;
+  }
+
+  GetDeviceRequest._();
+
+  factory GetDeviceRequest.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDeviceRequest.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetDeviceRequest',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'librarian.sephirah.v1'),
+      createEmptyInstance: create)
+    ..aOM<$0.InternalID>(1, _omitFieldNames ? '' : 'deviceId',
+        subBuilder: $0.InternalID.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDeviceRequest clone() => GetDeviceRequest()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDeviceRequest copyWith(void Function(GetDeviceRequest) updates) =>
+      super.copyWith((message) => updates(message as GetDeviceRequest))
+          as GetDeviceRequest;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDeviceRequest create() => GetDeviceRequest._();
+  @$core.override
+  GetDeviceRequest createEmptyInstance() => create();
+  static $pb.PbList<GetDeviceRequest> createRepeated() =>
+      $pb.PbList<GetDeviceRequest>();
+  @$core.pragma('dart2js:noInline')
+  static GetDeviceRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetDeviceRequest>(create);
+  static GetDeviceRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.InternalID get deviceId => $_getN(0);
+  @$pb.TagNumber(1)
+  set deviceId($0.InternalID value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDeviceId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDeviceId() => $_clearField(1);
+  @$pb.TagNumber(1)
+  $0.InternalID ensureDeviceId() => $_ensure(0);
+}
+
+class GetDeviceResponse extends $pb.GeneratedMessage {
+  factory GetDeviceResponse({
+    Device? deviceInfo,
+  }) {
+    final result = create();
+    if (deviceInfo != null) result.deviceInfo = deviceInfo;
+    return result;
+  }
+
+  GetDeviceResponse._();
+
+  factory GetDeviceResponse.fromBuffer($core.List<$core.int> data,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(data, registry);
+  factory GetDeviceResponse.fromJson($core.String json,
+          [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(json, registry);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      _omitMessageNames ? '' : 'GetDeviceResponse',
+      package: const $pb.PackageName(
+          _omitMessageNames ? '' : 'librarian.sephirah.v1'),
+      createEmptyInstance: create)
+    ..aOM<Device>(1, _omitFieldNames ? '' : 'deviceInfo',
+        subBuilder: Device.create)
+    ..hasRequiredFields = false;
+
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDeviceResponse clone() => GetDeviceResponse()..mergeFromMessage(this);
+  @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
+  GetDeviceResponse copyWith(void Function(GetDeviceResponse) updates) =>
+      super.copyWith((message) => updates(message as GetDeviceResponse))
+          as GetDeviceResponse;
+
+  @$core.override
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static GetDeviceResponse create() => GetDeviceResponse._();
+  @$core.override
+  GetDeviceResponse createEmptyInstance() => create();
+  static $pb.PbList<GetDeviceResponse> createRepeated() =>
+      $pb.PbList<GetDeviceResponse>();
+  @$core.pragma('dart2js:noInline')
+  static GetDeviceResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<GetDeviceResponse>(create);
+  static GetDeviceResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  Device get deviceInfo => $_getN(0);
+  @$pb.TagNumber(1)
+  set deviceInfo(Device value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasDeviceInfo() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearDeviceInfo() => $_clearField(1);
+  @$pb.TagNumber(1)
+  Device ensureDeviceInfo() => $_ensure(0);
+}
+
 class ListUserSessionsRequest extends $pb.GeneratedMessage {
-  factory ListUserSessionsRequest() => create();
+  factory ListUserSessionsRequest({
+    $0.PagingRequest? paging,
+    $core.bool? includeExpired,
+    $core.Iterable<$0.InternalID>? deviceIdFilter,
+  }) {
+    final result = create();
+    if (paging != null) result.paging = paging;
+    if (includeExpired != null) result.includeExpired = includeExpired;
+    if (deviceIdFilter != null) result.deviceIdFilter.addAll(deviceIdFilter);
+    return result;
+  }
 
   ListUserSessionsRequest._();
 
@@ -787,6 +916,12 @@ class ListUserSessionsRequest extends $pb.GeneratedMessage {
       package: const $pb.PackageName(
           _omitMessageNames ? '' : 'librarian.sephirah.v1'),
       createEmptyInstance: create)
+    ..aOM<$0.PagingRequest>(1, _omitFieldNames ? '' : 'paging',
+        subBuilder: $0.PagingRequest.create)
+    ..aOB(2, _omitFieldNames ? '' : 'includeExpired')
+    ..pc<$0.InternalID>(
+        3, _omitFieldNames ? '' : 'deviceIdFilter', $pb.PbFieldType.PM,
+        subBuilder: $0.InternalID.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -811,6 +946,29 @@ class ListUserSessionsRequest extends $pb.GeneratedMessage {
   static ListUserSessionsRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ListUserSessionsRequest>(create);
   static ListUserSessionsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $0.PagingRequest get paging => $_getN(0);
+  @$pb.TagNumber(1)
+  set paging($0.PagingRequest value) => $_setField(1, value);
+  @$pb.TagNumber(1)
+  $core.bool hasPaging() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPaging() => $_clearField(1);
+  @$pb.TagNumber(1)
+  $0.PagingRequest ensurePaging() => $_ensure(0);
+
+  @$pb.TagNumber(2)
+  $core.bool get includeExpired => $_getBF(1);
+  @$pb.TagNumber(2)
+  set includeExpired($core.bool value) => $_setBool(1, value);
+  @$pb.TagNumber(2)
+  $core.bool hasIncludeExpired() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearIncludeExpired() => $_clearField(2);
+
+  @$pb.TagNumber(3)
+  $pb.PbList<$0.InternalID> get deviceIdFilter => $_getList(2);
 }
 
 class ListUserSessionsResponse extends $pb.GeneratedMessage {
@@ -867,8 +1025,8 @@ class ListUserSessionsResponse extends $pb.GeneratedMessage {
   $pb.PbList<UserSession> get sessions => $_getList(0);
 }
 
-class DeleteUserSessionRequest extends $pb.GeneratedMessage {
-  factory DeleteUserSessionRequest({
+class RevokeUserSessionRequest extends $pb.GeneratedMessage {
+  factory RevokeUserSessionRequest({
     $0.InternalID? sessionId,
   }) {
     final result = create();
@@ -876,17 +1034,17 @@ class DeleteUserSessionRequest extends $pb.GeneratedMessage {
     return result;
   }
 
-  DeleteUserSessionRequest._();
+  RevokeUserSessionRequest._();
 
-  factory DeleteUserSessionRequest.fromBuffer($core.List<$core.int> data,
+  factory RevokeUserSessionRequest.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromBuffer(data, registry);
-  factory DeleteUserSessionRequest.fromJson($core.String json,
+  factory RevokeUserSessionRequest.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'DeleteUserSessionRequest',
+      _omitMessageNames ? '' : 'RevokeUserSessionRequest',
       package: const $pb.PackageName(
           _omitMessageNames ? '' : 'librarian.sephirah.v1'),
       createEmptyInstance: create)
@@ -895,27 +1053,27 @@ class DeleteUserSessionRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  DeleteUserSessionRequest clone() =>
-      DeleteUserSessionRequest()..mergeFromMessage(this);
+  RevokeUserSessionRequest clone() =>
+      RevokeUserSessionRequest()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  DeleteUserSessionRequest copyWith(
-          void Function(DeleteUserSessionRequest) updates) =>
-      super.copyWith((message) => updates(message as DeleteUserSessionRequest))
-          as DeleteUserSessionRequest;
+  RevokeUserSessionRequest copyWith(
+          void Function(RevokeUserSessionRequest) updates) =>
+      super.copyWith((message) => updates(message as RevokeUserSessionRequest))
+          as RevokeUserSessionRequest;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static DeleteUserSessionRequest create() => DeleteUserSessionRequest._();
+  static RevokeUserSessionRequest create() => RevokeUserSessionRequest._();
   @$core.override
-  DeleteUserSessionRequest createEmptyInstance() => create();
-  static $pb.PbList<DeleteUserSessionRequest> createRepeated() =>
-      $pb.PbList<DeleteUserSessionRequest>();
+  RevokeUserSessionRequest createEmptyInstance() => create();
+  static $pb.PbList<RevokeUserSessionRequest> createRepeated() =>
+      $pb.PbList<RevokeUserSessionRequest>();
   @$core.pragma('dart2js:noInline')
-  static DeleteUserSessionRequest getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<DeleteUserSessionRequest>(create);
-  static DeleteUserSessionRequest? _defaultInstance;
+  static RevokeUserSessionRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RevokeUserSessionRequest>(create);
+  static RevokeUserSessionRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $0.InternalID get sessionId => $_getN(0);
@@ -929,47 +1087,47 @@ class DeleteUserSessionRequest extends $pb.GeneratedMessage {
   $0.InternalID ensureSessionId() => $_ensure(0);
 }
 
-class DeleteUserSessionResponse extends $pb.GeneratedMessage {
-  factory DeleteUserSessionResponse() => create();
+class RevokeUserSessionResponse extends $pb.GeneratedMessage {
+  factory RevokeUserSessionResponse() => create();
 
-  DeleteUserSessionResponse._();
+  RevokeUserSessionResponse._();
 
-  factory DeleteUserSessionResponse.fromBuffer($core.List<$core.int> data,
+  factory RevokeUserSessionResponse.fromBuffer($core.List<$core.int> data,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromBuffer(data, registry);
-  factory DeleteUserSessionResponse.fromJson($core.String json,
+  factory RevokeUserSessionResponse.fromJson($core.String json,
           [$pb.ExtensionRegistry registry = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromJson(json, registry);
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      _omitMessageNames ? '' : 'DeleteUserSessionResponse',
+      _omitMessageNames ? '' : 'RevokeUserSessionResponse',
       package: const $pb.PackageName(
           _omitMessageNames ? '' : 'librarian.sephirah.v1'),
       createEmptyInstance: create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  DeleteUserSessionResponse clone() =>
-      DeleteUserSessionResponse()..mergeFromMessage(this);
+  RevokeUserSessionResponse clone() =>
+      RevokeUserSessionResponse()..mergeFromMessage(this);
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  DeleteUserSessionResponse copyWith(
-          void Function(DeleteUserSessionResponse) updates) =>
-      super.copyWith((message) => updates(message as DeleteUserSessionResponse))
-          as DeleteUserSessionResponse;
+  RevokeUserSessionResponse copyWith(
+          void Function(RevokeUserSessionResponse) updates) =>
+      super.copyWith((message) => updates(message as RevokeUserSessionResponse))
+          as RevokeUserSessionResponse;
 
   @$core.override
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
-  static DeleteUserSessionResponse create() => DeleteUserSessionResponse._();
+  static RevokeUserSessionResponse create() => RevokeUserSessionResponse._();
   @$core.override
-  DeleteUserSessionResponse createEmptyInstance() => create();
-  static $pb.PbList<DeleteUserSessionResponse> createRepeated() =>
-      $pb.PbList<DeleteUserSessionResponse>();
+  RevokeUserSessionResponse createEmptyInstance() => create();
+  static $pb.PbList<RevokeUserSessionResponse> createRepeated() =>
+      $pb.PbList<RevokeUserSessionResponse>();
   @$core.pragma('dart2js:noInline')
-  static DeleteUserSessionResponse getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<DeleteUserSessionResponse>(create);
-  static DeleteUserSessionResponse? _defaultInstance;
+  static RevokeUserSessionResponse getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RevokeUserSessionResponse>(create);
+  static RevokeUserSessionResponse? _defaultInstance;
 }
 
 class UpdateUserRequest extends $pb.GeneratedMessage {
@@ -2415,14 +2573,14 @@ class UserSession extends $pb.GeneratedMessage {
   factory UserSession({
     $0.InternalID? id,
     $0.InternalID? userId,
-    Device? deviceInfo,
+    $0.InternalID? deviceId,
     $1.Timestamp? createTime,
     $1.Timestamp? expireTime,
   }) {
     final result = create();
     if (id != null) result.id = id;
     if (userId != null) result.userId = userId;
-    if (deviceInfo != null) result.deviceInfo = deviceInfo;
+    if (deviceId != null) result.deviceId = deviceId;
     if (createTime != null) result.createTime = createTime;
     if (expireTime != null) result.expireTime = expireTime;
     return result;
@@ -2446,8 +2604,8 @@ class UserSession extends $pb.GeneratedMessage {
         subBuilder: $0.InternalID.create)
     ..aOM<$0.InternalID>(2, _omitFieldNames ? '' : 'userId',
         subBuilder: $0.InternalID.create)
-    ..aOM<Device>(3, _omitFieldNames ? '' : 'deviceInfo',
-        subBuilder: Device.create)
+    ..aOM<$0.InternalID>(3, _omitFieldNames ? '' : 'deviceId',
+        subBuilder: $0.InternalID.create)
     ..aOM<$1.Timestamp>(4, _omitFieldNames ? '' : 'createTime',
         subBuilder: $1.Timestamp.create)
     ..aOM<$1.Timestamp>(5, _omitFieldNames ? '' : 'expireTime',
@@ -2497,15 +2655,15 @@ class UserSession extends $pb.GeneratedMessage {
   $0.InternalID ensureUserId() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  Device get deviceInfo => $_getN(2);
+  $0.InternalID get deviceId => $_getN(2);
   @$pb.TagNumber(3)
-  set deviceInfo(Device value) => $_setField(3, value);
+  set deviceId($0.InternalID value) => $_setField(3, value);
   @$pb.TagNumber(3)
-  $core.bool hasDeviceInfo() => $_has(2);
+  $core.bool hasDeviceId() => $_has(2);
   @$pb.TagNumber(3)
-  void clearDeviceInfo() => $_clearField(3);
+  void clearDeviceId() => $_clearField(3);
   @$pb.TagNumber(3)
-  Device ensureDeviceInfo() => $_ensure(2);
+  $0.InternalID ensureDeviceId() => $_ensure(2);
 
   @$pb.TagNumber(4)
   $1.Timestamp get createTime => $_getN(3);

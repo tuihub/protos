@@ -13,13 +13,7 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global =
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var global = globalThis;
 
 var librarian_v1_wellknown_pb = require('../../../librarian/v1/wellknown_pb.js');
 goog.object.extend(proto, librarian_v1_wellknown_pb);
@@ -134,7 +128,7 @@ config: (f = msg.getConfig()) && librarian_v1_wellknown_pb.FeatureRequest.toObje
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.porter.v1.GetAccountRequest}
  */
 proto.librarian.porter.v1.GetAccountRequest.deserializeBinary = function(bytes) {
@@ -285,7 +279,7 @@ account: (f = msg.getAccount()) && proto.librarian.porter.v1.Account.toObject(in
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.porter.v1.GetAccountResponse}
  */
 proto.librarian.porter.v1.GetAccountResponse.deserializeBinary = function(bytes) {
@@ -440,7 +434,7 @@ avatarUrl: jspb.Message.getFieldWithDefault(msg, 5, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.porter.v1.Account}
  */
 proto.librarian.porter.v1.Account.deserializeBinary = function(bytes) {
@@ -465,23 +459,23 @@ proto.librarian.porter.v1.Account.deserializeBinaryFromReader = function(msg, re
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setPlatform(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setPlatformAccountId(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setName(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setProfileUrl(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setAvatarUrl(value);
       break;
     default:

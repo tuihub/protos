@@ -13,13 +13,7 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global =
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var global = globalThis;
 
 goog.exportSymbol('proto.librarian.miner.v1.RecognizeImageBinaryRequest', null, global);
 goog.exportSymbol('proto.librarian.miner.v1.RecognizeImageBinaryResponse', null, global);
@@ -176,7 +170,7 @@ data: msg.getData_asB64()
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.miner.v1.RecognizeImageBinaryRequest}
  */
 proto.librarian.miner.v1.RecognizeImageBinaryRequest.deserializeBinary = function(bytes) {
@@ -338,7 +332,7 @@ resultsList: jspb.Message.toObjectList(msg.getResultsList(),
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.miner.v1.RecognizeImageBinaryResponse}
  */
 proto.librarian.miner.v1.RecognizeImageBinaryResponse.deserializeBinary = function(bytes) {
@@ -490,7 +484,7 @@ url: jspb.Message.getFieldWithDefault(msg, 1, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.miner.v1.RecognizeImageURLRequest}
  */
 proto.librarian.miner.v1.RecognizeImageURLRequest.deserializeBinary = function(bytes) {
@@ -515,7 +509,7 @@ proto.librarian.miner.v1.RecognizeImageURLRequest.deserializeBinaryFromReader = 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setUrl(value);
       break;
     default:
@@ -628,7 +622,7 @@ resultsList: jspb.Message.toObjectList(msg.getResultsList(),
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.miner.v1.RecognizeImageURLResponse}
  */
 proto.librarian.miner.v1.RecognizeImageURLResponse.deserializeBinary = function(bytes) {
@@ -781,7 +775,7 @@ text: jspb.Message.getFieldWithDefault(msg, 2, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.miner.v1.RecognizeImageResult}
  */
 proto.librarian.miner.v1.RecognizeImageResult.deserializeBinary = function(bytes) {
@@ -810,7 +804,7 @@ proto.librarian.miner.v1.RecognizeImageResult.deserializeBinaryFromReader = func
       msg.setConfidence(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setText(value);
       break;
     default:

@@ -130,15 +130,47 @@ const ServerInstanceSummary$json = {
   '2': [
     {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
     {'1': 'description', '3': 2, '4': 1, '5': 9, '10': 'description'},
-    {'1': 'website_url', '3': 3, '4': 1, '5': 9, '10': 'websiteUrl'},
-    {'1': 'logo_url', '3': 4, '4': 1, '5': 9, '10': 'logoUrl'},
-    {'1': 'background_url', '3': 5, '4': 1, '5': 9, '10': 'backgroundUrl'},
+    {
+      '1': 'website_url',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '9': 0,
+      '10': 'websiteUrl',
+      '17': true
+    },
+    {
+      '1': 'logo_image_url',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '9': 1,
+      '10': 'logoImageUrl',
+      '17': true
+    },
+    {
+      '1': 'background_image_url',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '9': 2,
+      '10': 'backgroundImageUrl',
+      '17': true
+    },
+    {'1': 'is_registerable', '3': 6, '4': 1, '5': 8, '10': 'isRegisterable'},
+  ],
+  '8': [
+    {'1': '_website_url'},
+    {'1': '_logo_image_url'},
+    {'1': '_background_image_url'},
   ],
 };
 
 /// Descriptor for `ServerInstanceSummary`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List serverInstanceSummaryDescriptor = $convert.base64Decode(
     'ChVTZXJ2ZXJJbnN0YW5jZVN1bW1hcnkSEgoEbmFtZRgBIAEoCVIEbmFtZRIgCgtkZXNjcmlwdG'
-    'lvbhgCIAEoCVILZGVzY3JpcHRpb24SHwoLd2Vic2l0ZV91cmwYAyABKAlSCndlYnNpdGVVcmwS'
-    'GQoIbG9nb191cmwYBCABKAlSB2xvZ29VcmwSJQoOYmFja2dyb3VuZF91cmwYBSABKAlSDWJhY2'
-    'tncm91bmRVcmw=');
+    'lvbhgCIAEoCVILZGVzY3JpcHRpb24SJAoLd2Vic2l0ZV91cmwYAyABKAlIAFIKd2Vic2l0ZVVy'
+    'bIgBARIpCg5sb2dvX2ltYWdlX3VybBgEIAEoCUgBUgxsb2dvSW1hZ2VVcmyIAQESNQoUYmFja2'
+    'dyb3VuZF9pbWFnZV91cmwYBSABKAlIAlISYmFja2dyb3VuZEltYWdlVXJsiAEBEicKD2lzX3Jl'
+    'Z2lzdGVyYWJsZRgGIAEoCFIOaXNSZWdpc3RlcmFibGVCDgoMX3dlYnNpdGVfdXJsQhEKD19sb2'
+    'dvX2ltYWdlX3VybEIXChVfYmFja2dyb3VuZF9pbWFnZV91cmw=');

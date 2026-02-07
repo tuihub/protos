@@ -13,13 +13,7 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global =
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var global = globalThis;
 
 var google_protobuf_duration_pb = require('google-protobuf/google/protobuf/duration_pb.js');
 goog.object.extend(proto, google_protobuf_duration_pb);
@@ -312,7 +306,7 @@ proto.librarian.sentinel.v1.RefreshTokenRequest.toObject = function(includeInsta
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sentinel.v1.RefreshTokenRequest}
  */
 proto.librarian.sentinel.v1.RefreshTokenRequest.deserializeBinary = function(bytes) {
@@ -414,7 +408,7 @@ refreshToken: jspb.Message.getFieldWithDefault(msg, 2, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sentinel.v1.RefreshTokenResponse}
  */
 proto.librarian.sentinel.v1.RefreshTokenResponse.deserializeBinary = function(bytes) {
@@ -439,11 +433,11 @@ proto.librarian.sentinel.v1.RefreshTokenResponse.deserializeBinaryFromReader = f
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setAccessToken(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setRefreshToken(value);
       break;
     default:
@@ -576,7 +570,7 @@ commitSnapshotInterval: (f = msg.getCommitSnapshotInterval()) && google_protobuf
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sentinel.v1.HeartbeatRequest}
  */
 proto.librarian.sentinel.v1.HeartbeatRequest.deserializeBinary = function(bytes) {
@@ -856,7 +850,7 @@ proto.librarian.sentinel.v1.HeartbeatResponse.toObject = function(includeInstanc
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sentinel.v1.HeartbeatResponse}
  */
 proto.librarian.sentinel.v1.HeartbeatResponse.deserializeBinary = function(bytes) {
@@ -969,7 +963,7 @@ librariesList: jspb.Message.toObjectList(msg.getLibrariesList(),
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sentinel.v1.ReportSentinelInformationRequest}
  */
 proto.librarian.sentinel.v1.ReportSentinelInformationRequest.deserializeBinary = function(bytes) {
@@ -994,19 +988,19 @@ proto.librarian.sentinel.v1.ReportSentinelInformationRequest.deserializeBinaryFr
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setUrl(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.addUrlAlternatives(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setGetTokenPath(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setDownloadFileBasePath(value);
       break;
     case 5:
@@ -1256,7 +1250,7 @@ proto.librarian.sentinel.v1.ReportSentinelInformationResponse.toObject = functio
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sentinel.v1.ReportSentinelInformationResponse}
  */
 proto.librarian.sentinel.v1.ReportSentinelInformationResponse.deserializeBinary = function(bytes) {
@@ -1367,7 +1361,7 @@ commitSnapshot: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined :
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sentinel.v1.ReportAppBinariesRequest}
  */
 proto.librarian.sentinel.v1.ReportAppBinariesRequest.deserializeBinary = function(bytes) {
@@ -1616,7 +1610,7 @@ commitSnapshotSuccess: (f = jspb.Message.getBooleanField(msg, 1)) == null ? unde
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sentinel.v1.ReportAppBinariesResponse}
  */
 proto.librarian.sentinel.v1.ReportAppBinariesResponse.deserializeBinary = function(bytes) {
@@ -1765,7 +1759,7 @@ downloadBasePath: jspb.Message.getFieldWithDefault(msg, 2, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sentinel.v1.SentinelLibrary}
  */
 proto.librarian.sentinel.v1.SentinelLibrary.deserializeBinary = function(bytes) {
@@ -1794,7 +1788,7 @@ proto.librarian.sentinel.v1.SentinelLibrary.deserializeBinaryFromReader = functi
       msg.setId(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setDownloadBasePath(value);
       break;
     default:
@@ -1940,7 +1934,7 @@ publisher: jspb.Message.getFieldWithDefault(msg, 13, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sentinel.v1.SentinelLibraryAppBinary}
  */
 proto.librarian.sentinel.v1.SentinelLibraryAppBinary.deserializeBinary = function(bytes) {
@@ -1969,7 +1963,7 @@ proto.librarian.sentinel.v1.SentinelLibraryAppBinary.deserializeBinaryFromReader
       msg.setSentinelLibraryId(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setSentinelGeneratedId(value);
       break;
     case 3:
@@ -1986,19 +1980,19 @@ proto.librarian.sentinel.v1.SentinelLibraryAppBinary.deserializeBinaryFromReader
       msg.addFiles(value);
       break;
     case 10:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setName(value);
       break;
     case 11:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setVersion(value);
       break;
     case 12:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setDeveloper(value);
       break;
     case 13:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setPublisher(value);
       break;
     default:
@@ -2328,7 +2322,7 @@ chunksInfo: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sentinel.v1.SentinelLibraryAppBinaryFile}
  */
 proto.librarian.sentinel.v1.SentinelLibraryAppBinaryFile.deserializeBinary = function(bytes) {
@@ -2353,7 +2347,7 @@ proto.librarian.sentinel.v1.SentinelLibraryAppBinaryFile.deserializeBinaryFromRe
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setName(value);
       break;
     case 2:
@@ -2365,11 +2359,11 @@ proto.librarian.sentinel.v1.SentinelLibraryAppBinaryFile.deserializeBinaryFromRe
       msg.setSha256(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setServerFilePath(value);
       break;
     case 10:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setChunksInfo(value);
       break;
     default:

@@ -46,7 +46,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
   LibrarianSephirahServiceClient(super.channel,
       {super.options, super.interceptors});
 
-  /// Allow anonymous call, use accessToken to get complete information
+  /// `anonymous` `access_token` Allow anonymous call, use accessToken to get complete information
   $grpc.ResponseFuture<$0.GetServerInformationResponse> getServerInformation(
     $0.GetServerInformationRequest request, {
     $grpc.CallOptions? options,
@@ -54,7 +54,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getServerInformation, request, options: options);
   }
 
-  /// `Normal` Client can use this to subscribe to server events.
+  /// `access_token` Client can use this to subscribe to server events.
   ///
   /// Server should send `SERVER_EVENT_LISTENER_CONNECTED` event immediately if the connection is valid.
   /// Otherwise, client should treat the connection as failed.
@@ -70,7 +70,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
         options: options);
   }
 
-  /// `Tiphereth` `Normal` Login via password and get two token
+  /// `Tiphereth` `anonymous` Login via password and get two token
   $grpc.ResponseFuture<$1.GetTokenResponse> getToken(
     $1.GetTokenRequest request, {
     $grpc.CallOptions? options,
@@ -78,7 +78,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getToken, request, options: options);
   }
 
-  /// `Tiphereth` `Normal` Use valid refresh_token and get two new token, a refresh_token can only be used once
+  /// `Tiphereth` `access_token` Use valid refresh_token and get two new token, a refresh_token can only be used once
   $grpc.ResponseFuture<$1.RefreshTokenResponse> refreshToken(
     $1.RefreshTokenRequest request, {
     $grpc.CallOptions? options,
@@ -86,7 +86,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$refreshToken, request, options: options);
   }
 
-  /// `Tiphereth`
+  /// `Tiphereth` `access_token`
   $grpc.ResponseFuture<$1.GetUserResponse> getUser(
     $1.GetUserRequest request, {
     $grpc.CallOptions? options,
@@ -94,7 +94,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getUser, request, options: options);
   }
 
-  /// `Tiphereth` Self register as a new normal user
+  /// `Tiphereth` `anonymous` Self register as a new normal user
   $grpc.ResponseFuture<$1.RegisterUserResponse> registerUser(
     $1.RegisterUserRequest request, {
     $grpc.CallOptions? options,
@@ -102,7 +102,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$registerUser, request, options: options);
   }
 
-  /// `Tiphereth` `Normal` Update self user info
+  /// `Tiphereth` `access_token` Update self user info
   $grpc.ResponseFuture<$1.UpdateUserResponse> updateUser(
     $1.UpdateUserRequest request, {
     $grpc.CallOptions? options,
@@ -110,7 +110,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$updateUser, request, options: options);
   }
 
-  /// `Tiphereth` `Normal` Client should register device after the first login
+  /// `Tiphereth` `access_token` Client should register device after the first login
   /// and store the device_id locally.
   /// The server could add extra limits to non-registered device
   $grpc.ResponseFuture<$1.RegisterDeviceResponse> registerDevice(
@@ -120,7 +120,15 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$registerDevice, request, options: options);
   }
 
-  /// `Tiphereth` `Normal`
+  /// `Tiphereth` `access_token`
+  $grpc.ResponseFuture<$1.GetDeviceResponse> getDevice(
+    $1.GetDeviceRequest request, {
+    $grpc.CallOptions? options,
+  }) {
+    return $createUnaryCall(_$getDevice, request, options: options);
+  }
+
+  /// `Tiphereth` `access_token`
   $grpc.ResponseFuture<$1.ListUserSessionsResponse> listUserSessions(
     $1.ListUserSessionsRequest request, {
     $grpc.CallOptions? options,
@@ -128,17 +136,17 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listUserSessions, request, options: options);
   }
 
-  /// `Tiphereth` `Normal` delete session will revoke refresh_token immediately.
+  /// `Tiphereth` `access_token` revoke session will revoke refresh_token immediately.
   /// NOTE: This can also be used to log out at server side.
-  /// NOTE2: Delete session will not affect device registration.
-  $grpc.ResponseFuture<$1.DeleteUserSessionResponse> deleteUserSession(
-    $1.DeleteUserSessionRequest request, {
+  /// NOTE2: Revoke session will not affect device registration.
+  $grpc.ResponseFuture<$1.RevokeUserSessionResponse> revokeUserSession(
+    $1.RevokeUserSessionRequest request, {
     $grpc.CallOptions? options,
   }) {
-    return $createUnaryCall(_$deleteUserSession, request, options: options);
+    return $createUnaryCall(_$revokeUserSession, request, options: options);
   }
 
-  /// `Tiphereth` `Normal` Bind third-party account to current user.
+  /// `Tiphereth` `access_token` Bind third-party account to current user.
   $grpc.ResponseFuture<$1.LinkAccountResponse> linkAccount(
     $1.LinkAccountRequest request, {
     $grpc.CallOptions? options,
@@ -146,7 +154,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$linkAccount, request, options: options);
   }
 
-  /// `Tiphereth` `Normal` Unbind third-party account from current user.
+  /// `Tiphereth` `access_token` Unbind third-party account from current user.
   $grpc.ResponseFuture<$1.UnLinkAccountResponse> unLinkAccount(
     $1.UnLinkAccountRequest request, {
     $grpc.CallOptions? options,
@@ -154,7 +162,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$unLinkAccount, request, options: options);
   }
 
-  /// `Tiphereth` `Normal` List third-party account binded to current user.
+  /// `Tiphereth` `access_token` List third-party account binded to current user.
   $grpc.ResponseFuture<$1.ListLinkAccountsResponse> listLinkAccounts(
     $1.ListLinkAccountsRequest request, {
     $grpc.CallOptions? options,
@@ -162,7 +170,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listLinkAccounts, request, options: options);
   }
 
-  /// `Tiphereth` `Normal`
+  /// `Tiphereth` `access_token`
   $grpc.ResponseFuture<$1.ListPorterDigestsResponse> listPorterDigests(
     $1.ListPorterDigestsRequest request, {
     $grpc.CallOptions? options,
@@ -170,7 +178,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listPorterDigests, request, options: options);
   }
 
-  /// `Tiphereth` `Normal`
+  /// `Tiphereth` `access_token`
   $grpc.ResponseFuture<$1.CreatePorterContextResponse> createPorterContext(
     $1.CreatePorterContextRequest request, {
     $grpc.CallOptions? options,
@@ -178,7 +186,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$createPorterContext, request, options: options);
   }
 
-  /// `Tiphereth` `Normal`
+  /// `Tiphereth` `access_token`
   $grpc.ResponseFuture<$1.ListPorterContextsResponse> listPorterContexts(
     $1.ListPorterContextsRequest request, {
     $grpc.CallOptions? options,
@@ -186,7 +194,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listPorterContexts, request, options: options);
   }
 
-  /// `Tiphereth` `Normal` Set porter context.
+  /// `Tiphereth` `access_token` Set porter context.
   $grpc.ResponseFuture<$1.UpdatePorterContextResponse> updatePorterContext(
     $1.UpdatePorterContextRequest request, {
     $grpc.CallOptions? options,
@@ -194,7 +202,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$updatePorterContext, request, options: options);
   }
 
-  /// `Binah` `Normal`
+  /// `Binah` `access_token`
   $grpc.ResponseFuture<$2.GetStorageCapacityUsageResponse>
       getStorageCapacityUsage(
     $2.GetStorageCapacityUsageRequest request, {
@@ -271,7 +279,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$presignedDownloadFile, request, options: options);
   }
 
-  /// `Chesed` `Normal`
+  /// `Chesed` `access_token`
   $grpc.ResponseFuture<$3.UploadImageResponse> uploadImage(
     $3.UploadImageRequest request, {
     $grpc.CallOptions? options,
@@ -279,7 +287,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$uploadImage, request, options: options);
   }
 
-  /// `Chesed` `Normal`
+  /// `Chesed` `access_token`
   $grpc.ResponseFuture<$3.UpdateImageResponse> updateImage(
     $3.UpdateImageRequest request, {
     $grpc.CallOptions? options,
@@ -287,7 +295,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$updateImage, request, options: options);
   }
 
-  /// `Chesed` `Normal`
+  /// `Chesed` `access_token`
   $grpc.ResponseFuture<$3.ListImagesResponse> listImages(
     $3.ListImagesRequest request, {
     $grpc.CallOptions? options,
@@ -295,7 +303,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listImages, request, options: options);
   }
 
-  /// `Chesed` `Normal`
+  /// `Chesed` `access_token`
   $grpc.ResponseFuture<$3.SearchImagesResponse> searchImages(
     $3.SearchImagesRequest request, {
     $grpc.CallOptions? options,
@@ -303,7 +311,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$searchImages, request, options: options);
   }
 
-  /// `Chesed` `Normal`
+  /// `Chesed` `access_token`
   $grpc.ResponseFuture<$3.GetImageResponse> getImage(
     $3.GetImageRequest request, {
     $grpc.CallOptions? options,
@@ -311,7 +319,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getImage, request, options: options);
   }
 
-  /// `Chesed` `Normal`
+  /// `Chesed` `access_token`
   $grpc.ResponseFuture<$3.DownloadImageResponse> downloadImage(
     $3.DownloadImageRequest request, {
     $grpc.CallOptions? options,
@@ -319,7 +327,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$downloadImage, request, options: options);
   }
 
-  /// `Gebura` `Normal`
+  /// `Gebura` `access_token`
   $grpc.ResponseFuture<$4.SearchStoreAppsResponse> searchStoreApps(
     $4.SearchStoreAppsRequest request, {
     $grpc.CallOptions? options,
@@ -327,7 +335,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$searchStoreApps, request, options: options);
   }
 
-  /// `Gebura` `Normal`
+  /// `Gebura` `access_token`
   $grpc.ResponseFuture<$4.GetStoreAppSummaryResponse> getStoreAppSummary(
     $4.GetStoreAppSummaryRequest request, {
     $grpc.CallOptions? options,
@@ -335,7 +343,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getStoreAppSummary, request, options: options);
   }
 
-  /// `Gebura` `Normal`
+  /// `Gebura` `access_token`
   $grpc.ResponseFuture<$4.AcquireStoreAppResponse> acquireStoreApp(
     $4.AcquireStoreAppRequest request, {
     $grpc.CallOptions? options,
@@ -343,7 +351,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$acquireStoreApp, request, options: options);
   }
 
-  /// `Gebura` `Normal`
+  /// `Gebura` `access_token`
   $grpc.ResponseFuture<$4.ListStoreAppBinariesResponse> listStoreAppBinaries(
     $4.ListStoreAppBinariesRequest request, {
     $grpc.CallOptions? options,
@@ -351,7 +359,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listStoreAppBinaries, request, options: options);
   }
 
-  /// `Gebura` `Normal`
+  /// `Gebura` `access_token`
   $grpc.ResponseFuture<$4.ListStoreAppBinaryFilesResponse>
       listStoreAppBinaryFiles(
     $4.ListStoreAppBinaryFilesRequest request, {
@@ -361,7 +369,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
         options: options);
   }
 
-  /// `Gebura` `Normal`
+  /// `Gebura` `access_token`
   $grpc.ResponseFuture<$4.DownloadStoreAppBinaryResponse>
       downloadStoreAppBinary(
     $4.DownloadStoreAppBinaryRequest request, {
@@ -371,7 +379,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
         options: options);
   }
 
-  /// `Gebura` `Normal`
+  /// `Gebura` `access_token`
   $grpc.ResponseFuture<$4.ListStoreAppSaveFilesResponse> listStoreAppSaveFiles(
     $4.ListStoreAppSaveFilesRequest request, {
     $grpc.CallOptions? options,
@@ -379,7 +387,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listStoreAppSaveFiles, request, options: options);
   }
 
-  /// `Gebura` `Normal`
+  /// `Gebura` `access_token`
   $grpc.ResponseFuture<$4.DownloadStoreAppSaveFileResponse>
       downloadStoreAppSaveFile(
     $4.DownloadStoreAppSaveFileRequest request, {
@@ -389,7 +397,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
         options: options);
   }
 
-  /// `Gebura` `Normal` Search app infos
+  /// `Gebura` `access_token` Search app infos
   $grpc.ResponseFuture<$4.SearchAppInfosResponse> searchAppInfos(
     $4.SearchAppInfosRequest request, {
     $grpc.CallOptions? options,
@@ -397,7 +405,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$searchAppInfos, request, options: options);
   }
 
-  /// `Gebura` `Normal`
+  /// `Gebura` `access_token`
   $grpc.ResponseFuture<$4.CreateAppResponse> createApp(
     $4.CreateAppRequest request, {
     $grpc.CallOptions? options,
@@ -405,7 +413,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$createApp, request, options: options);
   }
 
-  /// `Gebura` `Normal`
+  /// `Gebura` `access_token`
   $grpc.ResponseFuture<$4.UpdateAppResponse> updateApp(
     $4.UpdateAppRequest request, {
     $grpc.CallOptions? options,
@@ -413,7 +421,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$updateApp, request, options: options);
   }
 
-  /// `Gebura` `Normal`
+  /// `Gebura` `access_token`
   $grpc.ResponseFuture<$4.ListAppsResponse> listApps(
     $4.ListAppsRequest request, {
     $grpc.CallOptions? options,
@@ -421,7 +429,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listApps, request, options: options);
   }
 
-  /// `Gebura` `Normal`
+  /// `Gebura` `access_token`
   $grpc.ResponseFuture<$4.DeleteAppResponse> deleteApp(
     $4.DeleteAppRequest request, {
     $grpc.CallOptions? options,
@@ -429,7 +437,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$deleteApp, request, options: options);
   }
 
-  /// `Gebura` `Normal`
+  /// `Gebura` `access_token`
   $grpc.ResponseFuture<$4.BatchCreateAppRunTimeResponse> batchCreateAppRunTime(
     $4.BatchCreateAppRunTimeRequest request, {
     $grpc.CallOptions? options,
@@ -437,7 +445,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$batchCreateAppRunTime, request, options: options);
   }
 
-  /// `Gebura` `Normal`
+  /// `Gebura` `access_token`
   $grpc.ResponseFuture<$4.SumAppRunTimeResponse> sumAppRunTime(
     $4.SumAppRunTimeRequest request, {
     $grpc.CallOptions? options,
@@ -445,7 +453,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$sumAppRunTime, request, options: options);
   }
 
-  /// `Gebura` `Normal`
+  /// `Gebura` `access_token`
   $grpc.ResponseFuture<$4.ListAppRunTimesResponse> listAppRunTimes(
     $4.ListAppRunTimesRequest request, {
     $grpc.CallOptions? options,
@@ -453,7 +461,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listAppRunTimes, request, options: options);
   }
 
-  /// `Gebura` `Normal`
+  /// `Gebura` `access_token`
   $grpc.ResponseFuture<$4.DeleteAppRunTimeResponse> deleteAppRunTime(
     $4.DeleteAppRunTimeRequest request, {
     $grpc.CallOptions? options,
@@ -461,7 +469,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$deleteAppRunTime, request, options: options);
   }
 
-  /// `Gebura` `Normal`
+  /// `Gebura` `access_token`
   $grpc.ResponseFuture<$4.UploadAppSaveFileResponse> uploadAppSaveFile(
     $4.UploadAppSaveFileRequest request, {
     $grpc.CallOptions? options,
@@ -469,7 +477,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$uploadAppSaveFile, request, options: options);
   }
 
-  /// `Gebura` `Normal`
+  /// `Gebura` `access_token`
   $grpc.ResponseFuture<$4.DownloadAppSaveFileResponse> downloadAppSaveFile(
     $4.DownloadAppSaveFileRequest request, {
     $grpc.CallOptions? options,
@@ -477,7 +485,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$downloadAppSaveFile, request, options: options);
   }
 
-  /// `Gebura` `Normal`
+  /// `Gebura` `access_token`
   $grpc.ResponseFuture<$4.ListAppSaveFilesResponse> listAppSaveFiles(
     $4.ListAppSaveFilesRequest request, {
     $grpc.CallOptions? options,
@@ -485,7 +493,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listAppSaveFiles, request, options: options);
   }
 
-  /// `Gebura` `Normal`
+  /// `Gebura` `access_token`
   $grpc.ResponseFuture<$4.DeleteAppSaveFileResponse> deleteAppSaveFile(
     $4.DeleteAppSaveFileRequest request, {
     $grpc.CallOptions? options,
@@ -493,7 +501,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$deleteAppSaveFile, request, options: options);
   }
 
-  /// `Gebura` `Normal`
+  /// `Gebura` `access_token`
   $grpc.ResponseFuture<$4.PinAppSaveFileResponse> pinAppSaveFile(
     $4.PinAppSaveFileRequest request, {
     $grpc.CallOptions? options,
@@ -501,7 +509,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$pinAppSaveFile, request, options: options);
   }
 
-  /// `Gebura` `Normal`
+  /// `Gebura` `access_token`
   $grpc.ResponseFuture<$4.UnpinAppSaveFileResponse> unpinAppSaveFile(
     $4.UnpinAppSaveFileRequest request, {
     $grpc.CallOptions? options,
@@ -509,7 +517,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$unpinAppSaveFile, request, options: options);
   }
 
-  /// `Gebura` `Normal`
+  /// `Gebura` `access_token`
   $grpc.ResponseFuture<$4.GetAppSaveFileCapacityResponse>
       getAppSaveFileCapacity(
     $4.GetAppSaveFileCapacityRequest request, {
@@ -519,7 +527,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
         options: options);
   }
 
-  /// `Gebura` `Normal`
+  /// `Gebura` `access_token`
   $grpc.ResponseFuture<$4.SetAppSaveFileCapacityResponse>
       setAppSaveFileCapacity(
     $4.SetAppSaveFileCapacityRequest request, {
@@ -529,7 +537,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
         options: options);
   }
 
-  /// `Gebura` `Normal`
+  /// `Gebura` `access_token`
   $grpc.ResponseFuture<$4.ListAppCategoriesResponse> listAppCategories(
     $4.ListAppCategoriesRequest request, {
     $grpc.CallOptions? options,
@@ -537,7 +545,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listAppCategories, request, options: options);
   }
 
-  /// `Gebura` `Normal`
+  /// `Gebura` `access_token`
   $grpc.ResponseFuture<$4.CreateAppCategoryResponse> createAppCategory(
     $4.CreateAppCategoryRequest request, {
     $grpc.CallOptions? options,
@@ -545,7 +553,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$createAppCategory, request, options: options);
   }
 
-  /// `Gebura` `Normal`
+  /// `Gebura` `access_token`
   $grpc.ResponseFuture<$4.UpdateAppCategoryResponse> updateAppCategory(
     $4.UpdateAppCategoryRequest request, {
     $grpc.CallOptions? options,
@@ -553,7 +561,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$updateAppCategory, request, options: options);
   }
 
-  /// `Gebura` `Normal`
+  /// `Gebura` `access_token`
   $grpc.ResponseFuture<$4.DeleteAppCategoryResponse> deleteAppCategory(
     $4.DeleteAppCategoryRequest request, {
     $grpc.CallOptions? options,
@@ -561,7 +569,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$deleteAppCategory, request, options: options);
   }
 
-  /// `Netzach` `Normal`
+  /// `Netzach` `access_token`
   $grpc.ResponseFuture<$5.CreateNotifyTargetResponse> createNotifyTarget(
     $5.CreateNotifyTargetRequest request, {
     $grpc.CallOptions? options,
@@ -569,7 +577,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$createNotifyTarget, request, options: options);
   }
 
-  /// `Netzach` `Normal`
+  /// `Netzach` `access_token`
   $grpc.ResponseFuture<$5.UpdateNotifyTargetResponse> updateNotifyTarget(
     $5.UpdateNotifyTargetRequest request, {
     $grpc.CallOptions? options,
@@ -577,7 +585,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$updateNotifyTarget, request, options: options);
   }
 
-  /// `Netzach` `Normal`
+  /// `Netzach` `access_token`
   $grpc.ResponseFuture<$5.ListNotifyTargetsResponse> listNotifyTargets(
     $5.ListNotifyTargetsRequest request, {
     $grpc.CallOptions? options,
@@ -585,7 +593,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listNotifyTargets, request, options: options);
   }
 
-  /// `Netzach` `Normal`
+  /// `Netzach` `access_token`
   $grpc.ResponseFuture<$5.CreateNotifyFlowResponse> createNotifyFlow(
     $5.CreateNotifyFlowRequest request, {
     $grpc.CallOptions? options,
@@ -593,7 +601,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$createNotifyFlow, request, options: options);
   }
 
-  /// `Netzach` `Normal`
+  /// `Netzach` `access_token`
   $grpc.ResponseFuture<$5.UpdateNotifyFlowResponse> updateNotifyFlow(
     $5.UpdateNotifyFlowRequest request, {
     $grpc.CallOptions? options,
@@ -601,7 +609,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$updateNotifyFlow, request, options: options);
   }
 
-  /// `Netzach` `Normal`
+  /// `Netzach` `access_token`
   $grpc.ResponseFuture<$5.ListNotifyFlowsResponse> listNotifyFlows(
     $5.ListNotifyFlowsRequest request, {
     $grpc.CallOptions? options,
@@ -609,7 +617,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listNotifyFlows, request, options: options);
   }
 
-  /// `Netzach` `Normal`
+  /// `Netzach` `access_token`
   $grpc.ResponseFuture<$5.ListSystemNotificationsResponse>
       listSystemNotifications(
     $5.ListSystemNotificationsRequest request, {
@@ -619,7 +627,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
         options: options);
   }
 
-  /// `Netzach` `Normal`
+  /// `Netzach` `access_token`
   $grpc.ResponseFuture<$5.UpdateSystemNotificationResponse>
       updateSystemNotification(
     $5.UpdateSystemNotificationRequest request, {
@@ -629,7 +637,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
         options: options);
   }
 
-  /// `Yesod` `Normal`
+  /// `Yesod` `access_token`
   $grpc.ResponseFuture<$6.CreateFeedConfigResponse> createFeedConfig(
     $6.CreateFeedConfigRequest request, {
     $grpc.CallOptions? options,
@@ -637,7 +645,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$createFeedConfig, request, options: options);
   }
 
-  /// `Yesod` `Normal`
+  /// `Yesod` `access_token`
   $grpc.ResponseFuture<$6.UpdateFeedConfigResponse> updateFeedConfig(
     $6.UpdateFeedConfigRequest request, {
     $grpc.CallOptions? options,
@@ -645,7 +653,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$updateFeedConfig, request, options: options);
   }
 
-  /// `Yesod` `Normal`
+  /// `Yesod` `access_token`
   $grpc.ResponseFuture<$6.ListFeedConfigsResponse> listFeedConfigs(
     $6.ListFeedConfigsRequest request, {
     $grpc.CallOptions? options,
@@ -653,7 +661,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listFeedConfigs, request, options: options);
   }
 
-  /// `Yesod` `Normal`
+  /// `Yesod` `access_token`
   $grpc.ResponseFuture<$6.CreateFeedActionSetResponse> createFeedActionSet(
     $6.CreateFeedActionSetRequest request, {
     $grpc.CallOptions? options,
@@ -661,7 +669,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$createFeedActionSet, request, options: options);
   }
 
-  /// `Yesod` `Normal`
+  /// `Yesod` `access_token`
   $grpc.ResponseFuture<$6.UpdateFeedActionSetResponse> updateFeedActionSet(
     $6.UpdateFeedActionSetRequest request, {
     $grpc.CallOptions? options,
@@ -669,7 +677,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$updateFeedActionSet, request, options: options);
   }
 
-  /// `Yesod` `Normal`
+  /// `Yesod` `access_token`
   $grpc.ResponseFuture<$6.ListFeedActionSetsResponse> listFeedActionSets(
     $6.ListFeedActionSetsRequest request, {
     $grpc.CallOptions? options,
@@ -677,7 +685,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listFeedActionSets, request, options: options);
   }
 
-  /// `Yesod` `Normal`
+  /// `Yesod` `access_token`
   $grpc.ResponseFuture<$6.ListFeedCategoriesResponse> listFeedCategories(
     $6.ListFeedCategoriesRequest request, {
     $grpc.CallOptions? options,
@@ -685,7 +693,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listFeedCategories, request, options: options);
   }
 
-  /// `Yesod` `Normal`
+  /// `Yesod` `access_token`
   $grpc.ResponseFuture<$6.ListFeedPlatformsResponse> listFeedPlatforms(
     $6.ListFeedPlatformsRequest request, {
     $grpc.CallOptions? options,
@@ -693,7 +701,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listFeedPlatforms, request, options: options);
   }
 
-  /// `Yesod` `Normal`
+  /// `Yesod` `access_token`
   $grpc.ResponseFuture<$6.ListFeedItemsResponse> listFeedItems(
     $6.ListFeedItemsRequest request, {
     $grpc.CallOptions? options,
@@ -701,7 +709,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$listFeedItems, request, options: options);
   }
 
-  /// `Yesod` `Normal`
+  /// `Yesod` `access_token`
   $grpc.ResponseFuture<$6.GetFeedItemResponse> getFeedItem(
     $6.GetFeedItemRequest request, {
     $grpc.CallOptions? options,
@@ -709,7 +717,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getFeedItem, request, options: options);
   }
 
-  /// `Yesod` `Normal`
+  /// `Yesod` `access_token`
   $grpc.ResponseFuture<$6.GetBatchFeedItemsResponse> getBatchFeedItems(
     $6.GetBatchFeedItemsRequest request, {
     $grpc.CallOptions? options,
@@ -717,7 +725,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$getBatchFeedItems, request, options: options);
   }
 
-  /// `Yesod` `Normal`
+  /// `Yesod` `access_token`
   $grpc.ResponseFuture<$6.ReadFeedItemResponse> readFeedItem(
     $6.ReadFeedItemRequest request, {
     $grpc.CallOptions? options,
@@ -725,7 +733,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
     return $createUnaryCall(_$readFeedItem, request, options: options);
   }
 
-  /// `Yesod` `Normal`
+  /// `Yesod` `access_token`
   $grpc.ResponseFuture<$6.CreateFeedItemCollectionResponse>
       createFeedItemCollection(
     $6.CreateFeedItemCollectionRequest request, {
@@ -735,7 +743,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
         options: options);
   }
 
-  /// `Yesod` `Normal`
+  /// `Yesod` `access_token`
   $grpc.ResponseFuture<$6.UpdateFeedItemCollectionResponse>
       updateFeedItemCollection(
     $6.UpdateFeedItemCollectionRequest request, {
@@ -745,7 +753,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
         options: options);
   }
 
-  /// `Yesod` `Normal`
+  /// `Yesod` `access_token`
   $grpc.ResponseFuture<$6.ListFeedItemCollectionsResponse>
       listFeedItemCollections(
     $6.ListFeedItemCollectionsRequest request, {
@@ -755,7 +763,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
         options: options);
   }
 
-  /// `Yesod` `Normal`
+  /// `Yesod` `access_token`
   $grpc.ResponseFuture<$6.AddFeedItemToCollectionResponse>
       addFeedItemToCollection(
     $6.AddFeedItemToCollectionRequest request, {
@@ -765,7 +773,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
         options: options);
   }
 
-  /// `Yesod` `Normal`
+  /// `Yesod` `access_token`
   $grpc.ResponseFuture<$6.RemoveFeedItemFromCollectionResponse>
       removeFeedItemFromCollection(
     $6.RemoveFeedItemFromCollectionRequest request, {
@@ -775,7 +783,7 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
         options: options);
   }
 
-  /// `Yesod` `Normal`
+  /// `Yesod` `access_token`
   $grpc.ResponseFuture<$6.ListFeedItemsInCollectionResponse>
       listFeedItemsInCollection(
     $6.ListFeedItemsInCollectionRequest request, {
@@ -827,16 +835,21 @@ class LibrarianSephirahServiceClient extends $grpc.Client {
           '/librarian.sephirah.v1.LibrarianSephirahService/RegisterDevice',
           ($1.RegisterDeviceRequest value) => value.writeToBuffer(),
           $1.RegisterDeviceResponse.fromBuffer);
+  static final _$getDevice =
+      $grpc.ClientMethod<$1.GetDeviceRequest, $1.GetDeviceResponse>(
+          '/librarian.sephirah.v1.LibrarianSephirahService/GetDevice',
+          ($1.GetDeviceRequest value) => value.writeToBuffer(),
+          $1.GetDeviceResponse.fromBuffer);
   static final _$listUserSessions = $grpc.ClientMethod<
           $1.ListUserSessionsRequest, $1.ListUserSessionsResponse>(
       '/librarian.sephirah.v1.LibrarianSephirahService/ListUserSessions',
       ($1.ListUserSessionsRequest value) => value.writeToBuffer(),
       $1.ListUserSessionsResponse.fromBuffer);
-  static final _$deleteUserSession = $grpc.ClientMethod<
-          $1.DeleteUserSessionRequest, $1.DeleteUserSessionResponse>(
-      '/librarian.sephirah.v1.LibrarianSephirahService/DeleteUserSession',
-      ($1.DeleteUserSessionRequest value) => value.writeToBuffer(),
-      $1.DeleteUserSessionResponse.fromBuffer);
+  static final _$revokeUserSession = $grpc.ClientMethod<
+          $1.RevokeUserSessionRequest, $1.RevokeUserSessionResponse>(
+      '/librarian.sephirah.v1.LibrarianSephirahService/RevokeUserSession',
+      ($1.RevokeUserSessionRequest value) => value.writeToBuffer(),
+      $1.RevokeUserSessionResponse.fromBuffer);
   static final _$linkAccount =
       $grpc.ClientMethod<$1.LinkAccountRequest, $1.LinkAccountResponse>(
           '/librarian.sephirah.v1.LibrarianSephirahService/LinkAccount',
@@ -1302,6 +1315,13 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $1.RegisterDeviceRequest.fromBuffer(value),
         ($1.RegisterDeviceResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$1.GetDeviceRequest, $1.GetDeviceResponse>(
+        'GetDevice',
+        getDevice_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $1.GetDeviceRequest.fromBuffer(value),
+        ($1.GetDeviceResponse value) => value.writeToBuffer()));
     $addMethod($grpc.ServiceMethod<$1.ListUserSessionsRequest,
             $1.ListUserSessionsResponse>(
         'ListUserSessions',
@@ -1311,15 +1331,15 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $1.ListUserSessionsRequest.fromBuffer(value),
         ($1.ListUserSessionsResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$1.DeleteUserSessionRequest,
-            $1.DeleteUserSessionResponse>(
-        'DeleteUserSession',
-        deleteUserSession_Pre,
+    $addMethod($grpc.ServiceMethod<$1.RevokeUserSessionRequest,
+            $1.RevokeUserSessionResponse>(
+        'RevokeUserSession',
+        revokeUserSession_Pre,
         false,
         false,
         ($core.List<$core.int> value) =>
-            $1.DeleteUserSessionRequest.fromBuffer(value),
-        ($1.DeleteUserSessionResponse value) => value.writeToBuffer()));
+            $1.RevokeUserSessionRequest.fromBuffer(value),
+        ($1.RevokeUserSessionResponse value) => value.writeToBuffer()));
     $addMethod(
         $grpc.ServiceMethod<$1.LinkAccountRequest, $1.LinkAccountResponse>(
             'LinkAccount',
@@ -2062,6 +2082,14 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
   $async.Future<$1.RegisterDeviceResponse> registerDevice(
       $grpc.ServiceCall call, $1.RegisterDeviceRequest request);
 
+  $async.Future<$1.GetDeviceResponse> getDevice_Pre($grpc.ServiceCall $call,
+      $async.Future<$1.GetDeviceRequest> $request) async {
+    return getDevice($call, await $request);
+  }
+
+  $async.Future<$1.GetDeviceResponse> getDevice(
+      $grpc.ServiceCall call, $1.GetDeviceRequest request);
+
   $async.Future<$1.ListUserSessionsResponse> listUserSessions_Pre(
       $grpc.ServiceCall $call,
       $async.Future<$1.ListUserSessionsRequest> $request) async {
@@ -2071,14 +2099,14 @@ abstract class LibrarianSephirahServiceBase extends $grpc.Service {
   $async.Future<$1.ListUserSessionsResponse> listUserSessions(
       $grpc.ServiceCall call, $1.ListUserSessionsRequest request);
 
-  $async.Future<$1.DeleteUserSessionResponse> deleteUserSession_Pre(
+  $async.Future<$1.RevokeUserSessionResponse> revokeUserSession_Pre(
       $grpc.ServiceCall $call,
-      $async.Future<$1.DeleteUserSessionRequest> $request) async {
-    return deleteUserSession($call, await $request);
+      $async.Future<$1.RevokeUserSessionRequest> $request) async {
+    return revokeUserSession($call, await $request);
   }
 
-  $async.Future<$1.DeleteUserSessionResponse> deleteUserSession(
-      $grpc.ServiceCall call, $1.DeleteUserSessionRequest request);
+  $async.Future<$1.RevokeUserSessionResponse> revokeUserSession(
+      $grpc.ServiceCall call, $1.RevokeUserSessionRequest request);
 
   $async.Future<$1.LinkAccountResponse> linkAccount_Pre($grpc.ServiceCall $call,
       $async.Future<$1.LinkAccountRequest> $request) async {

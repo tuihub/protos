@@ -42,20 +42,23 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             "E3NvdXJjZV9jb2RlX2FkZHJlc3MYASABKAlSEXNvdXJjZUNvZGVBZGRyZXNz",
             "EiMKDWJ1aWxkX3ZlcnNpb24YAiABKAlSDGJ1aWxkVmVyc2lvbhIdCgpidWls",
             "ZF9kYXRlGAMgASgJUglidWlsZERhdGUiMQoVU2VydmVyUHJvdG9jb2xTdW1t",
-            "YXJ5EhgKB3ZlcnNpb24YASABKAlSB3ZlcnNpb24isAEKFVNlcnZlckluc3Rh",
+            "YXJ5EhgKB3ZlcnNpb24YASABKAlSB3ZlcnNpb24iugIKFVNlcnZlckluc3Rh",
             "bmNlU3VtbWFyeRISCgRuYW1lGAEgASgJUgRuYW1lEiAKC2Rlc2NyaXB0aW9u",
-            "GAIgASgJUgtkZXNjcmlwdGlvbhIfCgt3ZWJzaXRlX3VybBgDIAEoCVIKd2Vi",
-            "c2l0ZVVybBIZCghsb2dvX3VybBgEIAEoCVIHbG9nb1VybBIlCg5iYWNrZ3Jv",
-            "dW5kX3VybBgFIAEoCVINYmFja2dyb3VuZFVybEJdWjVnaXRodWIuY29tL3R1",
-            "aWh1Yi9wcm90b3MvcGtnL2xpYnJhcmlhbi9zZXBoaXJhaC92MTt2MaoCI1R1",
-            "aUh1Yi5Qcm90b3MuTGlicmFyaWFuLlNlcGhpcmFoLlYxYgZwcm90bzM="));
+            "GAIgASgJUgtkZXNjcmlwdGlvbhIkCgt3ZWJzaXRlX3VybBgDIAEoCUgAUgp3",
+            "ZWJzaXRlVXJsiAEBEikKDmxvZ29faW1hZ2VfdXJsGAQgASgJSAFSDGxvZ29J",
+            "bWFnZVVybIgBARI1ChRiYWNrZ3JvdW5kX2ltYWdlX3VybBgFIAEoCUgCUhJi",
+            "YWNrZ3JvdW5kSW1hZ2VVcmyIAQESJwoPaXNfcmVnaXN0ZXJhYmxlGAYgASgI",
+            "Ug5pc1JlZ2lzdGVyYWJsZUIOCgxfd2Vic2l0ZV91cmxCEQoPX2xvZ29faW1h",
+            "Z2VfdXJsQhcKFV9iYWNrZ3JvdW5kX2ltYWdlX3VybEJdWjVnaXRodWIuY29t",
+            "L3R1aWh1Yi9wcm90b3MvcGtnL2xpYnJhcmlhbi9zZXBoaXJhaC92MTt2MaoC",
+            "I1R1aUh1Yi5Qcm90b3MuTGlicmFyaWFuLlNlcGhpcmFoLlYxYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::TuiHub.Protos.Librarian.V1.WellknownReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ServerInformation), global::TuiHub.Protos.Librarian.Sephirah.V1.ServerInformation.Parser, new[]{ "ServerBinarySummary", "ProtocolSummary", "CurrentTime", "FeatureSummary", "ServerInstanceSummary", "StatusReport" }, new[]{ "FeatureSummary", "StatusReport" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ServerBinarySummary), global::TuiHub.Protos.Librarian.Sephirah.V1.ServerBinarySummary.Parser, new[]{ "SourceCodeAddress", "BuildVersion", "BuildDate" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ServerProtocolSummary), global::TuiHub.Protos.Librarian.Sephirah.V1.ServerProtocolSummary.Parser, new[]{ "Version" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ServerInstanceSummary), global::TuiHub.Protos.Librarian.Sephirah.V1.ServerInstanceSummary.Parser, new[]{ "Name", "Description", "WebsiteUrl", "LogoUrl", "BackgroundUrl" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::TuiHub.Protos.Librarian.Sephirah.V1.ServerInstanceSummary), global::TuiHub.Protos.Librarian.Sephirah.V1.ServerInstanceSummary.Parser, new[]{ "Name", "Description", "WebsiteUrl", "LogoImageUrl", "BackgroundImageUrl", "IsRegisterable" }, new[]{ "WebsiteUrl", "LogoImageUrl", "BackgroundImageUrl" }, null, null, null)
           }));
     }
     #endregion
@@ -115,7 +118,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     public const int ServerBinarySummaryFieldNumber = 1;
     private global::TuiHub.Protos.Librarian.Sephirah.V1.ServerBinarySummary serverBinarySummary_;
     /// <summary>
-    /// For manual inspection only, the client may display but should not parse the response.
+    /// For manual inspection only, the client may display but should not parse the response texts.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -130,7 +133,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     public const int ProtocolSummaryFieldNumber = 2;
     private global::TuiHub.Protos.Librarian.Sephirah.V1.ServerProtocolSummary protocolSummary_;
     /// <summary>
-    /// For manual inspection only, the client may display but should not parse the response.
+    /// For manual inspection only, the client may display but should not parse the response texts.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1022,8 +1025,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       name_ = other.name_;
       description_ = other.description_;
       websiteUrl_ = other.websiteUrl_;
-      logoUrl_ = other.logoUrl_;
-      backgroundUrl_ = other.backgroundUrl_;
+      logoImageUrl_ = other.logoImageUrl_;
+      backgroundImageUrl_ = other.backgroundImageUrl_;
+      isRegisterable_ = other.isRegisterable_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1059,37 +1063,91 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
 
     /// <summary>Field number for the "website_url" field.</summary>
     public const int WebsiteUrlFieldNumber = 3;
-    private string websiteUrl_ = "";
+    private readonly static string WebsiteUrlDefaultValue = "";
+
+    private string websiteUrl_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public string WebsiteUrl {
-      get { return websiteUrl_; }
+      get { return websiteUrl_ ?? WebsiteUrlDefaultValue; }
       set {
         websiteUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
-
-    /// <summary>Field number for the "logo_url" field.</summary>
-    public const int LogoUrlFieldNumber = 4;
-    private string logoUrl_ = "";
+    /// <summary>Gets whether the "website_url" field is set</summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string LogoUrl {
-      get { return logoUrl_; }
-      set {
-        logoUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
+    public bool HasWebsiteUrl {
+      get { return websiteUrl_ != null; }
+    }
+    /// <summary>Clears the value of the "website_url" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearWebsiteUrl() {
+      websiteUrl_ = null;
     }
 
-    /// <summary>Field number for the "background_url" field.</summary>
-    public const int BackgroundUrlFieldNumber = 5;
-    private string backgroundUrl_ = "";
+    /// <summary>Field number for the "logo_image_url" field.</summary>
+    public const int LogoImageUrlFieldNumber = 4;
+    private readonly static string LogoImageUrlDefaultValue = "";
+
+    private string logoImageUrl_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string BackgroundUrl {
-      get { return backgroundUrl_; }
+    public string LogoImageUrl {
+      get { return logoImageUrl_ ?? LogoImageUrlDefaultValue; }
       set {
-        backgroundUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        logoImageUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+    /// <summary>Gets whether the "logo_image_url" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasLogoImageUrl {
+      get { return logoImageUrl_ != null; }
+    }
+    /// <summary>Clears the value of the "logo_image_url" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearLogoImageUrl() {
+      logoImageUrl_ = null;
+    }
+
+    /// <summary>Field number for the "background_image_url" field.</summary>
+    public const int BackgroundImageUrlFieldNumber = 5;
+    private readonly static string BackgroundImageUrlDefaultValue = "";
+
+    private string backgroundImageUrl_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string BackgroundImageUrl {
+      get { return backgroundImageUrl_ ?? BackgroundImageUrlDefaultValue; }
+      set {
+        backgroundImageUrl_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+    /// <summary>Gets whether the "background_image_url" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasBackgroundImageUrl {
+      get { return backgroundImageUrl_ != null; }
+    }
+    /// <summary>Clears the value of the "background_image_url" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearBackgroundImageUrl() {
+      backgroundImageUrl_ = null;
+    }
+
+    /// <summary>Field number for the "is_registerable" field.</summary>
+    public const int IsRegisterableFieldNumber = 6;
+    private bool isRegisterable_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool IsRegisterable {
+      get { return isRegisterable_; }
+      set {
+        isRegisterable_ = value;
       }
     }
 
@@ -1111,8 +1169,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (Name != other.Name) return false;
       if (Description != other.Description) return false;
       if (WebsiteUrl != other.WebsiteUrl) return false;
-      if (LogoUrl != other.LogoUrl) return false;
-      if (BackgroundUrl != other.BackgroundUrl) return false;
+      if (LogoImageUrl != other.LogoImageUrl) return false;
+      if (BackgroundImageUrl != other.BackgroundImageUrl) return false;
+      if (IsRegisterable != other.IsRegisterable) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1122,9 +1181,10 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       int hash = 1;
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
-      if (WebsiteUrl.Length != 0) hash ^= WebsiteUrl.GetHashCode();
-      if (LogoUrl.Length != 0) hash ^= LogoUrl.GetHashCode();
-      if (BackgroundUrl.Length != 0) hash ^= BackgroundUrl.GetHashCode();
+      if (HasWebsiteUrl) hash ^= WebsiteUrl.GetHashCode();
+      if (HasLogoImageUrl) hash ^= LogoImageUrl.GetHashCode();
+      if (HasBackgroundImageUrl) hash ^= BackgroundImageUrl.GetHashCode();
+      if (IsRegisterable != false) hash ^= IsRegisterable.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1151,17 +1211,21 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(18);
         output.WriteString(Description);
       }
-      if (WebsiteUrl.Length != 0) {
+      if (HasWebsiteUrl) {
         output.WriteRawTag(26);
         output.WriteString(WebsiteUrl);
       }
-      if (LogoUrl.Length != 0) {
+      if (HasLogoImageUrl) {
         output.WriteRawTag(34);
-        output.WriteString(LogoUrl);
+        output.WriteString(LogoImageUrl);
       }
-      if (BackgroundUrl.Length != 0) {
+      if (HasBackgroundImageUrl) {
         output.WriteRawTag(42);
-        output.WriteString(BackgroundUrl);
+        output.WriteString(BackgroundImageUrl);
+      }
+      if (IsRegisterable != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(IsRegisterable);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -1181,17 +1245,21 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         output.WriteRawTag(18);
         output.WriteString(Description);
       }
-      if (WebsiteUrl.Length != 0) {
+      if (HasWebsiteUrl) {
         output.WriteRawTag(26);
         output.WriteString(WebsiteUrl);
       }
-      if (LogoUrl.Length != 0) {
+      if (HasLogoImageUrl) {
         output.WriteRawTag(34);
-        output.WriteString(LogoUrl);
+        output.WriteString(LogoImageUrl);
       }
-      if (BackgroundUrl.Length != 0) {
+      if (HasBackgroundImageUrl) {
         output.WriteRawTag(42);
-        output.WriteString(BackgroundUrl);
+        output.WriteString(BackgroundImageUrl);
+      }
+      if (IsRegisterable != false) {
+        output.WriteRawTag(48);
+        output.WriteBool(IsRegisterable);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -1209,14 +1277,17 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (Description.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
       }
-      if (WebsiteUrl.Length != 0) {
+      if (HasWebsiteUrl) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(WebsiteUrl);
       }
-      if (LogoUrl.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(LogoUrl);
+      if (HasLogoImageUrl) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(LogoImageUrl);
       }
-      if (BackgroundUrl.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(BackgroundUrl);
+      if (HasBackgroundImageUrl) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(BackgroundImageUrl);
+      }
+      if (IsRegisterable != false) {
+        size += 1 + 1;
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1236,14 +1307,17 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       if (other.Description.Length != 0) {
         Description = other.Description;
       }
-      if (other.WebsiteUrl.Length != 0) {
+      if (other.HasWebsiteUrl) {
         WebsiteUrl = other.WebsiteUrl;
       }
-      if (other.LogoUrl.Length != 0) {
-        LogoUrl = other.LogoUrl;
+      if (other.HasLogoImageUrl) {
+        LogoImageUrl = other.LogoImageUrl;
       }
-      if (other.BackgroundUrl.Length != 0) {
-        BackgroundUrl = other.BackgroundUrl;
+      if (other.HasBackgroundImageUrl) {
+        BackgroundImageUrl = other.BackgroundImageUrl;
+      }
+      if (other.IsRegisterable != false) {
+        IsRegisterable = other.IsRegisterable;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1273,11 +1347,15 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 34: {
-            LogoUrl = input.ReadString();
+            LogoImageUrl = input.ReadString();
             break;
           }
           case 42: {
-            BackgroundUrl = input.ReadString();
+            BackgroundImageUrl = input.ReadString();
+            break;
+          }
+          case 48: {
+            IsRegisterable = input.ReadBool();
             break;
           }
         }
@@ -1308,11 +1386,15 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
             break;
           }
           case 34: {
-            LogoUrl = input.ReadString();
+            LogoImageUrl = input.ReadString();
             break;
           }
           case 42: {
-            BackgroundUrl = input.ReadString();
+            BackgroundImageUrl = input.ReadString();
+            break;
+          }
+          case 48: {
+            IsRegisterable = input.ReadBool();
             break;
           }
         }

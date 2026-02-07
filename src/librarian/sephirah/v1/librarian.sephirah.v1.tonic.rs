@@ -1,7 +1,13 @@
 // @generated
 /// Generated client implementations.
 pub mod librarian_sephirah_service_client {
-    #![allow(unused_variables, dead_code, missing_docs, clippy::let_unit_value)]
+    #![allow(
+        unused_variables,
+        dead_code,
+        missing_docs,
+        clippy::wildcard_imports,
+        clippy::let_unit_value,
+    )]
     use tonic::codegen::*;
     use tonic::codegen::http::Uri;
     #[derive(Debug, Clone)]
@@ -21,10 +27,10 @@ pub mod librarian_sephirah_service_client {
     }
     impl<T> LibrarianSephirahServiceClient<T>
     where
-        T: tonic::client::GrpcService<tonic::body::BoxBody>,
+        T: tonic::client::GrpcService<tonic::body::Body>,
         T::Error: Into<StdError>,
-        T::ResponseBody: Body<Data = Bytes> + Send + 'static,
-        <T::ResponseBody as Body>::Error: Into<StdError> + Send,
+        T::ResponseBody: Body<Data = Bytes> + std::marker::Send + 'static,
+        <T::ResponseBody as Body>::Error: Into<StdError> + std::marker::Send,
     {
         pub fn new(inner: T) -> Self {
             let inner = tonic::client::Grpc::new(inner);
@@ -42,14 +48,14 @@ pub mod librarian_sephirah_service_client {
             F: tonic::service::Interceptor,
             T::ResponseBody: Default,
             T: tonic::codegen::Service<
-                http::Request<tonic::body::BoxBody>,
+                http::Request<tonic::body::Body>,
                 Response = http::Response<
-                    <T as tonic::client::GrpcService<tonic::body::BoxBody>>::ResponseBody,
+                    <T as tonic::client::GrpcService<tonic::body::Body>>::ResponseBody,
                 >,
             >,
             <T as tonic::codegen::Service<
-                http::Request<tonic::body::BoxBody>,
-            >>::Error: Into<StdError> + Send + Sync,
+                http::Request<tonic::body::Body>,
+            >>::Error: Into<StdError> + std::marker::Send + std::marker::Sync,
         {
             LibrarianSephirahServiceClient::new(
                 InterceptedService::new(inner, interceptor),
@@ -97,12 +103,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/GetServerInformation",
             );
@@ -127,12 +132,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ListenServerEvent",
             );
@@ -146,7 +150,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.server_streaming(req, path, codec).await
         }
-        /** `Tiphereth` `Normal` Login via password and get two token
+        /** `Tiphereth` `anonymous` Login via password and get two token
 */
         pub async fn get_token(
             &mut self,
@@ -159,12 +163,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/GetToken",
             );
@@ -178,7 +181,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Tiphereth` `Normal` Use valid refresh_token and get two new token, a refresh_token can only be used once
+        /** `Tiphereth` `access_token` Use valid refresh_token and get two new token, a refresh_token can only be used once
 */
         pub async fn refresh_token(
             &mut self,
@@ -191,12 +194,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/RefreshToken",
             );
@@ -210,7 +212,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Tiphereth`
+        /** `Tiphereth` `access_token`
 */
         pub async fn get_user(
             &mut self,
@@ -223,12 +225,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/GetUser",
             );
@@ -242,7 +243,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Tiphereth` Self register as a new normal user
+        /** `Tiphereth` `anonymous` Self register as a new normal user
 */
         pub async fn register_user(
             &mut self,
@@ -255,12 +256,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/RegisterUser",
             );
@@ -274,7 +274,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Tiphereth` `Normal` Update self user info
+        /** `Tiphereth` `access_token` Update self user info
 */
         pub async fn update_user(
             &mut self,
@@ -287,12 +287,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/UpdateUser",
             );
@@ -306,7 +305,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Tiphereth` `Normal` Client should register device after the first login
+        /** `Tiphereth` `access_token` Client should register device after the first login
  and store the device_id locally.
  The server could add extra limits to non-registered device
 */
@@ -321,12 +320,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/RegisterDevice",
             );
@@ -340,7 +338,38 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Tiphereth` `Normal`
+        /** `Tiphereth` `access_token`
+*/
+        pub async fn get_device(
+            &mut self,
+            request: impl tonic::IntoRequest<super::GetDeviceRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::GetDeviceResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic_prost::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/librarian.sephirah.v1.LibrarianSephirahService/GetDevice",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "librarian.sephirah.v1.LibrarianSephirahService",
+                        "GetDevice",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
+        }
+        /** `Tiphereth` `access_token`
 */
         pub async fn list_user_sessions(
             &mut self,
@@ -353,12 +382,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ListUserSessions",
             );
@@ -372,41 +400,40 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Tiphereth` `Normal` delete session will revoke refresh_token immediately.
+        /** `Tiphereth` `access_token` revoke session will revoke refresh_token immediately.
  NOTE: This can also be used to log out at server side.
- NOTE2: Delete session will not affect device registration.
+ NOTE2: Revoke session will not affect device registration.
 */
-        pub async fn delete_user_session(
+        pub async fn revoke_user_session(
             &mut self,
-            request: impl tonic::IntoRequest<super::DeleteUserSessionRequest>,
+            request: impl tonic::IntoRequest<super::RevokeUserSessionRequest>,
         ) -> std::result::Result<
-            tonic::Response<super::DeleteUserSessionResponse>,
+            tonic::Response<super::RevokeUserSessionResponse>,
             tonic::Status,
         > {
             self.inner
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/librarian.sephirah.v1.LibrarianSephirahService/DeleteUserSession",
+                "/librarian.sephirah.v1.LibrarianSephirahService/RevokeUserSession",
             );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(
                     GrpcMethod::new(
                         "librarian.sephirah.v1.LibrarianSephirahService",
-                        "DeleteUserSession",
+                        "RevokeUserSession",
                     ),
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Tiphereth` `Normal` Bind third-party account to current user.
+        /** `Tiphereth` `access_token` Bind third-party account to current user.
 */
         pub async fn link_account(
             &mut self,
@@ -419,12 +446,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/LinkAccount",
             );
@@ -438,7 +464,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Tiphereth` `Normal` Unbind third-party account from current user.
+        /** `Tiphereth` `access_token` Unbind third-party account from current user.
 */
         pub async fn un_link_account(
             &mut self,
@@ -451,12 +477,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/UnLinkAccount",
             );
@@ -470,7 +495,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Tiphereth` `Normal` List third-party account binded to current user.
+        /** `Tiphereth` `access_token` List third-party account binded to current user.
 */
         pub async fn list_link_accounts(
             &mut self,
@@ -483,12 +508,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ListLinkAccounts",
             );
@@ -502,7 +526,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Tiphereth` `Normal`
+        /** `Tiphereth` `access_token`
 */
         pub async fn list_porter_digests(
             &mut self,
@@ -515,12 +539,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ListPorterDigests",
             );
@@ -534,7 +557,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Tiphereth` `Normal`
+        /** `Tiphereth` `access_token`
 */
         pub async fn create_porter_context(
             &mut self,
@@ -547,12 +570,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/CreatePorterContext",
             );
@@ -566,7 +588,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Tiphereth` `Normal`
+        /** `Tiphereth` `access_token`
 */
         pub async fn list_porter_contexts(
             &mut self,
@@ -579,12 +601,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ListPorterContexts",
             );
@@ -598,7 +619,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Tiphereth` `Normal` Set porter context.
+        /** `Tiphereth` `access_token` Set porter context.
 */
         pub async fn update_porter_context(
             &mut self,
@@ -611,12 +632,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/UpdatePorterContext",
             );
@@ -630,7 +650,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Binah` `Normal`
+        /** `Binah` `access_token`
 */
         pub async fn get_storage_capacity_usage(
             &mut self,
@@ -643,12 +663,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/GetStorageCapacityUsage",
             );
@@ -675,12 +694,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/UploadFile",
             );
@@ -709,12 +727,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/DownloadFile",
             );
@@ -746,12 +763,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/SimpleUploadFile",
             );
@@ -779,12 +795,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/SimpleDownloadFile",
             );
@@ -812,12 +827,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/PresignedUploadFile",
             );
@@ -845,12 +859,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/PresignedUploadFileStatus",
             );
@@ -878,12 +891,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/PresignedDownloadFile",
             );
@@ -897,7 +909,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Chesed` `Normal`
+        /** `Chesed` `access_token`
 */
         pub async fn upload_image(
             &mut self,
@@ -910,12 +922,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/UploadImage",
             );
@@ -929,7 +940,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Chesed` `Normal`
+        /** `Chesed` `access_token`
 */
         pub async fn update_image(
             &mut self,
@@ -942,12 +953,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/UpdateImage",
             );
@@ -961,7 +971,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Chesed` `Normal`
+        /** `Chesed` `access_token`
 */
         pub async fn list_images(
             &mut self,
@@ -974,12 +984,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ListImages",
             );
@@ -993,7 +1002,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Chesed` `Normal`
+        /** `Chesed` `access_token`
 */
         pub async fn search_images(
             &mut self,
@@ -1006,12 +1015,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/SearchImages",
             );
@@ -1025,7 +1033,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Chesed` `Normal`
+        /** `Chesed` `access_token`
 */
         pub async fn get_image(
             &mut self,
@@ -1038,12 +1046,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/GetImage",
             );
@@ -1057,7 +1064,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Chesed` `Normal`
+        /** `Chesed` `access_token`
 */
         pub async fn download_image(
             &mut self,
@@ -1070,12 +1077,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/DownloadImage",
             );
@@ -1089,7 +1095,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         pub async fn search_store_apps(
             &mut self,
@@ -1102,12 +1108,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/SearchStoreApps",
             );
@@ -1121,7 +1126,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         pub async fn get_store_app_summary(
             &mut self,
@@ -1134,12 +1139,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/GetStoreAppSummary",
             );
@@ -1153,7 +1157,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         pub async fn acquire_store_app(
             &mut self,
@@ -1166,12 +1170,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/AcquireStoreApp",
             );
@@ -1185,7 +1188,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         pub async fn list_store_app_binaries(
             &mut self,
@@ -1198,12 +1201,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ListStoreAppBinaries",
             );
@@ -1217,7 +1219,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         pub async fn list_store_app_binary_files(
             &mut self,
@@ -1230,12 +1232,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ListStoreAppBinaryFiles",
             );
@@ -1249,7 +1250,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         pub async fn download_store_app_binary(
             &mut self,
@@ -1262,12 +1263,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/DownloadStoreAppBinary",
             );
@@ -1281,7 +1281,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         pub async fn list_store_app_save_files(
             &mut self,
@@ -1294,12 +1294,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ListStoreAppSaveFiles",
             );
@@ -1313,7 +1312,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         pub async fn download_store_app_save_file(
             &mut self,
@@ -1326,12 +1325,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/DownloadStoreAppSaveFile",
             );
@@ -1345,7 +1343,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Gebura` `Normal` Search app infos
+        /** `Gebura` `access_token` Search app infos
 */
         pub async fn search_app_infos(
             &mut self,
@@ -1358,12 +1356,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/SearchAppInfos",
             );
@@ -1377,7 +1374,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         pub async fn create_app(
             &mut self,
@@ -1390,12 +1387,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/CreateApp",
             );
@@ -1409,7 +1405,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         pub async fn update_app(
             &mut self,
@@ -1422,12 +1418,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/UpdateApp",
             );
@@ -1441,7 +1436,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         pub async fn list_apps(
             &mut self,
@@ -1454,12 +1449,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ListApps",
             );
@@ -1473,7 +1467,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         pub async fn delete_app(
             &mut self,
@@ -1486,12 +1480,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/DeleteApp",
             );
@@ -1505,7 +1498,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         pub async fn batch_create_app_run_time(
             &mut self,
@@ -1518,12 +1511,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/BatchCreateAppRunTime",
             );
@@ -1537,7 +1529,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         pub async fn sum_app_run_time(
             &mut self,
@@ -1550,12 +1542,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/SumAppRunTime",
             );
@@ -1569,7 +1560,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         pub async fn list_app_run_times(
             &mut self,
@@ -1582,12 +1573,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ListAppRunTimes",
             );
@@ -1601,7 +1591,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         pub async fn delete_app_run_time(
             &mut self,
@@ -1614,12 +1604,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/DeleteAppRunTime",
             );
@@ -1633,7 +1622,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         pub async fn upload_app_save_file(
             &mut self,
@@ -1646,12 +1635,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/UploadAppSaveFile",
             );
@@ -1665,7 +1653,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         pub async fn download_app_save_file(
             &mut self,
@@ -1678,12 +1666,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/DownloadAppSaveFile",
             );
@@ -1697,7 +1684,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         pub async fn list_app_save_files(
             &mut self,
@@ -1710,12 +1697,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ListAppSaveFiles",
             );
@@ -1729,7 +1715,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         pub async fn delete_app_save_file(
             &mut self,
@@ -1742,12 +1728,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/DeleteAppSaveFile",
             );
@@ -1761,7 +1746,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         pub async fn pin_app_save_file(
             &mut self,
@@ -1774,12 +1759,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/PinAppSaveFile",
             );
@@ -1793,7 +1777,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         pub async fn unpin_app_save_file(
             &mut self,
@@ -1806,12 +1790,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/UnpinAppSaveFile",
             );
@@ -1825,7 +1808,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         pub async fn get_app_save_file_capacity(
             &mut self,
@@ -1838,12 +1821,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/GetAppSaveFileCapacity",
             );
@@ -1857,7 +1839,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         pub async fn set_app_save_file_capacity(
             &mut self,
@@ -1870,12 +1852,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/SetAppSaveFileCapacity",
             );
@@ -1889,7 +1870,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         pub async fn list_app_categories(
             &mut self,
@@ -1902,12 +1883,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ListAppCategories",
             );
@@ -1921,7 +1901,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         pub async fn create_app_category(
             &mut self,
@@ -1934,12 +1914,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/CreateAppCategory",
             );
@@ -1953,7 +1932,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         pub async fn update_app_category(
             &mut self,
@@ -1966,12 +1945,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/UpdateAppCategory",
             );
@@ -1985,7 +1963,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         pub async fn delete_app_category(
             &mut self,
@@ -1998,12 +1976,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/DeleteAppCategory",
             );
@@ -2017,7 +1994,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Netzach` `Normal`
+        /** `Netzach` `access_token`
 */
         pub async fn create_notify_target(
             &mut self,
@@ -2030,12 +2007,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/CreateNotifyTarget",
             );
@@ -2049,7 +2025,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Netzach` `Normal`
+        /** `Netzach` `access_token`
 */
         pub async fn update_notify_target(
             &mut self,
@@ -2062,12 +2038,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/UpdateNotifyTarget",
             );
@@ -2081,7 +2056,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Netzach` `Normal`
+        /** `Netzach` `access_token`
 */
         pub async fn list_notify_targets(
             &mut self,
@@ -2094,12 +2069,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ListNotifyTargets",
             );
@@ -2113,7 +2087,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Netzach` `Normal`
+        /** `Netzach` `access_token`
 */
         pub async fn create_notify_flow(
             &mut self,
@@ -2126,12 +2100,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/CreateNotifyFlow",
             );
@@ -2145,7 +2118,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Netzach` `Normal`
+        /** `Netzach` `access_token`
 */
         pub async fn update_notify_flow(
             &mut self,
@@ -2158,12 +2131,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/UpdateNotifyFlow",
             );
@@ -2177,7 +2149,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Netzach` `Normal`
+        /** `Netzach` `access_token`
 */
         pub async fn list_notify_flows(
             &mut self,
@@ -2190,12 +2162,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ListNotifyFlows",
             );
@@ -2209,7 +2180,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Netzach` `Normal`
+        /** `Netzach` `access_token`
 */
         pub async fn list_system_notifications(
             &mut self,
@@ -2222,12 +2193,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ListSystemNotifications",
             );
@@ -2241,7 +2211,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Netzach` `Normal`
+        /** `Netzach` `access_token`
 */
         pub async fn update_system_notification(
             &mut self,
@@ -2254,12 +2224,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/UpdateSystemNotification",
             );
@@ -2273,7 +2242,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Yesod` `Normal`
+        /** `Yesod` `access_token`
 */
         pub async fn create_feed_config(
             &mut self,
@@ -2286,12 +2255,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/CreateFeedConfig",
             );
@@ -2305,7 +2273,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Yesod` `Normal`
+        /** `Yesod` `access_token`
 */
         pub async fn update_feed_config(
             &mut self,
@@ -2318,12 +2286,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/UpdateFeedConfig",
             );
@@ -2337,7 +2304,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Yesod` `Normal`
+        /** `Yesod` `access_token`
 */
         pub async fn list_feed_configs(
             &mut self,
@@ -2350,12 +2317,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ListFeedConfigs",
             );
@@ -2369,7 +2335,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Yesod` `Normal`
+        /** `Yesod` `access_token`
 */
         pub async fn create_feed_action_set(
             &mut self,
@@ -2382,12 +2348,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/CreateFeedActionSet",
             );
@@ -2401,7 +2366,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Yesod` `Normal`
+        /** `Yesod` `access_token`
 */
         pub async fn update_feed_action_set(
             &mut self,
@@ -2414,12 +2379,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/UpdateFeedActionSet",
             );
@@ -2433,7 +2397,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Yesod` `Normal`
+        /** `Yesod` `access_token`
 */
         pub async fn list_feed_action_sets(
             &mut self,
@@ -2446,12 +2410,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ListFeedActionSets",
             );
@@ -2465,7 +2428,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Yesod` `Normal`
+        /** `Yesod` `access_token`
 */
         pub async fn list_feed_categories(
             &mut self,
@@ -2478,12 +2441,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ListFeedCategories",
             );
@@ -2497,7 +2459,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Yesod` `Normal`
+        /** `Yesod` `access_token`
 */
         pub async fn list_feed_platforms(
             &mut self,
@@ -2510,12 +2472,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ListFeedPlatforms",
             );
@@ -2529,7 +2490,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Yesod` `Normal`
+        /** `Yesod` `access_token`
 */
         pub async fn list_feed_items(
             &mut self,
@@ -2542,12 +2503,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ListFeedItems",
             );
@@ -2561,7 +2521,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Yesod` `Normal`
+        /** `Yesod` `access_token`
 */
         pub async fn get_feed_item(
             &mut self,
@@ -2574,12 +2534,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/GetFeedItem",
             );
@@ -2593,7 +2552,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Yesod` `Normal`
+        /** `Yesod` `access_token`
 */
         pub async fn get_batch_feed_items(
             &mut self,
@@ -2606,12 +2565,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/GetBatchFeedItems",
             );
@@ -2625,7 +2583,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Yesod` `Normal`
+        /** `Yesod` `access_token`
 */
         pub async fn read_feed_item(
             &mut self,
@@ -2638,12 +2596,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ReadFeedItem",
             );
@@ -2657,7 +2614,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Yesod` `Normal`
+        /** `Yesod` `access_token`
 */
         pub async fn create_feed_item_collection(
             &mut self,
@@ -2670,12 +2627,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/CreateFeedItemCollection",
             );
@@ -2689,7 +2645,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Yesod` `Normal`
+        /** `Yesod` `access_token`
 */
         pub async fn update_feed_item_collection(
             &mut self,
@@ -2702,12 +2658,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/UpdateFeedItemCollection",
             );
@@ -2721,7 +2676,7 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Yesod` `Normal`
+        /** `Yesod` `access_token`
 */
         pub async fn list_feed_item_collections(
             &mut self,
@@ -2734,12 +2689,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ListFeedItemCollections",
             );
@@ -2753,8 +2707,6 @@ pub mod librarian_sephirah_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        /** `Yesod` `Normal`
-*/
         pub async fn add_feed_item_to_collection(
             &mut self,
             request: impl tonic::IntoRequest<super::AddFeedItemToCollectionRequest>,
@@ -2766,12 +2718,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/AddFeedItemToCollection",
             );
@@ -2796,12 +2747,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/RemoveFeedItemFromCollection",
             );
@@ -2826,12 +2776,11 @@ pub mod librarian_sephirah_service_client {
                 .ready()
                 .await
                 .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
+                    tonic::Status::unknown(
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/librarian.sephirah.v1.LibrarianSephirahService/ListFeedItemsInCollection",
             );
@@ -2849,11 +2798,17 @@ pub mod librarian_sephirah_service_client {
 }
 /// Generated server implementations.
 pub mod librarian_sephirah_service_server {
-    #![allow(unused_variables, dead_code, missing_docs, clippy::let_unit_value)]
+    #![allow(
+        unused_variables,
+        dead_code,
+        missing_docs,
+        clippy::wildcard_imports,
+        clippy::let_unit_value,
+    )]
     use tonic::codegen::*;
     /// Generated trait containing gRPC methods that should be implemented for use with LibrarianSephirahServiceServer.
     #[async_trait]
-    pub trait LibrarianSephirahService: Send + Sync + 'static {
+    pub trait LibrarianSephirahService: std::marker::Send + std::marker::Sync + 'static {
         async fn get_server_information(
             &self,
             request: tonic::Request<super::GetServerInformationRequest>,
@@ -2868,7 +2823,7 @@ pub mod librarian_sephirah_service_server {
                     tonic::Status,
                 >,
             >
-            + Send
+            + std::marker::Send
             + 'static;
         async fn listen_server_event(
             &self,
@@ -2877,7 +2832,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<Self::ListenServerEventStream>,
             tonic::Status,
         >;
-        /** `Tiphereth` `Normal` Login via password and get two token
+        /** `Tiphereth` `anonymous` Login via password and get two token
 */
         async fn get_token(
             &self,
@@ -2886,7 +2841,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::GetTokenResponse>,
             tonic::Status,
         >;
-        /** `Tiphereth` `Normal` Use valid refresh_token and get two new token, a refresh_token can only be used once
+        /** `Tiphereth` `access_token` Use valid refresh_token and get two new token, a refresh_token can only be used once
 */
         async fn refresh_token(
             &self,
@@ -2895,13 +2850,13 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::RefreshTokenResponse>,
             tonic::Status,
         >;
-        /** `Tiphereth`
+        /** `Tiphereth` `access_token`
 */
         async fn get_user(
             &self,
             request: tonic::Request<super::GetUserRequest>,
         ) -> std::result::Result<tonic::Response<super::GetUserResponse>, tonic::Status>;
-        /** `Tiphereth` Self register as a new normal user
+        /** `Tiphereth` `anonymous` Self register as a new normal user
 */
         async fn register_user(
             &self,
@@ -2910,7 +2865,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::RegisterUserResponse>,
             tonic::Status,
         >;
-        /** `Tiphereth` `Normal` Update self user info
+        /** `Tiphereth` `access_token` Update self user info
 */
         async fn update_user(
             &self,
@@ -2919,7 +2874,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::UpdateUserResponse>,
             tonic::Status,
         >;
-        /** `Tiphereth` `Normal` Client should register device after the first login
+        /** `Tiphereth` `access_token` Client should register device after the first login
  and store the device_id locally.
  The server could add extra limits to non-registered device
 */
@@ -2930,7 +2885,16 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::RegisterDeviceResponse>,
             tonic::Status,
         >;
-        /** `Tiphereth` `Normal`
+        /** `Tiphereth` `access_token`
+*/
+        async fn get_device(
+            &self,
+            request: tonic::Request<super::GetDeviceRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::GetDeviceResponse>,
+            tonic::Status,
+        >;
+        /** `Tiphereth` `access_token`
 */
         async fn list_user_sessions(
             &self,
@@ -2939,18 +2903,18 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::ListUserSessionsResponse>,
             tonic::Status,
         >;
-        /** `Tiphereth` `Normal` delete session will revoke refresh_token immediately.
+        /** `Tiphereth` `access_token` revoke session will revoke refresh_token immediately.
  NOTE: This can also be used to log out at server side.
- NOTE2: Delete session will not affect device registration.
+ NOTE2: Revoke session will not affect device registration.
 */
-        async fn delete_user_session(
+        async fn revoke_user_session(
             &self,
-            request: tonic::Request<super::DeleteUserSessionRequest>,
+            request: tonic::Request<super::RevokeUserSessionRequest>,
         ) -> std::result::Result<
-            tonic::Response<super::DeleteUserSessionResponse>,
+            tonic::Response<super::RevokeUserSessionResponse>,
             tonic::Status,
         >;
-        /** `Tiphereth` `Normal` Bind third-party account to current user.
+        /** `Tiphereth` `access_token` Bind third-party account to current user.
 */
         async fn link_account(
             &self,
@@ -2959,7 +2923,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::LinkAccountResponse>,
             tonic::Status,
         >;
-        /** `Tiphereth` `Normal` Unbind third-party account from current user.
+        /** `Tiphereth` `access_token` Unbind third-party account from current user.
 */
         async fn un_link_account(
             &self,
@@ -2968,7 +2932,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::UnLinkAccountResponse>,
             tonic::Status,
         >;
-        /** `Tiphereth` `Normal` List third-party account binded to current user.
+        /** `Tiphereth` `access_token` List third-party account binded to current user.
 */
         async fn list_link_accounts(
             &self,
@@ -2977,7 +2941,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::ListLinkAccountsResponse>,
             tonic::Status,
         >;
-        /** `Tiphereth` `Normal`
+        /** `Tiphereth` `access_token`
 */
         async fn list_porter_digests(
             &self,
@@ -2986,7 +2950,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::ListPorterDigestsResponse>,
             tonic::Status,
         >;
-        /** `Tiphereth` `Normal`
+        /** `Tiphereth` `access_token`
 */
         async fn create_porter_context(
             &self,
@@ -2995,7 +2959,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::CreatePorterContextResponse>,
             tonic::Status,
         >;
-        /** `Tiphereth` `Normal`
+        /** `Tiphereth` `access_token`
 */
         async fn list_porter_contexts(
             &self,
@@ -3004,7 +2968,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::ListPorterContextsResponse>,
             tonic::Status,
         >;
-        /** `Tiphereth` `Normal` Set porter context.
+        /** `Tiphereth` `access_token` Set porter context.
 */
         async fn update_porter_context(
             &self,
@@ -3013,7 +2977,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::UpdatePorterContextResponse>,
             tonic::Status,
         >;
-        /** `Binah` `Normal`
+        /** `Binah` `access_token`
 */
         async fn get_storage_capacity_usage(
             &self,
@@ -3026,7 +2990,7 @@ pub mod librarian_sephirah_service_server {
         type UploadFileStream: tonic::codegen::tokio_stream::Stream<
                 Item = std::result::Result<super::UploadFileResponse, tonic::Status>,
             >
-            + Send
+            + std::marker::Send
             + 'static;
         /** `Binah` `upload_token`
 */
@@ -3038,7 +3002,7 @@ pub mod librarian_sephirah_service_server {
         type DownloadFileStream: tonic::codegen::tokio_stream::Stream<
                 Item = std::result::Result<super::DownloadFileResponse, tonic::Status>,
             >
-            + Send
+            + std::marker::Send
             + 'static;
         /** `Binah` `download_token`
 */
@@ -3056,7 +3020,7 @@ pub mod librarian_sephirah_service_server {
                     tonic::Status,
                 >,
             >
-            + Send
+            + std::marker::Send
             + 'static;
         /** `Binah` `upload_token`
  Maximum 256M
@@ -3077,7 +3041,7 @@ pub mod librarian_sephirah_service_server {
                     tonic::Status,
                 >,
             >
-            + Send
+            + std::marker::Send
             + 'static;
         /** `Binah` `download_token`
  Server will not check the receiving state
@@ -3119,7 +3083,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::PresignedDownloadFileResponse>,
             tonic::Status,
         >;
-        /** `Chesed` `Normal`
+        /** `Chesed` `access_token`
 */
         async fn upload_image(
             &self,
@@ -3128,7 +3092,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::UploadImageResponse>,
             tonic::Status,
         >;
-        /** `Chesed` `Normal`
+        /** `Chesed` `access_token`
 */
         async fn update_image(
             &self,
@@ -3137,7 +3101,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::UpdateImageResponse>,
             tonic::Status,
         >;
-        /** `Chesed` `Normal`
+        /** `Chesed` `access_token`
 */
         async fn list_images(
             &self,
@@ -3146,7 +3110,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::ListImagesResponse>,
             tonic::Status,
         >;
-        /** `Chesed` `Normal`
+        /** `Chesed` `access_token`
 */
         async fn search_images(
             &self,
@@ -3155,7 +3119,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::SearchImagesResponse>,
             tonic::Status,
         >;
-        /** `Chesed` `Normal`
+        /** `Chesed` `access_token`
 */
         async fn get_image(
             &self,
@@ -3164,7 +3128,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::GetImageResponse>,
             tonic::Status,
         >;
-        /** `Chesed` `Normal`
+        /** `Chesed` `access_token`
 */
         async fn download_image(
             &self,
@@ -3173,7 +3137,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::DownloadImageResponse>,
             tonic::Status,
         >;
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         async fn search_store_apps(
             &self,
@@ -3182,7 +3146,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::SearchStoreAppsResponse>,
             tonic::Status,
         >;
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         async fn get_store_app_summary(
             &self,
@@ -3191,7 +3155,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::GetStoreAppSummaryResponse>,
             tonic::Status,
         >;
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         async fn acquire_store_app(
             &self,
@@ -3200,7 +3164,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::AcquireStoreAppResponse>,
             tonic::Status,
         >;
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         async fn list_store_app_binaries(
             &self,
@@ -3209,7 +3173,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::ListStoreAppBinariesResponse>,
             tonic::Status,
         >;
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         async fn list_store_app_binary_files(
             &self,
@@ -3218,7 +3182,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::ListStoreAppBinaryFilesResponse>,
             tonic::Status,
         >;
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         async fn download_store_app_binary(
             &self,
@@ -3227,7 +3191,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::DownloadStoreAppBinaryResponse>,
             tonic::Status,
         >;
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         async fn list_store_app_save_files(
             &self,
@@ -3236,7 +3200,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::ListStoreAppSaveFilesResponse>,
             tonic::Status,
         >;
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         async fn download_store_app_save_file(
             &self,
@@ -3245,7 +3209,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::DownloadStoreAppSaveFileResponse>,
             tonic::Status,
         >;
-        /** `Gebura` `Normal` Search app infos
+        /** `Gebura` `access_token` Search app infos
 */
         async fn search_app_infos(
             &self,
@@ -3254,7 +3218,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::SearchAppInfosResponse>,
             tonic::Status,
         >;
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         async fn create_app(
             &self,
@@ -3263,7 +3227,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::CreateAppResponse>,
             tonic::Status,
         >;
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         async fn update_app(
             &self,
@@ -3272,7 +3236,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::UpdateAppResponse>,
             tonic::Status,
         >;
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         async fn list_apps(
             &self,
@@ -3281,7 +3245,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::ListAppsResponse>,
             tonic::Status,
         >;
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         async fn delete_app(
             &self,
@@ -3290,7 +3254,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::DeleteAppResponse>,
             tonic::Status,
         >;
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         async fn batch_create_app_run_time(
             &self,
@@ -3299,7 +3263,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::BatchCreateAppRunTimeResponse>,
             tonic::Status,
         >;
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         async fn sum_app_run_time(
             &self,
@@ -3308,7 +3272,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::SumAppRunTimeResponse>,
             tonic::Status,
         >;
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         async fn list_app_run_times(
             &self,
@@ -3317,7 +3281,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::ListAppRunTimesResponse>,
             tonic::Status,
         >;
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         async fn delete_app_run_time(
             &self,
@@ -3326,7 +3290,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::DeleteAppRunTimeResponse>,
             tonic::Status,
         >;
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         async fn upload_app_save_file(
             &self,
@@ -3335,7 +3299,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::UploadAppSaveFileResponse>,
             tonic::Status,
         >;
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         async fn download_app_save_file(
             &self,
@@ -3344,7 +3308,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::DownloadAppSaveFileResponse>,
             tonic::Status,
         >;
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         async fn list_app_save_files(
             &self,
@@ -3353,7 +3317,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::ListAppSaveFilesResponse>,
             tonic::Status,
         >;
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         async fn delete_app_save_file(
             &self,
@@ -3362,7 +3326,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::DeleteAppSaveFileResponse>,
             tonic::Status,
         >;
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         async fn pin_app_save_file(
             &self,
@@ -3371,7 +3335,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::PinAppSaveFileResponse>,
             tonic::Status,
         >;
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         async fn unpin_app_save_file(
             &self,
@@ -3380,7 +3344,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::UnpinAppSaveFileResponse>,
             tonic::Status,
         >;
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         async fn get_app_save_file_capacity(
             &self,
@@ -3389,7 +3353,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::GetAppSaveFileCapacityResponse>,
             tonic::Status,
         >;
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         async fn set_app_save_file_capacity(
             &self,
@@ -3398,7 +3362,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::SetAppSaveFileCapacityResponse>,
             tonic::Status,
         >;
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         async fn list_app_categories(
             &self,
@@ -3407,7 +3371,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::ListAppCategoriesResponse>,
             tonic::Status,
         >;
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         async fn create_app_category(
             &self,
@@ -3416,7 +3380,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::CreateAppCategoryResponse>,
             tonic::Status,
         >;
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         async fn update_app_category(
             &self,
@@ -3425,7 +3389,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::UpdateAppCategoryResponse>,
             tonic::Status,
         >;
-        /** `Gebura` `Normal`
+        /** `Gebura` `access_token`
 */
         async fn delete_app_category(
             &self,
@@ -3434,7 +3398,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::DeleteAppCategoryResponse>,
             tonic::Status,
         >;
-        /** `Netzach` `Normal`
+        /** `Netzach` `access_token`
 */
         async fn create_notify_target(
             &self,
@@ -3443,7 +3407,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::CreateNotifyTargetResponse>,
             tonic::Status,
         >;
-        /** `Netzach` `Normal`
+        /** `Netzach` `access_token`
 */
         async fn update_notify_target(
             &self,
@@ -3452,7 +3416,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::UpdateNotifyTargetResponse>,
             tonic::Status,
         >;
-        /** `Netzach` `Normal`
+        /** `Netzach` `access_token`
 */
         async fn list_notify_targets(
             &self,
@@ -3461,7 +3425,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::ListNotifyTargetsResponse>,
             tonic::Status,
         >;
-        /** `Netzach` `Normal`
+        /** `Netzach` `access_token`
 */
         async fn create_notify_flow(
             &self,
@@ -3470,7 +3434,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::CreateNotifyFlowResponse>,
             tonic::Status,
         >;
-        /** `Netzach` `Normal`
+        /** `Netzach` `access_token`
 */
         async fn update_notify_flow(
             &self,
@@ -3479,7 +3443,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::UpdateNotifyFlowResponse>,
             tonic::Status,
         >;
-        /** `Netzach` `Normal`
+        /** `Netzach` `access_token`
 */
         async fn list_notify_flows(
             &self,
@@ -3488,7 +3452,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::ListNotifyFlowsResponse>,
             tonic::Status,
         >;
-        /** `Netzach` `Normal`
+        /** `Netzach` `access_token`
 */
         async fn list_system_notifications(
             &self,
@@ -3497,7 +3461,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::ListSystemNotificationsResponse>,
             tonic::Status,
         >;
-        /** `Netzach` `Normal`
+        /** `Netzach` `access_token`
 */
         async fn update_system_notification(
             &self,
@@ -3506,7 +3470,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::UpdateSystemNotificationResponse>,
             tonic::Status,
         >;
-        /** `Yesod` `Normal`
+        /** `Yesod` `access_token`
 */
         async fn create_feed_config(
             &self,
@@ -3515,7 +3479,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::CreateFeedConfigResponse>,
             tonic::Status,
         >;
-        /** `Yesod` `Normal`
+        /** `Yesod` `access_token`
 */
         async fn update_feed_config(
             &self,
@@ -3524,7 +3488,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::UpdateFeedConfigResponse>,
             tonic::Status,
         >;
-        /** `Yesod` `Normal`
+        /** `Yesod` `access_token`
 */
         async fn list_feed_configs(
             &self,
@@ -3533,7 +3497,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::ListFeedConfigsResponse>,
             tonic::Status,
         >;
-        /** `Yesod` `Normal`
+        /** `Yesod` `access_token`
 */
         async fn create_feed_action_set(
             &self,
@@ -3542,7 +3506,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::CreateFeedActionSetResponse>,
             tonic::Status,
         >;
-        /** `Yesod` `Normal`
+        /** `Yesod` `access_token`
 */
         async fn update_feed_action_set(
             &self,
@@ -3551,7 +3515,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::UpdateFeedActionSetResponse>,
             tonic::Status,
         >;
-        /** `Yesod` `Normal`
+        /** `Yesod` `access_token`
 */
         async fn list_feed_action_sets(
             &self,
@@ -3560,7 +3524,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::ListFeedActionSetsResponse>,
             tonic::Status,
         >;
-        /** `Yesod` `Normal`
+        /** `Yesod` `access_token`
 */
         async fn list_feed_categories(
             &self,
@@ -3569,7 +3533,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::ListFeedCategoriesResponse>,
             tonic::Status,
         >;
-        /** `Yesod` `Normal`
+        /** `Yesod` `access_token`
 */
         async fn list_feed_platforms(
             &self,
@@ -3578,7 +3542,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::ListFeedPlatformsResponse>,
             tonic::Status,
         >;
-        /** `Yesod` `Normal`
+        /** `Yesod` `access_token`
 */
         async fn list_feed_items(
             &self,
@@ -3587,7 +3551,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::ListFeedItemsResponse>,
             tonic::Status,
         >;
-        /** `Yesod` `Normal`
+        /** `Yesod` `access_token`
 */
         async fn get_feed_item(
             &self,
@@ -3596,7 +3560,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::GetFeedItemResponse>,
             tonic::Status,
         >;
-        /** `Yesod` `Normal`
+        /** `Yesod` `access_token`
 */
         async fn get_batch_feed_items(
             &self,
@@ -3605,7 +3569,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::GetBatchFeedItemsResponse>,
             tonic::Status,
         >;
-        /** `Yesod` `Normal`
+        /** `Yesod` `access_token`
 */
         async fn read_feed_item(
             &self,
@@ -3614,7 +3578,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::ReadFeedItemResponse>,
             tonic::Status,
         >;
-        /** `Yesod` `Normal`
+        /** `Yesod` `access_token`
 */
         async fn create_feed_item_collection(
             &self,
@@ -3623,7 +3587,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::CreateFeedItemCollectionResponse>,
             tonic::Status,
         >;
-        /** `Yesod` `Normal`
+        /** `Yesod` `access_token`
 */
         async fn update_feed_item_collection(
             &self,
@@ -3632,7 +3596,7 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::UpdateFeedItemCollectionResponse>,
             tonic::Status,
         >;
-        /** `Yesod` `Normal`
+        /** `Yesod` `access_token`
 */
         async fn list_feed_item_collections(
             &self,
@@ -3641,8 +3605,6 @@ pub mod librarian_sephirah_service_server {
             tonic::Response<super::ListFeedItemCollectionsResponse>,
             tonic::Status,
         >;
-        /** `Yesod` `Normal`
-*/
         async fn add_feed_item_to_collection(
             &self,
             request: tonic::Request<super::AddFeedItemToCollectionRequest>,
@@ -3666,14 +3628,14 @@ pub mod librarian_sephirah_service_server {
         >;
     }
     #[derive(Debug)]
-    pub struct LibrarianSephirahServiceServer<T: LibrarianSephirahService> {
+    pub struct LibrarianSephirahServiceServer<T> {
         inner: Arc<T>,
         accept_compression_encodings: EnabledCompressionEncodings,
         send_compression_encodings: EnabledCompressionEncodings,
         max_decoding_message_size: Option<usize>,
         max_encoding_message_size: Option<usize>,
     }
-    impl<T: LibrarianSephirahService> LibrarianSephirahServiceServer<T> {
+    impl<T> LibrarianSephirahServiceServer<T> {
         pub fn new(inner: T) -> Self {
             Self::from_arc(Arc::new(inner))
         }
@@ -3728,10 +3690,10 @@ pub mod librarian_sephirah_service_server {
     for LibrarianSephirahServiceServer<T>
     where
         T: LibrarianSephirahService,
-        B: Body + Send + 'static,
-        B::Error: Into<StdError> + Send + 'static,
+        B: Body + std::marker::Send + 'static,
+        B::Error: Into<StdError> + std::marker::Send + 'static,
     {
-        type Response = http::Response<tonic::body::BoxBody>;
+        type Response = http::Response<tonic::body::Body>;
         type Error = std::convert::Infallible;
         type Future = BoxFuture<Self::Response, Self::Error>;
         fn poll_ready(
@@ -3778,7 +3740,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = GetServerInformationSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -3829,7 +3791,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListenServerEventSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -3875,7 +3837,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = GetTokenSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -3924,7 +3886,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = RefreshTokenSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -3970,7 +3932,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = GetUserSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -4019,7 +3981,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = RegisterUserSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -4068,7 +4030,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = UpdateUserSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -4117,7 +4079,53 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = RegisterDeviceSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/librarian.sephirah.v1.LibrarianSephirahService/GetDevice" => {
+                    #[allow(non_camel_case_types)]
+                    struct GetDeviceSvc<T: LibrarianSephirahService>(pub Arc<T>);
+                    impl<
+                        T: LibrarianSephirahService,
+                    > tonic::server::UnaryService<super::GetDeviceRequest>
+                    for GetDeviceSvc<T> {
+                        type Response = super::GetDeviceResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::GetDeviceRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as LibrarianSephirahService>::get_device(&inner, request)
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = GetDeviceSvc(inner);
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -4166,7 +4174,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListUserSessionsSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -4181,25 +4189,25 @@ pub mod librarian_sephirah_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/librarian.sephirah.v1.LibrarianSephirahService/DeleteUserSession" => {
+                "/librarian.sephirah.v1.LibrarianSephirahService/RevokeUserSession" => {
                     #[allow(non_camel_case_types)]
-                    struct DeleteUserSessionSvc<T: LibrarianSephirahService>(pub Arc<T>);
+                    struct RevokeUserSessionSvc<T: LibrarianSephirahService>(pub Arc<T>);
                     impl<
                         T: LibrarianSephirahService,
-                    > tonic::server::UnaryService<super::DeleteUserSessionRequest>
-                    for DeleteUserSessionSvc<T> {
-                        type Response = super::DeleteUserSessionResponse;
+                    > tonic::server::UnaryService<super::RevokeUserSessionRequest>
+                    for RevokeUserSessionSvc<T> {
+                        type Response = super::RevokeUserSessionResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
                             tonic::Status,
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<super::DeleteUserSessionRequest>,
+                            request: tonic::Request<super::RevokeUserSessionRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                <T as LibrarianSephirahService>::delete_user_session(
+                                <T as LibrarianSephirahService>::revoke_user_session(
                                         &inner,
                                         request,
                                     )
@@ -4214,8 +4222,8 @@ pub mod librarian_sephirah_service_server {
                     let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
-                        let method = DeleteUserSessionSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let method = RevokeUserSessionSvc(inner);
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -4264,7 +4272,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = LinkAccountSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -4313,7 +4321,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = UnLinkAccountSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -4362,7 +4370,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListLinkAccountsSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -4411,7 +4419,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListPorterDigestsSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -4462,7 +4470,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = CreatePorterContextSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -4513,7 +4521,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListPorterContextsSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -4564,7 +4572,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = UpdatePorterContextSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -4617,7 +4625,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = GetStorageCapacityUsageSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -4669,7 +4677,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = UploadFileSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -4721,7 +4729,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = DownloadFileSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -4773,7 +4781,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = SimpleUploadFileSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -4826,7 +4834,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = SimpleDownloadFileSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -4877,7 +4885,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = PresignedUploadFileSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -4931,7 +4939,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = PresignedUploadFileStatusSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -4982,7 +4990,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = PresignedDownloadFileSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -5031,7 +5039,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = UploadImageSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -5080,7 +5088,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = UpdateImageSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -5129,7 +5137,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListImagesSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -5178,7 +5186,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = SearchImagesSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -5224,7 +5232,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = GetImageSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -5273,7 +5281,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = DownloadImageSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -5322,7 +5330,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = SearchStoreAppsSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -5373,7 +5381,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = GetStoreAppSummarySvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -5422,7 +5430,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = AcquireStoreAppSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -5473,7 +5481,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListStoreAppBinariesSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -5526,7 +5534,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListStoreAppBinaryFilesSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -5577,7 +5585,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = DownloadStoreAppBinarySvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -5628,7 +5636,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListStoreAppSaveFilesSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -5681,7 +5689,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = DownloadStoreAppSaveFileSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -5730,7 +5738,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = SearchAppInfosSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -5776,7 +5784,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = CreateAppSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -5822,7 +5830,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = UpdateAppSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -5868,7 +5876,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListAppsSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -5914,7 +5922,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = DeleteAppSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -5965,7 +5973,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = BatchCreateAppRunTimeSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -6014,7 +6022,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = SumAppRunTimeSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -6063,7 +6071,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListAppRunTimesSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -6112,7 +6120,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = DeleteAppRunTimeSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -6161,7 +6169,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = UploadAppSaveFileSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -6212,7 +6220,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = DownloadAppSaveFileSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -6261,7 +6269,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListAppSaveFilesSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -6310,7 +6318,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = DeleteAppSaveFileSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -6359,7 +6367,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = PinAppSaveFileSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -6408,7 +6416,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = UnpinAppSaveFileSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -6459,7 +6467,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = GetAppSaveFileCapacitySvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -6510,7 +6518,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = SetAppSaveFileCapacitySvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -6559,7 +6567,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListAppCategoriesSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -6608,7 +6616,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = CreateAppCategorySvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -6657,7 +6665,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = UpdateAppCategorySvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -6706,7 +6714,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = DeleteAppCategorySvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -6757,7 +6765,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = CreateNotifyTargetSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -6808,7 +6816,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = UpdateNotifyTargetSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -6857,7 +6865,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListNotifyTargetsSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -6906,7 +6914,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = CreateNotifyFlowSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -6955,7 +6963,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = UpdateNotifyFlowSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -7004,7 +7012,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListNotifyFlowsSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -7057,7 +7065,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListSystemNotificationsSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -7110,7 +7118,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = UpdateSystemNotificationSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -7159,7 +7167,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = CreateFeedConfigSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -7208,7 +7216,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = UpdateFeedConfigSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -7257,7 +7265,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListFeedConfigsSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -7308,7 +7316,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = CreateFeedActionSetSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -7359,7 +7367,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = UpdateFeedActionSetSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -7410,7 +7418,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListFeedActionSetsSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -7461,7 +7469,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListFeedCategoriesSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -7510,7 +7518,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListFeedPlatformsSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -7559,7 +7567,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListFeedItemsSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -7608,7 +7616,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = GetFeedItemSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -7657,7 +7665,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = GetBatchFeedItemsSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -7706,7 +7714,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ReadFeedItemSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -7759,7 +7767,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = CreateFeedItemCollectionSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -7812,7 +7820,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = UpdateFeedItemCollectionSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -7865,7 +7873,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListFeedItemCollectionsSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -7918,7 +7926,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = AddFeedItemToCollectionSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -7972,7 +7980,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = RemoveFeedItemFromCollectionSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -8026,7 +8034,7 @@ pub mod librarian_sephirah_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListFeedItemsInCollectionSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -8043,23 +8051,27 @@ pub mod librarian_sephirah_service_server {
                 }
                 _ => {
                     Box::pin(async move {
-                        Ok(
-                            http::Response::builder()
-                                .status(200)
-                                .header("grpc-status", tonic::Code::Unimplemented as i32)
-                                .header(
-                                    http::header::CONTENT_TYPE,
-                                    tonic::metadata::GRPC_CONTENT_TYPE,
-                                )
-                                .body(empty_body())
-                                .unwrap(),
-                        )
+                        let mut response = http::Response::new(
+                            tonic::body::Body::default(),
+                        );
+                        let headers = response.headers_mut();
+                        headers
+                            .insert(
+                                tonic::Status::GRPC_STATUS,
+                                (tonic::Code::Unimplemented as i32).into(),
+                            );
+                        headers
+                            .insert(
+                                http::header::CONTENT_TYPE,
+                                tonic::metadata::GRPC_CONTENT_TYPE,
+                            );
+                        Ok(response)
                     })
                 }
             }
         }
     }
-    impl<T: LibrarianSephirahService> Clone for LibrarianSephirahServiceServer<T> {
+    impl<T> Clone for LibrarianSephirahServiceServer<T> {
         fn clone(&self) -> Self {
             let inner = self.inner.clone();
             Self {
@@ -8071,8 +8083,9 @@ pub mod librarian_sephirah_service_server {
             }
         }
     }
-    impl<T: LibrarianSephirahService> tonic::server::NamedService
-    for LibrarianSephirahServiceServer<T> {
-        const NAME: &'static str = "librarian.sephirah.v1.LibrarianSephirahService";
+    /// Generated gRPC service name
+    pub const SERVICE_NAME: &str = "librarian.sephirah.v1.LibrarianSephirahService";
+    impl<T> tonic::server::NamedService for LibrarianSephirahServiceServer<T> {
+        const NAME: &'static str = SERVICE_NAME;
     }
 }

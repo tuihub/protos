@@ -89,7 +89,7 @@ class ServerInformation extends $pb.GeneratedMessage {
       $pb.GeneratedMessage.$_defaultFor<ServerInformation>(create);
   static ServerInformation? _defaultInstance;
 
-  /// For manual inspection only, the client may display but should not parse the response.
+  /// For manual inspection only, the client may display but should not parse the response texts.
   @$pb.TagNumber(1)
   ServerBinarySummary get serverBinarySummary => $_getN(0);
   @$pb.TagNumber(1)
@@ -101,7 +101,7 @@ class ServerInformation extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   ServerBinarySummary ensureServerBinarySummary() => $_ensure(0);
 
-  /// For manual inspection only, the client may display but should not parse the response.
+  /// For manual inspection only, the client may display but should not parse the response texts.
   @$pb.TagNumber(2)
   ServerProtocolSummary get protocolSummary => $_getN(1);
   @$pb.TagNumber(2)
@@ -318,15 +318,18 @@ class ServerInstanceSummary extends $pb.GeneratedMessage {
     $core.String? name,
     $core.String? description,
     $core.String? websiteUrl,
-    $core.String? logoUrl,
-    $core.String? backgroundUrl,
+    $core.String? logoImageUrl,
+    $core.String? backgroundImageUrl,
+    $core.bool? isRegisterable,
   }) {
     final result = create();
     if (name != null) result.name = name;
     if (description != null) result.description = description;
     if (websiteUrl != null) result.websiteUrl = websiteUrl;
-    if (logoUrl != null) result.logoUrl = logoUrl;
-    if (backgroundUrl != null) result.backgroundUrl = backgroundUrl;
+    if (logoImageUrl != null) result.logoImageUrl = logoImageUrl;
+    if (backgroundImageUrl != null)
+      result.backgroundImageUrl = backgroundImageUrl;
+    if (isRegisterable != null) result.isRegisterable = isRegisterable;
     return result;
   }
 
@@ -347,8 +350,9 @@ class ServerInstanceSummary extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..aOS(2, _omitFieldNames ? '' : 'description')
     ..aOS(3, _omitFieldNames ? '' : 'websiteUrl')
-    ..aOS(4, _omitFieldNames ? '' : 'logoUrl')
-    ..aOS(5, _omitFieldNames ? '' : 'backgroundUrl')
+    ..aOS(4, _omitFieldNames ? '' : 'logoImageUrl')
+    ..aOS(5, _omitFieldNames ? '' : 'backgroundImageUrl')
+    ..aOB(6, _omitFieldNames ? '' : 'isRegisterable')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
@@ -402,22 +406,31 @@ class ServerInstanceSummary extends $pb.GeneratedMessage {
   void clearWebsiteUrl() => $_clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get logoUrl => $_getSZ(3);
+  $core.String get logoImageUrl => $_getSZ(3);
   @$pb.TagNumber(4)
-  set logoUrl($core.String value) => $_setString(3, value);
+  set logoImageUrl($core.String value) => $_setString(3, value);
   @$pb.TagNumber(4)
-  $core.bool hasLogoUrl() => $_has(3);
+  $core.bool hasLogoImageUrl() => $_has(3);
   @$pb.TagNumber(4)
-  void clearLogoUrl() => $_clearField(4);
+  void clearLogoImageUrl() => $_clearField(4);
 
   @$pb.TagNumber(5)
-  $core.String get backgroundUrl => $_getSZ(4);
+  $core.String get backgroundImageUrl => $_getSZ(4);
   @$pb.TagNumber(5)
-  set backgroundUrl($core.String value) => $_setString(4, value);
+  set backgroundImageUrl($core.String value) => $_setString(4, value);
   @$pb.TagNumber(5)
-  $core.bool hasBackgroundUrl() => $_has(4);
+  $core.bool hasBackgroundImageUrl() => $_has(4);
   @$pb.TagNumber(5)
-  void clearBackgroundUrl() => $_clearField(5);
+  void clearBackgroundImageUrl() => $_clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.bool get isRegisterable => $_getBF(5);
+  @$pb.TagNumber(6)
+  set isRegisterable($core.bool value) => $_setBool(5, value);
+  @$pb.TagNumber(6)
+  $core.bool hasIsRegisterable() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearIsRegisterable() => $_clearField(6);
 }
 
 const $core.bool _omitFieldNames =

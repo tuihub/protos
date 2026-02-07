@@ -342,28 +342,6 @@ function deserialize_librarian_sephirah_v1_DeleteAppSaveFileResponse(buffer_arg)
   return librarian_sephirah_v1_gebura_pb.DeleteAppSaveFileResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_librarian_sephirah_v1_DeleteUserSessionRequest(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.DeleteUserSessionRequest)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.DeleteUserSessionRequest');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_librarian_sephirah_v1_DeleteUserSessionRequest(buffer_arg) {
-  return librarian_sephirah_v1_tiphereth_pb.DeleteUserSessionRequest.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_librarian_sephirah_v1_DeleteUserSessionResponse(arg) {
-  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.DeleteUserSessionResponse)) {
-    throw new Error('Expected argument of type librarian.sephirah.v1.DeleteUserSessionResponse');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_librarian_sephirah_v1_DeleteUserSessionResponse(buffer_arg) {
-  return librarian_sephirah_v1_tiphereth_pb.DeleteUserSessionResponse.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
 function serialize_librarian_sephirah_v1_DownloadAppSaveFileRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_gebura_pb.DownloadAppSaveFileRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.DownloadAppSaveFileRequest');
@@ -516,6 +494,28 @@ function serialize_librarian_sephirah_v1_GetBatchFeedItemsResponse(arg) {
 
 function deserialize_librarian_sephirah_v1_GetBatchFeedItemsResponse(buffer_arg) {
   return librarian_sephirah_v1_yesod_pb.GetBatchFeedItemsResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_GetDeviceRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.GetDeviceRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.GetDeviceRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_GetDeviceRequest(buffer_arg) {
+  return librarian_sephirah_v1_tiphereth_pb.GetDeviceRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_GetDeviceResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.GetDeviceResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.GetDeviceResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_GetDeviceResponse(buffer_arg) {
+  return librarian_sephirah_v1_tiphereth_pb.GetDeviceResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_librarian_sephirah_v1_GetFeedItemRequest(arg) {
@@ -1398,6 +1398,28 @@ function deserialize_librarian_sephirah_v1_RemoveFeedItemFromCollectionResponse(
   return librarian_sephirah_v1_yesod_pb.RemoveFeedItemFromCollectionResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_librarian_sephirah_v1_RevokeUserSessionRequest(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.RevokeUserSessionRequest)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.RevokeUserSessionRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_RevokeUserSessionRequest(buffer_arg) {
+  return librarian_sephirah_v1_tiphereth_pb.RevokeUserSessionRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_librarian_sephirah_v1_RevokeUserSessionResponse(arg) {
+  if (!(arg instanceof librarian_sephirah_v1_tiphereth_pb.RevokeUserSessionResponse)) {
+    throw new Error('Expected argument of type librarian.sephirah.v1.RevokeUserSessionResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_librarian_sephirah_v1_RevokeUserSessionResponse(buffer_arg) {
+  return librarian_sephirah_v1_tiphereth_pb.RevokeUserSessionResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_librarian_sephirah_v1_SearchAppInfosRequest(arg) {
   if (!(arg instanceof librarian_sephirah_v1_gebura_pb.SearchAppInfosRequest)) {
     throw new Error('Expected argument of type librarian.sephirah.v1.SearchAppInfosRequest');
@@ -1913,7 +1935,7 @@ function deserialize_librarian_sephirah_v1_UploadImageResponse(buffer_arg) {
 // 4. `Yesod` handles feed data
 // 5. `Netzach` handles notifications
 var LibrarianSephirahServiceService = exports.LibrarianSephirahServiceService = {
-  // Allow anonymous call, use accessToken to get complete information
+  // `anonymous` `access_token` Allow anonymous call, use accessToken to get complete information
 getServerInformation: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/GetServerInformation',
     requestStream: false,
@@ -1925,7 +1947,7 @@ getServerInformation: {
     responseSerialize: serialize_librarian_sephirah_v1_GetServerInformationResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_GetServerInformationResponse,
   },
-  // `Normal` Client can use this to subscribe to server events.
+  // `access_token` Client can use this to subscribe to server events.
 //
 // Server should send `SERVER_EVENT_LISTENER_CONNECTED` event immediately if the connection is valid.
 // Otherwise, client should treat the connection as failed.
@@ -1943,7 +1965,7 @@ listenServerEvent: {
     responseSerialize: serialize_librarian_sephirah_v1_ListenServerEventResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_ListenServerEventResponse,
   },
-  // `Tiphereth` `Normal` Login via password and get two token
+  // `Tiphereth` `anonymous` Login via password and get two token
 getToken: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/GetToken',
     requestStream: false,
@@ -1955,7 +1977,7 @@ getToken: {
     responseSerialize: serialize_librarian_sephirah_v1_GetTokenResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_GetTokenResponse,
   },
-  // `Tiphereth` `Normal` Use valid refresh_token and get two new token, a refresh_token can only be used once
+  // `Tiphereth` `access_token` Use valid refresh_token and get two new token, a refresh_token can only be used once
 refreshToken: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/RefreshToken',
     requestStream: false,
@@ -1967,7 +1989,7 @@ refreshToken: {
     responseSerialize: serialize_librarian_sephirah_v1_RefreshTokenResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_RefreshTokenResponse,
   },
-  // `Tiphereth`
+  // `Tiphereth` `access_token`
 getUser: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/GetUser',
     requestStream: false,
@@ -1979,7 +2001,7 @@ getUser: {
     responseSerialize: serialize_librarian_sephirah_v1_GetUserResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_GetUserResponse,
   },
-  // `Tiphereth` Self register as a new normal user
+  // `Tiphereth` `anonymous` Self register as a new normal user
 registerUser: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/RegisterUser',
     requestStream: false,
@@ -1991,7 +2013,7 @@ registerUser: {
     responseSerialize: serialize_librarian_sephirah_v1_RegisterUserResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_RegisterUserResponse,
   },
-  // `Tiphereth` `Normal` Update self user info
+  // `Tiphereth` `access_token` Update self user info
 updateUser: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/UpdateUser',
     requestStream: false,
@@ -2003,7 +2025,7 @@ updateUser: {
     responseSerialize: serialize_librarian_sephirah_v1_UpdateUserResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_UpdateUserResponse,
   },
-  // `Tiphereth` `Normal` Client should register device after the first login
+  // `Tiphereth` `access_token` Client should register device after the first login
 // and store the device_id locally.
 // The server could add extra limits to non-registered device
 registerDevice: {
@@ -2017,7 +2039,19 @@ registerDevice: {
     responseSerialize: serialize_librarian_sephirah_v1_RegisterDeviceResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_RegisterDeviceResponse,
   },
-  // `Tiphereth` `Normal`
+  // `Tiphereth` `access_token`
+getDevice: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/GetDevice',
+    requestStream: false,
+    responseStream: false,
+    requestType: librarian_sephirah_v1_tiphereth_pb.GetDeviceRequest,
+    responseType: librarian_sephirah_v1_tiphereth_pb.GetDeviceResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_GetDeviceRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_GetDeviceRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_GetDeviceResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_GetDeviceResponse,
+  },
+  // `Tiphereth` `access_token`
 listUserSessions: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/ListUserSessions',
     requestStream: false,
@@ -2029,21 +2063,21 @@ listUserSessions: {
     responseSerialize: serialize_librarian_sephirah_v1_ListUserSessionsResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_ListUserSessionsResponse,
   },
-  // `Tiphereth` `Normal` delete session will revoke refresh_token immediately.
+  // `Tiphereth` `access_token` revoke session will revoke refresh_token immediately.
 // NOTE: This can also be used to log out at server side.
-// NOTE2: Delete session will not affect device registration.
-deleteUserSession: {
-    path: '/librarian.sephirah.v1.LibrarianSephirahService/DeleteUserSession',
+// NOTE2: Revoke session will not affect device registration.
+revokeUserSession: {
+    path: '/librarian.sephirah.v1.LibrarianSephirahService/RevokeUserSession',
     requestStream: false,
     responseStream: false,
-    requestType: librarian_sephirah_v1_tiphereth_pb.DeleteUserSessionRequest,
-    responseType: librarian_sephirah_v1_tiphereth_pb.DeleteUserSessionResponse,
-    requestSerialize: serialize_librarian_sephirah_v1_DeleteUserSessionRequest,
-    requestDeserialize: deserialize_librarian_sephirah_v1_DeleteUserSessionRequest,
-    responseSerialize: serialize_librarian_sephirah_v1_DeleteUserSessionResponse,
-    responseDeserialize: deserialize_librarian_sephirah_v1_DeleteUserSessionResponse,
+    requestType: librarian_sephirah_v1_tiphereth_pb.RevokeUserSessionRequest,
+    responseType: librarian_sephirah_v1_tiphereth_pb.RevokeUserSessionResponse,
+    requestSerialize: serialize_librarian_sephirah_v1_RevokeUserSessionRequest,
+    requestDeserialize: deserialize_librarian_sephirah_v1_RevokeUserSessionRequest,
+    responseSerialize: serialize_librarian_sephirah_v1_RevokeUserSessionResponse,
+    responseDeserialize: deserialize_librarian_sephirah_v1_RevokeUserSessionResponse,
   },
-  // `Tiphereth` `Normal` Bind third-party account to current user.
+  // `Tiphereth` `access_token` Bind third-party account to current user.
 linkAccount: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/LinkAccount',
     requestStream: false,
@@ -2055,7 +2089,7 @@ linkAccount: {
     responseSerialize: serialize_librarian_sephirah_v1_LinkAccountResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_LinkAccountResponse,
   },
-  // `Tiphereth` `Normal` Unbind third-party account from current user.
+  // `Tiphereth` `access_token` Unbind third-party account from current user.
 unLinkAccount: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/UnLinkAccount',
     requestStream: false,
@@ -2067,7 +2101,7 @@ unLinkAccount: {
     responseSerialize: serialize_librarian_sephirah_v1_UnLinkAccountResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_UnLinkAccountResponse,
   },
-  // `Tiphereth` `Normal` List third-party account binded to current user.
+  // `Tiphereth` `access_token` List third-party account binded to current user.
 listLinkAccounts: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/ListLinkAccounts',
     requestStream: false,
@@ -2079,7 +2113,7 @@ listLinkAccounts: {
     responseSerialize: serialize_librarian_sephirah_v1_ListLinkAccountsResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_ListLinkAccountsResponse,
   },
-  // `Tiphereth` `Normal`
+  // `Tiphereth` `access_token`
 listPorterDigests: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/ListPorterDigests',
     requestStream: false,
@@ -2091,7 +2125,7 @@ listPorterDigests: {
     responseSerialize: serialize_librarian_sephirah_v1_ListPorterDigestsResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_ListPorterDigestsResponse,
   },
-  // `Tiphereth` `Normal`
+  // `Tiphereth` `access_token`
 createPorterContext: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/CreatePorterContext',
     requestStream: false,
@@ -2103,7 +2137,7 @@ createPorterContext: {
     responseSerialize: serialize_librarian_sephirah_v1_CreatePorterContextResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_CreatePorterContextResponse,
   },
-  // `Tiphereth` `Normal`
+  // `Tiphereth` `access_token`
 listPorterContexts: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/ListPorterContexts',
     requestStream: false,
@@ -2115,7 +2149,7 @@ listPorterContexts: {
     responseSerialize: serialize_librarian_sephirah_v1_ListPorterContextsResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_ListPorterContextsResponse,
   },
-  // `Tiphereth` `Normal` Set porter context.
+  // `Tiphereth` `access_token` Set porter context.
 updatePorterContext: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/UpdatePorterContext',
     requestStream: false,
@@ -2127,7 +2161,7 @@ updatePorterContext: {
     responseSerialize: serialize_librarian_sephirah_v1_UpdatePorterContextResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_UpdatePorterContextResponse,
   },
-  // `Binah` `Normal`
+  // `Binah` `access_token`
 getStorageCapacityUsage: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/GetStorageCapacityUsage',
     requestStream: false,
@@ -2230,7 +2264,7 @@ presignedDownloadFile: {
     responseSerialize: serialize_librarian_sephirah_v1_PresignedDownloadFileResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_PresignedDownloadFileResponse,
   },
-  // `Chesed` `Normal`
+  // `Chesed` `access_token`
 uploadImage: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/UploadImage',
     requestStream: false,
@@ -2242,7 +2276,7 @@ uploadImage: {
     responseSerialize: serialize_librarian_sephirah_v1_UploadImageResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_UploadImageResponse,
   },
-  // `Chesed` `Normal`
+  // `Chesed` `access_token`
 updateImage: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/UpdateImage',
     requestStream: false,
@@ -2254,7 +2288,7 @@ updateImage: {
     responseSerialize: serialize_librarian_sephirah_v1_UpdateImageResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_UpdateImageResponse,
   },
-  // `Chesed` `Normal`
+  // `Chesed` `access_token`
 listImages: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/ListImages',
     requestStream: false,
@@ -2266,7 +2300,7 @@ listImages: {
     responseSerialize: serialize_librarian_sephirah_v1_ListImagesResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_ListImagesResponse,
   },
-  // `Chesed` `Normal`
+  // `Chesed` `access_token`
 searchImages: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/SearchImages',
     requestStream: false,
@@ -2278,7 +2312,7 @@ searchImages: {
     responseSerialize: serialize_librarian_sephirah_v1_SearchImagesResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_SearchImagesResponse,
   },
-  // `Chesed` `Normal`
+  // `Chesed` `access_token`
 getImage: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/GetImage',
     requestStream: false,
@@ -2290,7 +2324,7 @@ getImage: {
     responseSerialize: serialize_librarian_sephirah_v1_GetImageResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_GetImageResponse,
   },
-  // `Chesed` `Normal`
+  // `Chesed` `access_token`
 downloadImage: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/DownloadImage',
     requestStream: false,
@@ -2302,7 +2336,7 @@ downloadImage: {
     responseSerialize: serialize_librarian_sephirah_v1_DownloadImageResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_DownloadImageResponse,
   },
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
 searchStoreApps: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/SearchStoreApps',
     requestStream: false,
@@ -2314,7 +2348,7 @@ searchStoreApps: {
     responseSerialize: serialize_librarian_sephirah_v1_SearchStoreAppsResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_SearchStoreAppsResponse,
   },
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
 getStoreAppSummary: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/GetStoreAppSummary',
     requestStream: false,
@@ -2326,7 +2360,7 @@ getStoreAppSummary: {
     responseSerialize: serialize_librarian_sephirah_v1_GetStoreAppSummaryResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_GetStoreAppSummaryResponse,
   },
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
 acquireStoreApp: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/AcquireStoreApp',
     requestStream: false,
@@ -2338,7 +2372,7 @@ acquireStoreApp: {
     responseSerialize: serialize_librarian_sephirah_v1_AcquireStoreAppResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_AcquireStoreAppResponse,
   },
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
 listStoreAppBinaries: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/ListStoreAppBinaries',
     requestStream: false,
@@ -2350,7 +2384,7 @@ listStoreAppBinaries: {
     responseSerialize: serialize_librarian_sephirah_v1_ListStoreAppBinariesResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_ListStoreAppBinariesResponse,
   },
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
 listStoreAppBinaryFiles: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/ListStoreAppBinaryFiles',
     requestStream: false,
@@ -2362,7 +2396,7 @@ listStoreAppBinaryFiles: {
     responseSerialize: serialize_librarian_sephirah_v1_ListStoreAppBinaryFilesResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_ListStoreAppBinaryFilesResponse,
   },
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
 downloadStoreAppBinary: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/DownloadStoreAppBinary',
     requestStream: false,
@@ -2374,7 +2408,7 @@ downloadStoreAppBinary: {
     responseSerialize: serialize_librarian_sephirah_v1_DownloadStoreAppBinaryResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_DownloadStoreAppBinaryResponse,
   },
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
 listStoreAppSaveFiles: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/ListStoreAppSaveFiles',
     requestStream: false,
@@ -2386,7 +2420,7 @@ listStoreAppSaveFiles: {
     responseSerialize: serialize_librarian_sephirah_v1_ListStoreAppSaveFilesResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_ListStoreAppSaveFilesResponse,
   },
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
 downloadStoreAppSaveFile: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/DownloadStoreAppSaveFile',
     requestStream: false,
@@ -2398,7 +2432,7 @@ downloadStoreAppSaveFile: {
     responseSerialize: serialize_librarian_sephirah_v1_DownloadStoreAppSaveFileResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_DownloadStoreAppSaveFileResponse,
   },
-  // `Gebura` `Normal` Search app infos
+  // `Gebura` `access_token` Search app infos
 searchAppInfos: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/SearchAppInfos',
     requestStream: false,
@@ -2410,7 +2444,7 @@ searchAppInfos: {
     responseSerialize: serialize_librarian_sephirah_v1_SearchAppInfosResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_SearchAppInfosResponse,
   },
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
 createApp: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/CreateApp',
     requestStream: false,
@@ -2422,7 +2456,7 @@ createApp: {
     responseSerialize: serialize_librarian_sephirah_v1_CreateAppResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_CreateAppResponse,
   },
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
 updateApp: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/UpdateApp',
     requestStream: false,
@@ -2434,7 +2468,7 @@ updateApp: {
     responseSerialize: serialize_librarian_sephirah_v1_UpdateAppResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_UpdateAppResponse,
   },
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
 listApps: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/ListApps',
     requestStream: false,
@@ -2446,7 +2480,7 @@ listApps: {
     responseSerialize: serialize_librarian_sephirah_v1_ListAppsResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_ListAppsResponse,
   },
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
 deleteApp: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/DeleteApp',
     requestStream: false,
@@ -2458,7 +2492,7 @@ deleteApp: {
     responseSerialize: serialize_librarian_sephirah_v1_DeleteAppResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_DeleteAppResponse,
   },
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
 batchCreateAppRunTime: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/BatchCreateAppRunTime',
     requestStream: false,
@@ -2470,7 +2504,7 @@ batchCreateAppRunTime: {
     responseSerialize: serialize_librarian_sephirah_v1_BatchCreateAppRunTimeResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_BatchCreateAppRunTimeResponse,
   },
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
 sumAppRunTime: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/SumAppRunTime',
     requestStream: false,
@@ -2482,7 +2516,7 @@ sumAppRunTime: {
     responseSerialize: serialize_librarian_sephirah_v1_SumAppRunTimeResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_SumAppRunTimeResponse,
   },
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
 listAppRunTimes: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/ListAppRunTimes',
     requestStream: false,
@@ -2494,7 +2528,7 @@ listAppRunTimes: {
     responseSerialize: serialize_librarian_sephirah_v1_ListAppRunTimesResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_ListAppRunTimesResponse,
   },
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
 deleteAppRunTime: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/DeleteAppRunTime',
     requestStream: false,
@@ -2506,7 +2540,7 @@ deleteAppRunTime: {
     responseSerialize: serialize_librarian_sephirah_v1_DeleteAppRunTimeResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_DeleteAppRunTimeResponse,
   },
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
 uploadAppSaveFile: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/UploadAppSaveFile',
     requestStream: false,
@@ -2518,7 +2552,7 @@ uploadAppSaveFile: {
     responseSerialize: serialize_librarian_sephirah_v1_UploadAppSaveFileResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_UploadAppSaveFileResponse,
   },
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
 downloadAppSaveFile: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/DownloadAppSaveFile',
     requestStream: false,
@@ -2530,7 +2564,7 @@ downloadAppSaveFile: {
     responseSerialize: serialize_librarian_sephirah_v1_DownloadAppSaveFileResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_DownloadAppSaveFileResponse,
   },
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
 listAppSaveFiles: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/ListAppSaveFiles',
     requestStream: false,
@@ -2542,7 +2576,7 @@ listAppSaveFiles: {
     responseSerialize: serialize_librarian_sephirah_v1_ListAppSaveFilesResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_ListAppSaveFilesResponse,
   },
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
 deleteAppSaveFile: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/DeleteAppSaveFile',
     requestStream: false,
@@ -2554,7 +2588,7 @@ deleteAppSaveFile: {
     responseSerialize: serialize_librarian_sephirah_v1_DeleteAppSaveFileResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_DeleteAppSaveFileResponse,
   },
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
 pinAppSaveFile: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/PinAppSaveFile',
     requestStream: false,
@@ -2566,7 +2600,7 @@ pinAppSaveFile: {
     responseSerialize: serialize_librarian_sephirah_v1_PinAppSaveFileResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_PinAppSaveFileResponse,
   },
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
 unpinAppSaveFile: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/UnpinAppSaveFile',
     requestStream: false,
@@ -2578,7 +2612,7 @@ unpinAppSaveFile: {
     responseSerialize: serialize_librarian_sephirah_v1_UnpinAppSaveFileResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_UnpinAppSaveFileResponse,
   },
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
 getAppSaveFileCapacity: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/GetAppSaveFileCapacity',
     requestStream: false,
@@ -2590,7 +2624,7 @@ getAppSaveFileCapacity: {
     responseSerialize: serialize_librarian_sephirah_v1_GetAppSaveFileCapacityResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_GetAppSaveFileCapacityResponse,
   },
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
 setAppSaveFileCapacity: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/SetAppSaveFileCapacity',
     requestStream: false,
@@ -2602,7 +2636,7 @@ setAppSaveFileCapacity: {
     responseSerialize: serialize_librarian_sephirah_v1_SetAppSaveFileCapacityResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_SetAppSaveFileCapacityResponse,
   },
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
 listAppCategories: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/ListAppCategories',
     requestStream: false,
@@ -2614,7 +2648,7 @@ listAppCategories: {
     responseSerialize: serialize_librarian_sephirah_v1_ListAppCategoriesResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_ListAppCategoriesResponse,
   },
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
 createAppCategory: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/CreateAppCategory',
     requestStream: false,
@@ -2626,7 +2660,7 @@ createAppCategory: {
     responseSerialize: serialize_librarian_sephirah_v1_CreateAppCategoryResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_CreateAppCategoryResponse,
   },
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
 updateAppCategory: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/UpdateAppCategory',
     requestStream: false,
@@ -2638,7 +2672,7 @@ updateAppCategory: {
     responseSerialize: serialize_librarian_sephirah_v1_UpdateAppCategoryResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_UpdateAppCategoryResponse,
   },
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
 deleteAppCategory: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/DeleteAppCategory',
     requestStream: false,
@@ -2650,7 +2684,7 @@ deleteAppCategory: {
     responseSerialize: serialize_librarian_sephirah_v1_DeleteAppCategoryResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_DeleteAppCategoryResponse,
   },
-  // `Netzach` `Normal`
+  // `Netzach` `access_token`
 createNotifyTarget: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/CreateNotifyTarget',
     requestStream: false,
@@ -2662,7 +2696,7 @@ createNotifyTarget: {
     responseSerialize: serialize_librarian_sephirah_v1_CreateNotifyTargetResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_CreateNotifyTargetResponse,
   },
-  // `Netzach` `Normal`
+  // `Netzach` `access_token`
 updateNotifyTarget: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/UpdateNotifyTarget',
     requestStream: false,
@@ -2674,7 +2708,7 @@ updateNotifyTarget: {
     responseSerialize: serialize_librarian_sephirah_v1_UpdateNotifyTargetResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_UpdateNotifyTargetResponse,
   },
-  // `Netzach` `Normal`
+  // `Netzach` `access_token`
 listNotifyTargets: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/ListNotifyTargets',
     requestStream: false,
@@ -2686,7 +2720,7 @@ listNotifyTargets: {
     responseSerialize: serialize_librarian_sephirah_v1_ListNotifyTargetsResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_ListNotifyTargetsResponse,
   },
-  // `Netzach` `Normal`
+  // `Netzach` `access_token`
 createNotifyFlow: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/CreateNotifyFlow',
     requestStream: false,
@@ -2698,7 +2732,7 @@ createNotifyFlow: {
     responseSerialize: serialize_librarian_sephirah_v1_CreateNotifyFlowResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_CreateNotifyFlowResponse,
   },
-  // `Netzach` `Normal`
+  // `Netzach` `access_token`
 updateNotifyFlow: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/UpdateNotifyFlow',
     requestStream: false,
@@ -2710,7 +2744,7 @@ updateNotifyFlow: {
     responseSerialize: serialize_librarian_sephirah_v1_UpdateNotifyFlowResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_UpdateNotifyFlowResponse,
   },
-  // `Netzach` `Normal`
+  // `Netzach` `access_token`
 listNotifyFlows: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/ListNotifyFlows',
     requestStream: false,
@@ -2722,7 +2756,7 @@ listNotifyFlows: {
     responseSerialize: serialize_librarian_sephirah_v1_ListNotifyFlowsResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_ListNotifyFlowsResponse,
   },
-  // `Netzach` `Normal`
+  // `Netzach` `access_token`
 listSystemNotifications: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/ListSystemNotifications',
     requestStream: false,
@@ -2734,7 +2768,7 @@ listSystemNotifications: {
     responseSerialize: serialize_librarian_sephirah_v1_ListSystemNotificationsResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_ListSystemNotificationsResponse,
   },
-  // `Netzach` `Normal`
+  // `Netzach` `access_token`
 updateSystemNotification: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/UpdateSystemNotification',
     requestStream: false,
@@ -2746,7 +2780,7 @@ updateSystemNotification: {
     responseSerialize: serialize_librarian_sephirah_v1_UpdateSystemNotificationResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_UpdateSystemNotificationResponse,
   },
-  // `Yesod` `Normal`
+  // `Yesod` `access_token`
 createFeedConfig: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/CreateFeedConfig',
     requestStream: false,
@@ -2758,7 +2792,7 @@ createFeedConfig: {
     responseSerialize: serialize_librarian_sephirah_v1_CreateFeedConfigResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_CreateFeedConfigResponse,
   },
-  // `Yesod` `Normal`
+  // `Yesod` `access_token`
 updateFeedConfig: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/UpdateFeedConfig',
     requestStream: false,
@@ -2770,7 +2804,7 @@ updateFeedConfig: {
     responseSerialize: serialize_librarian_sephirah_v1_UpdateFeedConfigResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_UpdateFeedConfigResponse,
   },
-  // `Yesod` `Normal`
+  // `Yesod` `access_token`
 listFeedConfigs: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/ListFeedConfigs',
     requestStream: false,
@@ -2782,7 +2816,7 @@ listFeedConfigs: {
     responseSerialize: serialize_librarian_sephirah_v1_ListFeedConfigsResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_ListFeedConfigsResponse,
   },
-  // `Yesod` `Normal`
+  // `Yesod` `access_token`
 createFeedActionSet: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/CreateFeedActionSet',
     requestStream: false,
@@ -2794,7 +2828,7 @@ createFeedActionSet: {
     responseSerialize: serialize_librarian_sephirah_v1_CreateFeedActionSetResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_CreateFeedActionSetResponse,
   },
-  // `Yesod` `Normal`
+  // `Yesod` `access_token`
 updateFeedActionSet: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/UpdateFeedActionSet',
     requestStream: false,
@@ -2806,7 +2840,7 @@ updateFeedActionSet: {
     responseSerialize: serialize_librarian_sephirah_v1_UpdateFeedActionSetResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_UpdateFeedActionSetResponse,
   },
-  // `Yesod` `Normal`
+  // `Yesod` `access_token`
 listFeedActionSets: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/ListFeedActionSets',
     requestStream: false,
@@ -2818,7 +2852,7 @@ listFeedActionSets: {
     responseSerialize: serialize_librarian_sephirah_v1_ListFeedActionSetsResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_ListFeedActionSetsResponse,
   },
-  // `Yesod` `Normal`
+  // `Yesod` `access_token`
 listFeedCategories: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/ListFeedCategories',
     requestStream: false,
@@ -2830,7 +2864,7 @@ listFeedCategories: {
     responseSerialize: serialize_librarian_sephirah_v1_ListFeedCategoriesResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_ListFeedCategoriesResponse,
   },
-  // `Yesod` `Normal`
+  // `Yesod` `access_token`
 listFeedPlatforms: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/ListFeedPlatforms',
     requestStream: false,
@@ -2842,7 +2876,7 @@ listFeedPlatforms: {
     responseSerialize: serialize_librarian_sephirah_v1_ListFeedPlatformsResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_ListFeedPlatformsResponse,
   },
-  // `Yesod` `Normal`
+  // `Yesod` `access_token`
 listFeedItems: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/ListFeedItems',
     requestStream: false,
@@ -2854,7 +2888,7 @@ listFeedItems: {
     responseSerialize: serialize_librarian_sephirah_v1_ListFeedItemsResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_ListFeedItemsResponse,
   },
-  // `Yesod` `Normal`
+  // `Yesod` `access_token`
 getFeedItem: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/GetFeedItem',
     requestStream: false,
@@ -2866,7 +2900,7 @@ getFeedItem: {
     responseSerialize: serialize_librarian_sephirah_v1_GetFeedItemResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_GetFeedItemResponse,
   },
-  // `Yesod` `Normal`
+  // `Yesod` `access_token`
 getBatchFeedItems: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/GetBatchFeedItems',
     requestStream: false,
@@ -2878,7 +2912,7 @@ getBatchFeedItems: {
     responseSerialize: serialize_librarian_sephirah_v1_GetBatchFeedItemsResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_GetBatchFeedItemsResponse,
   },
-  // `Yesod` `Normal`
+  // `Yesod` `access_token`
 readFeedItem: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/ReadFeedItem',
     requestStream: false,
@@ -2890,7 +2924,7 @@ readFeedItem: {
     responseSerialize: serialize_librarian_sephirah_v1_ReadFeedItemResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_ReadFeedItemResponse,
   },
-  // `Yesod` `Normal`
+  // `Yesod` `access_token`
 createFeedItemCollection: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/CreateFeedItemCollection',
     requestStream: false,
@@ -2902,7 +2936,7 @@ createFeedItemCollection: {
     responseSerialize: serialize_librarian_sephirah_v1_CreateFeedItemCollectionResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_CreateFeedItemCollectionResponse,
   },
-  // `Yesod` `Normal`
+  // `Yesod` `access_token`
 updateFeedItemCollection: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/UpdateFeedItemCollection',
     requestStream: false,
@@ -2914,7 +2948,7 @@ updateFeedItemCollection: {
     responseSerialize: serialize_librarian_sephirah_v1_UpdateFeedItemCollectionResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_UpdateFeedItemCollectionResponse,
   },
-  // `Yesod` `Normal`
+  // `Yesod` `access_token`
 listFeedItemCollections: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/ListFeedItemCollections',
     requestStream: false,
@@ -2926,7 +2960,7 @@ listFeedItemCollections: {
     responseSerialize: serialize_librarian_sephirah_v1_ListFeedItemCollectionsResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_ListFeedItemCollectionsResponse,
   },
-  // `Yesod` `Normal`
+  // `Yesod` `access_token`
 addFeedItemToCollection: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/AddFeedItemToCollection',
     requestStream: false,
@@ -2938,7 +2972,7 @@ addFeedItemToCollection: {
     responseSerialize: serialize_librarian_sephirah_v1_AddFeedItemToCollectionResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_AddFeedItemToCollectionResponse,
   },
-  // `Yesod` `Normal`
+  // `Yesod` `access_token`
 removeFeedItemFromCollection: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/RemoveFeedItemFromCollection',
     requestStream: false,
@@ -2950,7 +2984,7 @@ removeFeedItemFromCollection: {
     responseSerialize: serialize_librarian_sephirah_v1_RemoveFeedItemFromCollectionResponse,
     responseDeserialize: deserialize_librarian_sephirah_v1_RemoveFeedItemFromCollectionResponse,
   },
-  // `Yesod` `Normal`
+  // `Yesod` `access_token`
 listFeedItemsInCollection: {
     path: '/librarian.sephirah.v1.LibrarianSephirahService/ListFeedItemsInCollection',
     requestStream: false,

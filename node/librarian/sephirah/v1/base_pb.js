@@ -13,13 +13,7 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global =
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var global = globalThis;
 
 var google_protobuf_timestamp_pb = require('google-protobuf/google/protobuf/timestamp_pb.js');
 goog.object.extend(proto, google_protobuf_timestamp_pb);
@@ -163,7 +157,7 @@ statusReport: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.ServerInformation}
  */
 proto.librarian.sephirah.v1.ServerInformation.deserializeBinary = function(bytes) {
@@ -213,7 +207,7 @@ proto.librarian.sephirah.v1.ServerInformation.deserializeBinaryFromReader = func
       msg.setServerInstanceSummary(value);
       break;
     case 6:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setStatusReport(value);
       break;
     default:
@@ -563,7 +557,7 @@ buildDate: jspb.Message.getFieldWithDefault(msg, 3, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.ServerBinarySummary}
  */
 proto.librarian.sephirah.v1.ServerBinarySummary.deserializeBinary = function(bytes) {
@@ -588,15 +582,15 @@ proto.librarian.sephirah.v1.ServerBinarySummary.deserializeBinaryFromReader = fu
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setSourceCodeAddress(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setBuildVersion(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setBuildDate(value);
       break;
     default:
@@ -751,7 +745,7 @@ version: jspb.Message.getFieldWithDefault(msg, 1, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.ServerProtocolSummary}
  */
 proto.librarian.sephirah.v1.ServerProtocolSummary.deserializeBinary = function(bytes) {
@@ -776,7 +770,7 @@ proto.librarian.sephirah.v1.ServerProtocolSummary.deserializeBinaryFromReader = 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setVersion(value);
       break;
     default:
@@ -870,9 +864,10 @@ proto.librarian.sephirah.v1.ServerInstanceSummary.toObject = function(includeIns
   var f, obj = {
 name: jspb.Message.getFieldWithDefault(msg, 1, ""),
 description: jspb.Message.getFieldWithDefault(msg, 2, ""),
-websiteUrl: jspb.Message.getFieldWithDefault(msg, 3, ""),
-logoUrl: jspb.Message.getFieldWithDefault(msg, 4, ""),
-backgroundUrl: jspb.Message.getFieldWithDefault(msg, 5, "")
+websiteUrl: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+logoImageUrl: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+backgroundImageUrl: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+isRegisterable: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
   };
 
   if (includeInstance) {
@@ -885,7 +880,7 @@ backgroundUrl: jspb.Message.getFieldWithDefault(msg, 5, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.ServerInstanceSummary}
  */
 proto.librarian.sephirah.v1.ServerInstanceSummary.deserializeBinary = function(bytes) {
@@ -910,24 +905,28 @@ proto.librarian.sephirah.v1.ServerInstanceSummary.deserializeBinaryFromReader = 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setName(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setDescription(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setWebsiteUrl(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setLogoUrl(value);
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
+      msg.setLogoImageUrl(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setBackgroundUrl(value);
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
+      msg.setBackgroundImageUrl(value);
+      break;
+    case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsRegisterable(value);
       break;
     default:
       reader.skipField();
@@ -972,24 +971,31 @@ proto.librarian.sephirah.v1.ServerInstanceSummary.serializeBinaryToWriter = func
       f
     );
   }
-  f = message.getWebsiteUrl();
-  if (f.length > 0) {
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+  if (f != null) {
     writer.writeString(
       3,
       f
     );
   }
-  f = message.getLogoUrl();
-  if (f.length > 0) {
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
     writer.writeString(
       4,
       f
     );
   }
-  f = message.getBackgroundUrl();
-  if (f.length > 0) {
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = message.getIsRegisterable();
+  if (f) {
+    writer.writeBool(
+      6,
       f
     );
   }
@@ -1046,15 +1052,33 @@ proto.librarian.sephirah.v1.ServerInstanceSummary.prototype.getWebsiteUrl = func
  * @return {!proto.librarian.sephirah.v1.ServerInstanceSummary} returns this
  */
 proto.librarian.sephirah.v1.ServerInstanceSummary.prototype.setWebsiteUrl = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
+  return jspb.Message.setField(this, 3, value);
 };
 
 
 /**
- * optional string logo_url = 4;
+ * Clears the field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.ServerInstanceSummary} returns this
+ */
+proto.librarian.sephirah.v1.ServerInstanceSummary.prototype.clearWebsiteUrl = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.ServerInstanceSummary.prototype.hasWebsiteUrl = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string logo_image_url = 4;
  * @return {string}
  */
-proto.librarian.sephirah.v1.ServerInstanceSummary.prototype.getLogoUrl = function() {
+proto.librarian.sephirah.v1.ServerInstanceSummary.prototype.getLogoImageUrl = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -1063,16 +1087,34 @@ proto.librarian.sephirah.v1.ServerInstanceSummary.prototype.getLogoUrl = functio
  * @param {string} value
  * @return {!proto.librarian.sephirah.v1.ServerInstanceSummary} returns this
  */
-proto.librarian.sephirah.v1.ServerInstanceSummary.prototype.setLogoUrl = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
+proto.librarian.sephirah.v1.ServerInstanceSummary.prototype.setLogoImageUrl = function(value) {
+  return jspb.Message.setField(this, 4, value);
 };
 
 
 /**
- * optional string background_url = 5;
+ * Clears the field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.ServerInstanceSummary} returns this
+ */
+proto.librarian.sephirah.v1.ServerInstanceSummary.prototype.clearLogoImageUrl = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.ServerInstanceSummary.prototype.hasLogoImageUrl = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional string background_image_url = 5;
  * @return {string}
  */
-proto.librarian.sephirah.v1.ServerInstanceSummary.prototype.getBackgroundUrl = function() {
+proto.librarian.sephirah.v1.ServerInstanceSummary.prototype.getBackgroundImageUrl = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -1081,8 +1123,44 @@ proto.librarian.sephirah.v1.ServerInstanceSummary.prototype.getBackgroundUrl = f
  * @param {string} value
  * @return {!proto.librarian.sephirah.v1.ServerInstanceSummary} returns this
  */
-proto.librarian.sephirah.v1.ServerInstanceSummary.prototype.setBackgroundUrl = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
+proto.librarian.sephirah.v1.ServerInstanceSummary.prototype.setBackgroundImageUrl = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.librarian.sephirah.v1.ServerInstanceSummary} returns this
+ */
+proto.librarian.sephirah.v1.ServerInstanceSummary.prototype.clearBackgroundImageUrl = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.ServerInstanceSummary.prototype.hasBackgroundImageUrl = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional bool is_registerable = 6;
+ * @return {boolean}
+ */
+proto.librarian.sephirah.v1.ServerInstanceSummary.prototype.getIsRegisterable = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.librarian.sephirah.v1.ServerInstanceSummary} returns this
+ */
+proto.librarian.sephirah.v1.ServerInstanceSummary.prototype.setIsRegisterable = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
 

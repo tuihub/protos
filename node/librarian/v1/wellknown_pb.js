@@ -13,13 +13,7 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global =
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var global = globalThis;
 
 var buf_validate_validate_pb = require('../../buf/validate/validate_pb.js');
 goog.object.extend(proto, buf_validate_validate_pb);
@@ -280,7 +274,7 @@ pageSize: jspb.Message.getFieldWithDefault(msg, 2, 0)
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.v1.PagingRequest}
  */
 proto.librarian.v1.PagingRequest.deserializeBinary = function(bytes) {
@@ -439,7 +433,7 @@ totalSize: jspb.Message.getFieldWithDefault(msg, 1, 0)
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.v1.PagingResponse}
  */
 proto.librarian.v1.PagingResponse.deserializeBinary = function(bytes) {
@@ -570,7 +564,7 @@ duration: (f = msg.getDuration()) && google_protobuf_duration_pb.Duration.toObje
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.v1.TimeRange}
  */
 proto.librarian.v1.TimeRange.deserializeBinary = function(bytes) {
@@ -771,7 +765,7 @@ id: jspb.Message.getFieldWithDefault(msg, 1, 0)
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.v1.InternalID}
  */
 proto.librarian.v1.InternalID.deserializeBinary = function(bytes) {
@@ -902,7 +896,7 @@ value: jspb.Message.getFieldWithDefault(msg, 2, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.v1.I18NString}
  */
 proto.librarian.v1.I18NString.deserializeBinary = function(bytes) {
@@ -927,11 +921,11 @@ proto.librarian.v1.I18NString.deserializeBinaryFromReader = function(msg, reader
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setKey(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setValue(value);
       break;
     default:
@@ -1066,7 +1060,7 @@ createTime: (f = msg.getCreateTime()) && google_protobuf_timestamp_pb.Timestamp.
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.v1.FileMetadata}
  */
 proto.librarian.v1.FileMetadata.deserializeBinary = function(bytes) {
@@ -1096,7 +1090,7 @@ proto.librarian.v1.FileMetadata.deserializeBinaryFromReader = function(msg, read
       msg.setId(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setName(value);
       break;
     case 3:
@@ -1412,7 +1406,7 @@ extraMap: (f = msg.getExtraMap()) ? f.toObject(includeInstance, undefined) : []
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.v1.FeatureFlag}
  */
 proto.librarian.v1.FeatureFlag.deserializeBinary = function(bytes) {
@@ -1437,19 +1431,19 @@ proto.librarian.v1.FeatureFlag.deserializeBinaryFromReader = function(msg, reade
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setId(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setName(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setDescription(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setConfigJsonSchema(value);
       break;
     case 5:
@@ -1459,7 +1453,7 @@ proto.librarian.v1.FeatureFlag.deserializeBinaryFromReader = function(msg, reade
     case 6:
       var value = msg.getExtraMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readStringRequireUtf8, jspb.BinaryReader.prototype.readStringRequireUtf8, null, "", "");
          });
       break;
     default:
@@ -1528,7 +1522,12 @@ proto.librarian.v1.FeatureFlag.serializeBinaryToWriter = function(message, write
   }
   f = message.getExtraMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(6, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+jspb.internal.public_for_gencode.serializeMapToBinary(
+    message.getExtraMap(true),
+    6,
+    writer,
+    jspb.BinaryWriter.prototype.writeString,
+    jspb.BinaryWriter.prototype.writeString);
   }
 };
 
@@ -1694,7 +1693,7 @@ contextId: (f = msg.getContextId()) && proto.librarian.v1.InternalID.toObject(in
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.v1.FeatureRequest}
  */
 proto.librarian.v1.FeatureRequest.deserializeBinary = function(bytes) {
@@ -1719,15 +1718,15 @@ proto.librarian.v1.FeatureRequest.deserializeBinaryFromReader = function(msg, re
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setId(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setRegion(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setConfigJson(value);
       break;
     case 4:
@@ -1952,7 +1951,7 @@ feedGettersList: jspb.Message.toObjectList(msg.getFeedGettersList(),
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.v1.FeatureSummary}
  */
 proto.librarian.v1.FeatureSummary.deserializeBinary = function(bytes) {
@@ -2434,7 +2433,7 @@ proto.librarian.v1.toString = new jspb.ExtensionFieldInfo(
 
 google_protobuf_descriptor_pb.EnumValueOptions.extensionsBinary[1000] = new jspb.ExtensionFieldBinaryInfo(
     proto.librarian.v1.toString,
-    jspb.BinaryReader.prototype.readString,
+    jspb.BinaryReader.prototype.readStringRequireUtf8,
     jspb.BinaryWriter.prototype.writeString,
     undefined,
     undefined,

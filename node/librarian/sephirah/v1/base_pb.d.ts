@@ -112,14 +112,23 @@ export class ServerInstanceSummary extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): void;
 
+  hasWebsiteUrl(): boolean;
+  clearWebsiteUrl(): void;
   getWebsiteUrl(): string;
   setWebsiteUrl(value: string): void;
 
-  getLogoUrl(): string;
-  setLogoUrl(value: string): void;
+  hasLogoImageUrl(): boolean;
+  clearLogoImageUrl(): void;
+  getLogoImageUrl(): string;
+  setLogoImageUrl(value: string): void;
 
-  getBackgroundUrl(): string;
-  setBackgroundUrl(value: string): void;
+  hasBackgroundImageUrl(): boolean;
+  clearBackgroundImageUrl(): void;
+  getBackgroundImageUrl(): string;
+  setBackgroundImageUrl(value: string): void;
+
+  getIsRegisterable(): boolean;
+  setIsRegisterable(value: boolean): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ServerInstanceSummary.AsObject;
@@ -136,8 +145,9 @@ export namespace ServerInstanceSummary {
     name: string,
     description: string,
     websiteUrl: string,
-    logoUrl: string,
-    backgroundUrl: string,
+    logoImageUrl: string,
+    backgroundImageUrl: string,
+    isRegisterable: boolean,
   }
 }
 

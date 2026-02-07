@@ -57,12 +57,15 @@ const (
 	// LibrarianSephirahServiceRegisterDeviceProcedure is the fully-qualified name of the
 	// LibrarianSephirahService's RegisterDevice RPC.
 	LibrarianSephirahServiceRegisterDeviceProcedure = "/librarian.sephirah.v1.LibrarianSephirahService/RegisterDevice"
+	// LibrarianSephirahServiceGetDeviceProcedure is the fully-qualified name of the
+	// LibrarianSephirahService's GetDevice RPC.
+	LibrarianSephirahServiceGetDeviceProcedure = "/librarian.sephirah.v1.LibrarianSephirahService/GetDevice"
 	// LibrarianSephirahServiceListUserSessionsProcedure is the fully-qualified name of the
 	// LibrarianSephirahService's ListUserSessions RPC.
 	LibrarianSephirahServiceListUserSessionsProcedure = "/librarian.sephirah.v1.LibrarianSephirahService/ListUserSessions"
-	// LibrarianSephirahServiceDeleteUserSessionProcedure is the fully-qualified name of the
-	// LibrarianSephirahService's DeleteUserSession RPC.
-	LibrarianSephirahServiceDeleteUserSessionProcedure = "/librarian.sephirah.v1.LibrarianSephirahService/DeleteUserSession"
+	// LibrarianSephirahServiceRevokeUserSessionProcedure is the fully-qualified name of the
+	// LibrarianSephirahService's RevokeUserSession RPC.
+	LibrarianSephirahServiceRevokeUserSessionProcedure = "/librarian.sephirah.v1.LibrarianSephirahService/RevokeUserSession"
 	// LibrarianSephirahServiceLinkAccountProcedure is the fully-qualified name of the
 	// LibrarianSephirahService's LinkAccount RPC.
 	LibrarianSephirahServiceLinkAccountProcedure = "/librarian.sephirah.v1.LibrarianSephirahService/LinkAccount"
@@ -296,9 +299,9 @@ const (
 // LibrarianSephirahServiceClient is a client for the librarian.sephirah.v1.LibrarianSephirahService
 // service.
 type LibrarianSephirahServiceClient interface {
-	// Allow anonymous call, use accessToken to get complete information
+	// `anonymous` `access_token` Allow anonymous call, use accessToken to get complete information
 	GetServerInformation(context.Context, *v1.GetServerInformationRequest) (*v1.GetServerInformationResponse, error)
-	// `Normal` Client can use this to subscribe to server events.
+	// `access_token` Client can use this to subscribe to server events.
 	//
 	// Server should send `SERVER_EVENT_LISTENER_CONNECTED` event immediately if the connection is valid.
 	// Otherwise, client should treat the connection as failed.
@@ -306,41 +309,43 @@ type LibrarianSephirahServiceClient interface {
 	// Server can close the stream at any time, client should reconnect if needed **with backoff**.
 	// Only used to improve real-time experience, no guarantee of delivery.
 	ListenServerEvent(context.Context, *v1.ListenServerEventRequest) (*connect.ServerStreamForClient[v1.ListenServerEventResponse], error)
-	// `Tiphereth` `Normal` Login via password and get two token
+	// `Tiphereth` `anonymous` Login via password and get two token
 	GetToken(context.Context, *v1.GetTokenRequest) (*v1.GetTokenResponse, error)
-	// `Tiphereth` `Normal` Use valid refresh_token and get two new token, a refresh_token can only be used once
+	// `Tiphereth` `access_token` Use valid refresh_token and get two new token, a refresh_token can only be used once
 	RefreshToken(context.Context, *v1.RefreshTokenRequest) (*v1.RefreshTokenResponse, error)
-	// `Tiphereth`
+	// `Tiphereth` `access_token`
 	GetUser(context.Context, *v1.GetUserRequest) (*v1.GetUserResponse, error)
-	// `Tiphereth` Self register as a new normal user
+	// `Tiphereth` `anonymous` Self register as a new normal user
 	RegisterUser(context.Context, *v1.RegisterUserRequest) (*v1.RegisterUserResponse, error)
-	// `Tiphereth` `Normal` Update self user info
+	// `Tiphereth` `access_token` Update self user info
 	UpdateUser(context.Context, *v1.UpdateUserRequest) (*v1.UpdateUserResponse, error)
-	// `Tiphereth` `Normal` Client should register device after the first login
+	// `Tiphereth` `access_token` Client should register device after the first login
 	// and store the device_id locally.
 	// The server could add extra limits to non-registered device
 	RegisterDevice(context.Context, *v1.RegisterDeviceRequest) (*v1.RegisterDeviceResponse, error)
-	// `Tiphereth` `Normal`
+	// `Tiphereth` `access_token`
+	GetDevice(context.Context, *v1.GetDeviceRequest) (*v1.GetDeviceResponse, error)
+	// `Tiphereth` `access_token`
 	ListUserSessions(context.Context, *v1.ListUserSessionsRequest) (*v1.ListUserSessionsResponse, error)
-	// `Tiphereth` `Normal` delete session will revoke refresh_token immediately.
+	// `Tiphereth` `access_token` revoke session will revoke refresh_token immediately.
 	// NOTE: This can also be used to log out at server side.
-	// NOTE2: Delete session will not affect device registration.
-	DeleteUserSession(context.Context, *v1.DeleteUserSessionRequest) (*v1.DeleteUserSessionResponse, error)
-	// `Tiphereth` `Normal` Bind third-party account to current user.
+	// NOTE2: Revoke session will not affect device registration.
+	RevokeUserSession(context.Context, *v1.RevokeUserSessionRequest) (*v1.RevokeUserSessionResponse, error)
+	// `Tiphereth` `access_token` Bind third-party account to current user.
 	LinkAccount(context.Context, *v1.LinkAccountRequest) (*v1.LinkAccountResponse, error)
-	// `Tiphereth` `Normal` Unbind third-party account from current user.
+	// `Tiphereth` `access_token` Unbind third-party account from current user.
 	UnLinkAccount(context.Context, *v1.UnLinkAccountRequest) (*v1.UnLinkAccountResponse, error)
-	// `Tiphereth` `Normal` List third-party account binded to current user.
+	// `Tiphereth` `access_token` List third-party account binded to current user.
 	ListLinkAccounts(context.Context, *v1.ListLinkAccountsRequest) (*v1.ListLinkAccountsResponse, error)
-	// `Tiphereth` `Normal`
+	// `Tiphereth` `access_token`
 	ListPorterDigests(context.Context, *v1.ListPorterDigestsRequest) (*v1.ListPorterDigestsResponse, error)
-	// `Tiphereth` `Normal`
+	// `Tiphereth` `access_token`
 	CreatePorterContext(context.Context, *v1.CreatePorterContextRequest) (*v1.CreatePorterContextResponse, error)
-	// `Tiphereth` `Normal`
+	// `Tiphereth` `access_token`
 	ListPorterContexts(context.Context, *v1.ListPorterContextsRequest) (*v1.ListPorterContextsResponse, error)
-	// `Tiphereth` `Normal` Set porter context.
+	// `Tiphereth` `access_token` Set porter context.
 	UpdatePorterContext(context.Context, *v1.UpdatePorterContextRequest) (*v1.UpdatePorterContextResponse, error)
-	// `Binah` `Normal`
+	// `Binah` `access_token`
 	GetStorageCapacityUsage(context.Context, *v1.GetStorageCapacityUsageRequest) (*v1.GetStorageCapacityUsageResponse, error)
 	// `Binah` `upload_token`
 	UploadFile(context.Context) (*connect.BidiStreamForClientSimple[v1.UploadFileRequest, v1.UploadFileResponse], error)
@@ -363,127 +368,127 @@ type LibrarianSephirahServiceClient interface {
 	// `Binah` `download_token`
 	// Download file through http url
 	PresignedDownloadFile(context.Context, *v1.PresignedDownloadFileRequest) (*v1.PresignedDownloadFileResponse, error)
-	// `Chesed` `Normal`
+	// `Chesed` `access_token`
 	UploadImage(context.Context, *v1.UploadImageRequest) (*v1.UploadImageResponse, error)
-	// `Chesed` `Normal`
+	// `Chesed` `access_token`
 	UpdateImage(context.Context, *v1.UpdateImageRequest) (*v1.UpdateImageResponse, error)
-	// `Chesed` `Normal`
+	// `Chesed` `access_token`
 	ListImages(context.Context, *v1.ListImagesRequest) (*v1.ListImagesResponse, error)
-	// `Chesed` `Normal`
+	// `Chesed` `access_token`
 	SearchImages(context.Context, *v1.SearchImagesRequest) (*v1.SearchImagesResponse, error)
-	// `Chesed` `Normal`
+	// `Chesed` `access_token`
 	GetImage(context.Context, *v1.GetImageRequest) (*v1.GetImageResponse, error)
-	// `Chesed` `Normal`
+	// `Chesed` `access_token`
 	DownloadImage(context.Context, *v1.DownloadImageRequest) (*v1.DownloadImageResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	SearchStoreApps(context.Context, *v1.SearchStoreAppsRequest) (*v1.SearchStoreAppsResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	GetStoreAppSummary(context.Context, *v1.GetStoreAppSummaryRequest) (*v1.GetStoreAppSummaryResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	AcquireStoreApp(context.Context, *v1.AcquireStoreAppRequest) (*v1.AcquireStoreAppResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	ListStoreAppBinaries(context.Context, *v1.ListStoreAppBinariesRequest) (*v1.ListStoreAppBinariesResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	ListStoreAppBinaryFiles(context.Context, *v1.ListStoreAppBinaryFilesRequest) (*v1.ListStoreAppBinaryFilesResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	DownloadStoreAppBinary(context.Context, *v1.DownloadStoreAppBinaryRequest) (*v1.DownloadStoreAppBinaryResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	ListStoreAppSaveFiles(context.Context, *v1.ListStoreAppSaveFilesRequest) (*v1.ListStoreAppSaveFilesResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	DownloadStoreAppSaveFile(context.Context, *v1.DownloadStoreAppSaveFileRequest) (*v1.DownloadStoreAppSaveFileResponse, error)
-	// `Gebura` `Normal` Search app infos
+	// `Gebura` `access_token` Search app infos
 	SearchAppInfos(context.Context, *v1.SearchAppInfosRequest) (*v1.SearchAppInfosResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	CreateApp(context.Context, *v1.CreateAppRequest) (*v1.CreateAppResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	UpdateApp(context.Context, *v1.UpdateAppRequest) (*v1.UpdateAppResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	ListApps(context.Context, *v1.ListAppsRequest) (*v1.ListAppsResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	DeleteApp(context.Context, *v1.DeleteAppRequest) (*v1.DeleteAppResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	BatchCreateAppRunTime(context.Context, *v1.BatchCreateAppRunTimeRequest) (*v1.BatchCreateAppRunTimeResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	SumAppRunTime(context.Context, *v1.SumAppRunTimeRequest) (*v1.SumAppRunTimeResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	ListAppRunTimes(context.Context, *v1.ListAppRunTimesRequest) (*v1.ListAppRunTimesResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	DeleteAppRunTime(context.Context, *v1.DeleteAppRunTimeRequest) (*v1.DeleteAppRunTimeResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	UploadAppSaveFile(context.Context, *v1.UploadAppSaveFileRequest) (*v1.UploadAppSaveFileResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	DownloadAppSaveFile(context.Context, *v1.DownloadAppSaveFileRequest) (*v1.DownloadAppSaveFileResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	ListAppSaveFiles(context.Context, *v1.ListAppSaveFilesRequest) (*v1.ListAppSaveFilesResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	DeleteAppSaveFile(context.Context, *v1.DeleteAppSaveFileRequest) (*v1.DeleteAppSaveFileResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	PinAppSaveFile(context.Context, *v1.PinAppSaveFileRequest) (*v1.PinAppSaveFileResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	UnpinAppSaveFile(context.Context, *v1.UnpinAppSaveFileRequest) (*v1.UnpinAppSaveFileResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	GetAppSaveFileCapacity(context.Context, *v1.GetAppSaveFileCapacityRequest) (*v1.GetAppSaveFileCapacityResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	SetAppSaveFileCapacity(context.Context, *v1.SetAppSaveFileCapacityRequest) (*v1.SetAppSaveFileCapacityResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	ListAppCategories(context.Context, *v1.ListAppCategoriesRequest) (*v1.ListAppCategoriesResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	CreateAppCategory(context.Context, *v1.CreateAppCategoryRequest) (*v1.CreateAppCategoryResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	UpdateAppCategory(context.Context, *v1.UpdateAppCategoryRequest) (*v1.UpdateAppCategoryResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	DeleteAppCategory(context.Context, *v1.DeleteAppCategoryRequest) (*v1.DeleteAppCategoryResponse, error)
-	// `Netzach` `Normal`
+	// `Netzach` `access_token`
 	CreateNotifyTarget(context.Context, *v1.CreateNotifyTargetRequest) (*v1.CreateNotifyTargetResponse, error)
-	// `Netzach` `Normal`
+	// `Netzach` `access_token`
 	UpdateNotifyTarget(context.Context, *v1.UpdateNotifyTargetRequest) (*v1.UpdateNotifyTargetResponse, error)
-	// `Netzach` `Normal`
+	// `Netzach` `access_token`
 	ListNotifyTargets(context.Context, *v1.ListNotifyTargetsRequest) (*v1.ListNotifyTargetsResponse, error)
-	// `Netzach` `Normal`
+	// `Netzach` `access_token`
 	CreateNotifyFlow(context.Context, *v1.CreateNotifyFlowRequest) (*v1.CreateNotifyFlowResponse, error)
-	// `Netzach` `Normal`
+	// `Netzach` `access_token`
 	UpdateNotifyFlow(context.Context, *v1.UpdateNotifyFlowRequest) (*v1.UpdateNotifyFlowResponse, error)
-	// `Netzach` `Normal`
+	// `Netzach` `access_token`
 	ListNotifyFlows(context.Context, *v1.ListNotifyFlowsRequest) (*v1.ListNotifyFlowsResponse, error)
-	// `Netzach` `Normal`
+	// `Netzach` `access_token`
 	ListSystemNotifications(context.Context, *v1.ListSystemNotificationsRequest) (*v1.ListSystemNotificationsResponse, error)
-	// `Netzach` `Normal`
+	// `Netzach` `access_token`
 	UpdateSystemNotification(context.Context, *v1.UpdateSystemNotificationRequest) (*v1.UpdateSystemNotificationResponse, error)
-	// `Yesod` `Normal`
+	// `Yesod` `access_token`
 	CreateFeedConfig(context.Context, *v1.CreateFeedConfigRequest) (*v1.CreateFeedConfigResponse, error)
-	// `Yesod` `Normal`
+	// `Yesod` `access_token`
 	UpdateFeedConfig(context.Context, *v1.UpdateFeedConfigRequest) (*v1.UpdateFeedConfigResponse, error)
-	// `Yesod` `Normal`
+	// `Yesod` `access_token`
 	ListFeedConfigs(context.Context, *v1.ListFeedConfigsRequest) (*v1.ListFeedConfigsResponse, error)
-	// `Yesod` `Normal`
+	// `Yesod` `access_token`
 	CreateFeedActionSet(context.Context, *v1.CreateFeedActionSetRequest) (*v1.CreateFeedActionSetResponse, error)
-	// `Yesod` `Normal`
+	// `Yesod` `access_token`
 	UpdateFeedActionSet(context.Context, *v1.UpdateFeedActionSetRequest) (*v1.UpdateFeedActionSetResponse, error)
-	// `Yesod` `Normal`
+	// `Yesod` `access_token`
 	ListFeedActionSets(context.Context, *v1.ListFeedActionSetsRequest) (*v1.ListFeedActionSetsResponse, error)
-	// `Yesod` `Normal`
+	// `Yesod` `access_token`
 	ListFeedCategories(context.Context, *v1.ListFeedCategoriesRequest) (*v1.ListFeedCategoriesResponse, error)
-	// `Yesod` `Normal`
+	// `Yesod` `access_token`
 	ListFeedPlatforms(context.Context, *v1.ListFeedPlatformsRequest) (*v1.ListFeedPlatformsResponse, error)
-	// `Yesod` `Normal`
+	// `Yesod` `access_token`
 	ListFeedItems(context.Context, *v1.ListFeedItemsRequest) (*v1.ListFeedItemsResponse, error)
-	// `Yesod` `Normal`
+	// `Yesod` `access_token`
 	GetFeedItem(context.Context, *v1.GetFeedItemRequest) (*v1.GetFeedItemResponse, error)
-	// `Yesod` `Normal`
+	// `Yesod` `access_token`
 	GetBatchFeedItems(context.Context, *v1.GetBatchFeedItemsRequest) (*v1.GetBatchFeedItemsResponse, error)
-	// `Yesod` `Normal`
+	// `Yesod` `access_token`
 	ReadFeedItem(context.Context, *v1.ReadFeedItemRequest) (*v1.ReadFeedItemResponse, error)
-	// `Yesod` `Normal`
+	// `Yesod` `access_token`
 	CreateFeedItemCollection(context.Context, *v1.CreateFeedItemCollectionRequest) (*v1.CreateFeedItemCollectionResponse, error)
-	// `Yesod` `Normal`
+	// `Yesod` `access_token`
 	UpdateFeedItemCollection(context.Context, *v1.UpdateFeedItemCollectionRequest) (*v1.UpdateFeedItemCollectionResponse, error)
-	// `Yesod` `Normal`
+	// `Yesod` `access_token`
 	ListFeedItemCollections(context.Context, *v1.ListFeedItemCollectionsRequest) (*v1.ListFeedItemCollectionsResponse, error)
-	// `Yesod` `Normal`
+	// `Yesod` `access_token`
 	AddFeedItemToCollection(context.Context, *v1.AddFeedItemToCollectionRequest) (*v1.AddFeedItemToCollectionResponse, error)
-	// `Yesod` `Normal`
+	// `Yesod` `access_token`
 	RemoveFeedItemFromCollection(context.Context, *v1.RemoveFeedItemFromCollectionRequest) (*v1.RemoveFeedItemFromCollectionResponse, error)
-	// `Yesod` `Normal`
+	// `Yesod` `access_token`
 	ListFeedItemsInCollection(context.Context, *v1.ListFeedItemsInCollectionRequest) (*v1.ListFeedItemsInCollectionResponse, error)
 }
 
@@ -547,16 +552,22 @@ func NewLibrarianSephirahServiceClient(httpClient connect.HTTPClient, baseURL st
 			connect.WithSchema(librarianSephirahServiceMethods.ByName("RegisterDevice")),
 			connect.WithClientOptions(opts...),
 		),
+		getDevice: connect.NewClient[v1.GetDeviceRequest, v1.GetDeviceResponse](
+			httpClient,
+			baseURL+LibrarianSephirahServiceGetDeviceProcedure,
+			connect.WithSchema(librarianSephirahServiceMethods.ByName("GetDevice")),
+			connect.WithClientOptions(opts...),
+		),
 		listUserSessions: connect.NewClient[v1.ListUserSessionsRequest, v1.ListUserSessionsResponse](
 			httpClient,
 			baseURL+LibrarianSephirahServiceListUserSessionsProcedure,
 			connect.WithSchema(librarianSephirahServiceMethods.ByName("ListUserSessions")),
 			connect.WithClientOptions(opts...),
 		),
-		deleteUserSession: connect.NewClient[v1.DeleteUserSessionRequest, v1.DeleteUserSessionResponse](
+		revokeUserSession: connect.NewClient[v1.RevokeUserSessionRequest, v1.RevokeUserSessionResponse](
 			httpClient,
-			baseURL+LibrarianSephirahServiceDeleteUserSessionProcedure,
-			connect.WithSchema(librarianSephirahServiceMethods.ByName("DeleteUserSession")),
+			baseURL+LibrarianSephirahServiceRevokeUserSessionProcedure,
+			connect.WithSchema(librarianSephirahServiceMethods.ByName("RevokeUserSession")),
 			connect.WithClientOptions(opts...),
 		),
 		linkAccount: connect.NewClient[v1.LinkAccountRequest, v1.LinkAccountResponse](
@@ -1028,8 +1039,9 @@ type librarianSephirahServiceClient struct {
 	registerUser                 *connect.Client[v1.RegisterUserRequest, v1.RegisterUserResponse]
 	updateUser                   *connect.Client[v1.UpdateUserRequest, v1.UpdateUserResponse]
 	registerDevice               *connect.Client[v1.RegisterDeviceRequest, v1.RegisterDeviceResponse]
+	getDevice                    *connect.Client[v1.GetDeviceRequest, v1.GetDeviceResponse]
 	listUserSessions             *connect.Client[v1.ListUserSessionsRequest, v1.ListUserSessionsResponse]
-	deleteUserSession            *connect.Client[v1.DeleteUserSessionRequest, v1.DeleteUserSessionResponse]
+	revokeUserSession            *connect.Client[v1.RevokeUserSessionRequest, v1.RevokeUserSessionResponse]
 	linkAccount                  *connect.Client[v1.LinkAccountRequest, v1.LinkAccountResponse]
 	unLinkAccount                *connect.Client[v1.UnLinkAccountRequest, v1.UnLinkAccountResponse]
 	listLinkAccounts             *connect.Client[v1.ListLinkAccountsRequest, v1.ListLinkAccountsResponse]
@@ -1176,6 +1188,15 @@ func (c *librarianSephirahServiceClient) RegisterDevice(ctx context.Context, req
 	return nil, err
 }
 
+// GetDevice calls librarian.sephirah.v1.LibrarianSephirahService.GetDevice.
+func (c *librarianSephirahServiceClient) GetDevice(ctx context.Context, req *v1.GetDeviceRequest) (*v1.GetDeviceResponse, error) {
+	response, err := c.getDevice.CallUnary(ctx, connect.NewRequest(req))
+	if response != nil {
+		return response.Msg, err
+	}
+	return nil, err
+}
+
 // ListUserSessions calls librarian.sephirah.v1.LibrarianSephirahService.ListUserSessions.
 func (c *librarianSephirahServiceClient) ListUserSessions(ctx context.Context, req *v1.ListUserSessionsRequest) (*v1.ListUserSessionsResponse, error) {
 	response, err := c.listUserSessions.CallUnary(ctx, connect.NewRequest(req))
@@ -1185,9 +1206,9 @@ func (c *librarianSephirahServiceClient) ListUserSessions(ctx context.Context, r
 	return nil, err
 }
 
-// DeleteUserSession calls librarian.sephirah.v1.LibrarianSephirahService.DeleteUserSession.
-func (c *librarianSephirahServiceClient) DeleteUserSession(ctx context.Context, req *v1.DeleteUserSessionRequest) (*v1.DeleteUserSessionResponse, error) {
-	response, err := c.deleteUserSession.CallUnary(ctx, connect.NewRequest(req))
+// RevokeUserSession calls librarian.sephirah.v1.LibrarianSephirahService.RevokeUserSession.
+func (c *librarianSephirahServiceClient) RevokeUserSession(ctx context.Context, req *v1.RevokeUserSessionRequest) (*v1.RevokeUserSessionResponse, error) {
+	response, err := c.revokeUserSession.CallUnary(ctx, connect.NewRequest(req))
 	if response != nil {
 		return response.Msg, err
 	}
@@ -1880,9 +1901,9 @@ func (c *librarianSephirahServiceClient) ListFeedItemsInCollection(ctx context.C
 // LibrarianSephirahServiceHandler is an implementation of the
 // librarian.sephirah.v1.LibrarianSephirahService service.
 type LibrarianSephirahServiceHandler interface {
-	// Allow anonymous call, use accessToken to get complete information
+	// `anonymous` `access_token` Allow anonymous call, use accessToken to get complete information
 	GetServerInformation(context.Context, *v1.GetServerInformationRequest) (*v1.GetServerInformationResponse, error)
-	// `Normal` Client can use this to subscribe to server events.
+	// `access_token` Client can use this to subscribe to server events.
 	//
 	// Server should send `SERVER_EVENT_LISTENER_CONNECTED` event immediately if the connection is valid.
 	// Otherwise, client should treat the connection as failed.
@@ -1890,41 +1911,43 @@ type LibrarianSephirahServiceHandler interface {
 	// Server can close the stream at any time, client should reconnect if needed **with backoff**.
 	// Only used to improve real-time experience, no guarantee of delivery.
 	ListenServerEvent(context.Context, *v1.ListenServerEventRequest, *connect.ServerStream[v1.ListenServerEventResponse]) error
-	// `Tiphereth` `Normal` Login via password and get two token
+	// `Tiphereth` `anonymous` Login via password and get two token
 	GetToken(context.Context, *v1.GetTokenRequest) (*v1.GetTokenResponse, error)
-	// `Tiphereth` `Normal` Use valid refresh_token and get two new token, a refresh_token can only be used once
+	// `Tiphereth` `access_token` Use valid refresh_token and get two new token, a refresh_token can only be used once
 	RefreshToken(context.Context, *v1.RefreshTokenRequest) (*v1.RefreshTokenResponse, error)
-	// `Tiphereth`
+	// `Tiphereth` `access_token`
 	GetUser(context.Context, *v1.GetUserRequest) (*v1.GetUserResponse, error)
-	// `Tiphereth` Self register as a new normal user
+	// `Tiphereth` `anonymous` Self register as a new normal user
 	RegisterUser(context.Context, *v1.RegisterUserRequest) (*v1.RegisterUserResponse, error)
-	// `Tiphereth` `Normal` Update self user info
+	// `Tiphereth` `access_token` Update self user info
 	UpdateUser(context.Context, *v1.UpdateUserRequest) (*v1.UpdateUserResponse, error)
-	// `Tiphereth` `Normal` Client should register device after the first login
+	// `Tiphereth` `access_token` Client should register device after the first login
 	// and store the device_id locally.
 	// The server could add extra limits to non-registered device
 	RegisterDevice(context.Context, *v1.RegisterDeviceRequest) (*v1.RegisterDeviceResponse, error)
-	// `Tiphereth` `Normal`
+	// `Tiphereth` `access_token`
+	GetDevice(context.Context, *v1.GetDeviceRequest) (*v1.GetDeviceResponse, error)
+	// `Tiphereth` `access_token`
 	ListUserSessions(context.Context, *v1.ListUserSessionsRequest) (*v1.ListUserSessionsResponse, error)
-	// `Tiphereth` `Normal` delete session will revoke refresh_token immediately.
+	// `Tiphereth` `access_token` revoke session will revoke refresh_token immediately.
 	// NOTE: This can also be used to log out at server side.
-	// NOTE2: Delete session will not affect device registration.
-	DeleteUserSession(context.Context, *v1.DeleteUserSessionRequest) (*v1.DeleteUserSessionResponse, error)
-	// `Tiphereth` `Normal` Bind third-party account to current user.
+	// NOTE2: Revoke session will not affect device registration.
+	RevokeUserSession(context.Context, *v1.RevokeUserSessionRequest) (*v1.RevokeUserSessionResponse, error)
+	// `Tiphereth` `access_token` Bind third-party account to current user.
 	LinkAccount(context.Context, *v1.LinkAccountRequest) (*v1.LinkAccountResponse, error)
-	// `Tiphereth` `Normal` Unbind third-party account from current user.
+	// `Tiphereth` `access_token` Unbind third-party account from current user.
 	UnLinkAccount(context.Context, *v1.UnLinkAccountRequest) (*v1.UnLinkAccountResponse, error)
-	// `Tiphereth` `Normal` List third-party account binded to current user.
+	// `Tiphereth` `access_token` List third-party account binded to current user.
 	ListLinkAccounts(context.Context, *v1.ListLinkAccountsRequest) (*v1.ListLinkAccountsResponse, error)
-	// `Tiphereth` `Normal`
+	// `Tiphereth` `access_token`
 	ListPorterDigests(context.Context, *v1.ListPorterDigestsRequest) (*v1.ListPorterDigestsResponse, error)
-	// `Tiphereth` `Normal`
+	// `Tiphereth` `access_token`
 	CreatePorterContext(context.Context, *v1.CreatePorterContextRequest) (*v1.CreatePorterContextResponse, error)
-	// `Tiphereth` `Normal`
+	// `Tiphereth` `access_token`
 	ListPorterContexts(context.Context, *v1.ListPorterContextsRequest) (*v1.ListPorterContextsResponse, error)
-	// `Tiphereth` `Normal` Set porter context.
+	// `Tiphereth` `access_token` Set porter context.
 	UpdatePorterContext(context.Context, *v1.UpdatePorterContextRequest) (*v1.UpdatePorterContextResponse, error)
-	// `Binah` `Normal`
+	// `Binah` `access_token`
 	GetStorageCapacityUsage(context.Context, *v1.GetStorageCapacityUsageRequest) (*v1.GetStorageCapacityUsageResponse, error)
 	// `Binah` `upload_token`
 	UploadFile(context.Context, *connect.BidiStream[v1.UploadFileRequest, v1.UploadFileResponse]) error
@@ -1947,127 +1970,127 @@ type LibrarianSephirahServiceHandler interface {
 	// `Binah` `download_token`
 	// Download file through http url
 	PresignedDownloadFile(context.Context, *v1.PresignedDownloadFileRequest) (*v1.PresignedDownloadFileResponse, error)
-	// `Chesed` `Normal`
+	// `Chesed` `access_token`
 	UploadImage(context.Context, *v1.UploadImageRequest) (*v1.UploadImageResponse, error)
-	// `Chesed` `Normal`
+	// `Chesed` `access_token`
 	UpdateImage(context.Context, *v1.UpdateImageRequest) (*v1.UpdateImageResponse, error)
-	// `Chesed` `Normal`
+	// `Chesed` `access_token`
 	ListImages(context.Context, *v1.ListImagesRequest) (*v1.ListImagesResponse, error)
-	// `Chesed` `Normal`
+	// `Chesed` `access_token`
 	SearchImages(context.Context, *v1.SearchImagesRequest) (*v1.SearchImagesResponse, error)
-	// `Chesed` `Normal`
+	// `Chesed` `access_token`
 	GetImage(context.Context, *v1.GetImageRequest) (*v1.GetImageResponse, error)
-	// `Chesed` `Normal`
+	// `Chesed` `access_token`
 	DownloadImage(context.Context, *v1.DownloadImageRequest) (*v1.DownloadImageResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	SearchStoreApps(context.Context, *v1.SearchStoreAppsRequest) (*v1.SearchStoreAppsResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	GetStoreAppSummary(context.Context, *v1.GetStoreAppSummaryRequest) (*v1.GetStoreAppSummaryResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	AcquireStoreApp(context.Context, *v1.AcquireStoreAppRequest) (*v1.AcquireStoreAppResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	ListStoreAppBinaries(context.Context, *v1.ListStoreAppBinariesRequest) (*v1.ListStoreAppBinariesResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	ListStoreAppBinaryFiles(context.Context, *v1.ListStoreAppBinaryFilesRequest) (*v1.ListStoreAppBinaryFilesResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	DownloadStoreAppBinary(context.Context, *v1.DownloadStoreAppBinaryRequest) (*v1.DownloadStoreAppBinaryResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	ListStoreAppSaveFiles(context.Context, *v1.ListStoreAppSaveFilesRequest) (*v1.ListStoreAppSaveFilesResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	DownloadStoreAppSaveFile(context.Context, *v1.DownloadStoreAppSaveFileRequest) (*v1.DownloadStoreAppSaveFileResponse, error)
-	// `Gebura` `Normal` Search app infos
+	// `Gebura` `access_token` Search app infos
 	SearchAppInfos(context.Context, *v1.SearchAppInfosRequest) (*v1.SearchAppInfosResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	CreateApp(context.Context, *v1.CreateAppRequest) (*v1.CreateAppResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	UpdateApp(context.Context, *v1.UpdateAppRequest) (*v1.UpdateAppResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	ListApps(context.Context, *v1.ListAppsRequest) (*v1.ListAppsResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	DeleteApp(context.Context, *v1.DeleteAppRequest) (*v1.DeleteAppResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	BatchCreateAppRunTime(context.Context, *v1.BatchCreateAppRunTimeRequest) (*v1.BatchCreateAppRunTimeResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	SumAppRunTime(context.Context, *v1.SumAppRunTimeRequest) (*v1.SumAppRunTimeResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	ListAppRunTimes(context.Context, *v1.ListAppRunTimesRequest) (*v1.ListAppRunTimesResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	DeleteAppRunTime(context.Context, *v1.DeleteAppRunTimeRequest) (*v1.DeleteAppRunTimeResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	UploadAppSaveFile(context.Context, *v1.UploadAppSaveFileRequest) (*v1.UploadAppSaveFileResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	DownloadAppSaveFile(context.Context, *v1.DownloadAppSaveFileRequest) (*v1.DownloadAppSaveFileResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	ListAppSaveFiles(context.Context, *v1.ListAppSaveFilesRequest) (*v1.ListAppSaveFilesResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	DeleteAppSaveFile(context.Context, *v1.DeleteAppSaveFileRequest) (*v1.DeleteAppSaveFileResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	PinAppSaveFile(context.Context, *v1.PinAppSaveFileRequest) (*v1.PinAppSaveFileResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	UnpinAppSaveFile(context.Context, *v1.UnpinAppSaveFileRequest) (*v1.UnpinAppSaveFileResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	GetAppSaveFileCapacity(context.Context, *v1.GetAppSaveFileCapacityRequest) (*v1.GetAppSaveFileCapacityResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	SetAppSaveFileCapacity(context.Context, *v1.SetAppSaveFileCapacityRequest) (*v1.SetAppSaveFileCapacityResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	ListAppCategories(context.Context, *v1.ListAppCategoriesRequest) (*v1.ListAppCategoriesResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	CreateAppCategory(context.Context, *v1.CreateAppCategoryRequest) (*v1.CreateAppCategoryResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	UpdateAppCategory(context.Context, *v1.UpdateAppCategoryRequest) (*v1.UpdateAppCategoryResponse, error)
-	// `Gebura` `Normal`
+	// `Gebura` `access_token`
 	DeleteAppCategory(context.Context, *v1.DeleteAppCategoryRequest) (*v1.DeleteAppCategoryResponse, error)
-	// `Netzach` `Normal`
+	// `Netzach` `access_token`
 	CreateNotifyTarget(context.Context, *v1.CreateNotifyTargetRequest) (*v1.CreateNotifyTargetResponse, error)
-	// `Netzach` `Normal`
+	// `Netzach` `access_token`
 	UpdateNotifyTarget(context.Context, *v1.UpdateNotifyTargetRequest) (*v1.UpdateNotifyTargetResponse, error)
-	// `Netzach` `Normal`
+	// `Netzach` `access_token`
 	ListNotifyTargets(context.Context, *v1.ListNotifyTargetsRequest) (*v1.ListNotifyTargetsResponse, error)
-	// `Netzach` `Normal`
+	// `Netzach` `access_token`
 	CreateNotifyFlow(context.Context, *v1.CreateNotifyFlowRequest) (*v1.CreateNotifyFlowResponse, error)
-	// `Netzach` `Normal`
+	// `Netzach` `access_token`
 	UpdateNotifyFlow(context.Context, *v1.UpdateNotifyFlowRequest) (*v1.UpdateNotifyFlowResponse, error)
-	// `Netzach` `Normal`
+	// `Netzach` `access_token`
 	ListNotifyFlows(context.Context, *v1.ListNotifyFlowsRequest) (*v1.ListNotifyFlowsResponse, error)
-	// `Netzach` `Normal`
+	// `Netzach` `access_token`
 	ListSystemNotifications(context.Context, *v1.ListSystemNotificationsRequest) (*v1.ListSystemNotificationsResponse, error)
-	// `Netzach` `Normal`
+	// `Netzach` `access_token`
 	UpdateSystemNotification(context.Context, *v1.UpdateSystemNotificationRequest) (*v1.UpdateSystemNotificationResponse, error)
-	// `Yesod` `Normal`
+	// `Yesod` `access_token`
 	CreateFeedConfig(context.Context, *v1.CreateFeedConfigRequest) (*v1.CreateFeedConfigResponse, error)
-	// `Yesod` `Normal`
+	// `Yesod` `access_token`
 	UpdateFeedConfig(context.Context, *v1.UpdateFeedConfigRequest) (*v1.UpdateFeedConfigResponse, error)
-	// `Yesod` `Normal`
+	// `Yesod` `access_token`
 	ListFeedConfigs(context.Context, *v1.ListFeedConfigsRequest) (*v1.ListFeedConfigsResponse, error)
-	// `Yesod` `Normal`
+	// `Yesod` `access_token`
 	CreateFeedActionSet(context.Context, *v1.CreateFeedActionSetRequest) (*v1.CreateFeedActionSetResponse, error)
-	// `Yesod` `Normal`
+	// `Yesod` `access_token`
 	UpdateFeedActionSet(context.Context, *v1.UpdateFeedActionSetRequest) (*v1.UpdateFeedActionSetResponse, error)
-	// `Yesod` `Normal`
+	// `Yesod` `access_token`
 	ListFeedActionSets(context.Context, *v1.ListFeedActionSetsRequest) (*v1.ListFeedActionSetsResponse, error)
-	// `Yesod` `Normal`
+	// `Yesod` `access_token`
 	ListFeedCategories(context.Context, *v1.ListFeedCategoriesRequest) (*v1.ListFeedCategoriesResponse, error)
-	// `Yesod` `Normal`
+	// `Yesod` `access_token`
 	ListFeedPlatforms(context.Context, *v1.ListFeedPlatformsRequest) (*v1.ListFeedPlatformsResponse, error)
-	// `Yesod` `Normal`
+	// `Yesod` `access_token`
 	ListFeedItems(context.Context, *v1.ListFeedItemsRequest) (*v1.ListFeedItemsResponse, error)
-	// `Yesod` `Normal`
+	// `Yesod` `access_token`
 	GetFeedItem(context.Context, *v1.GetFeedItemRequest) (*v1.GetFeedItemResponse, error)
-	// `Yesod` `Normal`
+	// `Yesod` `access_token`
 	GetBatchFeedItems(context.Context, *v1.GetBatchFeedItemsRequest) (*v1.GetBatchFeedItemsResponse, error)
-	// `Yesod` `Normal`
+	// `Yesod` `access_token`
 	ReadFeedItem(context.Context, *v1.ReadFeedItemRequest) (*v1.ReadFeedItemResponse, error)
-	// `Yesod` `Normal`
+	// `Yesod` `access_token`
 	CreateFeedItemCollection(context.Context, *v1.CreateFeedItemCollectionRequest) (*v1.CreateFeedItemCollectionResponse, error)
-	// `Yesod` `Normal`
+	// `Yesod` `access_token`
 	UpdateFeedItemCollection(context.Context, *v1.UpdateFeedItemCollectionRequest) (*v1.UpdateFeedItemCollectionResponse, error)
-	// `Yesod` `Normal`
+	// `Yesod` `access_token`
 	ListFeedItemCollections(context.Context, *v1.ListFeedItemCollectionsRequest) (*v1.ListFeedItemCollectionsResponse, error)
-	// `Yesod` `Normal`
+	// `Yesod` `access_token`
 	AddFeedItemToCollection(context.Context, *v1.AddFeedItemToCollectionRequest) (*v1.AddFeedItemToCollectionResponse, error)
-	// `Yesod` `Normal`
+	// `Yesod` `access_token`
 	RemoveFeedItemFromCollection(context.Context, *v1.RemoveFeedItemFromCollectionRequest) (*v1.RemoveFeedItemFromCollectionResponse, error)
-	// `Yesod` `Normal`
+	// `Yesod` `access_token`
 	ListFeedItemsInCollection(context.Context, *v1.ListFeedItemsInCollectionRequest) (*v1.ListFeedItemsInCollectionResponse, error)
 }
 
@@ -2126,16 +2149,22 @@ func NewLibrarianSephirahServiceHandler(svc LibrarianSephirahServiceHandler, opt
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("RegisterDevice")),
 		connect.WithHandlerOptions(opts...),
 	)
+	librarianSephirahServiceGetDeviceHandler := connect.NewUnaryHandlerSimple(
+		LibrarianSephirahServiceGetDeviceProcedure,
+		svc.GetDevice,
+		connect.WithSchema(librarianSephirahServiceMethods.ByName("GetDevice")),
+		connect.WithHandlerOptions(opts...),
+	)
 	librarianSephirahServiceListUserSessionsHandler := connect.NewUnaryHandlerSimple(
 		LibrarianSephirahServiceListUserSessionsProcedure,
 		svc.ListUserSessions,
 		connect.WithSchema(librarianSephirahServiceMethods.ByName("ListUserSessions")),
 		connect.WithHandlerOptions(opts...),
 	)
-	librarianSephirahServiceDeleteUserSessionHandler := connect.NewUnaryHandlerSimple(
-		LibrarianSephirahServiceDeleteUserSessionProcedure,
-		svc.DeleteUserSession,
-		connect.WithSchema(librarianSephirahServiceMethods.ByName("DeleteUserSession")),
+	librarianSephirahServiceRevokeUserSessionHandler := connect.NewUnaryHandlerSimple(
+		LibrarianSephirahServiceRevokeUserSessionProcedure,
+		svc.RevokeUserSession,
+		connect.WithSchema(librarianSephirahServiceMethods.ByName("RevokeUserSession")),
 		connect.WithHandlerOptions(opts...),
 	)
 	librarianSephirahServiceLinkAccountHandler := connect.NewUnaryHandlerSimple(
@@ -2612,10 +2641,12 @@ func NewLibrarianSephirahServiceHandler(svc LibrarianSephirahServiceHandler, opt
 			librarianSephirahServiceUpdateUserHandler.ServeHTTP(w, r)
 		case LibrarianSephirahServiceRegisterDeviceProcedure:
 			librarianSephirahServiceRegisterDeviceHandler.ServeHTTP(w, r)
+		case LibrarianSephirahServiceGetDeviceProcedure:
+			librarianSephirahServiceGetDeviceHandler.ServeHTTP(w, r)
 		case LibrarianSephirahServiceListUserSessionsProcedure:
 			librarianSephirahServiceListUserSessionsHandler.ServeHTTP(w, r)
-		case LibrarianSephirahServiceDeleteUserSessionProcedure:
-			librarianSephirahServiceDeleteUserSessionHandler.ServeHTTP(w, r)
+		case LibrarianSephirahServiceRevokeUserSessionProcedure:
+			librarianSephirahServiceRevokeUserSessionHandler.ServeHTTP(w, r)
 		case LibrarianSephirahServiceLinkAccountProcedure:
 			librarianSephirahServiceLinkAccountHandler.ServeHTTP(w, r)
 		case LibrarianSephirahServiceUnLinkAccountProcedure:
@@ -2809,12 +2840,16 @@ func (UnimplementedLibrarianSephirahServiceHandler) RegisterDevice(context.Conte
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.RegisterDevice is not implemented"))
 }
 
+func (UnimplementedLibrarianSephirahServiceHandler) GetDevice(context.Context, *v1.GetDeviceRequest) (*v1.GetDeviceResponse, error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.GetDevice is not implemented"))
+}
+
 func (UnimplementedLibrarianSephirahServiceHandler) ListUserSessions(context.Context, *v1.ListUserSessionsRequest) (*v1.ListUserSessionsResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.ListUserSessions is not implemented"))
 }
 
-func (UnimplementedLibrarianSephirahServiceHandler) DeleteUserSession(context.Context, *v1.DeleteUserSessionRequest) (*v1.DeleteUserSessionResponse, error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.DeleteUserSession is not implemented"))
+func (UnimplementedLibrarianSephirahServiceHandler) RevokeUserSession(context.Context, *v1.RevokeUserSessionRequest) (*v1.RevokeUserSessionResponse, error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("librarian.sephirah.v1.LibrarianSephirahService.RevokeUserSession is not implemented"))
 }
 
 func (UnimplementedLibrarianSephirahServiceHandler) LinkAccount(context.Context, *v1.LinkAccountRequest) (*v1.LinkAccountResponse, error) {

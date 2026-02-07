@@ -13,13 +13,7 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global =
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var global = globalThis;
 
 var librarian_porter_v1_gebura_pb = require('../../../librarian/porter/v1/gebura_pb.js');
 goog.object.extend(proto, librarian_porter_v1_gebura_pb);
@@ -580,7 +574,7 @@ proto.librarian.porter.v1.GetPorterInformationRequest.toObject = function(includ
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.porter.v1.GetPorterInformationRequest}
  */
 proto.librarian.porter.v1.GetPorterInformationRequest.deserializeBinary = function(bytes) {
@@ -685,7 +679,7 @@ contextJsonSchema: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.porter.v1.GetPorterInformationResponse}
  */
 proto.librarian.porter.v1.GetPorterInformationResponse.deserializeBinary = function(bytes) {
@@ -715,11 +709,11 @@ proto.librarian.porter.v1.GetPorterInformationResponse.deserializeBinaryFromRead
       msg.setBinarySummary(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setGlobalName(value);
       break;
     case 3:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setRegion(value);
       break;
     case 4:
@@ -728,7 +722,7 @@ proto.librarian.porter.v1.GetPorterInformationResponse.deserializeBinaryFromRead
       msg.setFeatureSummary(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setContextJsonSchema(value);
       break;
     default:
@@ -992,7 +986,7 @@ refreshToken: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.porter.v1.EnablePorterRequest}
  */
 proto.librarian.porter.v1.EnablePorterRequest.deserializeBinary = function(bytes) {
@@ -1021,7 +1015,7 @@ proto.librarian.porter.v1.EnablePorterRequest.deserializeBinaryFromReader = func
       msg.setSephirahId(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setRefreshToken(value);
       break;
     default:
@@ -1171,7 +1165,7 @@ enablesSummary: (f = msg.getEnablesSummary()) && proto.librarian.porter.v1.Porte
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.porter.v1.EnablePorterResponse}
  */
 proto.librarian.porter.v1.EnablePorterResponse.deserializeBinary = function(bytes) {
@@ -1196,7 +1190,7 @@ proto.librarian.porter.v1.EnablePorterResponse.deserializeBinaryFromReader = fun
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setStatusMessage(value);
       break;
     case 2:
@@ -1392,7 +1386,7 @@ feedGetterIdsList: jspb.Message.toObjectList(msg.getFeedGetterIdsList(),
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.porter.v1.PorterEnablesSummary}
  */
 proto.librarian.porter.v1.PorterEnablesSummary.deserializeBinary = function(bytes) {
@@ -1647,7 +1641,7 @@ contextJson: jspb.Message.getFieldWithDefault(msg, 2, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.porter.v1.EnableContextRequest}
  */
 proto.librarian.porter.v1.EnableContextRequest.deserializeBinary = function(bytes) {
@@ -1677,7 +1671,7 @@ proto.librarian.porter.v1.EnableContextRequest.deserializeBinaryFromReader = fun
       msg.setContextId(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setContextJson(value);
       break;
     default:
@@ -1827,7 +1821,7 @@ proto.librarian.porter.v1.EnableContextResponse.toObject = function(includeInsta
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.porter.v1.EnableContextResponse}
  */
 proto.librarian.porter.v1.EnableContextResponse.deserializeBinary = function(bytes) {
@@ -1928,7 +1922,7 @@ contextId: (f = msg.getContextId()) && librarian_v1_wellknown_pb.InternalID.toOb
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.porter.v1.DisableContextRequest}
  */
 proto.librarian.porter.v1.DisableContextRequest.deserializeBinary = function(bytes) {
@@ -2079,7 +2073,7 @@ proto.librarian.porter.v1.DisableContextResponse.toObject = function(includeInst
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.porter.v1.DisableContextResponse}
  */
 proto.librarian.porter.v1.DisableContextResponse.deserializeBinary = function(bytes) {
@@ -2180,7 +2174,7 @@ source: (f = msg.getSource()) && librarian_v1_wellknown_pb.FeatureRequest.toObje
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.porter.v1.PullFeedRequest}
  */
 proto.librarian.porter.v1.PullFeedRequest.deserializeBinary = function(bytes) {
@@ -2331,7 +2325,7 @@ data: (f = msg.getData()) && librarian_v1_common_pb.Feed.toObject(includeInstanc
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.porter.v1.PullFeedResponse}
  */
 proto.librarian.porter.v1.PullFeedResponse.deserializeBinary = function(bytes) {
@@ -2491,7 +2485,7 @@ itemsList: jspb.Message.toObjectList(msg.getItemsList(),
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.porter.v1.PushFeedItemsRequest}
  */
 proto.librarian.porter.v1.PushFeedItemsRequest.deserializeBinary = function(bytes) {
@@ -2693,7 +2687,7 @@ proto.librarian.porter.v1.PushFeedItemsResponse.toObject = function(includeInsta
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.porter.v1.PushFeedItemsResponse}
  */
 proto.librarian.porter.v1.PushFeedItemsResponse.deserializeBinary = function(bytes) {
@@ -2795,7 +2789,7 @@ item: (f = msg.getItem()) && librarian_v1_common_pb.FeedItem.toObject(includeIns
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.porter.v1.ExecFeedItemActionRequest}
  */
 proto.librarian.porter.v1.ExecFeedItemActionRequest.deserializeBinary = function(bytes) {
@@ -2996,7 +2990,7 @@ item: (f = msg.getItem()) && librarian_v1_common_pb.FeedItem.toObject(includeIns
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.porter.v1.ExecFeedItemActionResponse}
  */
 proto.librarian.porter.v1.ExecFeedItemActionResponse.deserializeBinary = function(bytes) {
@@ -3149,7 +3143,7 @@ feedId: (f = msg.getFeedId()) && librarian_v1_wellknown_pb.InternalID.toObject(i
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.porter.v1.EnableFeedSetterRequest}
  */
 proto.librarian.porter.v1.EnableFeedSetterRequest.deserializeBinary = function(bytes) {
@@ -3400,7 +3394,7 @@ proto.librarian.porter.v1.EnableFeedSetterResponse.toObject = function(includeIn
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.porter.v1.EnableFeedSetterResponse}
  */
 proto.librarian.porter.v1.EnableFeedSetterResponse.deserializeBinary = function(bytes) {
@@ -3501,7 +3495,7 @@ setterId: (f = msg.getSetterId()) && librarian_v1_wellknown_pb.InternalID.toObje
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.porter.v1.DisableFeedSetterRequest}
  */
 proto.librarian.porter.v1.DisableFeedSetterRequest.deserializeBinary = function(bytes) {
@@ -3652,7 +3646,7 @@ proto.librarian.porter.v1.DisableFeedSetterResponse.toObject = function(includeI
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.porter.v1.DisableFeedSetterResponse}
  */
 proto.librarian.porter.v1.DisableFeedSetterResponse.deserializeBinary = function(bytes) {
@@ -3755,7 +3749,7 @@ feedId: (f = msg.getFeedId()) && librarian_v1_wellknown_pb.InternalID.toObject(i
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.porter.v1.EnableFeedGetterRequest}
  */
 proto.librarian.porter.v1.EnableFeedGetterRequest.deserializeBinary = function(bytes) {
@@ -4006,7 +4000,7 @@ proto.librarian.porter.v1.EnableFeedGetterResponse.toObject = function(includeIn
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.porter.v1.EnableFeedGetterResponse}
  */
 proto.librarian.porter.v1.EnableFeedGetterResponse.deserializeBinary = function(bytes) {
@@ -4107,7 +4101,7 @@ getterId: (f = msg.getGetterId()) && librarian_v1_wellknown_pb.InternalID.toObje
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.porter.v1.DisableFeedGetterRequest}
  */
 proto.librarian.porter.v1.DisableFeedGetterRequest.deserializeBinary = function(bytes) {
@@ -4258,7 +4252,7 @@ proto.librarian.porter.v1.DisableFeedGetterResponse.toObject = function(includeI
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.porter.v1.DisableFeedGetterResponse}
  */
 proto.librarian.porter.v1.DisableFeedGetterResponse.deserializeBinary = function(bytes) {

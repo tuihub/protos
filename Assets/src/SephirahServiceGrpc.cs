@@ -87,13 +87,17 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.RegisterDeviceResponse> __Marshaller_librarian_sephirah_v1_RegisterDeviceResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.RegisterDeviceResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.GetDeviceRequest> __Marshaller_librarian_sephirah_v1_GetDeviceRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.GetDeviceRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.GetDeviceResponse> __Marshaller_librarian_sephirah_v1_GetDeviceResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.GetDeviceResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.ListUserSessionsRequest> __Marshaller_librarian_sephirah_v1_ListUserSessionsRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.ListUserSessionsRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.ListUserSessionsResponse> __Marshaller_librarian_sephirah_v1_ListUserSessionsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.ListUserSessionsResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionRequest> __Marshaller_librarian_sephirah_v1_DeleteUserSessionRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionRequest.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.RevokeUserSessionRequest> __Marshaller_librarian_sephirah_v1_RevokeUserSessionRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.RevokeUserSessionRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionResponse> __Marshaller_librarian_sephirah_v1_DeleteUserSessionResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionResponse.Parser));
+    static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.RevokeUserSessionResponse> __Marshaller_librarian_sephirah_v1_RevokeUserSessionResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.RevokeUserSessionResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::TuiHub.Protos.Librarian.Sephirah.V1.LinkAccountRequest> __Marshaller_librarian_sephirah_v1_LinkAccountRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::TuiHub.Protos.Librarian.Sephirah.V1.LinkAccountRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
@@ -464,6 +468,14 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         __Marshaller_librarian_sephirah_v1_RegisterDeviceResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.GetDeviceRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GetDeviceResponse> __Method_GetDevice = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.GetDeviceRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GetDeviceResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetDevice",
+        __Marshaller_librarian_sephirah_v1_GetDeviceRequest,
+        __Marshaller_librarian_sephirah_v1_GetDeviceResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.ListUserSessionsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListUserSessionsResponse> __Method_ListUserSessions = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.ListUserSessionsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListUserSessionsResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
@@ -472,12 +484,12 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         __Marshaller_librarian_sephirah_v1_ListUserSessionsResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionResponse> __Method_DeleteUserSession = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionResponse>(
+    static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.RevokeUserSessionRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.RevokeUserSessionResponse> __Method_RevokeUserSession = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.RevokeUserSessionRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.RevokeUserSessionResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
-        "DeleteUserSession",
-        __Marshaller_librarian_sephirah_v1_DeleteUserSessionRequest,
-        __Marshaller_librarian_sephirah_v1_DeleteUserSessionResponse);
+        "RevokeUserSession",
+        __Marshaller_librarian_sephirah_v1_RevokeUserSessionRequest,
+        __Marshaller_librarian_sephirah_v1_RevokeUserSessionResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.LinkAccountRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.LinkAccountResponse> __Method_LinkAccount = new grpc::Method<global::TuiHub.Protos.Librarian.Sephirah.V1.LinkAccountRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.LinkAccountResponse>(
@@ -1098,7 +1110,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
     public abstract partial class LibrarianSephirahServiceBase
     {
       /// <summary>
-      /// Allow anonymous call, use accessToken to get complete information
+      /// `anonymous` `access_token` Allow anonymous call, use accessToken to get complete information
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1110,7 +1122,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Normal` Client can use this to subscribe to server events.
+      /// `access_token` Client can use this to subscribe to server events.
       ///
       /// Server should send `SERVER_EVENT_LISTENER_CONNECTED` event immediately if the connection is valid.
       /// Otherwise, client should treat the connection as failed.
@@ -1129,7 +1141,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Tiphereth` `Normal` Login via password and get two token
+      /// `Tiphereth` `anonymous` Login via password and get two token
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1141,7 +1153,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Tiphereth` `Normal` Use valid refresh_token and get two new token, a refresh_token can only be used once
+      /// `Tiphereth` `access_token` Use valid refresh_token and get two new token, a refresh_token can only be used once
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1153,7 +1165,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Tiphereth`
+      /// `Tiphereth` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1165,7 +1177,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Tiphereth` Self register as a new normal user
+      /// `Tiphereth` `anonymous` Self register as a new normal user
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1177,7 +1189,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Tiphereth` `Normal` Update self user info
+      /// `Tiphereth` `access_token` Update self user info
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1189,7 +1201,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Tiphereth` `Normal` Client should register device after the first login
+      /// `Tiphereth` `access_token` Client should register device after the first login
       /// and store the device_id locally.
       /// The server could add extra limits to non-registered device
       /// </summary>
@@ -1203,7 +1215,19 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Tiphereth` `Normal`
+      /// `Tiphereth` `access_token`
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.GetDeviceResponse> GetDevice(global::TuiHub.Protos.Librarian.Sephirah.V1.GetDeviceRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// `Tiphereth` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1215,21 +1239,21 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Tiphereth` `Normal` delete session will revoke refresh_token immediately.
+      /// `Tiphereth` `access_token` revoke session will revoke refresh_token immediately.
       /// NOTE: This can also be used to log out at server side.
-      /// NOTE2: Delete session will not affect device registration.
+      /// NOTE2: Revoke session will not affect device registration.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionResponse> DeleteUserSession(global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::TuiHub.Protos.Librarian.Sephirah.V1.RevokeUserSessionResponse> RevokeUserSession(global::TuiHub.Protos.Librarian.Sephirah.V1.RevokeUserSessionRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
       /// <summary>
-      /// `Tiphereth` `Normal` Bind third-party account to current user.
+      /// `Tiphereth` `access_token` Bind third-party account to current user.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1241,7 +1265,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Tiphereth` `Normal` Unbind third-party account from current user.
+      /// `Tiphereth` `access_token` Unbind third-party account from current user.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1253,7 +1277,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Tiphereth` `Normal` List third-party account binded to current user.
+      /// `Tiphereth` `access_token` List third-party account binded to current user.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1265,7 +1289,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Tiphereth` `Normal`
+      /// `Tiphereth` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1277,7 +1301,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Tiphereth` `Normal`
+      /// `Tiphereth` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1289,7 +1313,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Tiphereth` `Normal`
+      /// `Tiphereth` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1301,7 +1325,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Tiphereth` `Normal` Set porter context.
+      /// `Tiphereth` `access_token` Set porter context.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1313,7 +1337,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Binah` `Normal`
+      /// `Binah` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1420,7 +1444,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Chesed` `Normal`
+      /// `Chesed` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1432,7 +1456,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Chesed` `Normal`
+      /// `Chesed` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1444,7 +1468,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Chesed` `Normal`
+      /// `Chesed` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1456,7 +1480,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Chesed` `Normal`
+      /// `Chesed` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1468,7 +1492,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Chesed` `Normal`
+      /// `Chesed` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1480,7 +1504,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Chesed` `Normal`
+      /// `Chesed` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1492,7 +1516,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1504,7 +1528,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1516,7 +1540,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1528,7 +1552,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1540,7 +1564,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1552,7 +1576,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1564,7 +1588,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1576,7 +1600,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1588,7 +1612,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Gebura` `Normal` Search app infos
+      /// `Gebura` `access_token` Search app infos
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1600,7 +1624,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1612,7 +1636,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1624,7 +1648,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1636,7 +1660,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1648,7 +1672,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1660,7 +1684,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1672,7 +1696,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1684,7 +1708,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1696,7 +1720,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1708,7 +1732,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1720,7 +1744,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1732,7 +1756,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1744,7 +1768,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1756,7 +1780,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1768,7 +1792,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1780,7 +1804,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1792,7 +1816,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1804,7 +1828,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1816,7 +1840,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1828,7 +1852,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1840,7 +1864,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1852,7 +1876,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1864,7 +1888,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1876,7 +1900,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1888,7 +1912,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1900,7 +1924,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1912,7 +1936,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1924,7 +1948,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1936,7 +1960,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1948,7 +1972,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1960,7 +1984,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1972,7 +1996,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1984,7 +2008,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -1996,7 +2020,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -2008,7 +2032,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -2020,7 +2044,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -2032,7 +2056,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -2044,7 +2068,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -2056,7 +2080,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -2068,7 +2092,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -2080,7 +2104,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -2092,7 +2116,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -2104,7 +2128,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -2116,7 +2140,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -2128,7 +2152,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -2140,7 +2164,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -2181,7 +2205,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       }
 
       /// <summary>
-      /// Allow anonymous call, use accessToken to get complete information
+      /// `anonymous` `access_token` Allow anonymous call, use accessToken to get complete information
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -2194,7 +2218,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return GetServerInformation(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Allow anonymous call, use accessToken to get complete information
+      /// `anonymous` `access_token` Allow anonymous call, use accessToken to get complete information
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -2205,7 +2229,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_GetServerInformation, null, options, request);
       }
       /// <summary>
-      /// Allow anonymous call, use accessToken to get complete information
+      /// `anonymous` `access_token` Allow anonymous call, use accessToken to get complete information
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -2218,7 +2242,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return GetServerInformationAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Allow anonymous call, use accessToken to get complete information
+      /// `anonymous` `access_token` Allow anonymous call, use accessToken to get complete information
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -2229,7 +2253,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_GetServerInformation, null, options, request);
       }
       /// <summary>
-      /// `Normal` Client can use this to subscribe to server events.
+      /// `access_token` Client can use this to subscribe to server events.
       ///
       /// Server should send `SERVER_EVENT_LISTENER_CONNECTED` event immediately if the connection is valid.
       /// Otherwise, client should treat the connection as failed.
@@ -2248,7 +2272,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListenServerEvent(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Normal` Client can use this to subscribe to server events.
+      /// `access_token` Client can use this to subscribe to server events.
       ///
       /// Server should send `SERVER_EVENT_LISTENER_CONNECTED` event immediately if the connection is valid.
       /// Otherwise, client should treat the connection as failed.
@@ -2265,7 +2289,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncServerStreamingCall(__Method_ListenServerEvent, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth` `Normal` Login via password and get two token
+      /// `Tiphereth` `anonymous` Login via password and get two token
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -2278,7 +2302,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return GetToken(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth` `Normal` Login via password and get two token
+      /// `Tiphereth` `anonymous` Login via password and get two token
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -2289,7 +2313,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_GetToken, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth` `Normal` Login via password and get two token
+      /// `Tiphereth` `anonymous` Login via password and get two token
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -2302,7 +2326,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return GetTokenAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth` `Normal` Login via password and get two token
+      /// `Tiphereth` `anonymous` Login via password and get two token
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -2313,7 +2337,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_GetToken, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth` `Normal` Use valid refresh_token and get two new token, a refresh_token can only be used once
+      /// `Tiphereth` `access_token` Use valid refresh_token and get two new token, a refresh_token can only be used once
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -2326,7 +2350,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return RefreshToken(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth` `Normal` Use valid refresh_token and get two new token, a refresh_token can only be used once
+      /// `Tiphereth` `access_token` Use valid refresh_token and get two new token, a refresh_token can only be used once
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -2337,7 +2361,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_RefreshToken, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth` `Normal` Use valid refresh_token and get two new token, a refresh_token can only be used once
+      /// `Tiphereth` `access_token` Use valid refresh_token and get two new token, a refresh_token can only be used once
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -2350,7 +2374,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return RefreshTokenAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth` `Normal` Use valid refresh_token and get two new token, a refresh_token can only be used once
+      /// `Tiphereth` `access_token` Use valid refresh_token and get two new token, a refresh_token can only be used once
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -2361,7 +2385,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_RefreshToken, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth`
+      /// `Tiphereth` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -2374,7 +2398,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return GetUser(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth`
+      /// `Tiphereth` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -2385,7 +2409,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_GetUser, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth`
+      /// `Tiphereth` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -2398,7 +2422,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return GetUserAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth`
+      /// `Tiphereth` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -2409,7 +2433,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_GetUser, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth` Self register as a new normal user
+      /// `Tiphereth` `anonymous` Self register as a new normal user
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -2422,7 +2446,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return RegisterUser(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth` Self register as a new normal user
+      /// `Tiphereth` `anonymous` Self register as a new normal user
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -2433,7 +2457,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_RegisterUser, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth` Self register as a new normal user
+      /// `Tiphereth` `anonymous` Self register as a new normal user
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -2446,7 +2470,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return RegisterUserAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth` Self register as a new normal user
+      /// `Tiphereth` `anonymous` Self register as a new normal user
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -2457,7 +2481,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_RegisterUser, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth` `Normal` Update self user info
+      /// `Tiphereth` `access_token` Update self user info
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -2470,7 +2494,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return UpdateUser(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth` `Normal` Update self user info
+      /// `Tiphereth` `access_token` Update self user info
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -2481,7 +2505,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_UpdateUser, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth` `Normal` Update self user info
+      /// `Tiphereth` `access_token` Update self user info
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -2494,7 +2518,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return UpdateUserAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth` `Normal` Update self user info
+      /// `Tiphereth` `access_token` Update self user info
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -2505,7 +2529,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_UpdateUser, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth` `Normal` Client should register device after the first login
+      /// `Tiphereth` `access_token` Client should register device after the first login
       /// and store the device_id locally.
       /// The server could add extra limits to non-registered device
       /// </summary>
@@ -2520,7 +2544,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return RegisterDevice(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth` `Normal` Client should register device after the first login
+      /// `Tiphereth` `access_token` Client should register device after the first login
       /// and store the device_id locally.
       /// The server could add extra limits to non-registered device
       /// </summary>
@@ -2533,7 +2557,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_RegisterDevice, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth` `Normal` Client should register device after the first login
+      /// `Tiphereth` `access_token` Client should register device after the first login
       /// and store the device_id locally.
       /// The server could add extra limits to non-registered device
       /// </summary>
@@ -2548,7 +2572,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return RegisterDeviceAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth` `Normal` Client should register device after the first login
+      /// `Tiphereth` `access_token` Client should register device after the first login
       /// and store the device_id locally.
       /// The server could add extra limits to non-registered device
       /// </summary>
@@ -2561,7 +2585,55 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_RegisterDevice, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth` `Normal`
+      /// `Tiphereth` `access_token`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.GetDeviceResponse GetDevice(global::TuiHub.Protos.Librarian.Sephirah.V1.GetDeviceRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetDevice(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Tiphereth` `access_token`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.GetDeviceResponse GetDevice(global::TuiHub.Protos.Librarian.Sephirah.V1.GetDeviceRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetDevice, null, options, request);
+      }
+      /// <summary>
+      /// `Tiphereth` `access_token`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.GetDeviceResponse> GetDeviceAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.GetDeviceRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetDeviceAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// `Tiphereth` `access_token`
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.GetDeviceResponse> GetDeviceAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.GetDeviceRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetDevice, null, options, request);
+      }
+      /// <summary>
+      /// `Tiphereth` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -2574,7 +2646,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListUserSessions(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth` `Normal`
+      /// `Tiphereth` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -2585,7 +2657,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_ListUserSessions, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth` `Normal`
+      /// `Tiphereth` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -2598,7 +2670,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListUserSessionsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth` `Normal`
+      /// `Tiphereth` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -2609,9 +2681,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_ListUserSessions, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth` `Normal` delete session will revoke refresh_token immediately.
+      /// `Tiphereth` `access_token` revoke session will revoke refresh_token immediately.
       /// NOTE: This can also be used to log out at server side.
-      /// NOTE2: Delete session will not affect device registration.
+      /// NOTE2: Revoke session will not affect device registration.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -2619,27 +2691,27 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionResponse DeleteUserSession(global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.RevokeUserSessionResponse RevokeUserSession(global::TuiHub.Protos.Librarian.Sephirah.V1.RevokeUserSessionRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        return DeleteUserSession(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return RevokeUserSession(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth` `Normal` delete session will revoke refresh_token immediately.
+      /// `Tiphereth` `access_token` revoke session will revoke refresh_token immediately.
       /// NOTE: This can also be used to log out at server side.
-      /// NOTE2: Delete session will not affect device registration.
+      /// NOTE2: Revoke session will not affect device registration.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
       /// <returns>The response received from the server.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionResponse DeleteUserSession(global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionRequest request, grpc::CallOptions options)
+      public virtual global::TuiHub.Protos.Librarian.Sephirah.V1.RevokeUserSessionResponse RevokeUserSession(global::TuiHub.Protos.Librarian.Sephirah.V1.RevokeUserSessionRequest request, grpc::CallOptions options)
       {
-        return CallInvoker.BlockingUnaryCall(__Method_DeleteUserSession, null, options, request);
+        return CallInvoker.BlockingUnaryCall(__Method_RevokeUserSession, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth` `Normal` delete session will revoke refresh_token immediately.
+      /// `Tiphereth` `access_token` revoke session will revoke refresh_token immediately.
       /// NOTE: This can also be used to log out at server side.
-      /// NOTE2: Delete session will not affect device registration.
+      /// NOTE2: Revoke session will not affect device registration.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -2647,25 +2719,25 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionResponse> DeleteUserSessionAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.RevokeUserSessionResponse> RevokeUserSessionAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.RevokeUserSessionRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
-        return DeleteUserSessionAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return RevokeUserSessionAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth` `Normal` delete session will revoke refresh_token immediately.
+      /// `Tiphereth` `access_token` revoke session will revoke refresh_token immediately.
       /// NOTE: This can also be used to log out at server side.
-      /// NOTE2: Delete session will not affect device registration.
+      /// NOTE2: Revoke session will not affect device registration.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionResponse> DeleteUserSessionAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::TuiHub.Protos.Librarian.Sephirah.V1.RevokeUserSessionResponse> RevokeUserSessionAsync(global::TuiHub.Protos.Librarian.Sephirah.V1.RevokeUserSessionRequest request, grpc::CallOptions options)
       {
-        return CallInvoker.AsyncUnaryCall(__Method_DeleteUserSession, null, options, request);
+        return CallInvoker.AsyncUnaryCall(__Method_RevokeUserSession, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth` `Normal` Bind third-party account to current user.
+      /// `Tiphereth` `access_token` Bind third-party account to current user.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -2678,7 +2750,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return LinkAccount(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth` `Normal` Bind third-party account to current user.
+      /// `Tiphereth` `access_token` Bind third-party account to current user.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -2689,7 +2761,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_LinkAccount, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth` `Normal` Bind third-party account to current user.
+      /// `Tiphereth` `access_token` Bind third-party account to current user.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -2702,7 +2774,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return LinkAccountAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth` `Normal` Bind third-party account to current user.
+      /// `Tiphereth` `access_token` Bind third-party account to current user.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -2713,7 +2785,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_LinkAccount, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth` `Normal` Unbind third-party account from current user.
+      /// `Tiphereth` `access_token` Unbind third-party account from current user.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -2726,7 +2798,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return UnLinkAccount(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth` `Normal` Unbind third-party account from current user.
+      /// `Tiphereth` `access_token` Unbind third-party account from current user.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -2737,7 +2809,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_UnLinkAccount, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth` `Normal` Unbind third-party account from current user.
+      /// `Tiphereth` `access_token` Unbind third-party account from current user.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -2750,7 +2822,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return UnLinkAccountAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth` `Normal` Unbind third-party account from current user.
+      /// `Tiphereth` `access_token` Unbind third-party account from current user.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -2761,7 +2833,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_UnLinkAccount, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth` `Normal` List third-party account binded to current user.
+      /// `Tiphereth` `access_token` List third-party account binded to current user.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -2774,7 +2846,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListLinkAccounts(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth` `Normal` List third-party account binded to current user.
+      /// `Tiphereth` `access_token` List third-party account binded to current user.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -2785,7 +2857,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_ListLinkAccounts, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth` `Normal` List third-party account binded to current user.
+      /// `Tiphereth` `access_token` List third-party account binded to current user.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -2798,7 +2870,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListLinkAccountsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth` `Normal` List third-party account binded to current user.
+      /// `Tiphereth` `access_token` List third-party account binded to current user.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -2809,7 +2881,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_ListLinkAccounts, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth` `Normal`
+      /// `Tiphereth` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -2822,7 +2894,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListPorterDigests(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth` `Normal`
+      /// `Tiphereth` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -2833,7 +2905,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_ListPorterDigests, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth` `Normal`
+      /// `Tiphereth` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -2846,7 +2918,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListPorterDigestsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth` `Normal`
+      /// `Tiphereth` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -2857,7 +2929,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_ListPorterDigests, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth` `Normal`
+      /// `Tiphereth` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -2870,7 +2942,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CreatePorterContext(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth` `Normal`
+      /// `Tiphereth` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -2881,7 +2953,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_CreatePorterContext, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth` `Normal`
+      /// `Tiphereth` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -2894,7 +2966,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CreatePorterContextAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth` `Normal`
+      /// `Tiphereth` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -2905,7 +2977,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_CreatePorterContext, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth` `Normal`
+      /// `Tiphereth` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -2918,7 +2990,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListPorterContexts(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth` `Normal`
+      /// `Tiphereth` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -2929,7 +3001,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_ListPorterContexts, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth` `Normal`
+      /// `Tiphereth` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -2942,7 +3014,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListPorterContextsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth` `Normal`
+      /// `Tiphereth` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -2953,7 +3025,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_ListPorterContexts, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth` `Normal` Set porter context.
+      /// `Tiphereth` `access_token` Set porter context.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -2966,7 +3038,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return UpdatePorterContext(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth` `Normal` Set porter context.
+      /// `Tiphereth` `access_token` Set porter context.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -2977,7 +3049,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_UpdatePorterContext, null, options, request);
       }
       /// <summary>
-      /// `Tiphereth` `Normal` Set porter context.
+      /// `Tiphereth` `access_token` Set porter context.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -2990,7 +3062,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return UpdatePorterContextAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Tiphereth` `Normal` Set porter context.
+      /// `Tiphereth` `access_token` Set porter context.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3001,7 +3073,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_UpdatePorterContext, null, options, request);
       }
       /// <summary>
-      /// `Binah` `Normal`
+      /// `Binah` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3014,7 +3086,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return GetStorageCapacityUsage(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Binah` `Normal`
+      /// `Binah` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3025,7 +3097,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_GetStorageCapacityUsage, null, options, request);
       }
       /// <summary>
-      /// `Binah` `Normal`
+      /// `Binah` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3038,7 +3110,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return GetStorageCapacityUsageAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Binah` `Normal`
+      /// `Binah` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3303,7 +3375,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_PresignedDownloadFile, null, options, request);
       }
       /// <summary>
-      /// `Chesed` `Normal`
+      /// `Chesed` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3316,7 +3388,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return UploadImage(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Chesed` `Normal`
+      /// `Chesed` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3327,7 +3399,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_UploadImage, null, options, request);
       }
       /// <summary>
-      /// `Chesed` `Normal`
+      /// `Chesed` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3340,7 +3412,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return UploadImageAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Chesed` `Normal`
+      /// `Chesed` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3351,7 +3423,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_UploadImage, null, options, request);
       }
       /// <summary>
-      /// `Chesed` `Normal`
+      /// `Chesed` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3364,7 +3436,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return UpdateImage(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Chesed` `Normal`
+      /// `Chesed` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3375,7 +3447,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_UpdateImage, null, options, request);
       }
       /// <summary>
-      /// `Chesed` `Normal`
+      /// `Chesed` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3388,7 +3460,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return UpdateImageAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Chesed` `Normal`
+      /// `Chesed` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3399,7 +3471,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_UpdateImage, null, options, request);
       }
       /// <summary>
-      /// `Chesed` `Normal`
+      /// `Chesed` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3412,7 +3484,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListImages(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Chesed` `Normal`
+      /// `Chesed` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3423,7 +3495,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_ListImages, null, options, request);
       }
       /// <summary>
-      /// `Chesed` `Normal`
+      /// `Chesed` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3436,7 +3508,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListImagesAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Chesed` `Normal`
+      /// `Chesed` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3447,7 +3519,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_ListImages, null, options, request);
       }
       /// <summary>
-      /// `Chesed` `Normal`
+      /// `Chesed` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3460,7 +3532,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return SearchImages(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Chesed` `Normal`
+      /// `Chesed` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3471,7 +3543,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_SearchImages, null, options, request);
       }
       /// <summary>
-      /// `Chesed` `Normal`
+      /// `Chesed` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3484,7 +3556,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return SearchImagesAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Chesed` `Normal`
+      /// `Chesed` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3495,7 +3567,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_SearchImages, null, options, request);
       }
       /// <summary>
-      /// `Chesed` `Normal`
+      /// `Chesed` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3508,7 +3580,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return GetImage(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Chesed` `Normal`
+      /// `Chesed` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3519,7 +3591,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_GetImage, null, options, request);
       }
       /// <summary>
-      /// `Chesed` `Normal`
+      /// `Chesed` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3532,7 +3604,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return GetImageAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Chesed` `Normal`
+      /// `Chesed` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3543,7 +3615,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_GetImage, null, options, request);
       }
       /// <summary>
-      /// `Chesed` `Normal`
+      /// `Chesed` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3556,7 +3628,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return DownloadImage(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Chesed` `Normal`
+      /// `Chesed` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3567,7 +3639,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_DownloadImage, null, options, request);
       }
       /// <summary>
-      /// `Chesed` `Normal`
+      /// `Chesed` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3580,7 +3652,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return DownloadImageAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Chesed` `Normal`
+      /// `Chesed` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3591,7 +3663,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_DownloadImage, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3604,7 +3676,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return SearchStoreApps(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3615,7 +3687,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_SearchStoreApps, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3628,7 +3700,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return SearchStoreAppsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3639,7 +3711,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_SearchStoreApps, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3652,7 +3724,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return GetStoreAppSummary(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3663,7 +3735,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_GetStoreAppSummary, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3676,7 +3748,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return GetStoreAppSummaryAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3687,7 +3759,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_GetStoreAppSummary, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3700,7 +3772,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return AcquireStoreApp(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3711,7 +3783,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_AcquireStoreApp, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3724,7 +3796,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return AcquireStoreAppAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3735,7 +3807,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_AcquireStoreApp, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3748,7 +3820,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListStoreAppBinaries(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3759,7 +3831,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_ListStoreAppBinaries, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3772,7 +3844,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListStoreAppBinariesAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3783,7 +3855,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_ListStoreAppBinaries, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3796,7 +3868,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListStoreAppBinaryFiles(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3807,7 +3879,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_ListStoreAppBinaryFiles, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3820,7 +3892,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListStoreAppBinaryFilesAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3831,7 +3903,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_ListStoreAppBinaryFiles, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3844,7 +3916,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return DownloadStoreAppBinary(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3855,7 +3927,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_DownloadStoreAppBinary, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3868,7 +3940,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return DownloadStoreAppBinaryAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3879,7 +3951,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_DownloadStoreAppBinary, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3892,7 +3964,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListStoreAppSaveFiles(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3903,7 +3975,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_ListStoreAppSaveFiles, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3916,7 +3988,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListStoreAppSaveFilesAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3927,7 +3999,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_ListStoreAppSaveFiles, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3940,7 +4012,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return DownloadStoreAppSaveFile(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3951,7 +4023,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_DownloadStoreAppSaveFile, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3964,7 +4036,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return DownloadStoreAppSaveFileAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3975,7 +4047,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_DownloadStoreAppSaveFile, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal` Search app infos
+      /// `Gebura` `access_token` Search app infos
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -3988,7 +4060,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return SearchAppInfos(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal` Search app infos
+      /// `Gebura` `access_token` Search app infos
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -3999,7 +4071,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_SearchAppInfos, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal` Search app infos
+      /// `Gebura` `access_token` Search app infos
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4012,7 +4084,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return SearchAppInfosAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal` Search app infos
+      /// `Gebura` `access_token` Search app infos
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4023,7 +4095,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_SearchAppInfos, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4036,7 +4108,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CreateApp(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4047,7 +4119,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_CreateApp, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4060,7 +4132,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CreateAppAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4071,7 +4143,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_CreateApp, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4084,7 +4156,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return UpdateApp(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4095,7 +4167,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_UpdateApp, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4108,7 +4180,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return UpdateAppAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4119,7 +4191,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_UpdateApp, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4132,7 +4204,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListApps(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4143,7 +4215,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_ListApps, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4156,7 +4228,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListAppsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4167,7 +4239,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_ListApps, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4180,7 +4252,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return DeleteApp(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4191,7 +4263,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_DeleteApp, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4204,7 +4276,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return DeleteAppAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4215,7 +4287,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_DeleteApp, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4228,7 +4300,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return BatchCreateAppRunTime(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4239,7 +4311,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_BatchCreateAppRunTime, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4252,7 +4324,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return BatchCreateAppRunTimeAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4263,7 +4335,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_BatchCreateAppRunTime, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4276,7 +4348,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return SumAppRunTime(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4287,7 +4359,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_SumAppRunTime, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4300,7 +4372,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return SumAppRunTimeAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4311,7 +4383,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_SumAppRunTime, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4324,7 +4396,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListAppRunTimes(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4335,7 +4407,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_ListAppRunTimes, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4348,7 +4420,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListAppRunTimesAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4359,7 +4431,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_ListAppRunTimes, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4372,7 +4444,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return DeleteAppRunTime(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4383,7 +4455,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_DeleteAppRunTime, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4396,7 +4468,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return DeleteAppRunTimeAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4407,7 +4479,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_DeleteAppRunTime, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4420,7 +4492,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return UploadAppSaveFile(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4431,7 +4503,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_UploadAppSaveFile, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4444,7 +4516,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return UploadAppSaveFileAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4455,7 +4527,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_UploadAppSaveFile, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4468,7 +4540,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return DownloadAppSaveFile(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4479,7 +4551,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_DownloadAppSaveFile, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4492,7 +4564,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return DownloadAppSaveFileAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4503,7 +4575,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_DownloadAppSaveFile, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4516,7 +4588,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListAppSaveFiles(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4527,7 +4599,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_ListAppSaveFiles, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4540,7 +4612,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListAppSaveFilesAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4551,7 +4623,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_ListAppSaveFiles, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4564,7 +4636,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return DeleteAppSaveFile(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4575,7 +4647,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_DeleteAppSaveFile, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4588,7 +4660,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return DeleteAppSaveFileAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4599,7 +4671,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_DeleteAppSaveFile, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4612,7 +4684,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return PinAppSaveFile(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4623,7 +4695,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_PinAppSaveFile, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4636,7 +4708,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return PinAppSaveFileAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4647,7 +4719,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_PinAppSaveFile, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4660,7 +4732,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return UnpinAppSaveFile(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4671,7 +4743,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_UnpinAppSaveFile, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4684,7 +4756,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return UnpinAppSaveFileAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4695,7 +4767,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_UnpinAppSaveFile, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4708,7 +4780,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return GetAppSaveFileCapacity(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4719,7 +4791,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_GetAppSaveFileCapacity, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4732,7 +4804,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return GetAppSaveFileCapacityAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4743,7 +4815,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_GetAppSaveFileCapacity, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4756,7 +4828,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return SetAppSaveFileCapacity(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4767,7 +4839,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_SetAppSaveFileCapacity, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4780,7 +4852,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return SetAppSaveFileCapacityAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4791,7 +4863,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_SetAppSaveFileCapacity, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4804,7 +4876,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListAppCategories(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4815,7 +4887,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_ListAppCategories, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4828,7 +4900,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListAppCategoriesAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4839,7 +4911,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_ListAppCategories, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4852,7 +4924,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CreateAppCategory(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4863,7 +4935,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_CreateAppCategory, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4876,7 +4948,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CreateAppCategoryAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4887,7 +4959,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_CreateAppCategory, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4900,7 +4972,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return UpdateAppCategory(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4911,7 +4983,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_UpdateAppCategory, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4924,7 +4996,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return UpdateAppCategoryAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4935,7 +5007,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_UpdateAppCategory, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4948,7 +5020,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return DeleteAppCategory(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4959,7 +5031,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_DeleteAppCategory, null, options, request);
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4972,7 +5044,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return DeleteAppCategoryAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Gebura` `Normal`
+      /// `Gebura` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -4983,7 +5055,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_DeleteAppCategory, null, options, request);
       }
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -4996,7 +5068,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CreateNotifyTarget(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5007,7 +5079,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_CreateNotifyTarget, null, options, request);
       }
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5020,7 +5092,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CreateNotifyTargetAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5031,7 +5103,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_CreateNotifyTarget, null, options, request);
       }
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5044,7 +5116,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return UpdateNotifyTarget(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5055,7 +5127,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_UpdateNotifyTarget, null, options, request);
       }
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5068,7 +5140,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return UpdateNotifyTargetAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5079,7 +5151,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_UpdateNotifyTarget, null, options, request);
       }
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5092,7 +5164,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListNotifyTargets(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5103,7 +5175,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_ListNotifyTargets, null, options, request);
       }
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5116,7 +5188,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListNotifyTargetsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5127,7 +5199,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_ListNotifyTargets, null, options, request);
       }
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5140,7 +5212,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CreateNotifyFlow(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5151,7 +5223,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_CreateNotifyFlow, null, options, request);
       }
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5164,7 +5236,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CreateNotifyFlowAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5175,7 +5247,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_CreateNotifyFlow, null, options, request);
       }
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5188,7 +5260,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return UpdateNotifyFlow(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5199,7 +5271,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_UpdateNotifyFlow, null, options, request);
       }
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5212,7 +5284,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return UpdateNotifyFlowAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5223,7 +5295,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_UpdateNotifyFlow, null, options, request);
       }
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5236,7 +5308,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListNotifyFlows(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5247,7 +5319,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_ListNotifyFlows, null, options, request);
       }
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5260,7 +5332,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListNotifyFlowsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5271,7 +5343,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_ListNotifyFlows, null, options, request);
       }
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5284,7 +5356,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListSystemNotifications(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5295,7 +5367,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_ListSystemNotifications, null, options, request);
       }
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5308,7 +5380,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListSystemNotificationsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5319,7 +5391,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_ListSystemNotifications, null, options, request);
       }
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5332,7 +5404,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return UpdateSystemNotification(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5343,7 +5415,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_UpdateSystemNotification, null, options, request);
       }
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5356,7 +5428,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return UpdateSystemNotificationAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Netzach` `Normal`
+      /// `Netzach` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5367,7 +5439,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_UpdateSystemNotification, null, options, request);
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5380,7 +5452,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CreateFeedConfig(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5391,7 +5463,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_CreateFeedConfig, null, options, request);
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5404,7 +5476,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CreateFeedConfigAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5415,7 +5487,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_CreateFeedConfig, null, options, request);
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5428,7 +5500,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return UpdateFeedConfig(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5439,7 +5511,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_UpdateFeedConfig, null, options, request);
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5452,7 +5524,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return UpdateFeedConfigAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5463,7 +5535,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_UpdateFeedConfig, null, options, request);
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5476,7 +5548,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListFeedConfigs(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5487,7 +5559,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_ListFeedConfigs, null, options, request);
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5500,7 +5572,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListFeedConfigsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5511,7 +5583,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_ListFeedConfigs, null, options, request);
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5524,7 +5596,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CreateFeedActionSet(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5535,7 +5607,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_CreateFeedActionSet, null, options, request);
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5548,7 +5620,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CreateFeedActionSetAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5559,7 +5631,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_CreateFeedActionSet, null, options, request);
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5572,7 +5644,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return UpdateFeedActionSet(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5583,7 +5655,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_UpdateFeedActionSet, null, options, request);
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5596,7 +5668,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return UpdateFeedActionSetAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5607,7 +5679,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_UpdateFeedActionSet, null, options, request);
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5620,7 +5692,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListFeedActionSets(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5631,7 +5703,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_ListFeedActionSets, null, options, request);
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5644,7 +5716,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListFeedActionSetsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5655,7 +5727,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_ListFeedActionSets, null, options, request);
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5668,7 +5740,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListFeedCategories(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5679,7 +5751,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_ListFeedCategories, null, options, request);
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5692,7 +5764,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListFeedCategoriesAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5703,7 +5775,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_ListFeedCategories, null, options, request);
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5716,7 +5788,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListFeedPlatforms(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5727,7 +5799,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_ListFeedPlatforms, null, options, request);
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5740,7 +5812,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListFeedPlatformsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5751,7 +5823,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_ListFeedPlatforms, null, options, request);
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5764,7 +5836,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListFeedItems(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5775,7 +5847,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_ListFeedItems, null, options, request);
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5788,7 +5860,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListFeedItemsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5799,7 +5871,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_ListFeedItems, null, options, request);
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5812,7 +5884,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return GetFeedItem(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5823,7 +5895,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_GetFeedItem, null, options, request);
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5836,7 +5908,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return GetFeedItemAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5847,7 +5919,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_GetFeedItem, null, options, request);
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5860,7 +5932,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return GetBatchFeedItems(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5871,7 +5943,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_GetBatchFeedItems, null, options, request);
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5884,7 +5956,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return GetBatchFeedItemsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5895,7 +5967,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_GetBatchFeedItems, null, options, request);
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5908,7 +5980,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ReadFeedItem(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5919,7 +5991,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_ReadFeedItem, null, options, request);
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5932,7 +6004,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ReadFeedItemAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5943,7 +6015,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_ReadFeedItem, null, options, request);
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5956,7 +6028,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CreateFeedItemCollection(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5967,7 +6039,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_CreateFeedItemCollection, null, options, request);
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -5980,7 +6052,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CreateFeedItemCollectionAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -5991,7 +6063,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_CreateFeedItemCollection, null, options, request);
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -6004,7 +6076,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return UpdateFeedItemCollection(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -6015,7 +6087,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_UpdateFeedItemCollection, null, options, request);
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -6028,7 +6100,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return UpdateFeedItemCollectionAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -6039,7 +6111,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_UpdateFeedItemCollection, null, options, request);
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -6052,7 +6124,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListFeedItemCollections(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -6063,7 +6135,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_ListFeedItemCollections, null, options, request);
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -6076,7 +6148,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListFeedItemCollectionsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -6087,7 +6159,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_ListFeedItemCollections, null, options, request);
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -6100,7 +6172,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return AddFeedItemToCollection(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -6111,7 +6183,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_AddFeedItemToCollection, null, options, request);
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -6124,7 +6196,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return AddFeedItemToCollectionAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -6135,7 +6207,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_AddFeedItemToCollection, null, options, request);
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -6148,7 +6220,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return RemoveFeedItemFromCollection(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -6159,7 +6231,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_RemoveFeedItemFromCollection, null, options, request);
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -6172,7 +6244,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return RemoveFeedItemFromCollectionAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -6183,7 +6255,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_RemoveFeedItemFromCollection, null, options, request);
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -6196,7 +6268,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListFeedItemsInCollection(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -6207,7 +6279,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_ListFeedItemsInCollection, null, options, request);
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -6220,7 +6292,7 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
         return ListFeedItemsInCollectionAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// `Yesod` `Normal`
+      /// `Yesod` `access_token`
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -6252,8 +6324,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
           .AddMethod(__Method_RegisterUser, serviceImpl.RegisterUser)
           .AddMethod(__Method_UpdateUser, serviceImpl.UpdateUser)
           .AddMethod(__Method_RegisterDevice, serviceImpl.RegisterDevice)
+          .AddMethod(__Method_GetDevice, serviceImpl.GetDevice)
           .AddMethod(__Method_ListUserSessions, serviceImpl.ListUserSessions)
-          .AddMethod(__Method_DeleteUserSession, serviceImpl.DeleteUserSession)
+          .AddMethod(__Method_RevokeUserSession, serviceImpl.RevokeUserSession)
           .AddMethod(__Method_LinkAccount, serviceImpl.LinkAccount)
           .AddMethod(__Method_UnLinkAccount, serviceImpl.UnLinkAccount)
           .AddMethod(__Method_ListLinkAccounts, serviceImpl.ListLinkAccounts)
@@ -6347,8 +6420,9 @@ namespace TuiHub.Protos.Librarian.Sephirah.V1 {
       serviceBinder.AddMethod(__Method_RegisterUser, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.RegisterUserRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.RegisterUserResponse>(serviceImpl.RegisterUser));
       serviceBinder.AddMethod(__Method_UpdateUser, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateUserRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UpdateUserResponse>(serviceImpl.UpdateUser));
       serviceBinder.AddMethod(__Method_RegisterDevice, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.RegisterDeviceRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.RegisterDeviceResponse>(serviceImpl.RegisterDevice));
+      serviceBinder.AddMethod(__Method_GetDevice, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.GetDeviceRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.GetDeviceResponse>(serviceImpl.GetDevice));
       serviceBinder.AddMethod(__Method_ListUserSessions, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.ListUserSessionsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListUserSessionsResponse>(serviceImpl.ListUserSessions));
-      serviceBinder.AddMethod(__Method_DeleteUserSession, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.DeleteUserSessionResponse>(serviceImpl.DeleteUserSession));
+      serviceBinder.AddMethod(__Method_RevokeUserSession, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.RevokeUserSessionRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.RevokeUserSessionResponse>(serviceImpl.RevokeUserSession));
       serviceBinder.AddMethod(__Method_LinkAccount, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.LinkAccountRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.LinkAccountResponse>(serviceImpl.LinkAccount));
       serviceBinder.AddMethod(__Method_UnLinkAccount, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.UnLinkAccountRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.UnLinkAccountResponse>(serviceImpl.UnLinkAccount));
       serviceBinder.AddMethod(__Method_ListLinkAccounts, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::TuiHub.Protos.Librarian.Sephirah.V1.ListLinkAccountsRequest, global::TuiHub.Protos.Librarian.Sephirah.V1.ListLinkAccountsResponse>(serviceImpl.ListLinkAccounts));

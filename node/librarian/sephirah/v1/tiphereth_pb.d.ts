@@ -271,7 +271,64 @@ export namespace RegisterDeviceResponse {
   }
 }
 
+export class GetDeviceRequest extends jspb.Message {
+  hasDeviceId(): boolean;
+  clearDeviceId(): void;
+  getDeviceId(): librarian_v1_wellknown_pb.InternalID | undefined;
+  setDeviceId(value?: librarian_v1_wellknown_pb.InternalID): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetDeviceRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: GetDeviceRequest): GetDeviceRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetDeviceRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetDeviceRequest;
+  static deserializeBinaryFromReader(message: GetDeviceRequest, reader: jspb.BinaryReader): GetDeviceRequest;
+}
+
+export namespace GetDeviceRequest {
+  export type AsObject = {
+    deviceId?: librarian_v1_wellknown_pb.InternalID.AsObject,
+  }
+}
+
+export class GetDeviceResponse extends jspb.Message {
+  hasDeviceInfo(): boolean;
+  clearDeviceInfo(): void;
+  getDeviceInfo(): Device | undefined;
+  setDeviceInfo(value?: Device): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetDeviceResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetDeviceResponse): GetDeviceResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetDeviceResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetDeviceResponse;
+  static deserializeBinaryFromReader(message: GetDeviceResponse, reader: jspb.BinaryReader): GetDeviceResponse;
+}
+
+export namespace GetDeviceResponse {
+  export type AsObject = {
+    deviceInfo?: Device.AsObject,
+  }
+}
+
 export class ListUserSessionsRequest extends jspb.Message {
+  hasPaging(): boolean;
+  clearPaging(): void;
+  getPaging(): librarian_v1_wellknown_pb.PagingRequest | undefined;
+  setPaging(value?: librarian_v1_wellknown_pb.PagingRequest): void;
+
+  getIncludeExpired(): boolean;
+  setIncludeExpired(value: boolean): void;
+
+  clearDeviceIdFilterList(): void;
+  getDeviceIdFilterList(): Array<librarian_v1_wellknown_pb.InternalID>;
+  setDeviceIdFilterList(value: Array<librarian_v1_wellknown_pb.InternalID>): void;
+  addDeviceIdFilter(value?: librarian_v1_wellknown_pb.InternalID, index?: number): librarian_v1_wellknown_pb.InternalID;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListUserSessionsRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ListUserSessionsRequest): ListUserSessionsRequest.AsObject;
@@ -284,6 +341,9 @@ export class ListUserSessionsRequest extends jspb.Message {
 
 export namespace ListUserSessionsRequest {
   export type AsObject = {
+    paging?: librarian_v1_wellknown_pb.PagingRequest.AsObject,
+    includeExpired: boolean,
+    deviceIdFilterList: Array<librarian_v1_wellknown_pb.InternalID.AsObject>,
   }
 }
 
@@ -309,40 +369,40 @@ export namespace ListUserSessionsResponse {
   }
 }
 
-export class DeleteUserSessionRequest extends jspb.Message {
+export class RevokeUserSessionRequest extends jspb.Message {
   hasSessionId(): boolean;
   clearSessionId(): void;
   getSessionId(): librarian_v1_wellknown_pb.InternalID | undefined;
   setSessionId(value?: librarian_v1_wellknown_pb.InternalID): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DeleteUserSessionRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: DeleteUserSessionRequest): DeleteUserSessionRequest.AsObject;
+  toObject(includeInstance?: boolean): RevokeUserSessionRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: RevokeUserSessionRequest): RevokeUserSessionRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: DeleteUserSessionRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DeleteUserSessionRequest;
-  static deserializeBinaryFromReader(message: DeleteUserSessionRequest, reader: jspb.BinaryReader): DeleteUserSessionRequest;
+  static serializeBinaryToWriter(message: RevokeUserSessionRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RevokeUserSessionRequest;
+  static deserializeBinaryFromReader(message: RevokeUserSessionRequest, reader: jspb.BinaryReader): RevokeUserSessionRequest;
 }
 
-export namespace DeleteUserSessionRequest {
+export namespace RevokeUserSessionRequest {
   export type AsObject = {
     sessionId?: librarian_v1_wellknown_pb.InternalID.AsObject,
   }
 }
 
-export class DeleteUserSessionResponse extends jspb.Message {
+export class RevokeUserSessionResponse extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): DeleteUserSessionResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: DeleteUserSessionResponse): DeleteUserSessionResponse.AsObject;
+  toObject(includeInstance?: boolean): RevokeUserSessionResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: RevokeUserSessionResponse): RevokeUserSessionResponse.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: DeleteUserSessionResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): DeleteUserSessionResponse;
-  static deserializeBinaryFromReader(message: DeleteUserSessionResponse, reader: jspb.BinaryReader): DeleteUserSessionResponse;
+  static serializeBinaryToWriter(message: RevokeUserSessionResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RevokeUserSessionResponse;
+  static deserializeBinaryFromReader(message: RevokeUserSessionResponse, reader: jspb.BinaryReader): RevokeUserSessionResponse;
 }
 
-export namespace DeleteUserSessionResponse {
+export namespace RevokeUserSessionResponse {
   export type AsObject = {
   }
 }
@@ -884,10 +944,10 @@ export class UserSession extends jspb.Message {
   getUserId(): librarian_v1_wellknown_pb.InternalID | undefined;
   setUserId(value?: librarian_v1_wellknown_pb.InternalID): void;
 
-  hasDeviceInfo(): boolean;
-  clearDeviceInfo(): void;
-  getDeviceInfo(): Device | undefined;
-  setDeviceInfo(value?: Device): void;
+  hasDeviceId(): boolean;
+  clearDeviceId(): void;
+  getDeviceId(): librarian_v1_wellknown_pb.InternalID | undefined;
+  setDeviceId(value?: librarian_v1_wellknown_pb.InternalID): void;
 
   hasCreateTime(): boolean;
   clearCreateTime(): void;
@@ -913,7 +973,7 @@ export namespace UserSession {
   export type AsObject = {
     id?: librarian_v1_wellknown_pb.InternalID.AsObject,
     userId?: librarian_v1_wellknown_pb.InternalID.AsObject,
-    deviceInfo?: Device.AsObject,
+    deviceId?: librarian_v1_wellknown_pb.InternalID.AsObject,
     createTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
     expireTime?: google_protobuf_timestamp_pb.Timestamp.AsObject,
   }

@@ -13,13 +13,7 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global =
-    (typeof globalThis !== 'undefined' && globalThis) ||
-    (typeof window !== 'undefined' && window) ||
-    (typeof global !== 'undefined' && global) ||
-    (typeof self !== 'undefined' && self) ||
-    (function () { return this; }).call(null) ||
-    Function('return this')();
+var global = globalThis;
 
 var librarian_v1_wellknown_pb = require('../../../librarian/v1/wellknown_pb.js');
 goog.object.extend(proto, librarian_v1_wellknown_pb);
@@ -534,7 +528,7 @@ proto.librarian.sephirah.v1.GetStorageCapacityUsageRequest.toObject = function(i
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.GetStorageCapacityUsageRequest}
  */
 proto.librarian.sephirah.v1.GetStorageCapacityUsageRequest.deserializeBinary = function(bytes) {
@@ -635,7 +629,7 @@ storageCapacityUsage: (f = msg.getStorageCapacityUsage()) && proto.librarian.sep
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.GetStorageCapacityUsageResponse}
  */
 proto.librarian.sephirah.v1.GetStorageCapacityUsageResponse.deserializeBinary = function(bytes) {
@@ -796,7 +790,7 @@ detailsList: jspb.Message.toObjectList(msg.getDetailsList(),
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.StorageCapacityUsage}
  */
 proto.librarian.sephirah.v1.StorageCapacityUsage.deserializeBinary = function(bytes) {
@@ -1008,7 +1002,7 @@ usedSizeBytes: jspb.Message.getFieldWithDefault(msg, 3, 0)
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.StorageCapacityUsageDetail}
  */
 proto.librarian.sephirah.v1.StorageCapacityUsageDetail.deserializeBinary = function(bytes) {
@@ -1223,7 +1217,7 @@ requireFileStatus: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefine
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.UploadFileRequest}
  */
 proto.librarian.sephirah.v1.UploadFileRequest.deserializeBinary = function(bytes) {
@@ -1448,7 +1442,7 @@ fileStatus: (f = msg.getFileStatus()) && proto.librarian.sephirah.v1.UploadFileR
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.UploadFileResponse}
  */
 proto.librarian.sephirah.v1.UploadFileResponse.deserializeBinary = function(bytes) {
@@ -1576,7 +1570,7 @@ status: jspb.Message.getFieldWithDefault(msg, 2, 0)
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.UploadFileResponse.ChunkStatus}
  */
 proto.librarian.sephirah.v1.UploadFileResponse.ChunkStatus.deserializeBinary = function(bytes) {
@@ -1743,7 +1737,7 @@ status: jspb.Message.getFieldWithDefault(msg, 2, 0)
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.UploadFileResponse.FileStatus}
  */
 proto.librarian.sephirah.v1.UploadFileResponse.FileStatus.deserializeBinary = function(bytes) {
@@ -1768,10 +1762,7 @@ proto.librarian.sephirah.v1.UploadFileResponse.FileStatus.deserializeBinaryFromR
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt64() : [reader.readInt64()]);
-      for (var i = 0; i < values.length; i++) {
-        msg.addMissingChunkList(values[i]);
-      }
+      reader.readPackableInt64Into(msg.getMissingChunkListList());
       break;
     case 2:
       var value = /** @type {!proto.librarian.sephirah.v1.FileTransferStatus} */ (reader.readEnum());
@@ -1998,7 +1989,7 @@ endChunkNumber: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.DownloadFileRequest}
  */
 proto.librarian.sephirah.v1.DownloadFileRequest.deserializeBinary = function(bytes) {
@@ -2175,7 +2166,7 @@ fileChunk: (f = msg.getFileChunk()) && proto.librarian.sephirah.v1.FileChunk.toO
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.DownloadFileResponse}
  */
 proto.librarian.sephirah.v1.DownloadFileResponse.deserializeBinary = function(bytes) {
@@ -2326,7 +2317,7 @@ data: msg.getData_asB64()
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.SimpleUploadFileRequest}
  */
 proto.librarian.sephirah.v1.SimpleUploadFileRequest.deserializeBinary = function(bytes) {
@@ -2480,7 +2471,7 @@ status: jspb.Message.getFieldWithDefault(msg, 1, 0)
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.SimpleUploadFileResponse}
  */
 proto.librarian.sephirah.v1.SimpleUploadFileResponse.deserializeBinary = function(bytes) {
@@ -2610,7 +2601,7 @@ proto.librarian.sephirah.v1.SimpleDownloadFileRequest.toObject = function(includ
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.SimpleDownloadFileRequest}
  */
 proto.librarian.sephirah.v1.SimpleDownloadFileRequest.deserializeBinary = function(bytes) {
@@ -2711,7 +2702,7 @@ data: msg.getData_asB64()
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.SimpleDownloadFileResponse}
  */
 proto.librarian.sephirah.v1.SimpleDownloadFileResponse.deserializeBinary = function(bytes) {
@@ -2865,7 +2856,7 @@ proto.librarian.sephirah.v1.PresignedUploadFileRequest.toObject = function(inclu
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.PresignedUploadFileRequest}
  */
 proto.librarian.sephirah.v1.PresignedUploadFileRequest.deserializeBinary = function(bytes) {
@@ -2966,7 +2957,7 @@ uploadUrl: jspb.Message.getFieldWithDefault(msg, 1, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.PresignedUploadFileResponse}
  */
 proto.librarian.sephirah.v1.PresignedUploadFileResponse.deserializeBinary = function(bytes) {
@@ -2991,7 +2982,7 @@ proto.librarian.sephirah.v1.PresignedUploadFileResponse.deserializeBinaryFromRea
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setUploadUrl(value);
       break;
     default:
@@ -3096,7 +3087,7 @@ status: jspb.Message.getFieldWithDefault(msg, 1, 0)
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.PresignedUploadFileStatusRequest}
  */
 proto.librarian.sephirah.v1.PresignedUploadFileStatusRequest.deserializeBinary = function(bytes) {
@@ -3226,7 +3217,7 @@ proto.librarian.sephirah.v1.PresignedUploadFileStatusResponse.toObject = functio
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.PresignedUploadFileStatusResponse}
  */
 proto.librarian.sephirah.v1.PresignedUploadFileStatusResponse.deserializeBinary = function(bytes) {
@@ -3327,7 +3318,7 @@ proto.librarian.sephirah.v1.PresignedDownloadFileRequest.toObject = function(inc
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.PresignedDownloadFileRequest}
  */
 proto.librarian.sephirah.v1.PresignedDownloadFileRequest.deserializeBinary = function(bytes) {
@@ -3428,7 +3419,7 @@ downloadUrl: jspb.Message.getFieldWithDefault(msg, 1, "")
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.PresignedDownloadFileResponse}
  */
 proto.librarian.sephirah.v1.PresignedDownloadFileResponse.deserializeBinary = function(bytes) {
@@ -3453,7 +3444,7 @@ proto.librarian.sephirah.v1.PresignedDownloadFileResponse.deserializeBinaryFromR
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {string} */ (reader.readStringRequireUtf8());
       msg.setDownloadUrl(value);
       break;
     default:
@@ -3559,7 +3550,7 @@ data: msg.getData_asB64()
 
 /**
  * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @param {jspb.binary.bytesource.ByteSource} bytes The bytes to deserialize.
  * @return {!proto.librarian.sephirah.v1.FileChunk}
  */
 proto.librarian.sephirah.v1.FileChunk.deserializeBinary = function(bytes) {
