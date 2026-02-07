@@ -12,8 +12,7 @@ option go_package = "github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1";
 message GetTokenRequest {
   string username = 1;
   string password = 2;
-  // Always ignore this if client don't impl device info feature.
-  // Otherwise, re-login after registered device with this and every time after
+  // Ignore this if client don't impl device info feature.
   optional librarian.v1.InternalID device_id = 3;
 }
 
@@ -23,7 +22,7 @@ message GetTokenResponse {
 }
 
 message RefreshTokenRequest {
-  // Always ignore this if client don't impl device info feature.
+  // Ignore this if client don't impl device info feature.
   // Be used to add device info after registered device.
   // Only first device_id will be used.
   optional librarian.v1.InternalID device_id = 3;
@@ -66,15 +65,26 @@ message RegisterDeviceResponse {
   librarian.v1.InternalID device_id = 1;
 }
 
-message ListUserSessionsRequest {}
+message GetDeviceRequest {
+  librarian.v1.InternalID device_id = 1;
+}
+message GetDeviceResponse {
+  Device device_info = 1;
+}
+
+message ListUserSessionsRequest {
+  librarian.v1.PagingRequest paging = 1;
+  bool include_expired = 2;
+  repeated librarian.v1.InternalID device_id_filter = 3;
+}
 message ListUserSessionsResponse {
   repeated UserSession sessions = 1;
 }
 
-message DeleteUserSessionRequest {
+message RevokeUserSessionRequest {
   librarian.v1.InternalID session_id = 1;
 }
-message DeleteUserSessionResponse {}
+message RevokeUserSessionResponse {}
 
 message UpdateUserRequest {
   User user = 1;
@@ -170,7 +180,7 @@ message User {
 message UserSession {
   librarian.v1.InternalID id = 1;
   librarian.v1.InternalID user_id = 2;
-  Device device_info = 3;
+  optional librarian.v1.InternalID device_id = 3;
   google.protobuf.Timestamp create_time = 4;
   google.protobuf.Timestamp expire_time = 5;
 }

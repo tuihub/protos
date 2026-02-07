@@ -23,9 +23,9 @@ option go_package = "github.com/tuihub/protos/pkg/librarian/sephirah/v1;v1";
  * 5. `Netzach` handles notifications
  */
 service LibrarianSephirahService {
-  // Allow anonymous call, use accessToken to get complete information
+  // `anonymous` `access_token` Allow anonymous call, use accessToken to get complete information
   rpc GetServerInformation(GetServerInformationRequest) returns (GetServerInformationResponse);
-  // `Normal` Client can use this to subscribe to server events.
+  // `access_token` Client can use this to subscribe to server events.
   //
   // Server should send `SERVER_EVENT_LISTENER_CONNECTED` event immediately if the connection is valid.
   // Otherwise, client should treat the connection as failed.
@@ -34,45 +34,47 @@ service LibrarianSephirahService {
   // Only used to improve real-time experience, no guarantee of delivery.
   rpc ListenServerEvent(ListenServerEventRequest) returns (stream ListenServerEventResponse);
 
-  // `Tiphereth` `Normal` Login via password and get two token
+  // `Tiphereth` `anonymous` Login via password and get two token
   rpc GetToken(GetTokenRequest) returns (GetTokenResponse);
-  // `Tiphereth` `Normal` Use valid refresh_token and get two new token, a refresh_token can only be used once
+  // `Tiphereth` `access_token` Use valid refresh_token and get two new token, a refresh_token can only be used once
   rpc RefreshToken(RefreshTokenRequest) returns (RefreshTokenResponse);
 
-  // `Tiphereth`
+  // `Tiphereth` `access_token`
   rpc GetUser(GetUserRequest) returns (GetUserResponse);
-  // `Tiphereth` Self register as a new normal user
+  // `Tiphereth` `anonymous` Self register as a new normal user
   rpc RegisterUser(RegisterUserRequest) returns (RegisterUserResponse);
-  // `Tiphereth` `Normal` Update self user info
+  // `Tiphereth` `access_token` Update self user info
   rpc UpdateUser(UpdateUserRequest) returns (UpdateUserResponse);
-  // `Tiphereth` `Normal` Client should register device after the first login
+  // `Tiphereth` `access_token` Client should register device after the first login
   // and store the device_id locally.
   // The server could add extra limits to non-registered device
   rpc RegisterDevice(RegisterDeviceRequest) returns (RegisterDeviceResponse);
-  // `Tiphereth` `Normal`
+  // `Tiphereth` `access_token`
+  rpc GetDevice(GetDeviceRequest) returns (GetDeviceResponse);
+  // `Tiphereth` `access_token`
   rpc ListUserSessions(ListUserSessionsRequest) returns (ListUserSessionsResponse);
-  // `Tiphereth` `Normal` delete session will revoke refresh_token immediately.
+  // `Tiphereth` `access_token` revoke session will revoke refresh_token immediately.
   // NOTE: This can also be used to log out at server side.
-  // NOTE2: Delete session will not affect device registration.
-  rpc DeleteUserSession(DeleteUserSessionRequest) returns (DeleteUserSessionResponse);
+  // NOTE2: Revoke session will not affect device registration.
+  rpc RevokeUserSession(RevokeUserSessionRequest) returns (RevokeUserSessionResponse);
 
-  // `Tiphereth` `Normal` Bind third-party account to current user.
+  // `Tiphereth` `access_token` Bind third-party account to current user.
   rpc LinkAccount(LinkAccountRequest) returns (LinkAccountResponse);
-  // `Tiphereth` `Normal` Unbind third-party account from current user.
+  // `Tiphereth` `access_token` Unbind third-party account from current user.
   rpc UnLinkAccount(UnLinkAccountRequest) returns (UnLinkAccountResponse);
-  // `Tiphereth` `Normal` List third-party account binded to current user.
+  // `Tiphereth` `access_token` List third-party account binded to current user.
   rpc ListLinkAccounts(ListLinkAccountsRequest) returns (ListLinkAccountsResponse);
 
-  // `Tiphereth` `Normal`
+  // `Tiphereth` `access_token`
   rpc ListPorterDigests(ListPorterDigestsRequest) returns (ListPorterDigestsResponse);
-  // `Tiphereth` `Normal`
+  // `Tiphereth` `access_token`
   rpc CreatePorterContext(CreatePorterContextRequest) returns (CreatePorterContextResponse);
-  // `Tiphereth` `Normal`
+  // `Tiphereth` `access_token`
   rpc ListPorterContexts(ListPorterContextsRequest) returns (ListPorterContextsResponse);
-  // `Tiphereth` `Normal` Set porter context.
+  // `Tiphereth` `access_token` Set porter context.
   rpc UpdatePorterContext(UpdatePorterContextRequest) returns (UpdatePorterContextResponse);
 
-  // `Binah` `Normal`
+  // `Binah` `access_token`
   rpc GetStorageCapacityUsage(GetStorageCapacityUsageRequest) returns (GetStorageCapacityUsageResponse);
   // `Binah` `upload_token`
   rpc UploadFile(stream UploadFileRequest) returns (stream UploadFileResponse);
@@ -96,140 +98,140 @@ service LibrarianSephirahService {
   // Download file through http url
   rpc PresignedDownloadFile(PresignedDownloadFileRequest) returns (PresignedDownloadFileResponse);
 
-  // `Chesed` `Normal`
+  // `Chesed` `access_token`
   rpc UploadImage(UploadImageRequest) returns (UploadImageResponse);
-  // `Chesed` `Normal`
+  // `Chesed` `access_token`
   rpc UpdateImage(UpdateImageRequest) returns (UpdateImageResponse);
-  // `Chesed` `Normal`
+  // `Chesed` `access_token`
   rpc ListImages(ListImagesRequest) returns (ListImagesResponse);
-  // `Chesed` `Normal`
+  // `Chesed` `access_token`
   rpc SearchImages(SearchImagesRequest) returns (SearchImagesResponse);
-  // `Chesed` `Normal`
+  // `Chesed` `access_token`
   rpc GetImage(GetImageRequest) returns (GetImageResponse);
-  // `Chesed` `Normal`
+  // `Chesed` `access_token`
   rpc DownloadImage(DownloadImageRequest) returns (DownloadImageResponse);
 
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
   rpc SearchStoreApps(SearchStoreAppsRequest) returns (SearchStoreAppsResponse);
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
   rpc GetStoreAppSummary(GetStoreAppSummaryRequest) returns (GetStoreAppSummaryResponse);
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
   rpc AcquireStoreApp(AcquireStoreAppRequest) returns (AcquireStoreAppResponse);
 
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
   rpc ListStoreAppBinaries(ListStoreAppBinariesRequest) returns (ListStoreAppBinariesResponse);
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
   rpc ListStoreAppBinaryFiles(ListStoreAppBinaryFilesRequest) returns (ListStoreAppBinaryFilesResponse);
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
   rpc DownloadStoreAppBinary(DownloadStoreAppBinaryRequest) returns (DownloadStoreAppBinaryResponse);
 
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
   rpc ListStoreAppSaveFiles(ListStoreAppSaveFilesRequest) returns (ListStoreAppSaveFilesResponse);
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
   rpc DownloadStoreAppSaveFile(DownloadStoreAppSaveFileRequest) returns (DownloadStoreAppSaveFileResponse);
 
-  // `Gebura` `Normal` Search app infos
+  // `Gebura` `access_token` Search app infos
   rpc SearchAppInfos(SearchAppInfosRequest) returns (SearchAppInfosResponse);
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
   rpc CreateApp(CreateAppRequest) returns (CreateAppResponse);
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
   rpc UpdateApp(UpdateAppRequest) returns (UpdateAppResponse);
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
   rpc ListApps(ListAppsRequest) returns (ListAppsResponse);
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
   rpc DeleteApp(DeleteAppRequest) returns (DeleteAppResponse);
 
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
   rpc BatchCreateAppRunTime(BatchCreateAppRunTimeRequest) returns (BatchCreateAppRunTimeResponse);
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
   rpc SumAppRunTime(SumAppRunTimeRequest) returns (SumAppRunTimeResponse);
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
   rpc ListAppRunTimes(ListAppRunTimesRequest) returns (ListAppRunTimesResponse);
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
   rpc DeleteAppRunTime(DeleteAppRunTimeRequest) returns (DeleteAppRunTimeResponse);
 
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
   rpc UploadAppSaveFile(UploadAppSaveFileRequest) returns (UploadAppSaveFileResponse);
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
   rpc DownloadAppSaveFile(DownloadAppSaveFileRequest) returns (DownloadAppSaveFileResponse);
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
   rpc ListAppSaveFiles(ListAppSaveFilesRequest) returns (ListAppSaveFilesResponse);
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
   rpc DeleteAppSaveFile(DeleteAppSaveFileRequest) returns (DeleteAppSaveFileResponse);
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
   rpc PinAppSaveFile(PinAppSaveFileRequest) returns (PinAppSaveFileResponse);
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
   rpc UnpinAppSaveFile(UnpinAppSaveFileRequest) returns (UnpinAppSaveFileResponse);
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
   rpc GetAppSaveFileCapacity(GetAppSaveFileCapacityRequest) returns (GetAppSaveFileCapacityResponse);
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
   rpc SetAppSaveFileCapacity(SetAppSaveFileCapacityRequest) returns (SetAppSaveFileCapacityResponse);
 
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
   rpc ListAppCategories(ListAppCategoriesRequest) returns (ListAppCategoriesResponse);
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
   rpc CreateAppCategory(CreateAppCategoryRequest) returns (CreateAppCategoryResponse);
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
   rpc UpdateAppCategory(UpdateAppCategoryRequest) returns (UpdateAppCategoryResponse);
-  // `Gebura` `Normal`
+  // `Gebura` `access_token`
   rpc DeleteAppCategory(DeleteAppCategoryRequest) returns (DeleteAppCategoryResponse);
 
-  // `Netzach` `Normal`
+  // `Netzach` `access_token`
   rpc CreateNotifyTarget(CreateNotifyTargetRequest) returns (CreateNotifyTargetResponse);
-  // `Netzach` `Normal`
+  // `Netzach` `access_token`
   rpc UpdateNotifyTarget(UpdateNotifyTargetRequest) returns (UpdateNotifyTargetResponse);
-  // `Netzach` `Normal`
+  // `Netzach` `access_token`
   rpc ListNotifyTargets(ListNotifyTargetsRequest) returns (ListNotifyTargetsResponse);
-  // `Netzach` `Normal`
+  // `Netzach` `access_token`
   rpc CreateNotifyFlow(CreateNotifyFlowRequest) returns (CreateNotifyFlowResponse);
-  // `Netzach` `Normal`
+  // `Netzach` `access_token`
   rpc UpdateNotifyFlow(UpdateNotifyFlowRequest) returns (UpdateNotifyFlowResponse);
-  // `Netzach` `Normal`
+  // `Netzach` `access_token`
   rpc ListNotifyFlows(ListNotifyFlowsRequest) returns (ListNotifyFlowsResponse);
 
-  // `Netzach` `Normal`
+  // `Netzach` `access_token`
   rpc ListSystemNotifications(ListSystemNotificationsRequest) returns (ListSystemNotificationsResponse);
-  // `Netzach` `Normal`
+  // `Netzach` `access_token`
   rpc UpdateSystemNotification(UpdateSystemNotificationRequest) returns (UpdateSystemNotificationResponse);
 
-  // `Yesod` `Normal`
+  // `Yesod` `access_token`
   rpc CreateFeedConfig(CreateFeedConfigRequest) returns (CreateFeedConfigResponse);
-  // `Yesod` `Normal`
+  // `Yesod` `access_token`
   rpc UpdateFeedConfig(UpdateFeedConfigRequest) returns (UpdateFeedConfigResponse);
-  // `Yesod` `Normal`
+  // `Yesod` `access_token`
   rpc ListFeedConfigs(ListFeedConfigsRequest) returns (ListFeedConfigsResponse);
 
-  // `Yesod` `Normal`
+  // `Yesod` `access_token`
   rpc CreateFeedActionSet(CreateFeedActionSetRequest) returns (CreateFeedActionSetResponse);
-  // `Yesod` `Normal`
+  // `Yesod` `access_token`
   rpc UpdateFeedActionSet(UpdateFeedActionSetRequest) returns (UpdateFeedActionSetResponse);
-  // `Yesod` `Normal`
+  // `Yesod` `access_token`
   rpc ListFeedActionSets(ListFeedActionSetsRequest) returns (ListFeedActionSetsResponse);
 
-  // `Yesod` `Normal`
+  // `Yesod` `access_token`
   rpc ListFeedCategories(ListFeedCategoriesRequest) returns (ListFeedCategoriesResponse);
-  // `Yesod` `Normal`
+  // `Yesod` `access_token`
   rpc ListFeedPlatforms(ListFeedPlatformsRequest) returns (ListFeedPlatformsResponse);
-  // `Yesod` `Normal`
+  // `Yesod` `access_token`
   rpc ListFeedItems(ListFeedItemsRequest) returns (ListFeedItemsResponse);
-  // `Yesod` `Normal`
+  // `Yesod` `access_token`
   rpc GetFeedItem(GetFeedItemRequest) returns (GetFeedItemResponse);
-  // `Yesod` `Normal`
+  // `Yesod` `access_token`
   rpc GetBatchFeedItems(GetBatchFeedItemsRequest) returns (GetBatchFeedItemsResponse);
-  // `Yesod` `Normal`
+  // `Yesod` `access_token`
   rpc ReadFeedItem(ReadFeedItemRequest) returns (ReadFeedItemResponse);
 
-  // `Yesod` `Normal`
+  // `Yesod` `access_token`
   rpc CreateFeedItemCollection(CreateFeedItemCollectionRequest) returns (CreateFeedItemCollectionResponse);
-  // `Yesod` `Normal`
+  // `Yesod` `access_token`
   rpc UpdateFeedItemCollection(UpdateFeedItemCollectionRequest) returns (UpdateFeedItemCollectionResponse);
-  // `Yesod` `Normal`
+  // `Yesod` `access_token`
   rpc ListFeedItemCollections(ListFeedItemCollectionsRequest) returns (ListFeedItemCollectionsResponse);
-  // `Yesod` `Normal`
+  // `Yesod` `access_token`
   rpc AddFeedItemToCollection(AddFeedItemToCollectionRequest) returns (AddFeedItemToCollectionResponse);
-  // `Yesod` `Normal`
+  // `Yesod` `access_token`
   rpc RemoveFeedItemFromCollection(RemoveFeedItemFromCollectionRequest) returns (RemoveFeedItemFromCollectionResponse);
-  // `Yesod` `Normal`
+  // `Yesod` `access_token`
   rpc ListFeedItemsInCollection(ListFeedItemsInCollectionRequest) returns (ListFeedItemsInCollectionResponse);
 }
 

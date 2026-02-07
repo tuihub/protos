@@ -11,7 +11,7 @@ install-plugins:
 	cargo install --locked protoc-gen-prost-crate
 	dart pub global activate protoc_plugin 22.5.0
 
-generate: clean buf go rust dart
+generate: clean buf go rust dart testsuite-tree
 
 check: buf-lint go rust dart
 
@@ -23,6 +23,9 @@ buf-lint:
 
 buf-generate:
 	PATH="${PATH}:${HOME}/.pub-cache/bin" buf generate --include-imports
+
+testsuite-tree:
+	go run ./cmd/testsuite tree > docs/testsuite_tree.md
 
 go:
 	GO111MODULE=on go mod tidy
@@ -37,6 +40,7 @@ dart:
 clean:
 	-rm -r Assets/src
 	-rm docs/protos.md
+	-rm docs/dependency-tree.md
 	-rm -r pkg
 	-rm -r node
 	-rm -r src
