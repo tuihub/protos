@@ -40,10 +40,16 @@
 #### {{.Name}}
 {{.Description}}
 
-| Method Name | Request Type | Response Type | Description |
-| ----------- | ------------ | ------------- | ------------|
-{{range .Methods -}}
-  | {{.Name}} | [{{.RequestLongType}}](#{{.RequestFullType | anchor}}){{if .RequestStreaming}} stream{{end}} | [{{.ResponseLongType}}](#{{.ResponseFullType | anchor}}){{if .ResponseStreaming}} stream{{end}} | {{nobr .Description}} |
+{{range .Methods}}
+
+##### {{.Name}}
+
+{{if .RequestStreaming}}Request: stream {{end}}[{{.RequestLongType}}](#{{.RequestFullType | anchor}})
+
+{{if .ResponseStreaming}}Response: stream {{end}}[{{.ResponseLongType}}](#{{.ResponseFullType | anchor}})
+
+{{.Description}}
+
 {{end}}
 {{end}} <!-- end services -->
 
@@ -66,10 +72,17 @@
 {{end}}
 
 {{if .HasExtensions}}
-| Extension | Type | Base | Number | Description |
-| --------- | ---- | ---- | ------ | ----------- |
-{{range .Extensions -}}
-  | {{.Name}} | {{.LongType}} | {{.ContainingLongType}} | {{.Number}} | {{nobr .Description}}{{if .DefaultValue}} Default: {{.DefaultValue}}{{end}} |
+
+#### Extensions
+
+{{range .Extensions}}
+- **{{.Name}}** ({{.Number}})
+  - Type: {{.LongType}}
+  - Base: {{.ContainingLongType}}
+{{if .DefaultValue}}  - Default: {{.DefaultValue}}{{end}}
+
+{{.Description}}
+
 {{end}}
 {{end}}
 
@@ -85,10 +98,12 @@
 #### {{.LongName}}
 {{.Description}}
 
-| Name | Number | Description |
-| ---- | ------ | ----------- |
-{{range .Values -}}
-  | {{.Name}} | {{.Number}} | {{nobr .Description}} |
+{{range .Values}}
+
+- **{{.Name}}** = {{.Number}}
+
+{{.Description}}
+
 {{end}}
 
 {{end}} <!-- end enums -->
@@ -97,10 +112,15 @@
 <a name="{{$file_name | anchor}}-extensions" id="{{$file_name | anchor}}-extensions"></a>
 
 ### File-level Extensions
-| Extension | Type | Base | Number | Description |
-| --------- | ---- | ---- | ------ | ----------- |
-{{range .Extensions -}}
-  | {{.Name}} | {{.LongType}} | {{.ContainingLongType}} | {{.Number}} | {{nobr .Description}}{{if .DefaultValue}} Default: `{{.DefaultValue}}`{{end}} |
+
+{{range .Extensions}}
+- **{{.Name}}** ({{.Number}})
+  - Type: {{.LongType}}
+  - Base: {{.ContainingLongType}}
+{{if .DefaultValue}}  - Default: `{{.DefaultValue}}`{{end}}
+
+{{.Description}}
+
 {{end}}
 {{end}} <!-- end HasExtensions -->
 
