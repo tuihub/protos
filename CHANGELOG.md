@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.6.3](https://github.com/tuihub/protos/compare/v0.6.2...v0.6.3) (2026-03-19)
+
+
+### Features
+
+* init feature set and testsuite ([#197](https://github.com/tuihub/protos/issues/197)) ([5d9f689](https://github.com/tuihub/protos/commit/5d9f6899cd21bf8b228ab16e347d9e3cbcab9ca6))
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#196](https://github.com/tuihub/protos/issues/196)) ([3b4f601](https://github.com/tuihub/protos/commit/3b4f6015f64b69dbf93f72afda8b306e3c60eaf1))
+* **deps:** update all non-major dependencies ([#200](https://github.com/tuihub/protos/issues/200)) ([05e4553](https://github.com/tuihub/protos/commit/05e4553a782df685ef63e459f8f3891d18d28930))
+* **deps:** update dependency google-protobuf to v4 ([#190](https://github.com/tuihub/protos/issues/190)) ([8f1142f](https://github.com/tuihub/protos/commit/8f1142fb62858c1794d57700caf4bcd7ea25c09b))
+* **deps:** update module google.golang.org/grpc to v1.79.3 [security] ([#201](https://github.com/tuihub/protos/issues/201)) ([027f91d](https://github.com/tuihub/protos/commit/027f91d7cb206b620033eae20356f144cb826f08))
+
 ## [0.6.2](https://github.com/tuihub/protos/compare/v0.6.1...v0.6.2) (2025-10-21)
 
 
