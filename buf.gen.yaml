@@ -79,3 +79,5 @@ plugins:
   - local: protoc-gen-dart
     out: lib
     opt: grpc
+    include_imports: true
+    include_wkt: true

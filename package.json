@@ -17,5 +17,9 @@
     "google-protobuf": "^4.0.2",
     "grpc-tools": "^1.13.1",
     "ts-protoc-gen": "^0.15.0"
+  },
+  "allowScripts": {
+    "grpc-tools@1.13.1": true,
+    "protobufjs@7.5.4": true
   }
 }
