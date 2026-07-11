@@ -8,13 +8,14 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
 
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
+import 'package:protobuf/well_known_types/google/protobuf/timestamp.pb.dart'
+    as $0;
 
-import '../../../google/protobuf/timestamp.pb.dart' as $0;
 import '../../v1/wellknown.pb.dart' as $1;
 
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
@@ -69,7 +70,7 @@ class ServerInformation extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ServerInformation clone() => ServerInformation()..mergeFromMessage(this);
+  ServerInformation clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ServerInformation copyWith(void Function(ServerInformation) updates) =>
       super.copyWith((message) => updates(message as ServerInformation))
@@ -82,8 +83,6 @@ class ServerInformation extends $pb.GeneratedMessage {
   static ServerInformation create() => ServerInformation._();
   @$core.override
   ServerInformation createEmptyInstance() => create();
-  static $pb.PbList<ServerInformation> createRepeated() =>
-      $pb.PbList<ServerInformation>();
   @$core.pragma('dart2js:noInline')
   static ServerInformation getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ServerInformation>(create);
@@ -196,7 +195,7 @@ class ServerBinarySummary extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ServerBinarySummary clone() => ServerBinarySummary()..mergeFromMessage(this);
+  ServerBinarySummary clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ServerBinarySummary copyWith(void Function(ServerBinarySummary) updates) =>
       super.copyWith((message) => updates(message as ServerBinarySummary))
@@ -209,8 +208,6 @@ class ServerBinarySummary extends $pb.GeneratedMessage {
   static ServerBinarySummary create() => ServerBinarySummary._();
   @$core.override
   ServerBinarySummary createEmptyInstance() => create();
-  static $pb.PbList<ServerBinarySummary> createRepeated() =>
-      $pb.PbList<ServerBinarySummary>();
   @$core.pragma('dart2js:noInline')
   static ServerBinarySummary getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ServerBinarySummary>(create);
@@ -278,8 +275,7 @@ class ServerProtocolSummary extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ServerProtocolSummary clone() =>
-      ServerProtocolSummary()..mergeFromMessage(this);
+  ServerProtocolSummary clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ServerProtocolSummary copyWith(
           void Function(ServerProtocolSummary) updates) =>
@@ -293,8 +289,6 @@ class ServerProtocolSummary extends $pb.GeneratedMessage {
   static ServerProtocolSummary create() => ServerProtocolSummary._();
   @$core.override
   ServerProtocolSummary createEmptyInstance() => create();
-  static $pb.PbList<ServerProtocolSummary> createRepeated() =>
-      $pb.PbList<ServerProtocolSummary>();
   @$core.pragma('dart2js:noInline')
   static ServerProtocolSummary getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ServerProtocolSummary>(create);
@@ -356,8 +350,7 @@ class ServerInstanceSummary extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ServerInstanceSummary clone() =>
-      ServerInstanceSummary()..mergeFromMessage(this);
+  ServerInstanceSummary clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ServerInstanceSummary copyWith(
           void Function(ServerInstanceSummary) updates) =>
@@ -371,8 +364,6 @@ class ServerInstanceSummary extends $pb.GeneratedMessage {
   static ServerInstanceSummary create() => ServerInstanceSummary._();
   @$core.override
   ServerInstanceSummary createEmptyInstance() => create();
-  static $pb.PbList<ServerInstanceSummary> createRepeated() =>
-      $pb.PbList<ServerInstanceSummary>();
   @$core.pragma('dart2js:noInline')
   static ServerInstanceSummary getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ServerInstanceSummary>(create);

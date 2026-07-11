@@ -8,15 +8,17 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
 
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
+import 'package:protobuf/well_known_types/google/protobuf/duration.pb.dart'
+    as $1;
+import 'package:protobuf/well_known_types/google/protobuf/timestamp.pb.dart'
+    as $0;
 
-import '../../google/protobuf/duration.pb.dart' as $1;
-import '../../google/protobuf/timestamp.pb.dart' as $0;
 import 'wellknown.pbenum.dart';
 
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
@@ -52,7 +54,7 @@ class PagingRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PagingRequest clone() => PagingRequest()..mergeFromMessage(this);
+  PagingRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PagingRequest copyWith(void Function(PagingRequest) updates) =>
       super.copyWith((message) => updates(message as PagingRequest))
@@ -65,8 +67,6 @@ class PagingRequest extends $pb.GeneratedMessage {
   static PagingRequest create() => PagingRequest._();
   @$core.override
   PagingRequest createEmptyInstance() => create();
-  static $pb.PbList<PagingRequest> createRepeated() =>
-      $pb.PbList<PagingRequest>();
   @$core.pragma('dart2js:noInline')
   static PagingRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<PagingRequest>(create);
@@ -118,7 +118,7 @@ class PagingResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PagingResponse clone() => PagingResponse()..mergeFromMessage(this);
+  PagingResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PagingResponse copyWith(void Function(PagingResponse) updates) =>
       super.copyWith((message) => updates(message as PagingResponse))
@@ -131,8 +131,6 @@ class PagingResponse extends $pb.GeneratedMessage {
   static PagingResponse create() => PagingResponse._();
   @$core.override
   PagingResponse createEmptyInstance() => create();
-  static $pb.PbList<PagingResponse> createRepeated() =>
-      $pb.PbList<PagingResponse>();
   @$core.pragma('dart2js:noInline')
   static PagingResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<PagingResponse>(create);
@@ -186,7 +184,7 @@ class TimeRange extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  TimeRange clone() => TimeRange()..mergeFromMessage(this);
+  TimeRange clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   TimeRange copyWith(void Function(TimeRange) updates) =>
       super.copyWith((message) => updates(message as TimeRange)) as TimeRange;
@@ -198,7 +196,6 @@ class TimeRange extends $pb.GeneratedMessage {
   static TimeRange create() => TimeRange._();
   @$core.override
   TimeRange createEmptyInstance() => create();
-  static $pb.PbList<TimeRange> createRepeated() => $pb.PbList<TimeRange>();
   @$core.pragma('dart2js:noInline')
   static TimeRange getDefault() =>
       _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TimeRange>(create);
@@ -254,7 +251,7 @@ class InternalID extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  InternalID clone() => InternalID()..mergeFromMessage(this);
+  InternalID clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   InternalID copyWith(void Function(InternalID) updates) =>
       super.copyWith((message) => updates(message as InternalID)) as InternalID;
@@ -266,7 +263,6 @@ class InternalID extends $pb.GeneratedMessage {
   static InternalID create() => InternalID._();
   @$core.override
   InternalID createEmptyInstance() => create();
-  static $pb.PbList<InternalID> createRepeated() => $pb.PbList<InternalID>();
   @$core.pragma('dart2js:noInline')
   static InternalID getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<InternalID>(create);
@@ -311,7 +307,7 @@ class I18NString extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  I18NString clone() => I18NString()..mergeFromMessage(this);
+  I18NString clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   I18NString copyWith(void Function(I18NString) updates) =>
       super.copyWith((message) => updates(message as I18NString)) as I18NString;
@@ -323,7 +319,6 @@ class I18NString extends $pb.GeneratedMessage {
   static I18NString create() => I18NString._();
   @$core.override
   I18NString createEmptyInstance() => create();
-  static $pb.PbList<I18NString> createRepeated() => $pb.PbList<I18NString>();
   @$core.pragma('dart2js:noInline')
   static I18NString getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<I18NString>(create);
@@ -386,9 +381,7 @@ class FileMetadata extends $pb.GeneratedMessage {
         subBuilder: InternalID.create)
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aInt64(3, _omitFieldNames ? '' : 'sizeBytes')
-    ..e<FileType>(4, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE,
-        defaultOrMaker: FileType.FILE_TYPE_UNSPECIFIED,
-        valueOf: FileType.valueOf,
+    ..aE<FileType>(4, _omitFieldNames ? '' : 'type',
         enumValues: FileType.values)
     ..a<$core.List<$core.int>>(
         5, _omitFieldNames ? '' : 'sha256', $pb.PbFieldType.OY)
@@ -397,7 +390,7 @@ class FileMetadata extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  FileMetadata clone() => FileMetadata()..mergeFromMessage(this);
+  FileMetadata clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   FileMetadata copyWith(void Function(FileMetadata) updates) =>
       super.copyWith((message) => updates(message as FileMetadata))
@@ -410,8 +403,6 @@ class FileMetadata extends $pb.GeneratedMessage {
   static FileMetadata create() => FileMetadata._();
   @$core.override
   FileMetadata createEmptyInstance() => create();
-  static $pb.PbList<FileMetadata> createRepeated() =>
-      $pb.PbList<FileMetadata>();
   @$core.pragma('dart2js:noInline')
   static FileMetadata getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<FileMetadata>(create);
@@ -523,7 +514,7 @@ class FeatureFlag extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  FeatureFlag clone() => FeatureFlag()..mergeFromMessage(this);
+  FeatureFlag clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   FeatureFlag copyWith(void Function(FeatureFlag) updates) =>
       super.copyWith((message) => updates(message as FeatureFlag))
@@ -536,7 +527,6 @@ class FeatureFlag extends $pb.GeneratedMessage {
   static FeatureFlag create() => FeatureFlag._();
   @$core.override
   FeatureFlag createEmptyInstance() => create();
-  static $pb.PbList<FeatureFlag> createRepeated() => $pb.PbList<FeatureFlag>();
   @$core.pragma('dart2js:noInline')
   static FeatureFlag getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<FeatureFlag>(create);
@@ -635,7 +625,7 @@ class FeatureRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  FeatureRequest clone() => FeatureRequest()..mergeFromMessage(this);
+  FeatureRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   FeatureRequest copyWith(void Function(FeatureRequest) updates) =>
       super.copyWith((message) => updates(message as FeatureRequest))
@@ -648,8 +638,6 @@ class FeatureRequest extends $pb.GeneratedMessage {
   static FeatureRequest create() => FeatureRequest._();
   @$core.override
   FeatureRequest createEmptyInstance() => create();
-  static $pb.PbList<FeatureRequest> createRepeated() =>
-      $pb.PbList<FeatureRequest>();
   @$core.pragma('dart2js:noInline')
   static FeatureRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<FeatureRequest>(create);
@@ -734,31 +722,24 @@ class FeatureSummary extends $pb.GeneratedMessage {
       _omitMessageNames ? '' : 'FeatureSummary',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'librarian.v1'),
       createEmptyInstance: create)
-    ..pc<FeatureFlag>(
-        1, _omitFieldNames ? '' : 'accountPlatforms', $pb.PbFieldType.PM,
+    ..pPM<FeatureFlag>(1, _omitFieldNames ? '' : 'accountPlatforms',
         subBuilder: FeatureFlag.create)
-    ..pc<FeatureFlag>(
-        2, _omitFieldNames ? '' : 'appInfoSources', $pb.PbFieldType.PM,
+    ..pPM<FeatureFlag>(2, _omitFieldNames ? '' : 'appInfoSources',
         subBuilder: FeatureFlag.create)
-    ..pc<FeatureFlag>(
-        3, _omitFieldNames ? '' : 'feedSources', $pb.PbFieldType.PM,
+    ..pPM<FeatureFlag>(3, _omitFieldNames ? '' : 'feedSources',
         subBuilder: FeatureFlag.create)
-    ..pc<FeatureFlag>(
-        4, _omitFieldNames ? '' : 'notifyDestinations', $pb.PbFieldType.PM,
+    ..pPM<FeatureFlag>(4, _omitFieldNames ? '' : 'notifyDestinations',
         subBuilder: FeatureFlag.create)
-    ..pc<FeatureFlag>(
-        5, _omitFieldNames ? '' : 'feedItemActions', $pb.PbFieldType.PM,
+    ..pPM<FeatureFlag>(5, _omitFieldNames ? '' : 'feedItemActions',
         subBuilder: FeatureFlag.create)
-    ..pc<FeatureFlag>(
-        6, _omitFieldNames ? '' : 'feedSetters', $pb.PbFieldType.PM,
+    ..pPM<FeatureFlag>(6, _omitFieldNames ? '' : 'feedSetters',
         subBuilder: FeatureFlag.create)
-    ..pc<FeatureFlag>(
-        7, _omitFieldNames ? '' : 'feedGetters', $pb.PbFieldType.PM,
+    ..pPM<FeatureFlag>(7, _omitFieldNames ? '' : 'feedGetters',
         subBuilder: FeatureFlag.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  FeatureSummary clone() => FeatureSummary()..mergeFromMessage(this);
+  FeatureSummary clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   FeatureSummary copyWith(void Function(FeatureSummary) updates) =>
       super.copyWith((message) => updates(message as FeatureSummary))
@@ -771,8 +752,6 @@ class FeatureSummary extends $pb.GeneratedMessage {
   static FeatureSummary create() => FeatureSummary._();
   @$core.override
   FeatureSummary createEmptyInstance() => create();
-  static $pb.PbList<FeatureSummary> createRepeated() =>
-      $pb.PbList<FeatureSummary>();
   @$core.pragma('dart2js:noInline')
   static FeatureSummary getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<FeatureSummary>(create);

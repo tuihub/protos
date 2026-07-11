@@ -8,7 +8,7 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
 
 import 'dart:core' as $core;
 
@@ -44,7 +44,7 @@ class Error extends $pb.GeneratedMessage {
       _omitMessageNames ? '' : 'Error',
       package: const $pb.PackageName(_omitMessageNames ? '' : 'errors'),
       createEmptyInstance: create)
-    ..a<$core.int>(1, _omitFieldNames ? '' : 'code', $pb.PbFieldType.O3)
+    ..aI(1, _omitFieldNames ? '' : 'code')
     ..aOS(2, _omitFieldNames ? '' : 'reason')
     ..aOS(3, _omitFieldNames ? '' : 'message')
     ..m<$core.String, $core.String>(4, _omitFieldNames ? '' : 'metadata',
@@ -55,7 +55,7 @@ class Error extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  Error clone() => Error()..mergeFromMessage(this);
+  Error clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   Error copyWith(void Function(Error) updates) =>
       super.copyWith((message) => updates(message as Error)) as Error;
@@ -67,7 +67,6 @@ class Error extends $pb.GeneratedMessage {
   static Error create() => Error._();
   @$core.override
   Error createEmptyInstance() => create();
-  static $pb.PbList<Error> createRepeated() => $pb.PbList<Error>();
   @$core.pragma('dart2js:noInline')
   static Error getDefault() =>
       _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Error>(create);

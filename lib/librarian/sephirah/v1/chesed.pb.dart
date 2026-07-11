@@ -8,7 +8,7 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
 
 import 'dart:core' as $core;
 
@@ -52,7 +52,7 @@ class UploadImageRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UploadImageRequest clone() => UploadImageRequest()..mergeFromMessage(this);
+  UploadImageRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UploadImageRequest copyWith(void Function(UploadImageRequest) updates) =>
       super.copyWith((message) => updates(message as UploadImageRequest))
@@ -65,8 +65,6 @@ class UploadImageRequest extends $pb.GeneratedMessage {
   static UploadImageRequest create() => UploadImageRequest._();
   @$core.override
   UploadImageRequest createEmptyInstance() => create();
-  static $pb.PbList<UploadImageRequest> createRepeated() =>
-      $pb.PbList<UploadImageRequest>();
   @$core.pragma('dart2js:noInline')
   static UploadImageRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<UploadImageRequest>(create);
@@ -129,7 +127,7 @@ class UploadImageResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UploadImageResponse clone() => UploadImageResponse()..mergeFromMessage(this);
+  UploadImageResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UploadImageResponse copyWith(void Function(UploadImageResponse) updates) =>
       super.copyWith((message) => updates(message as UploadImageResponse))
@@ -142,8 +140,6 @@ class UploadImageResponse extends $pb.GeneratedMessage {
   static UploadImageResponse create() => UploadImageResponse._();
   @$core.override
   UploadImageResponse createEmptyInstance() => create();
-  static $pb.PbList<UploadImageResponse> createRepeated() =>
-      $pb.PbList<UploadImageResponse>();
   @$core.pragma('dart2js:noInline')
   static UploadImageResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<UploadImageResponse>(create);
@@ -193,7 +189,7 @@ class UpdateImageRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UpdateImageRequest clone() => UpdateImageRequest()..mergeFromMessage(this);
+  UpdateImageRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UpdateImageRequest copyWith(void Function(UpdateImageRequest) updates) =>
       super.copyWith((message) => updates(message as UpdateImageRequest))
@@ -206,8 +202,6 @@ class UpdateImageRequest extends $pb.GeneratedMessage {
   static UpdateImageRequest create() => UpdateImageRequest._();
   @$core.override
   UpdateImageRequest createEmptyInstance() => create();
-  static $pb.PbList<UpdateImageRequest> createRepeated() =>
-      $pb.PbList<UpdateImageRequest>();
   @$core.pragma('dart2js:noInline')
   static UpdateImageRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<UpdateImageRequest>(create);
@@ -263,7 +257,7 @@ class UpdateImageResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UpdateImageResponse clone() => UpdateImageResponse()..mergeFromMessage(this);
+  UpdateImageResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UpdateImageResponse copyWith(void Function(UpdateImageResponse) updates) =>
       super.copyWith((message) => updates(message as UpdateImageResponse))
@@ -276,8 +270,6 @@ class UpdateImageResponse extends $pb.GeneratedMessage {
   static UpdateImageResponse create() => UpdateImageResponse._();
   @$core.override
   UpdateImageResponse createEmptyInstance() => create();
-  static $pb.PbList<UpdateImageResponse> createRepeated() =>
-      $pb.PbList<UpdateImageResponse>();
   @$core.pragma('dart2js:noInline')
   static UpdateImageResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<UpdateImageResponse>(create);
@@ -316,7 +308,7 @@ class ListImagesRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListImagesRequest clone() => ListImagesRequest()..mergeFromMessage(this);
+  ListImagesRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ListImagesRequest copyWith(void Function(ListImagesRequest) updates) =>
       super.copyWith((message) => updates(message as ListImagesRequest))
@@ -329,8 +321,6 @@ class ListImagesRequest extends $pb.GeneratedMessage {
   static ListImagesRequest create() => ListImagesRequest._();
   @$core.override
   ListImagesRequest createEmptyInstance() => create();
-  static $pb.PbList<ListImagesRequest> createRepeated() =>
-      $pb.PbList<ListImagesRequest>();
   @$core.pragma('dart2js:noInline')
   static ListImagesRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ListImagesRequest>(create);
@@ -386,12 +376,12 @@ class ListImagesResponse extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOM<$0.PagingResponse>(1, _omitFieldNames ? '' : 'paging',
         subBuilder: $0.PagingResponse.create)
-    ..pc<$0.InternalID>(2, _omitFieldNames ? '' : 'ids', $pb.PbFieldType.PM,
+    ..pPM<$0.InternalID>(2, _omitFieldNames ? '' : 'ids',
         subBuilder: $0.InternalID.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListImagesResponse clone() => ListImagesResponse()..mergeFromMessage(this);
+  ListImagesResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ListImagesResponse copyWith(void Function(ListImagesResponse) updates) =>
       super.copyWith((message) => updates(message as ListImagesResponse))
@@ -404,8 +394,6 @@ class ListImagesResponse extends $pb.GeneratedMessage {
   static ListImagesResponse create() => ListImagesResponse._();
   @$core.override
   ListImagesResponse createEmptyInstance() => create();
-  static $pb.PbList<ListImagesResponse> createRepeated() =>
-      $pb.PbList<ListImagesResponse>();
   @$core.pragma('dart2js:noInline')
   static ListImagesResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ListImagesResponse>(create);
@@ -457,7 +445,7 @@ class SearchImagesRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SearchImagesRequest clone() => SearchImagesRequest()..mergeFromMessage(this);
+  SearchImagesRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   SearchImagesRequest copyWith(void Function(SearchImagesRequest) updates) =>
       super.copyWith((message) => updates(message as SearchImagesRequest))
@@ -470,8 +458,6 @@ class SearchImagesRequest extends $pb.GeneratedMessage {
   static SearchImagesRequest create() => SearchImagesRequest._();
   @$core.override
   SearchImagesRequest createEmptyInstance() => create();
-  static $pb.PbList<SearchImagesRequest> createRepeated() =>
-      $pb.PbList<SearchImagesRequest>();
   @$core.pragma('dart2js:noInline')
   static SearchImagesRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<SearchImagesRequest>(create);
@@ -525,13 +511,12 @@ class SearchImagesResponse extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOM<$0.PagingResponse>(1, _omitFieldNames ? '' : 'paging',
         subBuilder: $0.PagingResponse.create)
-    ..pc<$0.InternalID>(2, _omitFieldNames ? '' : 'ids', $pb.PbFieldType.PM,
+    ..pPM<$0.InternalID>(2, _omitFieldNames ? '' : 'ids',
         subBuilder: $0.InternalID.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SearchImagesResponse clone() =>
-      SearchImagesResponse()..mergeFromMessage(this);
+  SearchImagesResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   SearchImagesResponse copyWith(void Function(SearchImagesResponse) updates) =>
       super.copyWith((message) => updates(message as SearchImagesResponse))
@@ -544,8 +529,6 @@ class SearchImagesResponse extends $pb.GeneratedMessage {
   static SearchImagesResponse create() => SearchImagesResponse._();
   @$core.override
   SearchImagesResponse createEmptyInstance() => create();
-  static $pb.PbList<SearchImagesResponse> createRepeated() =>
-      $pb.PbList<SearchImagesResponse>();
   @$core.pragma('dart2js:noInline')
   static SearchImagesResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<SearchImagesResponse>(create);
@@ -594,7 +577,7 @@ class GetImageRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetImageRequest clone() => GetImageRequest()..mergeFromMessage(this);
+  GetImageRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetImageRequest copyWith(void Function(GetImageRequest) updates) =>
       super.copyWith((message) => updates(message as GetImageRequest))
@@ -607,8 +590,6 @@ class GetImageRequest extends $pb.GeneratedMessage {
   static GetImageRequest create() => GetImageRequest._();
   @$core.override
   GetImageRequest createEmptyInstance() => create();
-  static $pb.PbList<GetImageRequest> createRepeated() =>
-      $pb.PbList<GetImageRequest>();
   @$core.pragma('dart2js:noInline')
   static GetImageRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<GetImageRequest>(create);
@@ -660,7 +641,7 @@ class GetImageResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetImageResponse clone() => GetImageResponse()..mergeFromMessage(this);
+  GetImageResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetImageResponse copyWith(void Function(GetImageResponse) updates) =>
       super.copyWith((message) => updates(message as GetImageResponse))
@@ -673,8 +654,6 @@ class GetImageResponse extends $pb.GeneratedMessage {
   static GetImageResponse create() => GetImageResponse._();
   @$core.override
   GetImageResponse createEmptyInstance() => create();
-  static $pb.PbList<GetImageResponse> createRepeated() =>
-      $pb.PbList<GetImageResponse>();
   @$core.pragma('dart2js:noInline')
   static GetImageResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<GetImageResponse>(create);
@@ -738,8 +717,7 @@ class DownloadImageRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  DownloadImageRequest clone() =>
-      DownloadImageRequest()..mergeFromMessage(this);
+  DownloadImageRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   DownloadImageRequest copyWith(void Function(DownloadImageRequest) updates) =>
       super.copyWith((message) => updates(message as DownloadImageRequest))
@@ -752,8 +730,6 @@ class DownloadImageRequest extends $pb.GeneratedMessage {
   static DownloadImageRequest create() => DownloadImageRequest._();
   @$core.override
   DownloadImageRequest createEmptyInstance() => create();
-  static $pb.PbList<DownloadImageRequest> createRepeated() =>
-      $pb.PbList<DownloadImageRequest>();
   @$core.pragma('dart2js:noInline')
   static DownloadImageRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<DownloadImageRequest>(create);
@@ -798,8 +774,7 @@ class DownloadImageResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  DownloadImageResponse clone() =>
-      DownloadImageResponse()..mergeFromMessage(this);
+  DownloadImageResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   DownloadImageResponse copyWith(
           void Function(DownloadImageResponse) updates) =>
@@ -813,8 +788,6 @@ class DownloadImageResponse extends $pb.GeneratedMessage {
   static DownloadImageResponse create() => DownloadImageResponse._();
   @$core.override
   DownloadImageResponse createEmptyInstance() => create();
-  static $pb.PbList<DownloadImageResponse> createRepeated() =>
-      $pb.PbList<DownloadImageResponse>();
   @$core.pragma('dart2js:noInline')
   static DownloadImageResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<DownloadImageResponse>(create);

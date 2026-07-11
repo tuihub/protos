@@ -8,15 +8,16 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
 
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
-
-import '../../../google/protobuf/duration.pb.dart' as $2;
-import '../../../google/protobuf/timestamp.pb.dart' as $1;
+import 'package:protobuf/well_known_types/google/protobuf/duration.pb.dart'
+    as $2;
+import 'package:protobuf/well_known_types/google/protobuf/timestamp.pb.dart'
+    as $1;
 
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
 
@@ -40,7 +41,7 @@ class RefreshTokenRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RefreshTokenRequest clone() => RefreshTokenRequest()..mergeFromMessage(this);
+  RefreshTokenRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   RefreshTokenRequest copyWith(void Function(RefreshTokenRequest) updates) =>
       super.copyWith((message) => updates(message as RefreshTokenRequest))
@@ -53,8 +54,6 @@ class RefreshTokenRequest extends $pb.GeneratedMessage {
   static RefreshTokenRequest create() => RefreshTokenRequest._();
   @$core.override
   RefreshTokenRequest createEmptyInstance() => create();
-  static $pb.PbList<RefreshTokenRequest> createRepeated() =>
-      $pb.PbList<RefreshTokenRequest>();
   @$core.pragma('dart2js:noInline')
   static RefreshTokenRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<RefreshTokenRequest>(create);
@@ -91,8 +90,7 @@ class RefreshTokenResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  RefreshTokenResponse clone() =>
-      RefreshTokenResponse()..mergeFromMessage(this);
+  RefreshTokenResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   RefreshTokenResponse copyWith(void Function(RefreshTokenResponse) updates) =>
       super.copyWith((message) => updates(message as RefreshTokenResponse))
@@ -105,8 +103,6 @@ class RefreshTokenResponse extends $pb.GeneratedMessage {
   static RefreshTokenResponse create() => RefreshTokenResponse._();
   @$core.override
   RefreshTokenResponse createEmptyInstance() => create();
-  static $pb.PbList<RefreshTokenResponse> createRepeated() =>
-      $pb.PbList<RefreshTokenResponse>();
   @$core.pragma('dart2js:noInline')
   static RefreshTokenResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<RefreshTokenResponse>(create);
@@ -171,7 +167,7 @@ class HeartbeatRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  HeartbeatRequest clone() => HeartbeatRequest()..mergeFromMessage(this);
+  HeartbeatRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   HeartbeatRequest copyWith(void Function(HeartbeatRequest) updates) =>
       super.copyWith((message) => updates(message as HeartbeatRequest))
@@ -184,8 +180,6 @@ class HeartbeatRequest extends $pb.GeneratedMessage {
   static HeartbeatRequest create() => HeartbeatRequest._();
   @$core.override
   HeartbeatRequest createEmptyInstance() => create();
-  static $pb.PbList<HeartbeatRequest> createRepeated() =>
-      $pb.PbList<HeartbeatRequest>();
   @$core.pragma('dart2js:noInline')
   static HeartbeatRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<HeartbeatRequest>(create);
@@ -255,7 +249,7 @@ class HeartbeatResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  HeartbeatResponse clone() => HeartbeatResponse()..mergeFromMessage(this);
+  HeartbeatResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   HeartbeatResponse copyWith(void Function(HeartbeatResponse) updates) =>
       super.copyWith((message) => updates(message as HeartbeatResponse))
@@ -268,8 +262,6 @@ class HeartbeatResponse extends $pb.GeneratedMessage {
   static HeartbeatResponse create() => HeartbeatResponse._();
   @$core.override
   HeartbeatResponse createEmptyInstance() => create();
-  static $pb.PbList<HeartbeatResponse> createRepeated() =>
-      $pb.PbList<HeartbeatResponse>();
   @$core.pragma('dart2js:noInline')
   static HeartbeatResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<HeartbeatResponse>(create);
@@ -313,14 +305,12 @@ class ReportSentinelInformationRequest extends $pb.GeneratedMessage {
     ..pPS(2, _omitFieldNames ? '' : 'urlAlternatives')
     ..aOS(3, _omitFieldNames ? '' : 'getTokenPath')
     ..aOS(4, _omitFieldNames ? '' : 'downloadFileBasePath')
-    ..pc<SentinelLibrary>(
-        5, _omitFieldNames ? '' : 'libraries', $pb.PbFieldType.PM,
+    ..pPM<SentinelLibrary>(5, _omitFieldNames ? '' : 'libraries',
         subBuilder: SentinelLibrary.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ReportSentinelInformationRequest clone() =>
-      ReportSentinelInformationRequest()..mergeFromMessage(this);
+  ReportSentinelInformationRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ReportSentinelInformationRequest copyWith(
           void Function(ReportSentinelInformationRequest) updates) =>
@@ -336,8 +326,6 @@ class ReportSentinelInformationRequest extends $pb.GeneratedMessage {
       ReportSentinelInformationRequest._();
   @$core.override
   ReportSentinelInformationRequest createEmptyInstance() => create();
-  static $pb.PbList<ReportSentinelInformationRequest> createRepeated() =>
-      $pb.PbList<ReportSentinelInformationRequest>();
   @$core.pragma('dart2js:noInline')
   static ReportSentinelInformationRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ReportSentinelInformationRequest>(
@@ -400,8 +388,7 @@ class ReportSentinelInformationResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ReportSentinelInformationResponse clone() =>
-      ReportSentinelInformationResponse()..mergeFromMessage(this);
+  ReportSentinelInformationResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ReportSentinelInformationResponse copyWith(
           void Function(ReportSentinelInformationResponse) updates) =>
@@ -417,8 +404,6 @@ class ReportSentinelInformationResponse extends $pb.GeneratedMessage {
       ReportSentinelInformationResponse._();
   @$core.override
   ReportSentinelInformationResponse createEmptyInstance() => create();
-  static $pb.PbList<ReportSentinelInformationResponse> createRepeated() =>
-      $pb.PbList<ReportSentinelInformationResponse>();
   @$core.pragma('dart2js:noInline')
   static ReportSentinelInformationResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ReportSentinelInformationResponse>(
@@ -453,8 +438,7 @@ class ReportAppBinariesRequest extends $pb.GeneratedMessage {
       package: const $pb.PackageName(
           _omitMessageNames ? '' : 'librarian.sentinel.v1'),
       createEmptyInstance: create)
-    ..pc<SentinelLibraryAppBinary>(
-        1, _omitFieldNames ? '' : 'appBinaries', $pb.PbFieldType.PM,
+    ..pPM<SentinelLibraryAppBinary>(1, _omitFieldNames ? '' : 'appBinaries',
         subBuilder: SentinelLibraryAppBinary.create)
     ..aOM<$1.Timestamp>(2, _omitFieldNames ? '' : 'snapshotTime',
         subBuilder: $1.Timestamp.create)
@@ -462,8 +446,7 @@ class ReportAppBinariesRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ReportAppBinariesRequest clone() =>
-      ReportAppBinariesRequest()..mergeFromMessage(this);
+  ReportAppBinariesRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ReportAppBinariesRequest copyWith(
           void Function(ReportAppBinariesRequest) updates) =>
@@ -477,8 +460,6 @@ class ReportAppBinariesRequest extends $pb.GeneratedMessage {
   static ReportAppBinariesRequest create() => ReportAppBinariesRequest._();
   @$core.override
   ReportAppBinariesRequest createEmptyInstance() => create();
-  static $pb.PbList<ReportAppBinariesRequest> createRepeated() =>
-      $pb.PbList<ReportAppBinariesRequest>();
   @$core.pragma('dart2js:noInline')
   static ReportAppBinariesRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ReportAppBinariesRequest>(create);
@@ -542,8 +523,7 @@ class ReportAppBinariesResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ReportAppBinariesResponse clone() =>
-      ReportAppBinariesResponse()..mergeFromMessage(this);
+  ReportAppBinariesResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ReportAppBinariesResponse copyWith(
           void Function(ReportAppBinariesResponse) updates) =>
@@ -557,8 +537,6 @@ class ReportAppBinariesResponse extends $pb.GeneratedMessage {
   static ReportAppBinariesResponse create() => ReportAppBinariesResponse._();
   @$core.override
   ReportAppBinariesResponse createEmptyInstance() => create();
-  static $pb.PbList<ReportAppBinariesResponse> createRepeated() =>
-      $pb.PbList<ReportAppBinariesResponse>();
   @$core.pragma('dart2js:noInline')
   static ReportAppBinariesResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ReportAppBinariesResponse>(create);
@@ -605,7 +583,7 @@ class SentinelLibrary extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SentinelLibrary clone() => SentinelLibrary()..mergeFromMessage(this);
+  SentinelLibrary clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   SentinelLibrary copyWith(void Function(SentinelLibrary) updates) =>
       super.copyWith((message) => updates(message as SentinelLibrary))
@@ -618,8 +596,6 @@ class SentinelLibrary extends $pb.GeneratedMessage {
   static SentinelLibrary create() => SentinelLibrary._();
   @$core.override
   SentinelLibrary createEmptyInstance() => create();
-  static $pb.PbList<SentinelLibrary> createRepeated() =>
-      $pb.PbList<SentinelLibrary>();
   @$core.pragma('dart2js:noInline')
   static SentinelLibrary getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<SentinelLibrary>(create);
@@ -688,8 +664,7 @@ class SentinelLibraryAppBinary extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'sentinelGeneratedId')
     ..aInt64(3, _omitFieldNames ? '' : 'sizeBytes')
     ..aOB(4, _omitFieldNames ? '' : 'needToken')
-    ..pc<SentinelLibraryAppBinaryFile>(
-        5, _omitFieldNames ? '' : 'files', $pb.PbFieldType.PM,
+    ..pPM<SentinelLibraryAppBinaryFile>(5, _omitFieldNames ? '' : 'files',
         subBuilder: SentinelLibraryAppBinaryFile.create)
     ..aOS(10, _omitFieldNames ? '' : 'name')
     ..aOS(11, _omitFieldNames ? '' : 'version')
@@ -698,8 +673,7 @@ class SentinelLibraryAppBinary extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SentinelLibraryAppBinary clone() =>
-      SentinelLibraryAppBinary()..mergeFromMessage(this);
+  SentinelLibraryAppBinary clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   SentinelLibraryAppBinary copyWith(
           void Function(SentinelLibraryAppBinary) updates) =>
@@ -713,8 +687,6 @@ class SentinelLibraryAppBinary extends $pb.GeneratedMessage {
   static SentinelLibraryAppBinary create() => SentinelLibraryAppBinary._();
   @$core.override
   SentinelLibraryAppBinary createEmptyInstance() => create();
-  static $pb.PbList<SentinelLibraryAppBinary> createRepeated() =>
-      $pb.PbList<SentinelLibraryAppBinary>();
   @$core.pragma('dart2js:noInline')
   static SentinelLibraryAppBinary getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<SentinelLibraryAppBinary>(create);
@@ -836,8 +808,7 @@ class SentinelLibraryAppBinaryFile extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SentinelLibraryAppBinaryFile clone() =>
-      SentinelLibraryAppBinaryFile()..mergeFromMessage(this);
+  SentinelLibraryAppBinaryFile clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   SentinelLibraryAppBinaryFile copyWith(
           void Function(SentinelLibraryAppBinaryFile) updates) =>
@@ -853,8 +824,6 @@ class SentinelLibraryAppBinaryFile extends $pb.GeneratedMessage {
       SentinelLibraryAppBinaryFile._();
   @$core.override
   SentinelLibraryAppBinaryFile createEmptyInstance() => create();
-  static $pb.PbList<SentinelLibraryAppBinaryFile> createRepeated() =>
-      $pb.PbList<SentinelLibraryAppBinaryFile>();
   @$core.pragma('dart2js:noInline')
   static SentinelLibraryAppBinaryFile getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<SentinelLibraryAppBinaryFile>(create);

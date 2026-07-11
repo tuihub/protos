@@ -8,7 +8,7 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
 
 import 'dart:core' as $core;
 
@@ -56,8 +56,7 @@ class DetectAppInfoRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  DetectAppInfoRequest clone() =>
-      DetectAppInfoRequest()..mergeFromMessage(this);
+  DetectAppInfoRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   DetectAppInfoRequest copyWith(void Function(DetectAppInfoRequest) updates) =>
       super.copyWith((message) => updates(message as DetectAppInfoRequest))
@@ -70,8 +69,6 @@ class DetectAppInfoRequest extends $pb.GeneratedMessage {
   static DetectAppInfoRequest create() => DetectAppInfoRequest._();
   @$core.override
   DetectAppInfoRequest createEmptyInstance() => create();
-  static $pb.PbList<DetectAppInfoRequest> createRepeated() =>
-      $pb.PbList<DetectAppInfoRequest>();
   @$core.pragma('dart2js:noInline')
   static DetectAppInfoRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<DetectAppInfoRequest>(create);
@@ -121,8 +118,7 @@ class DetectAppInfoResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  DetectAppInfoResponse clone() =>
-      DetectAppInfoResponse()..mergeFromMessage(this);
+  DetectAppInfoResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   DetectAppInfoResponse copyWith(
           void Function(DetectAppInfoResponse) updates) =>
@@ -136,8 +132,6 @@ class DetectAppInfoResponse extends $pb.GeneratedMessage {
   static DetectAppInfoResponse create() => DetectAppInfoResponse._();
   @$core.override
   DetectAppInfoResponse createEmptyInstance() => create();
-  static $pb.PbList<DetectAppInfoResponse> createRepeated() =>
-      $pb.PbList<DetectAppInfoResponse>();
   @$core.pragma('dart2js:noInline')
   static DetectAppInfoResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<DetectAppInfoResponse>(create);
@@ -183,8 +177,7 @@ class SearchAppInfoRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SearchAppInfoRequest clone() =>
-      SearchAppInfoRequest()..mergeFromMessage(this);
+  SearchAppInfoRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   SearchAppInfoRequest copyWith(void Function(SearchAppInfoRequest) updates) =>
       super.copyWith((message) => updates(message as SearchAppInfoRequest))
@@ -197,8 +190,6 @@ class SearchAppInfoRequest extends $pb.GeneratedMessage {
   static SearchAppInfoRequest create() => SearchAppInfoRequest._();
   @$core.override
   SearchAppInfoRequest createEmptyInstance() => create();
-  static $pb.PbList<SearchAppInfoRequest> createRepeated() =>
-      $pb.PbList<SearchAppInfoRequest>();
   @$core.pragma('dart2js:noInline')
   static SearchAppInfoRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<SearchAppInfoRequest>(create);
@@ -239,13 +230,12 @@ class SearchAppInfoResponse extends $pb.GeneratedMessage {
       package:
           const $pb.PackageName(_omitMessageNames ? '' : 'librarian.porter.v1'),
       createEmptyInstance: create)
-    ..pc<AppInfo>(1, _omitFieldNames ? '' : 'appInfos', $pb.PbFieldType.PM,
+    ..pPM<AppInfo>(1, _omitFieldNames ? '' : 'appInfos',
         subBuilder: AppInfo.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SearchAppInfoResponse clone() =>
-      SearchAppInfoResponse()..mergeFromMessage(this);
+  SearchAppInfoResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   SearchAppInfoResponse copyWith(
           void Function(SearchAppInfoResponse) updates) =>
@@ -259,8 +249,6 @@ class SearchAppInfoResponse extends $pb.GeneratedMessage {
   static SearchAppInfoResponse create() => SearchAppInfoResponse._();
   @$core.override
   SearchAppInfoResponse createEmptyInstance() => create();
-  static $pb.PbList<SearchAppInfoResponse> createRepeated() =>
-      $pb.PbList<SearchAppInfoResponse>();
   @$core.pragma('dart2js:noInline')
   static SearchAppInfoResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<SearchAppInfoResponse>(create);
@@ -298,7 +286,7 @@ class GetAppInfoRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetAppInfoRequest clone() => GetAppInfoRequest()..mergeFromMessage(this);
+  GetAppInfoRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetAppInfoRequest copyWith(void Function(GetAppInfoRequest) updates) =>
       super.copyWith((message) => updates(message as GetAppInfoRequest))
@@ -311,8 +299,6 @@ class GetAppInfoRequest extends $pb.GeneratedMessage {
   static GetAppInfoRequest create() => GetAppInfoRequest._();
   @$core.override
   GetAppInfoRequest createEmptyInstance() => create();
-  static $pb.PbList<GetAppInfoRequest> createRepeated() =>
-      $pb.PbList<GetAppInfoRequest>();
   @$core.pragma('dart2js:noInline')
   static GetAppInfoRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<GetAppInfoRequest>(create);
@@ -358,7 +344,7 @@ class GetAppInfoResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetAppInfoResponse clone() => GetAppInfoResponse()..mergeFromMessage(this);
+  GetAppInfoResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetAppInfoResponse copyWith(void Function(GetAppInfoResponse) updates) =>
       super.copyWith((message) => updates(message as GetAppInfoResponse))
@@ -371,8 +357,6 @@ class GetAppInfoResponse extends $pb.GeneratedMessage {
   static GetAppInfoResponse create() => GetAppInfoResponse._();
   @$core.override
   GetAppInfoResponse createEmptyInstance() => create();
-  static $pb.PbList<GetAppInfoResponse> createRepeated() =>
-      $pb.PbList<GetAppInfoResponse>();
   @$core.pragma('dart2js:noInline')
   static GetAppInfoResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<GetAppInfoResponse>(create);
@@ -421,8 +405,7 @@ class ParseRawAppInfoRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ParseRawAppInfoRequest clone() =>
-      ParseRawAppInfoRequest()..mergeFromMessage(this);
+  ParseRawAppInfoRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ParseRawAppInfoRequest copyWith(
           void Function(ParseRawAppInfoRequest) updates) =>
@@ -436,8 +419,6 @@ class ParseRawAppInfoRequest extends $pb.GeneratedMessage {
   static ParseRawAppInfoRequest create() => ParseRawAppInfoRequest._();
   @$core.override
   ParseRawAppInfoRequest createEmptyInstance() => create();
-  static $pb.PbList<ParseRawAppInfoRequest> createRepeated() =>
-      $pb.PbList<ParseRawAppInfoRequest>();
   @$core.pragma('dart2js:noInline')
   static ParseRawAppInfoRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ParseRawAppInfoRequest>(create);
@@ -492,8 +473,7 @@ class ParseRawAppInfoResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ParseRawAppInfoResponse clone() =>
-      ParseRawAppInfoResponse()..mergeFromMessage(this);
+  ParseRawAppInfoResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ParseRawAppInfoResponse copyWith(
           void Function(ParseRawAppInfoResponse) updates) =>
@@ -507,8 +487,6 @@ class ParseRawAppInfoResponse extends $pb.GeneratedMessage {
   static ParseRawAppInfoResponse create() => ParseRawAppInfoResponse._();
   @$core.override
   ParseRawAppInfoResponse createEmptyInstance() => create();
-  static $pb.PbList<ParseRawAppInfoResponse> createRepeated() =>
-      $pb.PbList<ParseRawAppInfoResponse>();
   @$core.pragma('dart2js:noInline')
   static ParseRawAppInfoResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ParseRawAppInfoResponse>(create);
@@ -582,10 +560,7 @@ class AppInfo extends $pb.GeneratedMessage {
     ..aOM<AppInfoDetails>(5, _omitFieldNames ? '' : 'details',
         subBuilder: AppInfoDetails.create)
     ..aOS(6, _omitFieldNames ? '' : 'name')
-    ..e<AppType>(7, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE,
-        defaultOrMaker: AppType.APP_TYPE_UNSPECIFIED,
-        valueOf: AppType.valueOf,
-        enumValues: AppType.values)
+    ..aE<AppType>(7, _omitFieldNames ? '' : 'type', enumValues: AppType.values)
     ..aOS(8, _omitFieldNames ? '' : 'shortDescription')
     ..aOS(9, _omitFieldNames ? '' : 'iconImageUrl')
     ..aOS(10, _omitFieldNames ? '' : 'backgroundImageUrl')
@@ -595,7 +570,7 @@ class AppInfo extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  AppInfo clone() => AppInfo()..mergeFromMessage(this);
+  AppInfo clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   AppInfo copyWith(void Function(AppInfo) updates) =>
       super.copyWith((message) => updates(message as AppInfo)) as AppInfo;
@@ -607,7 +582,6 @@ class AppInfo extends $pb.GeneratedMessage {
   static AppInfo create() => AppInfo._();
   @$core.override
   AppInfo createEmptyInstance() => create();
-  static $pb.PbList<AppInfo> createRepeated() => $pb.PbList<AppInfo>();
   @$core.pragma('dart2js:noInline')
   static AppInfo getDefault() =>
       _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AppInfo>(create);
@@ -767,7 +741,7 @@ class AppInfoDetails extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  AppInfoDetails clone() => AppInfoDetails()..mergeFromMessage(this);
+  AppInfoDetails clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   AppInfoDetails copyWith(void Function(AppInfoDetails) updates) =>
       super.copyWith((message) => updates(message as AppInfoDetails))
@@ -780,8 +754,6 @@ class AppInfoDetails extends $pb.GeneratedMessage {
   static AppInfoDetails create() => AppInfoDetails._();
   @$core.override
   AppInfoDetails createEmptyInstance() => create();
-  static $pb.PbList<AppInfoDetails> createRepeated() =>
-      $pb.PbList<AppInfoDetails>();
   @$core.pragma('dart2js:noInline')
   static AppInfoDetails getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<AppInfoDetails>(create);

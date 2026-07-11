@@ -8,15 +8,17 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
 
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
+import 'package:protobuf/well_known_types/google/protobuf/duration.pb.dart'
+    as $1;
+import 'package:protobuf/well_known_types/google/protobuf/timestamp.pb.dart'
+    as $2;
 
-import '../../../google/protobuf/duration.pb.dart' as $1;
-import '../../../google/protobuf/timestamp.pb.dart' as $2;
 import '../../v1/wellknown.pb.dart' as $0;
 import 'gebura.pbenum.dart';
 
@@ -55,8 +57,7 @@ class SearchStoreAppsRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SearchStoreAppsRequest clone() =>
-      SearchStoreAppsRequest()..mergeFromMessage(this);
+  SearchStoreAppsRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   SearchStoreAppsRequest copyWith(
           void Function(SearchStoreAppsRequest) updates) =>
@@ -70,8 +71,6 @@ class SearchStoreAppsRequest extends $pb.GeneratedMessage {
   static SearchStoreAppsRequest create() => SearchStoreAppsRequest._();
   @$core.override
   SearchStoreAppsRequest createEmptyInstance() => create();
-  static $pb.PbList<SearchStoreAppsRequest> createRepeated() =>
-      $pb.PbList<SearchStoreAppsRequest>();
   @$core.pragma('dart2js:noInline')
   static SearchStoreAppsRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<SearchStoreAppsRequest>(create);
@@ -125,14 +124,12 @@ class SearchStoreAppsResponse extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOM<$0.PagingResponse>(1, _omitFieldNames ? '' : 'paging',
         subBuilder: $0.PagingResponse.create)
-    ..pc<StoreAppDigest>(
-        2, _omitFieldNames ? '' : 'appInfos', $pb.PbFieldType.PM,
+    ..pPM<StoreAppDigest>(2, _omitFieldNames ? '' : 'appInfos',
         subBuilder: StoreAppDigest.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SearchStoreAppsResponse clone() =>
-      SearchStoreAppsResponse()..mergeFromMessage(this);
+  SearchStoreAppsResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   SearchStoreAppsResponse copyWith(
           void Function(SearchStoreAppsResponse) updates) =>
@@ -146,8 +143,6 @@ class SearchStoreAppsResponse extends $pb.GeneratedMessage {
   static SearchStoreAppsResponse create() => SearchStoreAppsResponse._();
   @$core.override
   SearchStoreAppsResponse createEmptyInstance() => create();
-  static $pb.PbList<SearchStoreAppsResponse> createRepeated() =>
-      $pb.PbList<SearchStoreAppsResponse>();
   @$core.pragma('dart2js:noInline')
   static SearchStoreAppsResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<SearchStoreAppsResponse>(create);
@@ -205,8 +200,7 @@ class GetStoreAppSummaryRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetStoreAppSummaryRequest clone() =>
-      GetStoreAppSummaryRequest()..mergeFromMessage(this);
+  GetStoreAppSummaryRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetStoreAppSummaryRequest copyWith(
           void Function(GetStoreAppSummaryRequest) updates) =>
@@ -220,8 +214,6 @@ class GetStoreAppSummaryRequest extends $pb.GeneratedMessage {
   static GetStoreAppSummaryRequest create() => GetStoreAppSummaryRequest._();
   @$core.override
   GetStoreAppSummaryRequest createEmptyInstance() => create();
-  static $pb.PbList<GetStoreAppSummaryRequest> createRepeated() =>
-      $pb.PbList<GetStoreAppSummaryRequest>();
   @$core.pragma('dart2js:noInline')
   static GetStoreAppSummaryRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<GetStoreAppSummaryRequest>(create);
@@ -297,8 +289,7 @@ class GetStoreAppSummaryResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetStoreAppSummaryResponse clone() =>
-      GetStoreAppSummaryResponse()..mergeFromMessage(this);
+  GetStoreAppSummaryResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetStoreAppSummaryResponse copyWith(
           void Function(GetStoreAppSummaryResponse) updates) =>
@@ -313,8 +304,6 @@ class GetStoreAppSummaryResponse extends $pb.GeneratedMessage {
   static GetStoreAppSummaryResponse create() => GetStoreAppSummaryResponse._();
   @$core.override
   GetStoreAppSummaryResponse createEmptyInstance() => create();
-  static $pb.PbList<GetStoreAppSummaryResponse> createRepeated() =>
-      $pb.PbList<GetStoreAppSummaryResponse>();
   @$core.pragma('dart2js:noInline')
   static GetStoreAppSummaryResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<GetStoreAppSummaryResponse>(create);
@@ -360,8 +349,7 @@ class AcquireStoreAppRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  AcquireStoreAppRequest clone() =>
-      AcquireStoreAppRequest()..mergeFromMessage(this);
+  AcquireStoreAppRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   AcquireStoreAppRequest copyWith(
           void Function(AcquireStoreAppRequest) updates) =>
@@ -375,8 +363,6 @@ class AcquireStoreAppRequest extends $pb.GeneratedMessage {
   static AcquireStoreAppRequest create() => AcquireStoreAppRequest._();
   @$core.override
   AcquireStoreAppRequest createEmptyInstance() => create();
-  static $pb.PbList<AcquireStoreAppRequest> createRepeated() =>
-      $pb.PbList<AcquireStoreAppRequest>();
   @$core.pragma('dart2js:noInline')
   static AcquireStoreAppRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<AcquireStoreAppRequest>(create);
@@ -422,8 +408,7 @@ class AcquireStoreAppResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  AcquireStoreAppResponse clone() =>
-      AcquireStoreAppResponse()..mergeFromMessage(this);
+  AcquireStoreAppResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   AcquireStoreAppResponse copyWith(
           void Function(AcquireStoreAppResponse) updates) =>
@@ -437,8 +422,6 @@ class AcquireStoreAppResponse extends $pb.GeneratedMessage {
   static AcquireStoreAppResponse create() => AcquireStoreAppResponse._();
   @$core.override
   AcquireStoreAppResponse createEmptyInstance() => create();
-  static $pb.PbList<AcquireStoreAppResponse> createRepeated() =>
-      $pb.PbList<AcquireStoreAppResponse>();
   @$core.pragma('dart2js:noInline')
   static AcquireStoreAppResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<AcquireStoreAppResponse>(create);
@@ -489,8 +472,7 @@ class ListStoreAppBinariesRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListStoreAppBinariesRequest clone() =>
-      ListStoreAppBinariesRequest()..mergeFromMessage(this);
+  ListStoreAppBinariesRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ListStoreAppBinariesRequest copyWith(
           void Function(ListStoreAppBinariesRequest) updates) =>
@@ -506,8 +488,6 @@ class ListStoreAppBinariesRequest extends $pb.GeneratedMessage {
       ListStoreAppBinariesRequest._();
   @$core.override
   ListStoreAppBinariesRequest createEmptyInstance() => create();
-  static $pb.PbList<ListStoreAppBinariesRequest> createRepeated() =>
-      $pb.PbList<ListStoreAppBinariesRequest>();
   @$core.pragma('dart2js:noInline')
   static ListStoreAppBinariesRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ListStoreAppBinariesRequest>(create);
@@ -563,14 +543,12 @@ class ListStoreAppBinariesResponse extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOM<$0.PagingResponse>(1, _omitFieldNames ? '' : 'paging',
         subBuilder: $0.PagingResponse.create)
-    ..pc<StoreAppBinary>(
-        2, _omitFieldNames ? '' : 'binaries', $pb.PbFieldType.PM,
+    ..pPM<StoreAppBinary>(2, _omitFieldNames ? '' : 'binaries',
         subBuilder: StoreAppBinary.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListStoreAppBinariesResponse clone() =>
-      ListStoreAppBinariesResponse()..mergeFromMessage(this);
+  ListStoreAppBinariesResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ListStoreAppBinariesResponse copyWith(
           void Function(ListStoreAppBinariesResponse) updates) =>
@@ -586,8 +564,6 @@ class ListStoreAppBinariesResponse extends $pb.GeneratedMessage {
       ListStoreAppBinariesResponse._();
   @$core.override
   ListStoreAppBinariesResponse createEmptyInstance() => create();
-  static $pb.PbList<ListStoreAppBinariesResponse> createRepeated() =>
-      $pb.PbList<ListStoreAppBinariesResponse>();
   @$core.pragma('dart2js:noInline')
   static ListStoreAppBinariesResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ListStoreAppBinariesResponse>(create);
@@ -640,8 +616,7 @@ class ListStoreAppBinaryFilesRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListStoreAppBinaryFilesRequest clone() =>
-      ListStoreAppBinaryFilesRequest()..mergeFromMessage(this);
+  ListStoreAppBinaryFilesRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ListStoreAppBinaryFilesRequest copyWith(
           void Function(ListStoreAppBinaryFilesRequest) updates) =>
@@ -657,8 +632,6 @@ class ListStoreAppBinaryFilesRequest extends $pb.GeneratedMessage {
       ListStoreAppBinaryFilesRequest._();
   @$core.override
   ListStoreAppBinaryFilesRequest createEmptyInstance() => create();
-  static $pb.PbList<ListStoreAppBinaryFilesRequest> createRepeated() =>
-      $pb.PbList<ListStoreAppBinaryFilesRequest>();
   @$core.pragma('dart2js:noInline')
   static ListStoreAppBinaryFilesRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ListStoreAppBinaryFilesRequest>(create);
@@ -714,14 +687,12 @@ class ListStoreAppBinaryFilesResponse extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOM<$0.PagingResponse>(1, _omitFieldNames ? '' : 'paging',
         subBuilder: $0.PagingResponse.create)
-    ..pc<StoreAppBinaryFile>(
-        2, _omitFieldNames ? '' : 'binaryFiles', $pb.PbFieldType.PM,
+    ..pPM<StoreAppBinaryFile>(2, _omitFieldNames ? '' : 'binaryFiles',
         subBuilder: StoreAppBinaryFile.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListStoreAppBinaryFilesResponse clone() =>
-      ListStoreAppBinaryFilesResponse()..mergeFromMessage(this);
+  ListStoreAppBinaryFilesResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ListStoreAppBinaryFilesResponse copyWith(
           void Function(ListStoreAppBinaryFilesResponse) updates) =>
@@ -737,8 +708,6 @@ class ListStoreAppBinaryFilesResponse extends $pb.GeneratedMessage {
       ListStoreAppBinaryFilesResponse._();
   @$core.override
   ListStoreAppBinaryFilesResponse createEmptyInstance() => create();
-  static $pb.PbList<ListStoreAppBinaryFilesResponse> createRepeated() =>
-      $pb.PbList<ListStoreAppBinaryFilesResponse>();
   @$core.pragma('dart2js:noInline')
   static ListStoreAppBinaryFilesResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ListStoreAppBinaryFilesResponse>(
@@ -788,8 +757,7 @@ class DownloadStoreAppBinaryRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  DownloadStoreAppBinaryRequest clone() =>
-      DownloadStoreAppBinaryRequest()..mergeFromMessage(this);
+  DownloadStoreAppBinaryRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   DownloadStoreAppBinaryRequest copyWith(
           void Function(DownloadStoreAppBinaryRequest) updates) =>
@@ -805,8 +773,6 @@ class DownloadStoreAppBinaryRequest extends $pb.GeneratedMessage {
       DownloadStoreAppBinaryRequest._();
   @$core.override
   DownloadStoreAppBinaryRequest createEmptyInstance() => create();
-  static $pb.PbList<DownloadStoreAppBinaryRequest> createRepeated() =>
-      $pb.PbList<DownloadStoreAppBinaryRequest>();
   @$core.pragma('dart2js:noInline')
   static DownloadStoreAppBinaryRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<DownloadStoreAppBinaryRequest>(create);
@@ -858,8 +824,7 @@ class DownloadStoreAppBinaryResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  DownloadStoreAppBinaryResponse clone() =>
-      DownloadStoreAppBinaryResponse()..mergeFromMessage(this);
+  DownloadStoreAppBinaryResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   DownloadStoreAppBinaryResponse copyWith(
           void Function(DownloadStoreAppBinaryResponse) updates) =>
@@ -875,8 +840,6 @@ class DownloadStoreAppBinaryResponse extends $pb.GeneratedMessage {
       DownloadStoreAppBinaryResponse._();
   @$core.override
   DownloadStoreAppBinaryResponse createEmptyInstance() => create();
-  static $pb.PbList<DownloadStoreAppBinaryResponse> createRepeated() =>
-      $pb.PbList<DownloadStoreAppBinaryResponse>();
   @$core.pragma('dart2js:noInline')
   static DownloadStoreAppBinaryResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<DownloadStoreAppBinaryResponse>(create);
@@ -937,8 +900,7 @@ class ListStoreAppSaveFilesRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListStoreAppSaveFilesRequest clone() =>
-      ListStoreAppSaveFilesRequest()..mergeFromMessage(this);
+  ListStoreAppSaveFilesRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ListStoreAppSaveFilesRequest copyWith(
           void Function(ListStoreAppSaveFilesRequest) updates) =>
@@ -954,8 +916,6 @@ class ListStoreAppSaveFilesRequest extends $pb.GeneratedMessage {
       ListStoreAppSaveFilesRequest._();
   @$core.override
   ListStoreAppSaveFilesRequest createEmptyInstance() => create();
-  static $pb.PbList<ListStoreAppSaveFilesRequest> createRepeated() =>
-      $pb.PbList<ListStoreAppSaveFilesRequest>();
   @$core.pragma('dart2js:noInline')
   static ListStoreAppSaveFilesRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ListStoreAppSaveFilesRequest>(create);
@@ -1011,14 +971,12 @@ class ListStoreAppSaveFilesResponse extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOM<$0.PagingResponse>(1, _omitFieldNames ? '' : 'paging',
         subBuilder: $0.PagingResponse.create)
-    ..pc<StoreAppSaveFile>(
-        2, _omitFieldNames ? '' : 'saveFiles', $pb.PbFieldType.PM,
+    ..pPM<StoreAppSaveFile>(2, _omitFieldNames ? '' : 'saveFiles',
         subBuilder: StoreAppSaveFile.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListStoreAppSaveFilesResponse clone() =>
-      ListStoreAppSaveFilesResponse()..mergeFromMessage(this);
+  ListStoreAppSaveFilesResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ListStoreAppSaveFilesResponse copyWith(
           void Function(ListStoreAppSaveFilesResponse) updates) =>
@@ -1034,8 +992,6 @@ class ListStoreAppSaveFilesResponse extends $pb.GeneratedMessage {
       ListStoreAppSaveFilesResponse._();
   @$core.override
   ListStoreAppSaveFilesResponse createEmptyInstance() => create();
-  static $pb.PbList<ListStoreAppSaveFilesResponse> createRepeated() =>
-      $pb.PbList<ListStoreAppSaveFilesResponse>();
   @$core.pragma('dart2js:noInline')
   static ListStoreAppSaveFilesResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ListStoreAppSaveFilesResponse>(create);
@@ -1084,8 +1040,7 @@ class DownloadStoreAppSaveFileRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  DownloadStoreAppSaveFileRequest clone() =>
-      DownloadStoreAppSaveFileRequest()..mergeFromMessage(this);
+  DownloadStoreAppSaveFileRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   DownloadStoreAppSaveFileRequest copyWith(
           void Function(DownloadStoreAppSaveFileRequest) updates) =>
@@ -1101,8 +1056,6 @@ class DownloadStoreAppSaveFileRequest extends $pb.GeneratedMessage {
       DownloadStoreAppSaveFileRequest._();
   @$core.override
   DownloadStoreAppSaveFileRequest createEmptyInstance() => create();
-  static $pb.PbList<DownloadStoreAppSaveFileRequest> createRepeated() =>
-      $pb.PbList<DownloadStoreAppSaveFileRequest>();
   @$core.pragma('dart2js:noInline')
   static DownloadStoreAppSaveFileRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<DownloadStoreAppSaveFileRequest>(
@@ -1149,8 +1102,7 @@ class DownloadStoreAppSaveFileResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  DownloadStoreAppSaveFileResponse clone() =>
-      DownloadStoreAppSaveFileResponse()..mergeFromMessage(this);
+  DownloadStoreAppSaveFileResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   DownloadStoreAppSaveFileResponse copyWith(
           void Function(DownloadStoreAppSaveFileResponse) updates) =>
@@ -1166,8 +1118,6 @@ class DownloadStoreAppSaveFileResponse extends $pb.GeneratedMessage {
       DownloadStoreAppSaveFileResponse._();
   @$core.override
   DownloadStoreAppSaveFileResponse createEmptyInstance() => create();
-  static $pb.PbList<DownloadStoreAppSaveFileResponse> createRepeated() =>
-      $pb.PbList<DownloadStoreAppSaveFileResponse>();
   @$core.pragma('dart2js:noInline')
   static DownloadStoreAppSaveFileResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<DownloadStoreAppSaveFileResponse>(
@@ -1218,8 +1168,7 @@ class SearchAppInfosRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SearchAppInfosRequest clone() =>
-      SearchAppInfosRequest()..mergeFromMessage(this);
+  SearchAppInfosRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   SearchAppInfosRequest copyWith(
           void Function(SearchAppInfosRequest) updates) =>
@@ -1233,8 +1182,6 @@ class SearchAppInfosRequest extends $pb.GeneratedMessage {
   static SearchAppInfosRequest create() => SearchAppInfosRequest._();
   @$core.override
   SearchAppInfosRequest createEmptyInstance() => create();
-  static $pb.PbList<SearchAppInfosRequest> createRepeated() =>
-      $pb.PbList<SearchAppInfosRequest>();
   @$core.pragma('dart2js:noInline')
   static SearchAppInfosRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<SearchAppInfosRequest>(create);
@@ -1291,13 +1238,12 @@ class SearchAppInfosResponse extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOM<$0.PagingResponse>(1, _omitFieldNames ? '' : 'paging',
         subBuilder: $0.PagingResponse.create)
-    ..pc<AppInfo>(2, _omitFieldNames ? '' : 'appInfos', $pb.PbFieldType.PM,
+    ..pPM<AppInfo>(2, _omitFieldNames ? '' : 'appInfos',
         subBuilder: AppInfo.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SearchAppInfosResponse clone() =>
-      SearchAppInfosResponse()..mergeFromMessage(this);
+  SearchAppInfosResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   SearchAppInfosResponse copyWith(
           void Function(SearchAppInfosResponse) updates) =>
@@ -1311,8 +1257,6 @@ class SearchAppInfosResponse extends $pb.GeneratedMessage {
   static SearchAppInfosResponse create() => SearchAppInfosResponse._();
   @$core.override
   SearchAppInfosResponse createEmptyInstance() => create();
-  static $pb.PbList<SearchAppInfosResponse> createRepeated() =>
-      $pb.PbList<SearchAppInfosResponse>();
   @$core.pragma('dart2js:noInline')
   static SearchAppInfosResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<SearchAppInfosResponse>(create);
@@ -1360,7 +1304,7 @@ class CreateAppRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CreateAppRequest clone() => CreateAppRequest()..mergeFromMessage(this);
+  CreateAppRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   CreateAppRequest copyWith(void Function(CreateAppRequest) updates) =>
       super.copyWith((message) => updates(message as CreateAppRequest))
@@ -1373,8 +1317,6 @@ class CreateAppRequest extends $pb.GeneratedMessage {
   static CreateAppRequest create() => CreateAppRequest._();
   @$core.override
   CreateAppRequest createEmptyInstance() => create();
-  static $pb.PbList<CreateAppRequest> createRepeated() =>
-      $pb.PbList<CreateAppRequest>();
   @$core.pragma('dart2js:noInline')
   static CreateAppRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<CreateAppRequest>(create);
@@ -1420,7 +1362,7 @@ class CreateAppResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CreateAppResponse clone() => CreateAppResponse()..mergeFromMessage(this);
+  CreateAppResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   CreateAppResponse copyWith(void Function(CreateAppResponse) updates) =>
       super.copyWith((message) => updates(message as CreateAppResponse))
@@ -1433,8 +1375,6 @@ class CreateAppResponse extends $pb.GeneratedMessage {
   static CreateAppResponse create() => CreateAppResponse._();
   @$core.override
   CreateAppResponse createEmptyInstance() => create();
-  static $pb.PbList<CreateAppResponse> createRepeated() =>
-      $pb.PbList<CreateAppResponse>();
   @$core.pragma('dart2js:noInline')
   static CreateAppResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<CreateAppResponse>(create);
@@ -1479,7 +1419,7 @@ class UpdateAppRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UpdateAppRequest clone() => UpdateAppRequest()..mergeFromMessage(this);
+  UpdateAppRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UpdateAppRequest copyWith(void Function(UpdateAppRequest) updates) =>
       super.copyWith((message) => updates(message as UpdateAppRequest))
@@ -1492,8 +1432,6 @@ class UpdateAppRequest extends $pb.GeneratedMessage {
   static UpdateAppRequest create() => UpdateAppRequest._();
   @$core.override
   UpdateAppRequest createEmptyInstance() => create();
-  static $pb.PbList<UpdateAppRequest> createRepeated() =>
-      $pb.PbList<UpdateAppRequest>();
   @$core.pragma('dart2js:noInline')
   static UpdateAppRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<UpdateAppRequest>(create);
@@ -1531,7 +1469,7 @@ class UpdateAppResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UpdateAppResponse clone() => UpdateAppResponse()..mergeFromMessage(this);
+  UpdateAppResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UpdateAppResponse copyWith(void Function(UpdateAppResponse) updates) =>
       super.copyWith((message) => updates(message as UpdateAppResponse))
@@ -1544,8 +1482,6 @@ class UpdateAppResponse extends $pb.GeneratedMessage {
   static UpdateAppResponse create() => UpdateAppResponse._();
   @$core.override
   UpdateAppResponse createEmptyInstance() => create();
-  static $pb.PbList<UpdateAppResponse> createRepeated() =>
-      $pb.PbList<UpdateAppResponse>();
   @$core.pragma('dart2js:noInline')
   static UpdateAppResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<UpdateAppResponse>(create);
@@ -1581,16 +1517,14 @@ class ListAppsRequest extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOM<$0.PagingRequest>(1, _omitFieldNames ? '' : 'paging',
         subBuilder: $0.PagingRequest.create)
-    ..pc<$0.InternalID>(
-        2, _omitFieldNames ? '' : 'ownerIdFilter', $pb.PbFieldType.PM,
+    ..pPM<$0.InternalID>(2, _omitFieldNames ? '' : 'ownerIdFilter',
         subBuilder: $0.InternalID.create)
-    ..pc<$0.InternalID>(
-        3, _omitFieldNames ? '' : 'idFilter', $pb.PbFieldType.PM,
+    ..pPM<$0.InternalID>(3, _omitFieldNames ? '' : 'idFilter',
         subBuilder: $0.InternalID.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListAppsRequest clone() => ListAppsRequest()..mergeFromMessage(this);
+  ListAppsRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ListAppsRequest copyWith(void Function(ListAppsRequest) updates) =>
       super.copyWith((message) => updates(message as ListAppsRequest))
@@ -1603,8 +1537,6 @@ class ListAppsRequest extends $pb.GeneratedMessage {
   static ListAppsRequest create() => ListAppsRequest._();
   @$core.override
   ListAppsRequest createEmptyInstance() => create();
-  static $pb.PbList<ListAppsRequest> createRepeated() =>
-      $pb.PbList<ListAppsRequest>();
   @$core.pragma('dart2js:noInline')
   static ListAppsRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ListAppsRequest>(create);
@@ -1657,12 +1589,11 @@ class ListAppsResponse extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOM<$0.PagingResponse>(1, _omitFieldNames ? '' : 'paging',
         subBuilder: $0.PagingResponse.create)
-    ..pc<App>(2, _omitFieldNames ? '' : 'apps', $pb.PbFieldType.PM,
-        subBuilder: App.create)
+    ..pPM<App>(2, _omitFieldNames ? '' : 'apps', subBuilder: App.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListAppsResponse clone() => ListAppsResponse()..mergeFromMessage(this);
+  ListAppsResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ListAppsResponse copyWith(void Function(ListAppsResponse) updates) =>
       super.copyWith((message) => updates(message as ListAppsResponse))
@@ -1675,8 +1606,6 @@ class ListAppsResponse extends $pb.GeneratedMessage {
   static ListAppsResponse create() => ListAppsResponse._();
   @$core.override
   ListAppsResponse createEmptyInstance() => create();
-  static $pb.PbList<ListAppsResponse> createRepeated() =>
-      $pb.PbList<ListAppsResponse>();
   @$core.pragma('dart2js:noInline')
   static ListAppsResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ListAppsResponse>(create);
@@ -1725,7 +1654,7 @@ class DeleteAppRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  DeleteAppRequest clone() => DeleteAppRequest()..mergeFromMessage(this);
+  DeleteAppRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   DeleteAppRequest copyWith(void Function(DeleteAppRequest) updates) =>
       super.copyWith((message) => updates(message as DeleteAppRequest))
@@ -1738,8 +1667,6 @@ class DeleteAppRequest extends $pb.GeneratedMessage {
   static DeleteAppRequest create() => DeleteAppRequest._();
   @$core.override
   DeleteAppRequest createEmptyInstance() => create();
-  static $pb.PbList<DeleteAppRequest> createRepeated() =>
-      $pb.PbList<DeleteAppRequest>();
   @$core.pragma('dart2js:noInline')
   static DeleteAppRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<DeleteAppRequest>(create);
@@ -1777,7 +1704,7 @@ class DeleteAppResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  DeleteAppResponse clone() => DeleteAppResponse()..mergeFromMessage(this);
+  DeleteAppResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   DeleteAppResponse copyWith(void Function(DeleteAppResponse) updates) =>
       super.copyWith((message) => updates(message as DeleteAppResponse))
@@ -1790,8 +1717,6 @@ class DeleteAppResponse extends $pb.GeneratedMessage {
   static DeleteAppResponse create() => DeleteAppResponse._();
   @$core.override
   DeleteAppResponse createEmptyInstance() => create();
-  static $pb.PbList<DeleteAppResponse> createRepeated() =>
-      $pb.PbList<DeleteAppResponse>();
   @$core.pragma('dart2js:noInline')
   static DeleteAppResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<DeleteAppResponse>(create);
@@ -1821,14 +1746,12 @@ class BatchCreateAppRunTimeRequest extends $pb.GeneratedMessage {
       package: const $pb.PackageName(
           _omitMessageNames ? '' : 'librarian.sephirah.v1'),
       createEmptyInstance: create)
-    ..pc<AppRunTime>(
-        1, _omitFieldNames ? '' : 'appRunTimes', $pb.PbFieldType.PM,
+    ..pPM<AppRunTime>(1, _omitFieldNames ? '' : 'appRunTimes',
         subBuilder: AppRunTime.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  BatchCreateAppRunTimeRequest clone() =>
-      BatchCreateAppRunTimeRequest()..mergeFromMessage(this);
+  BatchCreateAppRunTimeRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   BatchCreateAppRunTimeRequest copyWith(
           void Function(BatchCreateAppRunTimeRequest) updates) =>
@@ -1844,8 +1767,6 @@ class BatchCreateAppRunTimeRequest extends $pb.GeneratedMessage {
       BatchCreateAppRunTimeRequest._();
   @$core.override
   BatchCreateAppRunTimeRequest createEmptyInstance() => create();
-  static $pb.PbList<BatchCreateAppRunTimeRequest> createRepeated() =>
-      $pb.PbList<BatchCreateAppRunTimeRequest>();
   @$core.pragma('dart2js:noInline')
   static BatchCreateAppRunTimeRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<BatchCreateAppRunTimeRequest>(create);
@@ -1875,8 +1796,7 @@ class BatchCreateAppRunTimeResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  BatchCreateAppRunTimeResponse clone() =>
-      BatchCreateAppRunTimeResponse()..mergeFromMessage(this);
+  BatchCreateAppRunTimeResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   BatchCreateAppRunTimeResponse copyWith(
           void Function(BatchCreateAppRunTimeResponse) updates) =>
@@ -1892,8 +1812,6 @@ class BatchCreateAppRunTimeResponse extends $pb.GeneratedMessage {
       BatchCreateAppRunTimeResponse._();
   @$core.override
   BatchCreateAppRunTimeResponse createEmptyInstance() => create();
-  static $pb.PbList<BatchCreateAppRunTimeResponse> createRepeated() =>
-      $pb.PbList<BatchCreateAppRunTimeResponse>();
   @$core.pragma('dart2js:noInline')
   static BatchCreateAppRunTimeResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<BatchCreateAppRunTimeResponse>(create);
@@ -1929,17 +1847,14 @@ class SumAppRunTimeRequest extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOM<$0.TimeRange>(1, _omitFieldNames ? '' : 'timeRangeCross',
         subBuilder: $0.TimeRange.create)
-    ..pc<$0.InternalID>(
-        2, _omitFieldNames ? '' : 'appIdFilter', $pb.PbFieldType.PM,
+    ..pPM<$0.InternalID>(2, _omitFieldNames ? '' : 'appIdFilter',
         subBuilder: $0.InternalID.create)
-    ..pc<$0.InternalID>(
-        3, _omitFieldNames ? '' : 'deviceIdFilter', $pb.PbFieldType.PM,
+    ..pPM<$0.InternalID>(3, _omitFieldNames ? '' : 'deviceIdFilter',
         subBuilder: $0.InternalID.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SumAppRunTimeRequest clone() =>
-      SumAppRunTimeRequest()..mergeFromMessage(this);
+  SumAppRunTimeRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   SumAppRunTimeRequest copyWith(void Function(SumAppRunTimeRequest) updates) =>
       super.copyWith((message) => updates(message as SumAppRunTimeRequest))
@@ -1952,8 +1867,6 @@ class SumAppRunTimeRequest extends $pb.GeneratedMessage {
   static SumAppRunTimeRequest create() => SumAppRunTimeRequest._();
   @$core.override
   SumAppRunTimeRequest createEmptyInstance() => create();
-  static $pb.PbList<SumAppRunTimeRequest> createRepeated() =>
-      $pb.PbList<SumAppRunTimeRequest>();
   @$core.pragma('dart2js:noInline')
   static SumAppRunTimeRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<SumAppRunTimeRequest>(create);
@@ -2005,8 +1918,7 @@ class SumAppRunTimeResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SumAppRunTimeResponse clone() =>
-      SumAppRunTimeResponse()..mergeFromMessage(this);
+  SumAppRunTimeResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   SumAppRunTimeResponse copyWith(
           void Function(SumAppRunTimeResponse) updates) =>
@@ -2020,8 +1932,6 @@ class SumAppRunTimeResponse extends $pb.GeneratedMessage {
   static SumAppRunTimeResponse create() => SumAppRunTimeResponse._();
   @$core.override
   SumAppRunTimeResponse createEmptyInstance() => create();
-  static $pb.PbList<SumAppRunTimeResponse> createRepeated() =>
-      $pb.PbList<SumAppRunTimeResponse>();
   @$core.pragma('dart2js:noInline')
   static SumAppRunTimeResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<SumAppRunTimeResponse>(create);
@@ -2070,19 +1980,16 @@ class ListAppRunTimesRequest extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOM<$0.PagingRequest>(1, _omitFieldNames ? '' : 'paging',
         subBuilder: $0.PagingRequest.create)
-    ..pc<$0.InternalID>(
-        2, _omitFieldNames ? '' : 'appIdFilter', $pb.PbFieldType.PM,
+    ..pPM<$0.InternalID>(2, _omitFieldNames ? '' : 'appIdFilter',
         subBuilder: $0.InternalID.create)
-    ..pc<$0.InternalID>(
-        3, _omitFieldNames ? '' : 'deviceIdFilter', $pb.PbFieldType.PM,
+    ..pPM<$0.InternalID>(3, _omitFieldNames ? '' : 'deviceIdFilter',
         subBuilder: $0.InternalID.create)
     ..aOM<$0.TimeRange>(4, _omitFieldNames ? '' : 'timeRangeCross',
         subBuilder: $0.TimeRange.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListAppRunTimesRequest clone() =>
-      ListAppRunTimesRequest()..mergeFromMessage(this);
+  ListAppRunTimesRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ListAppRunTimesRequest copyWith(
           void Function(ListAppRunTimesRequest) updates) =>
@@ -2096,8 +2003,6 @@ class ListAppRunTimesRequest extends $pb.GeneratedMessage {
   static ListAppRunTimesRequest create() => ListAppRunTimesRequest._();
   @$core.override
   ListAppRunTimesRequest createEmptyInstance() => create();
-  static $pb.PbList<ListAppRunTimesRequest> createRepeated() =>
-      $pb.PbList<ListAppRunTimesRequest>();
   @$core.pragma('dart2js:noInline')
   static ListAppRunTimesRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ListAppRunTimesRequest>(create);
@@ -2159,14 +2064,12 @@ class ListAppRunTimesResponse extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOM<$0.PagingResponse>(1, _omitFieldNames ? '' : 'paging',
         subBuilder: $0.PagingResponse.create)
-    ..pc<AppRunTime>(
-        2, _omitFieldNames ? '' : 'appRunTimes', $pb.PbFieldType.PM,
+    ..pPM<AppRunTime>(2, _omitFieldNames ? '' : 'appRunTimes',
         subBuilder: AppRunTime.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListAppRunTimesResponse clone() =>
-      ListAppRunTimesResponse()..mergeFromMessage(this);
+  ListAppRunTimesResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ListAppRunTimesResponse copyWith(
           void Function(ListAppRunTimesResponse) updates) =>
@@ -2180,8 +2083,6 @@ class ListAppRunTimesResponse extends $pb.GeneratedMessage {
   static ListAppRunTimesResponse create() => ListAppRunTimesResponse._();
   @$core.override
   ListAppRunTimesResponse createEmptyInstance() => create();
-  static $pb.PbList<ListAppRunTimesResponse> createRepeated() =>
-      $pb.PbList<ListAppRunTimesResponse>();
   @$core.pragma('dart2js:noInline')
   static ListAppRunTimesResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ListAppRunTimesResponse>(create);
@@ -2230,8 +2131,7 @@ class DeleteAppRunTimeRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  DeleteAppRunTimeRequest clone() =>
-      DeleteAppRunTimeRequest()..mergeFromMessage(this);
+  DeleteAppRunTimeRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   DeleteAppRunTimeRequest copyWith(
           void Function(DeleteAppRunTimeRequest) updates) =>
@@ -2245,8 +2145,6 @@ class DeleteAppRunTimeRequest extends $pb.GeneratedMessage {
   static DeleteAppRunTimeRequest create() => DeleteAppRunTimeRequest._();
   @$core.override
   DeleteAppRunTimeRequest createEmptyInstance() => create();
-  static $pb.PbList<DeleteAppRunTimeRequest> createRepeated() =>
-      $pb.PbList<DeleteAppRunTimeRequest>();
   @$core.pragma('dart2js:noInline')
   static DeleteAppRunTimeRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<DeleteAppRunTimeRequest>(create);
@@ -2284,8 +2182,7 @@ class DeleteAppRunTimeResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  DeleteAppRunTimeResponse clone() =>
-      DeleteAppRunTimeResponse()..mergeFromMessage(this);
+  DeleteAppRunTimeResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   DeleteAppRunTimeResponse copyWith(
           void Function(DeleteAppRunTimeResponse) updates) =>
@@ -2299,8 +2196,6 @@ class DeleteAppRunTimeResponse extends $pb.GeneratedMessage {
   static DeleteAppRunTimeResponse create() => DeleteAppRunTimeResponse._();
   @$core.override
   DeleteAppRunTimeResponse createEmptyInstance() => create();
-  static $pb.PbList<DeleteAppRunTimeResponse> createRepeated() =>
-      $pb.PbList<DeleteAppRunTimeResponse>();
   @$core.pragma('dart2js:noInline')
   static DeleteAppRunTimeResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<DeleteAppRunTimeResponse>(create);
@@ -2347,7 +2242,7 @@ class AppRunTime extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  AppRunTime clone() => AppRunTime()..mergeFromMessage(this);
+  AppRunTime clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   AppRunTime copyWith(void Function(AppRunTime) updates) =>
       super.copyWith((message) => updates(message as AppRunTime)) as AppRunTime;
@@ -2359,7 +2254,6 @@ class AppRunTime extends $pb.GeneratedMessage {
   static AppRunTime create() => AppRunTime._();
   @$core.override
   AppRunTime createEmptyInstance() => create();
-  static $pb.PbList<AppRunTime> createRepeated() => $pb.PbList<AppRunTime>();
   @$core.pragma('dart2js:noInline')
   static AppRunTime getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<AppRunTime>(create);
@@ -2442,8 +2336,7 @@ class UploadAppSaveFileRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UploadAppSaveFileRequest clone() =>
-      UploadAppSaveFileRequest()..mergeFromMessage(this);
+  UploadAppSaveFileRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UploadAppSaveFileRequest copyWith(
           void Function(UploadAppSaveFileRequest) updates) =>
@@ -2457,8 +2350,6 @@ class UploadAppSaveFileRequest extends $pb.GeneratedMessage {
   static UploadAppSaveFileRequest create() => UploadAppSaveFileRequest._();
   @$core.override
   UploadAppSaveFileRequest createEmptyInstance() => create();
-  static $pb.PbList<UploadAppSaveFileRequest> createRepeated() =>
-      $pb.PbList<UploadAppSaveFileRequest>();
   @$core.pragma('dart2js:noInline')
   static UploadAppSaveFileRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<UploadAppSaveFileRequest>(create);
@@ -2514,8 +2405,7 @@ class UploadAppSaveFileResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UploadAppSaveFileResponse clone() =>
-      UploadAppSaveFileResponse()..mergeFromMessage(this);
+  UploadAppSaveFileResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UploadAppSaveFileResponse copyWith(
           void Function(UploadAppSaveFileResponse) updates) =>
@@ -2529,8 +2419,6 @@ class UploadAppSaveFileResponse extends $pb.GeneratedMessage {
   static UploadAppSaveFileResponse create() => UploadAppSaveFileResponse._();
   @$core.override
   UploadAppSaveFileResponse createEmptyInstance() => create();
-  static $pb.PbList<UploadAppSaveFileResponse> createRepeated() =>
-      $pb.PbList<UploadAppSaveFileResponse>();
   @$core.pragma('dart2js:noInline')
   static UploadAppSaveFileResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<UploadAppSaveFileResponse>(create);
@@ -2574,8 +2462,7 @@ class DownloadAppSaveFileRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  DownloadAppSaveFileRequest clone() =>
-      DownloadAppSaveFileRequest()..mergeFromMessage(this);
+  DownloadAppSaveFileRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   DownloadAppSaveFileRequest copyWith(
           void Function(DownloadAppSaveFileRequest) updates) =>
@@ -2590,8 +2477,6 @@ class DownloadAppSaveFileRequest extends $pb.GeneratedMessage {
   static DownloadAppSaveFileRequest create() => DownloadAppSaveFileRequest._();
   @$core.override
   DownloadAppSaveFileRequest createEmptyInstance() => create();
-  static $pb.PbList<DownloadAppSaveFileRequest> createRepeated() =>
-      $pb.PbList<DownloadAppSaveFileRequest>();
   @$core.pragma('dart2js:noInline')
   static DownloadAppSaveFileRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<DownloadAppSaveFileRequest>(create);
@@ -2636,8 +2521,7 @@ class DownloadAppSaveFileResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  DownloadAppSaveFileResponse clone() =>
-      DownloadAppSaveFileResponse()..mergeFromMessage(this);
+  DownloadAppSaveFileResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   DownloadAppSaveFileResponse copyWith(
           void Function(DownloadAppSaveFileResponse) updates) =>
@@ -2653,8 +2537,6 @@ class DownloadAppSaveFileResponse extends $pb.GeneratedMessage {
       DownloadAppSaveFileResponse._();
   @$core.override
   DownloadAppSaveFileResponse createEmptyInstance() => create();
-  static $pb.PbList<DownloadAppSaveFileResponse> createRepeated() =>
-      $pb.PbList<DownloadAppSaveFileResponse>();
   @$core.pragma('dart2js:noInline')
   static DownloadAppSaveFileResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<DownloadAppSaveFileResponse>(create);
@@ -2698,8 +2580,7 @@ class ListAppSaveFilesRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListAppSaveFilesRequest clone() =>
-      ListAppSaveFilesRequest()..mergeFromMessage(this);
+  ListAppSaveFilesRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ListAppSaveFilesRequest copyWith(
           void Function(ListAppSaveFilesRequest) updates) =>
@@ -2713,8 +2594,6 @@ class ListAppSaveFilesRequest extends $pb.GeneratedMessage {
   static ListAppSaveFilesRequest create() => ListAppSaveFilesRequest._();
   @$core.override
   ListAppSaveFilesRequest createEmptyInstance() => create();
-  static $pb.PbList<ListAppSaveFilesRequest> createRepeated() =>
-      $pb.PbList<ListAppSaveFilesRequest>();
   @$core.pragma('dart2js:noInline')
   static ListAppSaveFilesRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ListAppSaveFilesRequest>(create);
@@ -2767,8 +2646,7 @@ class ListAppSaveFilesResponse_Result extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListAppSaveFilesResponse_Result clone() =>
-      ListAppSaveFilesResponse_Result()..mergeFromMessage(this);
+  ListAppSaveFilesResponse_Result clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ListAppSaveFilesResponse_Result copyWith(
           void Function(ListAppSaveFilesResponse_Result) updates) =>
@@ -2784,8 +2662,6 @@ class ListAppSaveFilesResponse_Result extends $pb.GeneratedMessage {
       ListAppSaveFilesResponse_Result._();
   @$core.override
   ListAppSaveFilesResponse_Result createEmptyInstance() => create();
-  static $pb.PbList<ListAppSaveFilesResponse_Result> createRepeated() =>
-      $pb.PbList<ListAppSaveFilesResponse_Result>();
   @$core.pragma('dart2js:noInline')
   static ListAppSaveFilesResponse_Result getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ListAppSaveFilesResponse_Result>(
@@ -2847,14 +2723,12 @@ class ListAppSaveFilesResponse extends $pb.GeneratedMessage {
       package: const $pb.PackageName(
           _omitMessageNames ? '' : 'librarian.sephirah.v1'),
       createEmptyInstance: create)
-    ..pc<ListAppSaveFilesResponse_Result>(
-        1, _omitFieldNames ? '' : 'results', $pb.PbFieldType.PM,
+    ..pPM<ListAppSaveFilesResponse_Result>(1, _omitFieldNames ? '' : 'results',
         subBuilder: ListAppSaveFilesResponse_Result.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListAppSaveFilesResponse clone() =>
-      ListAppSaveFilesResponse()..mergeFromMessage(this);
+  ListAppSaveFilesResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ListAppSaveFilesResponse copyWith(
           void Function(ListAppSaveFilesResponse) updates) =>
@@ -2868,8 +2742,6 @@ class ListAppSaveFilesResponse extends $pb.GeneratedMessage {
   static ListAppSaveFilesResponse create() => ListAppSaveFilesResponse._();
   @$core.override
   ListAppSaveFilesResponse createEmptyInstance() => create();
-  static $pb.PbList<ListAppSaveFilesResponse> createRepeated() =>
-      $pb.PbList<ListAppSaveFilesResponse>();
   @$core.pragma('dart2js:noInline')
   static ListAppSaveFilesResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ListAppSaveFilesResponse>(create);
@@ -2907,8 +2779,7 @@ class DeleteAppSaveFileRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  DeleteAppSaveFileRequest clone() =>
-      DeleteAppSaveFileRequest()..mergeFromMessage(this);
+  DeleteAppSaveFileRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   DeleteAppSaveFileRequest copyWith(
           void Function(DeleteAppSaveFileRequest) updates) =>
@@ -2922,8 +2793,6 @@ class DeleteAppSaveFileRequest extends $pb.GeneratedMessage {
   static DeleteAppSaveFileRequest create() => DeleteAppSaveFileRequest._();
   @$core.override
   DeleteAppSaveFileRequest createEmptyInstance() => create();
-  static $pb.PbList<DeleteAppSaveFileRequest> createRepeated() =>
-      $pb.PbList<DeleteAppSaveFileRequest>();
   @$core.pragma('dart2js:noInline')
   static DeleteAppSaveFileRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<DeleteAppSaveFileRequest>(create);
@@ -2961,8 +2830,7 @@ class DeleteAppSaveFileResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  DeleteAppSaveFileResponse clone() =>
-      DeleteAppSaveFileResponse()..mergeFromMessage(this);
+  DeleteAppSaveFileResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   DeleteAppSaveFileResponse copyWith(
           void Function(DeleteAppSaveFileResponse) updates) =>
@@ -2976,8 +2844,6 @@ class DeleteAppSaveFileResponse extends $pb.GeneratedMessage {
   static DeleteAppSaveFileResponse create() => DeleteAppSaveFileResponse._();
   @$core.override
   DeleteAppSaveFileResponse createEmptyInstance() => create();
-  static $pb.PbList<DeleteAppSaveFileResponse> createRepeated() =>
-      $pb.PbList<DeleteAppSaveFileResponse>();
   @$core.pragma('dart2js:noInline')
   static DeleteAppSaveFileResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<DeleteAppSaveFileResponse>(create);
@@ -3012,8 +2878,7 @@ class PinAppSaveFileRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PinAppSaveFileRequest clone() =>
-      PinAppSaveFileRequest()..mergeFromMessage(this);
+  PinAppSaveFileRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PinAppSaveFileRequest copyWith(
           void Function(PinAppSaveFileRequest) updates) =>
@@ -3027,8 +2892,6 @@ class PinAppSaveFileRequest extends $pb.GeneratedMessage {
   static PinAppSaveFileRequest create() => PinAppSaveFileRequest._();
   @$core.override
   PinAppSaveFileRequest createEmptyInstance() => create();
-  static $pb.PbList<PinAppSaveFileRequest> createRepeated() =>
-      $pb.PbList<PinAppSaveFileRequest>();
   @$core.pragma('dart2js:noInline')
   static PinAppSaveFileRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<PinAppSaveFileRequest>(create);
@@ -3066,8 +2929,7 @@ class PinAppSaveFileResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PinAppSaveFileResponse clone() =>
-      PinAppSaveFileResponse()..mergeFromMessage(this);
+  PinAppSaveFileResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PinAppSaveFileResponse copyWith(
           void Function(PinAppSaveFileResponse) updates) =>
@@ -3081,8 +2943,6 @@ class PinAppSaveFileResponse extends $pb.GeneratedMessage {
   static PinAppSaveFileResponse create() => PinAppSaveFileResponse._();
   @$core.override
   PinAppSaveFileResponse createEmptyInstance() => create();
-  static $pb.PbList<PinAppSaveFileResponse> createRepeated() =>
-      $pb.PbList<PinAppSaveFileResponse>();
   @$core.pragma('dart2js:noInline')
   static PinAppSaveFileResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<PinAppSaveFileResponse>(create);
@@ -3117,8 +2977,7 @@ class UnpinAppSaveFileRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UnpinAppSaveFileRequest clone() =>
-      UnpinAppSaveFileRequest()..mergeFromMessage(this);
+  UnpinAppSaveFileRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UnpinAppSaveFileRequest copyWith(
           void Function(UnpinAppSaveFileRequest) updates) =>
@@ -3132,8 +2991,6 @@ class UnpinAppSaveFileRequest extends $pb.GeneratedMessage {
   static UnpinAppSaveFileRequest create() => UnpinAppSaveFileRequest._();
   @$core.override
   UnpinAppSaveFileRequest createEmptyInstance() => create();
-  static $pb.PbList<UnpinAppSaveFileRequest> createRepeated() =>
-      $pb.PbList<UnpinAppSaveFileRequest>();
   @$core.pragma('dart2js:noInline')
   static UnpinAppSaveFileRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<UnpinAppSaveFileRequest>(create);
@@ -3171,8 +3028,7 @@ class UnpinAppSaveFileResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UnpinAppSaveFileResponse clone() =>
-      UnpinAppSaveFileResponse()..mergeFromMessage(this);
+  UnpinAppSaveFileResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UnpinAppSaveFileResponse copyWith(
           void Function(UnpinAppSaveFileResponse) updates) =>
@@ -3186,8 +3042,6 @@ class UnpinAppSaveFileResponse extends $pb.GeneratedMessage {
   static UnpinAppSaveFileResponse create() => UnpinAppSaveFileResponse._();
   @$core.override
   UnpinAppSaveFileResponse createEmptyInstance() => create();
-  static $pb.PbList<UnpinAppSaveFileResponse> createRepeated() =>
-      $pb.PbList<UnpinAppSaveFileResponse>();
   @$core.pragma('dart2js:noInline')
   static UnpinAppSaveFileResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<UnpinAppSaveFileResponse>(create);
@@ -3222,8 +3076,7 @@ class GetAppSaveFileCapacityRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetAppSaveFileCapacityRequest clone() =>
-      GetAppSaveFileCapacityRequest()..mergeFromMessage(this);
+  GetAppSaveFileCapacityRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetAppSaveFileCapacityRequest copyWith(
           void Function(GetAppSaveFileCapacityRequest) updates) =>
@@ -3239,8 +3092,6 @@ class GetAppSaveFileCapacityRequest extends $pb.GeneratedMessage {
       GetAppSaveFileCapacityRequest._();
   @$core.override
   GetAppSaveFileCapacityRequest createEmptyInstance() => create();
-  static $pb.PbList<GetAppSaveFileCapacityRequest> createRepeated() =>
-      $pb.PbList<GetAppSaveFileCapacityRequest>();
   @$core.pragma('dart2js:noInline')
   static GetAppSaveFileCapacityRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<GetAppSaveFileCapacityRequest>(create);
@@ -3293,17 +3144,12 @@ class GetAppSaveFileCapacityResponse extends $pb.GeneratedMessage {
     ..aInt64(2, _omitFieldNames ? '' : 'countMax')
     ..aInt64(3, _omitFieldNames ? '' : 'sizeBytes')
     ..aInt64(4, _omitFieldNames ? '' : 'sizeBytesMax')
-    ..e<AppSaveFileCapacityStrategy>(
-        5, _omitFieldNames ? '' : 'strategy', $pb.PbFieldType.OE,
-        defaultOrMaker: AppSaveFileCapacityStrategy
-            .APP_SAVE_FILE_CAPACITY_STRATEGY_UNSPECIFIED,
-        valueOf: AppSaveFileCapacityStrategy.valueOf,
+    ..aE<AppSaveFileCapacityStrategy>(5, _omitFieldNames ? '' : 'strategy',
         enumValues: AppSaveFileCapacityStrategy.values)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetAppSaveFileCapacityResponse clone() =>
-      GetAppSaveFileCapacityResponse()..mergeFromMessage(this);
+  GetAppSaveFileCapacityResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetAppSaveFileCapacityResponse copyWith(
           void Function(GetAppSaveFileCapacityResponse) updates) =>
@@ -3319,8 +3165,6 @@ class GetAppSaveFileCapacityResponse extends $pb.GeneratedMessage {
       GetAppSaveFileCapacityResponse._();
   @$core.override
   GetAppSaveFileCapacityResponse createEmptyInstance() => create();
-  static $pb.PbList<GetAppSaveFileCapacityResponse> createRepeated() =>
-      $pb.PbList<GetAppSaveFileCapacityResponse>();
   @$core.pragma('dart2js:noInline')
   static GetAppSaveFileCapacityResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<GetAppSaveFileCapacityResponse>(create);
@@ -3407,18 +3251,13 @@ class SetAppSaveFileCapacityRequest extends $pb.GeneratedMessage {
         subBuilder: $0.InternalID.create)
     ..aInt64(2, _omitFieldNames ? '' : 'count')
     ..aInt64(3, _omitFieldNames ? '' : 'sizeBytes')
-    ..e<AppSaveFileCapacityStrategy>(
-        4, _omitFieldNames ? '' : 'strategy', $pb.PbFieldType.OE,
-        defaultOrMaker: AppSaveFileCapacityStrategy
-            .APP_SAVE_FILE_CAPACITY_STRATEGY_UNSPECIFIED,
-        valueOf: AppSaveFileCapacityStrategy.valueOf,
+    ..aE<AppSaveFileCapacityStrategy>(4, _omitFieldNames ? '' : 'strategy',
         enumValues: AppSaveFileCapacityStrategy.values)
     ..aOB(5, _omitFieldNames ? '' : 'applyToAll')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SetAppSaveFileCapacityRequest clone() =>
-      SetAppSaveFileCapacityRequest()..mergeFromMessage(this);
+  SetAppSaveFileCapacityRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   SetAppSaveFileCapacityRequest copyWith(
           void Function(SetAppSaveFileCapacityRequest) updates) =>
@@ -3434,8 +3273,6 @@ class SetAppSaveFileCapacityRequest extends $pb.GeneratedMessage {
       SetAppSaveFileCapacityRequest._();
   @$core.override
   SetAppSaveFileCapacityRequest createEmptyInstance() => create();
-  static $pb.PbList<SetAppSaveFileCapacityRequest> createRepeated() =>
-      $pb.PbList<SetAppSaveFileCapacityRequest>();
   @$core.pragma('dart2js:noInline')
   static SetAppSaveFileCapacityRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<SetAppSaveFileCapacityRequest>(create);
@@ -3510,8 +3347,7 @@ class SetAppSaveFileCapacityResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SetAppSaveFileCapacityResponse clone() =>
-      SetAppSaveFileCapacityResponse()..mergeFromMessage(this);
+  SetAppSaveFileCapacityResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   SetAppSaveFileCapacityResponse copyWith(
           void Function(SetAppSaveFileCapacityResponse) updates) =>
@@ -3527,8 +3363,6 @@ class SetAppSaveFileCapacityResponse extends $pb.GeneratedMessage {
       SetAppSaveFileCapacityResponse._();
   @$core.override
   SetAppSaveFileCapacityResponse createEmptyInstance() => create();
-  static $pb.PbList<SetAppSaveFileCapacityResponse> createRepeated() =>
-      $pb.PbList<SetAppSaveFileCapacityResponse>();
   @$core.pragma('dart2js:noInline')
   static SetAppSaveFileCapacityResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<SetAppSaveFileCapacityResponse>(create);
@@ -3555,8 +3389,7 @@ class ListAppCategoriesRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListAppCategoriesRequest clone() =>
-      ListAppCategoriesRequest()..mergeFromMessage(this);
+  ListAppCategoriesRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ListAppCategoriesRequest copyWith(
           void Function(ListAppCategoriesRequest) updates) =>
@@ -3570,8 +3403,6 @@ class ListAppCategoriesRequest extends $pb.GeneratedMessage {
   static ListAppCategoriesRequest create() => ListAppCategoriesRequest._();
   @$core.override
   ListAppCategoriesRequest createEmptyInstance() => create();
-  static $pb.PbList<ListAppCategoriesRequest> createRepeated() =>
-      $pb.PbList<ListAppCategoriesRequest>();
   @$core.pragma('dart2js:noInline')
   static ListAppCategoriesRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ListAppCategoriesRequest>(create);
@@ -3601,14 +3432,12 @@ class ListAppCategoriesResponse extends $pb.GeneratedMessage {
       package: const $pb.PackageName(
           _omitMessageNames ? '' : 'librarian.sephirah.v1'),
       createEmptyInstance: create)
-    ..pc<AppCategory>(
-        1, _omitFieldNames ? '' : 'appCategories', $pb.PbFieldType.PM,
+    ..pPM<AppCategory>(1, _omitFieldNames ? '' : 'appCategories',
         subBuilder: AppCategory.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListAppCategoriesResponse clone() =>
-      ListAppCategoriesResponse()..mergeFromMessage(this);
+  ListAppCategoriesResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ListAppCategoriesResponse copyWith(
           void Function(ListAppCategoriesResponse) updates) =>
@@ -3622,8 +3451,6 @@ class ListAppCategoriesResponse extends $pb.GeneratedMessage {
   static ListAppCategoriesResponse create() => ListAppCategoriesResponse._();
   @$core.override
   ListAppCategoriesResponse createEmptyInstance() => create();
-  static $pb.PbList<ListAppCategoriesResponse> createRepeated() =>
-      $pb.PbList<ListAppCategoriesResponse>();
   @$core.pragma('dart2js:noInline')
   static ListAppCategoriesResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ListAppCategoriesResponse>(create);
@@ -3661,8 +3488,7 @@ class CreateAppCategoryRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CreateAppCategoryRequest clone() =>
-      CreateAppCategoryRequest()..mergeFromMessage(this);
+  CreateAppCategoryRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   CreateAppCategoryRequest copyWith(
           void Function(CreateAppCategoryRequest) updates) =>
@@ -3676,8 +3502,6 @@ class CreateAppCategoryRequest extends $pb.GeneratedMessage {
   static CreateAppCategoryRequest create() => CreateAppCategoryRequest._();
   @$core.override
   CreateAppCategoryRequest createEmptyInstance() => create();
-  static $pb.PbList<CreateAppCategoryRequest> createRepeated() =>
-      $pb.PbList<CreateAppCategoryRequest>();
   @$core.pragma('dart2js:noInline')
   static CreateAppCategoryRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<CreateAppCategoryRequest>(create);
@@ -3723,8 +3547,7 @@ class CreateAppCategoryResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CreateAppCategoryResponse clone() =>
-      CreateAppCategoryResponse()..mergeFromMessage(this);
+  CreateAppCategoryResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   CreateAppCategoryResponse copyWith(
           void Function(CreateAppCategoryResponse) updates) =>
@@ -3738,8 +3561,6 @@ class CreateAppCategoryResponse extends $pb.GeneratedMessage {
   static CreateAppCategoryResponse create() => CreateAppCategoryResponse._();
   @$core.override
   CreateAppCategoryResponse createEmptyInstance() => create();
-  static $pb.PbList<CreateAppCategoryResponse> createRepeated() =>
-      $pb.PbList<CreateAppCategoryResponse>();
   @$core.pragma('dart2js:noInline')
   static CreateAppCategoryResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<CreateAppCategoryResponse>(create);
@@ -3785,8 +3606,7 @@ class UpdateAppCategoryRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UpdateAppCategoryRequest clone() =>
-      UpdateAppCategoryRequest()..mergeFromMessage(this);
+  UpdateAppCategoryRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UpdateAppCategoryRequest copyWith(
           void Function(UpdateAppCategoryRequest) updates) =>
@@ -3800,8 +3620,6 @@ class UpdateAppCategoryRequest extends $pb.GeneratedMessage {
   static UpdateAppCategoryRequest create() => UpdateAppCategoryRequest._();
   @$core.override
   UpdateAppCategoryRequest createEmptyInstance() => create();
-  static $pb.PbList<UpdateAppCategoryRequest> createRepeated() =>
-      $pb.PbList<UpdateAppCategoryRequest>();
   @$core.pragma('dart2js:noInline')
   static UpdateAppCategoryRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<UpdateAppCategoryRequest>(create);
@@ -3839,8 +3657,7 @@ class UpdateAppCategoryResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UpdateAppCategoryResponse clone() =>
-      UpdateAppCategoryResponse()..mergeFromMessage(this);
+  UpdateAppCategoryResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UpdateAppCategoryResponse copyWith(
           void Function(UpdateAppCategoryResponse) updates) =>
@@ -3854,8 +3671,6 @@ class UpdateAppCategoryResponse extends $pb.GeneratedMessage {
   static UpdateAppCategoryResponse create() => UpdateAppCategoryResponse._();
   @$core.override
   UpdateAppCategoryResponse createEmptyInstance() => create();
-  static $pb.PbList<UpdateAppCategoryResponse> createRepeated() =>
-      $pb.PbList<UpdateAppCategoryResponse>();
   @$core.pragma('dart2js:noInline')
   static UpdateAppCategoryResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<UpdateAppCategoryResponse>(create);
@@ -3890,8 +3705,7 @@ class DeleteAppCategoryRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  DeleteAppCategoryRequest clone() =>
-      DeleteAppCategoryRequest()..mergeFromMessage(this);
+  DeleteAppCategoryRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   DeleteAppCategoryRequest copyWith(
           void Function(DeleteAppCategoryRequest) updates) =>
@@ -3905,8 +3719,6 @@ class DeleteAppCategoryRequest extends $pb.GeneratedMessage {
   static DeleteAppCategoryRequest create() => DeleteAppCategoryRequest._();
   @$core.override
   DeleteAppCategoryRequest createEmptyInstance() => create();
-  static $pb.PbList<DeleteAppCategoryRequest> createRepeated() =>
-      $pb.PbList<DeleteAppCategoryRequest>();
   @$core.pragma('dart2js:noInline')
   static DeleteAppCategoryRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<DeleteAppCategoryRequest>(create);
@@ -3944,8 +3756,7 @@ class DeleteAppCategoryResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  DeleteAppCategoryResponse clone() =>
-      DeleteAppCategoryResponse()..mergeFromMessage(this);
+  DeleteAppCategoryResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   DeleteAppCategoryResponse copyWith(
           void Function(DeleteAppCategoryResponse) updates) =>
@@ -3959,8 +3770,6 @@ class DeleteAppCategoryResponse extends $pb.GeneratedMessage {
   static DeleteAppCategoryResponse create() => DeleteAppCategoryResponse._();
   @$core.override
   DeleteAppCategoryResponse createEmptyInstance() => create();
-  static $pb.PbList<DeleteAppCategoryResponse> createRepeated() =>
-      $pb.PbList<DeleteAppCategoryResponse>();
   @$core.pragma('dart2js:noInline')
   static DeleteAppCategoryResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<DeleteAppCategoryResponse>(create);
@@ -4026,10 +3835,7 @@ class AppInfo extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'sourceAppId')
     ..aOS(3, _omitFieldNames ? '' : 'sourceUrl')
     ..aOS(10, _omitFieldNames ? '' : 'name')
-    ..e<AppType>(11, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE,
-        defaultOrMaker: AppType.APP_TYPE_UNSPECIFIED,
-        valueOf: AppType.valueOf,
-        enumValues: AppType.values)
+    ..aE<AppType>(11, _omitFieldNames ? '' : 'type', enumValues: AppType.values)
     ..aOS(12, _omitFieldNames ? '' : 'description')
     ..aOS(13, _omitFieldNames ? '' : 'iconImageUrl')
     ..aOM<$0.InternalID>(14, _omitFieldNames ? '' : 'iconImageId',
@@ -4047,7 +3853,7 @@ class AppInfo extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  AppInfo clone() => AppInfo()..mergeFromMessage(this);
+  AppInfo clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   AppInfo copyWith(void Function(AppInfo) updates) =>
       super.copyWith((message) => updates(message as AppInfo)) as AppInfo;
@@ -4059,7 +3865,6 @@ class AppInfo extends $pb.GeneratedMessage {
   static AppInfo create() => AppInfo._();
   @$core.override
   AppInfo createEmptyInstance() => create();
-  static $pb.PbList<AppInfo> createRepeated() => $pb.PbList<AppInfo>();
   @$core.pragma('dart2js:noInline')
   static AppInfo getDefault() =>
       _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AppInfo>(create);
@@ -4245,21 +4050,18 @@ class StoreAppSummary extends $pb.GeneratedMessage {
     ..aOM<StoreApp>(1, _omitFieldNames ? '' : 'storeApp',
         subBuilder: StoreApp.create)
     ..aInt64(2, _omitFieldNames ? '' : 'appBinaryCount')
-    ..pc<StoreAppBinary>(
-        3, _omitFieldNames ? '' : 'binaries', $pb.PbFieldType.PM,
+    ..pPM<StoreAppBinary>(3, _omitFieldNames ? '' : 'binaries',
         subBuilder: StoreAppBinary.create)
     ..aInt64(4, _omitFieldNames ? '' : 'appSaveFileCount')
-    ..pc<StoreAppSaveFile>(
-        5, _omitFieldNames ? '' : 'saveFiles', $pb.PbFieldType.PM,
+    ..pPM<StoreAppSaveFile>(5, _omitFieldNames ? '' : 'saveFiles',
         subBuilder: StoreAppSaveFile.create)
     ..aInt64(6, _omitFieldNames ? '' : 'acquiredCount')
-    ..pc<$0.InternalID>(
-        7, _omitFieldNames ? '' : 'acquiredUserIds', $pb.PbFieldType.PM,
+    ..pPM<$0.InternalID>(7, _omitFieldNames ? '' : 'acquiredUserIds',
         subBuilder: $0.InternalID.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  StoreAppSummary clone() => StoreAppSummary()..mergeFromMessage(this);
+  StoreAppSummary clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   StoreAppSummary copyWith(void Function(StoreAppSummary) updates) =>
       super.copyWith((message) => updates(message as StoreAppSummary))
@@ -4272,8 +4074,6 @@ class StoreAppSummary extends $pb.GeneratedMessage {
   static StoreAppSummary create() => StoreAppSummary._();
   @$core.override
   StoreAppSummary createEmptyInstance() => create();
-  static $pb.PbList<StoreAppSummary> createRepeated() =>
-      $pb.PbList<StoreAppSummary>();
   @$core.pragma('dart2js:noInline')
   static StoreAppSummary getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<StoreAppSummary>(create);
@@ -4385,10 +4185,7 @@ class StoreApp extends $pb.GeneratedMessage {
         packageName: const $pb.PackageName('librarian.sephirah.v1'))
     ..aOB(6, _omitFieldNames ? '' : 'public')
     ..aOS(20, _omitFieldNames ? '' : 'name')
-    ..e<AppType>(21, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE,
-        defaultOrMaker: AppType.APP_TYPE_UNSPECIFIED,
-        valueOf: AppType.valueOf,
-        enumValues: AppType.values)
+    ..aE<AppType>(21, _omitFieldNames ? '' : 'type', enumValues: AppType.values)
     ..aOS(22, _omitFieldNames ? '' : 'description')
     ..aOM<$0.InternalID>(23, _omitFieldNames ? '' : 'iconImageId',
         subBuilder: $0.InternalID.create)
@@ -4403,7 +4200,7 @@ class StoreApp extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  StoreApp clone() => StoreApp()..mergeFromMessage(this);
+  StoreApp clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   StoreApp copyWith(void Function(StoreApp) updates) =>
       super.copyWith((message) => updates(message as StoreApp)) as StoreApp;
@@ -4415,7 +4212,6 @@ class StoreApp extends $pb.GeneratedMessage {
   static StoreApp create() => StoreApp._();
   @$core.override
   StoreApp createEmptyInstance() => create();
-  static $pb.PbList<StoreApp> createRepeated() => $pb.PbList<StoreApp>();
   @$core.pragma('dart2js:noInline')
   static StoreApp getDefault() =>
       _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StoreApp>(create);
@@ -4569,10 +4365,7 @@ class StoreAppDigest extends $pb.GeneratedMessage {
     ..aOM<$0.InternalID>(1, _omitFieldNames ? '' : 'id',
         subBuilder: $0.InternalID.create)
     ..aOS(20, _omitFieldNames ? '' : 'name')
-    ..e<AppType>(21, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE,
-        defaultOrMaker: AppType.APP_TYPE_UNSPECIFIED,
-        valueOf: AppType.valueOf,
-        enumValues: AppType.values)
+    ..aE<AppType>(21, _omitFieldNames ? '' : 'type', enumValues: AppType.values)
     ..aOS(22, _omitFieldNames ? '' : 'shortDescription')
     ..aOM<$0.InternalID>(25, _omitFieldNames ? '' : 'coverImageId',
         subBuilder: $0.InternalID.create)
@@ -4580,7 +4373,7 @@ class StoreAppDigest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  StoreAppDigest clone() => StoreAppDigest()..mergeFromMessage(this);
+  StoreAppDigest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   StoreAppDigest copyWith(void Function(StoreAppDigest) updates) =>
       super.copyWith((message) => updates(message as StoreAppDigest))
@@ -4593,8 +4386,6 @@ class StoreAppDigest extends $pb.GeneratedMessage {
   static StoreAppDigest create() => StoreAppDigest._();
   @$core.override
   StoreAppDigest createEmptyInstance() => create();
-  static $pb.PbList<StoreAppDigest> createRepeated() =>
-      $pb.PbList<StoreAppDigest>();
   @$core.pragma('dart2js:noInline')
   static StoreAppDigest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<StoreAppDigest>(create);
@@ -4697,7 +4488,7 @@ class StoreAppBinary extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  StoreAppBinary clone() => StoreAppBinary()..mergeFromMessage(this);
+  StoreAppBinary clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   StoreAppBinary copyWith(void Function(StoreAppBinary) updates) =>
       super.copyWith((message) => updates(message as StoreAppBinary))
@@ -4710,8 +4501,6 @@ class StoreAppBinary extends $pb.GeneratedMessage {
   static StoreAppBinary create() => StoreAppBinary._();
   @$core.override
   StoreAppBinary createEmptyInstance() => create();
-  static $pb.PbList<StoreAppBinary> createRepeated() =>
-      $pb.PbList<StoreAppBinary>();
   @$core.pragma('dart2js:noInline')
   static StoreAppBinary getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<StoreAppBinary>(create);
@@ -4809,7 +4598,7 @@ class StoreAppBinaryFile extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  StoreAppBinaryFile clone() => StoreAppBinaryFile()..mergeFromMessage(this);
+  StoreAppBinaryFile clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   StoreAppBinaryFile copyWith(void Function(StoreAppBinaryFile) updates) =>
       super.copyWith((message) => updates(message as StoreAppBinaryFile))
@@ -4822,8 +4611,6 @@ class StoreAppBinaryFile extends $pb.GeneratedMessage {
   static StoreAppBinaryFile create() => StoreAppBinaryFile._();
   @$core.override
   StoreAppBinaryFile createEmptyInstance() => create();
-  static $pb.PbList<StoreAppBinaryFile> createRepeated() =>
-      $pb.PbList<StoreAppBinaryFile>();
   @$core.pragma('dart2js:noInline')
   static StoreAppBinaryFile getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<StoreAppBinaryFile>(create);
@@ -4902,7 +4689,7 @@ class StoreAppSaveFile extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  StoreAppSaveFile clone() => StoreAppSaveFile()..mergeFromMessage(this);
+  StoreAppSaveFile clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   StoreAppSaveFile copyWith(void Function(StoreAppSaveFile) updates) =>
       super.copyWith((message) => updates(message as StoreAppSaveFile))
@@ -4915,8 +4702,6 @@ class StoreAppSaveFile extends $pb.GeneratedMessage {
   static StoreAppSaveFile create() => StoreAppSaveFile._();
   @$core.override
   StoreAppSaveFile createEmptyInstance() => create();
-  static $pb.PbList<StoreAppSaveFile> createRepeated() =>
-      $pb.PbList<StoreAppSaveFile>();
   @$core.pragma('dart2js:noInline')
   static StoreAppSaveFile getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<StoreAppSaveFile>(create);
@@ -5056,10 +4841,7 @@ class App extends $pb.GeneratedMessage {
         subBuilder: $0.InternalID.create)
     ..aOB(8, _omitFieldNames ? '' : 'stopStoreManage')
     ..aOS(20, _omitFieldNames ? '' : 'name')
-    ..e<AppType>(21, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE,
-        defaultOrMaker: AppType.APP_TYPE_UNSPECIFIED,
-        valueOf: AppType.valueOf,
-        enumValues: AppType.values)
+    ..aE<AppType>(21, _omitFieldNames ? '' : 'type', enumValues: AppType.values)
     ..aOS(22, _omitFieldNames ? '' : 'description')
     ..aOS(23, _omitFieldNames ? '' : 'iconImageUrl')
     ..aOM<$0.InternalID>(24, _omitFieldNames ? '' : 'iconImageId',
@@ -5077,7 +4859,7 @@ class App extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  App clone() => App()..mergeFromMessage(this);
+  App clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   App copyWith(void Function(App) updates) =>
       super.copyWith((message) => updates(message as App)) as App;
@@ -5089,7 +4871,6 @@ class App extends $pb.GeneratedMessage {
   static App create() => App._();
   @$core.override
   App createEmptyInstance() => create();
-  static $pb.PbList<App> createRepeated() => $pb.PbList<App>();
   @$core.pragma('dart2js:noInline')
   static App getDefault() =>
       _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<App>(create);
@@ -5333,12 +5114,12 @@ class AppCategory extends $pb.GeneratedMessage {
     ..aOM<$2.Timestamp>(3, _omitFieldNames ? '' : 'versionDate',
         subBuilder: $2.Timestamp.create)
     ..aOS(10, _omitFieldNames ? '' : 'name')
-    ..pc<$0.InternalID>(11, _omitFieldNames ? '' : 'appIds', $pb.PbFieldType.PM,
+    ..pPM<$0.InternalID>(11, _omitFieldNames ? '' : 'appIds',
         subBuilder: $0.InternalID.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  AppCategory clone() => AppCategory()..mergeFromMessage(this);
+  AppCategory clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   AppCategory copyWith(void Function(AppCategory) updates) =>
       super.copyWith((message) => updates(message as AppCategory))
@@ -5351,7 +5132,6 @@ class AppCategory extends $pb.GeneratedMessage {
   static AppCategory create() => AppCategory._();
   @$core.override
   AppCategory createEmptyInstance() => create();
-  static $pb.PbList<AppCategory> createRepeated() => $pb.PbList<AppCategory>();
   @$core.pragma('dart2js:noInline')
   static AppCategory getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<AppCategory>(create);

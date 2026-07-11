@@ -8,13 +8,14 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
 
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
+import 'package:protobuf/well_known_types/google/protobuf/timestamp.pb.dart'
+    as $8;
 
-import '../../../google/protobuf/timestamp.pb.dart' as $8;
 import 'base.pb.dart' as $7;
 import 'sephirah_service.pbenum.dart';
 
@@ -49,8 +50,7 @@ class GetServerInformationRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetServerInformationRequest clone() =>
-      GetServerInformationRequest()..mergeFromMessage(this);
+  GetServerInformationRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetServerInformationRequest copyWith(
           void Function(GetServerInformationRequest) updates) =>
@@ -66,8 +66,6 @@ class GetServerInformationRequest extends $pb.GeneratedMessage {
       GetServerInformationRequest._();
   @$core.override
   GetServerInformationRequest createEmptyInstance() => create();
-  static $pb.PbList<GetServerInformationRequest> createRepeated() =>
-      $pb.PbList<GetServerInformationRequest>();
   @$core.pragma('dart2js:noInline')
   static GetServerInformationRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<GetServerInformationRequest>(create);
@@ -111,8 +109,7 @@ class GetServerInformationResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetServerInformationResponse clone() =>
-      GetServerInformationResponse()..mergeFromMessage(this);
+  GetServerInformationResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetServerInformationResponse copyWith(
           void Function(GetServerInformationResponse) updates) =>
@@ -128,8 +125,6 @@ class GetServerInformationResponse extends $pb.GeneratedMessage {
       GetServerInformationResponse._();
   @$core.override
   GetServerInformationResponse createEmptyInstance() => create();
-  static $pb.PbList<GetServerInformationResponse> createRepeated() =>
-      $pb.PbList<GetServerInformationResponse>();
   @$core.pragma('dart2js:noInline')
   static GetServerInformationResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<GetServerInformationResponse>(create);
@@ -167,8 +162,7 @@ class ListenServerEventRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListenServerEventRequest clone() =>
-      ListenServerEventRequest()..mergeFromMessage(this);
+  ListenServerEventRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ListenServerEventRequest copyWith(
           void Function(ListenServerEventRequest) updates) =>
@@ -182,8 +176,6 @@ class ListenServerEventRequest extends $pb.GeneratedMessage {
   static ListenServerEventRequest create() => ListenServerEventRequest._();
   @$core.override
   ListenServerEventRequest createEmptyInstance() => create();
-  static $pb.PbList<ListenServerEventRequest> createRepeated() =>
-      $pb.PbList<ListenServerEventRequest>();
   @$core.pragma('dart2js:noInline')
   static ListenServerEventRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ListenServerEventRequest>(create);
@@ -217,9 +209,7 @@ class ListenServerEventResponse extends $pb.GeneratedMessage {
       package: const $pb.PackageName(
           _omitMessageNames ? '' : 'librarian.sephirah.v1'),
       createEmptyInstance: create)
-    ..e<ServerEvent>(1, _omitFieldNames ? '' : 'event', $pb.PbFieldType.OE,
-        defaultOrMaker: ServerEvent.SERVER_EVENT_UNSPECIFIED,
-        valueOf: ServerEvent.valueOf,
+    ..aE<ServerEvent>(1, _omitFieldNames ? '' : 'event',
         enumValues: ServerEvent.values)
     ..aOM<$8.Timestamp>(2, _omitFieldNames ? '' : 'occurTime',
         subBuilder: $8.Timestamp.create)
@@ -227,8 +217,7 @@ class ListenServerEventResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListenServerEventResponse clone() =>
-      ListenServerEventResponse()..mergeFromMessage(this);
+  ListenServerEventResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ListenServerEventResponse copyWith(
           void Function(ListenServerEventResponse) updates) =>
@@ -242,8 +231,6 @@ class ListenServerEventResponse extends $pb.GeneratedMessage {
   static ListenServerEventResponse create() => ListenServerEventResponse._();
   @$core.override
   ListenServerEventResponse createEmptyInstance() => create();
-  static $pb.PbList<ListenServerEventResponse> createRepeated() =>
-      $pb.PbList<ListenServerEventResponse>();
   @$core.pragma('dart2js:noInline')
   static ListenServerEventResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ListenServerEventResponse>(create);

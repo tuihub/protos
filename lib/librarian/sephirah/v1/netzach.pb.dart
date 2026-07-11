@@ -8,13 +8,14 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
 
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
+import 'package:protobuf/well_known_types/google/protobuf/timestamp.pb.dart'
+    as $1;
 
-import '../../../google/protobuf/timestamp.pb.dart' as $1;
 import '../../v1/wellknown.pb.dart' as $0;
 import 'netzach.pbenum.dart';
 
@@ -50,8 +51,7 @@ class CreateNotifyTargetRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CreateNotifyTargetRequest clone() =>
-      CreateNotifyTargetRequest()..mergeFromMessage(this);
+  CreateNotifyTargetRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   CreateNotifyTargetRequest copyWith(
           void Function(CreateNotifyTargetRequest) updates) =>
@@ -65,8 +65,6 @@ class CreateNotifyTargetRequest extends $pb.GeneratedMessage {
   static CreateNotifyTargetRequest create() => CreateNotifyTargetRequest._();
   @$core.override
   CreateNotifyTargetRequest createEmptyInstance() => create();
-  static $pb.PbList<CreateNotifyTargetRequest> createRepeated() =>
-      $pb.PbList<CreateNotifyTargetRequest>();
   @$core.pragma('dart2js:noInline')
   static CreateNotifyTargetRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<CreateNotifyTargetRequest>(create);
@@ -112,8 +110,7 @@ class CreateNotifyTargetResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CreateNotifyTargetResponse clone() =>
-      CreateNotifyTargetResponse()..mergeFromMessage(this);
+  CreateNotifyTargetResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   CreateNotifyTargetResponse copyWith(
           void Function(CreateNotifyTargetResponse) updates) =>
@@ -128,8 +125,6 @@ class CreateNotifyTargetResponse extends $pb.GeneratedMessage {
   static CreateNotifyTargetResponse create() => CreateNotifyTargetResponse._();
   @$core.override
   CreateNotifyTargetResponse createEmptyInstance() => create();
-  static $pb.PbList<CreateNotifyTargetResponse> createRepeated() =>
-      $pb.PbList<CreateNotifyTargetResponse>();
   @$core.pragma('dart2js:noInline')
   static CreateNotifyTargetResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<CreateNotifyTargetResponse>(create);
@@ -175,8 +170,7 @@ class UpdateNotifyTargetRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UpdateNotifyTargetRequest clone() =>
-      UpdateNotifyTargetRequest()..mergeFromMessage(this);
+  UpdateNotifyTargetRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UpdateNotifyTargetRequest copyWith(
           void Function(UpdateNotifyTargetRequest) updates) =>
@@ -190,8 +184,6 @@ class UpdateNotifyTargetRequest extends $pb.GeneratedMessage {
   static UpdateNotifyTargetRequest create() => UpdateNotifyTargetRequest._();
   @$core.override
   UpdateNotifyTargetRequest createEmptyInstance() => create();
-  static $pb.PbList<UpdateNotifyTargetRequest> createRepeated() =>
-      $pb.PbList<UpdateNotifyTargetRequest>();
   @$core.pragma('dart2js:noInline')
   static UpdateNotifyTargetRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<UpdateNotifyTargetRequest>(create);
@@ -229,8 +221,7 @@ class UpdateNotifyTargetResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UpdateNotifyTargetResponse clone() =>
-      UpdateNotifyTargetResponse()..mergeFromMessage(this);
+  UpdateNotifyTargetResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UpdateNotifyTargetResponse copyWith(
           void Function(UpdateNotifyTargetResponse) updates) =>
@@ -245,8 +236,6 @@ class UpdateNotifyTargetResponse extends $pb.GeneratedMessage {
   static UpdateNotifyTargetResponse create() => UpdateNotifyTargetResponse._();
   @$core.override
   UpdateNotifyTargetResponse createEmptyInstance() => create();
-  static $pb.PbList<UpdateNotifyTargetResponse> createRepeated() =>
-      $pb.PbList<UpdateNotifyTargetResponse>();
   @$core.pragma('dart2js:noInline')
   static UpdateNotifyTargetResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<UpdateNotifyTargetResponse>(create);
@@ -282,8 +271,7 @@ class ListNotifyTargetsRequest extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOM<$0.PagingRequest>(1, _omitFieldNames ? '' : 'paging',
         subBuilder: $0.PagingRequest.create)
-    ..pc<$0.InternalID>(
-        2, _omitFieldNames ? '' : 'idFilter', $pb.PbFieldType.PM,
+    ..pPM<$0.InternalID>(2, _omitFieldNames ? '' : 'idFilter',
         subBuilder: $0.InternalID.create)
     ..pc<NotifyTargetStatus>(
         4, _omitFieldNames ? '' : 'statusFilter', $pb.PbFieldType.KE,
@@ -293,8 +281,7 @@ class ListNotifyTargetsRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListNotifyTargetsRequest clone() =>
-      ListNotifyTargetsRequest()..mergeFromMessage(this);
+  ListNotifyTargetsRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ListNotifyTargetsRequest copyWith(
           void Function(ListNotifyTargetsRequest) updates) =>
@@ -308,8 +295,6 @@ class ListNotifyTargetsRequest extends $pb.GeneratedMessage {
   static ListNotifyTargetsRequest create() => ListNotifyTargetsRequest._();
   @$core.override
   ListNotifyTargetsRequest createEmptyInstance() => create();
-  static $pb.PbList<ListNotifyTargetsRequest> createRepeated() =>
-      $pb.PbList<ListNotifyTargetsRequest>();
   @$core.pragma('dart2js:noInline')
   static ListNotifyTargetsRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ListNotifyTargetsRequest>(create);
@@ -360,13 +345,12 @@ class ListNotifyTargetsResponse extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOM<$0.PagingResponse>(1, _omitFieldNames ? '' : 'paging',
         subBuilder: $0.PagingResponse.create)
-    ..pc<NotifyTarget>(2, _omitFieldNames ? '' : 'targets', $pb.PbFieldType.PM,
+    ..pPM<NotifyTarget>(2, _omitFieldNames ? '' : 'targets',
         subBuilder: NotifyTarget.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListNotifyTargetsResponse clone() =>
-      ListNotifyTargetsResponse()..mergeFromMessage(this);
+  ListNotifyTargetsResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ListNotifyTargetsResponse copyWith(
           void Function(ListNotifyTargetsResponse) updates) =>
@@ -380,8 +364,6 @@ class ListNotifyTargetsResponse extends $pb.GeneratedMessage {
   static ListNotifyTargetsResponse create() => ListNotifyTargetsResponse._();
   @$core.override
   ListNotifyTargetsResponse createEmptyInstance() => create();
-  static $pb.PbList<ListNotifyTargetsResponse> createRepeated() =>
-      $pb.PbList<ListNotifyTargetsResponse>();
   @$core.pragma('dart2js:noInline')
   static ListNotifyTargetsResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ListNotifyTargetsResponse>(create);
@@ -430,8 +412,7 @@ class CreateNotifyFlowRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CreateNotifyFlowRequest clone() =>
-      CreateNotifyFlowRequest()..mergeFromMessage(this);
+  CreateNotifyFlowRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   CreateNotifyFlowRequest copyWith(
           void Function(CreateNotifyFlowRequest) updates) =>
@@ -445,8 +426,6 @@ class CreateNotifyFlowRequest extends $pb.GeneratedMessage {
   static CreateNotifyFlowRequest create() => CreateNotifyFlowRequest._();
   @$core.override
   CreateNotifyFlowRequest createEmptyInstance() => create();
-  static $pb.PbList<CreateNotifyFlowRequest> createRepeated() =>
-      $pb.PbList<CreateNotifyFlowRequest>();
   @$core.pragma('dart2js:noInline')
   static CreateNotifyFlowRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<CreateNotifyFlowRequest>(create);
@@ -492,8 +471,7 @@ class CreateNotifyFlowResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  CreateNotifyFlowResponse clone() =>
-      CreateNotifyFlowResponse()..mergeFromMessage(this);
+  CreateNotifyFlowResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   CreateNotifyFlowResponse copyWith(
           void Function(CreateNotifyFlowResponse) updates) =>
@@ -507,8 +485,6 @@ class CreateNotifyFlowResponse extends $pb.GeneratedMessage {
   static CreateNotifyFlowResponse create() => CreateNotifyFlowResponse._();
   @$core.override
   CreateNotifyFlowResponse createEmptyInstance() => create();
-  static $pb.PbList<CreateNotifyFlowResponse> createRepeated() =>
-      $pb.PbList<CreateNotifyFlowResponse>();
   @$core.pragma('dart2js:noInline')
   static CreateNotifyFlowResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<CreateNotifyFlowResponse>(create);
@@ -554,8 +530,7 @@ class UpdateNotifyFlowRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UpdateNotifyFlowRequest clone() =>
-      UpdateNotifyFlowRequest()..mergeFromMessage(this);
+  UpdateNotifyFlowRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UpdateNotifyFlowRequest copyWith(
           void Function(UpdateNotifyFlowRequest) updates) =>
@@ -569,8 +544,6 @@ class UpdateNotifyFlowRequest extends $pb.GeneratedMessage {
   static UpdateNotifyFlowRequest create() => UpdateNotifyFlowRequest._();
   @$core.override
   UpdateNotifyFlowRequest createEmptyInstance() => create();
-  static $pb.PbList<UpdateNotifyFlowRequest> createRepeated() =>
-      $pb.PbList<UpdateNotifyFlowRequest>();
   @$core.pragma('dart2js:noInline')
   static UpdateNotifyFlowRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<UpdateNotifyFlowRequest>(create);
@@ -608,8 +581,7 @@ class UpdateNotifyFlowResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UpdateNotifyFlowResponse clone() =>
-      UpdateNotifyFlowResponse()..mergeFromMessage(this);
+  UpdateNotifyFlowResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UpdateNotifyFlowResponse copyWith(
           void Function(UpdateNotifyFlowResponse) updates) =>
@@ -623,8 +595,6 @@ class UpdateNotifyFlowResponse extends $pb.GeneratedMessage {
   static UpdateNotifyFlowResponse create() => UpdateNotifyFlowResponse._();
   @$core.override
   UpdateNotifyFlowResponse createEmptyInstance() => create();
-  static $pb.PbList<UpdateNotifyFlowResponse> createRepeated() =>
-      $pb.PbList<UpdateNotifyFlowResponse>();
   @$core.pragma('dart2js:noInline')
   static UpdateNotifyFlowResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<UpdateNotifyFlowResponse>(create);
@@ -658,14 +628,12 @@ class ListNotifyFlowsRequest extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOM<$0.PagingRequest>(1, _omitFieldNames ? '' : 'paging',
         subBuilder: $0.PagingRequest.create)
-    ..pc<$0.InternalID>(
-        2, _omitFieldNames ? '' : 'idFilter', $pb.PbFieldType.PM,
+    ..pPM<$0.InternalID>(2, _omitFieldNames ? '' : 'idFilter',
         subBuilder: $0.InternalID.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListNotifyFlowsRequest clone() =>
-      ListNotifyFlowsRequest()..mergeFromMessage(this);
+  ListNotifyFlowsRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ListNotifyFlowsRequest copyWith(
           void Function(ListNotifyFlowsRequest) updates) =>
@@ -679,8 +647,6 @@ class ListNotifyFlowsRequest extends $pb.GeneratedMessage {
   static ListNotifyFlowsRequest create() => ListNotifyFlowsRequest._();
   @$core.override
   ListNotifyFlowsRequest createEmptyInstance() => create();
-  static $pb.PbList<ListNotifyFlowsRequest> createRepeated() =>
-      $pb.PbList<ListNotifyFlowsRequest>();
   @$core.pragma('dart2js:noInline')
   static ListNotifyFlowsRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ListNotifyFlowsRequest>(create);
@@ -728,13 +694,12 @@ class ListNotifyFlowsResponse extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOM<$0.PagingResponse>(1, _omitFieldNames ? '' : 'paging',
         subBuilder: $0.PagingResponse.create)
-    ..pc<NotifyFlow>(2, _omitFieldNames ? '' : 'flows', $pb.PbFieldType.PM,
+    ..pPM<NotifyFlow>(2, _omitFieldNames ? '' : 'flows',
         subBuilder: NotifyFlow.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListNotifyFlowsResponse clone() =>
-      ListNotifyFlowsResponse()..mergeFromMessage(this);
+  ListNotifyFlowsResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ListNotifyFlowsResponse copyWith(
           void Function(ListNotifyFlowsResponse) updates) =>
@@ -748,8 +713,6 @@ class ListNotifyFlowsResponse extends $pb.GeneratedMessage {
   static ListNotifyFlowsResponse create() => ListNotifyFlowsResponse._();
   @$core.override
   ListNotifyFlowsResponse createEmptyInstance() => create();
-  static $pb.PbList<ListNotifyFlowsResponse> createRepeated() =>
-      $pb.PbList<ListNotifyFlowsResponse>();
   @$core.pragma('dart2js:noInline')
   static ListNotifyFlowsResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ListNotifyFlowsResponse>(create);
@@ -807,15 +770,12 @@ class NotifyTarget extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'description')
     ..aOM<$0.FeatureRequest>(4, _omitFieldNames ? '' : 'destination',
         subBuilder: $0.FeatureRequest.create)
-    ..e<NotifyTargetStatus>(
-        5, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE,
-        defaultOrMaker: NotifyTargetStatus.NOTIFY_TARGET_STATUS_UNSPECIFIED,
-        valueOf: NotifyTargetStatus.valueOf,
+    ..aE<NotifyTargetStatus>(5, _omitFieldNames ? '' : 'status',
         enumValues: NotifyTargetStatus.values)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  NotifyTarget clone() => NotifyTarget()..mergeFromMessage(this);
+  NotifyTarget clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   NotifyTarget copyWith(void Function(NotifyTarget) updates) =>
       super.copyWith((message) => updates(message as NotifyTarget))
@@ -828,8 +788,6 @@ class NotifyTarget extends $pb.GeneratedMessage {
   static NotifyTarget create() => NotifyTarget._();
   @$core.override
   NotifyTarget createEmptyInstance() => create();
-  static $pb.PbList<NotifyTarget> createRepeated() =>
-      $pb.PbList<NotifyTarget>();
   @$core.pragma('dart2js:noInline')
   static NotifyTarget getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<NotifyTarget>(create);
@@ -923,21 +881,16 @@ class NotifyFlow extends $pb.GeneratedMessage {
         subBuilder: $0.InternalID.create)
     ..aOS(2, _omitFieldNames ? '' : 'name')
     ..aOS(3, _omitFieldNames ? '' : 'description')
-    ..pc<NotifyFlowSource>(
-        4, _omitFieldNames ? '' : 'sources', $pb.PbFieldType.PM,
+    ..pPM<NotifyFlowSource>(4, _omitFieldNames ? '' : 'sources',
         subBuilder: NotifyFlowSource.create)
-    ..pc<NotifyFlowTarget>(
-        5, _omitFieldNames ? '' : 'targets', $pb.PbFieldType.PM,
+    ..pPM<NotifyFlowTarget>(5, _omitFieldNames ? '' : 'targets',
         subBuilder: NotifyFlowTarget.create)
-    ..e<NotifyFlowStatus>(
-        6, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE,
-        defaultOrMaker: NotifyFlowStatus.NOTIFY_FLOW_STATUS_UNSPECIFIED,
-        valueOf: NotifyFlowStatus.valueOf,
+    ..aE<NotifyFlowStatus>(6, _omitFieldNames ? '' : 'status',
         enumValues: NotifyFlowStatus.values)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  NotifyFlow clone() => NotifyFlow()..mergeFromMessage(this);
+  NotifyFlow clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   NotifyFlow copyWith(void Function(NotifyFlow) updates) =>
       super.copyWith((message) => updates(message as NotifyFlow)) as NotifyFlow;
@@ -949,7 +902,6 @@ class NotifyFlow extends $pb.GeneratedMessage {
   static NotifyFlow create() => NotifyFlow._();
   @$core.override
   NotifyFlow createEmptyInstance() => create();
-  static $pb.PbList<NotifyFlow> createRepeated() => $pb.PbList<NotifyFlow>();
   @$core.pragma('dart2js:noInline')
   static NotifyFlow getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<NotifyFlow>(create);
@@ -1032,7 +984,7 @@ class NotifyFlowSource extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  NotifyFlowSource clone() => NotifyFlowSource()..mergeFromMessage(this);
+  NotifyFlowSource clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   NotifyFlowSource copyWith(void Function(NotifyFlowSource) updates) =>
       super.copyWith((message) => updates(message as NotifyFlowSource))
@@ -1045,8 +997,6 @@ class NotifyFlowSource extends $pb.GeneratedMessage {
   static NotifyFlowSource create() => NotifyFlowSource._();
   @$core.override
   NotifyFlowSource createEmptyInstance() => create();
-  static $pb.PbList<NotifyFlowSource> createRepeated() =>
-      $pb.PbList<NotifyFlowSource>();
   @$core.pragma('dart2js:noInline')
   static NotifyFlowSource getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<NotifyFlowSource>(create);
@@ -1108,7 +1058,7 @@ class NotifyFlowTarget extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  NotifyFlowTarget clone() => NotifyFlowTarget()..mergeFromMessage(this);
+  NotifyFlowTarget clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   NotifyFlowTarget copyWith(void Function(NotifyFlowTarget) updates) =>
       super.copyWith((message) => updates(message as NotifyFlowTarget))
@@ -1121,8 +1071,6 @@ class NotifyFlowTarget extends $pb.GeneratedMessage {
   static NotifyFlowTarget create() => NotifyFlowTarget._();
   @$core.override
   NotifyFlowTarget createEmptyInstance() => create();
-  static $pb.PbList<NotifyFlowTarget> createRepeated() =>
-      $pb.PbList<NotifyFlowTarget>();
   @$core.pragma('dart2js:noInline')
   static NotifyFlowTarget getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<NotifyFlowTarget>(create);
@@ -1182,7 +1130,7 @@ class NotifyFilter extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  NotifyFilter clone() => NotifyFilter()..mergeFromMessage(this);
+  NotifyFilter clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   NotifyFilter copyWith(void Function(NotifyFilter) updates) =>
       super.copyWith((message) => updates(message as NotifyFilter))
@@ -1195,8 +1143,6 @@ class NotifyFilter extends $pb.GeneratedMessage {
   static NotifyFilter create() => NotifyFilter._();
   @$core.override
   NotifyFilter createEmptyInstance() => create();
-  static $pb.PbList<NotifyFilter> createRepeated() =>
-      $pb.PbList<NotifyFilter>();
   @$core.pragma('dart2js:noInline')
   static NotifyFilter getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<NotifyFilter>(create);
@@ -1253,8 +1199,7 @@ class ListSystemNotificationsRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListSystemNotificationsRequest clone() =>
-      ListSystemNotificationsRequest()..mergeFromMessage(this);
+  ListSystemNotificationsRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ListSystemNotificationsRequest copyWith(
           void Function(ListSystemNotificationsRequest) updates) =>
@@ -1270,8 +1215,6 @@ class ListSystemNotificationsRequest extends $pb.GeneratedMessage {
       ListSystemNotificationsRequest._();
   @$core.override
   ListSystemNotificationsRequest createEmptyInstance() => create();
-  static $pb.PbList<ListSystemNotificationsRequest> createRepeated() =>
-      $pb.PbList<ListSystemNotificationsRequest>();
   @$core.pragma('dart2js:noInline')
   static ListSystemNotificationsRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ListSystemNotificationsRequest>(create);
@@ -1322,14 +1265,12 @@ class ListSystemNotificationsResponse extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOM<$0.PagingResponse>(1, _omitFieldNames ? '' : 'paging',
         subBuilder: $0.PagingResponse.create)
-    ..pc<SystemNotification>(
-        2, _omitFieldNames ? '' : 'notifications', $pb.PbFieldType.PM,
+    ..pPM<SystemNotification>(2, _omitFieldNames ? '' : 'notifications',
         subBuilder: SystemNotification.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  ListSystemNotificationsResponse clone() =>
-      ListSystemNotificationsResponse()..mergeFromMessage(this);
+  ListSystemNotificationsResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   ListSystemNotificationsResponse copyWith(
           void Function(ListSystemNotificationsResponse) updates) =>
@@ -1345,8 +1286,6 @@ class ListSystemNotificationsResponse extends $pb.GeneratedMessage {
       ListSystemNotificationsResponse._();
   @$core.override
   ListSystemNotificationsResponse createEmptyInstance() => create();
-  static $pb.PbList<ListSystemNotificationsResponse> createRepeated() =>
-      $pb.PbList<ListSystemNotificationsResponse>();
   @$core.pragma('dart2js:noInline')
   static ListSystemNotificationsResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<ListSystemNotificationsResponse>(
@@ -1395,17 +1334,12 @@ class UpdateSystemNotificationRequest extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOM<$0.InternalID>(1, _omitFieldNames ? '' : 'id',
         subBuilder: $0.InternalID.create)
-    ..e<SystemNotificationStatus>(
-        2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE,
-        defaultOrMaker:
-            SystemNotificationStatus.SYSTEM_NOTIFICATION_STATUS_UNSPECIFIED,
-        valueOf: SystemNotificationStatus.valueOf,
+    ..aE<SystemNotificationStatus>(2, _omitFieldNames ? '' : 'status',
         enumValues: SystemNotificationStatus.values)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UpdateSystemNotificationRequest clone() =>
-      UpdateSystemNotificationRequest()..mergeFromMessage(this);
+  UpdateSystemNotificationRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UpdateSystemNotificationRequest copyWith(
           void Function(UpdateSystemNotificationRequest) updates) =>
@@ -1421,8 +1355,6 @@ class UpdateSystemNotificationRequest extends $pb.GeneratedMessage {
       UpdateSystemNotificationRequest._();
   @$core.override
   UpdateSystemNotificationRequest createEmptyInstance() => create();
-  static $pb.PbList<UpdateSystemNotificationRequest> createRepeated() =>
-      $pb.PbList<UpdateSystemNotificationRequest>();
   @$core.pragma('dart2js:noInline')
   static UpdateSystemNotificationRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<UpdateSystemNotificationRequest>(
@@ -1471,8 +1403,7 @@ class UpdateSystemNotificationResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UpdateSystemNotificationResponse clone() =>
-      UpdateSystemNotificationResponse()..mergeFromMessage(this);
+  UpdateSystemNotificationResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UpdateSystemNotificationResponse copyWith(
           void Function(UpdateSystemNotificationResponse) updates) =>
@@ -1488,8 +1419,6 @@ class UpdateSystemNotificationResponse extends $pb.GeneratedMessage {
       UpdateSystemNotificationResponse._();
   @$core.override
   UpdateSystemNotificationResponse createEmptyInstance() => create();
-  static $pb.PbList<UpdateSystemNotificationResponse> createRepeated() =>
-      $pb.PbList<UpdateSystemNotificationResponse>();
   @$core.pragma('dart2js:noInline')
   static UpdateSystemNotificationResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<UpdateSystemNotificationResponse>(
@@ -1534,17 +1463,9 @@ class SystemNotification extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aOM<$0.InternalID>(1, _omitFieldNames ? '' : 'id',
         subBuilder: $0.InternalID.create)
-    ..e<SystemNotificationLevel>(
-        3, _omitFieldNames ? '' : 'level', $pb.PbFieldType.OE,
-        defaultOrMaker:
-            SystemNotificationLevel.SYSTEM_NOTIFICATION_LEVEL_UNSPECIFIED,
-        valueOf: SystemNotificationLevel.valueOf,
+    ..aE<SystemNotificationLevel>(3, _omitFieldNames ? '' : 'level',
         enumValues: SystemNotificationLevel.values)
-    ..e<SystemNotificationStatus>(
-        4, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE,
-        defaultOrMaker:
-            SystemNotificationStatus.SYSTEM_NOTIFICATION_STATUS_UNSPECIFIED,
-        valueOf: SystemNotificationStatus.valueOf,
+    ..aE<SystemNotificationStatus>(4, _omitFieldNames ? '' : 'status',
         enumValues: SystemNotificationStatus.values)
     ..aOS(5, _omitFieldNames ? '' : 'title')
     ..aOS(6, _omitFieldNames ? '' : 'content')
@@ -1555,7 +1476,7 @@ class SystemNotification extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SystemNotification clone() => SystemNotification()..mergeFromMessage(this);
+  SystemNotification clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   SystemNotification copyWith(void Function(SystemNotification) updates) =>
       super.copyWith((message) => updates(message as SystemNotification))
@@ -1568,8 +1489,6 @@ class SystemNotification extends $pb.GeneratedMessage {
   static SystemNotification create() => SystemNotification._();
   @$core.override
   SystemNotification createEmptyInstance() => create();
-  static $pb.PbList<SystemNotification> createRepeated() =>
-      $pb.PbList<SystemNotification>();
   @$core.pragma('dart2js:noInline')
   static SystemNotification getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<SystemNotification>(create);

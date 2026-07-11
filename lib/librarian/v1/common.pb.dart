@@ -8,14 +8,15 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
 
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
+import 'package:protobuf/well_known_types/google/protobuf/timestamp.pb.dart'
+    as $1;
 
-import '../../google/protobuf/timestamp.pb.dart' as $1;
 import 'wellknown.pb.dart' as $0;
 
 export 'package:protobuf/protobuf.dart' show GeneratedMessageGenericExtensions;
@@ -61,17 +62,17 @@ class Feed extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'title')
     ..aOS(3, _omitFieldNames ? '' : 'link')
     ..aOS(4, _omitFieldNames ? '' : 'description')
-    ..pc<FeedItem>(5, _omitFieldNames ? '' : 'items', $pb.PbFieldType.PM,
+    ..pPM<FeedItem>(5, _omitFieldNames ? '' : 'items',
         subBuilder: FeedItem.create)
     ..aOS(6, _omitFieldNames ? '' : 'language')
     ..aOM<FeedImage>(7, _omitFieldNames ? '' : 'image',
         subBuilder: FeedImage.create)
-    ..pc<FeedPerson>(8, _omitFieldNames ? '' : 'authors', $pb.PbFieldType.PM,
+    ..pPM<FeedPerson>(8, _omitFieldNames ? '' : 'authors',
         subBuilder: FeedPerson.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  Feed clone() => Feed()..mergeFromMessage(this);
+  Feed clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   Feed copyWith(void Function(Feed) updates) =>
       super.copyWith((message) => updates(message as Feed)) as Feed;
@@ -83,7 +84,6 @@ class Feed extends $pb.GeneratedMessage {
   static Feed create() => Feed._();
   @$core.override
   Feed createEmptyInstance() => create();
-  static $pb.PbList<Feed> createRepeated() => $pb.PbList<Feed>();
   @$core.pragma('dart2js:noInline')
   static Feed getDefault() =>
       _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Feed>(create);
@@ -214,7 +214,7 @@ class FeedItem extends $pb.GeneratedMessage {
     ..aOM<$0.InternalID>(1, _omitFieldNames ? '' : 'id',
         subBuilder: $0.InternalID.create)
     ..aOS(2, _omitFieldNames ? '' : 'title')
-    ..pc<FeedPerson>(3, _omitFieldNames ? '' : 'authors', $pb.PbFieldType.PM,
+    ..pPM<FeedPerson>(3, _omitFieldNames ? '' : 'authors',
         subBuilder: FeedPerson.create)
     ..aOS(4, _omitFieldNames ? '' : 'description')
     ..aOS(5, _omitFieldNames ? '' : 'content')
@@ -228,15 +228,14 @@ class FeedItem extends $pb.GeneratedMessage {
     ..aOS(11, _omitFieldNames ? '' : 'updated')
     ..aOM<$1.Timestamp>(12, _omitFieldNames ? '' : 'updatedParsed',
         subBuilder: $1.Timestamp.create)
-    ..pc<FeedEnclosure>(
-        13, _omitFieldNames ? '' : 'enclosures', $pb.PbFieldType.PM,
+    ..pPM<FeedEnclosure>(13, _omitFieldNames ? '' : 'enclosures',
         subBuilder: FeedEnclosure.create)
     ..aOS(14, _omitFieldNames ? '' : 'publishPlatform')
     ..aInt64(15, _omitFieldNames ? '' : 'readCount')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  FeedItem clone() => FeedItem()..mergeFromMessage(this);
+  FeedItem clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   FeedItem copyWith(void Function(FeedItem) updates) =>
       super.copyWith((message) => updates(message as FeedItem)) as FeedItem;
@@ -248,7 +247,6 @@ class FeedItem extends $pb.GeneratedMessage {
   static FeedItem create() => FeedItem._();
   @$core.override
   FeedItem createEmptyInstance() => create();
-  static $pb.PbList<FeedItem> createRepeated() => $pb.PbList<FeedItem>();
   @$core.pragma('dart2js:noInline')
   static FeedItem getDefault() =>
       _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FeedItem>(create);
@@ -431,7 +429,7 @@ class FeedPerson extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  FeedPerson clone() => FeedPerson()..mergeFromMessage(this);
+  FeedPerson clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   FeedPerson copyWith(void Function(FeedPerson) updates) =>
       super.copyWith((message) => updates(message as FeedPerson)) as FeedPerson;
@@ -443,7 +441,6 @@ class FeedPerson extends $pb.GeneratedMessage {
   static FeedPerson create() => FeedPerson._();
   @$core.override
   FeedPerson createEmptyInstance() => create();
-  static $pb.PbList<FeedPerson> createRepeated() => $pb.PbList<FeedPerson>();
   @$core.pragma('dart2js:noInline')
   static FeedPerson getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<FeedPerson>(create);
@@ -501,7 +498,7 @@ class FeedImage extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  FeedImage clone() => FeedImage()..mergeFromMessage(this);
+  FeedImage clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   FeedImage copyWith(void Function(FeedImage) updates) =>
       super.copyWith((message) => updates(message as FeedImage)) as FeedImage;
@@ -513,7 +510,6 @@ class FeedImage extends $pb.GeneratedMessage {
   static FeedImage create() => FeedImage._();
   @$core.override
   FeedImage createEmptyInstance() => create();
-  static $pb.PbList<FeedImage> createRepeated() => $pb.PbList<FeedImage>();
   @$core.pragma('dart2js:noInline')
   static FeedImage getDefault() =>
       _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FeedImage>(create);
@@ -573,7 +569,7 @@ class FeedEnclosure extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  FeedEnclosure clone() => FeedEnclosure()..mergeFromMessage(this);
+  FeedEnclosure clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   FeedEnclosure copyWith(void Function(FeedEnclosure) updates) =>
       super.copyWith((message) => updates(message as FeedEnclosure))
@@ -586,8 +582,6 @@ class FeedEnclosure extends $pb.GeneratedMessage {
   static FeedEnclosure create() => FeedEnclosure._();
   @$core.override
   FeedEnclosure createEmptyInstance() => create();
-  static $pb.PbList<FeedEnclosure> createRepeated() =>
-      $pb.PbList<FeedEnclosure>();
   @$core.pragma('dart2js:noInline')
   static FeedEnclosure getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<FeedEnclosure>(create);
@@ -665,7 +659,7 @@ class PorterBinarySummary extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PorterBinarySummary clone() => PorterBinarySummary()..mergeFromMessage(this);
+  PorterBinarySummary clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PorterBinarySummary copyWith(void Function(PorterBinarySummary) updates) =>
       super.copyWith((message) => updates(message as PorterBinarySummary))
@@ -678,8 +672,6 @@ class PorterBinarySummary extends $pb.GeneratedMessage {
   static PorterBinarySummary create() => PorterBinarySummary._();
   @$core.override
   PorterBinarySummary createEmptyInstance() => create();
-  static $pb.PbList<PorterBinarySummary> createRepeated() =>
-      $pb.PbList<PorterBinarySummary>();
   @$core.pragma('dart2js:noInline')
   static PorterBinarySummary getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<PorterBinarySummary>(create);

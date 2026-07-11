@@ -8,7 +8,7 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
 
 import 'dart:core' as $core;
 
@@ -42,8 +42,7 @@ class GetStorageCapacityUsageRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetStorageCapacityUsageRequest clone() =>
-      GetStorageCapacityUsageRequest()..mergeFromMessage(this);
+  GetStorageCapacityUsageRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetStorageCapacityUsageRequest copyWith(
           void Function(GetStorageCapacityUsageRequest) updates) =>
@@ -59,8 +58,6 @@ class GetStorageCapacityUsageRequest extends $pb.GeneratedMessage {
       GetStorageCapacityUsageRequest._();
   @$core.override
   GetStorageCapacityUsageRequest createEmptyInstance() => create();
-  static $pb.PbList<GetStorageCapacityUsageRequest> createRepeated() =>
-      $pb.PbList<GetStorageCapacityUsageRequest>();
   @$core.pragma('dart2js:noInline')
   static GetStorageCapacityUsageRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<GetStorageCapacityUsageRequest>(create);
@@ -97,8 +94,7 @@ class GetStorageCapacityUsageResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetStorageCapacityUsageResponse clone() =>
-      GetStorageCapacityUsageResponse()..mergeFromMessage(this);
+  GetStorageCapacityUsageResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetStorageCapacityUsageResponse copyWith(
           void Function(GetStorageCapacityUsageResponse) updates) =>
@@ -114,8 +110,6 @@ class GetStorageCapacityUsageResponse extends $pb.GeneratedMessage {
       GetStorageCapacityUsageResponse._();
   @$core.override
   GetStorageCapacityUsageResponse createEmptyInstance() => create();
-  static $pb.PbList<GetStorageCapacityUsageResponse> createRepeated() =>
-      $pb.PbList<GetStorageCapacityUsageResponse>();
   @$core.pragma('dart2js:noInline')
   static GetStorageCapacityUsageResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<GetStorageCapacityUsageResponse>(
@@ -165,14 +159,12 @@ class StorageCapacityUsage extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..aInt64(1, _omitFieldNames ? '' : 'totalLimitSizeBytes')
     ..aInt64(2, _omitFieldNames ? '' : 'totalUsedSizeBytes')
-    ..pc<StorageCapacityUsageDetail>(
-        3, _omitFieldNames ? '' : 'details', $pb.PbFieldType.PM,
+    ..pPM<StorageCapacityUsageDetail>(3, _omitFieldNames ? '' : 'details',
         subBuilder: StorageCapacityUsageDetail.create)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  StorageCapacityUsage clone() =>
-      StorageCapacityUsage()..mergeFromMessage(this);
+  StorageCapacityUsage clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   StorageCapacityUsage copyWith(void Function(StorageCapacityUsage) updates) =>
       super.copyWith((message) => updates(message as StorageCapacityUsage))
@@ -185,8 +177,6 @@ class StorageCapacityUsage extends $pb.GeneratedMessage {
   static StorageCapacityUsage create() => StorageCapacityUsage._();
   @$core.override
   StorageCapacityUsage createEmptyInstance() => create();
-  static $pb.PbList<StorageCapacityUsage> createRepeated() =>
-      $pb.PbList<StorageCapacityUsage>();
   @$core.pragma('dart2js:noInline')
   static StorageCapacityUsage getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<StorageCapacityUsage>(create);
@@ -242,17 +232,14 @@ class StorageCapacityUsageDetail extends $pb.GeneratedMessage {
       package: const $pb.PackageName(
           _omitMessageNames ? '' : 'librarian.sephirah.v1'),
       createEmptyInstance: create)
-    ..e<$0.FileType>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OE,
-        defaultOrMaker: $0.FileType.FILE_TYPE_UNSPECIFIED,
-        valueOf: $0.FileType.valueOf,
+    ..aE<$0.FileType>(1, _omitFieldNames ? '' : 'type',
         enumValues: $0.FileType.values)
     ..aInt64(2, _omitFieldNames ? '' : 'limitSizeBytes')
     ..aInt64(3, _omitFieldNames ? '' : 'usedSizeBytes')
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  StorageCapacityUsageDetail clone() =>
-      StorageCapacityUsageDetail()..mergeFromMessage(this);
+  StorageCapacityUsageDetail clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   StorageCapacityUsageDetail copyWith(
           void Function(StorageCapacityUsageDetail) updates) =>
@@ -267,8 +254,6 @@ class StorageCapacityUsageDetail extends $pb.GeneratedMessage {
   static StorageCapacityUsageDetail create() => StorageCapacityUsageDetail._();
   @$core.override
   StorageCapacityUsageDetail createEmptyInstance() => create();
-  static $pb.PbList<StorageCapacityUsageDetail> createRepeated() =>
-      $pb.PbList<StorageCapacityUsageDetail>();
   @$core.pragma('dart2js:noInline')
   static StorageCapacityUsageDetail getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<StorageCapacityUsageDetail>(create);
@@ -342,7 +327,7 @@ class UploadFileRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UploadFileRequest clone() => UploadFileRequest()..mergeFromMessage(this);
+  UploadFileRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UploadFileRequest copyWith(void Function(UploadFileRequest) updates) =>
       super.copyWith((message) => updates(message as UploadFileRequest))
@@ -355,15 +340,17 @@ class UploadFileRequest extends $pb.GeneratedMessage {
   static UploadFileRequest create() => UploadFileRequest._();
   @$core.override
   UploadFileRequest createEmptyInstance() => create();
-  static $pb.PbList<UploadFileRequest> createRepeated() =>
-      $pb.PbList<UploadFileRequest>();
   @$core.pragma('dart2js:noInline')
   static UploadFileRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<UploadFileRequest>(create);
   static UploadFileRequest? _defaultInstance;
 
+  @$pb.TagNumber(1)
+  @$pb.TagNumber(2)
   UploadFileRequest_Content whichContent() =>
       _UploadFileRequest_ContentByTag[$_whichOneof(0)]!;
+  @$pb.TagNumber(1)
+  @$pb.TagNumber(2)
   void clearContent() => $_clearField($_whichOneof(0));
 
   @$pb.TagNumber(1)
@@ -413,16 +400,12 @@ class UploadFileResponse_ChunkStatus extends $pb.GeneratedMessage {
           _omitMessageNames ? '' : 'librarian.sephirah.v1'),
       createEmptyInstance: create)
     ..aInt64(1, _omitFieldNames ? '' : 'chunkNumber')
-    ..e<ChunkTransferStatus>(
-        2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE,
-        defaultOrMaker: ChunkTransferStatus.CHUNK_TRANSFER_STATUS_UNSPECIFIED,
-        valueOf: ChunkTransferStatus.valueOf,
+    ..aE<ChunkTransferStatus>(2, _omitFieldNames ? '' : 'status',
         enumValues: ChunkTransferStatus.values)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UploadFileResponse_ChunkStatus clone() =>
-      UploadFileResponse_ChunkStatus()..mergeFromMessage(this);
+  UploadFileResponse_ChunkStatus clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UploadFileResponse_ChunkStatus copyWith(
           void Function(UploadFileResponse_ChunkStatus) updates) =>
@@ -438,8 +421,6 @@ class UploadFileResponse_ChunkStatus extends $pb.GeneratedMessage {
       UploadFileResponse_ChunkStatus._();
   @$core.override
   UploadFileResponse_ChunkStatus createEmptyInstance() => create();
-  static $pb.PbList<UploadFileResponse_ChunkStatus> createRepeated() =>
-      $pb.PbList<UploadFileResponse_ChunkStatus>();
   @$core.pragma('dart2js:noInline')
   static UploadFileResponse_ChunkStatus getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<UploadFileResponse_ChunkStatus>(create);
@@ -492,16 +473,12 @@ class UploadFileResponse_FileStatus extends $pb.GeneratedMessage {
       createEmptyInstance: create)
     ..p<$fixnum.Int64>(
         1, _omitFieldNames ? '' : 'missingChunkList', $pb.PbFieldType.K6)
-    ..e<FileTransferStatus>(
-        2, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE,
-        defaultOrMaker: FileTransferStatus.FILE_TRANSFER_STATUS_UNSPECIFIED,
-        valueOf: FileTransferStatus.valueOf,
+    ..aE<FileTransferStatus>(2, _omitFieldNames ? '' : 'status',
         enumValues: FileTransferStatus.values)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UploadFileResponse_FileStatus clone() =>
-      UploadFileResponse_FileStatus()..mergeFromMessage(this);
+  UploadFileResponse_FileStatus clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UploadFileResponse_FileStatus copyWith(
           void Function(UploadFileResponse_FileStatus) updates) =>
@@ -517,8 +494,6 @@ class UploadFileResponse_FileStatus extends $pb.GeneratedMessage {
       UploadFileResponse_FileStatus._();
   @$core.override
   UploadFileResponse_FileStatus createEmptyInstance() => create();
-  static $pb.PbList<UploadFileResponse_FileStatus> createRepeated() =>
-      $pb.PbList<UploadFileResponse_FileStatus>();
   @$core.pragma('dart2js:noInline')
   static UploadFileResponse_FileStatus getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<UploadFileResponse_FileStatus>(create);
@@ -579,7 +554,7 @@ class UploadFileResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  UploadFileResponse clone() => UploadFileResponse()..mergeFromMessage(this);
+  UploadFileResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   UploadFileResponse copyWith(void Function(UploadFileResponse) updates) =>
       super.copyWith((message) => updates(message as UploadFileResponse))
@@ -592,15 +567,17 @@ class UploadFileResponse extends $pb.GeneratedMessage {
   static UploadFileResponse create() => UploadFileResponse._();
   @$core.override
   UploadFileResponse createEmptyInstance() => create();
-  static $pb.PbList<UploadFileResponse> createRepeated() =>
-      $pb.PbList<UploadFileResponse>();
   @$core.pragma('dart2js:noInline')
   static UploadFileResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<UploadFileResponse>(create);
   static UploadFileResponse? _defaultInstance;
 
+  @$pb.TagNumber(1)
+  @$pb.TagNumber(2)
   UploadFileResponse_Content whichContent() =>
       _UploadFileResponse_ContentByTag[$_whichOneof(0)]!;
+  @$pb.TagNumber(1)
+  @$pb.TagNumber(2)
   void clearContent() => $_clearField($_whichOneof(0));
 
   @$pb.TagNumber(1)
@@ -656,7 +633,7 @@ class DownloadFileRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  DownloadFileRequest clone() => DownloadFileRequest()..mergeFromMessage(this);
+  DownloadFileRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   DownloadFileRequest copyWith(void Function(DownloadFileRequest) updates) =>
       super.copyWith((message) => updates(message as DownloadFileRequest))
@@ -669,8 +646,6 @@ class DownloadFileRequest extends $pb.GeneratedMessage {
   static DownloadFileRequest create() => DownloadFileRequest._();
   @$core.override
   DownloadFileRequest createEmptyInstance() => create();
-  static $pb.PbList<DownloadFileRequest> createRepeated() =>
-      $pb.PbList<DownloadFileRequest>();
   @$core.pragma('dart2js:noInline')
   static DownloadFileRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<DownloadFileRequest>(create);
@@ -723,8 +698,7 @@ class DownloadFileResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  DownloadFileResponse clone() =>
-      DownloadFileResponse()..mergeFromMessage(this);
+  DownloadFileResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   DownloadFileResponse copyWith(void Function(DownloadFileResponse) updates) =>
       super.copyWith((message) => updates(message as DownloadFileResponse))
@@ -737,8 +711,6 @@ class DownloadFileResponse extends $pb.GeneratedMessage {
   static DownloadFileResponse create() => DownloadFileResponse._();
   @$core.override
   DownloadFileResponse createEmptyInstance() => create();
-  static $pb.PbList<DownloadFileResponse> createRepeated() =>
-      $pb.PbList<DownloadFileResponse>();
   @$core.pragma('dart2js:noInline')
   static DownloadFileResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<DownloadFileResponse>(create);
@@ -784,8 +756,7 @@ class SimpleUploadFileRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SimpleUploadFileRequest clone() =>
-      SimpleUploadFileRequest()..mergeFromMessage(this);
+  SimpleUploadFileRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   SimpleUploadFileRequest copyWith(
           void Function(SimpleUploadFileRequest) updates) =>
@@ -799,8 +770,6 @@ class SimpleUploadFileRequest extends $pb.GeneratedMessage {
   static SimpleUploadFileRequest create() => SimpleUploadFileRequest._();
   @$core.override
   SimpleUploadFileRequest createEmptyInstance() => create();
-  static $pb.PbList<SimpleUploadFileRequest> createRepeated() =>
-      $pb.PbList<SimpleUploadFileRequest>();
   @$core.pragma('dart2js:noInline')
   static SimpleUploadFileRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<SimpleUploadFileRequest>(create);
@@ -839,16 +808,12 @@ class SimpleUploadFileResponse extends $pb.GeneratedMessage {
       package: const $pb.PackageName(
           _omitMessageNames ? '' : 'librarian.sephirah.v1'),
       createEmptyInstance: create)
-    ..e<FileTransferStatus>(
-        1, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE,
-        defaultOrMaker: FileTransferStatus.FILE_TRANSFER_STATUS_UNSPECIFIED,
-        valueOf: FileTransferStatus.valueOf,
+    ..aE<FileTransferStatus>(1, _omitFieldNames ? '' : 'status',
         enumValues: FileTransferStatus.values)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SimpleUploadFileResponse clone() =>
-      SimpleUploadFileResponse()..mergeFromMessage(this);
+  SimpleUploadFileResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   SimpleUploadFileResponse copyWith(
           void Function(SimpleUploadFileResponse) updates) =>
@@ -862,8 +827,6 @@ class SimpleUploadFileResponse extends $pb.GeneratedMessage {
   static SimpleUploadFileResponse create() => SimpleUploadFileResponse._();
   @$core.override
   SimpleUploadFileResponse createEmptyInstance() => create();
-  static $pb.PbList<SimpleUploadFileResponse> createRepeated() =>
-      $pb.PbList<SimpleUploadFileResponse>();
   @$core.pragma('dart2js:noInline')
   static SimpleUploadFileResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<SimpleUploadFileResponse>(create);
@@ -899,8 +862,7 @@ class SimpleDownloadFileRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SimpleDownloadFileRequest clone() =>
-      SimpleDownloadFileRequest()..mergeFromMessage(this);
+  SimpleDownloadFileRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   SimpleDownloadFileRequest copyWith(
           void Function(SimpleDownloadFileRequest) updates) =>
@@ -914,8 +876,6 @@ class SimpleDownloadFileRequest extends $pb.GeneratedMessage {
   static SimpleDownloadFileRequest create() => SimpleDownloadFileRequest._();
   @$core.override
   SimpleDownloadFileRequest createEmptyInstance() => create();
-  static $pb.PbList<SimpleDownloadFileRequest> createRepeated() =>
-      $pb.PbList<SimpleDownloadFileRequest>();
   @$core.pragma('dart2js:noInline')
   static SimpleDownloadFileRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<SimpleDownloadFileRequest>(create);
@@ -950,8 +910,7 @@ class SimpleDownloadFileResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  SimpleDownloadFileResponse clone() =>
-      SimpleDownloadFileResponse()..mergeFromMessage(this);
+  SimpleDownloadFileResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   SimpleDownloadFileResponse copyWith(
           void Function(SimpleDownloadFileResponse) updates) =>
@@ -966,8 +925,6 @@ class SimpleDownloadFileResponse extends $pb.GeneratedMessage {
   static SimpleDownloadFileResponse create() => SimpleDownloadFileResponse._();
   @$core.override
   SimpleDownloadFileResponse createEmptyInstance() => create();
-  static $pb.PbList<SimpleDownloadFileResponse> createRepeated() =>
-      $pb.PbList<SimpleDownloadFileResponse>();
   @$core.pragma('dart2js:noInline')
   static SimpleDownloadFileResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<SimpleDownloadFileResponse>(create);
@@ -1003,8 +960,7 @@ class PresignedUploadFileRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PresignedUploadFileRequest clone() =>
-      PresignedUploadFileRequest()..mergeFromMessage(this);
+  PresignedUploadFileRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PresignedUploadFileRequest copyWith(
           void Function(PresignedUploadFileRequest) updates) =>
@@ -1019,8 +975,6 @@ class PresignedUploadFileRequest extends $pb.GeneratedMessage {
   static PresignedUploadFileRequest create() => PresignedUploadFileRequest._();
   @$core.override
   PresignedUploadFileRequest createEmptyInstance() => create();
-  static $pb.PbList<PresignedUploadFileRequest> createRepeated() =>
-      $pb.PbList<PresignedUploadFileRequest>();
   @$core.pragma('dart2js:noInline')
   static PresignedUploadFileRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<PresignedUploadFileRequest>(create);
@@ -1054,8 +1008,7 @@ class PresignedUploadFileResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PresignedUploadFileResponse clone() =>
-      PresignedUploadFileResponse()..mergeFromMessage(this);
+  PresignedUploadFileResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PresignedUploadFileResponse copyWith(
           void Function(PresignedUploadFileResponse) updates) =>
@@ -1071,8 +1024,6 @@ class PresignedUploadFileResponse extends $pb.GeneratedMessage {
       PresignedUploadFileResponse._();
   @$core.override
   PresignedUploadFileResponse createEmptyInstance() => create();
-  static $pb.PbList<PresignedUploadFileResponse> createRepeated() =>
-      $pb.PbList<PresignedUploadFileResponse>();
   @$core.pragma('dart2js:noInline')
   static PresignedUploadFileResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<PresignedUploadFileResponse>(create);
@@ -1112,16 +1063,12 @@ class PresignedUploadFileStatusRequest extends $pb.GeneratedMessage {
       package: const $pb.PackageName(
           _omitMessageNames ? '' : 'librarian.sephirah.v1'),
       createEmptyInstance: create)
-    ..e<FileTransferStatus>(
-        1, _omitFieldNames ? '' : 'status', $pb.PbFieldType.OE,
-        defaultOrMaker: FileTransferStatus.FILE_TRANSFER_STATUS_UNSPECIFIED,
-        valueOf: FileTransferStatus.valueOf,
+    ..aE<FileTransferStatus>(1, _omitFieldNames ? '' : 'status',
         enumValues: FileTransferStatus.values)
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PresignedUploadFileStatusRequest clone() =>
-      PresignedUploadFileStatusRequest()..mergeFromMessage(this);
+  PresignedUploadFileStatusRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PresignedUploadFileStatusRequest copyWith(
           void Function(PresignedUploadFileStatusRequest) updates) =>
@@ -1137,8 +1084,6 @@ class PresignedUploadFileStatusRequest extends $pb.GeneratedMessage {
       PresignedUploadFileStatusRequest._();
   @$core.override
   PresignedUploadFileStatusRequest createEmptyInstance() => create();
-  static $pb.PbList<PresignedUploadFileStatusRequest> createRepeated() =>
-      $pb.PbList<PresignedUploadFileStatusRequest>();
   @$core.pragma('dart2js:noInline')
   static PresignedUploadFileStatusRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<PresignedUploadFileStatusRequest>(
@@ -1176,8 +1121,7 @@ class PresignedUploadFileStatusResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PresignedUploadFileStatusResponse clone() =>
-      PresignedUploadFileStatusResponse()..mergeFromMessage(this);
+  PresignedUploadFileStatusResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PresignedUploadFileStatusResponse copyWith(
           void Function(PresignedUploadFileStatusResponse) updates) =>
@@ -1193,8 +1137,6 @@ class PresignedUploadFileStatusResponse extends $pb.GeneratedMessage {
       PresignedUploadFileStatusResponse._();
   @$core.override
   PresignedUploadFileStatusResponse createEmptyInstance() => create();
-  static $pb.PbList<PresignedUploadFileStatusResponse> createRepeated() =>
-      $pb.PbList<PresignedUploadFileStatusResponse>();
   @$core.pragma('dart2js:noInline')
   static PresignedUploadFileStatusResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<PresignedUploadFileStatusResponse>(
@@ -1222,8 +1164,7 @@ class PresignedDownloadFileRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PresignedDownloadFileRequest clone() =>
-      PresignedDownloadFileRequest()..mergeFromMessage(this);
+  PresignedDownloadFileRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PresignedDownloadFileRequest copyWith(
           void Function(PresignedDownloadFileRequest) updates) =>
@@ -1239,8 +1180,6 @@ class PresignedDownloadFileRequest extends $pb.GeneratedMessage {
       PresignedDownloadFileRequest._();
   @$core.override
   PresignedDownloadFileRequest createEmptyInstance() => create();
-  static $pb.PbList<PresignedDownloadFileRequest> createRepeated() =>
-      $pb.PbList<PresignedDownloadFileRequest>();
   @$core.pragma('dart2js:noInline')
   static PresignedDownloadFileRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<PresignedDownloadFileRequest>(create);
@@ -1274,8 +1213,7 @@ class PresignedDownloadFileResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  PresignedDownloadFileResponse clone() =>
-      PresignedDownloadFileResponse()..mergeFromMessage(this);
+  PresignedDownloadFileResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   PresignedDownloadFileResponse copyWith(
           void Function(PresignedDownloadFileResponse) updates) =>
@@ -1291,8 +1229,6 @@ class PresignedDownloadFileResponse extends $pb.GeneratedMessage {
       PresignedDownloadFileResponse._();
   @$core.override
   PresignedDownloadFileResponse createEmptyInstance() => create();
-  static $pb.PbList<PresignedDownloadFileResponse> createRepeated() =>
-      $pb.PbList<PresignedDownloadFileResponse>();
   @$core.pragma('dart2js:noInline')
   static PresignedDownloadFileResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<PresignedDownloadFileResponse>(create);
@@ -1340,7 +1276,7 @@ class FileChunk extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  FileChunk clone() => FileChunk()..mergeFromMessage(this);
+  FileChunk clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   FileChunk copyWith(void Function(FileChunk) updates) =>
       super.copyWith((message) => updates(message as FileChunk)) as FileChunk;
@@ -1352,7 +1288,6 @@ class FileChunk extends $pb.GeneratedMessage {
   static FileChunk create() => FileChunk._();
   @$core.override
   FileChunk createEmptyInstance() => create();
-  static $pb.PbList<FileChunk> createRepeated() => $pb.PbList<FileChunk>();
   @$core.pragma('dart2js:noInline')
   static FileChunk getDefault() =>
       _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FileChunk>(create);

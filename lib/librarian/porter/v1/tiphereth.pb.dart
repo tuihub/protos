@@ -8,7 +8,7 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: curly_braces_in_flow_control_structures
 // ignore_for_file: deprecated_member_use_from_same_package, library_prefixes
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, prefer_relative_imports
 
 import 'dart:core' as $core;
 
@@ -46,7 +46,7 @@ class GetAccountRequest extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetAccountRequest clone() => GetAccountRequest()..mergeFromMessage(this);
+  GetAccountRequest clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetAccountRequest copyWith(void Function(GetAccountRequest) updates) =>
       super.copyWith((message) => updates(message as GetAccountRequest))
@@ -59,8 +59,6 @@ class GetAccountRequest extends $pb.GeneratedMessage {
   static GetAccountRequest create() => GetAccountRequest._();
   @$core.override
   GetAccountRequest createEmptyInstance() => create();
-  static $pb.PbList<GetAccountRequest> createRepeated() =>
-      $pb.PbList<GetAccountRequest>();
   @$core.pragma('dart2js:noInline')
   static GetAccountRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<GetAccountRequest>(create);
@@ -106,7 +104,7 @@ class GetAccountResponse extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  GetAccountResponse clone() => GetAccountResponse()..mergeFromMessage(this);
+  GetAccountResponse clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   GetAccountResponse copyWith(void Function(GetAccountResponse) updates) =>
       super.copyWith((message) => updates(message as GetAccountResponse))
@@ -119,8 +117,6 @@ class GetAccountResponse extends $pb.GeneratedMessage {
   static GetAccountResponse create() => GetAccountResponse._();
   @$core.override
   GetAccountResponse createEmptyInstance() => create();
-  static $pb.PbList<GetAccountResponse> createRepeated() =>
-      $pb.PbList<GetAccountResponse>();
   @$core.pragma('dart2js:noInline')
   static GetAccountResponse getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<GetAccountResponse>(create);
@@ -177,7 +173,7 @@ class Account extends $pb.GeneratedMessage {
     ..hasRequiredFields = false;
 
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
-  Account clone() => Account()..mergeFromMessage(this);
+  Account clone() => deepCopy();
   @$core.Deprecated('See https://github.com/google/protobuf.dart/issues/998.')
   Account copyWith(void Function(Account) updates) =>
       super.copyWith((message) => updates(message as Account)) as Account;
@@ -189,7 +185,6 @@ class Account extends $pb.GeneratedMessage {
   static Account create() => Account._();
   @$core.override
   Account createEmptyInstance() => create();
-  static $pb.PbList<Account> createRepeated() => $pb.PbList<Account>();
   @$core.pragma('dart2js:noInline')
   static Account getDefault() =>
       _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Account>(create);
