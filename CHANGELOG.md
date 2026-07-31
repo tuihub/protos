@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.6.4](https://github.com/tuihub/protos/compare/v0.6.3...v0.6.4) (2026-07-31)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#207](https://github.com/tuihub/protos/issues/207)) ([62d6c0d](https://github.com/tuihub/protos/commit/62d6c0d2c215bcadaccc9e9abf850dcd2ce5670c))
+* **deps:** update module google.golang.org/grpc to v1.82.1 [security] ([#206](https://github.com/tuihub/protos/issues/206)) ([88651e7](https://github.com/tuihub/protos/commit/88651e7124668e13a78d8deab3d5b91aa35936d3))
+
 ## [0.6.3](https://github.com/tuihub/protos/compare/v0.6.2...v0.6.3) (2026-07-11)
 
 
