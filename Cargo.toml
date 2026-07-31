@@ -7,11 +7,11 @@ readme = "README.md"
 
 [dependencies]
 bytes = "1.12.1"
-futures-core = "0.3.32"
+futures-core = "0.3.33"
 pbjson = "0.9.0"
 pbjson-types = "0.9.0"
 prost = "0.14.4"
-serde = "1.0.228"
+serde = "1.0.229"
 tonic = { version = "0.14.6", features = ["gzip"] }
 tonic-prost = "0.14.6"
 
